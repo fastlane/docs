@@ -1,9 +1,32 @@
 code {
   font-family: "Liberation Mono", Menlo, Courier, monospace !important;
+  background-color: #f3f3f3 !important;
   color: #333 !important;
   font-size: 18px;
-  line-height: 20px;
-  background-color: #f3f3f3 !important;
   border: none !important;
+  padding: 5px !important;
+}
+
+pre > code {
+  line-height: 20px;
   padding: 16px !important;
 }
+
+blockquote {
+  color: #777 !important;
+  border-left: 4px solid rgb(221, 221, 221);
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 0px !important;
+}
+
+h3, h4, h5, h6 {
+  color: #333 !important;
+}
+
+/* We don't want to show h2 tags in the sidebar */
+.toctree-l4 {
+  display: none !important;
+}
+
+/* TODO: Hide toctree-l3 is there is only 1 item in it */

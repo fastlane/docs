@@ -2,411 +2,181 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to MkDocs\n\n\nYolo Docs :rocket:\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "text": "fastlane\n\n\n\n\n\n\n\n\n\n\nfastlane\n is \nthe\n tool to release your iOS and Android app \ud83d\ude80 It handles all tedious tasks, like generating screenshots, deadling with code signing, and releasing your application.\n\n\nTODO: Alternative\n\n\nfastlane\n is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.\n\n\nYou create a so-called \nFastfile\n in your repository, that defines how your beta or App Store release process:\n\n\nlane :beta do\n  increment_build_number\n  gym                       # Build your app\n  testflight                # Upload to TestFlight\nend\n\nlane :appstore do\n  snapshot                  # Generate screenshots for the App Store\n  gym                       # Build your app\n  deliver                   # Upload the screenshots and the binary to iTunes\n  slack                     # Let your team-mates know the new version is live\nend\n\n\n\n\nYou just defined 2 different lanes, one for beta deployment, one for App Store. To releaes your app in the App Store, all you have to do is\n\n\nfastlane appstore\n\n\n\n\nWhy fastlane?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u2728\n\n\nConnect all iOS, Mac, and Android build tools into one workflow\n\n\n\n\n\n\n\ud83d\ude9d\n\n\nDefine different \nlanes\n for App Store deployment, beta builds, or testing\n\n\n\n\n\n\n\ud83d\udea2\n\n\nDeploy from any computer, including a CI server\n\n\n\n\n\n\n\ud83d\udd27\n\n\nExtend and customise fastlane to fit your needs\n\n\n\n\n\n\n\ud83d\udcad\n\n\nNever remember any difficult commands, just \nfastlane\n\n\n\n\n\n\n\ud83c\udfa9\n\n\nEasy setup assistant to get started in a few minutes\n\n\n\n\n\n\n\u2709\ufe0f\n\n\nfastlane\n automatically passes information between build steps\n\n\n\n\n\n\n\ud83d\udcc3\n\n\nStore \neverything\n in Git. Never lookup build commands in \nJenkins\n configs again\n\n\n\n\n\n\n\ud83d\ude80\n\n\nSaves you \nhours\n for every app update you release\n\n\n\n\n\n\n\u270f\ufe0f\n\n\nFlexible configuration using a fully customisable \nFastfile\n\n\n\n\n\n\n\ud83d\udea0\n\n\nImplement a fully working Continuous Delivery process\n\n\n\n\n\n\n\ud83d\udc7b\n\n\nIntegrates with all major CI systems\n\n\n\n\n\n\n\ud83d\udc23\n\n\nOver 170 built-in integrations available\n\n\n\n\n\n\n\ud83d\udda5\n\n\nSupports iOS, Mac, and Android apps\n\n\n\n\n\n\n\ud83d\udd76\n\n\nFull Git and Mercurial support\n\n\n\n\n\n\n\n\nGetting Started\n\n\nMake sure you have the latest version of the Xcode command line tools installed:\n\n\nxcode-select --install\n\n\n\n\nUsing the terminal\n\n\nsudo gem install fastlane --verbose\n\n\n\n\nNavigate to your iOS or Android app and run\n\n\nfastlane init\n\n\n\n\nfastlane\n will automatically detect your project, and ask for any missing information.\n\n\nFor more details about how to get up and running, check out the \nfastlane guide\n.\n\n\nUsing the Fabric app\n\n\nIf you're not familiar with the terminal and prefer a graphical user interface, download the \nFabric app\n and use the built-in \nfastlane\n button.\n\n\nQuestions and support\n\n\nAll fastlane related questions, problems and feature ideas should be posted as \nGitHub issue\n. This way, other users can search existing discussions, and everybody can jump in.\n\n\nSystem requirements\n\n\nfastlane\n requires macOS or Linux with Ruby 2.0.0 or above\n\n\nCode of Conduct\n\n\nHelp us keep \nfastlane\n open and inclusive. Please read and follow our \nCode of Conduct\n.\n\n\nLicense\n\n\nThis project is licensed under the terms of the MIT license. See the \nLICENSE\n file.\n\n\n\n\nThis project and all fastlane tools are in no way affiliated with Apple Inc or Google. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.", 
             "title": "Home"
         }, 
         {
-            "location": "/#welcome-to-mkdocs", 
-            "text": "Yolo Docs :rocket:  For full documentation visit  mkdocs.org .", 
-            "title": "Welcome to MkDocs"
-        }, 
-        {
-            "location": "/#commands", 
-            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
-            "title": "Commands"
-        }, 
-        {
-            "location": "/#project-layout", 
-            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
-            "title": "Project layout"
-        }, 
-        {
-            "location": "/Debug/", 
-            "text": "Enable Debug Mode\n\n\n\n\nIf you need to get a better look into what Fabric is doing behind the scenes, feel free to enable debug mode:\n\n\n// Objective-C\n[[Fabric sharedSDK] setDebug: YES];\n\n[Fabric with:@[CrashlyticsKit]];\n\n// Swift\nFabric.sharedSDK().debug = true\nFabric.with([Crashlytics.self()])\n\n\n\n\nAnd this is how it looks in Ruby\n\n\ndef upload_large_icon!(icon_path)\n  unless icon_path\n    @large_app_icon.reset!\n    return\n  end\n  upload_image = UploadFile.from_path icon_path\n  image_data = client.upload_large_icon(self, upload_image)\n\n  @large_app_icon.reset!({ asset_token: image_data['token'], original_file_name: upload_image.file_name })\nend\n\n\n\n\nFor example, you can get insight into whether Answers is enabled and sending events.", 
-            "title": "Debug"
-        }, 
-        {
-            "location": "/FAQs/", 
-            "text": "FAQs\n\n\nI'm getting an SSL error\n\n\nIf your output contains something like\n\n\nSSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed\n\n\n\n\nthat usually means you are using an outdated version of OpenSSL. Make sure to install the latest one using \nhomebrew\n.\n\n\nbrew update \n brew upgrade openssl\n\n\n\n\nIf you use \nrvm\n, try the following\n\n\nrvm osx-ssl-certs update all\n\n\n\n\nfastlane is slow (to start)\n\n\nIf you experiennce slow launch times of \nfastlane\n, there are 2 solutions to solve this problem:\n\n\nUninstall unused gems\n\n\n[sudo] gem cleanup\n\n\n\n\nUse a Gemfile\n\n\nFollow the \nCocoaPods Gemfile Guide\n to set up your initial Gemfile. From the on launch \nfastlane\n using:\n\n\nbundle exec fastlane ...\n\n\n\n\nError when running \nfastlane\n with Jenkins\n\n\nThis is usually caused when running Jenkins as its own user. While this is possible, you'll have to take care of creating a temporary Keychain, filling it and then using it when building your application. \n\n\nFor more information about the recommended setup with Jenkins open the \nJenkins Guide\n.\n\n\nCode signing issues\n\n\nCheck out the \ncodesigning.guide\n website for more information on how to properly setup code-signing in your team using \nmatch\n.\n\n\nMultiple targets of the same underlying app\n\n\nIf you have one code base, but multiple branded applications\n\n\nCreate different \n.env\n files for each environment and reference those environment variables in the \nDeliverfile\n, \nFastfile\n, etc. \n\n\nExample: Create a \n.env.app1\n, \n.env.app2\n, and \n.env.app3\n. Define each of these like the following...\n\n\nDLV_FIRST_NAME=Josh\nDLV_LAST_NAME=Holtz\nDLV_PRIM_CATG=Business\nDLV_SCND_CATG=Games\n\n\n\n\nNow your Deliver file should look something like this:\n\n\napp_review_information(\n  first_name: ENV['DLV_FIRST_NAME'],\n  last_name: ENV['DLV_LAST_NAME']\n)\n\nprimary_category ENV['DLV_PRIM_CATG']\nsecondary_category ENV['DLV_SCND_CATG']\n\n\n\n\nNow to run this, all you need to do is specify the environment argument when running \nfastlane\n and it will pull from the \n.env\n file that matches the same name...\nEx: \nfastlane build --env app1\n will use \n.env.app1\n\nEx: \nfastlane build --env app2\n will use \n.env.app2\n\n\nYou can also references these environment variables almost anywhere in \nfastlane\n. \n\n\nYou can even define a lane to perform actions on multiple targets:\n\n\ndesc \nDeploy both versions\n\nlane :deploy_all do\n    sh \nfastlane deploy --env paid\n\n    sh \nfastlane deploy --env free\n\nend\n\n\n\n\nMore on the \n.env\n file can be found \nhere\n.\n\n\nDisable colored output\n\n\nSet the \nFASTLANE_DISABLE_COLORS\n environment variable to disable ANSI colors (e.g. for CI machines)\n\n\nexport FASTLANE_DISABLE_COLORS=1\n\n\n\n\n\"User interaction is not allowed\" when using \nfastlane\n via SSH\n\n\nThis error can occur when you run \nfastlane\n via SSH. To fix it check out \nthis reply on StackOverflow\n.", 
-            "title": "FAQs"
-        }, 
-        {
-            "location": "/FAQs/#faqs", 
-            "text": "", 
-            "title": "FAQs"
-        }, 
-        {
-            "location": "/FAQs/#im-getting-an-ssl-error", 
-            "text": "If your output contains something like  SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed  that usually means you are using an outdated version of OpenSSL. Make sure to install the latest one using  homebrew .  brew update   brew upgrade openssl  If you use  rvm , try the following  rvm osx-ssl-certs update all", 
-            "title": "I'm getting an SSL error"
-        }, 
-        {
-            "location": "/FAQs/#fastlane-is-slow-to-start", 
-            "text": "If you experiennce slow launch times of  fastlane , there are 2 solutions to solve this problem:", 
-            "title": "fastlane is slow (to start)"
-        }, 
-        {
-            "location": "/FAQs/#uninstall-unused-gems", 
-            "text": "[sudo] gem cleanup", 
-            "title": "Uninstall unused gems"
-        }, 
-        {
-            "location": "/FAQs/#use-a-gemfile", 
-            "text": "Follow the  CocoaPods Gemfile Guide  to set up your initial Gemfile. From the on launch  fastlane  using:  bundle exec fastlane ...", 
-            "title": "Use a Gemfile"
-        }, 
-        {
-            "location": "/FAQs/#error-when-running-fastlane-with-jenkins", 
-            "text": "This is usually caused when running Jenkins as its own user. While this is possible, you'll have to take care of creating a temporary Keychain, filling it and then using it when building your application.   For more information about the recommended setup with Jenkins open the  Jenkins Guide .", 
-            "title": "Error when running fastlane with Jenkins"
-        }, 
-        {
-            "location": "/FAQs/#code-signing-issues", 
-            "text": "Check out the  codesigning.guide  website for more information on how to properly setup code-signing in your team using  match .", 
-            "title": "Code signing issues"
-        }, 
-        {
-            "location": "/FAQs/#multiple-targets-of-the-same-underlying-app", 
-            "text": "If you have one code base, but multiple branded applications  Create different  .env  files for each environment and reference those environment variables in the  Deliverfile ,  Fastfile , etc.   Example: Create a  .env.app1 ,  .env.app2 , and  .env.app3 . Define each of these like the following...  DLV_FIRST_NAME=Josh\nDLV_LAST_NAME=Holtz\nDLV_PRIM_CATG=Business\nDLV_SCND_CATG=Games  Now your Deliver file should look something like this:  app_review_information(\n  first_name: ENV['DLV_FIRST_NAME'],\n  last_name: ENV['DLV_LAST_NAME']\n)\n\nprimary_category ENV['DLV_PRIM_CATG']\nsecondary_category ENV['DLV_SCND_CATG']  Now to run this, all you need to do is specify the environment argument when running  fastlane  and it will pull from the  .env  file that matches the same name...\nEx:  fastlane build --env app1  will use  .env.app1 \nEx:  fastlane build --env app2  will use  .env.app2  You can also references these environment variables almost anywhere in  fastlane .   You can even define a lane to perform actions on multiple targets:  desc  Deploy both versions \nlane :deploy_all do\n    sh  fastlane deploy --env paid \n    sh  fastlane deploy --env free \nend  More on the  .env  file can be found  here .", 
-            "title": "Multiple targets of the same underlying app"
-        }, 
-        {
-            "location": "/FAQs/#disable-colored-output", 
-            "text": "Set the  FASTLANE_DISABLE_COLORS  environment variable to disable ANSI colors (e.g. for CI machines)  export FASTLANE_DISABLE_COLORS=1", 
-            "title": "Disable colored output"
-        }, 
-        {
-            "location": "/FAQs/#user-interaction-is-not-allowed-when-using-fastlane-via-ssh", 
-            "text": "This error can occur when you run  fastlane  via SSH. To fix it check out  this reply on StackOverflow .", 
-            "title": "\"User interaction is not allowed\" when using fastlane via SSH"
-        }, 
-        {
-            "location": "/Gitignore/", 
-            "text": "Gitignore\n\n\nIf you use git, it is recommended to keep the \nfastlane\n configuration files in your repository. You may want to add the following lines to your \n.gitignore\n file to exclude some generated and temporary files:\n\n\n# fastlane specific\nfastlane/report.xml\n\n# deliver temporary files\nfastlane/Preview.html\n\n# snapshot generated screenshots\nfastlane/screenshots\n\n# scan temporary files\nfastlane/test_output\n\n\n\n\nIt is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the screenshots whenever they are needed.", 
-            "title": "Gitignore"
-        }, 
-        {
-            "location": "/Gitignore/#gitignore", 
-            "text": "If you use git, it is recommended to keep the  fastlane  configuration files in your repository. You may want to add the following lines to your  .gitignore  file to exclude some generated and temporary files:  # fastlane specific\nfastlane/report.xml\n\n# deliver temporary files\nfastlane/Preview.html\n\n# snapshot generated screenshots\nfastlane/screenshots\n\n# scan temporary files\nfastlane/test_output  It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the screenshots whenever they are needed.", 
-            "title": "Gitignore"
-        }, 
-        {
-            "location": "/Guide/", 
-            "text": "This guide will help you get started with \nfastlane\n in no time :rocket:\n\n\n\n\n\n    \nInstallation\n \n\n    \nSetting up\n \n\n    \nExample Projects\n \n\n    \nHelp\n\n\n\n\n\n\nNotes about this guide\n\n\nIf you don't want to use \nsudo\n, you can follow the \nCocoaPods Guide\n of a \nsudo-less installation\n.\n\n\nSee how \nWikipedia\n, \nProduct Hunt\n and \nMindNode\n use \nfastlane\n to automate their iOS submission process.\n\n\nInstallation\n\n\nRequirements:\n\n\n\n\nMac OS 10.9 or newer\n\n\nRuby 2.0 or newer (\nruby -v\n)\n\n\nXcode\n\n\n\n\nAdditionally, to an Xcode installation, you also need the Xcode command line tools set up\n\n\nxcode-select --install\n\n\n\nIf you have not used the command line tools before, you'll need to accept the terms of service.\n\n\nsudo xcodebuild -license accept\n\n\n\nfastlane\n\n\nInstall the gem and all its dependencies (this might take a few minutes).\n\n\nsudo gem install fastlane --verbose\n\n\n\nSetting up \nfastlane\n\n\nBefore making any modifications to your project, it's always recommended to commit your current directory in \ngit\n.\n\n\nWhen running the setup commands, please read the instructions shown in the terminal. There is usually a reason they are there.\n\n\nfastlane\n will create all necessary files and folders for you with the following command. It will use values detected from the project in the working directory.\n\n\nfastlane init\n\n\n\nThis will prompt you for your \nApple ID\n in order to verify that your application already exists on both iTunes Connect and the Apple Developer Portal. If that's not the case, \nfastlane\n will ask you if it should be created automatically.\n\n\nThat's it, you should have received a success message.\n\n\nWhat did this setup do?\n\n\n\n\nCreated a \nfastlane\n folder\n\n\nMoved existing \ndeliver\n and \nsnapshot\n configuration into the \nfastlane\n folder (if they existed).\n\n\nCreated \nfastlane/Appfile\n, which stores your \nApple ID\n and \nBundle Identifier\n.\n\n\nCreated \nfastlane/Fastfile\n, which stores your lanes.\n\n\n\n\nThe setup automatically detects, which tools you're using (e.g. \ndeliver\n, \nCocoaPods\n and more).\n\n\nIndividual Tools\n\n\nBefore running \nfastlane\n, make sure, all tools are correctly set up.\n\n\nFor example, try running the following (depending on what you plan on using):\n\n\n\n\ndeliver\n\n\nsnapshot\n\n\nsigh\n\n\n\n\nAll those tools have detailed instructions on how to set them up. It's easier to set them up now, than later.\n\n\nConfigure the \nFastfile\n\n\nFirst, think about what different builds you'll need. Some ideas:\n\n\n\n\nNew App Store releases\n\n\nBeta Builds for TestFlight or \nHockeyApp\n\n\nRun tests\n\n\nIn House distribution\n\n\n\n\nOpen the \nfastlane/Fastfile\n in your preferred text editor and change the syntax highlighting to \nRuby\n.\n\n\nDepending on your existing setup, it looks similar to this:\n\n\nbefore_all do\n  # increment_build_number\n  cocoapods\nend\n\nlane :test do\n  snapshot\nend\n\nlane :beta do\n  sigh\n  gym\n  pilot\n  # sh \nyour_script.sh\n\nend\n\nlane :deploy do\n  snapshot\n  sigh\n  gym\n  deliver(force: true)\n  # frameit\nend\n\nafter_all do |lane|\n  # This block is called, only if the executed lane was successful\nend\n\nerror do |lane, exception|\n  # Something bad happened\nend\n\n\n\n\nYou can quickly try running \nfastlane\n by copying and pasting the following to your \nfastlane/Fastfile\n:\n\n\nlane :example do\n  say \nIt works\n\nend\n\n\n\n\nAnd then run the following from your Terminal\n\n\nfastlane example\n\n\n\nIf you're successful, you should hear your computer speaking to you!\n\n\nA list of available actions can be found in the \nActions documentation\n.\n\n\nAutomating the deployment process is a great next step. You should use the \nincrement_build_number\n action when you want to upload builds to iTunes Connect (\nActivate incrementing build numbers\n).\n\n\nUse your existing build scripts\n\n\nsh \"./script.sh\"\n\n\n\nThis will execute your existing build script. Everything inside the \n\"\n will be executed in the shell.\n\n\nCreate your own actions (build steps)\n\n\nIf you want a fancy command (like \nsnapshot\n has), you can build your own extension very easily using \nfastlane new_action\n.\n\n\nExample projects\n\n\nSee how \nWikipedia\n, \nProduct Hunt\n and \nMindNode\n use \nfastlane\n to automate their iOS submission process.\n\n\nCheck out the \nActions documentation\n to see a list of available integrations and options.\n\n\nHelp\n\n\nIf something is unclear or you need help, \nopen an issue\n.", 
-            "title": "Guide"
-        }, 
-        {
-            "location": "/Guide/#notes-about-this-guide", 
-            "text": "If you don't want to use  sudo , you can follow the  CocoaPods Guide  of a  sudo-less installation .  See how  Wikipedia ,  Product Hunt  and  MindNode  use  fastlane  to automate their iOS submission process.", 
-            "title": "Notes about this guide"
-        }, 
-        {
-            "location": "/Guide/#installation", 
-            "text": "Requirements:   Mac OS 10.9 or newer  Ruby 2.0 or newer ( ruby -v )  Xcode   Additionally, to an Xcode installation, you also need the Xcode command line tools set up  xcode-select --install  If you have not used the command line tools before, you'll need to accept the terms of service.  sudo xcodebuild -license accept", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/Guide/#fastlane", 
-            "text": "Install the gem and all its dependencies (this might take a few minutes).  sudo gem install fastlane --verbose", 
+            "location": "/#fastlane", 
+            "text": "fastlane  is  the  tool to release your iOS and Android app \ud83d\ude80 It handles all tedious tasks, like generating screenshots, deadling with code signing, and releasing your application.  TODO: Alternative  fastlane  is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.  You create a so-called  Fastfile  in your repository, that defines how your beta or App Store release process:  lane :beta do\n  increment_build_number\n  gym                       # Build your app\n  testflight                # Upload to TestFlight\nend\n\nlane :appstore do\n  snapshot                  # Generate screenshots for the App Store\n  gym                       # Build your app\n  deliver                   # Upload the screenshots and the binary to iTunes\n  slack                     # Let your team-mates know the new version is live\nend  You just defined 2 different lanes, one for beta deployment, one for App Store. To releaes your app in the App Store, all you have to do is  fastlane appstore", 
             "title": "fastlane"
         }, 
         {
-            "location": "/Guide/#setting-up-fastlane", 
-            "text": "Before making any modifications to your project, it's always recommended to commit your current directory in  git .  When running the setup commands, please read the instructions shown in the terminal. There is usually a reason they are there.  fastlane  will create all necessary files and folders for you with the following command. It will use values detected from the project in the working directory.  fastlane init  This will prompt you for your  Apple ID  in order to verify that your application already exists on both iTunes Connect and the Apple Developer Portal. If that's not the case,  fastlane  will ask you if it should be created automatically.  That's it, you should have received a success message.  What did this setup do?   Created a  fastlane  folder  Moved existing  deliver  and  snapshot  configuration into the  fastlane  folder (if they existed).  Created  fastlane/Appfile , which stores your  Apple ID  and  Bundle Identifier .  Created  fastlane/Fastfile , which stores your lanes.   The setup automatically detects, which tools you're using (e.g.  deliver ,  CocoaPods  and more).", 
-            "title": "Setting up fastlane"
+            "location": "/#why-fastlane", 
+            "text": "\u2728  Connect all iOS, Mac, and Android build tools into one workflow    \ud83d\ude9d  Define different  lanes  for App Store deployment, beta builds, or testing    \ud83d\udea2  Deploy from any computer, including a CI server    \ud83d\udd27  Extend and customise fastlane to fit your needs    \ud83d\udcad  Never remember any difficult commands, just  fastlane    \ud83c\udfa9  Easy setup assistant to get started in a few minutes    \u2709\ufe0f  fastlane  automatically passes information between build steps    \ud83d\udcc3  Store  everything  in Git. Never lookup build commands in  Jenkins  configs again    \ud83d\ude80  Saves you  hours  for every app update you release    \u270f\ufe0f  Flexible configuration using a fully customisable  Fastfile    \ud83d\udea0  Implement a fully working Continuous Delivery process    \ud83d\udc7b  Integrates with all major CI systems    \ud83d\udc23  Over 170 built-in integrations available    \ud83d\udda5  Supports iOS, Mac, and Android apps    \ud83d\udd76  Full Git and Mercurial support", 
+            "title": "Why fastlane?"
         }, 
         {
-            "location": "/Guide/#individual-tools", 
-            "text": "Before running  fastlane , make sure, all tools are correctly set up.  For example, try running the following (depending on what you plan on using):   deliver  snapshot  sigh   All those tools have detailed instructions on how to set them up. It's easier to set them up now, than later.", 
-            "title": "Individual Tools"
+            "location": "/#getting-started", 
+            "text": "Make sure you have the latest version of the Xcode command line tools installed:  xcode-select --install", 
+            "title": "Getting Started"
         }, 
         {
-            "location": "/Guide/#configure-the-fastfile", 
-            "text": "First, think about what different builds you'll need. Some ideas:   New App Store releases  Beta Builds for TestFlight or  HockeyApp  Run tests  In House distribution   Open the  fastlane/Fastfile  in your preferred text editor and change the syntax highlighting to  Ruby .  Depending on your existing setup, it looks similar to this:  before_all do\n  # increment_build_number\n  cocoapods\nend\n\nlane :test do\n  snapshot\nend\n\nlane :beta do\n  sigh\n  gym\n  pilot\n  # sh  your_script.sh \nend\n\nlane :deploy do\n  snapshot\n  sigh\n  gym\n  deliver(force: true)\n  # frameit\nend\n\nafter_all do |lane|\n  # This block is called, only if the executed lane was successful\nend\n\nerror do |lane, exception|\n  # Something bad happened\nend  You can quickly try running  fastlane  by copying and pasting the following to your  fastlane/Fastfile :  lane :example do\n  say  It works \nend  And then run the following from your Terminal  fastlane example  If you're successful, you should hear your computer speaking to you!  A list of available actions can be found in the  Actions documentation .  Automating the deployment process is a great next step. You should use the  increment_build_number  action when you want to upload builds to iTunes Connect ( Activate incrementing build numbers ).", 
-            "title": "Configure the Fastfile"
+            "location": "/#using-the-terminal", 
+            "text": "sudo gem install fastlane --verbose  Navigate to your iOS or Android app and run  fastlane init  fastlane  will automatically detect your project, and ask for any missing information.  For more details about how to get up and running, check out the  fastlane guide .", 
+            "title": "Using the terminal"
         }, 
         {
-            "location": "/Guide/#use-your-existing-build-scripts", 
-            "text": "sh \"./script.sh\"  This will execute your existing build script. Everything inside the  \"  will be executed in the shell.", 
-            "title": "Use your existing build scripts"
+            "location": "/#using-the-fabric-app", 
+            "text": "If you're not familiar with the terminal and prefer a graphical user interface, download the  Fabric app  and use the built-in  fastlane  button.", 
+            "title": "Using the Fabric app"
         }, 
         {
-            "location": "/Guide/#create-your-own-actions-build-steps", 
-            "text": "If you want a fancy command (like  snapshot  has), you can build your own extension very easily using  fastlane new_action .", 
-            "title": "Create your own actions (build steps)"
+            "location": "/#questions-and-support", 
+            "text": "All fastlane related questions, problems and feature ideas should be posted as  GitHub issue . This way, other users can search existing discussions, and everybody can jump in.", 
+            "title": "Questions and support"
         }, 
         {
-            "location": "/Guide/#example-projects", 
-            "text": "See how  Wikipedia ,  Product Hunt  and  MindNode  use  fastlane  to automate their iOS submission process.  Check out the  Actions documentation  to see a list of available integrations and options.", 
-            "title": "Example projects"
+            "location": "/#system-requirements", 
+            "text": "fastlane  requires macOS or Linux with Ruby 2.0.0 or above", 
+            "title": "System requirements"
         }, 
         {
-            "location": "/Guide/#help", 
-            "text": "If something is unclear or you need help,  open an issue .", 
-            "title": "Help"
-        }, 
-        {
-            "location": "/Jenkins/", 
-            "text": "Jenkins Integration\n\n\n(or any other Continuous Integration system)\n\n\nDeploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.\n\n\nfastlane\n automatically generates a JUnit report for you. This allows Continuous Integration systems, like \nJenkins\n, access the results of your deployment.\n\n\nInstallation\n\n\nThe recommended way to install \nJenkins\n is through \nhomebrew\n:\n\n\nbrew update \n brew install jenkins\n\n\nFrom now on start \nJenkins\n by running:\n\n\njenkins\n\n\n\n\nTo store the password in the Keychain of your remote machine, I recommend running \nsigh\n or \ndeliver\n using ssh or remote desktop at least once.\n\n\nDeploy Strategy\n\n\nYou should \nnot\n deploy a new App Store update after every commit, since you still have to wait 1-2 weeks for the review. Instead I recommend using Git Tags, or custom triggers to deploy a new update.\n\n\nYou can set up your own \nRelease\n job, which is only triggered manually.\n\n\nPlugins\n\n\nI recommend the following plugins:\n\n\n\n\nHTML Publisher Plugin\n:\n Can be used to show the generated screenshots right inside Jenkins.\n\n\nAnsiColor Plugin\n:\n Used to show the coloured output of the fastlane tools. Don\u2019t forget to enable \nColor ANSI Console Output\n in the \nBuild Environment\n or your project.\n\n\nRebuild Plugin\n:\n This plugin will save you a lot of time.\n\n\nKeychains and Provisioning Profiles Plugin\n:\n Manages keychains across Jenkins installations.\n\n\n\n\nBuild Step\n\n\nUse the following as your build step:\n\n\nfastlane appstore\n\n\n\n\nReplace \nappstore\n with the lane you want to use.\n\n\nsetup_jenkins\n\n\nYou can use \nsetup_jenkins\n action which integrates well with the \nKeychains and Provisioning Profiles Plugin\n. Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the \n./output\n folder in the job workspace. In additions \nsetup_jenkins\n will create separate derived data folder for each job (in the \n./derivedData\n).\n\n\nUnder the hood \nsetup_jenkins\n configures other actions like: \ngym\n, \nscan\n, \nxcodebuild\n, \nbackup_xcarchive\n and \nclear_derived_data\n.\n\n\nTest Results and Screenshots\n\n\nTo show the \ndeployment result\n right in \nJenkins\n\n\n\n\nAdd post-build action\n\n\nPublish JUnit test result report\n\n\nTest report XMLs\n: \nfastlane/report.xml\n\n\n\n\nTo show the \ngenerated screenhots\n right in \nJenkins\n\n\n\n\nAdd post-build action\n\n\nPublish HTML reports\n\n\nHTML directory to archive\n: \nfastlane/screenshots\n\n\nIndex page\n: \nscreenshots.html\n\n\n\n\nSave and run. The result should look like this:", 
-            "title": "Jenkins"
-        }, 
-        {
-            "location": "/Jenkins/#jenkins-integration", 
-            "text": "(or any other Continuous Integration system)  Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.  fastlane  automatically generates a JUnit report for you. This allows Continuous Integration systems, like  Jenkins , access the results of your deployment.", 
-            "title": "Jenkins Integration"
-        }, 
-        {
-            "location": "/Jenkins/#installation", 
-            "text": "The recommended way to install  Jenkins  is through  homebrew :  brew update   brew install jenkins  From now on start  Jenkins  by running:  jenkins  To store the password in the Keychain of your remote machine, I recommend running  sigh  or  deliver  using ssh or remote desktop at least once.", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/Jenkins/#deploy-strategy", 
-            "text": "You should  not  deploy a new App Store update after every commit, since you still have to wait 1-2 weeks for the review. Instead I recommend using Git Tags, or custom triggers to deploy a new update.  You can set up your own  Release  job, which is only triggered manually.", 
-            "title": "Deploy Strategy"
-        }, 
-        {
-            "location": "/Jenkins/#plugins", 
-            "text": "I recommend the following plugins:   HTML Publisher Plugin :  Can be used to show the generated screenshots right inside Jenkins.  AnsiColor Plugin :  Used to show the coloured output of the fastlane tools. Don\u2019t forget to enable  Color ANSI Console Output  in the  Build Environment  or your project.  Rebuild Plugin :  This plugin will save you a lot of time.  Keychains and Provisioning Profiles Plugin :  Manages keychains across Jenkins installations.", 
-            "title": "Plugins"
-        }, 
-        {
-            "location": "/Jenkins/#build-step", 
-            "text": "Use the following as your build step:  fastlane appstore  Replace  appstore  with the lane you want to use.", 
-            "title": "Build Step"
-        }, 
-        {
-            "location": "/Jenkins/#setup_jenkins", 
-            "text": "You can use  setup_jenkins  action which integrates well with the  Keychains and Provisioning Profiles Plugin . Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the  ./output  folder in the job workspace. In additions  setup_jenkins  will create separate derived data folder for each job (in the  ./derivedData ).  Under the hood  setup_jenkins  configures other actions like:  gym ,  scan ,  xcodebuild ,  backup_xcarchive  and  clear_derived_data .", 
-            "title": "setup_jenkins"
-        }, 
-        {
-            "location": "/Jenkins/#test-results-and-screenshots", 
-            "text": "To show the  deployment result  right in  Jenkins   Add post-build action  Publish JUnit test result report  Test report XMLs :  fastlane/report.xml   To show the  generated screenhots  right in  Jenkins   Add post-build action  Publish HTML reports  HTML directory to archive :  fastlane/screenshots  Index page :  screenshots.html   Save and run. The result should look like this:", 
-            "title": "Test Results and Screenshots"
-        }, 
-        {
-            "location": "/README/", 
-            "text": "Yolo kind\n\n\n\nfastlane\n\n\n\n\n\n\n\n\n\n\nfastlane\n is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.\n\n\nUse a lane to define your process:\n\n\nlane :beta do\n  increment_build_number\n  cocoapods\n  match\n  testflight\n  sh \n./customScript.sh\n\n  slack\nend\n\n\n\n\nThen to deploy a new 'beta' version of your app just run\n\nfastlane beta\n :rocket:\n\n\n\n\n\n\n\n\nfastlane\n\n\nfastlane\n\n\n\n\n\n\n\n\n\n\n:sparkles:\n\n\nConnect iOS, Mac, and Android build tools into one workflow (both \nfastlane\n tools and third party tools)\n\n\n\n\n\n\n:monorail:\n\n\nDefine different \ndeployment lanes\n for App Store deployment, beta builds, or testing\n\n\n\n\n\n\n:ship:\n\n\nDeploy from any computer, including a CI server\n\n\n\n\n\n\n:wrench:\n\n\nExtend and customise functionality\n\n\n\n\n\n\n:thought_balloon:\n\n\nNever remember any difficult commands, just \nfastlane\n\n\n\n\n\n\n:tophat:\n\n\nEasy setup assistant to get started in a few minutes\n\n\n\n\n\n\n:email:\n\n\nAutomatically pass on information from one build step to another (\ne.g.\n path to the \nipa\n file)\n\n\n\n\n\n\n:page_with_curl:\n\n\nStore \neverything\n in Git. Never lookup build commands in \nJenkins\n configs again.\n\n\n\n\n\n\n:rocket:\n\n\nSaves you \nhours\n for every app update you release\n\n\n\n\n\n\n:pencil2:\n\n\nFlexible configuration using a fully customisable \nFastfile\n\n\n\n\n\n\n:mountain_cableway:\n\n\nImplement a fully working Continuous Delivery process\n\n\n\n\n\n\n:ghost:\n\n\nJenkins Integration\n: Show output directly in test results\n\n\n\n\n\n\n:book:\n\n\nAutomatically generate Markdown documentation of your lane configurations\n\n\n\n\n\n\n:hatching_chick:\n\n\nOver 170 built-in integrations available\n\n\n\n\n\n\n:computer:\n\n\nSupport for iOS, Mac, and Android apps\n\n\n\n\n\n\n:octocat:\n\n\nFull Git and Mercurial support\n\n\n\n\n\n\n\n\nLike this tool? \nBe the first to know about updates and new fastlane tools\n.\n\n\nInstallation\n\n\nsudo gem install fastlane --verbose\n\n\n\nMake sure you have the latest version of the Xcode command line tools installed:\n\n\nxcode-select --install\n\n\n\nIf you experience slow launch times of fastlane, try running:\n\n\ngem cleanup\n\n\n\nSystem Requirements:\n \nfastlane\n requires macOS or Linux with Ruby 2.0.0 or above\n\n\nIf you'd like to take a look at a project already using \nfastlane\n check out \nfastlane-examples\n which includes \nfastlane\n setups by Wikipedia, Product Hunt, MindNode, and more.\n\n\nQuick Start\n\n\nfastlane\n's setup assistant creates all the necessary files to get you started, using existing app metadata from iTunes Connect or Google Play.\n\n\n\n\ncd [your_project_folder]\n\n\nfastlane init\n\n\nFollow the setup assistant to configure your app\n\n\nFurther customise the Ruby based \nFastfile\n with additional \nactions\n\n\n\n\nFor more details, check out the \nfastlane guide\n.\n\n\nAvailable Commands\n\n\nTypically you'll use \nfastlane\n by triggering individual lanes:\n\n\nfastlane [lane_name]\n\n\n\nOther Commands\n\n\n\n\nfastlane actions\n: List all available \nfastlane\n actions\n\n\nfastlane action [action_name]\n: Shows a more detailed description of an action\n\n\nfastlane lanes\n: Lists all available lanes with description\n\n\nfastlane list\n: Lists all available lanes without description\n\n\nfastlane new_action\n: Create a new action \n(integration)\n for fastlane\n\n\n\n\nfastlane\n Toolchain\n\n\nIn addition to \nfastlane\n's commands, you also have access to these \nfastlane\n tools:\n\n\n\n\ndeliver\n: Upload screenshots, metadata, and your app to the App Store\n\n\nsupply\n: Upload your Android app and its metadata to Google Play\n\n\nsnapshot\n: Automate taking localized screenshots of your iOS app on every device\n\n\nscreengrab\n: Automate taking localized screenshots of your Android app on every device\n\n\nframeit\n: Quickly put your screenshots into the right device frames\n\n\npem\n: Automatically generate and renew your push notification profiles\n\n\nsigh\n: Because you would rather spend your time building stuff than fighting provisioning\n\n\nproduce\n: Create new iOS apps on iTunes Connect and Dev Portal using the command line\n\n\ncert\n: Automatically create and maintain iOS code signing certificates\n\n\nspaceship\n: Ruby library to access the Apple Dev Center and iTunes Connect\n\n\npilot\n: The best way to manage your TestFlight testers and builds from your terminal\n\n\nboarding\n: The easiest way to invite your TestFlight beta testers\n\n\ngym\n: Building your iOS apps has never been easier\n\n\nmatch\n: Easily sync your certificates and profiles across your team using Git\n\n\nscan\n: The easiest way to run tests for your iOS and Mac apps\n\n\n\n\nNeed Help?\n\n\nPlease \nsubmit an issue\n on GitHub and provide information about your setup.\n\n\nSpecial Thanks\n\n\nThanks to all \ncontributors\n for extending and improving \nfastlane\n.\n\n\nCode of Conduct\n\n\nHelp us keep \nfastlane\n open and inclusive. Please read and follow our \nCode of Conduct\n.\n\n\nLicense\n\n\nThis project is licensed under the terms of the MIT license. See the LICENSE file.\n\n\n\n\nThis project and all fastlane tools are in no way affiliated with Apple Inc or Google. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.", 
-            "title": "README"
-        }, 
-        {
-            "location": "/README/#fastlane", 
-            "text": "fastlane  is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.  Use a lane to define your process:  lane :beta do\n  increment_build_number\n  cocoapods\n  match\n  testflight\n  sh  ./customScript.sh \n  slack\nend  Then to deploy a new 'beta' version of your app just run fastlane beta  :rocket:     fastlane  fastlane      :sparkles:  Connect iOS, Mac, and Android build tools into one workflow (both  fastlane  tools and third party tools)    :monorail:  Define different  deployment lanes  for App Store deployment, beta builds, or testing    :ship:  Deploy from any computer, including a CI server    :wrench:  Extend and customise functionality    :thought_balloon:  Never remember any difficult commands, just  fastlane    :tophat:  Easy setup assistant to get started in a few minutes    :email:  Automatically pass on information from one build step to another ( e.g.  path to the  ipa  file)    :page_with_curl:  Store  everything  in Git. Never lookup build commands in  Jenkins  configs again.    :rocket:  Saves you  hours  for every app update you release    :pencil2:  Flexible configuration using a fully customisable  Fastfile    :mountain_cableway:  Implement a fully working Continuous Delivery process    :ghost:  Jenkins Integration : Show output directly in test results    :book:  Automatically generate Markdown documentation of your lane configurations    :hatching_chick:  Over 170 built-in integrations available    :computer:  Support for iOS, Mac, and Android apps    :octocat:  Full Git and Mercurial support", 
-            "title": "fastlane"
-        }, 
-        {
-            "location": "/README/#like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools", 
-            "text": "", 
-            "title": "Like this tool? Be the first to know about updates and new fastlane tools."
-        }, 
-        {
-            "location": "/README/#installation", 
-            "text": "sudo gem install fastlane --verbose  Make sure you have the latest version of the Xcode command line tools installed:  xcode-select --install  If you experience slow launch times of fastlane, try running:  gem cleanup  System Requirements:   fastlane  requires macOS or Linux with Ruby 2.0.0 or above  If you'd like to take a look at a project already using  fastlane  check out  fastlane-examples  which includes  fastlane  setups by Wikipedia, Product Hunt, MindNode, and more.", 
-            "title": "Installation"
-        }, 
-        {
-            "location": "/README/#quick-start", 
-            "text": "fastlane 's setup assistant creates all the necessary files to get you started, using existing app metadata from iTunes Connect or Google Play.   cd [your_project_folder]  fastlane init  Follow the setup assistant to configure your app  Further customise the Ruby based  Fastfile  with additional  actions   For more details, check out the  fastlane guide .", 
-            "title": "Quick Start"
-        }, 
-        {
-            "location": "/README/#available-commands", 
-            "text": "Typically you'll use  fastlane  by triggering individual lanes:  fastlane [lane_name]", 
-            "title": "Available Commands"
-        }, 
-        {
-            "location": "/README/#other-commands", 
-            "text": "fastlane actions : List all available  fastlane  actions  fastlane action [action_name] : Shows a more detailed description of an action  fastlane lanes : Lists all available lanes with description  fastlane list : Lists all available lanes without description  fastlane new_action : Create a new action  (integration)  for fastlane", 
-            "title": "Other Commands"
-        }, 
-        {
-            "location": "/README/#fastlane-toolchain", 
-            "text": "In addition to  fastlane 's commands, you also have access to these  fastlane  tools:   deliver : Upload screenshots, metadata, and your app to the App Store  supply : Upload your Android app and its metadata to Google Play  snapshot : Automate taking localized screenshots of your iOS app on every device  screengrab : Automate taking localized screenshots of your Android app on every device  frameit : Quickly put your screenshots into the right device frames  pem : Automatically generate and renew your push notification profiles  sigh : Because you would rather spend your time building stuff than fighting provisioning  produce : Create new iOS apps on iTunes Connect and Dev Portal using the command line  cert : Automatically create and maintain iOS code signing certificates  spaceship : Ruby library to access the Apple Dev Center and iTunes Connect  pilot : The best way to manage your TestFlight testers and builds from your terminal  boarding : The easiest way to invite your TestFlight beta testers  gym : Building your iOS apps has never been easier  match : Easily sync your certificates and profiles across your team using Git  scan : The easiest way to run tests for your iOS and Mac apps", 
-            "title": "fastlane Toolchain"
-        }, 
-        {
-            "location": "/README/#need-help", 
-            "text": "Please  submit an issue  on GitHub and provide information about your setup.", 
-            "title": "Need Help?"
-        }, 
-        {
-            "location": "/README/#special-thanks", 
-            "text": "Thanks to all  contributors  for extending and improving  fastlane .", 
-            "title": "Special Thanks"
-        }, 
-        {
-            "location": "/README/#code-of-conduct", 
+            "location": "/#code-of-conduct", 
             "text": "Help us keep  fastlane  open and inclusive. Please read and follow our  Code of Conduct .", 
             "title": "Code of Conduct"
         }, 
         {
-            "location": "/README/#license", 
-            "text": "This project is licensed under the terms of the MIT license. See the LICENSE file.   This project and all fastlane tools are in no way affiliated with Apple Inc or Google. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.", 
+            "location": "/#license", 
+            "text": "This project is licensed under the terms of the MIT license. See the  LICENSE  file.   This project and all fastlane tools are in no way affiliated with Apple Inc or Google. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.", 
             "title": "License"
         }, 
         {
-            "location": "/about/", 
-            "text": "Viderat nectare ait\n\n\nSic huius inpia responsaque stravit pumice vitamque\n\n\nLorem markdownum postquam crine mihi. Cum adest comantem Achivis: \nfoci crinis\ncremantur\n corpore, famem.\n\n\n\n\nQuos secunda centum sum credens agreste. Omen movebo \nAmpycidesque anxia\n,\nmuta Astyages simul dexteriore omnia me Stygiae iuvenum. Texit adulantum\nlapsae, de in male \ndedisse\n, mota\nillas, plumbo placidissime. \nCorpore arbore\n.\n\n\n\n\nCaeruleos quanta in\n\n\nPontum heros quid pervenit. Et annos gaudenti; \nnoxia ora\n, ut vindicat, et.\nSigillis surgimus nitar, tellus ab, iuncti esse aures.\n\n\n\n\nLongoque dixisse suo nostrae venit pleno addere hiatu paene aderat uno admotis\nquoque infans? Ubi Thaumantea mihi sum capioque sentit constitit vocato; fugit\ndetinuit levavit suarum diversaque, sed quosque mille dum. Procul bracchia:\ncreatos, coniuge, cutem tibi, \nquam sensisse auras\n Aurora agit refugitque\nsumme!\n\n\n\n\nIllae crinem gnatae huic agat deorum virgineam radice laevaque monebat longo\nlactentis. Circumdata causa; ore terga iamque noctes omne: lateo praetereo.\nContrahitur audebatis recenti, factura cum omne obscenae deducere \ndiscordia\ninridet Idaeumque\n manibusque, ut.\n\n\nBracchia genitum sis sic ultimus quod non\n\n\nQuaerant tu illo tauros legem toto occupat, noscere alta vinaque! Circumspicit\nIuno culpam, residens, Iove sensit orba duris aeacides Cebrenida meumque refugit\nest. Ignes parente quoque distinxit denique glaebam divumque carinas tumidis\nhunc.\n\n\nFumis hanc Dixit, Scyrum; calcare exhortor terras, detulit lenis comitesque\nterga, ipso quibus. Ut veteris monstrum quisque excipit solebat spissisque\nstaret. Quid tendi erat vota notavi, \net defuerunt Minos\n loqui, cum mirum. Nec\nnudos liquidum arcusque odium retegente magis, sine medio invita densa, suum\nillius, videre ferebant. Fere cibus abeunt, inhospita videri ereptaque magnorum\nnostroque iacentem.\n\n\n\n\nDicturus iam, corruit diu \nomnes deus somnus\n coloni Echidnaeae Cumaeae\npariterque prospiciens. Nympha litore visceraque stamina, esse potes aurea\npaventis \nsimul\n, Icare nurus et de mea. Tecta\nlicere septem nunc saxum, oleaster blandas, de solebat Siculae observo digitos\nauro nimiumque posuit ergo nec ille.\n\n\n\n\nNec fixa sincera reddant si ferrum medio suam Iovis liquitur grege aut tam!\nLampetie cecidere maturus, amorem non Athamas tellus. Flammas corpore mihi.", 
-            "title": "About"
-        }, 
-        {
-            "location": "/about/#viderat-nectare-ait", 
-            "text": "", 
-            "title": "Viderat nectare ait"
-        }, 
-        {
-            "location": "/about/#sic-huius-inpia-responsaque-stravit-pumice-vitamque", 
-            "text": "Lorem markdownum postquam crine mihi. Cum adest comantem Achivis:  foci crinis\ncremantur  corpore, famem.   Quos secunda centum sum credens agreste. Omen movebo  Ampycidesque anxia ,\nmuta Astyages simul dexteriore omnia me Stygiae iuvenum. Texit adulantum\nlapsae, de in male  dedisse , mota\nillas, plumbo placidissime.  Corpore arbore .", 
-            "title": "Sic huius inpia responsaque stravit pumice vitamque"
-        }, 
-        {
-            "location": "/about/#caeruleos-quanta-in", 
-            "text": "Pontum heros quid pervenit. Et annos gaudenti;  noxia ora , ut vindicat, et.\nSigillis surgimus nitar, tellus ab, iuncti esse aures.   Longoque dixisse suo nostrae venit pleno addere hiatu paene aderat uno admotis\nquoque infans? Ubi Thaumantea mihi sum capioque sentit constitit vocato; fugit\ndetinuit levavit suarum diversaque, sed quosque mille dum. Procul bracchia:\ncreatos, coniuge, cutem tibi,  quam sensisse auras  Aurora agit refugitque\nsumme!   Illae crinem gnatae huic agat deorum virgineam radice laevaque monebat longo\nlactentis. Circumdata causa; ore terga iamque noctes omne: lateo praetereo.\nContrahitur audebatis recenti, factura cum omne obscenae deducere  discordia\ninridet Idaeumque  manibusque, ut.", 
-            "title": "Caeruleos quanta in"
-        }, 
-        {
-            "location": "/about/#bracchia-genitum-sis-sic-ultimus-quod-non", 
-            "text": "Quaerant tu illo tauros legem toto occupat, noscere alta vinaque! Circumspicit\nIuno culpam, residens, Iove sensit orba duris aeacides Cebrenida meumque refugit\nest. Ignes parente quoque distinxit denique glaebam divumque carinas tumidis\nhunc.  Fumis hanc Dixit, Scyrum; calcare exhortor terras, detulit lenis comitesque\nterga, ipso quibus. Ut veteris monstrum quisque excipit solebat spissisque\nstaret. Quid tendi erat vota notavi,  et defuerunt Minos  loqui, cum mirum. Nec\nnudos liquidum arcusque odium retegente magis, sine medio invita densa, suum\nillius, videre ferebant. Fere cibus abeunt, inhospita videri ereptaque magnorum\nnostroque iacentem.   Dicturus iam, corruit diu  omnes deus somnus  coloni Echidnaeae Cumaeae\npariterque prospiciens. Nympha litore visceraque stamina, esse potes aurea\npaventis  simul , Icare nurus et de mea. Tecta\nlicere septem nunc saxum, oleaster blandas, de solebat Siculae observo digitos\nauro nimiumque posuit ergo nec ille.   Nec fixa sincera reddant si ferrum medio suam Iovis liquitur grege aut tam!\nLampetie cecidere maturus, amorem non Athamas tellus. Flammas corpore mihi.", 
-            "title": "Bracchia genitum sis sic ultimus quod non"
-        }, 
-        {
-            "location": "/Codesigning/CommonIssues/", 
+            "location": "/codesigning/CommonIssues/", 
             "text": "Common code signing issues\n\n\nXcode errors\n\n\n\n\nCode Sign error: No matching provisioning profiles found: No provisioning profiles with a valid signing identity (i.e. certificate and private key pair) matching the bundle identifier \"X\" were found.\n\n\n\n\nThe provisioning profile for the given app identifier \"X\" is not available on the local machine. Make sure you have a valid provisioning profile for the correct distribution type (App Store, Development or Ad Hoc) on the Apple Developer Portal, download and install it, and select the profile in the Xcode settings (See \nXcodeProject.md\n).\n\n\nYou might have the provisioning profile installed locally, but miss the private key or certificate for it. \n\n\n\n\nNo matching codesigning identity found: No codesigning identities (i.e. certificate and private key pairs) matching \"iPhone Distribution: X\" were found\n\n\n\n\nThe code signing identity you specified in the Xcode project can't be found in your local keychain. Make sure to transfer the certificate and private key from another Mac (or wherever you store the private key), or to update the project file to use the correct code signing identity.\n\n\n\n\nError Domain=IDEDistributionErrorDomain Code=1 \"The operation couldn\u2019t be completed. (IDEDistributionErrorDomain error 1.)\"\n\n\n\n\nThis error can have a lot of reasons, some things you should try:\n\n\n\n\nVerify your Keychain is valid and you don't have an expired WWDR certificate using \nthis guide\n\n\nVerify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out \nTroubleshooting.md\n for more information)\n\n\nIf you're using \ngym\n, try using the \nuse_legacy_build_api\n flag to fallback to the Xcode 6 build API\n\n\nFollow the other steps of \nTroubleshooting.md\n\n\n\n\n\n\nProvisioning profile does not match bundle identifier: The provisioning profile specified in your build settings (\"X\") has an AppID of \"Y\" which does not match your bundle identifier \"Z\"\n\n\n\n\nYour project defines a provisioning profile that doesn't match the bundle identifier of your app. There is mismatch between the bundle identifiers, this might happen if you specify the wrong provisioning profile in your target.\n\n\n\n\nYour build settings specify a provisioning profile with the UUID \"X\", however, no such provisioning profile was found.\n\n\n\n\nYour project defines a provisioning profile which doesn't exist on your local machine. Check out \nXcodeProject.md\n for more information how to properly specify a provisioning profile to avoid hard coded UUIDs in your project.\n\n\n\n\nCodeSign Error: code signing is required for product type 'Application'...\n\n\n\n\nMake sure to have a valid code signing identity defined in your project targets. This might happen when you select \nDon't Code Sign\n as Code Signing Identity.\n\n\nfastlane errors\n\n\n\n\nCould not find a matching code signing identity for type 'X'\n\n\n\n\nThere are no certificates available on the Apple Developer Portal. This could either mean someone revoked a certificate, or you don't have access to it.", 
             "title": "CommonIssues"
         }, 
         {
-            "location": "/Codesigning/CommonIssues/#common-code-signing-issues", 
+            "location": "/codesigning/CommonIssues/#common-code-signing-issues", 
             "text": "", 
             "title": "Common code signing issues"
         }, 
         {
-            "location": "/Codesigning/CommonIssues/#xcode-errors", 
+            "location": "/codesigning/CommonIssues/#xcode-errors", 
             "text": "Code Sign error: No matching provisioning profiles found: No provisioning profiles with a valid signing identity (i.e. certificate and private key pair) matching the bundle identifier \"X\" were found.   The provisioning profile for the given app identifier \"X\" is not available on the local machine. Make sure you have a valid provisioning profile for the correct distribution type (App Store, Development or Ad Hoc) on the Apple Developer Portal, download and install it, and select the profile in the Xcode settings (See  XcodeProject.md ).  You might have the provisioning profile installed locally, but miss the private key or certificate for it.    No matching codesigning identity found: No codesigning identities (i.e. certificate and private key pairs) matching \"iPhone Distribution: X\" were found   The code signing identity you specified in the Xcode project can't be found in your local keychain. Make sure to transfer the certificate and private key from another Mac (or wherever you store the private key), or to update the project file to use the correct code signing identity.   Error Domain=IDEDistributionErrorDomain Code=1 \"The operation couldn\u2019t be completed. (IDEDistributionErrorDomain error 1.)\"   This error can have a lot of reasons, some things you should try:   Verify your Keychain is valid and you don't have an expired WWDR certificate using  this guide  Verify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out  Troubleshooting.md  for more information)  If you're using  gym , try using the  use_legacy_build_api  flag to fallback to the Xcode 6 build API  Follow the other steps of  Troubleshooting.md    Provisioning profile does not match bundle identifier: The provisioning profile specified in your build settings (\"X\") has an AppID of \"Y\" which does not match your bundle identifier \"Z\"   Your project defines a provisioning profile that doesn't match the bundle identifier of your app. There is mismatch between the bundle identifiers, this might happen if you specify the wrong provisioning profile in your target.   Your build settings specify a provisioning profile with the UUID \"X\", however, no such provisioning profile was found.   Your project defines a provisioning profile which doesn't exist on your local machine. Check out  XcodeProject.md  for more information how to properly specify a provisioning profile to avoid hard coded UUIDs in your project.   CodeSign Error: code signing is required for product type 'Application'...   Make sure to have a valid code signing identity defined in your project targets. This might happen when you select  Don't Code Sign  as Code Signing Identity.", 
             "title": "Xcode errors"
         }, 
         {
-            "location": "/Codesigning/CommonIssues/#fastlane-errors", 
+            "location": "/codesigning/CommonIssues/#fastlane-errors", 
             "text": "Could not find a matching code signing identity for type 'X'   There are no certificates available on the Apple Developer Portal. This could either mean someone revoked a certificate, or you don't have access to it.", 
             "title": "fastlane errors"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/", 
+            "location": "/codesigning/GettingStarted/", 
             "text": "Codesigning concepts\n\n\n\ud83d\ude80\n\n\nIf you are just starting a new project, it's important to think about how you want to handle code signing. This guide will help you choose the best approach for you.\n\n\nFor existing projects it might make sense to switch from a manual process to the \nmatch approach\n to make it easier for new team-members to onboard.\n\n\nIf you are new to code signing, check out the \nWWDC session\n that describes the fundamentals of code signing in Xcode.\n\n\n\n\nUsing match\n\n\nUsing cert and sigh\n\n\nUsing Xcode's code signing feature\n\n\nManually\n\n\n\n\nUsing \nmatch\n\n\nThe concept of \nmatch\n is described in the \ncodesigning guide\n. \n\n\nWith \nmatch\n you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach \nis secure\n and uses technology you already use.\n\n\nGetting started with \nmatch\n requires you to revoke your existing certificates.\n\n\nMake sure to follow \nXcodeProject.md\n to set up your project properly.\n\n\nUsing \ncert\n and \nsigh\n\n\nIf you don't want to revoke your existing certificates, but still want an automated setup, \ncert\n and \nsigh\n are for you. \n\n\n\n\ncert\n will make sure you have a valid certificate and its private key installed on the local machine\n\n\nsigh\n will make sure you have a valid provisioning profile installed locally, that matches the installed certificate\n\n\n\n\nAdd the following lines to your \nFastfile\n\n\nlane :beta do\n  cert\n  sigh\n  gym\nend\n\n\n\n\nMake sure to follow \nXcodeProject.md\n to set up your project properly.\n\n\nUsing Xcode's code signing feature\n\n\nOccasionally the \nAutomatic\n setting as the provisioning profile doesn't work reliably as it will just select the most recently updated provisioning profile, no matter if the certificate is installed. \n\n\nThat's why it is recommended to specify a specific provisioning profile somehow:\n\n\nXcode 7 and lower\n\n\nYou should avoid clicking the \nFix Issue\n button (There is an \nXcode plugin\n that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.\n\n\nUnfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).\n\n\nTo work around this issue, check out \nXcodeProject.md\n on how to pass a provisioning profile to Xcode when building your app.\n\n\nXcode 8 and up\n\n\nApple improved code signing a lot with the release of Xcode 8, the following has changed:\n\n\n\n\nNo more \nFix Issue\n button, instead all code signing processes run in the background and show the log right in Xcode\n\n\nYou can now specify the provisioning profile by name, instead of the UUID (Check out \nXcodeProject.md\n for more information)\n\n\nImproved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out \nTroubleshooting.md\n for more information)\n\n\n\n\nManually\n\n\nYou can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key (\n.p12\n) of your certificates in a safe place, as they can't be restored if you lose them. \n\n\nYou can always download the certificate (\n.cer\n) and provisioning profile (\n.mobileprovision\n) from the Apple Developer Portal.", 
             "title": "GettingStarted"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/#codesigning-concepts", 
+            "location": "/codesigning/GettingStarted/#codesigning-concepts", 
             "text": "\ud83d\ude80  If you are just starting a new project, it's important to think about how you want to handle code signing. This guide will help you choose the best approach for you.  For existing projects it might make sense to switch from a manual process to the  match approach  to make it easier for new team-members to onboard.  If you are new to code signing, check out the  WWDC session  that describes the fundamentals of code signing in Xcode.   Using match  Using cert and sigh  Using Xcode's code signing feature  Manually", 
             "title": "Codesigning concepts"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/#using-match", 
+            "location": "/codesigning/GettingStarted/#using-match", 
             "text": "The concept of  match  is described in the  codesigning guide .   With  match  you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach  is secure  and uses technology you already use.  Getting started with  match  requires you to revoke your existing certificates.  Make sure to follow  XcodeProject.md  to set up your project properly.", 
             "title": "Using match"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/#using-cert-and-sigh", 
+            "location": "/codesigning/GettingStarted/#using-cert-and-sigh", 
             "text": "If you don't want to revoke your existing certificates, but still want an automated setup,  cert  and  sigh  are for you.    cert  will make sure you have a valid certificate and its private key installed on the local machine  sigh  will make sure you have a valid provisioning profile installed locally, that matches the installed certificate   Add the following lines to your  Fastfile  lane :beta do\n  cert\n  sigh\n  gym\nend  Make sure to follow  XcodeProject.md  to set up your project properly.", 
             "title": "Using cert and sigh"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/#using-xcodes-code-signing-feature", 
+            "location": "/codesigning/GettingStarted/#using-xcodes-code-signing-feature", 
             "text": "Occasionally the  Automatic  setting as the provisioning profile doesn't work reliably as it will just select the most recently updated provisioning profile, no matter if the certificate is installed.   That's why it is recommended to specify a specific provisioning profile somehow:", 
             "title": "Using Xcode's code signing feature"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/#xcode-7-and-lower", 
+            "location": "/codesigning/GettingStarted/#xcode-7-and-lower", 
             "text": "You should avoid clicking the  Fix Issue  button (There is an  Xcode plugin  that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.  Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).  To work around this issue, check out  XcodeProject.md  on how to pass a provisioning profile to Xcode when building your app.", 
             "title": "Xcode 7 and lower"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/#xcode-8-and-up", 
+            "location": "/codesigning/GettingStarted/#xcode-8-and-up", 
             "text": "Apple improved code signing a lot with the release of Xcode 8, the following has changed:   No more  Fix Issue  button, instead all code signing processes run in the background and show the log right in Xcode  You can now specify the provisioning profile by name, instead of the UUID (Check out  XcodeProject.md  for more information)  Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out  Troubleshooting.md  for more information)", 
             "title": "Xcode 8 and up"
         }, 
         {
-            "location": "/Codesigning/GettingStarted/#manually", 
+            "location": "/codesigning/GettingStarted/#manually", 
             "text": "You can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key ( .p12 ) of your certificates in a safe place, as they can't be restored if you lose them.   You can always download the certificate ( .cer ) and provisioning profile ( .mobileprovision ) from the Apple Developer Portal.", 
             "title": "Manually"
         }, 
         {
-            "location": "/Codesigning/README/", 
-            "text": "fastlane code signing\n\n\nThis directory contains all kinds of information and help around code signing.\n\n\n\n\nGettingStarted.md\n: Find the best code signing approach for your setup\n\n\nXcodeProject.md\n: How to set up your Xcode project\n\n\nTroubleshooting.md\n: Helps you debug signing issues\n\n\nCommonIssues.md\n: A list of some of the most common signing issues and how to solve them\n\n\nWWDC session about code signing\n: Describes the fundamentals of code signing in Xcode", 
-            "title": "README"
-        }, 
-        {
-            "location": "/Codesigning/README/#fastlane-code-signing", 
-            "text": "This directory contains all kinds of information and help around code signing.   GettingStarted.md : Find the best code signing approach for your setup  XcodeProject.md : How to set up your Xcode project  Troubleshooting.md : Helps you debug signing issues  CommonIssues.md : A list of some of the most common signing issues and how to solve them  WWDC session about code signing : Describes the fundamentals of code signing in Xcode", 
-            "title": "fastlane code signing"
-        }, 
-        {
-            "location": "/Codesigning/Troubleshooting/", 
+            "location": "/codesigning/Troubleshooting/", 
             "text": "Debugging codesigning issues\n\n\nThis guide will help you resolve the most common code signing errors.\n\n\nError message\n\n\nMake sure to find the exact error message in your build output. Many times the error message actually tells you how to resolve the issue. \n\n\nTo get even more details, try archiving using Xcode 8. \n\n\nDifferent machine\n\n\nDoes code signing work on a different Mac, but not on yours? If so, chances are high you don't have the latest private key, the certificate or the provisioning profile. Also follow the \nKeychain\n part of this document to make sure you don't have any expired certificates installed.\n\n\nXcode project\n\n\nMake sure to follow \nXcodeProject.md\n on how to properly set up your project.\n\n\nA check list on what you should verify on your Xcode project\n\n\n\n\nMake sure to have consistent code signing settings across your targets\n\n\nDon't set any code signing settings on your project level, just on the target level\n\n\nMake sure the bundle identifier matches the one of your provisioning profile\n\n\nMake sure the code signing identity is set to \niOS Distribution\n for \nRelease\n builds\n\n\nMake sure to set a provisioning profile for all your targets, e.g. Watch, Today widget, ...\n\n\nCheck your working copy in git - did you make any changes by mistake?\n\n\n\n\nDeveloper Portal\n\n\nIf a certificate gets revoked, all connected provisioning profiles get invalidated. This however might not immediately show up in your local keychain.\n\n\n\n\nOpen the \nDeveloper Portal\n\n\nVerify your certificates are valid, and didn't expire or get revoked\n\n\nSwitch to the Provisioning Profiles and make sure the profiles you want to use are all still valid\n\n\nIf your profile is invalid or expired, you can easily fix it:\n\n\nIf you're using \nmatch\n, run \nmatch\n with \nforce\n enabled\n\n\nIf you're using \nsigh\n, run \nsigh\n with \nforce\n enabled\n\n\nIf you're doing manual code signing, edit the provisioning profile, and click on \nGenerate\n on the bottom of the screen. Make sure to select the correct certificate, then download and open the new provisioning profile\n\n\n\n\n\n\nIf your profile is valid, but you still have issues make sure\n\n\nthat the certificate matches the certificate you have installed locally. You can view the used certificate by editing the profile (Don't click \nGenerate\n, unless you want to re-generate the provisioning profile)\n\n\nthat all devices you need are included (Development and Ad-Hoc only)\n\n\nthat you are actually looking at the correct provisioning profile, that matches the bundle identifier of your app. You might have multiple provisioning profiles for the same app / certificate combination. By default Xcode will use the last modified one.\n\n\n\n\n\n\n\n\nKeychain\n\n\n\n\nRun \nsecurity find-identity -v -p codesigning\n to get a list of locally installed code signing identities. Does yours show up?\n\n\nOpen the \nKeychain Access\n app, switch to \nCertificates\n and find your \niOS Developer\n or \niOS Distribution\n entry and unfold the entry to verify the private key is locally installed: \n\n\n  \n\n\n\n\nMake sure to have deleted all expired WWDR certificates, more information \nhere\n. There might be 2 expired WWDR certificates, one in the \nlogin\n, and one in the \nsystem\n keychain\n\n\n\n\nHave you tried turning it off and on again?\n\n\nAs funny as it sounds, sometimes restarting your Mac helps.\n\n\nfastlane\n\n\nRun \nfastlane\n in verbose mode to get even more debug information:\n\n\nfastlane [lane] --verbose\n\n\n\n\nCommon Issues\n\n\nCheck out \nCommonIssues.md\n for the most common code signing issues and how you can solve them.", 
             "title": "Troubleshooting"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#debugging-codesigning-issues", 
+            "location": "/codesigning/Troubleshooting/#debugging-codesigning-issues", 
             "text": "This guide will help you resolve the most common code signing errors.", 
             "title": "Debugging codesigning issues"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#error-message", 
+            "location": "/codesigning/Troubleshooting/#error-message", 
             "text": "Make sure to find the exact error message in your build output. Many times the error message actually tells you how to resolve the issue.   To get even more details, try archiving using Xcode 8.", 
             "title": "Error message"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#different-machine", 
+            "location": "/codesigning/Troubleshooting/#different-machine", 
             "text": "Does code signing work on a different Mac, but not on yours? If so, chances are high you don't have the latest private key, the certificate or the provisioning profile. Also follow the  Keychain  part of this document to make sure you don't have any expired certificates installed.", 
             "title": "Different machine"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#xcode-project", 
+            "location": "/codesigning/Troubleshooting/#xcode-project", 
             "text": "Make sure to follow  XcodeProject.md  on how to properly set up your project.  A check list on what you should verify on your Xcode project   Make sure to have consistent code signing settings across your targets  Don't set any code signing settings on your project level, just on the target level  Make sure the bundle identifier matches the one of your provisioning profile  Make sure the code signing identity is set to  iOS Distribution  for  Release  builds  Make sure to set a provisioning profile for all your targets, e.g. Watch, Today widget, ...  Check your working copy in git - did you make any changes by mistake?", 
             "title": "Xcode project"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#developer-portal", 
+            "location": "/codesigning/Troubleshooting/#developer-portal", 
             "text": "If a certificate gets revoked, all connected provisioning profiles get invalidated. This however might not immediately show up in your local keychain.   Open the  Developer Portal  Verify your certificates are valid, and didn't expire or get revoked  Switch to the Provisioning Profiles and make sure the profiles you want to use are all still valid  If your profile is invalid or expired, you can easily fix it:  If you're using  match , run  match  with  force  enabled  If you're using  sigh , run  sigh  with  force  enabled  If you're doing manual code signing, edit the provisioning profile, and click on  Generate  on the bottom of the screen. Make sure to select the correct certificate, then download and open the new provisioning profile    If your profile is valid, but you still have issues make sure  that the certificate matches the certificate you have installed locally. You can view the used certificate by editing the profile (Don't click  Generate , unless you want to re-generate the provisioning profile)  that all devices you need are included (Development and Ad-Hoc only)  that you are actually looking at the correct provisioning profile, that matches the bundle identifier of your app. You might have multiple provisioning profiles for the same app / certificate combination. By default Xcode will use the last modified one.", 
             "title": "Developer Portal"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#keychain", 
+            "location": "/codesigning/Troubleshooting/#keychain", 
             "text": "Run  security find-identity -v -p codesigning  to get a list of locally installed code signing identities. Does yours show up?  Open the  Keychain Access  app, switch to  Certificates  and find your  iOS Developer  or  iOS Distribution  entry and unfold the entry to verify the private key is locally installed:  \n     Make sure to have deleted all expired WWDR certificates, more information  here . There might be 2 expired WWDR certificates, one in the  login , and one in the  system  keychain", 
             "title": "Keychain"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#have-you-tried-turning-it-off-and-on-again", 
+            "location": "/codesigning/Troubleshooting/#have-you-tried-turning-it-off-and-on-again", 
             "text": "As funny as it sounds, sometimes restarting your Mac helps.", 
             "title": "Have you tried turning it off and on again?"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#fastlane", 
+            "location": "/codesigning/Troubleshooting/#fastlane", 
             "text": "Run  fastlane  in verbose mode to get even more debug information:  fastlane [lane] --verbose", 
             "title": "fastlane"
         }, 
         {
-            "location": "/Codesigning/Troubleshooting/#common-issues", 
+            "location": "/codesigning/Troubleshooting/#common-issues", 
             "text": "Check out  CommonIssues.md  for the most common code signing issues and how you can solve them.", 
             "title": "Common Issues"
         }, 
         {
-            "location": "/Codesigning/XcodeProject/", 
+            "location": "/codesigning/XcodeProject/", 
             "text": "Setting up your Xcode Project\n\n\nXcode 8 and up\n\n\nWith Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)\n\n\nYou can now specify which provisioning profile to use in the \nGeneral\n tab after disabling \nAutomatically manage signing\n.\n\n\n\n\nAlternatively you can also specify the provisioning profile in the \nBuild Settings\n tab.\n\n\n\n\nIf your provisioning profile is not listed in the drop down, there might be a few reasons:\n\n\n\n\nIt doesn't match the bundle identifier of the target\n\n\nThe associated certificate or its private key is not installed on the local machine\n\n\nThe provisioning profile is not installed on the local machine\n\n\n\n\nCheck out \nTroubleshooting.md\n for more information on how to debug signing issues.\n\n\nBuild settings / Environment variables\n\n\nPreviously you could specify the UUID of the provisioning profile using the \nPROVISIONING_PROFILE\n Xcode settings property, with Xcode 8 you specify it using the \nPROVISIONING_PROFILE_SPECIFIER\n instead:\n\n\nPROVISIONING_PROFILE_SPECIFIER = \n5AA97AAHK2/Themoji_AppStore\n;\nPROVISIONING_PROFILE_SPECIFIER = \n[team_id]/[profile_name]\n;\n````\n\nYou could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.\n\n## Xcode 7 and lower\n\n**Note**: This approach is deprecated with Xcode 8\n\nIf you use `Automatic` value for your provisioning profile, Xcode sometimes selects the wrong profile, resulting in code signing errors at a later point.\n\nInstead it is recommended to specify a specific provisioning profile, which can only be done using the UUID (in Xcode 7).\n\nSince it is not recommended to update the project file, every time you update your provisioning profile, you can pass the UUID via environment variables.\n\nTo do so, open your target settings, open the dropdown for `Provisioning Profile` and select `Other`:\n\n\nimg src=\n/match/assets/XcodeProjectSettings.png\n width=\n700\n /\n\n\nUsing the `$(...)` notation, Xcode will use the provisioning profile matching the UUID, and fallback to `Automatic` if it's not provided. \n\nIf you use [fastlane](https://fastlane.tools) you don't have to do any extra work, since the environment variable for the latest profile are automatically set by [match](https://fastlane.tools/match)\n\n```ruby\nlane :beta do\n  match(type: \nadhoc\n)\n  gym\nend\n\n\n\n\nYou can also manually set the environment variable using\n\n\nlane :beta do\n  ENV[\nPROVISIONING_PROFILE_TARGET1\n] = \nb01c39c9-1b4a-412e-9ae2-3087ee9ea9d3\n\n  gym\nend", 
             "title": "XcodeProject"
         }, 
         {
-            "location": "/Codesigning/XcodeProject/#setting-up-your-xcode-project", 
+            "location": "/codesigning/XcodeProject/#setting-up-your-xcode-project", 
             "text": "", 
             "title": "Setting up your Xcode Project"
         }, 
         {
-            "location": "/Codesigning/XcodeProject/#xcode-8-and-up", 
+            "location": "/codesigning/XcodeProject/#xcode-8-and-up", 
             "text": "With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)  You can now specify which provisioning profile to use in the  General  tab after disabling  Automatically manage signing .   Alternatively you can also specify the provisioning profile in the  Build Settings  tab.   If your provisioning profile is not listed in the drop down, there might be a few reasons:   It doesn't match the bundle identifier of the target  The associated certificate or its private key is not installed on the local machine  The provisioning profile is not installed on the local machine   Check out  Troubleshooting.md  for more information on how to debug signing issues.", 
             "title": "Xcode 8 and up"
         }, 
         {
-            "location": "/Codesigning/XcodeProject/#build-settings-environment-variables", 
+            "location": "/codesigning/XcodeProject/#build-settings-environment-variables", 
             "text": "Previously you could specify the UUID of the provisioning profile using the  PROVISIONING_PROFILE  Xcode settings property, with Xcode 8 you specify it using the  PROVISIONING_PROFILE_SPECIFIER  instead:  PROVISIONING_PROFILE_SPECIFIER =  5AA97AAHK2/Themoji_AppStore ;\nPROVISIONING_PROFILE_SPECIFIER =  [team_id]/[profile_name] ;\n````\n\nYou could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.\n\n## Xcode 7 and lower\n\n**Note**: This approach is deprecated with Xcode 8\n\nIf you use `Automatic` value for your provisioning profile, Xcode sometimes selects the wrong profile, resulting in code signing errors at a later point.\n\nInstead it is recommended to specify a specific provisioning profile, which can only be done using the UUID (in Xcode 7).\n\nSince it is not recommended to update the project file, every time you update your provisioning profile, you can pass the UUID via environment variables.\n\nTo do so, open your target settings, open the dropdown for `Provisioning Profile` and select `Other`: img src= /match/assets/XcodeProjectSettings.png  width= 700  / \n\nUsing the `$(...)` notation, Xcode will use the provisioning profile matching the UUID, and fallback to `Automatic` if it's not provided. \n\nIf you use [fastlane](https://fastlane.tools) you don't have to do any extra work, since the environment variable for the latest profile are automatically set by [match](https://fastlane.tools/match)\n\n```ruby\nlane :beta do\n  match(type:  adhoc )\n  gym\nend  You can also manually set the environment variable using  lane :beta do\n  ENV[ PROVISIONING_PROFILE_TARGET1 ] =  b01c39c9-1b4a-412e-9ae2-3087ee9ea9d3 \n  gym\nend", 
             "title": "Build settings / Environment variables"
         }

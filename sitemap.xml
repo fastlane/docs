@@ -10,89 +10,27 @@
     
 
     
-    <url>
-     <loc>None/Debug/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/FAQs/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Gitignore/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Guide/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Jenkins/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/README/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/about/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
         
     <url>
-     <loc>None/Codesigning/CommonIssues/</loc>
+     <loc>None/codesigning/CommonIssues/</loc>
      <lastmod>2016-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Codesigning/GettingStarted/</loc>
+     <loc>None/codesigning/GettingStarted/</loc>
      <lastmod>2016-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Codesigning/README/</loc>
+     <loc>None/codesigning/Troubleshooting/</loc>
      <lastmod>2016-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/Codesigning/Troubleshooting/</loc>
-     <lastmod>2016-08-16</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/Codesigning/XcodeProject/</loc>
+     <loc>None/codesigning/XcodeProject/</loc>
      <lastmod>2016-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>

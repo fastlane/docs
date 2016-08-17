@@ -5403,11 +5403,6 @@ div[class^='highlight'] pre {
   display: block
 }
 
-.wy-menu-vertical li ul {
-  margin-bottom: 0;
-  display: none
-}
-
 .wy-menu-vertical .local-toc li ul {
   display: block
 }
