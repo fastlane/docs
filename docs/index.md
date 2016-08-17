@@ -37,8 +37,6 @@ You just defined 2 different lanes, one for beta deployment, one for App Store. 
 fastlane appstore
 ```
 
-##### Level 5
-
 ## Why fastlane?
 
  |
