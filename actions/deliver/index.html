@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>deliver - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "deliver";
+    var mkdocs_page_input_path = "actions/deliver.md";
+    var mkdocs_page_url = "/actions/deliver/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../GettingStarted/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Actions</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">deliver</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#deliver">deliver</a></li>
+                
+                    <li><a class="toctree-l4" href="#upload-screenshots-metadata-and-your-app-to-the-app-store-using-a-single-command">Upload screenshots, metadata and your app to the App Store using a single command</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools">Like this tool? Be the first to know about updates and new fastlane tools</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#quick-start">Quick Start</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#usage">Usage</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#credentials">Credentials</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-does-this-thing-even-work-is-magic-involved">How does this thing even work? Is magic involved? 🎩</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#tips">Tips</a></li>
+                
+                    <li><a class="toctree-l4" href="#fastlane-toolchain">fastlane Toolchain</a></li>
+                
+                    <li><a class="toctree-l4" href="#available-language-codes">Available language codes</a></li>
+                
+                    <li><a class="toctree-l4" href="#default-values">Default values</a></li>
+                
+                    <li><a class="toctree-l4" href="#automatically-create-screenshots">Automatically create screenshots</a></li>
+                
+                    <li><a class="toctree-l4" href="#jenkins-integration">Jenkins integration</a></li>
+                
+                    <li><a class="toctree-l4" href="#firewall-issues">Firewall Issues</a></li>
+                
+                    <li><a class="toctree-l4" href="#http-proxy">HTTP Proxy</a></li>
+                
+                    <li><a class="toctree-l4" href="#limit">Limit</a></li>
+                
+                    <li><a class="toctree-l4" href="#editing-the-deliverfile">Editing the Deliverfile</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#need-help">Need help?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#code-of-conduct">Code of Conduct</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#license">License</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../snapshot/">snapshot</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../sigh/">sigh</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actions/">More actions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Intro</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Appfile/">Appfile</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Android/">Android</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/GettingStarted/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/XcodeProject/">Xcode Project</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/AvailablePlugins/">AvailablePlugins</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/CreatePlugin/">Create your own plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/PluginsTroubleshooting/">Plugins Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Best Practices</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/Gitignore/">Gitignore</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/ContinuousIntegration/">Continuous Integration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Advanced/">Advanced</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/UI/">UI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/CONTRIBUTING/">Contribution Guidelines</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Actions &raquo;</li>
+        
+      
+    
+    <li>deliver</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 align="center">
+  <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">
+    <img src="../fastlane/assets/fastlane.png" width="150" />
+    <br />
+    fastlane
+  </a>
+</h3>
+
+<p align="center">
+  <b>deliver</b> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/snapshot">snapshot</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/frameit">frameit</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/pem">pem</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/sigh">sigh</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/produce">produce</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/cert">cert</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/spaceship">spaceship</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/pilot">pilot</a> &bull;
+  <a href="https://github.com/fastlane/boarding">boarding</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/scan">scan</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>
+</p>
+
+<hr />
+<p align="center">
+  <img src="assets/deliver.png" height="110">
+</p>
+
+<h1 id="deliver">deliver</h1>
+<p><a href="https://twitter.com/FastlaneTools"><img alt="Twitter: @FastlaneTools" src="https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat" /></a>
+<a href="https://github.com/fastlane/fastlane/blob/master/deliver/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat" /></a>
+<a href="http://rubygems.org/gems/deliver"><img alt="Gem" src="https://img.shields.io/gem/v/deliver.svg?style=flat" /></a>
+<a href="https://circleci.com/gh/fastlane/fastlane"><img alt="Build Status" src="https://img.shields.io/circleci/project/fastlane/fastlane/master.svg?style=flat" /></a></p>
+<h6 id="upload-screenshots-metadata-and-your-app-to-the-app-store-using-a-single-command">Upload screenshots, metadata and your app to the App Store using a single command</h6>
+<p><code>deliver</code> uploads screenshots, metadata and binaries to iTunes Connect. Use <code>deliver</code> to submit your app for App Store review.</p>
+<p>Get in contact with the developer on Twitter: <a href="https://twitter.com/FastlaneTools">@FastlaneTools</a></p>
+<hr />
+<p><p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#installation">Installation</a> &bull;
+    <a href="#quick-start">Quick Start</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#tips">Tips</a> &bull;
+    <a href="#need-help">Need help?</a>
+</p></p>
+<hr />
+<h5 align="center"><code>deliver</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate building and releasing your iOS and Android apps.</h5>
+
+<h1 id="features">Features</h1>
+<ul>
+<li>Upload hundreds of localised screenshots completely automatically</li>
+<li>Upload a new ipa/pkg file to iTunes Connect without Xcode from any Mac</li>
+<li>Maintain your app metadata locally and push changes back to iTunes Connect</li>
+<li>Easily implement a real Continuous Deployment process using <a href="https://fastlane.tools">fastlane</a></li>
+<li>Store the configuration in git to easily deploy from <strong>any</strong> Mac, including your Continuous Integration server</li>
+<li>Get a HTML preview of the fetched metadata before uploading the app metadata and screenshots to iTC</li>
+</ul>
+<p>To upload builds to TestFlight check out <a href="https://github.com/fastlane/fastlane/tree/master/pilot">pilot</a>.</p>
+<h5 id="like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools"><a href="https://tinyletter.com/krausefx">Like this tool? Be the first to know about updates and new fastlane tools</a></h5>
+<h1 id="installation">Installation</h1>
+<p>Install the gem</p>
+<pre><code>sudo gem install deliver
+</code></pre>
+<p>Make sure, you have the latest version of the Xcode command line tools installed:</p>
+<pre><code>xcode-select --install
+</code></pre>
+<h1 id="quick-start">Quick Start</h1>
+<p>The guide will create all the necessary files for you, using the existing app metadata from iTunes Connect.</p>
+<ul>
+<li><code>cd [your_project_folder]</code></li>
+<li><code>deliver init</code></li>
+<li>Enter your iTunes Connect credentials</li>
+<li>Enter your app identifier</li>
+<li>Enjoy a good drink, while the computer does all the work for you</li>
+</ul>
+<p>From now on, you can run <code>deliver</code> to deploy a new update, or just upload new app metadata and screenshots.</p>
+<p>Already using <code>deliver</code> and just updated to 1.0? Check out the <a href="https://github.com/fastlane/fastlane/blob/master/deliver/MigrationGuide.md">Migration Guide</a>.</p>
+<h1 id="usage">Usage</h1>
+<p>Check out your local <code>./fastlane/metadata</code> and <code>./fastlane/screenshots</code> folders (if you don't use <a href="https://fastlane.tools">fastlane</a> it's <code>./metadata</code> instead)</p>
+<p><img alt="assets/metadata.png" src="../assets/metadata.png" /></p>
+<p>You'll see your metadata from iTunes Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to iTunes Connect.</p>
+<p>Run <code>deliver</code> to upload the app metadata from your local machine</p>
+<pre><code>deliver
+</code></pre>
+
+<p>Provide the path to an <code>ipa</code> file to upload and submit your app for review:</p>
+<pre><code>deliver --ipa &quot;App.ipa&quot; --submit_for_review
+</code></pre>
+
+<p>or you can specify path to <code>pkg</code> file for macOS apps:</p>
+<pre><code>deliver --pkg &quot;MacApp.pkg&quot;
+</code></pre>
+
+<p>If you use <a href="https://fastlane.tools">fastlane</a> you don't have to manually specify the path to your <code>ipa</code>/<code>pkg</code> file.</p>
+<p>This is just a small sub-set of what you can do with <code>deliver</code>, check out the full documentation in <a href="https://github.com/fastlane/fastlane/blob/master/deliver/Deliverfile.md">Deliverfile.md</a></p>
+<p>Download existing screenshots from iTunes Connect</p>
+<pre><code>deliver download_screenshots
+</code></pre>
+
+<p>To get a list of available options run</p>
+<pre><code>deliver --help
+</code></pre>
+
+<p>Select a previously uploaded build and submit it for review.</p>
+<pre><code>deliver submit_build --build_number 830
+</code></pre>
+
+<p>Check out <a href="https://github.com/fastlane/fastlane/blob/master/deliver/Deliverfile.md">Deliverfile.md</a> for more options.</p>
+<p>Already using <code>deliver</code> and just updated to 1.0? Check out the <a href="https://github.com/fastlane/fastlane/blob/master/deliver/MigrationGuide.md">Migration Guide</a>.</p>
+<h1 id="credentials">Credentials</h1>
+<p>A detailed description about how your credentials are handled is available in a <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">credentials_manager</a>.</p>
+<h3 id="how-does-this-thing-even-work-is-magic-involved">How does this thing even work? Is magic involved? 🎩</h3>
+<p>Your password will be stored in the macOS keychain, but can also be passed using environment variables. (More information available on <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a>)</p>
+<p>Before actually uploading anything to iTunes, <code>deliver</code> will generate a HTML summary of the collected data.</p>
+<p><code>deliver</code> uses the following techniques under the hood:</p>
+<ul>
+<li>The iTMSTransporter tool is used to upload the binary to iTunes Connect. iTMSTransporter is a command line tool provided by Apple.</li>
+<li>For all metadata related actions <code>deliver</code> uses <a href="https://github.com/fastlane/fastlane/tree/master/spaceship">spaceship</a></li>
+</ul>
+<h1 id="tips">Tips</h1>
+<h2 id="fastlane-toolchain"><a href="https://fastlane.tools"><code>fastlane</code></a> Toolchain</h2>
+<ul>
+<li><a href="https://fastlane.tools"><code>fastlane</code></a>: The easiest way to automate building and releasing your iOS and Android apps</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/snapshot"><code>snapshot</code></a>: Automate taking localized screenshots of your iOS app on every device</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/frameit"><code>frameit</code></a>: Quickly put your screenshots into the right device frames</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pem"><code>pem</code></a>: Automatically generate and renew your push notification profiles</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/sigh"><code>sigh</code></a>: Because you would rather spend your time building stuff than fighting provisioning</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/produce"><code>produce</code></a>: Create new iOS apps on iTunes Connect and Dev Portal using the command line</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/cert"><code>cert</code></a>: Automatically create and maintain iOS code signing certificates</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/spaceship"><code>spaceship</code></a>: Ruby library to access the Apple Dev Center and iTunes Connect</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pilot"><code>pilot</code></a>: The best way to manage your TestFlight testers and builds from your terminal</li>
+<li><a href="https://github.com/fastlane/boarding"><code>boarding</code></a>: The easiest way to invite your TestFlight beta testers</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/gym"><code>gym</code></a>: Building your iOS apps has never been easier</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/scan"><code>scan</code></a>: The easiest way to run tests of your iOS and Mac app</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/match"><code>match</code></a>: Easily sync your certificates and profiles across your team using git</li>
+</ul>
+<h5 id="like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools_1"><a href="https://tinyletter.com/krausefx">Like this tool? Be the first to know about updates and new fastlane tools</a></h5>
+<h2 id="available-language-codes">Available language codes</h2>
+<pre><code>no, en-US, en-CA, fi, ru, zh-Hans, nl-NL, zh-Hant, en-AU, id, de-DE, sv, ko, ms, pt-BR, el, es-ES, it, fr-CA, es-MX, pt-PT, vi, th, ja, fr-FR, da, tr, en-GB
+</code></pre>
+
+<h2 id="default-values">Default values</h2>
+<p>Deliver has a special <code>default</code> language code which allows you to provide values that are not localised, and which will be used as defaults when you don’t provide a specific localised value.</p>
+<p>You can use this either in json within your deliverfile, or as a folder in your metadata file.</p>
+<p>Imagine that you have localised data for the following language codes:  <code>en-US, de-DE, el, it</code></p>
+<p>You can set the following in your deliverfile</p>
+<pre><code>release_notes({
+  'default' =&gt; &quot;Shiny and new”,
+  'de-DE' =&gt; &quot;glänzend und neu&quot;
+})
+</code></pre>
+
+<p>Deliver will use "Shiny and new" for en-US, el and it.</p>
+<p>It will use "glänzend und neu" for de-DE.</p>
+<p>You can do the same with folders</p>
+<pre><code>   default
+      keywords.txt
+      marketing_url.txt
+      name.txt
+      privacy_url.txt
+      support_url.txt
+      release_notes.txt
+   en-US
+      description.txt
+   de-DE
+      description.txt
+   el
+      description.txt
+   it
+      description.txt
+</code></pre>
+
+<p>In this case, default values for keywords, urls, name and release notes are used in all localisations, but each language has a fully localised description</p>
+<h2 id="automatically-create-screenshots">Automatically create screenshots</h2>
+<p>If you want to integrate <code>deliver</code> with <a href="https://github.com/fastlane/fastlane/tree/master/snapshot">snapshot</a>, check out <a href="https://fastlane.tools">fastlane</a>!</p>
+<h2 id="jenkins-integration">Jenkins integration</h2>
+<p>Detailed instructions about how to set up <code>deliver</code> and <code>fastlane</code> in <code>Jenkins</code> can be found in the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Jenkins.md">fastlane README</a>.</p>
+<h2 id="firewall-issues">Firewall Issues</h2>
+<p><code>deliver</code> uses the iTunes Transporter to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol using</p>
+<pre><code>DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; deliver
+</code></pre>
+
+<h2 id="http-proxy">HTTP Proxy</h2>
+<p>iTunes Transporter is a Java application bundled with Xcode. In addition to utilizing the <code>DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS="-t DAV"</code>, you need to configure the transporter application to use the proxy independently from the system proxy or any environment proxy settings. You can find the configuration file within Xcode:</p>
+<pre><code class="bash">TOOLS_PATH=$( xcode-select -p )
+REL_PATH='../Applications/Application Loader.app/Contents/itms/java/lib/net.properties'
+echo &quot;$TOOLS_PATH/$REL_PATH&quot;
+</code></pre>
+
+<p>Add necessary proxy configuration values to the net.properties according to <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html">Java Proxy Configuration</a>.</p>
+<h2 id="limit">Limit</h2>
+<p>Apple has a limit of 150 binary uploads per day.</p>
+<h2 id="editing-the-deliverfile">Editing the <code>Deliverfile</code></h2>
+<p>Change syntax highlighting to <em>Ruby</em>.</p>
+<h1 id="need-help">Need help?</h1>
+<p>Please submit an issue on GitHub and provide information about your setup</p>
+<h1 id="code-of-conduct">Code of Conduct</h1>
+<p>Help us keep <code>deliver</code> open and inclusive. Please read and follow our <a href="https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<h1 id="license">License</h1>
+<p>This project is licensed under the terms of the MIT license. See the LICENSE file.</p>
+<blockquote>
+<p>This project and all fastlane tools are in no way affiliated with Apple Inc. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../snapshot/" class="btn btn-neutral float-right" title="snapshot">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../GettingStarted/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../GettingStarted/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../snapshot/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

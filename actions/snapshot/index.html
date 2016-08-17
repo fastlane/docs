@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>snapshot - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "snapshot";
+    var mkdocs_page_input_path = "actions/snapshot.md";
+    var mkdocs_page_url = "/actions/snapshot/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../GettingStarted/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Actions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../deliver/">deliver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">snapshot</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#snapshot">snapshot</a></li>
+                
+                    <li><a class="toctree-l4" href="#automate-taking-localized-screenshots-of-your-ios-app-on-every-device">Automate taking localized screenshots of your iOS app on every device</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools">Like this tool? Be the first to know about updates and new fastlane tools</a></li>
+                
+                    <li><a class="toctree-l4" href="#why">Why?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#ui-tests">UI Tests</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-started">Getting started</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#quick-start">Quick Start</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#usage">Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#snapfile">Snapfile</a></li>
+                
+                    <li><a class="toctree-l4" href="#update-snapshot-helpers">Update snapshot helpers</a></li>
+                
+                    <li><a class="toctree-l4" href="#launch-arguments">Launch Arguments</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#how-does-it-work">How does it work?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#tips">Tips</a></li>
+                
+                    <li><a class="toctree-l4" href="#fastlane-toolchain">fastlane Toolchain</a></li>
+                
+                    <li><a class="toctree-l4" href="#frame-the-screenshots">Frame the screenshots</a></li>
+                
+                    <li><a class="toctree-l4" href="#available-language-codes">Available language codes</a></li>
+                
+                    <li><a class="toctree-l4" href="#use-a-clean-status-bar">Use a clean status bar</a></li>
+                
+                    <li><a class="toctree-l4" href="#editing-the-snapfile">Editing the Snapfile</a></li>
+                
+                    <li><a class="toctree-l4" href="#determine-language">Determine language</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#need-help">Need help?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#code-of-conduct">Code of Conduct</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#license">License</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../sigh/">sigh</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actions/">More actions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Intro</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Appfile/">Appfile</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Android/">Android</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/GettingStarted/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/XcodeProject/">Xcode Project</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/AvailablePlugins/">AvailablePlugins</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/CreatePlugin/">Create your own plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/PluginsTroubleshooting/">Plugins Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Best Practices</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/Gitignore/">Gitignore</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/ContinuousIntegration/">Continuous Integration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Advanced/">Advanced</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/UI/">UI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/CONTRIBUTING/">Contribution Guidelines</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Actions &raquo;</li>
+        
+      
+    
+    <li>snapshot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 align="center">
+  <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">
+    <img src="../fastlane/assets/fastlane.png" width="150" />
+    <br />
+    fastlane
+  </a>
+</h3>
+
+<p align="center">
+  <a href="https://github.com/fastlane/fastlane/tree/master/deliver">deliver</a> &bull;
+  <b>snapshot</b> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/frameit">frameit</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/pem">pem</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/sigh">sigh</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/produce">produce</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/cert">cert</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/spaceship">spaceship</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/pilot">pilot</a> &bull;
+  <a href="https://github.com/fastlane/boarding">boarding</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/scan">scan</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>
+</p>
+
+<hr />
+<p align="center">
+  <img src="assets/snapshot.png" height="110">
+</p>
+
+<h1 id="snapshot">snapshot</h1>
+<p><a href="https://twitter.com/FastlaneTools"><img alt="Twitter: @FastlaneTools" src="https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat" /></a>
+<a href="https://github.com/fastlane/fastlane/blob/master/snapshot/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat" /></a>
+<a href="http://rubygems.org/gems/snapshot"><img alt="Gem" src="https://img.shields.io/gem/v/snapshot.svg?style=flat" /></a></p>
+<h6 id="automate-taking-localized-screenshots-of-your-ios-app-on-every-device">Automate taking localized screenshots of your iOS app on every device</h6>
+<p>'snapshot' generates localized iOS screenshots for different device types and languages for the App Store and can be uploaded using (<a href="https://github.com/fastlane/fastlane/tree/master/deliver"><code>deliver</code></a>).</p>
+<p>You have to manually create 20 (languages) x 6 (devices) x 5 (screenshots) = <strong>600 screenshots</strong>.</p>
+<p>It's hard to get everything right!</p>
+<ul>
+<li>New screenshots with every (design) update</li>
+<li>No loading indicators</li>
+<li>Same content / screens</li>
+<li><a href="#use-a-clean-status-bar">Clean Status Bar</a></li>
+<li>Uploading screenshots (<a href="https://github.com/fastlane/fastlane/tree/master/deliver"><code>deliver</code></a> is your friend)</li>
+</ul>
+<p>More information about <a href="https://krausefx.com/blog/creating-perfect-app-store-screenshots-of-your-ios-app">creating perfect screenshots</a>.</p>
+<p><code>snapshot</code> runs completely in the background - you can do something else, while your computer takes the screenshots for you.</p>
+<p>Get in contact with the developer on Twitter: <a href="https://twitter.com/FastlaneTools">@FastlaneTools</a></p>
+<hr />
+<p><p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#installation">Installation</a> &bull;
+    <a href="#ui-tests">UI Tests</a> &bull;
+    <a href="#quick-start">Quick Start</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#tips">Tips</a> &bull;
+    <a href="#how-does-it-work">How?</a> &bull;
+    <a href="#need-help">Need help?</a>
+</p></p>
+<hr />
+<h5 align="center"><code>snapshot</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate building and releasing your iOS and Android apps.</h5>
+
+<h1 id="features">Features</h1>
+<ul>
+<li>Create hundreds of screenshots in multiple languages on all simulators</li>
+<li>Configure it once, store the configuration in git</li>
+<li>Do something else, while the computer takes the screenshots for you</li>
+<li>Integrates with <a href="https://fastlane.tools"><code>fastlane</code></a> and <a href="https://github.com/fastlane/fastlane/tree/master/deliver"><code>deliver</code></a></li>
+<li>Generates a beautiful web page, which shows all screenshots on all devices. This is perfect to send to Q&amp;A or the marketing team</li>
+<li><code>snapshot</code> automatically waits for network requests to be finished before taking a screenshot (we don't want loading images in the App Store screenshots)</li>
+</ul>
+<h5 id="like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools"><a href="https://tinyletter.com/krausefx">Like this tool? Be the first to know about updates and new fastlane tools</a></h5>
+<p>After <code>snapshot</code> successfully created new screenshots, it will generate a beautiful HTML file to get a quick overview of all screens:</p>
+<p><img alt="assets/htmlPagePreviewFade.jpg" src="../assets/htmlPagePreviewFade.jpg" /></p>
+<h2 id="why">Why?</h2>
+<p>This tool automatically switches the language and device type and runs UI Tests for every combination.</p>
+<h3 id="why-should-i-automate-this-process">Why should I automate this process?</h3>
+<ul>
+<li>It takes <strong>hours</strong> to take screenshots</li>
+<li>You get a great overview of all your screens, running on all available simulators without the need to manually start it hundreds of times</li>
+<li>Easy verification for translators (without an iDevice) that translations do make sense in real App context</li>
+<li>Easy verification that localizations fit into labels on all screen dimensions</li>
+<li>It is an integration test: You can test for UI elements and other things inside your scripts</li>
+<li>Be so nice, and provide new screenshots with every App Store update. Your customers deserve it</li>
+<li>You realise, there is a spelling mistake in one of the screens? Well, just correct it and re-run the script</li>
+</ul>
+<h1 id="installation">Installation</h1>
+<p>Install the gem</p>
+<pre><code>sudo gem install snapshot
+</code></pre>
+<p>Make sure, you have the latest version of the Xcode command line tools installed:</p>
+<pre><code>xcode-select --install
+</code></pre>
+<h1 id="ui-tests">UI Tests</h1>
+<h2 id="getting-started">Getting started</h2>
+<p>This project uses Apple's newly announced UI Tests. We will not go into detail on how to write scripts.</p>
+<p>Here a few links to get started:</p>
+<ul>
+<li><a href="https://developer.apple.com/videos/play/wwdc2015-406/">WWDC 2015 Introduction to UI Tests</a></li>
+<li><a href="http://www.mokacoding.com/blog/xcode-7-ui-testing/">A first look into UI Tests</a></li>
+<li><a href="http://masilotti.com/ui-testing-xcode-7/">UI Testing in Xcode 7</a></li>
+<li><a href="https://github.com/ConfusedVorlon/HSTestingBackchannel">HSTestingBackchannel : ‘Cheat’ by communicating directly with your app</a></li>
+<li><a href="https://tisunov.github.io/2015/11/06/automating-app-store-screenshots-generation-with-fastlane-snapshot-and-sketch.html">Automating App Store screenshots using fastlane snapshot and frameit</a></li>
+</ul>
+<h1 id="quick-start">Quick Start</h1>
+<ul>
+<li>Create a new UI Test target in your Xcode project (<a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">top part of this article</a>)</li>
+<li>Run <code>snapshot init</code> in your project folder</li>
+<li>Add the ./SnapshotHelper.swift to your UI Test target (You can move the file anywhere you want)</li>
+<li>(Objective C only) add the bridging header to your test class.</li>
+<li><code>#import "MYUITests-Swift.h"</code></li>
+<li>The bridging header is named after your test target with -Swift.h appended.</li>
+<li>In your UI Test class, click the <code>Record</code> button on the bottom left and record your interaction</li>
+<li>To take a snapshot, call the following between interactions</li>
+<li>Swift: <code>snapshot("01LoginScreen")</code></li>
+<li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];</code></li>
+<li>Add the following code to your <code>setUp()</code> method</li>
+</ul>
+<p><strong>Swift</strong></p>
+<pre><code class="swift">let app = XCUIApplication()
+setupSnapshot(app)
+app.launch()
+</code></pre>
+
+<p><strong>Objective C</strong></p>
+<pre><code class="objective-c">XCUIApplication *app = [[XCUIApplication alloc] init];
+[Snapshot setupSnapshot:app];
+[app launch];
+</code></pre>
+
+<p><img alt="assets/snapshot.gif" src="../assets/snapshot.gif" /></p>
+<p>You can try the <code>snapshot</code> <a href="https://github.com/fastlane/fastlane/tree/master/snapshot/example">example project</a> by cloning this repo.</p>
+<p>To quick start your UI tests, you can use the UI Test recorder. You only have to interact with the simulator, and Xcode will generate the UI Test code for you. You can find the red record button on the bottom of the screen (more information in <a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">this blog post</a>)</p>
+<h1 id="usage">Usage</h1>
+<pre><code class="sh">snapshot
+</code></pre>
+
+<p>Your screenshots will be stored in the <code>./screenshots/</code> folder by default (or <code>./fastlane/screenshots</code> if you're using <a href="https://fastlane.tools">fastlane</a>)</p>
+<p>If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and <code>snapshot</code> will continue with the next device or language. To stop the flow after the first error, run</p>
+<pre><code class="sh">snapshot --stop_after_first_error
+</code></pre>
+
+<p>Also by default, <code>snapshot</code> will open the HTML after all is done. This can be skipped with the following command</p>
+<pre><code class="sh">snapshot --stop_after_first_error --skip_open_summary
+</code></pre>
+
+<p>There are a lot of options available that define how to build your app, for example</p>
+<pre><code class="sh">snapshot --scheme &quot;UITests&quot; --configuration &quot;Release&quot;  --sdk &quot;iphonesimulator&quot;
+</code></pre>
+
+<p>Reinstall the app before running <code>snapshot</code></p>
+<pre><code class="sh">snapshot --reinstall_app --app_identifier &quot;tools.fastlane.app&quot;
+</code></pre>
+
+<p>By default <code>snapshot</code> automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. <a href="https://github.com/fastlane/snapshot/issues/372">#372</a>). You can adapt this number using</p>
+<pre><code class="sh">snapshot --number_of_retries 3
+</code></pre>
+
+<p>Add photos and/or videos to the simulator before running <code>snapshot</code></p>
+<pre><code class="sh">snapshot --add_photos MyTestApp/Assets/demo.jpg --add_videos MyTestApp/Assets/demo.mp4
+</code></pre>
+
+<p>For a list for all available options run</p>
+<pre><code class="sh">snapshot --help
+</code></pre>
+
+<p>After running <code>snapshot</code> you will get a nice summary:</p>
+<p><img src="assets/testSummary.png" width="500"></p>
+<h2 id="snapfile">Snapfile</h2>
+<p>All of the available options can also be stored in a configuration file called the <code>Snapfile</code>. Since most values will not change often for your project, it is recommended to store them there:</p>
+<p>First make sure to have a <code>Snapfile</code> (you get it for free when running <code>snapshot init</code>)</p>
+<p>The <code>Snapfile</code> can contain all the options that are also available on <code>snapshot --help</code></p>
+<pre><code class="ruby">scheme &quot;UITests&quot;
+
+devices([
+  &quot;iPhone 6&quot;,
+  &quot;iPhone 6 Plus&quot;,
+  &quot;iPhone 5&quot;,
+  &quot;iPhone 4s&quot;
+])
+
+languages([
+  &quot;en-US&quot;,
+  &quot;de-DE&quot;,
+  &quot;es-ES&quot;,
+  [&quot;pt&quot;, &quot;pt_BR&quot;] # Portuguese with Brazilian locale
+])
+
+launch_arguments([&quot;-username Felix&quot;])
+
+# The directory in which the screenshots should be stored
+output_directory './screenshots'
+
+clear_previous_screenshots true
+
+add_photos [&quot;MyTestApp/Assets/demo.jpg&quot;]
+
+</code></pre>
+
+<h3 id="completely-reset-all-simulators">Completely reset all simulators</h3>
+<p>You can run this command in the terminal to delete and re-create all iOS simulators:</p>
+<pre><code>snapshot reset_simulators
+</code></pre>
+
+<p><strong>Warning</strong>: This will delete <strong>all</strong> your simulators and replace by new ones! This is useful, if you run into weird problems when running <code>snapshot</code>.</p>
+<p>You can use the environment variable <code>SNAPSHOT_FORCE_DELETE</code> to stop asking for confirmation before deleting.</p>
+<h2 id="update-snapshot-helpers">Update snapshot helpers</h2>
+<p>Some updates require the helper files to be updated. <code>snapshot</code> will automatically warn you and tell you how to update.</p>
+<p>Basically you can run</p>
+<pre><code>snapshot update
+</code></pre>
+
+<p>to update your <code>SnapshotHelper.swift</code> files. In case you modified your <code>SnapshotHelper.swift</code> and want to manually update the file, check out <a href="https://github.com/fastlane/fastlane/blob/master/snapshot/lib/assets/SnapshotHelper.swift">SnapshotHelper.swift</a>.</p>
+<h2 id="launch-arguments">Launch Arguments</h2>
+<p>You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through <code>NSProcessInfo.processInfo().arguments</code>. Alternatively, use user-default syntax (<code>-key value</code>) and they will be available as key-value pairs in <code>NSUserDefaults.standardUserDefaults()</code>.</p>
+<pre><code class="ruby">launch_arguments([
+  &quot;-firstName Felix -lastName Krause&quot;
+])
+</code></pre>
+
+<pre><code class="swift">name.text = NSUserDefaults.standardUserDefaults().stringForKey(&quot;firstName&quot;)
+// name.text = &quot;Felix&quot;
+</code></pre>
+
+<p><code>snapshot</code> includes <code>-FASTLANE_SNAPSHOT YES</code>, which will set a temporary user default for the key <code>FASTLANE_SNAPSHOT</code>, you may use this to detect when the app is run by <code>snapshot</code>.</p>
+<pre><code class="swift">if NSUserDefaults.standardUserDefaults().boolForKey(&quot;FASTLANE_SNAPSHOT&quot;) {
+    // runtime check that we are in snapshot mode
+}
+</code></pre>
+
+<p>Specify multiple argument strings and <code>snapshot</code> will generate screenshots for each combination of arguments, devices, and languages. This is useful for comparing the same screenshots with different feature flags, dynamic text sizes, and different data sets.</p>
+<pre><code class="ruby"># Snapfile for A/B Test Comparison
+launch_arguments([
+  &quot;-secretFeatureEnabled YES&quot;,
+  &quot;-secretFeatureEnabled NO&quot;
+])
+</code></pre>
+
+<h1 id="how-does-it-work">How does it work?</h1>
+<p>The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So <code>snapshot</code> uses a different approach:</p>
+<p>When you run unit tests in Xcode, the reporter generates a plist file, documenting all events that occurred during the tests (<a href="http://michele.io/test-logs-in-xcode">More Information</a>). Additionally, Xcode generates screenshots before, during and after each of these events. There is no way to manually trigger a screenshot event. The screenshots and the plist files are stored in the DerivedData directory, which <code>snapshot</code> stores in a temporary folder.</p>
+<p>When the user calls <code>snapshot(...)</code> in the UI Tests (Swift or Objective C) the script actually does a rotation to <code>.Unknown</code> which doesn't have any effect on the actual app, but is enough to trigger a screenshot. It has no effect to the application and is not something you would do in your tests. The goal was to find <em>some</em> event that a user would never trigger, so that we know it's from <code>snapshot</code>. On tvOS, there is no orientation so we ask for a count of app views with type "Browser" (which should never exist on tvOS).</p>
+<p><code>snapshot</code> then iterates through all test events and check where we either did this weird rotation (on iOS) or searched for browsers (on tvOS). Once <code>snapshot</code> has all events triggered by <code>snapshot</code> it collects a ordered list of all the file names of the actual screenshots of the application.</p>
+<p>In the test output, the Swift <code>snapshot</code> function will print out something like this</p>
+<blockquote>
+<p>snapshot: [some random text here]</p>
+</blockquote>
+<p><code>snapshot</code> finds all these entries using a regex. The number of <code>snapshot</code> outputs in the terminal and the number of <code>snapshot</code> events in the plist file should be the same. Knowing that, <code>snapshot</code> automatically matches these 2 lists to identify the name of each of these screenshots. They are then copied over to the output directory and separated by language and device.</p>
+<p>2 thing have to be passed on from <code>snapshot</code> to the <code>xcodebuild</code> command line tool:</p>
+<ul>
+<li>The device type is passed via the <code>destination</code> parameter of the <code>xcodebuild</code> parameter</li>
+<li>The language is passed via a temporary file which is written by <code>snapshot</code> before running the tests and read by the UI Tests when launching the application</li>
+</ul>
+<p>If you find a better way to do any of this, please submit an issue on GitHub or even a pull request :+1:</p>
+<p>Also, feel free to duplicate radar <a href="https://openradar.appspot.com/radar?id=5056366381105152">23062925</a>.</p>
+<h1 id="tips">Tips</h1>
+<h2 id="fastlane-toolchain"><a href="https://fastlane.tools"><code>fastlane</code></a> Toolchain</h2>
+<ul>
+<li><a href="https://fastlane.tools"><code>fastlane</code></a>: The easiest way to automate building and releasing your iOS and Android apps</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/deliver"><code>deliver</code></a>: Upload screenshots, metadata and your app to the App Store</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/frameit"><code>frameit</code></a>: Quickly put your screenshots into the right device frames</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pem"><code>PEM</code></a>: Automatically generate and renew your push notification profiles</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/sigh"><code>sigh</code></a>: Because you would rather spend your time building stuff than fighting provisioning</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/produce"><code>produce</code></a>: Create new iOS apps on iTunes Connect and Dev Portal using the command line</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/cert"><code>cert</code></a>: Automatically create and maintain iOS code signing certificates</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/spaceship"><code>spaceship</code></a>: Ruby library to access the Apple Dev Center and iTunes Connect</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pilot"><code>pilot</code></a>: The best way to manage your TestFlight testers and builds from your terminal</li>
+<li><a href="https://github.com/fastlane/boarding"><code>boarding</code></a>: The easiest way to invite your TestFlight beta testers</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/gym"><code>gym</code></a>: Building your iOS apps has never been easier</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/scan"><code>scan</code></a>: The easiest way to run tests of your iOS and Mac app</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/match"><code>match</code></a>: Easily sync your certificates and profiles across your team using git</li>
+</ul>
+<h5 id="like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools_1"><a href="https://tinyletter.com/krausefx">Like this tool? Be the first to know about updates and new fastlane tools</a></h5>
+<h2 id="frame-the-screenshots">Frame the screenshots</h2>
+<p>If you want to add frames around the screenshots and even put a title on top, check out <a href="https://github.com/fastlane/fastlane/tree/master/frameit">frameit</a>.</p>
+<h2 id="available-language-codes">Available language codes</h2>
+<pre><code class="ruby">ALL_LANGUAGES = [&quot;da&quot;, &quot;de-DE&quot;, &quot;el&quot;, &quot;en-AU&quot;, &quot;en-CA&quot;, &quot;en-GB&quot;, &quot;en-US&quot;, &quot;es-ES&quot;, &quot;es-MX&quot;, &quot;fi&quot;, &quot;fr-CA&quot;, &quot;fr-FR&quot;, &quot;id&quot;, &quot;it&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;ms&quot;, &quot;nl&quot;, &quot;no&quot;, &quot;pt-BR&quot;, &quot;pt-PT&quot;, &quot;ru&quot;, &quot;sv&quot;, &quot;th&quot;, &quot;tr&quot;, &quot;vi&quot;, &quot;zh-Hans&quot;, &quot;zh-Hant&quot;]
+</code></pre>
+
+<p>To get more information about language and locale codes please read <a href="https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">Internationalization and Localization Guide</a>.</p>
+<h2 id="use-a-clean-status-bar">Use a clean status bar</h2>
+<p>You can use <a href="https://github.com/shinydevelopment/SimulatorStatusMagic">SimulatorStatusMagic</a> to clean up the status bar.</p>
+<h2 id="editing-the-snapfile">Editing the <code>Snapfile</code></h2>
+<p>Change syntax highlighting to <em>Ruby</em>.</p>
+<h3 id="simulator-doesnt-launch-the-application">Simulator doesn't launch the application</h3>
+<p>When the app dies directly after the application is launched there might be 2 problems</p>
+<ul>
+<li>The simulator is somehow in a broken state and you need to re-create it. You can use <code>snapshot reset_simulators</code> to reset all simulators (this will remove all installed apps)</li>
+<li>A restart helps very often</li>
+</ul>
+<h2 id="determine-language">Determine language</h2>
+<p>To detect the currently used localization in your tests, use the following code:</p>
+<pre><code class="javascript">You can access the language using the `deviceLanguage` variable.
+</code></pre>
+
+<h1 id="need-help">Need help?</h1>
+<p>Please submit an issue on GitHub and provide information about your setup</p>
+<h1 id="code-of-conduct">Code of Conduct</h1>
+<p>Help us keep <code>snapshot</code> open and inclusive. Please read and follow our <a href="https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<h1 id="license">License</h1>
+<p>This project is licensed under the terms of the MIT license. See the LICENSE file.</p>
+<blockquote>
+<p>This project and all fastlane tools are in no way affiliated with Apple Inc. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sigh/" class="btn btn-neutral float-right" title="sigh">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../deliver/" class="btn btn-neutral" title="deliver"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../deliver/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../sigh/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

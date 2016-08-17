@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>Android - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Android";
+    var mkdocs_page_input_path = "intro/Android.md";
+    var mkdocs_page_url = "/intro/Android/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../GettingStarted/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Actions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/deliver/">deliver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/snapshot/">snapshot</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/sigh/">sigh</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/Actions/">More actions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Intro</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Appfile/">Appfile</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Android</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#fastlane-for-android">fastlane for Android</a></li>
+                
+                    <li><a class="toctree-l4" href="#initial-setup">Initial setup</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/GettingStarted/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/XcodeProject/">Xcode Project</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/AvailablePlugins/">AvailablePlugins</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/CreatePlugin/">Create your own plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/PluginsTroubleshooting/">Plugins Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Best Practices</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/Gitignore/">Gitignore</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/ContinuousIntegration/">Continuous Integration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Advanced/">Advanced</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/UI/">UI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/CONTRIBUTING/">Contribution Guidelines</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Intro &raquo;</li>
+        
+      
+    
+    <li>Android</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="fastlane-for-android">fastlane for Android</h1>
+<p>This guide will show you step by step how to get started with <code>fastlane</code> for your Android project.</p>
+<h2 id="initial-setup">Initial setup</h2>
+<p>Install <code>fastlane</code> if you haven't already</p>
+<pre><code>sudo gem install fastlane --verbose
+</code></pre>
+<p>Navigate your terminal to your project directory and run</p>
+<pre><code>fastlane init
+</code></pre>
+
+<p>Feel free to skip any of these inputs by submitting with empty without entering anything.</p>
+<h3 id="package-name">Package Name</h3>
+<p>That's your package name, which usually looks something like <code>com.krausefx.app</code></p>
+<h3 id="google-play-access">Google Play Access</h3>
+<p>To enable <code>fastlane</code> to access Google Play you have to follow these steps:</p>
+<ul>
+<li>Open the <a href="https://play.google.com/apps/publish/">Google Play Console</a></li>
+<li>Select <strong>Settings</strong> tab, followed by the <strong>API access</strong> tab</li>
+<li>Click the <strong>Create Service Account</strong> button and follow the <strong>Google Developers Console</strong> link in the dialog</li>
+<li>Click <strong>Create credentials</strong> and select <strong>Service account</strong></li>
+<li>Select <strong>JSON</strong> as the Key type and click <strong>Create</strong></li>
+<li>Make a note of the file name of the JSON file downloaded to your computer, and close the dialog</li>
+<li>Back on the Google Play developer console, click <strong>Done</strong> to close the dialog</li>
+<li>Click on <strong>Grant Access</strong> for the newly added service account</li>
+<li>Choose <strong>Release Manager</strong> from the <strong>Role</strong> dropdown and click <strong>Send Invitation</strong> to close the dialog</li>
+</ul>
+<h3 id="json-key">JSON Key</h3>
+<p>The path to the json secret file that you're asked for should be the JSON file you downloaded from Google Play Console</p>
+<h3 id="finishing-up">Finishing up</h3>
+<p>You'll be asked if you want to start using <a href="https://github.com/fastlane/fastlane/tree/master/supply">supply</a>. Do it if you plan on upload screenshots or binaries to Google Play.</p>
+<h3 id="editing-the-configuration-files">Editing the configuration files</h3>
+<p><code>fastlane</code> created 2 important files and a metadata folder for you</p>
+<h5 id="fastlanefastfile"><code>fastlane/Fastfile</code></h5>
+<p>This file contains the actual deployment process. It defines which steps to run in which order. Check out <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md">Actions.md</a> for a list of all available integrations.</p>
+<h5 id="fastlaneappfile"><code>fastlane/Appfile</code></h5>
+<p>Contains basic metadata of your app that can be used by the actions you define in your <code>Fastfile</code></p>
+<h5 id="fastlanemetadataandroid"><code>fastlane/metadata/android</code></h5>
+<p>This folder contains the metadata fetched from Google Play. You can modify any values here and run <code>supply</code> to upload the updated metadata.</p>
+<h3 id="next-steps">Next Steps</h3>
+<p>Go ahead and modify the <code>Fastfile</code> to fit your needs. You might want to add the API Keys to your <code>crashlytics</code> action or your Slack URL to show notifications in your Slack room.</p>
+<p>To get a list of all available integrations run</p>
+<pre><code>fastlane actions --platform android
+</code></pre>
+
+<p>and to get more information about what a specific action does and the available parameters use</p>
+<pre><code>fastlane action [action_name]
+</code></pre>
+
+<p>For more information, visit <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md">Actions.md</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../codesigning/GettingStarted/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Appfile/" class="btn btn-neutral" title="Appfile"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Appfile/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../codesigning/GettingStarted/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

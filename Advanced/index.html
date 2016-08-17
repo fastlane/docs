@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>Advanced - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/fabric.css" rel="stylesheet">
+  <link href="../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Advanced";
+    var mkdocs_page_input_path = "Advanced.md";
+    var mkdocs_page_url = "/Advanced/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../GettingStarted/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Actions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/deliver/">deliver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/snapshot/">snapshot</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/sigh/">sigh</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../actions/Actions/">More actions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Intro</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../intro/Appfile/">Appfile</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../intro/Android/">Android</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../codesigning/GettingStarted/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../codesigning/XcodeProject/">Xcode Project</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../codesigning/Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../plugins/AvailablePlugins/">AvailablePlugins</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../plugins/CreatePlugin/">Create your own plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../plugins/PluginsTroubleshooting/">Plugins Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Best Practices</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../best-practices/Gitignore/">Gitignore</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../best-practices/ContinuousIntegration/">Continuous Integration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Advanced</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#advanced-fastlane">Advanced fastlane</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#passing-parameters">Passing Parameters</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#switching-lanes">Switching lanes</a></li>
+                
+                    <li><a class="toctree-l4" href="#returning-values">Returning values</a></li>
+                
+                    <li><a class="toctree-l4" href="#before_each-and-after_each-blocks">before_each and after_each blocks</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#run-actions-directly">Run actions directly</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#shell-values">Shell values</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#priorities-of-parameters-and-options">Priorities of parameters and options</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#importing-another-fastfile">Importing another Fastfile</a></li>
+                
+                    <li><a class="toctree-l4" href="#import">import</a></li>
+                
+                    <li><a class="toctree-l4" href="#import_from_git">import_from_git</a></li>
+                
+                    <li><a class="toctree-l4" href="#note">Note</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#environment-variables">Environment Variables</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#lane-context">Lane Context</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hide-the-fastlane-folder">Hide the fastlane folder</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#load-own-actions-from-external-folder">Load own actions from external folder</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#skip-update-check-when-launching-fastlane">Skip update check when launching fastlane</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#adding-credentials">Adding Credentials</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../contributing/UI/">UI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../contributing/CONTRIBUTING/">Contribution Guidelines</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Advanced</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="advanced-fastlane">Advanced fastlane</h1>
+<h1 id="passing-parameters">Passing Parameters</h1>
+<p>To pass parameters from the command line to your lane, use the following syntax:</p>
+<pre><code>fastlane [lane] key:value key2:value2
+
+fastlane deploy submit:false build_number:24
+</code></pre>
+
+<p>To access those values, change your lane declaration to also include <code>|options|</code></p>
+<pre><code class="ruby">before_all do |lane, options|
+  ...
+end
+
+before_each do |lane, options|
+  ...
+end
+
+lane :deploy do |options|
+  ...
+  if options[:submit]
+    # Only when submit is true
+  end
+  ...
+  increment_build_number(build_number: options[:build_number])
+  ...
+end
+
+after_all do |lane, options|
+  ...
+end
+
+after_each do |lane, options|
+  ...
+end
+
+error do |lane, exception, options|
+  if options[:debug]
+    puts &quot;Hi :)&quot;
+  end
+end
+</code></pre>
+
+<h1 id="switching-lanes">Switching lanes</h1>
+<p>To switch lanes while executing a lane, use the following code:</p>
+<pre><code class="ruby">lane :deploy do |options|
+  ...
+  build(release: true) # that's the important bit
+  hockey
+  ...
+end
+
+lane :staging do |options|
+  ...
+  build # it also works when you don't pass parameters
+  hockey
+  ...
+end
+
+lane :build do |options|
+  scheme = (options[:release] ? &quot;Release&quot; : &quot;Staging&quot;)
+  ipa(scheme: scheme)
+end
+</code></pre>
+
+<p><code>fastlane</code> takes care of all the magic for you. You can call lanes of the same platform or a general lane outside of the <code>platform</code> definition.</p>
+<p>Passing parameters is optional.</p>
+<h2 id="returning-values">Returning values</h2>
+<p>Additionally, you can retrieve the return value. In Ruby, the last line of the <code>lane</code> definition is the return value. Here is an example:</p>
+<pre><code class="ruby">lane :deploy do |options|
+  value = calculate(value: 3)
+  puts value # =&gt; 5
+end
+
+lane :calculate do |options|
+  ...
+  2 + options[:value] # the last line will always be the return value
+end
+</code></pre>
+
+<h2 id="before_each-and-after_each-blocks"><code>before_each</code> and <code>after_each</code> blocks</h2>
+<p><code>before_each</code> blocks are called before any lane is called. This would include being called before each lane you've switched to.</p>
+<pre><code class="ruby">before_each do |lane, options|
+  ...
+end
+</code></pre>
+
+<p><code>after_each</code> blocks are called after any lane is called. This would include being called after each lane you've switched to.
+Just like <code>after_all</code>, <code>after_each</code> is not called if an error occurs. The <code>error</code> block should be used in this case.</p>
+<pre><code class="ruby">after_each do |lane, options|
+  ...
+end
+</code></pre>
+
+<p>e.g. With this scenario, <code>before_each</code> and <code>after_each</code> would be called 4 times: before the <code>deploy</code> lane, before the switch to <code>archive</code>, <code>sign</code>, and <code>upload</code>, and after each of these lanes as well.</p>
+<pre><code class="ruby">lane :deploy do
+  archive
+  sign
+  upload
+end
+
+lane :archive do
+  ...
+end
+
+lane :sign do
+  ...
+end
+
+lane :upload do
+  ...
+end
+</code></pre>
+
+<h1 id="run-actions-directly">Run actions directly</h1>
+<p>If you just want to try an action without adding them to your <code>Fastfile</code> yet, you can use</p>
+<pre><code class="sh">fastlane run notification message:&quot;My Text&quot; title:&quot;The Title&quot;
+</code></pre>
+
+<p>To get the avaiable options for any action run <code>fastlane action [action_name]</code>. You might not be able to set some kind of parameters using this method.</p>
+<h1 id="shell-values">Shell values</h1>
+<p>You can get value from shell commands:</p>
+<pre><code class="ruby">output = sh(&quot;pod update&quot;)
+</code></pre>
+
+<h1 id="priorities-of-parameters-and-options">Priorities of parameters and options</h1>
+<p>The order in which <code>fastlane</code> tools take their values from</p>
+<ol>
+<li>CLI parameter (e.g. <code>gym --scheme Example</code>) or Fastfile (e.g. <code>gym(scheme: 'Example')</code>)</li>
+<li>Environment variable (e.g. <code>GYM_SCHEME</code>)</li>
+<li>Tool specific config file (e.g. <code>Gymfile</code> containing <code>scheme 'Example'</code>)</li>
+<li>Default value (which might be taken from the <code>Appfile</code>, e.g. <code>app_identifier</code> from the <code>Appfile</code>)</li>
+<li>If this value is required, you'll be asked for it (e.g. you have multiple schemes, you'll be asked for it)</li>
+</ol>
+<h1 id="importing-another-fastfile">Importing another Fastfile</h1>
+<p>Within your <code>Fastfile</code> you can import another <code>Fastfile</code> using 2 methods:</p>
+<h2 id="import"><code>import</code></h2>
+<p>Import a <code>Fastfile</code> from a local path</p>
+<pre><code class="ruby">import &quot;../GeneralFastfile&quot;
+
+override_lane :from_general do
+  ...
+end
+</code></pre>
+
+<h2 id="import_from_git"><code>import_from_git</code></h2>
+<p>Import from another git repository, which you can use to have one git repo with a default <code>Fastfile</code> for all your project</p>
+<pre><code class="ruby">import_from_git(url: 'https://github.com/fastlane/fastlane/tree/master/fastlane')
+# or
+import_from_git(url: 'git@github.com:MyAwesomeRepo/MyAwesomeFastlaneStandardSetup.git',
+               path: 'fastlane/Fastfile')
+
+lane :new_main_lane do
+  ...
+end
+</code></pre>
+
+<p>This will also automatically import all the local actions from this repo.</p>
+<h2 id="note">Note</h2>
+<p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <code>fastlane</code> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword. </p>
+<h1 id="environment-variables">Environment Variables</h1>
+<p>You can define environment variables in a <code>.env</code> or <code>.env.default</code> file in the same directory as your <code>Fastfile</code>. Environment variables are loading using <a href="https://github.com/bkeepers/dotenv">dotenv</a>. Here's an example.</p>
+<pre><code>WORKSPACE=YourApp.xcworkspace
+HOCKEYAPP_API_TOKEN=your-hockey-api-token
+</code></pre>
+
+<p><code>fastlane</code> also has a <code>--env</code> option that allows loading of environment specific <code>dotenv</code> files. <code>.env</code> and <code>.env.default</code> will be loaded before environment specific <code>dotenv</code> files are loaded. The naming convention for environment specific <code>dotenv</code> files is <code>.env.&lt;environment&gt;</code></p>
+<p>For example, <code>fastlane &lt;lane-name&gt; --env development</code> will load <code>.env</code>, <code>.env.default</code>, and <code>.env.development</code></p>
+<h1 id="lane-context">Lane Context</h1>
+<p>The different actions can <em>communicate</em> with each other using a shared hash. You can access them in your lanes with the following code.</p>
+<p>Replace <code>VARIABLE_NAME_HERE</code> with any of the following.</p>
+<pre><code class="ruby">lane_context[SharedValues::LANE_NAME]                 # The name of the current lane (stays the same when switching lanes)
+lane_context[SharedValues::BUILD_NUMBER]              # Generated by `increment_build_number`
+lane_context[SharedValues::VERSION_NUMBER]            # Generated by `increment_version_number`
+lane_context[SharedValues::SNAPSHOT_SCREENSHOTS_PATH] # Generated by `snapshot`
+lane_context[SharedValues::PRODUCE_APPLE_ID]          # The Apple ID of the newly created app
+lane_context[SharedValues::IPA_OUTPUT_PATH]           # Generated by `gym`
+lane_context[SharedValues::DSYM_OUTPUT_PATH]          # Generated by `gym`
+lane_context[SharedValues::SIGH_PROFILE_PATH]         # Generated by `sigh`
+lane_context[SharedValues::SIGH_UDID]                 # The UDID of the generated provisioning profile
+lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK]      # Generated by `hockey`
+````
+
+To get information about the available lane variables, run `fastlane action [action_name]`.
+
+# Private lanes
+
+Sometimes you might have a lane that is used from different lanes, for example:
+
+```ruby
+lane :production do
+  ...
+  build(release: true)
+  appstore # Deploy to the AppStore
+  ...
+end
+
+lane :beta do
+  ...
+  build(release: false)
+  crashlytics # Distribute to testers
+  ...
+end
+
+lane :build do |options|
+  ...
+  ipa
+  ...
+end
+</code></pre>
+
+<p>It probably doesn't make sense to execute the <code>build</code> lane directly using <code>fastlane build</code>. You can hide this lane using</p>
+<pre><code class="ruby">private_lane :build do |options|
+  ...
+end
+</code></pre>
+
+<p>This will hide the lane from:</p>
+<ul>
+<li><code>fastlane lanes</code></li>
+<li><code>fastlane list</code></li>
+<li><code>fastlane docs</code></li>
+</ul>
+<p>And also, you can't call the private lane using <code>fastlane build</code>.</p>
+<p>The resulting private lane can only be called from another lane using the lane switching technology.</p>
+<h1 id="hide-the-fastlane-folder">Hide the <code>fastlane</code> folder</h1>
+<p>Just rename the folder to <code>.fastlane</code> in case you don't want it to be visible in the Finder.</p>
+<h1 id="load-own-actions-from-external-folder">Load own actions from external folder</h1>
+<p>Add this to the top of your <code>Fastfile</code>.</p>
+<pre><code class="ruby">actions_path '../custom_actions_folder/'
+</code></pre>
+
+<h1 id="skip-update-check-when-launching-fastlane">Skip update check when launching <code>fastlane</code></h1>
+<p>You can set the environment variable <code>FASTLANE_SKIP_UPDATE_CHECK</code> to skip the update check.</p>
+<h1 id="adding-credentials">Adding Credentials</h1>
+<p>You can add credentials for use by <code>fastlane</code> to your keychain using the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> command line interface. This is useful for situations like CI environments.</p>
+<p><strong>Adding a Credential</strong></p>
+<pre><code>fastlane-credentials add --username felix@krausefx.com
+Password: *********
+Credential felix@krausefx.com:********* added to keychain.
+</code></pre>
+
+<p><strong>Removing a Credential</strong></p>
+<pre><code>fastlane-credentials remove --username felix@krausefx.com
+password has been deleted.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contributing/UI/" class="btn btn-neutral float-right" title="UI">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../best-practices/ContinuousIntegration/" class="btn btn-neutral" title="Continuous Integration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../best-practices/ContinuousIntegration/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../contributing/UI/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

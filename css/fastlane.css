@@ -24,9 +24,35 @@ h3, h4, h5, h6 {
   color: #333 !important;
 }
 
-/* We don't want to show h2 tags in the sidebar */
+.rst-versions {
+  display: none !important; 
+}
+
+
+/*
+  So here is the deal:
+    - We don't want h2 tags to be shown in the sidebar, as it's too cluttered
+    - However we still want h1 tag in the sidebar, except for the first one
+      The reason for that, is that the first h1 is usually just the page name
+      This way, you can still have links in the sidebar without cluttering it 
+      too much by having multiple h1 tags
+*/
+
+/* Hide all h2 tags */
 .toctree-l4 {
   display: none !important;
 }
 
-/* TODO: Hide toctree-l3 is there is only 1 item in it */
+/* Hide the first h1 tag in the sidebar*/
+.toctree-l3:first-child {
+  display: none !important;
+}
+
+/* Fix the design not having the correct spacing */
+.wy-menu-vertical li.current > a {
+  padding: 0.4045em 2.427em;
+}
+
+.toctree-l3 {
+  padding-left: 1.0em;
+}

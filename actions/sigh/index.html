@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>sigh - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "sigh";
+    var mkdocs_page_input_path = "actions/sigh.md";
+    var mkdocs_page_url = "/actions/sigh/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../GettingStarted/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Actions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../deliver/">deliver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../snapshot/">snapshot</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">sigh</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#sigh">sigh</a></li>
+                
+                    <li><a class="toctree-l4" href="#because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning">Because you would rather spend your time building stuff than fighting provisioning</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools">Like this tool? Be the first to know about updates and new fastlane tools</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-not-let-xcode-do-the-work">Why not let Xcode do the work?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#installation">Installation</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#usage">Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#advanced">Advanced</a></li>
+                
+                    <li><a class="toctree-l4" href="#use-with-fastlane">Use with fastlane</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#repair">Repair</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#resign">Resign</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#manage">Manage</a></li>
+                
+                    <li><a class="toctree-l4" href="#environment-variables">Environment Variables</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#how-does-it-work">How does it work?</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-is-my-password-stored">How is my password stored?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#tips">Tips</a></li>
+                
+                    <li><a class="toctree-l4" href="#fastlane-toolchain">fastlane Toolchain</a></li>
+                
+                    <li><a class="toctree-l4" href="#use-the-provisioning-quicklook-plugin">Use the 'Provisioning Quicklook plugin'</a></li>
+                
+                    <li><a class="toctree-l4" href="#app-identifier-couldnt-be-found">App Identifier couldn't be found</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-happens-to-my-xcode-managed-profiles">What happens to my Xcode managed profiles?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#need-help">Need help?</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#code-of-conduct">Code of Conduct</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#license">License</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actions/">More actions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Intro</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Appfile/">Appfile</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Android/">Android</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/GettingStarted/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/XcodeProject/">Xcode Project</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/AvailablePlugins/">AvailablePlugins</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/CreatePlugin/">Create your own plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/PluginsTroubleshooting/">Plugins Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Best Practices</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/Gitignore/">Gitignore</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/ContinuousIntegration/">Continuous Integration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Advanced/">Advanced</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/UI/">UI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../contributing/CONTRIBUTING/">Contribution Guidelines</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Actions &raquo;</li>
+        
+      
+    
+    <li>sigh</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 align="center">
+  <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">
+    <img src="../fastlane/assets/fastlane.png" width="150" />
+    <br />
+    fastlane
+  </a>
+</h3>
+
+<p align="center">
+  <a href="https://github.com/fastlane/fastlane/tree/master/deliver">deliver</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/snapshot">snapshot</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/frameit">frameit</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/pem">pem</a> &bull;
+  <b>sigh</b> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/produce">produce</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/cert">cert</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/spaceship">spaceship</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/pilot">pilot</a> &bull;
+  <a href="https://github.com/fastlane/boarding">boarding</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/scan">scan</a> &bull;
+  <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>
+</p>
+
+<hr />
+<p align="center">
+  <img src="assets/sigh.png" height="110">
+</p>
+
+<h1 id="sigh">sigh</h1>
+<p><a href="https://twitter.com/FastlaneTools"><img alt="Twitter: @FastlaneTools" src="https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat" /></a>
+<a href="https://github.com/fastlane/fastlane/blob/master/sigh/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat" /></a>
+<a href="http://rubygems.org/gems/sigh"><img alt="Gem" src="https://img.shields.io/gem/v/sigh.svg?style=flat" /></a>
+<a href="https://circleci.com/gh/fastlane/fastlane"><img alt="Build Status" src="https://img.shields.io/circleci/project/fastlane/fastlane/master.svg?style=flat" /></a></p>
+<h6 id="because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning">Because you would rather spend your time building stuff than fighting provisioning</h6>
+<p><code>sigh</code> can create, renew, download and repair provisioning profiles (with one command). It supports App Store, Ad Hoc, Development and Enterprise profiles and supports nice features, like auto-adding all test devices.</p>
+<p>Get in contact with the developer on Twitter: <a href="https://twitter.com/FastlaneTools">@FastlaneTools</a></p>
+<hr />
+<p><p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#installation">Installation</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#resign">Resign</a> &bull;
+    <a href="#how-does-it-work">How does it work?</a> &bull;
+    <a href="#tips">Tips</a> &bull;
+    <a href="#need-help">Need help?</a>
+</p></p>
+<hr />
+<h5 align="center"><code>sigh</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate building and releasing your iOS and Android apps.</h5>
+
+<h1 id="features">Features</h1>
+<ul>
+<li><strong>Download</strong> the latest provisioning profile for your app</li>
+<li><strong>Renew</strong> a provisioning profile, when it has expired</li>
+<li><strong>Repair</strong> a provisioning profile, when it is broken</li>
+<li><strong>Create</strong> a new provisioning profile, if it doesn't exist already</li>
+<li>Supports <strong>App Store</strong>, <strong>Ad Hoc</strong> and <strong>Development</strong> profiles</li>
+<li>Support for <strong>multiple Apple accounts</strong>, storing your credentials securely in the Keychain</li>
+<li>Support for <strong>multiple Teams</strong></li>
+<li>Support for <strong>Enterprise Profiles</strong></li>
+</ul>
+<p>To automate iOS Push profiles you can use <a href="https://github.com/fastlane/fastlane/tree/master/pem">pem</a>.</p>
+<h5 id="like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools"><a href="https://tinyletter.com/krausefx">Like this tool? Be the first to know about updates and new fastlane tools</a></h5>
+<h3 id="why-not-let-xcode-do-the-work">Why not let Xcode do the work?</h3>
+<ul>
+<li><code>sigh</code> can easily be integrated into your CI-server (e.g. Jenkins)</li>
+<li>Xcode sometimes invalidates <a href="../assets/SignErrors.png">all existing profiles</a></li>
+<li>You have control over what happens</li>
+<li>You still get to have the signing files, which you can then use for your build scripts or store in git</li>
+</ul>
+<p>See <code>sigh</code> in action:</p>
+<p><img alt="assets/sighRecording.gif" src="../assets/sighRecording.gif" /></p>
+<h1 id="installation">Installation</h1>
+<p><strong>Note</strong>: It is recommended to use <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your provisioning profiles. Use <code>sigh</code> directly only if you want full control over what's going on and know more about codesigning.</p>
+<pre><code>sudo gem install sigh
+</code></pre>
+<p>Make sure, you have the latest version of the Xcode command line tools installed:</p>
+<pre><code>xcode-select --install
+</code></pre>
+<h1 id="usage">Usage</h1>
+<pre><code>sigh
+</code></pre>
+<p>Yes, that's the whole command!</p>
+<p><code>sigh</code> will create, repair and download profiles for the App Store by default.</p>
+<p>You can pass your bundle identifier and username like this:</p>
+<pre><code>sigh -a com.krausefx.app -u username
+</code></pre>
+<p>If you want to generate an <strong>Ad Hoc</strong> profile instead of an App Store profile:</p>
+<pre><code>sigh --adhoc
+</code></pre>
+<p>If you want to generate a <strong>Development</strong> profile:</p>
+<pre><code>sigh --development
+</code></pre>
+<p>To generate the profile in a specific directory:</p>
+<pre><code>sigh -o "~/Certificates/"
+</code></pre>
+<p>To download all your provisioning profiles use</p>
+<pre><code>sigh download_all
+</code></pre>
+<p>For a list of available parameters and commands run</p>
+<pre><code>sigh --help
+</code></pre>
+<h3 id="advanced">Advanced</h3>
+<p>By default, <code>sigh</code> will install the downloaded profile on your machine. If you just want to generate the profile and skip the installation, use the following flag:</p>
+<pre><code>sigh --skip_install
+</code></pre>
+<p>To save the provisioning profile under a specific name, use the -q option:</p>
+<pre><code>sigh -a com.krausefx.app -u username -q "myProfile.mobileprovision"
+</code></pre>
+<p>If for some reason you don't want <code>sigh</code> to verify that the code signing identity is installed on your local machine:</p>
+<pre><code>sigh --skip_certificate_verification
+</code></pre>
+<p>If you need the provisioning profile to be renewed regardless of its state use the <code>--force</code> option. This gives you a profile with the maximum lifetime. <code>--force</code> will also add all available devices to this profile.</p>
+<pre><code>sigh --force
+</code></pre>
+<p>By default, <code>sigh</code> will include all certificates on development profiles, and first certificate on other types. If you need to specify which certificate to use you can either use the environment variable <code>SIGH_CERTIFICATE</code>, or pass the name or expiry date of the certificate as argument:</p>
+<pre><code>sigh -c "SunApps GmbH"
+</code></pre>
+<p>For a list of available parameters and commands run</p>
+<pre><code>sigh --help
+</code></pre>
+<h3 id="use-with-fastlane">Use with <a href="https://github.com/fastlane/fastlane/tree/master/fastlane"><code>fastlane</code></a></h3>
+<p><code>sigh</code> becomes really interesting when used in <a href="https://github.com/fastlane/fastlane/tree/master/fastlane"><code>fastlane</code></a> in combination with <a href="https://github.com/fastlane/fastlane/tree/master/cert"><code>cert</code></a>.</p>
+<p>Update your <code>Fastfile</code> to contain the following code:</p>
+<pre><code class="ruby">lane :beta do
+  cert
+  sigh(force: true)
+end
+</code></pre>
+
+<p><code>force: true</code> will make sure to re-generate the provisioning profile on each run.
+This will result in <code>sigh</code> always using the correct signing certificate, which is installed on the local machine.</p>
+<h1 id="repair">Repair</h1>
+<p><code>sigh</code> can automatically repair all your existing provisioning profiles which are expired or just invalid.</p>
+<pre><code>sigh repair
+</code></pre>
+<h1 id="resign">Resign</h1>
+<p>If you generated your <code>ipa</code> file but want to apply a different code signing onto the ipa file, you can use <code>sigh resign</code>:</p>
+<pre><code>sigh resign
+</code></pre>
+<p><code>sigh</code> will find the ipa file and the provisioning profile for you if they are located in the current folder.</p>
+<p>You can pass more information using the command line:</p>
+<pre><code>sigh resign ./path/app.ipa --signing_identity "iPhone Distribution: Felix Krause" -p "my.mobileprovision"
+</code></pre>
+<h1 id="manage">Manage</h1>
+<p>With <code>sigh manage</code> you can list all provisioning profiles installed locally.</p>
+<pre><code>sigh manage
+</code></pre>
+<p>Delete all expired provisioning profiles</p>
+<pre><code>sigh manage -e
+</code></pre>
+<p>Or delete all <code>iOS Team Provisioning Profile</code> by using a regular expression</p>
+<pre><code>sigh manage -p "iOS\ ?Team Provisioning Profile:"
+</code></pre>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>Run <code>sigh --help</code> to get a list of all available environment variables.</p>
+<p>If you're using <a href="https://github.com/fastlane/fastlane/tree/master/cert">cert</a> in combination with <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">fastlane</a> the signing certificate will automatically be selected for you. (make sure to run <code>cert</code> before <code>sigh</code>)</p>
+<h1 id="how-does-it-work">How does it work?</h1>
+<p><code>sigh</code> will access the <code>iOS Dev Center</code> to download, renew or generate the <code>.mobileprovision</code> file. It uses <a href="https://spaceship.airforce">spaceship</a> to communicate with Apple's web services.</p>
+<h2 id="how-is-my-password-stored">How is my password stored?</h2>
+<p><code>sigh</code> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> from <code>fastlane</code>.</p>
+<h1 id="tips">Tips</h1>
+<h2 id="fastlane-toolchain"><a href="https://fastlane.tools"><code>fastlane</code></a> Toolchain</h2>
+<ul>
+<li><a href="https://fastlane.tools"><code>fastlane</code></a>: The easiest way to automate building and releasing your iOS and Android apps</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/deliver"><code>deliver</code></a>: Upload screenshots, metadata and your app to the App Store</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/snapshot"><code>snapshot</code></a>: Automate taking localized screenshots of your iOS app on every device</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/frameit"><code>frameit</code></a>: Quickly put your screenshots into the right device frames</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pem"><code>pem</code></a>: Automatically generate and renew your push notification profiles</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/produce"><code>produce</code></a>: Create new iOS apps on iTunes Connect and Dev Portal using the command line</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/cert"><code>cert</code></a>: Automatically create and maintain iOS code signing certificates</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/spaceship"><code>spaceship</code></a>: Ruby library to access the Apple Dev Center and iTunes Connect</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pilot"><code>pilot</code></a>: The best way to manage your TestFlight testers and builds from your terminal</li>
+<li><a href="https://github.com/fastlane/boarding"><code>boarding</code></a>: The easiest way to invite your TestFlight beta testers</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/gym"><code>gym</code></a>: Building your iOS apps has never been easier</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/scan"><code>scan</code></a>: The easiest way to run tests of your iOS and Mac app</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/match"><code>match</code></a>: Easily sync your certificates and profiles across your team using git</li>
+</ul>
+<h5 id="like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools_1"><a href="https://tinyletter.com/krausefx">Like this tool? Be the first to know about updates and new fastlane tools</a></h5>
+<h2 id="use-the-provisioning-quicklook-plugin">Use the 'Provisioning Quicklook plugin'</h2>
+<p>Download and install the <a href="https://github.com/chockenberry/Provisioning">Provisioning Plugin</a>.</p>
+<p>It will show you the <code>mobileprovision</code> files like this:
+<img alt="assets/QuickLookScreenshot.png" src="../assets/QuickLookScreenshot.png" /></p>
+<h2 id="app-identifier-couldnt-be-found">App Identifier couldn't be found</h2>
+<p>If you also want to create a new App Identifier on the Apple Developer Portal, check out <a href="https://github.com/fastlane/fastlane/tree/master/produce">produce</a>, which does exactly that.</p>
+<h2 id="what-happens-to-my-xcode-managed-profiles">What happens to my Xcode managed profiles?</h2>
+<p><code>sigh</code> will never touch or use the profiles which are created and managed by Xcode. Instead <code>sigh</code> will manage its own set of provisioning profiles.</p>
+<h1 id="need-help">Need help?</h1>
+<p>Please submit an issue on GitHub and provide information about your setup</p>
+<h1 id="code-of-conduct">Code of Conduct</h1>
+<p>Help us keep <code>sigh</code> open and inclusive. Please read and follow our <a href="https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<h1 id="license">License</h1>
+<p>This project is licensed under the terms of the MIT license. See the LICENSE file.</p>
+<blockquote>
+<p>This project and all fastlane tools are in no way affiliated with Apple Inc. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Actions/" class="btn btn-neutral float-right" title="More actions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../snapshot/" class="btn btn-neutral" title="snapshot"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../snapshot/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Actions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

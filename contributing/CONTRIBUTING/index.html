@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>Contribution Guidelines - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Contribution Guidelines";
+    var mkdocs_page_input_path = "contributing/CONTRIBUTING.md";
+    var mkdocs_page_url = "/contributing/CONTRIBUTING/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../GettingStarted/">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Actions</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/deliver/">deliver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/snapshot/">snapshot</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/sigh/">sigh</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../actions/Actions/">More actions</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Intro</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Appfile/">Appfile</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/Android/">Android</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/GettingStarted/">Getting Started</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/XcodeProject/">Xcode Project</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../codesigning/Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Plugins</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/AvailablePlugins/">AvailablePlugins</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/CreatePlugin/">Create your own plugin</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/PluginsTroubleshooting/">Plugins Troubleshooting</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Best Practices</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/Gitignore/">Gitignore</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../best-practices/ContinuousIntegration/">Continuous Integration</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Advanced/">Advanced</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Contributing</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../UI/">UI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Contribution Guidelines</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#contributing-to-fastlane">Contributing to fastlane</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-started">Getting started</a></li>
+                
+                    <li><a class="toctree-l4" href="#new-issues">New Issues</a></li>
+                
+                    <li><a class="toctree-l4" href="#helping-to-resolve-existing-issues">Helping to Resolve Existing Issues</a></li>
+                
+                    <li><a class="toctree-l4" href="#pull-requests-prs">Pull Requests (PRs)</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-do-all-these-labels-mean">What Do All These Labels Mean?</a></li>
+                
+                    <li><a class="toctree-l4" href="#why-did-my-issuepr-get-closed">Why Did My Issue/PR Get Closed?</a></li>
+                
+                    <li><a class="toctree-l4" href="#contributing-new-actions">Contributing New Actions</a></li>
+                
+                    <li><a class="toctree-l4" href="#developing">Developing</a></li>
+                
+                    <li><a class="toctree-l4" href="#debugging">Debugging</a></li>
+                
+                    <li><a class="toctree-l4" href="#running-tests">Running tests</a></li>
+                
+                    <li><a class="toctree-l4" href="#rubocop-validation">rubocop validation</a></li>
+                
+                    <li><a class="toctree-l4" href="#need-help">Need help?</a></li>
+                
+                    <li><a class="toctree-l4" href="#code-of-conduct">Code of Conduct</a></li>
+                
+                    <li><a class="toctree-l4" href="#above-all-thanks-for-your-contributions">Above All, Thanks for Your Contributions</a></li>
+                
+                    <li><a class="toctree-l4" href="#license">License</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Contributing &raquo;</li>
+        
+      
+    
+    <li>Contribution Guidelines</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="contributing-to-fastlane">Contributing to <code>fastlane</code></h1>
+<h2 id="getting-started">Getting started</h2>
+<p>Make sure you have <code>bundler</code> installed using <code>gem install bundler</code></p>
+<ul>
+<li>Open the GitHub page of the <code>fastlane</code>repository  (e.g. <a href="https://github.com/fastlane/fastlane">https://github.com/fastlane/fastlane</a>)</li>
+<li>Create an issue to discuss your idea/feature/enhancement.</li>
+<li>Click on <code>Fork</code> on the top right</li>
+<li>Then clone your new repo locally <code>git clone https://github.com/[my_user]/fastlane.git</code></li>
+<li>On your terminal, navigate to the project and run <code>git remote add upstream https://github.com/fastlane/fastlane</code> (or use the <code>git</code> URL if you use private key auth)</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>).</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>).</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>).</li>
+<li>Create a new Pull Request.</li>
+</ul>
+<p>Before working on something, make sure to have pulled the latest changes. To pull the changes run</p>
+<pre><code>git pull master
+</code></pre>
+
+<h2 id="new-issues">New Issues</h2>
+<p>Before submitting a new issue, do the following:</p>
+<ul>
+<li>Verify you're running the latest version by running <code>fastlane -v</code> and compare it with the <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">project page on GitHub</a>.</li>
+<li>Verify you have Xcode tools installed by running <code>xcode-select --install</code>.</li>
+<li>Make sure to read through the <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">README</a> of the project.</li>
+</ul>
+<p>When submitting a new issue, please provide the following information:</p>
+<ul>
+<li>The full stack trace and output when running <code>fastlane</code>.</li>
+<li>The command and parameters you used to launch it.</li>
+<li>Your <code>Fastfile</code> and all other configuration files you are using.</li>
+</ul>
+<p><em>By providing this information it's much faster and easier to help you</em></p>
+<h2 id="helping-to-resolve-existing-issues">Helping to Resolve Existing Issues</h2>
+<p>If you're motivated to help out at a level beyond reporting issues, we really appreciate it! :+1: We use the <a href="https://github.com/fastlane/fastlane/labels/help%20wanted"><code>help wanted</code></a> label to mark things that we think it would be great to have community help in resolving, so that's a great place to start! In addition, working on the following things are super valuable:</p>
+<h3 id="verifying-bug-reports">Verifying Bug Reports</h3>
+<p>Are you able to reproduce this problem on your computer? If so, chime in! If the original issue report is a bit vague, but you have some additional details, please contribute them! If you find a bug report without an example script or configuration, contribute one that can be used to reproduce it.</p>
+<p>If you're comfortable diving into the code a bit, see if you can produce a failing test that illustrates the bad behavior in the problematic area of the code! Tests live in the <code>spec/</code> directory, and are generally named relative to the source code files whose functionality they test. Once you are done, <code>git diff &gt; my_patch.diff</code> can be used to produce a patch file containing the details of your changes, which can be added to the issue.</p>
+<h3 id="testing-proposed-fixes">Testing Proposed Fixes</h3>
+<p>Another way to help out is to verify submitted pull requests. To do that, you'll need to be able to get the author's proposed changes onto your machine. Start by giving yourself a new branch to work in:</p>
+<pre><code>git checkout -b testing_branch
+</code></pre>
+
+<p>Next, you'll need to tell git where to find this contributor's fastlane fork and branch. Let's say that the contributor's username is <strong>JohnSmith</strong> and their topic branch is called <code>new_fastlane_action</code> located at <strong>https://github.com/JohnSmith/fastlane</strong>. You can use the following commands to pull their work:</p>
+<pre><code>git remote add JohnSmith https://github.com/JohnSmith/fastlane.git
+git pull JohnSmith new_fastlane_action
+</code></pre>
+
+<p>Once you have their changes locally, there's many things worth checking on:</p>
+<ul>
+<li>Does the change work?</li>
+<li>Are there adequate tests to cover the changes or new functionality? Are the tests clear and testing the right things?</li>
+<li>Is the related documentation updated? New actions get described in <code>docs/Actions.md</code>, for example.</li>
+<li>How does the code look to you? Can you think of a nicer or more performant way to implement part of it?</li>
+</ul>
+<p>If you're happy with what you see, leave a comment on the GitHub issue stating your approval. If not, leave a polite suggestion for what you think could be improved and how. The more you can show that you've reviewed the content seriously, the more valuable it will be to the author and other reviewers!</p>
+<h2 id="pull-requests-prs">Pull Requests (PRs)</h2>
+<p>Pull requests are always welcome :smile:</p>
+<p>PRs should reference an open GitHub issue (preferably those marked with the <a href="https://github.com/fastlane/fastlane/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">help wanted</a> label). Referring to the issue in the description of your PR is required and is really helpful for establishing the context needed for review.</p>
+<p>If you're considering contributing new functionality, please open a new issue explaining the functionality desired first so that we can discuss as a community. We'll add the <a href="https://github.com/fastlane/fastlane/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">help wanted</a> label if we believe this to be a meaningful contribution that will benefit other fastlane users and you go ahead with the pull request. :raised_hands:</p>
+<ul>
+<li>Adding automated tests that cover your changes and/or new functionality is important!<ul>
+<li><code>fastlane</code> has a lot of moving parts and receives contributions from many developers. The best way to ensure that your contributions keep working is to ensure that there will be failing tests if something accidentally gets broken.</li>
+<li>You can run the tests by executing <code>bundle install</code> and then <code>bundle exec rspec</code>.</li>
+</ul>
+</li>
+<li>Your code editor should indent using spaces with a tab size of 2 spaces.</li>
+</ul>
+<p>To submit the changes to the fastlane repo, you have to do the following:</p>
+<ul>
+<li>Run <code>git push upstream master</code>.</li>
+<li>Open <code>https://github.com/fastlane/fastlane</code> in your browser and click the green "Create Pull Request" button</li>
+</ul>
+<h2 id="what-do-all-these-labels-mean">What Do All These Labels Mean?</h2>
+<p>Great question! Check out the <a href="GitHubLabels.md">GitHub Labels</a> document for a quick summary of the labels we use and what they mean.</p>
+<h2 id="why-did-my-issuepr-get-closed">Why Did My Issue/PR Get Closed?</h2>
+<p>It's not you, it's us! fastlane and its related tools receive a lot of issues and PRs. In order to effectively work through them and give each the prompt attention it deserves, we need to keep a sharp focus on the work we have outstanding.</p>
+<p>One way we do this is by closing issues that we don't feel are immediately actionable. This might mean that we need more information in order to investigate (Have you provided enough information for us to reproduce the problem? The <a href="#new-issues">New Issues</a> section has the details!). Or, it might mean that we haven't been able to reproduce it using the provided info. In this case we might close the issue while we wait for others to reproduce the problem and possibly provide some more info that unlocks the mystery.</p>
+<p>In any case, <strong>a closed issue is not necessarily the end of the story!</strong> If more info becomes available after an issue is closed, it can be reopened for further consideration.</p>
+<p>One of the best ways we can keep fastlane an approachable, stable, and dependable tool is to be deliberate about how we choose to modify it. If we don't adopt your changes or new feature into fastlane, that doesn't mean it was bad work! It may be that the fastlane philosophy about how to accomplish a particular task doesn't align well with your approach. The best way to make sure that your time is well spent in contributing to fastlane is to <strong>start your work</strong> on a modification or new feature <strong>by opening an issue to discuss the problem or shortcoming with the community</strong>. The fastlane maintainers will do our best to give early feedback about whether a particular goal and approach is likely to be something we want to adopt!</p>
+<h2 id="contributing-new-actions">Contributing New Actions</h2>
+<p>There are different approaches to build your own <code>fastlane</code> actions. You can either build your own local actions, or provide your own fastlane plugin. For more information, check out <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md#readme">Plugins.md</a>.</p>
+<h2 id="developing">Developing</h2>
+<p>When working on something, directly edit the Ruby files in the project folders. Make sure to switch your text editor to use spaces and indentations should be 2 spaces.</p>
+<p>To run the modified version of the tool, run the following in the project directory</p>
+<pre><code>.[tool_name]/bin/[tool_name]
+</code></pre>
+
+<p>or install the local copy (might require <code>sudo</code>)</p>
+<pre><code>bundle install &amp;&amp; rake install
+</code></pre>
+
+<h2 id="debugging">Debugging</h2>
+<p>I personally use a plain Sublime Text with a terminal. Debugging is pretty easy, just insert the following code to where you want to jump in:</p>
+<pre><code class="ruby">require 'pry'
+binding.pry
+</code></pre>
+
+<p>You then jump into an interactive debugger that allows you to print out variables, call methods and much more. Continue running the original script using <code>control</code> + <code>d</code></p>
+<h2 id="running-tests">Running tests</h2>
+<p>In the directory of one project, run the tests using</p>
+<p><code>rake test_all</code></p>
+<p>This will do a few things:</p>
+<ul>
+<li>Runs the tests (you can run them via <code>rspec</code> too)</li>
+<li>Makes sure no debug code (like <code>pry</code>) is still there</li>
+<li>The <code>--help</code> command works as expected</li>
+</ul>
+<p>The tests are executed using <code>fastlane</code> :rocket:</p>
+<p>To run only a subset of the tests, you can add the <code>now: true</code> keyword to the test</p>
+<pre><code class="ruby">it &quot;raises an exception if it rains&quot;, now: true do
+  ...
+end
+</code></pre>
+
+<p>and then run these tests only using</p>
+<pre><code class="sh">rspec -t now
+</code></pre>
+
+<h2 id="rubocop-validation">rubocop validation</h2>
+<p>The <code>fastlane</code> repos use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to validate the code style.</p>
+<p>The style validation is automatically done when running <code>rake test_all</code>.</p>
+<p>To automatically fix common code style issues (e.g. wrong spacing), run <code>rubocop -a</code></p>
+<h2 id="need-help">Need help?</h2>
+<p>Please submit an <a href="https://github.com/fastlane/fastlane/issues">issue</a> on GitHub and provide information about your setup</p>
+<h2 id="code-of-conduct">Code of Conduct</h2>
+<p>Help us keep <code>fastlane</code> open and inclusive. Please read and follow our <a href="https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<h2 id="above-all-thanks-for-your-contributions">Above All, Thanks for Your Contributions</h2>
+<p>Thank you for reading to the end, and for taking the time to contribute to the project! If you include the 🔑 emoji at the top of the body of your issue or pull request, we'll know that you've given this your full attention and are doing your best to help!</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the terms of the MIT license. See the LICENSE file.</p>
+<blockquote>
+<p>This project and all fastlane tools are in no way affiliated with Apple Inc. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../UI/" class="btn btn-neutral" title="UI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../UI/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
