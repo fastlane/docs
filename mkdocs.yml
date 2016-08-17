@@ -1,5 +1,2 @@
 site_name: fastlane docs
 theme: readthedocs
-extra_css: 
-  - css/fabric.css
-  - css/fastlane.css
