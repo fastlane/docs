@@ -1,9 +1,25 @@
-pre > code {
+code {
   font-family: "Liberation Mono", Menlo, Courier, monospace !important;
+  background-color: #f3f3f3 !important;
   color: #333 !important;
   font-size: 18px;
-  line-height: 20px;
-  background-color: #f3f3f3 !important;
   border: none !important;
+  padding: 5px !important;
+}
+
+pre > code {
+  line-height: 20px;
   padding: 16px !important;
+}
+
+blockquote {
+  color: #777 !important;
+  border-left: 4px solid rgb(221, 221, 221);
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 0px !important;
+}
+
+h3, h4, h5, h6 {
+  color: #333 !important;
 }
