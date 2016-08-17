@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>README - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/fabric.css" rel="stylesheet">
+  <link href="../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "README";
+    var mkdocs_page_input_path = "README.md";
+    var mkdocs_page_url = "/README/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Debug/">Debug</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Gitignore/">Gitignore</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Guide/">Guide</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Jenkins/">Jenkins</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">README</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#fastlane">fastlane</a></li>
+                
+                    <li><a class="toctree-l4" href="#like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools">Like this tool? Be the first to know about updates and new fastlane tools.</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation">Installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#quick-start">Quick Start</a></li>
+                
+                    <li><a class="toctree-l4" href="#available-commands">Available Commands</a></li>
+                
+                    <li><a class="toctree-l4" href="#fastlane-toolchain">fastlane Toolchain</a></li>
+                
+                    <li><a class="toctree-l4" href="#need-help">Need Help?</a></li>
+                
+                    <li><a class="toctree-l4" href="#special-thanks">Special Thanks</a></li>
+                
+                    <li><a class="toctree-l4" href="#code-of-conduct">Code of Conduct</a></li>
+                
+                    <li><a class="toctree-l4" href="#license">License</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Codesigning/CommonIssues/">CommonIssues</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Codesigning/GettingStarted/">GettingStarted</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Codesigning/README/">README</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Codesigning/Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Codesigning/XcodeProject/">XcodeProject</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>README</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><img alt="img/fastlane_text.png" src="../img/fastlane_text.png" /></p>
+<h3>Yolo kind</h3>
+
+<h1 id="fastlane">fastlane</h1>
+<p><a href="https://twitter.com/FastlaneTools"><img alt="Twitter: @FastlaneTools" src="https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat" /></a>
+<a href="https://github.com/fastlane/fastlane/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat" /></a>
+<a href="http://rubygems.org/gems/fastlane"><img alt="Gem" src="https://img.shields.io/gem/v/fastlane.svg?style=flat" /></a>
+<a href="https://circleci.com/gh/fastlane/fastlane"><img alt="Build Status" src="https://img.shields.io/circleci/project/fastlane/fastlane/master.svg?style=flat" /></a></p>
+<p><code>fastlane</code> is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.</p>
+<p>Use a lane to define your process:</p>
+<pre><code class="ruby">lane :beta do
+  increment_build_number
+  cocoapods
+  match
+  testflight
+  sh &quot;./customScript.sh&quot;
+  slack
+end
+</code></pre>
+
+<p>Then to deploy a new 'beta' version of your app just run
+<code>fastlane beta</code> :rocket:</p>
+<table>
+<thead>
+<tr>
+<th>fastlane</th>
+<th>fastlane</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:sparkles:</td>
+<td>Connect iOS, Mac, and Android build tools into one workflow (both <code>fastlane</code> tools and third party tools)</td>
+</tr>
+<tr>
+<td>:monorail:</td>
+<td>Define different <code>deployment lanes</code> for App Store deployment, beta builds, or testing</td>
+</tr>
+<tr>
+<td>:ship:</td>
+<td>Deploy from any computer, including a CI server</td>
+</tr>
+<tr>
+<td>:wrench:</td>
+<td>Extend and customise functionality</td>
+</tr>
+<tr>
+<td>:thought_balloon:</td>
+<td>Never remember any difficult commands, just <code>fastlane</code></td>
+</tr>
+<tr>
+<td>:tophat:</td>
+<td>Easy setup assistant to get started in a few minutes</td>
+</tr>
+<tr>
+<td>:email:</td>
+<td>Automatically pass on information from one build step to another (<em>e.g.</em> path to the <code>ipa</code> file)</td>
+</tr>
+<tr>
+<td>:page_with_curl:</td>
+<td>Store <strong>everything</strong> in Git. Never lookup build commands in <code>Jenkins</code> configs again.</td>
+</tr>
+<tr>
+<td>:rocket:</td>
+<td>Saves you <strong>hours</strong> for every app update you release</td>
+</tr>
+<tr>
+<td>:pencil2:</td>
+<td>Flexible configuration using a fully customisable <code>Fastfile</code></td>
+</tr>
+<tr>
+<td>:mountain_cableway:</td>
+<td>Implement a fully working Continuous Delivery process</td>
+</tr>
+<tr>
+<td>:ghost:</td>
+<td><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Jenkins.md">Jenkins Integration</a>: Show output directly in test results</td>
+</tr>
+<tr>
+<td>:book:</td>
+<td>Automatically generate Markdown documentation of your lane configurations</td>
+</tr>
+<tr>
+<td>:hatching_chick:</td>
+<td>Over 170 built-in integrations available</td>
+</tr>
+<tr>
+<td>:computer:</td>
+<td>Support for iOS, Mac, and Android apps</td>
+</tr>
+<tr>
+<td>:octocat:</td>
+<td>Full Git and Mercurial support</td>
+</tr>
+</tbody>
+</table>
+<h5 id="like-this-tool-be-the-first-to-know-about-updates-and-new-fastlane-tools">Like this tool? <a href="https://tinyletter.com/krausefx">Be the first to know about updates and new fastlane tools</a>.</h5>
+<h2 id="installation">Installation</h2>
+<pre><code>sudo gem install fastlane --verbose
+</code></pre>
+<p>Make sure you have the latest version of the Xcode command line tools installed:</p>
+<pre><code>xcode-select --install
+</code></pre>
+<p>If you experience slow launch times of fastlane, try running:</p>
+<pre><code>gem cleanup
+</code></pre>
+<p><strong>System Requirements:</strong> <code>fastlane</code> requires macOS or Linux with Ruby 2.0.0 or above</p>
+<p>If you'd like to take a look at a project already using <code>fastlane</code> check out <a href="https://github.com/fastlane/examples">fastlane-examples</a> which includes <code>fastlane</code> setups by Wikipedia, Product Hunt, MindNode, and more.</p>
+<h2 id="quick-start">Quick Start</h2>
+<p><code>fastlane</code>'s setup assistant creates all the necessary files to get you started, using existing app metadata from iTunes Connect or Google Play.</p>
+<ul>
+<li><code>cd [your_project_folder]</code></li>
+<li><code>fastlane init</code></li>
+<li>Follow the setup assistant to configure your app</li>
+<li>Further customise the Ruby based <code>Fastfile</code> with additional <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md">actions</a></li>
+</ul>
+<p>For more details, check out the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Guide.md">fastlane guide</a>.</p>
+<h2 id="available-commands">Available Commands</h2>
+<p>Typically you'll use <code>fastlane</code> by triggering individual lanes:</p>
+<pre><code>fastlane [lane_name]
+</code></pre>
+<h4 id="other-commands">Other Commands</h4>
+<ul>
+<li><code>fastlane actions</code>: List all available <code>fastlane</code> actions</li>
+<li><code>fastlane action [action_name]</code>: Shows a more detailed description of an action</li>
+<li><code>fastlane lanes</code>: Lists all available lanes with description</li>
+<li><code>fastlane list</code>: Lists all available lanes without description</li>
+<li><code>fastlane new_action</code>: Create a new action <em>(integration)</em> for fastlane</li>
+</ul>
+<h2 id="fastlane-toolchain"><a href="https://fastlane.tools"><code>fastlane</code></a> Toolchain</h2>
+<p>In addition to <code>fastlane</code>'s commands, you also have access to these <code>fastlane</code> tools:</p>
+<ul>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/deliver"><code>deliver</code></a>: Upload screenshots, metadata, and your app to the App Store</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/supply"><code>supply</code></a>: Upload your Android app and its metadata to Google Play</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/snapshot"><code>snapshot</code></a>: Automate taking localized screenshots of your iOS app on every device</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/screengrab"><code>screengrab</code></a>: Automate taking localized screenshots of your Android app on every device</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/frameit"><code>frameit</code></a>: Quickly put your screenshots into the right device frames</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pem"><code>pem</code></a>: Automatically generate and renew your push notification profiles</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/sigh"><code>sigh</code></a>: Because you would rather spend your time building stuff than fighting provisioning</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/produce"><code>produce</code></a>: Create new iOS apps on iTunes Connect and Dev Portal using the command line</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/cert"><code>cert</code></a>: Automatically create and maintain iOS code signing certificates</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/spaceship"><code>spaceship</code></a>: Ruby library to access the Apple Dev Center and iTunes Connect</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/pilot"><code>pilot</code></a>: The best way to manage your TestFlight testers and builds from your terminal</li>
+<li><a href="https://github.com/fastlane/boarding"><code>boarding</code></a>: The easiest way to invite your TestFlight beta testers</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/gym"><code>gym</code></a>: Building your iOS apps has never been easier</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/match"><code>match</code></a>: Easily sync your certificates and profiles across your team using Git</li>
+<li><a href="https://github.com/fastlane/fastlane/tree/master/scan"><code>scan</code></a>: The easiest way to run tests for your iOS and Mac apps</li>
+</ul>
+<h2 id="need-help">Need Help?</h2>
+<p>Please <a href="https://github.com/fastlane/fastlane/issues">submit an issue</a> on GitHub and provide information about your setup.</p>
+<h2 id="special-thanks">Special Thanks</h2>
+<p>Thanks to all <a href="https://github.com/fastlane/fastlane/graphs/contributors">contributors</a> for extending and improving <code>fastlane</code>.</p>
+<h2 id="code-of-conduct">Code of Conduct</h2>
+<p>Help us keep <code>fastlane</code> open and inclusive. Please read and follow our <a href="https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the terms of the MIT license. See the LICENSE file.</p>
+<blockquote>
+<p>This project and all fastlane tools are in no way affiliated with Apple Inc or Google. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Jenkins/" class="btn btn-neutral" title="Jenkins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Jenkins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

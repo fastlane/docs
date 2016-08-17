@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>XcodeProject - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "XcodeProject";
+    var mkdocs_page_input_path = "Codesigning/XcodeProject.md";
+    var mkdocs_page_url = "/Codesigning/XcodeProject/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Debug/">Debug</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../FAQs/">FAQs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Gitignore/">Gitignore</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Guide/">Guide</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../Jenkins/">Jenkins</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../README/">README</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/">About</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Codesigning</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CommonIssues/">CommonIssues</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../GettingStarted/">GettingStarted</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../README/">README</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Troubleshooting/">Troubleshooting</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">XcodeProject</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#setting-up-your-xcode-project">Setting up your Xcode Project</a></li>
+                
+                    <li><a class="toctree-l4" href="#xcode-8-and-up">Xcode 8 and up</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Codesigning &raquo;</li>
+        
+      
+    
+    <li>XcodeProject</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="setting-up-your-xcode-project">Setting up your Xcode Project</h1>
+<h2 id="xcode-8-and-up">Xcode 8 and up</h2>
+<p>With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)</p>
+<p>You can now specify which provisioning profile to use in the <code>General</code> tab after disabling <code>Automatically manage signing</code>.</p>
+<p><img src="assets/ProvisioningProfileSelectionNew.png" width=500 /></p>
+<p>Alternatively you can also specify the provisioning profile in the <code>Build Settings</code> tab.</p>
+<p><img src="assets/ProvisioningProfileSelectionManual.png" width=500 /></p>
+<p>If your provisioning profile is not listed in the drop down, there might be a few reasons:</p>
+<ul>
+<li>It doesn't match the bundle identifier of the target</li>
+<li>The associated certificate or its private key is not installed on the local machine</li>
+<li>The provisioning profile is not installed on the local machine</li>
+</ul>
+<p>Check out <a href="../Troubleshooting/">Troubleshooting.md</a> for more information on how to debug signing issues.</p>
+<h3 id="build-settings-environment-variables">Build settings / Environment variables</h3>
+<p>Previously you could specify the UUID of the provisioning profile using the <code>PROVISIONING_PROFILE</code> Xcode settings property, with Xcode 8 you specify it using the <code>PROVISIONING_PROFILE_SPECIFIER</code> instead:</p>
+<pre><code>PROVISIONING_PROFILE_SPECIFIER = &quot;5AA97AAHK2/Themoji_AppStore&quot;;
+PROVISIONING_PROFILE_SPECIFIER = &quot;[team_id]/[profile_name]&quot;;
+````
+
+You could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.
+
+## Xcode 7 and lower
+
+**Note**: This approach is deprecated with Xcode 8
+
+If you use `Automatic` value for your provisioning profile, Xcode sometimes selects the wrong profile, resulting in code signing errors at a later point.
+
+Instead it is recommended to specify a specific provisioning profile, which can only be done using the UUID (in Xcode 7).
+
+Since it is not recommended to update the project file, every time you update your provisioning profile, you can pass the UUID via environment variables.
+
+To do so, open your target settings, open the dropdown for `Provisioning Profile` and select `Other`:
+
+&lt;img src=&quot;/match/assets/XcodeProjectSettings.png&quot; width=&quot;700&quot; /&gt;
+
+Using the `$(...)` notation, Xcode will use the provisioning profile matching the UUID, and fallback to `Automatic` if it's not provided. 
+
+If you use [fastlane](https://fastlane.tools) you don't have to do any extra work, since the environment variable for the latest profile are automatically set by [match](https://fastlane.tools/match)
+
+```ruby
+lane :beta do
+  match(type: &quot;adhoc&quot;)
+  gym
+end
+</code></pre>
+
+<p>You can also manually set the environment variable using</p>
+<pre><code class="ruby">lane :beta do
+  ENV[&quot;PROVISIONING_PROFILE_TARGET1&quot;] = &quot;b01c39c9-1b4a-412e-9ae2-3087ee9ea9d3&quot;
+  gym
+end
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../Troubleshooting/" class="btn btn-neutral" title="Troubleshooting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Troubleshooting/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
