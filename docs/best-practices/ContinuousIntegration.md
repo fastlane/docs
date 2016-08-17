@@ -1,0 +1,196 @@
+# Continuous Integration
+
+# Jenkins Integration
+(or any other Continuous Integration system)
+
+Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.
+
+`fastlane` automatically generates a JUnit report for you. This allows Continuous Integration systems, like `Jenkins`, access the results of your deployment.
+
+## Installation
+
+The recommended way to install [Jenkins](http://jenkins-ci.org/) is through [homebrew](http://brew.sh/):
+
+```brew update && brew install jenkins```
+
+From now on start ```Jenkins``` by running:
+
+```
+jenkins
+```
+
+To store the password in the Keychain of your remote machine, I recommend running `sigh` or `deliver` using ssh or remote desktop at least once.
+
+## Deploy Strategy
+
+You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 weeks for the review. Instead I recommend using Git Tags, or custom triggers to deploy a new update.
+
+You can set up your own ```Release``` job, which is only triggered manually.
+
+## Plugins
+
+I recommend the following plugins:
+
+- **[HTML Publisher Plugin](https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin):** Can be used to show the generated screenshots right inside Jenkins.
+- **[AnsiColor Plugin](https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin):** Used to show the coloured output of the fastlane tools. Don’t forget to enable `Color ANSI Console Output` in the `Build Environment` or your project.
+- **[Rebuild Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Rebuild+Plugin):** This plugin will save you a lot of time.
+- **[Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin):** Manages keychains across Jenkins installations.
+
+## Build Step
+
+Use the following as your build step:
+
+```
+fastlane appstore
+```
+
+Replace `appstore` with the lane you want to use.
+
+### setup_jenkins
+
+You can use `setup_jenkins` action which integrates well with the [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin). Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the `./output` folder in the job workspace. In additions `setup_jenkins` will create separate derived data folder for each job (in the `./derivedData`).
+
+Under the hood `setup_jenkins` configures other actions like: `gym`, `scan`, `xcodebuild`, `backup_xcarchive` and `clear_derived_data`.
+
+## Test Results and Screenshots
+
+To show the **deployment result** right in `Jenkins`
+
+- *Add post-build action*
+- *Publish JUnit test result report*
+- *Test report XMLs*: `fastlane/report.xml`
+
+To show the **generated screenhots** right in `Jenkins`
+
+- *Add post-build action*
+- *Publish HTML reports*
+- *HTML directory to archive*: `fastlane/screenshots`
+- *Index page*: `screenshots.html`
+
+Save and run. The result should look like this:
+
+![JenkinsIntegration](../assets/JenkinsIntegration.png)
+
+# Circle Integration
+
+To run fastlane on Circle as your CI, first create a `Gemfile` in the root of your project with the following content
+
+```ruby
+source "https://rubygems.org"
+
+gem "fastlane"
+```
+
+and run
+
+```
+gem install bundler && bundle update
+```
+
+This will create a `Gemfile.lock`, that defines all Ruby dependencies. Make sure to commit both files to version control.
+
+Next, use the following `circle.yml` file
+
+```yml
+machine:
+  xcode:
+    version: "7.3"
+dependencies:
+  override:
+    - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
+  cache_directories:
+    - vendor/bundle
+test:
+  override:
+    - bundle exec fastlane test
+```
+
+This will automatically cache the installed gems on Circle, making your CI builds much faster :rocket:
+
+# Bamboo Integration
+
+## Repository setup
+
+In bamboo under **Linked Repositories** (where you configure your git repo) under **Advanced Settings** is an option called **Exclude changesets**
+
+This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.  
+
+For example, if your `Fastfile` is configured to make a commit message in the style of 
+
+```
+Build Version bump by fastlane to Version [0.3] Build [8]
+```
+Then you could use the following regex to ignore these commits
+
+```
+^.*Build Version bump by fastlane.*$
+```
+
+
+## Setting repository remote
+By default bamboo will do an anonymous shallow clone of the repo.  This will not preserve the  `git remote` information nor the list of tags.  If you are using bamboo to create commits you may want to use a code block similar to the following:
+
+
+```ruby
+# In prep for eventually committing a version/build bump - set the git params
+sh('git config user.name "<COMMITTER USERNAME>"')
+sh('git config user.email <COMITTER EMAIL>')   
+
+# Bamboo does an anonymous checkout so in order to update the build versions must set the git repo URL
+git_remote_cmd = 'git remote set-url origin ' + ENV['bamboo_repository_git_repositoryUrl']
+sh(git_remote_cmd) 
+```
+
+
+##Speeding up build times with carthage
+
+Carthage is a wonderful dependency manager but once you are start using a large number of frameworks, things can start to slow down, especially if your CI server has to run `carthage` EVERY time you check in a small line of code.
+
+One way to make build times faster is to break your work up into two separate build plans (*this can get even more funky if you start having multiple branches*)
+
+The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs `fastlane`.  
+
+
+###Artifact Plan
+
+Use a very simple setup to create this build plan.  First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the `Cartfile` changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.
+
+####Stages / Jobs / Tasks
+This plan consists of 1 Job, 1 Stage and 2 Tasks
+
+* Task 1: **Source Code Checkout**
+* Task 2: **Script** (`carthage update`)
+
+####Artifact definitions
+
+Create a shared artifact with the following info:
+
+* **Name:** CarthageFolder
+* **Location:** (leave blank) 
+* **Copy Pattern:** Carthage/Build/** 
+
+*Optional*: You may want to automatically make the **Fastlane Plan** trigger whenever this plan is built
+
+### Fastlane Plan
+
+When configuring fastlane to run in this setup you need to make sure that you are not calling either:
+
+```ruby
+reset_git_repo(force: true)
+```
+or
+
+```ruby
+ensure_git_status_clean
+```
+
+as these calls will either fail the build or delete the `Carthage` directory.  Additionally you want to remove any `carthage` tasks from inside your `Fastfile` as `carthage` is now happening externally to the build.
+
+#### Build plan setup
+
+What this build plan does is it checks out the source code, then it downloads the entire `Carthage/Build/` directory into your local project - which is exactly what would be created from `carthage bootstrap` and then it runs `fastlane`
+
+* Task 1: **Source Code Checkout**
+* Task 2: **Artifact Download**
+* Task 3: **Fastlane**
+

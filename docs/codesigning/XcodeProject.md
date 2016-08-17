@@ -1,6 +1,6 @@
 # Setting up your Xcode Project
 
-## Xcode 8 and up
+# Xcode 8 and up
 
 With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)
 
@@ -27,11 +27,11 @@ Previously you could specify the UUID of the provisioning profile using the `PRO
 ```
 PROVISIONING_PROFILE_SPECIFIER = "5AA97AAHK2/Themoji_AppStore";
 PROVISIONING_PROFILE_SPECIFIER = "[team_id]/[profile_name]";
-````
+```
 
 You could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.
 
-## Xcode 7 and lower
+# Xcode 7 and lower
 
 **Note**: This approach is deprecated with Xcode 8
 

@@ -3,3 +3,31 @@ theme: readthedocs
 site_author: "fastlane team"
 site_description: "Documentation for fastlane tools, the easiest way to automate building and releasing your iOS and Android apps"
 strict: true
+
+pages:
+- Home: index.md
+- Getting Started: GettingStarted.md
+- Actions: 
+  - deliver: actions/deliver.md
+  - snapshot: actions/snapshot.md
+  - sigh: actions/sigh.md
+  - More actions: actions/Actions.md
+- FAQs: FAQs.md
+- Intro:
+  - Appfile: intro/Appfile.md
+  - Android: intro/Android.md
+- Codesigning:
+  - Getting Started: codesigning/GettingStarted.md
+  - Xcode Project: codesigning/XcodeProject.md
+  - Troubleshooting: codesigning/Troubleshooting.md
+- Plugins:
+  - AvailablePlugins: plugins/AvailablePlugins.md
+  - Create your own plugin: plugins/CreatePlugin.md
+  - Plugins Troubleshooting: plugins/PluginsTroubleshooting.md
+- Best Practices: 
+  - Gitignore: "best-practices/Gitignore.md"
+  - Continuous Integration: "best-practices/ContinuousIntegration.md"
+- Advanced: "Advanced.md"
+- Contributing:
+  - UI: contributing/UI.md
+  - Contribution Guidelines: contributing/CONTRIBUTING.md
