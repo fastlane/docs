@@ -1,4 +1,4 @@
-code {
+pre > code {
   font-family: "Liberation Mono", Menlo, Courier, monospace !important;
   color: #333 !important;
   font-size: 18px;
