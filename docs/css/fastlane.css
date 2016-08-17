@@ -23,3 +23,10 @@ blockquote {
 h3, h4, h5, h6 {
   color: #333 !important;
 }
+
+/* We don't want to show h2 tags in the sidebar */
+.toctree-l4 {
+  display: none !important;
+}
+
+/* TODO: Hide toctree-l3 is there is only 1 item in it */
