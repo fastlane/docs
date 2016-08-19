@@ -6,16 +6,16 @@ strict: true
 
 pages:
 - Home: index.md
-- Getting Started: GettingStarted.md
-- Actions: 
-  - deliver: actions/deliver.md
-  - snapshot: actions/snapshot.md
-  - sigh: actions/sigh.md
-  - More actions: actions/Actions.md
+- Getting Started: 
+  - Setup: getting-started/setup.md
+  - Screenshots: getting-started/screenshots.md
+  - Beta Deployment: getting-started/beta-deployment.md
+  - App Store Deployment: getting-started/beta-deployment.md
+  - More fastlane actions: actions/Actions.md
 - FAQs: FAQs.md
-- Intro:
-  - Appfile: intro/Appfile.md
-  - Android: intro/Android.md
+# - Intro:
+#   - Appfile: intro/Appfile.md
+#   - Android: intro/Android.md
 - Codesigning:
   - Getting Started: codesigning/GettingStarted.md
   - Xcode Project: codesigning/XcodeProject.md
