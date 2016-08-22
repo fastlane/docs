@@ -10,12 +10,9 @@ pages:
   - Setup: getting-started/setup.md
   - Screenshots: getting-started/screenshots.md
   - Beta Deployment: getting-started/beta-deployment.md
-  - App Store Deployment: getting-started/beta-deployment.md
-  - More fastlane actions: actions/Actions.md
+  - App Store Deployment: getting-started/appstore-deployment.md
+- Actions: actions/Actions.md
 - FAQs: FAQs.md
-# - Intro:
-#   - Appfile: intro/Appfile.md
-#   - Android: intro/Android.md
 - Codesigning:
   - Getting Started: codesigning/GettingStarted.md
   - Xcode Project: codesigning/XcodeProject.md
