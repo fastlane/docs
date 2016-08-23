@@ -8,7 +8,7 @@ fastlane
 [![Gem](https://img.shields.io/gem/v/fastlane.svg?style=flat)](http://rubygems.org/gems/fastlane)
 [![Build Status](https://img.shields.io/circleci/project/fastlane/fastlane/master.svg?style=flat)](https://circleci.com/gh/fastlane/fastlane)
 
-`fastlane` is **the** tool to release your iOS and Android app 🚀 It handles all tedious tasks, like generating screenshots, deadling with code signing, and releasing your application.
+`fastlane` is **the** tool to release your iOS and Android app 🚀 It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
 TODO: Alternative
 
