@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>Plugins Troubleshooting - fastlane docs</title>
+  <title>Beta Deployment - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -25,9 +25,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Plugins Troubleshooting";
-    var mkdocs_page_input_path = "plugins/PluginsTroubleshooting.md";
-    var mkdocs_page_url = "/plugins/PluginsTroubleshooting/";
+    var mkdocs_page_name = "Beta Deployment";
+    var mkdocs_page_input_path = "getting-started/beta-deployment.md";
+    var mkdocs_page_url = "/getting-started/beta-deployment/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -70,28 +70,35 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../getting-started/setup/">Setup</a>
+        <a class="" href="../setup/">Setup</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../getting-started/screenshots/">Screenshots</a>
+        <a class="" href="../screenshots/">Screenshots</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Beta Deployment</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#beta-deployment-using-fastlane">Beta deployment using fastlane</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../getting-started/beta-deployment/">Beta Deployment</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../getting-started/appstore-deployment/">App Store Deployment</a>
+        <a class="" href="../appstore-deployment/">App Store Deployment</a>
         
     </li>
 
@@ -149,44 +156,21 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../AvailablePlugins/">AvailablePlugins</a>
+        <a class="" href="../../plugins/AvailablePlugins/">AvailablePlugins</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../CreatePlugin/">Create your own plugin</a>
+        <a class="" href="../../plugins/CreatePlugin/">Create your own plugin</a>
         
     </li>
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Plugins Troubleshooting</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#fastlane-plugins-troubleshooting">fastlane plugins troubleshooting</a></li>
-                
-                    <li><a class="toctree-l4" href="#make-sure-fastlane-is-up-to-date">Make sure fastlane is up to date</a></li>
-                
-                    <li><a class="toctree-l4" href="#update-your-plugins">Update your plugins</a></li>
-                
-                    <li><a class="toctree-l4" href="#use-bundle-exec">Use bundle exec</a></li>
-                
-                    <li><a class="toctree-l4" href="#use-the-verbose-mode">Use the --verbose mode</a></li>
-                
-                    <li><a class="toctree-l4" href="#make-sure-the-action-name-is-correct">Make sure the action name is correct</a></li>
-                
-                    <li><a class="toctree-l4" href="#gemfile-and-pluginfile">Gemfile and Pluginfile</a></li>
-                
-                    <li><a class="toctree-l4" href="#building-your-own-plugin">Building your own plugin</a></li>
-                
-                    <li><a class="toctree-l4" href="#more-help">More help</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../plugins/PluginsTroubleshooting/">Plugins Troubleshooting</a>
         
     </li>
 
@@ -267,11 +251,11 @@
     
       
         
-          <li>Plugins &raquo;</li>
+          <li>Getting Started &raquo;</li>
         
       
     
-    <li>Plugins Troubleshooting</li>
+    <li>Beta Deployment</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -281,50 +265,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="fastlane-plugins-troubleshooting">fastlane plugins troubleshooting</h1>
-<p>If you're having trouble calling a plugin action, here is a simple guide on how to resolve the issue:</p>
-<h3 id="make-sure-fastlane-is-up-to-date">Make sure fastlane is up to date</h3>
-<p>Run <code>fastlane -v</code> and <code>bundle exec fastlane -v</code> and make sure it's at least version 1.93.0.</p>
-<h3 id="update-your-plugins">Update your plugins</h3>
-<p>Run <code>fastlane update_plugins</code> to make sure to have all the latest plugins and their dependencies installed.</p>
-<h3 id="use-bundle-exec">Use <code>bundle exec</code></h3>
-<p>Run <code>fastlane</code> using <code>bundle exec fastlane [lane]</code> to make sure your plugins are properly loaded.</p>
-<p>This is required when you use plugins from a local path or a git remote.</p>
-<h3 id="use-the-verbose-mode">Use the <code>--verbose</code> mode</h3>
-<p>Running <code>fastlane [lane] --verbose</code> will show a lot more information that might be useful to resolve the issue.</p>
-<h3 id="make-sure-the-action-name-is-correct">Make sure the action name is correct</h3>
-<p>A plugin can contain any number of actions. Make sure to read the docs for the plugin itself!</p>
-<p>Additionally check out the source code of the plugin:</p>
-<pre><code>lib/fastlane/plugin/[plugin_name]/actions/[action_name].rb
-</code></pre>
-
-<p>Open the <code>[action_name].rb</code> file and make sure the name of the class on line 3 looks like this:</p>
-<pre><code>class [ActionName]Action &lt; Action
-</code></pre>
-
-<p>Note how the name of the class should be capitalised and have <code>Action</code> appended in the name. Additionally this class must be a subclass of <code>Action</code>.</p>
-<h3 id="gemfile-and-pluginfile">Gemfile and Pluginfile</h3>
-<p>Your <code>Gemfile</code> should look something like this:</p>
-<pre><code class="ruby">gem &quot;fastlane&quot;
-
-plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
-eval(File.read(plugins_path), binding) if File.exist?(plugins_path)
-</code></pre>
-
-<p>Your <code>Pluginfile</code> should look something like this</p>
-<pre><code class="ruby"># Autogenerated by fastlane
-
-gem 'fastlane-plugin-ruby'
-</code></pre>
-
-<h3 id="building-your-own-plugin">Building your own plugin</h3>
-<p>If you have issues with running your local plugins during plugin development, make sure to run</p>
-<pre><code>bundle install --with development
-</code></pre>
-
-<p>to install all required development dependencies</p>
-<h3 id="more-help">More help</h3>
-<p>If it's still not working for you, please <a href="https://github.com/fastlane/fastlane/issues/new">submit a new GitHub issue</a> with your <code>Gemfile</code>, <code>Gemfile.lock</code>, <code>Pluginfile</code>, <code>Fastfile</code> and terminal output when running <code>fastlane</code> using the <code>--verbose</code> flag.</p>
+                <h1 id="beta-deployment-using-fastlane">Beta deployment using fastlane</h1>
+<p>To be written soon, this will contain</p>
+<ul>
+<li>Building your app (this is the same as <a href="../appstore-deployment/">App Store deployment</a>)</li>
+<li>This also includes references to Code Signing</li>
+<li>List of supported beta testing services including potential plugins</li>
+<li>Best practises around how to do beta deployment</li>
+</ul>
               
             </div>
           </div>
@@ -332,10 +280,10 @@ gem 'fastlane-plugin-ruby'
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../best-practices/Gitignore/" class="btn btn-neutral float-right" title="Gitignore">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../appstore-deployment/" class="btn btn-neutral float-right" title="App Store Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../CreatePlugin/" class="btn btn-neutral" title="Create your own plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../screenshots/" class="btn btn-neutral" title="Screenshots"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -361,10 +309,10 @@ gem 'fastlane-plugin-ruby'
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../CreatePlugin/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../screenshots/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../best-practices/Gitignore/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../appstore-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
