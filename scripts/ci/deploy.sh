@@ -19,7 +19,7 @@ rm -rf "/tmp/fl-docs"
 cp -R "site/" "/tmp/fl-docs"
 # Check out gh-pages and clear all files
 git checkout gh-pages
-rm -rf .
+rm -rf *
 # Copy the finished HTML page to the current directory
 cp -R "/tmp/fl-docs" .
 
