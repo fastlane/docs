@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/getting-started/setup/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/getting-started/screenshots/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/getting-started/beta-deployment/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/getting-started/appstore-deployment/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/actions/Actions/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/FAQs/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/codesigning/GettingStarted/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/codesigning/XcodeProject/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/codesigning/Troubleshooting/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/plugins/AvailablePlugins/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/plugins/CreatePlugin/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/plugins/PluginsTroubleshooting/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/best-practices/Gitignore/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/best-practices/ContinuousIntegration/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/Advanced/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/contributing/UI/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/contributing/CONTRIBUTING/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>
