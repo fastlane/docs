@@ -1,6 +1,9 @@
 machine:
   python:
     version: pypy-2.2.1
+  environment:
+    USER_NAME: "fastlane bot"
+    USER_EMAIL: "fastlanebothelper@krausefx.com"
 dependencies:
   pre:
     - pip install mkdocs
