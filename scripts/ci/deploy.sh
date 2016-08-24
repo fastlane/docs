@@ -26,6 +26,9 @@ cp -R "/tmp/fl-docs" .
 # We need a CNAME file for GitHub
 echo "docs.fastlane.tools" > "CNAME"
 
+# We also need a circle.yml file on the gh-pages branch, otherwise the build fails
+echo "test:\n  override:\n    - echo 'Running on 'gh-pages' branch" > "circle.yml"
+
 # Commit all the changes and push it to the remote
 git add -A
 git commit -m "Deployed with $(mkdocs --version)"
