@@ -6,7 +6,7 @@ set -e
 
 echo "Started deploying to https://docs.fastlane.tools"
 
-mkdocs gh-deploy
+mkdocs gh-deploy --clean --remote-branch "gh-pages" --remote-name "upstream" --verbose
 
 # To make sure pushing was successful and to see the error message if it wasn't,
 # we have to manually push like an animal

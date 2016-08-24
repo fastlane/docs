@@ -6,5 +6,9 @@ dependencies:
     - pip install mkdocs
 test:
   override:
-    - if [ $CIRCLE_BRANCH = 'auto-deploy' ]; then ./scripts/ci/deploy.sh; fi # deploy to GH Pages
-    - if [ $CIRCLE_BRANCH != 'master' ] && [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi # just build
+    - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi
+deployment:
+  master:
+    branch: master
+    commands:
+      - ./scripts/ci/deploy.sh
