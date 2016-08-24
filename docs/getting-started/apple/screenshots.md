@@ -2,7 +2,7 @@
 
 Taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent!
 
-- Do you need to take new screenshots with every design update?
+- Is your latest app design inconsistent with the screenshots from your store page?
 - Is your app localized into many languages that require different screenshots for each?
 - Have you made sure that no loading indicators are showing?
 - Is the same content displayed for each of your size variations?
