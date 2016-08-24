@@ -6,8 +6,7 @@ machine:
     USER_EMAIL: "fastlanebothelper@krausefx.com"
 dependencies:
   pre:
-    # - pip install mkdocs
-    - pip install -e git+https://github.com/mkdocs/mkdocs#egg=mkdocs # since the latest version has better error message if something goes wrong
+    - pip install mkdocs
 test:
   override:
     - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi
