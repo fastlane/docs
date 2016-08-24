@@ -1,16 +1,4 @@
 /*
- * Tweak the overal size to better match RTD.
- */
-html {
-    font-size: 90%;
-}
-
-h3, h4, h5, h6 {
-    color: #2980b9;
-    font-weight: 300
-}
-
-/*
  * Sphinx doesn't have support for section dividers like we do in
  * MkDocs, this styles the section titles in the nav
  *
@@ -57,6 +45,7 @@ h3, h4, h5, h6 {
  */
 code {
     white-space: pre;
+    padding: 2px 5px;
 }
 
 /*
@@ -67,6 +56,34 @@ code {
  */
 p code {
     word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/**
+ * Make code blocks display as blocks and give them the appropriate
+ * font size and padding.
+ *
+ * https://github.com/mkdocs/mkdocs/issues/855
+ */
+pre code {
+  display: block;
+  padding: 12px;
+  font-size: 12px;
+}
+
+/*
+ * Fix link colors when the link text is inline code.
+ *
+ * https://github.com/mkdocs/mkdocs/issues/718
+ */
+a code {
+    color: #2980B9;
+}
+a:hover code {
+    color: #3091d1;
+}
+a:visited code {
+    color: #9B59B6;
 }
 
 /*
@@ -125,6 +142,12 @@ code.cs, code.c {
     padding-left: 1em;
 }
 
+.wy-menu-vertical .subnav li.current > a {
+    padding-left: 2.42em;
+}
+.wy-menu-vertical .subnav li.current > ul li a {
+    padding-left: 3.23em;
+}
 
 /*
  * Improve inline code blocks within admonitions.

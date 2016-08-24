@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>None/</loc>
+     <loc>/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -12,63 +12,25 @@
     
         
     <url>
-     <loc>None/getting-started/setup/</loc>
+     <loc>/getting-started/setup/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/getting-started/screenshots/</loc>
+     <loc>/getting-started/screenshots/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/getting-started/beta-deployment/</loc>
+     <loc>/getting-started/beta-deployment/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/getting-started/appstore-deployment/</loc>
-     <lastmod>2016-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>None/actions/Actions/</loc>
-     <lastmod>2016-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/FAQs/</loc>
-     <lastmod>2016-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>None/codesigning/GettingStarted/</loc>
-     <lastmod>2016-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/codesigning/XcodeProject/</loc>
-     <lastmod>2016-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/codesigning/Troubleshooting/</loc>
+     <loc>/getting-started/appstore-deployment/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -76,21 +38,37 @@
     
 
     
+    <url>
+     <loc>/actions/Actions/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/FAQs/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
         
     <url>
-     <loc>None/plugins/AvailablePlugins/</loc>
+     <loc>/codesigning/GettingStarted/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/plugins/CreatePlugin/</loc>
+     <loc>/codesigning/XcodeProject/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/plugins/PluginsTroubleshooting/</loc>
+     <loc>/codesigning/Troubleshooting/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -100,13 +78,35 @@
     
         
     <url>
-     <loc>None/best-practices/Gitignore/</loc>
+     <loc>/plugins/AvailablePlugins/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/best-practices/ContinuousIntegration/</loc>
+     <loc>/plugins/CreatePlugin/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/plugins/PluginsTroubleshooting/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/best-practices/Gitignore/</loc>
+     <lastmod>2016-08-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/best-practices/ContinuousIntegration/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -115,7 +115,7 @@
 
     
     <url>
-     <loc>None/Advanced/</loc>
+     <loc>/Advanced/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -124,13 +124,13 @@
     
         
     <url>
-     <loc>None/contributing/UI/</loc>
+     <loc>/contributing/UI/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/contributing/CONTRIBUTING/</loc>
+     <loc>/contributing/CONTRIBUTING/</loc>
      <lastmod>2016-08-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
