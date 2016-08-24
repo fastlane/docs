@@ -1,15 +1,29 @@
 # fastlane screenshots for iOS and tvOS
 
-Taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent!
+Your App Store screenshots are probably the most important thing when it comes to convincing potential users to download or purchase your app. Unfortunately, many apps don't do screenshots well. This is often because taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent! For example:
 
-- Is your latest app design inconsistent with the screenshots from your store page?
+- Are the screenshots in the App Store inconsistent with your latest app design?
 - Is your app localized into many languages that require different screenshots for each?
 - Have you made sure that no loading indicators are showing?
 - Is the same content displayed for each of your size variations?
 
-If you manually take screenshots of your app for many screen sizes, orientations, and locales, _fastlane_ can save you a lot of time by having _snapshot_ run through all combinations of devices and locales without any intervention!
+## Alternatives
 
-If you put your screenshots into device frames for display on the App Store or your own website, _fastlane_ can be your automated design department by decorating each screenshot with a device frame and other text in the colors and fonts of your choice with **frameit**!
+For the full story about the many ways that developers can capture and beautify screenshots check out [this article](https://krausefx.com/blog/creating-perfect-app-store-screenshots-of-your-ios-app).
+
+### Manually Capturing Screenshots
+
+It goes without saying that this takes too much time, which also decreases the quality of the screenshots. Since it is not automated, the screenshots will show slightly different content on the various devices and languages. Many companies choose to create screenshots in one language and use them for all languages. While this might seem okay to us developers, there are many potential users out there that cannot read the text on your app screenshots if they are not localised. Have you ever looked at a screenshots with content in a language you don't know? It won't convince you to download the app.
+
+However, the biggest disadvantage of this method is what happens when you need to repeat the process. If you notice a spelling mistake in the screenshots, if you release an update with a new design, or if you just want to show more up to date content, you'll have to create new screenshots for all languages and devices... manually.
+
+The positive side of this approach is that your screenshots will all be crisp and correctly sized, with readable text.
+
+### Scaled Screenshots via iTunes Connect
+
+With the [iTunes Connect screenshot update](https://developer.apple.com/news/?id=08082016a) from August 8th, 2016, you can now use one set of screenshots for all available devices and screenshots. iTunes Connect will automatically scale the images for you, so that each device renders the same exact image.
+
+While this is convenient, this approach has the same problems as the device frame approach: The screenshots don't actually show how the app looks on the user's device. It's a valid way to start though, since you can gradually overwrite screenshots for specific languages and devices.
 
 # Capture Screenshots Automatically
 
@@ -25,7 +39,7 @@ After _snapshot_ successfully captures all the screenshots, it will show you a b
 
 ![HTML summary page](assets/htmlPagePreviewFade.jpg)
 
-### Getting Started Using UI Tests
+## Getting Started Using UI Tests
 
 _snapshot_ uses the capabilities of Apple's UI Tests to drive interactions with your app. To get familiar with writing UI Tests, check out the following introductions:
 
@@ -37,7 +51,7 @@ _snapshot_ uses the capabilities of Apple's UI Tests to drive interactions with 
 
 To jump-start your UI tests, you can use the UI Test recorder. By interacting with your app through the simulator while using it, Xcode will generate UI Test code for you. You can find the red record button on the bottom of the screen, and there's more information in [this blog post](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line)
 
-### Setting Up _snapshot_
+## Setting Up _snapshot_
 
 1. Create a new UI Test target in your Xcode project (See the top part of [this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
 1. Run `snapshot init` in your project folder
@@ -82,11 +96,26 @@ $ fastlane snapshot
 
 # Decorate Screenshots with Device Frames
 
+TODO: write about _frameit_
+
 # Upload Screenshots for the App Store
 
-To be written soon, this will contain
+TODO: write about _deliver_
 
-- Overview of the different methods of screenshots
-- Getting started with snapshot
-- Getting started with frameit
+# All Together Now
 
+To put all of this together so that anyone on your team could trigger this complete process, you could define a _fastlane_ lane called **screenshots**. It would be responsible for:
+
+1. Running your app through _snapshot_ to automatically capture your screenshots
+1. Decorating those screenshots with _frameit_
+1. Having _deliver_ send your final screenshots to iTunes Connect for use in the App Store
+
+That's all potentially as simple as:
+
+```ruby
+lane :screenshots do
+  snapshot
+  frameit(white: true)
+  deliver
+end
+```
