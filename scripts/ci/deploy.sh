@@ -21,7 +21,7 @@ cp -R "site/" "/tmp/fl-docs"
 git checkout gh-pages
 rm -rf *
 # Copy the finished HTML page to the current directory
-cp -R "/tmp/fl-docs/*" .
+cp -R /tmp/fl-docs/* .
 
 # We need a CNAME file for GitHub
 echo "docs.fastlane.tools" > "CNAME"
