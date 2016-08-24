@@ -6,22 +6,27 @@ set -e
 
 echo "Starting deploy to https://docs.fastlane.tools"
 
+# Build the docs page locally
 mkdocs build --clean
-site_dir="$PWD"
 
-
+# Bots need names too
 git config --global user.email "fastlanebothelper@krausefx.com"
 git config --global user.name "fastlane bot"
 
-
+# Delete old directories (if any)
 rm -rf "/tmp/fl-docs"
-git clone "https://github.com/fastlane/docs" "/tmp/fl-docs"
-cd "/tmp/fl-docs"
+# Copy the generated website to the temporary directory
+cp -R "site/" "/tmp/fl-docs"
+# Check out gh-pages and clear all files
 git checkout gh-pages
-rm -rf *
-cp -R "$site_dir/site/" "/tmp/fl-docs"
+rm -rf .
+# Copy the finished HTML page to the current directory
+cp -R "/tmp/fl-docs" .
+
+# We need a CNAME file for GitHub
 echo "docs.fastlane.tools" > "CNAME"
 
+# Commit all the changes and push it to the remote
 git add -A
 git commit -m "Deployed with $(mkdocs --version)"
 git push origin gh-pages
