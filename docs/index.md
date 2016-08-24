@@ -31,7 +31,7 @@ lane :appstore do
 end
 ```
 
-You just defined 2 different lanes, one for beta deployment, one for App Store. To releaes your app in the App Store, all you have to do is
+You just defined 2 different lanes, one for beta deployment, one for App Store. To release your app in the App Store, all you have to do is
 
 ```
 fastlane appstore
