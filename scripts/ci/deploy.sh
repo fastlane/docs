@@ -9,6 +9,11 @@ echo "Starting deploy to https://docs.fastlane.tools"
 mkdocs build --clean
 site_dir="$PWD"
 
+
+git config --global user.email "fastlanebothelper@krausefx.com"
+git config --global user.name "fastlane bot"
+
+
 rm -rf "/tmp/fl-docs"
 git clone "https://github.com/fastlane/docs" "/tmp/fl-docs"
 cd "/tmp/fl-docs"
