@@ -1,8 +1,9 @@
 machine:
   python:
     version: pypy-2.2.1
-install:
-- pip install mkdocs
+dependencies:
+  pre:
+  - pip install mkdocs
 test:
   override:
   - mkdocs build
