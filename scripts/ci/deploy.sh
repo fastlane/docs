@@ -4,9 +4,22 @@
 # Exit if any subcommand fails.
 set -e
 
-echo "Started deploying to https://docs.fastlane.tools"
+echo "Starting deploy to https://docs.fastlane.tools"
 
-mkdocs gh-deploy --clean --remote-branch "gh-pages" --remote-name "upstream" --verbose
+mkdocs build --clean
+site_dir="$PWD"
+
+rm -rf "/tmp/fl-docs"
+git clone "https://github.com/fastlane/docs" "/tmp/fl-docs"
+cd "/tmp/fl-docs"
+git checkout gh-pages
+rm -rf *
+cp -R "$site_dir/site/" "/tmp/fl-docs"
+echo "docs.fastlane.tools" > "CNAME"
+
+git add -A
+git commit -m "Deployed with $(mkdocs --version)"
+git push origin gh-pages
 
 echo "Deployed successfully, check out https://docs.fastlane.tools"
 
