@@ -3,7 +3,9 @@ machine:
     version: pypy-2.2.1
 dependencies:
   pre:
-  - pip install mkdocs
+    - pip install mkdocs
 test:
   override:
-  - mkdocs build
+    - if [ $CIRCLE_BRANCH = 'master' ]; then ./scripts/ci/deploy.sh; fi # deploy to GH Pages
+    - if [ $CIRCLE_BRANCH != 'master' ]; then mkdocs build; fi # just build
+
