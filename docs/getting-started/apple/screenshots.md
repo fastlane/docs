@@ -7,13 +7,13 @@ Taking screenshots of your app and then preparing them for display is time consu
 - Have you made sure that no loading indicators are showing?
 - Is the same content displayed for each of your size variations?
 
-If you manually take screenshots of your app for many screen sizes, orientations, and locales, **fastlane** can save you a lot of time by having **snapshot** run through all combinations of devices and locales without any intervention!
+If you manually take screenshots of your app for many screen sizes, orientations, and locales, _fastlane_ can save you a lot of time by having _snapshot_ run through all combinations of devices and locales without any intervention!
 
-If you put your screenshots into device frames for display on the App Store or your own website, **fastlane** can be your automated design department by decorating each screenshot with a device frame and other text in the colors and fonts of your choice!
+If you put your screenshots into device frames for display on the App Store or your own website, _fastlane_ can be your automated design department by decorating each screenshot with a device frame and other text in the colors and fonts of your choice with **frameit**!
 
 # Automated Screenshot Capture
 
-**snapshot** works with **fastlane** to automate the process of capturing screenshots of your app. It allows you to:
+_snapshot_ works with _fastlane_ to automate the process of capturing screenshots of your app. It allows you to:
 
 - Capture hundreds of screenshots in multiple languages on all simulators
 - Do something else while the computer takes the screenshots for you
@@ -21,13 +21,13 @@ If you put your screenshots into device frames for display on the App Store or y
 - Generate a beautiful web page showing all screenshots on all devices. This is perfect to send to Q&A, marketing, or translators for verification
 - Avoid having loading indicators in your App Store screenshots by intelligently waiting for network requests to be finished
 
-After **snapshot** successfully captures all the screenshots, it will show you a beautiful HTML page to summarize all the screens that were captured:
+After _snapshot_ successfully captures all the screenshots, it will show you a beautiful HTML page to summarize all the screens that were captured:
 
 ![HTML summary page](assets/htmlPagePreviewFade.jpg)
 
 ### Getting Started Using UI Tests
 
-**snapshot** uses the capabilities of Apple's UI Tests to drive interactions with your app. To get familiar with writing UI Tests, check out the following introductions:
+_snapshot_ uses the capabilities of Apple's UI Tests to drive interactions with your app. To get familiar with writing UI Tests, check out the following introductions:
 
 - [WWDC 2015 Introduction to UI Tests](https://developer.apple.com/videos/play/wwdc2015-406/)
 - [A first look into UI Tests](http://www.mokacoding.com/blog/xcode-7-ui-testing/)
@@ -37,7 +37,7 @@ After **snapshot** successfully captures all the screenshots, it will show you a
 
 To jump-start your UI tests, you can use the UI Test recorder. By interacting with your app through the simulator while using it, Xcode will generate UI Test code for you. You can find the red record button on the bottom of the screen, and there's more information in [this blog post](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line)
 
-### Setting Up snapshot
+### Setting Up _snapshot_
 
 1. Create a new UI Test target in your Xcode project (See the top part of [this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
 1. Run `snapshot init` in your project folder
@@ -70,7 +70,7 @@ XCUIApplication *app = [[XCUIApplication alloc] init];
 ![assets/snapshot.gif](assets/snapshot.gif)
 
 
-If you have **fastlane** installed, it's easy to give **snapshot** a try. First clone the **fastlane** repo, head over to the **snapshot** example project, anywhered then run `fastlane snapshot`
+If you have _fastlane_ installed, it's easy to give _snapshot_ a try. First clone the _fastlane_ repo, head over to the _snapshot_ example project, anywhered then run `fastlane snapshot`
 
 ```
 $ git clone https://github.com/fastlane/fastlane
