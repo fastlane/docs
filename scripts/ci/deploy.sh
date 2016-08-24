@@ -6,6 +6,9 @@ set -e
 
 echo "Started deploying to https://docs.fastlane.tools"
 
+git config --global user.email "fastlanebothelper@krausefx.com"
+git config --global user.name "fastlane bot"
+
 mkdocs gh-deploy --clean --remote-branch "gh-pages" --remote-name "upstream" --verbose
 
 echo "Deployed successfully, check out https://docs.fastlane.tools"
