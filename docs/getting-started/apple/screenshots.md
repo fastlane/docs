@@ -7,6 +7,8 @@ Your App Store screenshots are probably the most important thing when it comes t
 - Have you made sure that no loading indicators are showing?
 - Is the same content displayed for each of your size variations?
 
+_fastlane_ tools can automate this process making it fast, and consistent while giving you beautiful results!
+
 ## Alternatives
 
 For the full story about the many ways that developers can capture and beautify screenshots check out [this article](https://krausefx.com/blog/creating-perfect-app-store-screenshots-of-your-ios-app).
@@ -81,9 +83,6 @@ XCUIApplication *app = [[XCUIApplication alloc] init];
 [app launch];
 ```
 
-![assets/snapshot.gif](assets/snapshot.gif)
-
-
 If you have _fastlane_ installed, it's easy to give _snapshot_ a try. First clone the _fastlane_ repo, head over to the _snapshot_ example project, and then run `fastlane snapshot`
 
 ```
@@ -94,9 +93,146 @@ $ cd fastlane/snapshot/example
 $ fastlane snapshot
 ```
 
+![assets/snapshot.gif](assets/snapshot.gif)
+
 # Decorate Screenshots with Device Frames
 
-TODO: write about _frameit_
+_frameit_ helps you beautify your screenshots with devices frames and text by running one simple command. It provides support for:
+
+- Multiple device types
+- Portrait and landscape orientations
+- Black and silver devices
+- Setting a background color and decorating the image with text
+
+![frameit results](assets/frameit-results.png)
+
+## Dependencies
+
+### Installing ImageMagick
+
+_frameit_ depends on a tool called `imagemagick` to do image manipulation. The easiest way to install it is through [homebrew](http://brew.sh/):
+
+```sh
+brew install libpng jpeg imagemagick
+```
+
+### Troubleshooting ImageMagick
+
+If you have installed _imagemagick_ but are seeing error messages like:
+
+```sh
+mogrify: no decode delegate for this image format `PNG'
+```
+
+You may need to reinstall and build from source. Run:
+
+```sh
+brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick --build-from-source
+```
+
+### Setting Up Device Frames
+
+_fastlane_ uses device frames provided by Apple which need to be downloaded and installed separately for legal reasons. Running `fastlane frameit setup` can walk you through the process.
+
+`**TODO:** Update this when we start distributing frames ourselves.`
+
+```
+$ fastlane frameit setup
+
+----------------------------------------------------
+Looks like you'd like to install new device templates
+The images can not be pre-installed due to licensing
+Press Enter to get started
+----------------------------------------------------
+
+----------------------------------------------------
+Download the zip files for the following devices
+iPhone 6s, iPhone 6s Plus, iPhone SE, iPad mini 4 and iPad Pro
+You only need to download the devices you want to use
+Press Enter when you downloaded the zip files
+----------------------------------------------------
+
+----------------------------------------------------
+Extract the downloaded files into the folder
+'/Users/mfurtak/.frameit/devices_frames', which should be open in your Finder
+You can just copy the whole content into it.
+Press Enter when you extracted the files into the given folder
+----------------------------------------------------
+```
+
+## Running
+
+At its simplest, you can just run:
+
+```sh
+fastlane frameit
+```
+
+A more complex example that configures a lot more about the output can be found in the [fastlane examples](https://github.com/fastlane/examples/tree/master/MindNode/screenshots) project.
+
+### Configure Using `Framefile.json`
+
+Your `Framefile.json` file should be in your `screenshots` folder, as seen in the [example](https://github.com/fastlane/examples/tree/master/MindNode/screenshots), and you can use it to define your configuration:
+
+```json
+{
+  "default": {
+    "keyword": {
+      "font": "./fonts/MyFont-Rg.otf"
+    },
+    "title": {
+      "font": "./fonts/MyFont-Th.otf",
+      "color": "#545454"
+    },
+    "background": "./background.jpg",
+    "padding": 50,
+    "show_complete_frame": false
+  },
+
+  "data": [
+    {
+      "filter": "Brainstorming",
+      "keyword": {
+        "color": "#d21559"
+      }
+    },
+    {
+      "filter": "Organizing",
+      "keyword": {
+        "color": "#feb909"
+      }
+    },
+    {
+      "filter": "Sharing",
+      "keyword": {
+        "color": "#aa4dbc"
+      }
+    },
+    {
+      "filter": "Styling",
+      "keyword": {
+        "color": "#31bb48"
+      }
+    }
+  ]
+}
+```
+
+The `show_complete_frame` value specifies whether _frameit_ should shrink the device and frame so that they show in full in the framed screenshot. If it is false, then they can hang over the bottom of the screenshot.
+
+The `filter` value is a part of the screenshot named for which the given option should be used. If a screenshot is named `iPhone5_Brainstorming.png` the first entry in the `data` array will be used.
+
+You can find a more complex [configuration](https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json), which also supports Chinese, Japanese, and Korean languages.
+
+### Localizing With `.strings` Files
+
+To define the title and optionally the keyword, put two `.strings` files into the language folder (e.g. [en-US in the example project](https://github.com/fastlane/examples/tree/master/MindNode/screenshots/en-US))
+
+The `keyword.strings` and `title.strings` are standard `.strings` file you already use for your iOS apps, making it easy to use your existing translation service to get localized titles.
+
+**Note:** These `.strings` files **MUST** be utf-16 encoded (UTF-16 LE with BOM).  They also must begin with an empty line. If you are having trouble see [issue #1740](https://github.com/fastlane/fastlane/issues/1740)
+
+**Note:** You **MUST** provide a background if you want titles. _frameit_ will not add the tiles if a background is not specified.
 
 # Upload Screenshots for the App Store
 
