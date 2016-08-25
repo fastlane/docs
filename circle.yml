@@ -1,12 +1,16 @@
 machine:
   python:
     version: pypy-2.2.1
+  ruby:
+    version: 2.3.0
 dependencies:
   pre:
     - pip install mkdocs
+    - bundle update
 test:
   override:
     - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi
+    - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then bundle exec danger; fi
 deployment:
   master:
     branch: master
