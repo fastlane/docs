@@ -6,7 +6,7 @@ dependencies:
     - pip install mkdocs
 test:
   override:
-    - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi
+    - echo "YOLO"
 deployment:
   master:
     branch: master
