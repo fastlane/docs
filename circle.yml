@@ -6,7 +6,7 @@ machine:
 dependencies:
   pre:
     - pip install mkdocs
-    - bundle update
+    - bundle install
 test:
   override:
     - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi
