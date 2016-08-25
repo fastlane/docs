@@ -8,7 +8,9 @@ To preview the updated documentation locally, just clone the repo, modify the fi
 mkdocs serve
 ```
 
-The resulting HTML files are stored in the [gh-pages](https://github.com/fastlane/docs/tree/gh-pages) branch, ready to be rendered via https://docs.fastlane.tools
+## Deploy changes
+
+Once a PR is merged into master, the latest version will automatically be deployed to [docs.fastlane.tools](https://docs.fastlane.tools) by one of the hard working fastlane bots. No need to do anything manually. The resulting HTML files are stored in the [`gh-pages`](https://github.com/fastlane/docs/tree/gh-pages) branch.
 
 ## Installation of [mkdocs](http://www.mkdocs.org/)
 
