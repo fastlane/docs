@@ -6,11 +6,14 @@ site_description: "Documentation for fastlane tools, the easiest way to automate
 
 pages:
 - Home: index.md
-- Getting Started: 
-  - Setup: getting-started/setup.md
-  - Screenshots: getting-started/screenshots.md
-  - Beta Deployment: getting-started/beta-deployment.md
-  - App Store Deployment: getting-started/appstore-deployment.md
+- Getting Started:
+  - Apple:
+    - Setup: getting-started/apple/setup.md
+    - Screenshots: getting-started/apple/screenshots.md
+    - Beta Deployment: getting-started/apple/beta-deployment.md
+    - App Store Deployment: getting-started/apple/appstore-deployment.md
+  - Android:
+    - Setup: getting-started/android/setup.md
 - Actions: actions/Actions.md
 - FAQs: FAQs.md
 - Codesigning:
@@ -21,7 +24,7 @@ pages:
   - AvailablePlugins: plugins/AvailablePlugins.md
   - Create your own plugin: plugins/CreatePlugin.md
   - Plugins Troubleshooting: plugins/PluginsTroubleshooting.md
-- Best Practices: 
+- Best Practices:
   - Gitignore: "best-practices/Gitignore.md"
   - Continuous Integration: "best-practices/ContinuousIntegration.md"
 - Advanced: "Advanced.md"
