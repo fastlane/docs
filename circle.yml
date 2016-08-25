@@ -1,1 +1,3 @@
-test:\n  override:\n    - echo 'Running on 'gh-pages' branch
+test:
+  override:
+  - echo 'Running on 'gh-pages' branch
