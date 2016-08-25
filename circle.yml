@@ -8,8 +8,8 @@ dependencies:
     - pip install mkdocs
 test:
   override:
-    - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi
-    - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then bundle exec danger; fi
+    - mkdocs build
+    - bundle exec danger
 deployment:
   master:
     branch: master
