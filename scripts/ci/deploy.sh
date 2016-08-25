@@ -27,7 +27,9 @@ cp -R /tmp/fl-docs/* .
 echo "docs.fastlane.tools" > "CNAME"
 
 # We also need a circle.yml file on the gh-pages branch, otherwise the build fails
-echo "test:\n  override:\n    - echo 'Running on 'gh-pages' branch" > "circle.yml"
+echo "test:
+  override:
+  - echo 'Running on 'gh-pages' branch" > "circle.yml"
 
 # Commit all the changes and push it to the remote
 git add -A
