@@ -52,53 +52,73 @@
         }, 
         {
             "location": "/getting-started/apple/setup/", 
-            "text": "fastlane guide\n\n\nTo be written soon, this will contain\n\n\n\n\nInstalling fastlane\n\n\nInitial setup of fastlane for your projet\n\n\nWhere to go from there", 
+            "text": "Getting started with fastlane for iOS\n\n\nTo be written soon, this will contain\n\n\n\n\nInstalling fastlane\n\n\nInitial setup of fastlane for your projet\n\n\nWhere to go from there", 
             "title": "Setup"
         }, 
         {
-            "location": "/getting-started/apple/setup/#fastlane-guide", 
+            "location": "/getting-started/apple/setup/#getting-started-with-fastlane-for-ios", 
             "text": "To be written soon, this will contain   Installing fastlane  Initial setup of fastlane for your projet  Where to go from there", 
-            "title": "fastlane guide"
+            "title": "Getting started with fastlane for iOS"
         }, 
         {
             "location": "/getting-started/apple/screenshots/", 
-            "text": "fastlane screenshots\n\n\nTo be written soon, this will contain\n\n\n\n\nOverview of the different methods of screenshots\n\n\nGetting started with snapshot\n\n\nGetting started with frameit", 
+            "text": "fastlane screenshots for iOS and tvOS\n\n\nTo be written soon, this will contain\n\n\n\n\nOverview of the different methods of screenshots\n\n\nGetting started with snapshot\n\n\nGetting started with frameit", 
             "title": "Screenshots"
         }, 
         {
-            "location": "/getting-started/apple/screenshots/#fastlane-screenshots", 
+            "location": "/getting-started/apple/screenshots/#fastlane-screenshots-for-ios-and-tvos", 
             "text": "To be written soon, this will contain   Overview of the different methods of screenshots  Getting started with snapshot  Getting started with frameit", 
-            "title": "fastlane screenshots"
+            "title": "fastlane screenshots for iOS and tvOS"
         }, 
         {
             "location": "/getting-started/apple/beta-deployment/", 
-            "text": "Beta deployment using fastlane\n\n\nTo be written soon, this will contain\n\n\n\n\nBuilding your app (this is the same as \nApp Store deployment\n)\n\n\nThis also includes references to Code Signing\n\n\nList of supported beta testing services including potential plugins\n\n\nBest practises around how to do beta deployment", 
+            "text": "iOS Beta deployment using fastlane\n\n\nTo be written soon, this will contain\n\n\n\n\nBuilding your app (this is the same as \nApp Store deployment\n)\n\n\nThis also includes references to Code Signing\n\n\n\n\n\n\nList of supported beta testing services including potential plugins\n\n\nBest practises around how to do beta deployment", 
             "title": "Beta Deployment"
         }, 
         {
-            "location": "/getting-started/apple/beta-deployment/#beta-deployment-using-fastlane", 
-            "text": "To be written soon, this will contain   Building your app (this is the same as  App Store deployment )  This also includes references to Code Signing  List of supported beta testing services including potential plugins  Best practises around how to do beta deployment", 
-            "title": "Beta deployment using fastlane"
+            "location": "/getting-started/apple/beta-deployment/#ios-beta-deployment-using-fastlane", 
+            "text": "To be written soon, this will contain   Building your app (this is the same as  App Store deployment )  This also includes references to Code Signing    List of supported beta testing services including potential plugins  Best practises around how to do beta deployment", 
+            "title": "iOS Beta deployment using fastlane"
         }, 
         {
             "location": "/getting-started/apple/appstore-deployment/", 
-            "text": "App Store deployment using fastlane\n\n\nTo be written soon, this will contain\n\n\n\n\nBuilding your app (this is the same as \nBeta deployment\n)\n\n\nThis also includes references to Code Signing\n\n\nReference the screenshots docs\n\n\nBest practises around how to do App Store deployment\n\n\nOrder of commands\n\n\nReference push notifications", 
+            "text": "iOS App Store deployment using fastlane\n\n\nTo be written soon, this will contain\n\n\n\n\nBuilding your app (this is the same as \nBeta deployment\n)\n\n\nThis also includes references to Code Signing\n\n\n\n\n\n\nReference the screenshots docs\n\n\nBest practises around how to do App Store deployment\n\n\nOrder of commands\n\n\nReference push notifications", 
             "title": "App Store Deployment"
         }, 
         {
-            "location": "/getting-started/apple/appstore-deployment/#app-store-deployment-using-fastlane", 
-            "text": "To be written soon, this will contain   Building your app (this is the same as  Beta deployment )  This also includes references to Code Signing  Reference the screenshots docs  Best practises around how to do App Store deployment  Order of commands  Reference push notifications", 
-            "title": "App Store deployment using fastlane"
+            "location": "/getting-started/apple/appstore-deployment/#ios-app-store-deployment-using-fastlane", 
+            "text": "To be written soon, this will contain   Building your app (this is the same as  Beta deployment )  This also includes references to Code Signing    Reference the screenshots docs  Best practises around how to do App Store deployment  Order of commands  Reference push notifications", 
+            "title": "iOS App Store deployment using fastlane"
         }, 
         {
             "location": "/getting-started/android/setup/", 
-            "text": "fastlane guide\n\n\nTo be written soon, this will contain\n\n\n\n\nInstalling fastlane\n\n\nInitial setup of fastlane for your projet\n\n\nWhere to go from there", 
+            "text": "Getting started with fastlane for Android\n\n\nTo be written soon, this will contain\n\n\n\n\nInstalling fastlane\n\n\nInitial setup of fastlane for your projet\n\n\nWhere to go from there", 
             "title": "Setup"
         }, 
         {
-            "location": "/getting-started/android/setup/#fastlane-guide", 
+            "location": "/getting-started/android/setup/#getting-started-with-fastlane-for-android", 
             "text": "To be written soon, this will contain   Installing fastlane  Initial setup of fastlane for your projet  Where to go from there", 
-            "title": "fastlane guide"
+            "title": "Getting started with fastlane for Android"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/", 
+            "text": "fastlane screenshots for Android\n\n\nTo be written soon, this will contain\n\n\n\n\nGetting started with \nscreengrab\n\n\nUploading the screenshots using \nsupply", 
+            "title": "Screenshots"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#fastlane-screenshots-for-android", 
+            "text": "To be written soon, this will contain   Getting started with  screengrab  Uploading the screenshots using  supply", 
+            "title": "fastlane screenshots for Android"
+        }, 
+        {
+            "location": "/getting-started/android/deployment/", 
+            "text": "Deploy to Google Play using fastlane\n\n\nTo be written soon, this will contain\n\n\n\n\nBuilding your app using \ngradle\n\n\nReference the screenshots docs\n\n\nDeploy to Google Play for production\n\n\nMention how to deploy to the beta track\n\n\n\n\n\n\nBest practises around the deployment\n\n\nOrder of commands", 
+            "title": "Deployment"
+        }, 
+        {
+            "location": "/getting-started/android/deployment/#deploy-to-google-play-using-fastlane", 
+            "text": "To be written soon, this will contain   Building your app using  gradle  Reference the screenshots docs  Deploy to Google Play for production  Mention how to deploy to the beta track    Best practises around the deployment  Order of commands", 
+            "title": "Deploy to Google Play using fastlane"
         }, 
         {
             "location": "/actions/Actions/", 
