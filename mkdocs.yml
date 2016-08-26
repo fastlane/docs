@@ -28,6 +28,3 @@ pages:
   - Gitignore: "best-practices/Gitignore.md"
   - Continuous Integration: "best-practices/ContinuousIntegration.md"
 - Advanced: "Advanced.md"
-- Contributing:
-  - UI: contributing/UI.md
-  - Contribution Guidelines: contributing/CONTRIBUTING.md
