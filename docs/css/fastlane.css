@@ -28,6 +28,11 @@ h3, h4, h5, h6 {
   display: none !important; 
 }
 
+/* The next and previous button we don't need */
+.rst-footer-buttons {
+  display: none;
+}
+
 
 /*
   So here is the deal:
