@@ -6,7 +6,7 @@ lane :test do
 end
 
 private_lane :build_site do
-  sh "mkdocs build" # to make sure building is successful
+  sh "mkdocs build --clean" # to make sure building is successful
 end
 
 private_lane :ensure_headers do
