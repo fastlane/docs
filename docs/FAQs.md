@@ -1,5 +1,4 @@
-FAQs
-=====
+# FAQs
 
 ### I'm getting an SSL error
 

@@ -8,7 +8,7 @@ dependencies:
     - pip install mkdocs pymdown-extensions
 test:
   override:
-    - mkdocs build
+    - bundle exec fastlane test
     - bundle exec danger
 deployment:
   master:
