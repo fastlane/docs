@@ -36,6 +36,10 @@ git add -A
 git commit -m "Deployed with $(mkdocs --version)"
 git push origin gh-pages
 
+# Post a Slack message
+git checkout master
+bundle exec fastlane run slack message:"Deployed a new version of https://docs.fastlane.tools" channel:"#new-docs"
+
 echo "Deployed successfully, check out https://docs.fastlane.tools"
 
 exit 0
