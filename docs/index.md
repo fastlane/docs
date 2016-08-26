@@ -79,7 +79,7 @@ fastlane init
 
 `fastlane` will automatically detect your project, and ask for any missing information.
 
-For more details about how to get up and running, check out the [fastlane guide](docs/Guide.md).
+For more details about how to get up and running, check out the _Getting Started_ section in the sidebar.
 
 ### Using the Fabric app
 
@@ -92,10 +92,6 @@ All fastlane related questions, problems and feature ideas should be posted as [
 ## System requirements
 
 `fastlane` requires macOS or Linux with Ruby 2.0.0 or above
-
-## Code of Conduct
-
-Help us keep `fastlane` open and inclusive. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
