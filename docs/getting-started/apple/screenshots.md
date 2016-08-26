@@ -23,7 +23,7 @@ The positive side of this approach is that your screenshots will all be crisp an
 
 ### Scaled Screenshots via iTunes Connect
 
-With the [iTunes Connect screenshot update](https://developer.apple.com/news/?id=08082016a) from August 8th, 2016, you can now use one set of screenshots for all available devices and screenshots. iTunes Connect will automatically scale the images for you, so that each device renders the same exact image.
+With the [iTunes Connect screenshot update](https://developer.apple.com/news/?id=08082016a) from August 2016, you can now use one set of screenshots for all available devices and screenshots. iTunes Connect will automatically scale the images for you, so that each device renders the same exact image.
 
 While this is convenient, this approach has the same problems as the device frame approach: The screenshots don't actually show how the app looks on the user's device. It's a valid way to start though, since you can gradually overwrite screenshots for specific languages and devices.
 
@@ -36,6 +36,7 @@ _snapshot_ works with _fastlane_ to automate the process of capturing screenshot
 - Configure it once, and store the configuration so anyone on the team can run it
 - Generate a beautiful web page showing all screenshots on all devices. This is perfect to send to Q&A, marketing, or translators for verification
 - Avoid having loading indicators in your App Store screenshots by intelligently waiting for network requests to be finished
+- Get a summary of how your app looks like across all supported devices and languages
 
 After _snapshot_ successfully captures all the screenshots, it will show you a beautiful HTML page to summarize all the screens that were captured:
 
@@ -51,13 +52,13 @@ _snapshot_ uses the capabilities of Apple's UI Tests to drive interactions with 
 - [HSTestingBackchannel : ‘Cheat’ by communicating directly with your app](https://github.com/ConfusedVorlon/HSTestingBackchannel)
 - [Automating App Store screenshots using fastlane snapshot and frameit](https://tisunov.github.io/2015/11/06/automating-app-store-screenshots-generation-with-fastlane-snapshot-and-sketch.html)
 
-To jump-start your UI tests, you can use the UI Test recorder. By interacting with your app through the simulator while using it, Xcode will generate UI Test code for you. You can find the red record button on the bottom of the screen, and there's more information in [this blog post](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line)
+To jump-start your UI tests, you can use the UI Test recorder, which you can start by clicking the red record button on the bottom of the window. By interacting with your app through the simulator while using it, Xcode will generate UI Test code for you. To learn more, check out this [this blog post](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line)!
 
 ## Setting Up _snapshot_
 
 1. Create a new UI Test target in your Xcode project (See the top part of [this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
 1. Run `snapshot init` in your project folder
-1. Add the ./SnapshotHelper.swift file to your UI Test target (You can move the file anywhere you want)
+1. Add the `./SnapshotHelper.swift` file to your UI Test target (You can move the file anywhere you want)
 1. (Objective C only) Add the bridging header to your test class.
     - `#import "MYUITests-Swift.h"`
     - The bridging header is named after your test target with -Swift.h appended.
@@ -138,26 +139,6 @@ _fastlane_ uses device frames provided by Apple which need to be downloaded and 
 
 ```
 $ fastlane frameit setup
-
-----------------------------------------------------
-Looks like you'd like to install new device templates
-The images can not be pre-installed due to licensing
-Press Enter to get started
-----------------------------------------------------
-
-----------------------------------------------------
-Download the zip files for the following devices
-iPhone 6s, iPhone 6s Plus, iPhone SE, iPad mini 4 and iPad Pro
-You only need to download the devices you want to use
-Press Enter when you downloaded the zip files
-----------------------------------------------------
-
-----------------------------------------------------
-Extract the downloaded files into the folder
-'/Users/mfurtak/.frameit/devices_frames', which should be open in your Finder
-You can just copy the whole content into it.
-Press Enter when you extracted the files into the given folder
-----------------------------------------------------
 ```
 
 ## Running
@@ -240,7 +221,7 @@ TODO: write about _deliver_
 
 # All Together Now
 
-To put all of this together so that anyone on your team could trigger this complete process, you could define a _fastlane_ lane called **screenshots**. It would be responsible for:
+To put all of this together so that anyone on your team could trigger this complete process, you could define a _fastlane_ lane called `screenshots`. It would be responsible for:
 
 1. Running your app through _snapshot_ to automatically capture your screenshots
 1. Decorating those screenshots with _frameit_
