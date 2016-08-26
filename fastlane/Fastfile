@@ -2,15 +2,18 @@ lane :test do
   Dir.chdir("..") do
     build_site
     ensure_headers
+    ensure_image_assets
   end
 end
 
 private_lane :build_site do
-  sh "mkdocs build" # to make sure building is successful
+  UI.message "🕗  Building page..."
+  sh "mkdocs build --clean" # to make sure building is successful
+  UI.success "✅  Build successful"
 end
 
 private_lane :ensure_headers do
-  UI.message "Investigating all docs files and their headers"
+  UI.message "🕗  Investigating all docs files and their headers..."
   exceptions = ["docs/index.md"]
 
   errors = []
@@ -20,5 +23,32 @@ private_lane :ensure_headers do
   end
   errors.each { |e| UI.error(e) }
   UI.user_error!("At least one file doesn't start with header one (#), the first line must always be # title") unless errors.empty?
-  UI.success "All doc files start with a header 👍"
+  UI.success "✅  All doc files start with a header"
+end
+
+private_lane :ensure_image_assets do
+  UI.message "🕗  Checking docs for dead image references..."
+  errors = []
+  Dir["docs/**/*.md"].each do |current_file|
+    content = File.read(current_file)
+    matches = content.scan(/\!\[.*\]\((.*\.png)\)/)
+    matches.each do |match|
+      # We support both relative and absolute file paths
+      if match.first.start_with?("/")
+        path = File.join(Dir.pwd, "docs", match.first)
+      else
+        path = File.join(File.expand_path("..", current_file), match.first)
+      end
+      
+      if File.exist?(path)
+        UI.message("- ✔ Verified image named '#{File.basename(match.first)}'")
+        next
+      end
+
+      errors << "Image file referenced in file '#{current_file}', but can't find it locally: '#{match.first}'"
+    end
+  end
+  errors.each { |e| UI.error(e) }
+  UI.user_error!("At least one image file was not found, check out error above") unless errors.empty?
+  UI.success "✅  All image files were found"
 end

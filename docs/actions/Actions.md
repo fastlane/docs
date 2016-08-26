@@ -919,11 +919,11 @@ Additionally you can specify `notes`, `emails`, `groups` and `notifications`.
 
 When using the `groups` parameter, it's important to use the group **alias** names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog here:
 
-![Crashlytics Beta Groups Navigation](../assets/Beta-Groups-Nav.png)
+![Crashlytics Beta Groups Navigation](/img/actions/Beta-Groups-Nav.png)
 
 Each group's alias is then listed here:
 
-![Crashlytics Beta Groups Navigation](../assets/Beta-Group-Alias.png)
+![Crashlytics Beta Groups Navigation](../img/actions/Beta-Group-Alias.png)
 
 There are a couple reasons why aliases exist:
 
@@ -1149,7 +1149,7 @@ If you provide a `public_key`, this will overwrite an existing application. If y
 
 #### `device_grid` for your Pull Requests
 
-![../lib/fastlane/actions/device_grid/assets/GridExampleScreenshot.png](../lib/fastlane/actions/device_grid/assets/GridExampleScreenshot.png)
+![/img/actions/GridExampleScreenshot.png](/img/actions/GridExampleScreenshot.png)
 
 Follow [this guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md) to get a grid of devices every time you submit a pull request. The app will be uploaded to [appetize.io](https://appetize.io/) so you can stream and try them right in your browser.
 
