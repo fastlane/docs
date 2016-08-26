@@ -1,4 +1,4 @@
-# fastlane guide
+# Getting started with fastlane for iOS
 
 To be written soon, this will contain
 

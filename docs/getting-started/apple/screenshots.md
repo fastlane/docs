@@ -1,4 +1,4 @@
-# fastlane screenshots
+# fastlane screenshots for iOS
 
 To be written soon, this will contain
 
