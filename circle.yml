@@ -1,12 +1,15 @@
 machine:
   python:
     version: pypy-2.2.1
+  ruby:
+    version: 2.3.0
 dependencies:
   pre:
     - pip install mkdocs
 test:
   override:
-    - if [ $CIRCLE_BRANCH != 'gh-pages' ]; then mkdocs build; fi
+    - mkdocs build
+    - bundle exec danger
 deployment:
   master:
     branch: master
