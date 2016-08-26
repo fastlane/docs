@@ -1,9 +1,13 @@
 site_name: fastlane docs
 theme: readthedocs
+copyright: Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a>
 site_author: "fastlane team"
 site_description: "Documentation for fastlane tools, the easiest way to automate building and releasing your iOS and Android apps"
 favicon: "img/favicon.ico"
+google_analytics: ["UA-18658848-13", "docs.fastlane.tools"]
 # strict: true # TODO: Enable once we have the docs structure
+markdown_extensions:
+  - pymdownx.headeranchor
 
 pages:
 - Home: index.md
