@@ -8,7 +8,7 @@ dependencies:
     - pip install mkdocs
 test:
   override:
-    - mkdocs build
+    - fastlane test
     - bundle exec danger
 deployment:
   master:
