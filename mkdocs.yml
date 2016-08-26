@@ -3,6 +3,8 @@ theme: readthedocs
 site_author: "fastlane team"
 site_description: "Documentation for fastlane tools, the easiest way to automate building and releasing your iOS and Android apps"
 # strict: true # TODO: Enable once we have the docs structure
+markdown_extensions:
+  - pymdownx.headeranchor
 
 pages:
 - Home: index.md

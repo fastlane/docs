@@ -16,5 +16,5 @@ Once a PR is merged into master, the latest version will automatically be deploy
 
 ```sh
 brew install python # if you don't have pip already
-pip install mkdocs
+[sudo] pip install mkdocs pymdown-extensions
 ```
