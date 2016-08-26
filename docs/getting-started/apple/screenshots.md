@@ -96,7 +96,7 @@ $ fastlane snapshot
 
 ![assets/snapshot.gif](assets/snapshot.gif)
 
-# Decorate Screenshots with Device Frames
+# Put Your Screenshots Into Device Frames
 
 _frameit_ helps you beautify your screenshots with devices frames and text by running one simple command. It provides support for:
 
