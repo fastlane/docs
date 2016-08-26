@@ -134,7 +134,7 @@ brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick -
 
 _fastlane_ uses device frames provided by Apple which need to be downloaded and installed separately for legal reasons. Running `fastlane frameit setup` can walk you through the process.
 
-`**TODO:** Update this when we start distributing frames ourselves.`
+**TODO: Update this when we start distributing frames ourselves.**
 
 ```
 $ fastlane frameit setup
