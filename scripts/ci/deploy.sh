@@ -17,6 +17,8 @@ git config --global user.name "fastlane bot"
 rm -rf "/tmp/fl-docs"
 # Copy the generated website to the temporary directory
 cp -R "site/" "/tmp/fl-docs"
+# Clean all temporary files (e.g. .bundle/config and .ruby-version)
+git clean -f -d
 # Check out gh-pages and clear all files
 git checkout gh-pages
 rm -rf *
