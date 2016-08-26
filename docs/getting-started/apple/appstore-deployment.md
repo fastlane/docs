@@ -1,4 +1,4 @@
-# App Store deployment using fastlane
+# iOS App Store deployment using fastlane
 
 To be written soon, this will contain
 
