@@ -36,6 +36,16 @@
   <script src="../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -298,8 +308,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="faqs">FAQs</h1>
-<h3 id="im-getting-an-ssl-error">I'm getting an SSL error</h3>
+                <h1 id="faqs"><a name="user-content-faqs" href="#faqs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>FAQs</h1>
+<h3 id="im-getting-an-ssl-error"><a name="user-content-im-getting-an-ssl-error" href="#im-getting-an-ssl-error" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>I'm getting an SSL error</h3>
 <p>If your output contains something like</p>
 <pre><code>SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
 </code></pre>
@@ -312,23 +322,23 @@
 <pre><code>rvm osx-ssl-certs update all
 </code></pre>
 
-<h3 id="fastlane-is-slow-to-start">fastlane is slow (to start)</h3>
+<h3 id="fastlane-is-slow-to-start"><a name="user-content-fastlane-is-slow-to-start" href="#fastlane-is-slow-to-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane is slow (to start)</h3>
 <p>If you experiennce slow launch times of <code>fastlane</code>, there are 2 solutions to solve this problem:</p>
-<h5 id="uninstall-unused-gems">Uninstall unused gems</h5>
+<h5 id="uninstall-unused-gems"><a name="user-content-uninstall-unused-gems" href="#uninstall-unused-gems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uninstall unused gems</h5>
 <pre><code>[sudo] gem cleanup
 </code></pre>
 
-<h5 id="use-a-gemfile">Use a Gemfile</h5>
+<h5 id="use-a-gemfile"><a name="user-content-use-a-gemfile" href="#use-a-gemfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a Gemfile</h5>
 <p>Follow the <a href="https://guides.cocoapods.org/using/a-gemfile.html">CocoaPods Gemfile Guide</a> to set up your initial Gemfile. From the on launch <code>fastlane</code> using:</p>
 <pre><code>bundle exec fastlane ...
 </code></pre>
 
-<h3 id="error-when-running-fastlane-with-jenkins">Error when running <code>fastlane</code> with Jenkins</h3>
+<h3 id="error-when-running-fastlane-with-jenkins"><a name="user-content-error-when-running-fastlane-with-jenkins" href="#error-when-running-fastlane-with-jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Error when running <code>fastlane</code> with Jenkins</h3>
 <p>This is usually caused when running Jenkins as its own user. While this is possible, you'll have to take care of creating a temporary Keychain, filling it and then using it when building your application. </p>
 <p>For more information about the recommended setup with Jenkins open the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Jenkins.md">Jenkins Guide</a>.</p>
-<h3 id="code-signing-issues">Code signing issues</h3>
+<h3 id="code-signing-issues"><a name="user-content-code-signing-issues" href="#code-signing-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code signing issues</h3>
 <p>Check out the <a href="https://codesigning.guide">codesigning.guide</a> website for more information on how to properly setup code-signing in your team using <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>.</p>
-<h3 id="multiple-targets-of-the-same-underlying-app">Multiple targets of the same underlying app</h3>
+<h3 id="multiple-targets-of-the-same-underlying-app"><a name="user-content-multiple-targets-of-the-same-underlying-app" href="#multiple-targets-of-the-same-underlying-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Multiple targets of the same underlying app</h3>
 <p>If you have one code base, but multiple branded applications</p>
 <p>Create different <code>.env</code> files for each environment and reference those environment variables in the <code>Deliverfile</code>, <code>Fastfile</code>, etc. </p>
 <p>Example: Create a <code>.env.app1</code>, <code>.env.app2</code>, and <code>.env.app3</code>. Define each of these like the following...</p>
@@ -361,12 +371,12 @@ end
 </code></pre>
 
 <p>More on the <code>.env</code> file can be found <a href="https://github.com/bkeepers/dotenv">here</a>.</p>
-<h3 id="disable-colored-output">Disable colored output</h3>
+<h3 id="disable-colored-output"><a name="user-content-disable-colored-output" href="#disable-colored-output" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Disable colored output</h3>
 <p>Set the <code>FASTLANE_DISABLE_COLORS</code> environment variable to disable ANSI colors (e.g. for CI machines)</p>
 <pre><code>export FASTLANE_DISABLE_COLORS=1
 </code></pre>
 
-<h3 id="user-interaction-is-not-allowed-when-using-fastlane-via-ssh">"User interaction is not allowed" when using <code>fastlane</code> via SSH</h3>
+<h3 id="user-interaction-is-not-allowed-when-using-fastlane-via-ssh"><a name="user-content-user-interaction-is-not-allowed-when-using-fastlane-via-ssh" href="#user-interaction-is-not-allowed-when-using-fastlane-via-ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>"User interaction is not allowed" when using <code>fastlane</code> via SSH</h3>
 <p>This error can occur when you run <code>fastlane</code> via SSH. To fix it check out <a href="http://stackoverflow.com/a/22637896/445598">this reply on StackOverflow</a>.</p>
               
             </div>
@@ -387,6 +397,8 @@ end
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a></p>
     
   </div>
 

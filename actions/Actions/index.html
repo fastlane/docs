@@ -36,6 +36,16 @@
   <script src="../../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -308,7 +318,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="actions">Actions</h1>
+                <h1 id="actions"><a name="user-content-actions" href="#actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Actions</h1>
 <p>There are lots of predefined <code>fastlane</code> actions you can use. If you have ideas for more, please <a href="https://github.com/fastlane/fastlane/issues/new">let me know</a>.</p>
 <p>To get the most up-to-date information from the command line on your current version you can also run:</p>
 <pre><code class="sh">fastlane actions: List all available fastlane actions
@@ -330,7 +340,7 @@ fastlane action [action_name]:
 <li><a href="#notifications">Notifications</a></li>
 <li><a href="#misc">Misc</a></li>
 </ul>
-<h2 id="building">Building</h2>
+<h2 id="building"><a name="user-content-building" href="#building" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building</h2>
 <h3 id="bundler"><a href="http://bundler.io/">Bundler</a></h3>
 <p>This will install your Gemfile by executing <code>bundle install</code></p>
 <pre><code class="ruby">bundle_install
@@ -382,7 +392,7 @@ fastlane action [action_name]:
 
 <p>Use <code>gym --help</code> to get all available options.</p>
 <p>The alternative to <code>gym</code> is <a href="#ipa"><code>ipa</code></a> which uses <a href="https://github.com/nomad/shenzhen">shenzhen</a> under the hood.</p>
-<h3 id="gradle">gradle</h3>
+<h3 id="gradle"><a name="user-content-gradle" href="#gradle" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>gradle</h3>
 <p>You can use the <code>gradle</code> action to integrate your gradle tasks into <code>fastlane</code>.</p>
 <p>Simple usage:</p>
 <pre><code class="ruby">gradle(
@@ -427,7 +437,7 @@ fastlane action [action_name]:
 )
 </code></pre>
 
-<h3 id="verify_xcode">verify_xcode</h3>
+<h3 id="verify_xcode"><a name="user-content-verify_xcode" href="#verify_xcode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_xcode</h3>
 <p>Verifies that the Xcode installation is properly signed by Apple. This is relevant after recent <a href="http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/">attacks targeting Xcode</a>.</p>
 <p>Add this action to your <code>appstore</code> lane. Keep in mind this action might take several minutes to be completed.</p>
 <pre><code class="ruby">verify_xcode
@@ -459,12 +469,12 @@ fastlane action [action_name]:
 </code></pre>
 
 <p>Take a look at the <a href="https://github.com/fastlane/fastlane/tree/master/snapshot#prefilling">prefilling data guide</a> on the <code>snapshot</code> documentation.</p>
-<h3 id="clear_derived_data">clear_derived_data</h3>
+<h3 id="clear_derived_data"><a name="user-content-clear_derived_data" href="#clear_derived_data" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clear_derived_data</h3>
 <p>Clears the Xcode Derived Data at path <code>~/Library/Developer/Xcode/DerivedData</code></p>
 <pre><code class="ruby">clear_derived_data
 </code></pre>
 
-<h3 id="ipa">ipa</h3>
+<h3 id="ipa"><a name="user-content-ipa" href="#ipa" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ipa</h3>
 <p><strong>Note</strong>: This action is deprecated, use <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> instead.</p>
 <p>Build your app right inside <code>fastlane</code> and the path to the resulting ipa is automatically available to all other actions.</p>
 <p>You should check out the <a href="https://github.com/fastlane/fastlane/tree/master/fastlane/docs/Codesigning">code signing guide</a>.</p>
@@ -489,7 +499,7 @@ fastlane action [action_name]:
 <p><strong>Important:</strong></p>
 <p>To also use it in <code>deliver</code>, update your <code>Deliverfile</code> and remove all code in the <code>Building and Testing</code> section, in particular all <code>ipa</code> and <code>beta_ipa</code> blocks.</p>
 <p>See how <a href="https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile">Product Hunt</a> uses the <code>ipa</code> action.</p>
-<h3 id="update_project_provisioning">update_project_provisioning</h3>
+<h3 id="update_project_provisioning"><a name="user-content-update_project_provisioning" href="#update_project_provisioning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_project_provisioning</h3>
 <p>You should check out the <a href="https://github.com/fastlane/fastlane/tree/master/fastlane/docs/Codesigning">code signing guide</a> before using this action.</p>
 <p>Updates your Xcode project to use a specific provisioning profile for code signing, so that you can properly build and sign the .ipa file using the <a href="#ipa">ipa</a> action or a CI service.</p>
 <p>Since you have to use different provisioning profiles for various targets (WatchKit, Extension, etc.) and configurations (Debug, Release) you can use the <code>target_filter</code> and <code>build_configuration</code> options:</p>
@@ -503,14 +513,14 @@ fastlane action [action_name]:
 
 <p>The <code>target_filter</code> and <code>build_configuration</code> options use standard regex, so if you want an exact match for a target, use <code>^MyTargetName$</code> to prevent a match for the <code>Pods - MyTargetName</code> target, for instance.</p>
 <p><strong><a href="https://github.com/fastlane/examples/blob/4fea7d2f16b095e09af409beb4da8a264be2301e/MindNode/Fastfile#L5-L47">Example Usage at MindNode</a></strong></p>
-<h3 id="update_app_group_identifiers">update_app_group_identifiers</h3>
+<h3 id="update_app_group_identifiers"><a name="user-content-update_app_group_identifiers" href="#update_app_group_identifiers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_app_group_identifiers</h3>
 <p>Updates the App Group Identifiers in the given Entitlements file, so you can have app groups for the app store build and app groups for an enterprise build.</p>
 <pre><code class="ruby">update_app_group_identifiers(
     entitlements_file: '/path/to/entitlements_file.entitlements',
     app_group_identifiers: ['group.your.app.group.identifier'])
 </code></pre>
 
-<h3 id="update_icloud_container_identifiers">update_icloud_container_identifiers</h3>
+<h3 id="update_icloud_container_identifiers"><a name="user-content-update_icloud_container_identifiers" href="#update_icloud_container_identifiers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_icloud_container_identifiers</h3>
 <p>Updates the iCloud Container Identifiers in the given Entitlements file, so you can use different iCloud containers for different builds like Adhoc, App Store, etc.</p>
 <pre><code class="ruby">update_icloud_container_identifiers(
   entitlements_file: '/path/to/entitlements_file.entitlements',
@@ -518,7 +528,7 @@ fastlane action [action_name]:
 )
 </code></pre>
 
-<h3 id="ensure_xcode_version">ensure_xcode_version</h3>
+<h3 id="ensure_xcode_version"><a name="user-content-ensure_xcode_version" href="#ensure_xcode_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_xcode_version</h3>
 <p>Makes sure a specific version of Xcode is selected to be used to build.
 You can use <code>ensure_xcode_version</code> to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.</p>
 <pre><code class="ruby">ensure_xcode_version(version: &quot;7.2&quot;)
@@ -530,7 +540,7 @@ You can use <code>ensure_xcode_version</code> to ensure that a beta version of X
 <pre><code class="ruby">xcode_install(version: &quot;7.1&quot;)
 </code></pre>
 
-<h3 id="xcversion">xcversion</h3>
+<h3 id="xcversion"><a name="user-content-xcversion" href="#xcversion" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcversion</h3>
 <p>Finds and selects a version of an installed Xcode that best matches the provided <a href="http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version"><code>Gem::Version</code> requirement specifier</a>.</p>
 <pre><code class="ruby">xcversion version: &quot;7.1&quot; # Selects Xcode 7.1.0
 xcversion version: &quot;~&gt; 7.1.0&quot; # Selects the latest installed version from the 7.1.x set
@@ -698,7 +708,7 @@ XCODE_BUILD_PATH=&quot;./build&quot;
 
 <p>See how <a href="https://github.com/fastlane/examples/blob/master/Wikipedia/Fastfile">Wikipedia</a> uses the <code>xctest</code> action to test their app.</p>
 <p><strong>Note</strong>: <code>xcodebuild</code> is a complex command, so it is recommended to use <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> for building your ipa file and <a href="https://github.com/fastlane/fastlane/tree/master/scan">scan</a> for testing your app instead.</p>
-<h3 id="copy_artifacts">copy_artifacts</h3>
+<h3 id="copy_artifacts"><a name="user-content-copy_artifacts" href="#copy_artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>copy_artifacts</h3>
 <p>This action copies artifacs to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your <code>.ipa</code>s, <code>.dSYM.zip</code>s, <code>.mobileprovision</code>s, <code>.cert</code>s</p>
 <p>Make sure your target_path is gitignored, and if you use <code>reset_git_repo</code>, make sure the artifacts are added to the exclude list</p>
 <p>Example in conjunction with reset_git_repo</p>
@@ -714,7 +724,7 @@ reset_git_repo(
 )
 </code></pre>
 
-<h3 id="clean_build_artifacts">clean_build_artifacts</h3>
+<h3 id="clean_build_artifacts"><a name="user-content-clean_build_artifacts" href="#clean_build_artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clean_build_artifacts</h3>
 <p>This action deletes the files that get created in your repo as a result of running the <code>ipa</code> and <code>sigh</code> commands. It doesn't delete the <code>fastlane/report.xml</code> though, this is probably more suited for the .gitignore.</p>
 <p>Useful if you quickly want to send out a test build by dropping down to the command line and typing something like <code>fastlane beta</code>, without leaving your repo in a messy state afterwards.</p>
 <pre><code class="ruby">clean_build_artifacts
@@ -731,7 +741,7 @@ reset_git_repo(
 </code></pre>
 
 <p>See how <a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">MindNode</a> uses <code>frameit</code> to not only frame the screenshots, but also add a title and a background around the screenshots. More information available in their <a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">Fastfile</a> and the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">screenshots folder</a> (<a href="https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json">Framefile.json</a>)</p>
-<h3 id="dsym_zip">dsym_zip</h3>
+<h3 id="dsym_zip"><a name="user-content-dsym_zip" href="#dsym_zip" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>dsym_zip</h3>
 <p>Create a zipped dSYM file from your <code>.xcarchive</code>, useful if you use the <code>xcodebuild</code> action in combination with <code>crashlytics</code> or <code>hockey</code>.</p>
 <pre><code class="ruby">dsym_zip
 </code></pre>
@@ -742,7 +752,7 @@ reset_git_repo(
 )
 </code></pre>
 
-<h3 id="splunkmint">splunkmint</h3>
+<h3 id="splunkmint"><a name="user-content-splunkmint" href="#splunkmint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>splunkmint</h3>
 <p>Uploads dSYM.zip file to <a href="https://mint.splunk.com">Splunk MINT</a> for crash symbolication.</p>
 <pre><code class="ruby">splunkmint(
     dsym: &quot;My.app.dSYM.zip&quot;,
@@ -752,14 +762,14 @@ reset_git_repo(
 </code></pre>
 
 <p>If you use <code>gym</code> the <code>dsym</code> parameter is optional.</p>
-<h3 id="recreate_schemes">recreate_schemes</h3>
+<h3 id="recreate_schemes"><a name="user-content-recreate_schemes" href="#recreate_schemes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>recreate_schemes</h3>
 <p>Recreate shared Xcode project schemes if the <code>Shared</code> checkbox was not enabled.</p>
 <pre><code class="ruby">recreate_schemes(
   project: './path/to/MyApp.xcodeproj'
 )
 </code></pre>
 
-<h2 id="testing">Testing</h2>
+<h2 id="testing"><a name="user-content-testing" href="#testing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testing</h2>
 <h3 id="scan"><a href="https://github.com/fastlane/fastlane/tree/master/scan">scan</a></h3>
 <p><code>scan</code> makes it super easy to run tests of your iOS and Mac applications</p>
 <pre><code class="ruby">scan
@@ -773,7 +783,7 @@ reset_git_repo(
 )
 </code></pre>
 
-<h3 id="xctest">xctest</h3>
+<h3 id="xctest"><a name="user-content-xctest" href="#xctest" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xctest</h3>
 <p>Use the <code>xctest</code> command to run unit tests.</p>
 <p>When running tests, coverage reports can be generated via <a href="https://github.com/supermarin/xcpretty">xcpretty</a> reporters:</p>
 <pre><code class="ruby">  # Run tests in given simulator
@@ -920,12 +930,12 @@ reset_git_repo(
 )
 </code></pre>
 
-<h2 id="deploying">Deploying</h2>
+<h2 id="deploying"><a name="user-content-deploying" href="#deploying" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploying</h2>
 <h3 id="pilot"><a href="https://github.com/fastlane/fastlane/tree/master/pilot">pilot</a></h3>
 <pre><code class="ruby">pilot
 </code></pre>
 
-<h4 id="options">Options</h4>
+<h4 id="options"><a name="user-content-options" href="#options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Options</h4>
 <p>If your account is on multiple teams and you need to tell the <code>iTMSTransporter</code> which "provider" to use, you can set the <code>itc_provider</code> option to pass this info.</p>
 <pre><code class="ruby">pilot(
   username: &quot;felix@krausefx.com&quot;,
@@ -940,7 +950,7 @@ reset_git_repo(
 </code></pre>
 
 <p>To upload a new build to TestFlight use <code>pilot</code> instead.</p>
-<h4 id="options_1">Options</h4>
+<h4 id="options_1"><a name="user-content-options_1" href="#options_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Options</h4>
 <p>If you don't want a PDF report for App Store builds, append <code>:force</code> to the command. This is useful when running <code>fastlane</code> on your Continuous Integration server: <code>deliver(force: true)</code></p>
 <p>If your account is on multiple teams and you need to tell the <code>iTMSTransporter</code> which "provider" to use, you can set the <code>itc_provider</code> option to pass this info.</p>
 <p>Other options</p>
@@ -953,7 +963,7 @@ reset_git_repo(
 
 <p>See how <a href="https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile">Product Hunt</a> automated the building and distributing of a beta version over TestFlight in their <a href="https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile">Fastfile</a>.</p>
 <p><strong>Note:</strong> There is an action named <code>appstore</code> which is a convenience alias to <code>deliver</code>.</p>
-<h3 id="testflight">TestFlight</h3>
+<h3 id="testflight"><a name="user-content-testflight" href="#testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TestFlight</h3>
 <p>To upload a new binary to Apple TestFlight use the <code>testflight</code> action:</p>
 <pre><code class="ruby">testflight
 </code></pre>
@@ -974,7 +984,7 @@ reset_git_repo(
 })
 </code></pre>
 
-<h3 id="local-device">Local Device</h3>
+<h3 id="local-device"><a name="user-content-local-device" href="#local-device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local Device</h3>
 <h3 id="install_on_device"><code>install_on_device</code></h3>
 <p>Installs the ipa on the device, if no id is given, the first found iOS device will be used, works via USB or Wi-Fi.
 this requires <code>ios-deploy</code> to be installed please have a look at <a href="https://github.com/phonegap/ios-deploy">ios-deploy</a>. to quickly install it, use <code>npm -g i ios-deploy</code></p>
@@ -1005,7 +1015,7 @@ this requires <code>ios-deploy</code> to be installed please have a look at <a h
 </code></pre>
 
 <p>Additionally you can specify <code>notes</code>, <code>emails</code>, <code>groups</code> and <code>notifications</code>.</p>
-<h4 id="distributing-to-groups">Distributing to Groups</h4>
+<h4 id="distributing-to-groups"><a name="user-content-distributing-to-groups" href="#distributing-to-groups" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Distributing to Groups</h4>
 <p>When using the <code>groups</code> parameter, it's important to use the group <strong>alias</strong> names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog here:</p>
 <p><img alt="Crashlytics Beta Groups Navigation" src="../../assets/Beta-Groups-Nav.png" /></p>
 <p>Each group's alias is then listed here:</p>
@@ -1019,9 +1029,9 @@ this requires <code>ios-deploy</code> to be installed please have a look at <a h
 <p><code>groups: ["dev-team-1"]</code> :white_check_mark:</p>
 <p><em>not</em></p>
 <p><code>groups: ["Android Devs"]</code> :x:</p>
-<h4 id="environment-variables">Environment Variables</h4>
+<h4 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h4>
 <p>The following environment variables may be used in place of parameters: <code>CRASHLYTICS_API_TOKEN</code>, <code>CRASHLYTICS_BUILD_SECRET</code>, and <code>CRASHLYTICS_FRAMEWORK_PATH</code>.</p>
-<h3 id="apteligent">Apteligent</h3>
+<h3 id="apteligent"><a name="user-content-apteligent" href="#apteligent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Apteligent</h3>
 <p>Uploads dSYM.zip file to <a href="https://apteligent.com">Apteligent</a> for crash symbolication.</p>
 <pre><code class="ruby">apteligent(
   app_id: '...',
@@ -1055,7 +1065,7 @@ end
 </code></pre>
 
 <p>The following environment variables may be used in place of parameters: <code>SENTRY_AUTH_TOKEN</code>, <code>SENTRY_ORG_SLUG</code>, <code>SENTRY_PROJECT_SLUG</code>, and <code>SENTRY_DSYM_PATH</code>.</p>
-<h3 id="aws-s3-distribution">AWS S3 Distribution</h3>
+<h3 id="aws-s3-distribution"><a name="user-content-aws-s3-distribution" href="#aws-s3-distribution" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>AWS S3 Distribution</h3>
 <p>Upload a new build to Amazon S3 to distribute the build to beta testers. Works for both Ad Hoc and Enterprise signed applications. This step will generate the necessary HTML, plist, and version files for you.</p>
 <p>Add the <code>s3</code> action after the <code>ipa</code> step:</p>
 <pre><code class="ruby">s3
@@ -1107,13 +1117,13 @@ end
 
 <p>This allows you to use Xcode Server for building and testing, which can be useful when your build takes a long time and requires connected iOS devices for testing. This action only requires you specify the <code>host</code> and the <code>bot_name</code> and it will go and download, unzip and return a path to the downloaded folder. Then you can export an IPA from the archive and upload it with <code>deliver</code>.</p>
 <p>Run <code>fastlane action xcode_server_get_assets</code> for the full list of options.</p>
-<h3 id="set_changelog">set_changelog</h3>
+<h3 id="set_changelog"><a name="user-content-set_changelog" href="#set_changelog" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>set_changelog</h3>
 <p>To easily set the changelog of an app on iTunes Connect for all languages</p>
 <pre><code class="ruby">set_changelog(app_identifier: &quot;com.krausefx.app&quot;, version: &quot;1.0&quot;, changelog: &quot;All Languages&quot;)
 </code></pre>
 
 <p>You can store the changelog in <code>./fastlane/changelog.txt</code> and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.</p>
-<h3 id="make_changelog_from_jenkins">make_changelog_from_jenkins</h3>
+<h3 id="make_changelog_from_jenkins"><a name="user-content-make_changelog_from_jenkins" href="#make_changelog_from_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>make_changelog_from_jenkins</h3>
 <p>Generate a changelog using the Changes section the running Jenkins job.</p>
 <pre><code class="ruby">make_changelog_from_jenkins(
   # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins
@@ -1236,7 +1246,7 @@ end
 )
 </code></pre>
 
-<h2 id="modifying-project">Modifying Project</h2>
+<h2 id="modifying-project"><a name="user-content-modifying-project" href="#modifying-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modifying Project</h2>
 <h3 id="increment_build_number"><a href="https://developer.apple.com/library/ios/qa/qa1827/_index.html">increment_build_number</a></h3>
 <p>This method will increment the <strong>build number</strong>, not the app version. Usually this is just an auto incremented number. You first have to <a href="https://developer.apple.com/library/ios/qa/qa1827/_index.html">set up your Xcode project</a>, if you haven't done it already.</p>
 <pre><code class="ruby">increment_build_number # automatically increment by one
@@ -1282,21 +1292,21 @@ increment_version_number(
 <pre><code class="ruby">version = get_version_number(xcodeproj: &quot;Project.xcodeproj&quot;)
 </code></pre>
 
-<h3 id="get_build_number_repository">get_build_number_repository</h3>
+<h3 id="get_build_number_repository"><a name="user-content-get_build_number_repository" href="#get_build_number_repository" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>get_build_number_repository</h3>
 <pre><code class="ruby">get_build_number_repository
 </code></pre>
 
 <p>This action will get the <strong>build number</strong> according to what the SCM HEAD reports.
 Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision) and git (uses short hash) and mercurial (uses short hash or revision number).</p>
 <p>There is an option, <code>:use_hg_revision_number</code>, which allows to use mercurial revision number instead of hash.</p>
-<h3 id="set_build_number_repository">set_build_number_repository</h3>
+<h3 id="set_build_number_repository"><a name="user-content-set_build_number_repository" href="#set_build_number_repository" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>set_build_number_repository</h3>
 <pre><code class="ruby">set_build_number_repository
 </code></pre>
 
 <p>This action will set the <strong>build number</strong> according to what the SCM HEAD reports.
 Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision) and git (uses short hash) and mercurial (uses short hash or revision number).</p>
 <p>There is an option, <code>:use_hg_revision_number</code>, which allows to use mercurial revision number instead of hash.</p>
-<h3 id="update_project_team">update_project_team</h3>
+<h3 id="update_project_team"><a name="user-content-update_project_team" href="#update_project_team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_project_team</h3>
 <p>This action allows you to modify the developer team. This may be useful if you want to use a different team for alpha, beta or distribution.</p>
 <pre><code class="ruby">update_project_team(
   path: &quot;Example.xcodeproj&quot;,
@@ -1304,7 +1314,7 @@ Currently supported SCMs are svn (uses root revision), git-svn (uses svn revisio
 )
 </code></pre>
 
-<h2 id="update_info_plist">update_info_plist</h2>
+<h2 id="update_info_plist"><a name="user-content-update_info_plist" href="#update_info_plist" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_info_plist</h2>
 <p>This action allows you to modify your <code>Info.plist</code> file before building. This may be useful if you want a separate build for alpha, beta or nightly builds, but don't want a separate target.</p>
 <pre><code class="ruby"># update app identifier string
 update_info_plist(
@@ -1336,7 +1346,7 @@ update_info_plist(
 )
 </code></pre>
 
-<h2 id="update_url_schemes">update_url_schemes</h2>
+<h2 id="update_url_schemes"><a name="user-content-update_url_schemes" href="#update_url_schemes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_url_schemes</h2>
 <p>This action allows you to update the URL schemes of the app before building it.
 For example, you can use this to set a different url scheme for the alpha
 or beta version of the app.</p>
@@ -1344,7 +1354,7 @@ or beta version of the app.</p>
             url_schemes: [&quot;com.myapp&quot;])
 </code></pre>
 
-<h3 id="update_app_identifier">update_app_identifier</h3>
+<h3 id="update_app_identifier"><a name="user-content-update_app_identifier" href="#update_app_identifier" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_app_identifier</h3>
 <p>Update an app identifier by either setting <code>CFBundleIdentifier</code> or <code>PRODUCT_BUNDLE_IDENTIFIER</code>, depending on which is already in use.</p>
 <pre><code class="ruby">update_app_identifier(
   xcodeproj: 'Example.xcodeproj', # Optional path to xcodeproj, will use the first .xcodeproj if not set
@@ -1362,7 +1372,7 @@ badge(shield: &quot;Version-0.0.3-blue&quot;, no_badge: true)
 </code></pre>
 
 <p><strong>Note</strong> If you want to reset the badge back to default you can use <code>sh "git checkout -- &lt;path&gt;/Assets.xcassets/"</code></p>
-<h3 id="update_urban_airship_configuration">update_urban_airship_configuration</h3>
+<h3 id="update_urban_airship_configuration"><a name="user-content-update_urban_airship_configuration" href="#update_urban_airship_configuration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_urban_airship_configuration</h3>
 <p>Easily update the AirshipConfig.plist for different deployment targets.</p>
 <pre><code class="ruby">update_urban_airship_configuration(
   plist_path: &quot;AirshipConfig.plist&quot;,
@@ -1371,7 +1381,7 @@ badge(shield: &quot;Version-0.0.3-blue&quot;, no_badge: true)
 )
 </code></pre>
 
-<h2 id="developer-portal">Developer Portal</h2>
+<h2 id="developer-portal"><a name="user-content-developer-portal" href="#developer-portal" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Developer Portal</h2>
 <h3 id="match"><a href="https://github.com/fastlane/fastlane/tree/master/match">match</a></h3>
 <p>Check out <a href="https://codesigning.guide">codesigning.guide</a> for more information about the concept of <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>.</p>
 <p><code>match</code> allows you to easily sync your certificates and profiles across your team using git. More information on <a href="https://github.com/fastlane/fastlane/tree/master/match">GitHub</a>.</p>
@@ -1441,7 +1451,7 @@ match(type: &quot;development&quot;, readonly: true)
 </code></pre>
 
 <p><a href="https://github.com/fastlane/examples/blob/master/SunApps/Fastfile#L41-L49">SunApps</a> uses <code>produce</code> to automatically generate new apps for new customers.</p>
-<h3 id="register_devices">register_devices</h3>
+<h3 id="register_devices"><a name="user-content-register_devices" href="#register_devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>register_devices</h3>
 <p>This will register iOS devices with the Developer Portal so that you can include them in your provisioning profiles.</p>
 <p>This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.</p>
 <p>The action will connect to the Apple Developer Portal using the username you specified in your <code>Appfile</code> with <code>apple_id</code>, but you can override it using the <code>username</code> option, or by setting the env variable <code>ENV['DELIVER_USER']</code>.</p>
@@ -1466,8 +1476,8 @@ register_devices(
 )
 </code></pre>
 
-<h2 id="using-git">Using git</h2>
-<h3 id="changelog_from_git_commits">changelog_from_git_commits</h3>
+<h2 id="using-git"><a name="user-content-using-git" href="#using-git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using git</h2>
+<h3 id="changelog_from_git_commits"><a name="user-content-changelog_from_git_commits" href="#changelog_from_git_commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>changelog_from_git_commits</h3>
 <p>This action turns your git commit history into formatted changelog text.</p>
 <pre><code class="ruby"># Collects commits since your last tag and returns a concatenation of their subjects and bodies
 changelog_from_git_commits
@@ -1482,7 +1492,7 @@ changelog_from_git_commits(
 )
 </code></pre>
 
-<h3 id="ensure_git_branch">ensure_git_branch</h3>
+<h3 id="ensure_git_branch"><a name="user-content-ensure_git_branch" href="#ensure_git_branch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_git_branch</h3>
 <p>This action will check if your git repo is checked out to a specific branch. You may only want to make releases from a specific branch, so <code>ensure_git_branch</code> will stop a lane if it was accidentally executed on an incorrect branch.</p>
 <pre><code class="ruby">ensure_git_branch # defaults to `master` branch
 
@@ -1491,7 +1501,7 @@ ensure_git_branch(
 )
 </code></pre>
 
-<h3 id="last_git_tag">last_git_tag</h3>
+<h3 id="last_git_tag"><a name="user-content-last_git_tag" href="#last_git_tag" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>last_git_tag</h3>
 <p>Simple action to get the latest git tag</p>
 <pre><code class="ruby">last_git_tag
 </code></pre>
@@ -1505,19 +1515,19 @@ ensure_git_branch(
   end
 </code></pre>
 
-<h3 id="git_branch">git_branch</h3>
+<h3 id="git_branch"><a name="user-content-git_branch" href="#git_branch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_branch</h3>
 <p>Quickly get the name of the branch you're currently in</p>
 <pre><code class="ruby">git_branch
 </code></pre>
 
-<h3 id="git_tag_exists">git_tag_exists</h3>
+<h3 id="git_tag_exists"><a name="user-content-git_tag_exists" href="#git_tag_exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_tag_exists</h3>
 <p>Checks whether the given tag exists in the repo</p>
 <pre><code class="ruby">if git_tag_exists(tag: &quot;1.1.0&quot;)
   UI.message(&quot;Found it 🚀&quot;)
 end
 </code></pre>
 
-<h3 id="git_add">git_add</h3>
+<h3 id="git_add"><a name="user-content-git_add" href="#git_add" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_add</h3>
 <p>To simply add one file before commit use</p>
 <pre><code class="ruby">git_add(path: &quot;./version.txt&quot;)
 </code></pre>
@@ -1526,7 +1536,7 @@ end
 <pre><code class="ruby">git_add(path: [&quot;./version.txt&quot;, &quot;./changelog.txt&quot;])
 </code></pre>
 
-<h3 id="git_commit">git_commit</h3>
+<h3 id="git_commit"><a name="user-content-git_commit" href="#git_commit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_commit</h3>
 <p>To simply commit one file with a certain commit message use</p>
 <pre><code class="ruby">git_commit(path: &quot;./version.txt&quot;,
         message: &quot;Version Bump&quot;)
@@ -1537,13 +1547,13 @@ end
         message: &quot;Version Bump&quot;)
 </code></pre>
 
-<h3 id="ensure_git_status_clean">ensure_git_status_clean</h3>
+<h3 id="ensure_git_status_clean"><a name="user-content-ensure_git_status_clean" href="#ensure_git_status_clean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_git_status_clean</h3>
 <p>A sanity check to make sure you are working in a repo that is clean. Especially useful to put at the beginning of your Fastfile in the <code>before_all</code> block, if some of your other actions will touch your filesystem, do things to your git repo, or just as a general reminder to save your work. Also needed as a prerequisite for some other actions like <code>reset_git_repo</code>.</p>
 <pre><code class="ruby">ensure_git_status_clean
 </code></pre>
 
 <p><a href="https://github.com/fastlane/examples/blob/master/Wikipedia/Fastfile">Wikipedia</a> uses <code>ensure_git_status_clean</code> to make sure, no uncommited changes are deployed by `fastlane.</p>
-<h3 id="commit_version_bump">commit_version_bump</h3>
+<h3 id="commit_version_bump"><a name="user-content-commit_version_bump" href="#commit_version_bump" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>commit_version_bump</h3>
 <p>This action will create a "Version Bump" commit in your repo. Useful in conjunction with <code>increment_build_number</code>.</p>
 <p>It checks the repo to make sure that only the relevant files have changed, these are the files that <code>increment_build_number</code> (<code>agvtool</code>) touches:
 - All .plist files
@@ -1560,13 +1570,13 @@ commit_version_bump(
 </code></pre>
 
 <p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile">Artsy</a> uses <code>fastlane</code> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
-<h3 id="number_of_commits">number_of_commits</h3>
+<h3 id="number_of_commits"><a name="user-content-number_of_commits" href="#number_of_commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>number_of_commits</h3>
 <p>You can use this action to get the number of commits of this repo. This is useful if you want to set the build number to the number of commits.</p>
 <pre><code class="ruby">build_number = number_of_commits
 increment_build_number(build_number: build_number)
 </code></pre>
 
-<h3 id="add_git_tag">add_git_tag</h3>
+<h3 id="add_git_tag"><a name="user-content-add_git_tag" href="#add_git_tag" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>add_git_tag</h3>
 <p>This will automatically tag your build with the following format: <code>&lt;grouping&gt;/&lt;lane&gt;/&lt;prefix&gt;&lt;build_number&gt;</code>, where:</p>
 <ul>
 <li><code>grouping</code> is just to keep your tags organised under one "folder", defaults to 'builds'</li>
@@ -1591,9 +1601,9 @@ add_git_tag(
 </code></pre>
 
 <p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile#L105">Artsy</a> uses <code>fastlane</code> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
-<h3 id="git_pull">git_pull</h3>
+<h3 id="git_pull"><a name="user-content-git_pull" href="#git_pull" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_pull</h3>
 <p>Executes a simple <code>git pull --tags</code> command</p>
-<h3 id="push_to_git_remote">push_to_git_remote</h3>
+<h3 id="push_to_git_remote"><a name="user-content-push_to_git_remote" href="#push_to_git_remote" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>push_to_git_remote</h3>
 <p>Lets you push your local commits to a remote git repo. Useful if you make local changes such as adding a version bump commit (using <code>commit_version_bump</code>) or a git tag (using 'add_git_tag') on a CI server, and you want to push those changes back to your canonical/main repo.</p>
 <p>Tags will be pushed as well by default, except when setting the option 'tags' to false.</p>
 <pre><code class="ruby">push_to_git_remote # simple version. pushes 'master' branch to 'origin' remote
@@ -1608,12 +1618,12 @@ push_to_git_remote(
 </code></pre>
 
 <p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile">Artsy</a> uses <code>fastlane</code> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
-<h3 id="push_git_tags">push_git_tags</h3>
+<h3 id="push_git_tags"><a name="user-content-push_git_tags" href="#push_git_tags" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>push_git_tags</h3>
 <p>If you only want to push the tags and nothing else, you can use the <code>push_git_tags</code> action:</p>
 <pre><code class="ruby">push_git_tags
 </code></pre>
 
-<h3 id="reset_git_repo">reset_git_repo</h3>
+<h3 id="reset_git_repo"><a name="user-content-reset_git_repo" href="#reset_git_repo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reset_git_repo</h3>
 <p>This action will reset your git repo to a clean state, discarding any uncommitted and untracked changes. Useful in case you need to revert the repo back to a clean state, e.g. after the fastlane run.
 Untracked files like <code>.env</code> will also be deleted, unless <code>:skip_clean</code> is true.</p>
 <p>It's a pretty drastic action so it comes with a sort of safety latch. It will only proceed with the reset if either of these conditions are met:</p>
@@ -1635,14 +1645,14 @@ reset_git_repo(
 </code></pre>
 
 <p><a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">MindNode</a> uses this action to reset temporary changes of the project configuration after successfully building it.</p>
-<h3 id="get_github_release">get_github_release</h3>
+<h3 id="get_github_release"><a name="user-content-get_github_release" href="#get_github_release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>get_github_release</h3>
 <p>You can easily receive information about a specific release from GitHub.com</p>
 <pre><code class="ruby">release = get_github_release(url: &quot;fastlane/fastlane&quot;, version: &quot;1.0.0&quot;)
 puts release['name']
 </code></pre>
 
 <p>To get a list of all available values run <code>fastlane action get_github_release</code>.</p>
-<h3 id="import_from_git">import_from_git</h3>
+<h3 id="import_from_git"><a name="user-content-import_from_git" href="#import_from_git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>import_from_git</h3>
 <p>Import another Fastfile from a remote git repository to use its lanes.</p>
 <p>This is useful if you have shared lanes across multiple apps and you want to store the Fastfile in a remote git repository.</p>
 <pre><code class="ruby">import_from_git(
@@ -1652,7 +1662,7 @@ puts release['name']
 )
 </code></pre>
 
-<h3 id="last_git_commit">last_git_commit</h3>
+<h3 id="last_git_commit"><a name="user-content-last_git_commit" href="#last_git_commit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>last_git_commit</h3>
 <p>Get information about the last git commit, returns the commit hash, the abbreviated commit hash, the author and the git message.</p>
 <pre><code class="ruby">commit = last_git_commit
 crashlytics(notes: commit[:message]) # message of commit
@@ -1661,7 +1671,7 @@ hash = commit[:commit_hash] # long sha of commit
 short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 </code></pre>
 
-<h3 id="create_pull_request">create_pull_request</h3>
+<h3 id="create_pull_request"><a name="user-content-create_pull_request" href="#create_pull_request" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>create_pull_request</h3>
 <p>Create a new pull request.</p>
 <pre><code class="ruby">create_pull_request(
   api_token: ENV['GITHUB_TOKEN'],
@@ -1674,13 +1684,13 @@ short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 )
 </code></pre>
 
-<h2 id="using-mercurial">Using mercurial</h2>
-<h3 id="hg_ensure_clean_status">hg_ensure_clean_status</h3>
+<h2 id="using-mercurial"><a name="user-content-using-mercurial" href="#using-mercurial" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using mercurial</h2>
+<h3 id="hg_ensure_clean_status"><a name="user-content-hg_ensure_clean_status" href="#hg_ensure_clean_status" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_ensure_clean_status</h3>
 <p>Along the same lines as the <a href="#ensure_git_status_clean"><code>ensure_git_status_clean</code></a> action, this is a sanity check to ensure the working mercurial repo is clean. Especially useful to put at the beginning of your Fastfile in the <code>before_all</code> block.</p>
 <pre><code class="ruby">hg_ensure_clean_status
 </code></pre>
 
-<h3 id="hg_commit_version_bump">hg_commit_version_bump</h3>
+<h3 id="hg_commit_version_bump"><a name="user-content-hg_commit_version_bump" href="#hg_commit_version_bump" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_commit_version_bump</h3>
 <p>The mercurial equivalent of the <a href="#commit_version_bump"><code>commit_version_bump</code></a> git action. Like the git version, it is useful in conjunction with <a href="#increment_build_number"><code>increment_build_number</code></a>.</p>
 <p>It checks the repo to make sure that only the relevant files have changed, these are the files that <code>increment_build_number</code> (<code>agvtool</code>) touches:
 - All .plist files
@@ -1696,13 +1706,13 @@ hg_commit_version_bump(
 )
 </code></pre>
 
-<h3 id="hg_add_tag">hg_add_tag</h3>
+<h3 id="hg_add_tag"><a name="user-content-hg_add_tag" href="#hg_add_tag" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_add_tag</h3>
 <p>A simplified version of git action <a href="#add_git_tag"><code>add_git_tag</code></a>. It adds a given tag to the mercurial repo.</p>
 <p>Specify the tag name with the <code>:tag</code> option.</p>
 <pre><code class="ruby">hg_add_tag tag: version_number
 </code></pre>
 
-<h3 id="hg_push">hg_push</h3>
+<h3 id="hg_push"><a name="user-content-hg_push" href="#hg_push" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_push</h3>
 <p>The mercurial equivalent of <a href="#push_to_git_remote"><code>push_to_git_remote</code></a> — pushes your local commits to a remote mercurial repo. Useful when local changes such as adding a version bump commit or adding a tag are part of your lane’s actions.</p>
 <pre><code class="ruby">hg_push # simple version. pushes commits from current branch to default destination
 
@@ -1712,7 +1722,7 @@ hg_push(
 )
 </code></pre>
 
-<h2 id="notifications">Notifications</h2>
+<h2 id="notifications"><a name="user-content-notifications" href="#notifications" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Notifications</h2>
 <h3 id="slack"><a href="http://slack.com">Slack</a></h3>
 <p>Create an Incoming WebHook and export this as <code>SLACK_URL</code>. Can send a message to <strong>#channel</strong> (by default), a direct message to <strong>@username</strong> or a message to a private group <strong>group</strong> with success (green) or failure (red) status.</p>
 <pre><code class="ruby">slack(
@@ -1804,7 +1814,7 @@ mailgun(
   )
 </code></pre>
 
-<h3 id="notification">Notification</h3>
+<h3 id="notification"><a name="user-content-notification" href="#notification" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Notification</h3>
 <p>Display a notification using the macOS notification center. Uses <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a>.</p>
 <pre><code class="ruby">  notification(subtitle: &quot;Finished Building&quot;, message: &quot;Ready to upload...&quot;)
 </code></pre>
@@ -1868,8 +1878,8 @@ in your Flock admin panel.</p>
 )
 </code></pre>
 
-<h2 id="other">Other</h2>
-<h3 id="update_fastlane">update_fastlane</h3>
+<h2 id="other"><a name="user-content-other" href="#other" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other</h2>
+<h3 id="update_fastlane"><a name="user-content-update_fastlane" href="#update_fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_fastlane</h3>
 <p>This action will look at all installed fastlane tools and update them to the next available minor version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.</p>
 <p>If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in <code>sudo</code> mode.</p>
 <p>The simplest possible fix for this is putting the following lines into your <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
@@ -1888,7 +1898,7 @@ export PATH=$PATH:~/.gems/bin
 end
 </code></pre>
 
-<h3 id="sonar">sonar</h3>
+<h3 id="sonar"><a name="user-content-sonar" href="#sonar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sonar</h3>
 <p>This action will execute <code>sonar-runner</code> to run SonarQube analysis on your source code.</p>
 <pre><code class="ruby">sonar(
   project_key: &quot;name.gretzki.awesomeApp&quot;,
@@ -1899,20 +1909,20 @@ end
 </code></pre>
 
 <p>It can process unit test results if formatted as junit report as shown in <a href="#xctest">xctest</a> action. It can also integrate coverage reports in Cobertura format, which can be transformed into by <a href="#slather">slather</a> action.</p>
-<h3 id="setup_jenkins">setup_jenkins</h3>
+<h3 id="setup_jenkins"><a name="user-content-setup_jenkins" href="#setup_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_jenkins</h3>
 <p>This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the <code>./output</code> directory. The action also works with <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>, selected keychain will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when fastlane is executed on a CI system.</p>
 <pre><code class="ruby">setup_jenkins
 </code></pre>
 
-<h2 id="misc">Misc</h2>
-<h3 id="adb">adb</h3>
+<h2 id="misc"><a name="user-content-misc" href="#misc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Misc</h2>
+<h3 id="adb"><a name="user-content-adb" href="#adb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>adb</h3>
 <p>Lets you execute adb commands.</p>
 <pre><code class="ruby">adb(
   command: &quot;shell ls&quot;,
 )
 </code></pre>
 
-<h3 id="adb_devices">adb_devices</h3>
+<h3 id="adb_devices"><a name="user-content-adb_devices" href="#adb_devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>adb_devices</h3>
 <p>Returns an array of all currently connected android devices.
 e.g.: run an adb command on all connected devices.</p>
 <pre><code>adb_devices.each  do | device |
@@ -1923,7 +1933,7 @@ e.g.: run an adb command on all connected devices.</p>
 end
 </code></pre>
 
-<h3 id="twitter">twitter</h3>
+<h3 id="twitter"><a name="user-content-twitter" href="#twitter" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>twitter</h3>
 <p>Post a tweet on twitter. Requires you to setup an app on twitter.com and obtain consumer and access_token.</p>
 <pre><code class="ruby">twitter(
   access_token: &quot;XXXX&quot;,
@@ -1934,7 +1944,7 @@ end
 )
 </code></pre>
 
-<h3 id="erb">erb</h3>
+<h3 id="erb"><a name="user-content-erb" href="#erb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>erb</h3>
 <p>Parses a given ERB template file (passes <code>placeholders</code> as a binding), and saves the rendered output to destination. If no destination is given, it returns the rendered output as a string.</p>
 <p>Example <code>erb</code> template:</p>
 <pre><code>Variable1 &lt;%= var1 %&gt;
@@ -1955,7 +1965,7 @@ Variable2 &lt;%= var2 %&gt;
 )
 </code></pre>
 
-<h3 id="appledoc">appledoc</h3>
+<h3 id="appledoc"><a name="user-content-appledoc" href="#appledoc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appledoc</h3>
 <p>Generate Apple-like source code documentation from specially formatted source code comments.</p>
 <pre><code class="ruby">appledoc(
   project_name: &quot;MyProjectName&quot;,
@@ -1971,7 +1981,7 @@ Variable2 &lt;%= var2 %&gt;
 </code></pre>
 
 <p>Use <code>appledoc --help</code> to see the list of all command line options.</p>
-<h3 id="download">download</h3>
+<h3 id="download"><a name="user-content-download" href="#download" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>download</h3>
 <p>Download a file from a remote server (e.g. JSON file)</p>
 <pre><code class="ruby">data = download(url: &quot;https://host.com/api.json&quot;)
 
@@ -1984,35 +1994,35 @@ data[&quot;users&quot;].each do |user|
 end
 </code></pre>
 
-<h3 id="version_get_podspec">version_get_podspec</h3>
+<h3 id="version_get_podspec"><a name="user-content-version_get_podspec" href="#version_get_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>version_get_podspec</h3>
 <p>To receive the current version number from your <code>.podspec</code> file use</p>
 <pre><code class="ruby">version = version_get_podspec(path: &quot;TSMessages.podspec&quot;)
 </code></pre>
 
-<h3 id="version_bump_podspec">version_bump_podspec</h3>
+<h3 id="version_bump_podspec"><a name="user-content-version_bump_podspec" href="#version_bump_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>version_bump_podspec</h3>
 <p>To increment the version number of your <code>.podspec</code> use</p>
 <pre><code class="ruby">version = version_bump_podspec(path: &quot;TSMessages.podspec&quot;, bump_type: &quot;patch&quot;)
 # or
 version = version_bump_podspec(path: &quot;TSMessages.podspec&quot;, version_number: &quot;1.4&quot;)
 </code></pre>
 
-<h3 id="get_info_plist_value">get_info_plist_value</h3>
+<h3 id="get_info_plist_value"><a name="user-content-get_info_plist_value" href="#get_info_plist_value" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>get_info_plist_value</h3>
 <p>Get a value from a plist file, which can be used to fetch the app identifier and more information about your app</p>
 <pre><code class="ruby">identifier = get_info_plist_value(path: './Info.plist', key: 'CFBundleIdentifier')
 puts identifier # =&gt; com.krausefx.app
 </code></pre>
 
-<h3 id="set_info_plist_value">set_info_plist_value</h3>
+<h3 id="set_info_plist_value"><a name="user-content-set_info_plist_value" href="#set_info_plist_value" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>set_info_plist_value</h3>
 <p>Set a value of a plist file. You can use this action to update the bundle identifier of your app</p>
 <pre><code class="ruby">set_info_plist_value(path: './Info.plist', key: 'CFBundleIdentifier', value: &quot;com.krausefx.app.beta&quot;)
 </code></pre>
 
-<h3 id="say">say</h3>
+<h3 id="say"><a name="user-content-say" href="#say" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>say</h3>
 <p>To speak out a text</p>
 <pre><code class="ruby">say &quot;I can speak&quot;
 </code></pre>
 
-<h3 id="clipboard">clipboard</h3>
+<h3 id="clipboard"><a name="user-content-clipboard" href="#clipboard" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clipboard</h3>
 <p>You can store a string in the clipboard running</p>
 <pre><code class="ruby">clipboard(value: &quot;https://github.com/fastlane/fastlane/tree/master/fastlane&quot;)
 </code></pre>
@@ -2027,7 +2037,7 @@ puts identifier # =&gt; com.krausefx.app
 cloc(exclude_dir: 'ThirdParty,Resources', output_directory: 'reports', source_directory: 'MyCoolApp')
 </code></pre>
 
-<h3 id="is_ci">is_ci?</h3>
+<h3 id="is_ci"><a name="user-content-is_ci" href="#is_ci" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>is_ci?</h3>
 <p>Is the current run being executed on a CI system, like Jenkins or Travis?</p>
 <pre><code class="ruby">if is_ci?
   puts &quot;I'm a computer&quot;
@@ -2036,7 +2046,7 @@ else
 end
 </code></pre>
 
-<h3 id="verify_build">verify_build</h3>
+<h3 id="verify_build"><a name="user-content-verify_build" href="#verify_build" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_build</h3>
 <p>Verifies that the built app was built using the expected build resources. This is relevant for people who build on machines that are used to build apps with different profiles, certificates and/or bundle identifiers to guard against configuration mistakes.</p>
 <p>Add this action to appropriate lanes and assign some values to verify, like:</p>
 <pre><code class="ruby">verify_build(
@@ -2052,13 +2062,13 @@ end
 - provisioning_uuid
 - team_identifier
 - team_name</p>
-<h3 id="verify_pod_keys">verify_pod_keys</h3>
+<h3 id="verify_pod_keys"><a name="user-content-verify_pod_keys" href="#verify_pod_keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_pod_keys</h3>
 <p>Runs a check against all keys specified in your Podfile to make sure they're more than a single character long. This is to ensure you don't deploy with stubbed keys.</p>
 <pre><code class="ruby">verify_pod_keys
 </code></pre>
 
 <p>Will raise an error if any key is empty or a single character.</p>
-<h3 id="read_podspec">read_podspec</h3>
+<h3 id="read_podspec"><a name="user-content-read_podspec" href="#read_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read_podspec</h3>
 <p>Loads the specified (or the first found) podspec in the folder as JSON, so that you can inspect its <code>version</code>, <code>files</code> etc. This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).</p>
 <pre><code class="ruby">spec = read_podspec
 version = spec['version']
@@ -2069,7 +2079,7 @@ puts &quot;Using Version #{version}&quot;
 <pre><code class="ruby">spec = read_podspec(path: &quot;./XcodeServerSDK.podspec&quot;)
 </code></pre>
 
-<h3 id="pod_push">pod_push</h3>
+<h3 id="pod_push"><a name="user-content-pod_push" href="#pod_push" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pod_push</h3>
 <p>Push a Podspec to Trunk or a private repository</p>
 <pre><code class="ruby"># If no path is supplied then Trunk will attempt to find the first Podspec in the current directory.
 pod_push
@@ -2084,7 +2094,7 @@ pod_push(path: 'TSMessages.podspec', repo: 'MyRepo')
 pod_push(path: 'TMessages.podspec', repo: 'MyRepo', sources: ['https://github.com/MyGithubPage/Specs', 'https://github.com/CocoaPods/Specs'])
 </code></pre>
 
-<h3 id="clean_cocoapods_cache">clean_cocoapods_cache</h3>
+<h3 id="clean_cocoapods_cache"><a name="user-content-clean_cocoapods_cache" href="#clean_cocoapods_cache" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clean_cocoapods_cache</h3>
 <p>Cleanup the Cocoapods cache.</p>
 <pre><code class="ruby"># Clean entire cocoapods cache.
 clean_cocoapods_cache
@@ -2093,7 +2103,7 @@ clean_cocoapods_cache
 clean_cocoapods_cache(name: 'CACHED POD')
 </code></pre>
 
-<h3 id="prompt">prompt</h3>
+<h3 id="prompt"><a name="user-content-prompt" href="#prompt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>prompt</h3>
 <p>You can use <code>prompt</code> to ask the user for a value or to just let the user confirm the next step.
 This action also supports multi-line inputs using the <code>multi_line_end_keyword</code> option.</p>
 <pre><code class="ruby">changelog = prompt(text: &quot;Changelog: &quot;)
@@ -2107,19 +2117,19 @@ This action also supports multi-line inputs using the <code>multi_line_end_keywo
 hockey(notes: changelog)
 </code></pre>
 
-<h3 id="backup_file">backup_file</h3>
+<h3 id="backup_file"><a name="user-content-backup_file" href="#backup_file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>backup_file</h3>
 <p>This action backs up your file to <code>[path].back</code>.</p>
 <pre><code class="ruby"># copies `file` to `/path/to/file.back`
 backup_file(path: '/path/to/file')
 </code></pre>
 
-<h3 id="restore_file">restore_file</h3>
+<h3 id="restore_file"><a name="user-content-restore_file" href="#restore_file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>restore_file</h3>
 <p>This action restores a file previously backed up by the <code>backup_file</code> action.</p>
 <pre><code class="ruby"># copies `file.back` to '/path/to/file'
 restore_file(path: '/path/to/file')
 </code></pre>
 
-<h3 id="backup_xcarchive">backup_xcarchive</h3>
+<h3 id="backup_xcarchive"><a name="user-content-backup_xcarchive" href="#backup_xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>backup_xcarchive</h3>
 <p>Save your [zipped] xcarchive elsewhere from default path.</p>
 <pre><code class="ruby">backup_xcarchive(
   xcarchive: '/path/to/file.xcarchive', # Optional if you use the `xcodebuild` action
@@ -2129,12 +2139,12 @@ restore_file(path: '/path/to/file')
 )
 </code></pre>
 
-<h3 id="debug">debug</h3>
+<h3 id="debug"><a name="user-content-debug" href="#debug" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>debug</h3>
 <p>Print out an overview of the lane context values.</p>
 <pre><code class="ruby">debug
 </code></pre>
 
-<h3 id="dotgpg_environment">dotgpg_environment</h3>
+<h3 id="dotgpg_environment"><a name="user-content-dotgpg_environment" href="#dotgpg_environment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>dotgpg_environment</h3>
 <p>Reads in production secrets set in a dotgpg file and puts them in ENV.</p>
 <pre><code class="ruby">dotgpg_environment(dotgpg_file: './path/to/gpgfile')
 </code></pre>
@@ -2144,7 +2154,7 @@ restore_file(path: '/path/to/file')
 <pre><code class="ruby">jazzy
 </code></pre>
 
-<h3 id="update_info_plist_1">update_info_plist</h3>
+<h3 id="update_info_plist_1"><a name="user-content-update_info_plist_1" href="#update_info_plist_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_info_plist</h3>
 <p>Update an <code>Info.plist</code> with a bundle identifier and display name.</p>
 <pre><code class="ruby">update_info_plist(
   xcodeproj: '/path/to/Project.xcodeproj', # Optional. Will pick the first `xcodeproj` in the directory if left blank
@@ -2154,12 +2164,12 @@ restore_file(path: '/path/to/file')
 )
 </code></pre>
 
-<h3 id="fastlane_version">fastlane_version</h3>
+<h3 id="fastlane_version"><a name="user-content-fastlane_version" href="#fastlane_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane_version</h3>
 <p>Add this to your <code>Fastfile</code> to require a certain version of <code>fastlane</code>. Use it if you use an action that just recently came out and you need it</p>
 <pre><code class="ruby">fastlane_version &quot;1.50.0&quot;
 </code></pre>
 
-<h3 id="install_xcode_plugin">install_xcode_plugin</h3>
+<h3 id="install_xcode_plugin"><a name="user-content-install_xcode_plugin" href="#install_xcode_plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>install_xcode_plugin</h3>
 <p>Install an Xcode plugin for the current user</p>
 <pre><code class="ruby">install_xcode_plugin(url: 'https://example.com/clubmate/plugin.zip')
 </code></pre>
@@ -2168,16 +2178,16 @@ restore_file(path: '/path/to/file')
 <pre><code class="ruby">install_xcode_plugin(github: 'https://github.com/contentful/ContentfulXcodePlugin')
 </code></pre>
 
-<h3 id="opt_out_usage">opt_out_usage</h3>
+<h3 id="opt_out_usage"><a name="user-content-opt_out_usage" href="#opt_out_usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_usage</h3>
 <p>Add this your <code>Fastfile</code> to not send any data to the fastlane web service. You can also use the <code>FASTLANE_OPT_OUT_USAGE</code> environment variable. No personal data is shared, more information on <a href="https://github.com/fastlane/enhancer">https://github.com/fastlane/enhancer</a></p>
 <pre><code>opt_out_usage
 </code></pre>
 
-<h3 id="rocket">rocket</h3>
+<h3 id="rocket"><a name="user-content-rocket" href="#rocket" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rocket</h3>
 <p>Print an ascii Rocket :rocket:. Useful after using <code>crashlytics</code> or <code>pilot</code> to indicate that your new build has been shipped to outer-space.</p>
-<h3 id="skip_docs">skip_docs</h3>
+<h3 id="skip_docs"><a name="user-content-skip_docs" href="#skip_docs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>skip_docs</h3>
 <p>Tell <code>fastlane</code> to not automatically create a <code>fastlane/README.md</code> when running <code>fastlane</code>. You can always trigger the creation of this file manually by running <code>fastlane docs</code></p>
-<h3 id="ssh">ssh</h3>
+<h3 id="ssh"><a name="user-content-ssh" href="#ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ssh</h3>
 <p>Lets you execute a series of commands on a remote host, if one of the commands in command-array returns non 0 - it fails.</p>
 <pre><code class="ruby">ssh(
   host: &quot;dev.januschka.com&quot;,
@@ -2200,7 +2210,7 @@ restore_file(path: '/path/to/file')
     "echo 'i wont be executed'"
   ]
 )</p>
-<h3 id="scp">scp</h3>
+<h3 id="scp"><a name="user-content-scp" href="#scp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>scp</h3>
 <p>Allows SCP file transfer.</p>
 <p><strong>Upload file/folder:</strong></p>
 <pre><code class="ruby">scp(
@@ -2224,7 +2234,7 @@ restore_file(path: '/path/to/file')
 )
 </code></pre>
 
-<h3 id="rsync">rsync</h3>
+<h3 id="rsync"><a name="user-content-rsync" href="#rsync" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rsync</h3>
 <p>a wrapper around rsync, rsync is a tool that lets you synchronize files, including permissions and so on for a more detailed information about rsync please see <strong><em>rsync(1)</em></strong> manpage.</p>
 <pre><code class="ruby">rsync(
   source: &quot;root@host:/tmp/1.txt&quot;,
@@ -2232,14 +2242,14 @@ restore_file(path: '/path/to/file')
 )
 </code></pre>
 
-<h3 id="zip">zip</h3>
+<h3 id="zip"><a name="user-content-zip" href="#zip" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>zip</h3>
 <p>Compress a file or directory</p>
 <pre><code class="ruby">zip(path: &quot;MyApp.app&quot;)
 
 zip(path: &quot;MyApp.app&quot;, output_path: &quot;Latest.app.zip&quot;)
 </code></pre>
 
-<h3 id="ifttt">ifttt</h3>
+<h3 id="ifttt"><a name="user-content-ifttt" href="#ifttt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ifttt</h3>
 <p>Connect to the IFTTT <a href="https://ifttt.com/maker">Maker Channel</a>. An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this <code>fastlane</code> action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.</p>
 <pre><code class="ruby">ifttt(
   api_key: &quot;...&quot;,
@@ -2250,7 +2260,7 @@ zip(path: &quot;MyApp.app&quot;, output_path: &quot;Latest.app.zip&quot;)
 )
 </code></pre>
 
-<h3 id="reset_simulators">reset_simulators</h3>
+<h3 id="reset_simulators"><a name="user-content-reset_simulators" href="#reset_simulators" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reset_simulators</h3>
 <p>Reset all the iOS simulators. Useful with test actions to ensure a clean simulator.</p>
 <pre><code class="ruby">reset_simulators
 </code></pre>
@@ -2262,7 +2272,7 @@ zip(path: &quot;MyApp.app&quot;, output_path: &quot;Latest.app.zip&quot;)
 end
 </code></pre>
 
-<h3 id="pod_lib_lint">pod_lib_lint</h3>
+<h3 id="pod_lib_lint"><a name="user-content-pod_lib_lint" href="#pod_lib_lint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pod_lib_lint</h3>
 <p>Execute pod lib lint command</p>
 <pre><code class="ruby">pod_lib_lint
 
@@ -2276,7 +2286,7 @@ pod_lib_lint(allow_warnings: true)
 pod_lib_lint(sources: ['https://github.com/MyGithubPage/Specs', 'https://github.com/CocoaPods/Specs'])
 </code></pre>
 
-<h3 id="set_pod_key">set_pod_key</h3>
+<h3 id="set_pod_key"><a name="user-content-set_pod_key" href="#set_pod_key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>set_pod_key</h3>
 <p>Adds a key to <a href="https://github.com/orta/cocoapods-keys">cocoapods-keys</a>.</p>
 <pre><code class="ruby">set_pod_key(
   key: 'APIToken',
@@ -2303,6 +2313,8 @@ pod_lib_lint(sources: ['https://github.com/MyGithubPage/Specs', 'https://github.
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a></p>
     
   </div>
 

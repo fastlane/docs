@@ -36,6 +36,16 @@
   <script src="../../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -313,12 +323,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="continuous-integration">Continuous Integration</h1>
-<h1 id="jenkins-integration">Jenkins Integration</h1>
+                <h1 id="continuous-integration"><a name="user-content-continuous-integration" href="#continuous-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Continuous Integration</h1>
+<h1 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins Integration</h1>
 <p>(or any other Continuous Integration system)</p>
 <p>Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.</p>
 <p><code>fastlane</code> automatically generates a JUnit report for you. This allows Continuous Integration systems, like <code>Jenkins</code>, access the results of your deployment.</p>
-<h2 id="installation">Installation</h2>
+<h2 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h2>
 <p>The recommended way to install <a href="http://jenkins-ci.org/">Jenkins</a> is through <a href="http://brew.sh/">homebrew</a>:</p>
 <p><code>brew update &amp;&amp; brew install jenkins</code></p>
 <p>From now on start <code>Jenkins</code> by running:</p>
@@ -326,10 +336,10 @@
 </code></pre>
 
 <p>To store the password in the Keychain of your remote machine, I recommend running <code>sigh</code> or <code>deliver</code> using ssh or remote desktop at least once.</p>
-<h2 id="deploy-strategy">Deploy Strategy</h2>
+<h2 id="deploy-strategy"><a name="user-content-deploy-strategy" href="#deploy-strategy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy Strategy</h2>
 <p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 weeks for the review. Instead I recommend using Git Tags, or custom triggers to deploy a new update.</p>
 <p>You can set up your own <code>Release</code> job, which is only triggered manually.</p>
-<h2 id="plugins">Plugins</h2>
+<h2 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h2>
 <p>I recommend the following plugins:</p>
 <ul>
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin">HTML Publisher Plugin</a>:</strong> Can be used to show the generated screenshots right inside Jenkins.</li>
@@ -337,16 +347,16 @@
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/Rebuild+Plugin">Rebuild Plugin</a>:</strong> This plugin will save you a lot of time.</li>
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>:</strong> Manages keychains across Jenkins installations.</li>
 </ul>
-<h2 id="build-step">Build Step</h2>
+<h2 id="build-step"><a name="user-content-build-step" href="#build-step" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build Step</h2>
 <p>Use the following as your build step:</p>
 <pre><code>fastlane appstore
 </code></pre>
 
 <p>Replace <code>appstore</code> with the lane you want to use.</p>
-<h3 id="setup_jenkins">setup_jenkins</h3>
+<h3 id="setup_jenkins"><a name="user-content-setup_jenkins" href="#setup_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_jenkins</h3>
 <p>You can use <code>setup_jenkins</code> action which integrates well with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>. Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the <code>./output</code> folder in the job workspace. In additions <code>setup_jenkins</code> will create separate derived data folder for each job (in the <code>./derivedData</code>).</p>
 <p>Under the hood <code>setup_jenkins</code> configures other actions like: <code>gym</code>, <code>scan</code>, <code>xcodebuild</code>, <code>backup_xcarchive</code> and <code>clear_derived_data</code>.</p>
-<h2 id="test-results-and-screenshots">Test Results and Screenshots</h2>
+<h2 id="test-results-and-screenshots"><a name="user-content-test-results-and-screenshots" href="#test-results-and-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Test Results and Screenshots</h2>
 <p>To show the <strong>deployment result</strong> right in <code>Jenkins</code></p>
 <ul>
 <li><em>Add post-build action</em></li>
@@ -362,7 +372,7 @@
 </ul>
 <p>Save and run. The result should look like this:</p>
 <p><img alt="JenkinsIntegration" src="../../assets/JenkinsIntegration.png" /></p>
-<h1 id="circle-integration">Circle Integration</h1>
+<h1 id="circle-integration"><a name="user-content-circle-integration" href="#circle-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Circle Integration</h1>
 <p>To run fastlane on Circle as your CI, first create a <code>Gemfile</code> in the root of your project with the following content</p>
 <pre><code class="ruby">source &quot;https://rubygems.org&quot;
 
@@ -389,8 +399,8 @@ test:
 </code></pre>
 
 <p>This will automatically cache the installed gems on Circle, making your CI builds much faster :rocket:</p>
-<h1 id="bamboo-integration">Bamboo Integration</h1>
-<h2 id="repository-setup">Repository setup</h2>
+<h1 id="bamboo-integration"><a name="user-content-bamboo-integration" href="#bamboo-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bamboo Integration</h1>
+<h2 id="repository-setup"><a name="user-content-repository-setup" href="#repository-setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repository setup</h2>
 <p>In bamboo under <strong>Linked Repositories</strong> (where you configure your git repo) under <strong>Advanced Settings</strong> is an option called <strong>Exclude changesets</strong></p>
 <p>This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.  </p>
 <p>For example, if your <code>Fastfile</code> is configured to make a commit message in the style of </p>
@@ -401,7 +411,7 @@ test:
 <pre><code>^.*Build Version bump by fastlane.*$
 </code></pre>
 
-<h2 id="setting-repository-remote">Setting repository remote</h2>
+<h2 id="setting-repository-remote"><a name="user-content-setting-repository-remote" href="#setting-repository-remote" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting repository remote</h2>
 <p>By default bamboo will do an anonymous shallow clone of the repo.  This will not preserve the  <code>git remote</code> information nor the list of tags.  If you are using bamboo to create commits you may want to use a code block similar to the following:</p>
 <pre><code class="ruby"># In prep for eventually committing a version/build bump - set the git params
 sh('git config user.name &quot;&lt;COMMITTER USERNAME&gt;&quot;')
@@ -412,19 +422,19 @@ git_remote_cmd = 'git remote set-url origin ' + ENV['bamboo_repository_git_repos
 sh(git_remote_cmd) 
 </code></pre>
 
-<h2 id="speeding-up-build-times-with-carthage">Speeding up build times with carthage</h2>
+<h2 id="speeding-up-build-times-with-carthage"><a name="user-content-speeding-up-build-times-with-carthage" href="#speeding-up-build-times-with-carthage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Speeding up build times with carthage</h2>
 <p>Carthage is a wonderful dependency manager but once you are start using a large number of frameworks, things can start to slow down, especially if your CI server has to run <code>carthage</code> EVERY time you check in a small line of code.</p>
 <p>One way to make build times faster is to break your work up into two separate build plans (<em>this can get even more funky if you start having multiple branches</em>)</p>
 <p>The general idea is to make a build plan: <strong>Project - Artifacts</strong> that builds the <code>Carthage</code> directory and stores it as a shared artifact.  Then you create a second build plan <strong>Project - Fastlane</strong> that pulls down the <code>Carthage</code> directory and runs <code>fastlane</code>.  </p>
-<h3 id="artifact-plan">Artifact Plan</h3>
+<h3 id="artifact-plan"><a name="user-content-artifact-plan" href="#artifact-plan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Artifact Plan</h3>
 <p>Use a very simple setup to create this build plan.  First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the <code>Cartfile</code> changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.</p>
-<h4 id="stages-jobs-tasks">Stages / Jobs / Tasks</h4>
+<h4 id="stages-jobs-tasks"><a name="user-content-stages-jobs-tasks" href="#stages-jobs-tasks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Stages / Jobs / Tasks</h4>
 <p>This plan consists of 1 Job, 1 Stage and 2 Tasks</p>
 <ul>
 <li>Task 1: <strong>Source Code Checkout</strong></li>
 <li>Task 2: <strong>Script</strong> (<code>carthage update</code>)</li>
 </ul>
-<h4 id="artifact-definitions">Artifact definitions</h4>
+<h4 id="artifact-definitions"><a name="user-content-artifact-definitions" href="#artifact-definitions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Artifact definitions</h4>
 <p>Create a shared artifact with the following info:</p>
 <ul>
 <li><strong>Name:</strong> CarthageFolder</li>
@@ -432,7 +442,7 @@ sh(git_remote_cmd)
 <li><strong>Copy Pattern:</strong> Carthage/Build/** </li>
 </ul>
 <p><em>Optional</em>: You may want to automatically make the <strong>Fastlane Plan</strong> trigger whenever this plan is built</p>
-<h3 id="fastlane-plan">Fastlane Plan</h3>
+<h3 id="fastlane-plan"><a name="user-content-fastlane-plan" href="#fastlane-plan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fastlane Plan</h3>
 <p>When configuring fastlane to run in this setup you need to make sure that you are not calling either:</p>
 <pre><code class="ruby">reset_git_repo(force: true)
 </code></pre>
@@ -442,7 +452,7 @@ sh(git_remote_cmd)
 </code></pre>
 
 <p>as these calls will either fail the build or delete the <code>Carthage</code> directory.  Additionally you want to remove any <code>carthage</code> tasks from inside your <code>Fastfile</code> as <code>carthage</code> is now happening externally to the build.</p>
-<h4 id="build-plan-setup">Build plan setup</h4>
+<h4 id="build-plan-setup"><a name="user-content-build-plan-setup" href="#build-plan-setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build plan setup</h4>
 <p>What this build plan does is it checks out the source code, then it downloads the entire <code>Carthage/Build/</code> directory into your local project - which is exactly what would be created from <code>carthage bootstrap</code> and then it runs <code>fastlane</code></p>
 <ul>
 <li>Task 1: <strong>Source Code Checkout</strong></li>
@@ -468,6 +478,8 @@ sh(git_remote_cmd)
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a></p>
     
   </div>
 

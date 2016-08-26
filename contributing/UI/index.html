@@ -36,6 +36,16 @@
   <script src="../../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -292,10 +302,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="fastlane-user-interface">fastlane user interface</h1>
-<h2 id="timestamps">Timestamps</h2>
+                <h1 id="fastlane-user-interface"><a name="user-content-fastlane-user-interface" href="#fastlane-user-interface" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane user interface</h1>
+<h2 id="timestamps"><a name="user-content-timestamps" href="#timestamps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Timestamps</h2>
 <p>To hide timestamps in each row, set the <code>FASTLANE_HIDE_TIMESTAMP</code> environment variable.</p>
-<h2 id="interacting-with-the-user">Interacting with the user</h2>
+<h2 id="interacting-with-the-user"><a name="user-content-interacting-with-the-user" href="#interacting-with-the-user" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Interacting with the user</h2>
 <p>Instead of using <code>puts</code>, <code>raise</code> and <code>gets</code>, please use the helper class <code>UI</code> across all fastlane tools:</p>
 <pre><code class="ruby">UI.message &quot;Neutral message (usually white)&quot;
 UI.success &quot;Succesully finished processing (usually green)&quot;
@@ -359,6 +369,8 @@ UI.deprecated(&quot;The '--key' parameter is deprecated&quot;)
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a></p>
     
   </div>
 

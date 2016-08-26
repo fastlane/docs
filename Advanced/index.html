@@ -36,6 +36,16 @@
   <script src="../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -330,8 +340,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="advanced-fastlane">Advanced fastlane</h1>
-<h1 id="passing-parameters">Passing Parameters</h1>
+                <h1 id="advanced-fastlane"><a name="user-content-advanced-fastlane" href="#advanced-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced fastlane</h1>
+<h1 id="passing-parameters"><a name="user-content-passing-parameters" href="#passing-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passing Parameters</h1>
 <p>To pass parameters from the command line to your lane, use the following syntax:</p>
 <pre><code>fastlane [lane] key:value key2:value2
 
@@ -372,7 +382,7 @@ error do |lane, exception, options|
 end
 </code></pre>
 
-<h1 id="switching-lanes">Switching lanes</h1>
+<h1 id="switching-lanes"><a name="user-content-switching-lanes" href="#switching-lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Switching lanes</h1>
 <p>To switch lanes while executing a lane, use the following code:</p>
 <pre><code class="ruby">lane :deploy do |options|
   ...
@@ -396,7 +406,7 @@ end
 
 <p><code>fastlane</code> takes care of all the magic for you. You can call lanes of the same platform or a general lane outside of the <code>platform</code> definition.</p>
 <p>Passing parameters is optional.</p>
-<h2 id="returning-values">Returning values</h2>
+<h2 id="returning-values"><a name="user-content-returning-values" href="#returning-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Returning values</h2>
 <p>Additionally, you can retrieve the return value. In Ruby, the last line of the <code>lane</code> definition is the return value. Here is an example:</p>
 <pre><code class="ruby">lane :deploy do |options|
   value = calculate(value: 3)
@@ -443,18 +453,18 @@ lane :upload do
 end
 </code></pre>
 
-<h1 id="run-actions-directly">Run actions directly</h1>
+<h1 id="run-actions-directly"><a name="user-content-run-actions-directly" href="#run-actions-directly" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run actions directly</h1>
 <p>If you just want to try an action without adding them to your <code>Fastfile</code> yet, you can use</p>
 <pre><code class="sh">fastlane run notification message:&quot;My Text&quot; title:&quot;The Title&quot;
 </code></pre>
 
 <p>To get the avaiable options for any action run <code>fastlane action [action_name]</code>. You might not be able to set some kind of parameters using this method.</p>
-<h1 id="shell-values">Shell values</h1>
+<h1 id="shell-values"><a name="user-content-shell-values" href="#shell-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Shell values</h1>
 <p>You can get value from shell commands:</p>
 <pre><code class="ruby">output = sh(&quot;pod update&quot;)
 </code></pre>
 
-<h1 id="priorities-of-parameters-and-options">Priorities of parameters and options</h1>
+<h1 id="priorities-of-parameters-and-options"><a name="user-content-priorities-of-parameters-and-options" href="#priorities-of-parameters-and-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Priorities of parameters and options</h1>
 <p>The order in which <code>fastlane</code> tools take their values from</p>
 <ol>
 <li>CLI parameter (e.g. <code>gym --scheme Example</code>) or Fastfile (e.g. <code>gym(scheme: 'Example')</code>)</li>
@@ -463,7 +473,7 @@ end
 <li>Default value (which might be taken from the <code>Appfile</code>, e.g. <code>app_identifier</code> from the <code>Appfile</code>)</li>
 <li>If this value is required, you'll be asked for it (e.g. you have multiple schemes, you'll be asked for it)</li>
 </ol>
-<h1 id="importing-another-fastfile">Importing another Fastfile</h1>
+<h1 id="importing-another-fastfile"><a name="user-content-importing-another-fastfile" href="#importing-another-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Importing another Fastfile</h1>
 <p>Within your <code>Fastfile</code> you can import another <code>Fastfile</code> using 2 methods:</p>
 <h2 id="import"><code>import</code></h2>
 <p>Import a <code>Fastfile</code> from a local path</p>
@@ -487,9 +497,9 @@ end
 </code></pre>
 
 <p>This will also automatically import all the local actions from this repo.</p>
-<h2 id="note">Note</h2>
+<h2 id="note"><a name="user-content-note" href="#note" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note</h2>
 <p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <code>fastlane</code> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword. </p>
-<h1 id="environment-variables">Environment Variables</h1>
+<h1 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h1>
 <p>You can define environment variables in a <code>.env</code> or <code>.env.default</code> file in the same directory as your <code>Fastfile</code>. Environment variables are loading using <a href="https://github.com/bkeepers/dotenv">dotenv</a>. Here's an example.</p>
 <pre><code>WORKSPACE=YourApp.xcworkspace
 HOCKEYAPP_API_TOKEN=your-hockey-api-token
@@ -497,7 +507,7 @@ HOCKEYAPP_API_TOKEN=your-hockey-api-token
 
 <p><code>fastlane</code> also has a <code>--env</code> option that allows loading of environment specific <code>dotenv</code> files. <code>.env</code> and <code>.env.default</code> will be loaded before environment specific <code>dotenv</code> files are loaded. The naming convention for environment specific <code>dotenv</code> files is <code>.env.&lt;environment&gt;</code></p>
 <p>For example, <code>fastlane &lt;lane-name&gt; --env development</code> will load <code>.env</code>, <code>.env.default</code>, and <code>.env.development</code></p>
-<h1 id="lane-context">Lane Context</h1>
+<h1 id="lane-context"><a name="user-content-lane-context" href="#lane-context" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Context</h1>
 <p>The different actions can <em>communicate</em> with each other using a shared hash. You can access them in your lanes with the following code.</p>
 <p>Replace <code>VARIABLE_NAME_HERE</code> with any of the following.</p>
 <pre><code class="ruby">lane_context[SharedValues::LANE_NAME]                 # The name of the current lane (stays the same when switching lanes)
@@ -554,16 +564,16 @@ end
 </ul>
 <p>And also, you can't call the private lane using <code>fastlane build</code>.</p>
 <p>The resulting private lane can only be called from another lane using the lane switching technology.</p>
-<h1 id="hide-the-fastlane-folder">Hide the <code>fastlane</code> folder</h1>
+<h1 id="hide-the-fastlane-folder"><a name="user-content-hide-the-fastlane-folder" href="#hide-the-fastlane-folder" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hide the <code>fastlane</code> folder</h1>
 <p>Just rename the folder to <code>.fastlane</code> in case you don't want it to be visible in the Finder.</p>
-<h1 id="load-own-actions-from-external-folder">Load own actions from external folder</h1>
+<h1 id="load-own-actions-from-external-folder"><a name="user-content-load-own-actions-from-external-folder" href="#load-own-actions-from-external-folder" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Load own actions from external folder</h1>
 <p>Add this to the top of your <code>Fastfile</code>.</p>
 <pre><code class="ruby">actions_path '../custom_actions_folder/'
 </code></pre>
 
-<h1 id="skip-update-check-when-launching-fastlane">Skip update check when launching <code>fastlane</code></h1>
+<h1 id="skip-update-check-when-launching-fastlane"><a name="user-content-skip-update-check-when-launching-fastlane" href="#skip-update-check-when-launching-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Skip update check when launching <code>fastlane</code></h1>
 <p>You can set the environment variable <code>FASTLANE_SKIP_UPDATE_CHECK</code> to skip the update check.</p>
-<h1 id="adding-credentials">Adding Credentials</h1>
+<h1 id="adding-credentials"><a name="user-content-adding-credentials" href="#adding-credentials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Adding Credentials</h1>
 <p>You can add credentials for use by <code>fastlane</code> to your keychain using the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> command line interface. This is useful for situations like CI environments.</p>
 <p><strong>Adding a Credential</strong></p>
 <pre><code>fastlane-credentials add --username felix@krausefx.com
@@ -594,6 +604,8 @@ password has been deleted.
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a></p>
     
   </div>
 

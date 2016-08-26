@@ -36,6 +36,16 @@
   <script src="../../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -296,7 +306,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="codesigning-concepts">Codesigning concepts</h1>
+                <h1 id="codesigning-concepts"><a name="user-content-codesigning-concepts" href="#codesigning-concepts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning concepts</h1>
 <p>If you are just starting a new project, it's important to think about how you want to handle code signing. This guide will help you choose the best approach for you.</p>
 <p>For existing projects it might make sense to switch from a manual process to the <a href="https://codesigning.guide">match approach</a> to make it easier for new team-members to onboard.</p>
 <p>If you are new to code signing, check out the <a href="https://developer.apple.com/videos/play/wwdc2016/401/">WWDC session</a> that describes the fundamentals of code signing in Xcode.</p>
@@ -306,12 +316,12 @@
 <li><a href="#using-xcodes-code-signing-feature">Using Xcode's code signing feature</a></li>
 <li><a href="#manually">Manually</a></li>
 </ul>
-<h2 id="using-match">Using <a href="https://fastlane.tools/match">match</a></h2>
+<h2 id="using-match"><a name="user-content-using-match" href="#using-match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/match">match</a></h2>
 <p>The concept of <a href="https://fastlane.tools/match">match</a> is described in the <a href="https://codesigning.guide">codesigning guide</a>. </p>
 <p>With <a href="https://fastlane.tools/match">match</a> you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach <a href="https://github.com/fastlane/fastlane/tree/master/match#is-this-secure">is secure</a> and uses technology you already use.</p>
 <p>Getting started with <a href="https://fastlane.tools/match">match</a> requires you to revoke your existing certificates.</p>
 <p>Make sure to follow <a href="../XcodeProject/">XcodeProject.md</a> to set up your project properly.</p>
-<h2 id="using-cert-and-sigh">Using <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a></h2>
+<h2 id="using-cert-and-sigh"><a name="user-content-using-cert-and-sigh" href="#using-cert-and-sigh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a></h2>
 <p>If you don't want to revoke your existing certificates, but still want an automated setup, <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a> are for you. </p>
 <ul>
 <li><a href="https://fastlane.tools/cert">cert</a> will make sure you have a valid certificate and its private key installed on the local machine</li>
@@ -326,21 +336,21 @@ end
 </code></pre>
 
 <p>Make sure to follow <a href="../XcodeProject/">XcodeProject.md</a> to set up your project properly.</p>
-<h2 id="using-xcodes-code-signing-feature">Using Xcode's code signing feature</h2>
+<h2 id="using-xcodes-code-signing-feature"><a name="user-content-using-xcodes-code-signing-feature" href="#using-xcodes-code-signing-feature" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Xcode's code signing feature</h2>
 <p>Occasionally the <code>Automatic</code> setting as the provisioning profile doesn't work reliably as it will just select the most recently updated provisioning profile, no matter if the certificate is installed. </p>
 <p>That's why it is recommended to specify a specific provisioning profile somehow:</p>
-<h4 id="xcode-7-and-lower">Xcode 7 and lower</h4>
+<h4 id="xcode-7-and-lower"><a name="user-content-xcode-7-and-lower" href="#xcode-7-and-lower" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 7 and lower</h4>
 <p>You should avoid clicking the <code>Fix Issue</code> button (There is an <a href="https://github.com/neonichu/FixCode#readme">Xcode plugin</a> that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.</p>
 <p>Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).</p>
 <p>To work around this issue, check out <a href="../XcodeProject/">XcodeProject.md</a> on how to pass a provisioning profile to Xcode when building your app.</p>
-<h4 id="xcode-8-and-up">Xcode 8 and up</h4>
+<h4 id="xcode-8-and-up"><a name="user-content-xcode-8-and-up" href="#xcode-8-and-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8 and up</h4>
 <p>Apple improved code signing a lot with the release of Xcode 8, the following has changed:</p>
 <ul>
 <li>No more <code>Fix Issue</code> button, instead all code signing processes run in the background and show the log right in Xcode</li>
 <li>You can now specify the provisioning profile by name, instead of the UUID (Check out <a href="../XcodeProject/">XcodeProject.md</a> for more information)</li>
 <li>Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out <a href="../Troubleshooting/">Troubleshooting.md</a> for more information)</li>
 </ul>
-<h2 id="manually">Manually</h2>
+<h2 id="manually"><a name="user-content-manually" href="#manually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manually</h2>
 <p>You can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key (<code>.p12</code>) of your certificates in a safe place, as they can't be restored if you lose them. </p>
 <p>You can always download the certificate (<code>.cer</code>) and provisioning profile (<code>.mobileprovision</code>) from the Apple Developer Portal.</p>
               
@@ -362,6 +372,8 @@ end
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a></p>
     
   </div>
 

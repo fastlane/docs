@@ -36,6 +36,16 @@
   <script src="../../js/theme.js"></script> 
 
   
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -304,18 +314,18 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="fastlane-plugins-troubleshooting">fastlane plugins troubleshooting</h1>
+                <h1 id="fastlane-plugins-troubleshooting"><a name="user-content-fastlane-plugins-troubleshooting" href="#fastlane-plugins-troubleshooting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane plugins troubleshooting</h1>
 <p>If you're having trouble calling a plugin action, here is a simple guide on how to resolve the issue:</p>
-<h3 id="make-sure-fastlane-is-up-to-date">Make sure fastlane is up to date</h3>
+<h3 id="make-sure-fastlane-is-up-to-date"><a name="user-content-make-sure-fastlane-is-up-to-date" href="#make-sure-fastlane-is-up-to-date" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Make sure fastlane is up to date</h3>
 <p>Run <code>fastlane -v</code> and <code>bundle exec fastlane -v</code> and make sure it's at least version 1.93.0.</p>
-<h3 id="update-your-plugins">Update your plugins</h3>
+<h3 id="update-your-plugins"><a name="user-content-update-your-plugins" href="#update-your-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Update your plugins</h3>
 <p>Run <code>fastlane update_plugins</code> to make sure to have all the latest plugins and their dependencies installed.</p>
-<h3 id="use-bundle-exec">Use <code>bundle exec</code></h3>
+<h3 id="use-bundle-exec"><a name="user-content-use-bundle-exec" href="#use-bundle-exec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use <code>bundle exec</code></h3>
 <p>Run <code>fastlane</code> using <code>bundle exec fastlane [lane]</code> to make sure your plugins are properly loaded.</p>
 <p>This is required when you use plugins from a local path or a git remote.</p>
-<h3 id="use-the-verbose-mode">Use the <code>--verbose</code> mode</h3>
+<h3 id="use-the-verbose-mode"><a name="user-content-use-the-verbose-mode" href="#use-the-verbose-mode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the <code>--verbose</code> mode</h3>
 <p>Running <code>fastlane [lane] --verbose</code> will show a lot more information that might be useful to resolve the issue.</p>
-<h3 id="make-sure-the-action-name-is-correct">Make sure the action name is correct</h3>
+<h3 id="make-sure-the-action-name-is-correct"><a name="user-content-make-sure-the-action-name-is-correct" href="#make-sure-the-action-name-is-correct" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Make sure the action name is correct</h3>
 <p>A plugin can contain any number of actions. Make sure to read the docs for the plugin itself!</p>
 <p>Additionally check out the source code of the plugin:</p>
 <pre><code>lib/fastlane/plugin/[plugin_name]/actions/[action_name].rb
@@ -326,7 +336,7 @@
 </code></pre>
 
 <p>Note how the name of the class should be capitalised and have <code>Action</code> appended in the name. Additionally this class must be a subclass of <code>Action</code>.</p>
-<h3 id="gemfile-and-pluginfile">Gemfile and Pluginfile</h3>
+<h3 id="gemfile-and-pluginfile"><a name="user-content-gemfile-and-pluginfile" href="#gemfile-and-pluginfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gemfile and Pluginfile</h3>
 <p>Your <code>Gemfile</code> should look something like this:</p>
 <pre><code class="ruby">gem &quot;fastlane&quot;
 
@@ -340,13 +350,13 @@ eval(File.read(plugins_path), binding) if File.exist?(plugins_path)
 gem 'fastlane-plugin-ruby'
 </code></pre>
 
-<h3 id="building-your-own-plugin">Building your own plugin</h3>
+<h3 id="building-your-own-plugin"><a name="user-content-building-your-own-plugin" href="#building-your-own-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your own plugin</h3>
 <p>If you have issues with running your local plugins during plugin development, make sure to run</p>
 <pre><code>bundle install --with development
 </code></pre>
 
 <p>to install all required development dependencies</p>
-<h3 id="more-help">More help</h3>
+<h3 id="more-help"><a name="user-content-more-help" href="#more-help" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More help</h3>
 <p>If it's still not working for you, please <a href="https://github.com/fastlane/fastlane/issues/new">submit a new GitHub issue</a> with your <code>Gemfile</code>, <code>Gemfile.lock</code>, <code>Pluginfile</code>, <code>Fastfile</code> and terminal output when running <code>fastlane</code> using the <code>--verbose</code> flag.</p>
               
             </div>
@@ -367,6 +377,8 @@ gem 'fastlane-plugin-ruby'
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a></p>
     
   </div>
 
