@@ -19,6 +19,8 @@ pages:
     - App Store Deployment: getting-started/apple/appstore-deployment.md
   - Android:
     - Setup: getting-started/android/setup.md
+    - Screenshots: getting-started/android/screenshots.md
+    - Deployment: getting-started/android/deployment.md
 - Actions: actions/Actions.md
 - FAQs: FAQs.md
 - Codesigning:
