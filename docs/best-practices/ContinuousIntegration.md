@@ -69,7 +69,7 @@ To show the **generated screenhots** right in `Jenkins`
 
 Save and run. The result should look like this:
 
-![JenkinsIntegration](../assets/JenkinsIntegration.png)
+![/img/best-practices/JenkinsIntegration.png](/img/best-practices/JenkinsIntegration.png)
 
 # Circle Integration
 
