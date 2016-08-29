@@ -6,11 +6,11 @@ With Xcode 8 you can set a provisioning profile name for each of your targets in
 
 You can now specify which provisioning profile to use in the `General` tab after disabling `Automatically manage signing`.
 
-<img src="assets/ProvisioningProfileSelectionNew.png" width=500 />
+<img src="/img/codesigning/ProvisioningProfileSelectionNew.png" width=500 />
 
 Alternatively you can also specify the provisioning profile in the `Build Settings` tab.
 
-<img src="assets/ProvisioningProfileSelectionManual.png" width=500 />
+<img src="/img/codesigning/ProvisioningProfileSelectionManual.png" width=500 />
 
 If your provisioning profile is not listed in the drop down, there might be a few reasons:
 
@@ -43,7 +43,7 @@ Since it is not recommended to update the project file, every time you update yo
 
 To do so, open your target settings, open the dropdown for `Provisioning Profile` and select `Other`:
 
-<img src="/match/assets/XcodeProjectSettings.png" width="700" />
+<img src="/img/codesigning/XcodeProjectSettings.png" width="700" />
 
 Using the `$(...)` notation, Xcode will use the provisioning profile matching the UUID, and fallback to `Automatic` if it's not provided. 
 
