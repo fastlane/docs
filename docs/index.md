@@ -41,21 +41,16 @@ fastlane appstore
 
  |
 -------------- | ----------
-✨ | Connect all iOS, Mac, and Android build tools into one workflow
-🚝 | Define different `lanes` for App Store deployment, beta builds, or testing
-🚢 | Deploy from any computer, including a CI server
-🔧 | Extend and customise fastlane to fit your needs
-💭 | Never remember any difficult commands, just `fastlane`
+🚀 | Save **hours** every time you push a new release to the store or beta testing service
+✨ | Integrates with all your existing tools and services (170 actions currently)
+📖 | 100% open source under the MIT license
 🎩 | Easy setup assistant to get started in a few minutes
-✉️   | `fastlane` automatically passes information between build steps
-📃 | Store **everything** in Git. Never lookup build commands in `Jenkins` configs again
-🚀 | Saves you **hours** for every app update you release
-✏️ | Flexible configuration using a fully customisable `Fastfile`
-🚠 | Implement a fully working Continuous Delivery process
+⚒ | Runs on **your** machine, it's your app and your data
 👻 | Integrates with all major CI systems
-🐣 | Over 170 built-in integrations available
 🖥 | Supports iOS, Mac, and Android apps
-🕶 | Full Git and Mercurial support
+🔧 | Extend and customise `fastlane` to fit your needs, you're not dependent on anyone
+💭 | Never remember any commands any more, just `fastlane`
+🚢 | Deploy from any computer, including a CI server
 
 ## Getting Started
 
