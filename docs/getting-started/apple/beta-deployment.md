@@ -22,7 +22,7 @@ end
 
 Try running the lane using
 
-```
+```no-highlight
 fastlane beta
 ```
 
@@ -230,11 +230,74 @@ end
 ---
 </details>
 
+### Best Practices
 
+<details>
+<summary>Manage devices and testers using fastlane</summary>
 
-TODO: Remove below
+### TestFlight
 
-- Building your app (this is the same as [App Store deployment](appstore-deployment.md))
-    - This also includes references to Code Signing
-- List of supported beta testing services including potential plugins
-- Best practises around how to do beta deployment
+If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.
+
+`fastlane` supports automatically registering devices using different approaches
+
+#### [boarding](https://github.com/fastlane/boarding#readme)
+
+[boarding](https://github.com/fastlane/boarding#readme) allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.
+
+![/img/getting-started/apple/boarding-screenshot.png](/img/getting-started/apple/boarding-screenshot.png)
+
+Check out the [boarding GitHub repo](https://github.com/fastlane/boarding#readme) for more information.
+
+#### pilot
+
+`pilot` is automatically installed with `fastlane`, you can use it to register individual testers to TestFlight
+
+```no-highlight
+# Register a new external tester
+fastlane pilot add email@invite.com
+
+# Register a new external tester and add them to your app
+fastlane pilot add email@invite.com -a com.app.name
+```
+---
+
+</details>
+
+<details>
+<summary>Incrementing the build number</summary>
+
+Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.
+
+To do so, there are some built-in fastlane actions available, here are some examples
+
+```ruby
+lane :beta do
+  # Ensure that there that your git status is not dirty
+  ensure_git_status_clean
+
+  # Increment the build number (not the version number)
+  # Providing the xcodeproj is optional
+  increment_build_number(xcodeproj: "Example.xcodeproj")
+
+  # Commit the version bump
+  commit_version_bump(xcodeproj: "Example.xcodeproj")
+
+  # Add a git tag for this build. This will automatically
+  # use an appropriate git tag name
+  add_git_tag
+
+  # Push the new commit and tag back to your git remote
+  push_to_git_remote
+end
+```
+
+For all the steps above, there are more parameters available, run the following to get a full list:
+
+```no-highlight
+fastlane action [action_name]
+```
+
+---
+
+</details>
