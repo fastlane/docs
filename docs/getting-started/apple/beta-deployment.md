@@ -86,7 +86,7 @@ If you used `fastlane init` to setup `fastlane`, your Apple ID is stored in the 
 
 To get a list of all available options, run
 
-```
+```no-highlight
 fastlane action testflight
 ```
 
@@ -102,13 +102,21 @@ With `fastlane`, you can also automatically manage your beta testers, check out 
 lane :beta do
   ...
   gym
-  crashlytics(api_key: "[insert_key_here]",
+  crashlytics(api_token: "[insert_key_here]",
               build_secret: "[insert_key_here]")
 end
 ```
 
-TODO: Add more docs here, on more parameters and how to get the keys
-TODO: Also mention the different onboarding technique
+To get your API token, open the [organizations settings page](https://www.fabric.io/settings/organizations) and click on the API key and build secret links. 
+
+
+To get a list of all available options, run
+
+```no-highlight
+fastlane action testfairy
+```
+
+TODO: Also mention the other onboarding method
 
 ---
 </details>
@@ -134,7 +142,7 @@ end
 
 To get a list of all available options, run
 
-```
+```no-highlight
 fastlane action testfairy
 ```
 
