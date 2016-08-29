@@ -86,7 +86,7 @@ XCUIApplication *app = [[XCUIApplication alloc] init];
 
 If you have _fastlane_ installed, it's easy to give _snapshot_ a try. First clone the _fastlane_ repo, head over to the _snapshot_ example project, and then run `fastlane snapshot`
 
-```
+```no-highlight
 $ git clone https://github.com/fastlane/fastlane
 
 $ cd fastlane/snapshot/example
@@ -113,7 +113,7 @@ _frameit_ helps you beautify your screenshots with devices frames and text by ru
 
 _frameit_ depends on a tool called `imagemagick` to do image manipulation. The easiest way to install it is through [homebrew](http://brew.sh/):
 
-```sh
+```no-highlight
 brew install libpng jpeg imagemagick
 ```
 
@@ -121,13 +121,13 @@ brew install libpng jpeg imagemagick
 
 If you have installed _imagemagick_ but are seeing error messages like:
 
-```sh
+```no-highlight
 mogrify: no decode delegate for this image format `PNG'
 ```
 
 You may need to reinstall and build from source. Run:
 
-```sh
+```no-highlight
 brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick --build-from-source
 ```
 
@@ -137,7 +137,7 @@ _fastlane_ uses device frames provided by Apple which need to be downloaded and 
 
 **TODO: Update this when we start distributing frames ourselves.**
 
-```
+```no-highlight
 $ fastlane frameit setup
 ```
 
@@ -145,7 +145,7 @@ $ fastlane frameit setup
 
 At its simplest, you can just run:
 
-```sh
+```no-highlight
 fastlane frameit
 ```
 
