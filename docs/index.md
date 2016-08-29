@@ -6,7 +6,6 @@ fastlane
 [![Twitter: @Fastlane1ols](https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat)](https://twitter.com/FastlaneTools)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE)
 [![Gem](https://img.shields.io/gem/v/fastlane.svg?style=flat)](http://rubygems.org/gems/fastlane)
-[![Build Status](https://img.shields.io/circleci/project/fastlane/fastlane/master.svg?style=flat)](https://circleci.com/gh/fastlane/fastlane)
 
 `fastlane` is **the** tool to release your iOS and Android app :rocket: It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
@@ -33,7 +32,7 @@ end
 
 You just defined 2 different lanes, one for beta deployment, one for App Store. To release your app in the App Store, all you have to do is
 
-```
+```no-highlight
 fastlane appstore
 ```
 
@@ -41,39 +40,34 @@ fastlane appstore
 
  |
 -------------- | ----------
-✨ | Connect all iOS, Mac, and Android build tools into one workflow
-🚝 | Define different `lanes` for App Store deployment, beta builds, or testing
-🚢 | Deploy from any computer, including a CI server
-🔧 | Extend and customise fastlane to fit your needs
-💭 | Never remember any difficult commands, just `fastlane`
+🚀 | Save **hours** every time you push a new release to the store or beta testing service
+✨ | Integrates with all your existing tools and services (170 actions currently)
+📖 | 100% open source under the MIT license
 🎩 | Easy setup assistant to get started in a few minutes
-✉️   | `fastlane` automatically passes information between build steps
-📃 | Store **everything** in Git. Never lookup build commands in `Jenkins` configs again
-🚀 | Saves you **hours** for every app update you release
-✏️ | Flexible configuration using a fully customisable `Fastfile`
-🚠 | Implement a fully working Continuous Delivery process
+⚒ | Runs on **your** machine, it's your app and your data
 👻 | Integrates with all major CI systems
-🐣 | Over 170 built-in integrations available
 🖥 | Supports iOS, Mac, and Android apps
-🕶 | Full Git and Mercurial support
+🔧 | Extend and customise `fastlane` to fit your needs, you're not dependent on anyone
+💭 | Never remember any commands any more, just `fastlane`
+🚢 | Deploy from any computer, including a CI server
 
 ## Getting Started
 
 Make sure you have the latest version of the Xcode command line tools installed:
 
-```
+```no-highlight
 xcode-select --install
 ```
 
 ### Using the terminal
 
-```
+```no-highlight
 sudo gem install fastlane --verbose
 ```
 
 Navigate to your iOS or Android app and run
 
-```
+```no-highlight
 fastlane init
 ```
 
