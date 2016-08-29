@@ -3,6 +3,7 @@ lane :test do
     build_site
     ensure_headers
     ensure_image_assets
+    ensure_assets_location
   end
 end
 
@@ -55,4 +56,19 @@ private_lane :ensure_image_assets do
   errors.each { |e| UI.error(e) }
   UI.user_error!("At least one image file was not found, check out error above") unless errors.empty?
   UI.success "✅  All image files were found"
+end
+
+# This will verify that no non-md files are inside each of the sub-directories
+# All images must be stored in the correct sub-dir
+private_lane :ensure_assets_location do
+  error = false
+  Dir["docs/**/*"].each do |path|
+    next if File.directory?(path)
+    next if ['docs/css', 'docs/img'].any? { |dir| path.start_with?(dir) }
+    next if File.dirname(path) == "docs" # root level
+    next if File.extname(path) == ".md"
+    error = true
+    UI.error("File '#{path}' shouldn't be in this directory, only `.md` files are allowed")
+  end
+  UI.user_error!("Found some files in a wrong directory") if error
 end
