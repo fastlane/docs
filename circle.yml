@@ -5,7 +5,7 @@ machine:
     version: 2.3.0
 dependencies:
   pre:
-    - pip install mkdocs pymdown-extensions
+    - pip install -r requirements.txt
 test:
   override:
     - bundle exec fastlane test
