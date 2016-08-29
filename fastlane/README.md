@@ -10,6 +10,11 @@ sudo gem install fastlane
 fastlane test
 ```
 
+### post_slack_deploy_message
+```
+fastlane post_slack_deploy_message
+```
+
 
 ----
 

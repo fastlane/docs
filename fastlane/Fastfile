@@ -7,6 +7,12 @@ lane :test do
   end
 end
 
+lane :post_slack_deploy_message do
+  slack(message: "Deployed a new version of [docs.fastlane.tools](https://docs.fastlane.tools)",
+        channel: "#new-docs",
+        default_payloads: [])
+end
+
 private_lane :build_site do
   UI.message "🕗  Building page..."
   sh "mkdocs build --clean" # to make sure building is successful
