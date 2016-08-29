@@ -33,7 +33,7 @@ end
 
 You just defined 2 different lanes, one for beta deployment, one for App Store. To release your app in the App Store, all you have to do is
 
-```
+```no-highlight
 fastlane appstore
 ```
 
@@ -61,19 +61,19 @@ fastlane appstore
 
 Make sure you have the latest version of the Xcode command line tools installed:
 
-```
+```no-highlight
 xcode-select --install
 ```
 
 ### Using the terminal
 
-```
+```no-highlight
 sudo gem install fastlane --verbose
 ```
 
 Navigate to your iOS or Android app and run
 
-```
+```no-highlight
 fastlane init
 ```
 
