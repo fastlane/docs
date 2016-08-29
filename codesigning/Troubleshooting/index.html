@@ -370,7 +370,7 @@
 <li>Run <code>security find-identity -v -p codesigning</code> to get a list of locally installed code signing identities. Does yours show up?</li>
 <li>Open the <code>Keychain Access</code> app, switch to <code>Certificates</code> and find your <code>iOS Developer</code> or <code>iOS Distribution</code> entry and unfold the entry to verify the private key is locally installed: 
 <p align="center">
-  <img src="assets/KeychainPrivateKey.png" width=500 />
+  <img src="/img/codesigning/KeychainPrivateKey.png" width=500 />
 </p></li>
 <li>Make sure to have deleted all expired WWDR certificates, more information <a href="https://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for/35401483#35401483">here</a>. There might be 2 expired WWDR certificates, one in the <code>login</code>, and one in the <code>system</code> keychain</li>
 </ol>

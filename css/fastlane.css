@@ -33,6 +33,17 @@ h3, h4, h5, h6 {
   display: none;
 }
 
+/* Foldable parts */
+details > * {
+  margin-left: 20px;
+}
+details > summary {
+  margin-left: 0px; /* To overwrite the margin from above */
+
+  font-size: 120%;
+  cursor: pointer
+}
+
 
 /*
   So here is the deal:
