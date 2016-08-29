@@ -31,8 +31,11 @@ private_lane :ensure_image_assets do
   errors = []
   Dir["docs/**/*.md"].each do |current_file|
     content = File.read(current_file)
-    matches = content.scan(/\!\[.*\]\((.*\.png)\)/) # markdown matches
-    matches += content.scan(/\<img.*src="(.*\.png)/) # HTML matches
+    matches = []
+    ["png", "jpg", "gif"].each do |extension|
+      matches += content.scan(/\!\[.*\]\((.*\.#{extension})\)/) # markdown matches
+      matches += content.scan(/\<img.*src="(.*\.#{extension})/) # HTML matches
+    end
     matches.each do |match|
       # We support both relative and absolute file paths
       if match.first.start_with?("/")
