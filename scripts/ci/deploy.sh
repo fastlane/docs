@@ -41,7 +41,7 @@ git push origin gh-pages
 # Post a Slack message
 git checkout master
 bundle install
-bundle exec fastlane run slack message:"Deployed a new version of https://docs.fastlane.tools" channel:"#new-docs"
+bundle exec fastlane post_slack_deploy_message
 
 echo "Deployed successfully, check out https://docs.fastlane.tools"
 
