@@ -52,4 +52,4 @@ UI.deprecated("The '--key' parameter is deprecated")
 
 The output will look like this
 
-<img src="/fastlane_core/assets/UI.png" width="550" />
+<img src="/img/contributing/UI.png" width="550" />
