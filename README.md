@@ -8,6 +8,10 @@ To preview the updated documentation locally, just clone the repo, modify the fi
 mkdocs serve
 ```
 
+## Why new docs?
+
+You can find more information [here](https://github.com/fastlane/docs/issues/5)
+
 ## Deploy changes
 
 Once a PR is merged into master, the latest version will automatically be deployed to [docs.fastlane.tools](https://docs.fastlane.tools) by one of the hard working fastlane bots. No need to do anything manually. The resulting HTML files are stored in the [`gh-pages`](https://github.com/fastlane/docs/tree/gh-pages) branch.
