@@ -1,4 +1,4 @@
-# Getting started with `fastlane` for iOS
+# Getting started with _fastlane_ for iOS
 
 ## Installing fastlane
 
@@ -14,9 +14,9 @@ Navigate your terminal to your project's directory and run
 fastlane init
 ```
 
-You'll be asked for your Apple ID, and `fastlane` will automatically generate a fastlane configuration for you, based on the information provided.
+You'll be asked for your Apple ID, and _fastlane_ will automatically generate a fastlane configuration for you, based on the information provided.
 
-You can see the newly created `fastlane` directory, with all your existing metadata fetched from iTunes Connect.
+You can see the newly created _fastlane_ directory, with all your existing metadata fetched from iTunes Connect.
 
 <img src="/img/getting-started/apple/fastlane-init.png" width="800" />
 
@@ -24,7 +24,7 @@ The most interesting file is `fastlane/Fastfile`, which contains all the informa
 
 ## What's next?
 
-`fastlane` created all the required files for you, now you can go ahead and customise it to generate screenshots or to automatically distribute new builds
+_fastlane_ created all the required files for you, now you can go ahead and customise it to generate screenshots or to automatically distribute new builds
 
 - [Automatically generate screenshots](screenshots.md)
 - [Distribute beta builds](beta-deployment.md)
@@ -32,7 +32,7 @@ The most interesting file is `fastlane/Fastfile`, which contains all the informa
 
 ### Use a Gemfile
 
-It is recommended that you use a Gemfile to define your dependency to `fastlane`. This will clearly define the used fastlane version, and its dependencies, and will also speed up using fastlane.
+It is recommended that you use a Gemfile to define your dependency to _fastlane_. This will clearly define the used fastlane version, and its dependencies, and will also speed up using fastlane.
 
 - Create a `Gemfile` with the content
 ```ruby
@@ -41,6 +41,6 @@ source "https://rubygems.org"
 gem "fastlane"
 ```
 - Run `bundle update` and add both the `Gemfile` and the `Gemfile.lock` to version control
-- Every time you run `fastlane`, use `bundle exec fastlane [lane]`
+- Every time you run _fastlane_, use `bundle exec fastlane [lane]`
 - On your CI, add `bundle install` as your first build step
-- To update `fastlane`, just run `bundle update`
+- To update _fastlane_, just run `bundle update`
