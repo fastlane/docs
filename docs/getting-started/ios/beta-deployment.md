@@ -245,7 +245,7 @@ _fastlane_ supports automatically registering devices using different approaches
 
 [boarding](https://github.com/fastlane/boarding#readme) allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.
 
-![/img/getting-started/apple/boarding-screenshot.png](/img/getting-started/apple/boarding-screenshot.png)
+![/img/getting-started/ios/boarding-screenshot.png](/img/getting-started/ios/boarding-screenshot.png)
 
 Check out the [boarding GitHub repo](https://github.com/fastlane/boarding#readme) for more information.
 

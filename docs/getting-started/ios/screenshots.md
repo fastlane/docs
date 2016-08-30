@@ -40,7 +40,7 @@ _snapshot_ works with _fastlane_ to automate the process of capturing screenshot
 
 After _snapshot_ successfully captures all the screenshots, it will show you a beautiful HTML page to summarize all the screens that were captured:
 
-![HTML summary page](/img/getting-started/apple/htmlPagePreviewFade.jpg)
+![HTML summary page](/img/getting-started/ios/htmlPagePreviewFade.jpg)
 
 ## Getting Started Using UI Tests
 
@@ -94,7 +94,7 @@ $ cd fastlane/snapshot/example
 $ fastlane snapshot
 ```
 
-![/img/getting-started/apple/snapshot.gif](/img/getting-started/apple/snapshot.gif)
+![/img/getting-started/ios/snapshot.gif](/img/getting-started/ios/snapshot.gif)
 
 # Put Your Screenshots Into Device Frames
 
@@ -105,7 +105,7 @@ _frameit_ helps you beautify your screenshots with devices frames and text by ru
 - Black and silver devices
 - Setting a background color and decorating the image with text
 
-![frameit results](/img/getting-started/apple/frameit-results.png)
+![frameit results](/img/getting-started/ios/frameit-results.png)
 
 ## Dependencies
 
