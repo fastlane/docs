@@ -412,13 +412,23 @@ $ fastlane snapshot
 <li>Setting a background color and decorating the image with text</li>
 </ul>
 <p><img alt="frameit results" src="../../../img/getting-started/ios/frameit-results.png" /></p>
+<h2 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h2>
+<p>Automatically add device frames around all screenshots in the current directory and its subdirectories, just run</p>
+<pre><code>fastlane frameit
+</code></pre>
+
+<p>This will only add a device frame around the screenshots, not the background and title. Those images can be used for your website, email newsletter and similar.</p>
+<p>If you want to implement the custom titles and background, you'll have to setup a <code>Framefile.json</code>, more information can be found <a href="https://github.com/fastlane/fastlane/tree/master/frameit#titles-and-background-optional">here</a>.</p>
 <h2 id="dependencies"><a name="user-content-dependencies" href="#dependencies" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependencies</h2>
-<h3 id="installing-imagemagick"><a name="user-content-installing-imagemagick" href="#installing-imagemagick" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing ImageMagick</h3>
+<p><details>
+<summary>Installing ImageMagick</summary></p>
 <p><em>frameit</em> depends on a tool called <code>imagemagick</code> to do image manipulation. The easiest way to install it is through <a href="http://brew.sh/">homebrew</a>:</p>
 <pre><code class="no-highlight">brew install libpng jpeg imagemagick
 </code></pre>
 
-<h3 id="troubleshooting-imagemagick"><a name="user-content-troubleshooting-imagemagick" href="#troubleshooting-imagemagick" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Troubleshooting ImageMagick</h3>
+<p></details></p>
+<p><details>
+<summary>Troubleshooting ImageMagick</summary></p>
 <p>If you have installed <em>imagemagick</em> but are seeing error messages like:</p>
 <pre><code class="no-highlight">mogrify: no decode delegate for this image format `PNG'
 </code></pre>
@@ -427,18 +437,14 @@ $ fastlane snapshot
 <pre><code class="no-highlight">brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick --build-from-source
 </code></pre>
 
-<h3 id="setting-up-device-frames"><a name="user-content-setting-up-device-frames" href="#setting-up-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting Up Device Frames</h3>
+<p></details></p>
+<p><details>
+<summary>Setting Up Device Frames</summary></p>
 <p><em>fastlane</em> uses device frames provided by Apple which need to be downloaded and installed separately for legal reasons. Running <code>fastlane frameit setup</code> can walk you through the process.</p>
-<p><strong>TODO: Update this when we start distributing frames ourselves.</strong></p>
 <pre><code class="no-highlight">$ fastlane frameit setup
 </code></pre>
 
-<h2 id="running"><a name="user-content-running" href="#running" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Running</h2>
-<p>At its simplest, you can just run:</p>
-<pre><code class="no-highlight">fastlane frameit
-</code></pre>
-
-<p>A more complex example that configures a lot more about the output can be found in the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">fastlane examples</a> project.</p>
+<p></details></p>
 <h1 id="upload-screenshots-for-the-app-store"><a name="user-content-upload-screenshots-for-the-app-store" href="#upload-screenshots-for-the-app-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload Screenshots for the App Store</h1>
 <p>TODO: write about <em>deliver</em></p>
 <h1 id="all-together-now"><a name="user-content-all-together-now" href="#all-together-now" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>All Together Now</h1>
