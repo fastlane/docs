@@ -87,11 +87,9 @@ XCUIApplication *app = [[XCUIApplication alloc] init];
 If you have _fastlane_ installed, it's easy to give _snapshot_ a try. First clone the _fastlane_ repo, head over to the _snapshot_ example project, and then run `fastlane snapshot`
 
 ```no-highlight
-$ git clone https://github.com/fastlane/fastlane
-
-$ cd fastlane/snapshot/example
-
-$ fastlane snapshot
+git clone https://github.com/fastlane/fastlane  # Clone the fastlane repo
+cd fastlane/snapshot/example                    # Navigate to the example project
+fastlane snapshot                               # Generate screenshots for the sample app
 ```
 
 ![/img/getting-started/ios/snapshot.gif](/img/getting-started/ios/snapshot.gif)
@@ -138,7 +136,7 @@ _fastlane_ uses device frames provided by Apple which need to be downloaded and 
 **TODO: Update this when we start distributing frames ourselves.**
 
 ```no-highlight
-$ fastlane frameit setup
+fastlane frameit setup
 ```
 
 ## Running
