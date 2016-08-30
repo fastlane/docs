@@ -5,7 +5,7 @@
 
 Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.
 
-`fastlane` automatically generates a JUnit report for you. This allows Continuous Integration systems, like `Jenkins`, access the results of your deployment.
+_fastlane_ automatically generates a JUnit report for you. This allows Continuous Integration systems, like `Jenkins`, access the results of your deployment.
 
 ## Installation
 
@@ -19,7 +19,7 @@ From now on start ```Jenkins``` by running:
 jenkins
 ```
 
-To store the password in the Keychain of your remote machine, I recommend running `sigh` or `deliver` using ssh or remote desktop at least once.
+To store the password in the Keychain of your remote machine, I recommend running _sigh_ or _deliver_ using ssh or remote desktop at least once.
 
 ## Deploy Strategy
 
@@ -50,7 +50,7 @@ Replace `appstore` with the lane you want to use.
 
 You can use `setup_jenkins` action which integrates well with the [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin). Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the `./output` folder in the job workspace. In additions `setup_jenkins` will create separate derived data folder for each job (in the `./derivedData`).
 
-Under the hood `setup_jenkins` configures other actions like: `gym`, `scan`, `xcodebuild`, `backup_xcarchive` and `clear_derived_data`.
+Under the hood `setup_jenkins` configures other actions like: _gym_, _scan_, `xcodebuild`, `backup_xcarchive` and `clear_derived_data`.
 
 ## Test Results and Screenshots
 
@@ -148,7 +148,7 @@ Carthage is a wonderful dependency manager but once you are start using a large 
 
 One way to make build times faster is to break your work up into two separate build plans (*this can get even more funky if you start having multiple branches*)
 
-The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs `fastlane`.  
+The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs _fastlane_.  
 
 
 ###Artifact Plan
@@ -188,7 +188,7 @@ as these calls will either fail the build or delete the `Carthage` directory.  A
 
 #### Build plan setup
 
-What this build plan does is it checks out the source code, then it downloads the entire `Carthage/Build/` directory into your local project - which is exactly what would be created from `carthage bootstrap` and then it runs `fastlane`
+What this build plan does is it checks out the source code, then it downloads the entire `Carthage/Build/` directory into your local project - which is exactly what would be created from `carthage bootstrap` and then it runs _fastlane_
 
 * Task 1: **Source Code Checkout**
 * Task 2: **Artifact Download**

@@ -1,10 +1,10 @@
 # fastlane for Android
 
-This guide will show you step by step how to get started with `fastlane` for your Android project.
+This guide will show you step by step how to get started with _fastlane_ for your Android project.
 
 ## Initial setup
 
-Install `fastlane` if you haven't already
+Install _fastlane_ if you haven't already
 
     sudo gem install fastlane --verbose
 
@@ -22,7 +22,7 @@ That's your package name, which usually looks something like `com.krausefx.app`
 
 ### Google Play Access
 
-To enable `fastlane` to access Google Play you have to follow these steps:
+To enable _fastlane_ to access Google Play you have to follow these steps:
 
 - Open the [Google Play Console](https://play.google.com/apps/publish/)
 - Select **Settings** tab, followed by the **API access** tab
@@ -44,7 +44,7 @@ You'll be asked if you want to start using [supply](https://github.com/fastlane/
 
 ### Editing the configuration files
 
-`fastlane` created 2 important files and a metadata folder for you
+_fastlane_ created 2 important files and a metadata folder for you
 
 ##### `fastlane/Fastfile`
 
@@ -56,7 +56,7 @@ Contains basic metadata of your app that can be used by the actions you define i
 
 ##### `fastlane/metadata/android`
 
-This folder contains the metadata fetched from Google Play. You can modify any values here and run `supply` to upload the updated metadata.
+This folder contains the metadata fetched from Google Play. You can modify any values here and run _supply_ to upload the updated metadata.
 
 ### Next Steps
 

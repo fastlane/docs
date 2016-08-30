@@ -1,6 +1,6 @@
 # Actions
 
-There are lots of predefined `fastlane` actions you can use. If you have ideas for more, please [let me know](https://github.com/fastlane/fastlane/issues/new).
+There are lots of predefined _fastlane_ actions you can use. If you have ideas for more, please [let me know](https://github.com/fastlane/fastlane/issues/new).
 
 To get the most up-to-date information from the command line on your current version you can also run:
 
@@ -71,7 +71,7 @@ carthage(
 
 ### [gym](https://github.com/fastlane/fastlane/tree/master/gym)
 
-`gym` builds and packages iOS apps for you. It takes care of all the heavy lifting and makes it super easy to generate a signed `ipa` file.
+_gym_ builds and packages iOS apps for you. It takes care of all the heavy lifting and makes it super easy to generate a signed `ipa` file.
 
 ```ruby
 gym(scheme: "MyApp", workspace: "MyApp.xcworkspace")
@@ -94,11 +94,11 @@ gym(
 
 Use `gym --help` to get all available options.
 
-The alternative to `gym` is [`ipa`](#ipa) which uses [shenzhen](https://github.com/nomad/shenzhen) under the hood.
+The alternative to _gym_ is [`ipa`](#ipa) which uses [shenzhen](https://github.com/nomad/shenzhen) under the hood.
 
 ### gradle
 
-You can use the `gradle` action to integrate your gradle tasks into `fastlane`.
+You can use the `gradle` action to integrate your gradle tasks into _fastlane_.
 
 Simple usage:
 ```ruby
@@ -162,7 +162,7 @@ verify_xcode
 
 ### [screengrab](https://github.com/fastlane/fastlane/tree/master/screengrab)
 
-`screengrab` automates taking localized screenshots of your Android app on every device
+_screengrab_ automates taking localized screenshots of your Android app on every device
 
 ```ruby
 screengrab
@@ -194,7 +194,7 @@ snapshot(
 )
 ```
 
-Take a look at the [prefilling data guide](https://github.com/fastlane/fastlane/tree/master/snapshot#prefilling) on the `snapshot` documentation.
+Take a look at the [prefilling data guide](https://github.com/fastlane/fastlane/tree/master/snapshot#prefilling) on the _snapshot_ documentation.
 
 ### clear_derived_data
 
@@ -208,7 +208,7 @@ clear_derived_data
 
 **Note**: This action is deprecated, use [gym](https://github.com/fastlane/fastlane/tree/master/gym) instead.
 
-Build your app right inside `fastlane` and the path to the resulting ipa is automatically available to all other actions.
+Build your app right inside _fastlane_ and the path to the resulting ipa is automatically available to all other actions.
 
 You should check out the [code signing guide](https://github.com/fastlane/fastlane/tree/master/fastlane/docs/Codesigning).
 
@@ -235,7 +235,7 @@ The path to the `ipa` is automatically used by `Crashlytics`, `Hockey` and `Depl
 
 **Important:**
 
-To also use it in `deliver`, update your `Deliverfile` and remove all code in the `Building and Testing` section, in particular all `ipa` and `beta_ipa` blocks.
+To also use it in _deliver_, update your `Deliverfile` and remove all code in the `Building and Testing` section, in particular all `ipa` and `beta_ipa` blocks.
 
 See how [Product Hunt](https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile) uses the `ipa` action.
 
@@ -318,13 +318,13 @@ xcode_select "/Applications/Xcode6.1.app"
 ### [resign](https://github.com/fastlane/fastlane/tree/master/sigh#resign)
 This will resign an ipa with another signing identity and provisioning profile.
 
-If you have used the `ipa` and `sigh` actions, then this action automatically gets the `ipa` and `provisioning_profile` values respectively from those actions and you don't need to manually set them (although you can always override them).
+If you have used the `ipa` and _sigh_ actions, then this action automatically gets the `ipa` and `provisioning_profile` values respectively from those actions and you don't need to manually set them (although you can always override them).
 
 ```ruby
 resign(
   ipa: 'path/to/ipa', # can omit if using the `ipa` action
   signing_identity: 'iPhone Distribution: Luka Mirosevic (0123456789)',
-  provisioning_profile: 'path/to/profile', # can omit if using the `sigh` action
+  provisioning_profile: 'path/to/profile', # can omit if using the _sigh_ action
 )
 ```
 
@@ -534,7 +534,7 @@ reset_git_repo(
 ```
 
 ### clean_build_artifacts
-This action deletes the files that get created in your repo as a result of running the `ipa` and `sigh` commands. It doesn't delete the `fastlane/report.xml` though, this is probably more suited for the .gitignore.
+This action deletes the files that get created in your repo as a result of running the `ipa` and _sigh_ commands. It doesn't delete the `fastlane/report.xml` though, this is probably more suited for the .gitignore.
 
 Useful if you quickly want to send out a test build by dropping down to the command line and typing something like `fastlane beta`, without leaving your repo in a messy state afterwards.
 
@@ -555,7 +555,7 @@ To use white (sorry, silver) device frames
 frameit :silver
 ```
 
-See how [MindNode](https://github.com/fastlane/examples/blob/master/MindNode/Fastfile) uses `frameit` to not only frame the screenshots, but also add a title and a background around the screenshots. More information available in their [Fastfile](https://github.com/fastlane/examples/blob/master/MindNode/Fastfile) and the [screenshots folder](https://github.com/fastlane/examples/tree/master/MindNode/screenshots) ([Framefile.json](https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json))
+See how [MindNode](https://github.com/fastlane/examples/blob/master/MindNode/Fastfile) uses _frameit_ to not only frame the screenshots, but also add a title and a background around the screenshots. More information available in their [Fastfile](https://github.com/fastlane/examples/blob/master/MindNode/Fastfile) and the [screenshots folder](https://github.com/fastlane/examples/tree/master/MindNode/screenshots) ([Framefile.json](https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json))
 
 ### dsym_zip
 
@@ -585,7 +585,7 @@ splunkmint(
 )
 ```
 
-If you use `gym` the `dsym` parameter is optional.
+If you use _gym_ the `dsym` parameter is optional.
 
 ### recreate_schemes
 
@@ -601,7 +601,7 @@ recreate_schemes(
 
 ### [scan](https://github.com/fastlane/fastlane/tree/master/scan)
 
-`scan` makes it super easy to run tests of your iOS and Mac applications
+_scan_ makes it super easy to run tests of your iOS and Mac applications
 
 ```ruby
 scan
@@ -708,7 +708,7 @@ xcov(
 ```
 
 ### [OCLint](http://oclint.org)
-Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your `fastlane` directory or pass a path to your file.
+Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your _fastlane_ directory or pass a path to your file.
 
 ```ruby
 oclint(
@@ -820,11 +820,11 @@ More information about the available options `fastlane action pilot` and a more 
 deliver
 ```
 
-To upload a new build to TestFlight use `pilot` instead.
+To upload a new build to TestFlight use _pilot_ instead.
 
 #### Options
 
-If you don't want a PDF report for App Store builds, append `:force` to the command. This is useful when running `fastlane` on your Continuous Integration server: `deliver(force: true)`
+If you don't want a PDF report for App Store builds, append `:force` to the command. This is useful when running _fastlane_ on your Continuous Integration server: `deliver(force: true)`
 
 If your account is on multiple teams and you need to tell the `iTMSTransporter` which "provider" to use, you can set the `itc_provider` option to pass this info.
 
@@ -840,7 +840,7 @@ deliver(
 
 See how [Product Hunt](https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile) automated the building and distributing of a beta version over TestFlight in their [Fastfile](https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile).
 
-**Note:** There is an action named `appstore` which is a convenience alias to `deliver`.
+**Note:** There is an action named `appstore` which is a convenience alias to _deliver_.
 
 ### TestFlight
 
@@ -953,7 +953,7 @@ apteligent(
 )
 ```
 
-If you use `gym` the `dsym` parameter is optional.
+If you use _gym_ the `dsym` parameter is optional.
 
 ### `download_dsyms`
 
@@ -1057,7 +1057,7 @@ xcode_server_get_assets(
   )
 ```
 
-This allows you to use Xcode Server for building and testing, which can be useful when your build takes a long time and requires connected iOS devices for testing. This action only requires you specify the `host` and the `bot_name` and it will go and download, unzip and return a path to the downloaded folder. Then you can export an IPA from the archive and upload it with `deliver`.
+This allows you to use Xcode Server for building and testing, which can be useful when your build takes a long time and requires connected iOS devices for testing. This action only requires you specify the `host` and the `bot_name` and it will go and download, unzip and return a path to the downloaded folder. Then you can export an IPA from the archive and upload it with _deliver_.
 
 Run `fastlane action xcode_server_get_assets` for the full list of options.
 
@@ -1165,7 +1165,7 @@ From within your app, you can check it is currently running on [Appetize.io](htt
 
 Upload your ipa or apk to your private store on Appaloosa.
 
-Add the `appaloosa` action after the `gym` step or use it with your existing `apk`.
+Add the `appaloosa` action after the _gym_ step or use it with your existing `apk`.
 
 You can add some options:
 ```ruby
@@ -1409,7 +1409,7 @@ update_urban_airship_configuration(
 
 Check out [codesigning.guide](https://codesigning.guide) for more information about the concept of [match](https://github.com/fastlane/fastlane/tree/master/match).
 
-`match` allows you to easily sync your certificates and profiles across your team using git. More information on [GitHub](https://github.com/fastlane/fastlane/tree/master/match).
+_match_ allows you to easily sync your certificates and profiles across your team using git. More information on [GitHub](https://github.com/fastlane/fastlane/tree/master/match).
 
 ```ruby
 match(type: "appstore", app_identifier: "tools.fastlane.app")
@@ -1418,15 +1418,15 @@ match(type: "development", readonly: true)
 
 ### [sigh](https://github.com/fastlane/fastlane/tree/master/sigh)
 
-**Note**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use `sigh` directly only if you want full control over what's going on and know more about codesigning.
+**Note**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use _sigh_ directly only if you want full control over what's going on and know more about codesigning.
 
-This will generate and download your App Store provisioning profile. `sigh` will store the generated profile in the current folder.
+This will generate and download your App Store provisioning profile. _sigh_ will store the generated profile in the current folder.
 
 ```ruby
 sigh
 ```
 
-You can pass all options listed in `sigh --help` in `fastlane`:
+You can pass all options listed in `sigh --help` in _fastlane_:
 
 ```ruby
 sigh(
@@ -1436,7 +1436,7 @@ sigh(
 )
 ```
 
-See how [Wikpedia](https://github.com/fastlane/examples/blob/master/Wikipedia/Fastfile) uses `sigh` to automatically retrieve the latest provisioning profile.
+See how [Wikpedia](https://github.com/fastlane/examples/blob/master/Wikipedia/Fastfile) uses _sigh_ to automatically retrieve the latest provisioning profile.
 
 ### [PEM](https://github.com/fastlane/fastlane/tree/master/PEM)
 
@@ -1466,17 +1466,17 @@ Use the `fastlane action pem` command to view all available options.
 
 ### [cert](https://github.com/fastlane/fastlane/tree/master/cert)
 
-**Note**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your certificates. Use `cert` directly only if you want full control over what's going on and know more about codesigning.
+**Note**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your certificates. Use _cert_ directly only if you want full control over what's going on and know more about codesigning.
 
-The `cert` action can be used to make sure to have the latest signing certificate installed. More information on the [`cert` project page](https://github.com/fastlane/fastlane/tree/master/cert).
+The _cert_ action can be used to make sure to have the latest signing certificate installed. More information on the [_cert_ project page](https://github.com/fastlane/fastlane/tree/master/cert).
 
 ```ruby
 cert
 ```
 
-`fastlane` will automatically pass the signing certificate to use to `sigh`.
+_fastlane_ will automatically pass the signing certificate to use to _sigh_.
 
-You can pass all options listed in `sigh --help` in `fastlane`:
+You can pass all options listed in `sigh --help` in _fastlane_:
 
 ```ruby
 cert(
@@ -1487,7 +1487,7 @@ cert(
 
 ### [produce](https://github.com/fastlane/fastlane/tree/master/produce)
 
-Create new apps on iTunes Connect and Apple Developer Portal. If the app already exists, `produce` will not do anything.
+Create new apps on iTunes Connect and Apple Developer Portal. If the app already exists, _produce_ will not do anything.
 
 ```ruby
 produce(
@@ -1501,7 +1501,7 @@ produce(
 )
 ```
 
-[SunApps](https://github.com/fastlane/examples/blob/master/SunApps/Fastfile#L41-L49) uses `produce` to automatically generate new apps for new customers.
+[SunApps](https://github.com/fastlane/examples/blob/master/SunApps/Fastfile#L41-L49) uses _produce_ to automatically generate new apps for new customers.
 
 ### register_devices
 This will register iOS devices with the Developer Portal so that you can include them in your provisioning profiles.
@@ -1654,7 +1654,7 @@ Then commits those files to the repo.
 
 Customise the message with the `:message` option, defaults to "Version Bump"
 
-If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the `ipa` and or `sigh` actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
+If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the `ipa` and or _sigh_ actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
 
 ```ruby
 commit_version_bump
@@ -1665,7 +1665,7 @@ commit_version_bump(
 )
 ```
 
-[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses `fastlane` to automatically commit the version bump, add a new git tag and push everything back to `master`.
+[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses _fastlane_ to automatically commit the version bump, add a new git tag and push everything back to `master`.
 
 ### number_of_commits
 
@@ -1704,7 +1704,7 @@ add_git_tag(
 )
 ```
 
-[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile#L105) uses `fastlane` to automatically commit the version bump, add a new git tag and push everything back to `master`.
+[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile#L105) uses _fastlane_ to automatically commit the version bump, add a new git tag and push everything back to `master`.
 
 ### git_pull
 
@@ -1727,7 +1727,7 @@ push_to_git_remote(
 )
 ```
 
-[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses `fastlane` to automatically commit the version bump, add a new git tag and push everything back to `master`.
+[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses _fastlane_ to automatically commit the version bump, add a new git tag and push everything back to `master`.
 
 ### push_git_tags
 
@@ -1836,7 +1836,7 @@ Then commits those files to the repo.
 
 Customise the message with the `:message` option, defaults to "Version Bump"
 
-If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the `ipa` and or `sigh` actions, then you can use the [`clean_build_artifacts`](#clean_build_artifacts) action to clean those temporary files up before running this action.
+If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the `ipa` and or _sigh_ actions, then you can use the [`clean_build_artifacts`](#clean_build_artifacts) action to clean those temporary files up before running this action.
 
 ```ruby
 hg_commit_version_bump
@@ -1901,7 +1901,7 @@ slack(
 Take a look at the [example projects](https://github.com/fastlane/examples) of how you can use the slack action, for example the [MindNode configuration](https://github.com/fastlane/examples/blob/master/MindNode/Fastfile).
 
 ### [Mailgun](http://www.mailgun.com)
-Send email notifications right from `fastlane` using [Mailgun](http://www.mailgun.com).
+Send email notifications right from _fastlane_ using [Mailgun](http://www.mailgun.com).
 
 ```ruby
 ENV['MAILGUN_SANDBOX_POSTMASTER'] ||= "MY_POSTMASTER"
@@ -1981,7 +1981,7 @@ Display a notification using the macOS notification center. Uses [terminal-notif
   notification(subtitle: "Finished Building", message: "Ready to upload...")
 ```
 
-[ByMyEyes](https://github.com/fastlane/examples/blob/master/BeMyEyes/Fastfile) uses the `notify` action to show a success message after `fastlane` finished executing.
+[ByMyEyes](https://github.com/fastlane/examples/blob/master/BeMyEyes/Fastfile) uses the `notify` action to show a success message after _fastlane_ finished executing.
 
 ### [Testmunk](http://testmunk.com)
 Run your functional tests on real iOS devices over the cloud (for free on an iPod). With this simple [testcase](https://github.com/testmunk/TMSample/blob/master/testcases/smoke/smoke_features.zip) you can ensure your app launches and there is no crash at launch. Tests can be extended with [Testmunk's library](http://docs.testmunk.com/en/latest/steps.html) or custom steps. More details about this action can be found in [`testmunk.rb`](https://github.com/fastlane/fastlane/blob/master/lib/fastlane/actions/testmunk.rb).
@@ -2070,7 +2070,7 @@ export PATH=$PATH:~/.gems/bin
 
 After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!
 
-Recommended usage of the `update_fastlane` action is at the top of the `before_all` block, before running any other action:
+Recommended usage of the `update_fastlane_ action is at the top of the `before_all` block, before running any other action:
 
 ```ruby
 before_all do
@@ -2448,7 +2448,7 @@ update_info_plist(
 
 ### fastlane_version
 
-Add this to your `Fastfile` to require a certain version of `fastlane`. Use it if you use an action that just recently came out and you need it
+Add this to your `Fastfile` to require a certain version of _fastlane_. Use it if you use an action that just recently came out and you need it
 
 ```ruby
 fastlane_version "1.50.0"
@@ -2462,7 +2462,7 @@ Install an Xcode plugin for the current user
 install_xcode_plugin(url: 'https://example.com/clubmate/plugin.zip')
 ```
 
-You can also let `fastlane` pick the latest version of a plugin automatically, if it is hosted on GitHub
+You can also let _fastlane_ pick the latest version of a plugin automatically, if it is hosted on GitHub
 
 ```ruby
 install_xcode_plugin(github: 'https://github.com/contentful/ContentfulXcodePlugin')
@@ -2478,11 +2478,11 @@ opt_out_usage
 
 ### rocket
 
-Print an ascii Rocket :rocket:. Useful after using `crashlytics` or `pilot` to indicate that your new build has been shipped to outer-space.
+Print an ascii Rocket :rocket:. Useful after using `crashlytics` or _pilot_ to indicate that your new build has been shipped to outer-space.
 
 ### skip_docs
 
-Tell `fastlane` to not automatically create a `fastlane/README.md` when running `fastlane`. You can always trigger the creation of this file manually by running `fastlane docs`
+Tell _fastlane_ to not automatically create a `fastlane/README.md` when running _fastlane_. You can always trigger the creation of this file manually by running `fastlane docs`
 
 
 ### ssh
@@ -2569,7 +2569,7 @@ zip(path: "MyApp.app", output_path: "Latest.app.zip")
 
 ### ifttt
 
-Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this `fastlane` action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
+Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this _fastlane_ action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
 
 ```ruby
 ifttt(

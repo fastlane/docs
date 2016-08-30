@@ -4,6 +4,7 @@ lane :test do
     ensure_headers
     ensure_image_assets
     ensure_assets_location
+    ensure_tool_name_formatting
   end
 end
 
@@ -67,6 +68,7 @@ end
 # This will verify that no non-md files are inside each of the sub-directories
 # All images must be stored in the correct sub-dir
 private_lane :ensure_assets_location do
+  UI.message "🕗  Ensuring asset locations..."
   error = false
   Dir["docs/**/*"].each do |path|
     next if File.directory?(path)
@@ -77,4 +79,23 @@ private_lane :ensure_assets_location do
     UI.error("File '#{path}' shouldn't be in this directory, only `.md` files are allowed")
   end
   UI.user_error!("Found some files in a wrong directory") if error
+  UI.success "✅  All assets are in the correct subfolder"
+end
+
+private_lane :ensure_tool_name_formatting do
+  UI.message "🕗  Verifying tool name formatting..."
+  require 'fastlane/tools'
+  errors = []
+  Dir["docs/**/*.md"].each do |path|
+    content = File.read(path)
+    Fastlane::TOOLS.each do |tool|
+      errors << "Use _#{tool}_ instead of `#{tool}` to mention a tool in the docs in '#{path}'" if content.include?("`#{tool}`")
+      if content.include?("_#{tool.to_s.capitalize}_") || content.include?("`#{tool.to_s.capitalize}`")
+        errors << "fastlane tools have to be formatted in lower case: #{tool} in '#{path}'"
+      end
+    end
+  end
+  errors.each { |a| UI.error(a) }
+  UI.user_error!("Invalid formatting of one of the fastlane tools") unless errors.empty?
+  UI.success "✅  fastlane formatting is correct"
 end

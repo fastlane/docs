@@ -1,10 +1,10 @@
-# Contributing to `fastlane`
+# Contributing to _fastlane_
 
 ## Getting started
 
 Make sure you have `bundler` installed using `gem install bundler`
 
-- Open the GitHub page of the `fastlane`repository  (e.g. [https://github.com/fastlane/fastlane](https://github.com/fastlane/fastlane))
+- Open the GitHub page of the _fastlane_repository  (e.g. [https://github.com/fastlane/fastlane](https://github.com/fastlane/fastlane))
 - Create an issue to discuss your idea/feature/enhancement.
 - Click on `Fork` on the top right
 - Then clone your new repo locally `git clone https://github.com/[my_user]/fastlane.git`
@@ -30,7 +30,7 @@ Before submitting a new issue, do the following:
 
 When submitting a new issue, please provide the following information:
 
-- The full stack trace and output when running `fastlane`.
+- The full stack trace and output when running _fastlane_.
 - The command and parameters you used to launch it.
 - Your `Fastfile` and all other configuration files you are using.
 
@@ -79,7 +79,7 @@ PRs should reference an open GitHub issue (preferably those marked with the [hel
 If you're considering contributing new functionality, please open a new issue explaining the functionality desired first so that we can discuss as a community. We'll add the [help wanted](https://github.com/fastlane/fastlane/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) label if we believe this to be a meaningful contribution that will benefit other fastlane users and you go ahead with the pull request. :raised_hands:
 
 - Adding automated tests that cover your changes and/or new functionality is important!
-    - `fastlane` has a lot of moving parts and receives contributions from many developers. The best way to ensure that your contributions keep working is to ensure that there will be failing tests if something accidentally gets broken.
+    - _fastlane_ has a lot of moving parts and receives contributions from many developers. The best way to ensure that your contributions keep working is to ensure that there will be failing tests if something accidentally gets broken.
     - You can run the tests by executing `bundle install` and then `bundle exec rspec`.
 - Your code editor should indent using spaces with a tab size of 2 spaces.
 
@@ -104,7 +104,7 @@ One of the best ways we can keep fastlane an approachable, stable, and dependabl
 
 ## Contributing New Actions
 
-There are different approaches to build your own `fastlane` actions. You can either build your own local actions, or provide your own fastlane plugin. For more information, check out [Plugins.md](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md#readme).
+There are different approaches to build your own _fastlane_ actions. You can either build your own local actions, or provide your own fastlane plugin. For more information, check out [Plugins.md](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md#readme).
 
 ## Developing
 
@@ -145,7 +145,7 @@ This will do a few things:
 - Makes sure no debug code (like `pry`) is still there
 - The `--help` command works as expected
 
-The tests are executed using `fastlane` :rocket:
+The tests are executed using _fastlane_ :rocket:
 
 To run only a subset of the tests, you can add the `now: true` keyword to the test
 
@@ -163,7 +163,7 @@ rspec -t now
 
 ## rubocop validation
 
-The `fastlane` repos use [rubocop](https://github.com/bbatsov/rubocop) to validate the code style.
+The _fastlane_ repos use [rubocop](https://github.com/bbatsov/rubocop) to validate the code style.
 
 The style validation is automatically done when running `rake test_all`.
 
@@ -173,7 +173,7 @@ To automatically fix common code style issues (e.g. wrong spacing), run `rubocop
 Please submit an [issue](https://github.com/fastlane/fastlane/issues) on GitHub and provide information about your setup
 
 ## Code of Conduct
-Help us keep `fastlane` open and inclusive. Please read and follow our [Code of Conduct](https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md).
+Help us keep _fastlane_ open and inclusive. Please read and follow our [Code of Conduct](https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md).
 
 
 ## Above All, Thanks for Your Contributions

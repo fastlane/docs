@@ -12,7 +12,7 @@ Run `fastlane update_plugins` to make sure to have all the latest plugins and th
 
 ### Use `bundle exec`
 
-Run `fastlane` using `bundle exec fastlane [lane]` to make sure your plugins are properly loaded.
+Run _fastlane_ using `bundle exec fastlane [lane]` to make sure your plugins are properly loaded.
 
 This is required when you use plugins from a local path or a git remote.
 
@@ -69,4 +69,4 @@ to install all required development dependencies
 
 ### More help
 
-If it's still not working for you, please [submit a new GitHub issue](https://github.com/fastlane/fastlane/issues/new) with your `Gemfile`, `Gemfile.lock`, `Pluginfile`, `Fastfile` and terminal output when running `fastlane` using the `--verbose` flag.
+If it's still not working for you, please [submit a new GitHub issue](https://github.com/fastlane/fastlane/issues/new) with your `Gemfile`, `Gemfile.lock`, `Pluginfile`, `Fastfile` and terminal output when running _fastlane_ using the `--verbose` flag.
