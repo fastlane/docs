@@ -158,11 +158,21 @@ fastlane frameit setup
 
 # Upload Screenshots for the App Store
 
-TODO: write about _deliver_
+After generating your screenshots using `fastlane snapshot`, you usually want to upload them to iTunes Connect.
+
+If you followed the setup guide, you already ran `fastlane init` before, so you should have your existing screenshots and metadata inside the `fastlane/screenshots` and `fastlane/metadata` directory. Running `fastlane snapshot` will store the screenshots in the `fastlane/screenshots` directory by default. 
+
+To upload the screenshots stored in `fastlane/screenshots`, just run
+
+```no-highlight
+fastlane deliver
+```
+
+This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on iTunes Connect. 
 
 # All Together Now
 
-To put all of this together so that anyone on your team could trigger this complete process, you could define a _fastlane_ lane called `screenshots`. It would be responsible for:
+To put all of this together so that anyone on your team could trigger this complete process, you can define a _fastlane_ lane called `screenshots`. It would be responsible for:
 
 1. Running your app through _snapshot_ to automatically capture your screenshots
 1. Decorating those screenshots with _frameit_
