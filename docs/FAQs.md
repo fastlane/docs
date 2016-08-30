@@ -22,7 +22,7 @@ rvm osx-ssl-certs update all
 
 ### fastlane is slow (to start)
 
-If you experiennce slow launch times of `fastlane`, there are 2 solutions to solve this problem:
+If you experiennce slow launch times of _fastlane`, there are 2 solutions to solve this problem:
 
 ##### Uninstall unused gems
 
@@ -32,13 +32,13 @@ If you experiennce slow launch times of `fastlane`, there are 2 solutions to sol
 
 ##### Use a Gemfile
 
-Follow the [CocoaPods Gemfile Guide](https://guides.cocoapods.org/using/a-gemfile.html) to set up your initial Gemfile. From the on launch `fastlane` using:
+Follow the [CocoaPods Gemfile Guide](https://guides.cocoapods.org/using/a-gemfile.html) to set up your initial Gemfile. From the on launch _fastlane` using:
 
 ```
 bundle exec fastlane ...
 ```
 
-### Error when running `fastlane` with Jenkins
+### Error when running _fastlane` with Jenkins
 
 This is usually caused when running Jenkins as its own user. While this is possible, you'll have to take care of creating a temporary Keychain, filling it and then using it when building your application. 
 
@@ -73,11 +73,11 @@ primary_category ENV['DLV_PRIM_CATG']
 secondary_category ENV['DLV_SCND_CATG']
 ```
 
-Now to run this, all you need to do is specify the environment argument when running `fastlane` and it will pull from the `.env` file that matches the same name...
+Now to run this, all you need to do is specify the environment argument when running _fastlane` and it will pull from the `.env` file that matches the same name...
 Ex: `fastlane build --env app1` will use `.env.app1`
 Ex: `fastlane build --env app2` will use `.env.app2`
 
-You can also references these environment variables almost anywhere in `fastlane`. 
+You can also references these environment variables almost anywhere in _fastlane`. 
 
 You can even define a lane to perform actions on multiple targets:
 
@@ -99,7 +99,7 @@ Set the `FASTLANE_DISABLE_COLORS` environment variable to disable ANSI colors (e
 export FASTLANE_DISABLE_COLORS=1
 ```
 
-### "User interaction is not allowed" when using `fastlane` via SSH
+### "User interaction is not allowed" when using _fastlane` via SSH
 
-This error can occur when you run `fastlane` via SSH. To fix it check out [this reply on StackOverflow](http://stackoverflow.com/a/22637896/445598).
+This error can occur when you run _fastlane` via SSH. To fix it check out [this reply on StackOverflow](http://stackoverflow.com/a/22637896/445598).
 

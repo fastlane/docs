@@ -2,7 +2,7 @@
 
 ## Building your app
 
-`fastlane` takes care of building your app using a feature called `gym`, just add the following to your `Fastfile`:
+_fastlane` takes care of building your app using a feature called `gym`, just add the following to your `Fastfile`:
 
 ```
 lane :beta do
@@ -34,7 +34,7 @@ Chances are that something went wrong because of code signing at the previous st
 
 ## Uploading your app
 
-After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of `fastlane` is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.
+After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane` is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.
 
 All you have to do is to put the name of the beta testing provider of your choice after building the app using `gym`:
 
@@ -47,7 +47,7 @@ lane :beta do
 end
 ```
 
-`fastlane` automatically passes on information about the generated `.ipa` file from `gym` to the beta testing provider of your choice.
+_fastlane` automatically passes on information about the generated `.ipa` file from `gym` to the beta testing provider of your choice.
 
 ### Supported beta testing services
 
@@ -55,7 +55,7 @@ end
 <details>
 <summary>TestFlight</summary>
 
-You can easily upload new builds to TestFlight (which is part of iTunes Connect) using `fastlane`. To do so, just use the built-in `testflight` action after building your app
+You can easily upload new builds to TestFlight (which is part of iTunes Connect) using _fastlane`. To do so, just use the built-in `testflight` action after building your app
 
 ```ruby
 lane :beta do
@@ -82,7 +82,7 @@ lane :beta do
 end
 ```
 
-If you used `fastlane init` to setup `fastlane`, your Apple ID is stored in the `fastlane/Appfile`. You can also overwrite the username, using `testflight(username: "bot@fastlane.tools")`.
+If you used `fastlane init` to setup _fastlane`, your Apple ID is stored in the `fastlane/Appfile`. You can also overwrite the username, using `testflight(username: "bot@fastlane.tools")`.
 
 To get a list of all available options, run
 
@@ -90,7 +90,7 @@ To get a list of all available options, run
 fastlane action testflight
 ```
 
-With `fastlane`, you can also automatically manage your beta testers, check out TODO for more information.
+With _fastlane`, you can also automatically manage your beta testers, check out TODO for more information.
 
 ---
 </details>
@@ -214,7 +214,7 @@ You can fetch values from anywhere in your `Fastfile`, including the file system
 ```ruby
 lane :beta do
   # Variant 1: Read from file system
-  #   note the `..`, since fastlane runs in the `fastlane` directory
+  #   note the `..`, since fastlane runs in the _fastlane` directory
   changelog = File.read("../Changelog.txt")
 
   # Variant 2: Fetch data from a remote web server
@@ -239,7 +239,7 @@ end
 
 If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.
 
-`fastlane` supports automatically registering devices using different approaches
+_fastlane` supports automatically registering devices using different approaches
 
 #### [boarding](https://github.com/fastlane/boarding#readme)
 
@@ -251,7 +251,7 @@ Check out the [boarding GitHub repo](https://github.com/fastlane/boarding#readme
 
 #### pilot
 
-`pilot` is automatically installed with `fastlane`, you can use it to register individual testers to TestFlight
+`pilot` is automatically installed with _fastlane`, you can use it to register individual testers to TestFlight
 
 ```no-highlight
 # Register a new external tester

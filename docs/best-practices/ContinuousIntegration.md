@@ -5,7 +5,7 @@
 
 Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.
 
-`fastlane` automatically generates a JUnit report for you. This allows Continuous Integration systems, like `Jenkins`, access the results of your deployment.
+_fastlane` automatically generates a JUnit report for you. This allows Continuous Integration systems, like `Jenkins`, access the results of your deployment.
 
 ## Installation
 
@@ -148,7 +148,7 @@ Carthage is a wonderful dependency manager but once you are start using a large 
 
 One way to make build times faster is to break your work up into two separate build plans (*this can get even more funky if you start having multiple branches*)
 
-The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs `fastlane`.  
+The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs _fastlane`.  
 
 
 ###Artifact Plan
@@ -188,7 +188,7 @@ as these calls will either fail the build or delete the `Carthage` directory.  A
 
 #### Build plan setup
 
-What this build plan does is it checks out the source code, then it downloads the entire `Carthage/Build/` directory into your local project - which is exactly what would be created from `carthage bootstrap` and then it runs `fastlane`
+What this build plan does is it checks out the source code, then it downloads the entire `Carthage/Build/` directory into your local project - which is exactly what would be created from `carthage bootstrap` and then it runs _fastlane`
 
 * Task 1: **Source Code Checkout**
 * Task 2: **Artifact Download**

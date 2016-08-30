@@ -7,11 +7,11 @@ fastlane
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE)
 [![Gem](https://img.shields.io/gem/v/fastlane.svg?style=flat)](http://rubygems.org/gems/fastlane)
 
-`fastlane` is **the** tool to release your iOS and Android app :rocket: It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
+_fastlane` is **the** tool to release your iOS and Android app :rocket: It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
 TODO: Alternative
 
-`fastlane` is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.
+_fastlane` is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.
 
 You create a so-called `Fastfile` in your repository, that defines how your beta or App Store release process:
 
@@ -47,8 +47,8 @@ fastlane appstore
 ⚒ | Runs on **your** machine, it's your app and your data
 👻 | Integrates with all major CI systems
 🖥 | Supports iOS, Mac, and Android apps
-🔧 | Extend and customise `fastlane` to fit your needs, you're not dependent on anyone
-💭 | Never remember any commands any more, just `fastlane`
+🔧 | Extend and customise _fastlane` to fit your needs, you're not dependent on anyone
+💭 | Never remember any commands any more, just _fastlane`
 🚢 | Deploy from any computer, including a CI server
 
 ## Getting Started
@@ -71,13 +71,13 @@ Navigate to your iOS or Android app and run
 fastlane init
 ```
 
-`fastlane` will automatically detect your project, and ask for any missing information.
+_fastlane` will automatically detect your project, and ask for any missing information.
 
 For more details about how to get up and running, check out the [fastlane guide](docs/Guide.md).
 
 ### Using the Fabric app
 
-If you're not familiar with the terminal and prefer a graphical user interface, download the [Fabric app](https://get.fabric.io/) and use the built-in `fastlane` button.
+If you're not familiar with the terminal and prefer a graphical user interface, download the [Fabric app](https://get.fabric.io/) and use the built-in _fastlane` button.
 
 ## Questions and support
 
@@ -85,11 +85,11 @@ All fastlane related questions, problems and feature ideas should be posted as [
 
 ## System requirements
 
-`fastlane` requires macOS or Linux with Ruby 2.0.0 or above
+_fastlane` requires macOS or Linux with Ruby 2.0.0 or above
 
 ## Code of Conduct
 
-Help us keep `fastlane` open and inclusive. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+Help us keep _fastlane` open and inclusive. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 

@@ -71,7 +71,7 @@ lane :build do |options|
 end
 ```
 
-`fastlane` takes care of all the magic for you. You can call lanes of the same platform or a general lane outside of the `platform` definition.
+_fastlane` takes care of all the magic for you. You can call lanes of the same platform or a general lane outside of the `platform` definition.
 
 Passing parameters is optional.
 
@@ -147,7 +147,7 @@ output = sh("pod update")
 
 # Priorities of parameters and options
 
-The order in which `fastlane` tools take their values from
+The order in which _fastlane` tools take their values from
 
 1. CLI parameter (e.g. `gym --scheme Example`) or Fastfile (e.g. `gym(scheme: 'Example')`)
 1. Environment variable (e.g. `GYM_SCHEME`)
@@ -191,7 +191,7 @@ This will also automatically import all the local actions from this repo.
 
 ## Note
 
-You should import the other `Fastfile` on the top above your lane declarations. When defining a new lane `fastlane` will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the `override_lane` keyword. 
+You should import the other `Fastfile` on the top above your lane declarations. When defining a new lane _fastlane` will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the `override_lane` keyword. 
 
 
 # Environment Variables
@@ -202,7 +202,7 @@ WORKSPACE=YourApp.xcworkspace
 HOCKEYAPP_API_TOKEN=your-hockey-api-token
 ```
 
-`fastlane` also has a `--env` option that allows loading of environment specific `dotenv` files. `.env` and `.env.default` will be loaded before environment specific `dotenv` files are loaded. The naming convention for environment specific `dotenv` files is `.env.<environment>`
+_fastlane` also has a `--env` option that allows loading of environment specific `dotenv` files. `.env` and `.env.default` will be loaded before environment specific `dotenv` files are loaded. The naming convention for environment specific `dotenv` files is `.env.<environment>`
 
 For example, `fastlane <lane-name> --env development` will load `.env`, `.env.default`, and `.env.development`
 
@@ -271,7 +271,7 @@ And also, you can't call the private lane using `fastlane build`.
 
 The resulting private lane can only be called from another lane using the lane switching technology.
 
-# Hide the `fastlane` folder
+# Hide the _fastlane` folder
 
 Just rename the folder to `.fastlane` in case you don't want it to be visible in the Finder.
 
@@ -283,13 +283,13 @@ Add this to the top of your `Fastfile`.
 actions_path '../custom_actions_folder/'
 ```
 
-# Skip update check when launching `fastlane`
+# Skip update check when launching _fastlane`
 
 You can set the environment variable `FASTLANE_SKIP_UPDATE_CHECK` to skip the update check.
 
 # Adding Credentials
 
-You can add credentials for use by `fastlane` to your keychain using the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) command line interface. This is useful for situations like CI environments.
+You can add credentials for use by _fastlane` to your keychain using the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) command line interface. This is useful for situations like CI environments.
 
 **Adding a Credential**
 ```
