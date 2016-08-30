@@ -19,7 +19,7 @@ From now on start ```Jenkins``` by running:
 jenkins
 ```
 
-To store the password in the Keychain of your remote machine, I recommend running `sigh` or `deliver` using ssh or remote desktop at least once.
+To store the password in the Keychain of your remote machine, I recommend running _sigh_ or _deliver_ using ssh or remote desktop at least once.
 
 ## Deploy Strategy
 
@@ -50,7 +50,7 @@ Replace `appstore` with the lane you want to use.
 
 You can use `setup_jenkins` action which integrates well with the [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin). Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the `./output` folder in the job workspace. In additions `setup_jenkins` will create separate derived data folder for each job (in the `./derivedData`).
 
-Under the hood `setup_jenkins` configures other actions like: `gym`, `scan`, `xcodebuild`, `backup_xcarchive` and `clear_derived_data`.
+Under the hood `setup_jenkins` configures other actions like: _gym_, _scan_, `xcodebuild`, `backup_xcarchive` and `clear_derived_data`.
 
 ## Test Results and Screenshots
 

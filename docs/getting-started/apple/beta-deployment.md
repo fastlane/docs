@@ -2,7 +2,7 @@
 
 ## Building your app
 
-_fastlane_ takes care of building your app using a feature called `gym`, just add the following to your `Fastfile`:
+_fastlane_ takes care of building your app using a feature called _gym_, just add the following to your `Fastfile`:
 
 ```
 lane :beta do
@@ -36,7 +36,7 @@ Chances are that something went wrong because of code signing at the previous st
 
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.
 
-All you have to do is to put the name of the beta testing provider of your choice after building the app using `gym`:
+All you have to do is to put the name of the beta testing provider of your choice after building the app using _gym_:
 
 ```ruby
 lane :beta do
@@ -47,7 +47,7 @@ lane :beta do
 end
 ```
 
-_fastlane_ automatically passes on information about the generated `.ipa` file from `gym` to the beta testing provider of your choice.
+_fastlane_ automatically passes on information about the generated `.ipa` file from _gym_ to the beta testing provider of your choice.
 
 ### Supported beta testing services
 
@@ -251,7 +251,7 @@ Check out the [boarding GitHub repo](https://github.com/fastlane/boarding#readme
 
 #### pilot
 
-`pilot` is automatically installed with _fastlane_, you can use it to register individual testers to TestFlight
+_pilot_ is automatically installed with _fastlane_, you can use it to register individual testers to TestFlight
 
 ```no-highlight
 # Register a new external tester

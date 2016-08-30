@@ -56,7 +56,7 @@ Contains basic metadata of your app that can be used by the actions you define i
 
 ##### `fastlane/metadata/android`
 
-This folder contains the metadata fetched from Google Play. You can modify any values here and run `supply` to upload the updated metadata.
+This folder contains the metadata fetched from Google Play. You can modify any values here and run _supply_ to upload the updated metadata.
 
 ### Next Steps
 
