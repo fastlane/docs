@@ -18,7 +18,7 @@ You'll be asked for your Apple ID, and _fastlane_ will automatically generate a 
 
 You can see the newly created _fastlane_ directory, with all your existing metadata fetched from iTunes Connect.
 
-<img src="/img/getting-started/apple/fastlane-init.png" width="800" />
+<img src="/img/getting-started/ios/fastlane-init.png" width="800" />
 
 The most interesting file is `fastlane/Fastfile`, which contains all the information that is needed to distribute your app.
 

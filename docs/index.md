@@ -75,7 +75,7 @@ _fastlane_ will automatically detect your project, and ask for any missing infor
 
 For more details about how to get up and running, check out the getting started guides:
 
-- [fastlane Getting Started guide for iOS](getting-started/apple/setup.md)
+- [fastlane Getting Started guide for iOS](getting-started/ios/setup.md)
 - [fastlane Getting Started guide for Android](getting-started/android/setup.md)
 
 ### Using the Fabric app
