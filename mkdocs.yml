@@ -13,11 +13,11 @@ theme_dir: theme
 pages:
 - Home: index.md
 - Getting Started:
-  - Apple:
-    - Setup: getting-started/apple/setup.md
-    - Screenshots: getting-started/apple/screenshots.md
-    - Beta Deployment: getting-started/apple/beta-deployment.md
-    - App Store Deployment: getting-started/apple/appstore-deployment.md
+  - iOS:
+    - Setup: getting-started/ios/setup.md
+    - Screenshots: getting-started/ios/screenshots.md
+    - Beta Deployment: getting-started/ios/beta-deployment.md
+    - App Store Deployment: getting-started/ios/appstore-deployment.md
   - Android:
     - Setup: getting-started/android/setup.md
     - Screenshots: getting-started/android/screenshots.md
