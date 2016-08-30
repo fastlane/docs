@@ -1,6 +1,6 @@
 # Actions
 
-There are lots of predefined _fastlane` actions you can use. If you have ideas for more, please [let me know](https://github.com/fastlane/fastlane/issues/new).
+There are lots of predefined _fastlane_ actions you can use. If you have ideas for more, please [let me know](https://github.com/fastlane/fastlane/issues/new).
 
 To get the most up-to-date information from the command line on your current version you can also run:
 
@@ -98,7 +98,7 @@ The alternative to `gym` is [`ipa`](#ipa) which uses [shenzhen](https://github.c
 
 ### gradle
 
-You can use the `gradle` action to integrate your gradle tasks into _fastlane`.
+You can use the `gradle` action to integrate your gradle tasks into _fastlane_.
 
 Simple usage:
 ```ruby
@@ -208,7 +208,7 @@ clear_derived_data
 
 **Note**: This action is deprecated, use [gym](https://github.com/fastlane/fastlane/tree/master/gym) instead.
 
-Build your app right inside _fastlane` and the path to the resulting ipa is automatically available to all other actions.
+Build your app right inside _fastlane_ and the path to the resulting ipa is automatically available to all other actions.
 
 You should check out the [code signing guide](https://github.com/fastlane/fastlane/tree/master/fastlane/docs/Codesigning).
 
@@ -708,7 +708,7 @@ xcov(
 ```
 
 ### [OCLint](http://oclint.org)
-Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your _fastlane` directory or pass a path to your file.
+Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your _fastlane_ directory or pass a path to your file.
 
 ```ruby
 oclint(
@@ -824,7 +824,7 @@ To upload a new build to TestFlight use `pilot` instead.
 
 #### Options
 
-If you don't want a PDF report for App Store builds, append `:force` to the command. This is useful when running _fastlane` on your Continuous Integration server: `deliver(force: true)`
+If you don't want a PDF report for App Store builds, append `:force` to the command. This is useful when running _fastlane_ on your Continuous Integration server: `deliver(force: true)`
 
 If your account is on multiple teams and you need to tell the `iTMSTransporter` which "provider" to use, you can set the `itc_provider` option to pass this info.
 
@@ -1426,7 +1426,7 @@ This will generate and download your App Store provisioning profile. `sigh` will
 sigh
 ```
 
-You can pass all options listed in `sigh --help` in _fastlane`:
+You can pass all options listed in `sigh --help` in _fastlane_:
 
 ```ruby
 sigh(
@@ -1474,9 +1474,9 @@ The `cert` action can be used to make sure to have the latest signing certificat
 cert
 ```
 
-_fastlane` will automatically pass the signing certificate to use to `sigh`.
+_fastlane_ will automatically pass the signing certificate to use to `sigh`.
 
-You can pass all options listed in `sigh --help` in _fastlane`:
+You can pass all options listed in `sigh --help` in _fastlane_:
 
 ```ruby
 cert(
@@ -1665,7 +1665,7 @@ commit_version_bump(
 )
 ```
 
-[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses _fastlane` to automatically commit the version bump, add a new git tag and push everything back to `master`.
+[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses _fastlane_ to automatically commit the version bump, add a new git tag and push everything back to `master`.
 
 ### number_of_commits
 
@@ -1704,7 +1704,7 @@ add_git_tag(
 )
 ```
 
-[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile#L105) uses _fastlane` to automatically commit the version bump, add a new git tag and push everything back to `master`.
+[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile#L105) uses _fastlane_ to automatically commit the version bump, add a new git tag and push everything back to `master`.
 
 ### git_pull
 
@@ -1727,7 +1727,7 @@ push_to_git_remote(
 )
 ```
 
-[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses _fastlane` to automatically commit the version bump, add a new git tag and push everything back to `master`.
+[Artsy](https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile) uses _fastlane_ to automatically commit the version bump, add a new git tag and push everything back to `master`.
 
 ### push_git_tags
 
@@ -1901,7 +1901,7 @@ slack(
 Take a look at the [example projects](https://github.com/fastlane/examples) of how you can use the slack action, for example the [MindNode configuration](https://github.com/fastlane/examples/blob/master/MindNode/Fastfile).
 
 ### [Mailgun](http://www.mailgun.com)
-Send email notifications right from _fastlane` using [Mailgun](http://www.mailgun.com).
+Send email notifications right from _fastlane_ using [Mailgun](http://www.mailgun.com).
 
 ```ruby
 ENV['MAILGUN_SANDBOX_POSTMASTER'] ||= "MY_POSTMASTER"
@@ -1981,7 +1981,7 @@ Display a notification using the macOS notification center. Uses [terminal-notif
   notification(subtitle: "Finished Building", message: "Ready to upload...")
 ```
 
-[ByMyEyes](https://github.com/fastlane/examples/blob/master/BeMyEyes/Fastfile) uses the `notify` action to show a success message after _fastlane` finished executing.
+[ByMyEyes](https://github.com/fastlane/examples/blob/master/BeMyEyes/Fastfile) uses the `notify` action to show a success message after _fastlane_ finished executing.
 
 ### [Testmunk](http://testmunk.com)
 Run your functional tests on real iOS devices over the cloud (for free on an iPod). With this simple [testcase](https://github.com/testmunk/TMSample/blob/master/testcases/smoke/smoke_features.zip) you can ensure your app launches and there is no crash at launch. Tests can be extended with [Testmunk's library](http://docs.testmunk.com/en/latest/steps.html) or custom steps. More details about this action can be found in [`testmunk.rb`](https://github.com/fastlane/fastlane/blob/master/lib/fastlane/actions/testmunk.rb).
@@ -2070,7 +2070,7 @@ export PATH=$PATH:~/.gems/bin
 
 After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!
 
-Recommended usage of the `update_fastlane` action is at the top of the `before_all` block, before running any other action:
+Recommended usage of the `update_fastlane_ action is at the top of the `before_all` block, before running any other action:
 
 ```ruby
 before_all do
@@ -2448,7 +2448,7 @@ update_info_plist(
 
 ### fastlane_version
 
-Add this to your `Fastfile` to require a certain version of _fastlane`. Use it if you use an action that just recently came out and you need it
+Add this to your `Fastfile` to require a certain version of _fastlane_. Use it if you use an action that just recently came out and you need it
 
 ```ruby
 fastlane_version "1.50.0"
@@ -2462,7 +2462,7 @@ Install an Xcode plugin for the current user
 install_xcode_plugin(url: 'https://example.com/clubmate/plugin.zip')
 ```
 
-You can also let _fastlane` pick the latest version of a plugin automatically, if it is hosted on GitHub
+You can also let _fastlane_ pick the latest version of a plugin automatically, if it is hosted on GitHub
 
 ```ruby
 install_xcode_plugin(github: 'https://github.com/contentful/ContentfulXcodePlugin')
@@ -2482,7 +2482,7 @@ Print an ascii Rocket :rocket:. Useful after using `crashlytics` or `pilot` to i
 
 ### skip_docs
 
-Tell _fastlane` to not automatically create a `fastlane/README.md` when running _fastlane`. You can always trigger the creation of this file manually by running `fastlane docs`
+Tell _fastlane_ to not automatically create a `fastlane/README.md` when running _fastlane_. You can always trigger the creation of this file manually by running `fastlane docs`
 
 
 ### ssh
@@ -2569,7 +2569,7 @@ zip(path: "MyApp.app", output_path: "Latest.app.zip")
 
 ### ifttt
 
-Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this _fastlane` action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
+Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this _fastlane_ action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
 
 ```ruby
 ifttt(

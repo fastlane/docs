@@ -1,6 +1,6 @@
 # fastlane Plugins
 
-The instructions below require _fastlane` 1.93.0 or higher
+The instructions below require _fastlane_ 1.93.0 or higher
 
 ## Local actions
 
@@ -12,7 +12,7 @@ From then on, you can just use your action in your `Fastfile`, just like any oth
 
 ### Submitting the action to the fastlane main repo
 
-Please be aware we may not accept all actions submitted to be bundled with _fastlane`. Before you submit a pull request adding the action to the _fastlane` code base, submit an issue proposing the new action and why it should be built-in.
+Please be aware we may not accept all actions submitted to be bundled with _fastlane_. Before you submit a pull request adding the action to the _fastlane_ code base, submit an issue proposing the new action and why it should be built-in.
 
 In general we tend to accept actions that
 
@@ -29,7 +29,7 @@ In general, we might not accept actions that
 
 ## Plugins
 
-_fastlane` is an open platform and we enable every developer to extend it to fit their needs. That's why we built a plugin system that allows you and your company to provide _fastlane` plugins to other _fastlane` users. You have the full power and responsibility of maintaining your plugin and keeping it up to date. This is useful if you maintain your own library or web service, and want to make sure the _fastlane` plugin is always up to date.
+_fastlane_ is an open platform and we enable every developer to extend it to fit their needs. That's why we built a plugin system that allows you and your company to provide _fastlane_ plugins to other _fastlane_ users. You have the full power and responsibility of maintaining your plugin and keeping it up to date. This is useful if you maintain your own library or web service, and want to make sure the _fastlane_ plugin is always up to date.
 
 ### Find a plugin
 
@@ -52,7 +52,7 @@ fastlane search_plugins [query]
 fastlane add_plugin [name]
 ```
 
-_fastlane` will assist you on setting up your project to start using plugins.
+_fastlane_ will assist you on setting up your project to start using plugins.
 
 This will:
 
@@ -63,7 +63,7 @@ This will:
 
 #### Plugin Source
 
-Your `fastlane/Pluginfile` contains the list of all _fastlane` plugins your project uses. The `Pluginfile` is a [Gemfile](http://bundler.io/gemfile.html) that gets imported from your main `Gemfile`.
+Your `fastlane/Pluginfile` contains the list of all _fastlane_ plugins your project uses. The `Pluginfile` is a [Gemfile](http://bundler.io/gemfile.html) that gets imported from your main `Gemfile`.
 You specificy all dependencies, including the required version numbers:
 
 ```ruby
@@ -107,13 +107,13 @@ cd ~/new/folder/
 fastlane new_plugin [plugin_name]
 ```
 
-- _fastlane` creates the directory structure that's needed to be a valid Ruby gem
+- _fastlane_ creates the directory structure that's needed to be a valid Ruby gem
 - Edit the `lib/fastlane/plugin/[plugin_name]/actions/[plugin_name].rb` and implement your action
 - Easily test the plugin locally by running `fastlane add_plugin` in your project's directory and specifying the local path when asked for it
 
 ##### New plugin for existing gem
 
-If you already have an exiting gem you want to provide a _fastlane` plugin for, you'll still have to create a new Ruby gem. The reason for that is the way plugins are imported.
+If you already have an exiting gem you want to provide a _fastlane_ plugin for, you'll still have to create a new Ruby gem. The reason for that is the way plugins are imported.
 
 The example project [xcake](https://github.com/jcampbell05/xcake) contains a folder named `fastlane-plugin-xcake`.
 
@@ -153,4 +153,4 @@ gem "fastlane-plugin-[plugin_name]", git: "https://github.com/[user]/[plugin_nam
 
 #### Multiple actions in one plugin
 
-Let's assume you work on a _fastlane` plugin for project management software. You could call it `fastlane-plugin-pm` and it may contain any number of actions and helpers, just add them to your `actions` folder. Make sure to mention the available actions in your plugin's `README.md`.
+Let's assume you work on a _fastlane_ plugin for project management software. You could call it `fastlane-plugin-pm` and it may contain any number of actions and helpers, just add them to your `actions` folder. Make sure to mention the available actions in your plugin's `README.md`.

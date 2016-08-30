@@ -56,7 +56,7 @@ As funny as it sounds, sometimes restarting your Mac helps.
 
 ## fastlane
 
-Run _fastlane` in verbose mode to get even more debug information:
+Run _fastlane_ in verbose mode to get even more debug information:
 
 ```
 fastlane [lane] --verbose
