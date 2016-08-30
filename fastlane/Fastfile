@@ -82,8 +82,8 @@ private_lane :ensure_assets_location do
   UI.success "✅  All assets are in the correct subfolder"
 end
 
-private_lane :ensure_fastlane_spelling do
-  UI.message "🕗  Verifying fastlane spelling..."
+private_lane :ensure_tool_name_formatting do
+  UI.message "🕗  Verifying tool name formatting..."
   require 'fastlane/tools'
   errors = []
   Dir["docs/**/*.md"].each do |path|
@@ -91,11 +91,11 @@ private_lane :ensure_fastlane_spelling do
     Fastlane::TOOLS.each do |tool|
       errors << "Use _#{tool}_ instead of `#{tool}` to mention a tool in the docs in '#{path}'" if content.include?("`#{tool}`")
       if content.include?("_#{tool.to_s.capitalize}_") || content.include?("`#{tool.to_s.capitalize}`")
-        errors << "fastlane tools have to be spelled lower case: #{tool} in '#{path}'"
+        errors << "fastlane tools have to be formatted in lower case: #{tool} in '#{path}'"
       end
     end
   end
   errors.each { |a| UI.error(a) }
-  UI.user_error!("Invalid spelling of one of the fastlane tools") unless errors.empty?
-  UI.success "✅  fastlane spelling is correct"
+  UI.user_error!("Invalid formatting of one of the fastlane tools") unless errors.empty?
+  UI.success "✅  fastlane formatting is correct"
 end
