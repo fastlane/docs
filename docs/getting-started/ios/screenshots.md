@@ -107,17 +107,32 @@ _frameit_ helps you beautify your screenshots with devices frames and text by ru
 
 ![frameit results](/img/getting-started/ios/frameit-results.png)
 
+## Usage
+
+Automatically add device frames around all screenshots in the current directory and its subdirectories, just run
+
+```
+fastlane frameit
+```
+
+This will only add a device frame around the screenshots, not the background and title. Those images can be used for your website, email newsletter and similar.
+
+If you want to implement the custom titles and background, you'll have to setup a `Framefile.json`, more information can be found [here](https://github.com/fastlane/fastlane/tree/master/frameit#titles-and-background-optional).
+
 ## Dependencies
 
-### Installing ImageMagick
+<details>
+<summary>Installing ImageMagick</summary>
 
 _frameit_ depends on a tool called `imagemagick` to do image manipulation. The easiest way to install it is through [homebrew](http://brew.sh/):
 
 ```no-highlight
 brew install libpng jpeg imagemagick
 ```
+</details>
 
-### Troubleshooting ImageMagick
+<details>
+<summary>Troubleshooting ImageMagick</summary>
 
 If you have installed _imagemagick_ but are seeing error messages like:
 
@@ -130,26 +145,18 @@ You may need to reinstall and build from source. Run:
 ```no-highlight
 brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick --build-from-source
 ```
+</details>
 
-### Setting Up Device Frames
+<details>
+<summary>Setting Up Device Frames</summary>
 
 _fastlane_ uses device frames provided by Apple which need to be downloaded and installed separately for legal reasons. Running `fastlane frameit setup` can walk you through the process.
-
-**TODO: Update this when we start distributing frames ourselves.**
 
 ```no-highlight
 $ fastlane frameit setup
 ```
 
-## Running
-
-At its simplest, you can just run:
-
-```no-highlight
-fastlane frameit
-```
-
-A more complex example that configures a lot more about the output can be found in the [fastlane examples](https://github.com/fastlane/examples/tree/master/MindNode/screenshots) project.
+</details>
 
 # Upload Screenshots for the App Store
 
