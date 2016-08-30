@@ -315,17 +315,17 @@
 </code></pre>
 
 <h3 id="fastlane-is-slow-to-start"><a name="user-content-fastlane-is-slow-to-start" href="#fastlane-is-slow-to-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane is slow (to start)</h3>
-<p>If you experiennce slow launch times of <code>fastlane</code>, there are 2 solutions to solve this problem:</p>
+<p>If you experiennce slow launch times of <em>fastlane</em>, there are 2 solutions to solve this problem:</p>
 <h5 id="uninstall-unused-gems"><a name="user-content-uninstall-unused-gems" href="#uninstall-unused-gems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uninstall unused gems</h5>
 <pre><code>[sudo] gem cleanup
 </code></pre>
 
 <h5 id="use-a-gemfile"><a name="user-content-use-a-gemfile" href="#use-a-gemfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a Gemfile</h5>
-<p>Follow the <a href="https://guides.cocoapods.org/using/a-gemfile.html">CocoaPods Gemfile Guide</a> to set up your initial Gemfile. From the on launch <code>fastlane</code> using:</p>
+<p>Follow the <a href="https://guides.cocoapods.org/using/a-gemfile.html">CocoaPods Gemfile Guide</a> to set up your initial Gemfile. From the on launch <em>fastlane</em> using:</p>
 <pre><code>bundle exec fastlane ...
 </code></pre>
 
-<h3 id="error-when-running-fastlane-with-jenkins"><a name="user-content-error-when-running-fastlane-with-jenkins" href="#error-when-running-fastlane-with-jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Error when running <code>fastlane</code> with Jenkins</h3>
+<h3 id="error-when-running-fastlane-with-jenkins"><a name="user-content-error-when-running-fastlane-with-jenkins" href="#error-when-running-fastlane-with-jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Error when running <em>fastlane</em> with Jenkins</h3>
 <p>This is usually caused when running Jenkins as its own user. While this is possible, you'll have to take care of creating a temporary Keychain, filling it and then using it when building your application. </p>
 <p>For more information about the recommended setup with Jenkins open the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Jenkins.md">Jenkins Guide</a>.</p>
 <h3 id="code-signing-issues"><a name="user-content-code-signing-issues" href="#code-signing-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code signing issues</h3>
@@ -350,10 +350,10 @@ primary_category ENV['DLV_PRIM_CATG']
 secondary_category ENV['DLV_SCND_CATG']
 </code></pre>
 
-<p>Now to run this, all you need to do is specify the environment argument when running <code>fastlane</code> and it will pull from the <code>.env</code> file that matches the same name...
+<p>Now to run this, all you need to do is specify the environment argument when running <em>fastlane</em> and it will pull from the <code>.env</code> file that matches the same name...
 Ex: <code>fastlane build --env app1</code> will use <code>.env.app1</code>
 Ex: <code>fastlane build --env app2</code> will use <code>.env.app2</code></p>
-<p>You can also references these environment variables almost anywhere in <code>fastlane</code>. </p>
+<p>You can also references these environment variables almost anywhere in <em>fastlane</em>. </p>
 <p>You can even define a lane to perform actions on multiple targets:</p>
 <pre><code class="ruby">desc &quot;Deploy both versions&quot;
 lane :deploy_all do
@@ -368,8 +368,8 @@ end
 <pre><code>export FASTLANE_DISABLE_COLORS=1
 </code></pre>
 
-<h3 id="user-interaction-is-not-allowed-when-using-fastlane-via-ssh"><a name="user-content-user-interaction-is-not-allowed-when-using-fastlane-via-ssh" href="#user-interaction-is-not-allowed-when-using-fastlane-via-ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>"User interaction is not allowed" when using <code>fastlane</code> via SSH</h3>
-<p>This error can occur when you run <code>fastlane</code> via SSH. To fix it check out <a href="http://stackoverflow.com/a/22637896/445598">this reply on StackOverflow</a>.</p>
+<h3 id="user-interaction-is-not-allowed-when-using-fastlane-via-ssh"><a name="user-content-user-interaction-is-not-allowed-when-using-fastlane-via-ssh" href="#user-interaction-is-not-allowed-when-using-fastlane-via-ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>"User interaction is not allowed" when using <em>fastlane</em> via SSH</h3>
+<p>This error can occur when you run <em>fastlane</em> via SSH. To fix it check out <a href="http://stackoverflow.com/a/22637896/445598">this reply on StackOverflow</a>.</p>
               
             </div>
           </div>

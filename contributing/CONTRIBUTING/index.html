@@ -304,11 +304,11 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="contributing-to-fastlane"><a name="user-content-contributing-to-fastlane" href="#contributing-to-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Contributing to <code>fastlane</code></h1>
+                <h1 id="contributing-to-fastlane"><a name="user-content-contributing-to-fastlane" href="#contributing-to-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Contributing to <em>fastlane</em></h1>
 <h2 id="getting-started"><a name="user-content-getting-started" href="#getting-started" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting started</h2>
 <p>Make sure you have <code>bundler</code> installed using <code>gem install bundler</code></p>
 <ul>
-<li>Open the GitHub page of the <code>fastlane</code>repository  (e.g. <a href="https://github.com/fastlane/fastlane">https://github.com/fastlane/fastlane</a>)</li>
+<li>Open the GitHub page of the _fastlane_repository  (e.g. <a href="https://github.com/fastlane/fastlane">https://github.com/fastlane/fastlane</a>)</li>
 <li>Create an issue to discuss your idea/feature/enhancement.</li>
 <li>Click on <code>Fork</code> on the top right</li>
 <li>Then clone your new repo locally <code>git clone https://github.com/[my_user]/fastlane.git</code></li>
@@ -331,7 +331,7 @@
 </ul>
 <p>When submitting a new issue, please provide the following information:</p>
 <ul>
-<li>The full stack trace and output when running <code>fastlane</code>.</li>
+<li>The full stack trace and output when running <em>fastlane</em>.</li>
 <li>The command and parameters you used to launch it.</li>
 <li>Your <code>Fastfile</code> and all other configuration files you are using.</li>
 </ul>
@@ -365,7 +365,7 @@ git pull JohnSmith new_fastlane_action
 <p>If you're considering contributing new functionality, please open a new issue explaining the functionality desired first so that we can discuss as a community. We'll add the <a href="https://github.com/fastlane/fastlane/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">help wanted</a> label if we believe this to be a meaningful contribution that will benefit other fastlane users and you go ahead with the pull request. :raised_hands:</p>
 <ul>
 <li>Adding automated tests that cover your changes and/or new functionality is important!<ul>
-<li><code>fastlane</code> has a lot of moving parts and receives contributions from many developers. The best way to ensure that your contributions keep working is to ensure that there will be failing tests if something accidentally gets broken.</li>
+<li><em>fastlane</em> has a lot of moving parts and receives contributions from many developers. The best way to ensure that your contributions keep working is to ensure that there will be failing tests if something accidentally gets broken.</li>
 <li>You can run the tests by executing <code>bundle install</code> and then <code>bundle exec rspec</code>.</li>
 </ul>
 </li>
@@ -384,7 +384,7 @@ git pull JohnSmith new_fastlane_action
 <p>In any case, <strong>a closed issue is not necessarily the end of the story!</strong> If more info becomes available after an issue is closed, it can be reopened for further consideration.</p>
 <p>One of the best ways we can keep fastlane an approachable, stable, and dependable tool is to be deliberate about how we choose to modify it. If we don't adopt your changes or new feature into fastlane, that doesn't mean it was bad work! It may be that the fastlane philosophy about how to accomplish a particular task doesn't align well with your approach. The best way to make sure that your time is well spent in contributing to fastlane is to <strong>start your work</strong> on a modification or new feature <strong>by opening an issue to discuss the problem or shortcoming with the community</strong>. The fastlane maintainers will do our best to give early feedback about whether a particular goal and approach is likely to be something we want to adopt!</p>
 <h2 id="contributing-new-actions"><a name="user-content-contributing-new-actions" href="#contributing-new-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Contributing New Actions</h2>
-<p>There are different approaches to build your own <code>fastlane</code> actions. You can either build your own local actions, or provide your own fastlane plugin. For more information, check out <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md#readme">Plugins.md</a>.</p>
+<p>There are different approaches to build your own <em>fastlane</em> actions. You can either build your own local actions, or provide your own fastlane plugin. For more information, check out <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md#readme">Plugins.md</a>.</p>
 <h2 id="developing"><a name="user-content-developing" href="#developing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Developing</h2>
 <p>When working on something, directly edit the Ruby files in the project folders. Make sure to switch your text editor to use spaces and indentations should be 2 spaces.</p>
 <p>To run the modified version of the tool, run the following in the project directory</p>
@@ -411,7 +411,7 @@ binding.pry
 <li>Makes sure no debug code (like <code>pry</code>) is still there</li>
 <li>The <code>--help</code> command works as expected</li>
 </ul>
-<p>The tests are executed using <code>fastlane</code> :rocket:</p>
+<p>The tests are executed using <em>fastlane</em> :rocket:</p>
 <p>To run only a subset of the tests, you can add the <code>now: true</code> keyword to the test</p>
 <pre><code class="ruby">it &quot;raises an exception if it rains&quot;, now: true do
   ...
@@ -423,13 +423,13 @@ end
 </code></pre>
 
 <h2 id="rubocop-validation"><a name="user-content-rubocop-validation" href="#rubocop-validation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rubocop validation</h2>
-<p>The <code>fastlane</code> repos use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to validate the code style.</p>
+<p>The <em>fastlane</em> repos use <a href="https://github.com/bbatsov/rubocop">rubocop</a> to validate the code style.</p>
 <p>The style validation is automatically done when running <code>rake test_all</code>.</p>
 <p>To automatically fix common code style issues (e.g. wrong spacing), run <code>rubocop -a</code></p>
 <h2 id="need-help"><a name="user-content-need-help" href="#need-help" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Need help?</h2>
 <p>Please submit an <a href="https://github.com/fastlane/fastlane/issues">issue</a> on GitHub and provide information about your setup</p>
 <h2 id="code-of-conduct"><a name="user-content-code-of-conduct" href="#code-of-conduct" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code of Conduct</h2>
-<p>Help us keep <code>fastlane</code> open and inclusive. Please read and follow our <a href="https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<p>Help us keep <em>fastlane</em> open and inclusive. Please read and follow our <a href="https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
 <h2 id="above-all-thanks-for-your-contributions"><a name="user-content-above-all-thanks-for-your-contributions" href="#above-all-thanks-for-your-contributions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Above All, Thanks for Your Contributions</h2>
 <p>Thank you for reading to the end, and for taking the time to contribute to the project! If you include the 🔑 emoji at the top of the body of your issue or pull request, we'll know that you've given this your full attention and are doing your best to help!</p>
 <h2 id="license"><a name="user-content-license" href="#license" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>License</h2>

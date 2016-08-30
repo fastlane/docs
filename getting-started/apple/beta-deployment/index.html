@@ -310,7 +310,7 @@
               
                 <h1 id="ios-beta-deployment-using-fastlane"><a name="user-content-ios-beta-deployment-using-fastlane" href="#ios-beta-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS Beta deployment using fastlane</h1>
 <h2 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h2>
-<p><code>fastlane</code> takes care of building your app using a feature called <code>gym</code>, just add the following to your <code>Fastfile</code>:</p>
+<p><em>fastlane</em> takes care of building your app using a feature called <em>gym</em>, just add the following to your <code>Fastfile</code>:</p>
 <pre><code>lane :beta do
   gym(scheme: &quot;MyApp&quot;)
 end
@@ -332,8 +332,8 @@ end
 <h3 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h3>
 <p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/GettingStarted">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
 <h2 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h2>
-<p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <code>fastlane</code> is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.</p>
-<p>All you have to do is to put the name of the beta testing provider of your choice after building the app using <code>gym</code>:</p>
+<p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <em>fastlane</em> is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.</p>
+<p>All you have to do is to put the name of the beta testing provider of your choice after building the app using <em>gym</em>:</p>
 <pre><code class="ruby">lane :beta do
   match(type: &quot;appstore&quot;)       # see code signing guide for more information
   gym(scheme: &quot;MyApp&quot;)          # build your app
@@ -342,11 +342,11 @@ end
 end
 </code></pre>
 
-<p><code>fastlane</code> automatically passes on information about the generated <code>.ipa</code> file from <code>gym</code> to the beta testing provider of your choice.</p>
+<p><em>fastlane</em> automatically passes on information about the generated <code>.ipa</code> file from <em>gym</em> to the beta testing provider of your choice.</p>
 <h3 id="supported-beta-testing-services"><a name="user-content-supported-beta-testing-services" href="#supported-beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Supported beta testing services</h3>
 <p><details>
 <summary>TestFlight</summary></p>
-<p>You can easily upload new builds to TestFlight (which is part of iTunes Connect) using <code>fastlane</code>. To do so, just use the built-in <code>testflight</code> action after building your app</p>
+<p>You can easily upload new builds to TestFlight (which is part of iTunes Connect) using <em>fastlane</em>. To do so, just use the built-in <code>testflight</code> action after building your app</p>
 <pre><code class="ruby">lane :beta do
   ...
   gym
@@ -369,12 +369,12 @@ end
 end
 </code></pre>
 
-<p>If you used <code>fastlane init</code> to setup <code>fastlane</code>, your Apple ID is stored in the <code>fastlane/Appfile</code>. You can also overwrite the username, using <code>testflight(username: "bot@fastlane.tools")</code>.</p>
+<p>If you used <code>fastlane init</code> to setup <em>fastlane</em>, your Apple ID is stored in the <code>fastlane/Appfile</code>. You can also overwrite the username, using <code>testflight(username: "bot@fastlane.tools")</code>.</p>
 <p>To get a list of all available options, run</p>
 <pre><code class="no-highlight">fastlane action testflight
 </code></pre>
 
-<p>With <code>fastlane</code>, you can also automatically manage your beta testers, check out TODO for more information.</p>
+<p>With <em>fastlane</em>, you can also automatically manage your beta testers, check out TODO for more information.</p>
 <hr />
 <p></details></p>
 <p><details>
@@ -468,7 +468,7 @@ end
 <p>You can fetch values from anywhere in your <code>Fastfile</code>, including the file system and remote server</p>
 <pre><code class="ruby">lane :beta do
   # Variant 1: Read from file system
-  #   note the `..`, since fastlane runs in the `fastlane` directory
+  #   note the `..`, since fastlane runs in the _fastlane_ directory
   changelog = File.read(&quot;../Changelog.txt&quot;)
 
   # Variant 2: Fetch data from a remote web server
@@ -488,13 +488,13 @@ end
 <summary>Manage devices and testers using fastlane</summary></p>
 <h3 id="testflight"><a name="user-content-testflight" href="#testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TestFlight</h3>
 <p>If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.</p>
-<p><code>fastlane</code> supports automatically registering devices using different approaches</p>
+<p><em>fastlane</em> supports automatically registering devices using different approaches</p>
 <h4 id="boarding"><a href="https://github.com/fastlane/boarding#readme">boarding</a></h4>
 <p><a href="https://github.com/fastlane/boarding#readme">boarding</a> allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.</p>
 <p><img alt="/img/getting-started/apple/boarding-screenshot.png" src="../../../img/getting-started/apple/boarding-screenshot.png" /></p>
 <p>Check out the <a href="https://github.com/fastlane/boarding#readme">boarding GitHub repo</a> for more information.</p>
 <h4 id="pilot"><a name="user-content-pilot" href="#pilot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pilot</h4>
-<p><code>pilot</code> is automatically installed with <code>fastlane</code>, you can use it to register individual testers to TestFlight</p>
+<p><em>pilot</em> is automatically installed with <em>fastlane</em>, you can use it to register individual testers to TestFlight</p>
 <pre><code class="no-highlight"># Register a new external tester
 fastlane pilot add email@invite.com
 

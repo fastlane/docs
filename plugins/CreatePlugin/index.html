@@ -305,13 +305,13 @@
             <div class="section">
               
                 <h1 id="fastlane-plugins"><a name="user-content-fastlane-plugins" href="#fastlane-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane Plugins</h1>
-<p>The instructions below require <code>fastlane</code> 1.93.0 or higher</p>
+<p>The instructions below require <em>fastlane</em> 1.93.0 or higher</p>
 <h2 id="local-actions"><a name="user-content-local-actions" href="#local-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local actions</h2>
 <p>You can create your own actions to extend the functionality of fastlane for your project. The action you create will behave exactly like the built in actions.</p>
 <p>Just run <code>fastlane new_action</code>, enter the name of the action and edit the generated Ruby file in <code>fastlane/actions/[action_name].rb</code>. After you finished writing your action, add it to your version control, so it is available for your whole team.</p>
 <p>From then on, you can just use your action in your <code>Fastfile</code>, just like any other action.</p>
 <h3 id="submitting-the-action-to-the-fastlane-main-repo"><a name="user-content-submitting-the-action-to-the-fastlane-main-repo" href="#submitting-the-action-to-the-fastlane-main-repo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submitting the action to the fastlane main repo</h3>
-<p>Please be aware we may not accept all actions submitted to be bundled with <code>fastlane</code>. Before you submit a pull request adding the action to the <code>fastlane</code> code base, submit an issue proposing the new action and why it should be built-in.</p>
+<p>Please be aware we may not accept all actions submitted to be bundled with <em>fastlane</em>. Before you submit a pull request adding the action to the <em>fastlane</em> code base, submit an issue proposing the new action and why it should be built-in.</p>
 <p>In general we tend to accept actions that</p>
 <ul>
 <li>Generally usable for a big majority of developers (e.g. basic interactions with git)</li>
@@ -326,7 +326,7 @@
 <li>Everything that isn't mobile developer related</li>
 </ul>
 <h2 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h2>
-<p><code>fastlane</code> is an open platform and we enable every developer to extend it to fit their needs. That's why we built a plugin system that allows you and your company to provide <code>fastlane</code> plugins to other <code>fastlane</code> users. You have the full power and responsibility of maintaining your plugin and keeping it up to date. This is useful if you maintain your own library or web service, and want to make sure the <code>fastlane</code> plugin is always up to date.</p>
+<p><em>fastlane</em> is an open platform and we enable every developer to extend it to fit their needs. That's why we built a plugin system that allows you and your company to provide <em>fastlane</em> plugins to other <em>fastlane</em> users. You have the full power and responsibility of maintaining your plugin and keeping it up to date. This is useful if you maintain your own library or web service, and want to make sure the <em>fastlane</em> plugin is always up to date.</p>
 <h3 id="find-a-plugin"><a name="user-content-find-a-plugin" href="#find-a-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Find a plugin</h3>
 <p>Head over the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/AvailablePlugins.md">AvailablePlugins.md</a> for a list of plugins you can use.</p>
 <p>List all available plugins using</p>
@@ -341,7 +341,7 @@
 <pre><code>fastlane add_plugin [name]
 </code></pre>
 
-<p><code>fastlane</code> will assist you on setting up your project to start using plugins.</p>
+<p><em>fastlane</em> will assist you on setting up your project to start using plugins.</p>
 <p>This will:</p>
 <ul>
 <li>Add the plugin to <code>fastlane/Pluginfile</code></li>
@@ -350,7 +350,7 @@
 <li>You'll have 3 new files, that should all be checked into version control: <code>Gemfile</code>, <code>Gemfile.lock</code> and <code>fastlane/Pluginfile</code></li>
 </ul>
 <h4 id="plugin-source"><a name="user-content-plugin-source" href="#plugin-source" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugin Source</h4>
-<p>Your <code>fastlane/Pluginfile</code> contains the list of all <code>fastlane</code> plugins your project uses. The <code>Pluginfile</code> is a <a href="http://bundler.io/gemfile.html">Gemfile</a> that gets imported from your main <code>Gemfile</code>.
+<p>Your <code>fastlane/Pluginfile</code> contains the list of all <em>fastlane</em> plugins your project uses. The <code>Pluginfile</code> is a <a href="http://bundler.io/gemfile.html">Gemfile</a> that gets imported from your main <code>Gemfile</code>.
 You specificy all dependencies, including the required version numbers:</p>
 <pre><code class="ruby"># Fetched from RubyGems.org
 gem &quot;fastlane-plugin-xcversion&quot;
@@ -384,12 +384,12 @@ fastlane new_plugin [plugin_name]
 </code></pre>
 
 <ul>
-<li><code>fastlane</code> creates the directory structure that's needed to be a valid Ruby gem</li>
+<li><em>fastlane</em> creates the directory structure that's needed to be a valid Ruby gem</li>
 <li>Edit the <code>lib/fastlane/plugin/[plugin_name]/actions/[plugin_name].rb</code> and implement your action</li>
 <li>Easily test the plugin locally by running <code>fastlane add_plugin</code> in your project's directory and specifying the local path when asked for it</li>
 </ul>
 <h5 id="new-plugin-for-existing-gem"><a name="user-content-new-plugin-for-existing-gem" href="#new-plugin-for-existing-gem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New plugin for existing gem</h5>
-<p>If you already have an exiting gem you want to provide a <code>fastlane</code> plugin for, you'll still have to create a new Ruby gem. The reason for that is the way plugins are imported.</p>
+<p>If you already have an exiting gem you want to provide a <em>fastlane</em> plugin for, you'll still have to create a new Ruby gem. The reason for that is the way plugins are imported.</p>
 <p>The example project <a href="https://github.com/jcampbell05/xcake">xcake</a> contains a folder named <code>fastlane-plugin-xcake</code>.</p>
 <p>All you have to do if you have an exiting gem:</p>
 <ul>
@@ -419,7 +419,7 @@ rake release
 
 <h3 id="advanced"><a name="user-content-advanced" href="#advanced" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced</h3>
 <h4 id="multiple-actions-in-one-plugin"><a name="user-content-multiple-actions-in-one-plugin" href="#multiple-actions-in-one-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Multiple actions in one plugin</h4>
-<p>Let's assume you work on a <code>fastlane</code> plugin for project management software. You could call it <code>fastlane-plugin-pm</code> and it may contain any number of actions and helpers, just add them to your <code>actions</code> folder. Make sure to mention the available actions in your plugin's <code>README.md</code>.</p>
+<p>Let's assume you work on a <em>fastlane</em> plugin for project management software. You could call it <code>fastlane-plugin-pm</code> and it may contain any number of actions and helpers, just add them to your <code>actions</code> folder. Make sure to mention the available actions in your plugin's <code>README.md</code>.</p>
               
             </div>
           </div>

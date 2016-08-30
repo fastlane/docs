@@ -301,7 +301,7 @@
             <div class="section">
               
                 <h1 id="actions"><a name="user-content-actions" href="#actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Actions</h1>
-<p>There are lots of predefined <code>fastlane</code> actions you can use. If you have ideas for more, please <a href="https://github.com/fastlane/fastlane/issues/new">let me know</a>.</p>
+<p>There are lots of predefined <em>fastlane</em> actions you can use. If you have ideas for more, please <a href="https://github.com/fastlane/fastlane/issues/new">let me know</a>.</p>
 <p>To get the most up-to-date information from the command line on your current version you can also run:</p>
 <pre><code class="sh">fastlane actions: List all available fastlane actions
 fastlane action [action_name]:
@@ -355,7 +355,7 @@ fastlane action [action_name]:
 </code></pre>
 
 <h3 id="gym"><a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a></h3>
-<p><code>gym</code> builds and packages iOS apps for you. It takes care of all the heavy lifting and makes it super easy to generate a signed <code>ipa</code> file.</p>
+<p><em>gym</em> builds and packages iOS apps for you. It takes care of all the heavy lifting and makes it super easy to generate a signed <code>ipa</code> file.</p>
 <pre><code class="ruby">gym(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
 </code></pre>
 
@@ -373,9 +373,9 @@ fastlane action [action_name]:
 </code></pre>
 
 <p>Use <code>gym --help</code> to get all available options.</p>
-<p>The alternative to <code>gym</code> is <a href="#ipa"><code>ipa</code></a> which uses <a href="https://github.com/nomad/shenzhen">shenzhen</a> under the hood.</p>
+<p>The alternative to <em>gym</em> is <a href="#ipa"><code>ipa</code></a> which uses <a href="https://github.com/nomad/shenzhen">shenzhen</a> under the hood.</p>
 <h3 id="gradle"><a name="user-content-gradle" href="#gradle" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>gradle</h3>
-<p>You can use the <code>gradle</code> action to integrate your gradle tasks into <code>fastlane</code>.</p>
+<p>You can use the <code>gradle</code> action to integrate your gradle tasks into <em>fastlane</em>.</p>
 <p>Simple usage:</p>
 <pre><code class="ruby">gradle(
   task: 'assemble',
@@ -426,7 +426,7 @@ fastlane action [action_name]:
 </code></pre>
 
 <h3 id="screengrab"><a href="https://github.com/fastlane/fastlane/tree/master/screengrab">screengrab</a></h3>
-<p><code>screengrab</code> automates taking localized screenshots of your Android app on every device</p>
+<p><em>screengrab</em> automates taking localized screenshots of your Android app on every device</p>
 <pre><code class="ruby">screengrab
 </code></pre>
 
@@ -450,7 +450,7 @@ fastlane action [action_name]:
 )
 </code></pre>
 
-<p>Take a look at the <a href="https://github.com/fastlane/fastlane/tree/master/snapshot#prefilling">prefilling data guide</a> on the <code>snapshot</code> documentation.</p>
+<p>Take a look at the <a href="https://github.com/fastlane/fastlane/tree/master/snapshot#prefilling">prefilling data guide</a> on the <em>snapshot</em> documentation.</p>
 <h3 id="clear_derived_data"><a name="user-content-clear_derived_data" href="#clear_derived_data" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clear_derived_data</h3>
 <p>Clears the Xcode Derived Data at path <code>~/Library/Developer/Xcode/DerivedData</code></p>
 <pre><code class="ruby">clear_derived_data
@@ -458,7 +458,7 @@ fastlane action [action_name]:
 
 <h3 id="ipa"><a name="user-content-ipa" href="#ipa" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ipa</h3>
 <p><strong>Note</strong>: This action is deprecated, use <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> instead.</p>
-<p>Build your app right inside <code>fastlane</code> and the path to the resulting ipa is automatically available to all other actions.</p>
+<p>Build your app right inside <em>fastlane</em> and the path to the resulting ipa is automatically available to all other actions.</p>
 <p>You should check out the <a href="https://github.com/fastlane/fastlane/tree/master/fastlane/docs/Codesigning">code signing guide</a>.</p>
 <pre><code class="ruby">ipa(
   workspace: &quot;MyApp.xcworkspace&quot;,
@@ -479,7 +479,7 @@ fastlane action [action_name]:
 <p>The <code>ipa</code> action uses <a href="https://github.com/nomad/shenzhen">shenzhen</a> under the hood.</p>
 <p>The path to the <code>ipa</code> is automatically used by <code>Crashlytics</code>, <code>Hockey</code> and <code>DeployGate</code>.</p>
 <p><strong>Important:</strong></p>
-<p>To also use it in <code>deliver</code>, update your <code>Deliverfile</code> and remove all code in the <code>Building and Testing</code> section, in particular all <code>ipa</code> and <code>beta_ipa</code> blocks.</p>
+<p>To also use it in <em>deliver</em>, update your <code>Deliverfile</code> and remove all code in the <code>Building and Testing</code> section, in particular all <code>ipa</code> and <code>beta_ipa</code> blocks.</p>
 <p>See how <a href="https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile">Product Hunt</a> uses the <code>ipa</code> action.</p>
 <h3 id="update_project_provisioning"><a name="user-content-update_project_provisioning" href="#update_project_provisioning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_project_provisioning</h3>
 <p>You should check out the <a href="https://github.com/fastlane/fastlane/tree/master/fastlane/docs/Codesigning">code signing guide</a> before using this action.</p>
@@ -535,11 +535,11 @@ xcversion version: &quot;~&gt; 7.1.0&quot; # Selects the latest installed versio
 
 <h3 id="resign"><a href="https://github.com/fastlane/fastlane/tree/master/sigh#resign">resign</a></h3>
 <p>This will resign an ipa with another signing identity and provisioning profile.</p>
-<p>If you have used the <code>ipa</code> and <code>sigh</code> actions, then this action automatically gets the <code>ipa</code> and <code>provisioning_profile</code> values respectively from those actions and you don't need to manually set them (although you can always override them).</p>
+<p>If you have used the <code>ipa</code> and <em>sigh</em> actions, then this action automatically gets the <code>ipa</code> and <code>provisioning_profile</code> values respectively from those actions and you don't need to manually set them (although you can always override them).</p>
 <pre><code class="ruby">resign(
   ipa: 'path/to/ipa', # can omit if using the `ipa` action
   signing_identity: 'iPhone Distribution: Luka Mirosevic (0123456789)',
-  provisioning_profile: 'path/to/profile', # can omit if using the `sigh` action
+  provisioning_profile: 'path/to/profile', # can omit if using the _sigh_ action
 )
 </code></pre>
 
@@ -707,7 +707,7 @@ reset_git_repo(
 </code></pre>
 
 <h3 id="clean_build_artifacts"><a name="user-content-clean_build_artifacts" href="#clean_build_artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clean_build_artifacts</h3>
-<p>This action deletes the files that get created in your repo as a result of running the <code>ipa</code> and <code>sigh</code> commands. It doesn't delete the <code>fastlane/report.xml</code> though, this is probably more suited for the .gitignore.</p>
+<p>This action deletes the files that get created in your repo as a result of running the <code>ipa</code> and <em>sigh</em> commands. It doesn't delete the <code>fastlane/report.xml</code> though, this is probably more suited for the .gitignore.</p>
 <p>Useful if you quickly want to send out a test build by dropping down to the command line and typing something like <code>fastlane beta</code>, without leaving your repo in a messy state afterwards.</p>
 <pre><code class="ruby">clean_build_artifacts
 </code></pre>
@@ -722,7 +722,7 @@ reset_git_repo(
 <pre><code class="ruby">frameit :silver
 </code></pre>
 
-<p>See how <a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">MindNode</a> uses <code>frameit</code> to not only frame the screenshots, but also add a title and a background around the screenshots. More information available in their <a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">Fastfile</a> and the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">screenshots folder</a> (<a href="https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json">Framefile.json</a>)</p>
+<p>See how <a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">MindNode</a> uses <em>frameit</em> to not only frame the screenshots, but also add a title and a background around the screenshots. More information available in their <a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">Fastfile</a> and the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">screenshots folder</a> (<a href="https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json">Framefile.json</a>)</p>
 <h3 id="dsym_zip"><a name="user-content-dsym_zip" href="#dsym_zip" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>dsym_zip</h3>
 <p>Create a zipped dSYM file from your <code>.xcarchive</code>, useful if you use the <code>xcodebuild</code> action in combination with <code>crashlytics</code> or <code>hockey</code>.</p>
 <pre><code class="ruby">dsym_zip
@@ -743,7 +743,7 @@ reset_git_repo(
 )
 </code></pre>
 
-<p>If you use <code>gym</code> the <code>dsym</code> parameter is optional.</p>
+<p>If you use <em>gym</em> the <code>dsym</code> parameter is optional.</p>
 <h3 id="recreate_schemes"><a name="user-content-recreate_schemes" href="#recreate_schemes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>recreate_schemes</h3>
 <p>Recreate shared Xcode project schemes if the <code>Shared</code> checkbox was not enabled.</p>
 <pre><code class="ruby">recreate_schemes(
@@ -753,7 +753,7 @@ reset_git_repo(
 
 <h2 id="testing"><a name="user-content-testing" href="#testing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testing</h2>
 <h3 id="scan"><a href="https://github.com/fastlane/fastlane/tree/master/scan">scan</a></h3>
-<p><code>scan</code> makes it super easy to run tests of your iOS and Mac applications</p>
+<p><em>scan</em> makes it super easy to run tests of your iOS and Mac applications</p>
 <pre><code class="ruby">scan
 </code></pre>
 
@@ -840,7 +840,7 @@ reset_git_repo(
 </code></pre>
 
 <h3 id="oclint"><a href="http://oclint.org">OCLint</a></h3>
-<p>Run the static analyzer tool <a href="http://oclint.org">OCLint</a> for your project. You need to have a <code>compile_commands.json</code> file in your <code>fastlane</code> directory or pass a path to your file.</p>
+<p>Run the static analyzer tool <a href="http://oclint.org">OCLint</a> for your project. You need to have a <code>compile_commands.json</code> file in your <em>fastlane</em> directory or pass a path to your file.</p>
 <pre><code class="ruby">oclint(
   compile_commands: 'commands.json',    # The JSON compilation database, use xctool reporter 'json-compilation-database'
   select_regex: /ViewController.m/,     # Select all files matching this regex
@@ -931,9 +931,9 @@ reset_git_repo(
 <pre><code class="ruby">deliver
 </code></pre>
 
-<p>To upload a new build to TestFlight use <code>pilot</code> instead.</p>
+<p>To upload a new build to TestFlight use <em>pilot</em> instead.</p>
 <h4 id="options_1"><a name="user-content-options_1" href="#options_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Options</h4>
-<p>If you don't want a PDF report for App Store builds, append <code>:force</code> to the command. This is useful when running <code>fastlane</code> on your Continuous Integration server: <code>deliver(force: true)</code></p>
+<p>If you don't want a PDF report for App Store builds, append <code>:force</code> to the command. This is useful when running <em>fastlane</em> on your Continuous Integration server: <code>deliver(force: true)</code></p>
 <p>If your account is on multiple teams and you need to tell the <code>iTMSTransporter</code> which "provider" to use, you can set the <code>itc_provider</code> option to pass this info.</p>
 <p>Other options</p>
 <pre><code class="ruby">deliver(
@@ -944,7 +944,7 @@ reset_git_repo(
 </code></pre>
 
 <p>See how <a href="https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile">Product Hunt</a> automated the building and distributing of a beta version over TestFlight in their <a href="https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile">Fastfile</a>.</p>
-<p><strong>Note:</strong> There is an action named <code>appstore</code> which is a convenience alias to <code>deliver</code>.</p>
+<p><strong>Note:</strong> There is an action named <code>appstore</code> which is a convenience alias to <em>deliver</em>.</p>
 <h3 id="testflight"><a name="user-content-testflight" href="#testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TestFlight</h3>
 <p>To upload a new binary to Apple TestFlight use the <code>testflight</code> action:</p>
 <pre><code class="ruby">testflight
@@ -1021,7 +1021,7 @@ this requires <code>ios-deploy</code> to be installed please have a look at <a h
 )
 </code></pre>
 
-<p>If you use <code>gym</code> the <code>dsym</code> parameter is optional.</p>
+<p>If you use <em>gym</em> the <code>dsym</code> parameter is optional.</p>
 <h3 id="download_dsyms"><code>download_dsyms</code></h3>
 <p>This action downloads dSYM files from Apple iTunes Connect after the ipa got re-compiled by Apple. Useful if you have Bitcode enabled.</p>
 <pre><code class="ruby">lane :refresh_dsyms do
@@ -1097,7 +1097,7 @@ end
   )
 </code></pre>
 
-<p>This allows you to use Xcode Server for building and testing, which can be useful when your build takes a long time and requires connected iOS devices for testing. This action only requires you specify the <code>host</code> and the <code>bot_name</code> and it will go and download, unzip and return a path to the downloaded folder. Then you can export an IPA from the archive and upload it with <code>deliver</code>.</p>
+<p>This allows you to use Xcode Server for building and testing, which can be useful when your build takes a long time and requires connected iOS devices for testing. This action only requires you specify the <code>host</code> and the <code>bot_name</code> and it will go and download, unzip and return a path to the downloaded folder. Then you can export an IPA from the archive and upload it with <em>deliver</em>.</p>
 <p>Run <code>fastlane action xcode_server_get_assets</code> for the full list of options.</p>
 <h3 id="set_changelog"><a name="user-content-set_changelog" href="#set_changelog" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>set_changelog</h3>
 <p>To easily set the changelog of an app on iTunes Connect for all languages</p>
@@ -1174,7 +1174,7 @@ end
 
 <h3 id="appaloosa"><a href="https://www.appaloosa-store.com">Appaloosa</a></h3>
 <p>Upload your ipa or apk to your private store on Appaloosa.</p>
-<p>Add the <code>appaloosa</code> action after the <code>gym</code> step or use it with your existing <code>apk</code>.</p>
+<p>Add the <code>appaloosa</code> action after the <em>gym</em> step or use it with your existing <code>apk</code>.</p>
 <p>You can add some options:</p>
 <pre><code class="ruby">appaloosa(
   # Path tor your IPA or APK
@@ -1366,18 +1366,18 @@ badge(shield: &quot;Version-0.0.3-blue&quot;, no_badge: true)
 <h2 id="developer-portal"><a name="user-content-developer-portal" href="#developer-portal" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Developer Portal</h2>
 <h3 id="match"><a href="https://github.com/fastlane/fastlane/tree/master/match">match</a></h3>
 <p>Check out <a href="https://codesigning.guide">codesigning.guide</a> for more information about the concept of <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>.</p>
-<p><code>match</code> allows you to easily sync your certificates and profiles across your team using git. More information on <a href="https://github.com/fastlane/fastlane/tree/master/match">GitHub</a>.</p>
+<p><em>match</em> allows you to easily sync your certificates and profiles across your team using git. More information on <a href="https://github.com/fastlane/fastlane/tree/master/match">GitHub</a>.</p>
 <pre><code class="ruby">match(type: &quot;appstore&quot;, app_identifier: &quot;tools.fastlane.app&quot;)
 match(type: &quot;development&quot;, readonly: true)
 </code></pre>
 
 <h3 id="sigh"><a href="https://github.com/fastlane/fastlane/tree/master/sigh">sigh</a></h3>
-<p><strong>Note</strong>: It is recommended to use <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your provisioning profiles. Use <code>sigh</code> directly only if you want full control over what's going on and know more about codesigning.</p>
-<p>This will generate and download your App Store provisioning profile. <code>sigh</code> will store the generated profile in the current folder.</p>
+<p><strong>Note</strong>: It is recommended to use <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your provisioning profiles. Use <em>sigh</em> directly only if you want full control over what's going on and know more about codesigning.</p>
+<p>This will generate and download your App Store provisioning profile. <em>sigh</em> will store the generated profile in the current folder.</p>
 <pre><code class="ruby">sigh
 </code></pre>
 
-<p>You can pass all options listed in <code>sigh --help</code> in <code>fastlane</code>:</p>
+<p>You can pass all options listed in <code>sigh --help</code> in <em>fastlane</em>:</p>
 <pre><code class="ruby">sigh(
   adhoc: true,
   force: true,
@@ -1385,7 +1385,7 @@ match(type: &quot;development&quot;, readonly: true)
 )
 </code></pre>
 
-<p>See how <a href="https://github.com/fastlane/examples/blob/master/Wikipedia/Fastfile">Wikpedia</a> uses <code>sigh</code> to automatically retrieve the latest provisioning profile.</p>
+<p>See how <a href="https://github.com/fastlane/examples/blob/master/Wikipedia/Fastfile">Wikpedia</a> uses <em>sigh</em> to automatically retrieve the latest provisioning profile.</p>
 <h3 id="pem"><a href="https://github.com/fastlane/fastlane/tree/master/PEM">PEM</a></h3>
 <p>This will generate a new push profile if necessary (the old one is about to expire).</p>
 <p>Use it like this:</p>
@@ -1406,13 +1406,13 @@ match(type: &quot;development&quot;, readonly: true)
 <p>Use the <code>fastlane action pem</code> command to view all available options.</p>
 <p><a href="https://github.com/fastlane/examples/blob/master/ProductHunt/Fastfile">Product Hunt</a> uses <code>PEM</code> to automatically create a new push profile for Parse.com if necessary before a release.</p>
 <h3 id="cert"><a href="https://github.com/fastlane/fastlane/tree/master/cert">cert</a></h3>
-<p><strong>Note</strong>: It is recommended to use <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your certificates. Use <code>cert</code> directly only if you want full control over what's going on and know more about codesigning.</p>
-<p>The <code>cert</code> action can be used to make sure to have the latest signing certificate installed. More information on the <a href="https://github.com/fastlane/fastlane/tree/master/cert"><code>cert</code> project page</a>.</p>
+<p><strong>Note</strong>: It is recommended to use <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your certificates. Use <em>cert</em> directly only if you want full control over what's going on and know more about codesigning.</p>
+<p>The <em>cert</em> action can be used to make sure to have the latest signing certificate installed. More information on the <a href="https://github.com/fastlane/fastlane/tree/master/cert"><em>cert</em> project page</a>.</p>
 <pre><code class="ruby">cert
 </code></pre>
 
-<p><code>fastlane</code> will automatically pass the signing certificate to use to <code>sigh</code>.</p>
-<p>You can pass all options listed in <code>sigh --help</code> in <code>fastlane</code>:</p>
+<p><em>fastlane</em> will automatically pass the signing certificate to use to <em>sigh</em>.</p>
+<p>You can pass all options listed in <code>sigh --help</code> in <em>fastlane</em>:</p>
 <pre><code class="ruby">cert(
   development: true,
   username: &quot;user@email.com&quot;
@@ -1420,7 +1420,7 @@ match(type: &quot;development&quot;, readonly: true)
 </code></pre>
 
 <h3 id="produce"><a href="https://github.com/fastlane/fastlane/tree/master/produce">produce</a></h3>
-<p>Create new apps on iTunes Connect and Apple Developer Portal. If the app already exists, <code>produce</code> will not do anything.</p>
+<p>Create new apps on iTunes Connect and Apple Developer Portal. If the app already exists, <em>produce</em> will not do anything.</p>
 <pre><code class="ruby">produce(
   username: 'felix@krausefx.com',
   app_identifier: 'com.krausefx.app',
@@ -1432,7 +1432,7 @@ match(type: &quot;development&quot;, readonly: true)
 )
 </code></pre>
 
-<p><a href="https://github.com/fastlane/examples/blob/master/SunApps/Fastfile#L41-L49">SunApps</a> uses <code>produce</code> to automatically generate new apps for new customers.</p>
+<p><a href="https://github.com/fastlane/examples/blob/master/SunApps/Fastfile#L41-L49">SunApps</a> uses <em>produce</em> to automatically generate new apps for new customers.</p>
 <h3 id="register_devices"><a name="user-content-register_devices" href="#register_devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>register_devices</h3>
 <p>This will register iOS devices with the Developer Portal so that you can include them in your provisioning profiles.</p>
 <p>This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.</p>
@@ -1542,7 +1542,7 @@ end
 - The <code>.xcodeproj/project.pbxproj</code> file</p>
 <p>Then commits those files to the repo.</p>
 <p>Customise the message with the <code>:message</code> option, defaults to "Version Bump"</p>
-<p>If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <code>ipa</code> and or <code>sigh</code> actions, then you can use the <code>clean_build_artifacts</code> action to clean those temporary files up before running this action.</p>
+<p>If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <code>ipa</code> and or <em>sigh</em> actions, then you can use the <code>clean_build_artifacts</code> action to clean those temporary files up before running this action.</p>
 <pre><code class="ruby">commit_version_bump
 
 commit_version_bump(
@@ -1551,7 +1551,7 @@ commit_version_bump(
 )
 </code></pre>
 
-<p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile">Artsy</a> uses <code>fastlane</code> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
+<p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile">Artsy</a> uses <em>fastlane</em> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
 <h3 id="number_of_commits"><a name="user-content-number_of_commits" href="#number_of_commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>number_of_commits</h3>
 <p>You can use this action to get the number of commits of this repo. This is useful if you want to set the build number to the number of commits.</p>
 <pre><code class="ruby">build_number = number_of_commits
@@ -1582,7 +1582,7 @@ add_git_tag(
 )
 </code></pre>
 
-<p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile#L105">Artsy</a> uses <code>fastlane</code> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
+<p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile#L105">Artsy</a> uses <em>fastlane</em> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
 <h3 id="git_pull"><a name="user-content-git_pull" href="#git_pull" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_pull</h3>
 <p>Executes a simple <code>git pull --tags</code> command</p>
 <h3 id="push_to_git_remote"><a name="user-content-push_to_git_remote" href="#push_to_git_remote" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>push_to_git_remote</h3>
@@ -1599,7 +1599,7 @@ push_to_git_remote(
 )
 </code></pre>
 
-<p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile">Artsy</a> uses <code>fastlane</code> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
+<p><a href="https://github.com/fastlane/examples/blob/master/Artsy/eidolon/Fastfile">Artsy</a> uses <em>fastlane</em> to automatically commit the version bump, add a new git tag and push everything back to <code>master</code>.</p>
 <h3 id="push_git_tags"><a name="user-content-push_git_tags" href="#push_git_tags" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>push_git_tags</h3>
 <p>If you only want to push the tags and nothing else, you can use the <code>push_git_tags</code> action:</p>
 <pre><code class="ruby">push_git_tags
@@ -1679,7 +1679,7 @@ short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 - The <code>.xcodeproj/project.pbxproj</code> file</p>
 <p>Then commits those files to the repo.</p>
 <p>Customise the message with the <code>:message</code> option, defaults to "Version Bump"</p>
-<p>If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <code>ipa</code> and or <code>sigh</code> actions, then you can use the <a href="#clean_build_artifacts"><code>clean_build_artifacts</code></a> action to clean those temporary files up before running this action.</p>
+<p>If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <code>ipa</code> and or <em>sigh</em> actions, then you can use the <a href="#clean_build_artifacts"><code>clean_build_artifacts</code></a> action to clean those temporary files up before running this action.</p>
 <pre><code class="ruby">hg_commit_version_bump
 
 hg_commit_version_bump(
@@ -1733,7 +1733,7 @@ slack(
 
 <p>Take a look at the <a href="https://github.com/fastlane/examples">example projects</a> of how you can use the slack action, for example the <a href="https://github.com/fastlane/examples/blob/master/MindNode/Fastfile">MindNode configuration</a>.</p>
 <h3 id="mailgun"><a href="http://www.mailgun.com">Mailgun</a></h3>
-<p>Send email notifications right from <code>fastlane</code> using <a href="http://www.mailgun.com">Mailgun</a>.</p>
+<p>Send email notifications right from <em>fastlane</em> using <a href="http://www.mailgun.com">Mailgun</a>.</p>
 <pre><code class="ruby">ENV['MAILGUN_SANDBOX_POSTMASTER'] ||= &quot;MY_POSTMASTER&quot;
 ENV['MAILGUN_APIKEY'] = &quot;MY_API_KEY&quot;
 ENV['MAILGUN_APP_LINK'] = &quot;MY_APP_LINK&quot;
@@ -1801,7 +1801,7 @@ mailgun(
 <pre><code class="ruby">  notification(subtitle: &quot;Finished Building&quot;, message: &quot;Ready to upload...&quot;)
 </code></pre>
 
-<p><a href="https://github.com/fastlane/examples/blob/master/BeMyEyes/Fastfile">ByMyEyes</a> uses the <code>notify</code> action to show a success message after <code>fastlane</code> finished executing.</p>
+<p><a href="https://github.com/fastlane/examples/blob/master/BeMyEyes/Fastfile">ByMyEyes</a> uses the <code>notify</code> action to show a success message after <em>fastlane</em> finished executing.</p>
 <h3 id="testmunk"><a href="http://testmunk.com">Testmunk</a></h3>
 <p>Run your functional tests on real iOS devices over the cloud (for free on an iPod). With this simple <a href="https://github.com/testmunk/TMSample/blob/master/testcases/smoke/smoke_features.zip">testcase</a> you can ensure your app launches and there is no crash at launch. Tests can be extended with <a href="http://docs.testmunk.com/en/latest/steps.html">Testmunk's library</a> or custom steps. More details about this action can be found in <a href="https://github.com/fastlane/fastlane/blob/master/lib/fastlane/actions/testmunk.rb"><code>testmunk.rb</code></a>.</p>
 <pre><code class="ruby">ENV['TESTMUNK_EMAIL'] = 'email@email.com'
@@ -1870,7 +1870,7 @@ export PATH=$PATH:~/.gems/bin
 </code></pre>
 
 <p>After the above changes, restart your terminal, then run <code>mkdir $GEM_HOME</code> to create the new gem directory. After this, you're good to go!</p>
-<p>Recommended usage of the <code>update_fastlane</code> action is at the top of the <code>before_all</code> block, before running any other action:</p>
+<p>Recommended usage of the <code>update_fastlane_ action is at the top of the</code>before_all` block, before running any other action:</p>
 <pre><code class="ruby">before_all do
   update_fastlane
 
@@ -2147,7 +2147,7 @@ restore_file(path: '/path/to/file')
 </code></pre>
 
 <h3 id="fastlane_version"><a name="user-content-fastlane_version" href="#fastlane_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane_version</h3>
-<p>Add this to your <code>Fastfile</code> to require a certain version of <code>fastlane</code>. Use it if you use an action that just recently came out and you need it</p>
+<p>Add this to your <code>Fastfile</code> to require a certain version of <em>fastlane</em>. Use it if you use an action that just recently came out and you need it</p>
 <pre><code class="ruby">fastlane_version &quot;1.50.0&quot;
 </code></pre>
 
@@ -2156,7 +2156,7 @@ restore_file(path: '/path/to/file')
 <pre><code class="ruby">install_xcode_plugin(url: 'https://example.com/clubmate/plugin.zip')
 </code></pre>
 
-<p>You can also let <code>fastlane</code> pick the latest version of a plugin automatically, if it is hosted on GitHub</p>
+<p>You can also let <em>fastlane</em> pick the latest version of a plugin automatically, if it is hosted on GitHub</p>
 <pre><code class="ruby">install_xcode_plugin(github: 'https://github.com/contentful/ContentfulXcodePlugin')
 </code></pre>
 
@@ -2166,9 +2166,9 @@ restore_file(path: '/path/to/file')
 </code></pre>
 
 <h3 id="rocket"><a name="user-content-rocket" href="#rocket" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rocket</h3>
-<p>Print an ascii Rocket :rocket:. Useful after using <code>crashlytics</code> or <code>pilot</code> to indicate that your new build has been shipped to outer-space.</p>
+<p>Print an ascii Rocket :rocket:. Useful after using <code>crashlytics</code> or <em>pilot</em> to indicate that your new build has been shipped to outer-space.</p>
 <h3 id="skip_docs"><a name="user-content-skip_docs" href="#skip_docs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>skip_docs</h3>
-<p>Tell <code>fastlane</code> to not automatically create a <code>fastlane/README.md</code> when running <code>fastlane</code>. You can always trigger the creation of this file manually by running <code>fastlane docs</code></p>
+<p>Tell <em>fastlane</em> to not automatically create a <code>fastlane/README.md</code> when running <em>fastlane</em>. You can always trigger the creation of this file manually by running <code>fastlane docs</code></p>
 <h3 id="ssh"><a name="user-content-ssh" href="#ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ssh</h3>
 <p>Lets you execute a series of commands on a remote host, if one of the commands in command-array returns non 0 - it fails.</p>
 <pre><code class="ruby">ssh(
@@ -2232,7 +2232,7 @@ zip(path: &quot;MyApp.app&quot;, output_path: &quot;Latest.app.zip&quot;)
 </code></pre>
 
 <h3 id="ifttt"><a name="user-content-ifttt" href="#ifttt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ifttt</h3>
-<p>Connect to the IFTTT <a href="https://ifttt.com/maker">Maker Channel</a>. An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this <code>fastlane</code> action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.</p>
+<p>Connect to the IFTTT <a href="https://ifttt.com/maker">Maker Channel</a>. An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this <em>fastlane</em> action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.</p>
 <pre><code class="ruby">ifttt(
   api_key: &quot;...&quot;,
   event_name: &quot;...&quot;,
