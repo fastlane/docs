@@ -94,6 +94,43 @@ fastlane snapshot                               # Generate screenshots for the s
 
 ![/img/getting-started/ios/snapshot.gif](/img/getting-started/ios/snapshot.gif)
 
+# Upload Screenshots for the App Store
+
+After generating your screenshots using `fastlane snapshot`, you usually want to upload them to iTunes Connect.
+
+If you followed the setup guide, you already ran `fastlane init` before, so you should have your existing screenshots and metadata inside the `fastlane/screenshots` and `fastlane/metadata` directory. Running `fastlane snapshot` will store the screenshots in the `fastlane/screenshots` directory by default. 
+
+To upload the screenshots stored in `fastlane/screenshots`, just run
+
+```no-highlight
+fastlane deliver
+```
+
+This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on iTunes Connect. 
+
+# Use in Fastfile
+
+To put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a _fastlane_ lane called `screenshots`. It would be responsible for:
+
+1. Running your app through _snapshot_ to automatically capture your screenshots
+1. Having _deliver_ send your final screenshots to iTunes Connect for use in the App Store
+
+Add the following code to your `fastlane/Fastfile`:
+
+```ruby
+lane :screenshots do
+  snapshot
+  deliver
+end
+```
+
+To get a list of all available options for each of the steps, run
+
+```no-highlight
+fastlane action snapshot
+fastlane action deliver
+```
+
 # Put Your Screenshots Into Device Frames
 
 _frameit_ helps you beautify your screenshots with devices frames and text by running one simple command. It provides support for:
@@ -109,13 +146,15 @@ _frameit_ helps you beautify your screenshots with devices frames and text by ru
 
 Automatically add device frames around all screenshots in the current directory and its subdirectories, just run
 
-```
+```no-highlight
 fastlane frameit
 ```
 
 This will only add a device frame around the screenshots, not the background and title. Those images can be used for your website, email newsletter and similar.
 
 If you want to implement the custom titles and background, you'll have to setup a `Framefile.json`, more information can be found [here](https://github.com/fastlane/fastlane/tree/master/frameit#titles-and-background-optional).
+
+If you want to upload the screenshots to the App Store, you **have** to provide a Framefile, with titles and background, otherwise the resolution of the framed screenshots doesn't match the requirements of iTunes Connect.
 
 ## Dependencies
 
@@ -156,29 +195,7 @@ fastlane frameit setup
 
 </details>
 
-# Upload Screenshots for the App Store
-
-After generating your screenshots using `fastlane snapshot`, you usually want to upload them to iTunes Connect.
-
-If you followed the setup guide, you already ran `fastlane init` before, so you should have your existing screenshots and metadata inside the `fastlane/screenshots` and `fastlane/metadata` directory. Running `fastlane snapshot` will store the screenshots in the `fastlane/screenshots` directory by default. 
-
-To upload the screenshots stored in `fastlane/screenshots`, just run
-
-```no-highlight
-fastlane deliver
-```
-
-This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on iTunes Connect. 
-
-# All Together Now
-
-To put all of this together so that anyone on your team could trigger this complete process, you can define a _fastlane_ lane called `screenshots`. It would be responsible for:
-
-1. Running your app through _snapshot_ to automatically capture your screenshots
-1. Decorating those screenshots with _frameit_
-1. Having _deliver_ send your final screenshots to iTunes Connect for use in the App Store
-
-That's all potentially as simple as:
+To add the framing to your deployment process, use the following code in your `Fastfile`:
 
 ```ruby
 lane :screenshots do
