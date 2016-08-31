@@ -131,6 +131,18 @@
     
       
     
+      
+      <li class="toctree-l3"><a href="#capture-screenshots-automatically">Capture Screenshots Automatically</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#upload-screenshots-to-google-play">Upload Screenshots to Google Play</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#use-in-fastfile">Use in Fastfile</a></li>
+      
+    
   </ul>
   
 </li>
@@ -309,11 +321,99 @@
             <div class="section">
               
                 <h1 id="fastlane-screenshots-for-android"><a name="user-content-fastlane-screenshots-for-android" href="#fastlane-screenshots-for-android" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane screenshots for Android</h1>
-<p>To be written soon, this will contain</p>
+<p>Your app screenshots are probably the most important thing when it comes to convincing potential users to download or purchase your app. Unfortunately, many apps don't do screenshots well. This is often because taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent! For example:</p>
 <ul>
-<li>Getting started with <em>screengrab</em></li>
-<li>Uploading the screenshots using <em>supply</em></li>
+<li>Are the screenshots in Google Play inconsistent with your latest app design?</li>
+<li>Is your app localized into many languages that require different screenshots for each?</li>
+<li>Is the same content displayed for each of your size variations?</li>
 </ul>
+<p><em>fastlane</em> tools can automate this process, making it fast and consistent while giving you beautiful results!</p>
+<p><img alt="running screengrab" src="../../../img/getting-started/android/running-screengrab.gif" /></p>
+<h1 id="capture-screenshots-automatically"><a name="user-content-capture-screenshots-automatically" href="#capture-screenshots-automatically" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Capture Screenshots Automatically</h1>
+<p><em>screengrab</em> works with <em>fastlane</em> to automate the process of capturing screenshots of your app. It allows you to:</p>
+<ul>
+<li>Capture hundreds of screenshots in multiple languages on any simulator</li>
+<li>Do something else while the computer takes the screenshots for you</li>
+<li>Configure it once, and store the configuration so anyone on the team can run it</li>
+<li>Get a summary of how your app looks like across all supported devices and languages</li>
+</ul>
+<p>After <em>screengrab</em> completes, it will show you summary of the screenshots you captured:</p>
+<p><img alt="screengrab results" src="../../../img/getting-started/android/screengrab-results.png" /></p>
+<h2 id="getting-started-using-espresso"><a name="user-content-getting-started-using-espresso" href="#getting-started-using-espresso" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started Using Espresso</h2>
+<p><em>screengrab</em> uses the capabilities of Android's built-in <a href="https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests.html">Instrumented tests</a> combined with <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso">Espresso</a> to drive interactions with your app. To get familiar with writing UI Tests with Espresso, check out <a href="http://developer.android.com/training/testing/ui-testing/espresso-testing.html">Testing UI for a Single App</a>.</p>
+<h2 id="installing-screengrab"><a name="user-content-installing-screengrab" href="#installing-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing <em>screengrab</em></h2>
+<p>Install the gem:</p>
+<pre><code>sudo gem install screengrab
+</code></pre>
+
+<h3 id="gradle-dependency"><a name="user-content-gradle-dependency" href="#gradle-dependency" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gradle dependency</h3>
+<p>Add the test dependency to your Gradle build:</p>
+<pre><code class="java">androidTestCompile 'tools.fastlane:screengrab:0.3.2'
+</code></pre>
+
+<h3 id="configuring-your-manifest-permissions"><a name="user-content-configuring-your-manifest-permissions" href="#configuring-your-manifest-permissions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your Manifest Permissions</h3>
+<p>Ensure that the following permissions exist in your <code>src/debug/AndroidManifest.xml</code></p>
+<pre><code class="xml">&lt;!-- Allows unlocking your device and activating its screen so UI tests can succeed --&gt;
+&lt;uses-permission android:name=&quot;android.permission.DISABLE_KEYGUARD&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;/&gt;
+
+&lt;!-- Allows for storing and retrieving screenshots --&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+
+&lt;!-- Allows changing locales --&gt;
+&lt;uses-permission android:name=&quot;android.permission.CHANGE_CONFIGURATION&quot; /&gt;
+</code></pre>
+
+<h2 id="configuring-your-ui-tests-for-screengrab"><a name="user-content-configuring-your-ui-tests-for-screengrab" href="#configuring-your-ui-tests-for-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your UI Tests for <em>screengrab</em></h2>
+<ol>
+<li>Add <code>@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();</code> to your tests class to handle automatic switching of locales</li>
+<li>To capture screenshots, add the following to your tests <code>Screengrab.screenshot("name_of_screenshot_here");</code> on the appropriate screens</li>
+</ol>
+<h2 id="generating-screenshots-with-screengrab"><a name="user-content-generating-screenshots-with-screengrab" href="#generating-screenshots-with-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating Screenshots with Screengrab</h2>
+<ul>
+<li>Run <code>./gradlew assembleDebug assembleAndroidTest</code> to generate debug and test APKs</li>
+<li>Run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
+<li>You will be prompted to provide any required parameters which are not in your <code>Screengrabfile</code>, or provided as command line arguments</li>
+</ul>
+</li>
+<li>Your screenshots will be saved to <code>fastlane/metadata/android</code> in the directory where you ran <code>fastlane screengrab</code></li>
+</ul>
+<h3 id="improved-screenshot-capture-with-ui-automator"><a name="user-content-improved-screenshot-capture-with-ui-automator" href="#improved-screenshot-capture-with-ui-automator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Improved screenshot capture with UI Automator</h3>
+<p>As of <em>screengrab</em> 0.5.0, you can specify different strategies to control the way <em>screengrab</em> captures screenshots. The newer strategy delegates to <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator">UI Automator</a> which fixes a number of problems compared to the original strategy:</p>
+<ul>
+<li>Shadows/elevation are correctly captured for Material UI</li>
+<li>Multi-window situations are correctly captured (dialogs, etc.)</li>
+<li>Works on Android N</li>
+</ul>
+<p>However, UI Automator requires a device with <strong>API level &gt;= 18</strong>, so it is not yet the default strategy. To enable it for all screenshots by default, make the following call before your tests run:</p>
+<pre><code class="java">Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());
+</code></pre>
+
+<h1 id="upload-screenshots-to-google-play"><a name="user-content-upload-screenshots-to-google-play" href="#upload-screenshots-to-google-play" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload Screenshots to Google Play</h1>
+<p>After generating your screenshots using <code>fastlane screengrab</code>, you'll usually want to upload them to Google Play.</p>
+<p><strong>TODO: Bring in <em>supply</em> getting started content</strong></p>
+<p>To upload the screenshots stored in <code>fastlane/screenshots</code>, just run</p>
+<pre><code class="no-highlight">fastlane supply
+</code></pre>
+
+<h1 id="use-in-fastfile"><a name="user-content-use-in-fastfile" href="#use-in-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use in Fastfile</h1>
+<p>To put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a <em>fastlane</em> lane called <code>screenshots</code>. It would be responsible for:</p>
+<ol>
+<li>Running your app through <em>screengrab</em> to automatically capture your screenshots</li>
+<li>Having <em>supply</em> send your screenshots to Google Play for use in the store</li>
+</ol>
+<p>Add the following code to your <code>fastlane/Fastfile</code>:</p>
+<pre><code class="ruby">lane :screenshots do
+  screengrab
+  supply
+end
+</code></pre>
+
+<p>To get a list of all available options for each of the steps, run</p>
+<pre><code class="no-highlight">fastlane action screengrab
+fastlane action supply
+</code></pre>
               
             </div>
           </div>

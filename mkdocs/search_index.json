@@ -227,13 +227,63 @@
         }, 
         {
             "location": "/getting-started/android/screenshots/", 
-            "text": "fastlane screenshots for Android\n\n\nTo be written soon, this will contain\n\n\n\n\nGetting started with \nscreengrab\n\n\nUploading the screenshots using \nsupply", 
+            "text": "fastlane screenshots for Android\n\n\nYour app screenshots are probably the most important thing when it comes to convincing potential users to download or purchase your app. Unfortunately, many apps don't do screenshots well. This is often because taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent! For example:\n\n\n\n\nAre the screenshots in Google Play inconsistent with your latest app design?\n\n\nIs your app localized into many languages that require different screenshots for each?\n\n\nIs the same content displayed for each of your size variations?\n\n\n\n\nfastlane\n tools can automate this process, making it fast and consistent while giving you beautiful results!\n\n\n\n\nCapture Screenshots Automatically\n\n\nscreengrab\n works with \nfastlane\n to automate the process of capturing screenshots of your app. It allows you to:\n\n\n\n\nCapture hundreds of screenshots in multiple languages on any simulator\n\n\nDo something else while the computer takes the screenshots for you\n\n\nConfigure it once, and store the configuration so anyone on the team can run it\n\n\nGet a summary of how your app looks like across all supported devices and languages\n\n\n\n\nAfter \nscreengrab\n completes, it will show you summary of the screenshots you captured:\n\n\n\n\nGetting Started Using Espresso\n\n\nscreengrab\n uses the capabilities of Android's built-in \nInstrumented tests\n combined with \nEspresso\n to drive interactions with your app. To get familiar with writing UI Tests with Espresso, check out \nTesting UI for a Single App\n.\n\n\nInstalling \nscreengrab\n\n\nInstall the gem:\n\n\nsudo gem install screengrab\n\n\n\n\nGradle dependency\n\n\nAdd the test dependency to your Gradle build:\n\n\nandroidTestCompile 'tools.fastlane:screengrab:0.3.2'\n\n\n\n\nConfiguring your Manifest Permissions\n\n\nEnsure that the following permissions exist in your \nsrc/debug/AndroidManifest.xml\n\n\n!-- Allows unlocking your device and activating its screen so UI tests can succeed --\n\n\nuses-permission android:name=\nandroid.permission.DISABLE_KEYGUARD\n/\n\n\nuses-permission android:name=\nandroid.permission.WAKE_LOCK\n/\n\n\n\n!-- Allows for storing and retrieving screenshots --\n\n\nuses-permission android:name=\nandroid.permission.WRITE_EXTERNAL_STORAGE\n /\n\n\nuses-permission android:name=\nandroid.permission.READ_EXTERNAL_STORAGE\n /\n\n\n\n!-- Allows changing locales --\n\n\nuses-permission android:name=\nandroid.permission.CHANGE_CONFIGURATION\n /\n\n\n\n\n\nConfiguring your UI Tests for \nscreengrab\n\n\n\n\nAdd \n@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();\n to your tests class to handle automatic switching of locales\n\n\nTo capture screenshots, add the following to your tests \nScreengrab.screenshot(\"name_of_screenshot_here\");\n on the appropriate screens\n\n\n\n\nGenerating Screenshots with Screengrab\n\n\n\n\nRun \n./gradlew assembleDebug assembleAndroidTest\n to generate debug and test APKs\n\n\nRun \nfastlane screengrab\n in your app project directory to generate screenshots\n\n\nYou will be prompted to provide any required parameters which are not in your \nScreengrabfile\n, or provided as command line arguments\n\n\n\n\n\n\nYour screenshots will be saved to \nfastlane/metadata/android\n in the directory where you ran \nfastlane screengrab\n\n\n\n\nImproved screenshot capture with UI Automator\n\n\nAs of \nscreengrab\n 0.5.0, you can specify different strategies to control the way \nscreengrab\n captures screenshots. The newer strategy delegates to \nUI Automator\n which fixes a number of problems compared to the original strategy:\n\n\n\n\nShadows/elevation are correctly captured for Material UI\n\n\nMulti-window situations are correctly captured (dialogs, etc.)\n\n\nWorks on Android N\n\n\n\n\nHowever, UI Automator requires a device with \nAPI level \n= 18\n, so it is not yet the default strategy. To enable it for all screenshots by default, make the following call before your tests run:\n\n\nScreengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());\n\n\n\n\nUpload Screenshots to Google Play\n\n\nAfter generating your screenshots using \nfastlane screengrab\n, you'll usually want to upload them to Google Play.\n\n\nTODO: Bring in \nsupply\n getting started content\n\n\nTo upload the screenshots stored in \nfastlane/screenshots\n, just run\n\n\nfastlane supply\n\n\n\n\nUse in Fastfile\n\n\nTo put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a \nfastlane\n lane called \nscreenshots\n. It would be responsible for:\n\n\n\n\nRunning your app through \nscreengrab\n to automatically capture your screenshots\n\n\nHaving \nsupply\n send your screenshots to Google Play for use in the store\n\n\n\n\nAdd the following code to your \nfastlane/Fastfile\n:\n\n\nlane :screenshots do\n  screengrab\n  supply\nend\n\n\n\n\nTo get a list of all available options for each of the steps, run\n\n\nfastlane action screengrab\nfastlane action supply", 
             "title": "Screenshots"
         }, 
         {
             "location": "/getting-started/android/screenshots/#fastlane-screenshots-for-android", 
-            "text": "To be written soon, this will contain   Getting started with  screengrab  Uploading the screenshots using  supply", 
+            "text": "Your app screenshots are probably the most important thing when it comes to convincing potential users to download or purchase your app. Unfortunately, many apps don't do screenshots well. This is often because taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent! For example:   Are the screenshots in Google Play inconsistent with your latest app design?  Is your app localized into many languages that require different screenshots for each?  Is the same content displayed for each of your size variations?   fastlane  tools can automate this process, making it fast and consistent while giving you beautiful results!", 
             "title": "fastlane screenshots for Android"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#capture-screenshots-automatically", 
+            "text": "screengrab  works with  fastlane  to automate the process of capturing screenshots of your app. It allows you to:   Capture hundreds of screenshots in multiple languages on any simulator  Do something else while the computer takes the screenshots for you  Configure it once, and store the configuration so anyone on the team can run it  Get a summary of how your app looks like across all supported devices and languages   After  screengrab  completes, it will show you summary of the screenshots you captured:", 
+            "title": "Capture Screenshots Automatically"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#getting-started-using-espresso", 
+            "text": "screengrab  uses the capabilities of Android's built-in  Instrumented tests  combined with  Espresso  to drive interactions with your app. To get familiar with writing UI Tests with Espresso, check out  Testing UI for a Single App .", 
+            "title": "Getting Started Using Espresso"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#installing-screengrab", 
+            "text": "Install the gem:  sudo gem install screengrab", 
+            "title": "Installing screengrab"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#gradle-dependency", 
+            "text": "Add the test dependency to your Gradle build:  androidTestCompile 'tools.fastlane:screengrab:0.3.2'", 
+            "title": "Gradle dependency"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#configuring-your-manifest-permissions", 
+            "text": "Ensure that the following permissions exist in your  src/debug/AndroidManifest.xml  !-- Allows unlocking your device and activating its screen so UI tests can succeed --  uses-permission android:name= android.permission.DISABLE_KEYGUARD /  uses-permission android:name= android.permission.WAKE_LOCK /  !-- Allows for storing and retrieving screenshots --  uses-permission android:name= android.permission.WRITE_EXTERNAL_STORAGE  /  uses-permission android:name= android.permission.READ_EXTERNAL_STORAGE  /  !-- Allows changing locales --  uses-permission android:name= android.permission.CHANGE_CONFIGURATION  /", 
+            "title": "Configuring your Manifest Permissions"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#configuring-your-ui-tests-for-screengrab", 
+            "text": "Add  @ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();  to your tests class to handle automatic switching of locales  To capture screenshots, add the following to your tests  Screengrab.screenshot(\"name_of_screenshot_here\");  on the appropriate screens", 
+            "title": "Configuring your UI Tests for screengrab"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#generating-screenshots-with-screengrab", 
+            "text": "Run  ./gradlew assembleDebug assembleAndroidTest  to generate debug and test APKs  Run  fastlane screengrab  in your app project directory to generate screenshots  You will be prompted to provide any required parameters which are not in your  Screengrabfile , or provided as command line arguments    Your screenshots will be saved to  fastlane/metadata/android  in the directory where you ran  fastlane screengrab", 
+            "title": "Generating Screenshots with Screengrab"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#improved-screenshot-capture-with-ui-automator", 
+            "text": "As of  screengrab  0.5.0, you can specify different strategies to control the way  screengrab  captures screenshots. The newer strategy delegates to  UI Automator  which fixes a number of problems compared to the original strategy:   Shadows/elevation are correctly captured for Material UI  Multi-window situations are correctly captured (dialogs, etc.)  Works on Android N   However, UI Automator requires a device with  API level  = 18 , so it is not yet the default strategy. To enable it for all screenshots by default, make the following call before your tests run:  Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());", 
+            "title": "Improved screenshot capture with UI Automator"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#upload-screenshots-to-google-play", 
+            "text": "After generating your screenshots using  fastlane screengrab , you'll usually want to upload them to Google Play.  TODO: Bring in  supply  getting started content  To upload the screenshots stored in  fastlane/screenshots , just run  fastlane supply", 
+            "title": "Upload Screenshots to Google Play"
+        }, 
+        {
+            "location": "/getting-started/android/screenshots/#use-in-fastfile", 
+            "text": "To put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a  fastlane  lane called  screenshots . It would be responsible for:   Running your app through  screengrab  to automatically capture your screenshots  Having  supply  send your screenshots to Google Play for use in the store   Add the following code to your  fastlane/Fastfile :  lane :screenshots do\n  screengrab\n  supply\nend  To get a list of all available options for each of the steps, run  fastlane action screengrab\nfastlane action supply", 
+            "title": "Use in Fastfile"
         }, 
         {
             "location": "/getting-started/android/deployment/", 
