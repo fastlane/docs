@@ -101,15 +101,15 @@
       
     
       
-      <li class="toctree-l3"><a href="#put-your-screenshots-into-device-frames">Put Your Screenshots Into Device Frames</a></li>
-      
-    
-      
       <li class="toctree-l3"><a href="#upload-screenshots-for-the-app-store">Upload Screenshots for the App Store</a></li>
       
     
       
-      <li class="toctree-l3"><a href="#all-together-now">All Together Now</a></li>
+      <li class="toctree-l3"><a href="#use-in-fastfile">Use in Fastfile</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#put-your-screenshots-into-device-frames">Put Your Screenshots Into Device Frames</a></li>
       
     
   </ul>
@@ -395,14 +395,38 @@ app.launch()
 </code></pre>
 
 <p>If you have <em>fastlane</em> installed, it's easy to give <em>snapshot</em> a try. First clone the <em>fastlane</em> repo, head over to the <em>snapshot</em> example project, and then run <code>fastlane snapshot</code></p>
-<pre><code class="no-highlight">$ git clone https://github.com/fastlane/fastlane
-
-$ cd fastlane/snapshot/example
-
-$ fastlane snapshot
+<pre><code class="no-highlight">git clone https://github.com/fastlane/fastlane  # Clone the fastlane repo
+cd fastlane/snapshot/example                    # Navigate to the example project
+fastlane snapshot                               # Generate screenshots for the sample app
 </code></pre>
 
 <p><img alt="/img/getting-started/ios/snapshot.gif" src="../../../img/getting-started/ios/snapshot.gif" /></p>
+<h1 id="upload-screenshots-for-the-app-store"><a name="user-content-upload-screenshots-for-the-app-store" href="#upload-screenshots-for-the-app-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload Screenshots for the App Store</h1>
+<p>After generating your screenshots using <code>fastlane snapshot</code>, you usually want to upload them to iTunes Connect.</p>
+<p>If you followed the setup guide, you already ran <code>fastlane init</code> before, so you should have your existing screenshots and metadata inside the <code>fastlane/screenshots</code> and <code>fastlane/metadata</code> directory. Running <code>fastlane snapshot</code> will store the screenshots in the <code>fastlane/screenshots</code> directory by default. </p>
+<p>To upload the screenshots stored in <code>fastlane/screenshots</code>, just run</p>
+<pre><code class="no-highlight">fastlane deliver
+</code></pre>
+
+<p>This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on iTunes Connect. </p>
+<h1 id="use-in-fastfile"><a name="user-content-use-in-fastfile" href="#use-in-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use in Fastfile</h1>
+<p>To put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a <em>fastlane</em> lane called <code>screenshots</code>. It would be responsible for:</p>
+<ol>
+<li>Running your app through <em>snapshot</em> to automatically capture your screenshots</li>
+<li>Having <em>deliver</em> send your final screenshots to iTunes Connect for use in the App Store</li>
+</ol>
+<p>Add the following code to your <code>fastlane/Fastfile</code>:</p>
+<pre><code class="ruby">lane :screenshots do
+  snapshot
+  deliver
+end
+</code></pre>
+
+<p>To get a list of all available options for each of the steps, run</p>
+<pre><code class="no-highlight">fastlane action snapshot
+fastlane action deliver
+</code></pre>
+
 <h1 id="put-your-screenshots-into-device-frames"><a name="user-content-put-your-screenshots-into-device-frames" href="#put-your-screenshots-into-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Put Your Screenshots Into Device Frames</h1>
 <p><em>frameit</em> helps you beautify your screenshots with devices frames and text by running one simple command. It provides support for:</p>
 <ul>
@@ -414,11 +438,12 @@ $ fastlane snapshot
 <p><img alt="frameit results" src="../../../img/getting-started/ios/frameit-results.png" /></p>
 <h2 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h2>
 <p>Automatically add device frames around all screenshots in the current directory and its subdirectories, just run</p>
-<pre><code>fastlane frameit
+<pre><code class="no-highlight">fastlane frameit
 </code></pre>
 
 <p>This will only add a device frame around the screenshots, not the background and title. Those images can be used for your website, email newsletter and similar.</p>
 <p>If you want to implement the custom titles and background, you'll have to setup a <code>Framefile.json</code>, more information can be found <a href="https://github.com/fastlane/fastlane/tree/master/frameit#titles-and-background-optional">here</a>.</p>
+<p>If you want to upload the screenshots to the App Store, you <strong>have</strong> to provide a <code>Framefile.json</code>, with titles and background, otherwise the resolution of the framed screenshots doesn't match the requirements of iTunes Connect.</p>
 <h2 id="dependencies"><a name="user-content-dependencies" href="#dependencies" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependencies</h2>
 <p><details>
 <summary>Installing ImageMagick</summary></p>
@@ -441,20 +466,11 @@ $ fastlane snapshot
 <p><details>
 <summary>Setting Up Device Frames</summary></p>
 <p><em>fastlane</em> uses device frames provided by Apple which need to be downloaded and installed separately for legal reasons. Running <code>fastlane frameit setup</code> can walk you through the process.</p>
-<pre><code class="no-highlight">$ fastlane frameit setup
+<pre><code class="no-highlight">fastlane frameit setup
 </code></pre>
 
 <p></details></p>
-<h1 id="upload-screenshots-for-the-app-store"><a name="user-content-upload-screenshots-for-the-app-store" href="#upload-screenshots-for-the-app-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload Screenshots for the App Store</h1>
-<p>TODO: write about <em>deliver</em></p>
-<h1 id="all-together-now"><a name="user-content-all-together-now" href="#all-together-now" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>All Together Now</h1>
-<p>To put all of this together so that anyone on your team could trigger this complete process, you could define a <em>fastlane</em> lane called <code>screenshots</code>. It would be responsible for:</p>
-<ol>
-<li>Running your app through <em>snapshot</em> to automatically capture your screenshots</li>
-<li>Decorating those screenshots with <em>frameit</em></li>
-<li>Having <em>deliver</em> send your final screenshots to iTunes Connect for use in the App Store</li>
-</ol>
-<p>That's all potentially as simple as:</p>
+<p>To add the framing to your deployment process, use the following code in your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :screenshots do
   snapshot
   frameit(white: true)
