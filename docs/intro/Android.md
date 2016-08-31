@@ -48,7 +48,7 @@ _fastlane_ created 2 important files and a metadata folder for you
 
 ##### `fastlane/Fastfile`
 
-This file contains the actual deployment process. It defines which steps to run in which order. Check out [Actions.md](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md) for a list of all available integrations.
+This file contains the actual deployment process. It defines which steps to run in which order. Check out [Actions.md](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md) for a list of all available actions.
 
 ##### `fastlane/Appfile`
 
@@ -62,7 +62,7 @@ This folder contains the metadata fetched from Google Play. You can modify any v
 
 Go ahead and modify the `Fastfile` to fit your needs. You might want to add the API Keys to your `crashlytics` action or your Slack URL to show notifications in your Slack room.
 
-To get a list of all available integrations run
+To get a list of all available actions run
 
 ```
 fastlane actions --platform android
