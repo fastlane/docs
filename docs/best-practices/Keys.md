@@ -42,7 +42,7 @@ export CRASHLYTICS_API_TOKEN="123abc"
 
 If you use a different shell (e.g. `zshell`) you'll need to edit `~/.zshrc` instead.
 
-After editing the `bash_profile` you need to either re-open your terminal session or run `source ~/.bash_profile`.
+After editing the `.bash_profile` you need to either re-open your terminal session or run `source ~/.bash_profile`.
 
 **Disadvantages**
 
