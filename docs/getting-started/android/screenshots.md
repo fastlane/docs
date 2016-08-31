@@ -4,7 +4,6 @@ Your app screenshots are probably the most important thing when it comes to conv
 
 - Are the screenshots in the App Store inconsistent with your latest app design?
 - Is your app localized into many languages that require different screenshots for each?
-- Have you made sure that no loading indicators are showing?
 - Is the same content displayed for each of your size variations?
 
 _fastlane_ tools can automate this process, making it fast and consistent while giving you beautiful results!
