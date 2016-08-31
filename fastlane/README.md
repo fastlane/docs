@@ -15,6 +15,11 @@ fastlane test
 fastlane post_slack_deploy_message
 ```
 
+### update_available_plugins
+```
+fastlane update_available_plugins
+```
+
 
 ----
 
