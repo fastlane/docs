@@ -30,6 +30,7 @@ module Fastlane
           UI.error(ex)
         end
 
+        ENV.delete("CI")
         UI.user_error!("Found at #{errors.count} errors in the documentation") unless errors.empty?
       end
 
