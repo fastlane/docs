@@ -2,7 +2,7 @@
 
 Your app screenshots are probably the most important thing when it comes to convincing potential users to download or purchase your app. Unfortunately, many apps don't do screenshots well. This is often because taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent! For example:
 
-- Are the screenshots in the App Store inconsistent with your latest app design?
+- Are the screenshots in Google Play inconsistent with your latest app design?
 - Is your app localized into many languages that require different screenshots for each?
 - Is the same content displayed for each of your size variations?
 
