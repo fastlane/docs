@@ -22,7 +22,7 @@ You'll be asked to confirm that you're ready to begin, and then for a few pieces
 
 That's it! _fastlane_ will automatically generate a configuration for you based on the information provided.
 
-You can see the newly created `fastlane` directory, with the following files:
+You can see the newly created `./fastlane` directory, with the following files:
 
 - `Appfile` which defines configuration information that is global to your app
 - `Fastfile` which defines the "lanes" that drive the behavior of _fastlane_
