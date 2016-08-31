@@ -138,7 +138,14 @@
   
   
 <li class="toctree-l1 ">
-  <a class="" href="../deployment/">Deployment</a>
+  <a class="" href="../beta-deployment/">Beta Deployment</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../release-deployment/">Release Deployment</a>
   
 </li>
 
@@ -315,12 +322,52 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="getting-started-with-fastlane-for-android"><a name="user-content-getting-started-with-fastlane-for-android" href="#getting-started-with-fastlane-for-android" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting started with fastlane for Android</h1>
-<p>To be written soon, this will contain</p>
+                <h1 id="getting-started-with-fastlane-for-android"><a name="user-content-getting-started-with-fastlane-for-android" href="#getting-started-with-fastlane-for-android" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting started with <em>fastlane</em> for Android</h1>
+<h2 id="installing-fastlane"><a name="user-content-installing-fastlane" href="#installing-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing <em>fastlane</em></h2>
+<pre><code class="no-highlight">sudo gem install fastlane --verbose
+</code></pre>
+
+<h2 id="setting-up-fastlane"><a name="user-content-setting-up-fastlane" href="#setting-up-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em></h2>
+<p>Navigate your terminal to your project's directory and run</p>
+<pre><code class="no-highlight">fastlane init
+</code></pre>
+
+<p>You'll be asked to confirm that you're ready to begin, and then for a few pieces of information. To get started quickly:</p>
+<ol>
+<li>Provide the package name for your application when asked (e.g. io.fabric.yourapp)</li>
+<li>Press enter when asked for the path to your json secret file</li>
+<li>Answer 'n' when asked if you plan on uploading info to Google Play via fastlane (we can set this up later)</li>
+</ol>
+<p>That's it! <em>fastlane</em> will automatically generate a configuration for you based on the information provided.</p>
+<p>You can see the newly created <code>./fastlane</code> directory, with the following files:</p>
 <ul>
-<li>Installing fastlane</li>
-<li>Initial setup of fastlane for your projet</li>
-<li>Where to go from there</li>
+<li><code>Appfile</code> which defines configuration information that is global to your app</li>
+<li><code>Fastfile</code> which defines the "lanes" that drive the behavior of <em>fastlane</em></li>
+</ul>
+<p><img src="/img/getting-started/android/fastlane-init.png" width="770" /></p>
+<p>The most interesting file is <code>fastlane/Fastfile</code>, which contains all the information that is needed to distribute your app.</p>
+<h2 id="whats-next"><a name="user-content-whats-next" href="#whats-next" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What's next?</h2>
+<p><em>fastlane</em> created all the required files for you, now you can go ahead and customise them to generate screenshots or to automatically distribute new builds. To learn more, check out:</p>
+<ul>
+<li><a href="../screenshots/">Automatically generate screenshots</a></li>
+<li><a href="../beta-deployment/">Distribute beta builds</a></li>
+<li><a href="../release-deployment/">Deploy to Google Play for production release</a></li>
+</ul>
+<h3 id="use-a-gemfile"><a name="user-content-use-a-gemfile" href="#use-a-gemfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a Gemfile</h3>
+<p>It is recommended that you use a <code>Gemfile</code> to define your dependency on <em>fastlane</em>. This will clearly define the used <em>fastlane</em> version, and its dependencies, and will also speed up using <em>fastlane</em>.</p>
+<ul>
+<li>Create a <code>Gemfile</code> with the content</li>
+</ul>
+<pre><code class="ruby">source &quot;https://rubygems.org&quot;
+
+gem &quot;fastlane&quot;
+</code></pre>
+
+<ul>
+<li>Run <code>bundle update</code> and add both the <code>Gemfile</code> and the <code>Gemfile.lock</code> to version control</li>
+<li>Every time you run <em>fastlane</em>, use <code>bundle exec fastlane [lane]</code></li>
+<li>On your CI, add <code>bundle install</code> as your first build step</li>
+<li>To update <em>fastlane</em>, just run <code>bundle update</code></li>
 </ul>
               
             </div>
