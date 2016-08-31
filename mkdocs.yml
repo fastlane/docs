@@ -35,6 +35,7 @@ pages:
 - Best Practices:
   - Gitignore: "best-practices/Gitignore.md"
   - Continuous Integration: "best-practices/ContinuousIntegration.md"
+  - Keys: "best-practices/Keys.md"
 - Advanced: "Advanced.md"
 - Contributing:
   - UI: contributing/UI.md
