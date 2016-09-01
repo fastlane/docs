@@ -344,10 +344,43 @@
 <li><code>Appfile</code> which defines configuration information that is global to your app</li>
 <li><code>Fastfile</code> which defines the "lanes" that drive the behavior of <em>fastlane</em></li>
 </ul>
-<p><img src="/img/getting-started/android/fastlane-init.png" width="770" /></p>
+<p><img src="/img/getting-started/android/fastlane-init.png" width="996" /></p>
 <p>The most interesting file is <code>fastlane/Fastfile</code>, which contains all the information that is needed to distribute your app.</p>
+<h2 id="setting-up-supply"><a name="user-content-setting-up-supply" href="#setting-up-supply" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>supply</em></h2>
+<p><em>supply</em> is a <em>fastlane</em> tool that uploads app metadata, screenshots and binaries to Google Play. You can also select tracks for builds and promote builds to production!</p>
+<p>Setting it up requires downloading a credentials file from your Google Developers Service Account.</p>
+<h3 id="collect-your-google-credentials"><a name="user-content-collect-your-google-credentials" href="#collect-your-google-credentials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Collect your Google credentials</h3>
+<ol>
+<li>Open the <a href="https://play.google.com/apps/publish/">Google Play Console</a></li>
+<li>Select <strong>Settings</strong> tab, followed by the <strong>API access</strong> tab</li>
+<li>Click the <strong>Create Service Account</strong> button and follow the <strong>Google Developers Console</strong> link in the dialog</li>
+<li>Click the <strong>Create Service account</strong> button at the top of the developers console screen</li>
+<li>Provide a name for the service account</li>
+<li>Click <strong>Select a role</strong> and choose <strong>Project &gt; Service Account Actor</strong></li>
+<li>Check the <strong>Furnish a new private key</strong> checkbox</li>
+<li>Select <strong>JSON</strong> as the Key type</li>
+<li>Click <strong>Create</strong> to close the dialog</li>
+<li>Make a note of the file name of the JSON file downloaded to your computer</li>
+<li>Back on the Google Play developer console, click <strong>Done</strong> to close the dialog</li>
+<li>Click on <strong>Grant Access</strong> for the newly added service account</li>
+<li>Choose <strong>Release Manager</strong> from the <strong>Role</strong> dropdown</li>
+<li>Click <strong>Add user</strong> to close the dialog</li>
+</ol>
+<h3 id="configure-supply"><a name="user-content-configure-supply" href="#configure-supply" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure <em>supply</em></h3>
+<p>Edit your <code>fastlane/Appfile</code> and change the <code>json_key_file</code> line to have the path to your credentials file:</p>
+<pre><code class="ruby">json_key_file &quot;/path/to/your/downloaded/key.json&quot;
+</code></pre>
+
+<h3 id="fetch-your-app-metadata"><a name="user-content-fetch-your-app-metadata" href="#fetch-your-app-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fetch your app metadata</h3>
+<p>If your app has been created on the Google Play developer console, you're ready to start using <em>supply</em> to manage it! Run:</p>
+<pre><code class="no-highlight">fastlane supply init
+</code></pre>
+
+<p>and all of your current Google Play store metadata will be downloaded to <code>fastlane/metadata/android</code>.</p>
+<p><img src="/img/getting-started/android/supply-init.png" width="1071" /></p>
+<p>Due to limitations of the Google Play API, <em>supply</em> can't download existing screenshots or videos.</p>
 <h2 id="whats-next"><a name="user-content-whats-next" href="#whats-next" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What's next?</h2>
-<p><em>fastlane</em> created all the required files for you, now you can go ahead and customise them to generate screenshots or to automatically distribute new builds. To learn more, check out:</p>
+<p><em>fastlane</em> is ready to generate screenshots and automatically distribute new builds! To learn more, check out:</p>
 <ul>
 <li><a href="../screenshots/">Automatically generate screenshots</a></li>
 <li><a href="../beta-deployment/">Distribute beta builds</a></li>
