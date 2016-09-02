@@ -148,6 +148,14 @@
     
       
     
+      
+      <li class="toctree-l3"><a href="#building-your-app">Building your app</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#uploading-your-apk">Uploading your APK</a></li>
+      
+    
   </ul>
   
 </li>
@@ -318,20 +326,57 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="deploy-to-google-play-using-fastlane"><a name="user-content-deploy-to-google-play-using-fastlane" href="#deploy-to-google-play-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy to Google Play using fastlane</h1>
-<p>To be written soon, this will contain</p>
+                <h1 id="deploy-to-google-play-using-fastlane"><a name="user-content-deploy-to-google-play-using-fastlane" href="#deploy-to-google-play-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy to Google Play using <em>fastlane</em></h1>
+<h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
+<p><em>fastlane</em> takes care of building your app by delegating to your existing Gradle build. Just add the following to your <code>Fastfile</code>:</p>
+<pre><code class="ruby">lane :playstore
+  gradle(
+    task: 'assemble',
+    build_type: 'Release'
+  )
+end
+</code></pre>
+
+<p>When that completes you should have the appropriate APK ready to go in the standard output directory. To get a list of all available parameters for the <code>gradle</code> action, run:</p>
+<pre><code class="no-highlight">fastlane action gradle
+</code></pre>
+
+<h1 id="uploading-your-apk"><a name="user-content-uploading-your-apk" href="#uploading-your-apk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your APK</h1>
+<p>To upload your binary to Google Play, <em>fastlane</em> uses a tool called <em>supply</em>. Because <em>supply</em> needs authentication information from Google, if you haven't yet done the <a href="../setup/"><em>supply</em> setup steps</a>, please do those now!</p>
+<p>With that done, simply add a call to <em>supply</em> to the lane you set up above:</p>
+<pre><code class="ruby">lane :playstore
+  gradle(
+    task: 'assemble',
+    build_type: 'Release'
+  )
+  supply # Uploads the APK built in the gradle step above
+end
+</code></pre>
+
+<p>This will also upload:</p>
 <ul>
-<li>Building your app using <em>gradle</em></li>
-<li>Reference the screenshots docs</li>
-<li>Deploy to Google Play for production<ul>
-<li>Mention how to deploy to the beta track</li>
+<li>App metadata from <code>fastlane/metadata/android</code> if you previously ran <code>fastlane supply init</code></li>
+<li>Expansion files (obbs) found under the same directory as your APK as long as:<ul>
+<li>They are identified by type as <strong>main</strong> or <strong>patch</strong> by containing <code>main</code> or <code>patch</code> in their file names</li>
+<li>There is at most one of each type</li>
 </ul>
 </li>
-<li>Best practises around the deployment<ul>
-<li>Order of commands</li>
+<li>Screenshots from <code>fastlane/metadata/android</code> if you previously ran <em>screengrab</em></li>
 </ul>
-</li>
-</ul>
+<p>If you would like to capture and upload screenshots automatically as part of your deployment process, check out the <a href="../screenshots/">fastlane screenshots for Android</a> guide to get started!</p>
+<p>To gradually roll out a new build you can use:</p>
+<pre><code class="ruby">lane :playstore
+  # ...
+  supply(
+    track: 'rollout',
+    rollout: '0.5'
+  )
+end
+</code></pre>
+
+<p>To get a list of all available parameters for the <em>supply</em> action, run:</p>
+<pre><code class="no-highlight">fastlane action supply
+</code></pre>
               
             </div>
           </div>
