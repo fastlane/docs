@@ -8,6 +8,8 @@ To preview the updated documentation locally, just clone the repo, modify the fi
 mkdocs serve
 ```
 
+The live version is available on [docs.fastlane.tools](https://docs.fastlane.tools).
+
 ## Why new docs?
 
 You can find more information [here](https://github.com/fastlane/docs/issues/5)
