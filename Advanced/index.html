@@ -361,7 +361,7 @@
                 <h1 id="advanced-fastlane"><a name="user-content-advanced-fastlane" href="#advanced-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced fastlane</h1>
 <h1 id="passing-parameters"><a name="user-content-passing-parameters" href="#passing-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passing Parameters</h1>
 <p>To pass parameters from the command line to your lane, use the following syntax:</p>
-<pre><code>fastlane [lane] key:value key2:value2
+<pre><code class="no-highlight">fastlane [lane] key:value key2:value2
 
 fastlane deploy submit:false build_number:24
 </code></pre>
@@ -473,7 +473,7 @@ end
 
 <h1 id="run-actions-directly"><a name="user-content-run-actions-directly" href="#run-actions-directly" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run actions directly</h1>
 <p>If you just want to try an action without adding them to your <code>Fastfile</code> yet, you can use</p>
-<pre><code class="sh">fastlane run notification message:&quot;My Text&quot; title:&quot;The Title&quot;
+<pre><code class="no-highlight">fastlane run notification message:&quot;My Text&quot; title:&quot;The Title&quot;
 </code></pre>
 
 <p>To get the avaiable options for any action run <code>fastlane action [action_name]</code>. You might not be able to set some kind of parameters using this method.</p>
@@ -519,7 +519,7 @@ end
 <p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <em>fastlane</em> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword. </p>
 <h1 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h1>
 <p>You can define environment variables in a <code>.env</code> or <code>.env.default</code> file in the same directory as your <code>Fastfile</code>. Environment variables are loading using <a href="https://github.com/bkeepers/dotenv">dotenv</a>. Here's an example.</p>
-<pre><code>WORKSPACE=YourApp.xcworkspace
+<pre><code class="no-highlight">WORKSPACE=YourApp.xcworkspace
 HOCKEYAPP_API_TOKEN=your-hockey-api-token
 </code></pre>
 
@@ -588,13 +588,13 @@ end
 <h1 id="adding-credentials"><a name="user-content-adding-credentials" href="#adding-credentials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Adding Credentials</h1>
 <p>You can add credentials for use by <em>fastlane</em> to your keychain using the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> command line interface. This is useful for situations like CI environments.</p>
 <p><strong>Adding a Credential</strong></p>
-<pre><code>fastlane-credentials add --username felix@krausefx.com
+<pre><code class="no-highlight">fastlane-credentials add --username felix@krausefx.com
 Password: *********
 Credential felix@krausefx.com:********* added to keychain.
 </code></pre>
 
 <p><strong>Removing a Credential</strong></p>
-<pre><code>fastlane-credentials remove --username felix@krausefx.com
+<pre><code class="no-highlight">fastlane-credentials remove --username felix@krausefx.com
 password has been deleted.
 </code></pre>
               
