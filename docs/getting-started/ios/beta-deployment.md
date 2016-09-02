@@ -1,6 +1,6 @@
 # iOS Beta deployment using fastlane
 
-## Building your app
+# Building your app
 
 _fastlane_ takes care of building your app using a feature called _gym_, just add the following to your `Fastfile`:
 
@@ -26,13 +26,13 @@ Try running the lane using
 fastlane beta
 ```
 
-If everything works, you should have a `[ProductName].ipa` file in the current directory.
+If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _gym_, run `fastlane action gym`.
 
-### Codesigning
+## Codesigning
 
 Chances are that something went wrong because of code signing at the previous step. We prepared our own [Code Signing Guide](/codesigning/GettingStarted) that helps you setting up the right code signing approach for your project.
 
-## Uploading your app
+# Uploading your app
 
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.
 
@@ -151,7 +151,7 @@ More information about the service on [TestFairy.com](https://testfairy.com).
 </details>
 
 
-### Release Notes
+# Release Notes
 
 <details>
 <summary>Automatically based on git commits</summary>
@@ -230,12 +230,13 @@ end
 ---
 </details>
 
-### Best Practices
+# Best Practices
 
 <details>
 <summary>Manage devices and testers using fastlane</summary>
 
-### TestFlight
+<details>
+<summary>TestFlight</summary>
 
 If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.
 
@@ -262,6 +263,34 @@ fastlane pilot add email@invite.com -a com.app.name
 ```
 ---
 
+</details>
+
+<details>
+<summary>Third party beta testing services</summary>
+
+If you're using a third party beta testing service, you'll need to manage your registered devices and their UDIDs. _fastlane_ already supports device registrations and updating provisioning profiles out of the box. 
+
+```ruby
+lane :beta do
+  # Before calling match, we make sure all our devices are registered on the Apple Developer Portal
+  register_devices(devices_file: "devices.txt")
+
+  # After registering the new devices, we'll make sure to update the provisioning profile if necessary
+  # Note how we make sure to pass "adhoc" to get and use a provisioning profile for Ad Hoc distribution
+  match(force_for_new_devices: true, type: "adhoc")
+  gym
+  ...
+end
+```
+
+The `devices.txt` should look like this:
+```
+Device ID Device Name
+A123456789012345678901234567890123456789  DeviceName1
+B123456789012345678901234567890123456789  DeviceName2
+```
+
+</details>
 </details>
 
 <details>
