@@ -91,9 +91,7 @@ Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());
 
 After generating your screenshots using `fastlane screengrab`, you'll usually want to upload them to Google Play.
 
-**TODO: Bring in _supply_ getting started content**
-
-To upload the screenshots stored in `fastlane/metadata/android`, just run
+To upload the screenshots stored in `fastlane/metadata/android`, just run;
 
 ```no-highlight
 fastlane supply
