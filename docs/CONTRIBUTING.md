@@ -90,7 +90,7 @@ To submit the changes to the fastlane repo, you have to do the following:
 
 ## What Do All These Labels Mean?
 
-Great question! Check out the [GitHub Labels](GitHubLabels.md) document for a quick summary of the labels we use and what they mean.
+Great question! Check out the [GitHub Labels](https://github.com/fastlane/fastlane/blob/master/GitHubLabels.md) document for a quick summary of the labels we use and what they mean.
 
 ## Why Did My Issue/PR Get Closed?
 
