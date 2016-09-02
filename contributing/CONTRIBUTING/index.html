@@ -333,7 +333,7 @@
 <li>Create a new Pull Request.</li>
 </ul>
 <p>Before working on something, make sure to have pulled the latest changes. To pull the changes run</p>
-<pre><code>git pull master
+<pre><code class="no-highlight">git pull master
 </code></pre>
 
 <h2 id="new-issues"><a name="user-content-new-issues" href="#new-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New Issues</h2>
@@ -357,11 +357,11 @@
 <p>If you're comfortable diving into the code a bit, see if you can produce a failing test that illustrates the bad behavior in the problematic area of the code! Tests live in the <code>spec/</code> directory, and are generally named relative to the source code files whose functionality they test. Once you are done, <code>git diff &gt; my_patch.diff</code> can be used to produce a patch file containing the details of your changes, which can be added to the issue.</p>
 <h3 id="testing-proposed-fixes"><a name="user-content-testing-proposed-fixes" href="#testing-proposed-fixes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testing Proposed Fixes</h3>
 <p>Another way to help out is to verify submitted pull requests. To do that, you'll need to be able to get the author's proposed changes onto your machine. Start by giving yourself a new branch to work in:</p>
-<pre><code>git checkout -b testing_branch
+<pre><code class="no-highlight">git checkout -b testing_branch
 </code></pre>
 
 <p>Next, you'll need to tell git where to find this contributor's fastlane fork and branch. Let's say that the contributor's username is <strong>JohnSmith</strong> and their topic branch is called <code>new_fastlane_action</code> located at <strong>https://github.com/JohnSmith/fastlane</strong>. You can use the following commands to pull their work:</p>
-<pre><code>git remote add JohnSmith https://github.com/JohnSmith/fastlane.git
+<pre><code class="no-highlight">git remote add JohnSmith https://github.com/JohnSmith/fastlane.git
 git pull JohnSmith new_fastlane_action
 </code></pre>
 
@@ -402,11 +402,11 @@ git pull JohnSmith new_fastlane_action
 <h2 id="developing"><a name="user-content-developing" href="#developing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Developing</h2>
 <p>When working on something, directly edit the Ruby files in the project folders. Make sure to switch your text editor to use spaces and indentations should be 2 spaces.</p>
 <p>To run the modified version of the tool, run the following in the project directory</p>
-<pre><code>.[tool_name]/bin/[tool_name]
+<pre><code class="no-highlight">.[tool_name]/bin/[tool_name]
 </code></pre>
 
 <p>or install the local copy (might require <code>sudo</code>)</p>
-<pre><code>bundle install &amp;&amp; rake install
+<pre><code class="no-highlight">bundle install &amp;&amp; rake install
 </code></pre>
 
 <h2 id="debugging"><a name="user-content-debugging" href="#debugging" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Debugging</h2>
@@ -433,7 +433,7 @@ end
 </code></pre>
 
 <p>and then run these tests only using</p>
-<pre><code class="sh">rspec -t now
+<pre><code class="no-highlight">rspec -t now
 </code></pre>
 
 <h2 id="rubocop-validation"><a name="user-content-rubocop-validation" href="#rubocop-validation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rubocop validation</h2>
