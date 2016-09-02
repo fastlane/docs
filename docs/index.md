@@ -7,7 +7,7 @@ fastlane
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE)
 [![Gem](https://img.shields.io/gem/v/fastlane.svg?style=flat)](http://rubygems.org/gems/fastlane)
 
-_fastlane_ is **the** tool to release your iOS and Android app :rocket: It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
+_fastlane_ is **the** tool to release your iOS and Android app 🚀 It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
 You create a so-called `Fastfile` in your repository, that defines how your beta or App Store release process:
 
