@@ -25,6 +25,15 @@ blockquote {
   margin-left: 0px !important;
 }
 
+/* Visited links purple is not a good idea */
+a:visited {
+  color: #008BF3;
+}
+
+a {
+  color: #008BF3;
+}
+
 h3, h4, h5, h6 {
   color: #333 !important;
 }
