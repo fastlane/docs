@@ -16,7 +16,7 @@ Make sure you have `bundler` installed using `gem install bundler`
 
 Before working on something, make sure to have pulled the latest changes. To pull the changes run
 
-```
+```no-highlight
 git pull master
 ```
 
@@ -50,13 +50,13 @@ If you're comfortable diving into the code a bit, see if you can produce a faili
 
 Another way to help out is to verify submitted pull requests. To do that, you'll need to be able to get the author's proposed changes onto your machine. Start by giving yourself a new branch to work in:
 
-```
+```no-highlight
 git checkout -b testing_branch
 ```
 
 Next, you'll need to tell git where to find this contributor's fastlane fork and branch. Let's say that the contributor's username is **JohnSmith** and their topic branch is called `new_fastlane_action` located at **https://github.com/JohnSmith/fastlane**. You can use the following commands to pull their work:
 
-```
+```no-highlight
 git remote add JohnSmith https://github.com/JohnSmith/fastlane.git
 git pull JohnSmith new_fastlane_action
 ```
@@ -112,13 +112,13 @@ When working on something, directly edit the Ruby files in the project folders. 
 
 To run the modified version of the tool, run the following in the project directory
 
-```
+```no-highlight
 .[tool_name]/bin/[tool_name]
 ```
 
 or install the local copy (might require `sudo`)
 
-```
+```no-highlight
 bundle install && rake install
 ```
 
@@ -157,7 +157,7 @@ end
 
 and then run these tests only using
 
-```sh
+```no-highlight
 rspec -t now
 ```
 
