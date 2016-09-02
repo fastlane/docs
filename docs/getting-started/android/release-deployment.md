@@ -1,4 +1,4 @@
-# Deploy to Google Play using fastlane
+# Deploy to Google Play using _fastlane_
 
 # Building your app
 
