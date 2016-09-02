@@ -1,4 +1,4 @@
-# iOS App Store deployment using fastlane
+# iOS App Store deployment using _fastlane_
 
 # Building your app
 

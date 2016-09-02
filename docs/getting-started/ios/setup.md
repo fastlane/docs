@@ -32,7 +32,7 @@ _fastlane_ created all the required files for you, now you can go ahead and cust
 
 ### Use a Gemfile
 
-It is recommended that you use a Gemfile to define your dependency to _fastlane_. This will clearly define the used fastlane version, and its dependencies, and will also speed up using fastlane.
+It is recommended that you use a Gemfile to define your dependency to _fastlane_. This will clearly define the used fastlane version, and its dependencies, and will also speed up using _fastlane_.
 
 - Create a `Gemfile` with the content
 ```ruby

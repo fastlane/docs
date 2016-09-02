@@ -1,4 +1,4 @@
-# iOS Beta deployment using fastlane
+# iOS Beta deployment using _fastlane_
 
 # Building your app
 
@@ -233,7 +233,7 @@ end
 # Best Practices
 
 <details>
-<summary>Manage devices and testers using fastlane</summary>
+<summary>Manage devices and testers using _fastlane_</summary>
 
 <details>
 <summary>TestFlight</summary>

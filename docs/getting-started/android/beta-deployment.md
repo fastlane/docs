@@ -1,4 +1,4 @@
-# Deploy to Beta distribution services using fastlane
+# Deploy to Beta distribution services using _fastlane_
 
 To be written soon, this will contain
 
