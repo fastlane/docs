@@ -374,7 +374,7 @@ end
 <summary>TestFlight</summary></p>
 <p>You can easily upload new builds to TestFlight (which is part of iTunes Connect) using <em>fastlane</em>. To do so, just use the built-in <code>testflight</code> action after building your app</p>
 <pre><code class="ruby">lane :beta do
-  ...
+  # ...
   gym
   testflight
 end
@@ -382,7 +382,7 @@ end
 
 <p>Some example use cases</p>
 <pre><code class="ruby">lane :beta do
-  ...
+  # ...
   gym
 
   # Variant 1: Provide a changelog to your build
@@ -406,7 +406,7 @@ end
 <p><details>
 <summary>Crashlytics</summary></p>
 <pre><code class="ruby">lane :beta do
-  ...
+  # ...
   gym
   crashlytics(api_token: &quot;[insert_key_here]&quot;,
               build_secret: &quot;[insert_key_here]&quot;)
@@ -424,7 +424,7 @@ end
 <p><details>
 <summary>TestFairy</summary></p>
 <pre><code class="ruby">lane :beta do
-  ...
+  # ...
   gym
 
   testfairy(api_key: &quot;[insert_key_here]&quot;)
@@ -542,7 +542,7 @@ fastlane pilot add email@invite.com -a com.app.name
   # Note how we make sure to pass &quot;adhoc&quot; to get and use a provisioning profile for Ad Hoc distribution
   match(force_for_new_devices: true, type: &quot;adhoc&quot;)
   gym
-  ...
+  # ...
 end
 </code></pre>
 
