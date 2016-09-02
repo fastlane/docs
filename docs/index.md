@@ -92,7 +92,7 @@ _fastlane_ requires macOS or Linux with Ruby 2.0.0 or above
 
 ## Code of Conduct
 
-Help us keep _fastlane_ open and inclusive. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+Help us keep _fastlane_ open and inclusive. Please read and follow our [Code of Conduct](https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
