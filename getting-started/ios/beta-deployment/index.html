@@ -103,6 +103,22 @@
     
       
     
+      
+      <li class="toctree-l3"><a href="#building-your-app">Building your app</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#uploading-your-app">Uploading your app</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#release-notes">Release Notes</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#best-practices">Best Practices</a></li>
+      
+    
   </ul>
   
 </li>
@@ -323,7 +339,7 @@
             <div class="section">
               
                 <h1 id="ios-beta-deployment-using-fastlane"><a name="user-content-ios-beta-deployment-using-fastlane" href="#ios-beta-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS Beta deployment using fastlane</h1>
-<h2 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h2>
+<h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app using a feature called <em>gym</em>, just add the following to your <code>Fastfile</code>:</p>
 <pre><code>lane :beta do
   gym(scheme: &quot;MyApp&quot;)
@@ -342,10 +358,10 @@ end
 <pre><code class="no-highlight">fastlane beta
 </code></pre>
 
-<p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory.</p>
-<h3 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h3>
+<p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>gym</em>, run <code>fastlane action gym</code>.</p>
+<h2 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h2>
 <p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/GettingStarted">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
-<h2 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h2>
+<h1 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h1>
 <p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <em>fastlane</em> is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.</p>
 <p>All you have to do is to put the name of the beta testing provider of your choice after building the app using <em>gym</em>:</p>
 <pre><code class="ruby">lane :beta do
@@ -432,7 +448,7 @@ end
 
 <h2 id="more-information-about-the-service-on-testfairycom"><a name="user-content-more-information-about-the-service-on-testfairycom" href="#more-information-about-the-service-on-testfairycom" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More information about the service on <a href="https://testfairy.com">TestFairy.com</a>.</h2>
 <p></details></p>
-<h3 id="release-notes"><a name="user-content-release-notes" href="#release-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Release Notes</h3>
+<h1 id="release-notes"><a name="user-content-release-notes" href="#release-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Release Notes</h1>
 <p><details>
 <summary>Automatically based on git commits</summary></p>
 <p>Your changelog changes, so it doesn't make a lot of sense to store a static release note in the <code>Fastfile</code>.</p>
@@ -497,10 +513,11 @@ end
 
 <hr />
 <p></details></p>
-<h3 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h3>
+<h1 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h1>
 <p><details>
 <summary>Manage devices and testers using fastlane</summary></p>
-<h3 id="testflight"><a name="user-content-testflight" href="#testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TestFlight</h3>
+<p><details>
+<summary>TestFlight</summary></p>
 <p>If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.</p>
 <p><em>fastlane</em> supports automatically registering devices using different approaches</p>
 <h4 id="boarding"><a href="https://github.com/fastlane/boarding#readme">boarding</a></h4>
@@ -518,6 +535,29 @@ fastlane pilot add email@invite.com -a com.app.name
 
 <hr />
 <p></details></p>
+<p><details>
+<summary>Third party beta testing services</summary></p>
+<p>If you're using a third party beta testing service, you'll need to manage your registered devices and their UDIDs. <em>fastlane</em> already supports device registrations and updating provisioning profiles out of the box. </p>
+<pre><code class="ruby">lane :beta do
+  # Before calling match, we make sure all our devices are registered on the Apple Developer Portal
+  register_devices(devices_file: &quot;devices.txt&quot;)
+
+  # After registering the new devices, we'll make sure to update the provisioning profile if necessary
+  # Note how we make sure to pass &quot;adhoc&quot; to get and use a provisioning profile for Ad Hoc distribution
+  match(force_for_new_devices: true, type: &quot;adhoc&quot;)
+  gym
+  ...
+end
+</code></pre>
+
+<p>The <code>devices.txt</code> should look like this:</p>
+<pre><code>Device ID Device Name
+A123456789012345678901234567890123456789  DeviceName1
+B123456789012345678901234567890123456789  DeviceName2
+</code></pre>
+
+<p></details>
+</details></p>
 <p><details>
 <summary>Incrementing the build number</summary></p>
 <p>Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.</p>
