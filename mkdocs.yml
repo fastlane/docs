@@ -39,6 +39,4 @@ pages:
   - Continuous Integration: "best-practices/ContinuousIntegration.md"
   - Keys: "best-practices/Keys.md"
 - Advanced: "Advanced.md"
-- Contributing:
-  - UI: contributing/UI.md
-  - Contribution Guidelines: contributing/CONTRIBUTING.md
+- Contributing: "CONTRIBUTING.md"
