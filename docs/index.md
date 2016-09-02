@@ -9,10 +9,6 @@ fastlane
 
 _fastlane_ is **the** tool to release your iOS and Android app :rocket: It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
-TODO: Alternative
-
-_fastlane_ is a tool for iOS, Mac, and Android developers to automate tedious tasks like generating screenshots, dealing with provisioning profiles, and releasing your application.
-
 You create a so-called `Fastfile` in your repository, that defines how your beta or App Store release process:
 
 ```ruby
