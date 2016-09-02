@@ -4,10 +4,14 @@
  */
 
 code {
-  font-family: "Liberation Mono", Menlo, Courier, monospace !important;
-  background-color: #f3f3f3 !important;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #f7f7f7 !important;
   color: #333 !important;
-  font-size: 18px;
+  font-size: 14px !important;
   border: none !important;
   padding: 5px !important;
 }
@@ -64,4 +68,18 @@ footer .fastlane {
 
 footer .fastlane iframe {
   vertical-align: middle;
+}
+
+/* Custom Syntax highlighting to look more like GitHub.com */
+.hljs-symbol {
+  color: #0086b3;
+}
+
+.hljs-keyword {
+  font-weight: normal;
+  color: #a71d5d;
+}
+
+.hljs-string {
+  color: #183691;
 }

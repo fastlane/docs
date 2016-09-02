@@ -4,7 +4,7 @@
 
 To pass parameters from the command line to your lane, use the following syntax:
 
-```
+```no-highlight
 fastlane [lane] key:value key2:value2
 
 fastlane deploy submit:false build_number:24
@@ -133,7 +133,7 @@ end
 
 If you just want to try an action without adding them to your `Fastfile` yet, you can use
 
-```sh
+```no-highlight
 fastlane run notification message:"My Text" title:"The Title"
 ```
 
@@ -197,7 +197,7 @@ You should import the other `Fastfile` on the top above your lane declarations. 
 # Environment Variables
 You can define environment variables in a `.env` or `.env.default` file in the same directory as your `Fastfile`. Environment variables are loading using [dotenv](https://github.com/bkeepers/dotenv). Here's an example.
 
-```
+```no-highlight
 WORKSPACE=YourApp.xcworkspace
 HOCKEYAPP_API_TOKEN=your-hockey-api-token
 ```
@@ -288,14 +288,14 @@ You can set the environment variable `FASTLANE_SKIP_UPDATE_CHECK` to skip the up
 You can add credentials for use by _fastlane_ to your keychain using the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) command line interface. This is useful for situations like CI environments.
 
 **Adding a Credential**
-```
+```no-highlight
 fastlane-credentials add --username felix@krausefx.com
 Password: *********
 Credential felix@krausefx.com:********* added to keychain.
 ```
 
 **Removing a Credential**
-```
+```no-highlight
 fastlane-credentials remove --username felix@krausefx.com
 password has been deleted.
 ```
