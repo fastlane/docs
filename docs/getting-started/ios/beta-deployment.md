@@ -59,7 +59,7 @@ You can easily upload new builds to TestFlight (which is part of iTunes Connect)
 
 ```ruby
 lane :beta do
-  ...
+  # ...
   gym
   testflight
 end
@@ -69,7 +69,7 @@ Some example use cases
 
 ```ruby
 lane :beta do
-  ...
+  # ...
   gym
 
   # Variant 1: Provide a changelog to your build
@@ -100,7 +100,7 @@ With _fastlane_, you can also automatically manage your beta testers, check out 
 
 ```ruby
 lane :beta do
-  ...
+  # ...
   gym
   crashlytics(api_token: "[insert_key_here]",
               build_secret: "[insert_key_here]")
@@ -126,7 +126,7 @@ TODO: Also mention the other onboarding method
 
 ```ruby
 lane :beta do
-  ...
+  # ...
   gym
 
   testfairy(api_key: "[insert_key_here]")
@@ -279,7 +279,7 @@ lane :beta do
   # Note how we make sure to pass "adhoc" to get and use a provisioning profile for Ad Hoc distribution
   match(force_for_new_devices: true, type: "adhoc")
   gym
-  ...
+  # ...
 end
 ```
 

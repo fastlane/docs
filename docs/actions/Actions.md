@@ -2078,7 +2078,7 @@ before_all do
 
   cocoapods
   increment_build_number
-  ...
+  # ...
 end
 ```
 
