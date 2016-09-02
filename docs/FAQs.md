@@ -4,19 +4,19 @@
 
 If your output contains something like
 
-```
+```no-highlight
 SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
 ```
 
 that usually means you are using an outdated version of OpenSSL. Make sure to install the latest one using [homebrew](http://brew.sh/).
 
-```
+```no-highlight
 brew update && brew upgrade openssl
 ```
 
 If you use `rvm`, try the following
 
-```
+```no-highlight
 rvm osx-ssl-certs update all
 ```
 
@@ -26,16 +26,8 @@ If you experiennce slow launch times of _fastlane_, there are 2 solutions to sol
 
 ##### Uninstall unused gems
 
-```
+```no-highlight
 [sudo] gem cleanup
-```
-
-##### Use a Gemfile
-
-Follow the [CocoaPods Gemfile Guide](https://guides.cocoapods.org/using/a-gemfile.html) to set up your initial Gemfile. From the on launch _fastlane_ using:
-
-```
-bundle exec fastlane ...
 ```
 
 ### Error when running _fastlane_ with Jenkins
@@ -55,7 +47,7 @@ If you have one code base, but multiple branded applications
 Create different `.env` files for each environment and reference those environment variables in the `Deliverfile`, `Fastfile`, etc. 
 
 Example: Create a `.env.app1`, `.env.app2`, and `.env.app3`. Define each of these like the following...
-```
+```no-highlight
 DLV_FIRST_NAME=Josh
 DLV_LAST_NAME=Holtz
 DLV_PRIM_CATG=Business
@@ -95,7 +87,7 @@ More on the `.env` file can be found [here](https://github.com/bkeepers/dotenv).
 
 Set the `FASTLANE_DISABLE_COLORS` environment variable to disable ANSI colors (e.g. for CI machines)
 
-```
+```no-highlight
 export FASTLANE_DISABLE_COLORS=1
 ```
 
