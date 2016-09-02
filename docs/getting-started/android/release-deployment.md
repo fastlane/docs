@@ -1,4 +1,4 @@
-# Deploy to Google Play using _fastlane_
+# Deploy to Google Play using fastlane
 
 # Building your app
 
@@ -8,7 +8,6 @@ _fastlane_ takes care of building your app by delegating to your existing Gradle
 lane :playstore
   gradle(
     task: 'assemble',
-    flavor: 'Paid',
     build_type: 'Release'
   )
 end
@@ -59,7 +58,7 @@ lane :playstore
 end
 ```
 
-To get a list of all available parameters for the `supply` action, run:
+To get a list of all available parameters for the _supply_ action, run:
 
 ```no-highlight
 fastlane action supply
