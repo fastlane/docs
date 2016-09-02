@@ -351,16 +351,6 @@
             "title": "Use in Fastfile"
         }, 
         {
-            "location": "/getting-started/android/beta-deployment/", 
-            "text": "Deploy to Beta distribution services using \nfastlane\n\n\nTo be written soon, this will contain\n\n\n\n\nBuilding your app using \ngradle\n\n\nDeploy to Beta by Crashlytics\n\n\nDeploy to Google Play for beta\n\n\nBest practises around the deployment\n\n\nOrder of commands", 
-            "title": "Beta Deployment"
-        }, 
-        {
-            "location": "/getting-started/android/beta-deployment/#deploy-to-beta-distribution-services-using-fastlane", 
-            "text": "To be written soon, this will contain   Building your app using  gradle  Deploy to Beta by Crashlytics  Deploy to Google Play for beta  Best practises around the deployment  Order of commands", 
-            "title": "Deploy to Beta distribution services using fastlane"
-        }, 
-        {
             "location": "/getting-started/android/release-deployment/", 
             "text": "Deploy to Google Play using \nfastlane\n\n\nBuilding your app\n\n\nfastlane\n takes care of building your app by delegating to your existing Gradle build. Just add the following to your \nFastfile\n:\n\n\nlane :playstore\n  gradle(\n    task: 'assemble',\n    build_type: 'Release'\n  )\nend\n\n\n\n\nWhen that completes you should have the appropriate APK ready to go in the standard output directory. To get a list of all available parameters for the \ngradle\n action, run:\n\n\nfastlane action gradle\n\n\n\n\nUploading your APK\n\n\nTo upload your binary to Google Play, \nfastlane\n uses a tool called \nsupply\n. Because \nsupply\n needs authentication information from Google, if you haven't yet done the \nsupply\n setup steps\n, please do those now!\n\n\nWith that done, simply add a call to \nsupply\n to the lane you set up above:\n\n\nlane :playstore\n  gradle(\n    task: 'assemble',\n    build_type: 'Release'\n  )\n  supply # Uploads the APK built in the gradle step above\nend\n\n\n\n\nThis will also upload:\n\n\n\n\nApp metadata from \nfastlane/metadata/android\n if you previously ran \nfastlane supply init\n\n\nExpansion files (obbs) found under the same directory as your APK as long as:\n\n\nThey are identified by type as \nmain\n or \npatch\n by containing \nmain\n or \npatch\n in their file names\n\n\nThere is at most one of each type\n\n\n\n\n\n\nScreenshots from \nfastlane/metadata/android\n if you previously ran \nscreengrab\n\n\n\n\nIf you would like to capture and upload screenshots automatically as part of your deployment process, check out the \nfastlane screenshots for Android\n guide to get started!\n\n\nTo gradually roll out a new build you can use:\n\n\nlane :playstore\n  # ...\n  supply(\n    track: 'rollout',\n    rollout: '0.5'\n  )\nend\n\n\n\n\nTo get a list of all available parameters for the \nsupply\n action, run:\n\n\nfastlane action supply", 
             "title": "Release Deployment"
