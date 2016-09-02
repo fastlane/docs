@@ -317,26 +317,21 @@
                 <h1 id="faqs"><a name="user-content-faqs" href="#faqs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>FAQs</h1>
 <h3 id="im-getting-an-ssl-error"><a name="user-content-im-getting-an-ssl-error" href="#im-getting-an-ssl-error" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>I'm getting an SSL error</h3>
 <p>If your output contains something like</p>
-<pre><code>SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+<pre><code class="no-highlight">SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
 </code></pre>
 
 <p>that usually means you are using an outdated version of OpenSSL. Make sure to install the latest one using <a href="http://brew.sh/">homebrew</a>.</p>
-<pre><code>brew update &amp;&amp; brew upgrade openssl
+<pre><code class="no-highlight">brew update &amp;&amp; brew upgrade openssl
 </code></pre>
 
 <p>If you use <code>rvm</code>, try the following</p>
-<pre><code>rvm osx-ssl-certs update all
+<pre><code class="no-highlight">rvm osx-ssl-certs update all
 </code></pre>
 
 <h3 id="fastlane-is-slow-to-start"><a name="user-content-fastlane-is-slow-to-start" href="#fastlane-is-slow-to-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane is slow (to start)</h3>
 <p>If you experiennce slow launch times of <em>fastlane</em>, there are 2 solutions to solve this problem:</p>
 <h5 id="uninstall-unused-gems"><a name="user-content-uninstall-unused-gems" href="#uninstall-unused-gems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uninstall unused gems</h5>
-<pre><code>[sudo] gem cleanup
-</code></pre>
-
-<h5 id="use-a-gemfile"><a name="user-content-use-a-gemfile" href="#use-a-gemfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a Gemfile</h5>
-<p>Follow the <a href="https://guides.cocoapods.org/using/a-gemfile.html">CocoaPods Gemfile Guide</a> to set up your initial Gemfile. From the on launch <em>fastlane</em> using:</p>
-<pre><code>bundle exec fastlane ...
+<pre><code class="no-highlight">[sudo] gem cleanup
 </code></pre>
 
 <h3 id="error-when-running-fastlane-with-jenkins"><a name="user-content-error-when-running-fastlane-with-jenkins" href="#error-when-running-fastlane-with-jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Error when running <em>fastlane</em> with Jenkins</h3>
@@ -348,7 +343,7 @@
 <p>If you have one code base, but multiple branded applications</p>
 <p>Create different <code>.env</code> files for each environment and reference those environment variables in the <code>Deliverfile</code>, <code>Fastfile</code>, etc. </p>
 <p>Example: Create a <code>.env.app1</code>, <code>.env.app2</code>, and <code>.env.app3</code>. Define each of these like the following...</p>
-<pre><code>DLV_FIRST_NAME=Josh
+<pre><code class="no-highlight">DLV_FIRST_NAME=Josh
 DLV_LAST_NAME=Holtz
 DLV_PRIM_CATG=Business
 DLV_SCND_CATG=Games
@@ -379,7 +374,7 @@ end
 <p>More on the <code>.env</code> file can be found <a href="https://github.com/bkeepers/dotenv">here</a>.</p>
 <h3 id="disable-colored-output"><a name="user-content-disable-colored-output" href="#disable-colored-output" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Disable colored output</h3>
 <p>Set the <code>FASTLANE_DISABLE_COLORS</code> environment variable to disable ANSI colors (e.g. for CI machines)</p>
-<pre><code>export FASTLANE_DISABLE_COLORS=1
+<pre><code class="no-highlight">export FASTLANE_DISABLE_COLORS=1
 </code></pre>
 
 <h3 id="user-interaction-is-not-allowed-when-using-fastlane-via-ssh"><a name="user-content-user-interaction-is-not-allowed-when-using-fastlane-via-ssh" href="#user-interaction-is-not-allowed-when-using-fastlane-via-ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>"User interaction is not allowed" when using <em>fastlane</em> via SSH</h3>
