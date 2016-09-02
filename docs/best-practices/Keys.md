@@ -65,7 +65,7 @@ CRASHLYTICS_API_TOKEN="123abc"
 
 You might want different configurations depending on your environment.
 
-```no-hightlight
+```no-highlight
 fastlane beta --env development
 ```
 

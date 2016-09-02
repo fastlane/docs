@@ -15,7 +15,7 @@ The recommended way to install [Jenkins](http://jenkins-ci.org/) is through [hom
 
 From now on start ```Jenkins``` by running:
 
-```
+```no-highlight
 jenkins
 ```
 
@@ -40,7 +40,7 @@ I recommend the following plugins:
 
 Use the following as your build step:
 
-```
+```no-highlight
 fastlane appstore
 ```
 
@@ -83,7 +83,7 @@ gem "fastlane"
 
 and run
 
-```
+```no-highlight
 gem install bundler && bundle update
 ```
 
@@ -117,12 +117,12 @@ This dialog will allow you to enter a regular expression that if a commit matche
 
 For example, if your `Fastfile` is configured to make a commit message in the style of 
 
-```
+```no-highlight
 Build Version bump by fastlane to Version [0.3] Build [8]
 ```
 Then you could use the following regex to ignore these commits
 
-```
+```no-highlight
 ^.*Build Version bump by fastlane.*$
 ```
 
