@@ -29,6 +29,7 @@ pages:
   - Getting Started: codesigning/GettingStarted.md
   - Xcode Project: codesigning/XcodeProject.md
   - Troubleshooting: codesigning/Troubleshooting.md
+  - Common Issues: codesigning/CommonIssues.md
 - Plugins:
   - AvailablePlugins: plugins/AvailablePlugins.md
   - Create your own plugin: plugins/CreatePlugin.md
