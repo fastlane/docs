@@ -52,3 +52,11 @@ details > summary {
 .toctree-l3 {
   padding-left: 1.0em;
 }
+
+footer .fastlane {
+  margin: 20px 0;
+}
+
+footer .fastlane iframe {
+  vertical-align: middle;
+}
