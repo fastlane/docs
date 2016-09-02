@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>Getting Started - fastlane docs</title>
+  <title>Common Issues - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -28,9 +28,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Getting Started";
-    var mkdocs_page_input_path = "codesigning/GettingStarted.md";
-    var mkdocs_page_url = "/codesigning/GettingStarted/";
+    var mkdocs_page_name = "Common Issues";
+    var mkdocs_page_input_path = "codesigning/CommonIssues.md";
+    var mkdocs_page_url = "/codesigning/CommonIssues/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -172,14 +172,8 @@
   <li><span>Codesigning</span></li>
   
   
-<li class="toctree-l1 current">
-  <a class="current" href="./">Getting Started</a>
-  
-  <ul>
-    
-      
-    
-  </ul>
+<li class="toctree-l1 ">
+  <a class="" href="../GettingStarted/">Getting Started</a>
   
 </li>
 
@@ -199,8 +193,14 @@
 
   
   
-<li class="toctree-l1 ">
-  <a class="" href="../CommonIssues/">Common Issues</a>
+<li class="toctree-l1 current">
+  <a class="current" href="./">Common Issues</a>
+  
+  <ul>
+    
+      
+    
+  </ul>
   
 </li>
 
@@ -318,7 +318,7 @@
         
       
     
-    <li>Getting Started</li>
+    <li>Common Issues</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -328,53 +328,44 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="codesigning-concepts"><a name="user-content-codesigning-concepts" href="#codesigning-concepts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning concepts</h1>
-<p>If you are just starting a new project, it's important to think about how you want to handle code signing. This guide will help you choose the best approach for you.</p>
-<p>For existing projects it might make sense to switch from a manual process to the <a href="https://codesigning.guide">match approach</a> to make it easier for new team-members to onboard.</p>
-<p>If you are new to code signing, check out the <a href="https://developer.apple.com/videos/play/wwdc2016/401/">WWDC session</a> that describes the fundamentals of code signing in Xcode.</p>
+                <h1 id="common-code-signing-issues"><a name="user-content-common-code-signing-issues" href="#common-code-signing-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Common code signing issues</h1>
+<h2 id="xcode-errors"><a name="user-content-xcode-errors" href="#xcode-errors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode errors</h2>
+<blockquote>
+<p>Code Sign error: No matching provisioning profiles found: No provisioning profiles with a valid signing identity (i.e. certificate and private key pair) matching the bundle identifier "X" were found.</p>
+</blockquote>
+<p>The provisioning profile for the given app identifier "X" is not available on the local machine. Make sure you have a valid provisioning profile for the correct distribution type (App Store, Development or Ad Hoc) on the Apple Developer Portal, download and install it, and select the profile in the Xcode settings (See <a href="../XcodeProject/">XcodeProject.md</a>).</p>
+<p>You might have the provisioning profile installed locally, but miss the private key or certificate for it. </p>
+<blockquote>
+<p>No matching codesigning identity found: No codesigning identities (i.e. certificate and private key pairs) matching "iPhone Distribution: X" were found</p>
+</blockquote>
+<p>The code signing identity you specified in the Xcode project can't be found in your local keychain. Make sure to transfer the certificate and private key from another Mac (or wherever you store the private key), or to update the project file to use the correct code signing identity.</p>
+<blockquote>
+<p>Error Domain=IDEDistributionErrorDomain Code=1 "The operation couldn’t be completed. (IDEDistributionErrorDomain error 1.)"</p>
+</blockquote>
+<p>This error can have a lot of reasons, some things you should try:</p>
 <ul>
-<li><a href="#using-match">Using match</a></li>
-<li><a href="#using-cert-and-sigh">Using cert and sigh</a></li>
-<li><a href="#using-xcodes-code-signing-feature">Using Xcode's code signing feature</a></li>
-<li><a href="#manually">Manually</a></li>
+<li>Verify your Keychain is valid and you don't have an expired WWDR certificate using <a href="../Troubleshooting/#keychain">this guide</a></li>
+<li>Verify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out <a href="../Troubleshooting/">Troubleshooting.md</a> for more information)</li>
+<li>If you're using <a href="https://fastlane.tools/gym">gym</a>, try using the <code>use_legacy_build_api</code> flag to fallback to the Xcode 6 build API</li>
+<li>Follow the other steps of <a href="../Troubleshooting/">Troubleshooting.md</a></li>
 </ul>
-<h2 id="using-match"><a name="user-content-using-match" href="#using-match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/match">match</a></h2>
-<p>The concept of <a href="https://fastlane.tools/match">match</a> is described in the <a href="https://codesigning.guide">codesigning guide</a>. </p>
-<p>With <a href="https://fastlane.tools/match">match</a> you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach <a href="https://github.com/fastlane/fastlane/tree/master/match#is-this-secure">is secure</a> and uses technology you already use.</p>
-<p>Getting started with <a href="https://fastlane.tools/match">match</a> requires you to revoke your existing certificates.</p>
-<p>Make sure to follow <a href="../XcodeProject/">XcodeProject.md</a> to set up your project properly.</p>
-<h2 id="using-cert-and-sigh"><a name="user-content-using-cert-and-sigh" href="#using-cert-and-sigh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a></h2>
-<p>If you don't want to revoke your existing certificates, but still want an automated setup, <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a> are for you. </p>
-<ul>
-<li><a href="https://fastlane.tools/cert">cert</a> will make sure you have a valid certificate and its private key installed on the local machine</li>
-<li><a href="https://fastlane.tools/sigh">sigh</a> will make sure you have a valid provisioning profile installed locally, that matches the installed certificate</li>
-</ul>
-<p>Add the following lines to your <code>Fastfile</code></p>
-<pre><code class="ruby">lane :beta do
-  cert
-  sigh
-  gym
-end
-</code></pre>
-
-<p>Make sure to follow <a href="../XcodeProject/">XcodeProject.md</a> to set up your project properly.</p>
-<h2 id="using-xcodes-code-signing-feature"><a name="user-content-using-xcodes-code-signing-feature" href="#using-xcodes-code-signing-feature" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Xcode's code signing feature</h2>
-<p>Occasionally the <code>Automatic</code> setting as the provisioning profile doesn't work reliably as it will just select the most recently updated provisioning profile, no matter if the certificate is installed. </p>
-<p>That's why it is recommended to specify a specific provisioning profile somehow:</p>
-<h4 id="xcode-7-and-lower"><a name="user-content-xcode-7-and-lower" href="#xcode-7-and-lower" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 7 and lower</h4>
-<p>You should avoid clicking the <code>Fix Issue</code> button (There is an <a href="https://github.com/neonichu/FixCode#readme">Xcode plugin</a> that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.</p>
-<p>Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).</p>
-<p>To work around this issue, check out <a href="../XcodeProject/">XcodeProject.md</a> on how to pass a provisioning profile to Xcode when building your app.</p>
-<h4 id="xcode-8-and-up"><a name="user-content-xcode-8-and-up" href="#xcode-8-and-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8 and up</h4>
-<p>Apple improved code signing a lot with the release of Xcode 8, the following has changed:</p>
-<ul>
-<li>No more <code>Fix Issue</code> button, instead all code signing processes run in the background and show the log right in Xcode</li>
-<li>You can now specify the provisioning profile by name, instead of the UUID (Check out <a href="../XcodeProject/">XcodeProject.md</a> for more information)</li>
-<li>Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out <a href="../Troubleshooting/">Troubleshooting.md</a> for more information)</li>
-</ul>
-<h2 id="manually"><a name="user-content-manually" href="#manually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manually</h2>
-<p>You can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key (<code>.p12</code>) of your certificates in a safe place, as they can't be restored if you lose them. </p>
-<p>You can always download the certificate (<code>.cer</code>) and provisioning profile (<code>.mobileprovision</code>) from the Apple Developer Portal.</p>
+<blockquote>
+<p>Provisioning profile does not match bundle identifier: The provisioning profile specified in your build settings ("X") has an AppID of "Y" which does not match your bundle identifier "Z"</p>
+</blockquote>
+<p>Your project defines a provisioning profile that doesn't match the bundle identifier of your app. There is mismatch between the bundle identifiers, this might happen if you specify the wrong provisioning profile in your target.</p>
+<blockquote>
+<p>Your build settings specify a provisioning profile with the UUID "X", however, no such provisioning profile was found.</p>
+</blockquote>
+<p>Your project defines a provisioning profile which doesn't exist on your local machine. Check out <a href="../XcodeProject/">XcodeProject.md</a> for more information how to properly specify a provisioning profile to avoid hard coded UUIDs in your project.</p>
+<blockquote>
+<p>CodeSign Error: code signing is required for product type 'Application'...</p>
+</blockquote>
+<p>Make sure to have a valid code signing identity defined in your project targets. This might happen when you select <code>Don't Code Sign</code> as Code Signing Identity.</p>
+<h2 id="fastlane-errors"><a name="user-content-fastlane-errors" href="#fastlane-errors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane errors</h2>
+<blockquote>
+<p>Could not find a matching code signing identity for type 'X'</p>
+</blockquote>
+<p>There are no certificates available on the Apple Developer Portal. This could either mean someone revoked a certificate, or you don't have access to it. </p>
               
             </div>
           </div>
@@ -382,10 +373,10 @@ end
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../XcodeProject/" class="btn btn-neutral float-right" title="Xcode Project">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../plugins/AvailablePlugins/" class="btn btn-neutral float-right" title="AvailablePlugins">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../FAQs/" class="btn btn-neutral" title="FAQs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Troubleshooting/" class="btn btn-neutral" title="Troubleshooting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -416,10 +407,10 @@ end
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../FAQs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Troubleshooting/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../XcodeProject/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../plugins/AvailablePlugins/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
