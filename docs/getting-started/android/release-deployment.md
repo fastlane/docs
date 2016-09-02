@@ -29,7 +29,6 @@ With that done, simply add a call to _supply_ to the lane you set up above:
 lane :playstore
   gradle(
     task: 'assemble',
-    flavor: 'Paid',
     build_type: 'Release'
   )
   supply # Uploads the APK built in the gradle step above
