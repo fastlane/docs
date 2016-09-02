@@ -66,7 +66,7 @@ To make sure your latest push notification certificate is still valid during you
 ```ruby
 lane :appstore do
   pem
-  ...
+  # ...
 end
 ```
 

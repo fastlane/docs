@@ -151,7 +151,7 @@ To run only a subset of the tests, you can add the `now: true` keyword to the te
 
 ```ruby
 it "raises an exception if it rains", now: true do
-  ...
+  # ...
 end
 ```
 
