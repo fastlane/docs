@@ -328,7 +328,7 @@
 <p>The recommended way to install <a href="http://jenkins-ci.org/">Jenkins</a> is through <a href="http://brew.sh/">homebrew</a>:</p>
 <p><code>brew update &amp;&amp; brew install jenkins</code></p>
 <p>From now on start <code>Jenkins</code> by running:</p>
-<pre><code>jenkins
+<pre><code class="no-highlight">jenkins
 </code></pre>
 
 <p>To store the password in the Keychain of your remote machine, I recommend running <em>sigh</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
@@ -345,7 +345,7 @@
 </ul>
 <h2 id="build-step"><a name="user-content-build-step" href="#build-step" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build Step</h2>
 <p>Use the following as your build step:</p>
-<pre><code>fastlane appstore
+<pre><code class="no-highlight">fastlane appstore
 </code></pre>
 
 <p>Replace <code>appstore</code> with the lane you want to use.</p>
@@ -376,7 +376,7 @@ gem &quot;fastlane&quot;
 </code></pre>
 
 <p>and run</p>
-<pre><code>gem install bundler &amp;&amp; bundle update
+<pre><code class="no-highlight">gem install bundler &amp;&amp; bundle update
 </code></pre>
 
 <p>This will create a <code>Gemfile.lock</code>, that defines all Ruby dependencies. Make sure to commit both files to version control.</p>
@@ -400,11 +400,11 @@ test:
 <p>In bamboo under <strong>Linked Repositories</strong> (where you configure your git repo) under <strong>Advanced Settings</strong> is an option called <strong>Exclude changesets</strong></p>
 <p>This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.  </p>
 <p>For example, if your <code>Fastfile</code> is configured to make a commit message in the style of </p>
-<pre><code>Build Version bump by fastlane to Version [0.3] Build [8]
+<pre><code class="no-highlight">Build Version bump by fastlane to Version [0.3] Build [8]
 </code></pre>
 
 <p>Then you could use the following regex to ignore these commits</p>
-<pre><code>^.*Build Version bump by fastlane.*$
+<pre><code class="no-highlight">^.*Build Version bump by fastlane.*$
 </code></pre>
 
 <h2 id="setting-repository-remote"><a name="user-content-setting-repository-remote" href="#setting-repository-remote" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting repository remote</h2>
