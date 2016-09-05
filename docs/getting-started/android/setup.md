@@ -81,7 +81,6 @@ Due to limitations of the Google Play API, _supply_ can't download existing scre
 _fastlane_ is ready to generate screenshots and automatically distribute new builds! To learn more, check out:
 
 - [Automatically generate screenshots](screenshots.md)
-- [Distribute beta builds](beta-deployment.md)
 - [Deploy to Google Play for production release](release-deployment.md)
 
 ### Use a Gemfile
