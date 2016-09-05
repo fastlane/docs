@@ -86,10 +86,6 @@ All fastlane related questions, problems and feature ideas should be posted as [
 
 _fastlane_ requires macOS or Linux with Ruby 2.0.0 or above
 
-## Code of Conduct
-
-Help us keep _fastlane_ open and inclusive. Please read and follow our [Code of Conduct](https://github.com/fastlane/fastlane/blob/master/CODE_OF_CONDUCT.md).
-
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](LICENSE) file.
