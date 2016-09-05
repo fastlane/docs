@@ -94,7 +94,8 @@ source "https://rubygems.org"
 
 gem "fastlane"
 ```
-- Run `bundle update` and add both the `Gemfile` and the `Gemfile.lock` to version control
+- Install [bundler](https://bundler.io/) using `sudo gem install bundler`
+- Run `[sudo] bundle update` and add both the `Gemfile` and the `Gemfile.lock` to version control
 - Every time you run _fastlane_, use `bundle exec fastlane [lane]`
-- On your CI, add `bundle install` as your first build step
-- To update _fastlane_, just run `bundle update`
+- On your CI, add `[sudo] bundle install` as your first build step
+- To update _fastlane_, just run `[sudo] bundle update`
