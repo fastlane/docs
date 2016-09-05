@@ -4,7 +4,7 @@
 
 Make sure you have `bundler` installed using `gem install bundler`
 
-- Open the GitHub page of the _fastlane_repository  (e.g. [https://github.com/fastlane/fastlane](https://github.com/fastlane/fastlane))
+- Open the GitHub page of the _fastlane_ repository  (e.g. [https://github.com/fastlane/fastlane](https://github.com/fastlane/fastlane))
 - Create an issue to discuss your idea/feature/enhancement.
 - Click on `Fork` on the top right
 - Then clone your new repo locally `git clone https://github.com/[my_user]/fastlane.git`
