@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +28,7 @@
     
     <url>
      <loc>None/actions/Actions/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +36,7 @@
     
     <url>
      <loc>None/FAQs/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -45,25 +45,25 @@
         
     <url>
      <loc>None/codesigning/GettingStarted/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/codesigning/XcodeProject/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/codesigning/Troubleshooting/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/codesigning/CommonIssues/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -73,19 +73,19 @@
         
     <url>
      <loc>None/plugins/AvailablePlugins/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/CreatePlugin/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/PluginsTroubleshooting/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -95,19 +95,19 @@
         
     <url>
      <loc>None/best-practices/Gitignore/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/best-practices/ContinuousIntegration/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/best-practices/Keys/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -116,7 +116,7 @@
     
     <url>
      <loc>None/Advanced/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -124,7 +124,7 @@
     
     <url>
      <loc>None/CONTRIBUTING/</loc>
-     <lastmod>2016-09-04</lastmod>
+     <lastmod>2016-09-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
