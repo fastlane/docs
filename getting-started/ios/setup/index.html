@@ -334,7 +334,7 @@
 <li><a href="../appstore-deployment/">Deploy to the App Store</a></li>
 </ul>
 <h3 id="use-a-gemfile"><a name="user-content-use-a-gemfile" href="#use-a-gemfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a Gemfile</h3>
-<p>It is recommended that you use a Gemfile to define your dependency to <em>fastlane</em>. This will clearly define the used fastlane version, and its dependencies, and will also speed up using <em>fastlane</em>.</p>
+<p>It is recommended that you use a <code>Gemfile</code> to define your dependency on <em>fastlane</em>. This will clearly define the used <em>fastlane</em> version, and its dependencies, and will also speed up using <em>fastlane</em>.</p>
 <ul>
 <li>Create a <code>Gemfile</code> with the content</li>
 </ul>
@@ -344,10 +344,11 @@ gem &quot;fastlane&quot;
 </code></pre>
 
 <ul>
-<li>Run <code>bundle update</code> and add both the <code>Gemfile</code> and the <code>Gemfile.lock</code> to version control</li>
+<li>Install <a href="https://bundler.io/">bundler</a> using <code>sudo gem install bundler</code></li>
+<li>Run <code>[sudo] bundle update</code> and add both the <code>Gemfile</code> and the <code>Gemfile.lock</code> to version control</li>
 <li>Every time you run <em>fastlane</em>, use <code>bundle exec fastlane [lane]</code></li>
-<li>On your CI, add <code>bundle install</code> as your first build step</li>
-<li>To update <em>fastlane</em>, just run <code>bundle update</code></li>
+<li>On your CI, add <code>[sudo] bundle install</code> as your first build step</li>
+<li>To update <em>fastlane</em>, just run <code>[sudo] bundle update</code></li>
 </ul>
               
             </div>

@@ -386,10 +386,11 @@ gem &quot;fastlane&quot;
 </code></pre>
 
 <ul>
-<li>Run <code>bundle update</code> and add both the <code>Gemfile</code> and the <code>Gemfile.lock</code> to version control</li>
+<li>Install <a href="https://bundler.io/">bundler</a> using <code>sudo gem install bundler</code></li>
+<li>Run <code>[sudo] bundle update</code> and add both the <code>Gemfile</code> and the <code>Gemfile.lock</code> to version control</li>
 <li>Every time you run <em>fastlane</em>, use <code>bundle exec fastlane [lane]</code></li>
-<li>On your CI, add <code>bundle install</code> as your first build step</li>
-<li>To update <em>fastlane</em>, just run <code>bundle update</code></li>
+<li>On your CI, add <code>[sudo] bundle install</code> as your first build step</li>
+<li>To update <em>fastlane</em>, just run <code>[sudo] bundle update</code></li>
 </ul>
               
             </div>
