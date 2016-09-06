@@ -30,7 +30,7 @@ pages:
   - Troubleshooting: codesigning/Troubleshooting.md
   - Common Issues: codesigning/CommonIssues.md
 - Plugins:
-  - AvailablePlugins: plugins/AvailablePlugins.md
+  - Available Plugins: plugins/AvailablePlugins.md
   - Create your own plugin: plugins/CreatePlugin.md
   - Plugins Troubleshooting: plugins/PluginsTroubleshooting.md
 - Best Practices:
