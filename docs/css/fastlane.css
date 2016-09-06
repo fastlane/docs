@@ -92,3 +92,78 @@ footer .fastlane iframe {
 .hljs-string {
   color: #183691;
 }
+
+/* Header Anchors */
+/* From https://github.com/facelessuser/pymdown-extensions/blob/bf18d0635e9d91b0f98eacdcaa10f26e0ace0f20/doc_theme/css/theme_custom.css#L322-L395 */
+.rst-content .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.rst-content .headeranchor-link:focus {
+  outline: none;
+}
+
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+  position: relative;
+}
+
+.rst-content h1 .headeranchor,
+.rst-content h2 .headeranchor,
+.rst-content h3 .headeranchor,
+.rst-content h4 .headeranchor,
+.rst-content h5 .headeranchor,
+.rst-content h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.rst-content h1:hover .headeranchor-link,
+.rst-content h2:hover .headeranchor-link,
+.rst-content h3:hover .headeranchor-link,
+.rst-content h4:hover .headeranchor-link,
+.rst-content h5:hover .headeranchor-link,
+.rst-content h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  text-decoration: none;
+}
+
+.rst-content h1:hover .headeranchor-link .headeranchor,
+.rst-content h2:hover .headeranchor-link .headeranchor,
+.rst-content h3:hover .headeranchor-link .headeranchor,
+.rst-content h4:hover .headeranchor-link .headeranchor,
+.rst-content h5:hover .headeranchor-link .headeranchor,
+.rst-content h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.rst-content .headeranchor {
+  font: normal normal 16px FontAwesome;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.rst-content .headeranchor:before {
+  content: '\f0c1';
+}
