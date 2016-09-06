@@ -8,6 +8,7 @@ google_analytics: ["UA-18658848-13", "docs.fastlane.tools"]
 # strict: true # TODO: Enable once we have the docs structure
 markdown_extensions:
   - pymdownx.headeranchor
+  - markdown.extensions.attr_list
 theme_dir: theme
 
 pages:
