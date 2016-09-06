@@ -24,7 +24,9 @@ Try running the lane with:
 fastlane beta
 ```
 
-When that completes you should have the appropriate APK ready to go in the standard output directory. To get a list of all available parameters for the `gradle` action, run:
+When that completes you should have the appropriate APK ready to go in the standard output directory.
+
+To get a list of all available parameters for the `gradle` action, run:
 
 ```no-highlight
 fastlane action gradle
