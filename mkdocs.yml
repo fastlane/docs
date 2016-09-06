@@ -21,6 +21,7 @@ pages:
   - Android:
     - Setup: getting-started/android/setup.md
     - Screenshots: getting-started/android/screenshots.md
+    - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
 - Actions: actions/Actions.md
 - FAQs: FAQs.md
