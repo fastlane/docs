@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>Release Deployment - fastlane docs</title>
+  <title>Beta Deployment - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Release Deployment";
-    var mkdocs_page_input_path = "getting-started/android/release-deployment.md";
-    var mkdocs_page_url = "/getting-started/android/release-deployment/";
+    var mkdocs_page_name = "Beta Deployment";
+    var mkdocs_page_input_path = "getting-started/android/beta-deployment.md";
+    var mkdocs_page_url = "/getting-started/android/beta-deployment/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js"></script>
@@ -135,15 +135,8 @@
 
   
   
-<li class="toctree-l1 ">
-  <a class="" href="../beta-deployment/">Beta Deployment</a>
-  
-</li>
-
-  
-  
 <li class="toctree-l1 current">
-  <a class="current" href="./">Release Deployment</a>
+  <a class="current" href="./">Beta Deployment</a>
   
   <ul>
     
@@ -154,10 +147,21 @@
       
     
       
-      <li class="toctree-l3"><a href="#uploading-your-apk">Uploading your APK</a></li>
+      <li class="toctree-l3"><a href="#uploading-your-app">Uploading your app</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#release-notes">Release Notes</a></li>
       
     
   </ul>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../release-deployment/">Release Deployment</a>
   
 </li>
 
@@ -317,7 +321,7 @@
         
       
     
-    <li>Release Deployment</li>
+    <li>Beta Deployment</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -327,61 +331,156 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="deploy-to-google-play-using-fastlane"><a name="user-content-deploy-to-google-play-using-fastlane" href="#deploy-to-google-play-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy to Google Play using <em>fastlane</em></h1>
+                <h1 id="deploy-to-beta-distribution-services-using-fastlane"><a name="user-content-deploy-to-beta-distribution-services-using-fastlane" href="#deploy-to-beta-distribution-services-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy to Beta distribution services using <em>fastlane</em></h1>
+<p>If you would like to distribute your beta builds to Google Play, please make sure you've done the steps from <a href="../setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing.</p>
 <h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app by delegating to your existing Gradle build. Just add the following to your <code>Fastfile</code>:</p>
-<pre><code class="ruby">lane :playstore do
+<pre><code class="ruby">lane :beta
+  # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
   gradle(
     task: 'assemble',
     build_type: 'Release'
   )
+
+  # ...
 end
 </code></pre>
 
 <p>Try running the lane with:</p>
-<pre><code class="no-highlight">fastlane playstore
+<pre><code class="no-highlight">fastlane beta
 </code></pre>
 
-<p>When that completes you should have the appropriate APK ready to go in the standard output directory. To get a list of all available parameters for the <code>gradle</code> action, run:</p>
+<p>When that completes you should have the appropriate APK ready to go in the standard output directory.</p>
+<p>To get a list of all available parameters for the <code>gradle</code> action, run:</p>
 <pre><code class="no-highlight">fastlane action gradle
 </code></pre>
 
-<h1 id="uploading-your-apk"><a name="user-content-uploading-your-apk" href="#uploading-your-apk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your APK</h1>
-<p>To upload your binary to Google Play, <em>fastlane</em> uses a tool called <em>supply</em>. Because <em>supply</em> needs authentication information from Google, if you haven't yet done the <a href="../setup/"><em>supply</em> setup steps</a>, please do those now!</p>
-<p>With that done, simply add a call to <em>supply</em> to the lane you set up above:</p>
-<pre><code class="ruby">lane :playstore do
+<h1 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h1>
+<p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <em>fastlane</em> is that you can easily switch beta providers, or even upload to multiple at once, with a minimum of configuration. Follow that with a notification posted to the group messaging service of your choice to let the team know that you've shipped!</p>
+<pre><code class="ruby">lane :beta
+  gradle(task: 'assemble', build_type: 'Release')
+  supply(track: 'beta')
+  slack(message: 'Successfully distributed a new beta build')
+end
+</code></pre>
+
+<h2 id="supported-beta-testing-services"><a name="user-content-supported-beta-testing-services" href="#supported-beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Supported beta testing services</h2>
+<p><details>
+<summary>Google Play</summary></p>
+<p>In order to distribute to Google Play with <em>supply</em> you will need to have your Google credentials set up. Make sure you've gone through <a href="../setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing!</p>
+<pre><code class="ruby">lane :beta do
+  # ...
   gradle(
     task: 'assemble',
     build_type: 'Release'
   )
-  supply # Uploads the APK built in the gradle step above
+  supply(track: 'beta')
+  # ...
 end
 </code></pre>
 
-<p>This will also upload:</p>
-<ul>
-<li>App metadata from <code>fastlane/metadata/android</code> if you previously ran <code>fastlane supply init</code></li>
-<li>Expansion files (obbs) found under the same directory as your APK as long as:<ul>
-<li>They are identified by type as <strong>main</strong> or <strong>patch</strong> by containing <code>main</code> or <code>patch</code> in their file names</li>
-<li>There is at most one of each type</li>
-</ul>
-</li>
-<li>Screenshots from <code>fastlane/metadata/android</code> if you previously ran <em>screengrab</em></li>
-</ul>
-<p>If you would like to capture and upload screenshots automatically as part of your deployment process, check out the <a href="../screenshots/">fastlane screenshots for Android</a> guide to get started!</p>
-<p>To gradually roll out a new build you can use:</p>
-<pre><code class="ruby">lane :playstore do
+<p>To get a list of all available options, run:</p>
+<pre><code class="no-highlight">fastlane action supply
+</code></pre>
+
+<hr />
+<p></details></p>
+<p><details>
+<summary>Crashlytics</summary></p>
+<pre><code class="ruby">lane :beta do
   # ...
-  supply(
-    track: 'rollout',
-    rollout: '0.5'
+  gradle(
+    task: 'assemble',
+    build_type: 'Release'
+  )
+
+  crashlytics(
+    api_token: '[insert_key_here]',
+    build_secret: '[insert_secret_here]'
+  )
+  # ...
+end
+</code></pre>
+
+<p>To get your API token, open the <a href="https://www.fabric.io/settings/organizations">organizations settings page</a> and click on the API key and build secret links.</p>
+<p>Additionally you can specify <code>notes</code>, <code>emails</code>, <code>groups</code> and <code>notifications</code>. To get a list of all available options, run:</p>
+<pre><code class="no-highlight">fastlane action crashlytics
+</code></pre>
+
+<hr />
+<p></details></p>
+<h1 id="release-notes"><a name="user-content-release-notes" href="#release-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Release Notes</h1>
+<p><details>
+<summary>Generate based on Git commits</summary></p>
+<p>You take the time to write great Git commit messages, right? Why not take advantage of them to automatically summarize the work done for your latest beta release?</p>
+<pre><code class="ruby">lane :beta do
+  # ...
+
+  # Generate the changelog based on commit messages since your last tag
+  changelog_from_git_commits
+
+  # The crashlytics action knows how to use the generated changelog automatically
+  crashlytics(
+    api_token: '[insert_key_here]',
+    build_secret: '[insert_secret_here]'
   )
 end
 </code></pre>
 
-<p>To get a list of all available parameters for the <em>supply</em> action, run:</p>
-<pre><code class="no-highlight">fastlane action supply
+<p>You can get a list of all available options by running <code>fastlane action changelog_from_git_commits</code>, but here are some examples:</p>
+<pre><code class="ruby">changelog_from_git_commits(
+  between: ['7b092b3', 'HEAD'], # Optional, lets you specify a revision/tag range between which to collect commit info
+  merge_commit_filtering: 'exclude_merges' # Optional, lets you filter out merge commits
+)
 </code></pre>
+
+<hr />
+<p></details></p>
+<p><details>
+<summary>Prompt for changelog</summary></p>
+<p>You can automatically be asked for the changelog in your terminal using the <code>prompt</code> action:</p>
+<pre><code class="ruby">lane :beta do
+  # Variant 1: Ask for a one line input
+  changelog = prompt(&quot;Changelog: &quot;)
+
+  # Variant 2: Ask for a multi-line input
+  #   The user confirms their input by typing `END` and Enter
+  changelog = prompt(
+    text: &quot;Changelog: &quot;,
+    multi_line_end_keyword: &quot;END&quot;
+  )
+
+  crashlytics(
+    api_token: '[insert_key_here]',
+    build_secret: '[insert_secret_here]',
+    notes: changelog
+  )
+end
+</code></pre>
+
+<hr />
+<p></details></p>
+<p><details>
+<summary>Fetch the changelog from the file system or remote server</summary></p>
+<p>You can fetch values from anywhere, including the file system and remote server, by writing code in your <code>Fastfile</code></p>
+<pre><code class="ruby">lane :beta do
+  # Variant 1: Read from file system
+  #   note the `..`, since fastlane runs in the _fastlane_ directory
+  changelog = File.read(&quot;../Changelog.txt&quot;)
+
+  # Variant 2: Fetch data from a remote web server
+  changelog = download(url: &quot;https://lookatmycms.com/changelog.txt&quot;)
+
+  crashlytics(
+    api_token: '[insert_key_here]',
+    build_secret: '[insert_secret_here]',
+    notes: changelog
+  )
+end
+</code></pre>
+
+<hr />
+<p></details></p>
               
             </div>
           </div>
@@ -389,10 +488,10 @@ end
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../../actions/Actions/" class="btn btn-neutral float-right" title="Actions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../release-deployment/" class="btn btn-neutral float-right" title="Release Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../beta-deployment/" class="btn btn-neutral" title="Beta Deployment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../screenshots/" class="btn btn-neutral" title="Screenshots"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -423,10 +522,10 @@ end
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../beta-deployment/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../screenshots/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../../actions/Actions/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../release-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
