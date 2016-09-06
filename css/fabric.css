@@ -2299,10 +2299,10 @@ input[type="checkbox"][disabled] {
 .wy-table th,
 .rst-content table.docutils th,
 .rst-content table.field-list th {
-  font-size: 90%;
+  font-size: 16px;
   margin: 0;
   overflow: visible;
-  padding: 8px 16px
+  padding: 6px 13px
 }
 
 .wy-table td:first-child,
@@ -2318,7 +2318,7 @@ input[type="checkbox"][disabled] {
 .rst-content table.docutils thead,
 .rst-content table.field-list thead {
   color: #000;
-  text-align: left;
+  text-align: center;
   vertical-align: bottom;
   white-space: nowrap
 }
@@ -2327,7 +2327,7 @@ input[type="checkbox"][disabled] {
 .rst-content table.docutils thead th,
 .rst-content table.field-list thead th {
   font-weight: 700;
-  border-bottom: solid 2px #e1e4e5
+  border-bottom: solid 1px #ddd;
 }
 
 .wy-table td,
@@ -2378,22 +2378,29 @@ input[type="checkbox"][disabled] {
 .wy-table-odd td,
 .wy-table-striped tr:nth-child(2n-1) td,
 .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
-  background-color: #f3f6f6
+  background-color: #fcfcfc;
+}
+
+.wy-table-odd td,
+.wy-table-striped tr:nth-child(2n) td,
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n) td {
+  background-color: #f8f8f8;
 }
 
 .wy-table-backed {
-  background-color: #f3f6f6
+  background-color: #f8f8f8;
 }
 
 .wy-table-bordered-all,
 .rst-content table.docutils {
-  border: 1px solid #e1e4e5
+  border: 1px solid #ddd;
+  line-height: 24px;
 }
 
 .wy-table-bordered-all td,
 .rst-content table.docutils td {
-  border-bottom: 1px solid #e1e4e5;
-  border-left: 1px solid #e1e4e5
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
 }
 
 .wy-table-bordered-all tbody>tr:last-child td,
@@ -2402,11 +2409,11 @@ input[type="checkbox"][disabled] {
 }
 
 .wy-table-bordered {
-  border: 1px solid #e1e4e5
+  border: 1px solid #ddd;
 }
 
 .wy-table-bordered-rows td {
-  border-bottom: 1px solid #e1e4e5
+  border-bottom: 1px solid #ddd;
 }
 
 .wy-table-bordered-rows tbody>tr:last-child td {
@@ -2420,7 +2427,7 @@ input[type="checkbox"][disabled] {
 .wy-table-horizontal td,
 .wy-table-horizontal th {
   border-width: 0 0 1px;
-  border-bottom: 1px solid #e1e4e5
+  border-bottom: 1px solid #ddd;
 }
 
 .wy-table-horizontal tbody>tr:last-child td {
