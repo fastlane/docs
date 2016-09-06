@@ -5,12 +5,18 @@
 _fastlane_ takes care of building your app by delegating to your existing Gradle build. Just add the following to your `Fastfile`:
 
 ```ruby
-lane :playstore
+lane :playstore do
   gradle(
     task: 'assemble',
     build_type: 'Release'
   )
 end
+```
+
+Try running the lane with:
+
+```no-highlight
+fastlane playstore
 ```
 
 When that completes you should have the appropriate APK ready to go in the standard output directory. To get a list of all available parameters for the `gradle` action, run:
@@ -26,7 +32,7 @@ To upload your binary to Google Play, _fastlane_ uses a tool called _supply_. Be
 With that done, simply add a call to _supply_ to the lane you set up above:
 
 ```ruby
-lane :playstore
+lane :playstore do
   gradle(
     task: 'assemble',
     build_type: 'Release'
@@ -48,7 +54,7 @@ If you would like to capture and upload screenshots automatically as part of you
 To gradually roll out a new build you can use:
 
 ```ruby
-lane :playstore
+lane :playstore do
   # ...
   supply(
   	track: 'rollout',
