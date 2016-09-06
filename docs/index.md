@@ -34,7 +34,7 @@ fastlane appstore
 
 ## Why fastlane?
 
- |
+|              | fastlane
 -------------- | ----------
 🚀 | Save **hours** every time you push a new release to the store or beta testing service
 ✨ | Integrates with all your existing tools and services (170 actions currently)
