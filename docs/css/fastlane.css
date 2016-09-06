@@ -167,3 +167,10 @@ footer .fastlane iframe {
 .rst-content .headeranchor:before {
   content: '\f0c1';
 }
+
+/* index.md badges */
+@media screen and (max-width: 768px) {
+  .badge img {
+    width: auto;
+  }
+}
