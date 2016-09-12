@@ -63,8 +63,8 @@ Ensure that the following permissions exist in your `src/debug/AndroidManifest.x
 
 ## Configuring your UI Tests for _screengrab_
 
-1.  Add `@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();` to your tests class to handle automatic switching of locales
-2.  To capture screenshots, add the following to your tests `Screengrab.screenshot("name_of_screenshot_here");` on the appropriate screens
+1. Add `@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();` to your tests class to handle automatic switching of locales
+2. To capture screenshots, add the following to your tests `Screengrab.screenshot("name_of_screenshot_here");` on the appropriate screens
 
 ## Generating Screenshots with Screengrab
 

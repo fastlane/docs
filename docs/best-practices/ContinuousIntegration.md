@@ -142,7 +142,7 @@ sh(git_remote_cmd)
 ```
 
 
-##Speeding up build times with carthage
+## Speeding up build times with carthage
 
 Carthage is a wonderful dependency manager but once you are start using a large number of frameworks, things can start to slow down, especially if your CI server has to run `carthage` EVERY time you check in a small line of code.
 
@@ -151,9 +151,9 @@ One way to make build times faster is to break your work up into two separate bu
 The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs _fastlane_.  
 
 
-###Artifact Plan
+### Artifact Plan
 
-Use a very simple setup to create this build plan.  First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the `Cartfile` changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.
+Use a simple setup to create this build plan. First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the `Cartfile` changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.
 
 ####Stages / Jobs / Tasks
 This plan consists of 1 Job, 1 Stage and 2 Tasks
@@ -169,9 +169,9 @@ Create a shared artifact with the following info:
 * **Location:** (leave blank) 
 * **Copy Pattern:** Carthage/Build/** 
 
-*Optional*: You may want to automatically make the **Fastlane Plan** trigger whenever this plan is built
+*Optional*: You may want to automatically make the **fastlane plan** trigger whenever this plan is built
 
-### Fastlane Plan
+### _fastlane_ plan
 
 When configuring fastlane to run in this setup you need to make sure that you are not calling either:
 
