@@ -431,7 +431,7 @@ sh(git_remote_cmd)
 <p>One way to make build times faster is to break your work up into two separate build plans (<em>this can get even more funky if you start having multiple branches</em>)</p>
 <p>The general idea is to make a build plan: <strong>Project - Artifacts</strong> that builds the <code>Carthage</code> directory and stores it as a shared artifact.  Then you create a second build plan <strong>Project - Fastlane</strong> that pulls down the <code>Carthage</code> directory and runs <em>fastlane</em>.  </p>
 <h3 id="artifact-plan"><a name="user-content-artifact-plan" href="#artifact-plan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Artifact Plan</h3>
-<p>Use a very simple setup to create this build plan.  First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the <code>Cartfile</code> changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.</p>
+<p>Use a simple setup to create this build plan. First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the <code>Cartfile</code> changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.</p>
 <h4 id="stages-jobs-tasks"><a name="user-content-stages-jobs-tasks" href="#stages-jobs-tasks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Stages / Jobs / Tasks</h4>
 <p>This plan consists of 1 Job, 1 Stage and 2 Tasks</p>
 <ul>
@@ -445,8 +445,8 @@ sh(git_remote_cmd)
 <li><strong>Location:</strong> (leave blank) </li>
 <li><strong>Copy Pattern:</strong> Carthage/Build/** </li>
 </ul>
-<p><em>Optional</em>: You may want to automatically make the <strong>Fastlane Plan</strong> trigger whenever this plan is built</p>
-<h3 id="fastlane-plan"><a name="user-content-fastlane-plan" href="#fastlane-plan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fastlane Plan</h3>
+<p><em>Optional</em>: You may want to automatically make the <strong>fastlane plan</strong> trigger whenever this plan is built</p>
+<h3 id="fastlane-plan"><em>fastlane</em> plan</h3>
 <p>When configuring fastlane to run in this setup you need to make sure that you are not calling either:</p>
 <pre><code class="ruby">reset_git_repo(force: true)
 </code></pre>
