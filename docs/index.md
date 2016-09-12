@@ -9,7 +9,7 @@ fastlane
 
 _fastlane_ is **the** tool to release your iOS and Android app 🚀 It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
-You create a so-called `Fastfile` in your repository, that defines how your beta or App Store release process:
+You can start by creating a `Fastfile` file in your repository, here’s one that that defines how your beta or App Store release process:
 
 ```ruby
 lane :beta do
