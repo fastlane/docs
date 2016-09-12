@@ -17,3 +17,9 @@ if git.diff_for_file("mkdocs.yml")
     end
   end
 end
+
+# Spelling and grammer
+docs_path = "docs/**/*.md"
+prose.disable_linters = ["typography.symbols.ellipsis"]
+prose.lint_files(docs_path)
+# prose.check_spelling(docs_path)
