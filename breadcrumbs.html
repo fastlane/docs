@@ -11,15 +11,14 @@
       {% endfor %}
     {% endif %}
     {% if current_page %}<li>{{ current_page.title }}</li>{% endif %}
-    <li class="wy-breadcrumbs-aside">
-      {% if repo_url %}
-        {% if repo_name == 'GitHub' %}
-          <a href="{{ repo_url }}" class="icon icon-github"> Edit on GitHub</a>
-        {% elif repo_name == 'Bitbucket' %}
-          <a href="{{ repo_url }}" class="icon icon-bitbucket"> Edit on BitBucket</a>
-        {% endif %}
-      {% endif %}
-    </li>
+
+    {% if current_page %}
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/fastlane/docs/edit/master/docs/{{ current_page.input_path }}" class="icon icon-github" target="_blank">
+          Edit on GitHub
+        </a>
+      </li>
+    {% endif %}
   </ul>
   <hr/>
 </div>
