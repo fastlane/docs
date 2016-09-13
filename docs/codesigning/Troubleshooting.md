@@ -58,7 +58,7 @@ As funny as it sounds, sometimes restarting your Mac helps.
 
 Run _fastlane_ in verbose mode to get even more debug information:
 
-```
+```no-highlight
 fastlane [lane] --verbose
 ```
 
