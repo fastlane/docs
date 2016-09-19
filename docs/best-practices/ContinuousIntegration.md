@@ -1,7 +1,18 @@
 # Continuous Integration
 
+# Best Practices
+
+## 2 factor auth
+
+If your account is protected using 2 step verification, you can get a login token by running
+
+```
+spaceauth -u user@email.com
+```
+
+This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system.
+
 # Jenkins Integration
-(or any other Continuous Integration system)
 
 Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.
 
@@ -11,9 +22,11 @@ _fastlane_ automatically generates a JUnit report for you. This allows Continuou
 
 The recommended way to install [Jenkins](http://jenkins-ci.org/) is through [homebrew](http://brew.sh/):
 
-```brew update && brew install jenkins```
+```
+brew update && brew install jenkins
+```
 
-From now on start ```Jenkins``` by running:
+From now on start `Jenkins` by running:
 
 ```no-highlight
 jenkins
