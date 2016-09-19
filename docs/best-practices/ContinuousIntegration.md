@@ -22,7 +22,7 @@ _fastlane_ automatically generates a JUnit report for you. This allows Continuou
 
 The recommended way to install [Jenkins](http://jenkins-ci.org/) is through [homebrew](http://brew.sh/):
 
-```
+```no-highlight
 brew update && brew install jenkins
 ```
 
