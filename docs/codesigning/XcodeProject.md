@@ -20,16 +20,36 @@ If your provisioning profile is not listed in the drop down, there might be a fe
 
 Check out [Troubleshooting.md](Troubleshooting.md) for more information on how to debug signing issues.
 
-### Build settings / Environment variables
+### Build settings
 
 Previously you could specify the UUID of the provisioning profile using the `PROVISIONING_PROFILE` Xcode settings property, with Xcode 8 you specify it using the `PROVISIONING_PROFILE_SPECIFIER` instead:
 
-```
-PROVISIONING_PROFILE_SPECIFIER = "5AA97AAHK2/Themoji_AppStore";
-PROVISIONING_PROFILE_SPECIFIER = "[team_id]/[profile_name]";
+```no-highlight
+DEVELOPMENT_TEAM = N8XAAASEU2;
+PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.themoji.app.release";
 ```
 
+It is recommended to select the provisioning profile in the `General` tab in your Xcode project, so Xcode will automatically set the values mentioned above for you.
+
+#### Set using environment variable
+
 You could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.
+
+If you're using [match](https://fastlane.tools/match) the following environment variables are being set for you:
+
+```
++---------------------+------------------------------------------------+--------------------------------------+
+|                                       Installed Provisioning Profile                                        |
++---------------------+------------------------------------------------+--------------------------------------+
+| Parameter           | Environment Variable                           | Value                                |
++---------------------+------------------------------------------------+--------------------------------------+
+| App Identifier      |                                                | me.themoji.release                   |
+| Type                |                                                | appstore                             |
+| Profile UUID        | sigh_me.themoji.beta_appstore                  | 22a19b3a-7cf6-4997-95f2-9cbb4d33fe7e |
+| Profile Name        | sigh_me.themoji.beta_appstore_profile-name     | match AppStore me.themoji.release    |
+| Development Team ID | sigh_me.themoji.beta_appstore_team-id          | N8XAAASEU2                           |
++---------------------+------------------------------------------------+--------------------------------------+
+```
 
 # Xcode 7 and lower
 
