@@ -51,6 +51,8 @@ If you're using [match](https://fastlane.tools/match) the following environment 
 +---------------------+------------------------------------------------+--------------------------------------+
 ```
 
+Check out the Xcode 7 section on how to update build settings using environment variables.
+
 # Xcode 7 and lower
 
 **Note**: This approach is deprecated with Xcode 8
