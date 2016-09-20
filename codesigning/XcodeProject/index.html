@@ -342,13 +342,29 @@
 <li>The provisioning profile is not installed on the local machine</li>
 </ul>
 <p>Check out <a href="../Troubleshooting/">Troubleshooting.md</a> for more information on how to debug signing issues.</p>
-<h3 id="build-settings-environment-variables"><a name="user-content-build-settings-environment-variables" href="#build-settings-environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build settings / Environment variables</h3>
+<h3 id="build-settings"><a name="user-content-build-settings" href="#build-settings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build settings</h3>
 <p>Previously you could specify the UUID of the provisioning profile using the <code>PROVISIONING_PROFILE</code> Xcode settings property, with Xcode 8 you specify it using the <code>PROVISIONING_PROFILE_SPECIFIER</code> instead:</p>
-<pre><code>PROVISIONING_PROFILE_SPECIFIER = &quot;5AA97AAHK2/Themoji_AppStore&quot;;
-PROVISIONING_PROFILE_SPECIFIER = &quot;[team_id]/[profile_name]&quot;;
+<pre><code class="no-highlight">DEVELOPMENT_TEAM = N8XAAASEU2;
+PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quot;;
 </code></pre>
 
+<p>It is recommended to select the provisioning profile in the <code>General</code> tab in your Xcode project, so Xcode will automatically set the values mentioned above for you.</p>
+<h4 id="set-using-environment-variable"><a name="user-content-set-using-environment-variable" href="#set-using-environment-variable" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Set using environment variable</h4>
 <p>You could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.</p>
+<p>If you're using <a href="https://fastlane.tools/match">match</a> the following environment variables are being set for you:</p>
+<pre><code>+---------------------+------------------------------------------------+--------------------------------------+
+|                                       Installed Provisioning Profile                                        |
++---------------------+------------------------------------------------+--------------------------------------+
+| Parameter           | Environment Variable                           | Value                                |
++---------------------+------------------------------------------------+--------------------------------------+
+| App Identifier      |                                                | me.themoji.release                   |
+| Type                |                                                | appstore                             |
+| Profile UUID        | sigh_me.themoji.beta_appstore                  | 22a19b3a-7cf6-4997-95f2-9cbb4d33fe7e |
+| Profile Name        | sigh_me.themoji.beta_appstore_profile-name     | match AppStore me.themoji.release    |
+| Development Team ID | sigh_me.themoji.beta_appstore_team-id          | N8XAAASEU2                           |
++---------------------+------------------------------------------------+--------------------------------------+
+</code></pre>
+
 <h1 id="xcode-7-and-lower"><a name="user-content-xcode-7-and-lower" href="#xcode-7-and-lower" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 7 and lower</h1>
 <p><strong>Note</strong>: This approach is deprecated with Xcode 8</p>
 <p>If you use <code>Automatic</code> value for your provisioning profile, Xcode sometimes selects the wrong profile, resulting in code signing errors at a later point.</p>
