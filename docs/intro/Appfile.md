@@ -68,7 +68,7 @@ team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 
 _fastlane_ supports having multiple users, depending on which machine it is currently running on.
 
-#### Using environment vairables
+#### Using environment variables
 
 You can always override the `apple_id` value using the `FASTLANE_USER` environment variable. Doing so will allow developers in your team to specify their own Apple ID without affecting the other teammates. If no `FASTLANE_USER` environment variable is defined, the one from the `fastlane/Appfile` will be used.
 
