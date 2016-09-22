@@ -122,6 +122,27 @@ TODO: Also mention the other onboarding method
 </details>
 
 <details>
+<summary>HockeyApp</summary>
+
+```ruby
+lane :beta do
+  # ...
+  gym
+  hockey(api_token: "[insert_key_here]")
+end
+```
+
+To get your API token, open [API Tokens in Account Settings](https://rink.hockeyapp.net/manage/auth_tokens). From there, you can find your existing API token, or create a new one. 
+
+To get a list of all available options see the [`hockey` action docs](https://docs.fastlane.tools/actions/Actions/#hockeyapp), or run 
+
+```no-highlight
+fastlane action hockey
+```
+
+</details>
+
+<details>
 <summary>TestFairy</summary>
 
 ```ruby
