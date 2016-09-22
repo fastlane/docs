@@ -63,3 +63,49 @@ If you want to access those values from within your `Fastfile` use
 identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 ```
+
+### Multiple users configuration
+
+_fastlane_ supports having multiple users, depending on which machine it is currently running on.
+
+#### Using environment vairables
+
+You can always override the `apple_id` value using the `FASTLANE_USER` environment variable. Doing so will allow developers in your team to specify their own Apple ID without affecting the other teammates. If no `FASTLANE_USER` environment variable is defined, the one from the `fastlane/Appfile` will be used.
+
+fastlane/Appfile:
+
+```ruby
+# This is the apple id that will be used in case if FASTLANE_USER is undefined
+apple_id "default@example.org"
+```
+
+~/.bashrc of user 1
+```bash
+export FASTLANE_USER="user1@example.org"
+```
+
+~/.bashrc of user 2
+```bash
+export FASTLANE_USER="user2@example.org"
+```
+
+#### Using a local `Appfile` that's not checked into git
+
+If you don't want to modify the `.bashrc`, you can also use a local Appfile, that you don't commit to version control.
+
+fastlane/Appfile:
+
+```ruby
+filename = File.expand_path("./Appfile.local")
+
+if File.exist?(filename)
+    puts "Using local Appfile #{filename}"
+    eval(File.read(filename)) 
+end
+```
+
+.gitignore:
+
+```sh
+apple_id.txt
+```
