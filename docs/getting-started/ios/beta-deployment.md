@@ -113,7 +113,7 @@ To get your API token, open the [organizations settings page](https://www.fabric
 To get a list of all available options, run
 
 ```no-highlight
-fastlane action testfairy
+fastlane action crashlytics
 ```
 
 TODO: Also mention the other onboarding method
