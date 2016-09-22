@@ -428,6 +428,21 @@ end
 <hr />
 <p></details></p>
 <p><details>
+<summary>HockeyApp</summary></p>
+<pre><code class="ruby">lane :beta do
+  # ...
+  gym
+  hockey(api_token: &quot;[insert_key_here]&quot;)
+end
+</code></pre>
+
+<p>To get your API token, open <a href="https://rink.hockeyapp.net/manage/auth_tokens">API Tokens in Account Settings</a>. From there, you can find your existing API token, or create a new one. </p>
+<p>To get a list of all available options see the <a href="https://docs.fastlane.tools/actions/Actions/#hockeyapp"><code>hockey</code> action docs</a>, or run </p>
+<pre><code class="no-highlight">fastlane action hockey
+</code></pre>
+
+<p></details></p>
+<p><details>
 <summary>TestFairy</summary></p>
 <pre><code class="ruby">lane :beta do
   # ...
