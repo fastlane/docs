@@ -67,3 +67,10 @@ Apple improved code signing a lot with the release of Xcode 8, the following has
 You can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key (`.p12`) of your certificates in a safe place, as they can't be restored if you lose them. 
 
 You can always download the certificate (`.cer`) and provisioning profile (`.mobileprovision`) from the Apple Developer Portal.
+
+## Where to go from here
+
+- [Setting up your Xcode Project](XcodeProject.md)
+- [Troubleshooting code signing errors](Troubleshooting.md)
+- [Common Issues](CommonIssues.md)
+- [Upgrading to Xcode 8](XcodeProject.md#xcode-8-and-up)
