@@ -99,13 +99,21 @@ fastlane/Appfile:
 filename = File.expand_path("./Appfile.local")
 
 if File.exist?(filename)
-    puts "Using local Appfile #{filename}"
-    eval(File.read(filename)) 
+  puts "Using local Appfile #{filename}"
+  eval(File.read(filename)) 
 end
+
+apple_id "default@example.org"
+```
+
+fastlane/Appfile.local
+
+```ruby
+apple_id "user1@example.org"
 ```
 
 .gitignore:
 
 ```sh
-apple_id.txt
+fastlane/Appfile.local
 ```
