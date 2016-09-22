@@ -91,7 +91,7 @@ export FASTLANE_USER="user2@example.org"
 
 #### Using a local `Appfile` that's not checked into git
 
-If you don't want to modify the `.bashrc`, you can also use a local Appfile, that you don't commit to version control.
+If you don't want to modify the `.bashrc`, you can also use a local Appfile that you don't commit to version control.
 
 fastlane/Appfile:
 
