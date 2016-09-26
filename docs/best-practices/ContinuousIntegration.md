@@ -118,7 +118,7 @@ test:
     - bundle exec fastlane test
 ```
 
-This will automatically cache the installed gems on Circle, making your CI builds much faster :rocket:
+This will automatically cache the installed gems on Circle, making your CI builds much faster!
 
 # Bamboo Integration
 
