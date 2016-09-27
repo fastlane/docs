@@ -8,6 +8,11 @@ def docs_redirects
     "plugins/CreatePlugin" => "plugins/create-plugin",
     "plugins/PluginsTroubleshooting" => "plugins/plugins-troubleshooting",
     "actions/Actions" => "actions",
-    "FAQs" => "faqs"
+    "FAQs" => "faqs",
+    "best-practices/Gitignore" => "best-practices/gitignore",
+    "best-practices/ContinuousIntegration" => "best-practices/continuous-integration",
+    "best-practices/Keys" => "best-practices/keys",
+    "Advanced" => "advanced",
+    "CONTRIBUTING" => "contributing"
   }
 end
