@@ -4,7 +4,7 @@
 
 > Code Sign error: No matching provisioning profiles found: No provisioning profiles with a valid signing identity (i.e. certificate and private key pair) matching the bundle identifier "X" were found.
 
-The provisioning profile for the given app identifier "X" is not available on the local machine. Make sure you have a valid provisioning profile for the correct distribution type (App Store, Development or Ad Hoc) on the Apple Developer Portal, download and install it, and select the profile in the Xcode settings (See [XcodeProject.md](XcodeProject.md)).
+The provisioning profile for the given app identifier "X" is not available on the local machine. Make sure you have a valid provisioning profile for the correct distribution type (App Store, Development or Ad Hoc) on the Apple Developer Portal, download and install it, and select the profile in the Xcode settings (See [xcode-project.md](xcode-project.md)).
 
 You might have the provisioning profile installed locally, but miss the private key or certificate for it. 
 
@@ -16,10 +16,10 @@ The code signing identity you specified in the Xcode project can't be found in y
 
 This error can have a lot of reasons, some things you should try:
 
-- Verify your Keychain is valid and you don't have an expired WWDR certificate using [this guide](Troubleshooting.md#keychain)
-- Verify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out [Troubleshooting.md](Troubleshooting.md) for more information)
+- Verify your Keychain is valid and you don't have an expired WWDR certificate using [this guide](troubleshooting.md#keychain)
+- Verify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out [troubleshooting.md](troubleshooting.md) for more information)
 - If you're using [gym](https://fastlane.tools/gym), try using the `use_legacy_build_api` flag to fallback to the Xcode 6 build API
-- Follow the other steps of [Troubleshooting.md](Troubleshooting.md)
+- Follow the other steps of [troubleshooting.md](troubleshooting.md)
 
 > Provisioning profile does not match bundle identifier: The provisioning profile specified in your build settings ("X") has an AppID of "Y" which does not match your bundle identifier "Z"
 
@@ -27,7 +27,7 @@ Your project defines a provisioning profile that doesn't match the bundle identi
 
 > Your build settings specify a provisioning profile with the UUID "X", however, no such provisioning profile was found.
 
-Your project defines a provisioning profile which doesn't exist on your local machine. Check out [XcodeProject.md](XcodeProject.md) for more information how to properly specify a provisioning profile to avoid hard coded UUIDs in your project.
+Your project defines a provisioning profile which doesn't exist on your local machine. Check out [xcode-project.md](xcode-project.md) for more information how to properly specify a provisioning profile to avoid hard coded UUIDs in your project.
 
 > CodeSign Error: code signing is required for product type 'Application'...
 
