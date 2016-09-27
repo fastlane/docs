@@ -6,7 +6,7 @@ site_description: "Documentation for fastlane tools, the easiest way to automate
 site_favicon: "img/favicon.ico"
 repo_url: "https://github.com/fastlane/docs"
 google_analytics: ["UA-18658848-13", "docs.fastlane.tools"]
-# strict: true # TODO: Enable once we have the docs structure
+strict: true
 markdown_extensions:
   - pymdownx.headeranchor
   - markdown.extensions.attr_list
