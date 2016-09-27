@@ -2,9 +2,9 @@ require_relative "available_redirects"
 require 'fileutils'
 
 puts "Generating redirects for the following URLs:"
-puts @redirects
+puts docs_redirects 
 
-@redirects.each do |from, to|
+docs_redirects.each do |from, to|
   FileUtils.mkdir_p(from)
 
   full_path = File.join(from, "index.html")
