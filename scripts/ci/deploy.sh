@@ -28,6 +28,10 @@ cp -R /tmp/fl-docs/* .
 # We need a CNAME file for GitHub
 echo "docs.fastlane.tools" > "CNAME"
 
+mkdir "FAQs"
+echo "adding forwarder here"
+echo "<script type='text/javascript'>location.href='https://docs.fastlane.tools/faqs/'</script>" > "FAQs/index.html"
+
 # We also need a circle.yml file on the gh-pages branch, otherwise the build fails
 echo "test:
   override:
