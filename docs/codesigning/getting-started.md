@@ -19,7 +19,7 @@ With [match](https://fastlane.tools/match) you store your private keys and certi
 
 Getting started with [match](https://fastlane.tools/match) requires you to revoke your existing certificates.
 
-Make sure to follow [XcodeProject.md](XcodeProject.md) to set up your project properly.
+Make sure to follow [xcode-project.md](xcode-project.md) to set up your project properly.
 
 ## Using [cert](https://fastlane.tools/cert) and [sigh](https://fastlane.tools/sigh)
 
@@ -38,7 +38,7 @@ lane :beta do
 end
 ```
 
-Make sure to follow [XcodeProject.md](XcodeProject.md) to set up your project properly.
+Make sure to follow [xcode-project.md](xcode-project.md) to set up your project properly.
 
 ## Using Xcode's code signing feature
 
@@ -52,15 +52,15 @@ You should avoid clicking the `Fix Issue` button (There is an [Xcode plugin](htt
 
 Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).
 
-To work around this issue, check out [XcodeProject.md](XcodeProject.md) on how to pass a provisioning profile to Xcode when building your app.
+To work around this issue, check out [xcode-project.md](xcode-project.md) on how to pass a provisioning profile to Xcode when building your app.
 
 #### Xcode 8 and up
 
 Apple improved code signing a lot with the release of Xcode 8, the following has changed:
 
 - No more `Fix Issue` button, instead all code signing processes run in the background and show the log right in Xcode
-- You can now specify the provisioning profile by name, instead of the UUID (Check out [XcodeProject.md](XcodeProject.md) for more information)
-- Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out [Troubleshooting.md](Troubleshooting.md) for more information)
+- You can now specify the provisioning profile by name, instead of the UUID (Check out [xcode-project.md](xcode-project.md) for more information)
+- Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out [troubleshooting.md](troubleshooting.md) for more information)
 
 ## Manually
 
@@ -70,7 +70,7 @@ You can always download the certificate (`.cer`) and provisioning profile (`.mob
 
 ## Where to go from here
 
-- [Setting up your Xcode Project](XcodeProject.md)
-- [Troubleshooting code signing errors](Troubleshooting.md)
-- [Common Issues](CommonIssues.md)
-- [Upgrading to Xcode 8](XcodeProject.md#xcode-8-and-up)
+- [Setting up your Xcode Project](xcode-project.md)
+- [Troubleshooting code signing errors](troubleshooting.md)
+- [Common Issues](common-issues.md)
+- [Upgrading to Xcode 8](xcode-project.md#xcode-8-and-up)

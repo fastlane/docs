@@ -34,14 +34,14 @@ _fastlane_ created all the required files for you, now you can go ahead and cust
 
 It is recommended that you use a `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
 
-- Create a `Gemfile` with the content
+- Install [bundler](https://bundler.io/) using `sudo gem install bundler`
+- Create a `./Gemfile` in the root directory of your project with the content
 ```ruby
 source "https://rubygems.org"
 
 gem "fastlane"
 ```
-- Install [bundler](https://bundler.io/) using `sudo gem install bundler`
-- Run `[sudo] bundle update` and add both the `Gemfile` and the `Gemfile.lock` to version control
+- Run `[sudo] bundle update` and add both the `./Gemfile` and the `./Gemfile.lock` to version control
 - Every time you run _fastlane_, use `bundle exec fastlane [lane]`
 - On your CI, add `[sudo] bundle install` as your first build step
 - To update _fastlane_, just run `[sudo] bundle update`
