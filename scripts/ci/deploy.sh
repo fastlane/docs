@@ -17,6 +17,9 @@ git config --global user.name "fastlane bot"
 rm -rf "/tmp/fl-docs"
 # Copy the generated website to the temporary directory
 cp -R "site/" "/tmp/fl-docs"
+# Copy the needed Ruby scripts to a temporary location (used for redirects)
+cp "scripts/ci/available_redirects.rb" "/tmp/"
+cp "scripts/ci/generate_redirects.rb" "/tmp/"
 # Clean all temporary files (e.g. .bundle/config and .ruby-version)
 git clean -f -d
 # Check out gh-pages and clear all files
@@ -28,9 +31,8 @@ cp -R /tmp/fl-docs/* .
 # We need a CNAME file for GitHub
 echo "docs.fastlane.tools" > "CNAME"
 
-mkdir "FAQs"
-echo "adding forwarder here"
-echo "<script type='text/javascript'>location.href='https://docs.fastlane.tools/faqs/'</script>" > "FAQs/index.html"
+echo "Generating redirects..."
+ruby /tmp/generate_redirects.rb
 
 # We also need a circle.yml file on the gh-pages branch, otherwise the build fails
 echo "test:
