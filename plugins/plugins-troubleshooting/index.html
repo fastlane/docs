@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>Plugins Troubleshooting - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/breadcrumbs.css" rel="stylesheet">
+  <link href="../../css/code.css" rel="stylesheet">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+  <link href="../../css/sidenav.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Plugins Troubleshooting";
+    var mkdocs_page_input_path = "plugins/plugins-troubleshooting.md";
+    var mkdocs_page_url = "/plugins/plugins-troubleshooting/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+<li class="toctree-l1 ">
+  <a class="" href="../..">Home</a>
+  
+</li>
+<li>
+          
+            <li>
+<ul class="subnav">
+  <li><span>Getting Started</span></li>
+  
+  
+<ul class="subnav">
+  <li><span>iOS</span></li>
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/ios/setup/">Setup</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/ios/screenshots/">Screenshots</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+  
+</li>
+
+  
+</ul>
+
+  
+  
+<ul class="subnav">
+  <li><span>Android</span></li>
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/android/setup/">Setup</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/android/screenshots/">Screenshots</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/android/beta-deployment/">Beta Deployment</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../getting-started/android/release-deployment/">Release Deployment</a>
+  
+</li>
+
+  
+</ul>
+
+  
+</ul>
+<li>
+          
+            <li>
+<li class="toctree-l1 ">
+  <a class="" href="../../actions/">Actions</a>
+  
+</li>
+<li>
+          
+            <li>
+<li class="toctree-l1 ">
+  <a class="" href="../../faqs/">FAQs</a>
+  
+</li>
+<li>
+          
+            <li>
+<ul class="subnav">
+  <li><span>Codesigning</span></li>
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../codesigning/getting-started/">Getting Started</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../codesigning/xcode-project/">Xcode Project</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../codesigning/troubleshooting/">Troubleshooting</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../codesigning/common-issues/">Common Issues</a>
+  
+</li>
+
+  
+</ul>
+<li>
+          
+            <li>
+<ul class="subnav">
+  <li><span>Plugins</span></li>
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../available-plugins/">Available Plugins</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../create-plugin/">Create your own plugin</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 current">
+  <a class="current" href="./">Plugins Troubleshooting</a>
+  
+  <ul>
+    
+      
+    
+  </ul>
+  
+</li>
+
+  
+</ul>
+<li>
+          
+            <li>
+<ul class="subnav">
+  <li><span>Best Practices</span></li>
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../best-practices/gitignore/">Gitignore</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../best-practices/continuous-integration/">Continuous Integration</a>
+  
+</li>
+
+  
+  
+<li class="toctree-l1 ">
+  <a class="" href="../../best-practices/keys/">Keys</a>
+  
+</li>
+
+  
+</ul>
+<li>
+          
+            <li>
+<li class="toctree-l1 ">
+  <a class="" href="../../advanced/">Advanced</a>
+  
+</li>
+<li>
+          
+            <li>
+<li class="toctree-l1 ">
+  <a class="" href="../../contributing/">Contributing</a>
+  
+</li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Plugins &raquo;</li>
+        
+      
+    
+    <li>Plugins Troubleshooting</li>
+
+    
+      <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/fastlane/docs/edit/master/docs/plugins/plugins-troubleshooting.md" class="icon icon-github" target="_blank">
+          Edit on GitHub
+        </a>
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="fastlane-plugins-troubleshooting"><a name="user-content-fastlane-plugins-troubleshooting" href="#fastlane-plugins-troubleshooting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane plugins troubleshooting</h1>
+<p>If you're having trouble calling a plugin action, here is a simple guide on how to resolve the issue:</p>
+<h3 id="make-sure-fastlane-is-up-to-date"><a name="user-content-make-sure-fastlane-is-up-to-date" href="#make-sure-fastlane-is-up-to-date" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Make sure fastlane is up to date</h3>
+<p>Run <code>fastlane -v</code> and <code>bundle exec fastlane -v</code> and make sure it's at least version 1.93.0.</p>
+<h3 id="update-your-plugins"><a name="user-content-update-your-plugins" href="#update-your-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Update your plugins</h3>
+<p>Run <code>fastlane update_plugins</code> to make sure to have all the latest plugins and their dependencies installed.</p>
+<h3 id="use-bundle-exec"><a name="user-content-use-bundle-exec" href="#use-bundle-exec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use <code>bundle exec</code></h3>
+<p>Run <em>fastlane</em> using <code>bundle exec fastlane [lane]</code> to make sure your plugins are properly loaded.</p>
+<p>This is required when you use plugins from a local path or a git remote.</p>
+<h3 id="use-the-verbose-mode"><a name="user-content-use-the-verbose-mode" href="#use-the-verbose-mode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the <code>--verbose</code> mode</h3>
+<p>Running <code>fastlane [lane] --verbose</code> will show a lot more information that might be useful to resolve the issue.</p>
+<h3 id="make-sure-the-action-name-is-correct"><a name="user-content-make-sure-the-action-name-is-correct" href="#make-sure-the-action-name-is-correct" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Make sure the action name is correct</h3>
+<p>A plugin can contain any number of actions. Make sure to read the docs for the plugin itself!</p>
+<p>Additionally check out the source code of the plugin:</p>
+<pre><code>lib/fastlane/plugin/[plugin_name]/actions/[action_name].rb
+</code></pre>
+
+<p>Open the <code>[action_name].rb</code> file and make sure the name of the class on line 3 looks like this:</p>
+<pre><code>class [ActionName]Action &lt; Action
+</code></pre>
+
+<p>Note how the name of the class should be capitalised and have <code>Action</code> appended in the name. Additionally this class must be a subclass of <code>Action</code>.</p>
+<h3 id="gemfile-and-pluginfile"><a name="user-content-gemfile-and-pluginfile" href="#gemfile-and-pluginfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gemfile and Pluginfile</h3>
+<p>Your <code>Gemfile</code> should look something like this:</p>
+<pre><code class="ruby">gem &quot;fastlane&quot;
+
+plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
+eval(File.read(plugins_path), binding) if File.exist?(plugins_path)
+</code></pre>
+
+<p>Your <code>Pluginfile</code> should look something like this</p>
+<pre><code class="ruby"># Autogenerated by fastlane
+
+gem 'fastlane-plugin-ruby'
+</code></pre>
+
+<h3 id="building-your-own-plugin"><a name="user-content-building-your-own-plugin" href="#building-your-own-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your own plugin</h3>
+<p>If you have issues with running your local plugins during plugin development, make sure to run</p>
+<pre><code>bundle install --with development
+</code></pre>
+
+<p>to install all required development dependencies</p>
+<h3 id="more-help"><a name="user-content-more-help" href="#more-help" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More help</h3>
+<p>If it's still not working for you, please <a href="https://github.com/fastlane/fastlane/issues/new">submit a new GitHub issue</a> with your <code>Gemfile</code>, <code>Gemfile.lock</code>, <code>Pluginfile</code>, <code>Fastfile</code> and terminal output when running <em>fastlane</em> using the <code>--verbose</code> flag.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../best-practices/gitignore/" class="btn btn-neutral float-right" title="Gitignore">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../create-plugin/" class="btn btn-neutral" title="Create your own plugin"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2016 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../create-plugin/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../best-practices/gitignore/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
