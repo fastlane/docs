@@ -325,7 +325,7 @@
 <blockquote>
 <p>Code Sign error: No matching provisioning profiles found: No provisioning profiles with a valid signing identity (i.e. certificate and private key pair) matching the bundle identifier "X" were found.</p>
 </blockquote>
-<p>The provisioning profile for the given app identifier "X" is not available on the local machine. Make sure you have a valid provisioning profile for the correct distribution type (App Store, Development or Ad Hoc) on the Apple Developer Portal, download and install it, and select the profile in the Xcode settings (See <a href="XcodeProject.md">XcodeProject.md</a>).</p>
+<p>The provisioning profile for the given app identifier "X" is not available on the local machine. Make sure you have a valid provisioning profile for the correct distribution type (App Store, Development or Ad Hoc) on the Apple Developer Portal, download and install it, and select the profile in the Xcode settings (See <a href="../xcode-project/">xcode-project.md</a>).</p>
 <p>You might have the provisioning profile installed locally, but miss the private key or certificate for it. </p>
 <blockquote>
 <p>No matching codesigning identity found: No codesigning identities (i.e. certificate and private key pairs) matching "iPhone Distribution: X" were found</p>
@@ -336,10 +336,10 @@
 </blockquote>
 <p>This error can have a lot of reasons, some things you should try:</p>
 <ul>
-<li>Verify your Keychain is valid and you don't have an expired WWDR certificate using <a href="Troubleshooting.md#keychain">this guide</a></li>
-<li>Verify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out <a href="Troubleshooting.md">Troubleshooting.md</a> for more information)</li>
+<li>Verify your Keychain is valid and you don't have an expired WWDR certificate using <a href="../troubleshooting/#keychain">this guide</a></li>
+<li>Verify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out <a href="../troubleshooting/">troubleshooting.md</a> for more information)</li>
 <li>If you're using <a href="https://fastlane.tools/gym">gym</a>, try using the <code>use_legacy_build_api</code> flag to fallback to the Xcode 6 build API</li>
-<li>Follow the other steps of <a href="Troubleshooting.md">Troubleshooting.md</a></li>
+<li>Follow the other steps of <a href="../troubleshooting/">troubleshooting.md</a></li>
 </ul>
 <blockquote>
 <p>Provisioning profile does not match bundle identifier: The provisioning profile specified in your build settings ("X") has an AppID of "Y" which does not match your bundle identifier "Z"</p>
@@ -348,7 +348,7 @@
 <blockquote>
 <p>Your build settings specify a provisioning profile with the UUID "X", however, no such provisioning profile was found.</p>
 </blockquote>
-<p>Your project defines a provisioning profile which doesn't exist on your local machine. Check out <a href="XcodeProject.md">XcodeProject.md</a> for more information how to properly specify a provisioning profile to avoid hard coded UUIDs in your project.</p>
+<p>Your project defines a provisioning profile which doesn't exist on your local machine. Check out <a href="../xcode-project/">xcode-project.md</a> for more information how to properly specify a provisioning profile to avoid hard coded UUIDs in your project.</p>
 <blockquote>
 <p>CodeSign Error: code signing is required for product type 'Application'...</p>
 </blockquote>
