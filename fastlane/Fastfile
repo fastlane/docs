@@ -1,6 +1,7 @@
 lane :test do
   Dir.chdir("..") do
     build_site
+    ensure_filenames
     ensure_headers
     ensure_image_assets
     ensure_assets_location
@@ -22,6 +23,16 @@ private_lane :build_site do
   UI.message "🕗  Building page..."
   sh "mkdocs build --clean" # to make sure building is successful
   UI.success "✅  Build successful"
+end
+
+private_lane :ensure_filenames do
+  UI.message "🕗  Making sure file names are all lowercase..."
+  Dir["docs/**/*.md"].each do |current_file|
+    if current_file =~ /[A-Z]/
+      UI.user_error!(".md files must not be upper case, use dash instead (file '#{current_file}')")
+    end
+  end
+  UI.success "✅  All doc files are properly named to not be camel case"
 end
 
 private_lane :ensure_headers do
