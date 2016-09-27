@@ -1,6 +1,8 @@
 lane :test do
   Dir.chdir("..") do
     build_site
+    ensure_filenames
+    ensure_redirects
     ensure_headers
     ensure_image_assets
     ensure_assets_location
@@ -22,6 +24,30 @@ private_lane :build_site do
   UI.message "🕗  Building page..."
   sh "mkdocs build --clean" # to make sure building is successful
   UI.success "✅  Build successful"
+end
+
+private_lane :ensure_filenames do
+  UI.message "🕗  Making sure file names are all lowercase..."
+  Dir["docs/**/*.md"].each do |current_file|
+    if current_file =~ /[A-Z]/
+      UI.user_error!(".md files must not be upper case, use dash instead (file '#{current_file}')")
+    end
+  end
+  UI.success "✅  All doc files are properly named to not be camel case"
+end
+
+private_lane :ensure_redirects do
+  UI.message "🕗  Making sure the forwards are set up properly..."
+  require_relative "scripts/ci/available_redirects"
+
+  docs_redirects.each do |from, to|
+    UI.user_error!("redirects must not include an extension") if (from + to).include?(".")
+    full_to_path = File.join("docs", "#{to.chomp('/')}.md")
+    unless File.exist?(full_to_path)
+      UI.user_error!("Couldn't find file that is being redirected to '#{full_to_path}' from '#{from}'")
+    end
+  end
+  UI.success "✅  All forwards are cool"
 end
 
 private_lane :ensure_headers do

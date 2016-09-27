@@ -923,7 +923,7 @@ When using the `groups` parameter, it's important to use the group **alias** nam
 
 Each group's alias is then listed here:
 
-![Crashlytics Beta Groups Navigation](../img/actions/Beta-Group-Alias.png)
+![Crashlytics Beta Groups Navigation](/img/actions/Beta-Group-Alias.png)
 
 There are a couple reasons why aliases exist:
 

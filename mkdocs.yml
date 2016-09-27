@@ -25,20 +25,20 @@ pages:
     - Screenshots: getting-started/android/screenshots.md
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
-- Actions: actions/Actions.md
-- FAQs: FAQs.md
+- Actions: actions.md
+- FAQs: faqs.md
 - Codesigning:
-  - Getting Started: codesigning/GettingStarted.md
-  - Xcode Project: codesigning/XcodeProject.md
-  - Troubleshooting: codesigning/Troubleshooting.md
-  - Common Issues: codesigning/CommonIssues.md
+  - Getting Started: codesigning/getting-started.md
+  - Xcode Project: codesigning/xcode-project.md
+  - Troubleshooting: codesigning/troubleshooting.md
+  - Common Issues: codesigning/common-issues.md
 - Plugins:
-  - Available Plugins: plugins/AvailablePlugins.md
-  - Create your own plugin: plugins/CreatePlugin.md
-  - Plugins Troubleshooting: plugins/PluginsTroubleshooting.md
+  - Available Plugins: plugins/available-plugins.md
+  - Create your own plugin: plugins/create-plugin.md
+  - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
-  - Gitignore: "best-practices/Gitignore.md"
-  - Continuous Integration: "best-practices/ContinuousIntegration.md"
-  - Keys: "best-practices/Keys.md"
-- Advanced: "Advanced.md"
-- Contributing: "CONTRIBUTING.md"
+  - Gitignore: "best-practices/gitignore.md"
+  - Continuous Integration: "best-practices/continuous-integration.md"
+  - Keys: "best-practices/keys.md"
+- Advanced: "advanced.md"
+- Contributing: "contributing.md"
