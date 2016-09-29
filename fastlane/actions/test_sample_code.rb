@@ -10,7 +10,7 @@ module Fastlane
         content.scan(/```ruby\n([^`]*)\n```/m).each do |current_match|
           current_match = current_match.first # we only expect one match
 
-          UI.message("parsing: #{current_match}")
+          UI.verbose("parsing: #{current_match}")
 
           begin
             begin
@@ -45,7 +45,7 @@ module Fastlane
         if available_options.kind_of?(Array) && available_options.first && available_options.first.kind_of?(FastlaneCore::ConfigItem)
           parameters = arguments.shift || []
           parameters.each do |current_argument, value|
-            UI.message("Verifying '#{value}' for option '#{current_argument}' for action '#{method_sym}'")
+            UI.verbose("Verifying '#{value}' for option '#{current_argument}' for action '#{method_sym}'")
 
             config_item = available_options.find { |a| a.key == current_argument }
             UI.user_error!("Unknown parameter '#{current_argument}' for action '#{method_sym}'") if config_item.nil?
