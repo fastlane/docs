@@ -19,6 +19,7 @@ module Fastlane
               UI.user_error!("Syntax error in code sample: #{current_match}")
             rescue => ex
               UI.error("Error found in code sample: #{current_match}")
+              UI.error(ex)
               raise ex
             end
           rescue => ex
