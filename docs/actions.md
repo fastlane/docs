@@ -37,7 +37,7 @@ import './path/to/other/Fastfile'
 
 ### scan
 
-Easily run tests of your iOS app using `scan`
+Easily run tests of your iOS app using _scan_
 
 > More information: https://github.com/fastlane/fastlane/tree/master/scan
 
@@ -271,7 +271,7 @@ Key | Description
 
 Lints implementation files with OCLint
 
-> Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your `fastlane` directory or pass a path to your file
+> Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your _fastlane_ directory or pass a path to your file
 
 oclint | 
 -----|----
@@ -610,7 +610,7 @@ Key | Description
 
 ### gym
 
-Easily build and sign your app using `gym`
+Easily build and sign your app using _gym_
 
 > More information: https://fastlane.tools/gym
 
@@ -1521,7 +1521,7 @@ Key | Description
   `launch_arguments` | A list of launch arguments which should be used
   `output_directory` | The directory where to store the screenshots
   `ios_version` | By default, the latest version should be used automatically. If you want to change it, do it here
-  `skip_open_summary` | Don't open the HTML summary after running `snapshot`
+  `skip_open_summary` | Don't open the HTML summary after running _snapshot_
   `clear_previous_screenshots` | Enabling this option will automatically clear previously generated screenshots before running snapshot
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it
   `erase_simulator` | Enabling this option will automatically erase the simulator before running the application
@@ -1634,7 +1634,7 @@ Key | Description
   `locales` | A list of locales which should be used
   `clear_previous_screenshots` | Enabling this option will automatically clear previously generated screenshots before running screengrab
   `output_directory` | The directory where to store the screenshots
-  `skip_open_summary` | Don't open the summary after running `screengrab`
+  `skip_open_summary` | Don't open the summary after running _screengrab_
   `app_package_name` | The package name of the app under test (e.g. com.yourcompany.yourapp)
   `tests_package_name` | The package name of the tests bundle (e.g. com.yourcompany.yourapp.test)
   `use_tests_in_packages` | Only run tests in these Java packages
@@ -2356,7 +2356,7 @@ Key | Description
 
 Generates a provisioning profile. Stores the profile in the current folder
 
-> **Note**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use `sigh` directly only if you want full control over what's going on and know more about codesigning.
+> **Note**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use _sigh_ directly only if you want full control over what's going on and know more about codesigning.
 
 sigh | 
 -----|----
@@ -2472,7 +2472,7 @@ Key | Description
 
 Fetch or generate the latest available code signing identity
 
-> **Important**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your certificates. Use `cert` directly only if you want full control over what's going on and know more about codesigning.
+> **Important**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your certificates. Use _cert_ directly only if you want full control over what's going on and know more about codesigning.
 Use this action to download the latest code signing identity
 
 cert | 
@@ -2646,7 +2646,7 @@ Author | @lmirosevic
 resign(
   ipa: "path/to/ipa", # can omit if using the `ipa` action
   signing_identity: "iPhone Distribution: Luka Mirosevic (0123456789)",
-  provisioning_profile: "path/to/profile", # can omit if using the `sigh` action
+  provisioning_profile: "path/to/profile", # can omit if using the _sigh_ action
 )
 ```
 
@@ -2670,10 +2670,10 @@ resign(
 
 Key | Description
 ----|------------
-  `ipa` | Path to the ipa file to resign. Optional if you use the `gym` or `xcodebuild` action
+  `ipa` | Path to the ipa file to resign. Optional if you use the _gym_ or _xcodebuild_ action
   `signing_identity` | Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)"
   `entitlements` | Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements"
-  `provisioning_profile` | Path to your provisioning_profile. Optional if you use `sigh`
+  `provisioning_profile` | Path to your provisioning_profile. Optional if you use _sigh_
   `version` | Version number to force resigned ipa to use.
 Updates both CFBundleShortVersionString and CFBundleVersion values in Info.plist.
 Applies for main app and all nested apps or extensions
@@ -2994,7 +2994,7 @@ crashlytics(
 
 Key | Description
 ----|------------
-  `ipa_path` | Path to your IPA file. Optional if you use the `gym` or `xcodebuild` action
+  `ipa_path` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
   `apk_path` | Path to your APK file
   `crashlytics_path` | Path to the submit binary in the Crashlytics bundle (iOS) or `crashlytics-devtools.jar` file (Android)
   `api_token` | Crashlytics Beta API Token
@@ -3048,7 +3048,7 @@ Key | Description
 ----|------------
   `apk` | Path to your APK file
   `api_token` | API Token for Hockey Access
-  `ipa` | Path to your IPA file. Optional if you use the `gym` or `xcodebuild` action. For Mac zip the .app. For Android provide path to .apk file
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action. For Mac zip the .app. For Android provide path to .apk file
   `dsym` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip. For Android provide path to mappings.txt file
   `notes` | Beta Notes
   `notify` | Notify testers? "1" for yes
@@ -3178,7 +3178,7 @@ Key | Description
 ----|------------
   `api_token` | Deploygate API Token
   `user` | Target username or organization name
-  `ipa` | Path to your IPA file. Optional if you use the `gym` or `xcodebuild` action
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
   `message` | Release Notes
   `distribution_key` | Target Distribution Key
   `release_note` | Release note for distribution page
@@ -3292,7 +3292,7 @@ testfairy(
 Key | Description
 ----|------------
   `api_key` | API Key for TestFairy
-  `ipa` | Path to your IPA file. Optional if you use the `gym` or `xcodebuild` action
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
   `symbols_file` | Symbols mapping file
   `testers_groups` | Array of tester groups to be notified
   `metrics` | Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi)
@@ -3649,7 +3649,7 @@ installr(
 Key | Description
 ----|------------
   `api_token` | API Token for Installr Access
-  `ipa` | Path to your IPA file. Optional if you use the `gym` or `xcodebuild` action
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
   `notes` | Release notes
   `notify` | Groups to notify (e.g. 'dev,qa')
   `add` | Groups to add (e.g. 'exec,ops')
@@ -4225,7 +4225,7 @@ It checks the repo to make sure that only the relevant files have changed, these
 - The `.xcodeproj/project.pbxproj` file
 Then commits those files to the repo.
 Customise the message with the `:message` option, defaults to 'Version Bump'
-If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the `ipa` and or `sigh` actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
+If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
 
 commit_version_bump | 
 -----|----
@@ -4817,7 +4817,7 @@ This will verify if a given release version is available on GitHub
                  "tarball_url"=>"https://api.github.com/repos/KrauseFx/fastlane/tarball/1.8.0",
                  "zipball_url"=>"https://api.github.com/repos/KrauseFx/fastlane/zipball/1.8.0",
                  "body"=> ...Markdown...
-                "This is one of the biggest updates of `fastlane` yet"
+                "This is one of the biggest updates of _fastlane_ yet"
               }
 
 get_github_release | 
@@ -4984,7 +4984,7 @@ It checks the repo to make sure that only the relevant files have changed, these
 - The `.xcodeproj/project.pbxproj` file
 Then commits those files to the repo.
 Customise the message with the `:message` option, defaults to 'Version Bump'
-If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the `ipa` and or `sigh` actions, then you can use the [`clean_build_artifacts`](#clean_build_artifacts) action to clean those temporary files up before running this action.
+If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the [`clean_build_artifacts`](#clean_build_artifacts) action to clean those temporary files up before running this action.
 
 hg_commit_version_bump | 
 -----|----
@@ -5438,7 +5438,7 @@ Key | Description
 
 Connect to the IFTTT Maker Channel. https://ifttt.com/maker
 
-> Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this `fastlane` action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
+> Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this _fastlane_ action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
 
 ifttt | 
 -----|----
@@ -5809,9 +5809,9 @@ Key | Description
 
 ### clean_build_artifacts
 
-Deletes files created as result of running ipa, cert, sigh or download_dsyms
+Deletes files created as result of running gym, cert, sigh or download_dsyms
 
-> This action deletes the files that get created in your repo as a result of running the `ipa` and `sigh` commands. It doesn't delete the `fastlane/report.xml` though, this is probably more suited for the .gitignore.
+> This action deletes the files that get created in your repo as a result of running the _gym_ and _sigh_ commands. It doesn't delete the `fastlane/report.xml` though, this is probably more suited for the .gitignore.
 Useful if you quickly want to send out a test build by dropping down to the command line and typing something like `fastlane beta`, without leaving your repo in a messy state afterwards.
 
 clean_build_artifacts | 
@@ -6169,7 +6169,7 @@ Key | Description
 
 Skip the creation of the fastlane/README.md file when running fastlane
 
-> Tell `fastlane` to not automatically create a `fastlane/README.md` when running `fastlane`. You can always trigger the creation of this file manually by running `fastlane docs`
+> Tell _fastlane_ to not automatically create a `fastlane/README.md` when running _fastlane_. You can always trigger the creation of this file manually by running `fastlane docs`
 
 skip_docs | 
 -----|----
@@ -7347,7 +7347,7 @@ Key | Description
 
 Outputs ascii-art for a rocket 🚀
 
-> Print an ascii Rocket :rocket:. Useful after using `crashlytics` or `pilot` to indicate that your new build has been shipped to outer-space.
+> Print an ascii Rocket :rocket:. Useful after using _crashlytics_ or _pilot_ to indicate that your new build has been shipped to outer-space.
 
 rocket | 
 -----|----
@@ -8199,7 +8199,7 @@ Key | Description
 ----|------------
   `app_id` | Tryouts application hash
   `api_token` | API Token for Tryouts Access
-  `build_file` | Path to your IPA or APK file. Optional if you use the `gym` or `xcodebuild` action
+  `build_file` | Path to your IPA or APK file. Optional if you use the _gym_ or _xcodebuild_ action
   `notes` | Release notes
   `notes_path` | Release notes text file path. Overrides the :notes paramether
   `notify` | Notify testers? 0 for no
@@ -8283,8 +8283,8 @@ opt_out_usage
 | Action | Plugin | Description | Usage Number
 ---------|--------|-------------|--------------
 synx | [synx](https://github.com/afonsograca/fastlane-plugin-synx) | Organise your Xcode project folder to match your Xcode groups. | 5863
-ascii_art | [ascii_art](https://github.com/neonichu/fastlane-ascii-art) | Add some fun to your fastlane output. | 3839
-trainer | [trainer](https://github.com/KrauseFx/trainer) | Convert xcodebuild plist files to JUnit reports | 1704
+ascii_art | [ascii_art](https://github.com/neonichu/fastlane-ascii-art) | Add some fun to your fastlane output. | 3848
+trainer | [trainer](https://github.com/KrauseFx/trainer) | Convert xcodebuild plist files to JUnit reports | 1722
 get_info_plist_path | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to work set/get app version directly to/from Info.plist | 1668
 pixie | `pixie` | Show your build status on PIXIE! | 1202
 xamarin_build | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 989
@@ -8304,7 +8304,7 @@ extract_certificate | [xamarin_build](https://github.com/punksta/fastlane-plugin
 carthage_cache_exist | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 543
 xamarin_update_configuration | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 511
 carthage_cache_install | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 477
-upload_to_onesky | [upload_to_onesky](https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky) | Upload a strings file to OneSky | 467
+upload_to_onesky | [upload_to_onesky](https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky) | Upload a strings file to OneSky | 468
 poeditor_export | [poeditor_export](https://github.com/Supmenow/fastlane-plugin-poeditor_export) | Exports translations from POEditor.com | 443
 add_prefix_schema | `polidea` | Polidea's fastlane action | 417
 branding | [branding](https://github.com/snatchev/fastlane-branding-plugin) | Add some branding to your fastlane output | 397
@@ -8319,7 +8319,7 @@ stamp_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changel
 remove_provisioning_profile | [remove_provisioning_profile](https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile) | Remove provision profile from your local machine | 281
 act | [act](https://github.com/richardszalay/fastlane-plugin-act) | Applies changes to plists and app icons inside a compiled IPA | 271
 applivery | [applivery](https://github.com/applivery/fastlane-applivery-plugin) | Upload new build to Applivery | 269
-goodify_info_plist | [goodify_info_plist](https://github.com/lyndsey-ferguson/fastlane_plugins) | This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management. | 246
+goodify_info_plist | [goodify_info_plist](https://github.com/lyndsey-ferguson/fastlane_plugins) | This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management. | 253
 tunes | [tunes](https://github.com/neonichu/fastlane-tunes) | Play music using fastlane, because you can. | 214
 droidicon | [droidicon](https://github.com/chrhsmt/fastlane-plugin-droidicon) | Generate required icon sizes and iconset from a master application icon | 213
 giffy_random_gif_url | [giffy](https://github.com/SiarheiFedartsou/fastlane-plugin-giffy) | Fastlane plugin for Giffy.com API | 203
@@ -8337,20 +8337,20 @@ coreos_deploy | [coreos](https://github.com/icuisine-pos/fastlane-plugin-coreos)
 export_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 61
 update_provisioning_profile_specifier | [update_provisioning_profile_specifier](https://github.com/faithfracture/update_provisioning_profile_specifier) | Update the provisioning profile in the Xcode Project file for a specified target | 60
 carthage_cache_publish | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 59
-upload_folder_to_s3 | [upload_folder_to_s3](https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3) | Upload a folder to S3 | 51
 import_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 51
+upload_folder_to_s3 | [upload_folder_to_s3](https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3) | Upload a folder to S3 | 51
 instabug | [instabug](https://github.com/SiarheiFedartsou/fastlane-plugin-instabug) | Uploads dSYM to Instabug | 49
 upload_symbols_to_hockey | [upload_symbols_to_hockey](https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey) | Upload dSYM symbolication files to Hockey | 46
 framer | [framer](https://github.com/spreaker/fastlane-framer-plugin) | Create images combining app screenshots with templates to make nice pictures for the App Store | 44
 tpa | [tpa](https://github.com/mbogh/fastlane-plugin-tpa) | TPA gives you advanced user behaviour analytics, app distribution, crash analytics and more | 43
-create_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 35
+create_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 36
 github_status | [github_status](https://github.com/mfurtak/fastlane-plugin-github_status) | Provides the ability to display and act upon GitHub server status as part of your build | 31
 ensure_xcode_build_version | [ensure_xcode_build_version](https://github.com/nafu/fastlane-plugin-ensure_xcode_build_version) | Ensure Xcode Build Version for working with Beta, GM and Release | 31
 clang_analyzer | [clang_analyzer](https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer) | Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report | 28
 coreos | [coreos](https://github.com/icuisine-pos/fastlane-plugin-coreos) | Deploy docker services to CoreOS hosts | 27
 latest_hockeyapp_version_number | [latest_hockeyapp_version_number](https://github.com/tpalmer/fastlane-plugin-latest_hockeyapp_version_number) | Easily fetch the most recent HockeyApp version number for your app | 20
 check_good_version | [check_good_version](https://github.com/lyndsey-ferguson/fastlane_plugins) | Checks the version of the installed Good framework | 19
-release_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 17
+release_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 18
 rubocop | [ruby](https://github.com/KrauseFx/fastlane-plugin-ruby) | Useful fastlane actions for Ruby projects | 16
 get_build_number_from_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to work set/get app version directly to/from Info.plist | 15
 wait_xcrun | [wait_xcrun](https://github.com/mgrebenets/fastlane-plugin-wait_xcrun) | Wait for Xcode toolchain to come back online after switching Xcode versions. | 14
@@ -8362,11 +8362,11 @@ certificate_expirydate | [certificate_expirydate](https://github.com/lyndsey-fer
 app_icon | `polidea` | Polidea's fastlane action | 6
 rspec | [ruby](https://github.com/KrauseFx/fastlane-plugin-ruby) | Useful fastlane actions for Ruby projects | 6
 figlet | `figlet` | Wrapper around figlet which makes large ascii text words | 5
-get_version_number_from_git_branch | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to work set/get app version directly to/from Info.plist | 3
 no_u | [no_u](https://github.com/neonichu/fastlane-plugin-no_u) | no u | 3
+get_version_number_from_git_branch | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to work set/get app version directly to/from Info.plist | 3
 clubmate | [clubmate](https://github.com/KrauseFx/fastlane-plugin-clubmate) | Print the Club Mate logo in your build output | 3
-update_project_codesigning | `update_project_codesigning` | Updates the Xcode 8 Automatic Codesigning Flag | 2
 pretty_junit | [pretty_junit](https://github.com/leandog/fastlane-plugin-pretty_junit) | Pretty JUnit test results for your Android projects. | 2
+update_project_codesigning | `update_project_codesigning` | Updates the Xcode 8 Automatic Codesigning Flag | 2
 import_provisioning | `polidea` | Polidea's fastlane action | 2
 messagesicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 2
 delete_files | [delete_files](https://github.com/leandog/fastlane-plugin-delete_files) | Deletes a file, folder or multiple files using shell glob pattern. | 1
