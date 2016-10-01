@@ -1,7 +1,5 @@
 lane :test do
   Dir.chdir("..") do
-    ensure_code_samples
-
     build_site
     ensure_filenames
     ensure_redirects
@@ -9,6 +7,7 @@ lane :test do
     ensure_image_assets
     ensure_assets_location
     ensure_tool_name_formatting
+    ensure_code_samples
   end
 end
 
@@ -134,15 +133,7 @@ end
 
 # Run the code samples, yo
 private_lane :ensure_code_samples do
+  UI.message "🕗  Verifying all code samples work with the latest fastlane release"
   test_sample_code(path: File.expand_path("docs/actions.md"))
-  # errors = []
-  # Dir["docs/**/*.md"].each do |path|
-  #   begin
-  #     test_sample_code(path: File.expand_path(path)) # expand_path since actions run in a different dir
-  #   rescue => ex
-  #     errors << ex
-  #   end
-  # end
-  # errors.each { |e| UI.error(e) }
-  # UI.user_error!("At least one code sample didn't work") unless errors.empty?
+  UI.success "✅  All fastlane code samples work as expected"
 end

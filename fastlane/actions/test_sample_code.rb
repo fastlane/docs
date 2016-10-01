@@ -4,6 +4,7 @@ module Fastlane
       def self.run(params)
         content = File.read(params[:path])
         ENV["CI"] = 1.to_s
+        fill_in_env_variables
 
         # /m says we ignore new line
         errors = []
@@ -16,17 +17,16 @@ module Fastlane
             begin
               eval(current_match)
             rescue SyntaxError => ex
-              UI.user_error!("Syntax error in code sample: #{current_match}")
+              UI.user_error!("Syntax error in code sample:\n#{current_match}\n#{ex}")
             rescue => ex
-              UI.error("Error found in code sample: #{current_match}")
-              UI.error(ex)
-              raise ex
+              UI.user_error!("Error found in code sample:\n#{current_match}\n#{ex}")
             end
           rescue => ex
             errors << ex
           end
         end
 
+        UI.error("Found errors in the documentation, more information above") unless errors.empty?
         errors.each do |ex|
           UI.error(ex)
         end
@@ -51,13 +51,15 @@ module Fastlane
             config_item = available_options.find { |a| a.key == current_argument }
             UI.user_error!("Unknown parameter '#{current_argument}' for action '#{method_sym}'") if config_item.nil?
 
-            if config_item.data_type && !value.kind_of?(config_item.data_type)
+            if config_item.data_type && !value.kind_of?(config_item.data_type) && !config_item.optional
               UI.user_error!("'#{current_argument}' value must be a #{config_item.data_type}! Found #{value.class} instead.")
             end
           end
         else
           UI.verbose("Legacy parameter technique for action '#{method_sym}'")
         end
+
+        return class_ref.sample_return_value # optional value that can be set by the action to make code samples work
       end
 
       # If the action name is x, don't run the verification
@@ -68,7 +70,10 @@ module Fastlane
         [
           :import,
           :xcode_select,
-          :frameit
+          :frameit,
+          :refresh_dsyms,
+          :lane,
+          :before_all
         ]
       end
 
@@ -85,6 +90,13 @@ module Fastlane
 
       def self.is_supported?(platform)
         true
+      end
+
+      def self.fill_in_env_variables
+        # Some code samples need a value in a certain env variable
+        ["GITHUB_TOKEN"].each do |current|
+          ENV[current] = "123"
+        end
       end
     end
   end
