@@ -1,4 +1,5 @@
 source "https://rubygems.org"
 
-gem "fastlane"
+# We want to test with the latest master branch
+gem "fastlane", git: "https://github.com/fastlane/fastlane"
 gem "danger"
