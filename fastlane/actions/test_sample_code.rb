@@ -73,7 +73,8 @@ module Fastlane
           :frameit,
           :refresh_dsyms,
           :lane,
-          :before_all
+          :before_all,
+          :verify_xcode
         ]
       end
 
