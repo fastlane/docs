@@ -57,7 +57,7 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
 ## Setting Up _snapshot_
 
 1. Create a new UI Test target in your Xcode project (See the top part of [this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
-1. Run `snapshot init` in your project folder
+1. Run `fastlane snapshot init` in your project folder
 1. Add the `./SnapshotHelper.swift` file to your UI Test target (You can move the file anywhere you want)
 1. (Objective C only) Add the bridging header to your test class.
     - `#import "MYUITests-Swift.h"`
@@ -67,6 +67,42 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
     - Swift: `snapshot("01LoginScreen")`
     - Objective C: `[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];`
 1. Add the following code to your `setUp()` method:
+
+This will generate a `Snapfile`, looking similar to
+
+```ruby
+# A list of devices you want to take the screenshots from
+# devices([
+#   "iPhone 6",
+#   "iPhone 6 Plus",
+#   "iPhone 5",
+#   "iPhone 4s",
+#   "iPad Retina",
+#   "iPad Pro"
+# ])
+
+languages([
+  "en-US",
+  "de-DE"
+])
+
+# The name of the scheme which contains the UI Tests
+# scheme "SchemeName"
+
+# Where should the resulting screenshots be stored?
+# output_directory "./screenshots"
+
+# clear_previous_screenshots true # remove the '#' to clear all previously generated screenshots before creating new ones
+
+# Choose which project/workspace to use
+# project "./Project.xcodeproj"
+# workspace "./Project.xcworkspace"
+
+# For more information about all available options run
+# fastlane action snapshot
+```
+
+You can adapt this file to fit your project. Every time you run `fastlane snapshot` the file will be loaded automatically.
 
 **Swift**
 
