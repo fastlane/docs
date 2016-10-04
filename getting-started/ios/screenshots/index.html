@@ -383,7 +383,7 @@
 <h2 id="setting-up-snapshot"><a name="user-content-setting-up-snapshot" href="#setting-up-snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting Up <em>snapshot</em></h2>
 <ol>
 <li>Create a new UI Test target in your Xcode project (See the top part of <a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">this article</a>)</li>
-<li>Run <code>snapshot init</code> in your project folder</li>
+<li>Run <code>fastlane snapshot init</code> in your project folder</li>
 <li>Add the <code>./SnapshotHelper.swift</code> file to your UI Test target (You can move the file anywhere you want)</li>
 <li>(Objective C only) Add the bridging header to your test class.<ul>
 <li><code>#import "MYUITests-Swift.h"</code></li>
@@ -398,6 +398,39 @@
 </li>
 <li>Add the following code to your <code>setUp()</code> method:</li>
 </ol>
+<p>This will generate a <code>Snapfile</code>, looking similar to</p>
+<pre><code class="ruby"># A list of devices you want to take the screenshots from
+# devices([
+#   &quot;iPhone 6&quot;,
+#   &quot;iPhone 6 Plus&quot;,
+#   &quot;iPhone 5&quot;,
+#   &quot;iPhone 4s&quot;,
+#   &quot;iPad Retina&quot;,
+#   &quot;iPad Pro&quot;
+# ])
+
+languages([
+  &quot;en-US&quot;,
+  &quot;de-DE&quot;
+])
+
+# The name of the scheme which contains the UI Tests
+# scheme &quot;SchemeName&quot;
+
+# Where should the resulting screenshots be stored?
+# output_directory &quot;./screenshots&quot;
+
+# clear_previous_screenshots true # remove the '#' to clear all previously generated screenshots before creating new ones
+
+# Choose which project/workspace to use
+# project &quot;./Project.xcodeproj&quot;
+# workspace &quot;./Project.xcworkspace&quot;
+
+# For more information about all available options run
+# fastlane action snapshot
+</code></pre>
+
+<p>You can adapt this file to fit your project. Every time you run <code>fastlane snapshot</code> the file will be loaded automatically.</p>
 <p><strong>Swift</strong></p>
 <pre><code class="swift">let app = XCUIApplication()
 setupSnapshot(app)
