@@ -130,7 +130,7 @@ fastlane snapshot                               # Generate screenshots for the s
 
 ![/img/getting-started/ios/snapshot.gif](/img/getting-started/ios/snapshot.gif)
 
-# Upload Screenshots for the App Store
+# Upload Screenshots to the App Store
 
 After generating your screenshots using `fastlane snapshot`, you usually want to upload them to iTunes Connect.
 
