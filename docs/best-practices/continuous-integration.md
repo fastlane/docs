@@ -73,7 +73,7 @@ To show the **deployment result** right in `Jenkins`
 - *Publish JUnit test result report*
 - *Test report XMLs*: `fastlane/report.xml`
 
-To show the **generated screenhots** right in `Jenkins`
+To show the **generated screenshots** right in `Jenkins`
 
 - *Add post-build action*
 - *Publish HTML reports*
