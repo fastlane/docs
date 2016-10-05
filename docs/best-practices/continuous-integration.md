@@ -12,6 +12,12 @@ spaceauth -u user@email.com
 
 This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system.
 
+## Deploy Strategy
+
+You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended using Git Tags, or custom triggers to deploy a new update.
+
+You can set up your own ```Release``` job, which is only triggered manually.
+
 # Jenkins Integration
 
 Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.
@@ -32,17 +38,11 @@ From now on start `Jenkins` by running:
 jenkins
 ```
 
-To store the password in the Keychain of your remote machine, I recommend running _sigh_ or _deliver_ using ssh or remote desktop at least once.
-
-## Deploy Strategy
-
-You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead I recommend using Git Tags, or custom triggers to deploy a new update.
-
-You can set up your own ```Release``` job, which is only triggered manually.
+To store the password in the Keychain of your remote machine, it is recommended running _match_ or _deliver_ using ssh or remote desktop at least once.
 
 ## Plugins
 
-I recommend the following plugins:
+You'll find the following Jenkins plugins to be useful:
 
 - **[HTML Publisher Plugin](https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin):** Can be used to show the generated screenshots right inside Jenkins.
 - **[AnsiColor Plugin](https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin):** Used to show the coloured output of the fastlane tools. Don’t forget to enable `Color ANSI Console Output` in the `Build Environment` or your project.
