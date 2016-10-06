@@ -14,7 +14,7 @@ This will generate a token you can set using the `FASTLANE_SESSION` environment 
 
 ## Deploy Strategy
 
-You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended using Git Tags, or custom triggers to deploy a new update.
+You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.
 
 You can set up your own ```Release``` job, which is only triggered manually.
 
@@ -38,7 +38,7 @@ From now on start `Jenkins` by running:
 jenkins
 ```
 
-To store the password in the Keychain of your remote machine, it is recommended running _match_ or _deliver_ using ssh or remote desktop at least once.
+To store the password in the Keychain of your remote machine, it is recommended that you run _match_ or _deliver_ using ssh or remote desktop at least once.
 
 ## Plugins
 
