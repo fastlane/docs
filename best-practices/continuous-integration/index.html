@@ -344,6 +344,9 @@
 </code></pre>
 
 <p>This will generate a token you can set using the <code>FASTLANE_SESSION</code> environment variable on your CI system.</p>
+<h2 id="deploy-strategy"><a name="user-content-deploy-strategy" href="#deploy-strategy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy Strategy</h2>
+<p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.</p>
+<p>You can set up your own <code>Release</code> job, which is only triggered manually.</p>
 <h1 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins Integration</h1>
 <p>Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.</p>
 <p><em>fastlane</em> automatically generates a JUnit report for you. This allows Continuous Integration systems, like <code>Jenkins</code>, access the results of your deployment.</p>
@@ -356,12 +359,9 @@
 <pre><code class="no-highlight">jenkins
 </code></pre>
 
-<p>To store the password in the Keychain of your remote machine, I recommend running <em>sigh</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
-<h2 id="deploy-strategy"><a name="user-content-deploy-strategy" href="#deploy-strategy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy Strategy</h2>
-<p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead I recommend using Git Tags, or custom triggers to deploy a new update.</p>
-<p>You can set up your own <code>Release</code> job, which is only triggered manually.</p>
+<p>To store the password in the Keychain of your remote machine, it is recommended that you run <em>match</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
 <h2 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h2>
-<p>I recommend the following plugins:</p>
+<p>You'll find the following Jenkins plugins to be useful:</p>
 <ul>
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin">HTML Publisher Plugin</a>:</strong> Can be used to show the generated screenshots right inside Jenkins.</li>
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin">AnsiColor Plugin</a>:</strong> Used to show the coloured output of the fastlane tools. Don’t forget to enable <code>Color ANSI Console Output</code> in the <code>Build Environment</code> or your project.</li>
