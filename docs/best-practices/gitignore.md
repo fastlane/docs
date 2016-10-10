@@ -1,6 +1,6 @@
 ## Gitignore
 
-If you use git, it is recommended to keep the _fastlane_ configuration files in your repository. You may want to add the following lines to your `.gitignore` file to exclude some generated and temporary files:
+If you use Git, it is recommended to keep the _fastlane_ configuration files in your repository. You may want to add the following lines to your `.gitignore` file to exclude some generated and temporary files:
 
 ```no-highlight
 # fastlane specific
@@ -16,4 +16,4 @@ fastlane/screenshots
 fastlane/test_output
 ```
 
-It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the screenshots whenever they are needed.
+It is recommended that you avoid storing screenshots in the Git repo. Instead, use fastlane to re-generate screenshots whenever they are needed.
