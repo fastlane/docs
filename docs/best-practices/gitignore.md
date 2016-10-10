@@ -1,4 +1,4 @@
-## Gitignore
+## Git Ignore
 
 If you use Git, it is recommended to keep the _fastlane_ configuration files in your repository. You may want to add the following lines to your `.gitignore` file to exclude some generated and temporary files:
 
