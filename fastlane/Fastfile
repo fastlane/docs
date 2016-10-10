@@ -1,6 +1,6 @@
-lane :test do
+lane :test do |options|
   Dir.chdir("..") do
-    build_site
+    build_site unless options[:skip_building]
     ensure_filenames
     ensure_redirects
     ensure_headers
