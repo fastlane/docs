@@ -40,7 +40,9 @@ _snapshot_ works with _fastlane_ to automate the process of capturing screenshot
 
 After _snapshot_ successfully captures all the screenshots, it will show you a beautiful HTML page to summarize all the screens that were captured:
 
-![HTML summary page](/img/getting-started/ios/htmlPagePreviewFade.jpg)
+<a href="/img/getting-started/ios/htmlPagePreviewFade.jpg">
+  <img src="/img/getting-started/ios/htmlPagePreviewFade.jpg" alt="HTML summary page" width="500" />
+</a>
 
 ## Getting Started Using UI Tests
 
@@ -176,7 +178,9 @@ _frameit_ helps you beautify your screenshots with devices frames and text by ru
 - Black and silver devices
 - Setting a background color and decorating the image with text
 
-![frameit results](/img/getting-started/ios/frameit-results.png)
+<a href="/img/getting-started/ios/frameit-results.png">
+  <img src="/img/getting-started/ios/frameit-results.png" alt="frameit results" width="800" />
+</a>
 
 ## Usage
 
