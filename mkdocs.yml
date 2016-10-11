@@ -37,7 +37,7 @@ pages:
   - Create your own plugin: plugins/create-plugin.md
   - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
-  - Gitignore: "best-practices/gitignore.md"
+  - Source Control: "best-practices/source-control.md"
   - Continuous Integration: "best-practices/continuous-integration.md"
   - Keys: "best-practices/keys.md"
 - Advanced: "advanced.md"
