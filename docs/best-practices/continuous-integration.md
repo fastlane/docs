@@ -207,3 +207,57 @@ What this build plan does is it checks out the source code, then it downloads th
 * Task 2: **Artifact Download**
 * Task 3: **Fastlane**
 
+# Gitlab-CI Integration
+Use [Gitlab-CI Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner) running on an MacOS machine
+to build using fastlane.
+
+## Setting up Repository
+
+Add a `.gitlab-ci.yml` file, to trigger _fastlane_.
+
+```yml
+stages:
+  - unit_tests
+  - testflight
+variables:
+  LC_ALL: "en_US.UTF-8"
+  LANG: "en_US.UTF-8"
+Testflight Build:
+  dependencies: []
+  stage: testflight
+  artifacts:
+    paths:
+      - fastlane/screenshots
+      - fastlane/logs
+  script:
+    - fastlane beta
+  tags: 
+    - ios
+  only: 
+     - /^release-.*$/
+     - master
+Unit Tests:
+  dependencies: []
+  stage: unit_tests
+  artifacts:
+    paths:
+      - fastlane/screenshots
+      - fastlane/logs
+  script:
+    - fastlane tests
+  tags:
+    - ios
+```
+
+## Setting up the lanes
+You should have a lane, in this example called `beta` - wich should do the usual, _match_, _gym_, _pilot_, to distribute an updated testflight version, and  one lane `tests` wich calls _scan_ to run uitests.
+
+## Auto Incemented Build Number.
+To get an auto incremented Build-Number you can use something like the following lane:
+then the gitlab build-id (wich is counting up each build) will be used.
+```ruby
+lane :increment_build_number do
+  increment_build_number(build_number: ENV['CI_BUILD_ID'])
+end
+```
+
