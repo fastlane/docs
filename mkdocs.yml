@@ -34,10 +34,10 @@ pages:
   - Common Issues: codesigning/common-issues.md
 - Plugins:
   - Available Plugins: plugins/available-plugins.md
-  - Create your own plugin: plugins/create-plugin.md
+  - Create Your Own Plugin: plugins/create-plugin.md
   - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
-  - Gitignore: "best-practices/gitignore.md"
+  - Source Control: "best-practices/source-control.md"
   - Continuous Integration: "best-practices/continuous-integration.md"
   - Keys: "best-practices/keys.md"
 - Advanced: "advanced.md"
