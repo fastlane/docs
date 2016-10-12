@@ -394,7 +394,7 @@ In the test output, the Swift _snapshot_ function will print out something like 
 
 _snapshot_ finds all these entries using a regex. The number of _snapshot_ outputs in the terminal and the number of _snapshot_ events in the plist file should be the same. Knowing that, _snapshot_ automatically matches these 2 lists to identify the name of each of these screenshots. They are then copied over to the output directory and separated by language and device.
 
-2 thing have to be passed on from _snapshot_ to the `xcodebuild` command line tool:
+Two things have to be passed on from _snapshot_ to the `xcodebuild` command line tool:
 
 - The device type is passed via the `destination` parameter of the `xcodebuild` parameter
 - The language is passed via a temporary file which is written by _snapshot_ before running the tests and read by the UI Tests when launching the application
