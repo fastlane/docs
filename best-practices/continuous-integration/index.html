@@ -266,6 +266,10 @@
       <li class="toctree-l3"><a href="#bamboo-integration">Bamboo Integration</a></li>
       
     
+      
+      <li class="toctree-l3"><a href="#gitlab-ci-integration">Gitlab-CI Integration</a></li>
+      
+    
   </ul>
   
 </li>
@@ -464,7 +468,7 @@ sh(git_remote_cmd)
 </ul>
 <p><em>Optional</em>: You may want to automatically make the <strong>fastlane plan</strong> trigger whenever this plan is built</p>
 <h3 id="fastlane-plan"><em>fastlane</em> plan</h3>
-<p>When configuring fastlane to run in this setup you need to make sure that you are not calling either:</p>
+<p>When configuring <em>fastlane</em> to run in this setup you need to make sure that you are not calling either:</p>
 <pre><code class="ruby">reset_git_repo(force: true)
 </code></pre>
 
@@ -478,8 +482,55 @@ sh(git_remote_cmd)
 <ul>
 <li>Task 1: <strong>Source Code Checkout</strong></li>
 <li>Task 2: <strong>Artifact Download</strong></li>
-<li>Task 3: <strong>Fastlane</strong></li>
+<li>Task 3: <strong>fastlane</strong></li>
 </ul>
+<h1 id="gitlab-ci-integration"><a name="user-content-gitlab-ci-integration" href="#gitlab-ci-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gitlab-CI Integration</h1>
+<p>Use <a href="https://gitlab.com/gitlab-org/gitlab-ci-multi-runner">Gitlab-CI Runner</a> running on an MacOS machine
+to build using fastlane.</p>
+<h2 id="setting-up-repository"><a name="user-content-setting-up-repository" href="#setting-up-repository" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up Repository</h2>
+<p>Add a <code>.gitlab-ci.yml</code> file, to trigger <em>fastlane</em>.</p>
+<pre><code class="yml">stages:
+  - unit_tests
+  - testflight
+variables:
+  LC_ALL: &quot;en_US.UTF-8&quot;
+  LANG: &quot;en_US.UTF-8&quot;
+Testflight Build:
+  dependencies: []
+  stage: testflight
+  artifacts:
+    paths:
+      - fastlane/screenshots
+      - fastlane/logs
+  script:
+    - fastlane beta
+  tags: 
+    - ios
+  only: 
+     - /^release-.*$/
+     - master
+Unit Tests:
+  dependencies: []
+  stage: unit_tests
+  artifacts:
+    paths:
+      - fastlane/screenshots
+      - fastlane/logs
+  script:
+    - fastlane tests
+  tags:
+    - ios
+</code></pre>
+
+<h2 id="setting-up-the-lanes"><a name="user-content-setting-up-the-lanes" href="#setting-up-the-lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up the lanes</h2>
+<p>You should have a lane, in this example called <code>beta</code> - wich should do the usual, <em>match</em>, <em>gym</em>, <em>pilot</em>, to distribute an updated Test Flight version, and one lane <code>tests</code> wich calls <em>scan</em> to run UI Tests.</p>
+<h2 id="auto-incemented-build-number"><a name="user-content-auto-incemented-build-number" href="#auto-incemented-build-number" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Auto Incemented Build Number.</h2>
+<p>To get an auto incremented Build-Number you can use something like the following lane:
+then the gitlab build-id (wich is counting up each build) will be used.</p>
+<pre><code class="ruby">lane :increment_build_number do
+  increment_build_number(build_number: ENV['CI_BUILD_ID'])
+end
+</code></pre>
               
             </div>
           </div>
