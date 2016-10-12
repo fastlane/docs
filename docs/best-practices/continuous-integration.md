@@ -168,13 +168,13 @@ The general idea is to make a build plan: **Project - Artifacts** that builds th
 
 Use a simple setup to create this build plan. First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the `Cartfile` changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.
 
-####Stages / Jobs / Tasks
+#### Stages / Jobs / Tasks
 This plan consists of 1 Job, 1 Stage and 2 Tasks
 
 * Task 1: **Source Code Checkout**
 * Task 2: **Script** (`carthage update`)
 
-####Artifact definitions
+#### Artifact definitions
 
 Create a shared artifact with the following info:
 
@@ -186,7 +186,7 @@ Create a shared artifact with the following info:
 
 ### _fastlane_ plan
 
-When configuring fastlane to run in this setup you need to make sure that you are not calling either:
+When configuring _fastlane_ to run in this setup you need to make sure that you are not calling either:
 
 ```ruby
 reset_git_repo(force: true)
@@ -205,7 +205,7 @@ What this build plan does is it checks out the source code, then it downloads th
 
 * Task 1: **Source Code Checkout**
 * Task 2: **Artifact Download**
-* Task 3: **Fastlane**
+* Task 3: **fastlane**
 
 # Gitlab-CI Integration
 Use [Gitlab-CI Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner) running on an MacOS machine
@@ -250,14 +250,14 @@ Unit Tests:
 ```
 
 ## Setting up the lanes
-You should have a lane, in this example called `beta` - wich should do the usual, _match_, _gym_, _pilot_, to distribute an updated testflight version, and  one lane `tests` wich calls _scan_ to run uitests.
+You should have a lane, in this example called `beta` - wich should do the usual, _match_, _gym_, _pilot_, to distribute an updated Test Flight version, and one lane `tests` wich calls _scan_ to run UI Tests.
 
 ## Auto Incemented Build Number.
 To get an auto incremented Build-Number you can use something like the following lane:
 then the gitlab build-id (wich is counting up each build) will be used.
+
 ```ruby
 lane :increment_build_number do
   increment_build_number(build_number: ENV['CI_BUILD_ID'])
 end
 ```
-
