@@ -128,7 +128,7 @@ In bamboo under **Linked Repositories** (where you configure your git repo) unde
 
 This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.  
 
-For example, if your `Fastfile` is configured to make a commit message in the style of 
+For example, if your `Fastfile` is configured to make a commit message in the style of
 
 ```no-highlight
 Build Version bump by fastlane to Version [0.3] Build [8]
@@ -151,7 +151,7 @@ sh('git config user.email <COMITTER EMAIL>')
 
 # Bamboo does an anonymous checkout so in order to update the build versions must set the git repo URL
 git_remote_cmd = 'git remote set-url origin ' + ENV['bamboo_repository_git_repositoryUrl']
-sh(git_remote_cmd) 
+sh(git_remote_cmd)
 ```
 
 
@@ -179,8 +179,8 @@ This plan consists of 1 Job, 1 Stage and 2 Tasks
 Create a shared artifact with the following info:
 
 * **Name:** CarthageFolder
-* **Location:** (leave blank) 
-* **Copy Pattern:** Carthage/Build/** 
+* **Location:** (leave blank)
+* **Copy Pattern:** Carthage/Build/**
 
 *Optional*: You may want to automatically make the **fastlane plan** trigger whenever this plan is built
 
@@ -207,36 +207,37 @@ What this build plan does is it checks out the source code, then it downloads th
 * Task 2: **Artifact Download**
 * Task 3: **fastlane**
 
-# Gitlab-CI Integration
-Use [Gitlab-CI Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner) running on an MacOS machine
+# GitLab CI Integration
+
+Use [GitLab CI Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner) running on a macOS machine
 to build using fastlane.
 
-## Setting up Repository
+## Repository setup
 
-Add a `.gitlab-ci.yml` file, to trigger _fastlane_.
+First create a `Gemfile` in the root of your project with the following content:
+
+```ruby
+source "https://rubygems.org"
+
+gem "fastlane"
+```
+
+Add a `.gitlab-ci.yml` file to trigger _fastlane_.
 
 ```yml
 stages:
   - unit_tests
-  - testflight
+  - test_flight
+
 variables:
   LC_ALL: "en_US.UTF-8"
   LANG: "en_US.UTF-8"
-Testflight Build:
-  dependencies: []
-  stage: testflight
-  artifacts:
-    paths:
-      - fastlane/screenshots
-      - fastlane/logs
-  script:
-    - fastlane beta
-  tags: 
-    - ios
-  only: 
-     - /^release-.*$/
-     - master
-Unit Tests:
+
+before_script:
+  - gem install bundler
+  - bundle install
+
+unit_tests:
   dependencies: []
   stage: unit_tests
   artifacts:
@@ -247,17 +248,36 @@ Unit Tests:
     - fastlane tests
   tags:
     - ios
+
+test_flight_build:
+  dependencies: []
+  stage: test_flight
+  artifacts:
+    paths:
+      - fastlane/screenshots
+      - fastlane/logs
+  script:
+    - fastlane beta
+  tags:
+    - ios
+  only:
+     - /^release-.*$/
+     - master
 ```
 
-## Setting up the lanes
-You should have a lane, in this example called `beta` - wich should do the usual, _match_, _gym_, _pilot_, to distribute an updated Test Flight version, and one lane `tests` wich calls _scan_ to run UI Tests.
+See [the ``.gitlab-ci.yml` documentation](https://docs.gitlab.com/ce/ci/yaml/README.html)
+for more information on how this file works.
 
-## Auto Incemented Build Number.
-To get an auto incremented Build-Number you can use something like the following lane:
-then the gitlab build-id (wich is counting up each build) will be used.
+## Setting up the lanes
+You should have a lane - in this example called `beta` - which should do the usual, _match_, _gym_, _pilot_, to distribute an updated Test Flight version, and one lane `tests` which calls _scan_ to run UI Tests.
+
+## Auto-incremented build number.
+To get an auto-incremented build number you can use something like the following lane:
 
 ```ruby
 lane :increment_build_number do
   increment_build_number(build_number: ENV['CI_BUILD_ID'])
 end
 ```
+
+Then the GitLab CI build ID (which iterates on each build) will be used.
