@@ -267,7 +267,7 @@
       
     
       
-      <li class="toctree-l3"><a href="#gitlab-ci-integration">Gitlab-CI Integration</a></li>
+      <li class="toctree-l3"><a href="#gitlab-ci-integration">GitLab CI Integration</a></li>
       
     
   </ul>
@@ -428,7 +428,7 @@ test:
 <h2 id="repository-setup"><a name="user-content-repository-setup" href="#repository-setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repository setup</h2>
 <p>In bamboo under <strong>Linked Repositories</strong> (where you configure your git repo) under <strong>Advanced Settings</strong> is an option called <strong>Exclude changesets</strong></p>
 <p>This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.  </p>
-<p>For example, if your <code>Fastfile</code> is configured to make a commit message in the style of </p>
+<p>For example, if your <code>Fastfile</code> is configured to make a commit message in the style of</p>
 <pre><code class="no-highlight">Build Version bump by fastlane to Version [0.3] Build [8]
 </code></pre>
 
@@ -444,7 +444,7 @@ sh('git config user.email &lt;COMITTER EMAIL&gt;')
 
 # Bamboo does an anonymous checkout so in order to update the build versions must set the git repo URL
 git_remote_cmd = 'git remote set-url origin ' + ENV['bamboo_repository_git_repositoryUrl']
-sh(git_remote_cmd) 
+sh(git_remote_cmd)
 </code></pre>
 
 <h2 id="speeding-up-build-times-with-carthage"><a name="user-content-speeding-up-build-times-with-carthage" href="#speeding-up-build-times-with-carthage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Speeding up build times with carthage</h2>
@@ -463,8 +463,8 @@ sh(git_remote_cmd)
 <p>Create a shared artifact with the following info:</p>
 <ul>
 <li><strong>Name:</strong> CarthageFolder</li>
-<li><strong>Location:</strong> (leave blank) </li>
-<li><strong>Copy Pattern:</strong> Carthage/Build/** </li>
+<li><strong>Location:</strong> (leave blank)</li>
+<li><strong>Copy Pattern:</strong> Carthage/Build/**</li>
 </ul>
 <p><em>Optional</em>: You may want to automatically make the <strong>fastlane plan</strong> trigger whenever this plan is built</p>
 <h3 id="fastlane-plan"><em>fastlane</em> plan</h3>
@@ -484,32 +484,30 @@ sh(git_remote_cmd)
 <li>Task 2: <strong>Artifact Download</strong></li>
 <li>Task 3: <strong>fastlane</strong></li>
 </ul>
-<h1 id="gitlab-ci-integration"><a name="user-content-gitlab-ci-integration" href="#gitlab-ci-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gitlab-CI Integration</h1>
-<p>Use <a href="https://gitlab.com/gitlab-org/gitlab-ci-multi-runner">Gitlab-CI Runner</a> running on an MacOS machine
+<h1 id="gitlab-ci-integration"><a name="user-content-gitlab-ci-integration" href="#gitlab-ci-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>GitLab CI Integration</h1>
+<p>Use <a href="https://gitlab.com/gitlab-org/gitlab-ci-multi-runner">GitLab CI Runner</a> running on a macOS machine
 to build using fastlane.</p>
-<h2 id="setting-up-repository"><a name="user-content-setting-up-repository" href="#setting-up-repository" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up Repository</h2>
-<p>Add a <code>.gitlab-ci.yml</code> file, to trigger <em>fastlane</em>.</p>
+<h2 id="repository-setup_1"><a name="user-content-repository-setup_1" href="#repository-setup_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repository setup</h2>
+<p>First create a <code>Gemfile</code> in the root of your project with the following content:</p>
+<pre><code class="ruby">source &quot;https://rubygems.org&quot;
+
+gem &quot;fastlane&quot;
+</code></pre>
+
+<p>Add a <code>.gitlab-ci.yml</code> file to trigger <em>fastlane</em>.</p>
 <pre><code class="yml">stages:
   - unit_tests
-  - testflight
+  - test_flight
+
 variables:
   LC_ALL: &quot;en_US.UTF-8&quot;
   LANG: &quot;en_US.UTF-8&quot;
-Testflight Build:
-  dependencies: []
-  stage: testflight
-  artifacts:
-    paths:
-      - fastlane/screenshots
-      - fastlane/logs
-  script:
-    - fastlane beta
-  tags: 
-    - ios
-  only: 
-     - /^release-.*$/
-     - master
-Unit Tests:
+
+before_script:
+  - gem install bundler
+  - bundle install
+
+unit_tests:
   dependencies: []
   stage: unit_tests
   artifacts:
@@ -520,17 +518,35 @@ Unit Tests:
     - fastlane tests
   tags:
     - ios
+
+test_flight_build:
+  dependencies: []
+  stage: test_flight
+  artifacts:
+    paths:
+      - fastlane/screenshots
+      - fastlane/logs
+  script:
+    - fastlane beta
+  tags:
+    - ios
+  only:
+     - /^release-.*$/
+     - master
 </code></pre>
 
+<p>See <a href="https://docs.gitlab.com/ce/ci/yaml/README.html">the <code>`.gitlab-ci.yml</code> documentation</a>
+for more information on how this file works.</p>
 <h2 id="setting-up-the-lanes"><a name="user-content-setting-up-the-lanes" href="#setting-up-the-lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up the lanes</h2>
-<p>You should have a lane, in this example called <code>beta</code> - wich should do the usual, <em>match</em>, <em>gym</em>, <em>pilot</em>, to distribute an updated Test Flight version, and one lane <code>tests</code> wich calls <em>scan</em> to run UI Tests.</p>
-<h2 id="auto-incemented-build-number"><a name="user-content-auto-incemented-build-number" href="#auto-incemented-build-number" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Auto Incemented Build Number.</h2>
-<p>To get an auto incremented Build-Number you can use something like the following lane:
-then the gitlab build-id (wich is counting up each build) will be used.</p>
+<p>You should have a lane - in this example called <code>beta</code> - which should do the usual, <em>match</em>, <em>gym</em>, <em>pilot</em>, to distribute an updated Test Flight version, and one lane <code>tests</code> which calls <em>scan</em> to run UI Tests.</p>
+<h2 id="auto-incremented-build-number"><a name="user-content-auto-incremented-build-number" href="#auto-incremented-build-number" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Auto-incremented build number.</h2>
+<p>To get an auto-incremented build number you can use something like the following lane:</p>
 <pre><code class="ruby">lane :increment_build_number do
   increment_build_number(build_number: ENV['CI_BUILD_ID'])
 end
 </code></pre>
+
+<p>Then the GitLab CI build ID (which iterates on each build) will be used.</p>
               
             </div>
           </div>
