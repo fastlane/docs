@@ -4,7 +4,7 @@
 
 _fastlane_ takes care of building your app using a feature called _gym_, just add the following to your `Fastfile`:
 
-```
+```ruby
 lane :beta do
   gym(scheme: "MyApp")
 end
@@ -48,6 +48,11 @@ end
 ```
 
 _fastlane_ automatically passes on information about the generated `.ipa` file from _gym_ to the beta testing provider of your choice.
+
+To get a list of all available parameters for a given action, run
+```no-highlight
+fastlane action slack
+```
 
 ### Supported beta testing services
 
