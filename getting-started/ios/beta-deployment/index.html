@@ -343,7 +343,7 @@
                 <h1 id="ios-beta-deployment-using-fastlane"><a name="user-content-ios-beta-deployment-using-fastlane" href="#ios-beta-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS Beta deployment using <em>fastlane</em></h1>
 <h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app using a feature called <em>gym</em>, just add the following to your <code>Fastfile</code>:</p>
-<pre><code>lane :beta do
+<pre><code class="ruby">lane :beta do
   gym(scheme: &quot;MyApp&quot;)
 end
 </code></pre>
@@ -375,6 +375,10 @@ end
 </code></pre>
 
 <p><em>fastlane</em> automatically passes on information about the generated <code>.ipa</code> file from <em>gym</em> to the beta testing provider of your choice.</p>
+<p>To get a list of all available parameters for a given action, run</p>
+<pre><code class="no-highlight">fastlane action slack
+</code></pre>
+
 <h3 id="supported-beta-testing-services"><a name="user-content-supported-beta-testing-services" href="#supported-beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Supported beta testing services</h3>
 <p><details>
 <summary>TestFlight</summary></p>
