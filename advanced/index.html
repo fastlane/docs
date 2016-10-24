@@ -443,6 +443,38 @@ lane :calculate do |options|
 end
 </code></pre>
 
+<h2 id="stop-executing-a-lane-early"><a name="user-content-stop-executing-a-lane-early" href="#stop-executing-a-lane-early" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Stop executing a lane early</h2>
+<p>The <code>next</code> keyword can be used to stop executing a <code>lane</code> before it reaches the end.</p>
+<pre><code class="ruby">lane :build do |options|
+  if cached_build_available?
+    UI.important 'Skipping build because a cached build is available!'
+    next # skip doing the rest of this lane
+  end
+  match
+  gym
+end
+
+private_lane :cached_build_available? do |options|
+  # ...
+  true
+end
+</code></pre>
+
+<p>When <code>next</code> is used during a <code>lane</code> switch, control returns to the previous <code>lane</code> that was executing.</p>
+<pre><code class="ruby">lane :first_lane do |options|
+  puts &quot;If you run: `fastlane first_lane`&quot;
+  puts &quot;You'll see this!&quot;
+  second_lane
+  puts &quot;As well as this!&quot;
+end
+
+private_lane :second_lane do |options|
+  next
+  puts &quot;This won't be shown&quot;
+end
+</code></pre>
+
+<p>When you stop executing a lane early with <code>next</code>, any <code>after_each</code> and <code>after_all</code> blocks you have will still trigger as usual :+1:</p>
 <h2 id="before_each-and-after_each-blocks"><code>before_each</code> and <code>after_each</code> blocks</h2>
 <p><code>before_each</code> blocks are called before any lane is called. This would include being called before each lane you've switched to.</p>
 <pre><code class="ruby">before_each do |lane, options|
@@ -522,7 +554,7 @@ end
 
 <p>This will also automatically import all the local actions from this repo.</p>
 <h2 id="note"><a name="user-content-note" href="#note" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note</h2>
-<p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <em>fastlane</em> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword. </p>
+<p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <em>fastlane</em> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword.</p>
 <h1 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h1>
 <p>You can define environment variables in a <code>.env</code> or <code>.env.default</code> file in the same directory as your <code>Fastfile</code>. Environment variables are loading using <a href="https://github.com/bkeepers/dotenv">dotenv</a>. Here's an example.</p>
 <pre><code class="no-highlight">WORKSPACE=YourApp.xcworkspace
