@@ -3893,11 +3893,14 @@ or beta version of the app.</p>
 </tbody>
 </table>
 <p><details>
-<summary>2 Examples</summary></p>
+<summary>3 Examples</summary></p>
 <pre><code class="ruby">match(type: &quot;appstore&quot;, app_identifier: &quot;tools.fastlane.app&quot;)
 </code></pre>
 
 <pre><code class="ruby">match(type: &quot;development&quot;, readonly: true)
+</code></pre>
+
+<pre><code class="ruby">match(app_identifier: [&quot;tools.fastlane.app&quot;, &quot;tools.fastlane.sleepy&quot;])
 </code></pre>
 
 <p></details></p>
@@ -3925,7 +3928,7 @@ or beta version of the app.</p>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
-<td>The bundle identifier of your app</td>
+<td>The bundle identifier(s) of your app (comma-separated)</td>
 </tr>
 <tr>
 <td><code>username</code></td>
@@ -3941,11 +3944,11 @@ or beta version of the app.</p>
 </tr>
 <tr>
 <td><code>team_id</code></td>
-<td>The ID of your team if you're in multiple teams</td>
+<td>The ID of your Developer Portal team if you're in multiple teams</td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
-<td>The name of your team if you're in multiple teams</td>
+<td>The name of your Developer Portal team if you're in multiple teams</td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
@@ -12447,31 +12450,31 @@ Using this action you can opt out</p>
 <td>synx</td>
 <td><a href="https://github.com/afonsograca/fastlane-plugin-synx">synx</a></td>
 <td>Organise your Xcode project folder to match your Xcode groups.</td>
-<td>7980</td>
+<td>8016</td>
 </tr>
 <tr>
 <td>ascii_art</td>
 <td><a href="https://github.com/neonichu/fastlane-ascii-art">ascii_art</a></td>
 <td>Add some fun to your fastlane output.</td>
-<td>4412</td>
+<td>4414</td>
 </tr>
 <tr>
 <td>trainer</td>
 <td><a href="https://github.com/KrauseFx/trainer">trainer</a></td>
 <td>Convert xcodebuild plist files to JUnit reports</td>
-<td>3522</td>
+<td>3540</td>
 </tr>
 <tr>
 <td>increment_build_number_in_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>2808</td>
+<td>2812</td>
 </tr>
 <tr>
 <td>pixie</td>
 <td><code>pixie</code></td>
 <td>Show your build status on PIXIE!</td>
-<td>2210</td>
+<td>2214</td>
 </tr>
 <tr>
 <td>get_info_plist_path</td>
@@ -12483,31 +12486,31 @@ Using this action you can opt out</p>
 <td>update_provisioning_profile_specifier</td>
 <td><a href="https://github.com/faithfracture/update_provisioning_profile_specifier">update_provisioning_profile_specifier</a></td>
 <td>Update the provisioning profile in the Xcode Project file for a specified target</td>
-<td>1851</td>
+<td>1870</td>
 </tr>
 <tr>
 <td>read_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>1196</td>
+<td>1198</td>
 </tr>
 <tr>
 <td>get_version_number_from_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>1159</td>
+<td>1161</td>
 </tr>
 <tr>
 <td>xamarin_build</td>
 <td><a href="https://github.com/punksta/fastlane-plugin-xamarin_build">xamarin_build</a></td>
 <td>Build xamarin android\ios projects</td>
-<td>1083</td>
+<td>1084</td>
 </tr>
 <tr>
 <td>carthage_cache_exist</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>998</td>
+<td>1004</td>
 </tr>
 <tr>
 <td>extract_app_icon</td>
@@ -12519,13 +12522,13 @@ Using this action you can opt out</p>
 <td>get_version_name</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-get-version-name">get_version_name</a></td>
 <td>Get the version name of an Android project.</td>
-<td>941</td>
+<td>945</td>
 </tr>
 <tr>
 <td>ftp</td>
 <td><a href="https://github.com/PoissonBallon/fastlane-ftp-plugin">ftp</a></td>
 <td>Simple ftp upload and download for Fastlane</td>
-<td>922</td>
+<td>925</td>
 </tr>
 <tr>
 <td>get_binary_size</td>
@@ -12537,7 +12540,7 @@ Using this action you can opt out</p>
 <td>carthage_cache_install</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>891</td>
+<td>895</td>
 </tr>
 <tr>
 <td>polidea_store</td>
@@ -12573,13 +12576,13 @@ Using this action you can opt out</p>
 <td>update_project_codesigning</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning">update_project_codesigning</a></td>
 <td>Updates the Xcode 8 Automatic Codesigning Flag</td>
-<td>792</td>
+<td>814</td>
 </tr>
 <tr>
 <td>increment_version_code</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-increment_version_code">increment_version_code</a></td>
 <td>Increment the version code of your android project.</td>
-<td>755</td>
+<td>756</td>
 </tr>
 <tr>
 <td>increment_version_number_in_plist</td>
@@ -12609,7 +12612,7 @@ Using this action you can opt out</p>
 <td>upload_to_onesky</td>
 <td><a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky">upload_to_onesky</a></td>
 <td>Upload a strings file to OneSky</td>
-<td>561</td>
+<td>565</td>
 </tr>
 <tr>
 <td>release_notes</td>
@@ -12627,7 +12630,7 @@ Using this action you can opt out</p>
 <td>stamp_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>508</td>
+<td>509</td>
 </tr>
 <tr>
 <td>branding</td>
@@ -12639,7 +12642,7 @@ Using this action you can opt out</p>
 <td>remove_provisioning_profile</td>
 <td><a href="https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile">remove_provisioning_profile</a></td>
 <td>Remove provision profile from your local machine</td>
-<td>431</td>
+<td>437</td>
 </tr>
 <tr>
 <td>automated_test_emulator_run</td>
@@ -12648,28 +12651,28 @@ Using this action you can opt out</p>
 <td>389</td>
 </tr>
 <tr>
+<td>droidicon</td>
+<td><a href="https://github.com/chrhsmt/fastlane-plugin-droidicon">droidicon</a></td>
+<td>Generate required icon sizes and iconset from a master application icon</td>
+<td>381</td>
+</tr>
+<tr>
 <td>xcake</td>
 <td><a href="https://github.com/jcampbell05/xcake/">xcake</a></td>
 <td>Create your Xcode projects automatically using a stupid simple DSL.</td>
 <td>376</td>
 </tr>
 <tr>
+<td>get_build_number_from_plist</td>
+<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
+<td>Allows to set/get app version and build number directly to/from Info.plist</td>
+<td>374</td>
+</tr>
+<tr>
 <td>get_version_code</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-get_version_code">get_version_code</a></td>
 <td>Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file</td>
 <td>373</td>
-</tr>
-<tr>
-<td>droidicon</td>
-<td><a href="https://github.com/chrhsmt/fastlane-plugin-droidicon">droidicon</a></td>
-<td>Generate required icon sizes and iconset from a master application icon</td>
-<td>371</td>
-</tr>
-<tr>
-<td>get_build_number_from_plist</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
-<td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>370</td>
 </tr>
 <tr>
 <td>deploy_file_provider</td>
@@ -12681,7 +12684,7 @@ Using this action you can opt out</p>
 <td>applivery</td>
 <td><a href="https://github.com/applivery/fastlane-applivery-plugin">applivery</a></td>
 <td>Upload new build to Applivery</td>
-<td>333</td>
+<td>356</td>
 </tr>
 <tr>
 <td>instrumented_tests</td>
@@ -12765,7 +12768,7 @@ Using this action you can opt out</p>
 <td>wait_xcrun</td>
 <td><a href="https://github.com/mgrebenets/fastlane-plugin-wait_xcrun">wait_xcrun</a></td>
 <td>Wait for Xcode toolchain to come back online after switching Xcode versions.</td>
-<td>135</td>
+<td>137</td>
 </tr>
 <tr>
 <td>upload_folder_to_s3</td>
@@ -12825,7 +12828,7 @@ Using this action you can opt out</p>
 <td>carthage_cache_publish</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>75</td>
+<td>77</td>
 </tr>
 <tr>
 <td>export_localizations</td>
@@ -12834,15 +12837,15 @@ Using this action you can opt out</p>
 <td>70</td>
 </tr>
 <tr>
-<td>shuttle</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>68</td>
-</tr>
-<tr>
 <td>create_jira_version</td>
 <td><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions">jira_versions</a></td>
 <td>Manage your JIRA project's releases/versions with this plugin.</td>
+<td>68</td>
+</tr>
+<tr>
+<td>shuttle</td>
+<td><code>polidea</code></td>
+<td>Polidea's fastlane action</td>
 <td>68</td>
 </tr>
 <tr>
@@ -12894,6 +12897,12 @@ Using this action you can opt out</p>
 <td>38</td>
 </tr>
 <tr>
+<td>rocket_chat</td>
+<td><a href="https://github.com/thiagofelix/fastlane-plugin-rocket_chat">rocket_chat</a></td>
+<td>Send message to Rocket.Chat right from fastlane</td>
+<td>32</td>
+</tr>
+<tr>
 <td>aws_device_farm</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-aws_device_farm">aws_device_farm</a></td>
 <td>Run UI Tests on AWS Devicefarm</td>
@@ -12904,12 +12913,6 @@ Using this action you can opt out</p>
 <td><a href="https://github.com/mfurtak/fastlane-plugin-github_status">github_status</a></td>
 <td>Provides the ability to display and act upon GitHub server status as part of your build</td>
 <td>31</td>
-</tr>
-<tr>
-<td>rocket_chat</td>
-<td><a href="https://github.com/thiagofelix/fastlane-plugin-rocket_chat">rocket_chat</a></td>
-<td>Send message to Rocket.Chat right from fastlane</td>
-<td>30</td>
 </tr>
 <tr>
 <td>apply_xcode8_srgb_workaround</td>
@@ -12936,16 +12939,16 @@ Using this action you can opt out</p>
 <td>25</td>
 </tr>
 <tr>
+<td>get_unprovisioned_devices_from_hockey</td>
+<td><a href="https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey">get_unprovisioned_devices_from_hockey</a></td>
+<td>Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices.</td>
+<td>24</td>
+</tr>
+<tr>
 <td>upload_symbols_to_new_relic</td>
 <td><code>upload_symbols_to_new_relic</code></td>
 <td>Uploads dSym to New Relic</td>
 <td>24</td>
-</tr>
-<tr>
-<td>get_unprovisioned_devices_from_hockey</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey">get_unprovisioned_devices_from_hockey</a></td>
-<td>Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices.</td>
-<td>23</td>
 </tr>
 <tr>
 <td>check_good_version</td>
@@ -12984,15 +12987,15 @@ Using this action you can opt out</p>
 <td>9</td>
 </tr>
 <tr>
-<td>app_icon</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>6</td>
-</tr>
-<tr>
 <td>rspec</td>
 <td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
 <td>Useful fastlane actions for Ruby projects</td>
+<td>6</td>
+</tr>
+<tr>
+<td>app_icon</td>
+<td><code>polidea</code></td>
+<td>Polidea's fastlane action</td>
 <td>6</td>
 </tr>
 <tr>
@@ -13020,6 +13023,12 @@ Using this action you can opt out</p>
 <td>3</td>
 </tr>
 <tr>
+<td>pretty_junit</td>
+<td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
+<td>Pretty JUnit test results for your Android projects.</td>
+<td>2</td>
+</tr>
+<tr>
 <td>import_provisioning</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
@@ -13029,12 +13038,6 @@ Using this action you can opt out</p>
 <td>messagesicon</td>
 <td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
 <td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>2</td>
-</tr>
-<tr>
-<td>pretty_junit</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
-<td>Pretty JUnit test results for your Android projects.</td>
 <td>2</td>
 </tr>
 <tr>
