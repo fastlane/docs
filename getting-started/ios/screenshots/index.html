@@ -523,10 +523,11 @@ fastlane action deliver
 <p></details></p>
 <p><details>
 <summary>Setting Up Device Frames</summary></p>
-<p><em>fastlane</em> uses device frames provided by Apple which need to be downloaded and installed separately for legal reasons. Running <code>fastlane frameit setup</code> can walk you through the process.</p>
+<p>To download the latest device frames, you can run</p>
 <pre><code class="no-highlight">fastlane frameit setup
 </code></pre>
 
+<p>This usually happens automatically when you use <em>frameit</em> for the first time on a new machine</p>
 <p></details></p>
 <p>To add the framing to your deployment process, use the following code in your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :screenshots do
