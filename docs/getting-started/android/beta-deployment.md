@@ -7,7 +7,7 @@ If you would like to distribute your beta builds to Google Play, please make sur
 _fastlane_ takes care of building your app by delegating to your existing Gradle build. Just add the following to your `Fastfile`:
 
 ```ruby
-lane :beta
+lane :beta do
   # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
   gradle(
     task: 'assemble',
@@ -37,7 +37,7 @@ fastlane action gradle
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta providers, or even upload to multiple at once, with a minimum of configuration. Follow that with a notification posted to the group messaging service of your choice to let the team know that you've shipped.
 
 ```ruby
-lane :beta
+lane :beta do
   gradle(task: 'assemble', build_type: 'Release')
   supply(track: 'beta')
   slack(message: 'Successfully distributed a new beta build')
