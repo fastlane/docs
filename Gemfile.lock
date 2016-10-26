@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 9ea3f15a721f366e59e55ed604d3ac0ceb39252a
+  revision: 485960d2150d81a7b6549377faa7bf4db9e3bc3c
   specs:
     cert (1.4.3)
       fastlane_core (>= 0.53.0, < 1.0.0)
@@ -10,7 +10,7 @@ GIT
       commander (>= 4.3.5)
       highline (>= 1.7.1)
       security
-    deliver (1.14.4)
+    deliver (1.14.5)
       credentials_manager (>= 0.16.2, < 1.0.0)
       fastimage (~> 1.6)
       fastlane_core (>= 0.53.0, < 1.0.0)
@@ -260,7 +260,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.2)
     word_wrap (1.0.0)
-    xcode-install (2.0.7)
+    xcode-install (2.0.8)
       claide (>= 0.9.1, < 1.1.0)
       spaceship (>= 0.25.1, < 1.0.0)
     xcodeproj (1.3.3)
