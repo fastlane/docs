@@ -59,7 +59,7 @@ Check out the Xcode 7 section on how to update build settings using environment 
 
 Apple's Automatic Provisioning in Xcode 8 will automatically generate a private key, development certificate, and managed development provisioning profile for each computer used to build a project. Since Xcode can auto-generate these for you, there is no need to share them between teammates' computers. As such, when using Xcode Automatic Provisioning, there is no need to use `match development` to keep development keys, certificates, and provisioning profiles in sync.
 
-If you are using _match_ to manage development code signing, Automatic Provisioning will use the _match_-generated key and certificate. However, Xcode will create and manage its own provisioning profile and will not use the _match_-generated profile.
+If you are already using _match_ to manage development code signing, Automatic Provisioning will use the _match_-generated key and certificate. However, Xcode will create and manage its own provisioning profile and will not use the _match_-generated profile.
 
 #### `match appstore` and Xcode Automatic Provisioning
 
