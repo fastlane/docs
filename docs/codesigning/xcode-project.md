@@ -53,6 +53,18 @@ If you're using [match](https://fastlane.tools/match) the following environment 
 
 Check out the Xcode 7 section on how to update build settings using environment variables.
 
+#### Using `match development` vs. Xcode Automatic Provisioning
+
+<img src="/img/codesigning/XcodeAutomaticallyManageSigning.png" width=300 />
+
+Apple's Automatic Provisioning in Xcode 8 will automatically generate a private key, development certificate, and managed development provisioning profile for each computer used to build a project. Since Xcode can auto-generate these for you, there is no need to share them between teammates' computers. As such, when using Xcode Automatic Provisioning, there is no need to use `match development` to keep development keys, certificates, and provisioning profiles in sync.
+
+If you are already using _match_ to keep development keys and certificates in sync, Automatic Provisioning will make use of your _match_-generated key and certificate. However, Automatic Provisioning will still create a separate local Xcode-managed development provisioning profile to build the project and will not use the _match_-generated profile.
+
+#### `match adhoc` and `match appstore` and Xcode Automatic Provisioning
+
+Although Automatic Provisioning will automatically configure Xcode to make development builds, you can still use `match adhoc` or `match appstore` to generate and synchronize distribution signing identities, certificates, and provisioning profiles.
+
 # Xcode 7 and lower
 
 **Note**: This approach is deprecated with Xcode 8
@@ -67,7 +79,7 @@ To do so, open your target settings, open the dropdown for `Provisioning Profile
 
 <img src="/img/codesigning/XcodeProjectSettings.png" width="700" />
 
-Using the `$(...)` notation, Xcode will use the provisioning profile matching the UUID, and fallback to `Automatic` if it's not provided. 
+Using the `$(...)` notation, Xcode will use the provisioning profile matching the UUID, and fallback to `Automatic` if it's not provided.
 
 If you use [fastlane](https://fastlane.tools) you don't have to do any extra work, since the environment variable for the latest profile are automatically set by [match](https://fastlane.tools/match)
 
