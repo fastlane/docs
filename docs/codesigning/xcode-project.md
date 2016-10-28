@@ -53,17 +53,17 @@ If you're using [match](https://fastlane.tools/match) the following environment 
 
 Check out the Xcode 7 section on how to update build settings using environment variables.
 
-#### Using `match development` vs. Xcode Automatic Provisioning
+#### Using `match development` or Xcode Automatic Provisioning
 
 <img src="/img/codesigning/XcodeAutomaticallyManageSigning.png" width=300 />
 
 Apple's Automatic Provisioning in Xcode 8 will automatically generate a private key, development certificate, and managed development provisioning profile for each computer used to build a project. Since Xcode can auto-generate these for you, there is no need to share them between teammates' computers. As such, when using Xcode Automatic Provisioning, there is no need to use `match development` to keep development keys, certificates, and provisioning profiles in sync.
 
-If you are already using _match_ to keep development keys and certificates in sync, Automatic Provisioning will make use of your _match_-generated key and certificate. However, Automatic Provisioning will still create a separate local Xcode-managed development provisioning profile to build the project and will not use the _match_-generated profile.
+If you are using _match_ to manage development code signing, Automatic Provisioning will use the _match_-generated key and certificate. However, Xcode will create and manage its own provisioning profile and will not use the _match_-generated profile.
 
-#### `match adhoc` and `match appstore` and Xcode Automatic Provisioning
+#### `match appstore` and Xcode Automatic Provisioning
 
-Although Automatic Provisioning will automatically configure Xcode to make development builds, you can still use `match adhoc` or `match appstore` to generate and synchronize distribution signing identities, certificates, and provisioning profiles.
+Xcode Automatic Provisioning doesn't sync your private keys across machines (if you have multiple computers or share them between teammates). To securely store your private key and have access to it from all your devices, use `match appstore` or `match adhoc`. This will sync your keys, certificates and provisioning profiles via git, encrypted using OpenSSL.
 
 # Xcode 7 and lower
 
