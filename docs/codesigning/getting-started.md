@@ -61,6 +61,7 @@ Apple improved code signing a lot with the release of Xcode 8, the following has
 - No more `Fix Issue` button, instead all code signing processes run in the background and show the log right in Xcode
 - You can now specify the provisioning profile by name, instead of the UUID (Check out [xcode-project.md](xcode-project.md) for more information)
 - Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out [troubleshooting.md](troubleshooting.md) for more information)
+- Improved Automatic Provisioning that can create per-machine development private keys, certificates, and provisioning profiles. (Check out [xcode-project.md](xcode-project.md) for more information)
 
 ## Manually
 
