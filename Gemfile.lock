@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 33dd1db0ae7adcddcd92199961b499921f6ad111
+  revision: e844e932c42f4d7b9bbb2993ec8d447c2d65d646
   specs:
     cert (1.4.3)
       fastlane_core (>= 0.53.0, < 1.0.0)
@@ -105,7 +105,7 @@ GIT
       fastlane_core (>= 0.53.0, < 1.0.0)
       plist (>= 3.1.0, < 4.0.0)
       xcpretty (>= 0.2.4, < 1.0.0)
-    spaceship (0.36.2)
+    spaceship (0.37.0)
       colored
       credentials_manager (>= 0.16.0)
       faraday (~> 0.9)
@@ -220,7 +220,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    nanaimo (0.2.0)
+    nanaimo (0.2.1)
     nap (1.1.0)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
