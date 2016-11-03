@@ -26,9 +26,9 @@ The most interesting file is `fastlane/Fastfile`, which contains all the informa
 
 _fastlane_ created all the required files for you, now you can go ahead and customise it to generate screenshots or to automatically distribute new builds
 
-- [Automatically generate screenshots](screenshots.md)
-- [Distribute beta builds](beta-deployment.md)
-- [Deploy to the App Store](appstore-deployment.md)
+- [_fastlane_ screenshots for iOS and tvOS](screenshots.md)
+- [iOS Beta deployment using _fastlane_](beta-deployment.md)
+- [iOS App Store deployment using _fastlane_](appstore-deployment.md)
 
 ### Use a Gemfile
 

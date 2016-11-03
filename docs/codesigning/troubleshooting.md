@@ -14,7 +14,7 @@ Does code signing work on a different Mac, but not on yours? If so, chances are 
 
 ## Xcode project
 
-Make sure to follow [xcode-project.md](xcode-project.md) on how to properly set up your project.
+Make sure to follow [Setting up your Xcode Project](xcode-project.md) to properly set up your project.
 
 A check list on what you should verify on your Xcode project
 
@@ -64,4 +64,4 @@ fastlane [lane] --verbose
 
 ## Common Issues
 
-Check out [common-issues.md](common-issues.md) for the most common code signing issues and how you can solve them.
+Check out [Common code signing issues](common-issues.md) for the most common code signing issues and how you can solve them.

@@ -104,7 +104,7 @@ One of the best ways we can keep fastlane an approachable, stable, and dependabl
 
 ## Contributing New Actions
 
-There are different approaches to build your own _fastlane_ actions. You can either build your own local actions, or provide your own fastlane plugin. For more information, check out [Plugins.md](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md#readme).
+There are different approaches to build your own _fastlane_ actions. You can either build your own local actions, or provide your own fastlane plugin. For more information, check out [_fastlane_ Plugins](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md#readme).
 
 ## Developing
 

@@ -12,7 +12,7 @@ To search for a specific plugin
 fastlane search_plugins [search_query]
 ```
 
-You can find more information about how to start using plugins in [Plugins.md](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md).
+You can find more information about how to start using plugins in [_fastlane_ Plugins](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Plugins.md).
 
 #### List of plugins
 
