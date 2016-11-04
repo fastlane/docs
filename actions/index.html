@@ -1446,6 +1446,10 @@ It can process unit test results if formatted as junit report as shown in <a hre
 <td>Specifies path to export options plist. User xcodebuild -help to print the full set of available options</td>
 </tr>
 <tr>
+<td><code>export_xcargs</code></td>
+<td>Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"</td>
+</tr>
+<tr>
 <td><code>skip_build_archive</code></td>
 <td>Export ipa from previously build xarchive. Uses archive_path as source</td>
 </tr>
@@ -1491,7 +1495,7 @@ It can process unit test results if formatted as junit report as shown in <a hre
 </tr>
 <tr>
 <td><code>xcargs</code></td>
-<td>Pass additional arguments to xcodebuild. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"</td>
+<td>Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"</td>
 </tr>
 <tr>
 <td><code>xcconfig</code></td>
@@ -2139,10 +2143,10 @@ gradle(
 </table>
 <p><details>
 <summary>2 Examples</summary></p>
-<pre><code class="ruby">xcversion version: &quot;7.1&quot; # Selects Xcode 7.1.0
+<pre><code class="ruby">xcversion(version: &quot;8.1&quot;) # Selects Xcode 8.1.0
 </code></pre>
 
-<pre><code class="ruby">xcversion version: &quot;~&gt; 7.1.0&quot; # Selects the latest installed version from the 7.1.x set
+<pre><code class="ruby">xcversion(version: &quot;~&gt; 8.1.0&quot;) # Selects the latest installed version from the 8.1.x set
 </code></pre>
 
 <p></details></p>
@@ -4797,6 +4801,10 @@ This integration will only do the TestFlight upload</p>
 <td><code>itc_provider</code></td>
 <td>The provider short name to be used with the iTMSTransporter to identify your team</td>
 </tr>
+<tr>
+<td><code>groups</code></td>
+<td>Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'</td>
+</tr>
 </tbody>
 </table>
 <p></details></p>
@@ -5266,6 +5274,10 @@ More information about the available options can be found in the <a href="http:/
 <tr>
 <td><code>itc_provider</code></td>
 <td>The provider short name to be used with the iTMSTransporter to identify your team</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td>Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'</td>
 </tr>
 </tbody>
 </table>
@@ -6338,7 +6350,6 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 <pre><code class="ruby">deliver(
   force: true, # Set to true to skip PDF verification
   itc_provider: &quot;abcde12345&quot; # pass a specific value to the iTMSTransporter -itc_provider option
-
 )
 </code></pre>
 
@@ -6444,6 +6455,10 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 <tr>
 <td><code>itc_provider</code></td>
 <td>The provider short name to be used with the iTMSTransporter to identify your team</td>
+</tr>
+<tr>
+<td><code>overwrite_screenshots</code></td>
+<td>Clear all previously uploaded screenshots before uploading the new ones</td>
 </tr>
 <tr>
 <td><code>app_icon</code></td>
@@ -6639,7 +6654,6 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 <pre><code class="ruby">deliver(
   force: true, # Set to true to skip PDF verification
   itc_provider: &quot;abcde12345&quot; # pass a specific value to the iTMSTransporter -itc_provider option
-
 )
 </code></pre>
 
@@ -6745,6 +6759,10 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 <tr>
 <td><code>itc_provider</code></td>
 <td>The provider short name to be used with the iTMSTransporter to identify your team</td>
+</tr>
+<tr>
+<td><code>overwrite_screenshots</code></td>
+<td>Clear all previously uploaded screenshots before uploading the new ones</td>
 </tr>
 <tr>
 <td><code>app_icon</code></td>
@@ -10018,6 +10036,10 @@ Fetches most recent build number from TestFlight based on the version number. Pr
 </thead>
 <tbody>
 <tr>
+<td><code>live</code></td>
+<td>Query the live version (ready-for-sale)</td>
+</tr>
+<tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of your app</td>
 </tr>
@@ -12405,6 +12427,89 @@ puts &quot;Using Version #{version}&quot;
 </tbody>
 </table>
 <p></details></p>
+<h3 id="app_store_build_number"><a name="user-content-app_store_build_number" href="#app_store_build_number" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_store_build_number</h3>
+<p>Returns the current build_number of either live or edit version</p>
+<blockquote>
+<p>Returns the current build number of either the live or testflight version - it is useful for getting the build_number of the current or ready-for-sale app version, and it also works on non-live testflight version. If you need to handle more build-trains please see <code>latest_testflight_build_number</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>app_store_build_number</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@hjanuschka</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>3 Examples</summary></p>
+<pre><code class="ruby">app_store_build_number
+</code></pre>
+
+<pre><code class="ruby">app_store_build_number(
+  app_identifier: &quot;app.identifier&quot;,
+  username: &quot;user@host.com&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">app_store_build_number(
+  live: false,
+  app_identifier: &quot;app.identifier&quot;,
+  version: &quot;1.2.9&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>initial_build_number</code></td>
+<td>sets the build number to given value if no build is in current train</td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier of your app</td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Your Apple ID Username</td>
+</tr>
+<tr>
+<td><code>team_id</code></td>
+<td>The ID of your iTunes Connect team if you're in multiple teams</td>
+</tr>
+<tr>
+<td><code>live</code></td>
+<td>Query the live version (ready-for-sale)</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>The version number whose latest build number we want</td>
+</tr>
+<tr>
+<td><code>team_name</code></td>
+<td>The name of your iTunes Connect team if you're in multiple teams</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <h3 id="opt_out_usage"><a name="user-content-opt_out_usage" href="#opt_out_usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_usage</h3>
 <p>This will stop uploading the information which actions were run</p>
 <blockquote>
@@ -12462,13 +12567,13 @@ Using this action you can opt out</p>
 <td>trainer</td>
 <td><a href="https://github.com/KrauseFx/trainer">trainer</a></td>
 <td>Convert xcodebuild plist files to JUnit reports</td>
-<td>4298</td>
+<td>4315</td>
 </tr>
 <tr>
 <td>update_provisioning_profile_specifier</td>
 <td><a href="https://github.com/faithfracture/update_provisioning_profile_specifier">update_provisioning_profile_specifier</a></td>
 <td>Update the provisioning profile in the Xcode Project file for a specified target</td>
-<td>3389</td>
+<td>3395</td>
 </tr>
 <tr>
 <td>increment_build_number_in_plist</td>
@@ -12492,7 +12597,7 @@ Using this action you can opt out</p>
 <td>update_project_codesigning</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning">update_project_codesigning</a></td>
 <td>Updates the Xcode 8 Automatic Codesigning Flag</td>
-<td>2022</td>
+<td>2025</td>
 </tr>
 <tr>
 <td>act</td>
@@ -12504,7 +12609,7 @@ Using this action you can opt out</p>
 <td>read_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>1596</td>
+<td>1597</td>
 </tr>
 <tr>
 <td>get_version_number_from_plist</td>
@@ -12522,7 +12627,7 @@ Using this action you can opt out</p>
 <td>carthage_cache_exist</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>1169</td>
+<td>1170</td>
 </tr>
 <tr>
 <td>xamarin_build</td>
@@ -12534,7 +12639,7 @@ Using this action you can opt out</p>
 <td>carthage_cache_install</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>1061</td>
+<td>1062</td>
 </tr>
 <tr>
 <td>extract_app_icon</td>
@@ -12558,7 +12663,7 @@ Using this action you can opt out</p>
 <td>ftp</td>
 <td><a href="https://github.com/PoissonBallon/fastlane-ftp-plugin">ftp</a></td>
 <td>Simple ftp upload and download for Fastlane</td>
-<td>1010</td>
+<td>1012</td>
 </tr>
 <tr>
 <td>get_binary_size</td>
@@ -12612,7 +12717,7 @@ Using this action you can opt out</p>
 <td>stamp_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>655</td>
+<td>662</td>
 </tr>
 <tr>
 <td>release_notes</td>
@@ -12627,16 +12732,16 @@ Using this action you can opt out</p>
 <td>635</td>
 </tr>
 <tr>
+<td>remove_provisioning_profile</td>
+<td><a href="https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile">remove_provisioning_profile</a></td>
+<td>Remove provision profile from your local machine</td>
+<td>603</td>
+</tr>
+<tr>
 <td>upload_to_onesky</td>
 <td><a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky">upload_to_onesky</a></td>
 <td>Upload a strings file to OneSky</td>
 <td>601</td>
-</tr>
-<tr>
-<td>remove_provisioning_profile</td>
-<td><a href="https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile">remove_provisioning_profile</a></td>
-<td>Remove provision profile from your local machine</td>
-<td>597</td>
 </tr>
 <tr>
 <td>poeditor_export</td>
@@ -12783,16 +12888,16 @@ Using this action you can opt out</p>
 <td>158</td>
 </tr>
 <tr>
+<td>import_localizations</td>
+<td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
+<td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
+<td>145</td>
+</tr>
+<tr>
 <td>upload_folder_to_s3</td>
 <td><a href="https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3">upload_folder_to_s3</a></td>
 <td>Upload a folder to S3</td>
 <td>143</td>
-</tr>
-<tr>
-<td>import_localizations</td>
-<td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
-<td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
-<td>142</td>
 </tr>
 <tr>
 <td>sharethemeal</td>
@@ -12810,7 +12915,13 @@ Using this action you can opt out</p>
 <td>export_localizations</td>
 <td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
 <td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
-<td>110</td>
+<td>112</td>
+</tr>
+<tr>
+<td>update_changelog</td>
+<td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
+<td>Automate changes to your project CHANGELOG.md</td>
+<td>111</td>
 </tr>
 <tr>
 <td>get_app_store_version_number</td>
@@ -12823,12 +12934,6 @@ Using this action you can opt out</p>
 <td><code>android_change_app_name</code></td>
 <td>Changes the manifest's label attribute (appName).  Stores the original name for revertinng.</td>
 <td>107</td>
-</tr>
-<tr>
-<td>update_changelog</td>
-<td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
-<td>Automate changes to your project CHANGELOG.md</td>
-<td>104</td>
 </tr>
 <tr>
 <td>onesky_download</td>
@@ -12936,7 +13041,7 @@ Using this action you can opt out</p>
 <td>upload_symbols_to_new_relic</td>
 <td><code>upload_symbols_to_new_relic</code></td>
 <td>Uploads dSym to New Relic</td>
-<td>49</td>
+<td>50</td>
 </tr>
 <tr>
 <td>upload_symbols_to_hockey</td>
@@ -12969,15 +13074,21 @@ Using this action you can opt out</p>
 <td>28</td>
 </tr>
 <tr>
-<td>update_xcodeproj</td>
-<td><a href="https://github.com/nafu/fastlane-plugin-update_xcodeproj">update_xcodeproj</a></td>
-<td>Update Xcode projects</td>
-<td>27</td>
-</tr>
-<tr>
 <td>coreos</td>
 <td><a href="https://github.com/icuisine-pos/fastlane-plugin-coreos">coreos</a></td>
 <td>Deploy docker services to CoreOS hosts</td>
+<td>27</td>
+</tr>
+<tr>
+<td>rubocop</td>
+<td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
+<td>Useful fastlane actions for Ruby projects</td>
+<td>27</td>
+</tr>
+<tr>
+<td>update_xcodeproj</td>
+<td><a href="https://github.com/nafu/fastlane-plugin-update_xcodeproj">update_xcodeproj</a></td>
+<td>Update Xcode projects</td>
 <td>27</td>
 </tr>
 <tr>
@@ -12987,16 +13098,16 @@ Using this action you can opt out</p>
 <td>25</td>
 </tr>
 <tr>
-<td>rubocop</td>
-<td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
-<td>Useful fastlane actions for Ruby projects</td>
-<td>21</td>
-</tr>
-<tr>
 <td>check_good_version</td>
 <td><a href="https://github.com/lyndsey-ferguson/fastlane_plugins">check_good_version</a></td>
 <td>Checks the version of the installed Good framework</td>
 <td>19</td>
+</tr>
+<tr>
+<td>rspec</td>
+<td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
+<td>Useful fastlane actions for Ruby projects</td>
+<td>16</td>
 </tr>
 <tr>
 <td>get_version_number_from_git_branch</td>
@@ -13005,16 +13116,16 @@ Using this action you can opt out</p>
 <td>13</td>
 </tr>
 <tr>
+<td>clubmate</td>
+<td><a href="https://github.com/KrauseFx/fastlane-plugin-clubmate">clubmate</a></td>
+<td>Print the Club Mate logo in your build output</td>
+<td>12</td>
+</tr>
+<tr>
 <td>giffy_random_sticker_url</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy">giffy</a></td>
 <td>Fastlane plugin for Giffy.com API</td>
 <td>11</td>
-</tr>
-<tr>
-<td>rspec</td>
-<td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
-<td>Useful fastlane actions for Ruby projects</td>
-<td>10</td>
 </tr>
 <tr>
 <td>ya_tu_sabes</td>
@@ -13032,12 +13143,6 @@ Using this action you can opt out</p>
 <td>android_change_package_identifier</td>
 <td><code>android_change_package_identifier</code></td>
 <td>Change the package identifier in the AndroidManifest.xml file. Can revert as well.</td>
-<td>6</td>
-</tr>
-<tr>
-<td>clubmate</td>
-<td><a href="https://github.com/KrauseFx/fastlane-plugin-clubmate">clubmate</a></td>
-<td>Print the Club Mate logo in your build output</td>
 <td>6</td>
 </tr>
 <tr>
@@ -13059,12 +13164,6 @@ Using this action you can opt out</p>
 <td>3</td>
 </tr>
 <tr>
-<td>pretty_junit</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
-<td>Pretty JUnit test results for your Android projects.</td>
-<td>2</td>
-</tr>
-<tr>
 <td>messagesicon</td>
 <td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
 <td>Generate required icon sizes and iconset from a master application icon.</td>
@@ -13080,6 +13179,12 @@ Using this action you can opt out</p>
 <td>import_provisioning</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
+<td>2</td>
+</tr>
+<tr>
+<td>pretty_junit</td>
+<td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
+<td>Pretty JUnit test results for your Android projects.</td>
 <td>2</td>
 </tr>
 <tr>
