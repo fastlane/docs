@@ -18,7 +18,7 @@ If your provisioning profile is not listed in the drop down, there might be a fe
 - The associated certificate or its private key is not installed on the local machine
 - The provisioning profile is not installed on the local machine
 
-Check out [troubleshooting.md](troubleshooting.md) for more information on how to debug signing issues.
+Check out [Debugging codesigning issues](troubleshooting.md) for more information on how to debug signing issues.
 
 ### Build settings
 
