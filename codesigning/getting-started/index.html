@@ -334,7 +334,7 @@
 <p>The concept of <a href="https://fastlane.tools/match">match</a> is described in the <a href="https://codesigning.guide">codesigning guide</a>. </p>
 <p>With <a href="https://fastlane.tools/match">match</a> you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach <a href="https://github.com/fastlane/fastlane/tree/master/match#is-this-secure">is secure</a> and uses technology you already use.</p>
 <p>Getting started with <a href="https://fastlane.tools/match">match</a> requires you to revoke your existing certificates.</p>
-<p>Make sure to follow <a href="../xcode-project/">xcode-project.md</a> to set up your project properly.</p>
+<p>Make sure to follow <a href="../xcode-project/">Setting up your Xcode Project</a> to set up your project properly.</p>
 <h2 id="using-cert-and-sigh"><a name="user-content-using-cert-and-sigh" href="#using-cert-and-sigh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a></h2>
 <p>If you don't want to revoke your existing certificates, but still want an automated setup, <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a> are for you. </p>
 <ul>
@@ -349,21 +349,21 @@
 end
 </code></pre>
 
-<p>Make sure to follow <a href="../xcode-project/">xcode-project.md</a> to set up your project properly.</p>
+<p>Make sure to follow <a href="../xcode-project/">Setting up your Xcode Project</a> to set up your project properly.</p>
 <h2 id="using-xcodes-code-signing-feature"><a name="user-content-using-xcodes-code-signing-feature" href="#using-xcodes-code-signing-feature" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Xcode's code signing feature</h2>
 <p>Occasionally the <code>Automatic</code> setting as the provisioning profile doesn't work reliably as it will just select the most recently updated provisioning profile, no matter if the certificate is installed. </p>
 <p>That's why it is recommended to specify a specific provisioning profile somehow:</p>
 <h4 id="xcode-7-and-lower"><a name="user-content-xcode-7-and-lower" href="#xcode-7-and-lower" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 7 and lower</h4>
 <p>You should avoid clicking the <code>Fix Issue</code> button (There is an <a href="https://github.com/neonichu/FixCode#readme">Xcode plugin</a> that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.</p>
 <p>Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).</p>
-<p>To work around this issue, check out <a href="../xcode-project/">xcode-project.md</a> on how to pass a provisioning profile to Xcode when building your app.</p>
+<p>To work around this issue, check out <a href="../xcode-project/">Setting up your Xcode Project</a> on how to pass a provisioning profile to Xcode when building your app.</p>
 <h4 id="xcode-8-and-up"><a name="user-content-xcode-8-and-up" href="#xcode-8-and-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8 and up</h4>
 <p>Apple improved code signing a lot with the release of Xcode 8, the following has changed:</p>
 <ul>
 <li>No more <code>Fix Issue</code> button, instead all code signing processes run in the background and show the log right in Xcode</li>
-<li>You can now specify the provisioning profile by name, instead of the UUID (Check out <a href="../xcode-project/">xcode-project.md</a> for more information)</li>
-<li>Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out <a href="../troubleshooting/">troubleshooting.md</a> for more information)</li>
-<li>Improved Automatic Provisioning that can create per-machine development private keys, certificates, and provisioning profiles. (Check out <a href="../xcode-project/">xcode-project.md</a> for more information)</li>
+<li>You can now specify the provisioning profile by name, instead of the UUID (Check out <a href="../xcode-project/">Setting up your Xcode Project</a> for more information)</li>
+<li>Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out <a href="../troubleshooting/">Debugging codesigning issues</a> for more information)</li>
+<li>Improved Automatic Provisioning that can create per-machine development private keys, certificates, and provisioning profiles. (Check out <a href="../xcode-project/">Setting up your Xcode Project</a> for more information)</li>
 </ul>
 <h2 id="manually"><a name="user-content-manually" href="#manually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manually</h2>
 <p>You can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key (<code>.p12</code>) of your certificates in a safe place, as they can't be restored if you lose them. </p>
@@ -371,8 +371,8 @@ end
 <h2 id="where-to-go-from-here"><a name="user-content-where-to-go-from-here" href="#where-to-go-from-here" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Where to go from here</h2>
 <ul>
 <li><a href="../xcode-project/">Setting up your Xcode Project</a></li>
-<li><a href="../troubleshooting/">Troubleshooting code signing errors</a></li>
-<li><a href="../common-issues/">Common Issues</a></li>
+<li><a href="../troubleshooting/">Debugging codesigning issues</a></li>
+<li><a href="../common-issues/">Common code signing issues</a></li>
 <li><a href="../xcode-project/#xcode-8-and-up">Upgrading to Xcode 8</a></li>
 </ul>
               

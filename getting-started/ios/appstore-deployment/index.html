@@ -361,9 +361,9 @@ end
 <p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/GettingStarted">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
 <h1 id="submitting-your-app"><a name="user-content-submitting-your-app" href="#submitting-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submitting your app</h1>
 <h2 id="generating-screenshots"><a name="user-content-generating-screenshots" href="#generating-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating screenshots</h2>
-<p>To find out more about how to automatically generate screenshots for the App Store, check out the <a href="../screenshots/">screenshots guide</a>.</p>
+<p>To find out more about how to automatically generate screenshots for the App Store, check out <a href="../screenshots/"><em>fastlane</em> screenshots for iOS and tvOS</a>.</p>
 <h2 id="upload-the-binary-and-app-metadata"><a name="user-content-upload-the-binary-and-app-metadata" href="#upload-the-binary-and-app-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload the binary and app metadata</h2>
-<p>After building your app, it's ready to be uploaded to the App Store. If you've already followed the <a href="../beta-deployment/">beta deployment guide</a>, the following code might look similar already. </p>
+<p>After building your app, it's ready to be uploaded to the App Store. If you've already followed <a href="../beta-deployment/">iOS Beta deployment using <em>fastlane</em></a>, the following code might look similar already.</p>
 <pre><code class="ruby">lane :appstore do
   snapshot                      # generate new screenshots for the App Store
   match(type: &quot;appstore&quot;)       # see code signing guide for more information
