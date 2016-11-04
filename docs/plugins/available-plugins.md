@@ -12,6 +12,8 @@ To search for a specific plugin
 fastlane search_plugins [search_query]
 ```
 
-You can find more information about how to start using plugins in [Plugins docs](https://docs.fastlane.tools/plugins/create-plugin/).
+You can find more information about how to start using plugins in [_fastlane_ Plugins](https://docs.fastlane.tools/plugins/create-plugin/).
+
+#### List of plugins
 
 The list of available plugins was moved to the [Actions#Plugins](https://docs.fastlane.tools/actions/#plugins)

@@ -36,11 +36,11 @@ Chances are that something went wrong because of code signing at the previous st
 
 ## Generating screenshots
 
-To find out more about how to automatically generate screenshots for the App Store, check out the [screenshots guide](screenshots.md).
+To find out more about how to automatically generate screenshots for the App Store, check out [_fastlane_ screenshots for iOS and tvOS](screenshots.md).
 
 ## Upload the binary and app metadata
 
-After building your app, it's ready to be uploaded to the App Store. If you've already followed the [beta deployment guide](beta-deployment.md), the following code might look similar already. 
+After building your app, it's ready to be uploaded to the App Store. If you've already followed [iOS Beta deployment using _fastlane_](beta-deployment.md), the following code might look similar already.
 
 ```ruby
 lane :appstore do
