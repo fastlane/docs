@@ -2366,7 +2366,7 @@ sigh |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
-Returns | The UDID of the profile sigh just fetched/generated
+Returns | The path to the profile sigh just fetched/generated
 
 
 
