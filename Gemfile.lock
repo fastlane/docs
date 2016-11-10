@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 5c82623443247cde2032a64a8607e3de15e8c521
+  revision: 5d2a22a0ef68755294ca3b4c6719c6c65b09a8cd
   specs:
     cert (1.4.4)
       fastlane_core (>= 0.55.0, < 1.0.0)
@@ -16,18 +16,18 @@ GIT
       fastlane_core (>= 0.55.0, < 1.0.0)
       plist (>= 3.1.0, < 4.0.0)
       spaceship (>= 0.37.0, < 1.0.0)
-    fastlane (1.107.0)
+    fastlane (1.108.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       bundler (~> 1.12)
-      cert (>= 1.4.3, < 2.0.0)
+      cert (>= 1.4.4, < 2.0.0)
       credentials_manager (>= 0.16.2, < 1.0.0)
       deliver (>= 1.15.0, < 2.0.0)
       fastlane_core (>= 0.55.0, < 1.0.0)
       frameit (>= 3.0.0, < 4.0.0)
       gym (>= 1.12.0, < 2.0.0)
       krausefx-shenzhen (>= 0.14.11, < 1.0.0)
-      match (>= 0.10.0, < 1.0.0)
+      match (>= 0.11.0, < 1.0.0)
       multipart-post (~> 2.0.0)
       pem (>= 1.4.0, < 2.0.0)
       pilot (>= 1.12.0, < 2.0.0)
@@ -71,7 +71,7 @@ GIT
       terminal-table (>= 1.4.5, < 2.0.0)
       xcpretty (>= 0.2.4, < 1.0.0)
     match (0.11.0)
-      cert (>= 1.4.3, < 2.0.0)
+      cert (>= 1.4.4, < 2.0.0)
       credentials_manager (>= 0.16.2, < 1.0.0)
       fastlane_core (>= 0.55.0, < 1.0.0)
       security
