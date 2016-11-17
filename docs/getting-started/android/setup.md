@@ -2,9 +2,10 @@
 
 ## Installing _fastlane_
 
-```no-highlight
-sudo gem install fastlane --verbose
-```
+| [Homebrew](http://brew.sh) | Manual | Rubygems |
+| --- | --- | --- |
+| macOS | macOS |macOS or Linux with Ruby 2.0.0 or above |
+| `brew cask install fastlane` | [Download the zip file](https://kits-crashlytics-com.s3.amazonaws.com/fastlane/standalone/latest.zip). Then double click on the `install` script (or run it in a terminal window).   | `sudo gem install fastlane -NV`|
 
 ## Setting up _fastlane_
 
