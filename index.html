@@ -397,9 +397,24 @@ end
 <pre><code class="no-highlight">xcode-select --install
 </code></pre>
 
-<h3 id="using-the-terminal"><a name="user-content-using-the-terminal" href="#using-the-terminal" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using the terminal</h3>
-<pre><code class="no-highlight">sudo gem install fastlane --verbose
-</code></pre>
+<h3 id="choose-your-installation-method"><a name="user-content-choose-your-installation-method" href="#choose-your-installation-method" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Choose your installation method:</h3>
+<table width="100%">
+<tr>
+<th width="33%"><a href="http://brew.sh">Homebrew</a></td>
+<th width="33%">Installer Script</td>
+<th width="33%">Rubygems</td>
+</tr>
+<tr>
+<td width="33%" align="center">macOS</td>
+<td width="33%" align="center">macOS</td>
+<td width="33%" align="center">macOS or Linux with Ruby 2.0.0 or above</td>
+</tr>
+<tr> 
+<td width="33%"><code>brew cask install fastlane</code></td>
+<td width="33%"><a href="https://kits-crashlytics-com.s3.amazonaws.com/fastlane/standalone/latest.zip">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
+<td width="33%"><code>sudo gem install fastlane -NV</code></td>
+</tr>
+</table>
 
 <p>Navigate to your iOS or Android app and run</p>
 <pre><code class="no-highlight">fastlane init
@@ -474,5 +489,5 @@ end
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-11-10 19:33:09.080380
+Build Date UTC : 2016-11-18 16:40:45.043955
 -->
