@@ -18,7 +18,7 @@ lane :post_slack_deploy_message do
 end
 
 lane :update_available_plugins do
-  Fastlane::PluginFetcher.update_md_file!(output_path: "../docs/plugins/AvailablePlugins.md")
+  Fastlane::PluginFetcher.update_md_file!(output_path: "../docs/plugins/available-plugins.md")
 end
 
 private_lane :build_site do
