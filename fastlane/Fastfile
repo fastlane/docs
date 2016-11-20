@@ -8,6 +8,7 @@ lane :test do |options|
     ensure_assets_location
     ensure_tool_name_formatting
     ensure_code_samples
+    update_available_plugins
   end
 end
 
@@ -18,7 +19,7 @@ lane :post_slack_deploy_message do
 end
 
 lane :update_available_plugins do
-  Fastlane::PluginFetcher.update_md_file!(output_path: "../docs/plugins/available-plugins.md")
+  Fastlane::PluginFetcher.update_md_file!(output_path: "docs/plugins/available-plugins.md")
 end
 
 private_lane :build_site do
