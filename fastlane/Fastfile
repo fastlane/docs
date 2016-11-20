@@ -8,7 +8,6 @@ lane :test do |options|
     ensure_assets_location
     ensure_tool_name_formatting
     ensure_code_samples
-    update_available_plugins
   end
 end
 
