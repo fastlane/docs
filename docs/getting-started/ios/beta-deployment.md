@@ -326,6 +326,10 @@ Depending on the beta testing service you use, you'll have to increment the buil
 
 To do so, there are some built-in fastlane actions available, here are some examples
 
+### Commiting the build number to version control
+
+The code sample below will increment the build number and commit the project changes to version control.
+
 ```ruby
 lane :beta do
   # Ensure that there that your git status is not dirty
@@ -344,6 +348,19 @@ lane :beta do
 
   # Push the new commit and tag back to your git remote
   push_to_git_remote
+end
+```
+
+### Fetching the latest build number from TestFlight
+
+The code sample below will use the latest build number from TestFlight and temporarily set it. 
+
+```ruby
+lane :beta do
+  increment_build_number(
+    build_number: latest_testflight_build_number + 1,
+    xcodeproj: "Example.xcodeproj"
+  )
 end
 ```
 
