@@ -173,7 +173,6 @@ fastlane action testfairy
 ```
 
 More information about the service on [TestFairy.com](https://testfairy.com).
----
 </details>
 
 
