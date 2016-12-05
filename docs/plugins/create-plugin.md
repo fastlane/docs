@@ -87,7 +87,7 @@ gem "fastlane-plugin-xcversion", ">= 1.0"
 
 To make sure all plugins are installed on the local machine, run
 
-```
+```no-highlight
 fastlane install_plugins
 ```
 
@@ -95,13 +95,13 @@ fastlane install_plugins
 
 Open your `fastlane/Pluginfile` and remove the line that looks like this
 
-```
+```ruby
 gem "fastlane-plugin-[plugin_name]"
 ```
 
 ### Create your own plugin
 
-```
+```no-highlight
 cd ~/new/folder/
 
 fastlane new_plugin [plugin_name]
