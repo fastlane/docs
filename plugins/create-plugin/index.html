@@ -385,16 +385,16 @@ gem &quot;fastlane-plugin-xcversion&quot;, &quot;&gt;= 1.0&quot;
 <p><a href="http://bundler.io/gemfile.html">More information about a Gemfile</a></p>
 <h3 id="install-plugins-on-another-machine"><a name="user-content-install-plugins-on-another-machine" href="#install-plugins-on-another-machine" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Install plugins on another machine</h3>
 <p>To make sure all plugins are installed on the local machine, run</p>
-<pre><code>fastlane install_plugins
+<pre><code class="no-highlight">fastlane install_plugins
 </code></pre>
 
 <h3 id="remove-a-plugin"><a name="user-content-remove-a-plugin" href="#remove-a-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Remove a plugin</h3>
 <p>Open your <code>fastlane/Pluginfile</code> and remove the line that looks like this</p>
-<pre><code>gem &quot;fastlane-plugin-[plugin_name]&quot;
+<pre><code class="ruby">gem &quot;fastlane-plugin-[plugin_name]&quot;
 </code></pre>
 
 <h3 id="create-your-own-plugin"><a name="user-content-create-your-own-plugin" href="#create-your-own-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create your own plugin</h3>
-<pre><code>cd ~/new/folder/
+<pre><code class="no-highlight">cd ~/new/folder/
 
 fastlane new_plugin [plugin_name]
 </code></pre>
