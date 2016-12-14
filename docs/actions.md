@@ -3088,7 +3088,7 @@ Key | Description
   `teams` | Comma separated list of team ID numbers to which this build will be restricted
   `users` | Comma separated list of user ID numbers to which this build will be restricted
   `tags` | Comma separated list of tags which will receive access to the build
-  `public_identifier` | Public identifier of the app you are targeting, usually you won't need this value
+  `public_identifier` | App id of the app you are targeting, usually you won't need this value. Required if you are using `upload_dsym_only` option.
   `commit_sha` | The Git commit SHA for this build
   `repository_url` | The URL of your source repository
   `build_server_url` | The URL of the build job on your build server
