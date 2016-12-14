@@ -11,6 +11,12 @@ markdown_extensions:
   - pymdownx.headeranchor
   - markdown.extensions.attr_list
 theme_dir: theme
+extra_css:
+  - css/breadcrumbs.css
+  - css/code.css
+  - css/fabric.css 
+  - css/fastlane.css
+  - css/sidenav.css
 
 pages:
 - Home: index.md
