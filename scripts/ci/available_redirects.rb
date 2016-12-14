@@ -14,7 +14,6 @@ def docs_redirects
     "best-practices/SourceControl" => "best-practices/source-control",
     "best-practices/ContinuousIntegration" => "best-practices/continuous-integration",
     "best-practices/Keys" => "best-practices/keys",
-    "Advanced" => "advanced",
-    "CONTRIBUTING" => "contributing"
+    "Advanced" => "advanced"
   }
 end
