@@ -331,7 +331,7 @@ The code sample below will increment the build number and commit the project cha
 
 ```ruby
 lane :beta do
-  # Ensure that there that your git status is not dirty
+  # Ensure that your git status is not dirty
   ensure_git_status_clean
 
   # Increment the build number (not the version number)
