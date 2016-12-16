@@ -309,7 +309,7 @@ end
 ```
 
 The `devices.txt` should look like this:
-```
+```no-highlight
 Device ID Device Name
 A123456789012345678901234567890123456789  DeviceName1
 B123456789012345678901234567890123456789  DeviceName2
