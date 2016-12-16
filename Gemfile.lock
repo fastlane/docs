@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 4b4095f6d680807e92d74f2507a7c4a180b36855
+  revision: d6ee94e141eefe8f14e39fb7de6298a66a4b29aa
   specs:
-    fastlane (2.0.3)
+    fastlane (2.0.4)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -24,7 +24,7 @@ GIT
       multi_xml (~> 0.5)
       multipart-post (~> 2.0.0)
       plist (>= 3.1.0, < 4.0.0)
-      rubyzip (>= 1.2.0, < 2.0.0)
+      rubyzip (>= 1.1.0, < 2.0.0)
       security (= 0.1.3)
       slack-notifier (>= 1.3, < 2.0.0)
       terminal-notifier (>= 1.6.2, < 2.0.0)
