@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: d6ee94e141eefe8f14e39fb7de6298a66a4b29aa
+  revision: a5c5e7eb68a817d57992ab9199f9ac5e74848af1
   specs:
-    fastlane (2.0.4)
+    fastlane (2.1.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
