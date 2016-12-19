@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: d6ee94e141eefe8f14e39fb7de6298a66a4b29aa
+  revision: f46e95c5e30faca3400a42c9d102ce4a78f28797
   specs:
-    fastlane (2.0.4)
+    fastlane (2.1.1)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -30,7 +30,6 @@ GIT
       terminal-notifier (>= 1.6.2, < 2.0.0)
       terminal-table (>= 1.4.5, < 2.0.0)
       word_wrap (~> 1.0.0)
-      xcode-install (~> 2.0.0)
       xcodeproj (>= 0.20, < 2.0.0)
       xcpretty (>= 0.2.4, < 1.0.0)
       xcpretty-travis-formatter (>= 0.0.3)
@@ -58,11 +57,6 @@ GEM
       highline (~> 1.7.2)
     cork (0.2.0)
       colored (~> 1.2)
-    credentials_manager (0.16.2)
-      colored
-      commander (>= 4.3.5)
-      highline (>= 1.7.1)
-      security
     danger (4.0.3)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
@@ -153,16 +147,6 @@ GEM
       jwt (~> 1.5)
       multi_json (~> 1.10)
     slack-notifier (1.5.1)
-    spaceship (0.39.0)
-      babosa (= 1.0.2)
-      colored
-      credentials_manager (>= 0.16.0)
-      faraday (~> 0.9)
-      faraday-cookie_jar (~> 0.0.6)
-      faraday_middleware (~> 0.9)
-      fastimage (>= 1.6)
-      multi_xml (~> 0.5)
-      plist (>= 3.1.0, < 4.0.0)
     terminal-notifier (1.7.1)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
@@ -175,9 +159,6 @@ GEM
     unf_ext (0.0.7.2)
     unicode-display_width (1.1.2)
     word_wrap (1.0.0)
-    xcode-install (2.0.9)
-      claide (>= 0.9.1, < 1.1.0)
-      spaceship (>= 0.25.1, < 1.0.0)
     xcodeproj (1.4.1)
       CFPropertyList (~> 2.3.3)
       activesupport (>= 3)
