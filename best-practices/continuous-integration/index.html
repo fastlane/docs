@@ -374,6 +374,18 @@
 <h3 id="setup_jenkins"><a name="user-content-setup_jenkins" href="#setup_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_jenkins</h3>
 <p>You can use <code>setup_jenkins</code> action which integrates well with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>. Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the <code>./output</code> folder in the job workspace. In additions <code>setup_jenkins</code> will create separate derived data folder for each job (in the <code>./derivedData</code>).</p>
 <p>Under the hood <code>setup_jenkins</code> configures other actions like: <em>gym</em>, <em>scan</em>, <code>xcodebuild</code>, <code>backup_xcarchive</code> and <code>clear_derived_data</code>.</p>
+<h3 id="commit_version_bump-git_commit"><a name="user-content-commit_version_bump-git_commit" href="#commit_version_bump-git_commit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>commit_version_bump || git_commit</h3>
+<p>You can use <code>commit_version_bump</code> or <code>git_commit</code> action to commit changes to your repository in your fastlane setup. When you are using webhooks to trigger your build on a push this will cause an infinite loop of triggering builds.</p>
+<h4 id="gitlab"><a name="user-content-gitlab" href="#gitlab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gitlab</h4>
+<p>When you are using Gitlab you will need the <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin">GitLab Plugin</a>. Inside the job you want to configure you go to <code>Build Triggers &gt; Build when a change is pushed to GitLab &gt; Enable [ci-skip]</code>. 
+When you include <code>[ci-skip]</code> in your build this commit won't trigger the build in jenkins at all.</p>
+<p><strong>Example</strong>  </p>
+<pre><code class="ruby">build_number = increment_build_number
+commit_version_bump(message:&quot;[ci-skip] Version Bump to #{build_number}&quot;)
+git_commit(path:&quot;./CHANGELOG.md&quot;, message:&quot;[ci-skip] Updated CHANGELOG for Build #{build_number}&quot;)
+push_to_git_remote
+</code></pre>
+
 <h2 id="test-results-and-screenshots"><a name="user-content-test-results-and-screenshots" href="#test-results-and-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Test Results and Screenshots</h2>
 <p>To show the <strong>deployment result</strong> right in <code>Jenkins</code></p>
 <ul>
