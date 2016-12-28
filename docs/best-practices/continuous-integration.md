@@ -7,7 +7,7 @@
 If your account is protected using 2 step verification, you can get a login token by running
 
 ```
-spaceauth -u user@email.com
+fastlane spaceauth -u user@email.com
 ```
 
 This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system.
