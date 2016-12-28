@@ -10,6 +10,7 @@ module Fastlane
         errors = []
         content.scan(/```ruby\n([^`]*)\n```/m).each do |current_match|
           current_match = current_match.first # we only expect one match
+          next if current_match.include?("sh(") # we don't want to run any shell scripts
 
           UI.verbose("parsing: #{current_match}")
 
