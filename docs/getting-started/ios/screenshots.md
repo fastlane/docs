@@ -502,6 +502,6 @@ If you ever bought music you should also grab the following directory
 Raw File System/Purchases
 ```
 
-That's it you should now be able to open your application and see the music files appear. You should even be able to play them!
+That's it you should now be able to open your application and see the music files appear. You should even be able to play them!  
 ![result](/img/getting-started/musiclibrary-result.png)
 </details>
