@@ -2,9 +2,15 @@
 
 # Best Practices
 
-## 2 factor auth
+## Two-step or Two-factor auth
 
-If your account is protected using 2 step verification, you can get a login token by running
+If you want to upload builds to TestFlight/iTunes Connect from your CI machine, you need to generate an application specific password:
+
+1. Visit [appleid.apple.com/account/manage](https://appleid.apple.com/account/manage)
+1. Generate a new application specific password
+1. Provide the application specific password using the environment variable `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`
+
+Because your CI machine will not be able to prompt you for your two-step or two-factor auth information, you also need to generate a login session for your CI machine in advance. You can get this by running:
 
 ```
 fastlane spaceauth -u user@email.com
@@ -143,7 +149,7 @@ This will automatically cache the installed gems on Circle, making your CI build
 
 In bamboo under **Linked Repositories** (where you configure your git repo) under **Advanced Settings** is an option called **Exclude changesets**
 
-This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.  
+This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.
 
 For example, if your `Fastfile` is configured to make a commit message in the style of
 
@@ -164,7 +170,7 @@ By default bamboo will do an anonymous shallow clone of the repo.  This will not
 ```ruby
 # In prep for eventually committing a version/build bump - set the git params
 sh('git config user.name "<COMMITTER USERNAME>"')
-sh('git config user.email <COMITTER EMAIL>')   
+sh('git config user.email <COMITTER EMAIL>')
 
 # Bamboo does an anonymous checkout so in order to update the build versions must set the git repo URL
 git_remote_cmd = 'git remote set-url origin ' + ENV['bamboo_repository_git_repositoryUrl']
@@ -178,7 +184,7 @@ Carthage is a wonderful dependency manager but once you are start using a large 
 
 One way to make build times faster is to break your work up into two separate build plans (*this can get even more funky if you start having multiple branches*)
 
-The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs _fastlane_.  
+The general idea is to make a build plan: **Project - Artifacts** that builds the `Carthage` directory and stores it as a shared artifact.  Then you create a second build plan **Project - Fastlane** that pulls down the `Carthage` directory and runs _fastlane_.
 
 
 ### Artifact Plan
