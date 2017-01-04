@@ -335,8 +335,14 @@
               
                 <h1 id="continuous-integration"><a name="user-content-continuous-integration" href="#continuous-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Continuous Integration</h1>
 <h1 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h1>
-<h2 id="2-factor-auth"><a name="user-content-2-factor-auth" href="#2-factor-auth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 factor auth</h2>
-<p>If your account is protected using 2 step verification, you can get a login token by running</p>
+<h2 id="two-step-or-two-factor-auth"><a name="user-content-two-step-or-two-factor-auth" href="#two-step-or-two-factor-auth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Two-step or Two-factor auth</h2>
+<p>If you want to upload builds to TestFlight/iTunes Connect from your CI machine, you need to generate an application specific password:</p>
+<ol>
+<li>Visit <a href="https://appleid.apple.com/account/manage">appleid.apple.com/account/manage</a></li>
+<li>Generate a new application specific password</li>
+<li>Provide the application specific password using the environment variable <code>FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD</code></li>
+</ol>
+<p>Because your CI machine will not be able to prompt you for your two-step or two-factor auth information, you also need to generate a login session for your CI machine in advance. You can get this by running:</p>
 <pre><code>fastlane spaceauth -u user@email.com
 </code></pre>
 
@@ -432,7 +438,7 @@ test:
 <h1 id="bamboo-integration"><a name="user-content-bamboo-integration" href="#bamboo-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bamboo Integration</h1>
 <h2 id="repository-setup"><a name="user-content-repository-setup" href="#repository-setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repository setup</h2>
 <p>In bamboo under <strong>Linked Repositories</strong> (where you configure your git repo) under <strong>Advanced Settings</strong> is an option called <strong>Exclude changesets</strong></p>
-<p>This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.  </p>
+<p>This dialog will allow you to enter a regular expression that if a commit matches, a build will not be triggered.</p>
 <p>For example, if your <code>Fastfile</code> is configured to make a commit message in the style of</p>
 <pre><code class="no-highlight">Build Version bump by fastlane to Version [0.3] Build [8]
 </code></pre>
@@ -445,7 +451,7 @@ test:
 <p>By default bamboo will do an anonymous shallow clone of the repo.  This will not preserve the  <code>git remote</code> information nor the list of tags.  If you are using bamboo to create commits you may want to use a code block similar to the following:</p>
 <pre><code class="ruby"># In prep for eventually committing a version/build bump - set the git params
 sh('git config user.name &quot;&lt;COMMITTER USERNAME&gt;&quot;')
-sh('git config user.email &lt;COMITTER EMAIL&gt;')   
+sh('git config user.email &lt;COMITTER EMAIL&gt;')
 
 # Bamboo does an anonymous checkout so in order to update the build versions must set the git repo URL
 git_remote_cmd = 'git remote set-url origin ' + ENV['bamboo_repository_git_repositoryUrl']
@@ -455,7 +461,7 @@ sh(git_remote_cmd)
 <h2 id="speeding-up-build-times-with-carthage"><a name="user-content-speeding-up-build-times-with-carthage" href="#speeding-up-build-times-with-carthage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Speeding up build times with carthage</h2>
 <p>Carthage is a wonderful dependency manager but once you are start using a large number of frameworks, things can start to slow down, especially if your CI server has to run <code>carthage</code> EVERY time you check in a small line of code.</p>
 <p>One way to make build times faster is to break your work up into two separate build plans (<em>this can get even more funky if you start having multiple branches</em>)</p>
-<p>The general idea is to make a build plan: <strong>Project - Artifacts</strong> that builds the <code>Carthage</code> directory and stores it as a shared artifact.  Then you create a second build plan <strong>Project - Fastlane</strong> that pulls down the <code>Carthage</code> directory and runs <em>fastlane</em>.  </p>
+<p>The general idea is to make a build plan: <strong>Project - Artifacts</strong> that builds the <code>Carthage</code> directory and stores it as a shared artifact.  Then you create a second build plan <strong>Project - Fastlane</strong> that pulls down the <code>Carthage</code> directory and runs <em>fastlane</em>.</p>
 <h3 id="artifact-plan"><a name="user-content-artifact-plan" href="#artifact-plan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Artifact Plan</h3>
 <p>Use a simple setup to create this build plan. First off you want to make sure this plan is manually triggered only - because you only need to run it whenever the <code>Cartfile</code> changes as opposed to after ever single commit.  It could also be on a nightly build perhaps if you desire.</p>
 <h4 id="stages-jobs-tasks"><a name="user-content-stages-jobs-tasks" href="#stages-jobs-tasks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Stages / Jobs / Tasks</h4>
