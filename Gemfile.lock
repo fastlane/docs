@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 3e6ebb8bf8b708dca9d27da412c3c03a6e4fa218
+  revision: b78b7cc1c2c98dd353750ac89d03c3be9f63856c
   specs:
-    fastlane (2.5.0)
+    fastlane (2.6.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -16,7 +16,7 @@ GIT
       faraday_middleware (~> 0.9)
       fastimage (>= 1.6)
       gh_inspector (>= 1.0.1, < 2.0.0)
-      google-api-client (~> 0.9.1)
+      google-api-client (~> 0.9.2)
       highline (>= 1.7.2, < 2.0.0)
       json (< 3.0.0)
       mini_magick (~> 4.5.1)
@@ -110,7 +110,7 @@ GEM
     i18n (0.7.0)
     json (1.8.3)
     jwt (1.5.6)
-    kramdown (1.13.1)
+    kramdown (1.13.2)
     little-plugger (1.1.4)
     logging (2.1.0)
       little-plugger (~> 1.1)
