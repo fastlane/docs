@@ -103,7 +103,7 @@ private_lane :ensure_assets_location do
   error = false
   Dir["docs/**/*"].each do |path|
     next if File.directory?(path)
-    next if ['docs/css', 'docs/img'].any? { |dir| path.start_with?(dir) }
+    next if ['docs/css', 'docs/img', 'docs/js'].any? { |dir| path.start_with?(dir) }
     next if File.dirname(path) == "docs" # root level
     next if File.extname(path) == ".md"
     error = true
