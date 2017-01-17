@@ -316,6 +316,10 @@
       <li class="toctree-l3"><a href="#adding-credentials">Adding Credentials</a></li>
       
     
+      
+      <li class="toctree-l3"><a href="#control-configuration-by-lane-and-by-platform">Control configuration by lane and by platform</a></li>
+      
+    
   </ul>
   
 </li>
@@ -629,6 +633,45 @@ Credential felix@krausefx.com:********* added to keychain.
 <pre><code class="no-highlight">fastlane-credentials remove --username felix@krausefx.com
 password has been deleted.
 </code></pre>
+
+<h1 id="control-configuration-by-lane-and-by-platform"><a name="user-content-control-configuration-by-lane-and-by-platform" href="#control-configuration-by-lane-and-by-platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Control configuration by lane and by platform</h1>
+<p>In general, configuration files take only the first value given for a particular configuration item. That means that for an <code>Appfile</code> like the following:</p>
+<pre><code class="ruby">app_identifier &quot;com.used.id&quot;
+app_identifier &quot;com.ignored.id&quot;
+</code></pre>
+
+<p>the <code>app_identfier</code> will be <code>"com.used.id"</code> and the second value will be ignored. The <code>for_lane</code> and <code>for_platform</code> configuration blocks provide a limited exception to this rule.</p>
+<p>All configuration files (Appfile, Matchfile, Screengrabfile, etc.) can use <code>for_lane</code> and <code>for_platform</code> blocks to control (and override) configuration values for those circumstances.</p>
+<p><code>for_lane</code> blocks will be called when the name of lane invoked on the command line matches the one specified by the block. So, given a <code>Screengrabfile</code> like:</p>
+<pre><code class="ruby">locales ['en-US', 'fr-FR', 'ja-JP']
+
+for_lane :screenshots_english_only do
+  locales ['en-US']
+end
+
+for_lane :screenshots_french_only do
+  locales ['fr-FR']
+end
+</code></pre>
+
+<p><code>locales</code> will have the values <code>['en-US', 'fr-FR', 'ja-JP']</code> by default, but will only have one value when running the <code>fastlane screenshots_english_only</code> or <code>fastlane screenshots_french_only</code>.</p>
+<p><code>for_platform</code> gives you similar control based on the platform for which you have invoked <em>fastlane</em>. So, for an <code>Appfile</code> configured like:</p>
+<pre><code class="ruby">app_identifier &quot;com.default.id&quot;
+
+for_lane :enterprise do
+  app_identifier &quot;com.forlane.enterprise&quot;
+end
+
+for_platform :mac do
+  app_identifier &quot;com.forplatform.mac&quot;
+
+  for_lane :release do
+    app_identifier &quot;com.forplatform.mac.forlane.release&quot;
+  end
+end
+</code></pre>
+
+<p>you can expect the <code>app_identifier</code> to equal <code>"com.forplatform.mac.forlane.release"</code> when invoking <code>fastlane mac release</code>.</p>
               
             </div>
           </div>
