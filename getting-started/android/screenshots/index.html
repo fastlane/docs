@@ -148,6 +148,10 @@
       <li class="toctree-l3"><a href="#use-in-fastfile">Use in Fastfile</a></li>
       
     
+      
+      <li class="toctree-l3"><a href="#advanced-screengrab">Advanced screengrab</a></li>
+      
+    
   </ul>
   
 </li>
@@ -424,6 +428,32 @@ end
 <pre><code class="no-highlight">fastlane action screengrab
 fastlane action supply
 </code></pre>
+
+<h1 id="advanced-screengrab"><a name="user-content-advanced-screengrab" href="#advanced-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced <em>screengrab</em></h1>
+<p><details>
+<summary>Launch Arguments</summary></p>
+<p>You can provide additional arguments to your testcases on launch. These strings will be available in your tests through <code>InstrumentationRegistry.getArguments()</code>.</p>
+<pre><code class="ruby">launch_arguments([
+  &quot;username hjanuschka&quot;,
+  &quot;build_number 201&quot;
+])
+</code></pre>
+
+<pre><code class="java">Bundle extras = InstrumentationRegistry.getArguments();
+String peerID = null;
+if (extras != null) {
+  if (extras.containsKey(&quot;username&quot;)) {
+    username = extras.getString(&quot;username&quot;);
+    System.out.println(&quot;Username: &quot; + username);
+  } else {
+    System.out.println(&quot;No username in extras&quot;);
+  }
+} else {
+  System.out.println(&quot;No extras&quot;);
+}
+</code></pre>
+
+<p></details></p>
               
             </div>
           </div>
