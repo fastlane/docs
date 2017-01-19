@@ -120,3 +120,33 @@ fastlane action screengrab
 fastlane action supply
 ```
 
+# Advanced _screengrab_
+
+<details>
+<summary>Launch Arguments</summary>
+
+You can provide additional arguments to your testcases on launch. These strings will be available in your tests through `InstrumentationRegistry.getArguments()`.
+
+```ruby
+launch_arguments([
+  "username hjanuschka",
+  "build_number 201"
+])
+```
+
+```java
+Bundle extras = InstrumentationRegistry.getArguments();
+String peerID = null;
+if ( extras != null ) {
+  if ( extras.containsKey ( "username" ) ) {
+    username = extras.getString("username");
+    System.out.println("Username: " + username);
+  } else {
+    System.out.println("No username in extras");
+  }
+} else {
+  System.out.println("No extras");
+}
+```
+</details>
+
