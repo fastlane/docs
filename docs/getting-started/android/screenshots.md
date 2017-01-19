@@ -137,8 +137,8 @@ launch_arguments([
 ```java
 Bundle extras = InstrumentationRegistry.getArguments();
 String peerID = null;
-if ( extras != null ) {
-  if ( extras.containsKey ( "username" ) ) {
+if (extras != null) {
+  if (extras.containsKey("username")) {
     username = extras.getString("username");
     System.out.println("Username: " + username);
   } else {
