@@ -28,7 +28,7 @@ import './path/to/other/Fastfile'
 - [Notifications](#notifications)
 - [Deprecated](#deprecated)
 - [Misc](#misc)
-- [Plugins](#Plugins)
+- [Plugins](#plugins)
 
 
 
