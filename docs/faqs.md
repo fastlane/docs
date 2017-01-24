@@ -101,5 +101,5 @@ Follow the on screen prompt to add a line to your _bash_/_zsh_ profile.
 
 ### "User interaction is not allowed" when using _fastlane_ via SSH
 
-This error can occur when you run _fastlane_ via SSH. To fix it check out [this reply on StackOverflow](http://stackoverflow.com/a/22637896/445598).
+This error can occur when you run _fastlane_ via SSH. To fix it check out [this reply on StackOverflow](https://stackoverflow.com/a/22637896/445598).
 
