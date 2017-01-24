@@ -4391,10 +4391,16 @@ Creates a 'Version Bump' commit. Run after `increment_build_number`
 
 > This action will create a 'Version Bump' commit in your repo. Useful in conjunction with `increment_build_number`.
 It checks the repo to make sure that only the relevant files have changed, these are the files that `increment_build_number` (`agvtool`) touches:
-- All .plist files
-- The `.xcodeproj/project.pbxproj` file
-Then commits those files to the repo.
-Customise the message with the `:message` option, defaults to 'Version Bump'
+
+> - All .plist files
+> - The `.xcodeproj/project.pbxproj` file
+
+> Then commits those files to the repo.
+
+> If your version bump includes changes to plist files in your settings bundle,
+use the `:settings` argument to include those files.
+
+> Customise the message with the `:message` option, defaults to 'Version Bump'
 If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
 
 commit_version_bump | 
@@ -4405,7 +4411,7 @@ Author | @lmirosevic
 
 
 <details>
-<summary>2 Examples</summary>
+<summary>5 Examples</summary>
 
 ```ruby
 commit_version_bump
@@ -4415,6 +4421,18 @@ commit_version_bump
 commit_version_bump(
   message: "Version Bump",# create a commit with a custom message
   xcodeproj: "./path/to/MyProject.xcodeproj", # optional, if you have multiple Xcode project files, you must specify your main project here
+)
+
+commit_version_bump(
+  settings: true # Include the Root.plist
+)
+
+commit_version_bump(
+  settings: "About.plist" # Include a different file from the settings bundle
+)
+
+commit_version_bump(
+  settings: ["About.plist", "Root.plist"] # Include multiple files from the settings bundle
 )
 ```
 
@@ -4430,7 +4448,7 @@ Key | Description
   `message` | The commit message when committing the version bump
   `xcodeproj` | The path to your project file (Not the workspace). If you have only one, this is optional
   `force` | Forces the commit, even if other files than the ones containing the version number have been modified
-  `settings` | Include Settings.bundle/Root.plist with version bump
+  `settings` | Include one or more plist files from the Settings.bundle with version bump
   `ignore` | A regular expression used to filter matched plist files to be modified
 
 </details>
