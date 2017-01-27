@@ -51,5 +51,6 @@ bundle install
 bundle exec fastlane post_slack_deploy_message
 
 echo "Deployed successfully, check out https://docs.fastlane.tools"
+echo "If you're running this on your local machine, please make sure to reset your git user credentials (username and email) to not be the fastlane-bot-helper"
 
 exit 0
