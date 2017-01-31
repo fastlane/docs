@@ -1383,7 +1383,7 @@ It can process unit test results if formatted as junit report as shown in <a hre
 </tbody>
 </table>
 <p><details>
-<summary>2 Examples</summary></p>
+<summary>3 Examples</summary></p>
 <pre><code class="ruby">gym(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
 </code></pre>
 
@@ -1396,6 +1396,24 @@ It can process unit test results if formatted as junit report as shown in <a hre
   output_directory: &quot;path/to/dir&quot;, # Destination directory. Defaults to current directory.
   output_name: &quot;my-app.ipa&quot;,       # specify the name of the .ipa file to generate (including file extension)
   sdk: &quot;10.0&quot;  # use SDK as the name or path of the base SDK when building the project.
+)
+</code></pre>
+
+<pre><code class="ruby"># Define a Hash/Dictionary of build settings you want to override via command-line arguments (via `xcargs`)
+# (Note: This requires fastlane 2.14.0 or higher. In previous versions, you can pass a manually-escaped string instead)
+build_settings_to_override = {
+  :PRODUCT_NAME =&gt; 'MyApp-Dev',
+  :PRODUCT_BUNDLE_IDENTIFIER =&gt; 'com.myapp.dev',
+  :VARIANT_SUFFIX =&gt; 'dev mode' # This can be a &quot;User-Defined Build Setting&quot; in your Xcode project, that you want to override
+}
+
+# In fastlane &lt; 2.14.0, you'll need to format those xcargs as a manually-escaped string instead:
+# build_settings_to_override = &quot;PRODUCT_NAME=MyApp-Dev PRODUCT_BUNDLE_IDENTIFIER=com.myapp.dev VARIANT_SUFFIX=dev\ mode&quot;
+
+gym(
+  workspace: &quot;MyApp.xcworkspace&quot;,
+  scheme: &quot;MyApp&quot;,
+  xcargs: build_settings_to_override
 )
 </code></pre>
 
