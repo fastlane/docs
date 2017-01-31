@@ -654,7 +654,7 @@ Returns | The absolute path to the generated ipa file
 
 
 <details>
-<summary>2 Examples</summary>
+<summary>3 Examples</summary>
 
 ```ruby
 gym(scheme: "MyApp", workspace: "MyApp.xcworkspace")
@@ -673,6 +673,24 @@ gym(
 )
 ```
 
+```ruby
+# Define a Hash/Dictionary of build settings you want to override via command-line arguments (via `xcargs`)
+# (Note: This requires fastlane 2.14.0 or higher. In previous versions, you can pass a manually-escaped string instead)
+build_settings_to_override = {
+  :PRODUCT_NAME => 'MyApp-Dev',
+  :PRODUCT_BUNDLE_IDENTIFIER => 'com.myapp.dev',
+  :VARIANT_SUFFIX => 'dev mode' # This can be a "User-Defined Build Setting" in your Xcode project, that you want to override
+}
+
+# In fastlane < 2.14.0, you'll need to format those xcargs as a manually-escaped string instead:
+# build_settings_to_override = "PRODUCT_NAME=MyApp-Dev PRODUCT_BUNDLE_IDENTIFIER=com.myapp.dev VARIANT_SUFFIX=dev\ mode"
+
+gym(
+  workspace: "MyApp.xcworkspace",
+  scheme: "MyApp",
+  xcargs: build_settings_to_override
+)
+```
 
 </details>
 
