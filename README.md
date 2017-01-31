@@ -25,6 +25,24 @@ brew install python # if you don't have pip already
 [sudo] pip install -r requirements.txt
 ```
 
+_Note: If you use `sudo` to run `pip`, you might need to use the `-H` flag of `sudo`._
+
+### Troubleshooting
+
+Due to a bug in `pip` trying to uninstall El Capitan's version of `six` (protected by SIP) when needing a new one, you may encounter the following error during `pip install -r requirements.txt`:
+
+```sh
+OSError: [Errno 1] Operation not permitted: '/tmp/pip-[…]-uninstall/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/six-1.4.1-py2.7.egg-info'
+```
+
+In this case, just [install `six` using the `--ignore-installed` flag first before retrying](https://github.com/pypa/pip/issues/3165#issuecomment-146666737):
+
+```sh
+[sudo] pip install --ignore-installed six
+[sudo] pip install -r requirements.txt
+```
+
+
 ## Adding a Python dependency
 
 Likely, to add a [Markdown extension](https://pythonhosted.org/Markdown/extensions/).
