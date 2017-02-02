@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 3cc404f064f79659f8dd8acb65c8e5680c7b6c29
+  revision: 492e6682cd8974a493b02cb2b74fb9822747fde2
   specs:
-    fastlane (2.13.0)
+    fastlane (2.14.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
       bundler (>= 1.12.0, < 2.0.0)
-      colored
+      colored2 (>= 3.1.1, < 4.0.0)
       commander (>= 4.4.0, < 5.0.0)
       dotenv (>= 2.1.1, < 3.0.0)
       excon (>= 0.45.0, < 1.0.0)
@@ -53,14 +53,15 @@ GEM
       nap
       open4 (~> 1.3)
     colored (1.2)
+    colored2 (3.1.1)
     commander (4.4.3)
       highline (~> 1.7.2)
     cork (0.2.0)
       colored (~> 1.2)
-    danger (4.1.1)
+    danger (4.2.0)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
-      colored (~> 1.2)
+      colored2 (~> 3.1)
       cork (~> 0.1)
       faraday (~> 0.9)
       faraday-http-cache (~> 1.0)
@@ -107,7 +108,7 @@ GEM
       domain_name (~> 0.5)
     httpclient (2.8.3)
     hurley (0.2)
-    i18n (0.7.0)
+    i18n (0.8.0)
     json (1.8.6)
     jwt (1.5.6)
     kramdown (1.13.2)
@@ -178,4 +179,4 @@ DEPENDENCIES
   fastlane!
 
 BUNDLED WITH
-   1.14.1
+   1.14.3
