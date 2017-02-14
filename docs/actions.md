@@ -28,7 +28,7 @@ import './path/to/other/Fastfile'
 - [Notifications](#notifications)
 - [Deprecated](#deprecated)
 - [Misc](#misc)
-- [Plugins](#Plugins)
+- [Plugins](#plugins)
 
 
 
@@ -100,6 +100,7 @@ Key | Description
   `workspace` | Path the workspace file
   `project` | Path the project file
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6')
+  `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air'])
   `scheme` | The project's scheme. Make sure it's marked as `Shared`
   `clean` | Should the project be cleaned before building it?
@@ -3216,17 +3217,29 @@ More information about the available options can be found in the [HockeyApp Docs
 hockey | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @KrauseFx, @modzelewski
+Author | @KrauseFx, @modzelewski, @lacostej
 
 
 
 <details>
-<summary>1 Example</summary>
+<summary>2 Examples</summary>
 
 ```ruby
 hockey(
   api_token: "...",
   ipa: "./app.ipa",
+  notes: "Changelog"
+)
+```
+
+```ruby
+hockey(
+  api_token: "...",
+  create_update: true,
+  public_identifier: "....",
+  bundle_short_version: "1.0.2,
+  bundle_version: "1.0.2",
+  ipa: "./my.msi",
   notes: "Changelog"
 )
 ```
@@ -3242,8 +3255,9 @@ Key | Description
 ----|------------
   `apk` | Path to your APK file
   `api_token` | API Token for Hockey Access
-  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action. For Mac zip the .app. For Android provide path to .apk file
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action. For Mac zip the .app. For Android provide path to .apk file. In addition you could use this to upload .msi, .zip, .pkg, etc if you use the 'create_update' mechanism
   `dsym` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip. For Android provide path to mappings.txt file
+  `create_update` | Set true if you want to create then update your app as opposed to just upload it. You will need the 'public_identifier', 'bundle_version' and 'bundle_short_version'
   `notes` | Beta Notes
   `notify` | Notify testers? "1" for yes
   `status` | Download status: "1" = No user can download; "2" = Available for download
@@ -3253,7 +3267,9 @@ Key | Description
   `teams` | Comma separated list of team ID numbers to which this build will be restricted
   `users` | Comma separated list of user ID numbers to which this build will be restricted
   `tags` | Comma separated list of tags which will receive access to the build
-  `public_identifier` | App id of the app you are targeting, usually you won't need this value. Required, if `upload_dsm_only` set to `true`
+  `bundle_short_version` | The bundle_short_version of your application, required when using `create_update`
+  `bundle_version` | The bundle_version of your application, required when using `create_update`
+  `public_identifier` | App id of the app you are targeting, usually you won't need this value. Required, if `upload_dsym_only` set to `true`
   `commit_sha` | The Git commit SHA for this build
   `repository_url` | The URL of your source repository
   `build_server_url` | The URL of the build job on your build server
@@ -3460,6 +3476,55 @@ Key | Description
 
 
 
+### appetize
+
+Upload your app to Appetize.io to stream it in the browser
+
+
+
+> If you provide a `public_key`, this will overwrite an existing application. If you want to have this build as a new app version, you shouldn't provide this value.
+To integrate appetize into your GitHub workflow check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
+
+appetize | 
+-----|----
+Supported platforms | ios, android
+Author | @klundberg, @giginet
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+appetize(
+  path: "./MyApp.zip",
+  api_token: "yourapitoken", # get it from https://appetize.io/docs#request-api-token
+  public_key: "your_public_key" # get it from https://appetize.io/dashboard
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `api_token` | Appetize.io API Token
+  `url` | URL from which the ipa file can be fetched. Alternative to :path
+  `platform` | Platform. Either `ios` or `android`. Default is `ios`
+  `path` | Path to zipped build on the local filesystem. Either this or `url` must be specified
+  `public_key` | If not provided, a new app will be created. If provided, the existing build will be overwritten
+  `note` | Notes you wish to add to the uploaded app
+
+</details>
+
+
+
+
+
 ### nexus_upload
 
 Upload a file to Sonatype Nexus platform
@@ -3517,55 +3582,6 @@ Key | Description
   `proxy_password` | Proxy password
   `proxy_address` | Proxy address
   `proxy_port` | Proxy port
-
-</details>
-
-
-
-
-
-### appetize
-
-Upload your app to Appetize.io to stream it in the browser
-
-
-
-> If you provide a `public_key`, this will overwrite an existing application. If you want to have this build as a new app version, you shouldn't provide this value.
-To integrate appetize into your GitHub workflow check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
-
-appetize | 
------|----
-Supported platforms | ios, android
-Author | @klundberg, @giginet
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-appetize(
-  path: "./MyApp.zip",
-  api_token: "yourapitoken", # get it from https://appetize.io/docs#request-api-token
-  public_key: "your_public_key" # get it from https://appetize.io/dashboard
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `api_token` | Appetize.io API Token
-  `url` | URL from which the ipa file can be fetched. Alternative to :path
-  `platform` | Platform. Either `ios` or `android`. Default is `ios`
-  `path` | Path to zipped build on the local filesystem. Either this or `url` must be specified
-  `public_key` | If not provided, a new app will be created. If provided, the existing build will be overwritten
-  `note` | Notes you wish to add to the uploaded app
 
 </details>
 
@@ -4565,7 +4581,7 @@ Collect git commit messages into a changelog
 changelog_from_git_commits | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @mfurtak, @asfalcone, @SiarheiFedartsou
+Author | @mfurtak, @asfalcone, @SiarheiFedartsou, @allewun
 Returns | Returns a String containing your formatted git commits
 
 
@@ -4579,10 +4595,11 @@ changelog_from_git_commits
 
 ```ruby
 changelog_from_git_commits(
-  between: ["7b092b3", "HEAD"], # Optional, lets you specify a revision/tag range between which to collect commit info
-  pretty: "- (%ae) %s", # Optional, lets you provide a custom format to apply to each commit when generating the changelog text
-  match_lightweight_tag: false, # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
-  include_merges: true # Optional, lets you filter out merge commits
+  between: ["7b092b3", "HEAD"],  # Optional, lets you specify a revision/tag range between which to collect commit info
+  pretty: "- (%ae) %s",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
+  date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
+  match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
+  merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
 )
 ```
 
@@ -4598,6 +4615,7 @@ Key | Description
   `between` | Array containing two Git revision values between which to collect messages, you mustn't use it with :commits_count key at the same time
   `commits_count` | Number of commits to include in changelog, you mustn't use it with :between key at the same time
   `pretty` | The format applied to each commit while generating the collected value
+  `date_format` | The date format applied to each commit while generating the collected value
   `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag
   `match_lightweight_tag` | Whether or not to match a lightweight tag when searching for the last one
   `include_merges` | Whether or not to include any commits that are merges
@@ -6851,47 +6869,6 @@ Key | Description
 
 
 
-### download
-
-Download a file from a remote server (e.g. JSON file)
-
-
-
-> Specify the URL to download and get the content as a return value
-For more advanced networking code, use the Ruby functions instead:
-http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html
-
-download | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-data = download(url: "https://host.com/api.json")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `url` | The URL that should be downloaded
-
-</details>
-
-
-
-
-
 ### upload_symbols_to_crashlytics
 
 Upload dSYM symbolication files to Crashlytics
@@ -6927,6 +6904,47 @@ Key | Description
   `api_token` | Crashlytics API Key
   `binary_path` | The path to the upload-symbols file of the Fabric app
   `platform` | The platform of the app (ios, tvos, mac)
+
+</details>
+
+
+
+
+
+### download
+
+Download a file from a remote server (e.g. JSON file)
+
+
+
+> Specify the URL to download and get the content as a return value
+For more advanced networking code, use the Ruby functions instead:
+http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html
+
+download | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+data = download(url: "https://host.com/api.json")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `url` | The URL that should be downloaded
 
 </details>
 
@@ -7289,36 +7307,6 @@ Key | Description
 
 
 
-### team_name
-
-Set a team to use by its name
-
-
-
-
-
-team_name | 
------|----
-Supported platforms | ios
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-team_name "Felix Krause"
-```
-
-
-</details>
-
-
-
-
-
-
 ### zip
 
 Compress a file or folder to a zip
@@ -7371,6 +7359,36 @@ Key | Description
   `verbose` | Enable verbose output of zipped file
 
 </details>
+
+
+
+
+
+### team_name
+
+Set a team to use by its name
+
+
+
+
+
+team_name | 
+-----|----
+Supported platforms | ios
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+team_name "Felix Krause"
+```
+
+
+</details>
+
 
 
 
@@ -7553,6 +7571,49 @@ debug
 
 
 
+### make_changelog_from_jenkins
+
+Generate a changelog using the Changes section from the current Jenkins build
+
+
+
+> This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.
+
+make_changelog_from_jenkins | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @mandrizzle
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+make_changelog_from_jenkins(
+  # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins
+  fallback_changelog: "Bug fixes and performance enhancements"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `fallback_changelog` | Fallback changelog if there is not one on Jenkins, or it couldn't be read
+  `include_commit_body` | Include the commit body along with the summary
+
+</details>
+
+
+
+
+
 ### ensure_no_debug_code
 
 Ensures the given text is nowhere in the code base
@@ -7613,49 +7674,7 @@ Key | Description
   `extension` | The extension that should be searched for
   `extensions` | An array of file extensions that should be searched for
   `exclude` | Exclude a certain pattern from the search
-
-</details>
-
-
-
-
-
-### make_changelog_from_jenkins
-
-Generate a changelog using the Changes section from the current Jenkins build
-
-
-
-> This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.
-
-make_changelog_from_jenkins | 
------|----
-Supported platforms | ios, android, mac
-Author | @mandrizzle
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-make_changelog_from_jenkins(
-  # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins
-  fallback_changelog: "Bug fixes and performance enhancements"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `fallback_changelog` | Fallback changelog if there is not one on Jenkins, or it couldn't be read
-  `include_commit_body` | Include the commit body along with the summary
+  `exclude_dirs` | An array of dirs that should not be included in the search
 
 </details>
 
@@ -8078,6 +8097,64 @@ Key | Description
 
 
 
+### artifactory
+
+This action uploads an artifact to artifactory
+
+
+
+
+
+artifactory | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @koglinjg
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+artifactory(
+  username: "username",
+  password: "password",
+  endpoint: "https://artifactory.example.com/artifactory/",
+  file: "example.ipa",  # File to upload
+  repo: "mobile_artifacts",       # Artifactory repo
+  repo_path: "/ios/appname/example-major.minor.ipa"   # Path to place the artifact including its filename
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `file` | File to be uploaded to artifactory
+  `repo` | Artifactory repo to put the file in
+  `repo_path` | Path to deploy within the repo, including filename
+  `endpoint` | Artifactory endpoint
+  `username` | Artifactory username
+  `password` | Artifactory password
+  `properties` | Artifact properties hash
+  `ssl_pem_file` | Location of pem file to use for ssl verification
+  `ssl_verify` | Verify SSL
+  `proxy_username` | Proxy username
+  `proxy_password` | Proxy password
+  `proxy_address` | Proxy address
+  `proxy_port` | Proxy port
+
+</details>
+
+
+
+
+
 ### install_on_device
 
 Installs an .ipa file on a connected iOS-device via usb or wifi
@@ -8155,64 +8232,6 @@ version = version_get_podspec(path: "TSMessages.podspec")
 Key | Description
 ----|------------
   `path` | You must specify the path to the podspec file
-
-</details>
-
-
-
-
-
-### artifactory
-
-This action uploads an artifact to artifactory
-
-
-
-
-
-artifactory | 
------|----
-Supported platforms | ios, android, mac
-Author | @koglinjg
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-artifactory(
-  username: "username",
-  password: "password",
-  endpoint: "https://artifactory.example.com/artifactory/",
-  file: "example.ipa",  # File to upload
-  repo: "mobile_artifacts",       # Artifactory repo
-  repo_path: "/ios/appname/example-major.minor.ipa"   # Path to place the artifact including its filename
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `file` | File to be uploaded to artifactory
-  `repo` | Artifactory repo to put the file in
-  `repo_path` | Path to deploy within the repo, including filename
-  `endpoint` | Artifactory endpoint
-  `username` | Artifactory username
-  `password` | Artifactory password
-  `properties` | Artifact properties hash
-  `ssl_pem_file` | Location of pem file to use for ssl verification
-  `ssl_verify` | Verify SSL
-  `proxy_username` | Proxy username
-  `proxy_password` | Proxy password
-  `proxy_address` | Proxy address
-  `proxy_port` | Proxy port
 
 </details>
 
@@ -8437,6 +8456,45 @@ Key | Description
 
 
 
+### reset_simulator_contents
+
+Shutdown and reset running simulators
+
+
+
+
+
+reset_simulator_contents | 
+-----|----
+Supported platforms | ios
+Author | @danramteke
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+reset_simulator_contents
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators
+
+</details>
+
+
+
+
+
 ### clipboard
 
 Copies a given string into the clipboard. Works only on macOS
@@ -8573,45 +8631,6 @@ Key | Description
   `port` | Port
   `commands` | Commands
   `log` | Log commands and output
-
-</details>
-
-
-
-
-
-### reset_simulator_contents
-
-Shutdown and reset running simulators
-
-
-
-
-
-reset_simulator_contents | 
------|----
-Supported platforms | ios
-Author | @danramteke
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-reset_simulator_contents
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators
 
 </details>
 
@@ -8907,6 +8926,47 @@ Key | Description
 
 
 
+### add_extra_platforms
+
+Modify the default list of supported platforms
+
+
+
+
+
+add_extra_platforms | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @lacostej
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+add_extra_platforms(
+  platforms: [:windows,:neogeo]
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `platforms` | The optional extra platforms to support
+
+</details>
+
+
+
+
+
 ### opt_out_usage
 
 This will stop uploading the information which actions were run
@@ -8942,149 +9002,152 @@ opt_out_usage # add this to the top of your Fastfile
 # Plugins
 | Action | Plugin | Description | Usage Number
 ---------|--------|-------------|--------------
-update_provisioning_profile_specifier | [update_provisioning_profile_specifier](https://github.com/faithfracture/update_provisioning_profile_specifier) | Update the provisioning profile in the Xcode Project file for a specified target | 25983
-download_file | [download_file](https://github.com/maxoly/fastlane-plugin-download_file) | This action downloads a file from an HTTP/HTTPS url (e.g. ZIP file) and puts it in a destination path | 23920
-update_project_codesigning | [update_project_codesigning](https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning) | Updates the Xcode 8 Automatic Codesigning Flag | 23417
-synx | [synx](https://github.com/afonsograca/fastlane-plugin-synx) | Organise your Xcode project folder to match your Xcode groups. | 13308
-increment_build_number_in_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 12133
-trainer | [trainer](https://github.com/KrauseFx/trainer) | Convert xcodebuild plist files to JUnit reports | 11019
-act | [act](https://github.com/richardszalay/fastlane-plugin-act) | Applies changes to plists and app icons inside a compiled IPA | 8216
-ascii_art | [ascii_art](https://github.com/neonichu/fastlane-ascii-art) | Add some fun to your fastlane output. | 7880
-github_job_status | [github_job_status](https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status) | Post the status of your test jobs to your pull requests | 6949
-get_version_number_from_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 6899
-increment_version_number_in_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 5572
-read_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 4993
-pixie | `pixie` | Show your build status on PIXIE! | 4875
-get_build_number_from_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 4031
-appicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 3973
-ftp | [ftp](https://github.com/PoissonBallon/fastlane-ftp-plugin) | Simple ftp upload and download for Fastlane | 3871
-get_info_plist_path | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 3769
-get_version_name | [get_version_name](https://github.com/Jems22/fastlane-plugin-get-version-name) | Get the version name of an Android project. | 3698
-rocket_chat | [rocket_chat](https://github.com/thiagofelix/fastlane-plugin-rocket_chat) | Send message to Rocket.Chat right from fastlane | 3430
-increment_version_code | [increment_version_code](https://github.com/Jems22/fastlane-plugin-increment_version_code) | Increment the version code of your android project. | 3135
-carthage_cache_install | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 2620
-automated_test_emulator_run | [automated_test_emulator_run](https://github.com/AzimoLabs/fastlane-plugin-automated-test-emulator-run) | Starts n AVDs based on JSON file config. AVDs are created and configured according to user liking before instrumentation test process (started either via shell command or gradle) and killed/deleted after test process finishes. | 2564
-carthage_cache_exist | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 2329
-add_prefix_schema | `polidea` | Polidea's fastlane action | 2085
-poeditor_export | [poeditor_export](https://github.com/Supmenow/fastlane-plugin-poeditor_export) | Exports translations from POEditor.com | 2005
-onesky_download | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 2003
-stamp_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 1906
-setup_fragile_tests_for_rescan | [setup_fragile_tests_for_rescan](https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-setup_fragile_tests_for_rescan) | Suppress stabile tests so that 'scan' can run the fragile tests again | 1873
-polidea_store | `polidea` | Polidea's fastlane action | 1640
-xamarin_build | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 1581
-get_version_code | [get_version_code](https://github.com/Jems22/fastlane-plugin-get_version_code) | Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file | 1536
-release_notes | `polidea` | Polidea's fastlane action | 1492
-extract_app_icon | `polidea` | Polidea's fastlane action | 1393
-remove_provisioning_profile | [remove_provisioning_profile](https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile) | Remove provision profile from your local machine | 1358
-get_binary_size | `polidea` | Polidea's fastlane action | 1356
-code_static_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 1326
-extract_app_name | `polidea` | Polidea's fastlane action | 1278
-extract_version | `polidea` | Polidea's fastlane action | 1268
-pretty_junit | [pretty_junit](https://github.com/leandog/fastlane-plugin-pretty_junit) | Pretty JUnit test results for your Android projects. | 1183
-check_build_cache_workspace | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 965
-applivery | [applivery](https://github.com/applivery/fastlane-applivery-plugin) | Upload new build to Applivery | 955
-upload_symbols_to_new_relic | `upload_symbols_to_new_relic` | Uploads dSym to New Relic | 950
-droidicon | [droidicon](https://github.com/chrhsmt/fastlane-plugin-droidicon) | Generate required icon sizes and iconset from a master application icon | 945
-latest_hockeyapp_version_number | [latest_hockeyapp_version_number](https://github.com/tpalmer/fastlane-plugin-latest_hockeyapp_version_number) | Easily fetch the most recent HockeyApp version number for your app | 944
-update_xcodeproj | [update_xcodeproj](https://github.com/nafu/fastlane-plugin-update_xcodeproj) | Update Xcode projects | 897
-extract_app_info | `polidea` | Polidea's fastlane action | 895
-shuttle | `polidea` | Polidea's fastlane action | 892
-unzip | [unzip](https://github.com/maxoly/fastlane-plugin-unzip) | Extract compressed files in a ZIP | 879
-upload_folder_to_s3 | [upload_folder_to_s3](https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3) | Upload a folder to S3 | 849
+download_file | [download_file](https://github.com/maxoly/fastlane-plugin-download_file) | This action downloads a file from an HTTP/HTTPS url (e.g. ZIP file) and puts it in a destination path | 28471
+update_provisioning_profile_specifier | [update_provisioning_profile_specifier](https://github.com/faithfracture/update_provisioning_profile_specifier) | Update the provisioning profile in the Xcode Project file for a specified target | 28264
+update_project_codesigning | [update_project_codesigning](https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning) | Updates the Xcode 8 Automatic Codesigning Flag | 27272
+synx | [synx](https://github.com/afonsograca/fastlane-plugin-synx) | Organise your Xcode project folder to match your Xcode groups. | 13689
+increment_build_number_in_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 13565
+trainer | [trainer](https://github.com/KrauseFx/trainer) | Convert xcodebuild plist files to JUnit reports | 13408
+github_job_status | [github_job_status](https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status) | Post the status of your test jobs to your pull requests | 8861
+act | [act](https://github.com/richardszalay/fastlane-plugin-act) | Applies changes to plists and app icons inside a compiled IPA | 8843
+ascii_art | [ascii_art](https://github.com/neonichu/fastlane-ascii-art) | Add some fun to your fastlane output. | 8547
+get_version_number_from_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 7783
+increment_version_number_in_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 6414
+read_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 5474
+pixie | `pixie` | Show your build status on PIXIE! | 5134
+get_build_number_from_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 4975
+appicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 4452
+ftp | [ftp](https://github.com/PoissonBallon/fastlane-ftp-plugin) | Simple ftp upload and download for Fastlane | 4409
+get_version_name | [get_version_name](https://github.com/Jems22/fastlane-plugin-get-version-name) | Get the version name of an Android project. | 3856
+get_info_plist_path | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 3836
+rocket_chat | [rocket_chat](https://github.com/thiagofelix/fastlane-plugin-rocket_chat) | Send message to Rocket.Chat right from fastlane | 3475
+increment_version_code | [increment_version_code](https://github.com/Jems22/fastlane-plugin-increment_version_code) | Increment the version code of your android project. | 3330
+carthage_cache_install | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 2743
+automated_test_emulator_run | [automated_test_emulator_run](https://github.com/AzimoLabs/fastlane-plugin-automated-test-emulator-run) | Starts n AVDs based on JSON file config. AVDs are created and configured according to user liking before instrumentation test process (started either via shell command or gradle) and killed/deleted after test process finishes. | 2650
+setup_fragile_tests_for_rescan | [setup_fragile_tests_for_rescan](https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-setup_fragile_tests_for_rescan) | Suppress stabile tests so that 'scan' can run the fragile tests again | 2541
+carthage_cache_exist | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 2459
+add_prefix_schema | `polidea` | Polidea's fastlane action | 2142
+poeditor_export | [poeditor_export](https://github.com/Supmenow/fastlane-plugin-poeditor_export) | Exports translations from POEditor.com | 2123
+onesky_download | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 2037
+stamp_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 1990
+xamarin_build | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 1731
+get_version_code | [get_version_code](https://github.com/Jems22/fastlane-plugin-get_version_code) | Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file | 1677
+polidea_store | `polidea` | Polidea's fastlane action | 1664
+release_notes | `polidea` | Polidea's fastlane action | 1566
+code_static_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 1425
+remove_provisioning_profile | [remove_provisioning_profile](https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile) | Remove provision profile from your local machine | 1425
+extract_app_icon | `polidea` | Polidea's fastlane action | 1404
+get_binary_size | `polidea` | Polidea's fastlane action | 1383
+pretty_junit | [pretty_junit](https://github.com/leandog/fastlane-plugin-pretty_junit) | Pretty JUnit test results for your Android projects. | 1362
+check_build_cache_workspace | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 1301
+extract_app_name | `polidea` | Polidea's fastlane action | 1289
+extract_version | `polidea` | Polidea's fastlane action | 1279
+xcpretty_report | [xcpretty_report](https://github.com/fsaragoca/fastlane-plugin-xcpretty_report) | Generate xcodebuild reports using xcpretty | 1106
+aws_s3 | [aws_s3](https://github.com/joshdholtz/fastlane-plugin-s3) | Upload IPA and APK to S3 | 1084
+latest_hockeyapp_version_number | [latest_hockeyapp_version_number](https://github.com/tpalmer/fastlane-plugin-latest_hockeyapp_version_number) | Easily fetch the most recent HockeyApp version number for your app | 1045
+upload_symbols_to_new_relic | `upload_symbols_to_new_relic` | Uploads dSym to New Relic | 1005
+applivery | [applivery](https://github.com/applivery/fastlane-applivery-plugin) | Upload new build to Applivery | 997
+update_xcodeproj | [update_xcodeproj](https://github.com/nafu/fastlane-plugin-update_xcodeproj) | Update Xcode projects | 987
+shuttle | `polidea` | Polidea's fastlane action | 979
+droidicon | [droidicon](https://github.com/chrhsmt/fastlane-plugin-droidicon) | Generate required icon sizes and iconset from a master application icon | 979
+extract_app_info | `polidea` | Polidea's fastlane action | 969
+cordova | [cordova](https://github.com/almouro/fastlane-plugin-cordova) | Build your Cordova app | 951
+humanable_build_number | [humanable_build_number](https://github.com/icyleaf/fastlane-plugin-humanable_build_number) | Automatic generate app build number unque and human readable friendly, like yymmHHMM. both support iOS and Android. | 935
+unzip | [unzip](https://github.com/maxoly/fastlane-plugin-unzip) | Extract compressed files in a ZIP | 930
+google_cloud_storage_check_file | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 922
+upload_folder_to_s3 | [upload_folder_to_s3](https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3) | Upload a folder to S3 | 900
+upload_to_onesky | [upload_to_onesky](https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky) | Upload a strings file to OneSky | 850
 fetch_itc_versions | [fetch_itc_versions](https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions) | Returns a listing of all app versions and their latest builds from iTunes Connect. | 845
-upload_to_onesky | [upload_to_onesky](https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky) | Upload a strings file to OneSky | 836
-aws_s3 | [aws_s3](https://github.com/joshdholtz/fastlane-plugin-s3) | Upload IPA and APK to S3 | 807
+ci_changelog | [ci_changelog](https://github.com/icyleaf/fastlane-plugin-ci_changelog) | Automate generate changelog between previous build failed and the latest commit of scm in CI | 789
+unarchive_derived_data | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 776
 xcake | [xcake](https://github.com/jcampbell05/xcake/) | Create your Xcode projects automatically using a stupid simple DSL. | 773
-humanable_build_number | [humanable_build_number](https://github.com/icyleaf/fastlane-plugin-humanable_build_number) | Automatic generate app build number unque and human readable friendly, like yymmHHMM. both support iOS and Android. | 770
 branding | [branding](https://github.com/snatchev/fastlane-branding-plugin) | Add some branding to your fastlane output | 767
+clubmate | [clubmate](https://github.com/KrauseFx/fastlane-plugin-clubmate) | Print the Club Mate logo in your build output | 761
 onesky_download_itunes | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 752
-xcpretty_report | [xcpretty_report](https://github.com/fsaragoca/fastlane-plugin-xcpretty_report) | Generate xcodebuild reports using xcpretty | 745
-clubmate | [clubmate](https://github.com/KrauseFx/fastlane-plugin-clubmate) | Print the Club Mate logo in your build output | 730
-ci_changelog | [ci_changelog](https://github.com/icyleaf/fastlane-plugin-ci_changelog) | Automate generate changelog between previous build failed and the latest commit of scm in CI | 719
-xamarin_update_configuration | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 718
-jira_transition | [jira_transition](https://github.com/valeriomazzeo/fastlane-plugin-jira_transition) | Apply a JIRA transition to issues mentioned in the changelog | 702
-commit_android_version_bump | [commit_android_version_bump](https://github.com/Jems22/fastlane-plugin-commit_android_version_bump) | This Android plugins allow you to commit every modification done in your build.gradle file during the execution of a lane. In fast, it do the same as the commit_version_bump action, but for Android | 698
-upload_to_qmobile | [upload_to_qmobile](https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile) | Upload a mobile app to qmobile | 687
-giffy_random_gif_url | [giffy](https://github.com/SiarheiFedartsou/fastlane-plugin-giffy) | Fastlane plugin for Giffy.com API | 661
-extract_certificate | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 655
-google_cloud_storage_check_file | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 645
-cordova | [cordova](https://github.com/almouro/fastlane-plugin-cordova) | Build your Cordova app | 636
-profile_expiration_info | [profile_expiration_info](https://github.com/schung7/fastlane-plugin-profile_expiration_info) | Returns if the provisioning profile has expired and the DateTime it expires | 625
-cryptex | [cryptex](https://github.com/hjanuschka/fastlane-plugin-cryptex) | fastlane Crypt Store Git repo | 618
-yarn | [yarn](https://github.com/joshrlesch/fastlane-plugin-yarn) | Execute Yarn commands from your Fastfile | 613
-unarchive_derived_data | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 578
-delete_files | [delete_files](https://github.com/leandog/fastlane-plugin-delete_files) | Deletes a file, folder or multiple files using shell glob pattern. | 550
+upload_to_qmobile | [upload_to_qmobile](https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile) | Upload a mobile app to qmobile | 745
+xamarin_update_configuration | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 744
+jira_transition | [jira_transition](https://github.com/valeriomazzeo/fastlane-plugin-jira_transition) | Apply a JIRA transition to issues mentioned in the changelog | 740
+yarn | [yarn](https://github.com/joshrlesch/fastlane-plugin-yarn) | Execute Yarn commands from your Fastfile | 737
+commit_android_version_bump | [commit_android_version_bump](https://github.com/Jems22/fastlane-plugin-commit_android_version_bump) | This Android plugins allow you to commit every modification done in your build.gradle file during the execution of a lane. In fast, it do the same as the commit_version_bump action, but for Android | 735
+cryptex | [cryptex](https://github.com/hjanuschka/fastlane-plugin-cryptex) | fastlane Crypt Store Git repo | 723
+profile_expiration_info | [profile_expiration_info](https://github.com/schung7/fastlane-plugin-profile_expiration_info) | Returns if the provisioning profile has expired and the DateTime it expires | 707
+giffy_random_gif_url | [giffy](https://github.com/SiarheiFedartsou/fastlane-plugin-giffy) | Fastlane plugin for Giffy.com API | 674
+extract_certificate | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 669
+delete_files | [delete_files](https://github.com/leandog/fastlane-plugin-delete_files) | Deletes a file, folder or multiple files using shell glob pattern. | 658
+sentry_upload_dsym | [sentry](https://github.com/getsentry/sentry-fastlane) | Upload symbols to Sentry | 637
+get_unprovisioned_devices_from_hockey | [get_unprovisioned_devices_from_hockey](https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey) | Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices. | 590
+wait_xcrun | [wait_xcrun](https://github.com/mgrebenets/fastlane-plugin-wait_xcrun) | Wait for Xcode toolchain to come back online after switching Xcode versions. | 561
+android_appicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 555
+tpa | [tpa](https://github.com/mbogh/fastlane-plugin-tpa) | TPA gives you advanced user behaviour analytics, app distribution, crash analytics and more | 554
 instrumented_tests | [instrumented_tests](https://github.com/joshrlesch/fastlane-plugin-instrumented_tests) | New action to run instrumented tests for android. This plugin creates and boots an emulator before running a gradle command so that you can run instrumented tests against that emulator. After the gradle command is executed, the avd gets shut down and deleted. This is really helpful on CI services, keeping them clean and always having a fresh avd for testing. | 527
-wait_xcrun | [wait_xcrun](https://github.com/mgrebenets/fastlane-plugin-wait_xcrun) | Wait for Xcode toolchain to come back online after switching Xcode versions. | 527
-tpa | [tpa](https://github.com/mbogh/fastlane-plugin-tpa) | TPA gives you advanced user behaviour analytics, app distribution, crash analytics and more | 516
-get_unprovisioned_devices_from_hockey | [get_unprovisioned_devices_from_hockey](https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey) | Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices. | 502
-firim | [firim](https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim) | firim | 499
-sentry_upload_dsym | [sentry](https://github.com/getsentry/sentry-fastlane) | Upload symbols to Sentry | 482
-android_appicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 458
+firim | [firim](https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim) | firim | 527
+ensure_xcode_build_version | [ensure_xcode_build_version](https://github.com/nafu/fastlane-plugin-ensure_xcode_build_version) | Ensure Xcode Build Version for working with Beta, GM and Release | 482
+google_cloud_storage_download | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 465
+app_info | `app_info` | Teardown tool for mobile app(ipa/apk), analysis metedata like version, name, icon etc. | 455
 deploy_file_provider | `deploy_file_provider` | Prepares metadata files with structure ready for AppStore, PlayStore deploy | 449
-import_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 427
-ensure_xcode_build_version | [ensure_xcode_build_version](https://github.com/nafu/fastlane-plugin-ensure_xcode_build_version) | Ensure Xcode Build Version for working with Beta, GM and Release | 427
-app_info | `app_info` | Teardown tool for mobile app(ipa/apk), analysis metedata like version, name, icon etc. | 423
-get_android_version | [get_android_version](https://github.com/MaximusMcCann/fastlane-plugin-get_android_version) | gets the android versionName and versionCode from the `AndroidManifest.xml` file located in the provided apk | 403
-goodify_info_plist | [goodify_info_plist](https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist) | This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management. | 390
-latest_hockey_build_number | [latest_hockey_build_number](https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number) | Gets latest version number of the app with the bundle id from HockeyApp | 330
-onesky_upload | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 320
-update_settings_bundle | [settings_bundle](https://github.com/jdee/settings-bundle) | Fastlane plugin to update static settings in an iOS settings bundle | 312
-get_app_store_version_number | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 300
-google_cloud_storage_download | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 296
+import_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 449
+get_android_version | [get_android_version](https://github.com/MaximusMcCann/fastlane-plugin-get_android_version) | gets the android versionName and versionCode from the `AndroidManifest.xml` file located in the provided apk | 436
+goodify_info_plist | [goodify_info_plist](https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist) | This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management. | 394
+latest_hockey_build_number | [latest_hockey_build_number](https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number) | Gets latest version number of the app with the bundle id from HockeyApp | 378
+google_cloud_storage_upload | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 357
+install_profiles | [provisioning](https://github.com/paweljankowski/fastlane-plugin-provisioning) | Helps provision your app in the CI environment | 349
+update_settings_bundle | [settings_bundle](https://github.com/jdee/settings-bundle) | Fastlane plugin to update static settings in an iOS settings bundle | 346
+archive_derived_data | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 338
+onesky_upload | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 335
+aws_sns | [aws_sns](https://github.com/joshdholtz/fastlane-plugin-aws_sns) | Creates AWS SNS platform applications | 332
+aws_device_farm | [aws_device_farm](https://github.com/hjanuschka/fastlane-plugin-aws_device_farm) | Run UI Tests on AWS Devicefarm | 326
+get_app_store_version_number | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 325
+git_tags | [git_tags](https://github.com/fsaragoca/fastlane-plugin-git_tags) | List git tags sorted by taggerdate | 299
+clang_analyzer | [clang_analyzer](https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer) | Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report | 293
+export_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 292
 coreos_deploy | [coreos](https://github.com/icuisine-pos/fastlane-plugin-coreos) | Deploy docker services to CoreOS hosts | 292
-aws_sns | [aws_sns](https://github.com/joshdholtz/fastlane-plugin-aws_sns) | Creates AWS SNS platform applications | 286
-export_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 284
-google_cloud_storage_upload | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 272
-aws_device_farm | [aws_device_farm](https://github.com/hjanuschka/fastlane-plugin-aws_device_farm) | Run UI Tests on AWS Devicefarm | 258
 tunes | [tunes](https://github.com/neonichu/fastlane-tunes) | Play music using fastlane, because you can. | 258
-archive_derived_data | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 248
-carthage_cache_publish | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 244
-install_profiles | [provisioning](https://github.com/paweljankowski/fastlane-plugin-provisioning) | Helps provision your app in the CI environment | 232
-clang_analyzer | [clang_analyzer](https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer) | Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report | 206
-apply_xcode8_srgb_workaround | [xcode8_srgb_workaround](https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround) | Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target | 206
-git_tags | [git_tags](https://github.com/fsaragoca/fastlane-plugin-git_tags) | List git tags sorted by taggerdate | 206
-update_build_settings_key | [update_build_settings_key](https://github.com/ungacy/update_build_settings_key) | Updated code signing settings from 'Automatic' to a specific profile | 184
+carthage_cache_publish | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 255
+update_build_settings_key | [update_build_settings_key](https://github.com/ungacy/update_build_settings_key) | Updated code signing settings from 'Automatic' to a specific profile | 230
+apply_xcode8_srgb_workaround | [xcode8_srgb_workaround](https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround) | Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target | 210
+emojify_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 208
+aws_device_farm_package | [aws_device_farm](https://github.com/hjanuschka/fastlane-plugin-aws_device_farm) | Run UI Tests on AWS Devicefarm | 192
 version_from_last_tag | `version_from_last_tag` | Perform a regex on last (latest) git tag and perform a regex to extract a version number such as Release 1.2.3 | 182
-emojify_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 171
-aws_device_farm_package | [aws_device_farm](https://github.com/hjanuschka/fastlane-plugin-aws_device_farm) | Run UI Tests on AWS Devicefarm | 170
-gs_increment_beta_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 169
-create_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 160
-s3_upload | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 154
-gs_increment_rc_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 147
-generate_changelog | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 146
-rubocop | [ruby](https://github.com/KrauseFx/fastlane-plugin-ruby) | Useful fastlane actions for Ruby projects | 145
+s3_upload | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 181
+generate_changelog | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 179
+create_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 174
+gs_increment_beta_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 172
+rubocop | [ruby](https://github.com/KrauseFx/fastlane-plugin-ruby) | Useful fastlane actions for Ruby projects | 170
+gs_increment_rc_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 167
+android_change_app_name | `android_change_app_name` | Changes the manifest's label attribute (appName).  Stores the original name for revertinng. | 139
 cpd_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 138
-update_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 133
+update_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 135
+prepare_build_resources | [prepare_build_resources](https://github.com/trifork/fastlane-plugin-prepare_build_resources) | Prepares certificates and provisioning profiles for building and removes them afterwards. | 135
+release_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 132
 intentconfirmation | `intentconfirmation` | Halts the lane invocation, asks user to confirm if he wants to continue, may require password or key. | 131
-android_change_app_name | `android_change_app_name` | Changes the manifest's label attribute (appName).  Stores the original name for revertinng. | 131
 sharethemeal | [sharethemeal](https://github.com/hjanuschka/fastlane-plugin-sharethemeal) | ShareTheMeal | 125
-prepare_build_resources | [prepare_build_resources](https://github.com/trifork/fastlane-plugin-prepare_build_resources) | Prepares certificates and provisioning profiles for building and removes them afterwards. | 124
-release_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 118
-trim_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 112
-certificate_expirydate | [certificate_expirydate](https://github.com/lyndsey-ferguson/fastlane_plugins/) | Retrieves the expiry date of the given p12 certificate file | 106
+pgyer | [pgyer](https://github.com/shishirui/fastlane-plugin-pgyer) | distribute app to pgyer beta testing service | 117
+trim_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 114
+certificate_expirydate | [certificate_expirydate](https://github.com/lyndsey-ferguson/fastlane_plugins/) | Retrieves the expiry date of the given p12 certificate file | 110
 fetch_github_labels | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 105
+xliff_en_gen | [xliff_en_gen](https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen) | gen Localizable.strings file from xliff | 104
 rspec | [ruby](https://github.com/KrauseFx/fastlane-plugin-ruby) | Useful fastlane actions for Ruby projects | 97
 facelift | [facelift](https://github.com/richardszalay/fastlane-plugin-facelift) | Deprecated in favor of 'fastlane-plugin-act' | 96
 instabug | [instabug](https://github.com/SiarheiFedartsou/fastlane-plugin-instabug) | Uploads dSYM to Instabug | 93
-onesky_upload_itunes | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 89
+onesky_upload_itunes | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 91
+framer | [framer](https://github.com/spreaker/fastlane-framer-plugin) | Create images combining app screenshots with templates to make nice pictures for the App Store | 90
 warning_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 88
-framer | [framer](https://github.com/spreaker/fastlane-framer-plugin) | Create images combining app screenshots with templates to make nice pictures for the App Store | 86
 apperian | [apperian](https://github.com/tomiblank/fastlane-plugin-apperian) | Allows to upload your IPA file to Apperian | 84
-pgyer | [pgyer](https://github.com/shishirui/fastlane-plugin-pgyer) | distribute app to pgyer beta testing service | 79
-xliff_en_gen | [xliff_en_gen](https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen) | gen Localizable.strings file from xliff | 75
-git_status | [git_status](https://github.com/4brunu/fastlane-plugin-git_status) | Show the status of one or multiple files/directories | 68
+git_status | [git_status](https://github.com/4brunu/fastlane-plugin-git_status) | Show the status of one or multiple files/directories | 79
+android_change_string_app_name | [android_change_string_app_name](https://github.com/MaximusMcCann/fastlane-plugin-android_change_string_app_name) | Change the app_name in the strings.xml file &amp; revert method | 73
 set_key_partition_list | [provisioning](https://github.com/paweljankowski/fastlane-plugin-provisioning) | Helps provision your app in the CI environment | 58
-android_change_string_app_name | [android_change_string_app_name](https://github.com/MaximusMcCann/fastlane-plugin-android_change_string_app_name) | Change the app_name in the strings.xml file &amp; revert method | 57
-gs_increment_release_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 51
-get_version_number_from_git_branch | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 49
+get_version_number_from_git_branch | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 56
+gs_increment_release_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 55
 upload_symbols_to_hockey | [upload_symbols_to_hockey](https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey) | Upload dSYM symbolication files to Hockey | 48
 git_tags | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 44
+gs_move_rc_to_beta_review | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 42
 cryptex_generate_keystore | [cryptex](https://github.com/hjanuschka/fastlane-plugin-cryptex) | fastlane Crypt Store Git repo | 41
-gs_move_rc_to_beta_review | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 40
 flurry_upload_dsym | [flurry](https://github.com/flurry/fastlane-plugin-flurry) | Upload dSYM symbolication files to Flurry | 38
+gs_get_app_status | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 38
 generate_release_changelog | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 38
-gs_get_app_status | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 34
+merge_junit_report | [merge_junit_report](https://github.com/dyang/merge_junit_report) | Merges multiple junit reports into one | 37
+export_xliff | [xliff_en_gen](https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen) | gen Localizable.strings file from xliff | 34
+git_info_extract | [git_info_extract](https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract) | Extract JIRA information from git merge | 33
 github_status | [github_status](https://github.com/mfurtak/fastlane-plugin-github_status) | Provides the ability to display and act upon GitHub server status as part of your build | 31
 ruby_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 30
 ya_tu_sabes | [ya_tu_sabes](https://github.com/neonichu/fastlane-plugin-ya_tu_sabes) | Ya tu sabes. | 28
@@ -9092,28 +9155,31 @@ coreos | [coreos](https://github.com/icuisine-pos/fastlane-plugin-coreos) | Depl
 docker_compose | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 27
 android_change_package_identifier | `android_change_package_identifier` | Change the package identifier in the AndroidManifest.xml file. Can revert as well. | 26
 check_good_version | [check_good_version](https://github.com/lyndsey-ferguson/fastlane_plugins) | Checks the version of the installed Good framework | 25
-gs_save_rc_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 20
+gs_save_rc_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 24
+google_analytics | [google_analytics](https://github.com/hjanuschka/fastlane-plugin-google_analytics) | Fire universal Analytics | 19
 gs_versioning | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 16
 docker_login | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 15
+playship | `playship` | Interact with Google Play Api | 14
 docker_build | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 14
+upload_symbols_to_bugsee | [bugsee](https://github.com/bugsee/fastlane-plugin-bugsee) | Bugsee symbols uploader | 14
+gs_save_beta_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 12
 giffy_random_sticker_url | [giffy](https://github.com/SiarheiFedartsou/fastlane-plugin-giffy) | Fastlane plugin for Giffy.com API | 11
 ensure_docker_machine_available | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 11
-gs_save_beta_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 11
 s3_check_file | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 11
 changelog_generator | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 9
+static_images | `static_assets` | Generate code for buildtime-safe assignments of assets. | 9
 gs_save_release_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 8
-docker_push | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 6
+translation | [translation](https://github.com/trifork/fastlane-plugin-translation) | Handling translations from Google sheet. | 8
 get_xcodeproj_targets | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 6
+docker_push | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 6
 app_icon | `polidea` | Polidea's fastlane action | 6
-static_images | `static_assets` | Generate code for buildtime-safe assignments of assets. | 6
 onesky_download_all | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 5
-upload_symbols_to_bugsee | [bugsee](https://github.com/bugsee/fastlane-plugin-bugsee) | Bugsee symbols uploader | 5
 figlet | `figlet` | Wrapper around figlet which makes large ascii text words | 5
 no_u | [no_u](https://github.com/neonichu/fastlane-plugin-no_u) | no u | 5
+cosigner | [cosigner](https://github.com/Mindera/fastlane-plugin-cosigner) | A fastlane plugin to help you sign your iOS builds | 4
 download_github_release_asset | [download_github_release_asset](https://github.com/Antondomashnev/fastlane-plugin-download_github_release_asset) | This action downloads a GitHub release's asset using the GitHub API and puts it in a destination path.\nIf the file has been previously downloaded, it will be overrided. | 4
 s3_download | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 4
 create_translation | [translation](https://github.com/trifork/fastlane-plugin-translation) | Handling translations from Google sheet. | 3
-translation | [translation](https://github.com/trifork/fastlane-plugin-translation) | Handling translations from Google sheet. | 3
 gs_move_to_ready_for_sale | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 2
 gs_deliver | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 2
 google_cloud_storage | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 2
