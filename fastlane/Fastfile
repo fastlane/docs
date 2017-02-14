@@ -23,6 +23,7 @@ end
 
 private_lane :build_site do
   UI.message "🕗  Building page..."
+  UI.user_error!("mkdocs not installed, please see README.md, or use option _skip_building_ to skip site building") if `which mkdocs`.length == 0
   sh "mkdocs build --clean --strict" # to make sure building is successful
   UI.success "✅  Build successful"
 end
