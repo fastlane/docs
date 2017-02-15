@@ -142,20 +142,18 @@ Key | Description
 
 
 
-### slather
+### lcov
 
-Use slather to generate a code coverage report
-
-
-
-> Slather works with multiple code coverage formats including Xcode7 code coverage.
-Slather is available at https://github.com/SlatherOrg/slather
+Generates coverage data using lcov
 
 
-slather | 
+
+
+
+lcov | 
 -----|----
 Supported platforms | ios, mac
-Author | @mattdelves
+Author | @thiagolioy
 
 
 
@@ -163,11 +161,10 @@ Author | @mattdelves
 <summary>1 Example</summary>
 
 ```ruby
-slather(
-  build_directory: "foo",
-  input_format: "bah",
-  scheme: "MyScheme",
-  proj: "MyProject.xcodeproj"
+lcov(
+  project_name: "ProjectName",
+  scheme: "yourScheme",
+  output_dir: "cov_reports" # This value is optional. Default is coverage_reports
 )
 ```
 
@@ -180,164 +177,12 @@ slather(
 
 Key | Description
 ----|------------
-  `build_directory` | The location of the build output
-  `proj` | The project file that slather looks at
-  `workspace` | The workspace that slather looks at
-  `scheme` | Scheme to use when calling slather
-  `input_format` | The input format that slather should look for
-  `buildkite` | Tell slather that it is running on Buildkite
-  `teamcity` | Tell slather that it is running on TeamCity
-  `jenkins` | Tell slather that it is running on Jenkins
-  `travis` | Tell slather that it is running on TravisCI
-  `circleci` | Tell slather that it is running on CircleCI
-  `coveralls` | Tell slather that it should post data to Coveralls
-  `simple_output` | Tell slather that it should output results to the terminal
-  `gutter_json` | Tell slather that it should output results as Gutter JSON format
-  `cobertura_xml` | Tell slather that it should output results as Cobertura XML format
-  `html` | Tell slather that it should output results as static HTML pages
-  `show` | Tell slather that it should open static html pages automatically
-  `source_directory` | Tell slather the location of your source files
-  `output_directory` | Tell slather the location of for your output files
-  `ignore` | Tell slather to ignore files matching a path or any path from an array of paths
-  `verbose` | Tell slather to enable verbose mode
-  `use_bundle_exec` | Use bundle exec to execute slather. Make sure it is in the Gemfile
-  `binary_basename` | Basename of the binary file, this should match the name of your bundle excluding its extension (i.e. YourApp [for YourApp.app bundle])
-  `binary_file` | Binary file name to be used for code coverage
-  `source_files` | A Dir.glob compatible pattern used to limit the lookup to specific source files. Ignored in gcov mode
-  `decimals` | The amount of decimals to use for % coverage reporting
+  `project_name` | Name of the project
+  `scheme` | Scheme of the project
+  `arch` | The build arch where will search .gcda files
+  `output_dir` | The output directory that coverage data will be stored. If not passed will use coverage_reports as default value
 
 </details>
-
-
-
-
-
-### xctool
-
-Run tests using xctool
-
-
-
-> You can run any `xctool` action. This will require having [xctool](https://github.com/facebook/xctool) installed through [homebrew](http://brew.sh/). It is recommended to store the build configuration in the `.xctool-args` file. More information available on GitHub: https://docs.fastlane.tools/actions#xctool
-
-xctool | 
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-xctool :test
-```
-
-```ruby
-# If you prefer to have the build configuration stored in the `Fastfile`:
-xctool :test, [
-  "--workspace", "'AwesomeApp.xcworkspace'",
-  "--scheme", "'Schema Name'",
-  "--configuration", "Debug",
-  "--sdk", "iphonesimulator",
-  "--arch", "i386"
-].join(" ")
-```
-
-
-</details>
-
-
-
-
-
-
-### swiftlint
-
-Run swift code validation using SwiftLint
-
-
-
-
-
-swiftlint | 
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-swiftlint(
-  mode: :lint,      # SwiftLint mode: :lint (default) or :autocorrect
-  output_file: "swiftlint.result.json", # The path of the output file (optional)
-  config_file: ".swiftlint-ci.yml",     # The path of the configuration file (optional)
-  files: [# List of files to process (optional)
-    "AppDelegate.swift",
-    "path/to/project/Model.swift"
-  ],
-  ignore_exit_status: true    # Allow fastlane to continue even if SwiftLint returns a non-zero exit status
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `mode` | SwiftLint mode: :lint (default) or :autocorrect; default is :lint
-  `output_file` | Path to output SwiftLint result
-  `config_file` | Custom configuration file of SwiftLint
-  `strict` | Fail on warnings? (true/false)
-  `files` | List of files to process
-  `ignore_exit_status` | Ignore the exit status of the SwiftLint command, so that serious violations                                                     don't fail the build (true/false)
-  `reporter` | Choose output reporter
-  `quiet` | Don't print status logs like 'Linting <file>' & 'Done linting'
-
-</details>
-
-
-
-
-
-### xcov
-
-Nice code coverage reports without hassle
-
-
-
-> Create nice code coverage reports and post coverage summaries on Slack *(xcov gem is required)*.
-More information: https://github.com/nakiostudio/xcov
-
-xcov | 
------|----
-Supported platforms | ios, mac
-Author | @nakiostudio
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcov(
-  workspace: "YourWorkspace.xcworkspace",
-  scheme: "YourScheme",
-  output_directory: "xcov_output"
-)
-```
-
-
-</details>
-
 
 
 
@@ -420,18 +265,20 @@ Key | Description
 
 
 
-### gcovr
+### slather
 
-Runs test coverage reports for your Xcode project
+Use slather to generate a code coverage report
 
 
 
-> Generate summarized code coverage reports using [gcovr](http://gcovr.com/)
+> Slather works with multiple code coverage formats including Xcode7 code coverage.
+Slather is available at https://github.com/SlatherOrg/slather
 
-gcovr | 
+
+slather | 
 -----|----
-Supported platforms | ios
-Author | @dtrenz
+Supported platforms | ios, mac
+Author | @mattdelves
 
 
 
@@ -439,16 +286,50 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-gcovr(
-  html: true,
-  html_details: true,
-  output: "./code-coverage/report.html"
+slather(
+  build_directory: "foo",
+  input_format: "bah",
+  scheme: "MyScheme",
+  proj: "MyProject.xcodeproj"
 )
 ```
 
 
 </details>
 
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `build_directory` | The location of the build output
+  `proj` | The project file that slather looks at
+  `workspace` | The workspace that slather looks at
+  `scheme` | Scheme to use when calling slather
+  `input_format` | The input format that slather should look for
+  `buildkite` | Tell slather that it is running on Buildkite
+  `teamcity` | Tell slather that it is running on TeamCity
+  `jenkins` | Tell slather that it is running on Jenkins
+  `travis` | Tell slather that it is running on TravisCI
+  `circleci` | Tell slather that it is running on CircleCI
+  `coveralls` | Tell slather that it should post data to Coveralls
+  `simple_output` | Tell slather that it should output results to the terminal
+  `gutter_json` | Tell slather that it should output results as Gutter JSON format
+  `cobertura_xml` | Tell slather that it should output results as Cobertura XML format
+  `html` | Tell slather that it should output results as static HTML pages
+  `show` | Tell slather that it should open static html pages automatically
+  `source_directory` | Tell slather the location of your source files
+  `output_directory` | Tell slather the location of for your output files
+  `ignore` | Tell slather to ignore files matching a path or any path from an array of paths
+  `verbose` | Tell slather to enable verbose mode
+  `use_bundle_exec` | Use bundle exec to execute slather. Make sure it is in the Gemfile
+  `binary_basename` | Basename of the binary file, this should match the name of your bundle excluding its extension (i.e. YourApp [for YourApp.app bundle])
+  `binary_file` | Binary file name to be used for code coverage
+  `source_files` | A Dir.glob compatible pattern used to limit the lookup to specific source files. Ignored in gcov mode
+  `decimals` | The amount of decimals to use for % coverage reporting
+
+</details>
 
 
 
@@ -508,18 +389,18 @@ Key | Description
 
 
 
-### lcov
+### gcovr
 
-Generates coverage data using lcov
-
-
+Runs test coverage reports for your Xcode project
 
 
 
-lcov | 
+> Generate summarized code coverage reports using [gcovr](http://gcovr.com/)
+
+gcovr | 
 -----|----
-Supported platforms | ios, mac
-Author | @thiagolioy
+Supported platforms | ios
+Author | @dtrenz
 
 
 
@@ -527,28 +408,16 @@ Author | @thiagolioy
 <summary>1 Example</summary>
 
 ```ruby
-lcov(
-  project_name: "ProjectName",
-  scheme: "yourScheme",
-  output_dir: "cov_reports" # This value is optional. Default is coverage_reports
+gcovr(
+  html: true,
+  html_details: true,
+  output: "./code-coverage/report.html"
 )
 ```
 
 
 </details>
 
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `project_name` | Name of the project
-  `scheme` | Scheme of the project
-  `arch` | The build arch where will search .gcda files
-  `output_dir` | The output directory that coverage data will be stored. If not passed will use coverage_reports as default value
-
-</details>
 
 
 
@@ -661,22 +530,152 @@ Key | Description
 
 
 
+### xctool
+
+Run tests using xctool
+
+
+
+> You can run any `xctool` action. This will require having [xctool](https://github.com/facebook/xctool) installed through [homebrew](http://brew.sh/). It is recommended to store the build configuration in the `.xctool-args` file. More information available on GitHub: https://docs.fastlane.tools/actions#xctool
+
+xctool | 
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+xctool :test
+```
+
+```ruby
+# If you prefer to have the build configuration stored in the `Fastfile`:
+xctool :test, [
+  "--workspace", "'AwesomeApp.xcworkspace'",
+  "--scheme", "'Schema Name'",
+  "--configuration", "Debug",
+  "--sdk", "iphonesimulator",
+  "--arch", "i386"
+].join(" ")
+```
+
+
+</details>
+
+
+
+
+
+
+### xcov
+
+Nice code coverage reports without hassle
+
+
+
+> Create nice code coverage reports and post coverage summaries on Slack *(xcov gem is required)*.
+More information: https://github.com/nakiostudio/xcov
+
+xcov | 
+-----|----
+Supported platforms | ios, mac
+Author | @nakiostudio
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcov(
+  workspace: "YourWorkspace.xcworkspace",
+  scheme: "YourScheme",
+  output_directory: "xcov_output"
+)
+```
+
+
+</details>
+
+
+
+
+
+
+### swiftlint
+
+Run swift code validation using SwiftLint
+
+
+
+
+
+swiftlint | 
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+swiftlint(
+  mode: :lint,      # SwiftLint mode: :lint (default) or :autocorrect
+  output_file: "swiftlint.result.json", # The path of the output file (optional)
+  config_file: ".swiftlint-ci.yml",     # The path of the configuration file (optional)
+  files: [# List of files to process (optional)
+    "AppDelegate.swift",
+    "path/to/project/Model.swift"
+  ],
+  ignore_exit_status: true    # Allow fastlane to continue even if SwiftLint returns a non-zero exit status
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `mode` | SwiftLint mode: :lint (default) or :autocorrect; default is :lint
+  `output_file` | Path to output SwiftLint result
+  `config_file` | Custom configuration file of SwiftLint
+  `strict` | Fail on warnings? (true/false)
+  `files` | List of files to process
+  `ignore_exit_status` | Ignore the exit status of the SwiftLint command, so that serious violations                                                     don't fail the build (true/false)
+  `reporter` | Choose output reporter
+  `quiet` | Don't print status logs like 'Linting <file>' & 'Done linting'
+
+</details>
+
+
+
+
+
 
 # Building
 
-### gym
+### carthage
 
-Easily build and sign your app using _gym_
+Runs `carthage` for your project
 
 
 
-> More information: https://fastlane.tools/gym
 
-gym | 
+
+carthage | 
 -----|----
 Supported platforms | ios, mac
-Author | @KrauseFx
-Returns | The absolute path to the generated ipa file
+Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev
 
 
 
@@ -684,19 +683,24 @@ Returns | The absolute path to the generated ipa file
 <summary>2 Examples</summary>
 
 ```ruby
-gym(scheme: "MyApp", workspace: "MyApp.xcworkspace")
+carthage
 ```
 
 ```ruby
-gym(
-  workspace: "MyApp.xcworkspace",
-  configuration: "Debug",
-  scheme: "MyApp",
-  silent: true,
-  clean: true,
-  output_directory: "path/to/dir", # Destination directory. Defaults to current directory.
-  output_name: "my-app.ipa",       # specify the name of the .ipa file to generate (including file extension)
-  sdk: "10.0"  # use SDK as the name or path of the base SDK when building the project.
+carthage(
+  frameworks: ["MyFramework1", "MyFramework2"],   # Specify which frameworks to archive (only for the archive command)
+  output: "MyFrameworkBundle.framework.zip",      # Specify the output archive name (only for the archive command)
+  command: "bootstrap",       # One of: build, bootstrap, update, archive. (default: bootstrap)
+  dependencies: ["Alamofire", "Notice"],# Specify which dependencies to update (only for the update command)
+  use_ssh: false,   # Use SSH for downloading GitHub repositories.
+  use_submodules: false,      # Add dependencies as Git submodules.
+  use_binaries: true,         # Check out dependency repositories even when prebuilt frameworks exist
+  no_build: false,  # When bootstrapping Carthage do not build
+  no_skip_current: false,     # Don't skip building the current project (only for frameworks)
+  verbose: false,   # Print xcodebuild output inline
+  platform: "all",  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
+  configuration: "Release",   # Build configuration to use when building
+  toolchain: "com.apple.dt.toolchain.Swift_2_3"   # Specify the xcodebuild toolchain
 )
 ```
 
@@ -709,42 +713,21 @@ gym(
 
 Key | Description
 ----|------------
-  `workspace` | Path the workspace file
-  `project` | Path the project file
-  `scheme` | The project's scheme. Make sure it's marked as `Shared`
-  `clean` | Should the project be cleaned before building it?
-  `output_directory` | The directory in which the ipa file should be stored in
-  `output_name` | The name of the resulting ipa file
-  `configuration` | The configuration to use when building the app. Defaults to 'Release'
-  `silent` | Hide all information that's not necessary while building
-  `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH'
-  `include_symbols` | Should the ipa file include symbols?
-  `include_bitcode` | Should the ipa include bitcode?
-  `use_legacy_build_api` | [DEPRECATED!] Don't use this option any more, as it's deprecated by Apple - Don't use this option any more, as it's deprecated by Apple
-  `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
-  `export_options` | Specifies path to export options plist. User xcodebuild -help to print the full set of available options
-  `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
-  `skip_build_archive` | Export ipa from previously build xarchive. Uses archive_path as source
-  `build_path` | The directory in which the archive should be stored in
-  `archive_path` | The path to the created archive
-  `derived_data_path` | The directory where build products and other derived data will go
-  `result_bundle` | Produce the result bundle describing what occurred will be placed
-  `buildlog_path` | The directory where to store the build log
-  `sdk` | The SDK that should be used for building the application
-  `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
-  `provisioning_profile_path` | [DEPRECATED!] Use target specific provisioning profiles instead - The path to the provisioning profile (optional)
-  `destination` | Use a custom destination for building the app
-  `export_team_id` | Optional: Sometimes you need to specify a team id when exporting the ipa file
-  `xcargs` | Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
-  `xcconfig` | Use an extra XCCONFIG file to build your app
-  `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path
-  `disable_xcpretty` | Disable xcpretty formatting of build output
-  `xcpretty_test_format` | Use the test (RSpec style) format for build output
-  `xcpretty_formatter` | A custom xcpretty formatter to use
-  `xcpretty_report_junit` | Have xcpretty create a JUnit-style XML report at the provided path
-  `xcpretty_report_html` | Have xcpretty create a simple HTML report at the provided path
-  `xcpretty_report_json` | Have xcpretty create a JSON compilation database at the provided path
-  `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds
+  `command` | Carthage command (one of: build, bootstrap, update, archive)
+  `dependencies` | Carthage dependencies to update
+  `use_ssh` | Use SSH for downloading GitHub repositories
+  `use_submodules` | Add dependencies as Git submodules
+  `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist
+  `no_build` | When bootstrapping Carthage do not build
+  `no_skip_current` | Don't skip building the Carthage project (in addition to its dependencies)
+  `derived_data` | Use derived data folder at path
+  `verbose` | Print xcodebuild output inline
+  `platform` | Define which platform to build for
+  `frameworks` | Framework name or names to archive, could be applied only along with the archive command
+  `output` | Output name for the archive, could be applied only along with the archive command. Use following format *.framework.zip
+  `configuration` | Define which build configuration to use when building
+  `toolchain` | Define which xcodebuild toolchain to use when building
+  `project_directory` | Define the directory containing the Carthage project
 
 </details>
 
@@ -752,97 +735,31 @@ Key | Description
 
 
 
-### cocoapods
+### xcarchive
 
-Runs `pod install` for the project
+Archives the project using `xcodebuild`
 
 
 
-> If you use [CocoaPods](http://cocoapods.org) you can use the `cocoapods` integration to run `pod install` before building your app.
 
-cocoapods | 
+
+xcarchive | 
 -----|----
 Supported platforms | ios, mac
-Author | @KrauseFx, @tadpol, @birmacher, @Liquidsoul
+Author | @dtrenz
 
 
 
 <details>
-<summary>2 Examples</summary>
+<summary>1 Example</summary>
 
 ```ruby
-cocoapods
-```
-
-```ruby
-cocoapods(
-  clean: true,
-  podfile: "./CustomPodfile"
-)
+xcarchive
 ```
 
 
 </details>
 
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `clean` | Remove SCM directories
-  `integrate` | Integrate the Pods libraries into the Xcode project(s)
-  `repo_update` | Run `pod repo update` before install
-  `silent` | Execute command without logging output
-  `verbose` | Show more debugging information
-  `ansi` | Show output with ANSI codes
-  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented
-  `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file
-
-</details>
-
-
-
-
-
-### clear_derived_data
-
-Deletes the Xcode Derived Data
-
-
-
-> Deletes the Derived Data from '~/Library/Developer/Xcode/DerivedData' or a supplied path
-
-clear_derived_data | 
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-clear_derived_data
-```
-
-```ruby
-clear_derived_data(derived_data_path: "/custom/")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `derived_data_path` | Custom path for derivedData
-
-</details>
 
 
 
@@ -938,6 +855,153 @@ Key | Description
 
 
 
+### ensure_xcode_version
+
+Ensure the selected Xcode version with xcode-select matches a value
+
+
+
+> If building your app requires a specific version of Xcode, you can invoke this command before using gym.
+        For example, to ensure that a beta version is not accidentally selected to build, which would make uploading to TestFlight fail.
+
+ensure_xcode_version | 
+-----|----
+Supported platforms | ios, mac
+Author | @JaviSoto
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ensure_xcode_version(version: "7.2")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `version` | Xcode version to verify that is selected
+
+</details>
+
+
+
+
+
+### xctest
+
+Runs tests on the given simulator
+
+
+
+
+
+xctest | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xctest(
+  destination: "name=iPhone 7s,OS=10.0"
+)
+```
+
+
+</details>
+
+
+
+
+
+
+### verify_xcode
+
+Verifies that the Xcode installation is properly signed by Apple
+
+
+
+> This action was implemented after the recent Xcode attack to make sure
+you're not using a hacked Xcode installation.
+http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/
+
+verify_xcode | 
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+verify_xcode
+```
+
+```ruby
+verify_xcode(xcode_path: "/Applications/Xcode.app")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `xcode_path` | The path to the Xcode installation to test
+
+</details>
+
+
+
+
+
+### xcexport
+
+Exports the project using `xcodebuild`
+
+
+
+
+
+xcexport | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcexport
+```
+
+
+</details>
+
+
+
+
+
+
 ### xcodebuild
 
 Use the `xcodebuild` command to build and sign your app
@@ -973,18 +1037,18 @@ xcodebuild(
 
 
 
-### carthage
+### cocoapods
 
-Runs `carthage` for your project
-
-
+Runs `pod install` for the project
 
 
 
-carthage | 
+> If you use [CocoaPods](http://cocoapods.org) you can use the `cocoapods` integration to run `pod install` before building your app.
+
+cocoapods | 
 -----|----
 Supported platforms | ios, mac
-Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev
+Author | @KrauseFx, @tadpol, @birmacher, @Liquidsoul
 
 
 
@@ -992,24 +1056,13 @@ Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampt
 <summary>2 Examples</summary>
 
 ```ruby
-carthage
+cocoapods
 ```
 
 ```ruby
-carthage(
-  frameworks: ["MyFramework1", "MyFramework2"],   # Specify which frameworks to archive (only for the archive command)
-  output: "MyFrameworkBundle.framework.zip",      # Specify the output archive name (only for the archive command)
-  command: "bootstrap",       # One of: build, bootstrap, update, archive. (default: bootstrap)
-  dependencies: ["Alamofire", "Notice"],# Specify which dependencies to update (only for the update command)
-  use_ssh: false,   # Use SSH for downloading GitHub repositories.
-  use_submodules: false,      # Add dependencies as Git submodules.
-  use_binaries: true,         # Check out dependency repositories even when prebuilt frameworks exist
-  no_build: false,  # When bootstrapping Carthage do not build
-  no_skip_current: false,     # Don't skip building the current project (only for frameworks)
-  verbose: false,   # Print xcodebuild output inline
-  platform: "all",  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
-  configuration: "Release",   # Build configuration to use when building
-  toolchain: "com.apple.dt.toolchain.Swift_2_3"   # Specify the xcodebuild toolchain
+cocoapods(
+  clean: true,
+  podfile: "./CustomPodfile"
 )
 ```
 
@@ -1022,21 +1075,14 @@ carthage(
 
 Key | Description
 ----|------------
-  `command` | Carthage command (one of: build, bootstrap, update, archive)
-  `dependencies` | Carthage dependencies to update
-  `use_ssh` | Use SSH for downloading GitHub repositories
-  `use_submodules` | Add dependencies as Git submodules
-  `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist
-  `no_build` | When bootstrapping Carthage do not build
-  `no_skip_current` | Don't skip building the Carthage project (in addition to its dependencies)
-  `derived_data` | Use derived data folder at path
-  `verbose` | Print xcodebuild output inline
-  `platform` | Define which platform to build for
-  `frameworks` | Framework name or names to archive, could be applied only along with the archive command
-  `output` | Output name for the archive, could be applied only along with the archive command. Use following format *.framework.zip
-  `configuration` | Define which build configuration to use when building
-  `toolchain` | Define which xcodebuild toolchain to use when building
-  `project_directory` | Define the directory containing the Carthage project
+  `clean` | Remove SCM directories
+  `integrate` | Integrate the Pods libraries into the Xcode project(s)
+  `repo_update` | Run `pod repo update` before install
+  `silent` | Execute command without logging output
+  `verbose` | Show more debugging information
+  `ansi` | Show output with ANSI codes
+  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented
+  `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file
 
 </details>
 
@@ -1044,48 +1090,18 @@ Key | Description
 
 
 
-### xcode_select
+### clean_cocoapods_cache
 
-Change the xcode-path to use. Useful for beta versions of Xcode
+Remove the cache for pods
 
 
 
-> Select and build with the Xcode installed at the provided path. Use the `xcversion` action if you want to select an Xcode based on a version specifier or you don't have known, stable paths as may happen in a CI environment.
 
-xcode_select | 
+
+clean_cocoapods_cache | 
 -----|----
 Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcode_select "/Applications/Xcode6.1.app"
-```
-
-
-</details>
-
-
-
-
-
-
-### xcversion
-
-Select an Xcode to use by version specifier
-
-
-
-> Finds and selects a version of an installed Xcode that best matches the provided [`Gem::Version` requirement specifier](http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version)
-
-xcversion | 
------|----
-Supported platforms | ios, mac
-Author | @oysta
+Author | @alexmx
 
 
 
@@ -1093,11 +1109,11 @@ Author | @oysta
 <summary>2 Examples</summary>
 
 ```ruby
-xcversion(version: "8.1") # Selects Xcode 8.1.0
+clean_cocoapods_cache
 ```
 
 ```ruby
-xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8.1.x set
+clean_cocoapods_cache(name: "CACHED_POD")
 ```
 
 
@@ -1109,7 +1125,167 @@ xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8
 
 Key | Description
 ----|------------
-  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0')
+  `name` | Pod name to be removed from cache
+
+</details>
+
+
+
+
+
+### xcbuild
+
+Builds the project using `xcodebuild`
+
+
+
+
+
+xcbuild | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcbuild
+```
+
+
+</details>
+
+
+
+
+
+
+### gym
+
+Easily build and sign your app using _gym_
+
+
+
+> More information: https://fastlane.tools/gym
+
+gym | 
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+Returns | The absolute path to the generated ipa file
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+gym(scheme: "MyApp", workspace: "MyApp.xcworkspace")
+```
+
+```ruby
+gym(
+  workspace: "MyApp.xcworkspace",
+  configuration: "Debug",
+  scheme: "MyApp",
+  silent: true,
+  clean: true,
+  output_directory: "path/to/dir", # Destination directory. Defaults to current directory.
+  output_name: "my-app.ipa",       # specify the name of the .ipa file to generate (including file extension)
+  sdk: "10.0"  # use SDK as the name or path of the base SDK when building the project.
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `workspace` | Path the workspace file
+  `project` | Path the project file
+  `scheme` | The project's scheme. Make sure it's marked as `Shared`
+  `clean` | Should the project be cleaned before building it?
+  `output_directory` | The directory in which the ipa file should be stored in
+  `output_name` | The name of the resulting ipa file
+  `configuration` | The configuration to use when building the app. Defaults to 'Release'
+  `silent` | Hide all information that's not necessary while building
+  `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH'
+  `include_symbols` | Should the ipa file include symbols?
+  `include_bitcode` | Should the ipa include bitcode?
+  `use_legacy_build_api` | [DEPRECATED!] Don't use this option any more, as it's deprecated by Apple - Don't use this option any more, as it's deprecated by Apple
+  `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
+  `export_options` | Specifies path to export options plist. User xcodebuild -help to print the full set of available options
+  `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
+  `skip_build_archive` | Export ipa from previously build xarchive. Uses archive_path as source
+  `build_path` | The directory in which the archive should be stored in
+  `archive_path` | The path to the created archive
+  `derived_data_path` | The directory where build products and other derived data will go
+  `result_bundle` | Produce the result bundle describing what occurred will be placed
+  `buildlog_path` | The directory where to store the build log
+  `sdk` | The SDK that should be used for building the application
+  `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
+  `provisioning_profile_path` | [DEPRECATED!] Use target specific provisioning profiles instead - The path to the provisioning profile (optional)
+  `destination` | Use a custom destination for building the app
+  `export_team_id` | Optional: Sometimes you need to specify a team id when exporting the ipa file
+  `xcargs` | Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
+  `xcconfig` | Use an extra XCCONFIG file to build your app
+  `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path
+  `disable_xcpretty` | Disable xcpretty formatting of build output
+  `xcpretty_test_format` | Use the test (RSpec style) format for build output
+  `xcpretty_formatter` | A custom xcpretty formatter to use
+  `xcpretty_report_junit` | Have xcpretty create a JUnit-style XML report at the provided path
+  `xcpretty_report_html` | Have xcpretty create a simple HTML report at the provided path
+  `xcpretty_report_json` | Have xcpretty create a JSON compilation database at the provided path
+  `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds
+
+</details>
+
+
+
+
+
+### xcode_install
+
+Make sure a certain version of Xcode is installed
+
+
+
+> Makes sure a specific version of Xcode is installed. If that's not the case, it will automatically be downloaded by the [xcode_install](https://github.com/neonichu/xcode-install) gem. This will make sure to use the correct Xcode for later actions.
+
+xcode_install | 
+-----|----
+Supported platforms | ios, mac
+Author | @Krausefx
+Returns | The path to the newly installed Xcode version
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcode_install(version: "7.1")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `version` | The version number of the version of Xcode to install
+  `username` | Your Apple ID Username
+  `team_id` | The ID of your team if you're in multiple teams
 
 </details>
 
@@ -1161,142 +1337,15 @@ Key | Description
 
 
 
-### ensure_xcode_version
+### clear_derived_data
 
-Ensure the selected Xcode version with xcode-select matches a value
+Deletes the Xcode Derived Data
 
 
 
-> If building your app requires a specific version of Xcode, you can invoke this command before using gym.
-        For example, to ensure that a beta version is not accidentally selected to build, which would make uploading to TestFlight fail.
+> Deletes the Derived Data from '~/Library/Developer/Xcode/DerivedData' or a supplied path
 
-ensure_xcode_version | 
------|----
-Supported platforms | ios, mac
-Author | @JaviSoto
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ensure_xcode_version(version: "7.2")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `version` | Xcode version to verify that is selected
-
-</details>
-
-
-
-
-
-### xcode_install
-
-Make sure a certain version of Xcode is installed
-
-
-
-> Makes sure a specific version of Xcode is installed. If that's not the case, it will automatically be downloaded by the [xcode_install](https://github.com/neonichu/xcode-install) gem. This will make sure to use the correct Xcode for later actions.
-
-xcode_install | 
------|----
-Supported platforms | ios, mac
-Author | @Krausefx
-Returns | The path to the newly installed Xcode version
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcode_install(version: "7.1")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `version` | The version number of the version of Xcode to install
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your team if you're in multiple teams
-
-</details>
-
-
-
-
-
-### clean_cocoapods_cache
-
-Remove the cache for pods
-
-
-
-
-
-clean_cocoapods_cache | 
------|----
-Supported platforms | ios, mac
-Author | @alexmx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-clean_cocoapods_cache
-```
-
-```ruby
-clean_cocoapods_cache(name: "CACHED_POD")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `name` | Pod name to be removed from cache
-
-</details>
-
-
-
-
-
-### verify_xcode
-
-Verifies that the Xcode installation is properly signed by Apple
-
-
-
-> This action was implemented after the recent Xcode attack to make sure
-you're not using a hacked Xcode installation.
-http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/
-
-verify_xcode | 
+clear_derived_data | 
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -1307,11 +1356,11 @@ Author | @KrauseFx
 <summary>2 Examples</summary>
 
 ```ruby
-verify_xcode
+clear_derived_data
 ```
 
 ```ruby
-verify_xcode(xcode_path: "/Applications/Xcode.app")
+clear_derived_data(derived_data_path: "/custom/")
 ```
 
 
@@ -1323,7 +1372,7 @@ verify_xcode(xcode_path: "/Applications/Xcode.app")
 
 Key | Description
 ----|------------
-  `xcode_path` | The path to the Xcode installation to test
+  `derived_data_path` | Custom path for derivedData
 
 </details>
 
@@ -1331,63 +1380,44 @@ Key | Description
 
 
 
-### verify_pod_keys
+### xcversion
 
-Verifies all keys referenced from the Podfile are non-empty
+Select an Xcode to use by version specifier
 
 
 
-> Runs a check against all keys specified in your Podfile to make sure they're more than a single character long. This is to ensure you don't deploy with stubbed keys.
+> Finds and selects a version of an installed Xcode that best matches the provided [`Gem::Version` requirement specifier](http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version)
 
-verify_pod_keys | 
+xcversion | 
 -----|----
 Supported platforms | ios, mac
-Author | @ashfurrow
+Author | @oysta
 
 
 
 <details>
-<summary>1 Example</summary>
+<summary>2 Examples</summary>
 
 ```ruby
-verify_pod_keys
+xcversion(version: "8.1") # Selects Xcode 8.1.0
+```
+
+```ruby
+xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8.1.x set
 ```
 
 
 </details>
 
 
-
-
-
-
-### xctest
-
-Runs tests on the given simulator
-
-
-
-
-
-xctest | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
 <details>
-<summary>1 Example</summary>
+<summary>Parameters</summary>
 
-```ruby
-xctest(
-  destination: "name=iPhone 7s,OS=10.0"
-)
-```
-
+Key | Description
+----|------------
+  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0')
 
 </details>
-
 
 
 
@@ -1423,18 +1453,18 @@ xcclean
 
 
 
-### xcexport
+### verify_pod_keys
 
-Exports the project using `xcodebuild`
-
-
+Verifies all keys referenced from the Podfile are non-empty
 
 
 
-xcexport | 
+> Runs a check against all keys specified in your Podfile to make sure they're more than a single character long. This is to ensure you don't deploy with stubbed keys.
+
+verify_pod_keys | 
 -----|----
 Supported platforms | ios, mac
-Author | @dtrenz
+Author | @ashfurrow
 
 
 
@@ -1442,7 +1472,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcexport
+verify_pod_keys
 ```
 
 
@@ -1453,15 +1483,15 @@ xcexport
 
 
 
-### xcarchive
+### xcode_select
 
-Archives the project using `xcodebuild`
-
-
+Change the xcode-path to use. Useful for beta versions of Xcode
 
 
 
-xcarchive | 
+> Select and build with the Xcode installed at the provided path. Use the `xcversion` action if you want to select an Xcode based on a version specifier or you don't have known, stable paths as may happen in a CI environment.
+
+xcode_select | 
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1472,37 +1502,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcarchive
-```
-
-
-</details>
-
-
-
-
-
-
-### xcbuild
-
-Builds the project using `xcodebuild`
-
-
-
-
-
-xcbuild | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcbuild
+xcode_select "/Applications/Xcode6.1.app"
 ```
 
 
@@ -1515,6 +1515,72 @@ xcbuild
 
 
 # Screenshots
+
+### screengrab
+
+Automated localized screenshots of your Android app on every device
+
+
+
+
+
+screengrab | 
+-----|----
+Supported platforms | android
+Author | @asfalcone, @i2amsam, @mfurtak
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+screengrab
+```
+
+```ruby
+screengrab(
+  locales: ["en-US", "fr-FR", "ja-JP"],
+  clear_previous_screenshots: true,
+  app_apk_path: "build/outputs/apk/example-debug.apk",
+  tests_apk_path: "build/outputs/apk/example-debug-androidTest-unaligned.apk"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `android_home` | Path to the root of your Android SDK installation, e.g. ~/tools/android-sdk-macosx
+  `build_tools_version` | The Android build tools version to use, e.g. '23.0.2'
+  `locales` | A list of locales which should be used
+  `clear_previous_screenshots` | Enabling this option will automatically clear previously generated screenshots before running screengrab
+  `output_directory` | The directory where to store the screenshots
+  `skip_open_summary` | Don't open the summary after running _screengrab_
+  `app_package_name` | The package name of the app under test (e.g. com.yourcompany.yourapp)
+  `tests_package_name` | The package name of the tests bundle (e.g. com.yourcompany.yourapp.test)
+  `use_tests_in_packages` | Only run tests in these Java packages
+  `use_tests_in_classes` | Only run tests in these Java classes
+  `launch_arguments` | Additional launch arguments
+  `test_instrumentation_runner` | The fully qualified class name of your test instrumentation runner
+  `ending_locale` | Return the device to this locale after running tests
+  `app_apk_path` | The path to the APK for the app under test
+  `tests_apk_path` | The path to the APK for the the tests bundle
+  `specific_device` | Use the device or emulator with the given serial number or qualifier
+  `device_type` | Type of device used for screenshots. Matches Google Play Types (phone, sevenInch, tenInch, tv, wear)
+  `exit_on_test_failure` | Whether or not to exit Screengrab on test failure. Exiting on failure will not copy sceenshots to local machine nor open sceenshots summary
+  `reinstall_app` | Enabling this option will automatically uninstall the application before running it
+
+</details>
+
+
+
+
 
 ### snapshot
 
@@ -1588,72 +1654,6 @@ Key | Description
 
 
 
-### screengrab
-
-Automated localized screenshots of your Android app on every device
-
-
-
-
-
-screengrab | 
------|----
-Supported platforms | android
-Author | @asfalcone, @i2amsam, @mfurtak
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-screengrab
-```
-
-```ruby
-screengrab(
-  locales: ["en-US", "fr-FR", "ja-JP"],
-  clear_previous_screenshots: true,
-  app_apk_path: "build/outputs/apk/example-debug.apk",
-  tests_apk_path: "build/outputs/apk/example-debug-androidTest-unaligned.apk"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `android_home` | Path to the root of your Android SDK installation, e.g. ~/tools/android-sdk-macosx
-  `build_tools_version` | The Android build tools version to use, e.g. '23.0.2'
-  `locales` | A list of locales which should be used
-  `clear_previous_screenshots` | Enabling this option will automatically clear previously generated screenshots before running screengrab
-  `output_directory` | The directory where to store the screenshots
-  `skip_open_summary` | Don't open the summary after running _screengrab_
-  `app_package_name` | The package name of the app under test (e.g. com.yourcompany.yourapp)
-  `tests_package_name` | The package name of the tests bundle (e.g. com.yourcompany.yourapp.test)
-  `use_tests_in_packages` | Only run tests in these Java packages
-  `use_tests_in_classes` | Only run tests in these Java classes
-  `launch_arguments` | Additional launch arguments
-  `test_instrumentation_runner` | The fully qualified class name of your test instrumentation runner
-  `ending_locale` | Return the device to this locale after running tests
-  `app_apk_path` | The path to the APK for the app under test
-  `tests_apk_path` | The path to the APK for the the tests bundle
-  `specific_device` | Use the device or emulator with the given serial number or qualifier
-  `device_type` | Type of device used for screenshots. Matches Google Play Types (phone, sevenInch, tenInch, tv, wear)
-  `exit_on_test_failure` | Whether or not to exit Screengrab on test failure. Exiting on failure will not copy sceenshots to local machine nor open sceenshots summary
-  `reinstall_app` | Enabling this option will automatically uninstall the application before running it
-
-</details>
-
-
-
-
-
 ### frameit
 
 Adds device frames around the screenshots using frameit
@@ -1716,44 +1716,64 @@ Key | Description
 
 # Project
 
-### increment_build_number
+### increment_version_number
 
-Increment the build number of your project
-
-
+Increment the version number of your project
 
 
 
-increment_build_number | 
+> This action will increment the version number. 
+You first have to set up your Xcode project, if you haven't done it already:
+https://developer.apple.com/library/ios/qa/qa1827/_index.html
+
+increment_version_number | 
 -----|----
 Supported platforms | ios, mac
-Author | @KrauseFx
-Returns | The new build number
+Author | @serluca
+Returns | The new version number
 
 
 
 <details>
-<summary>4 Examples</summary>
+<summary>7 Examples</summary>
 
 ```ruby
-increment_build_number # automatically increment by one
+increment_version_number # Automatically increment patch version number
 ```
 
 ```ruby
-increment_build_number(
-  build_number: "75" # set a specific number
+increment_version_number(
+  bump_type: "patch" # Automatically increment patch version number
 )
 ```
 
 ```ruby
-increment_build_number(
-  build_number: 75, # specify specific build number (optional, omitting it increments by one)
-  xcodeproj: "./path/to/MyApp.xcodeproj" # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+increment_version_number(
+  bump_type: "minor" # Automatically increment minor version number
 )
 ```
 
 ```ruby
-build_number = increment_build_number
+increment_version_number(
+  bump_type: "major" # Automatically increment major version number
+)
+```
+
+```ruby
+increment_version_number(
+  version_number: "2.1.1" # Set a specific version number
+)
+```
+
+```ruby
+increment_version_number(
+  version_number: "2.1.1",      # specify specific version number (optional, omitting it increments patch version number)
+  xcodeproj: "./path/to/MyApp.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+)
+```
+
+```ruby
+version = increment_version_number
 ```
 
 
@@ -1765,7 +1785,8 @@ build_number = increment_build_number
 
 Key | Description
 ----|------------
-  `build_number` | Change to a specific version
+  `bump_type` | The type of this version bump. Available: patch, minor, major
+  `version_number` | Change to a specific version. This will replace the bump type value
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
@@ -1774,18 +1795,18 @@ Key | Description
 
 
 
-### set_info_plist_value
+### recreate_schemes
 
-Sets value to Info.plist of your project as native Ruby data structures
-
-
+Recreate not shared Xcode project schemes
 
 
 
-set_info_plist_value | 
+
+
+recreate_schemes | 
 -----|----
 Supported platforms | ios, mac
-Author | @kohtenko
+Author | @jerolimov
 
 
 
@@ -1793,7 +1814,7 @@ Author | @kohtenko
 <summary>1 Example</summary>
 
 ```ruby
-set_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier", value: "com.krausefx.app.beta")
+recreate_schemes(project: "./path/to/MyApp.xcodeproj")
 ```
 
 
@@ -1805,9 +1826,95 @@ set_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier", value: "co
 
 Key | Description
 ----|------------
-  `key` | Name of key in plist
-  `value` | Value to setup
-  `path` | Path to plist file you want to update
+  `project` | The Xcode project
+
+</details>
+
+
+
+
+
+### update_app_group_identifiers
+
+This action changes the app group identifiers in the entitlements file
+
+
+
+> Updates the App Group Identifiers in the given Entitlements file, so you can have app groups for the app store build and app groups for an enterprise build.
+
+update_app_group_identifiers | 
+-----|----
+Supported platforms | ios
+Author | @mathiasAichinger
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+update_app_group_identifiers(
+  entitlements_file: "/path/to/entitlements_file.entitlements",
+  app_group_identifiers: ["group.your.app.group.identifier"]
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `entitlements_file` | The path to the entitlement file which contains the app group identifiers
+  `app_group_identifiers` | An Array of unique identifiers for the app groups. Eg. ['group.com.test.testapp']
+
+</details>
+
+
+
+
+
+### update_app_identifier
+
+Update the project's bundle identifier
+
+
+
+> Update an app identifier by either setting `CFBundleIdentifier` or `PRODUCT_BUNDLE_IDENTIFIER`, depending on which is already in use.
+
+update_app_identifier | 
+-----|----
+Supported platforms | ios
+Author | @squarefrog, @tobiasstrebitzer
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+update_app_identifier(
+  xcodeproj: "Example.xcodeproj", # Optional path to xcodeproj, will use the first .xcodeproj if not set
+  plist_path: "Example/Info.plist", # Path to info plist file, relative to xcodeproj
+  app_identifier: "com.test.example" # The App Identifier
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `xcodeproj` | Path to your Xcode project
+  `plist_path` | Path to info plist, relative to your Xcode project
+  `app_identifier` | The app Identifier you want to set
 
 </details>
 
@@ -1852,46 +1959,6 @@ Key | Description
                                           Please use the 'target' parameter instead. The behavior of this parameter
                                           is currently undefined if your scheme name doesn't match your target name
   `target` | Specify a specific target if you have multiple per project, optional
-
-</details>
-
-
-
-
-
-### get_info_plist_value
-
-Returns value from Info.plist of your project as native Ruby data structures
-
-
-
-> Get a value from a plist file, which can be used to fetch the app identifier and more information about your app
-
-get_info_plist_value | 
------|----
-Supported platforms | ios, mac
-Author | @kohtenko
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-identifier = get_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `key` | Name of parameter
-  `path` | Path to plist file you want to read
 
 </details>
 
@@ -1979,169 +2046,6 @@ Key | Description
 
 
 
-### get_build_number
-
-Get the build number of your project
-
-
-
-> This action will return the current build number set on your project. You first have to set up your Xcode project, if you haven't done it already: https://developer.apple.com/library/ios/qa/qa1827/_index.html
-
-get_build_number | 
------|----
-Supported platforms | ios, mac
-Author | @Liquidsoul
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-build_number = get_build_number(xcodeproj: "Project.xcodeproj")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
-
-</details>
-
-
-
-
-
-### increment_version_number
-
-Increment the version number of your project
-
-
-
-> This action will increment the version number. 
-You first have to set up your Xcode project, if you haven't done it already:
-https://developer.apple.com/library/ios/qa/qa1827/_index.html
-
-increment_version_number | 
------|----
-Supported platforms | ios, mac
-Author | @serluca
-Returns | The new version number
-
-
-
-<details>
-<summary>7 Examples</summary>
-
-```ruby
-increment_version_number # Automatically increment patch version number
-```
-
-```ruby
-increment_version_number(
-  bump_type: "patch" # Automatically increment patch version number
-)
-```
-
-```ruby
-increment_version_number(
-  bump_type: "minor" # Automatically increment minor version number
-)
-```
-
-```ruby
-increment_version_number(
-  bump_type: "major" # Automatically increment major version number
-)
-```
-
-```ruby
-increment_version_number(
-  version_number: "2.1.1" # Set a specific version number
-)
-```
-
-```ruby
-increment_version_number(
-  version_number: "2.1.1",      # specify specific version number (optional, omitting it increments patch version number)
-  xcodeproj: "./path/to/MyApp.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
-)
-```
-
-```ruby
-version = increment_version_number
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `bump_type` | The type of this version bump. Available: patch, minor, major
-  `version_number` | Change to a specific version. This will replace the bump type value
-  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
-
-</details>
-
-
-
-
-
-### update_app_identifier
-
-Update the project's bundle identifier
-
-
-
-> Update an app identifier by either setting `CFBundleIdentifier` or `PRODUCT_BUNDLE_IDENTIFIER`, depending on which is already in use.
-
-update_app_identifier | 
------|----
-Supported platforms | ios
-Author | @squarefrog, @tobiasstrebitzer
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-update_app_identifier(
-  xcodeproj: "Example.xcodeproj", # Optional path to xcodeproj, will use the first .xcodeproj if not set
-  plist_path: "Example/Info.plist", # Path to info plist file, relative to xcodeproj
-  app_identifier: "com.test.example" # The App Identifier
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `xcodeproj` | Path to your Xcode project
-  `plist_path` | Path to info plist, relative to your Xcode project
-  `app_identifier` | The app Identifier you want to set
-
-</details>
-
-
-
-
-
 ### update_project_team
 
 Update Xcode Development Team ID
@@ -2185,62 +2089,18 @@ Key | Description
 
 
 
-### update_app_group_identifiers
+### get_info_plist_value
 
-This action changes the app group identifiers in the entitlements file
-
-
-
-> Updates the App Group Identifiers in the given Entitlements file, so you can have app groups for the app store build and app groups for an enterprise build.
-
-update_app_group_identifiers | 
------|----
-Supported platforms | ios
-Author | @mathiasAichinger
+Returns value from Info.plist of your project as native Ruby data structures
 
 
 
-<details>
-<summary>1 Example</summary>
+> Get a value from a plist file, which can be used to fetch the app identifier and more information about your app
 
-```ruby
-update_app_group_identifiers(
-  entitlements_file: "/path/to/entitlements_file.entitlements",
-  app_group_identifiers: ["group.your.app.group.identifier"]
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `entitlements_file` | The path to the entitlement file which contains the app group identifiers
-  `app_group_identifiers` | An Array of unique identifiers for the app groups. Eg. ['group.com.test.testapp']
-
-</details>
-
-
-
-
-
-### get_ipa_info_plist_value
-
-Returns a value from Info.plist inside a .ipa file
-
-
-
-> This is useful for introspecting Info.plist files for .ipa files that have already been built.
-
-get_ipa_info_plist_value | 
+get_info_plist_value | 
 -----|----
 Supported platforms | ios, mac
-Author | @johnboiles
-Returns | Returns the value in the .ipa's Info.plist corresponding to the passed in Key
+Author | @kohtenko
 
 
 
@@ -2248,7 +2108,7 @@ Returns | Returns the value in the .ipa's Info.plist corresponding to the passed
 <summary>1 Example</summary>
 
 ```ruby
-get_ipa_info_plist_value(ipa: "path.ipa", key: "KEY_YOU_READ")
+identifier = get_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier")
 ```
 
 
@@ -2261,7 +2121,7 @@ get_ipa_info_plist_value(ipa: "path.ipa", key: "KEY_YOU_READ")
 Key | Description
 ----|------------
   `key` | Name of parameter
-  `ipa` | Path to IPA
+  `path` | Path to plist file you want to read
 
 </details>
 
@@ -2269,18 +2129,18 @@ Key | Description
 
 
 
-### recreate_schemes
+### get_build_number
 
-Recreate not shared Xcode project schemes
-
-
+Get the build number of your project
 
 
 
-recreate_schemes | 
+> This action will return the current build number set on your project. You first have to set up your Xcode project, if you haven't done it already: https://developer.apple.com/library/ios/qa/qa1827/_index.html
+
+get_build_number | 
 -----|----
 Supported platforms | ios, mac
-Author | @jerolimov
+Author | @Liquidsoul
 
 
 
@@ -2288,7 +2148,7 @@ Author | @jerolimov
 <summary>1 Example</summary>
 
 ```ruby
-recreate_schemes(project: "./path/to/MyApp.xcodeproj")
+build_number = get_build_number(xcodeproj: "Project.xcodeproj")
 ```
 
 
@@ -2300,7 +2160,7 @@ recreate_schemes(project: "./path/to/MyApp.xcodeproj")
 
 Key | Description
 ----|------------
-  `project` | The Xcode project
+  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
 
@@ -2447,8 +2307,272 @@ Key | Description
 
 
 
+### increment_build_number
+
+Increment the build number of your project
+
+
+
+
+
+increment_build_number | 
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+Returns | The new build number
+
+
+
+<details>
+<summary>4 Examples</summary>
+
+```ruby
+increment_build_number # automatically increment by one
+```
+
+```ruby
+increment_build_number(
+  build_number: "75" # set a specific number
+)
+```
+
+```ruby
+increment_build_number(
+  build_number: 75, # specify specific build number (optional, omitting it increments by one)
+  xcodeproj: "./path/to/MyApp.xcodeproj" # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+)
+```
+
+```ruby
+build_number = increment_build_number
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `build_number` | Change to a specific version
+  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
+
+</details>
+
+
+
+
+
+### set_info_plist_value
+
+Sets value to Info.plist of your project as native Ruby data structures
+
+
+
+
+
+set_info_plist_value | 
+-----|----
+Supported platforms | ios, mac
+Author | @kohtenko
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+set_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier", value: "com.krausefx.app.beta")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `key` | Name of key in plist
+  `value` | Value to setup
+  `path` | Path to plist file you want to update
+
+</details>
+
+
+
+
+
+### get_ipa_info_plist_value
+
+Returns a value from Info.plist inside a .ipa file
+
+
+
+> This is useful for introspecting Info.plist files for .ipa files that have already been built.
+
+get_ipa_info_plist_value | 
+-----|----
+Supported platforms | ios, mac
+Author | @johnboiles
+Returns | Returns the value in the .ipa's Info.plist corresponding to the passed in Key
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+get_ipa_info_plist_value(ipa: "path.ipa", key: "KEY_YOU_READ")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `key` | Name of parameter
+  `ipa` | Path to IPA
+
+</details>
+
+
+
+
+
 
 # Code Signing
+
+### import_certificate
+
+Import certificate from inputfile into a keychain
+
+
+
+> Import certificates into the current default keychain. Use `create_keychain` to create a new keychain.
+
+import_certificate | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @gin0606
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+import_certificate(certificate_path: "certs/AppleWWDRCA.cer")
+```
+
+```ruby
+import_certificate(
+  certificate_path: "certs/dist.p12",
+  certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `keychain_name` | Keychain the items should be imported to
+  `keychain_password` | The password for the keychain. Note that for the login keychain this is your user's password
+  `certificate_path` | Path to certificate
+  `certificate_password` | Certificate password
+  `log_output` | If output should be logged to the console
+
+</details>
+
+
+
+
+
+### resign
+
+Codesign an existing ipa file
+
+
+
+> You may provide multiple provisioning profiles if the application contains
+nested applications or app extensions, which need their own provisioning
+profile. You can do so by passing an array of provisiong profile strings or a
+hash that associates provisioning profile values to bundle identifier keys.
+resign(ipa: "path", signing_identity: "identity", provisioning_profile: {
+  "com.example.awesome-app" => "App.mobileprovision",
+  "com.example.awesome-app.app-extension" => "Extension.mobileprovision"
+})
+
+resign | 
+-----|----
+Supported platforms | ios
+Author | @lmirosevic
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+resign(
+  ipa: "path/to/ipa", # can omit if using the `ipa` action
+  signing_identity: "iPhone Distribution: Luka Mirosevic (0123456789)",
+  provisioning_profile: "path/to/profile", # can omit if using the _sigh_ action
+)
+```
+
+```ruby
+resign(
+  ipa: "path/to/ipa", # can omit if using the `ipa` action
+  signing_identity: "iPhone Distribution: Luka Mirosevic (0123456789)",
+  provisioning_profile: {
+    "com.example.awesome-app" => "path/to/profile",
+    "com.example.awesome-app.app-extension" => "path/to/app-extension/profile"
+  }
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `ipa` | Path to the ipa file to resign. Optional if you use the _gym_ or _xcodebuild_ action
+  `signing_identity` | Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)"
+  `entitlements` | Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements"
+  `provisioning_profile` | Path to your provisioning_profile. Optional if you use _sigh_
+  `version` | Version number to force resigned ipa to use.
+Updates both CFBundleShortVersionString and CFBundleVersion values in Info.plist.
+Applies for main app and all nested apps or extensions
+  `display_name` | Display name to force resigned ipa to use
+  `short_version` | Short version string to force resigned ipa to use (CFBundleShortVersionString)
+  `bundle_version` | Bundle version to force resigned ipa to use (CFBundleVersion)
+  `bundle_id` | Set new bundle ID during resign (CFBundleIdentifier)
+  `use_app_entitlements` | Extract app bundle codesigning entitlements
+and combine with entitlements from new provisionin profile
+  `keychain_path` | Provide a path to a keychain file that should be used by /usr/bin/codesign
+
+</details>
+
+
+
+
 
 ### sigh
 
@@ -2632,130 +2756,20 @@ Key | Description
 
 
 
-### update_project_provisioning
+### register_device
 
-Update projects code signing settings from your provisioning profile
-
-
-
-> You should check out the code signing gide before using this action: https://docs.fastlane.tools/codesigning/getting-started/
-This action retrieves a provisioning profile UUID from a provisioning profile (.mobileprovision) to set
-up the xcode projects' code signing settings in *.xcodeproj/project.pbxproj
-The `target_filter` value can be used to only update code signing for specified targets
-The `build_configuration` value can be used to only update code signing for specified build configurations of the targets passing through the `target_filter`
-Example Usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles
-Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".*WatchKit App.*")
-
-update_project_provisioning | 
------|----
-Supported platforms | ios, mac
-Author | @tobiasstrebitzer, @czechboy0
+Registers a new device to the Apple Dev Portal
 
 
 
-<details>
-<summary>1 Example</summary>
+> This will register an iOS device with the Developer Portal so that you can include it in your provisioning profiles.
+This is an optimistic action, in that it will only ever add a device to the member center. If the device has already been registered within the member center, it will be left alone in the member center.
+The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option.
 
-```ruby
-update_project_provisioning(
-  xcodeproj: "Project.xcodeproj",
-  profile: "./watch_app_store.mobileprovision", # optional if you use sigh
-  target_filter: ".*WatchKit Extension.*", # matches name or type of a target
-  build_configuration: "Release"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `xcodeproj` | Path to your Xcode project
-  `profile` | Path to provisioning profile (.mobileprovision)
-  `target_filter` | A filter for the target name. Use a standard regex
-  `build_configuration_filter` | Legacy option, use 'target_filter' instead
-  `build_configuration` | A filter for the build configuration name. Use a standard regex. Applied to all configurations if not specified
-  `certificate` | Path to apple root certificate
-
-</details>
-
-
-
-
-
-### import_certificate
-
-Import certificate from inputfile into a keychain
-
-
-
-> Import certificates into the current default keychain. Use `create_keychain` to create a new keychain.
-
-import_certificate | 
------|----
-Supported platforms | ios, android, mac
-Author | @gin0606
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-import_certificate(certificate_path: "certs/AppleWWDRCA.cer")
-```
-
-```ruby
-import_certificate(
-  certificate_path: "certs/dist.p12",
-  certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `keychain_name` | Keychain the items should be imported to
-  `keychain_password` | The password for the keychain. Note that for the login keychain this is your user's password
-  `certificate_path` | Path to certificate
-  `certificate_password` | Certificate password
-  `log_output` | If output should be logged to the console
-
-</details>
-
-
-
-
-
-### resign
-
-Codesign an existing ipa file
-
-
-
-> You may provide multiple provisioning profiles if the application contains
-nested applications or app extensions, which need their own provisioning
-profile. You can do so by passing an array of provisiong profile strings or a
-hash that associates provisioning profile values to bundle identifier keys.
-resign(ipa: "path", signing_identity: "identity", provisioning_profile: {
-  "com.example.awesome-app" => "App.mobileprovision",
-  "com.example.awesome-app.app-extension" => "Extension.mobileprovision"
-})
-
-resign | 
+register_device | 
 -----|----
 Supported platforms | ios
-Author | @lmirosevic
+Author | @pvinis
 
 
 
@@ -2763,21 +2777,18 @@ Author | @lmirosevic
 <summary>2 Examples</summary>
 
 ```ruby
-resign(
-  ipa: "path/to/ipa", # can omit if using the `ipa` action
-  signing_identity: "iPhone Distribution: Luka Mirosevic (0123456789)",
-  provisioning_profile: "path/to/profile", # can omit if using the _sigh_ action
-)
+register_device(
+  name: "Luka iPhone 6",
+  udid: "1234567890123456789012345678901234567890"
+) # Simply provide the name and udid of the device
 ```
 
 ```ruby
-resign(
-  ipa: "path/to/ipa", # can omit if using the `ipa` action
-  signing_identity: "iPhone Distribution: Luka Mirosevic (0123456789)",
-  provisioning_profile: {
-    "com.example.awesome-app" => "path/to/profile",
-    "com.example.awesome-app.app-extension" => "path/to/app-extension/profile"
-  }
+register_device(
+  name: "Luka iPhone 6",
+  udid: "1234567890123456789012345678901234567890",
+  team_id: "XXXXXXXXXX",         # Optional, if you"re a member of multiple teams, then you need to pass the team ID here.
+  username: "luka@goonbee.com"   # Optional, lets you override the Apple Member Center username.
 )
 ```
 
@@ -2790,20 +2801,11 @@ resign(
 
 Key | Description
 ----|------------
-  `ipa` | Path to the ipa file to resign. Optional if you use the _gym_ or _xcodebuild_ action
-  `signing_identity` | Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)"
-  `entitlements` | Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements"
-  `provisioning_profile` | Path to your provisioning_profile. Optional if you use _sigh_
-  `version` | Version number to force resigned ipa to use.
-Updates both CFBundleShortVersionString and CFBundleVersion values in Info.plist.
-Applies for main app and all nested apps or extensions
-  `display_name` | Display name to force resigned ipa to use
-  `short_version` | Short version string to force resigned ipa to use (CFBundleShortVersionString)
-  `bundle_version` | Bundle version to force resigned ipa to use (CFBundleVersion)
-  `bundle_id` | Set new bundle ID during resign (CFBundleIdentifier)
-  `use_app_entitlements` | Extract app bundle codesigning entitlements
-and combine with entitlements from new provisionin profile
-  `keychain_path` | Provide a path to a keychain file that should be used by /usr/bin/codesign
+  `name` | Provide the name of the device to register as
+  `udid` | Provide the UDID of the device to register as
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams
+  `team_name` | The name of your Developer Portal team if you're in multiple teams
+  `username` | Optional: Your Apple ID
 
 </details>
 
@@ -2875,39 +2877,36 @@ Key | Description
 
 
 
-### register_device
+### update_project_provisioning
 
-Registers a new device to the Apple Dev Portal
+Update projects code signing settings from your provisioning profile
 
 
 
-> This will register an iOS device with the Developer Portal so that you can include it in your provisioning profiles.
-This is an optimistic action, in that it will only ever add a device to the member center. If the device has already been registered within the member center, it will be left alone in the member center.
-The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option.
+> You should check out the code signing gide before using this action: https://docs.fastlane.tools/codesigning/getting-started/
+This action retrieves a provisioning profile UUID from a provisioning profile (.mobileprovision) to set
+up the xcode projects' code signing settings in *.xcodeproj/project.pbxproj
+The `target_filter` value can be used to only update code signing for specified targets
+The `build_configuration` value can be used to only update code signing for specified build configurations of the targets passing through the `target_filter`
+Example Usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles
+Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".*WatchKit App.*")
 
-register_device | 
+update_project_provisioning | 
 -----|----
-Supported platforms | ios
-Author | @pvinis
+Supported platforms | ios, mac
+Author | @tobiasstrebitzer, @czechboy0
 
 
 
 <details>
-<summary>2 Examples</summary>
+<summary>1 Example</summary>
 
 ```ruby
-register_device(
-  name: "Luka iPhone 6",
-  udid: "1234567890123456789012345678901234567890"
-) # Simply provide the name and udid of the device
-```
-
-```ruby
-register_device(
-  name: "Luka iPhone 6",
-  udid: "1234567890123456789012345678901234567890",
-  team_id: "XXXXXXXXXX",         # Optional, if you"re a member of multiple teams, then you need to pass the team ID here.
-  username: "luka@goonbee.com"   # Optional, lets you override the Apple Member Center username.
+update_project_provisioning(
+  xcodeproj: "Project.xcodeproj",
+  profile: "./watch_app_store.mobileprovision", # optional if you use sigh
+  target_filter: ".*WatchKit Extension.*", # matches name or type of a target
+  build_configuration: "Release"
 )
 ```
 
@@ -2920,11 +2919,12 @@ register_device(
 
 Key | Description
 ----|------------
-  `name` | Provide the name of the device to register as
-  `udid` | Provide the UDID of the device to register as
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `username` | Optional: Your Apple ID
+  `xcodeproj` | Path to your Xcode project
+  `profile` | Path to provisioning profile (.mobileprovision)
+  `target_filter` | A filter for the target name. Use a standard regex
+  `build_configuration_filter` | Legacy option, use 'target_filter' instead
+  `build_configuration` | A filter for the build configuration name. Use a standard regex. Applied to all configurations if not specified
+  `certificate` | Path to apple root certificate
 
 </details>
 
@@ -3069,6 +3069,133 @@ Key | Description
 
 # Beta
 
+### splunkmint
+
+Upload dSYM file to Splunk MINT
+
+
+
+
+
+splunkmint | 
+-----|----
+Supported platforms | ios
+Author | @xfreebird
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+splunkmint(
+  dsym: "My.app.dSYM.zip",
+  api_key: "43564d3a",
+  api_token: "e05456234c4869fb7e0b61"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `dsym` | dSYM.zip file to upload to Splunk MINT
+  `api_key` | Splunk MINT App API key e.g. f57a57ca
+  `api_token` | Splunk MINT API token e.g. e05ba40754c4869fb7e0b61
+  `verbose` | Make detailed output
+  `upload_progress` | Show upload progress
+  `proxy_username` | Proxy username
+  `proxy_password` | Proxy password
+  `proxy_address` | Proxy address
+  `proxy_port` | Proxy port
+
+</details>
+
+
+
+
+
+### testflight
+
+Alias for the pilot action
+
+
+
+
+
+testflight | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>4 Examples</summary>
+
+```ruby
+testflight
+```
+
+```ruby
+pilot # alias for "testflight"
+```
+
+```ruby
+testflight(skip_submission: true) # to only upload the build
+```
+
+```ruby
+testflight(
+  username: "felix@krausefx.com",
+  app_identifier: "com.krausefx.app",
+  itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `username` | Your Apple ID Username
+  `app_identifier` | The bundle identifier of the app to upload or manage testers (optional)
+  `app_platform` | The platform to use (optional)
+  `ipa` | Path to the ipa file to upload
+  `changelog` | Provide the what's new text when uploading a new build
+  `beta_app_description` | Provide the beta app description when uploading a new build
+  `beta_app_feedback_email` | Provide the beta app email when uploading a new build
+  `skip_submission` | Skip the distributing action of pilot and only upload the ipa file
+  `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work
+  `update_build_info_on_upload` | Update build info immediately after validation. This will set the changelog even if PILOT_SKIP_SUBMISSION is set, but will have no effect if PILOT_SKIP_WAITING_FOR_BUILD_PROCESSING is set
+  `apple_id` | The unique App ID provided by iTunes Connect
+  `distribute_external` | Should the build be distributed to external testers?
+  `first_name` | The tester's first name
+  `last_name` | The tester's last name
+  `email` | The tester's email
+  `testers_file_path` | Path to a CSV file of testers
+  `wait_processing_interval` | Interval in seconds to wait for iTunes Connect processing
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+  `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID!
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team
+  `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'
+
+</details>
+
+
+
+
+
 ### pilot
 
 Upload a new binary to iTunes Connect for TestFlight beta testing
@@ -3205,277 +3332,6 @@ Key | Description
 
 
 
-### hockey
-
-Upload a new build to HockeyApp
-
-
-
-> Symbols will also be uploaded automatically if a `app.dSYM.zip` file is found next to `app.ipa`. In case it is located in a different place you can specify the path explicitly in `:dsym` parameter.
-More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
-
-hockey | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx, @modzelewski, @lacostej
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-hockey(
-  api_token: "...",
-  ipa: "./app.ipa",
-  notes: "Changelog"
-)
-```
-
-```ruby
-hockey(
-  api_token: "...",
-  create_update: true,
-  public_identifier: "....",
-  bundle_short_version: "1.0.2",
-  bundle_version: "1.0.2.145",
-  ipa: "./my.msi",
-  notes: "Changelog"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `apk` | Path to your APK file
-  `api_token` | API Token for Hockey Access
-  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action. For Mac zip the .app. For Android provide path to .apk file. In addition you could use this to upload .msi, .zip, .pkg, etc if you use the 'create_update' mechanism
-  `dsym` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip. For Android provide path to mappings.txt file
-  `create_update` | Set true if you want to create then update your app as opposed to just upload it. You will need the 'public_identifier', 'bundle_version' and 'bundle_short_version'
-  `notes` | Beta Notes
-  `notify` | Notify testers? "1" for yes
-  `status` | Download status: "1" = No user can download; "2" = Available for download
-  `notes_type` | Notes type for your :notes, "0" = Textile, "1" = Markdown (default)
-  `release_type` | Release type of the app: "0" = Beta (default), "1" = Store, "2" = Alpha, "3" = Enterprise
-  `mandatory` | Set to "1" to make this update mandatory
-  `teams` | Comma separated list of team ID numbers to which this build will be restricted
-  `users` | Comma separated list of user ID numbers to which this build will be restricted
-  `tags` | Comma separated list of tags which will receive access to the build
-  `bundle_short_version` | The bundle_short_version of your application, required when using `create_update`
-  `bundle_version` | The bundle_version of your application, required when using `create_update`
-  `public_identifier` | App id of the app you are targeting, usually you won't need this value. Required, if `upload_dsym_only` set to `true`
-  `commit_sha` | The Git commit SHA for this build
-  `repository_url` | The URL of your source repository
-  `build_server_url` | The URL of the build job on your build server
-  `upload_dsym_only` | Flag to upload only the dSYM file to hockey app
-  `owner_id` | ID for the owner of the app
-  `strategy` | Strategy: 'add' = to add the build as a new build even if it has the same build number (default); 'replace' = to replace a build with the same build number
-  `bypass_cdn` | Flag to bypass Hockey CDN when it uploads successfully but reports error
-  `dsa_signature` | DSA signature for sparkle updates for macOS
-
-</details>
-
-
-
-
-
-### testflight
-
-Alias for the pilot action
-
-
-
-
-
-testflight | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>4 Examples</summary>
-
-```ruby
-testflight
-```
-
-```ruby
-pilot # alias for "testflight"
-```
-
-```ruby
-testflight(skip_submission: true) # to only upload the build
-```
-
-```ruby
-testflight(
-  username: "felix@krausefx.com",
-  app_identifier: "com.krausefx.app",
-  itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `username` | Your Apple ID Username
-  `app_identifier` | The bundle identifier of the app to upload or manage testers (optional)
-  `app_platform` | The platform to use (optional)
-  `ipa` | Path to the ipa file to upload
-  `changelog` | Provide the what's new text when uploading a new build
-  `beta_app_description` | Provide the beta app description when uploading a new build
-  `beta_app_feedback_email` | Provide the beta app email when uploading a new build
-  `skip_submission` | Skip the distributing action of pilot and only upload the ipa file
-  `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work
-  `update_build_info_on_upload` | Update build info immediately after validation. This will set the changelog even if PILOT_SKIP_SUBMISSION is set, but will have no effect if PILOT_SKIP_WAITING_FOR_BUILD_PROCESSING is set
-  `apple_id` | The unique App ID provided by iTunes Connect
-  `distribute_external` | Should the build be distributed to external testers?
-  `first_name` | The tester's first name
-  `last_name` | The tester's last name
-  `email` | The tester's email
-  `testers_file_path` | Path to a CSV file of testers
-  `wait_processing_interval` | Interval in seconds to wait for iTunes Connect processing
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
-  `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID!
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team
-  `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'
-
-</details>
-
-
-
-
-
-### deploygate
-
-Upload a new build to [DeployGate](https://deploygate.com/)
-
-
-
-> You can retrieve your username and API token on [your settings page](https://deploygate.com/settings)
-More information about the available options can be found in the [DeployGate Push API document](https://deploygate.com/docs/api).
-
-deploygate | 
------|----
-Supported platforms | ios, android
-Author | @tnj, @tomorrowkey
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-deploygate(
-  api_token: "...",
-  user: "target username or organization name",
-  ipa: "./ipa_file.ipa",
-  message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
-  distribution_key: "(Optional) Target Distribution Key"
-)
-```
-
-```ruby
-deploygate(
-  api_token: "...",
-  user: "target username or organization name",
-  apk: "./apk_file.apk",
-  message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
-  distribution_key: "(Optional) Target Distribution Key"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `api_token` | Deploygate API Token
-  `user` | Target username or organization name
-  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
-  `apk` | Path to your APK file
-  `message` | Release Notes
-  `distribution_key` | Target Distribution Key
-  `release_note` | Release note for distribution page
-  `disable_notify` | Disables Push notification emails
-
-</details>
-
-
-
-
-
-### testfairy
-
-Upload a new build to TestFairy
-
-
-
-> You can retrieve your API key on [your settings page](https://free.testfairy.com/settings/)
-
-testfairy | 
------|----
-Supported platforms | ios, android
-Author | @taka0125, @tcurdt
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-testfairy(
-  api_key: "...",
-  ipa: "./ipa_file.ipa",
-  comment: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `api_key` | API Key for TestFairy
-  `ipa` | Path to your IPA file for iOS or APK for Android
-  `symbols_file` | Symbols mapping file
-  `testers_groups` | Array of tester groups to be notified
-  `metrics` | Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi)
-  `icon_watermark` | Add a small watermark to app icon
-  `comment` | Additional release notes for this upload. This text will be added to email notifications
-  `auto_update` | Allows easy upgrade of all users to current version
-  `notify` | Send email to testers
-  `options` | Array of options (shake,video_only_wifi,anonymous)
-
-</details>
-
-
-
-
-
 ### appetize
 
 Upload your app to Appetize.io to stream it in the browser
@@ -3589,6 +3445,51 @@ Key | Description
 
 
 
+### set_changelog
+
+Set the changelog for all languages on iTunes Connect
+
+
+
+> This is useful if you have only one changelog for all languages.
+You can store the changelog in `./fastlane/changelog.txt` and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.
+
+set_changelog | 
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+set_changelog(app_identifier: "com.krausefx.app", version: "1.0", changelog: "All Languages")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `app_identifier` | The bundle identifier of your app
+  `username` | Your Apple ID Username
+  `version` | The version number to create/update
+  `changelog` | Changelog text that should be uploaded to iTunes Connect
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+
+</details>
+
+
+
+
+
 ### apteligent
 
 Upload dSYM file to Apteligent (Crittercism)
@@ -3626,6 +3527,149 @@ Key | Description
   `dsym` | dSYM.zip file to upload to Apteligent
   `app_id` | Apteligent App ID key e.g. 569f5c87cb99e10e00c7xxxx
   `api_key` | Apteligent App API key e.g. IXPQIi8yCbHaLliqzRoo065tH0lxxxxx
+
+</details>
+
+
+
+
+
+### deploygate
+
+Upload a new build to [DeployGate](https://deploygate.com/)
+
+
+
+> You can retrieve your username and API token on [your settings page](https://deploygate.com/settings)
+More information about the available options can be found in the [DeployGate Push API document](https://deploygate.com/docs/api).
+
+deploygate | 
+-----|----
+Supported platforms | ios, android
+Author | @tnj, @tomorrowkey
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+deploygate(
+  api_token: "...",
+  user: "target username or organization name",
+  ipa: "./ipa_file.ipa",
+  message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
+  distribution_key: "(Optional) Target Distribution Key"
+)
+```
+
+```ruby
+deploygate(
+  api_token: "...",
+  user: "target username or organization name",
+  apk: "./apk_file.apk",
+  message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
+  distribution_key: "(Optional) Target Distribution Key"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `api_token` | Deploygate API Token
+  `user` | Target username or organization name
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
+  `apk` | Path to your APK file
+  `message` | Release Notes
+  `distribution_key` | Target Distribution Key
+  `release_note` | Release note for distribution page
+  `disable_notify` | Disables Push notification emails
+
+</details>
+
+
+
+
+
+### hockey
+
+Upload a new build to HockeyApp
+
+
+
+> Symbols will also be uploaded automatically if a `app.dSYM.zip` file is found next to `app.ipa`. In case it is located in a different place you can specify the path explicitly in `:dsym` parameter.
+More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
+
+hockey | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx, @modzelewski, @lacostej
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+hockey(
+  api_token: "...",
+  ipa: "./app.ipa",
+  notes: "Changelog"
+)
+```
+
+```ruby
+hockey(
+  api_token: "...",
+  create_update: true,
+  public_identifier: "....",
+  bundle_short_version: "1.0.2",
+  bundle_version: "1.0.2.145",
+  ipa: "./my.msi",
+  notes: "Changelog"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `apk` | Path to your APK file
+  `api_token` | API Token for Hockey Access
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action. For Mac zip the .app. For Android provide path to .apk file. In addition you could use this to upload .msi, .zip, .pkg, etc if you use the 'create_update' mechanism
+  `dsym` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip. For Android provide path to mappings.txt file
+  `create_update` | Set true if you want to create then update your app as opposed to just upload it. You will need the 'public_identifier', 'bundle_version' and 'bundle_short_version'
+  `notes` | Beta Notes
+  `notify` | Notify testers? "1" for yes
+  `status` | Download status: "1" = No user can download; "2" = Available for download
+  `notes_type` | Notes type for your :notes, "0" = Textile, "1" = Markdown (default)
+  `release_type` | Release type of the app: "0" = Beta (default), "1" = Store, "2" = Alpha, "3" = Enterprise
+  `mandatory` | Set to "1" to make this update mandatory
+  `teams` | Comma separated list of team ID numbers to which this build will be restricted
+  `users` | Comma separated list of user ID numbers to which this build will be restricted
+  `tags` | Comma separated list of tags which will receive access to the build
+  `bundle_short_version` | The bundle_short_version of your application, required when using `create_update`
+  `bundle_version` | The bundle_version of your application, required when using `create_update`
+  `public_identifier` | App id of the app you are targeting, usually you won't need this value. Required, if `upload_dsym_only` set to `true`
+  `commit_sha` | The Git commit SHA for this build
+  `repository_url` | The URL of your source repository
+  `build_server_url` | The URL of the build job on your build server
+  `upload_dsym_only` | Flag to upload only the dSYM file to hockey app
+  `owner_id` | ID for the owner of the app
+  `strategy` | Strategy: 'add' = to add the build as a new build even if it has the same build number (default); 'replace' = to replace a build with the same build number
+  `bypass_cdn` | Flag to bypass Hockey CDN when it uploads successfully but reports error
+  `dsa_signature` | DSA signature for sparkle updates for macOS
 
 </details>
 
@@ -3699,19 +3743,18 @@ Key | Description
 
 
 
-### set_changelog
+### testfairy
 
-Set the changelog for all languages on iTunes Connect
+Upload a new build to TestFairy
 
 
 
-> This is useful if you have only one changelog for all languages.
-You can store the changelog in `./fastlane/changelog.txt` and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.
+> You can retrieve your API key on [your settings page](https://free.testfairy.com/settings/)
 
-set_changelog | 
+testfairy | 
 -----|----
-Supported platforms | ios, mac
-Author | @KrauseFx
+Supported platforms | ios, android
+Author | @taka0125, @tcurdt
 
 
 
@@ -3719,54 +3762,10 @@ Author | @KrauseFx
 <summary>1 Example</summary>
 
 ```ruby
-set_changelog(app_identifier: "com.krausefx.app", version: "1.0", changelog: "All Languages")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `version` | The version number to create/update
-  `changelog` | Changelog text that should be uploaded to iTunes Connect
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
-
-</details>
-
-
-
-
-
-### splunkmint
-
-Upload dSYM file to Splunk MINT
-
-
-
-
-
-splunkmint | 
------|----
-Supported platforms | ios
-Author | @xfreebird
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-splunkmint(
-  dsym: "My.app.dSYM.zip",
-  api_key: "43564d3a",
-  api_token: "e05456234c4869fb7e0b61"
+testfairy(
+  api_key: "...",
+  ipa: "./ipa_file.ipa",
+  comment: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
 )
 ```
 
@@ -3779,15 +3778,16 @@ splunkmint(
 
 Key | Description
 ----|------------
-  `dsym` | dSYM.zip file to upload to Splunk MINT
-  `api_key` | Splunk MINT App API key e.g. f57a57ca
-  `api_token` | Splunk MINT API token e.g. e05ba40754c4869fb7e0b61
-  `verbose` | Make detailed output
-  `upload_progress` | Show upload progress
-  `proxy_username` | Proxy username
-  `proxy_password` | Proxy password
-  `proxy_address` | Proxy address
-  `proxy_port` | Proxy port
+  `api_key` | API Key for TestFairy
+  `ipa` | Path to your IPA file for iOS or APK for Android
+  `symbols_file` | Symbols mapping file
+  `testers_groups` | Array of tester groups to be notified
+  `metrics` | Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi)
+  `icon_watermark` | Add a small watermark to app icon
+  `comment` | Additional release notes for this upload. This text will be added to email notifications
+  `auto_update` | Allows easy upgrade of all users to current version
+  `notify` | Send email to testers
+  `options` | Array of options (shake,video_only_wifi,anonymous)
 
 </details>
 
@@ -3902,6 +3902,54 @@ Key | Description
 
 # Push
 
+### update_urban_airship_configuration
+
+Set the Urban Airship plist configuration values
+
+
+
+> This action updates the AirshipConfig.plist need to configure the Urban Airship SDK at runtime, allowing keys and secrets to easily be set for Enterprise and Production versions of the application.
+
+update_urban_airship_configuration | 
+-----|----
+Supported platforms | ios
+Author | @kcharwood
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+update_urban_airship_configuration(
+  plist_path: "AirshipConfig.plist",
+  production_app_key: "PRODKEY",
+  production_app_secret: "PRODSECRET"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `plist_path` | Path to Urban Airship configuration Plist
+  `development_app_key` | The development app key
+  `development_app_secret` | The development app secret
+  `production_app_key` | The production app key
+  `production_app_secret` | The production app secret
+  `detect_provisioning_mode` | Automatically detect provisioning mode
+
+</details>
+
+
+
+
+
 ### pem
 
 Makes sure a valid push profile is active and creates a new one if needed
@@ -3971,54 +4019,6 @@ Key | Description
 
 
 
-### update_urban_airship_configuration
-
-Set the Urban Airship plist configuration values
-
-
-
-> This action updates the AirshipConfig.plist need to configure the Urban Airship SDK at runtime, allowing keys and secrets to easily be set for Enterprise and Production versions of the application.
-
-update_urban_airship_configuration | 
------|----
-Supported platforms | ios
-Author | @kcharwood
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-update_urban_airship_configuration(
-  plist_path: "AirshipConfig.plist",
-  production_app_key: "PRODKEY",
-  production_app_secret: "PRODSECRET"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `plist_path` | Path to Urban Airship configuration Plist
-  `development_app_key` | The development app key
-  `development_app_secret` | The development app secret
-  `production_app_key` | The production app key
-  `production_app_secret` | The production app secret
-  `detect_provisioning_mode` | Automatically detect provisioning mode
-
-</details>
-
-
-
-
-
 ### onesignal
 
 Create a new OneSignal application
@@ -4072,95 +4072,6 @@ Key | Description
 
 
 # Releasing your app
-
-### deliver
-
-Uses deliver to upload new app metadata and builds to iTunes Connect
-
-
-
-> Using _deliver_ after _gym_ and _snapshot_ will automatically upload the
-latest ipa and screenshots with no other configuration
-If you don't want a PDF report for App Store builds, use the `:force` option.
-This is useful when running _fastlane_ on your Continuous Integration server: `deliver(force: true)`
-If your account is on multiple teams and you need to tell the `iTMSTransporter`
-which 'provider' to use, you can set the `itc_provider` option to pass this info.
-
-deliver | 
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-deliver(
-  force: true, # Set to true to skip PDF verification
-  itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `username` | Your Apple ID Username
-  `app_identifier` | The bundle identifier of your app
-  `app` | The app ID of the app you want to use/modify
-  `edit_live` | Modify live metadata, this option disables ipa upload and screenshot upload
-  `ipa` | Path to your ipa file
-  `pkg` | Path to your pkg file
-  `platform` | The platform to use (optional)
-  `metadata_path` | Path to the folder containing the metadata files
-  `screenshots_path` | Path to the folder containing the screenshots
-  `skip_binary_upload` | Skip uploading an ipa or pkg to iTunes Connect
-  `skip_screenshots` | Don't upload the screenshots
-  `app_version` | The version that should be edited or created
-  `skip_metadata` | Don't upload the metadata (e.g. title, description), this will still upload screenshots
-  `force` | Skip the HTML report file verification
-  `submit_for_review` | Submit the new version for Review after uploading everything
-  `automatic_release` | Should the app be automatically released once it's approved?
-  `price_tier` | The price tier of this application
-  `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one
-  `app_rating_config_path` | Path to the app rating's config
-  `submission_information` | Extra information for the submission (e.g. third party content)
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
-  `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID!
-  `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team
-  `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones
-  `app_icon` | Metadata: The path to the app icon
-  `apple_watch_app_icon` | Metadata: The path to the Apple Watch app icon
-  `copyright` | Metadata: The copyright notice
-  `primary_category` | Metadata: The english name of the primary category(e.g. `Business`, `Books`)
-  `secondary_category` | Metadata: The english name of the secondary category(e.g. `Business`, `Books`)
-  `primary_first_sub_category` | Metadata: The english name of the primary first sub category(e.g. `Educational`, `Puzzle`)
-  `primary_second_sub_category` | Metadata: The english name of the primary second sub category(e.g. `Educational`, `Puzzle`)
-  `secondary_first_sub_category` | Metadata: The english name of the secondary first sub category(e.g. `Educational`, `Puzzle`)
-  `secondary_second_sub_category` | Metadata: The english name of the secondary second sub category(e.g. `Educational`, `Puzzle`)
-  `app_review_information` | Metadata: A hash containing the review information
-  `description` | Metadata: The localised app description
-  `name` | Metadata: The localised app name
-  `keywords` | Metadata: An array of localised keywords
-  `release_notes` | Metadata: Localised release notes for this version
-  `privacy_url` | Metadata: Localised privacy url
-  `support_url` | Metadata: Localised support url
-  `marketing_url` | Metadata: Localised marketing url
-
-</details>
-
-
-
-
 
 ### supply
 
@@ -4302,114 +4213,22 @@ Key | Description
 
 
 
+### deliver
 
-# Source Control
-
-### ensure_git_status_clean
-
-Raises an exception if there are uncommited git changes
+Uses deliver to upload new app metadata and builds to iTunes Connect
 
 
 
-> A sanity check to make sure you are working in a repo that is clean. Especially
-useful to put at the beginning of your Fastfile in the `before_all` block, if
-some of your other actions will touch your filesystem, do things to your git repo,
-or just as a general reminder to save your work. Also needed as a prerequisite for
-some other actions like `reset_git_repo`.
+> Using _deliver_ after _gym_ and _snapshot_ will automatically upload the
+latest ipa and screenshots with no other configuration
+If you don't want a PDF report for App Store builds, use the `:force` option.
+This is useful when running _fastlane_ on your Continuous Integration server: `deliver(force: true)`
+If your account is on multiple teams and you need to tell the `iTMSTransporter`
+which 'provider' to use, you can set the `itc_provider` option to pass this info.
 
-ensure_git_status_clean | 
+deliver | 
 -----|----
-Supported platforms | ios, android, mac
-Author | @lmirosevic
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ensure_git_status_clean
-```
-
-
-</details>
-
-
-
-
-
-
-### reset_git_repo
-
-Resets git repo to a clean state by discarding uncommited changes
-
-
-
-> This action will reset your git repo to a clean state, discarding any uncommitted and untracked changes. Useful in case you need to revert the repo back to a clean state, e.g. after the fastlane run. Untracked files like `.env` will also be deleted, unless `:skip_clean` is true. It's a pretty drastic action so it comes with a sort of safety latch. It will only proceed with the reset if either of these conditions are met: You have called the ensure_git_status_clean action prior to calling this action. This ensures that your repo started off in a clean state, so the only things that will get destroyed by this action are files that are created as a byproduct of the fastlane run.
-
-reset_git_repo | 
------|----
-Supported platforms | ios, android, mac
-Author | @lmirosevic
-
-
-
-<details>
-<summary>4 Examples</summary>
-
-```ruby
-reset_git_repo
-```
-
-```ruby
-reset_git_repo(force: true) # If you don't care about warnings and are absolutely sure that you want to discard all changes. This will reset the repo even if you have valuable uncommitted changes, so use with care!
-```
-
-```ruby
-reset_git_repo(skip_clean: true) # If you want "git clean" to be skipped, thus NOT deleting untracked files like ".env". Optional, defaults to false.
-```
-
-```ruby
-reset_git_repo(
-  force: true,
-  files: [
-    "./file.txt"
-  ]
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `files` | Array of files the changes should be discarded. If not given, all files will be discarded
-  `force` | Skip verifying of previously clean state of repo. Only recommended in combination with `files` option
-  `skip_clean` | Skip 'git clean' to avoid removing untracked files like `.env`. Defaults to false
-  `disregard_gitignore` | Setting this to true will clean the whole repository, ignoring anything in your local .gitignore. Set this to true if you want the equivalent of a fresh clone, and for all untracked and ignore files to also be removed
-  `exclude` | You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk. E.g. to leave the `artifacts` directory you would specify `exclude: 'artifacts'`. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns
-
-</details>
-
-
-
-
-
-### git_branch
-
-Returns the name of the current git branch
-
-
-
-> If no branch could be found, this action will return nil
-
-git_branch | 
------|----
-Supported platforms | ios, android, mac
+Supported platforms | ios, mac
 Author | @KrauseFx
 
 
@@ -4418,9 +4237,64 @@ Author | @KrauseFx
 <summary>1 Example</summary>
 
 ```ruby
-git_branch
+deliver(
+  force: true, # Set to true to skip PDF verification
+  itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
+)
 ```
 
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `username` | Your Apple ID Username
+  `app_identifier` | The bundle identifier of your app
+  `app` | The app ID of the app you want to use/modify
+  `edit_live` | Modify live metadata, this option disables ipa upload and screenshot upload
+  `ipa` | Path to your ipa file
+  `pkg` | Path to your pkg file
+  `platform` | The platform to use (optional)
+  `metadata_path` | Path to the folder containing the metadata files
+  `screenshots_path` | Path to the folder containing the screenshots
+  `skip_binary_upload` | Skip uploading an ipa or pkg to iTunes Connect
+  `skip_screenshots` | Don't upload the screenshots
+  `app_version` | The version that should be edited or created
+  `skip_metadata` | Don't upload the metadata (e.g. title, description), this will still upload screenshots
+  `force` | Skip the HTML report file verification
+  `submit_for_review` | Submit the new version for Review after uploading everything
+  `automatic_release` | Should the app be automatically released once it's approved?
+  `price_tier` | The price tier of this application
+  `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one
+  `app_rating_config_path` | Path to the app rating's config
+  `submission_information` | Extra information for the submission (e.g. third party content)
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+  `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID!
+  `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team
+  `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones
+  `app_icon` | Metadata: The path to the app icon
+  `apple_watch_app_icon` | Metadata: The path to the Apple Watch app icon
+  `copyright` | Metadata: The copyright notice
+  `primary_category` | Metadata: The english name of the primary category(e.g. `Business`, `Books`)
+  `secondary_category` | Metadata: The english name of the secondary category(e.g. `Business`, `Books`)
+  `primary_first_sub_category` | Metadata: The english name of the primary first sub category(e.g. `Educational`, `Puzzle`)
+  `primary_second_sub_category` | Metadata: The english name of the primary second sub category(e.g. `Educational`, `Puzzle`)
+  `secondary_first_sub_category` | Metadata: The english name of the secondary first sub category(e.g. `Educational`, `Puzzle`)
+  `secondary_second_sub_category` | Metadata: The english name of the secondary second sub category(e.g. `Educational`, `Puzzle`)
+  `app_review_information` | Metadata: A hash containing the review information
+  `description` | Metadata: The localised app description
+  `name` | Metadata: The localised app name
+  `keywords` | Metadata: An array of localised keywords
+  `release_notes` | Metadata: Localised release notes for this version
+  `privacy_url` | Metadata: Localised privacy url
+  `support_url` | Metadata: Localised support url
+  `marketing_url` | Metadata: Localised marketing url
 
 </details>
 
@@ -4429,19 +4303,20 @@ git_branch
 
 
 
-### number_of_commits
+# Source Control
 
-Return the total number of all commits in current git repo
+### hg_add_tag
+
+This will add a hg tag to the current branch
 
 
 
-> You can use this action to get the number of commits of this repo. This is useful if you want to set the build number to the number of commits.
 
-number_of_commits | 
+
+hg_add_tag | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @onevcat
-Returns | The total number of all commits in current git repo
+Author | @sjrmanning
 
 
 
@@ -4449,51 +4324,7 @@ Returns | The total number of all commits in current git repo
 <summary>1 Example</summary>
 
 ```ruby
-build_number = number_of_commits
-increment_build_number(build_number: build_number)
-```
-
-
-</details>
-
-
-
-
-
-
-### commit_version_bump
-
-Creates a 'Version Bump' commit. Run after `increment_build_number`
-
-
-
-> This action will create a 'Version Bump' commit in your repo. Useful in conjunction with `increment_build_number`.
-It checks the repo to make sure that only the relevant files have changed, these are the files that `increment_build_number` (`agvtool`) touches:
-- All .plist files
-- The `.xcodeproj/project.pbxproj` file
-Then commits those files to the repo.
-Customise the message with the `:message` option, defaults to 'Version Bump'
-If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
-
-commit_version_bump | 
------|----
-Supported platforms | ios, mac
-Author | @lmirosevic
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-commit_version_bump
-```
-
-```ruby
-commit_version_bump(
-  message: "Version Bump",# create a commit with a custom message
-  xcodeproj: "./path/to/MyProject.xcodeproj", # optional, if you have multiple Xcode project files, you must specify your main project here
-)
+hg_add_tag(tag: "1.3")
 ```
 
 
@@ -4505,224 +4336,7 @@ commit_version_bump(
 
 Key | Description
 ----|------------
-  `message` | The commit message when committing the version bump
-  `xcodeproj` | The path to your project file (Not the workspace). If you have only one, this is optional
-  `force` | Forces the commit, even if other files than the ones containing the version number have been modified
-  `settings` | Include Settings.bundle/Root.plist with version bump
-  `ignore` | A regular expression used to filter matched plist files to be modified
-
-</details>
-
-
-
-
-
-### push_to_git_remote
-
-Push local changes to the remote branch
-
-
-
-> Lets you push your local commits to a remote git repo. Useful if you make local changes such as adding a version bump commit (using `commit_version_bump`) or a git tag (using 'add_git_tag') on a CI server, and you want to push those changes back to your canonical/main repo.
-
-push_to_git_remote | 
------|----
-Supported platforms | ios, android, mac
-Author | @lmirosevic
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-push_to_git_remote # simple version. pushes "master" branch to "origin" remote
-```
-
-```ruby
-push_to_git_remote(
-  remote: "origin",         # optional, default: "origin"
-  local_branch: "develop",  # optional, aliased by "branch", default: "master"
-  remote_branch: "develop", # optional, default is set to local_branch
-  force: true,    # optional, default: false
-  tags: false     # optional, default: true
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `local_branch` | The local branch to push from. Defaults to the current branch
-  `remote_branch` | The remote branch to push to. Defaults to the local branch
-  `force` | Force push to remote. Defaults to false
-  `tags` | Wether tags are pushed to remote. Defaults to true
-  `remote` | The remote to push to. Defaults to `origin`
-
-</details>
-
-
-
-
-
-### last_git_commit
-
-Return last git commit hash, abbreviated commit hash, commit message and author
-
-
-
-
-
-last_git_commit | 
------|----
-Supported platforms | ios, android, mac
-Author | @ngutman
-Returns | Returns the following dict: {commit_hash: "commit hash", abbreviated_commit_hash: "abbreviated commit hash" author: "Author", message: "commit message"}
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-commit = last_git_commit
-crashlytics(notes: commit[:message]) # message of commit
-author = commit[:author] # author of the commit
-hash = commit[:commit_hash] # long sha of commit
-short_hash = commit[:abbreviated_commit_hash] # short sha of commit
-```
-
-
-</details>
-
-
-
-
-
-
-### changelog_from_git_commits
-
-Collect git commit messages into a changelog
-
-
-
-> By default, messages will be collected back to the last tag, but the range can be controlled
-
-changelog_from_git_commits | 
------|----
-Supported platforms | ios, android, mac
-Author | @mfurtak, @asfalcone, @SiarheiFedartsou, @allewun
-Returns | Returns a String containing your formatted git commits
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-changelog_from_git_commits
-```
-
-```ruby
-changelog_from_git_commits(
-  between: ["7b092b3", "HEAD"],  # Optional, lets you specify a revision/tag range between which to collect commit info
-  pretty: "- (%ae) %s",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
-  date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
-  match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
-  merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `between` | Array containing two Git revision values between which to collect messages, you mustn't use it with :commits_count key at the same time
-  `commits_count` | Number of commits to include in changelog, you mustn't use it with :between key at the same time
-  `pretty` | The format applied to each commit while generating the collected value
-  `date_format` | The date format applied to each commit while generating the collected value
-  `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag
-  `match_lightweight_tag` | Whether or not to match a lightweight tag when searching for the last one
-  `include_merges` | Whether or not to include any commits that are merges
-[31m(DEPRECATED - use :merge_commit_filtering)[0m
-  `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog.
-Valid values: 'include_merges', 'exclude_merges', 'only_include_merges'
-
-</details>
-
-
-
-
-
-### add_git_tag
-
-This will add an annotated git tag to the current branch
-
-
-
-> This will automatically tag your build with the following format: `<grouping>/<lane>/<prefix><build_number>`, where:
-- `grouping` is just to keep your tags organised under one 'folder', defaults to 'builds'
-- `lane` is the name of the current fastlane lane
-- `prefix` is anything you want to stick in front of the version number, e.g. 'v'
-- `build_number` is the build number, which defaults to the value emitted by the `increment_build_number` action
-For example for build 1234 in the 'appstore' lane it will tag the commit with `builds/appstore/1234`
-
-add_git_tag | 
------|----
-Supported platforms | ios, android, mac
-Author | @lmirosevic, @maschall
-
-
-
-<details>
-<summary>3 Examples</summary>
-
-```ruby
-add_git_tag # simple tag with default values
-```
-
-```ruby
-add_git_tag(
-  grouping: "fastlane-builds",
-  prefix: "v",
-  build_number: 123
-)
-```
-
-```ruby
-# Alternatively, you can specify your own tag. Note that if you do specify a tag, all other arguments are ignored.
-add_git_tag(
-  tag: "my_custom_tag"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `tag` | Define your own tag text. This will replace all other parameters
-  `grouping` | Is used to keep your tags organised under one 'folder'. Defaults to 'builds'
-  `prefix` | Anything you want to put in front of the version number (e.g. 'v')
-  `build_number` | The build number. Defaults to the result of increment_build_number if you're using it
-  `message` | The tag message. Defaults to the tag's name
-  `commit` | The commit or object where the tag will be set. Defaults to the current HEAD
-  `force` | Force adding the tag
-  `sign` | Make a GPG-signed tag, using the default e-mail address's key
+  `tag` | Tag to create
 
 </details>
 
@@ -4770,290 +4384,6 @@ ensure_git_branch(
 Key | Description
 ----|------------
   `branch` | The branch that should be checked for. String that can be either the full name of the branch or a regex to match
-
-</details>
-
-
-
-
-
-### git_pull
-
-Executes a simple git pull command
-
-
-
-
-
-git_pull | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx, @JaviSoto
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-git_pull
-```
-
-```ruby
-git_pull(only_tags: true) # only the tags, no commits
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `only_tags` | Simply pull the tags, and not bring new commits to the current branch from the remote
-
-</details>
-
-
-
-
-
-### git_commit
-
-Directly commit the given file with the given message
-
-
-
-
-
-git_commit | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-git_commit(path: "./version.txt", message: "Version Bump")
-```
-
-```ruby
-git_commit(path: ["./version.txt", "./changelog.txt"], message: "Version Bump")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | The file you want to commit
-  `message` | The commit message that should be used
-
-</details>
-
-
-
-
-
-### push_git_tags
-
-Push local tags to the remote - this will only push tags
-
-
-
-> If you only want to push the tags and nothing else, you can use the `push_git_tags` action
-
-push_git_tags | 
------|----
-Supported platforms | ios, android, mac
-Author | @vittoriom
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-push_git_tags
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `force` | Force push to remote. Defaults to false
-  `remote` | The remote to push tags to
-
-</details>
-
-
-
-
-
-### last_git_tag
-
-Get the most recent git tag
-
-
-
-> If you are using this action on a **shallow clone**, *the default with some CI systems like Bamboo*, you need to ensure that you have also have pulled all the git tags appropriately.  Assuming your git repo has the correct remote set you can issue `sh('git fetch --tags')`
-
-last_git_tag | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-last_git_tag
-```
-
-
-</details>
-
-
-
-
-
-
-### get_build_number_repository
-
-Get the build number from the current repository
-
-
-
-> This action will get the **build number** according to what the SCM HEAD reports.
-Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision) and git (uses short hash) and mercurial (uses short hash or revision number).
-There is an option, `:use_hg_revision_number`, which allows to use mercurial revision number instead of hash.
-
-get_build_number_repository | 
------|----
-Supported platforms | ios, mac
-Author | @bartoszj, @pbrooks, @armadsen
-Returns | The build number from the current repository
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-get_build_number_repository
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `use_hg_revision_number` | Use hg revision number instead of hash (ignored for non-hg repos)
-
-</details>
-
-
-
-
-
-### git_add
-
-Directly add the given file
-
-
-
-
-
-git_add | 
------|----
-Supported platforms | ios, android, mac
-Author | @4brunu
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-git_add(path: "./version.txt")
-```
-
-```ruby
-git_add(path: ["./version.txt", "./changelog.txt"])
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | The file you want to add
-
-</details>
-
-
-
-
-
-### git_tag_exists
-
-Checks if the git tag with the given name exists in the current repo
-
-
-
-
-
-git_tag_exists | 
------|----
-Supported platforms | ios, android, mac
-Author | @antondomashnev
-Returns | Boolean value whether the tag exists or not
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-if git_tag_exists(tag: "1.1.0")
-  UI.message("Found it 🚀")
-end
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `tag` | The tag name that should be checked
 
 </details>
 
@@ -5140,6 +4470,49 @@ Key | Description
 
 
 
+### git_add
+
+Directly add the given file
+
+
+
+
+
+git_add | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @4brunu
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+git_add(path: "./version.txt")
+```
+
+```ruby
+git_add(path: ["./version.txt", "./changelog.txt"])
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | The file you want to add
+
+</details>
+
+
+
+
+
 ### create_pull_request
 
 This will create a new pull request on GitHub
@@ -5188,6 +4561,36 @@ Key | Description
   `api_url` | The URL of Github API - used when the Enterprise (default to `https://api.github.com`)
 
 </details>
+
+
+
+
+
+### git_branch
+
+Returns the name of the current git branch
+
+
+
+> If no branch could be found, this action will return nil
+
+git_branch | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+git_branch
+```
+
+
+</details>
+
 
 
 
@@ -5249,31 +4652,57 @@ Key | Description
 
 
 
-### hg_ensure_clean_status
+### commit_version_bump
 
-Raises an exception if there are uncommited hg changes
+Creates a 'Version Bump' commit. Run after `increment_build_number`
 
 
 
-> Along the same lines as the [`ensure_git_status_clean`](#ensure_git_status_clean) action, this is a sanity check to ensure the working mercurial repo is clean. Especially useful to put at the beginning of your Fastfile in the `before_all` block.
+> This action will create a 'Version Bump' commit in your repo. Useful in conjunction with `increment_build_number`.
+It checks the repo to make sure that only the relevant files have changed, these are the files that `increment_build_number` (`agvtool`) touches:
+- All .plist files
+- The `.xcodeproj/project.pbxproj` file
+Then commits those files to the repo.
+Customise the message with the `:message` option, defaults to 'Version Bump'
+If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
 
-hg_ensure_clean_status | 
+commit_version_bump | 
 -----|----
-Supported platforms | ios, android, mac
-Author | @sjrmanning
+Supported platforms | ios, mac
+Author | @lmirosevic
 
 
 
 <details>
-<summary>1 Example</summary>
+<summary>2 Examples</summary>
 
 ```ruby
-hg_ensure_clean_status
+commit_version_bump
+```
+
+```ruby
+commit_version_bump(
+  message: "Version Bump",# create a commit with a custom message
+  xcodeproj: "./path/to/MyProject.xcodeproj", # optional, if you have multiple Xcode project files, you must specify your main project here
+)
 ```
 
 
 </details>
 
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `message` | The commit message when committing the version bump
+  `xcodeproj` | The path to your project file (Not the workspace). If you have only one, this is optional
+  `force` | Forces the commit, even if other files than the ones containing the version number have been modified
+  `settings` | Include Settings.bundle/Root.plist with version bump
+  `ignore` | A regular expression used to filter matched plist files to be modified
+
+</details>
 
 
 
@@ -5326,90 +4755,42 @@ Key | Description
 
 
 
-### hg_add_tag
+### reset_git_repo
 
-This will add a hg tag to the current branch
-
-
+Resets git repo to a clean state by discarding uncommited changes
 
 
 
-hg_add_tag | 
+> This action will reset your git repo to a clean state, discarding any uncommitted and untracked changes. Useful in case you need to revert the repo back to a clean state, e.g. after the fastlane run. Untracked files like `.env` will also be deleted, unless `:skip_clean` is true. It's a pretty drastic action so it comes with a sort of safety latch. It will only proceed with the reset if either of these conditions are met: You have called the ensure_git_status_clean action prior to calling this action. This ensures that your repo started off in a clean state, so the only things that will get destroyed by this action are files that are created as a byproduct of the fastlane run.
+
+reset_git_repo | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @sjrmanning
+Author | @lmirosevic
 
 
 
 <details>
-<summary>1 Example</summary>
+<summary>4 Examples</summary>
 
 ```ruby
-hg_add_tag(tag: "1.3")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `tag` | Tag to create
-
-</details>
-
-
-
-
-
-
-# Notifications
-
-### slack
-
-Send a success/error message to your Slack group
-
-
-
-> Create an Incoming WebHook and export this as `SLACK_URL`. Can send a message to **#channel** (by default), a direct message to **@username** or a message to a private group **group** with success (green) or failure (red) status.
-
-slack | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-slack(message: "App successfully released!")
+reset_git_repo
 ```
 
 ```ruby
-slack(
-  message: "App successfully released!",
-  channel: "#channel",  # Optional, by default will post to the default channel configured for the POST URL.
-  success: true,        # Optional, defaults to true.
-  payload: {  # Optional, lets you specify any number of your own Slack attachments.
-    "Build Date" => Time.new.to_s,
-    "Built by" => "Jenkins",
-  },
-  default_payloads: [:git_branch, :git_author], # Optional, lets you specify a whitelist of default payloads to include. Pass an empty array to suppress all the default payloads.
-        # Don't add this key, or pass nil, if you want all the default payloads. The available default payloads are: `lane`, `test_result`, `git_branch`, `git_author`, `last_git_commit_message`.
-  attachment_properties: { # Optional, lets you specify any other properties available for attachments in the slack API (see https://api.slack.com/docs/attachments).
-       # This hash is deep merged with the existing properties set using the other properties above. This allows your own fields properties to be appended to the existing fields that were created using the `payload` property for instance.
-    thumb_url: "http://example.com/path/to/thumb.png",
-    fields: [{
-      title: "My Field",
-      value: "My Value",
-      short: true
-    }]
-  }
+reset_git_repo(force: true) # If you don't care about warnings and are absolutely sure that you want to discard all changes. This will reset the repo even if you have valuable uncommitted changes, so use with care!
+```
+
+```ruby
+reset_git_repo(skip_clean: true) # If you want "git clean" to be skipped, thus NOT deleting untracked files like ".env". Optional, defaults to false.
+```
+
+```ruby
+reset_git_repo(
+  force: true,
+  files: [
+    "./file.txt"
+  ]
 )
 ```
 
@@ -5422,16 +4803,613 @@ slack(
 
 Key | Description
 ----|------------
-  `message` | The message that should be displayed on Slack. This supports the standard Slack markup language
-  `channel` | #channel or @username
-  `use_webhook_configured_username_and_icon` | Use webook's default username and icon settings? (true/false)
-  `slack_url` | Create an Incoming WebHook for your Slack group
-  `username` | Overrides the webook's username property if use_webhook_configured_username_and_icon is false
-  `icon_url` | Overrides the webook's image property if use_webhook_configured_username_and_icon is false
-  `payload` | Add additional information to this post. payload must be a hash containg any key with any value
-  `default_payloads` | Remove some of the default payloads. More information about the available payloads on GitHub
-  `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments
-  `success` | Was this build successful? (true/false)
+  `files` | Array of files the changes should be discarded. If not given, all files will be discarded
+  `force` | Skip verifying of previously clean state of repo. Only recommended in combination with `files` option
+  `skip_clean` | Skip 'git clean' to avoid removing untracked files like `.env`. Defaults to false
+  `disregard_gitignore` | Setting this to true will clean the whole repository, ignoring anything in your local .gitignore. Set this to true if you want the equivalent of a fresh clone, and for all untracked and ignore files to also be removed
+  `exclude` | You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk. E.g. to leave the `artifacts` directory you would specify `exclude: 'artifacts'`. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns
+
+</details>
+
+
+
+
+
+### hg_ensure_clean_status
+
+Raises an exception if there are uncommited hg changes
+
+
+
+> Along the same lines as the [`ensure_git_status_clean`](#ensure_git_status_clean) action, this is a sanity check to ensure the working mercurial repo is clean. Especially useful to put at the beginning of your Fastfile in the `before_all` block.
+
+hg_ensure_clean_status | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @sjrmanning
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+hg_ensure_clean_status
+```
+
+
+</details>
+
+
+
+
+
+
+### push_to_git_remote
+
+Push local changes to the remote branch
+
+
+
+> Lets you push your local commits to a remote git repo. Useful if you make local changes such as adding a version bump commit (using `commit_version_bump`) or a git tag (using 'add_git_tag') on a CI server, and you want to push those changes back to your canonical/main repo.
+
+push_to_git_remote | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @lmirosevic
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+push_to_git_remote # simple version. pushes "master" branch to "origin" remote
+```
+
+```ruby
+push_to_git_remote(
+  remote: "origin",         # optional, default: "origin"
+  local_branch: "develop",  # optional, aliased by "branch", default: "master"
+  remote_branch: "develop", # optional, default is set to local_branch
+  force: true,    # optional, default: false
+  tags: false     # optional, default: true
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `local_branch` | The local branch to push from. Defaults to the current branch
+  `remote_branch` | The remote branch to push to. Defaults to the local branch
+  `force` | Force push to remote. Defaults to false
+  `tags` | Wether tags are pushed to remote. Defaults to true
+  `remote` | The remote to push to. Defaults to `origin`
+
+</details>
+
+
+
+
+
+### add_git_tag
+
+This will add an annotated git tag to the current branch
+
+
+
+> This will automatically tag your build with the following format: `<grouping>/<lane>/<prefix><build_number>`, where:
+- `grouping` is just to keep your tags organised under one 'folder', defaults to 'builds'
+- `lane` is the name of the current fastlane lane
+- `prefix` is anything you want to stick in front of the version number, e.g. 'v'
+- `build_number` is the build number, which defaults to the value emitted by the `increment_build_number` action
+For example for build 1234 in the 'appstore' lane it will tag the commit with `builds/appstore/1234`
+
+add_git_tag | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @lmirosevic, @maschall
+
+
+
+<details>
+<summary>3 Examples</summary>
+
+```ruby
+add_git_tag # simple tag with default values
+```
+
+```ruby
+add_git_tag(
+  grouping: "fastlane-builds",
+  prefix: "v",
+  build_number: 123
+)
+```
+
+```ruby
+# Alternatively, you can specify your own tag. Note that if you do specify a tag, all other arguments are ignored.
+add_git_tag(
+  tag: "my_custom_tag"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `tag` | Define your own tag text. This will replace all other parameters
+  `grouping` | Is used to keep your tags organised under one 'folder'. Defaults to 'builds'
+  `prefix` | Anything you want to put in front of the version number (e.g. 'v')
+  `build_number` | The build number. Defaults to the result of increment_build_number if you're using it
+  `message` | The tag message. Defaults to the tag's name
+  `commit` | The commit or object where the tag will be set. Defaults to the current HEAD
+  `force` | Force adding the tag
+  `sign` | Make a GPG-signed tag, using the default e-mail address's key
+
+</details>
+
+
+
+
+
+### number_of_commits
+
+Return the total number of all commits in current git repo
+
+
+
+> You can use this action to get the number of commits of this repo. This is useful if you want to set the build number to the number of commits.
+
+number_of_commits | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @onevcat
+Returns | The total number of all commits in current git repo
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+build_number = number_of_commits
+increment_build_number(build_number: build_number)
+```
+
+
+</details>
+
+
+
+
+
+
+### last_git_commit
+
+Return last git commit hash, abbreviated commit hash, commit message and author
+
+
+
+
+
+last_git_commit | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @ngutman
+Returns | Returns the following dict: {commit_hash: "commit hash", abbreviated_commit_hash: "abbreviated commit hash" author: "Author", message: "commit message"}
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+commit = last_git_commit
+crashlytics(notes: commit[:message]) # message of commit
+author = commit[:author] # author of the commit
+hash = commit[:commit_hash] # long sha of commit
+short_hash = commit[:abbreviated_commit_hash] # short sha of commit
+```
+
+
+</details>
+
+
+
+
+
+
+### get_build_number_repository
+
+Get the build number from the current repository
+
+
+
+> This action will get the **build number** according to what the SCM HEAD reports.
+Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision) and git (uses short hash) and mercurial (uses short hash or revision number).
+There is an option, `:use_hg_revision_number`, which allows to use mercurial revision number instead of hash.
+
+get_build_number_repository | 
+-----|----
+Supported platforms | ios, mac
+Author | @bartoszj, @pbrooks, @armadsen
+Returns | The build number from the current repository
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+get_build_number_repository
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `use_hg_revision_number` | Use hg revision number instead of hash (ignored for non-hg repos)
+
+</details>
+
+
+
+
+
+### git_pull
+
+Executes a simple git pull command
+
+
+
+
+
+git_pull | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx, @JaviSoto
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+git_pull
+```
+
+```ruby
+git_pull(only_tags: true) # only the tags, no commits
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `only_tags` | Simply pull the tags, and not bring new commits to the current branch from the remote
+
+</details>
+
+
+
+
+
+### push_git_tags
+
+Push local tags to the remote - this will only push tags
+
+
+
+> If you only want to push the tags and nothing else, you can use the `push_git_tags` action
+
+push_git_tags | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @vittoriom
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+push_git_tags
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `force` | Force push to remote. Defaults to false
+  `remote` | The remote to push tags to
+
+</details>
+
+
+
+
+
+### ensure_git_status_clean
+
+Raises an exception if there are uncommited git changes
+
+
+
+> A sanity check to make sure you are working in a repo that is clean. Especially
+useful to put at the beginning of your Fastfile in the `before_all` block, if
+some of your other actions will touch your filesystem, do things to your git repo,
+or just as a general reminder to save your work. Also needed as a prerequisite for
+some other actions like `reset_git_repo`.
+
+ensure_git_status_clean | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @lmirosevic
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ensure_git_status_clean
+```
+
+
+</details>
+
+
+
+
+
+
+### changelog_from_git_commits
+
+Collect git commit messages into a changelog
+
+
+
+> By default, messages will be collected back to the last tag, but the range can be controlled
+
+changelog_from_git_commits | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @mfurtak, @asfalcone, @SiarheiFedartsou, @allewun
+Returns | Returns a String containing your formatted git commits
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+changelog_from_git_commits
+```
+
+```ruby
+changelog_from_git_commits(
+  between: ["7b092b3", "HEAD"],  # Optional, lets you specify a revision/tag range between which to collect commit info
+  pretty: "- (%ae) %s",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
+  date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
+  match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
+  merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `between` | Array containing two Git revision values between which to collect messages, you mustn't use it with :commits_count key at the same time
+  `commits_count` | Number of commits to include in changelog, you mustn't use it with :between key at the same time
+  `pretty` | The format applied to each commit while generating the collected value
+  `date_format` | The date format applied to each commit while generating the collected value
+  `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag
+  `match_lightweight_tag` | Whether or not to match a lightweight tag when searching for the last one
+  `include_merges` | Whether or not to include any commits that are merges
+[31m(DEPRECATED - use :merge_commit_filtering)[0m
+  `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog.
+Valid values: 'include_merges', 'exclude_merges', 'only_include_merges'
+
+</details>
+
+
+
+
+
+### git_commit
+
+Directly commit the given file with the given message
+
+
+
+
+
+git_commit | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+git_commit(path: "./version.txt", message: "Version Bump")
+```
+
+```ruby
+git_commit(path: ["./version.txt", "./changelog.txt"], message: "Version Bump")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | The file you want to commit
+  `message` | The commit message that should be used
+
+</details>
+
+
+
+
+
+### git_tag_exists
+
+Checks if the git tag with the given name exists in the current repo
+
+
+
+
+
+git_tag_exists | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @antondomashnev
+Returns | Boolean value whether the tag exists or not
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+if git_tag_exists(tag: "1.1.0")
+  UI.message("Found it 🚀")
+end
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `tag` | The tag name that should be checked
+
+</details>
+
+
+
+
+
+### last_git_tag
+
+Get the most recent git tag
+
+
+
+> If you are using this action on a **shallow clone**, *the default with some CI systems like Bamboo*, you need to ensure that you have also have pulled all the git tags appropriately.  Assuming your git repo has the correct remote set you can issue `sh('git fetch --tags')`
+
+last_git_tag | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+last_git_tag
+```
+
+
+</details>
+
+
+
+
+
+
+
+# Notifications
+
+### twitter
+
+Post a tweet on Twitter.com
+
+
+
+> Post a tweet on twitter. Requires you to setup an app on twitter.com and obtain consumer and access_token.
+
+twitter | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @hjanuschka
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+twitter(
+  access_token: "XXXX",
+  access_token_secret: "xxx",
+  consumer_key: "xxx",
+  consumer_secret: "xxx",
+  message: "You rock!"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `consumer_key` | Consumer Key
+  `consumer_secret` | Consumer Secret
+  `access_token` | Access Token
+  `access_token_secret` | Access Token Secret
+  `message` | The tweet
 
 </details>
 
@@ -5540,6 +5518,218 @@ Key | Description
 
 
 
+### flock
+
+Send a message to a Flock group
+
+
+
+> To obtain the token, create a new [incoming message webhook](https://dev.flock.co/wiki/display/FlockAPI/Incoming+Webhooks)
+in your Flock admin panel.
+
+flock | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @Manav
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+flock(
+  message: "Hello",
+  token: "xxx"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `message` | Message text
+  `token` | Token for the Flock incoming webhook
+  `base_url` | Base URL of the Flock incoming message webhook
+
+</details>
+
+
+
+
+
+### slack
+
+Send a success/error message to your Slack group
+
+
+
+> Create an Incoming WebHook and export this as `SLACK_URL`. Can send a message to **#channel** (by default), a direct message to **@username** or a message to a private group **group** with success (green) or failure (red) status.
+
+slack | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+slack(message: "App successfully released!")
+```
+
+```ruby
+slack(
+  message: "App successfully released!",
+  channel: "#channel",  # Optional, by default will post to the default channel configured for the POST URL.
+  success: true,        # Optional, defaults to true.
+  payload: {  # Optional, lets you specify any number of your own Slack attachments.
+    "Build Date" => Time.new.to_s,
+    "Built by" => "Jenkins",
+  },
+  default_payloads: [:git_branch, :git_author], # Optional, lets you specify a whitelist of default payloads to include. Pass an empty array to suppress all the default payloads.
+        # Don't add this key, or pass nil, if you want all the default payloads. The available default payloads are: `lane`, `test_result`, `git_branch`, `git_author`, `last_git_commit_message`.
+  attachment_properties: { # Optional, lets you specify any other properties available for attachments in the slack API (see https://api.slack.com/docs/attachments).
+       # This hash is deep merged with the existing properties set using the other properties above. This allows your own fields properties to be appended to the existing fields that were created using the `payload` property for instance.
+    thumb_url: "http://example.com/path/to/thumb.png",
+    fields: [{
+      title: "My Field",
+      value: "My Value",
+      short: true
+    }]
+  }
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `message` | The message that should be displayed on Slack. This supports the standard Slack markup language
+  `channel` | #channel or @username
+  `use_webhook_configured_username_and_icon` | Use webook's default username and icon settings? (true/false)
+  `slack_url` | Create an Incoming WebHook for your Slack group
+  `username` | Overrides the webook's username property if use_webhook_configured_username_and_icon is false
+  `icon_url` | Overrides the webook's image property if use_webhook_configured_username_and_icon is false
+  `payload` | Add additional information to this post. payload must be a hash containg any key with any value
+  `default_payloads` | Remove some of the default payloads. More information about the available payloads on GitHub
+  `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments
+  `success` | Was this build successful? (true/false)
+
+</details>
+
+
+
+
+
+### ifttt
+
+Connect to the IFTTT Maker Channel. https://ifttt.com/maker
+
+
+
+> Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this _fastlane_ action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
+
+ifttt | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @vpolouchkine
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ifttt(
+  api_key: "...",
+  event_name: "...",
+  value1: "foo",
+  value2: "bar",
+  value3: "baz"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `api_key` | API key
+  `event_name` | The name of the event that will be triggered
+  `value1` | Extra data sent with the event
+  `value2` | Extra data sent with the event
+  `value3` | Extra data sent with the event
+
+</details>
+
+
+
+
+
+### chatwork
+
+Send a success/error message to ChatWork
+
+
+
+> Information on how to obtain an API token: http://developer.chatwork.com/ja/authenticate.html
+
+chatwork | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @astronaughts
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+chatwork(
+  message: "App successfully released!",
+  roomid: 12345,
+  success: true,
+  api_token: "Your Token"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `api_token` | ChatWork API Token
+  `message` | The message to post on ChatWork
+  `roomid` | The room ID
+  `success` | Was this build successful? (true/false)
+
+</details>
+
+
+
+
+
 ### mailgun
 
 Send a success/error message to an email group
@@ -5613,196 +5803,6 @@ Key | Description
 
 
 
-### chatwork
-
-Send a success/error message to ChatWork
-
-
-
-> Information on how to obtain an API token: http://developer.chatwork.com/ja/authenticate.html
-
-chatwork | 
------|----
-Supported platforms | ios, android, mac
-Author | @astronaughts
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-chatwork(
-  message: "App successfully released!",
-  roomid: 12345,
-  success: true,
-  api_token: "Your Token"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `api_token` | ChatWork API Token
-  `message` | The message to post on ChatWork
-  `roomid` | The room ID
-  `success` | Was this build successful? (true/false)
-
-</details>
-
-
-
-
-
-### flock
-
-Send a message to a Flock group
-
-
-
-> To obtain the token, create a new [incoming message webhook](https://dev.flock.co/wiki/display/FlockAPI/Incoming+Webhooks)
-in your Flock admin panel.
-
-flock | 
------|----
-Supported platforms | ios, android, mac
-Author | @Manav
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-flock(
-  message: "Hello",
-  token: "xxx"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `message` | Message text
-  `token` | Token for the Flock incoming webhook
-  `base_url` | Base URL of the Flock incoming message webhook
-
-</details>
-
-
-
-
-
-### ifttt
-
-Connect to the IFTTT Maker Channel. https://ifttt.com/maker
-
-
-
-> Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this _fastlane_ action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
-
-ifttt | 
------|----
-Supported platforms | ios, android, mac
-Author | @vpolouchkine
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ifttt(
-  api_key: "...",
-  event_name: "...",
-  value1: "foo",
-  value2: "bar",
-  value3: "baz"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `api_key` | API key
-  `event_name` | The name of the event that will be triggered
-  `value1` | Extra data sent with the event
-  `value2` | Extra data sent with the event
-  `value3` | Extra data sent with the event
-
-</details>
-
-
-
-
-
-### twitter
-
-Post a tweet on Twitter.com
-
-
-
-> Post a tweet on twitter. Requires you to setup an app on twitter.com and obtain consumer and access_token.
-
-twitter | 
------|----
-Supported platforms | ios, android, mac
-Author | @hjanuschka
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-twitter(
-  access_token: "XXXX",
-  access_token_secret: "xxx",
-  consumer_key: "xxx",
-  consumer_secret: "xxx",
-  message: "You rock!"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `consumer_key` | Consumer Key
-  `consumer_secret` | Consumer Secret
-  `access_token` | Access Token
-  `access_token_secret` | Access Token Secret
-  `message` | The tweet
-
-</details>
-
-
-
-
-
 ### typetalk
 
 Post a message to Typetalk
@@ -5841,6 +5841,27 @@ typetalk(
 
 
 # Deprecated
+
+### notify
+
+Shows a macOS notification - use `notification` instead
+
+> It's recommended to use the new 'notification' method instead of 'notify'
+
+
+
+notify | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @champo, @KrauseFx
+
+
+</details>
+
+
+
+
+
 
 ### ipa
 
@@ -5902,97 +5923,6 @@ Key | Description
   `ipa` | Specify the name of the .ipa file to generate (including file extension)
   `xcconfig` | Use an extra XCCONFIG file to build the app
   `xcargs` | Pass additional arguments to xcodebuild when building the app. Be sure to quote multiple args
-
-</details>
-
-
-
-
-
-### notify
-
-Shows a macOS notification - use `notification` instead
-
-> It's recommended to use the new 'notification' method instead of 'notify'
-
-
-
-notify | 
------|----
-Supported platforms | ios, android, mac
-Author | @champo, @KrauseFx
-
-
-</details>
-
-
-
-
-
-
-### s3
-
-Generates a plist file and uploads all to AWS S3
-
-> Please use the `aws_s3` plugin instead.
-Install using `fastlane add_plugin aws_s3`.
-
-> Upload a new build to Amazon S3 to distribute the build to beta testers.  Works for both Ad Hoc and Enterprise signed applications. This step will generate the necessary HTML, plist, and version files for you. It is recommended to **not** store the AWS access keys in the `Fastfile`. The uploaded `version.json` file provides an easy way for apps to poll if a new update is available.
-
-s3 | 
------|----
-Supported platforms | ios
-Author | @joshdholtz
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-s3
-```
-
-```ruby
-s3(
-  # All of these are used to make Shenzhen's `ipa distribute:s3` command
-  access_key: ENV["S3_ACCESS_KEY"],     # Required from user.
-  secret_access_key: ENV["S3_SECRET_ACCESS_KEY"], # Required from user.
-  bucket: ENV["S3_BUCKET"],   # Required from user.
-  ipa: "AppName.ipa",         # Optional is you use `ipa` to build
-  dsym: "AppName.app.dSYM.zip",         # Optional is you use `ipa` to build
-  path: "v{CFBundleShortVersionString}_b{CFBundleVersion}/", # This is actually the default.
-  upload_metadata: true,      # Upload version.json, plist and HTML. Set to false to skip uploading of these files.
-  version_file_name: "app_version.json",# Name of the file to upload to S3. Defaults to "version.json"
-  version_template_path: "path/to/erb"  # Path to an ERB to configure the structure of the version JSON file
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `ipa` | .ipa file for the build 
-  `dsym` | zipped .dsym package for the build 
-  `upload_metadata` | Upload relevant metadata for this build
-  `plist_template_path` | plist template path
-  `plist_file_name` | uploaded plist filename
-  `html_template_path` | html erb template path
-  `html_file_name` | uploaded html filename
-  `version_template_path` | version erb template path
-  `version_file_name` | uploaded version filename
-  `access_key` | AWS Access Key ID 
-  `secret_access_key` | AWS Secret Access Key 
-  `bucket` | AWS bucket name
-  `region` | AWS region (for bucket creation) 
-  `path` | S3 'path'. Values from Info.plist will be substituded for keys wrapped in {}  
-  `source` | Optional source directory e.g. ./build 
-  `acl` | Uploaded object permissions e.g public_read (default), private, public_read_write, authenticated_read 
 
 </details>
 
@@ -6087,6 +6017,76 @@ Key | Description
 
 
 
+### s3
+
+Generates a plist file and uploads all to AWS S3
+
+> Please use the `aws_s3` plugin instead.
+Install using `fastlane add_plugin aws_s3`.
+
+> Upload a new build to Amazon S3 to distribute the build to beta testers.  Works for both Ad Hoc and Enterprise signed applications. This step will generate the necessary HTML, plist, and version files for you. It is recommended to **not** store the AWS access keys in the `Fastfile`. The uploaded `version.json` file provides an easy way for apps to poll if a new update is available.
+
+s3 | 
+-----|----
+Supported platforms | ios
+Author | @joshdholtz
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+s3
+```
+
+```ruby
+s3(
+  # All of these are used to make Shenzhen's `ipa distribute:s3` command
+  access_key: ENV["S3_ACCESS_KEY"],     # Required from user.
+  secret_access_key: ENV["S3_SECRET_ACCESS_KEY"], # Required from user.
+  bucket: ENV["S3_BUCKET"],   # Required from user.
+  ipa: "AppName.ipa",         # Optional is you use `ipa` to build
+  dsym: "AppName.app.dSYM.zip",         # Optional is you use `ipa` to build
+  path: "v{CFBundleShortVersionString}_b{CFBundleVersion}/", # This is actually the default.
+  upload_metadata: true,      # Upload version.json, plist and HTML. Set to false to skip uploading of these files.
+  version_file_name: "app_version.json",# Name of the file to upload to S3. Defaults to "version.json"
+  version_template_path: "path/to/erb"  # Path to an ERB to configure the structure of the version JSON file
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `ipa` | .ipa file for the build 
+  `dsym` | zipped .dsym package for the build 
+  `upload_metadata` | Upload relevant metadata for this build
+  `plist_template_path` | plist template path
+  `plist_file_name` | uploaded plist filename
+  `html_template_path` | html erb template path
+  `html_file_name` | uploaded html filename
+  `version_template_path` | version erb template path
+  `version_file_name` | uploaded version filename
+  `access_key` | AWS Access Key ID 
+  `secret_access_key` | AWS Secret Access Key 
+  `bucket` | AWS bucket name
+  `region` | AWS region (for bucket creation) 
+  `path` | S3 'path'. Values from Info.plist will be substituded for keys wrapped in {}  
+  `source` | Optional source directory e.g. ./build 
+  `acl` | Uploaded object permissions e.g public_read (default), private, public_read_write, authenticated_read 
+
+</details>
+
+
+
+
+
 
 # Misc
 
@@ -6120,18 +6120,85 @@ puts "Hi there"
 
 
 
-### fastlane_version
+### ensure_no_debug_code
 
-Verifies the minimum fastlane version required
+Ensures the given text is nowhere in the code base
 
 
 
-> Add this to your `Fastfile` to require a certain version of _fastlane_.
-Use it if you use an action that just recently came out and you need it
+> You don't want any debug code to slip into production. This can be used
+to check if there is any debug code still in your code base or if you have
+things like // TO DO or similar
 
-fastlane_version | 
+ensure_no_debug_code | 
 -----|----
 Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>5 Examples</summary>
+
+```ruby
+ensure_no_debug_code(text: "// TODO")
+```
+
+```ruby
+ensure_no_debug_code(text: "Log.v",
+      extension: "java")
+```
+
+```ruby
+ensure_no_debug_code(text: "NSLog",
+ path: "./lib",
+      extension: "m")
+```
+
+```ruby
+ensure_no_debug_code(text: "(^#define DEBUG|NSLog)",
+ path: "./lib",
+      extension: "m")
+```
+
+```ruby
+ensure_no_debug_code(text: "<<<<<<",
+     extensions: ["m", "swift", "java"])
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `text` | The text that must not be in the code base
+  `path` | The directory containing all the source files
+  `extension` | The extension that should be searched for
+  `extensions` | An array of file extensions that should be searched for
+  `exclude` | Exclude a certain pattern from the search
+  `exclude_dirs` | An array of dirs that should not be included in the search
+
+</details>
+
+
+
+
+
+### team_id
+
+Specify the Team ID you want to use for the Apple Developer Portal
+
+
+
+
+
+team_id | 
+-----|----
+Supported platforms | ios
 Author | @KrauseFx
 
 
@@ -6140,59 +6207,8 @@ Author | @KrauseFx
 <summary>1 Example</summary>
 
 ```ruby
-fastlane_version "1.50.0"
+team_id "Q2CBPK58CA"
 ```
-
-
-</details>
-
-
-
-
-
-
-### default_platform
-
-Defines a default platform to not have to specify the platform
-
-
-
-
-
-default_platform | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-default_platform :android
-```
-
-
-</details>
-
-
-
-
-
-
-### lane_context
-
-An alias to `Actions.lane_context`
-
-
-
-
-
-lane_context | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
 
 
 </details>
@@ -6233,17 +6249,18 @@ import "./path/to/other/Fastfile"
 
 
 
-### produce
+### is_ci
 
-Creates the given application on iTC and the Dev Portal if necessary
-
-
+Is the current run being executed on a CI system, like Jenkins or Travis
 
 
 
-produce | 
+> The return value of this method is true if fastlane is currently executed on
+Travis, Jenkins, Circle or a similar CI service
+
+is_ci | 
 -----|----
-Supported platforms | ios
+Supported platforms | ios, android, mac
 Author | @KrauseFx
 
 
@@ -6252,14 +6269,43 @@ Author | @KrauseFx
 <summary>1 Example</summary>
 
 ```ruby
-produce(
-  username: "felix@krausefx.com",
-  app_identifier: "com.krausefx.app",
-  app_name: "MyApp",
-  language: "English",
-  app_version: "1.0",
-  sku: "123",
-  team_name: "SunApps GmbH" # Only necessary when in multiple teams.
+if is_ci?
+  puts "I'm a computer"
+else
+  say "Hi Human!"
+end
+```
+
+
+</details>
+
+
+
+
+
+
+### verify_build
+
+Able to verify various settings in ipa file
+
+
+
+> Verifies that the built app was built using the expected build resources. This is relevant for people who build on machines that are used to build apps with different profiles, certificates and/or bundle identifiers to guard against configuration mistakes.
+
+verify_build | 
+-----|----
+Supported platforms | ios
+Author | @CodeReaper
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+verify_build(
+  provisioning_type: "distribution",
+  bundle_identifier: "com.example.myapp"
 )
 ```
 
@@ -6272,24 +6318,1253 @@ produce(
 
 Key | Description
 ----|------------
-  `username` | Your Apple ID Username
-  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app)
-  `bundle_identifier_suffix` | App Identifier Suffix (Ignored if App Identifier does not ends with .*)
-  `app_name` | App Name
-  `app_version` | Initial version number (e.g. '1.0')
-  `sku` | SKU Number (e.g. '1234')
-  `platform` | The platform to use (optional)
-  `language` | Primary Language (e.g. 'English', 'German')
-  `company_name` | The name of your company. Only required if it's the first app you create
-  `skip_itc` | Skip the creation of the app on iTunes Connect
-  `enabled_features` | Array with Spaceship App Features
-  `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `itc_team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `itc_team_name` | The name of your iTunes Connect team if you're in multiple teams
+  `provisioning_type` | Required type of provisioning
+  `provisioning_uuid` | Required UUID of provisioning profile
+  `team_identifier` | Required team identifier
+  `team_name` | Required team name
+  `app_name` | Required app name
+  `bundle_identifier` | Required bundle identifier
+  `ipa_path` | Explicitly set the ipa path
 
 </details>
+
+
+
+
+
+### backup_xcarchive
+
+Save your [zipped] xcarchive elsewhere from default path
+
+
+
+
+
+backup_xcarchive | 
+-----|----
+Supported platforms | ios, mac
+Author | @dral3x
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+backup_xcarchive(
+  xcarchive: "/path/to/file.xcarchive", # Optional if you use the `xcodebuild` action
+  destination: "/somewhere/else/file.xcarchive", # Where the backup should be created
+  zip: false, # Enable compression of the archive. Defaults to `true`.
+  versioned: true # Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `xcarchive` | Path to your xcarchive file. Optional if you use the `xcodebuild` action
+  `destination` | Where your archive will be placed
+  `zip` | Enable compression of the archive. Default value `true`
+  `versioned` | Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
+
+</details>
+
+
+
+
+
+### opt_out_usage
+
+This will stop uploading the information which actions were run
+
+
+
+> By default, fastlane will track what actions are being used No personal information is shared. More information available on https://github.com/fastlane/enhancer Add `opt_out_usage` at the top of your Fastfile
+
+opt_out_usage | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_usage # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
+
+
+### install_xcode_plugin
+
+Install an Xcode plugin for the current user
+
+
+
+
+
+install_xcode_plugin | 
+-----|----
+Supported platforms | ios, mac
+Author | @NeoNachoSoto
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+install_xcode_plugin(url: "https://example.com/clubmate/plugin.zip")
+```
+
+```ruby
+install_xcode_plugin(github: "https://github.com/contentful/ContentfulXcodePlugin")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `url` | URL for Xcode plugin ZIP file
+  `github` | GitHub repository URL for Xcode plugin
+
+</details>
+
+
+
+
+
+### make_changelog_from_jenkins
+
+Generate a changelog using the Changes section from the current Jenkins build
+
+
+
+> This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.
+
+make_changelog_from_jenkins | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @mandrizzle
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+make_changelog_from_jenkins(
+  # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins
+  fallback_changelog: "Bug fixes and performance enhancements"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `fallback_changelog` | Fallback changelog if there is not one on Jenkins, or it couldn't be read
+  `include_commit_body` | Include the commit body along with the summary
+
+</details>
+
+
+
+
+
+### sh
+
+Runs a shell command
+
+
+
+> Allows running an arbitrary shell command.
+Be aware of a specific behavior of 'sh' action with regard to the working directory. For details refer to Advanced.md
+
+sh | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+Returns | Outputs the string and executes it. When running in tests, it returns the actual command instead of executing it
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+sh("ls")
+```
+
+```ruby
+sh("git commit -m 'My message'")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `command` | Shell command to be executed
+  `log` | Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true
+  `error_callback` | A callback invoked with the command ouptut if there is a non-zero exit status
+
+</details>
+
+
+
+
+
+### version_get_podspec
+
+Receive the version number from a podspec file
+
+
+
+
+
+version_get_podspec | 
+-----|----
+Supported platforms | ios, mac
+Author | @Liquidsoul, @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+version = version_get_podspec(path: "TSMessages.podspec")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | You must specify the path to the podspec file
+
+</details>
+
+
+
+
+
+### ssh
+
+Allows remote command execution using ssh
+
+
+
+> Lets you execute remote commands via ssh using username/password or ssh-agent. If one of the commands in command-array returns non 0 - it fails.
+
+ssh | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @hjanuschka
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ssh(
+  host: "dev.januschka.com",
+  username: "root",
+  commands: [
+    "date",
+    "echo 1 > /tmp/file1"
+  ]
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `username` | Username
+  `password` | Password
+  `host` | Hostname
+  `port` | Port
+  `commands` | Commands
+  `log` | Log commands and output
+
+</details>
+
+
+
+
+
+### prompt
+
+Ask the user for a value or for confirmation
+
+
+
+> You can use `prompt` to ask the user for a value or to just let the user confirm the next step
+When this is executed on a CI service, the passed `ci_input` value will be returned
+This action also supports multi-line inputs using the `multi_line_end_keyword` option.
+
+prompt | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+changelog = prompt(text: "Changelog: ")
+```
+
+```ruby
+changelog = prompt(
+  text: "Changelog: ",
+  multi_line_end_keyword: "END"
+)
+
+crashlytics(notes: changelog)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `text` | The text that will be displayed to the user
+  `ci_input` | The default text that will be used when being executed on a CI service
+  `boolean` | Is that a boolean question (yes/no)? This will add (y/n) at the end
+  `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input
+
+</details>
+
+
+
+
+
+### erb
+
+Allows to Generate output files based on ERB templates
+
+
+
+> Renders an ERB template with `placeholders` given as a hash via parameter,
+if no :destination is set, returns rendered template as string
+
+erb | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @hjanuschka
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+# Example `erb` template:
+
+# Variable1 <%= var1 %>
+# Variable2 <%= var2 %>
+# <% for item in var3 %>
+#        <%= item %>
+# <% end %>
+
+erb(
+  template: "1.erb",
+  destination: "/tmp/rendered.out",
+  placeholders: {
+    :var1 => 123,
+    :var2 => "string",
+    :var3 => ["element1", "element2"]
+  }
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `template` | ERB Template File
+  `destination` | Destination file
+  `placeholders` | Placeholders given as a hash
+
+</details>
+
+
+
+
+
+### restore_file
+
+This action restore your file that was backuped with the `backup_file` action
+
+
+
+
+
+restore_file | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @gin0606
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+restore_file(path: "/path/to/file")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | Original file name you want to restore
+
+</details>
+
+
+
+
+
+### jira
+
+Leave a comment on JIRA tickets
+
+
+
+
+
+jira | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @iAmChrisTruman
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+jira(
+  url: "https://bugs.yourdomain.com",
+  username: "Your username",
+  password: "Your password",
+  ticket_id: "Ticket ID, i.e. IOS-123",
+  comment_text: "Text to post as a comment"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `url` | URL for Jira instance
+  `username` | Username for JIRA instance
+  `password` | Password for Jira
+  `ticket_id` | Ticket ID for Jira, i.e. IOS-123
+  `comment_text` | Text to add to the ticket as a comment
+
+</details>
+
+
+
+
+
+### artifactory
+
+This action uploads an artifact to artifactory
+
+
+
+
+
+artifactory | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @koglinjg
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+artifactory(
+  username: "username",
+  password: "password",
+  endpoint: "https://artifactory.example.com/artifactory/",
+  file: "example.ipa",  # File to upload
+  repo: "mobile_artifacts",       # Artifactory repo
+  repo_path: "/ios/appname/example-major.minor.ipa"   # Path to place the artifact including its filename
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `file` | File to be uploaded to artifactory
+  `repo` | Artifactory repo to put the file in
+  `repo_path` | Path to deploy within the repo, including filename
+  `endpoint` | Artifactory endpoint
+  `username` | Artifactory username
+  `password` | Artifactory password
+  `properties` | Artifact properties hash
+  `ssl_pem_file` | Location of pem file to use for ssl verification
+  `ssl_verify` | Verify SSL
+  `proxy_username` | Proxy username
+  `proxy_password` | Proxy password
+  `proxy_address` | Proxy address
+  `proxy_port` | Proxy port
+
+</details>
+
+
+
+
+
+### scp
+
+Transfer files via SCP
+
+
+
+
+
+scp | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @hjanuschka
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+scp(
+  host: "dev.januschka.com",
+  username: "root",
+  upload: {
+    src: "/root/dir1",
+    dst: "/tmp/new_dir"
+  }
+)
+```
+
+```ruby
+scp(
+  host: "dev.januschka.com",
+  username: "root",
+  download: {
+    src: "/root/dir1",
+    dst: "/tmp/new_dir"
+  }
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `username` | Username
+  `password` | Password
+  `host` | Hostname
+  `port` | Port
+  `upload` | Upload
+  `download` | Download
+
+</details>
+
+
+
+
+
+### upload_symbols_to_crashlytics
+
+Upload dSYM symbolication files to Crashlytics
+
+
+
+> This action allows you to upload symbolication files to Crashlytics. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode. This action will not fail the build if one of the uploads failed. The reason for that is that sometimes some of dSYM files are invalid, and we don't want them to fail the complete build.
+
+upload_symbols_to_crashlytics | 
+-----|----
+Supported platforms | ios
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `dsym_path` | Path to the DSYM file or zip to upload
+  `api_token` | Crashlytics API Key
+  `binary_path` | The path to the upload-symbols file of the Fabric app
+  `platform` | The platform of the app (ios, tvos, mac)
+
+</details>
+
+
+
+
+
+### build_and_upload_to_appetize
+
+Generate and upload an ipa file to appetize.io
+
+
+
+> This should be called from danger
+More information in the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
+
+build_and_upload_to_appetize | 
+-----|----
+Supported platforms | ios
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `xcodebuild` | Parameters that are passed to the xcodebuild action
+  `scheme` | The scheme to build. Can also be passed using the `xcodebuild` parameter
+  `api_token` | Appetize.io API Token
+
+</details>
+
+
+
+
+
+### install_on_device
+
+Installs an .ipa file on a connected iOS-device via usb or wifi
+
+
+
+> Installs the ipa on the device, if no id is given, the first found iOS device will be used, works via USB or Wi-Fi. This requires `ios-deploy` to be installed please have a look at [ios-deploy](https://github.com/phonegap/ios-deploy). to quickly install it, use `npm -g i ios-deploy`
+
+install_on_device | 
+-----|----
+Supported platforms | ios
+Author | @hjanuschka
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+install_on_device(
+  device_id: "a3be6c9ff7e5c3c6028597513243b0f933b876d4",
+  ipa: "./app.ipa"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `extra` | Extra Commandline arguments passed to ios-deploy
+  `device_id` | id of the device / if not set defaults to first found device
+  `skip_wifi` | Do not search for devices via WiFi
+  `ipa` | The IPA file to put on the device
+
+</details>
+
+
+
+
+
+### create_keychain
+
+Create a new Keychain
+
+
+
+
+
+create_keychain | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @gin0606
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+create_keychain(
+  name: "KeychainName",
+  default_keychain: true,
+  unlock: true,
+  timeout: 3600,
+  lock_when_sleeps: true
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `name` | Keychain name
+  `path` | Path to Keychain
+  `password` | Password for the keychain
+  `default_keychain` | Set the default keychain
+  `unlock` | Unlock keychain after create
+  `timeout` | timeout interval in seconds. Set `false` if you want to specify "no time-out"
+  `lock_when_sleeps` | Lock keychain when the system sleeps
+  `lock_after_timeout` | Lock keychain after timeout interval
+  `add_to_search_list` | Add keychain to search list
+
+</details>
+
+
+
+
+
+### app_store_build_number
+
+Returns the current build_number of either live or edit version
+
+
+
+> Returns the current build number of either the live or testflight version - it is useful for getting the build_number of the current or ready-for-sale app version, and it also works on non-live testflight version. If you need to handle more build-trains please see `latest_testflight_build_number`
+
+app_store_build_number | 
+-----|----
+Supported platforms | ios, mac
+Author | @hjanuschka
+
+
+
+<details>
+<summary>3 Examples</summary>
+
+```ruby
+app_store_build_number
+```
+
+```ruby
+app_store_build_number(
+  app_identifier: "app.identifier",
+  username: "user@host.com"
+)
+```
+
+```ruby
+app_store_build_number(
+  live: false,
+  app_identifier: "app.identifier",
+  version: "1.2.9"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `initial_build_number` | sets the build number to given value if no build is in current train
+  `app_identifier` | The bundle identifier of your app
+  `username` | Your Apple ID Username
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
+  `live` | Query the live version (ready-for-sale)
+  `version` | The version number whose latest build number we want
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+
+</details>
+
+
+
+
+
+### add_extra_platforms
+
+Modify the default list of supported platforms
+
+
+
+
+
+add_extra_platforms | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @lacostej
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+add_extra_platforms(
+  platforms: [:windows,:neogeo]
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `platforms` | The optional extra platforms to support
+
+</details>
+
+
+
+
+
+### skip_docs
+
+Skip the creation of the fastlane/README.md file when running fastlane
+
+
+
+> Tell _fastlane_ to not automatically create a `fastlane/README.md` when running _fastlane_. You can always trigger the creation of this file manually by running `fastlane docs`
+
+skip_docs | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+skip_docs
+```
+
+
+</details>
+
+
+
+
+
+
+### zip
+
+Compress a file or folder to a zip
+
+
+
+
+
+zip | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+Returns | The path to the output zip file
+
+
+
+<details>
+<summary>3 Examples</summary>
+
+```ruby
+zip
+```
+
+```ruby
+zip(
+  path: "MyApp.app",
+  output_path: "Latest.app.zip"
+)
+```
+
+```ruby
+zip(
+  path: "MyApp.app",
+  output_path: "Latest.app.zip",
+  verbose: false
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | Path to the directory or file to be zipped
+  `output_path` | The name of the resulting zip file
+  `verbose` | Enable verbose output of zipped file
+
+</details>
+
+
+
+
+
+### latest_testflight_build_number
+
+Fetches most recent build number from TestFlight
+
+
+
+> Provides a way to have increment_build_number be based on the latest build you uploaded to iTC.
+Fetches most recent build number from TestFlight based on the version number. Provides a way to have `increment_build_number` be based on the latest build you uploaded to iTC.
+
+latest_testflight_build_number | 
+-----|----
+Supported platforms | ios
+Author | @daveanderson
+Returns | Integer representation of the latest build number uploaded to TestFlight
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+latest_testflight_build_number(version: "1.3")
+```
+
+```ruby
+increment_build_number({
+  build_number: latest_testflight_build_number + 1
+})
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `live` | Query the live version (ready-for-sale)
+  `app_identifier` | The bundle identifier of your app
+  `username` | Your Apple ID Username
+  `version` | The version number whose latest build number we want
+  `initial_build_number` | sets the build number to given value if no build is in current train
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+
+</details>
+
+
+
+
+
+### adb_devices
+
+Get an Array of Connected android device serials
+
+
+
+> Fetches device list via adb, e.g. run an adb command on all connected devices.
+
+adb_devices | 
+-----|----
+Supported platforms | android
+Author | @hjanuschka
+Returns | Returns an array of all currently connected android devices
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+adb_devices.each do |device|
+  model = adb(command: "shell getprop ro.product.model",
+    serial: device.serial).strip
+
+  puts "Model #{model} is connected"
+end
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `adb_path` | The path to your `adb` binary
+
+</details>
+
+
+
+
+
+### lane_context
+
+An alias to `Actions.lane_context`
+
+
+
+
+
+lane_context | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+
+
+
+
+### version_bump_podspec
+
+Increment or set the version in a podspec file
+
+
+
+> You can use this action to manipulate any 'version' variable contained in a ruby file.
+For example, you can use it to bump the version of a cocoapods' podspec file.
+
+version_bump_podspec | 
+-----|----
+Supported platforms | ios, mac
+Author | @Liquidsoul, @KrauseFx
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+version = version_bump_podspec(path: "TSMessages.podspec", bump_type: "patch")
+```
+
+```ruby
+version = version_bump_podspec(path: "TSMessages.podspec", version_number: "1.4")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | You must specify the path to the podspec file to update
+  `bump_type` | The type of this version bump. Available: patch, minor, major
+  `version_number` | Change to a specific version. This will replace the bump type value
+
+</details>
+
+
+
+
+
+### set_github_release
+
+This will create a new release on GitHub and upload assets for it
+
+
+
+> Creates a new release on GitHub. You must provide your GitHub Personal token
+        (get one from https://github.com/settings/tokens/new), the repository name
+        and tag name. By default that's 'master'. If the tag doesn't exist, one will be created on the commit or branch passed-in as
+        commitish. Out parameters provide the release's id, which can be used for later editing and the
+        release html link to GitHub. You can also specify a list of assets to be uploaded to the release with the upload_assets parameter.
+
+set_github_release | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @czechboy0
+Returns | A hash containing all relevant information of this release
+Access things like 'html_url', 'tag_name', 'name', 'body'
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+github_release = set_github_release(
+  repository_name: "fastlane/fastlane",
+  api_token: ENV["GITHUB_TOKEN"],
+  name: "Super New actions",
+  tag_name: "v1.22.0",
+  description: (File.read("changelog") rescue "No changelog provided"),
+  commitish: "master",
+  upload_assets: ["example_integration.ipa", "./pkg/built.gem"]
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `repository_name` | The path to your repo, e.g. 'fastlane/fastlane'
+  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
+  `tag_name` | Pass in the tag name
+  `name` | Name of this release
+  `commitish` | Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually master)
+  `description` | Description of this release
+  `is_draft` | Whether the release should be marked as draft
+  `is_prerelease` | Whether the release should be marked as prerelease
+  `upload_assets` | Path to assets to be uploaded with the release
+
+</details>
+
+
+
+
+
+### rocket
+
+Outputs ascii-art for a rocket 🚀
+
+
+
+> Print an ascii Rocket :rocket:. Useful after using _crashlytics_ or _pilot_ to indicate that your new build has been shipped to outer-space.
+
+rocket | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @JaviSoto, @radex
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+rocket
+```
+
+
+</details>
+
 
 
 
@@ -6341,19 +7616,18 @@ Key | Description
 
 
 
-### clean_build_artifacts
+### say
 
-Deletes files created as result of running gym, cert, sigh or download_dsyms
+This action speaks out loud the given text
 
 
 
-> This action deletes the files that get created in your repo as a result of running the _gym_ and _sigh_ commands. It doesn't delete the `fastlane/report.xml` though, this is probably more suited for the .gitignore.
-Useful if you quickly want to send out a test build by dropping down to the command line and typing something like `fastlane beta`, without leaving your repo in a messy state afterwards.
 
-clean_build_artifacts | 
+
+say | 
 -----|----
-Supported platforms | ios, mac
-Author | @lmirosevic
+Supported platforms | ios, android, mac
+Author | @KrauseFx
 
 
 
@@ -6361,7 +7635,52 @@ Author | @lmirosevic
 <summary>1 Example</summary>
 
 ```ruby
-clean_build_artifacts
+say "I can speak"
+```
+
+
+</details>
+
+
+
+
+
+
+### badge
+
+Automatically add a badge to your app icon
+
+
+
+> This action will add a light/dark badge onto your app icon.
+You can also provide your custom badge/overlay or add an shield for more customization more info:
+https://github.com/HazAT/badge
+**Note** If you want to reset the badge back to default you can use `sh 'git checkout -- <path>/Assets.xcassets/'`
+
+badge | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @DanielGri
+
+
+
+<details>
+<summary>4 Examples</summary>
+
+```ruby
+badge(dark: true)
+```
+
+```ruby
+badge(alpha: true)
+```
+
+```ruby
+badge(custom: "/Users/xxx/Desktop/badge.png")
+```
+
+```ruby
+badge(shield: "Version-0.0.3-blue", no_badge: true)
 ```
 
 
@@ -6373,7 +7692,280 @@ clean_build_artifacts
 
 Key | Description
 ----|------------
-  `exclude_pattern` | Exclude all files from clearing that match the given Regex pattern: e.g. '.*.mobileprovision'
+  `dark` | Adds a dark flavored badge ontop of your icon
+  `custom` | Add your custom overlay/badge image
+  `no_badge` | Hides the beta badge
+  `shield` | Add a shield to your app icon from shield.io
+  `alpha` | Adds and alpha badge instead of the default beta one
+  `path` | Sets the root path to look for AppIcons
+  `shield_io_timeout` | Set custom duration for the timeout of the shield.io request in seconds
+  `glob` | Glob pattern for finding image files
+  `alpha_channel` | Keeps/adds an alpha channel to the icon (useful for android icons)
+  `shield_gravity` | Position of shield on icon. Default: North - Choices include: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast
+  `shield_no_resize` | Shield image will no longer be resized to aspect fill the full icon. Instead it will only be shrinked to not exceed the icon graphic
+
+</details>
+
+
+
+
+
+### backup_file
+
+This action backs up your file to "[path].back"
+
+
+
+
+
+backup_file | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @gin0606
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+backup_file(path: "/path/to/file")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | Path to the file you want to backup
+
+</details>
+
+
+
+
+
+### update_fastlane
+
+Makes sure fastlane-tools are up-to-date when running fastlane
+
+
+
+> This action will look at all installed fastlane tools and update them to the next available minor version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.
+If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in `sudo` mode.
+The simplest possible fix for this is putting the following lines into your `~/.bashrc` or `~/.zshrc` file:
+```bash
+export GEM_HOME=~/.gems
+export PATH=$PATH:~/.gems/bin
+```
+After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!
+Recommended usage of the `update_fastlane` action is at the top of the `before_all` block, before running any other action
+
+update_fastlane | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @milch
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+before_all do
+  update_fastlane
+  # ...
+end
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `tools` | Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh). If not specified, all currently installed fastlane-tools will be updated
+  `no_update` | Don't update during this run. Defaults to false
+
+</details>
+
+
+
+
+
+### read_podspec
+
+Loads a CocoaPods spec as JSON
+
+
+
+> This can be used for only specifying a version string in your podspec
+- and during your release process you'd read it from the podspec by running
+`version = read_podspec['version']` at the beginning of your lane
+Loads the specified (or the first found) podspec in the folder as JSON, so that you can inspect its `version`, `files` etc. 
+This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of 
+the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).
+
+read_podspec | 
+-----|----
+Supported platforms | ios, mac
+Author | @czechboy0
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+spec = read_podspec
+version = spec["version"]
+puts "Using Version #{version}"
+```
+
+```ruby
+spec = read_podspec(path: "./XcodeServerSDK.podspec")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | Path to the podspec to be read
+
+</details>
+
+
+
+
+
+### download
+
+Download a file from a remote server (e.g. JSON file)
+
+
+
+> Specify the URL to download and get the content as a return value
+For more advanced networking code, use the Ruby functions instead:
+http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html
+
+download | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+data = download(url: "https://host.com/api.json")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `url` | The URL that should be downloaded
+
+</details>
+
+
+
+
+
+### update_icloud_container_identifiers
+
+This action changes the iCloud container identifiers in the entitlements file
+
+
+
+> Updates the iCloud Container Identifiers in the given Entitlements file, so you can use different iCloud containers for different builds like Adhoc, App Store, etc.
+
+update_icloud_container_identifiers | 
+-----|----
+Supported platforms | ios
+Author | @JamesKuang
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+update_icloud_container_identifiers(
+  entitlements_file: "/path/to/entitlements_file.entitlements",
+  icloud_container_identifiers: ["iCloud.com.companyname.appname"]
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `entitlements_file` | The path to the entitlement file which contains the iCloud container identifiers
+  `icloud_container_identifiers` | An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp']
+
+</details>
+
+
+
+
+
+### dotgpg_environment
+
+Reads in production secrets set in a dotgpg file and puts them in ENV
+
+
+
+> More information about dotgpg can be found at https://github.com/ConradIrwin/dotgpg
+
+dotgpg_environment | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @simonlevy5
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+dotgpg_environment(dotgpg_file: './path/to/gpgfile')
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `dotgpg_file` | Path to your gpg file
 
 </details>
 
@@ -6450,38 +8042,19 @@ Key | Description
 
 
 
-### update_fastlane
+### appetize_viewing_url_generator
 
-Makes sure fastlane-tools are up-to-date when running fastlane
+Generate an URL for appetize simulator
 
 
 
-> This action will look at all installed fastlane tools and update them to the next available minor version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.
-If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in `sudo` mode.
-The simplest possible fix for this is putting the following lines into your `~/.bashrc` or `~/.zshrc` file:
-```bash
-export GEM_HOME=~/.gems
-export PATH=$PATH:~/.gems/bin
-```
-After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!
-Recommended usage of the `update_fastlane` action is at the top of the `before_all` block, before running any other action
+> Check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md) for more information
 
-update_fastlane | 
+appetize_viewing_url_generator | 
 -----|----
-Supported platforms | ios, android, mac
-Author | @milch
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-before_all do
-  update_fastlane
-  # ...
-end
-```
+Supported platforms | ios
+Author | @KrauseFx
+Returns | The URL to preview the iPhone app
 
 
 </details>
@@ -6492,8 +8065,13 @@ end
 
 Key | Description
 ----|------------
-  `tools` | Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh). If not specified, all currently installed fastlane-tools will be updated
-  `no_update` | Don't update during this run. Defaults to false
+  `public_key` | Public key of the app you wish to update
+  `device` | Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9
+  `scale` | Scale of the simulator
+  `orientation` | Device orientation
+  `language` | Device language in ISO 639-1 language code, e.g. 'de'
+  `color` | Color of the device
+  `launch_url` | Specify a deep link to open when your app is launched
 
 </details>
 
@@ -6501,561 +8079,18 @@ Key | Description
 
 
 
-### is_ci
+### clean_build_artifacts
 
-Is the current run being executed on a CI system, like Jenkins or Travis
-
-
-
-> The return value of this method is true if fastlane is currently executed on
-Travis, Jenkins, Circle or a similar CI service
-
-is_ci | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
+Deletes files created as result of running gym, cert, sigh or download_dsyms
 
 
 
-<details>
-<summary>1 Example</summary>
+> This action deletes the files that get created in your repo as a result of running the _gym_ and _sigh_ commands. It doesn't delete the `fastlane/report.xml` though, this is probably more suited for the .gitignore.
+Useful if you quickly want to send out a test build by dropping down to the command line and typing something like `fastlane beta`, without leaving your repo in a messy state afterwards.
 
-```ruby
-if is_ci?
-  puts "I'm a computer"
-else
-  say "Hi Human!"
-end
-```
-
-
-</details>
-
-
-
-
-
-
-### skip_docs
-
-Skip the creation of the fastlane/README.md file when running fastlane
-
-
-
-> Tell _fastlane_ to not automatically create a `fastlane/README.md` when running _fastlane_. You can always trigger the creation of this file manually by running `fastlane docs`
-
-skip_docs | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-skip_docs
-```
-
-
-</details>
-
-
-
-
-
-
-### setup_jenkins
-
-Setup xcodebuild, gym and scan for easier Jenkins integration
-
-
-
-> - Adds and unlocks keychains from Jenkins 'Keychains and Provisioning Profiles Plugin'
-- Sets code signing identity from Jenkins 'Keychains and Provisioning Profiles Plugin'
-- Sets output directory to './output' (gym, scan and backup_xcarchive).
-- Sets derived data path to './derivedData' (xcodebuild, gym, scan and clear_derived_data, carthage).
-- Produce result bundle (gym and scan).
-This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the `./output` directory.
-The action also works with [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin), selected keychain
-will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when fastlane is executed on a CI system.
-
-setup_jenkins | 
+clean_build_artifacts | 
 -----|----
 Supported platforms | ios, mac
-Author | @bartoszj
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-setup_jenkins
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by Jenkins
-  `unlock_keychain` | Unlocks keychain
-  `add_keychain_to_search_list` | Add to keychain search list
-  `set_default_keychain` | Set keychain as default
-  `keychain_path` | Path to keychain
-  `keychain_password` | Keychain password
-  `set_code_signing_identity` | Set code signing identity from CODE_SIGNING_IDENTITY environment
-  `code_signing_identity` | Code signing identity
-  `output_directory` | The directory in which the ipa file should be stored in
-  `derived_data_path` | The directory where build products and other derived data will go
-  `result_bundle` | Produce the result bundle describing what occurred will be placed
-
-</details>
-
-
-
-
-
-### badge
-
-Automatically add a badge to your app icon
-
-
-
-> This action will add a light/dark badge onto your app icon.
-You can also provide your custom badge/overlay or add an shield for more customization more info:
-https://github.com/HazAT/badge
-**Note** If you want to reset the badge back to default you can use `sh 'git checkout -- <path>/Assets.xcassets/'`
-
-badge | 
------|----
-Supported platforms | ios, android, mac
-Author | @DanielGri
-
-
-
-<details>
-<summary>4 Examples</summary>
-
-```ruby
-badge(dark: true)
-```
-
-```ruby
-badge(alpha: true)
-```
-
-```ruby
-badge(custom: "/Users/xxx/Desktop/badge.png")
-```
-
-```ruby
-badge(shield: "Version-0.0.3-blue", no_badge: true)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `dark` | Adds a dark flavored badge ontop of your icon
-  `custom` | Add your custom overlay/badge image
-  `no_badge` | Hides the beta badge
-  `shield` | Add a shield to your app icon from shield.io
-  `alpha` | Adds and alpha badge instead of the default beta one
-  `path` | Sets the root path to look for AppIcons
-  `shield_io_timeout` | Set custom duration for the timeout of the shield.io request in seconds
-  `glob` | Glob pattern for finding image files
-  `alpha_channel` | Keeps/adds an alpha channel to the icon (useful for android icons)
-  `shield_gravity` | Position of shield on icon. Default: North - Choices include: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast
-  `shield_no_resize` | Shield image will no longer be resized to aspect fill the full icon. Instead it will only be shrinked to not exceed the icon graphic
-
-</details>
-
-
-
-
-
-### bundle_install
-
-This action runs `bundle install` (if available)
-
-
-
-
-
-bundle_install | 
------|----
-Supported platforms | ios, android, mac
-Author | @birmacher, @koglinjg
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `binstubs` | Generate bin stubs for bundled gems to ./bin
-  `clean` | Run bundle clean automatically after install
-  `full_index` | Use the rubygems modern index instead of the API endpoint
-  `gemfile` | Use the specified gemfile instead of Gemfile
-  `jobs` | Install gems using parallel workers
-  `local` | Do not attempt to fetch gems remotely and use the gem cache instead
-  `deployment` | Install using defaults tuned for deployment and CI environments
-  `no_cache` | Don't update the existing gem cache
-  `no_prune` | Don't remove stale gems from the cache
-  `path` | Specify a different path than the system default ($BUNDLE_PATH or $GEM_HOME). Bundler will remember this value for future installs on this machine
-  `system` | Install to the system location ($BUNDLE_PATH or $GEM_HOME) even if the bundle was previously installed somewhere else for this application
-  `quiet` | Only output warnings and errors
-  `retry` | Retry network and git requests that have failed
-  `shebang` | Specify a different shebang executable name than the default (usually 'ruby')
-  `standalone` | Make a bundle that can work without the Bundler runtime
-  `trust_policy` | Sets level of security when dealing with signed gems. Accepts `LowSecurity`, `MediumSecurity` and `HighSecurity` as values
-  `without` | Exclude gems that are part of the specified named group
-  `with` | Include gems that are part of the specified named group
-
-</details>
-
-
-
-
-
-### say
-
-This action speaks out loud the given text
-
-
-
-
-
-say | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-say "I can speak"
-```
-
-
-</details>
-
-
-
-
-
-
-### prompt
-
-Ask the user for a value or for confirmation
-
-
-
-> You can use `prompt` to ask the user for a value or to just let the user confirm the next step
-When this is executed on a CI service, the passed `ci_input` value will be returned
-This action also supports multi-line inputs using the `multi_line_end_keyword` option.
-
-prompt | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-changelog = prompt(text: "Changelog: ")
-```
-
-```ruby
-changelog = prompt(
-  text: "Changelog: ",
-  multi_line_end_keyword: "END"
-)
-
-crashlytics(notes: changelog)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `text` | The text that will be displayed to the user
-  `ci_input` | The default text that will be used when being executed on a CI service
-  `boolean` | Is that a boolean question (yes/no)? This will add (y/n) at the end
-  `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input
-
-</details>
-
-
-
-
-
-### create_keychain
-
-Create a new Keychain
-
-
-
-
-
-create_keychain | 
------|----
-Supported platforms | ios, android, mac
-Author | @gin0606
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-create_keychain(
-  name: "KeychainName",
-  default_keychain: true,
-  unlock: true,
-  timeout: 3600,
-  lock_when_sleeps: true
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `name` | Keychain name
-  `path` | Path to Keychain
-  `password` | Password for the keychain
-  `default_keychain` | Set the default keychain
-  `unlock` | Unlock keychain after create
-  `timeout` | timeout interval in seconds. Set `false` if you want to specify "no time-out"
-  `lock_when_sleeps` | Lock keychain when the system sleeps
-  `lock_after_timeout` | Lock keychain after timeout interval
-  `add_to_search_list` | Add keychain to search list
-
-</details>
-
-
-
-
-
-### upload_symbols_to_crashlytics
-
-Upload dSYM symbolication files to Crashlytics
-
-
-
-> This action allows you to upload symbolication files to Crashlytics. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode. This action will not fail the build if one of the uploads failed. The reason for that is that sometimes some of dSYM files are invalid, and we don't want them to fail the complete build.
-
-upload_symbols_to_crashlytics | 
------|----
-Supported platforms | ios
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `dsym_path` | Path to the DSYM file or zip to upload
-  `api_token` | Crashlytics API Key
-  `binary_path` | The path to the upload-symbols file of the Fabric app
-  `platform` | The platform of the app (ios, tvos, mac)
-
-</details>
-
-
-
-
-
-### download
-
-Download a file from a remote server (e.g. JSON file)
-
-
-
-> Specify the URL to download and get the content as a return value
-For more advanced networking code, use the Ruby functions instead:
-http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html
-
-download | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-data = download(url: "https://host.com/api.json")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `url` | The URL that should be downloaded
-
-</details>
-
-
-
-
-
-### delete_keychain
-
-Delete keychains and remove them from the search list
-
-
-
-> Keychains can be deleted after being creating with `create_keychain`
-
-delete_keychain | 
------|----
-Supported platforms | ios, android, mac
-Author | @gin0606
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-delete_keychain(name: "KeychainName")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `name` | Keychain name
-
-</details>
-
-
-
-
-
-### latest_testflight_build_number
-
-Fetches most recent build number from TestFlight
-
-
-
-> Provides a way to have increment_build_number be based on the latest build you uploaded to iTC.
-Fetches most recent build number from TestFlight based on the version number. Provides a way to have `increment_build_number` be based on the latest build you uploaded to iTC.
-
-latest_testflight_build_number | 
------|----
-Supported platforms | ios
-Author | @daveanderson
-Returns | Integer representation of the latest build number uploaded to TestFlight
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-latest_testflight_build_number(version: "1.3")
-```
-
-```ruby
-increment_build_number({
-  build_number: latest_testflight_build_number + 1
-})
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `live` | Query the live version (ready-for-sale)
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `version` | The version number whose latest build number we want
-  `initial_build_number` | sets the build number to given value if no build is in current train
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
-
-</details>
-
-
-
-
-
-### copy_artifacts
-
-Small action to save your build artifacts. Useful when you use reset_git_repo
-
-
-
-> This action copies artifacs to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your `.ipa`s, `.dSYM.zip`s, `.mobileprovision`s, `.cert`s
-Make sure your target_path is gitignored, and if you use `reset_git_repo`, make sure the artifacts are added to the exclude list
-
-copy_artifacts | 
------|----
-Supported platforms | ios, android, mac
 Author | @lmirosevic
 
 
@@ -7064,15 +8099,7 @@ Author | @lmirosevic
 <summary>1 Example</summary>
 
 ```ruby
-copy_artifacts(
-  target_path: "artifacts",
-  artifacts: ["*.cer", "*.mobileprovision", "*.ipa", "*.dSYM.zip"]
-)
-
-# Reset the git repo to a clean state, but leave our artifacts in place
-reset_git_repo(
-  exclude: "artifacts"
-)
+clean_build_artifacts
 ```
 
 
@@ -7084,10 +8111,7 @@ reset_git_repo(
 
 Key | Description
 ----|------------
-  `keep_original` | Set this to true if you want copy, rather than move, semantics
-  `target_path` | The directory in which you want your artifacts placed
-  `artifacts` | An array of file patterns of the files/folders you want to preserve
-  `fail_on_missing` | Fail when a source file isn't found
+  `exclude_pattern` | Exclude all files from clearing that match the given Regex pattern: e.g. '.*.mobileprovision'
 
 </details>
 
@@ -7095,18 +8119,18 @@ Key | Description
 
 
 
-### backup_file
+### tryouts
 
-This action backs up your file to "[path].back"
-
-
+Upload a new build to Tryouts
 
 
 
-backup_file | 
+> More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release
+
+tryouts | 
 -----|----
-Supported platforms | ios, android, mac
-Author | @gin0606
+Supported platforms | ios, android
+Author | @alicertel
 
 
 
@@ -7114,80 +8138,10 @@ Author | @gin0606
 <summary>1 Example</summary>
 
 ```ruby
-backup_file(path: "/path/to/file")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | Path to the file you want to backup
-
-</details>
-
-
-
-
-
-### team_id
-
-Specify the Team ID you want to use for the Apple Developer Portal
-
-
-
-
-
-team_id | 
------|----
-Supported platforms | ios
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-team_id "Q2CBPK58CA"
-```
-
-
-</details>
-
-
-
-
-
-
-### backup_xcarchive
-
-Save your [zipped] xcarchive elsewhere from default path
-
-
-
-
-
-backup_xcarchive | 
------|----
-Supported platforms | ios, mac
-Author | @dral3x
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-backup_xcarchive(
-  xcarchive: "/path/to/file.xcarchive", # Optional if you use the `xcodebuild` action
-  destination: "/somewhere/else/file.xcarchive", # Where the backup should be created
-  zip: false, # Enable compression of the archive. Defaults to `true`.
-  versioned: true # Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
+tryouts(
+  api_token: "...",
+  app_id: "application-id",
+  build_file: "test.ipa",
 )
 ```
 
@@ -7200,49 +8154,13 @@ backup_xcarchive(
 
 Key | Description
 ----|------------
-  `xcarchive` | Path to your xcarchive file. Optional if you use the `xcodebuild` action
-  `destination` | Where your archive will be placed
-  `zip` | Enable compression of the archive. Default value `true`
-  `versioned` | Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
-
-</details>
-
-
-
-
-
-### restore_file
-
-This action restore your file that was backuped with the `backup_file` action
-
-
-
-
-
-restore_file | 
------|----
-Supported platforms | ios, android, mac
-Author | @gin0606
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-restore_file(path: "/path/to/file")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | Original file name you want to restore
+  `app_id` | Tryouts application hash
+  `api_token` | API Token for Tryouts Access
+  `build_file` | Path to your IPA or APK file. Optional if you use the _gym_ or _xcodebuild_ action
+  `notes` | Release notes
+  `notes_path` | Release notes text file path. Overrides the :notes paramether
+  `notify` | Notify testers? 0 for no
+  `status` | 2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update
 
 </details>
 
@@ -7307,41 +8225,69 @@ Key | Description
 
 
 
-### zip
+### delete_keychain
 
-Compress a file or folder to a zip
-
-
+Delete keychains and remove them from the search list
 
 
 
-zip | 
+> Keychains can be deleted after being creating with `create_keychain`
+
+delete_keychain | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @KrauseFx
-Returns | The path to the output zip file
+Author | @gin0606
 
 
 
 <details>
-<summary>3 Examples</summary>
+<summary>1 Example</summary>
 
 ```ruby
-zip
+delete_keychain(name: "KeychainName")
 ```
 
-```ruby
-zip(
-  path: "MyApp.app",
-  output_path: "Latest.app.zip"
-)
-```
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `name` | Keychain name
+
+</details>
+
+
+
+
+
+### cloc
+
+Generates a Code Count that can be read by Jenkins (xml format)
+
+
+
+> This action will run cloc to generate a SLOC report that the Jenkins SLOCCount plugin can read.
+See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.
+
+cloc | 
+-----|----
+Supported platforms | ios, mac
+Author | @intere
+
+
+
+<details>
+<summary>1 Example</summary>
 
 ```ruby
-zip(
-  path: "MyApp.app",
-  output_path: "Latest.app.zip",
-  verbose: false
+cloc(
+   exclude_dir: "ThirdParty,Resources",
+   output_directory: "reports",
+   source_directory: "MyCoolApp"
 )
 ```
 
@@ -7354,9 +8300,11 @@ zip(
 
 Key | Description
 ----|------------
-  `path` | Path to the directory or file to be zipped
-  `output_path` | The name of the resulting zip file
-  `verbose` | Enable verbose output of zipped file
+  `binary_path` | Where the cloc binary lives on your system (full path including 'cloc')
+  `exclude_dir` | Comma separated list of directories to exclude
+  `output_directory` | Where to put the generated report file
+  `source_directory` | Where to look for the source code (relative to the project root folder)
+  `xml` | Should we generate an XML File (if false, it will generate a plain text file)?
 
 </details>
 
@@ -7364,31 +8312,61 @@ Key | Description
 
 
 
-### team_name
+### pod_push
 
-Set a team to use by its name
-
-
+Push a Podspec to Trunk or a private repository
 
 
 
-team_name | 
+
+
+pod_push | 
 -----|----
-Supported platforms | ios
-Author | @KrauseFx
+Supported platforms | ios, mac
+Author | @squarefrog
 
 
 
 <details>
-<summary>1 Example</summary>
+<summary>4 Examples</summary>
 
 ```ruby
-team_name "Felix Krause"
+# If no path is supplied then Trunk will attempt to find the first Podspec in the current directory.
+pod_push
+```
+
+```ruby
+# Alternatively, supply the Podspec file path
+pod_push(path: "TSMessages.podspec")
+```
+
+```ruby
+# You may also push to a private repo instead of Trunk
+pod_push(path: "TSMessages.podspec", repo: "MyRepo")
+```
+
+```ruby
+# If the podspec has a dependency on another private pod, then you will have to supply the sources you want the podspec to lint with for pod_push to succeed. Read more here - https://github.com/CocoaPods/CocoaPods/issues/2543.
+pod_push(path: "TMessages.podspec", repo: "MyRepo", sources: ["https://github.com/MyGithubPage/Specs", "https://github.com/CocoaPods/Specs"])
 ```
 
 
 </details>
 
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `path` | The Podspec you want to push
+  `repo` | The repo you want to push. Pushes to Trunk by default
+  `allow_warnings` | Allow warnings during pod push
+  `use_libraries` | Allow lint to use static libraries to install the spec
+  `sources` | The sources of repos you want the pod spec to lint with, separated by commas
+  `verbose` | Show more debugging information
+
+</details>
 
 
 
@@ -7448,52 +8426,6 @@ Key | Description
 
 
 
-### version_bump_podspec
-
-Increment or set the version in a podspec file
-
-
-
-> You can use this action to manipulate any 'version' variable contained in a ruby file.
-For example, you can use it to bump the version of a cocoapods' podspec file.
-
-version_bump_podspec | 
------|----
-Supported platforms | ios, mac
-Author | @Liquidsoul, @KrauseFx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-version = version_bump_podspec(path: "TSMessages.podspec", bump_type: "patch")
-```
-
-```ruby
-version = version_bump_podspec(path: "TSMessages.podspec", version_number: "1.4")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | You must specify the path to the podspec file to update
-  `bump_type` | The type of this version bump. Available: patch, minor, major
-  `version_number` | Change to a specific version. This will replace the bump type value
-
-</details>
-
-
-
-
-
 ### dsym_zip
 
 Creates a zipped dSYM in the project root from the .xcarchive
@@ -7541,6 +8473,49 @@ Key | Description
 
 
 
+### clipboard
+
+Copies a given string into the clipboard. Works only on macOS
+
+
+
+
+
+clipboard | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+clipboard(value: "https://docs.fastlane.tools/")
+```
+
+```ruby
+clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `value` | The string that should be copied into the clipboard
+
+</details>
+
+
+
+
+
 ### debug
 
 Print out an overview of the lane context values
@@ -7571,18 +8546,18 @@ debug
 
 
 
-### make_changelog_from_jenkins
+### reset_simulator_contents
 
-Generate a changelog using the Changes section from the current Jenkins build
+Shutdown and reset running simulators
 
 
 
-> This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.
 
-make_changelog_from_jenkins | 
+
+reset_simulator_contents | 
 -----|----
-Supported platforms | ios, android, mac
-Author | @mandrizzle
+Supported platforms | ios
+Author | @danramteke
 
 
 
@@ -7590,10 +8565,7 @@ Author | @mandrizzle
 <summary>1 Example</summary>
 
 ```ruby
-make_changelog_from_jenkins(
-  # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins
-  fallback_changelog: "Bug fixes and performance enhancements"
-)
+reset_simulator_contents
 ```
 
 
@@ -7605,8 +8577,7 @@ make_changelog_from_jenkins(
 
 Key | Description
 ----|------------
-  `fallback_changelog` | Fallback changelog if there is not one on Jenkins, or it couldn't be read
-  `include_commit_body` | Include the commit body along with the summary
+  `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators
 
 </details>
 
@@ -7614,107 +8585,136 @@ Key | Description
 
 
 
-### ensure_no_debug_code
+### bundle_install
 
-Ensures the given text is nowhere in the code base
+This action runs `bundle install` (if available)
 
 
 
-> You don't want any debug code to slip into production. This can be used
-to check if there is any debug code still in your code base or if you have
-things like // TO DO or similar
 
-ensure_no_debug_code | 
+
+bundle_install | 
 -----|----
 Supported platforms | ios, android, mac
+Author | @birmacher, @koglinjg
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `binstubs` | Generate bin stubs for bundled gems to ./bin
+  `clean` | Run bundle clean automatically after install
+  `full_index` | Use the rubygems modern index instead of the API endpoint
+  `gemfile` | Use the specified gemfile instead of Gemfile
+  `jobs` | Install gems using parallel workers
+  `local` | Do not attempt to fetch gems remotely and use the gem cache instead
+  `deployment` | Install using defaults tuned for deployment and CI environments
+  `no_cache` | Don't update the existing gem cache
+  `no_prune` | Don't remove stale gems from the cache
+  `path` | Specify a different path than the system default ($BUNDLE_PATH or $GEM_HOME). Bundler will remember this value for future installs on this machine
+  `system` | Install to the system location ($BUNDLE_PATH or $GEM_HOME) even if the bundle was previously installed somewhere else for this application
+  `quiet` | Only output warnings and errors
+  `retry` | Retry network and git requests that have failed
+  `shebang` | Specify a different shebang executable name than the default (usually 'ruby')
+  `standalone` | Make a bundle that can work without the Bundler runtime
+  `trust_policy` | Sets level of security when dealing with signed gems. Accepts `LowSecurity`, `MediumSecurity` and `HighSecurity` as values
+  `without` | Exclude gems that are part of the specified named group
+  `with` | Include gems that are part of the specified named group
+
+</details>
+
+
+
+
+
+### setup_jenkins
+
+Setup xcodebuild, gym and scan for easier Jenkins integration
+
+
+
+> - Adds and unlocks keychains from Jenkins 'Keychains and Provisioning Profiles Plugin'
+- Sets code signing identity from Jenkins 'Keychains and Provisioning Profiles Plugin'
+- Sets output directory to './output' (gym, scan and backup_xcarchive).
+- Sets derived data path to './derivedData' (xcodebuild, gym, scan and clear_derived_data, carthage).
+- Produce result bundle (gym and scan).
+This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the `./output` directory.
+The action also works with [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin), selected keychain
+will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when fastlane is executed on a CI system.
+
+setup_jenkins | 
+-----|----
+Supported platforms | ios, mac
+Author | @bartoszj
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+setup_jenkins
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `force` | Force setup, even if not executed by Jenkins
+  `unlock_keychain` | Unlocks keychain
+  `add_keychain_to_search_list` | Add to keychain search list
+  `set_default_keychain` | Set keychain as default
+  `keychain_path` | Path to keychain
+  `keychain_password` | Keychain password
+  `set_code_signing_identity` | Set code signing identity from CODE_SIGNING_IDENTITY environment
+  `code_signing_identity` | Code signing identity
+  `output_directory` | The directory in which the ipa file should be stored in
+  `derived_data_path` | The directory where build products and other derived data will go
+  `result_bundle` | Produce the result bundle describing what occurred will be placed
+
+</details>
+
+
+
+
+
+### produce
+
+Creates the given application on iTC and the Dev Portal if necessary
+
+
+
+
+
+produce | 
+-----|----
+Supported platforms | ios
 Author | @KrauseFx
 
 
 
 <details>
-<summary>5 Examples</summary>
-
-```ruby
-ensure_no_debug_code(text: "// TODO")
-```
-
-```ruby
-ensure_no_debug_code(text: "Log.v",
-      extension: "java")
-```
-
-```ruby
-ensure_no_debug_code(text: "NSLog",
- path: "./lib",
-      extension: "m")
-```
-
-```ruby
-ensure_no_debug_code(text: "(^#define DEBUG|NSLog)",
- path: "./lib",
-      extension: "m")
-```
-
-```ruby
-ensure_no_debug_code(text: "<<<<<<",
-     extensions: ["m", "swift", "java"])
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `text` | The text that must not be in the code base
-  `path` | The directory containing all the source files
-  `extension` | The extension that should be searched for
-  `extensions` | An array of file extensions that should be searched for
-  `exclude` | Exclude a certain pattern from the search
-  `exclude_dirs` | An array of dirs that should not be included in the search
-
-</details>
-
-
-
-
-
-### set_github_release
-
-This will create a new release on GitHub and upload assets for it
-
-
-
-> Creates a new release on GitHub. You must provide your GitHub Personal token
-        (get one from https://github.com/settings/tokens/new), the repository name
-        and tag name. By default that's 'master'. If the tag doesn't exist, one will be created on the commit or branch passed-in as
-        commitish. Out parameters provide the release's id, which can be used for later editing and the
-        release html link to GitHub. You can also specify a list of assets to be uploaded to the release with the upload_assets parameter.
-
-set_github_release | 
------|----
-Supported platforms | ios, android, mac
-Author | @czechboy0
-Returns | A hash containing all relevant information of this release
-Access things like 'html_url', 'tag_name', 'name', 'body'
-
-
-
-<details>
 <summary>1 Example</summary>
 
 ```ruby
-github_release = set_github_release(
-  repository_name: "fastlane/fastlane",
-  api_token: ENV["GITHUB_TOKEN"],
-  name: "Super New actions",
-  tag_name: "v1.22.0",
-  description: (File.read("changelog") rescue "No changelog provided"),
-  commitish: "master",
-  upload_assets: ["example_integration.ipa", "./pkg/built.gem"]
+produce(
+  username: "felix@krausefx.com",
+  app_identifier: "com.krausefx.app",
+  app_name: "MyApp",
+  language: "English",
+  app_version: "1.0",
+  sku: "123",
+  team_name: "SunApps GmbH" # Only necessary when in multiple teams.
 )
 ```
 
@@ -7727,16 +8727,22 @@ github_release = set_github_release(
 
 Key | Description
 ----|------------
-  `repository_name` | The path to your repo, e.g. 'fastlane/fastlane'
-  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
-  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
-  `tag_name` | Pass in the tag name
-  `name` | Name of this release
-  `commitish` | Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually master)
-  `description` | Description of this release
-  `is_draft` | Whether the release should be marked as draft
-  `is_prerelease` | Whether the release should be marked as prerelease
-  `upload_assets` | Path to assets to be uploaded with the release
+  `username` | Your Apple ID Username
+  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app)
+  `bundle_identifier_suffix` | App Identifier Suffix (Ignored if App Identifier does not ends with .*)
+  `app_name` | App Name
+  `app_version` | Initial version number (e.g. '1.0')
+  `sku` | SKU Number (e.g. '1234')
+  `platform` | The platform to use (optional)
+  `language` | Primary Language (e.g. 'English', 'German')
+  `company_name` | The name of your company. Only required if it's the first app you create
+  `skip_itc` | Skip the creation of the app on iTunes Connect
+  `enabled_features` | Array with Spaceship App Features
+  `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams
+  `team_name` | The name of your Developer Portal team if you're in multiple teams
+  `itc_team_id` | The ID of your iTunes Connect team if you're in multiple teams
+  `itc_team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
 
@@ -7744,30 +8750,29 @@ Key | Description
 
 
 
-### install_xcode_plugin
+### rsync
 
-Install an Xcode plugin for the current user
-
-
+Rsync files from :source to :destination
 
 
 
-install_xcode_plugin | 
+> A wrapper around rsync, rsync is a tool that lets you synchronize files, including permissions and so on for a more detailed information about rsync please see rsync(1) manpage.
+
+rsync | 
 -----|----
-Supported platforms | ios, mac
-Author | @NeoNachoSoto
+Supported platforms | ios, android, mac
+Author | @hjanuschka
 
 
 
 <details>
-<summary>2 Examples</summary>
+<summary>1 Example</summary>
 
 ```ruby
-install_xcode_plugin(url: "https://example.com/clubmate/plugin.zip")
-```
-
-```ruby
-install_xcode_plugin(github: "https://github.com/contentful/ContentfulXcodePlugin")
+rsync(
+  source: "root@host:/tmp/1.txt",
+  destination: "/tmp/local_file.txt"
+)
 ```
 
 
@@ -7779,8 +8784,9 @@ install_xcode_plugin(github: "https://github.com/contentful/ContentfulXcodePlugi
 
 Key | Description
 ----|------------
-  `url` | URL for Xcode plugin ZIP file
-  `github` | GitHub repository URL for Xcode plugin
+  `extra` | Port
+  `source` | source file/folder
+  `destination` | destination file/folder
 
 </details>
 
@@ -7849,544 +8855,49 @@ Key | Description
 
 
 
-### rocket
+### team_name
 
-Outputs ascii-art for a rocket 🚀
+Set a team to use by its name
 
 
 
-> Print an ascii Rocket :rocket:. Useful after using _crashlytics_ or _pilot_ to indicate that your new build has been shipped to outer-space.
 
-rocket | 
------|----
-Supported platforms | ios, android, mac
-Author | @JaviSoto, @radex
 
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-rocket
-```
-
-
-</details>
-
-
-
-
-
-
-### cloc
-
-Generates a Code Count that can be read by Jenkins (xml format)
-
-
-
-> This action will run cloc to generate a SLOC report that the Jenkins SLOCCount plugin can read.
-See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.
-
-cloc | 
------|----
-Supported platforms | ios, mac
-Author | @intere
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-cloc(
-   exclude_dir: "ThirdParty,Resources",
-   output_directory: "reports",
-   source_directory: "MyCoolApp"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `binary_path` | Where the cloc binary lives on your system (full path including 'cloc')
-  `exclude_dir` | Comma separated list of directories to exclude
-  `output_directory` | Where to put the generated report file
-  `source_directory` | Where to look for the source code (relative to the project root folder)
-  `xml` | Should we generate an XML File (if false, it will generate a plain text file)?
-
-</details>
-
-
-
-
-
-### verify_build
-
-Able to verify various settings in ipa file
-
-
-
-> Verifies that the built app was built using the expected build resources. This is relevant for people who build on machines that are used to build apps with different profiles, certificates and/or bundle identifiers to guard against configuration mistakes.
-
-verify_build | 
------|----
-Supported platforms | ios
-Author | @CodeReaper
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-verify_build(
-  provisioning_type: "distribution",
-  bundle_identifier: "com.example.myapp"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `provisioning_type` | Required type of provisioning
-  `provisioning_uuid` | Required UUID of provisioning profile
-  `team_identifier` | Required team identifier
-  `team_name` | Required team name
-  `app_name` | Required app name
-  `bundle_identifier` | Required bundle identifier
-  `ipa_path` | Explicitly set the ipa path
-
-</details>
-
-
-
-
-
-### pod_push
-
-Push a Podspec to Trunk or a private repository
-
-
-
-
-
-pod_push | 
------|----
-Supported platforms | ios, mac
-Author | @squarefrog
-
-
-
-<details>
-<summary>4 Examples</summary>
-
-```ruby
-# If no path is supplied then Trunk will attempt to find the first Podspec in the current directory.
-pod_push
-```
-
-```ruby
-# Alternatively, supply the Podspec file path
-pod_push(path: "TSMessages.podspec")
-```
-
-```ruby
-# You may also push to a private repo instead of Trunk
-pod_push(path: "TSMessages.podspec", repo: "MyRepo")
-```
-
-```ruby
-# If the podspec has a dependency on another private pod, then you will have to supply the sources you want the podspec to lint with for pod_push to succeed. Read more here - https://github.com/CocoaPods/CocoaPods/issues/2543.
-pod_push(path: "TMessages.podspec", repo: "MyRepo", sources: ["https://github.com/MyGithubPage/Specs", "https://github.com/CocoaPods/Specs"])
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | The Podspec you want to push
-  `repo` | The repo you want to push. Pushes to Trunk by default
-  `allow_warnings` | Allow warnings during pod push
-  `use_libraries` | Allow lint to use static libraries to install the spec
-  `sources` | The sources of repos you want the pod spec to lint with, separated by commas
-  `verbose` | Show more debugging information
-
-</details>
-
-
-
-
-
-### scp
-
-Transfer files via SCP
-
-
-
-
-
-scp | 
------|----
-Supported platforms | ios, android, mac
-Author | @hjanuschka
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-scp(
-  host: "dev.januschka.com",
-  username: "root",
-  upload: {
-    src: "/root/dir1",
-    dst: "/tmp/new_dir"
-  }
-)
-```
-
-```ruby
-scp(
-  host: "dev.januschka.com",
-  username: "root",
-  download: {
-    src: "/root/dir1",
-    dst: "/tmp/new_dir"
-  }
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `username` | Username
-  `password` | Password
-  `host` | Hostname
-  `port` | Port
-  `upload` | Upload
-  `download` | Download
-
-</details>
-
-
-
-
-
-### artifactory
-
-This action uploads an artifact to artifactory
-
-
-
-
-
-artifactory | 
------|----
-Supported platforms | ios, android, mac
-Author | @koglinjg
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-artifactory(
-  username: "username",
-  password: "password",
-  endpoint: "https://artifactory.example.com/artifactory/",
-  file: "example.ipa",  # File to upload
-  repo: "mobile_artifacts",       # Artifactory repo
-  repo_path: "/ios/appname/example-major.minor.ipa"   # Path to place the artifact including its filename
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `file` | File to be uploaded to artifactory
-  `repo` | Artifactory repo to put the file in
-  `repo_path` | Path to deploy within the repo, including filename
-  `endpoint` | Artifactory endpoint
-  `username` | Artifactory username
-  `password` | Artifactory password
-  `properties` | Artifact properties hash
-  `ssl_pem_file` | Location of pem file to use for ssl verification
-  `ssl_verify` | Verify SSL
-  `proxy_username` | Proxy username
-  `proxy_password` | Proxy password
-  `proxy_address` | Proxy address
-  `proxy_port` | Proxy port
-
-</details>
-
-
-
-
-
-### install_on_device
-
-Installs an .ipa file on a connected iOS-device via usb or wifi
-
-
-
-> Installs the ipa on the device, if no id is given, the first found iOS device will be used, works via USB or Wi-Fi. This requires `ios-deploy` to be installed please have a look at [ios-deploy](https://github.com/phonegap/ios-deploy). to quickly install it, use `npm -g i ios-deploy`
-
-install_on_device | 
------|----
-Supported platforms | ios
-Author | @hjanuschka
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-install_on_device(
-  device_id: "a3be6c9ff7e5c3c6028597513243b0f933b876d4",
-  ipa: "./app.ipa"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `extra` | Extra Commandline arguments passed to ios-deploy
-  `device_id` | id of the device / if not set defaults to first found device
-  `skip_wifi` | Do not search for devices via WiFi
-  `ipa` | The IPA file to put on the device
-
-</details>
-
-
-
-
-
-### version_get_podspec
-
-Receive the version number from a podspec file
-
-
-
-
-
-version_get_podspec | 
------|----
-Supported platforms | ios, mac
-Author | @Liquidsoul, @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-version = version_get_podspec(path: "TSMessages.podspec")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | You must specify the path to the podspec file
-
-</details>
-
-
-
-
-
-### erb
-
-Allows to Generate output files based on ERB templates
-
-
-
-> Renders an ERB template with `placeholders` given as a hash via parameter,
-if no :destination is set, returns rendered template as string
-
-erb | 
------|----
-Supported platforms | ios, android, mac
-Author | @hjanuschka
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-# Example `erb` template:
-
-# Variable1 <%= var1 %>
-# Variable2 <%= var2 %>
-# <% for item in var3 %>
-#        <%= item %>
-# <% end %>
-
-erb(
-  template: "1.erb",
-  destination: "/tmp/rendered.out",
-  placeholders: {
-    :var1 => 123,
-    :var2 => "string",
-    :var3 => ["element1", "element2"]
-  }
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `template` | ERB Template File
-  `destination` | Destination file
-  `placeholders` | Placeholders given as a hash
-
-</details>
-
-
-
-
-
-### build_and_upload_to_appetize
-
-Generate and upload an ipa file to appetize.io
-
-
-
-> This should be called from danger
-More information in the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
-
-build_and_upload_to_appetize | 
+team_name | 
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
 
 
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `xcodebuild` | Parameters that are passed to the xcodebuild action
-  `scheme` | The scheme to build. Can also be passed using the `xcodebuild` parameter
-  `api_token` | Appetize.io API Token
-
-</details>
-
-
-
-
-
-### adb_devices
-
-Get an Array of Connected android device serials
-
-
-
-> Fetches device list via adb, e.g. run an adb command on all connected devices.
-
-adb_devices | 
------|----
-Supported platforms | android
-Author | @hjanuschka
-Returns | Returns an array of all currently connected android devices
-
-
 
 <details>
 <summary>1 Example</summary>
 
 ```ruby
-adb_devices.each do |device|
-  model = adb(command: "shell getprop ro.product.model",
-    serial: device.serial).strip
-
-  puts "Model #{model} is connected"
-end
+team_name "Felix Krause"
 ```
 
 
 </details>
 
 
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `adb_path` | The path to your `adb` binary
-
-</details>
 
 
 
 
+### copy_artifacts
 
-### rsync
-
-Rsync files from :source to :destination
-
+Small action to save your build artifacts. Useful when you use reset_git_repo
 
 
-> A wrapper around rsync, rsync is a tool that lets you synchronize files, including permissions and so on for a more detailed information about rsync please see rsync(1) manpage.
 
-rsync | 
+> This action copies artifacs to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your `.ipa`s, `.dSYM.zip`s, `.mobileprovision`s, `.cert`s
+Make sure your target_path is gitignored, and if you use `reset_git_repo`, make sure the artifacts are added to the exclude list
+
+copy_artifacts | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @hjanuschka
+Author | @lmirosevic
 
 
 
@@ -8394,9 +8905,14 @@ Author | @hjanuschka
 <summary>1 Example</summary>
 
 ```ruby
-rsync(
-  source: "root@host:/tmp/1.txt",
-  destination: "/tmp/local_file.txt"
+copy_artifacts(
+  target_path: "artifacts",
+  artifacts: ["*.cer", "*.mobileprovision", "*.ipa", "*.dSYM.zip"]
+)
+
+# Reset the git repo to a clean state, but leave our artifacts in place
+reset_git_repo(
+  exclude: "artifacts"
 )
 ```
 
@@ -8409,589 +8925,12 @@ rsync(
 
 Key | Description
 ----|------------
-  `extra` | Port
-  `source` | source file/folder
-  `destination` | destination file/folder
+  `keep_original` | Set this to true if you want copy, rather than move, semantics
+  `target_path` | The directory in which you want your artifacts placed
+  `artifacts` | An array of file patterns of the files/folders you want to preserve
+  `fail_on_missing` | Fail when a source file isn't found
 
 </details>
-
-
-
-
-
-### appetize_viewing_url_generator
-
-Generate an URL for appetize simulator
-
-
-
-> Check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md) for more information
-
-appetize_viewing_url_generator | 
------|----
-Supported platforms | ios
-Author | @KrauseFx
-Returns | The URL to preview the iPhone app
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `public_key` | Public key of the app you wish to update
-  `device` | Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9
-  `scale` | Scale of the simulator
-  `orientation` | Device orientation
-  `language` | Device language in ISO 639-1 language code, e.g. 'de'
-  `color` | Color of the device
-  `launch_url` | Specify a deep link to open when your app is launched
-
-</details>
-
-
-
-
-
-### reset_simulator_contents
-
-Shutdown and reset running simulators
-
-
-
-
-
-reset_simulator_contents | 
------|----
-Supported platforms | ios
-Author | @danramteke
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-reset_simulator_contents
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators
-
-</details>
-
-
-
-
-
-### clipboard
-
-Copies a given string into the clipboard. Works only on macOS
-
-
-
-
-
-clipboard | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-clipboard(value: "https://docs.fastlane.tools/")
-```
-
-```ruby
-clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `value` | The string that should be copied into the clipboard
-
-</details>
-
-
-
-
-
-### jira
-
-Leave a comment on JIRA tickets
-
-
-
-
-
-jira | 
------|----
-Supported platforms | ios, android, mac
-Author | @iAmChrisTruman
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-jira(
-  url: "https://bugs.yourdomain.com",
-  username: "Your username",
-  password: "Your password",
-  ticket_id: "Ticket ID, i.e. IOS-123",
-  comment_text: "Text to post as a comment"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `url` | URL for Jira instance
-  `username` | Username for JIRA instance
-  `password` | Password for Jira
-  `ticket_id` | Ticket ID for Jira, i.e. IOS-123
-  `comment_text` | Text to add to the ticket as a comment
-
-</details>
-
-
-
-
-
-### ssh
-
-Allows remote command execution using ssh
-
-
-
-> Lets you execute remote commands via ssh using username/password or ssh-agent. If one of the commands in command-array returns non 0 - it fails.
-
-ssh | 
------|----
-Supported platforms | ios, android, mac
-Author | @hjanuschka
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ssh(
-  host: "dev.januschka.com",
-  username: "root",
-  commands: [
-    "date",
-    "echo 1 > /tmp/file1"
-  ]
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `username` | Username
-  `password` | Password
-  `host` | Hostname
-  `port` | Port
-  `commands` | Commands
-  `log` | Log commands and output
-
-</details>
-
-
-
-
-
-### update_icloud_container_identifiers
-
-This action changes the iCloud container identifiers in the entitlements file
-
-
-
-> Updates the iCloud Container Identifiers in the given Entitlements file, so you can use different iCloud containers for different builds like Adhoc, App Store, etc.
-
-update_icloud_container_identifiers | 
------|----
-Supported platforms | ios
-Author | @JamesKuang
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-update_icloud_container_identifiers(
-  entitlements_file: "/path/to/entitlements_file.entitlements",
-  icloud_container_identifiers: ["iCloud.com.companyname.appname"]
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `entitlements_file` | The path to the entitlement file which contains the iCloud container identifiers
-  `icloud_container_identifiers` | An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp']
-
-</details>
-
-
-
-
-
-### read_podspec
-
-Loads a CocoaPods spec as JSON
-
-
-
-> This can be used for only specifying a version string in your podspec
-- and during your release process you'd read it from the podspec by running
-`version = read_podspec['version']` at the beginning of your lane
-Loads the specified (or the first found) podspec in the folder as JSON, so that you can inspect its `version`, `files` etc. 
-This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of 
-the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).
-
-read_podspec | 
------|----
-Supported platforms | ios, mac
-Author | @czechboy0
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-spec = read_podspec
-version = spec["version"]
-puts "Using Version #{version}"
-```
-
-```ruby
-spec = read_podspec(path: "./XcodeServerSDK.podspec")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `path` | Path to the podspec to be read
-
-</details>
-
-
-
-
-
-### dotgpg_environment
-
-Reads in production secrets set in a dotgpg file and puts them in ENV
-
-
-
-> More information about dotgpg can be found at https://github.com/ConradIrwin/dotgpg
-
-dotgpg_environment | 
------|----
-Supported platforms | ios, android, mac
-Author | @simonlevy5
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-dotgpg_environment(dotgpg_file: './path/to/gpgfile')
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `dotgpg_file` | Path to your gpg file
-
-</details>
-
-
-
-
-
-### app_store_build_number
-
-Returns the current build_number of either live or edit version
-
-
-
-> Returns the current build number of either the live or testflight version - it is useful for getting the build_number of the current or ready-for-sale app version, and it also works on non-live testflight version. If you need to handle more build-trains please see `latest_testflight_build_number`
-
-app_store_build_number | 
------|----
-Supported platforms | ios, mac
-Author | @hjanuschka
-
-
-
-<details>
-<summary>3 Examples</summary>
-
-```ruby
-app_store_build_number
-```
-
-```ruby
-app_store_build_number(
-  app_identifier: "app.identifier",
-  username: "user@host.com"
-)
-```
-
-```ruby
-app_store_build_number(
-  live: false,
-  app_identifier: "app.identifier",
-  version: "1.2.9"
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `initial_build_number` | sets the build number to given value if no build is in current train
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `live` | Query the live version (ready-for-sale)
-  `version` | The version number whose latest build number we want
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
-
-</details>
-
-
-
-
-
-### tryouts
-
-Upload a new build to Tryouts
-
-
-
-> More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release
-
-tryouts | 
------|----
-Supported platforms | ios, android
-Author | @alicertel
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-tryouts(
-  api_token: "...",
-  app_id: "application-id",
-  build_file: "test.ipa",
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `app_id` | Tryouts application hash
-  `api_token` | API Token for Tryouts Access
-  `build_file` | Path to your IPA or APK file. Optional if you use the _gym_ or _xcodebuild_ action
-  `notes` | Release notes
-  `notes_path` | Release notes text file path. Overrides the :notes paramether
-  `notify` | Notify testers? 0 for no
-  `status` | 2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update
-
-</details>
-
-
-
-
-
-### sh
-
-Runs a shell command
-
-
-
-> Allows running an arbitrary shell command.
-Be aware of a specific behavior of 'sh' action with regard to the working directory. For details refer to Advanced.md
-
-sh | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-Returns | Outputs the string and executes it. When running in tests, it returns the actual command instead of executing it
-
-
-
-<details>
-<summary>2 Examples</summary>
-
-```ruby
-sh("ls")
-```
-
-```ruby
-sh("git commit -m 'My message'")
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `command` | Shell command to be executed
-  `log` | Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true
-  `error_callback` | A callback invoked with the command ouptut if there is a non-zero exit status
-
-</details>
-
-
-
-
-
-### add_extra_platforms
-
-Modify the default list of supported platforms
-
-
-
-
-
-add_extra_platforms | 
------|----
-Supported platforms | ios, android, mac
-Author | @lacostej
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-add_extra_platforms(
-  platforms: [:windows,:neogeo]
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `platforms` | The optional extra platforms to support
-
-</details>
-
-
-
-
-
-### opt_out_usage
-
-This will stop uploading the information which actions were run
-
-
-
-> By default, fastlane will track what actions are being used No personal information is shared. More information available on https://github.com/fastlane/enhancer Add `opt_out_usage` at the top of your Fastfile
-
-opt_out_usage | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_usage # add this to the top of your Fastfile
-```
-
-
-</details>
-
 
 
 
@@ -9002,189 +8941,3 @@ opt_out_usage # add this to the top of your Fastfile
 # Plugins
 | Action | Plugin | Description | Usage Number
 ---------|--------|-------------|--------------
-download_file | [download_file](https://github.com/maxoly/fastlane-plugin-download_file) | This action downloads a file from an HTTP/HTTPS url (e.g. ZIP file) and puts it in a destination path | 29168
-update_provisioning_profile_specifier | [update_provisioning_profile_specifier](https://github.com/faithfracture/update_provisioning_profile_specifier) | Update the provisioning profile in the Xcode Project file for a specified target | 28582
-update_project_codesigning | [update_project_codesigning](https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning) | Updates the Xcode 8 Automatic Codesigning Flag | 27878
-synx | [synx](https://github.com/afonsograca/fastlane-plugin-synx) | Organise your Xcode project folder to match your Xcode groups. | 13731
-increment_build_number_in_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 13699
-trainer | [trainer](https://github.com/KrauseFx/trainer) | Convert xcodebuild plist files to JUnit reports | 13648
-github_job_status | [github_job_status](https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status) | Post the status of your test jobs to your pull requests | 8984
-act | [act](https://github.com/richardszalay/fastlane-plugin-act) | Applies changes to plists and app icons inside a compiled IPA | 8924
-ascii_art | [ascii_art](https://github.com/neonichu/fastlane-ascii-art) | Add some fun to your fastlane output. | 8579
-get_version_number_from_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 7887
-increment_version_number_in_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 6476
-read_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 5547
-pixie | `pixie` | Show your build status on PIXIE! | 5167
-get_build_number_from_plist | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 5054
-appicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 4491
-ftp | [ftp](https://github.com/PoissonBallon/fastlane-ftp-plugin) | Simple ftp upload and download for Fastlane | 4432
-get_version_name | [get_version_name](https://github.com/Jems22/fastlane-plugin-get-version-name) | Get the version name of an Android project. | 3871
-get_info_plist_path | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 3846
-rocket_chat | [rocket_chat](https://github.com/thiagofelix/fastlane-plugin-rocket_chat) | Send message to Rocket.Chat right from fastlane | 3475
-increment_version_code | [increment_version_code](https://github.com/Jems22/fastlane-plugin-increment_version_code) | Increment the version code of your android project. | 3345
-carthage_cache_install | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 2759
-automated_test_emulator_run | [automated_test_emulator_run](https://github.com/AzimoLabs/fastlane-plugin-automated-test-emulator-run) | Starts n AVDs based on JSON file config. AVDs are created and configured according to user liking before instrumentation test process (started either via shell command or gradle) and killed/deleted after test process finishes. | 2658
-setup_fragile_tests_for_rescan | [setup_fragile_tests_for_rescan](https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-setup_fragile_tests_for_rescan) | Suppress stabile tests so that 'scan' can run the fragile tests again | 2599
-carthage_cache_exist | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 2476
-add_prefix_schema | `polidea` | Polidea's fastlane action | 2155
-poeditor_export | [poeditor_export](https://github.com/Supmenow/fastlane-plugin-poeditor_export) | Exports translations from POEditor.com | 2127
-onesky_download | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 2037
-stamp_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 2009
-xamarin_build | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 1738
-get_version_code | [get_version_code](https://github.com/Jems22/fastlane-plugin-get_version_code) | Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file | 1690
-polidea_store | `polidea` | Polidea's fastlane action | 1674
-release_notes | `polidea` | Polidea's fastlane action | 1582
-code_static_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 1446
-remove_provisioning_profile | [remove_provisioning_profile](https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile) | Remove provision profile from your local machine | 1427
-extract_app_icon | `polidea` | Polidea's fastlane action | 1404
-get_binary_size | `polidea` | Polidea's fastlane action | 1385
-pretty_junit | [pretty_junit](https://github.com/leandog/fastlane-plugin-pretty_junit) | Pretty JUnit test results for your Android projects. | 1365
-check_build_cache_workspace | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 1304
-extract_app_name | `polidea` | Polidea's fastlane action | 1289
-extract_version | `polidea` | Polidea's fastlane action | 1279
-aws_s3 | [aws_s3](https://github.com/joshdholtz/fastlane-plugin-s3) | Upload IPA and APK to S3 | 1112
-xcpretty_report | [xcpretty_report](https://github.com/fsaragoca/fastlane-plugin-xcpretty_report) | Generate xcodebuild reports using xcpretty | 1109
-latest_hockeyapp_version_number | [latest_hockeyapp_version_number](https://github.com/tpalmer/fastlane-plugin-latest_hockeyapp_version_number) | Easily fetch the most recent HockeyApp version number for your app | 1054
-update_xcodeproj | [update_xcodeproj](https://github.com/nafu/fastlane-plugin-update_xcodeproj) | Update Xcode projects | 1050
-upload_symbols_to_new_relic | `upload_symbols_to_new_relic` | Uploads dSym to New Relic | 1024
-shuttle | `polidea` | Polidea's fastlane action | 1001
-applivery | [applivery](https://github.com/applivery/fastlane-applivery-plugin) | Upload new build to Applivery | 998
-extract_app_info | `polidea` | Polidea's fastlane action | 985
-droidicon | [droidicon](https://github.com/chrhsmt/fastlane-plugin-droidicon) | Generate required icon sizes and iconset from a master application icon | 985
-cordova | [cordova](https://github.com/almouro/fastlane-plugin-cordova) | Build your Cordova app | 976
-humanable_build_number | [humanable_build_number](https://github.com/icyleaf/fastlane-plugin-humanable_build_number) | Automatic generate app build number unque and human readable friendly, like yymmHHMM. both support iOS and Android. | 959
-unzip | [unzip](https://github.com/maxoly/fastlane-plugin-unzip) | Extract compressed files in a ZIP | 952
-google_cloud_storage_check_file | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 925
-upload_folder_to_s3 | [upload_folder_to_s3](https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3) | Upload a folder to S3 | 908
-upload_to_onesky | [upload_to_onesky](https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky) | Upload a strings file to OneSky | 850
-fetch_itc_versions | [fetch_itc_versions](https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions) | Returns a listing of all app versions and their latest builds from iTunes Connect. | 845
-ci_changelog | [ci_changelog](https://github.com/icyleaf/fastlane-plugin-ci_changelog) | Automate generate changelog between previous build failed and the latest commit of scm in CI | 799
-unarchive_derived_data | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 778
-xcake | [xcake](https://github.com/jcampbell05/xcake/) | Create your Xcode projects automatically using a stupid simple DSL. | 773
-branding | [branding](https://github.com/snatchev/fastlane-branding-plugin) | Add some branding to your fastlane output | 767
-clubmate | [clubmate](https://github.com/KrauseFx/fastlane-plugin-clubmate) | Print the Club Mate logo in your build output | 761
-upload_to_qmobile | [upload_to_qmobile](https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile) | Upload a mobile app to qmobile | 752
-onesky_download_itunes | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 752
-xamarin_update_configuration | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 746
-jira_transition | [jira_transition](https://github.com/valeriomazzeo/fastlane-plugin-jira_transition) | Apply a JIRA transition to issues mentioned in the changelog | 745
-cryptex | [cryptex](https://github.com/hjanuschka/fastlane-plugin-cryptex) | fastlane Crypt Store Git repo | 743
-yarn | [yarn](https://github.com/joshrlesch/fastlane-plugin-yarn) | Execute Yarn commands from your Fastfile | 743
-commit_android_version_bump | [commit_android_version_bump](https://github.com/Jems22/fastlane-plugin-commit_android_version_bump) | This Android plugins allow you to commit every modification done in your build.gradle file during the execution of a lane. In fast, it do the same as the commit_version_bump action, but for Android | 736
-profile_expiration_info | [profile_expiration_info](https://github.com/schung7/fastlane-plugin-profile_expiration_info) | Returns if the provisioning profile has expired and the DateTime it expires | 713
-giffy_random_gif_url | [giffy](https://github.com/SiarheiFedartsou/fastlane-plugin-giffy) | Fastlane plugin for Giffy.com API | 676
-delete_files | [delete_files](https://github.com/leandog/fastlane-plugin-delete_files) | Deletes a file, folder or multiple files using shell glob pattern. | 673
-extract_certificate | [xamarin_build](https://github.com/punksta/fastlane-plugin-xamarin_build) | Build xamarin android\ios projects | 670
-sentry_upload_dsym | [sentry](https://github.com/getsentry/sentry-fastlane) | Upload symbols to Sentry | 638
-get_unprovisioned_devices_from_hockey | [get_unprovisioned_devices_from_hockey](https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey) | Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices. | 593
-wait_xcrun | [wait_xcrun](https://github.com/mgrebenets/fastlane-plugin-wait_xcrun) | Wait for Xcode toolchain to come back online after switching Xcode versions. | 565
-tpa | [tpa](https://github.com/mbogh/fastlane-plugin-tpa) | TPA gives you advanced user behaviour analytics, app distribution, crash analytics and more | 561
-android_appicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 558
-firim | [firim](https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim) | firim | 530
-instrumented_tests | [instrumented_tests](https://github.com/joshrlesch/fastlane-plugin-instrumented_tests) | New action to run instrumented tests for android. This plugin creates and boots an emulator before running a gradle command so that you can run instrumented tests against that emulator. After the gradle command is executed, the avd gets shut down and deleted. This is really helpful on CI services, keeping them clean and always having a fresh avd for testing. | 528
-ensure_xcode_build_version | [ensure_xcode_build_version](https://github.com/nafu/fastlane-plugin-ensure_xcode_build_version) | Ensure Xcode Build Version for working with Beta, GM and Release | 496
-google_cloud_storage_download | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 467
-app_info | `app_info` | Teardown tool for mobile app(ipa/apk), analysis metedata like version, name, icon etc. | 460
-deploy_file_provider | `deploy_file_provider` | Prepares metadata files with structure ready for AppStore, PlayStore deploy | 449
-import_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 449
-get_android_version | [get_android_version](https://github.com/MaximusMcCann/fastlane-plugin-get_android_version) | gets the android versionName and versionCode from the `AndroidManifest.xml` file located in the provided apk | 446
-goodify_info_plist | [goodify_info_plist](https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist) | This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management. | 394
-latest_hockey_build_number | [latest_hockey_build_number](https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number) | Gets latest version number of the app with the bundle id from HockeyApp | 381
-google_cloud_storage_upload | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 358
-update_settings_bundle | [settings_bundle](https://github.com/jdee/settings-bundle) | Fastlane plugin to update static settings in an iOS settings bundle | 350
-install_profiles | [provisioning](https://github.com/paweljankowski/fastlane-plugin-provisioning) | Helps provision your app in the CI environment | 349
-archive_derived_data | [build_cache](https://github.com/fsaragoca/fastlane-plugin-build_cache) | Helper for caching builds when using 'build for testing' &amp; 'test without building' | 339
-onesky_upload | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 335
-aws_sns | [aws_sns](https://github.com/joshdholtz/fastlane-plugin-aws_sns) | Creates AWS SNS platform applications | 334
-aws_device_farm | [aws_device_farm](https://github.com/hjanuschka/fastlane-plugin-aws_device_farm) | Run UI Tests on AWS Devicefarm | 330
-get_app_store_version_number | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 327
-clang_analyzer | [clang_analyzer](https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer) | Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report | 308
-git_tags | [git_tags](https://github.com/fsaragoca/fastlane-plugin-git_tags) | List git tags sorted by taggerdate | 304
-export_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 292
-coreos_deploy | [coreos](https://github.com/icuisine-pos/fastlane-plugin-coreos) | Deploy docker services to CoreOS hosts | 292
-tunes | [tunes](https://github.com/neonichu/fastlane-tunes) | Play music using fastlane, because you can. | 258
-carthage_cache_publish | [carthage_cache](https://github.com/thii/fastlane-plugin-carthage_cache) | A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3. | 256
-update_build_settings_key | [update_build_settings_key](https://github.com/ungacy/update_build_settings_key) | Updated code signing settings from 'Automatic' to a specific profile | 234
-apply_xcode8_srgb_workaround | [xcode8_srgb_workaround](https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround) | Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target | 212
-emojify_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 210
-gs_increment_rc_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 197
-aws_device_farm_package | [aws_device_farm](https://github.com/hjanuschka/fastlane-plugin-aws_device_farm) | Run UI Tests on AWS Devicefarm | 192
-rubocop | [ruby](https://github.com/KrauseFx/fastlane-plugin-ruby) | Useful fastlane actions for Ruby projects | 186
-version_from_last_tag | `version_from_last_tag` | Perform a regex on last (latest) git tag and perform a regex to extract a version number such as Release 1.2.3 | 182
-s3_upload | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 181
-generate_changelog | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 181
-create_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 174
-gs_increment_beta_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 172
-android_change_app_name | `android_change_app_name` | Changes the manifest's label attribute (appName).  Stores the original name for revertinng. | 139
-cpd_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 138
-update_changelog | [changelog](https://github.com/pajapro/fastlane-plugin-changelog) | Automate changes to your project CHANGELOG.md | 135
-prepare_build_resources | [prepare_build_resources](https://github.com/trifork/fastlane-plugin-prepare_build_resources) | Prepares certificates and provisioning profiles for building and removes them afterwards. | 135
-release_jira_version | [jira_versions](https://github.com/SandyChapman/fastlane-plugin-jira_versions) | Manage your JIRA project's releases/versions with this plugin. | 132
-intentconfirmation | `intentconfirmation` | Halts the lane invocation, asks user to confirm if he wants to continue, may require password or key. | 131
-sharethemeal | [sharethemeal](https://github.com/hjanuschka/fastlane-plugin-sharethemeal) | ShareTheMeal | 125
-pgyer | [pgyer](https://github.com/shishirui/fastlane-plugin-pgyer) | distribute app to pgyer beta testing service | 121
-trim_localizations | [localization](https://github.com/vmalyi/fastlane-plugin-localization) | Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool | 114
-certificate_expirydate | [certificate_expirydate](https://github.com/lyndsey-ferguson/fastlane_plugins/) | Retrieves the expiry date of the given p12 certificate file | 110
-xliff_en_gen | [xliff_en_gen](https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen) | gen Localizable.strings file from xliff | 106
-fetch_github_labels | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 105
-rspec | [ruby](https://github.com/KrauseFx/fastlane-plugin-ruby) | Useful fastlane actions for Ruby projects | 97
-facelift | [facelift](https://github.com/richardszalay/fastlane-plugin-facelift) | Deprecated in favor of 'fastlane-plugin-act' | 96
-instabug | [instabug](https://github.com/SiarheiFedartsou/fastlane-plugin-instabug) | Uploads dSYM to Instabug | 93
-onesky_upload_itunes | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 91
-framer | [framer](https://github.com/spreaker/fastlane-framer-plugin) | Create images combining app screenshots with templates to make nice pictures for the App Store | 90
-warning_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 88
-apperian | [apperian](https://github.com/tomiblank/fastlane-plugin-apperian) | Allows to upload your IPA file to Apperian | 84
-git_status | [git_status](https://github.com/4brunu/fastlane-plugin-git_status) | Show the status of one or multiple files/directories | 81
-android_change_string_app_name | [android_change_string_app_name](https://github.com/MaximusMcCann/fastlane-plugin-android_change_string_app_name) | Change the app_name in the strings.xml file &amp; revert method | 73
-set_key_partition_list | [provisioning](https://github.com/paweljankowski/fastlane-plugin-provisioning) | Helps provision your app in the CI environment | 58
-get_version_number_from_git_branch | [versioning](https://github.com/SiarheiFedartsou/fastlane-plugin-versioning) | Allows to set/get app version and build number directly to/from Info.plist | 56
-gs_increment_release_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 56
-upload_symbols_to_hockey | [upload_symbols_to_hockey](https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey) | Upload dSYM symbolication files to Hockey | 48
-git_tags | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 44
-gs_move_rc_to_beta_review | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 43
-git_info_extract | [git_info_extract](https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract) | Extract JIRA information from git merge | 42
-cryptex_generate_keystore | [cryptex](https://github.com/hjanuschka/fastlane-plugin-cryptex) | fastlane Crypt Store Git repo | 41
-export_xliff | [xliff_en_gen](https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen) | gen Localizable.strings file from xliff | 40
-gs_get_app_status | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 39
-flurry_upload_dsym | [flurry](https://github.com/flurry/fastlane-plugin-flurry) | Upload dSYM symbolication files to Flurry | 38
-generate_release_changelog | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 38
-merge_junit_report | [merge_junit_report](https://github.com/dyang/merge_junit_report) | Merges multiple junit reports into one | 37
-github_status | [github_status](https://github.com/mfurtak/fastlane-plugin-github_status) | Provides the ability to display and act upon GitHub server status as part of your build | 31
-ruby_analyzer | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 30
-ya_tu_sabes | [ya_tu_sabes](https://github.com/neonichu/fastlane-plugin-ya_tu_sabes) | Ya tu sabes. | 28
-coreos | [coreos](https://github.com/icuisine-pos/fastlane-plugin-coreos) | Deploy docker services to CoreOS hosts | 27
-docker_compose | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 27
-android_change_package_identifier | `android_change_package_identifier` | Change the package identifier in the AndroidManifest.xml file. Can revert as well. | 26
-check_good_version | [check_good_version](https://github.com/lyndsey-ferguson/fastlane_plugins) | Checks the version of the installed Good framework | 25
-gs_save_rc_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 25
-google_analytics | [google_analytics](https://github.com/hjanuschka/fastlane-plugin-google_analytics) | Fire universal Analytics | 19
-gs_versioning | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 16
-docker_login | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 15
-playship | `playship` | Interact with Google Play Api | 14
-docker_build | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 14
-upload_symbols_to_bugsee | [bugsee](https://github.com/bugsee/fastlane-plugin-bugsee) | Bugsee symbols uploader | 14
-gs_save_beta_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 12
-giffy_random_sticker_url | [giffy](https://github.com/SiarheiFedartsou/fastlane-plugin-giffy) | Fastlane plugin for Giffy.com API | 11
-ensure_docker_machine_available | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 11
-s3_check_file | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 11
-changelog_generator | [changelog_generator](https://github.com/fsaragoca/fastlane-plugin-changelog_generator) | Changelog generation based on merged pull requests &amp; tags | 9
-static_images | `static_assets` | Generate code for buildtime-safe assignments of assets. | 9
-gs_save_release_version | [gs_versioning](https://github.com/SAVeselovskiy/gs_versioning) | Plugin for GradoService versioning system | 8
-translation | [translation](https://github.com/trifork/fastlane-plugin-translation) | Handling translations from Google sheet. | 8
-get_xcodeproj_targets | [code_static_analyzer](https://github.com/knolga/fastlane-plugin-code_static_analyzer) | Runs different Static Analyzers and generate report | 6
-docker_push | [docker](https://github.com/milch/fastlane-plugin-docker) | fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub | 6
-cosigner | [cosigner](https://github.com/Mindera/fastlane-plugin-cosigner) | A fastlane plugin to help you sign your iOS builds | 6
-app_icon | `polidea` | Polidea's fastlane action | 6
-onesky_download_all | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 5
-figlet | `figlet` | Wrapper around figlet which makes large ascii text words | 5
-no_u | [no_u](https://github.com/neonichu/fastlane-plugin-no_u) | no u | 5
-download_github_release_asset | [download_github_release_asset](https://github.com/Antondomashnev/fastlane-plugin-download_github_release_asset) | This action downloads a GitHub release's asset using the GitHub API and puts it in a destination path.\nIf the file has been previously downloaded, it will be overrided. | 4
-s3_download | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 4
-create_translation | [translation](https://github.com/trifork/fastlane-plugin-translation) | Handling translations from Google sheet. | 3
-gs_reject_latest_version | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 3
-gs_move_to_ready_for_sale | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 2
-gs_deliver | [gs_deliver](https://github.com/SAVeselovskiy/gs_deliver) | Gradoservice plugin to rule apps releases | 2
-google_cloud_storage | [google_cloud_storage](https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage) | Google Cloud Storage | 2
-messagesicon | [appicon](https://github.com/neonichu/fastlane-plugin-appicon) | Generate required icon sizes and iconset from a master application icon. | 2
-import_provisioning | `polidea` | Polidea's fastlane action | 2
-s3_verify_existence | [s3_actions](https://github.com/fsaragoca/fastlane-plugin-s3_actions) | Download and upload files to AWS S3 | 1
-onesky | [onesky](https://github.com/danielkiedrowski/fastlane-plugin-onesky) | Helps to update the translations of your app using the OneSky service. | 1
