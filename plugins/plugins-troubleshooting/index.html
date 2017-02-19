@@ -340,7 +340,7 @@
 <pre><code class="ruby">gem &quot;fastlane&quot;
 
 plugins_path = File.join(File.dirname(__FILE__), 'fastlane', 'Pluginfile')
-eval(File.read(plugins_path), binding) if File.exist?(plugins_path)
+eval_gemfile(plugins_path) if File.exist?(plugins_path)
 </code></pre>
 
 <p>Your <code>Pluginfile</code> should look something like this</p>
