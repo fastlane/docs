@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 771283762ca1f2aa9b6b2921db8f411ee7822f8f
+  revision: a688df9e83774987e576bcd63a399f7c5db68526
   specs:
-    fastlane (2.17.1)
+    fastlane (2.18.2)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -39,9 +39,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.5)
-    activesupport (4.2.7.1)
+    activesupport (4.2.8)
       i18n (~> 0.7)
-      json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
@@ -109,8 +108,8 @@ GEM
       domain_name (~> 0.5)
     httpclient (2.8.3)
     hurley (0.2)
-    i18n (0.8.0)
-    json (1.8.6)
+    i18n (0.8.1)
+    json (2.0.3)
     jwt (1.5.6)
     kramdown (1.13.2)
     little-plugger (1.1.4)
