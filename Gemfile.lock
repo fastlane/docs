@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: a688df9e83774987e576bcd63a399f7c5db68526
+  revision: e35eafebbffa48b189a039c7eb1cfe07ca6870b5
   specs:
-    fastlane (2.18.2)
+    fastlane (2.18.3)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -58,7 +58,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.2.0)
       colored (~> 1.2)
-    danger (4.2.2)
+    danger (4.3.0)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
@@ -69,7 +69,7 @@ GEM
       kramdown (~> 1.5)
       octokit (~> 4.2)
       terminal-table (~> 1)
-    domain_name (0.5.20161129)
+    domain_name (0.5.20170223)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.0)
     excon (0.55.0)
@@ -151,7 +151,7 @@ GEM
     terminal-notifier (1.7.1)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     tty-screen (0.5.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
