@@ -37,18 +37,18 @@ Head over to [Available Plugins](https://github.com/fastlane/fastlane/blob/maste
 
 List all available plugins using
 
-```
+```no-highlight
 fastlane search_plugins
 ```
 
 To search for something specific 
-```
+```no-highlight
 fastlane search_plugins [query]
 ```
 
 ### Add a plugin to your project
 
-```
+```no-highlight
 fastlane add_plugin [name]
 ```
 
