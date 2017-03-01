@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: e35eafebbffa48b189a039c7eb1cfe07ca6870b5
+  revision: 75ae09eafb468171d71dd4eb860e3604160adbe2
   specs:
-    fastlane (2.18.3)
+    fastlane (2.19.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -82,8 +82,7 @@ GEM
       faraday (~> 0.8)
     faraday_middleware (0.11.0.1)
       faraday (>= 0.7.4, < 1.0)
-    fastimage (2.0.1)
-      addressable (~> 2)
+    fastimage (2.1.0)
     gh_inspector (1.0.3)
     git (1.3.0)
     google-api-client (0.9.28)
