@@ -63,6 +63,28 @@ Apple improved code signing a lot with the release of Xcode 8, the following has
 - Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out [Debugging codesigning issues](troubleshooting.md) for more information)
 - Improved Automatic Provisioning that can create per-machine development private keys, certificates, and provisioning profiles. (Check out [Setting up your Xcode Project](xcode-project.md) for more information)
 
+##### Automatic & Manual Signing
+
+To simplfie development workflow you could use `Automatic` code signing for development, and `Manual` for release builds.
+You have to configure your xcode project to use automatic code signing, and on the release configuration specify the `$()` match env variable.
+
+e.g: 
+<img src="/img/codesigning/auto_signing.png" width=500 />
+
+in your Fastfile you then use a lane like this:
+
+```ruby
+lane :release do
+  match
+  disable_automatic_code_signing(path: "my_project.xcodeproj")
+  gym
+  enable_automatic_code_signing(path: "my_project.xcodeproj")
+  pilot
+end
+```
+
+this way you can profit of the automatic code signing on development machines. and also stay in control on release builds to be sure the right cert/provisioning profiles are used.
+
 ## Manually
 
 You can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key (`.p12`) of your certificates in a safe place, as they can't be restored if you lose them. 
