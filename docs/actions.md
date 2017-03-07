@@ -2728,22 +2728,22 @@ sigh(
 Key | Description
 ----|------------
   `adhoc` | Setting this flag will generate AdHoc profiles instead of App Store Profiles
-  `development` | Renew the development certificate instead of the production one
-  `skip_install` | By default, the certificate will be added on your local machine. Setting this flag will skip this action
-  `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles
   `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `provisioning_name` | The name of the profile that is used on the Apple Developer Portal
-  `ignore_profiles_with_different_name` | Use in combination with :provisioning_name - when true only profiles matching this exact name will be downloaded
-  `output_path` | Directory in which the profile should be stored
   `cert_id` | The ID of the code signing certificate to use (e.g. 78ADL6LVAA) 
   `cert_owner_name` | The certificate name to use for new profiles, or to renew with. (e.g. "Felix Krause")
+  `development` | Renew the development certificate instead of the production one
   `filename` | Filename to use for the generated provisioning profile (must include .mobileprovision)
-  `skip_fetch_profiles` | Skips the verification of existing profiles which is useful if you have thousands of profiles
-  `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine
+  `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles
+  `ignore_profiles_with_different_name` | Use in combination with :provisioning_name - when true only profiles matching this exact name will be downloaded
+  `output_path` | Directory in which the profile should be stored
   `platform` | Set the provisioning profile's platform (i.e. ios, tvos)
+  `provisioning_name` | The name of the profile that is used on the Apple Developer Portal
+  `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine
+  `skip_fetch_profiles` | Skips the verification of existing profiles which is useful if you have thousands of profiles
+  `skip_install` | By default, the certificate will be added on your local machine. Setting this flag will skip this action
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams
+  `team_name` | The name of your Developer Portal team if you're in multiple teams
+  `username` | Your Apple ID Username
 
 </details>
 
