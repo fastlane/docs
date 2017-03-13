@@ -65,7 +65,7 @@ Apple improved code signing a lot with the release of Xcode 8, the following has
 
 ##### Automatic & Manual Signing
 
-To simplfie development workflow you could use `Automatic` code signing for development, and `Manual` for release builds.
+To simplifie development workflow you could use `Automatic` code signing for development, and `Manual` for release builds.
 You have to configure your xcode project to use automatic code signing, and on the release configuration specify the `$()` match env variable.
 
 e.g: 
