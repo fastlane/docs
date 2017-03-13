@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 1a2d5da06f4c51a81218698461a53204e3337cae
+  revision: d8af295c3ad0eeb12bb2c78aee2359cee9b1b6d0
   specs:
     fastlane (2.19.3)
       activesupport (< 5)
@@ -112,7 +112,7 @@ GEM
     jwt (1.5.6)
     kramdown (1.13.2)
     little-plugger (1.1.4)
-    logging (2.1.0)
+    logging (2.2.0)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
     memoist (0.15.0)
@@ -179,4 +179,4 @@ DEPENDENCIES
   fastlane!
 
 BUNDLED WITH
-   1.14.4
+   1.14.6
