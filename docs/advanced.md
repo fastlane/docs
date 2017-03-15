@@ -386,3 +386,70 @@ end
 ```
 
 you can expect the `app_identifier` to equal `"com.forplatform.mac.forlane.release"` when invoking `fastlane mac release`.
+
+# Manually Manage the fastlane match Repo
+
+Most users can benefit from fastlane match's automatic management of the repo that stores certificates and provisioning profiles. From time to time, it may be necessary to manually change the files in this repo.
+
+For example, fastlane requires admin access to the Apple Developer account to generate the appropriate files. If you are provided with an updated certificate or profile but do not have admin access, you can manually edit the repo.
+
+### Overview
+
+Because:
+
+1. fastlane encrypts the repo, and
+2. fastlane doesn't support manual edits to the repo
+
+it's necessary to manually decrypt, then modify, then encrypt, the repo to make any changes.
+
+> These instructions presuppose you already have fastlane match configured correctly.
+
+### 🔓 Decryption Instructions
+
+The easiest way to decrypt the repo is to use the fastlane match `GitHelper` class. You can do this from an interactive Ruby console:
+
+```bash
+$ bundle console
+irb(main):001:0>
+```
+
+Then, require `match` and set the appropriate parameters:
+
+```ruby
+irb(main):001:0> require 'match'
+irb(main):002:0> git_url = 'https://github.com/fastlane/example-certificate-repo'
+=> "https://github.com/fastlane/example-certificate-repo"
+irb(main):003:0> shallow_clone = false
+=> false
+irb(main):004:0> manual_password = 'example-password'
+=> "example-password"
+```
+
+Now call `GitHelper.clone`, which will clone and decrypt the repo for you. Assign the return value to `workspace`, which we'll need later when we re-encrypt:
+
+```ruby
+irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manual_password: manual_password)
+[14:49:30]: Cloning remote git repo...
+[14:49:31]: 🔓  Successfully decrypted certificates repo
+=> "/var/folders/0j/29ytx6wx0fg86sznfb4mqdph0000gn/T/d20170314-14350-11hmdro"
+```
+
+The directory beginning with `/var/folders` contains the decrypted git repo. Modify it as needed.
+
+If you are updating a `.p12` file, ensure it's exported from the keychain without a password, since match doesn't support importing private keys with a password.
+
+> **Warning:** Do *not* commit your changes. Allow the fastlane script to do that for you.
+
+Once your changes are made, we'll need to encrypt the repo and push it.
+
+### 🔒 Encryption Instructions
+
+In the Ruby console, call `GitHelper.commit_changes`, passing in the commit message you want. For example:
+
+```ruby
+irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url)
+```
+
+Your changes will be encrypted, committed, and pushed.
+
+> **Note:** If your keychain doesn't include the encryption passcode, you may be prompted for it. If so, just enter the same password you used to decrypt it.
