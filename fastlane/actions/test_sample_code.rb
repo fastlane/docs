@@ -3,7 +3,7 @@ module Fastlane
     class TestSampleCodeAction < Action
       def self.run(params)
         content = File.read(params[:path])
-        ENV["CI"] = 1.to_s
+
         fill_in_env_variables
 
         # /m says we ignore new line
@@ -95,10 +95,8 @@ module Fastlane
       end
 
       def self.fill_in_env_variables
-        # Some code samples need a value in a certain env variable
-        ["GITHUB_TOKEN"].each do |current|
-          ENV[current] = "123"
-        end
+        ENV["CI"] = 1.to_s
+        ENV["GITHUB_TOKEN"] = "123"
       end
     end
   end
