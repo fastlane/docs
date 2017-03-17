@@ -389,11 +389,11 @@ you can expect the `app_identifier` to equal `"com.forplatform.mac.forlane.relea
 
 # Manually Manage the fastlane match Repo
 
-Most users can benefit from *match*'s automatic management of the repo that stores certificates and provisioning profiles. From time to time, it may be necessary to manually change the files in this repo.
+Most users can benefit from _match_'s automatic management of the repo that stores certificates and provisioning profiles. From time to time, it may be necessary to manually change the files in this repo.
 
 For example, fastlane requires admin access to the Apple Developer account to generate the appropriate files. If you are provided with an updated certificate or profile but do not have admin access, you can manually edit the repo.
 
-> **Warning:** Manually editing your *match* repo can introduce unexpected behavior and is not recommended. Proceed with caution.
+> **Warning:** Manually editing your _match_ repo can introduce unexpected behavior and is not recommended. Proceed with caution.
 
 <details>
 <summary>Instructions</summary>
@@ -413,14 +413,14 @@ it's necessary to manually decrypt, then modify, then encrypt, the repo to make 
 
 ### 🔓 Decryption Instructions
 
-The easiest way to decrypt the repo is to use the fastlane *match* `GitHelper` class. You can do this from an interactive Ruby console:
+The easiest way to decrypt the repo is to use the fastlane _match_ `GitHelper` class. You can do this from an interactive Ruby console:
 
 ```bash
 $ bundle console
 irb(main):001:0>
 ```
 
-Then, require *match* and set the appropriate parameters:
+Then, require _match_ and set the appropriate parameters:
 
 ```ruby
 irb(main):001:0> require 'match'
@@ -443,7 +443,7 @@ irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manu
 
 The directory beginning with `/var/folders` contains the decrypted git repo. Modify it as needed.
 
-If you are updating a `.p12` file, ensure it's exported from the keychain without a password, since *match* doesn't support importing private keys with a password.
+If you are updating a `.p12` file, ensure it's exported from the keychain without a password, since _match_ doesn't support importing private keys with a password.
 
 > **Warning:** Do *not* commit your changes. Allow the fastlane script to do that for you.
 
