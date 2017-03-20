@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: d8af295c3ad0eeb12bb2c78aee2359cee9b1b6d0
+  revision: 935a0e3bbad6aebbdf989c9576362ecd8c56f71d
   specs:
-    fastlane (2.19.3)
+    fastlane (2.21.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -58,7 +58,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.2.0)
       colored (~> 1.2)
-    danger (4.3.0)
+    danger (4.3.1)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
