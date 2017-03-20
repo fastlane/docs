@@ -3,7 +3,7 @@ module Fastlane
     class TestSampleCodeAction < Action
       def self.run(params)
         content = File.read(params[:path])
-        ENV["CI"] = 1.to_s
+
         fill_in_env_variables
 
         # /m says we ignore new line
@@ -16,7 +16,9 @@ module Fastlane
 
           begin
             begin
+              # rubocop:disable Security/Eval
               eval(current_match)
+              # rubocop:enable Security/Eval
             rescue SyntaxError => ex
               UI.user_error!("Syntax error in code sample:\n#{current_match}\n#{ex}")
             rescue => ex
@@ -33,7 +35,7 @@ module Fastlane
         end
 
         ENV.delete("CI")
-        UI.user_error!("Found at #{errors.count} errors in the documentation") unless errors.empty?
+        UI.user_error!("Found #{errors.count} errors in the documentation") unless errors.empty?
       end
 
       # Is used to look if the method is implemented as an action
@@ -41,6 +43,13 @@ module Fastlane
         return if blacklist.include?(method_sym)
 
         class_ref = self.runner.class_reference_from_action_name(method_sym)
+        unless class_ref
+          alias_found = self.runner.find_alias(method_sym.to_s)
+          if alias_found
+            class_ref = self.runner.class_reference_from_action_name(alias_found.to_sym)
+          end
+        end
+
         UI.user_error!("Could not find method or action named '#{method_sym}'") if class_ref.nil?
         available_options = class_ref.available_options
 
@@ -65,7 +74,7 @@ module Fastlane
 
       # If the action name is x, don't run the verification
       # This will still verify the syntax though
-      # The actions listed here are still legacy actions, so 
+      # The actions listed here are still legacy actions, so
       # they don't use the fastlane configuration system
       def self.blacklist
         [
@@ -95,10 +104,8 @@ module Fastlane
       end
 
       def self.fill_in_env_variables
-        # Some code samples need a value in a certain env variable
-        ["GITHUB_TOKEN"].each do |current|
-          ENV[current] = "123"
-        end
+        ENV["CI"] = 1.to_s
+        ENV["GITHUB_TOKEN"] = "123"
       end
     end
   end
