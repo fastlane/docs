@@ -106,7 +106,7 @@ module Fastlane
 
       def self.fill_in_env_variables
         ["GITHUB_TOKEN"].each do |current|
-            ENV[current] = "123"
+          ENV[current] = "123"
         end
       end
     end
