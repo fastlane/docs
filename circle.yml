@@ -8,6 +8,7 @@ dependencies:
     - pip install -r requirements.txt
 test:
   override:
+    - bundle update
     - bundle exec fastlane test
     - bundle exec danger || echo "danger failed, moving on"
 deployment:
