@@ -4,7 +4,6 @@ module Fastlane
       def self.run(params)
         content = File.read(params[:path])
         ENV["CI"] = 1.to_s
-
         fill_in_env_variables
 
         # /m says we ignore new line
