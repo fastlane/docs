@@ -3,6 +3,7 @@ module Fastlane
     class TestSampleCodeAction < Action
       def self.run(params)
         content = File.read(params[:path])
+        ENV["CI"] = 1.to_s
 
         fill_in_env_variables
 
@@ -104,8 +105,9 @@ module Fastlane
       end
 
       def self.fill_in_env_variables
-        ENV["CI"] = 1.to_s
-        ENV["GITHUB_TOKEN"] = "123"
+        ["GITHUB_TOKEN"].each do |current|
+            ENV[current] = "123"
+        end
       end
     end
   end
