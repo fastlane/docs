@@ -391,7 +391,7 @@ you can expect the `app_identifier` to equal `"com.forplatform.mac.forlane.relea
 
 Most users can benefit from _match_'s automatic management of the repo that stores certificates and provisioning profiles. From time to time, it may be necessary to manually change the files in this repo.
 
-For example, fastlane requires admin access to the Apple Developer account to generate the appropriate files. If you are provided with an updated certificate or profile but do not have admin access, you can manually edit the repo.
+For example, _fastlane_ requires admin access to the Apple Developer account to generate the appropriate files. If you are provided with an updated certificate or profile but do not have admin access, you can manually edit the repo.
 
 > **Warning:** Manually editing your _match_ repo can introduce unexpected behavior and is not recommended. Proceed with caution.
 
@@ -404,16 +404,16 @@ For example, fastlane requires admin access to the Apple Developer account to ge
 
 Because:
 
-1. fastlane encrypts the repo, and
-2. fastlane doesn't support manual edits to the repo
+1. _fastlane_ encrypts the repo, and
+2. _fastlane_ doesn't support manual edits to the repo
 
 it's necessary to manually decrypt, then modify, then encrypt, the repo to make any changes.
 
-> These instructions presuppose you already have fastlane match configured correctly.
+> These instructions presuppose you already have _fastlane_ _match_ configured correctly.
 
 ### 🔓 Decryption Instructions
 
-The easiest way to decrypt the repo is to use the fastlane _match_ `GitHelper` class. You can do this from an interactive Ruby console:
+The easiest way to decrypt the repo is to use the _fastlane_ _match_ `GitHelper` class. You can do this from an interactive Ruby console:
 
 ```bash
 $ bundle console
@@ -445,7 +445,7 @@ The directory beginning with `/var/folders` contains the decrypted git repo. Mod
 
 If you are updating a `.p12` file, ensure it's exported from the keychain without a password, since _match_ doesn't support importing private keys with a password.
 
-> **Warning:** Do *not* commit your changes. Allow the fastlane script to do that for you.
+> **Warning:** Do *not* commit your changes. Allow _fastlane_ to do that for you.
 
 Once your changes are made, we'll need to encrypt the repo and push it.
 
