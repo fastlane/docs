@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: ac95501e2f254067ec32581f8e283df1211ba6bb
+  revision: 3d3f9d431f7b6b68bb031578078a45ccf8238102
   specs:
     fastlane (2.23.0)
       activesupport (< 5)
@@ -54,7 +54,7 @@ GEM
       open4 (~> 1.3)
     colored (1.2)
     colored2 (3.1.2)
-    commander-fastlane (4.4.3)
+    commander-fastlane (4.4.4)
       highline (~> 1.7.2)
     cork (0.2.0)
       colored (~> 1.2)
@@ -152,7 +152,7 @@ GEM
       unicode-display_width (~> 1.1.1)
     thread_safe (0.3.6)
     tty-screen (0.5.0)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uber (0.0.15)
     unf (0.1.4)
