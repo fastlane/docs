@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 3d3f9d431f7b6b68bb031578078a45ccf8238102
+  revision: 8ccb8790db310e0dc6d304c9eaafb568fc9c33b6
   specs:
-    fastlane (2.23.0)
+    fastlane (2.24.0)
       activesupport (< 5)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -44,7 +44,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.5.0)
+    addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     babosa (1.0.2)
     claide (1.0.1)
@@ -58,7 +58,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.2.0)
       colored (~> 1.2)
-    danger (4.3.1)
+    danger (4.3.2)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
