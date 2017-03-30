@@ -358,6 +358,22 @@ end
 <li>Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out <a href="../troubleshooting/">Debugging codesigning issues</a> for more information)</li>
 <li>Improved Automatic Provisioning that can create per-machine development private keys, certificates, and provisioning profiles. (Check out <a href="../xcode-project/">Setting up your Xcode Project</a> for more information)</li>
 </ul>
+<h5 id="automatic-manual-signing"><a name="user-content-automatic-manual-signing" href="#automatic-manual-signing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatic &amp; Manual Signing</h5>
+<p>To simplify development workflow you could use <code>Automatic</code> code signing for development, and <code>Manual</code> for release builds.
+You have to configure your xcode project to use automatic code signing, and on the release configuration specify the <code>$()</code> match env variable.</p>
+<p>e.g: 
+<img src="/img/codesigning/auto_signing.png" width=500 /></p>
+<p>in your Fastfile you then use a lane like this:</p>
+<pre><code class="ruby">lane :release do
+  match
+  disable_automatic_code_signing(path: &quot;my_project.xcodeproj&quot;)
+  gym
+  enable_automatic_code_signing(path: &quot;my_project.xcodeproj&quot;)
+  pilot
+end
+</code></pre>
+
+<p>this way you can profit of the automatic code signing on development machines. and also stay in control on release builds to be sure the right cert/provisioning profiles are used.</p>
 <h2 id="manually"><a name="user-content-manually" href="#manually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manually</h2>
 <p>You can always manually create and manage your certificates and provisioning profiles using the Apple Developer Portal. Make sure to store the private key (<code>.p12</code>) of your certificates in a safe place, as they can't be restored if you lose them. </p>
 <p>You can always download the certificate (<code>.cer</code>) and provisioning profile (<code>.mobileprovision</code>) from the Apple Developer Portal.</p>
