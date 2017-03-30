@@ -469,7 +469,7 @@ Your changes will be encrypted, committed, and pushed.
 
 ## Directory behavior
 
-_fastlane_ was designed in a way that you can run _fastlane_ from both the root directory of the project, and from the `fastlane` sub-folder.
+_fastlane_ was designed in a way that you can run _fastlane_ from both the root directory of the project, and from the `./fastlane` sub-folder.
 
 Take this example `Fastfile` on the path `fastlane/Fastfile`
 ```ruby
