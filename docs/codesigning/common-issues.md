@@ -18,7 +18,6 @@ This error can have a lot of reasons, some things you should try:
 
 - Verify your Keychain is valid and you don't have an expired WWDR certificate using [this guide](troubleshooting.md#keychain)
 - Verify both your certificate and provisioning profile are valid in both your Keychain and on the Apple Developer Portal (Check out [Debugging codesigning issues](troubleshooting.md) for more information)
-- If you're using [gym](https://fastlane.tools/gym), try using the `use_legacy_build_api` flag to fallback to the Xcode 6 build API
 - Follow the other steps of [Debugging codesigning issues](troubleshooting.md)
 
 > Provisioning profile does not match bundle identifier: The provisioning profile specified in your build settings ("X") has an AppID of "Y" which does not match your bundle identifier "Z"
