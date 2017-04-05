@@ -345,6 +345,10 @@
 <p>CodeSign Error: code signing is required for product type 'Application'...</p>
 </blockquote>
 <p>Make sure to have a valid code signing identity defined in your project targets. This might happen when you select <code>Don't Code Sign</code> as Code Signing Identity.</p>
+<blockquote>
+<p>User interaction is not allowed. Command /usr/bin/codesign failed with exit code 1</p>
+</blockquote>
+<p>Make sure that codesign can access your signing private key. Open Keychain Access. Select your signing private key, right-click, choose Get Info, change to the Access Control tab and select the "Allow all applications to access this item".</p>
 <h2 id="fastlane-errors"><a name="user-content-fastlane-errors" href="#fastlane-errors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane errors</h2>
 <blockquote>
 <p>Could not find a matching code signing identity for type 'X'</p>
