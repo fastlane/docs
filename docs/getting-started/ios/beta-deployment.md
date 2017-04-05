@@ -325,7 +325,7 @@ Depending on the beta testing service you use, you'll have to increment the buil
 
 To do so, there are some built-in fastlane actions available, here are some examples
 
-### Commiting the build number to version control
+### Committing the build number to version control
 
 The code sample below will increment the build number and commit the project changes to version control.
 
