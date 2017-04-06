@@ -529,7 +529,7 @@ scan(
 </tr>
 <tr>
 <td><code>test_without_building</code></td>
-<td>Test without building, requires a derrived data path</td>
+<td>Test without building, requires a derived data path</td>
 </tr>
 <tr>
 <td><code>build_for_testing</code></td>
@@ -1083,6 +1083,225 @@ More information: https://github.com/nakiostudio/xcov</p>
 </code></pre>
 
 <p></details></p>
+<h3 id="xcode_server_get_assets"><a name="user-content-xcode_server_get_assets" href="#xcode_server_get_assets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcode_server_get_assets</h3>
+<p>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</p>
+<blockquote>
+<p>This action downloads assets from your Xcode Server Bot (works with Xcode Server
+          using Xcode 6 and 7. By default this action downloads all assets, unzips them and
+          deletes everything except for the <code>.xcarchive</code>. If you'd like to keep all downloaded
+          assets, pass <code>:keep_all_assets: true</code>. This action returns the path to the downloaded
+          assets folder and puts into shared values the paths to the asset folder and to the <code>.xcarchive</code> inside it</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>xcode_server_get_assets</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@czechboy0</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcode_server_get_assets(
+  host: &quot;10.99.0.59&quot;, # Specify Xcode Server's Host or IP Address
+  bot_name: &quot;release-1.3.4&quot; # Specify the particular Bot
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>IP Address/Hostname of Xcode Server</td>
+</tr>
+<tr>
+<td><code>bot_name</code></td>
+<td>Name of the Bot to pull assets from</td>
+</tr>
+<tr>
+<td><code>integration_number</code></td>
+<td>Optionally you can override which integration's assets should be downloaded. If not provided, the latest integration is used</td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Username for your Xcode Server</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password for your Xcode Server</td>
+</tr>
+<tr>
+<td><code>target_folder</code></td>
+<td>Relative path to a folder into which to download assets</td>
+</tr>
+<tr>
+<td><code>keep_all_assets</code></td>
+<td>Whether to keep all assets or let the script delete everything except for the .xcarchive</td>
+</tr>
+<tr>
+<td><code>trust_self_signed_certs</code></td>
+<td>Whether to trust self-signed certs on your Xcode Server</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="appium"><a name="user-content-appium" href="#appium" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appium</h3>
+<p>Run UI test by Appium with RSpec</p>
+<table>
+<thead>
+<tr>
+<th>appium</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@yonekawa</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">appium(
+  app_path:  &quot;appium/apps/TargetApp.app&quot;,
+  spec_path: &quot;appium/spec&quot;,
+  platform:  &quot;iOS&quot;,
+  caps: {
+    versionNumber: &quot;9.1&quot;,
+    deviceName:    &quot;iPhone 6&quot;
+  }
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>platform</code></td>
+<td>Appium platform name</td>
+</tr>
+<tr>
+<td><code>spec_path</code></td>
+<td>Path to Appium spec directory</td>
+</tr>
+<tr>
+<td><code>app_path</code></td>
+<td>Path to Appium target app file</td>
+</tr>
+<tr>
+<td><code>invoke_appium_server</code></td>
+<td>Use local Appium server with invoke automatically</td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>Hostname of Appium server</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>HTTP port of Appium server</td>
+</tr>
+<tr>
+<td><code>appium_path</code></td>
+<td>Path to Appium executable</td>
+</tr>
+<tr>
+<td><code>caps</code></td>
+<td>Hash of caps for Appium::Driver</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="lcov"><a name="user-content-lcov" href="#lcov" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>lcov</h3>
+<p>Generates coverage data using lcov</p>
+<table>
+<thead>
+<tr>
+<th>lcov</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@thiagolioy</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">lcov(
+  project_name: &quot;ProjectName&quot;,
+  scheme: &quot;yourScheme&quot;,
+  output_dir: &quot;cov_reports&quot; # This value is optional. Default is coverage_reports
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>project_name</code></td>
+<td>Name of the project</td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>Scheme of the project</td>
+</tr>
+<tr>
+<td><code>arch</code></td>
+<td>The build arch where will search .gcda files</td>
+</tr>
+<tr>
+<td><code>output_dir</code></td>
+<td>The output directory that coverage data will be stored. If not passed will use coverage_reports as default value</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <h3 id="sonar"><a name="user-content-sonar" href="#sonar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sonar</h3>
 <p>Invokes sonar-scanner to programmatically run SonarQube analysis</p>
 <blockquote>
@@ -1167,225 +1386,6 @@ It can process unit test results if formatted as junit report as shown in <a hre
 <tr>
 <td><code>sonar_login</code></td>
 <td>Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e)</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="lcov"><a name="user-content-lcov" href="#lcov" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>lcov</h3>
-<p>Generates coverage data using lcov</p>
-<table>
-<thead>
-<tr>
-<th>lcov</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@thiagolioy</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">lcov(
-  project_name: &quot;ProjectName&quot;,
-  scheme: &quot;yourScheme&quot;,
-  output_dir: &quot;cov_reports&quot; # This value is optional. Default is coverage_reports
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>project_name</code></td>
-<td>Name of the project</td>
-</tr>
-<tr>
-<td><code>scheme</code></td>
-<td>Scheme of the project</td>
-</tr>
-<tr>
-<td><code>arch</code></td>
-<td>The build arch where will search .gcda files</td>
-</tr>
-<tr>
-<td><code>output_dir</code></td>
-<td>The output directory that coverage data will be stored. If not passed will use coverage_reports as default value</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="appium"><a name="user-content-appium" href="#appium" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appium</h3>
-<p>Run UI test by Appium with RSpec</p>
-<table>
-<thead>
-<tr>
-<th>appium</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@yonekawa</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">appium(
-  app_path:  &quot;appium/apps/TargetApp.app&quot;,
-  spec_path: &quot;appium/spec&quot;,
-  platform:  &quot;iOS&quot;,
-  caps: {
-    versionNumber: &quot;9.1&quot;,
-    deviceName:    &quot;iPhone 6&quot;
-  }
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>platform</code></td>
-<td>Appium platform name</td>
-</tr>
-<tr>
-<td><code>spec_path</code></td>
-<td>Path to Appium spec directory</td>
-</tr>
-<tr>
-<td><code>app_path</code></td>
-<td>Path to Appium target app file</td>
-</tr>
-<tr>
-<td><code>invoke_appium_server</code></td>
-<td>Use local Appium server with invoke automatically</td>
-</tr>
-<tr>
-<td><code>host</code></td>
-<td>Hostname of Appium server</td>
-</tr>
-<tr>
-<td><code>port</code></td>
-<td>HTTP port of Appium server</td>
-</tr>
-<tr>
-<td><code>appium_path</code></td>
-<td>Path to Appium executable</td>
-</tr>
-<tr>
-<td><code>caps</code></td>
-<td>Hash of caps for Appium::Driver</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="xcode_server_get_assets"><a name="user-content-xcode_server_get_assets" href="#xcode_server_get_assets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcode_server_get_assets</h3>
-<p>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</p>
-<blockquote>
-<p>This action downloads assets from your Xcode Server Bot (works with Xcode Server
-          using Xcode 6 and 7. By default this action downloads all assets, unzips them and
-          deletes everything except for the <code>.xcarchive</code>. If you'd like to keep all downloaded
-          assets, pass <code>:keep_all_assets: true</code>. This action returns the path to the downloaded
-          assets folder and puts into shared values the paths to the asset folder and to the <code>.xcarchive</code> inside it</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>xcode_server_get_assets</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@czechboy0</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xcode_server_get_assets(
-  host: &quot;10.99.0.59&quot;, # Specify Xcode Server's Host or IP Address
-  bot_name: &quot;release-1.3.4&quot; # Specify the particular Bot
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>host</code></td>
-<td>IP Address/Hostname of Xcode Server</td>
-</tr>
-<tr>
-<td><code>bot_name</code></td>
-<td>Name of the Bot to pull assets from</td>
-</tr>
-<tr>
-<td><code>integration_number</code></td>
-<td>Optionally you can override which integration's assets should be downloaded. If not provided, the latest integration is used</td>
-</tr>
-<tr>
-<td><code>username</code></td>
-<td>Username for your Xcode Server</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>Password for your Xcode Server</td>
-</tr>
-<tr>
-<td><code>target_folder</code></td>
-<td>Relative path to a folder into which to download assets</td>
-</tr>
-<tr>
-<td><code>keep_all_assets</code></td>
-<td>Whether to keep all assets or let the script delete everything except for the .xcarchive</td>
-</tr>
-<tr>
-<td><code>trust_self_signed_certs</code></td>
-<td>Whether to trust self-signed certs on your Xcode Server</td>
 </tr>
 </tbody>
 </table>
@@ -1950,6 +1950,7 @@ gradle(
   verbose: false,   # Print xcodebuild output inline
   platform: &quot;all&quot;,  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
   configuration: &quot;Release&quot;,   # Build configuration to use when building
+  cache_builds: true,         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
   toolchain: &quot;com.apple.dt.toolchain.Swift_2_3&quot;   # Specify the xcodebuild toolchain
 )
 </code></pre>
@@ -2004,6 +2005,10 @@ gradle(
 <tr>
 <td><code>platform</code></td>
 <td>Define which platform to build for</td>
+</tr>
+<tr>
+<td><code>cache_builds</code></td>
+<td>By default Carthage will rebuild a dependency regardless of whether it's the same resolved version as before. Passing the --cache-builds will cause carthage to avoid rebuilding a dependency if it can</td>
 </tr>
 <tr>
 <td><code>frameworks</code></td>
@@ -2288,6 +2293,167 @@ gradle(
 </tbody>
 </table>
 <p></details></p>
+<h3 id="xcexport"><a name="user-content-xcexport" href="#xcexport" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcexport</h3>
+<p>Exports the project using <code>xcodebuild</code></p>
+<table>
+<thead>
+<tr>
+<th>xcexport</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcexport
+</code></pre>
+
+<p></details></p>
+<h3 id="xctest"><a name="user-content-xctest" href="#xctest" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xctest</h3>
+<p>Runs tests on the given simulator</p>
+<table>
+<thead>
+<tr>
+<th>xctest</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xctest(
+  destination: &quot;name=iPhone 7s,OS=10.0&quot;
+)
+</code></pre>
+
+<p></details></p>
+<h3 id="xcarchive"><a name="user-content-xcarchive" href="#xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcarchive</h3>
+<p>Archives the project using <code>xcodebuild</code></p>
+<table>
+<thead>
+<tr>
+<th>xcarchive</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcarchive
+</code></pre>
+
+<p></details></p>
+<h3 id="verify_pod_keys"><a name="user-content-verify_pod_keys" href="#verify_pod_keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_pod_keys</h3>
+<p>Verifies all keys referenced from the Podfile are non-empty</p>
+<blockquote>
+<p>Runs a check against all keys specified in your Podfile to make sure they're more than a single character long. This is to ensure you don't deploy with stubbed keys.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>verify_pod_keys</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@ashfurrow</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">verify_pod_keys
+</code></pre>
+
+<p></details></p>
+<h3 id="xcbuild"><a name="user-content-xcbuild" href="#xcbuild" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcbuild</h3>
+<p>Builds the project using <code>xcodebuild</code></p>
+<table>
+<thead>
+<tr>
+<th>xcbuild</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcbuild
+</code></pre>
+
+<p></details></p>
+<h3 id="xcclean"><a name="user-content-xcclean" href="#xcclean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcclean</h3>
+<p>Cleans the project using <code>xcodebuild</code></p>
+<table>
+<thead>
+<tr>
+<th>xcclean</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcclean
+</code></pre>
+
+<p></details></p>
 <h3 id="verify_xcode"><a name="user-content-verify_xcode" href="#verify_xcode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_xcode</h3>
 <p>Verifies that the Xcode installation is properly signed by Apple</p>
 <blockquote>
@@ -2338,167 +2504,6 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </tr>
 </tbody>
 </table>
-<p></details></p>
-<h3 id="verify_pod_keys"><a name="user-content-verify_pod_keys" href="#verify_pod_keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_pod_keys</h3>
-<p>Verifies all keys referenced from the Podfile are non-empty</p>
-<blockquote>
-<p>Runs a check against all keys specified in your Podfile to make sure they're more than a single character long. This is to ensure you don't deploy with stubbed keys.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>verify_pod_keys</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@ashfurrow</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">verify_pod_keys
-</code></pre>
-
-<p></details></p>
-<h3 id="xctest"><a name="user-content-xctest" href="#xctest" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xctest</h3>
-<p>Runs tests on the given simulator</p>
-<table>
-<thead>
-<tr>
-<th>xctest</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xctest(
-  destination: &quot;name=iPhone 7s,OS=10.0&quot;
-)
-</code></pre>
-
-<p></details></p>
-<h3 id="xcclean"><a name="user-content-xcclean" href="#xcclean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcclean</h3>
-<p>Cleans the project using <code>xcodebuild</code></p>
-<table>
-<thead>
-<tr>
-<th>xcclean</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xcclean
-</code></pre>
-
-<p></details></p>
-<h3 id="xcexport"><a name="user-content-xcexport" href="#xcexport" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcexport</h3>
-<p>Exports the project using <code>xcodebuild</code></p>
-<table>
-<thead>
-<tr>
-<th>xcexport</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xcexport
-</code></pre>
-
-<p></details></p>
-<h3 id="xcarchive"><a name="user-content-xcarchive" href="#xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcarchive</h3>
-<p>Archives the project using <code>xcodebuild</code></p>
-<table>
-<thead>
-<tr>
-<th>xcarchive</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xcarchive
-</code></pre>
-
-<p></details></p>
-<h3 id="xcbuild"><a name="user-content-xcbuild" href="#xcbuild" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcbuild</h3>
-<p>Builds the project using <code>xcodebuild</code></p>
-<table>
-<thead>
-<tr>
-<th>xcbuild</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xcbuild
-</code></pre>
-
 <p></details></p>
 <h1 id="screenshots"><a name="user-content-screenshots" href="#screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Screenshots</h1>
 <h3 id="snapshot"><a name="user-content-snapshot" href="#snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>snapshot</h3>
@@ -2582,6 +2587,10 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 <tr>
 <td><code>skip_open_summary</code></td>
 <td>Don't open the HTML summary after running <em>snapshot</em></td>
+</tr>
+<tr>
+<td><code>skip_helper_version_check</code></td>
+<td>Do not check for most recent SnapshotHelper code</td>
 </tr>
 <tr>
 <td><code>clear_previous_screenshots</code></td>
@@ -4059,6 +4068,14 @@ Use this action to download the latest code signing identity</p>
 <td>Create a development certificate instead of a distribution one</td>
 </tr>
 <tr>
+<td><code>generate_p12</code></td>
+<td>Generate a p12 file additionally to a PEM file</td>
+</tr>
+<tr>
+<td><code>p12_password</code></td>
+<td>The password that is used for your p12 file</td>
+</tr>
+<tr>
 <td><code>force</code></td>
 <td>Create a certificate even if an existing certificate exists</td>
 </tr>
@@ -4620,49 +4637,6 @@ The action will connect to the Apple Developer Portal using the username you spe
 </table>
 <p></details></p>
 <h1 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h1>
-<h3 id="jazzy"><a name="user-content-jazzy" href="#jazzy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>jazzy</h3>
-<p>Generate docs using Jazzy</p>
-<table>
-<thead>
-<tr>
-<th>jazzy</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">jazzy
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>config</code></td>
-<td>Path to jazzy config file</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
 <h3 id="appledoc"><a name="user-content-appledoc" href="#appledoc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appledoc</h3>
 <p>Generate Apple-like source code documentation from the source code</p>
 <blockquote>
@@ -4834,7 +4808,7 @@ The action will connect to the Apple Developer Portal using the username you spe
 </tr>
 <tr>
 <td><code>docset_platform_family</code></td>
-<td>DocSet platform familiy</td>
+<td>DocSet platform family</td>
 </tr>
 <tr>
 <td><code>docset_cert_issuer</code></td>
@@ -4887,6 +4861,49 @@ The action will connect to the Apple Developer Portal using the username you spe
 <tr>
 <td><code>verbose</code></td>
 <td>Log verbosity level [0-6,xcode]</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="jazzy"><a name="user-content-jazzy" href="#jazzy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>jazzy</h3>
+<p>Generate docs using Jazzy</p>
+<table>
+<thead>
+<tr>
+<th>jazzy</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">jazzy
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config</code></td>
+<td>Path to jazzy config file</td>
 </tr>
 </tbody>
 </table>
@@ -4979,7 +4996,7 @@ This integration will only do the TestFlight upload</p>
 </tr>
 <tr>
 <td><code>skip_waiting_for_build_processing</code></td>
-<td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work</td>
+<td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work and no build will be distributed to testers</td>
 </tr>
 <tr>
 <td><code>update_build_info_on_upload</code></td>
@@ -5372,7 +5389,7 @@ More information about the available options can be found in the <a href="http:/
 </tr>
 <tr>
 <td><code>skip_waiting_for_build_processing</code></td>
-<td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work</td>
+<td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work and no build will be distributed to testers</td>
 </tr>
 <tr>
 <td><code>update_build_info_on_upload</code></td>
@@ -5519,163 +5536,6 @@ More information about the available options can be found in the <a href="https:
 </tbody>
 </table>
 <p></details></p>
-<h3 id="testfairy"><a name="user-content-testfairy" href="#testfairy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>testfairy</h3>
-<p>Upload a new build to TestFairy</p>
-<blockquote>
-<p>You can retrieve your API key on <a href="https://free.testfairy.com/settings/">your settings page</a></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>testfairy</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@taka0125, @tcurdt</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">testfairy(
-  api_key: &quot;...&quot;,
-  ipa: &quot;./ipa_file.ipa&quot;,
-  comment: &quot;Build #{lane_context[SharedValues::BUILD_NUMBER]}&quot;,
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>api_key</code></td>
-<td>API Key for TestFairy</td>
-</tr>
-<tr>
-<td><code>ipa</code></td>
-<td>Path to your IPA file for iOS or APK for Android</td>
-</tr>
-<tr>
-<td><code>symbols_file</code></td>
-<td>Symbols mapping file</td>
-</tr>
-<tr>
-<td><code>testers_groups</code></td>
-<td>Array of tester groups to be notified</td>
-</tr>
-<tr>
-<td><code>metrics</code></td>
-<td>Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi)</td>
-</tr>
-<tr>
-<td><code>icon_watermark</code></td>
-<td>Add a small watermark to app icon</td>
-</tr>
-<tr>
-<td><code>comment</code></td>
-<td>Additional release notes for this upload. This text will be added to email notifications</td>
-</tr>
-<tr>
-<td><code>auto_update</code></td>
-<td>Allows easy upgrade of all users to current version</td>
-</tr>
-<tr>
-<td><code>notify</code></td>
-<td>Send email to testers</td>
-</tr>
-<tr>
-<td><code>options</code></td>
-<td>Array of options (shake,video_only_wifi,anonymous)</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="appetize"><a name="user-content-appetize" href="#appetize" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appetize</h3>
-<p>Upload your app to Appetize.io to stream it in the browser</p>
-<blockquote>
-<p>If you provide a <code>public_key</code>, this will overwrite an existing application. If you want to have this build as a new app version, you shouldn't provide this value.
-To integrate appetize into your GitHub workflow check out the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md">device_grid guide</a></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>appetize</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@klundberg, @giginet</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">appetize(
-  path: &quot;./MyApp.zip&quot;,
-  api_token: &quot;yourapitoken&quot;, # get it from https://appetize.io/docs#request-api-token
-  public_key: &quot;your_public_key&quot; # get it from https://appetize.io/dashboard
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>api_token</code></td>
-<td>Appetize.io API Token</td>
-</tr>
-<tr>
-<td><code>url</code></td>
-<td>URL from which the ipa file can be fetched. Alternative to :path</td>
-</tr>
-<tr>
-<td><code>platform</code></td>
-<td>Platform. Either <code>ios</code> or <code>android</code>. Default is <code>ios</code></td>
-</tr>
-<tr>
-<td><code>path</code></td>
-<td>Path to zipped build on the local filesystem. Either this or <code>url</code> must be specified</td>
-</tr>
-<tr>
-<td><code>public_key</code></td>
-<td>If not provided, a new app will be created. If provided, the existing build will be overwritten</td>
-</tr>
-<tr>
-<td><code>note</code></td>
-<td>Notes you wish to add to the uploaded app</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
 <h3 id="nexus_upload"><a name="user-content-nexus_upload" href="#nexus_upload" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>nexus_upload</h3>
 <p>Upload a file to Sonatype Nexus platform</p>
 <table>
@@ -5785,60 +5645,6 @@ To integrate appetize into your GitHub workflow check out the <a href="https://g
 <tr>
 <td><code>proxy_port</code></td>
 <td>Proxy port</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="apteligent"><a name="user-content-apteligent" href="#apteligent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>apteligent</h3>
-<p>Upload dSYM file to Apteligent (Crittercism)</p>
-<table>
-<thead>
-<tr>
-<th>apteligent</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@Mo7amedFouad</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">apteligent(
-  app_id: &quot;...&quot;,
-  api_key: &quot;...&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dsym</code></td>
-<td>dSYM.zip file to upload to Apteligent</td>
-</tr>
-<tr>
-<td><code>app_id</code></td>
-<td>Apteligent App ID key e.g. 569f5c87cb99e10e00c7xxxx</td>
-</tr>
-<tr>
-<td><code>api_key</code></td>
-<td>Apteligent App API key e.g. IXPQIi8yCbHaLliqzRoo065tH0lxxxxx</td>
 </tr>
 </tbody>
 </table>
@@ -6004,32 +5810,35 @@ You can store the changelog in <code>./fastlane/changelog.txt</code> and it will
 </tbody>
 </table>
 <p></details></p>
-<h3 id="splunkmint"><a name="user-content-splunkmint" href="#splunkmint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>splunkmint</h3>
-<p>Upload dSYM file to Splunk MINT</p>
+<h3 id="testfairy"><a name="user-content-testfairy" href="#testfairy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>testfairy</h3>
+<p>Upload a new build to TestFairy</p>
+<blockquote>
+<p>You can retrieve your API key on <a href="https://free.testfairy.com/settings/">your settings page</a></p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>splunkmint</th>
+<th>testfairy</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios</td>
+<td>ios, android</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@xfreebird</td>
+<td>@taka0125, @tcurdt</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">splunkmint(
-  dsym: &quot;My.app.dSYM.zip&quot;,
-  api_key: &quot;43564d3a&quot;,
-  api_token: &quot;e05456234c4869fb7e0b61&quot;
+<pre><code class="ruby">testfairy(
+  api_key: &quot;...&quot;,
+  ipa: &quot;./ipa_file.ipa&quot;,
+  comment: &quot;Build #{lane_context[SharedValues::BUILD_NUMBER]}&quot;,
 )
 </code></pre>
 
@@ -6044,106 +5853,45 @@ You can store the changelog in <code>./fastlane/changelog.txt</code> and it will
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>dsym</code></td>
-<td>dSYM.zip file to upload to Splunk MINT</td>
-</tr>
 <tr>
 <td><code>api_key</code></td>
-<td>Splunk MINT App API key e.g. f57a57ca</td>
-</tr>
-<tr>
-<td><code>api_token</code></td>
-<td>Splunk MINT API token e.g. e05ba40754c4869fb7e0b61</td>
-</tr>
-<tr>
-<td><code>verbose</code></td>
-<td>Make detailed output</td>
-</tr>
-<tr>
-<td><code>upload_progress</code></td>
-<td>Show upload progress</td>
-</tr>
-<tr>
-<td><code>proxy_username</code></td>
-<td>Proxy username</td>
-</tr>
-<tr>
-<td><code>proxy_password</code></td>
-<td>Proxy password</td>
-</tr>
-<tr>
-<td><code>proxy_address</code></td>
-<td>Proxy address</td>
-</tr>
-<tr>
-<td><code>proxy_port</code></td>
-<td>Proxy port</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="installr"><a name="user-content-installr" href="#installr" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>installr</h3>
-<p>Upload a new build to Installr</p>
-<table>
-<thead>
-<tr>
-<th>installr</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@scottrhoyt</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">installr(
-  api_token: &quot;...&quot;,
-  ipa: &quot;test.ipa&quot;,
-  notes: &quot;The next great version of the app!&quot;,
-  notify: &quot;dev,qa&quot;,
-  add: &quot;exec,ops&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>api_token</code></td>
-<td>API Token for Installr Access</td>
+<td>API Key for TestFairy</td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
-<td>Path to your IPA file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+<td>Path to your IPA file for iOS or APK for Android</td>
 </tr>
 <tr>
-<td><code>notes</code></td>
-<td>Release notes</td>
+<td><code>symbols_file</code></td>
+<td>Symbols mapping file</td>
+</tr>
+<tr>
+<td><code>testers_groups</code></td>
+<td>Array of tester groups to be notified</td>
+</tr>
+<tr>
+<td><code>metrics</code></td>
+<td>Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi)</td>
+</tr>
+<tr>
+<td><code>icon_watermark</code></td>
+<td>Add a small watermark to app icon</td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td>Additional release notes for this upload. This text will be added to email notifications</td>
+</tr>
+<tr>
+<td><code>auto_update</code></td>
+<td>Allows easy upgrade of all users to current version</td>
 </tr>
 <tr>
 <td><code>notify</code></td>
-<td>Groups to notify (e.g. 'dev,qa')</td>
+<td>Send email to testers</td>
 </tr>
 <tr>
-<td><code>add</code></td>
-<td>Groups to add (e.g. 'exec,ops')</td>
+<td><code>options</code></td>
+<td>Array of options (shake,video_only_wifi,anonymous)</td>
 </tr>
 </tbody>
 </table>
@@ -6224,6 +5972,275 @@ You can store the changelog in <code>./fastlane/changelog.txt</code> and it will
 <tr>
 <td><code>other_fields</code></td>
 <td>Dictionary of your app fields. Podio supports several field types, see https://developers.podio.com/doc/items</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="installr"><a name="user-content-installr" href="#installr" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>installr</h3>
+<p>Upload a new build to Installr</p>
+<table>
+<thead>
+<tr>
+<th>installr</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@scottrhoyt</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">installr(
+  api_token: &quot;...&quot;,
+  ipa: &quot;test.ipa&quot;,
+  notes: &quot;The next great version of the app!&quot;,
+  notify: &quot;dev,qa&quot;,
+  add: &quot;exec,ops&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_token</code></td>
+<td>API Token for Installr Access</td>
+</tr>
+<tr>
+<td><code>ipa</code></td>
+<td>Path to your IPA file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+</tr>
+<tr>
+<td><code>notes</code></td>
+<td>Release notes</td>
+</tr>
+<tr>
+<td><code>notify</code></td>
+<td>Groups to notify (e.g. 'dev,qa')</td>
+</tr>
+<tr>
+<td><code>add</code></td>
+<td>Groups to add (e.g. 'exec,ops')</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="splunkmint"><a name="user-content-splunkmint" href="#splunkmint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>splunkmint</h3>
+<p>Upload dSYM file to Splunk MINT</p>
+<table>
+<thead>
+<tr>
+<th>splunkmint</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@xfreebird</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">splunkmint(
+  dsym: &quot;My.app.dSYM.zip&quot;,
+  api_key: &quot;43564d3a&quot;,
+  api_token: &quot;e05456234c4869fb7e0b61&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dsym</code></td>
+<td>dSYM.zip file to upload to Splunk MINT</td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Splunk MINT App API key e.g. f57a57ca</td>
+</tr>
+<tr>
+<td><code>api_token</code></td>
+<td>Splunk MINT API token e.g. e05ba40754c4869fb7e0b61</td>
+</tr>
+<tr>
+<td><code>verbose</code></td>
+<td>Make detailed output</td>
+</tr>
+<tr>
+<td><code>upload_progress</code></td>
+<td>Show upload progress</td>
+</tr>
+<tr>
+<td><code>proxy_username</code></td>
+<td>Proxy username</td>
+</tr>
+<tr>
+<td><code>proxy_password</code></td>
+<td>Proxy password</td>
+</tr>
+<tr>
+<td><code>proxy_address</code></td>
+<td>Proxy address</td>
+</tr>
+<tr>
+<td><code>proxy_port</code></td>
+<td>Proxy port</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="apteligent"><a name="user-content-apteligent" href="#apteligent" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>apteligent</h3>
+<p>Upload dSYM file to Apteligent (Crittercism)</p>
+<table>
+<thead>
+<tr>
+<th>apteligent</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@Mo7amedFouad</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">apteligent(
+  app_id: &quot;...&quot;,
+  api_key: &quot;...&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dsym</code></td>
+<td>dSYM.zip file to upload to Apteligent</td>
+</tr>
+<tr>
+<td><code>app_id</code></td>
+<td>Apteligent App ID key e.g. 569f5c87cb99e10e00c7xxxx</td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Apteligent App API key e.g. IXPQIi8yCbHaLliqzRoo065tH0lxxxxx</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="appetize"><a name="user-content-appetize" href="#appetize" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appetize</h3>
+<p>Upload your app to Appetize.io to stream it in the browser</p>
+<blockquote>
+<p>If you provide a <code>public_key</code>, this will overwrite an existing application. If you want to have this build as a new app version, you shouldn't provide this value.
+To integrate appetize into your GitHub workflow check out the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md">device_grid guide</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>appetize</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@klundberg, @giginet</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">appetize(
+  path: &quot;./MyApp.zip&quot;,
+  api_token: &quot;yourapitoken&quot;, # get it from https://appetize.io/docs#request-api-token
+  public_key: &quot;your_public_key&quot; # get it from https://appetize.io/dashboard
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_token</code></td>
+<td>Appetize.io API Token</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>URL from which the ipa file can be fetched. Alternative to :path</td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td>Platform. Either <code>ios</code> or <code>android</code>. Default is <code>ios</code></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>Path to zipped build on the local filesystem. Either this or <code>url</code> must be specified</td>
+</tr>
+<tr>
+<td><code>public_key</code></td>
+<td>If not provided, a new app will be created. If provided, the existing build will be overwritten</td>
+</tr>
+<tr>
+<td><code>note</code></td>
+<td>Notes you wish to add to the uploaded app</td>
 </tr>
 </tbody>
 </table>
@@ -7033,7 +7050,7 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 <p></details></p>
 <h1 id="source-control"><a name="user-content-source-control" href="#source-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source Control</h1>
 <h3 id="ensure_git_status_clean"><a name="user-content-ensure_git_status_clean" href="#ensure_git_status_clean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_git_status_clean</h3>
-<p>Raises an exception if there are uncommited git changes</p>
+<p>Raises an exception if there are uncommitted git changes</p>
 <blockquote>
 <p>A sanity check to make sure you are working in a repo that is clean. Especially
 useful to put at the beginning of your Fastfile in the <code>before_all</code> block, if
@@ -7066,7 +7083,7 @@ some other actions like <code>reset_git_repo</code>.</p>
 
 <p></details></p>
 <h3 id="reset_git_repo"><a name="user-content-reset_git_repo" href="#reset_git_repo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reset_git_repo</h3>
-<p>Resets git repo to a clean state by discarding uncommited changes</p>
+<p>Resets git repo to a clean state by discarding uncommitted changes</p>
 <blockquote>
 <p>This action will reset your git repo to a clean state, discarding any uncommitted and untracked changes. Useful in case you need to revert the repo back to a clean state, e.g. after the fastlane run. Untracked files like <code>.env</code> will also be deleted, unless <code>:skip_clean</code> is true. It's a pretty drastic action so it comes with a sort of safety latch. It will only proceed with the reset if either of these conditions are met: You have called the ensure_git_status_clean action prior to calling this action. This ensures that your repo started off in a clean state, so the only things that will get destroyed by this action are files that are created as a byproduct of the fastlane run.</p>
 </blockquote>
@@ -7171,9 +7188,9 @@ some other actions like <code>reset_git_repo</code>.</p>
 
 <p></details></p>
 <h3 id="number_of_commits"><a name="user-content-number_of_commits" href="#number_of_commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>number_of_commits</h3>
-<p>Return the total number of all commits in current git repo</p>
+<p>Return the number of commits in current git branch</p>
 <blockquote>
-<p>You can use this action to get the number of commits of this repo. This is useful if you want to set the build number to the number of commits.</p>
+<p>You can use this action to get the number of commits of this branch. This is useful if you want to set the build number to the number of commits. See <code>faslane actions number_of_commits</code> for more details</p>
 </blockquote>
 <table>
 <thead>
@@ -7189,20 +7206,40 @@ some other actions like <code>reset_git_repo</code>.</p>
 </tr>
 <tr>
 <td>Author</td>
-<td>@onevcat</td>
+<td>@onevcat, @samuelbeek</td>
 </tr>
 <tr>
 <td>Returns</td>
-<td>The total number of all commits in current git repo</td>
+<td>The total number of all commits in current git branch</td>
 </tr>
 </tbody>
 </table>
 <p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">build_number = number_of_commits
-increment_build_number(build_number: build_number)
+<summary>2 Examples</summary></p>
+<pre><code class="ruby">increment_build_number(build_number: number_of_commits)
 </code></pre>
 
+<pre><code class="ruby">build_number = number_of_commits(all: true)
+increment_build_number(build_number: number_of_commits)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>all</code></td>
+<td>Returns number of all commits instead of current branch</td>
+</tr>
+</tbody>
+</table>
 <p></details></p>
 <h3 id="changelog_from_git_commits"><a name="user-content-changelog_from_git_commits" href="#changelog_from_git_commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>changelog_from_git_commits</h3>
 <p>Collect git commit messages into a changelog</p>
@@ -7896,6 +7933,62 @@ There is an option, <code>:use_hg_revision_number</code>, which allows to use me
 </tbody>
 </table>
 <p></details></p>
+<h3 id="hg_push"><a name="user-content-hg_push" href="#hg_push" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_push</h3>
+<p>This will push changes to the remote hg repository</p>
+<blockquote>
+<p>The mercurial equivalent of <a href="#push_to_git_remote"><code>push_to_git_remote</code></a> — pushes your local commits to a remote mercurial repo. Useful when local changes such as adding a version bump commit or adding a tag are part of your lane’s actions.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>hg_push</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@sjrmanning</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>2 Examples</summary></p>
+<pre><code class="ruby">hg_push
+</code></pre>
+
+<pre><code class="ruby">hg_push(
+  destination: &quot;ssh://hg@repohost.com/owner/repo&quot;,
+  force: true
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>force</code></td>
+<td>Force push to remote. Defaults to false</td>
+</tr>
+<tr>
+<td><code>destination</code></td>
+<td>The destination to push to</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <h3 id="git_tag_exists"><a name="user-content-git_tag_exists" href="#git_tag_exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_tag_exists</h3>
 <p>Checks if the git tag with the given name exists in the current repo</p>
 <table>
@@ -7941,6 +8034,80 @@ end
 <tr>
 <td><code>tag</code></td>
 <td>The tag name that should be checked</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="hg_commit_version_bump"><a name="user-content-hg_commit_version_bump" href="#hg_commit_version_bump" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_commit_version_bump</h3>
+<p>This will commit a version bump to the hg repo</p>
+<blockquote>
+<p>The mercurial equivalent of the <a href="#commit_version_bump"><code>commit_version_bump</code></a> git action. Like the git version, it is useful in conjunction with <a href="#increment_build_number"><code>increment_build_number</code></a>.
+It checks the repo to make sure that only the relevant files have changed, these are the files that <code>increment_build_number</code> (<code>agvtool</code>) touches:
+- All .plist files
+- The <code>.xcodeproj/project.pbxproj</code> file
+Then commits those files to the repo.
+Customise the message with the <code>:message</code> option, defaults to 'Version Bump'
+If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <em>ipa</em> and or <em>sigh</em> actions, then you can use the <a href="#clean_build_artifacts"><code>clean_build_artifacts</code></a> action to clean those temporary files up before running this action.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>hg_commit_version_bump</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@sjrmanning</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>2 Examples</summary></p>
+<pre><code class="ruby">hg_commit_version_bump
+</code></pre>
+
+<pre><code class="ruby">hg_commit_version_bump(
+  message: &quot;Version Bump&quot;,       # create a commit with a custom message
+  xcodeproj: &quot;./path/MyProject.xcodeproj&quot;, # optional, if you have multiple Xcode project files, you must specify your main project here
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td>The commit message when committing the version bump</td>
+</tr>
+<tr>
+<td><code>xcodeproj</code></td>
+<td>The path to your project file (Not the workspace). If you have only one, this is optional</td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>Forces the commit, even if other files than the ones containing the version number have been modified</td>
+</tr>
+<tr>
+<td><code>test_dirty_files</code></td>
+<td>A list of dirty files passed in for testing</td>
+</tr>
+<tr>
+<td><code>test_expected_files</code></td>
+<td>A list of expected changed files passed in for testin</td>
 </tr>
 </tbody>
 </table>
@@ -8040,6 +8207,78 @@ puts release[&quot;name&quot;]
 </tbody>
 </table>
 <p></details></p>
+<h3 id="hg_add_tag"><a name="user-content-hg_add_tag" href="#hg_add_tag" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_add_tag</h3>
+<p>This will add a hg tag to the current branch</p>
+<table>
+<thead>
+<tr>
+<th>hg_add_tag</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@sjrmanning</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">hg_add_tag(tag: &quot;1.3&quot;)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag</code></td>
+<td>Tag to create</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="hg_ensure_clean_status"><a name="user-content-hg_ensure_clean_status" href="#hg_ensure_clean_status" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_ensure_clean_status</h3>
+<p>Raises an exception if there are uncommitted hg changes</p>
+<blockquote>
+<p>Along the same lines as the <a href="#ensure_git_status_clean"><code>ensure_git_status_clean</code></a> action, this is a sanity check to ensure the working mercurial repo is clean. Especially useful to put at the beginning of your Fastfile in the <code>before_all</code> block.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>hg_ensure_clean_status</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@sjrmanning</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">hg_ensure_clean_status
+</code></pre>
+
+<p></details></p>
 <h3 id="create_pull_request"><a name="user-content-create_pull_request" href="#create_pull_request" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>create_pull_request</h3>
 <p>This will create a new pull request on GitHub</p>
 <table>
@@ -8111,208 +8350,6 @@ puts release[&quot;name&quot;]
 <tr>
 <td><code>api_url</code></td>
 <td>The URL of Github API - used when the Enterprise (default to <code>https://api.github.com</code>)</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="hg_ensure_clean_status"><a name="user-content-hg_ensure_clean_status" href="#hg_ensure_clean_status" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_ensure_clean_status</h3>
-<p>Raises an exception if there are uncommited hg changes</p>
-<blockquote>
-<p>Along the same lines as the <a href="#ensure_git_status_clean"><code>ensure_git_status_clean</code></a> action, this is a sanity check to ensure the working mercurial repo is clean. Especially useful to put at the beginning of your Fastfile in the <code>before_all</code> block.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>hg_ensure_clean_status</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@sjrmanning</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">hg_ensure_clean_status
-</code></pre>
-
-<p></details></p>
-<h3 id="hg_commit_version_bump"><a name="user-content-hg_commit_version_bump" href="#hg_commit_version_bump" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_commit_version_bump</h3>
-<p>This will commit a version bump to the hg repo</p>
-<blockquote>
-<p>The mercurial equivalent of the <a href="#commit_version_bump"><code>commit_version_bump</code></a> git action. Like the git version, it is useful in conjunction with <a href="#increment_build_number"><code>increment_build_number</code></a>.
-It checks the repo to make sure that only the relevant files have changed, these are the files that <code>increment_build_number</code> (<code>agvtool</code>) touches:
-- All .plist files
-- The <code>.xcodeproj/project.pbxproj</code> file
-Then commits those files to the repo.
-Customise the message with the <code>:message</code> option, defaults to 'Version Bump'
-If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <em>ipa</em> and or <em>sigh</em> actions, then you can use the <a href="#clean_build_artifacts"><code>clean_build_artifacts</code></a> action to clean those temporary files up before running this action.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>hg_commit_version_bump</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@sjrmanning</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>2 Examples</summary></p>
-<pre><code class="ruby">hg_commit_version_bump
-</code></pre>
-
-<pre><code class="ruby">hg_commit_version_bump(
-  message: &quot;Version Bump&quot;,       # create a commit with a custom message
-  xcodeproj: &quot;./path/MyProject.xcodeproj&quot;, # optional, if you have multiple Xcode project files, you must specify your main project here
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>message</code></td>
-<td>The commit message when committing the version bump</td>
-</tr>
-<tr>
-<td><code>xcodeproj</code></td>
-<td>The path to your project file (Not the workspace). If you have only one, this is optional</td>
-</tr>
-<tr>
-<td><code>force</code></td>
-<td>Forces the commit, even if other files than the ones containing the version number have been modified</td>
-</tr>
-<tr>
-<td><code>test_dirty_files</code></td>
-<td>A list of dirty files passed in for testing</td>
-</tr>
-<tr>
-<td><code>test_expected_files</code></td>
-<td>A list of expected changed files passed in for testin</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="hg_push"><a name="user-content-hg_push" href="#hg_push" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_push</h3>
-<p>This will push changes to the remote hg repository</p>
-<blockquote>
-<p>The mercurial equivalent of <a href="#push_to_git_remote"><code>push_to_git_remote</code></a> — pushes your local commits to a remote mercurial repo. Useful when local changes such as adding a version bump commit or adding a tag are part of your lane’s actions.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>hg_push</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@sjrmanning</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>2 Examples</summary></p>
-<pre><code class="ruby">hg_push
-</code></pre>
-
-<pre><code class="ruby">hg_push(
-  destination: &quot;ssh://hg@repohost.com/owner/repo&quot;,
-  force: true
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>force</code></td>
-<td>Force push to remote. Defaults to false</td>
-</tr>
-<tr>
-<td><code>destination</code></td>
-<td>The destination to push to</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="hg_add_tag"><a name="user-content-hg_add_tag" href="#hg_add_tag" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hg_add_tag</h3>
-<p>This will add a hg tag to the current branch</p>
-<table>
-<thead>
-<tr>
-<th>hg_add_tag</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@sjrmanning</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">hg_add_tag(tag: &quot;1.3&quot;)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>tag</code></td>
-<td>Tag to create</td>
 </tr>
 </tbody>
 </table>
@@ -8405,7 +8442,7 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tr>
 <tr>
 <td><code>payload</code></td>
-<td>Add additional information to this post. payload must be a hash containg any key with any value</td>
+<td>Add additional information to this post. payload must be a hash containing any key with any value</td>
 </tr>
 <tr>
 <td><code>default_payloads</code></td>
@@ -8588,6 +8625,174 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tbody>
 </table>
 <p></details></p>
+<h3 id="ifttt"><a name="user-content-ifttt" href="#ifttt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ifttt</h3>
+<p>Connect to the IFTTT Maker Channel. https://ifttt.com/maker</p>
+<blockquote>
+<p>Connect to the IFTTT <a href="https://ifttt.com/maker">Maker Channel</a>. An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this <em>fastlane</em> action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>ifttt</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@vpolouchkine</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">ifttt(
+  api_key: &quot;...&quot;,
+  event_name: &quot;...&quot;,
+  value1: &quot;foo&quot;,
+  value2: &quot;bar&quot;,
+  value3: &quot;baz&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api_key</code></td>
+<td>API key</td>
+</tr>
+<tr>
+<td><code>event_name</code></td>
+<td>The name of the event that will be triggered</td>
+</tr>
+<tr>
+<td><code>value1</code></td>
+<td>Extra data sent with the event</td>
+</tr>
+<tr>
+<td><code>value2</code></td>
+<td>Extra data sent with the event</td>
+</tr>
+<tr>
+<td><code>value3</code></td>
+<td>Extra data sent with the event</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="typetalk"><a name="user-content-typetalk" href="#typetalk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>typetalk</h3>
+<p>Post a message to Typetalk</p>
+<table>
+<thead>
+<tr>
+<th>typetalk</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@Nulab Inc.</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">typetalk(
+  message: &quot;App successfully released!&quot;,
+  note_path: &quot;ChangeLog.md&quot;,
+  topicId: 1,
+  success: true,
+  typetalk_token: &quot;Your Typetalk Token&quot;
+)
+</code></pre>
+
+<p></details></p>
+<h3 id="twitter"><a name="user-content-twitter" href="#twitter" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>twitter</h3>
+<p>Post a tweet on Twitter.com</p>
+<blockquote>
+<p>Post a tweet on twitter. Requires you to setup an app on twitter.com and obtain consumer and access_token.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>twitter</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@hjanuschka</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">twitter(
+  access_token: &quot;XXXX&quot;,
+  access_token_secret: &quot;xxx&quot;,
+  consumer_key: &quot;xxx&quot;,
+  consumer_secret: &quot;xxx&quot;,
+  message: &quot;You rock!&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>consumer_key</code></td>
+<td>Consumer Key</td>
+</tr>
+<tr>
+<td><code>consumer_secret</code></td>
+<td>Consumer Secret</td>
+</tr>
+<tr>
+<td><code>access_token</code></td>
+<td>Access Token</td>
+</tr>
+<tr>
+<td><code>access_token_secret</code></td>
+<td>Access Token Secret</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>The tweet</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <h3 id="mailgun"><a name="user-content-mailgun" href="#mailgun" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>mailgun</h3>
 <p>Send a success/error message to an email group</p>
 <table>
@@ -8706,6 +8911,64 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tbody>
 </table>
 <p></details></p>
+<h3 id="flock"><a name="user-content-flock" href="#flock" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>flock</h3>
+<p>Send a message to a Flock group</p>
+<blockquote>
+<p>To obtain the token, create a new <a href="https://dev.flock.co/wiki/display/FlockAPI/Incoming+Webhooks">incoming message webhook</a>
+in your Flock admin panel.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>flock</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@Manav</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">flock(
+  message: &quot;Hello&quot;,
+  token: &quot;xxx&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td>Message text</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td>Token for the Flock incoming webhook</td>
+</tr>
+<tr>
+<td><code>base_url</code></td>
+<td>Base URL of the Flock incoming message webhook</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <h3 id="chatwork"><a name="user-content-chatwork" href="#chatwork" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>chatwork</h3>
 <p>Send a success/error message to ChatWork</p>
 <blockquote>
@@ -8768,232 +9031,6 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tr>
 </tbody>
 </table>
-<p></details></p>
-<h3 id="flock"><a name="user-content-flock" href="#flock" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>flock</h3>
-<p>Send a message to a Flock group</p>
-<blockquote>
-<p>To obtain the token, create a new <a href="https://dev.flock.co/wiki/display/FlockAPI/Incoming+Webhooks">incoming message webhook</a>
-in your Flock admin panel.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>flock</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@Manav</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">flock(
-  message: &quot;Hello&quot;,
-  token: &quot;xxx&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>message</code></td>
-<td>Message text</td>
-</tr>
-<tr>
-<td><code>token</code></td>
-<td>Token for the Flock incoming webhook</td>
-</tr>
-<tr>
-<td><code>base_url</code></td>
-<td>Base URL of the Flock incoming message webhook</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="ifttt"><a name="user-content-ifttt" href="#ifttt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ifttt</h3>
-<p>Connect to the IFTTT Maker Channel. https://ifttt.com/maker</p>
-<blockquote>
-<p>Connect to the IFTTT <a href="https://ifttt.com/maker">Maker Channel</a>. An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this <em>fastlane</em> action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>ifttt</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@vpolouchkine</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">ifttt(
-  api_key: &quot;...&quot;,
-  event_name: &quot;...&quot;,
-  value1: &quot;foo&quot;,
-  value2: &quot;bar&quot;,
-  value3: &quot;baz&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>api_key</code></td>
-<td>API key</td>
-</tr>
-<tr>
-<td><code>event_name</code></td>
-<td>The name of the event that will be triggered</td>
-</tr>
-<tr>
-<td><code>value1</code></td>
-<td>Extra data sent with the event</td>
-</tr>
-<tr>
-<td><code>value2</code></td>
-<td>Extra data sent with the event</td>
-</tr>
-<tr>
-<td><code>value3</code></td>
-<td>Extra data sent with the event</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="twitter"><a name="user-content-twitter" href="#twitter" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>twitter</h3>
-<p>Post a tweet on Twitter.com</p>
-<blockquote>
-<p>Post a tweet on twitter. Requires you to setup an app on twitter.com and obtain consumer and access_token.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>twitter</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@hjanuschka</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">twitter(
-  access_token: &quot;XXXX&quot;,
-  access_token_secret: &quot;xxx&quot;,
-  consumer_key: &quot;xxx&quot;,
-  consumer_secret: &quot;xxx&quot;,
-  message: &quot;You rock!&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>consumer_key</code></td>
-<td>Consumer Key</td>
-</tr>
-<tr>
-<td><code>consumer_secret</code></td>
-<td>Consumer Secret</td>
-</tr>
-<tr>
-<td><code>access_token</code></td>
-<td>Access Token</td>
-</tr>
-<tr>
-<td><code>access_token_secret</code></td>
-<td>Access Token Secret</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td>The tweet</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="typetalk"><a name="user-content-typetalk" href="#typetalk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>typetalk</h3>
-<p>Post a message to Typetalk</p>
-<table>
-<thead>
-<tr>
-<th>typetalk</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@Nulab Inc.</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">typetalk(
-  message: &quot;App successfully released!&quot;,
-  note_path: &quot;ChangeLog.md&quot;,
-  topicId: 1,
-  success: true,
-  typetalk_token: &quot;Your Typetalk Token&quot;
-)
-</code></pre>
-
 <p></details></p>
 <h1 id="deprecated"><a name="user-content-deprecated" href="#deprecated" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deprecated</h1>
 <h3 id="ipa"><a name="user-content-ipa" href="#ipa" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ipa</h3>
@@ -9239,7 +9276,7 @@ Install using <code>fastlane add_plugin aws_s3</code>.</p>
 </tr>
 <tr>
 <td><code>path</code></td>
-<td>S3 'path'. Values from Info.plist will be substituded for keys wrapped in </td>
+<td>S3 'path'. Values from Info.plist will be substituted for keys wrapped in </td>
 </tr>
 <tr>
 <td><code>source</code></td>
@@ -9372,7 +9409,7 @@ Replace <code>upload_symbols_to_sentry</code> with <code>sentry_upload_dsym</cod
 </tr>
 <tr>
 <td><code>project_slug</code></td>
-<td>Prgoject slug for Sentry</td>
+<td>Project slug for Sentry</td>
 </tr>
 <tr>
 <td><code>dsym_path</code></td>
@@ -10658,7 +10695,7 @@ Fetches most recent build number from TestFlight based on the version number. Pr
 <h3 id="copy_artifacts"><a name="user-content-copy_artifacts" href="#copy_artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>copy_artifacts</h3>
 <p>Small action to save your build artifacts. Useful when you use reset_git_repo</p>
 <blockquote>
-<p>This action copies artifacs to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your <code>.ipa</code>s, <code>.dSYM.zip</code>s, <code>.mobileprovision</code>s, <code>.cert</code>s
+<p>This action copies artifacts to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your <code>.ipa</code>s, <code>.dSYM.zip</code>s, <code>.mobileprovision</code>s, <code>.cert</code>s
 Make sure your target_path is gitignored, and if you use <code>reset_git_repo</code>, make sure the artifacts are added to the exclude list</p>
 </blockquote>
 <table>
@@ -11130,37 +11167,13 @@ More information: https://github.com/danger/danger</p>
 </tbody>
 </table>
 <p></details></p>
-<h3 id="team_name"><a name="user-content-team_name" href="#team_name" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>team_name</h3>
-<p>Set a team to use by its name</p>
-<table>
-<thead>
-<tr>
-<th>team_name</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">team_name &quot;Felix Krause&quot;
-</code></pre>
-
-<p></details></p>
 <h3 id="version_bump_podspec"><a name="user-content-version_bump_podspec" href="#version_bump_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>version_bump_podspec</h3>
 <p>Increment or set the version in a podspec file</p>
 <blockquote>
 <p>You can use this action to manipulate any 'version' variable contained in a ruby file.
-For example, you can use it to bump the version of a cocoapods' podspec file.</p>
+For example, you can use it to bump the version of a cocoapods' podspec file.
+It also supports versions that are not semantic: 1.4.14.4.1
+For such versions there is an option to change appendix (4.1)</p>
 </blockquote>
 <table>
 <thead>
@@ -11211,15 +11224,93 @@ For example, you can use it to bump the version of a cocoapods' podspec file.</p
 <td><code>version_number</code></td>
 <td>Change to a specific version. This will replace the bump type value</td>
 </tr>
+<tr>
+<td><code>version_appendix</code></td>
+<td>Change version appendix to a specific value. For example 1.4.14.4.1 -&gt; 1.4.14.5</td>
+</tr>
 </tbody>
 </table>
 <p></details></p>
-<h3 id="debug"><a name="user-content-debug" href="#debug" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>debug</h3>
-<p>Print out an overview of the lane context values</p>
+<h3 id="team_name"><a name="user-content-team_name" href="#team_name" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>team_name</h3>
+<p>Set a team to use by its name</p>
 <table>
 <thead>
 <tr>
-<th>debug</th>
+<th>team_name</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">team_name &quot;Felix Krause&quot;
+</code></pre>
+
+<p></details></p>
+<h3 id="version_get_podspec"><a name="user-content-version_get_podspec" href="#version_get_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>version_get_podspec</h3>
+<p>Receive the version number from a podspec file</p>
+<table>
+<thead>
+<tr>
+<th>version_get_podspec</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@Liquidsoul, @KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">version = version_get_podspec(path: &quot;TSMessages.podspec&quot;)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>You must specify the path to the podspec file</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="ensure_no_debug_code"><a name="user-content-ensure_no_debug_code" href="#ensure_no_debug_code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_no_debug_code</h3>
+<p>Ensures the given text is nowhere in the code base</p>
+<blockquote>
+<p>You don't want any debug code to slip into production. This can be used
+to check if there is any debug code still in your code base or if you have
+things like // TO DO or similar</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>ensure_no_debug_code</th>
 <th></th>
 </tr>
 </thead>
@@ -11235,10 +11326,65 @@ For example, you can use it to bump the version of a cocoapods' podspec file.</p
 </tbody>
 </table>
 <p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">debug
+<summary>5 Examples</summary></p>
+<pre><code class="ruby">ensure_no_debug_code(text: &quot;// TODO&quot;)
 </code></pre>
 
+<pre><code class="ruby">ensure_no_debug_code(text: &quot;Log.v&quot;,
+      extension: &quot;java&quot;)
+</code></pre>
+
+<pre><code class="ruby">ensure_no_debug_code(text: &quot;NSLog&quot;,
+ path: &quot;./lib&quot;,
+      extension: &quot;m&quot;)
+</code></pre>
+
+<pre><code class="ruby">ensure_no_debug_code(text: &quot;(^#define DEBUG|NSLog)&quot;,
+ path: &quot;./lib&quot;,
+      extension: &quot;m&quot;)
+</code></pre>
+
+<pre><code class="ruby">ensure_no_debug_code(text: &quot;&lt;&lt;&lt;&lt;&lt;&lt;&quot;,
+     extensions: [&quot;m&quot;, &quot;swift&quot;, &quot;java&quot;])
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>The text that must not be in the code base</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>The directory containing all the source files</td>
+</tr>
+<tr>
+<td><code>extension</code></td>
+<td>The extension that should be searched for</td>
+</tr>
+<tr>
+<td><code>extensions</code></td>
+<td>An array of file extensions that should be searched for</td>
+</tr>
+<tr>
+<td><code>exclude</code></td>
+<td>Exclude a certain pattern from the search</td>
+</tr>
+<tr>
+<td><code>exclude_dirs</code></td>
+<td>An array of dirs that should not be included in the search</td>
+</tr>
+</tbody>
+</table>
 <p></details></p>
 <h3 id="dsym_zip"><a name="user-content-dsym_zip" href="#dsym_zip" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>dsym_zip</h3>
 <p>Creates a zipped dSYM in the project root from the .xcarchive</p>
@@ -11295,59 +11441,6 @@ For example, you can use it to bump the version of a cocoapods' podspec file.</p
 <tr>
 <td><code>all</code></td>
 <td>Whether or not all dSYM files are to be included. Optional, default is false in which only your app dSYM is included</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="make_changelog_from_jenkins"><a name="user-content-make_changelog_from_jenkins" href="#make_changelog_from_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>make_changelog_from_jenkins</h3>
-<p>Generate a changelog using the Changes section from the current Jenkins build</p>
-<blockquote>
-<p>This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>make_changelog_from_jenkins</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@mandrizzle</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">make_changelog_from_jenkins(
-  # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins
-  fallback_changelog: &quot;Bug fixes and performance enhancements&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>fallback_changelog</code></td>
-<td>Fallback changelog if there is not one on Jenkins, or it couldn't be read</td>
-</tr>
-<tr>
-<td><code>include_commit_body</code></td>
-<td>Include the commit body along with the summary</td>
 </tr>
 </tbody>
 </table>
@@ -11454,15 +11547,12 @@ For example, you can use it to bump the version of a cocoapods' podspec file.</p
 </tbody>
 </table>
 <p></details></p>
-<h3 id="pod_lib_lint"><a name="user-content-pod_lib_lint" href="#pod_lib_lint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pod_lib_lint</h3>
-<p>Pod lib lint</p>
-<blockquote>
-<p>Test the syntax of your Podfile by linting the pod against the files of its directory</p>
-</blockquote>
+<h3 id="pod_push"><a name="user-content-pod_push" href="#pod_push" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pod_push</h3>
+<p>Push a Podspec to Trunk or a private repository</p>
 <table>
 <thead>
 <tr>
-<th>pod_lib_lint</th>
+<th>pod_push</th>
 <th></th>
 </tr>
 </thead>
@@ -11473,25 +11563,26 @@ For example, you can use it to bump the version of a cocoapods' podspec file.</p
 </tr>
 <tr>
 <td>Author</td>
-<td>@thierryxing</td>
+<td>@squarefrog</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>4 Examples</summary></p>
-<pre><code class="ruby">pod_lib_lint
+<pre><code class="ruby"># If no path is supplied then Trunk will attempt to find the first Podspec in the current directory.
+pod_push
 </code></pre>
 
-<pre><code class="ruby"># Allow ouput detail in console
-pod_lib_lint(verbose: true)
+<pre><code class="ruby"># Alternatively, supply the Podspec file path
+pod_push(path: &quot;TSMessages.podspec&quot;)
 </code></pre>
 
-<pre><code class="ruby"># Allow warnings during pod lint
-pod_lib_lint(allow_warnings: true)
+<pre><code class="ruby"># You may also push to a private repo instead of Trunk
+pod_push(path: &quot;TSMessages.podspec&quot;, repo: &quot;MyRepo&quot;)
 </code></pre>
 
-<pre><code class="ruby"># If the podspec has a dependency on another private pod, then you will have to supply the sources
-pod_lib_lint(sources: [&quot;https://github.com/MyGithubPage/Specs&quot;, &quot;https://github.com/CocoaPods/Specs&quot;])
+<pre><code class="ruby"># If the podspec has a dependency on another private pod, then you will have to supply the sources you want the podspec to lint with for pod_push to succeed. Read more here - https://github.com/CocoaPods/CocoaPods/issues/2543.
+pod_push(path: &quot;TMessages.podspec&quot;, repo: &quot;MyRepo&quot;, sources: [&quot;https://github.com/MyGithubPage/Specs&quot;, &quot;https://github.com/CocoaPods/Specs&quot;])
 </code></pre>
 
 <p></details></p>
@@ -11506,58 +11597,116 @@ pod_lib_lint(sources: [&quot;https://github.com/MyGithubPage/Specs&quot;, &quot;
 </thead>
 <tbody>
 <tr>
-<td><code>use_bundle_exec</code></td>
-<td>Use bundle exec when there is a Gemfile presented</td>
+<td><code>path</code></td>
+<td>The Podspec you want to push</td>
 </tr>
 <tr>
-<td><code>verbose</code></td>
-<td>Allow ouput detail in console</td>
+<td><code>repo</code></td>
+<td>The repo you want to push. Pushes to Trunk by default</td>
 </tr>
 <tr>
 <td><code>allow_warnings</code></td>
-<td>Allow warnings during pod lint</td>
+<td>Allow warnings during pod push</td>
+</tr>
+<tr>
+<td><code>use_libraries</code></td>
+<td>Allow lint to use static libraries to install the spec</td>
 </tr>
 <tr>
 <td><code>sources</code></td>
 <td>The sources of repos you want the pod spec to lint with, separated by commas</td>
 </tr>
 <tr>
-<td><code>use_libraries</code></td>
-<td>Lint uses static libraries to install the spec</td>
-</tr>
-<tr>
-<td><code>fail_fast</code></td>
-<td>Lint stops on the first failing platform or subspec</td>
-</tr>
-<tr>
-<td><code>private</code></td>
-<td>Lint skips checks that apply only to public specs</td>
-</tr>
-<tr>
-<td><code>quick</code></td>
-<td>Lint skips checks that would require to download and build the spec</td>
+<td><code>verbose</code></td>
+<td>Show more debugging information</td>
 </tr>
 </tbody>
 </table>
 <p></details></p>
-<h3 id="ensure_no_debug_code"><a name="user-content-ensure_no_debug_code" href="#ensure_no_debug_code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_no_debug_code</h3>
-<p>Ensures the given text is nowhere in the code base</p>
+<h3 id="cloc"><a name="user-content-cloc" href="#cloc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>cloc</h3>
+<p>Generates a Code Count that can be read by Jenkins (xml format)</p>
 <blockquote>
-<p>You don't want any debug code to slip into production. This can be used
-to check if there is any debug code still in your code base or if you have
-things like // TO DO or similar</p>
+<p>This action will run cloc to generate a SLOC report that the Jenkins SLOCCount plugin can read.
+See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>ensure_no_debug_code</th>
+<th>cloc</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, android, mac</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@intere</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">cloc(
+   exclude_dir: &quot;ThirdParty,Resources&quot;,
+   output_directory: &quot;reports&quot;,
+   source_directory: &quot;MyCoolApp&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>binary_path</code></td>
+<td>Where the cloc binary lives on your system (full path including 'cloc')</td>
+</tr>
+<tr>
+<td><code>exclude_dir</code></td>
+<td>Comma separated list of directories to exclude</td>
+</tr>
+<tr>
+<td><code>output_directory</code></td>
+<td>Where to put the generated report file</td>
+</tr>
+<tr>
+<td><code>source_directory</code></td>
+<td>Where to look for the source code (relative to the project root folder)</td>
+</tr>
+<tr>
+<td><code>xml</code></td>
+<td>Should we generate an XML File (if false, it will generate a plain text file)?</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="build_and_upload_to_appetize"><a name="user-content-build_and_upload_to_appetize" href="#build_and_upload_to_appetize" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>build_and_upload_to_appetize</h3>
+<p>Generate and upload an ipa file to appetize.io</p>
+<blockquote>
+<p>This should be called from danger
+More information in the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md">device_grid guide</a></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>build_and_upload_to_appetize</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
 </tr>
 <tr>
 <td>Author</td>
@@ -11565,27 +11714,130 @@ things like // TO DO or similar</p>
 </tr>
 </tbody>
 </table>
+<p></details></p>
 <p><details>
-<summary>5 Examples</summary></p>
-<pre><code class="ruby">ensure_no_debug_code(text: &quot;// TODO&quot;)
-</code></pre>
-
-<pre><code class="ruby">ensure_no_debug_code(text: &quot;Log.v&quot;,
-      extension: &quot;java&quot;)
-</code></pre>
-
-<pre><code class="ruby">ensure_no_debug_code(text: &quot;NSLog&quot;,
- path: &quot;./lib&quot;,
-      extension: &quot;m&quot;)
-</code></pre>
-
-<pre><code class="ruby">ensure_no_debug_code(text: &quot;(^#define DEBUG|NSLog)&quot;,
- path: &quot;./lib&quot;,
-      extension: &quot;m&quot;)
-</code></pre>
-
-<pre><code class="ruby">ensure_no_debug_code(text: &quot;&lt;&lt;&lt;&lt;&lt;&lt;&quot;,
-     extensions: [&quot;m&quot;, &quot;swift&quot;, &quot;java&quot;])
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>xcodebuild</code></td>
+<td>Parameters that are passed to the xcodebuild action</td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>The scheme to build. Can also be passed using the <code>xcodebuild</code> parameter</td>
+</tr>
+<tr>
+<td><code>api_token</code></td>
+<td>Appetize.io API Token</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="appetize_viewing_url_generator"><a name="user-content-appetize_viewing_url_generator" href="#appetize_viewing_url_generator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appetize_viewing_url_generator</h3>
+<p>Generate an URL for appetize simulator</p>
+<blockquote>
+<p>Check out the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md">device_grid guide</a> for more information</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>appetize_viewing_url_generator</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The URL to preview the iPhone app</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public_key</code></td>
+<td>Public key of the app you wish to update</td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9</td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>Scale of the simulator</td>
+</tr>
+<tr>
+<td><code>orientation</code></td>
+<td>Device orientation</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>Device language in ISO 639-1 language code, e.g. 'de'</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>Color of the device</td>
+</tr>
+<tr>
+<td><code>launch_url</code></td>
+<td>Specify a deep link to open when your app is launched</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="install_on_device"><a name="user-content-install_on_device" href="#install_on_device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>install_on_device</h3>
+<p>Installs an .ipa file on a connected iOS-device via usb or wifi</p>
+<blockquote>
+<p>Installs the ipa on the device, if no id is given, the first found iOS device will be used, works via USB or Wi-Fi. This requires <code>ios-deploy</code> to be installed please have a look at <a href="https://github.com/phonegap/ios-deploy">ios-deploy</a>. to quickly install it, use <code>npm -g i ios-deploy</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>install_on_device</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@hjanuschka</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">install_on_device(
+  device_id: &quot;a3be6c9ff7e5c3c6028597513243b0f933b876d4&quot;,
+  ipa: &quot;./app.ipa&quot;
+)
 </code></pre>
 
 <p></details></p>
@@ -11600,41 +11852,34 @@ things like // TO DO or similar</p>
 </thead>
 <tbody>
 <tr>
-<td><code>text</code></td>
-<td>The text that must not be in the code base</td>
+<td><code>extra</code></td>
+<td>Extra Commandline arguments passed to ios-deploy</td>
 </tr>
 <tr>
-<td><code>path</code></td>
-<td>The directory containing all the source files</td>
+<td><code>device_id</code></td>
+<td>id of the device / if not set defaults to first found device</td>
 </tr>
 <tr>
-<td><code>extension</code></td>
-<td>The extension that should be searched for</td>
+<td><code>skip_wifi</code></td>
+<td>Do not search for devices via WiFi</td>
 </tr>
 <tr>
-<td><code>extensions</code></td>
-<td>An array of file extensions that should be searched for</td>
-</tr>
-<tr>
-<td><code>exclude</code></td>
-<td>Exclude a certain pattern from the search</td>
-</tr>
-<tr>
-<td><code>exclude_dirs</code></td>
-<td>An array of dirs that should not be included in the search</td>
+<td><code>ipa</code></td>
+<td>The IPA file to put on the device</td>
 </tr>
 </tbody>
 </table>
 <p></details></p>
-<h3 id="rocket"><a name="user-content-rocket" href="#rocket" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rocket</h3>
-<p>Outputs ascii-art for a rocket 🚀</p>
+<h3 id="erb"><a name="user-content-erb" href="#erb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>erb</h3>
+<p>Allows to Generate output files based on ERB templates</p>
 <blockquote>
-<p>Print an ascii Rocket :rocket:. Useful after using <em>crashlytics</em> or <em>pilot</em> to indicate that your new build has been shipped to outer-space.</p>
+<p>Renders an ERB template with <code>placeholders</code> given as a hash via parameter,
+if no :destination is set, returns rendered template as string</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>rocket</th>
+<th>erb</th>
 <th></th>
 </tr>
 </thead>
@@ -11645,42 +11890,29 @@ things like // TO DO or similar</p>
 </tr>
 <tr>
 <td>Author</td>
-<td>@JaviSoto, @radex</td>
+<td>@hjanuschka</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">rocket
-</code></pre>
+<pre><code class="ruby"># Example `erb` template:
 
-<p></details></p>
-<h3 id="install_xcode_plugin"><a name="user-content-install_xcode_plugin" href="#install_xcode_plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>install_xcode_plugin</h3>
-<p>Install an Xcode plugin for the current user</p>
-<table>
-<thead>
-<tr>
-<th>install_xcode_plugin</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@NeoNachoSoto</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>2 Examples</summary></p>
-<pre><code class="ruby">install_xcode_plugin(url: &quot;https://example.com/clubmate/plugin.zip&quot;)
-</code></pre>
+# Variable1 &lt;%= var1 %&gt;
+# Variable2 &lt;%= var2 %&gt;
+# &lt;% for item in var3 %&gt;
+#        &lt;%= item %&gt;
+# &lt;% end %&gt;
 
-<pre><code class="ruby">install_xcode_plugin(github: &quot;https://github.com/contentful/ContentfulXcodePlugin&quot;)
+erb(
+  template: &quot;1.erb&quot;,
+  destination: &quot;/tmp/rendered.out&quot;,
+  placeholders: {
+    :var1 =&gt; 123,
+    :var2 =&gt; &quot;string&quot;,
+    :var3 =&gt; [&quot;element1&quot;, &quot;element2&quot;]
+  }
+)
 </code></pre>
 
 <p></details></p>
@@ -11695,12 +11927,16 @@ things like // TO DO or similar</p>
 </thead>
 <tbody>
 <tr>
-<td><code>url</code></td>
-<td>URL for Xcode plugin ZIP file</td>
+<td><code>template</code></td>
+<td>ERB Template File</td>
 </tr>
 <tr>
-<td><code>github</code></td>
-<td>GitHub repository URL for Xcode plugin</td>
+<td><code>destination</code></td>
+<td>Destination file</td>
+</tr>
+<tr>
+<td><code>placeholders</code></td>
+<td>Placeholders given as a hash</td>
 </tr>
 </tbody>
 </table>
@@ -11803,16 +12039,15 @@ things like // TO DO or similar</p>
 </tbody>
 </table>
 <p></details></p>
-<h3 id="cloc"><a name="user-content-cloc" href="#cloc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>cloc</h3>
-<p>Generates a Code Count that can be read by Jenkins (xml format)</p>
+<h3 id="pod_lib_lint"><a name="user-content-pod_lib_lint" href="#pod_lib_lint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pod_lib_lint</h3>
+<p>Pod lib lint</p>
 <blockquote>
-<p>This action will run cloc to generate a SLOC report that the Jenkins SLOCCount plugin can read.
-See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.</p>
+<p>Test the syntax of your Podfile by linting the pod against the files of its directory</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>cloc</th>
+<th>pod_lib_lint</th>
 <th></th>
 </tr>
 </thead>
@@ -11823,162 +12058,162 @@ See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://git
 </tr>
 <tr>
 <td>Author</td>
-<td>@intere</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">cloc(
-   exclude_dir: &quot;ThirdParty,Resources&quot;,
-   output_directory: &quot;reports&quot;,
-   source_directory: &quot;MyCoolApp&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>binary_path</code></td>
-<td>Where the cloc binary lives on your system (full path including 'cloc')</td>
-</tr>
-<tr>
-<td><code>exclude_dir</code></td>
-<td>Comma separated list of directories to exclude</td>
-</tr>
-<tr>
-<td><code>output_directory</code></td>
-<td>Where to put the generated report file</td>
-</tr>
-<tr>
-<td><code>source_directory</code></td>
-<td>Where to look for the source code (relative to the project root folder)</td>
-</tr>
-<tr>
-<td><code>xml</code></td>
-<td>Should we generate an XML File (if false, it will generate a plain text file)?</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="verify_build"><a name="user-content-verify_build" href="#verify_build" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_build</h3>
-<p>Able to verify various settings in ipa file</p>
-<blockquote>
-<p>Verifies that the built app was built using the expected build resources. This is relevant for people who build on machines that are used to build apps with different profiles, certificates and/or bundle identifiers to guard against configuration mistakes.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>verify_build</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@CodeReaper</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">verify_build(
-  provisioning_type: &quot;distribution&quot;,
-  bundle_identifier: &quot;com.example.myapp&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>provisioning_type</code></td>
-<td>Required type of provisioning</td>
-</tr>
-<tr>
-<td><code>provisioning_uuid</code></td>
-<td>Required UUID of provisioning profile</td>
-</tr>
-<tr>
-<td><code>team_identifier</code></td>
-<td>Required team identifier</td>
-</tr>
-<tr>
-<td><code>team_name</code></td>
-<td>Required team name</td>
-</tr>
-<tr>
-<td><code>app_name</code></td>
-<td>Required app name</td>
-</tr>
-<tr>
-<td><code>bundle_identifier</code></td>
-<td>Required bundle identifier</td>
-</tr>
-<tr>
-<td><code>ipa_path</code></td>
-<td>Explicitly set the ipa path</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="pod_push"><a name="user-content-pod_push" href="#pod_push" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pod_push</h3>
-<p>Push a Podspec to Trunk or a private repository</p>
-<table>
-<thead>
-<tr>
-<th>pod_push</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@squarefrog</td>
+<td>@thierryxing</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>4 Examples</summary></p>
-<pre><code class="ruby"># If no path is supplied then Trunk will attempt to find the first Podspec in the current directory.
-pod_push
+<pre><code class="ruby">pod_lib_lint
 </code></pre>
 
-<pre><code class="ruby"># Alternatively, supply the Podspec file path
-pod_push(path: &quot;TSMessages.podspec&quot;)
+<pre><code class="ruby"># Allow ouput detail in console
+pod_lib_lint(verbose: true)
 </code></pre>
 
-<pre><code class="ruby"># You may also push to a private repo instead of Trunk
-pod_push(path: &quot;TSMessages.podspec&quot;, repo: &quot;MyRepo&quot;)
+<pre><code class="ruby"># Allow warnings during pod lint
+pod_lib_lint(allow_warnings: true)
 </code></pre>
 
-<pre><code class="ruby"># If the podspec has a dependency on another private pod, then you will have to supply the sources you want the podspec to lint with for pod_push to succeed. Read more here - https://github.com/CocoaPods/CocoaPods/issues/2543.
-pod_push(path: &quot;TMessages.podspec&quot;, repo: &quot;MyRepo&quot;, sources: [&quot;https://github.com/MyGithubPage/Specs&quot;, &quot;https://github.com/CocoaPods/Specs&quot;])
+<pre><code class="ruby"># If the podspec has a dependency on another private pod, then you will have to supply the sources
+pod_lib_lint(sources: [&quot;https://github.com/MyGithubPage/Specs&quot;, &quot;https://github.com/CocoaPods/Specs&quot;])
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>use_bundle_exec</code></td>
+<td>Use bundle exec when there is a Gemfile presented</td>
+</tr>
+<tr>
+<td><code>verbose</code></td>
+<td>Allow ouput detail in console</td>
+</tr>
+<tr>
+<td><code>allow_warnings</code></td>
+<td>Allow warnings during pod lint</td>
+</tr>
+<tr>
+<td><code>sources</code></td>
+<td>The sources of repos you want the pod spec to lint with, separated by commas</td>
+</tr>
+<tr>
+<td><code>use_libraries</code></td>
+<td>Lint uses static libraries to install the spec</td>
+</tr>
+<tr>
+<td><code>fail_fast</code></td>
+<td>Lint stops on the first failing platform or subspec</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>Lint skips checks that apply only to public specs</td>
+</tr>
+<tr>
+<td><code>quick</code></td>
+<td>Lint skips checks that would require to download and build the spec</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="make_changelog_from_jenkins"><a name="user-content-make_changelog_from_jenkins" href="#make_changelog_from_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>make_changelog_from_jenkins</h3>
+<p>Generate a changelog using the Changes section from the current Jenkins build</p>
+<blockquote>
+<p>This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>make_changelog_from_jenkins</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@mandrizzle</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">make_changelog_from_jenkins(
+  # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins
+  fallback_changelog: &quot;Bug fixes and performance enhancements&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fallback_changelog</code></td>
+<td>Fallback changelog if there is not one on Jenkins, or it couldn't be read</td>
+</tr>
+<tr>
+<td><code>include_commit_body</code></td>
+<td>Include the commit body along with the summary</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="read_podspec"><a name="user-content-read_podspec" href="#read_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read_podspec</h3>
+<p>Loads a CocoaPods spec as JSON</p>
+<blockquote>
+<p>This can be used for only specifying a version string in your podspec
+- and during your release process you'd read it from the podspec by running
+<code>version = read_podspec['version']</code> at the beginning of your lane
+Loads the specified (or the first found) podspec in the folder as JSON, so that you can inspect its <code>version</code>, <code>files</code> etc. 
+This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of 
+the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>read_podspec</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@czechboy0</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>2 Examples</summary></p>
+<pre><code class="ruby">spec = read_podspec
+version = spec[&quot;version&quot;]
+puts &quot;Using Version #{version}&quot;
+</code></pre>
+
+<pre><code class="ruby">spec = read_podspec(path: &quot;./XcodeServerSDK.podspec&quot;)
 </code></pre>
 
 <p></details></p>
@@ -11994,27 +12229,246 @@ pod_push(path: &quot;TMessages.podspec&quot;, repo: &quot;MyRepo&quot;, sources:
 <tbody>
 <tr>
 <td><code>path</code></td>
-<td>The Podspec you want to push</td>
+<td>Path to the podspec to be read</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="tryouts"><a name="user-content-tryouts" href="#tryouts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>tryouts</h3>
+<p>Upload a new build to Tryouts</p>
+<blockquote>
+<p>More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>tryouts</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android</td>
 </tr>
 <tr>
-<td><code>repo</code></td>
-<td>The repo you want to push. Pushes to Trunk by default</td>
+<td>Author</td>
+<td>@alicertel</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">tryouts(
+  api_token: &quot;...&quot;,
+  app_id: &quot;application-id&quot;,
+  build_file: &quot;test.ipa&quot;,
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_id</code></td>
+<td>Tryouts application hash</td>
 </tr>
 <tr>
-<td><code>allow_warnings</code></td>
-<td>Allow warnings during pod push</td>
+<td><code>api_token</code></td>
+<td>API Token for Tryouts Access</td>
 </tr>
 <tr>
-<td><code>use_libraries</code></td>
-<td>Allow lint to use static libraries to install the spec</td>
+<td><code>build_file</code></td>
+<td>Path to your IPA or APK file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
 </tr>
 <tr>
-<td><code>sources</code></td>
-<td>The sources of repos you want the pod spec to lint with, separated by commas</td>
+<td><code>notes</code></td>
+<td>Release notes</td>
 </tr>
 <tr>
-<td><code>verbose</code></td>
-<td>Show more debugging information</td>
+<td><code>notes_path</code></td>
+<td>Release notes text file path. Overrides the :notes parameter</td>
+</tr>
+<tr>
+<td><code>notify</code></td>
+<td>Notify testers? 0 for no</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="install_xcode_plugin"><a name="user-content-install_xcode_plugin" href="#install_xcode_plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>install_xcode_plugin</h3>
+<p>Install an Xcode plugin for the current user</p>
+<table>
+<thead>
+<tr>
+<th>install_xcode_plugin</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@NeoNachoSoto</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>2 Examples</summary></p>
+<pre><code class="ruby">install_xcode_plugin(url: &quot;https://example.com/clubmate/plugin.zip&quot;)
+</code></pre>
+
+<pre><code class="ruby">install_xcode_plugin(github: &quot;https://github.com/contentful/ContentfulXcodePlugin&quot;)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>URL for Xcode plugin ZIP file</td>
+</tr>
+<tr>
+<td><code>github</code></td>
+<td>GitHub repository URL for Xcode plugin</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="sh"><a name="user-content-sh" href="#sh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sh</h3>
+<p>Runs a shell command</p>
+<blockquote>
+<p>Allows running an arbitrary shell command.
+Be aware of a specific behavior of 'sh' action with regard to the working directory. For details refer to Advanced.md</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>sh</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>Outputs the string and executes it. When running in tests, it returns the actual command instead of executing it</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>2 Examples</summary></p>
+<pre><code class="ruby">sh(&quot;ls&quot;)
+</code></pre>
+
+<pre><code class="ruby">sh(&quot;git commit -m 'My message'&quot;)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command</code></td>
+<td>Shell command to be executed</td>
+</tr>
+<tr>
+<td><code>log</code></td>
+<td>Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true</td>
+</tr>
+<tr>
+<td><code>error_callback</code></td>
+<td>A callback invoked with the command output if there is a non-zero exit status</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="update_icloud_container_identifiers"><a name="user-content-update_icloud_container_identifiers" href="#update_icloud_container_identifiers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_icloud_container_identifiers</h3>
+<p>This action changes the iCloud container identifiers in the entitlements file</p>
+<blockquote>
+<p>Updates the iCloud Container Identifiers in the given Entitlements file, so you can use different iCloud containers for different builds like Adhoc, App Store, etc.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>update_icloud_container_identifiers</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@JamesKuang</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">update_icloud_container_identifiers(
+  entitlements_file: &quot;/path/to/entitlements_file.entitlements&quot;,
+  icloud_container_identifiers: [&quot;iCloud.com.companyname.appname&quot;]
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>entitlements_file</code></td>
+<td>The path to the entitlement file which contains the iCloud container identifiers</td>
+</tr>
+<tr>
+<td><code>icloud_container_identifiers</code></td>
+<td>An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp']</td>
 </tr>
 </tbody>
 </table>
@@ -12099,520 +12553,6 @@ pod_push(path: &quot;TMessages.podspec&quot;, repo: &quot;MyRepo&quot;, sources:
 </tbody>
 </table>
 <p></details></p>
-<h3 id="reset_simulator_contents"><a name="user-content-reset_simulator_contents" href="#reset_simulator_contents" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reset_simulator_contents</h3>
-<p>Shutdown and reset running simulators</p>
-<table>
-<thead>
-<tr>
-<th>reset_simulator_contents</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@danramteke</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">reset_simulator_contents
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ios</code></td>
-<td>Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="erb"><a name="user-content-erb" href="#erb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>erb</h3>
-<p>Allows to Generate output files based on ERB templates</p>
-<blockquote>
-<p>Renders an ERB template with <code>placeholders</code> given as a hash via parameter,
-if no :destination is set, returns rendered template as string</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>erb</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@hjanuschka</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby"># Example `erb` template:
-
-# Variable1 &lt;%= var1 %&gt;
-# Variable2 &lt;%= var2 %&gt;
-# &lt;% for item in var3 %&gt;
-#        &lt;%= item %&gt;
-# &lt;% end %&gt;
-
-erb(
-  template: &quot;1.erb&quot;,
-  destination: &quot;/tmp/rendered.out&quot;,
-  placeholders: {
-    :var1 =&gt; 123,
-    :var2 =&gt; &quot;string&quot;,
-    :var3 =&gt; [&quot;element1&quot;, &quot;element2&quot;]
-  }
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>template</code></td>
-<td>ERB Template File</td>
-</tr>
-<tr>
-<td><code>destination</code></td>
-<td>Destination file</td>
-</tr>
-<tr>
-<td><code>placeholders</code></td>
-<td>Placeholders given as a hash</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="install_on_device"><a name="user-content-install_on_device" href="#install_on_device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>install_on_device</h3>
-<p>Installs an .ipa file on a connected iOS-device via usb or wifi</p>
-<blockquote>
-<p>Installs the ipa on the device, if no id is given, the first found iOS device will be used, works via USB or Wi-Fi. This requires <code>ios-deploy</code> to be installed please have a look at <a href="https://github.com/phonegap/ios-deploy">ios-deploy</a>. to quickly install it, use <code>npm -g i ios-deploy</code></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>install_on_device</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@hjanuschka</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">install_on_device(
-  device_id: &quot;a3be6c9ff7e5c3c6028597513243b0f933b876d4&quot;,
-  ipa: &quot;./app.ipa&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>extra</code></td>
-<td>Extra Commandline arguments passed to ios-deploy</td>
-</tr>
-<tr>
-<td><code>device_id</code></td>
-<td>id of the device / if not set defaults to first found device</td>
-</tr>
-<tr>
-<td><code>skip_wifi</code></td>
-<td>Do not search for devices via WiFi</td>
-</tr>
-<tr>
-<td><code>ipa</code></td>
-<td>The IPA file to put on the device</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="version_get_podspec"><a name="user-content-version_get_podspec" href="#version_get_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>version_get_podspec</h3>
-<p>Receive the version number from a podspec file</p>
-<table>
-<thead>
-<tr>
-<th>version_get_podspec</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@Liquidsoul, @KrauseFx</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">version = version_get_podspec(path: &quot;TSMessages.podspec&quot;)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>path</code></td>
-<td>You must specify the path to the podspec file</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="build_and_upload_to_appetize"><a name="user-content-build_and_upload_to_appetize" href="#build_and_upload_to_appetize" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>build_and_upload_to_appetize</h3>
-<p>Generate and upload an ipa file to appetize.io</p>
-<blockquote>
-<p>This should be called from danger
-More information in the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md">device_grid guide</a></p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>build_and_upload_to_appetize</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>xcodebuild</code></td>
-<td>Parameters that are passed to the xcodebuild action</td>
-</tr>
-<tr>
-<td><code>scheme</code></td>
-<td>The scheme to build. Can also be passed using the <code>xcodebuild</code> parameter</td>
-</tr>
-<tr>
-<td><code>api_token</code></td>
-<td>Appetize.io API Token</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="adb_devices"><a name="user-content-adb_devices" href="#adb_devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>adb_devices</h3>
-<p>Get an Array of Connected android device serials</p>
-<blockquote>
-<p>Fetches device list via adb, e.g. run an adb command on all connected devices.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>adb_devices</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>android</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@hjanuschka</td>
-</tr>
-<tr>
-<td>Returns</td>
-<td>Returns an array of all currently connected android devices</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">adb_devices.each do |device|
-  model = adb(command: &quot;shell getprop ro.product.model&quot;,
-    serial: device.serial).strip
-
-  puts &quot;Model #{model} is connected&quot;
-end
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>adb_path</code></td>
-<td>The path to your <code>adb</code> binary</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="rsync"><a name="user-content-rsync" href="#rsync" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rsync</h3>
-<p>Rsync files from :source to :destination</p>
-<blockquote>
-<p>A wrapper around rsync, rsync is a tool that lets you synchronize files, including permissions and so on for a more detailed information about rsync please see rsync(1) manpage.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>rsync</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@hjanuschka</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">rsync(
-  source: &quot;root@host:/tmp/1.txt&quot;,
-  destination: &quot;/tmp/local_file.txt&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>extra</code></td>
-<td>Port</td>
-</tr>
-<tr>
-<td><code>source</code></td>
-<td>source file/folder</td>
-</tr>
-<tr>
-<td><code>destination</code></td>
-<td>destination file/folder</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="appetize_viewing_url_generator"><a name="user-content-appetize_viewing_url_generator" href="#appetize_viewing_url_generator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appetize_viewing_url_generator</h3>
-<p>Generate an URL for appetize simulator</p>
-<blockquote>
-<p>Check out the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md">device_grid guide</a> for more information</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>appetize_viewing_url_generator</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-<tr>
-<td>Returns</td>
-<td>The URL to preview the iPhone app</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>public_key</code></td>
-<td>Public key of the app you wish to update</td>
-</tr>
-<tr>
-<td><code>device</code></td>
-<td>Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9</td>
-</tr>
-<tr>
-<td><code>scale</code></td>
-<td>Scale of the simulator</td>
-</tr>
-<tr>
-<td><code>orientation</code></td>
-<td>Device orientation</td>
-</tr>
-<tr>
-<td><code>language</code></td>
-<td>Device language in ISO 639-1 language code, e.g. 'de'</td>
-</tr>
-<tr>
-<td><code>color</code></td>
-<td>Color of the device</td>
-</tr>
-<tr>
-<td><code>launch_url</code></td>
-<td>Specify a deep link to open when your app is launched</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="jira"><a name="user-content-jira" href="#jira" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>jira</h3>
-<p>Leave a comment on JIRA tickets</p>
-<table>
-<thead>
-<tr>
-<th>jira</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@iAmChrisTruman</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">jira(
-  url: &quot;https://bugs.yourdomain.com&quot;,
-  username: &quot;Your username&quot;,
-  password: &quot;Your password&quot;,
-  ticket_id: &quot;Ticket ID, i.e. IOS-123&quot;,
-  comment_text: &quot;Text to post as a comment&quot;
-)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>url</code></td>
-<td>URL for Jira instance</td>
-</tr>
-<tr>
-<td><code>username</code></td>
-<td>Username for JIRA instance</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>Password for Jira</td>
-</tr>
-<tr>
-<td><code>ticket_id</code></td>
-<td>Ticket ID for Jira, i.e. IOS-123</td>
-</tr>
-<tr>
-<td><code>comment_text</code></td>
-<td>Text to add to the ticket as a comment</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
 <h3 id="clipboard"><a name="user-content-clipboard" href="#clipboard" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clipboard</h3>
 <p>Copies a given string into the clipboard. Works only on macOS</p>
 <table>
@@ -12659,15 +12599,15 @@ end
 </tbody>
 </table>
 <p></details></p>
-<h3 id="ssh"><a name="user-content-ssh" href="#ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ssh</h3>
-<p>Allows remote command execution using ssh</p>
+<h3 id="rocket"><a name="user-content-rocket" href="#rocket" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rocket</h3>
+<p>Outputs ascii-art for a rocket 🚀</p>
 <blockquote>
-<p>Lets you execute remote commands via ssh using username/password or ssh-agent. If one of the commands in command-array returns non 0 - it fails.</p>
+<p>Print an ascii Rocket :rocket:. Useful after using <em>crashlytics</em> or <em>pilot</em> to indicate that your new build has been shipped to outer-space.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>ssh</th>
+<th>rocket</th>
 <th></th>
 </tr>
 </thead>
@@ -12678,105 +12618,15 @@ end
 </tr>
 <tr>
 <td>Author</td>
-<td>@hjanuschka</td>
+<td>@JaviSoto, @radex</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">ssh(
-  host: &quot;dev.januschka.com&quot;,
-  username: &quot;root&quot;,
-  commands: [
-    &quot;date&quot;,
-    &quot;echo 1 &gt; /tmp/file1&quot;
-  ]
-)
+<pre><code class="ruby">rocket
 </code></pre>
 
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>username</code></td>
-<td>Username</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>Password</td>
-</tr>
-<tr>
-<td><code>host</code></td>
-<td>Hostname</td>
-</tr>
-<tr>
-<td><code>port</code></td>
-<td>Port</td>
-</tr>
-<tr>
-<td><code>commands</code></td>
-<td>Commands</td>
-</tr>
-<tr>
-<td><code>log</code></td>
-<td>Log commands and output</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="dotgpg_environment"><a name="user-content-dotgpg_environment" href="#dotgpg_environment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>dotgpg_environment</h3>
-<p>Reads in production secrets set in a dotgpg file and puts them in ENV</p>
-<blockquote>
-<p>More information about dotgpg can be found at https://github.com/ConradIrwin/dotgpg</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>dotgpg_environment</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@simonlevy5</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">dotgpg_environment(dotgpg_file: './path/to/gpgfile')
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dotgpg_file</code></td>
-<td>Path to your gpg file</td>
-</tr>
-</tbody>
-</table>
 <p></details></p>
 <h3 id="app_store_build_number"><a name="user-content-app_store_build_number" href="#app_store_build_number" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_store_build_number</h3>
 <p>Returns the current build_number of either live or edit version</p>
@@ -12861,71 +12711,15 @@ end
 </tbody>
 </table>
 <p></details></p>
-<h3 id="read_podspec"><a name="user-content-read_podspec" href="#read_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read_podspec</h3>
-<p>Loads a CocoaPods spec as JSON</p>
+<h3 id="verify_build"><a name="user-content-verify_build" href="#verify_build" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>verify_build</h3>
+<p>Able to verify various settings in ipa file</p>
 <blockquote>
-<p>This can be used for only specifying a version string in your podspec
-- and during your release process you'd read it from the podspec by running
-<code>version = read_podspec['version']</code> at the beginning of your lane
-Loads the specified (or the first found) podspec in the folder as JSON, so that you can inspect its <code>version</code>, <code>files</code> etc. 
-This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of 
-the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).</p>
+<p>Verifies that the built app was built using the expected build resources. This is relevant for people who build on machines that are used to build apps with different profiles, certificates and/or bundle identifiers to guard against configuration mistakes.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>read_podspec</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@czechboy0</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>2 Examples</summary></p>
-<pre><code class="ruby">spec = read_podspec
-version = spec[&quot;version&quot;]
-puts &quot;Using Version #{version}&quot;
-</code></pre>
-
-<pre><code class="ruby">spec = read_podspec(path: &quot;./XcodeServerSDK.podspec&quot;)
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>path</code></td>
-<td>Path to the podspec to be read</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="update_icloud_container_identifiers"><a name="user-content-update_icloud_container_identifiers" href="#update_icloud_container_identifiers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_icloud_container_identifiers</h3>
-<p>This action changes the iCloud container identifiers in the entitlements file</p>
-<blockquote>
-<p>Updates the iCloud Container Identifiers in the given Entitlements file, so you can use different iCloud containers for different builds like Adhoc, App Store, etc.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>update_icloud_container_identifiers</th>
+<th>verify_build</th>
 <th></th>
 </tr>
 </thead>
@@ -12936,15 +12730,15 @@ puts &quot;Using Version #{version}&quot;
 </tr>
 <tr>
 <td>Author</td>
-<td>@JamesKuang</td>
+<td>@CodeReaper</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">update_icloud_container_identifiers(
-  entitlements_file: &quot;/path/to/entitlements_file.entitlements&quot;,
-  icloud_container_identifiers: [&quot;iCloud.com.companyname.appname&quot;]
+<pre><code class="ruby">verify_build(
+  provisioning_type: &quot;distribution&quot;,
+  bundle_identifier: &quot;com.example.myapp&quot;
 )
 </code></pre>
 
@@ -12960,12 +12754,162 @@ puts &quot;Using Version #{version}&quot;
 </thead>
 <tbody>
 <tr>
-<td><code>entitlements_file</code></td>
-<td>The path to the entitlement file which contains the iCloud container identifiers</td>
+<td><code>provisioning_type</code></td>
+<td>Required type of provisioning</td>
 </tr>
 <tr>
-<td><code>icloud_container_identifiers</code></td>
-<td>An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp']</td>
+<td><code>provisioning_uuid</code></td>
+<td>Required UUID of provisioning profile</td>
+</tr>
+<tr>
+<td><code>team_identifier</code></td>
+<td>Required team identifier</td>
+</tr>
+<tr>
+<td><code>team_name</code></td>
+<td>Required team name</td>
+</tr>
+<tr>
+<td><code>app_name</code></td>
+<td>Required app name</td>
+</tr>
+<tr>
+<td><code>bundle_identifier</code></td>
+<td>Required bundle identifier</td>
+</tr>
+<tr>
+<td><code>ipa_path</code></td>
+<td>Explicitly set the ipa path</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="ssh"><a name="user-content-ssh" href="#ssh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ssh</h3>
+<p>Allows remote command execution using ssh</p>
+<blockquote>
+<p>Lets you execute remote commands via ssh using username/password or ssh-agent. If one of the commands in command-array returns non 0 - it fails.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>ssh</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@hjanuschka</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">ssh(
+  host: &quot;dev.januschka.com&quot;,
+  username: &quot;root&quot;,
+  commands: [
+    &quot;date&quot;,
+    &quot;echo 1 &gt; /tmp/file1&quot;
+  ]
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>username</code></td>
+<td>Username</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password</td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>Hostname</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td>Port</td>
+</tr>
+<tr>
+<td><code>commands</code></td>
+<td>Commands</td>
+</tr>
+<tr>
+<td><code>log</code></td>
+<td>Log commands and output</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="rsync"><a name="user-content-rsync" href="#rsync" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rsync</h3>
+<p>Rsync files from :source to :destination</p>
+<blockquote>
+<p>A wrapper around rsync, rsync is a tool that lets you synchronize files, including permissions and so on for a more detailed information about rsync please see rsync(1) manpage.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>rsync</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@hjanuschka</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">rsync(
+  source: &quot;root@host:/tmp/1.txt&quot;,
+  destination: &quot;/tmp/local_file.txt&quot;
+)
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>extra</code></td>
+<td>Port</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>source file/folder</td>
+</tr>
+<tr>
+<td><code>destination</code></td>
+<td>destination file/folder</td>
 </tr>
 </tbody>
 </table>
@@ -13015,35 +12959,106 @@ puts &quot;Using Version #{version}&quot;
 </tbody>
 </table>
 <p></details></p>
-<h3 id="tryouts"><a name="user-content-tryouts" href="#tryouts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>tryouts</h3>
-<p>Upload a new build to Tryouts</p>
-<blockquote>
-<p>More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release</p>
-</blockquote>
+<h3 id="debug"><a name="user-content-debug" href="#debug" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>debug</h3>
+<p>Print out an overview of the lane context values</p>
 <table>
 <thead>
 <tr>
-<th>tryouts</th>
+<th>debug</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, android</td>
+<td>ios, android, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@alicertel</td>
+<td>@KrauseFx</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">tryouts(
-  api_token: &quot;...&quot;,
-  app_id: &quot;application-id&quot;,
-  build_file: &quot;test.ipa&quot;,
+<pre><code class="ruby">debug
+</code></pre>
+
+<p></details></p>
+<h3 id="dotgpg_environment"><a name="user-content-dotgpg_environment" href="#dotgpg_environment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>dotgpg_environment</h3>
+<p>Reads in production secrets set in a dotgpg file and puts them in ENV</p>
+<blockquote>
+<p>More information about dotgpg can be found at https://github.com/ConradIrwin/dotgpg</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>dotgpg_environment</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@simonlevy5</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">dotgpg_environment(dotgpg_file: './path/to/gpgfile')
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dotgpg_file</code></td>
+<td>Path to your gpg file</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+<h3 id="jira"><a name="user-content-jira" href="#jira" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>jira</h3>
+<p>Leave a comment on JIRA tickets</p>
+<table>
+<thead>
+<tr>
+<th>jira</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@iAmChrisTruman</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">jira(
+  url: &quot;https://bugs.yourdomain.com&quot;,
+  username: &quot;Your username&quot;,
+  password: &quot;Your password&quot;,
+  ticket_id: &quot;Ticket ID, i.e. IOS-123&quot;,
+  comment_text: &quot;Text to post as a comment&quot;
 )
 </code></pre>
 
@@ -13059,70 +13074,51 @@ puts &quot;Using Version #{version}&quot;
 </thead>
 <tbody>
 <tr>
-<td><code>app_id</code></td>
-<td>Tryouts application hash</td>
+<td><code>url</code></td>
+<td>URL for Jira instance</td>
 </tr>
 <tr>
-<td><code>api_token</code></td>
-<td>API Token for Tryouts Access</td>
+<td><code>username</code></td>
+<td>Username for JIRA instance</td>
 </tr>
 <tr>
-<td><code>build_file</code></td>
-<td>Path to your IPA or APK file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+<td><code>password</code></td>
+<td>Password for Jira</td>
 </tr>
 <tr>
-<td><code>notes</code></td>
-<td>Release notes</td>
+<td><code>ticket_id</code></td>
+<td>Ticket ID for Jira, i.e. IOS-123</td>
 </tr>
 <tr>
-<td><code>notes_path</code></td>
-<td>Release notes text file path. Overrides the :notes paramether</td>
-</tr>
-<tr>
-<td><code>notify</code></td>
-<td>Notify testers? 0 for no</td>
-</tr>
-<tr>
-<td><code>status</code></td>
-<td>2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update</td>
+<td><code>comment_text</code></td>
+<td>Text to add to the ticket as a comment</td>
 </tr>
 </tbody>
 </table>
 <p></details></p>
-<h3 id="sh"><a name="user-content-sh" href="#sh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sh</h3>
-<p>Runs a shell command</p>
-<blockquote>
-<p>Allows running an arbitrary shell command.
-Be aware of a specific behavior of 'sh' action with regard to the working directory. For details refer to Advanced.md</p>
-</blockquote>
+<h3 id="reset_simulator_contents"><a name="user-content-reset_simulator_contents" href="#reset_simulator_contents" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reset_simulator_contents</h3>
+<p>Shutdown and reset running simulators</p>
 <table>
 <thead>
 <tr>
-<th>sh</th>
+<th>reset_simulator_contents</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, android, mac</td>
+<td>ios</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-<tr>
-<td>Returns</td>
-<td>Outputs the string and executes it. When running in tests, it returns the actual command instead of executing it</td>
+<td>@danramteke</td>
 </tr>
 </tbody>
 </table>
 <p><details>
-<summary>2 Examples</summary></p>
-<pre><code class="ruby">sh(&quot;ls&quot;)
-</code></pre>
-
-<pre><code class="ruby">sh(&quot;git commit -m 'My message'&quot;)
+<summary>1 Example</summary></p>
+<pre><code class="ruby">reset_simulator_contents
 </code></pre>
 
 <p></details></p>
@@ -13137,16 +13133,8 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </thead>
 <tbody>
 <tr>
-<td><code>command</code></td>
-<td>Shell command to be executed</td>
-</tr>
-<tr>
-<td><code>log</code></td>
-<td>Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true</td>
-</tr>
-<tr>
-<td><code>error_callback</code></td>
-<td>A callback invoked with the command output if there is a non-zero exit status</td>
+<td><code>ios</code></td>
+<td>Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators</td>
 </tr>
 </tbody>
 </table>
@@ -13180,6 +13168,61 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </code></pre>
 
 <p></details></p>
+<h3 id="adb_devices"><a name="user-content-adb_devices" href="#adb_devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>adb_devices</h3>
+<p>Get an Array of Connected android device serials</p>
+<blockquote>
+<p>Fetches device list via adb, e.g. run an adb command on all connected devices.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>adb_devices</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@hjanuschka</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>Returns an array of all currently connected android devices</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">adb_devices.each do |device|
+  model = adb(command: &quot;shell getprop ro.product.model&quot;,
+    serial: device.serial).strip
+
+  puts &quot;Model #{model} is connected&quot;
+end
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>adb_path</code></td>
+<td>The path to your <code>adb</code> binary</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <h1 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h1>
 <table>
 <thead>
@@ -13195,1375 +13238,37 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>update_project_codesigning</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning">update_project_codesigning</a></td>
 <td>Updates the Xcode 8 Automatic Codesigning Flag</td>
-<td>49996</td>
+<td>52905</td>
 </tr>
 <tr>
 <td>update_provisioning_profile_specifier</td>
 <td><a href="https://github.com/faithfracture/update_provisioning_profile_specifier">update_provisioning_profile_specifier</a></td>
 <td>Update the provisioning profile in the Xcode Project file for a specified target</td>
-<td>45639</td>
+<td>48345</td>
 </tr>
 <tr>
 <td>download_file</td>
 <td><a href="https://github.com/maxoly/fastlane-plugin-download_file">download_file</a></td>
 <td>This action downloads a file from an HTTP/HTTPS url (e.g. ZIP file) and puts it in a destination path</td>
-<td>45059</td>
+<td>45120</td>
 </tr>
 <tr>
 <td>trainer</td>
 <td><a href="https://github.com/KrauseFx/trainer">trainer</a></td>
 <td>Convert xcodebuild plist files to JUnit reports</td>
-<td>23122</td>
+<td>24428</td>
 </tr>
 <tr>
 <td>github_job_status</td>
 <td><a href="https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status">github_job_status</a></td>
 <td>Post the status of your test jobs to your pull requests</td>
-<td>21979</td>
+<td>24256</td>
 </tr>
 <tr>
 <td>increment_build_number_in_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>21305</td>
-</tr>
-<tr>
-<td>synx</td>
-<td><a href="https://github.com/afonsograca/fastlane-plugin-synx">synx</a></td>
-<td>Organise your Xcode project folder to match your Xcode groups.</td>
-<td>15735</td>
-</tr>
-<tr>
-<td>act</td>
-<td><a href="https://github.com/richardszalay/fastlane-plugin-act">act</a></td>
-<td>Applies changes to plists and app icons inside a compiled IPA</td>
-<td>13860</td>
-</tr>
-<tr>
-<td>ascii_art</td>
-<td><a href="https://github.com/neonichu/fastlane-ascii-art">ascii_art</a></td>
-<td>Add some fun to your fastlane output.</td>
-<td>13212</td>
-</tr>
-<tr>
-<td>get_version_number_from_plist</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
-<td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>13132</td>
-</tr>
-<tr>
-<td>increment_version_number_in_plist</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
-<td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>10604</td>
-</tr>
-<tr>
-<td>get_build_number_from_plist</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
-<td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>7894</td>
-</tr>
-<tr>
-<td>read_changelog</td>
-<td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
-<td>Automate changes to your project CHANGELOG.md</td>
-<td>7829</td>
-</tr>
-<tr>
-<td>appicon</td>
-<td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
-<td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>7272</td>
-</tr>
-<tr>
-<td>ftp</td>
-<td><a href="https://github.com/PoissonBallon/fastlane-ftp-plugin">ftp</a></td>
-<td>Simple ftp upload and download for Fastlane</td>
-<td>7096</td>
-</tr>
-<tr>
-<td>setup_fragile_tests_for_rescan</td>
-<td><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-setup_fragile_tests_for_rescan">setup_fragile_tests_for_rescan</a></td>
-<td>Suppress stabile tests so that 'scan' can run the fragile tests again</td>
-<td>6856</td>
-</tr>
-<tr>
-<td>pixie</td>
-<td><code>pixie</code></td>
-<td>Show your build status on PIXIE!</td>
-<td>6665</td>
-</tr>
-<tr>
-<td>onesky_download</td>
-<td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
-<td>Helps to update the translations of your app using the OneSky service.</td>
-<td>6485</td>
-</tr>
-<tr>
-<td>get_version_name</td>
-<td><a href="https://github.com/Jems22/fastlane-plugin-get-version-name">get_version_name</a></td>
-<td>Get the version name of an Android project.</td>
-<td>5359</td>
-</tr>
-<tr>
-<td>increment_version_code</td>
-<td><a href="https://github.com/Jems22/fastlane-plugin-increment_version_code">increment_version_code</a></td>
-<td>Increment the version code of your android project.</td>
-<td>4544</td>
-</tr>
-<tr>
-<td>get_info_plist_path</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
-<td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>4540</td>
-</tr>
-<tr>
-<td>poeditor_export</td>
-<td><a href="https://github.com/Supmenow/fastlane-plugin-poeditor_export">poeditor_export</a></td>
-<td>Exports translations from POEditor.com</td>
-<td>4185</td>
-</tr>
-<tr>
-<td>rocket_chat</td>
-<td><a href="https://github.com/thiagofelix/fastlane-plugin-rocket_chat">rocket_chat</a></td>
-<td>Send message to Rocket.Chat right from fastlane</td>
-<td>3857</td>
-</tr>
-<tr>
-<td>automated_test_emulator_run</td>
-<td><a href="https://github.com/AzimoLabs/fastlane-plugin-automated-test-emulator-run">automated_test_emulator_run</a></td>
-<td>Starts n AVDs based on JSON file config. AVDs are created and configured according to user liking before instrumentation test process (started either via shell command or gradle) and killed/deleted after test process finishes.</td>
-<td>3773</td>
-</tr>
-<tr>
-<td>aws_s3</td>
-<td><a href="https://github.com/joshdholtz/fastlane-plugin-s3">aws_s3</a></td>
-<td>Upload IPA and APK to S3</td>
-<td>3569</td>
-</tr>
-<tr>
-<td>carthage_cache_install</td>
-<td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
-<td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>3374</td>
-</tr>
-<tr>
-<td>msbuild</td>
-<td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
-<td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
-<td>3130</td>
-</tr>
-<tr>
-<td>carthage_cache_exist</td>
-<td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
-<td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>3121</td>
-</tr>
-<tr>
-<td>merge_junit_report</td>
-<td><a href="https://github.com/dyang/merge_junit_report">merge_junit_report</a></td>
-<td>Merges multiple junit reports into one</td>
-<td>3032</td>
-</tr>
-<tr>
-<td>onesky_upload</td>
-<td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
-<td>Helps to update the translations of your app using the OneSky service.</td>
-<td>2953</td>
-</tr>
-<tr>
-<td>get_version_code</td>
-<td><a href="https://github.com/Jems22/fastlane-plugin-get_version_code">get_version_code</a></td>
-<td>Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file</td>
-<td>2701</td>
-</tr>
-<tr>
-<td>stamp_changelog</td>
-<td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
-<td>Automate changes to your project CHANGELOG.md</td>
-<td>2658</td>
-</tr>
-<tr>
-<td>add_prefix_schema</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>2610</td>
-</tr>
-<tr>
-<td>cordova</td>
-<td><a href="https://github.com/almouro/fastlane-plugin-cordova">cordova</a></td>
-<td>Build your Cordova app</td>
-<td>2466</td>
-</tr>
-<tr>
-<td>update_xcodeproj</td>
-<td><a href="https://github.com/nafu/fastlane-plugin-update_xcodeproj">update_xcodeproj</a></td>
-<td>Update Xcode projects</td>
-<td>2268</td>
-</tr>
-<tr>
-<td>xamarin_build</td>
-<td><a href="https://github.com/punksta/fastlane-plugin-xamarin_build">xamarin_build</a></td>
-<td>Build xamarin android\ios projects</td>
-<td>2228</td>
-</tr>
-<tr>
-<td>release_notes</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>2226</td>
-</tr>
-<tr>
-<td>pretty_junit</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
-<td>Pretty JUnit test results for your Android projects.</td>
-<td>2119</td>
-</tr>
-<tr>
-<td>remove_provisioning_profile</td>
-<td><a href="https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile">remove_provisioning_profile</a></td>
-<td>Remove provision profile from your local machine</td>
-<td>2091</td>
-</tr>
-<tr>
-<td>code_static_analyzer</td>
-<td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
-<td>Runs different Static Analyzers and generate report</td>
-<td>2018</td>
-</tr>
-<tr>
-<td>profile_expiration_info</td>
-<td><a href="https://github.com/schung7/fastlane-plugin-profile_expiration_info">profile_expiration_info</a></td>
-<td>Returns if the provisioning profile has expired and the DateTime it expires</td>
-<td>1971</td>
-</tr>
-<tr>
-<td>yarn</td>
-<td><a href="https://github.com/joshrlesch/fastlane-plugin-yarn">yarn</a></td>
-<td>Execute Yarn commands from your Fastfile</td>
-<td>1839</td>
-</tr>
-<tr>
-<td>humanable_build_number</td>
-<td><a href="https://github.com/icyleaf/fastlane-plugin-humanable_build_number">humanable_build_number</a></td>
-<td>Automatic generate app build number unque and human readable friendly, like yymmHHMM. both support iOS and Android.</td>
-<td>1825</td>
-</tr>
-<tr>
-<td>sentry_upload_dsym</td>
-<td><a href="https://github.com/getsentry/sentry-fastlane">sentry</a></td>
-<td>Upload symbols to Sentry</td>
-<td>1820</td>
-</tr>
-<tr>
-<td>polidea_store</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>1795</td>
-</tr>
-<tr>
-<td>latest_hockeyapp_version_number</td>
-<td><a href="https://github.com/tpalmer/fastlane-plugin-latest_hockeyapp_version_number">latest_hockeyapp_version_number</a></td>
-<td>Easily fetch the most recent HockeyApp version number for your app</td>
-<td>1782</td>
-</tr>
-<tr>
-<td>shuttle</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>1629</td>
-</tr>
-<tr>
-<td>extract_app_info</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>1627</td>
-</tr>
-<tr>
-<td>check_build_cache_workspace</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-build_cache">build_cache</a></td>
-<td>Helper for caching builds when using 'build for testing' &amp; 'test without building'</td>
-<td>1595</td>
-</tr>
-<tr>
-<td>droidicon</td>
-<td><a href="https://github.com/chrhsmt/fastlane-plugin-droidicon">droidicon</a></td>
-<td>Generate required icon sizes and iconset from a master application icon</td>
-<td>1506</td>
-</tr>
-<tr>
-<td>get_binary_size</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>1486</td>
-</tr>
-<tr>
-<td>xcpretty_report</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-xcpretty_report">xcpretty_report</a></td>
-<td>Generate xcodebuild reports using xcpretty</td>
-<td>1475</td>
-</tr>
-<tr>
-<td>ci_changelog</td>
-<td><a href="https://github.com/icyleaf/fastlane-plugin-ci_changelog">ci_changelog</a></td>
-<td>Automate generate changelog between previous build failed and the latest commit of scm in CI</td>
-<td>1466</td>
-</tr>
-<tr>
-<td>extract_app_icon</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>1423</td>
-</tr>
-<tr>
-<td>unzip</td>
-<td><a href="https://github.com/maxoly/fastlane-plugin-unzip">unzip</a></td>
-<td>Extract compressed files in a ZIP</td>
-<td>1405</td>
-</tr>
-<tr>
-<td>upload_folder_to_s3</td>
-<td><a href="https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3">upload_folder_to_s3</a></td>
-<td>Upload a folder to S3</td>
-<td>1404</td>
-</tr>
-<tr>
-<td>upload_to_qmobile</td>
-<td><a href="https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile">upload_to_qmobile</a></td>
-<td>Upload a mobile app to qmobile</td>
-<td>1360</td>
-</tr>
-<tr>
-<td>android_appicon</td>
-<td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
-<td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>1310</td>
-</tr>
-<tr>
-<td>upload_symbols_to_new_relic</td>
-<td><code>upload_symbols_to_new_relic</code></td>
-<td>Uploads dSym to New Relic</td>
-<td>1309</td>
-</tr>
-<tr>
-<td>extract_app_name</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>1308</td>
-</tr>
-<tr>
-<td>extract_version</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>1298</td>
-</tr>
-<tr>
-<td>delete_files</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-delete_files">delete_files</a></td>
-<td>Deletes a file, folder or multiple files using shell glob pattern.</td>
-<td>1220</td>
-</tr>
-<tr>
-<td>onesky_download_itunes</td>
-<td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
-<td>Helps to update the translations of your app using the OneSky service.</td>
-<td>1188</td>
-</tr>
-<tr>
-<td>google_cloud_storage_check_file</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage">google_cloud_storage</a></td>
-<td>Google Cloud Storage</td>
-<td>1184</td>
-</tr>
-<tr>
-<td>applivery</td>
-<td><a href="https://github.com/applivery/fastlane-applivery-plugin">applivery</a></td>
-<td>Upload new build to Applivery</td>
-<td>1182</td>
-</tr>
-<tr>
-<td>cryptex</td>
-<td><a href="https://github.com/hjanuschka/fastlane-plugin-cryptex">cryptex</a></td>
-<td>fastlane Crypt Store Git repo</td>
-<td>1108</td>
-</tr>
-<tr>
-<td>pgyer</td>
-<td><a href="https://github.com/shishirui/fastlane-plugin-pgyer">pgyer</a></td>
-<td>distribute app to pgyer beta testing service</td>
-<td>1059</td>
-</tr>
-<tr>
-<td>commit_android_version_bump</td>
-<td><a href="https://github.com/Jems22/fastlane-plugin-commit_android_version_bump">commit_android_version_bump</a></td>
-<td>This Android plugins allow you to commit every modification done in your build.gradle file during the execution of a lane. In fast, it do the same as the commit_version_bump action, but for Android</td>
-<td>994</td>
-</tr>
-<tr>
-<td>upload_to_onesky</td>
-<td><a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky">upload_to_onesky</a></td>
-<td>Upload a strings file to OneSky</td>
-<td>990</td>
-</tr>
-<tr>
-<td>get_android_version</td>
-<td><a href="https://github.com/MaximusMcCann/fastlane-plugin-get_android_version">get_android_version</a></td>
-<td>gets the android versionName and versionCode from the <code>AndroidManifest.xml</code> file located in the provided apk</td>
-<td>976</td>
-</tr>
-<tr>
-<td>unarchive_derived_data</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-build_cache">build_cache</a></td>
-<td>Helper for caching builds when using 'build for testing' &amp; 'test without building'</td>
-<td>971</td>
-</tr>
-<tr>
-<td>firim</td>
-<td><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim">firim</a></td>
-<td>firim</td>
-<td>946</td>
-</tr>
-<tr>
-<td>tpa</td>
-<td><a href="https://github.com/mbogh/fastlane-plugin-tpa">tpa</a></td>
-<td>TPA gives you advanced user behaviour analytics, app distribution, crash analytics and more</td>
-<td>899</td>
-</tr>
-<tr>
-<td>get_unprovisioned_devices_from_hockey</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey">get_unprovisioned_devices_from_hockey</a></td>
-<td>Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices.</td>
-<td>893</td>
-</tr>
-<tr>
-<td>jira_transition</td>
-<td><a href="https://github.com/valeriomazzeo/fastlane-plugin-jira_transition">jira_transition</a></td>
-<td>Apply a JIRA transition to issues mentioned in the changelog</td>
-<td>856</td>
-</tr>
-<tr>
-<td>fetch_itc_versions</td>
-<td><a href="https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions">fetch_itc_versions</a></td>
-<td>Returns a listing of all app versions and their latest builds from iTunes Connect.</td>
-<td>845</td>
-</tr>
-<tr>
-<td>app_info</td>
-<td><code>app_info</code></td>
-<td>Teardown tool for mobile app(ipa/apk), analysis metedata like version, name, icon etc.</td>
-<td>818</td>
-</tr>
-<tr>
-<td>giffy_random_gif_url</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy">giffy</a></td>
-<td>Fastlane plugin for Giffy.com API</td>
-<td>806</td>
-</tr>
-<tr>
-<td>latest_hockey_build_number</td>
-<td><a href="https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number">latest_hockey_build_number</a></td>
-<td>Gets latest version number of the app with the bundle id from HockeyApp</td>
-<td>791</td>
-</tr>
-<tr>
-<td>xamarin_update_configuration</td>
-<td><a href="https://github.com/punksta/fastlane-plugin-xamarin_build">xamarin_build</a></td>
-<td>Build xamarin android\ios projects</td>
-<td>784</td>
-</tr>
-<tr>
-<td>xcake</td>
-<td><a href="https://github.com/jcampbell05/xcake/">xcake</a></td>
-<td>Create your Xcode projects automatically using a stupid simple DSL.</td>
-<td>773</td>
-</tr>
-<tr>
-<td>branding</td>
-<td><a href="https://github.com/snatchev/fastlane-branding-plugin">branding</a></td>
-<td>Add some branding to your fastlane output</td>
-<td>772</td>
-</tr>
-<tr>
-<td>clubmate</td>
-<td><a href="https://github.com/KrauseFx/fastlane-plugin-clubmate">clubmate</a></td>
-<td>Print the Club Mate logo in your build output</td>
-<td>765</td>
-</tr>
-<tr>
-<td>google_cloud_storage_download</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage">google_cloud_storage</a></td>
-<td>Google Cloud Storage</td>
-<td>751</td>
-</tr>
-<tr>
-<td>ensure_xcode_build_version</td>
-<td><a href="https://github.com/nafu/fastlane-plugin-ensure_xcode_build_version">ensure_xcode_build_version</a></td>
-<td>Ensure Xcode Build Version for working with Beta, GM and Release</td>
-<td>738</td>
-</tr>
-<tr>
-<td>update_build_settings_key</td>
-<td><a href="https://github.com/ungacy/update_build_settings_key">update_build_settings_key</a></td>
-<td>Updated code signing settings from 'Automatic' to a specific profile</td>
-<td>696</td>
-</tr>
-<tr>
-<td>wait_xcrun</td>
-<td><a href="https://github.com/mgrebenets/fastlane-plugin-wait_xcrun">wait_xcrun</a></td>
-<td>Wait for Xcode toolchain to come back online after switching Xcode versions.</td>
-<td>694</td>
-</tr>
-<tr>
-<td>extract_certificate</td>
-<td><a href="https://github.com/punksta/fastlane-plugin-xamarin_build">xamarin_build</a></td>
-<td>Build xamarin android\ios projects</td>
-<td>689</td>
-</tr>
-<tr>
-<td>clang_analyzer</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer">clang_analyzer</a></td>
-<td>Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report</td>
-<td>678</td>
-</tr>
-<tr>
-<td>update_settings_bundle</td>
-<td><a href="https://github.com/jdee/settings-bundle">settings_bundle</a></td>
-<td>Fastlane plugin to update static settings in an iOS settings bundle</td>
-<td>647</td>
-</tr>
-<tr>
-<td>aws_sns</td>
-<td><a href="https://github.com/joshdholtz/fastlane-plugin-aws_sns">aws_sns</a></td>
-<td>Creates AWS SNS platform applications</td>
-<td>603</td>
-</tr>
-<tr>
-<td>aws_device_farm</td>
-<td><a href="https://github.com/hjanuschka/fastlane-plugin-aws_device_farm">aws_device_farm</a></td>
-<td>Run UI Tests on AWS Devicefarm</td>
-<td>594</td>
-</tr>
-<tr>
-<td>assembly_info_poke_version</td>
-<td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
-<td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
-<td>583</td>
-</tr>
-<tr>
-<td>souyuz</td>
-<td><a href="http://rubygems.org/gems/fastlane-plugin-souyuz">souyuz</a></td>
-<td>A fastlane component to make Xamarin builds a breeze</td>
-<td>575</td>
-</tr>
-<tr>
-<td>install_profiles</td>
-<td><a href="https://github.com/paweljankowski/fastlane-plugin-provisioning">provisioning</a></td>
-<td>Helps provision your app in the CI environment</td>
-<td>571</td>
-</tr>
-<tr>
-<td>goodify_info_plist</td>
-<td><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist">goodify_info_plist</a></td>
-<td>This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management.</td>
-<td>569</td>
-</tr>
-<tr>
-<td>instrumented_tests</td>
-<td><a href="https://github.com/joshrlesch/fastlane-plugin-instrumented_tests">instrumented_tests</a></td>
-<td>New action to run instrumented tests for android. This plugin creates and boots an emulator before running a gradle command so that you can run instrumented tests against that emulator. After the gradle command is executed, the avd gets shut down and deleted. This is really helpful on CI services, keeping them clean and always having a fresh avd for testing.</td>
-<td>568</td>
-</tr>
-<tr>
-<td>prepare_build_resources</td>
-<td><a href="https://github.com/trifork/fastlane-plugin-prepare_build_resources">prepare_build_resources</a></td>
-<td>Prepares certificates and provisioning profiles for building and removes them afterwards.</td>
-<td>522</td>
-</tr>
-<tr>
-<td>import_localizations</td>
-<td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
-<td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
-<td>516</td>
-</tr>
-<tr>
-<td>google_cloud_storage_upload</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage">google_cloud_storage</a></td>
-<td>Google Cloud Storage</td>
-<td>494</td>
-</tr>
-<tr>
-<td>get_app_store_version_number</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
-<td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>468</td>
-</tr>
-<tr>
-<td>nuget_pack</td>
-<td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
-<td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
-<td>463</td>
-</tr>
-<tr>
-<td>git_tags</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-git_tags">git_tags</a></td>
-<td>List git tags sorted by taggerdate</td>
-<td>462</td>
-</tr>
-<tr>
-<td>deploy_file_provider</td>
-<td><code>deploy_file_provider</code></td>
-<td>Prepares metadata files with structure ready for AppStore, PlayStore deploy</td>
-<td>449</td>
-</tr>
-<tr>
-<td>archive_derived_data</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-build_cache">build_cache</a></td>
-<td>Helper for caching builds when using 'build for testing' &amp; 'test without building'</td>
-<td>426</td>
-</tr>
-<tr>
-<td>export_localizations</td>
-<td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
-<td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
-<td>413</td>
-</tr>
-<tr>
-<td>s3_upload</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-s3_actions">s3_actions</a></td>
-<td>Download and upload files to AWS S3</td>
-<td>379</td>
-</tr>
-<tr>
-<td>run_lane</td>
-<td><a href="https://github.com/jonathanneilritchie/fastlane-plugin-run_lane">run_lane</a></td>
-<td>Run a specified fastlane lane in your project.</td>
-<td>377</td>
-</tr>
-<tr>
-<td>rubocop</td>
-<td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
-<td>Useful fastlane actions for Ruby projects</td>
-<td>364</td>
-</tr>
-<tr>
-<td>emojify_changelog</td>
-<td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
-<td>Automate changes to your project CHANGELOG.md</td>
-<td>357</td>
-</tr>
-<tr>
-<td>upload_symbols_to_bugsee</td>
-<td><a href="https://github.com/bugsee/fastlane-plugin-bugsee">bugsee</a></td>
-<td>Bugsee symbols uploader</td>
-<td>350</td>
-</tr>
-<tr>
-<td>aws_device_farm_package</td>
-<td><a href="https://github.com/hjanuschka/fastlane-plugin-aws_device_farm">aws_device_farm</a></td>
-<td>Run UI Tests on AWS Devicefarm</td>
-<td>332</td>
-</tr>
-<tr>
-<td>carthage_cache_publish</td>
-<td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
-<td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>317</td>
-</tr>
-<tr>
-<td>coreos_deploy</td>
-<td><a href="https://github.com/icuisine-pos/fastlane-plugin-coreos">coreos</a></td>
-<td>Deploy docker services to CoreOS hosts</td>
-<td>292</td>
-</tr>
-<tr>
-<td>verify_ipa_files</td>
-<td><a href="https://github.com/dyang/verify_ipa">verify_ipa</a></td>
-<td>Verify various aspects of iOS ipa file</td>
-<td>270</td>
-</tr>
-<tr>
-<td>tunes</td>
-<td><a href="https://github.com/neonichu/fastlane-tunes">tunes</a></td>
-<td>Play music using fastlane, because you can.</td>
-<td>258</td>
-</tr>
-<tr>
-<td>gs_get_release_notes</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>258</td>
-</tr>
-<tr>
-<td>gs_increment_beta_version</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_versioning">gs_versioning</a></td>
-<td>Plugin for GradoService versioning system</td>
-<td>255</td>
-</tr>
-<tr>
-<td>apply_xcode8_srgb_workaround</td>
-<td><a href="https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround">xcode8_srgb_workaround</a></td>
-<td>Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target</td>
-<td>254</td>
-</tr>
-<tr>
-<td>android_change_string_app_name</td>
-<td><a href="https://github.com/MaximusMcCann/fastlane-plugin-android_change_string_app_name">android_change_string_app_name</a></td>
-<td>Change the app_name in the strings.xml file &amp; revert method</td>
-<td>254</td>
-</tr>
-<tr>
-<td>gs_increment_rc_version</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_versioning">gs_versioning</a></td>
-<td>Plugin for GradoService versioning system</td>
-<td>252</td>
-</tr>
-<tr>
-<td>app_version</td>
-<td><a href="http://rubygems.org/gems/fastlane-plugin-souyuz">souyuz</a></td>
-<td>A fastlane component to make Xamarin builds a breeze</td>
-<td>244</td>
-</tr>
-<tr>
-<td>set_value_in_build</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
-<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>240</td>
-</tr>
-<tr>
-<td>create_jira_version</td>
-<td><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions">jira_versions</a></td>
-<td>Manage your JIRA project's releases/versions with this plugin.</td>
-<td>238</td>
-</tr>
-<tr>
-<td>generate_changelog</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
-<td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>238</td>
-</tr>
-<tr>
-<td>increment_version_name</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
-<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>235</td>
-</tr>
-<tr>
-<td>git_info_extract</td>
-<td><a href="https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract">git_info_extract</a></td>
-<td>Extract JIRA information from git merge</td>
-<td>219</td>
-</tr>
-<tr>
-<td>cosigner</td>
-<td><a href="https://github.com/Mindera/fastlane-plugin-cosigner">cosigner</a></td>
-<td>A fastlane plugin to help you sign your iOS builds</td>
-<td>197</td>
-</tr>
-<tr>
-<td>framer</td>
-<td><a href="https://github.com/spreaker/fastlane-framer-plugin">framer</a></td>
-<td>Create images combining app screenshots with templates to make nice pictures for the App Store</td>
-<td>192</td>
-</tr>
-<tr>
-<td>get_version_code</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
-<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>191</td>
-</tr>
-<tr>
-<td>version_from_last_tag</td>
-<td><code>version_from_last_tag</code></td>
-<td>Perform a regex on last (latest) git tag and perform a regex to extract a version number such as Release 1.2.3</td>
-<td>188</td>
-</tr>
-<tr>
-<td>onesky_order_translation</td>
-<td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
-<td>Helps to update the translations of your app using the OneSky service.</td>
-<td>182</td>
-</tr>
-<tr>
-<td>release_jira_version</td>
-<td><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions">jira_versions</a></td>
-<td>Manage your JIRA project's releases/versions with this plugin.</td>
-<td>179</td>
-</tr>
-<tr>
-<td>onesky_upload_itunes</td>
-<td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
-<td>Helps to update the translations of your app using the OneSky service.</td>
-<td>177</td>
-</tr>
-<tr>
-<td>xml_editor</td>
-<td><a href="https://github.com/jonathanneilritchie/fastlane-plugin-xml_editor">xml_editor</a></td>
-<td>Generic xml editor for iOS and Android projects.</td>
-<td>176</td>
-</tr>
-<tr>
-<td>trim_localizations</td>
-<td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
-<td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
-<td>174</td>
-</tr>
-<tr>
-<td>download_circleci_artifacts</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-download_circleci_artifacts">download_circleci_artifacts</a></td>
-<td>Downloads a Circle CI artifact's</td>
-<td>173</td>
-</tr>
-<tr>
-<td>xliff_en_gen</td>
-<td><a href="https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen">xliff_en_gen</a></td>
-<td>gen Localizable.strings file from xliff</td>
-<td>173</td>
-</tr>
-<tr>
-<td>update_changelog</td>
-<td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
-<td>Automate changes to your project CHANGELOG.md</td>
-<td>166</td>
-</tr>
-<tr>
-<td>replace_file</td>
-<td><a href="https://github.com/jonathanneilritchie/fastlane-plugin-replace_file">replace_file</a></td>
-<td>Replace any file in your mobile project.</td>
-<td>160</td>
-</tr>
-<tr>
-<td>clang_analyzer</td>
-<td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
-<td>Runs different Static Analyzers and generate report</td>
-<td>153</td>
-</tr>
-<tr>
-<td>android_change_app_name</td>
-<td><code>android_change_app_name</code></td>
-<td>Changes the manifest's label attribute (appName).  Stores the original name for revertinng.</td>
-<td>139</td>
-</tr>
-<tr>
-<td>cpd_analyzer</td>
-<td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
-<td>Runs different Static Analyzers and generate report</td>
-<td>138</td>
-</tr>
-<tr>
-<td>certificate_expirydate</td>
-<td><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/">certificate_expirydate</a></td>
-<td>Retrieves the expiry date of the given p12 certificate file</td>
-<td>134</td>
-</tr>
-<tr>
-<td>intentconfirmation</td>
-<td><code>intentconfirmation</code></td>
-<td>Halts the lane invocation, asks user to confirm if he wants to continue, may require password or key.</td>
-<td>131</td>
-</tr>
-<tr>
-<td>sharethemeal</td>
-<td><a href="https://github.com/hjanuschka/fastlane-plugin-sharethemeal">sharethemeal</a></td>
-<td>ShareTheMeal</td>
-<td>126</td>
-</tr>
-<tr>
-<td>logme</td>
-<td><code>logme</code></td>
-<td>Provides a simple way to get logs from two delta commits</td>
-<td>125</td>
-</tr>
-<tr>
-<td>increment_version_code</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
-<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>119</td>
-</tr>
-<tr>
-<td>get_version_name</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
-<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>110</td>
-</tr>
-<tr>
-<td>export_xliff</td>
-<td><a href="https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen">xliff_en_gen</a></td>
-<td>gen Localizable.strings file from xliff</td>
-<td>108</td>
-</tr>
-<tr>
-<td>rome</td>
-<td><a href="https://github.com/netbe/fastlane-plugin-rome">rome</a></td>
-<td>An S3 cache tool for Carthage</td>
-<td>105</td>
-</tr>
-<tr>
-<td>fetch_github_labels</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
-<td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>105</td>
-</tr>
-<tr>
-<td>git_status</td>
-<td><a href="https://github.com/4brunu/fastlane-plugin-git_status">git_status</a></td>
-<td>Show the status of one or multiple files/directories</td>
-<td>99</td>
-</tr>
-<tr>
-<td>rspec</td>
-<td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
-<td>Useful fastlane actions for Ruby projects</td>
-<td>97</td>
-</tr>
-<tr>
-<td>facelift</td>
-<td><a href="https://github.com/richardszalay/fastlane-plugin-facelift">facelift</a></td>
-<td>Deprecated in favor of 'fastlane-plugin-act'</td>
-<td>96</td>
-</tr>
-<tr>
-<td>instabug</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-instabug">instabug</a></td>
-<td>Uploads dSYM to Instabug</td>
-<td>93</td>
-</tr>
-<tr>
-<td>nuspec_poke_version</td>
-<td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
-<td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
-<td>92</td>
-</tr>
-<tr>
-<td>transifex_api</td>
-<td><a href="https://github.com/xiangyu-sun/fastlane-plugin-transifex_api">transifex_api</a></td>
-<td>basic transifex api wrapper</td>
-<td>91</td>
-</tr>
-<tr>
-<td>gs_execute_command</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>90</td>
-</tr>
-<tr>
-<td>warning_analyzer</td>
-<td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
-<td>Runs different Static Analyzers and generate report</td>
-<td>88</td>
-</tr>
-<tr>
-<td>apperian</td>
-<td><a href="https://github.com/tomiblank/fastlane-plugin-apperian">apperian</a></td>
-<td>Allows to upload your IPA file to Apperian</td>
-<td>84</td>
-</tr>
-<tr>
-<td>code_push_login</td>
-<td><a href="https://github.com/manuelkch/fastlane-plugin-code_push">code_push</a></td>
-<td>CodePush functionality for fastlane</td>
-<td>83</td>
-</tr>
-<tr>
-<td>generate_release_changelog</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
-<td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>76</td>
-</tr>
-<tr>
-<td>code_push</td>
-<td><a href="https://github.com/manuelkch/fastlane-plugin-code_push">code_push</a></td>
-<td>CodePush functionality for fastlane</td>
-<td>66</td>
-</tr>
-<tr>
-<td>find_replace_string</td>
-<td><a href="https://github.com/jonathanneilritchie/fastlane-plugin-find_replace_string">find_replace_string</a></td>
-<td>Find a string in a file and replace it with a new one.</td>
-<td>66</td>
-</tr>
-<tr>
-<td>gs_increment_release_version</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_versioning">gs_versioning</a></td>
-<td>Plugin for GradoService versioning system</td>
-<td>61</td>
-</tr>
-<tr>
-<td>set_key_partition_list</td>
-<td><a href="https://github.com/paweljankowski/fastlane-plugin-provisioning">provisioning</a></td>
-<td>Helps provision your app in the CI environment</td>
-<td>58</td>
-</tr>
-<tr>
-<td>get_version_number_from_git_branch</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
-<td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>56</td>
-</tr>
-<tr>
-<td>gs_move_rc_to_beta_review</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>51</td>
-</tr>
-<tr>
-<td>upload_symbols_to_hockey</td>
-<td><a href="https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey">upload_symbols_to_hockey</a></td>
-<td>Upload dSYM symbolication files to Hockey</td>
-<td>50</td>
-</tr>
-<tr>
-<td>gs_get_app_status</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>45</td>
-</tr>
-<tr>
-<td>translation</td>
-<td><a href="https://github.com/trifork/fastlane-plugin-translation">translation</a></td>
-<td>Handling translations from Google sheet.</td>
-<td>44</td>
-</tr>
-<tr>
-<td>git_tags</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
-<td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>44</td>
-</tr>
-<tr>
-<td>code_push_release_react</td>
-<td><a href="https://github.com/manuelkch/fastlane-plugin-code_push">code_push</a></td>
-<td>CodePush functionality for fastlane</td>
-<td>43</td>
-</tr>
-<tr>
-<td>show_builds</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-download_circleci_artifacts">download_circleci_artifacts</a></td>
-<td>Downloads a Circle CI artifact's</td>
-<td>43</td>
-</tr>
-<tr>
-<td>cryptex_generate_keystore</td>
-<td><a href="https://github.com/hjanuschka/fastlane-plugin-cryptex">cryptex</a></td>
-<td>fastlane Crypt Store Git repo</td>
-<td>42</td>
-</tr>
-<tr>
-<td>get_value_from_build</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
-<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>41</td>
-</tr>
-<tr>
-<td>flurry_upload_dsym</td>
-<td><a href="https://github.com/flurry/fastlane-plugin-flurry">flurry</a></td>
-<td>Upload dSYM symbolication files to Flurry</td>
-<td>38</td>
-</tr>
-<tr>
-<td>raven</td>
-<td><a href="https://github.com/mortik/fastlane-plugin-raven">raven</a></td>
-<td>Plugin to manage Releases and upload JS Sourcemaps</td>
-<td>37</td>
-</tr>
-<tr>
-<td>gs_save_beta_version</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_versioning">gs_versioning</a></td>
-<td>Plugin for GradoService versioning system</td>
-<td>34</td>
-</tr>
-<tr>
-<td>github_status</td>
-<td><a href="https://github.com/mfurtak/fastlane-plugin-github_status">github_status</a></td>
-<td>Provides the ability to display and act upon GitHub server status as part of your build</td>
-<td>33</td>
-</tr>
-<tr>
-<td>android_change_package_identifier</td>
-<td><code>android_change_package_identifier</code></td>
-<td>Change the package identifier in the AndroidManifest.xml file. Can revert as well.</td>
-<td>33</td>
-</tr>
-<tr>
-<td>gs_save_rc_version</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_versioning">gs_versioning</a></td>
-<td>Plugin for GradoService versioning system</td>
-<td>31</td>
-</tr>
-<tr>
-<td>ruby_analyzer</td>
-<td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
-<td>Runs different Static Analyzers and generate report</td>
-<td>30</td>
-</tr>
-<tr>
-<td>ya_tu_sabes</td>
-<td><a href="https://github.com/neonichu/fastlane-plugin-ya_tu_sabes">ya_tu_sabes</a></td>
-<td>Ya tu sabes.</td>
-<td>28</td>
-</tr>
-<tr>
-<td>docker_compose</td>
-<td><a href="https://github.com/milch/fastlane-plugin-docker">docker</a></td>
-<td>fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub</td>
-<td>27</td>
-</tr>
-<tr>
-<td>coreos</td>
-<td><a href="https://github.com/icuisine-pos/fastlane-plugin-coreos">coreos</a></td>
-<td>Deploy docker services to CoreOS hosts</td>
-<td>27</td>
-</tr>
-<tr>
-<td>report</td>
-<td><a href="https://github.com/BrunoMiguens/fastlane-plugin-report">report</a></td>
-<td>After an action, like scan for instance, you're able to generate a report file. This fastlane plugin gives you a way to upload and share your report using Slack.</td>
-<td>25</td>
-</tr>
-<tr>
-<td>check_good_version</td>
-<td><a href="https://github.com/lyndsey-ferguson/fastlane_plugins">check_good_version</a></td>
-<td>Checks the version of the installed Good framework</td>
-<td>25</td>
-</tr>
-<tr>
-<td>slack_train</td>
-<td><code>slack_train</code></td>
-<td>Show a train of the fastlane progress</td>
-<td>23</td>
-</tr>
-<tr>
-<td>influxdb</td>
-<td><a href="https://github.com/giginet/fastlane-plugin-influxdb">influxdb</a></td>
-<td>Post values to IndluxDB</td>
-<td>21</td>
-</tr>
-<tr>
-<td>download_github_release_asset</td>
-<td><a href="https://github.com/Antondomashnev/fastlane-plugin-download_github_release_asset">download_github_release_asset</a></td>
-<td>This action downloads a GitHub release's asset using the GitHub API and puts it in a destination path.\nIf the file has been previously downloaded, it will be overrided.</td>
-<td>21</td>
-</tr>
-<tr>
-<td>google_analytics</td>
-<td><a href="https://github.com/hjanuschka/fastlane-plugin-google_analytics">google_analytics</a></td>
-<td>Fire universal Analytics</td>
-<td>19</td>
-</tr>
-<tr>
-<td>gs_versioning</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_versioning">gs_versioning</a></td>
-<td>Plugin for GradoService versioning system</td>
-<td>16</td>
-</tr>
-<tr>
-<td>slack_train_start</td>
-<td><code>slack_train</code></td>
-<td>Show a train of the fastlane progress</td>
-<td>16</td>
-</tr>
-<tr>
-<td>bluepill</td>
-<td><a href="https://github.com/tbrand/fastlane-plugin-bluepill">bluepill</a></td>
-<td>Fastlane plugin to use bluepill in fastlane</td>
-<td>15</td>
-</tr>
-<tr>
-<td>docker_login</td>
-<td><a href="https://github.com/milch/fastlane-plugin-docker">docker</a></td>
-<td>fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub</td>
-<td>15</td>
-</tr>
-<tr>
-<td>static_images</td>
-<td><a href="https://github.com/trifork/fastlane-plugin-static_assets">static_assets</a></td>
-<td>Generate code for buildtime-safe assignments of assets.</td>
-<td>15</td>
-</tr>
-<tr>
-<td>get_product_bundle_id</td>
-<td><a href="https://github.com/lyndsey-ferguson/fastlane-plugin-get_product_bundle_id">get_product_bundle_id</a></td>
-<td>Gets PRODUCT_BUNDLE_IDENTIFIER from the first buildable target in a given scheme</td>
-<td>14</td>
-</tr>
-<tr>
-<td>playship</td>
-<td><code>playship</code></td>
-<td>Interact with Google Play Api</td>
-<td>14</td>
-</tr>
-<tr>
-<td>docker_build</td>
-<td><a href="https://github.com/milch/fastlane-plugin-docker">docker</a></td>
-<td>fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub</td>
-<td>14</td>
-</tr>
-<tr>
-<td>giffy_random_sticker_url</td>
-<td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy">giffy</a></td>
-<td>Fastlane plugin for Giffy.com API</td>
-<td>11</td>
-</tr>
-<tr>
-<td>ensure_docker_machine_available</td>
-<td><a href="https://github.com/milch/fastlane-plugin-docker">docker</a></td>
-<td>fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub</td>
-<td>11</td>
-</tr>
-<tr>
-<td>s3_check_file</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-s3_actions">s3_actions</a></td>
-<td>Download and upload files to AWS S3</td>
-<td>11</td>
-</tr>
-<tr>
-<td>devicelab_bot</td>
-<td><code>devicelab_bot</code></td>
-<td>Automatically install your app on your devicelab with the devicelab bot</td>
-<td>10</td>
-</tr>
-<tr>
-<td>jira_issue_keys_from_changelog</td>
-<td><a href="https://github.com/yuriy-tolstoguzov/fastlane-plugin-set_jira_fix_version">set_jira_fix_version</a></td>
-<td>Adds fix version to specified JIRA issues. Creates version if needed</td>
-<td>10</td>
-</tr>
-<tr>
-<td>changelog_generator</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
-<td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>9</td>
-</tr>
-<tr>
-<td>gs_save_release_version</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_versioning">gs_versioning</a></td>
-<td>Plugin for GradoService versioning system</td>
-<td>8</td>
-</tr>
-<tr>
-<td>get_xcodeproj_targets</td>
-<td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
-<td>Runs different Static Analyzers and generate report</td>
-<td>6</td>
-</tr>
-<tr>
-<td>docker_push</td>
-<td><a href="https://github.com/milch/fastlane-plugin-docker">docker</a></td>
-<td>fastlane Actions to support building images, logging into Docker Hub, and pushing those images to the Hub</td>
-<td>6</td>
-</tr>
-<tr>
-<td>app_icon</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>6</td>
-</tr>
-<tr>
-<td>gs_start_external_testing</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>5</td>
-</tr>
-<tr>
-<td>onesky_download_all</td>
-<td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
-<td>Helps to update the translations of your app using the OneSky service.</td>
-<td>5</td>
-</tr>
-<tr>
-<td>figlet</td>
-<td><code>figlet</code></td>
-<td>Wrapper around figlet which makes large ascii text words</td>
-<td>5</td>
-</tr>
-<tr>
-<td>no_u</td>
-<td><a href="https://github.com/neonichu/fastlane-plugin-no_u">no_u</a></td>
-<td>no u</td>
-<td>5</td>
-</tr>
-<tr>
-<td>submit</td>
-<td><a href="https://github.com/suculent/fastlane-plugin-apprepo">apprepo</a></td>
-<td>experimental fastlane plugin based on https://github.com/suculent/apprepo SFTP uploader</td>
-<td>4</td>
-</tr>
-<tr>
-<td>s3_download</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-s3_actions">s3_actions</a></td>
-<td>Download and upload files to AWS S3</td>
-<td>4</td>
-</tr>
-<tr>
-<td>create_translation</td>
-<td><a href="https://github.com/trifork/fastlane-plugin-translation">translation</a></td>
-<td>Handling translations from Google sheet.</td>
-<td>3</td>
-</tr>
-<tr>
-<td>gs_reject_latest_version</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>3</td>
-</tr>
-<tr>
-<td>set_app_version</td>
-<td><a href="http://rubygems.org/gems/fastlane-plugin-souyuz">souyuz</a></td>
-<td>A fastlane component to make Xamarin builds a breeze</td>
-<td>2</td>
-</tr>
-<tr>
-<td>set_jira_fix_version</td>
-<td><a href="https://github.com/yuriy-tolstoguzov/fastlane-plugin-set_jira_fix_version">set_jira_fix_version</a></td>
-<td>Adds fix version to specified JIRA issues. Creates version if needed</td>
-<td>2</td>
-</tr>
-<tr>
-<td>gs_move_to_ready_for_sale</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>2</td>
-</tr>
-<tr>
-<td>verify_ipa_entitlements</td>
-<td><a href="https://github.com/dyang/verify_ipa">verify_ipa</a></td>
-<td>Verify various aspects of iOS ipa file</td>
-<td>2</td>
-</tr>
-<tr>
-<td>gs_deliver</td>
-<td><a href="https://github.com/SAVeselovskiy/gs_deliver">gs_deliver</a></td>
-<td>Gradoservice plugin to rule apps releases</td>
-<td>2</td>
-</tr>
-<tr>
-<td>messagesicon</td>
-<td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
-<td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>2</td>
-</tr>
-<tr>
-<td>import_provisioning</td>
-<td><code>polidea</code></td>
-<td>Polidea's fastlane action</td>
-<td>2</td>
-</tr>
-<tr>
-<td>google_cloud_storage</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage">google_cloud_storage</a></td>
-<td>Google Cloud Storage</td>
-<td>2</td>
-</tr>
-<tr>
-<td>s3_verify_existence</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-s3_actions">s3_actions</a></td>
-<td>Download and upload files to AWS S3</td>
-<td>1</td>
-</tr>
-<tr>
-<td>onesky</td>
-<td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
-<td>Helps to update the translations of your app using the OneSky service.</td>
-<td>1</td>
+<td>22848</td>
 </tr>
 </tbody>
 </table>
