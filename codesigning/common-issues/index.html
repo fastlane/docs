@@ -202,6 +202,14 @@
       
     
       
+      <li class="toctree-l3"><a href="#xcode-errors">Xcode errors</a></li>
+      
+    
+      
+      <li class="toctree-l3"><a href="#fastlane-errors">fastlane errors</a></li>
+      
+    
+      
       <li class="toctree-l3"><a href="#debugging-steps-for-no-applicable-devices-found-error">Debugging steps for "No applicable devices found." error</a></li>
       
     
@@ -318,7 +326,7 @@
             <div class="section">
               
                 <h1 id="common-code-signing-issues"><a name="user-content-common-code-signing-issues" href="#common-code-signing-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Common code signing issues</h1>
-<h2 id="xcode-errors"><a name="user-content-xcode-errors" href="#xcode-errors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode errors</h2>
+<h1 id="xcode-errors"><a name="user-content-xcode-errors" href="#xcode-errors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode errors</h1>
 <blockquote>
 <p>Code Sign error: No matching provisioning profiles found: No provisioning profiles with a valid signing identity (i.e. certificate and private key pair) matching the bundle identifier "X" were found.</p>
 </blockquote>
@@ -349,7 +357,7 @@
 <p>CodeSign Error: code signing is required for product type 'Application'...</p>
 </blockquote>
 <p>Make sure to have a valid code signing identity defined in your project targets. This might happen when you select <code>Don't Code Sign</code> as Code Signing Identity.</p>
-<h2 id="fastlane-errors"><em>fastlane</em> errors</h2>
+<h1 id="fastlane-errors"><em>fastlane</em> errors</h1>
 <blockquote>
 <p>User interaction is not allowed. Command /usr/bin/codesign failed with exit code 1</p>
 </blockquote>
@@ -360,17 +368,17 @@
 <p>There are no certificates available on the Apple Developer Portal. This could either mean someone revoked a certificate, or you don't have access to it. </p>
 <h1 id="debugging-steps-for-no-applicable-devices-found-error"><a name="user-content-debugging-steps-for-no-applicable-devices-found-error" href="#debugging-steps-for-no-applicable-devices-found-error" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Debugging steps for "No applicable devices found." error</h1>
 <p>It's not immediately obvious what this error is or what it's caused by, so hopefully these simple steps will help you find the root cause faster.</p>
-<h3 id="not-just-fastlane"><a name="user-content-not-just-fastlane" href="#not-just-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Not just <em>fastlane</em></h3>
+<h2 id="not-just-fastlane"><a name="user-content-not-just-fastlane" href="#not-just-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Not just <em>fastlane</em></h2>
 <p>This error happens to all projects built with <code>xcodebuild</code> / <code>xcrun</code>, so it's likely not caused by <em>fastlane</em>. <em>fastlane</em> might help alleviate it with some env var unsetting / setting or other tricks, but this is an error from the new export APIs that Xcode uses.</p>
-<h3 id="legacy-export-api"><a name="user-content-legacy-export-api" href="#legacy-export-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Legacy export API</h3>
+<h2 id="legacy-export-api"><a name="user-content-legacy-export-api" href="#legacy-export-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Legacy export API</h2>
 <p>As of Xcode 8.3, the deprecated / legacy export api (e.g. <code>use_legacy_build_api</code>) is removed, so you have to use the latest Xcode export API, which unfortunately still has some issues.</p>
-<h3 id="misleading-errors"><a name="user-content-misleading-errors" href="#misleading-errors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Misleading errors</h3>
+<h2 id="misleading-errors"><a name="user-content-misleading-errors" href="#misleading-errors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Misleading errors</h2>
 <p>The error message, <code>"No applicable devices found."</code>, is actually misleading: it's not the real error. Something else is erroring out at a lower level so you'll need to dig in to find out what.</p>
-<h3 id="the-archive-built-successfully-but-the-export-step-failed"><a name="user-content-the-archive-built-successfully-but-the-export-step-failed" href="#the-archive-built-successfully-but-the-export-step-failed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The archive built successfully, but the export step failed</h3>
+<h2 id="the-archive-built-successfully-but-the-export-step-failed"><a name="user-content-the-archive-built-successfully-but-the-export-step-failed" href="#the-archive-built-successfully-but-the-export-step-failed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The archive built successfully, but the export step failed</h2>
 <p>Typically, your archive will build nicely, and with the correct provisioning profile; you can inspect the <code>.xcarchive</code> package to verify the <code>embedded.mobileprovision</code> file matches.</p>
 <p>What happens is the export step will possibly sign it with a different profile depending on which <code>export_method</code> you're choosing (with <code>development</code> being the default) and it is during this step that the process will fail.</p>
 <p>This allows you to isolate the error to the export step, under most circumstances.</p>
-<h3 id="dependency-on-other-gems"><a name="user-content-dependency-on-other-gems" href="#dependency-on-other-gems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependency on other gems</h3>
+<h2 id="dependency-on-other-gems"><a name="user-content-dependency-on-other-gems" href="#dependency-on-other-gems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependency on other gems</h2>
 <p>The export step sometimes fails due to not having these Ruby gems installed and caused many of the old instances of this problem.</p>
 <ul>
 <li><a href="https://github.com/ckruse/CFPropertyList">CFPropertyList</a></li>
@@ -378,7 +386,7 @@
 <li><a href="https://rubygems.org/gems/digest">digest</a></li>
 </ul>
 <p>You can use <code>$ gem list</code> to show which gems are installed</p>
-<h3 id="ruby-version"><a name="user-content-ruby-version" href="#ruby-version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ruby version</h3>
+<h2 id="ruby-version"><a name="user-content-ruby-version" href="#ruby-version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ruby version</h2>
 <p>Many of the old instances of this problem were caused by not using <code>system</code> Ruby, but this likely won't impact many in the future since <em>fastlane</em> helps ensure your environment is set up properly now.</p>
 <p>Using <a href="https://rvm.io/">RVM</a> or newer versions of Ruby should work fine. If you have RVM installed and want to try reverting back to <code>system</code> Ruby just in case, you can set and check this using:</p>
 <pre><code class="shell">$ rvm use system
@@ -388,7 +396,7 @@ $ which ruby
 /usr/bin/ruby
 </code></pre>
 
-<h3 id="check-the-logs"><a name="user-content-check-the-logs" href="#check-the-logs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Check the Logs</h3>
+<h2 id="check-the-logs"><a name="user-content-check-the-logs" href="#check-the-logs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Check the Logs</h2>
 <p>In many issues that were seen on the <em>fastlane</em> repo and across the web, this error was given during the bundling process. Luckily, that bundler creates a log file that you can access to see what error <em>actually</em> happened:</p>
 <pre><code class="shell">2017-03-30 21:47:09.855 xcodebuild[78957:9114437] [MT] IDEDistribution: -[IDEDistributionLogging _createLoggingBundleAtPath:]: Created bundle at path '/var/folders/s1/0h7d0scx6xqdthft328yfk0m0000gn/T/MyApp-Internal_2017-03-30_21-47-09.854.xcdistributionlogs'.
 1.2.840.113635.100.1.61
@@ -406,7 +414,7 @@ error: Bundle only contains bitcode-marker /var/folders/s1/0h7d0scx6xqdthft328yf
 </code></pre>
 
 <p>When that framework was rebuilt without bitcode, it worked like a charm! 😅 </p>
-<h3 id="run-commands-yourself"><a name="user-content-run-commands-yourself" href="#run-commands-yourself" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run commands yourself</h3>
+<h2 id="run-commands-yourself"><a name="user-content-run-commands-yourself" href="#run-commands-yourself" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run commands yourself</h2>
 <p><em>gym</em> does a great job of showing which commands it's going to run. Inspect the files it generates and run these commands yourself, as many times as you need to, in order to isolate the problems.</p>
 <p>For example, here's the export command that <em>gym</em> shows:</p>
 <pre><code class="shell">/usr/bin/xcrun /Users/rob/.fastlane/bin/bundle/lib/ruby/gems/2.2.0/gems/fastlane-2.24.0/gym/lib/assets/wrap_xcodebuild/xcbuild-safe.sh -exportArchive -exportOptionsPlist '/var/folders/s1/0h7d0scx6xqdthft328yfk0m0000gn/T/gym_config20170330-65021-1xbw0ov.plist' -archivePath /Users/rob/Library/Developer/Xcode/Archives/2017-03-30/MyApp\ 2017-03-30\ 21.12.02.xcarchive -exportPath '/var/folders/s1/0h7d0scx6xqdthft328yfk0m0000gn/T/gym_output20170330-65021-u80ojn'
@@ -425,7 +433,7 @@ error: Bundle only contains bitcode-marker /var/folders/s1/0h7d0scx6xqdthft328yf
 
 <p>And you can see which <code>.xcarchive</code> it's using to check if it built that with the correct provisioning profile.</p>
 <p>Most importantly, you can keep running that entire command until you figure out why it's breaking (e.g. try installing these gems, try using system Ruby).</p>
-<h3 id="other-causes"><a name="user-content-other-causes" href="#other-causes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other Causes</h3>
+<h2 id="other-causes"><a name="user-content-other-causes" href="#other-causes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other Causes</h2>
 <p>Keep in mind, this list could be infinite since this <code>No applicable devices found</code> error just manifests itself from underlying errors. Your best bet is to dig into the logs and see which error is actually being thrown.</p>
 <ul>
 <li>Using the wrong <code>export_method</code> or some other error in the generated <code>exportPlist</code> (e.g. using <code>enterprise</code> method when you're actually building for the <code>app store</code> and don't have the proper certificates)</li>
@@ -435,15 +443,15 @@ error: Bundle only contains bitcode-marker /var/folders/s1/0h7d0scx6xqdthft328yf
 <li>Provisioning profiles not matching capabilities and beta-reports-active flag on .entitlements file.</li>
 <li>Not having the gems (<code>CFPropertyList</code> etc) we discussed earlier installed </li>
 </ul>
-<h3 id="apple-tech-notes"><a name="user-content-apple-tech-notes" href="#apple-tech-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Apple Tech Notes</h3>
+<h2 id="apple-tech-notes"><a name="user-content-apple-tech-notes" href="#apple-tech-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Apple Tech Notes</h2>
 <p>If all else fails, use these tech notes to troubleshoot app thinning and bitcode: </p>
 <ul>
 <li><a href="https://developer.apple.com/library/content/technotes/tn2432/_index.html">https://developer.apple.com/library/content/technotes/tn2432/_index.html</a></li>
 <li><a href="https://stackoverflow.com/questions/34959767/whats-the-difference-between-fembed-bitcode-and-bitcode-generation-mode">https://stackoverflow.com/questions/34959767/whats-the-difference-between-fembed-bitcode-and-bitcode-generation-mode</a></li>
 <li><a href="https://forums.developer.apple.com/thread/70583">https://forums.developer.apple.com/thread/70583</a></li>
 </ul>
-<h3 id="radar"><a name="user-content-radar" href="#radar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Radar</h3>
-<p>Feel free to duplicate the radar we filed <a href="https://openradar.appspot.com/31389725">https://openradar.appspot.com/31389725</a> so the export APIs will return an accurate error message</p>
+<h2 id="radar"><a name="user-content-radar" href="#radar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Radar</h2>
+<p>Feel free to duplicate the radar <a href="https://openradar.appspot.com/31389725">https://openradar.appspot.com/31389725</a> so the export APIs will return an accurate error message</p>
               
             </div>
           </div>
