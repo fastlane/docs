@@ -34,6 +34,10 @@ Make sure to have a valid code signing identity defined in your project targets.
 
 ## _fastlane_ errors
 
+> User interaction is not allowed. Command /usr/bin/codesign failed with exit code 1
+
+Make sure that codesign can access your signing private key. Open Keychain Access. Select your signing private key, right-click, choose Get Info, change to the Access Control tab and select the "Allow all applications to access this item".
+
 > Could not find a matching code signing identity for type 'X'
 
 There are no certificates available on the Apple Developer Portal. This could either mean someone revoked a certificate, or you don't have access to it. 
