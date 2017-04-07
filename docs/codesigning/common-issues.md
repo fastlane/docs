@@ -1,6 +1,6 @@
 # Common code signing issues
 
-## Xcode errors
+# Xcode errors
 
 > Code Sign error: No matching provisioning profiles found: No provisioning profiles with a valid signing identity (i.e. certificate and private key pair) matching the bundle identifier "X" were found.
 
@@ -32,7 +32,7 @@ Your project defines a provisioning profile which doesn't exist on your local ma
 
 Make sure to have a valid code signing identity defined in your project targets. This might happen when you select `Don't Code Sign` as Code Signing Identity.
 
-## _fastlane_ errors
+# _fastlane_ errors
 
 > User interaction is not allowed. Command /usr/bin/codesign failed with exit code 1
 
@@ -46,19 +46,19 @@ There are no certificates available on the Apple Developer Portal. This could ei
 
 It's not immediately obvious what this error is or what it's caused by, so hopefully these simple steps will help you find the root cause faster.
 
-### Not just _fastlane_
+## Not just _fastlane_
 
 This error happens to all projects built with `xcodebuild` / `xcrun`, so it's likely not caused by _fastlane_. _fastlane_ might help alleviate it with some env var unsetting / setting or other tricks, but this is an error from the new export APIs that Xcode uses.
 
-### Legacy export API
+## Legacy export API
 
 As of Xcode 8.3, the deprecated / legacy export api (e.g. `use_legacy_build_api`) is removed, so you have to use the latest Xcode export API, which unfortunately still has some issues.
 
-### Misleading errors
+## Misleading errors
 
 The error message, `"No applicable devices found."`, is actually misleading: it's not the real error. Something else is erroring out at a lower level so you'll need to dig in to find out what.
 
-### The archive built successfully, but the export step failed
+## The archive built successfully, but the export step failed
 
 Typically, your archive will build nicely, and with the correct provisioning profile; you can inspect the `.xcarchive` package to verify the `embedded.mobileprovision` file matches.
 
@@ -66,7 +66,7 @@ What happens is the export step will possibly sign it with a different profile d
 
 This allows you to isolate the error to the export step, under most circumstances.
 
-### Dependency on other gems
+## Dependency on other gems
 
 The export step sometimes fails due to not having these Ruby gems installed and caused many of the old instances of this problem.
 
@@ -76,7 +76,7 @@ The export step sometimes fails due to not having these Ruby gems installed and 
 
 You can use `$ gem list` to show which gems are installed
 
-### Ruby version
+## Ruby version
 
 Many of the old instances of this problem were caused by not using `system` Ruby, but this likely won't impact many in the future since _fastlane_ helps ensure your environment is set up properly now.
 
@@ -90,7 +90,7 @@ $ which ruby
 /usr/bin/ruby
 ```
 
-### Check the Logs
+## Check the Logs
 
 In many issues that were seen on the _fastlane_ repo and across the web, this error was given during the bundling process. Luckily, that bundler creates a log file that you can access to see what error *actually* happened:
 
@@ -115,7 +115,7 @@ error: Bundle only contains bitcode-marker /var/folders/s1/0h7d0scx6xqdthft328yf
 
 When that framework was rebuilt without bitcode, it worked like a charm! 😅 
 
-### Run commands yourself
+## Run commands yourself
 
 _gym_ does a great job of showing which commands it's going to run. Inspect the files it generates and run these commands yourself, as many times as you need to, in order to isolate the problems.
 
@@ -142,7 +142,7 @@ And you can see which `.xcarchive` it's using to check if it built that with the
 
 Most importantly, you can keep running that entire command until you figure out why it's breaking (e.g. try installing these gems, try using system Ruby).
 
-### Other Causes
+## Other Causes
 
 Keep in mind, this list could be infinite since this `No applicable devices found` error just manifests itself from underlying errors. Your best bet is to dig into the logs and see which error is actually being thrown.
 
@@ -153,7 +153,7 @@ Keep in mind, this list could be infinite since this `No applicable devices foun
 - Provisioning profiles not matching capabilities and beta-reports-active flag on .entitlements file.
 - Not having the gems (`CFPropertyList` etc) we discussed earlier installed 
 
-### Apple Tech Notes
+## Apple Tech Notes
 
 If all else fails, use these tech notes to troubleshoot app thinning and bitcode: 
 
@@ -161,6 +161,6 @@ If all else fails, use these tech notes to troubleshoot app thinning and bitcode
 - [https://stackoverflow.com/questions/34959767/whats-the-difference-between-fembed-bitcode-and-bitcode-generation-mode](https://stackoverflow.com/questions/34959767/whats-the-difference-between-fembed-bitcode-and-bitcode-generation-mode)
 - [https://forums.developer.apple.com/thread/70583](https://forums.developer.apple.com/thread/70583)
 
-### Radar
+## Radar
 
-Feel free to duplicate the radar we filed [https://openradar.appspot.com/31389725](https://openradar.appspot.com/31389725) so the export APIs will return an accurate error message
+Feel free to duplicate the radar [https://openradar.appspot.com/31389725](https://openradar.appspot.com/31389725) so the export APIs will return an accurate error message
