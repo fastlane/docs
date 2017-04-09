@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 6ac83f8abda9d9cade37e902b83fb46e1aaa59b8
+  revision: 1e50b7628569e7ac13ab27bbdedc6354c873e2cb
   specs:
     fastlane (2.26.1)
       activesupport (< 5)
