@@ -270,6 +270,10 @@
       <li class="toctree-l3"><a href="#gitlab-ci-integration">GitLab CI Integration</a></li>
       
     
+      
+      <li class="toctree-l3"><a href="#visual-studio-team-services">Visual Studio Team Services</a></li>
+      
+    
   </ul>
   
 </li>
@@ -558,6 +562,22 @@ end
 </code></pre>
 
 <p>Then the GitLab CI build ID (which iterates on each build) will be used.</p>
+<h1 id="visual-studio-team-services"><a name="user-content-visual-studio-team-services" href="#visual-studio-team-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Visual Studio Team Services</h1>
+<p>Microsoft Visual Studio Team Services (VSTS) and Team Foundation Server (TFS) use <em>fastlane</em> in their <a href="https://marketplace.visualstudio.com/items?itemName=ms-vsclient.app-store">Apple App Store</a> extension.</p>
+<h2 id="getting-started"><a name="user-content-getting-started" href="#getting-started" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started</h2>
+<p>Once you have created or retrieved credentials for your App Store account, then perform the following steps to automate releasing updates from a VSTS build or release definition:
+1. Install the App Store extension from the VSTS Marketplace
+1. Go to your VSTS or TFS project, click on the <strong>Build</strong> tab, and create a new build definition (the "+" icon) that is hooked up to your project's appropriate source repo
+1. Click <strong>Add build step...</strong> and select the neccessary tasks to generate your release assets (e.g. Gulp, Cordova Build)
+1. Click <strong>Add build step...</strong> and select <strong>App Store Release</strong> from the <strong>Deploy</strong> category
+1. Configure the <strong>App Store Release</strong> task with the desired authentication method, the generated IPA file path, and the desired release track.</p>
+<p>Now when you build, your app will automatically be published to <em>iTunes Connect</em>!</p>
+<h2 id="configuring-fastlane-versions"><a name="user-content-configuring-fastlane-versions" href="#configuring-fastlane-versions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring <em>fastlane</em> versions</h2>
+<p>The extension can be configured to install the latest version of <em>fastlane</em> or a specific version of <em>fastlane</em>:
+1. In the Build for your project, click on the <strong>Apple App Store</strong> task (supported in both <code>Apple App Store Release</code> and <code>Apple App Store Promote</code>), go to the <strong>Advanced</strong> section of the Task, click <strong>Install fastlane</strong>
+1. Optionally, select <strong>Specific Version</strong> from <code>fastlane version</code>, and enter a specific version of <em>fastlane</em></p>
+<h2 id="more-information"><a name="user-content-more-information" href="#more-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More Information</h2>
+<p>For more documentation, see the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vsclient.app-store">Apple App Store</a> in the Visual Studio Team Server marketplace.</p>
               
             </div>
           </div>
