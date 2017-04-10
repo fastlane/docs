@@ -318,10 +318,10 @@ Once you have created or retrieved credentials for your App Store account, then 
 
 Now when you build, your app will automatically be published to _iTunes Connect_!
 
-## Configuring _fastlane_  versions
+## Configuring _fastlane_ versions
 The extension can be configured to install the latest version of _fastlane_ or a specific version of _fastlane_:
-1. In the Build for your project, click on the Apple App Store task (supported in both `Apple App Store Release` and `Apple App Store Promote`), go to the `Advanced` section of the Task, click `Install fastlane`
-1. Optionally, select `Specific version` from `_fastlane_ version`, and enter a specific version of _fastlane_
+1. In the Build for your project, click on the **Apple App Store** task (supported in both `Apple App Store Release` and `Apple App Store Promote`), go to the **Advanced** section of the Task, click **Install fastlane**
+1. Optionally, select **Specific Version** from `_fastlane_ version`, and enter a specific version of _fastlane_
 
 ## More Information
 For more documentation, see the [Apple App Store](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.app-store) in the Visual Studio Team Server marketplace.
