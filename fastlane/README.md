@@ -4,7 +4,7 @@ fastlane documentation
 
 Make sure you have the latest version of the Xcode command line tools installed:
 
-```
+```no-highlight
 xcode-select --install
 ```
 

@@ -3,7 +3,9 @@
 ## Installing fastlane
 Make sure you have the latest version of the Xcode command line tools installed:
 
-    xcode-select --install
+```no-highlight
+xcode-select --install
+```
 
 ### Choose your installation method:
 
