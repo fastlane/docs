@@ -397,7 +397,6 @@ Key | Description
 ----|------------
   `oclint_path` | The path to oclint binary
   `compile_commands` | The json compilation database, use xctool reporter 'json-compilation-database'
-  `select_reqex` | Select all files matching this reqex
   `select_regex` | Select all files matching this regex
   `exclude_regex` | Exclude all files matching this regex
   `report_type` | The type of the report (default: html)
