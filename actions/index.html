@@ -513,7 +513,11 @@ scan(
 </tr>
 <tr>
 <td><code>output_types</code></td>
-<td>Comma separated list of the output types (e.g. html, junit)</td>
+<td>Comma separated list of the output types (e.g. html, junit, json-compilation-database)</td>
+</tr>
+<tr>
+<td><code>output_files</code></td>
+<td>Comma separated list of the output files, corresponding to the types provided by :output_types (order should match). If specifying an output type of json-compilation-database with :use_clang_report_name enabled, that option will take precedence</td>
 </tr>
 <tr>
 <td><code>buildlog_path</code></td>
@@ -605,7 +609,7 @@ scan(
 </tr>
 <tr>
 <td><code>custom_report_file_name</code></td>
-<td>Sets custom full report file name</td>
+<td>[DEPRECATED!] Use --output_files - Sets custom full report file name when generating a single report</td>
 </tr>
 <tr>
 <td><code>fail_build</code></td>
@@ -674,6 +678,10 @@ Slather is available at https://github.com/SlatherOrg/slather</p>
 <tr>
 <td><code>scheme</code></td>
 <td>Scheme to use when calling slather</td>
+</tr>
+<tr>
+<td><code>configuration</code></td>
+<td>Configuration to use when calling slather (since slather-2.4.1)</td>
 </tr>
 <tr>
 <td><code>input_format</code></td>
@@ -7119,6 +7127,35 @@ some other actions like <code>reset_git_repo</code>.</p>
 </tbody>
 </table>
 <p></details></p>
+<h3 id="git_branch"><a name="user-content-git_branch" href="#git_branch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_branch</h3>
+<p>Returns the name of the current git branch, possibly as managed by CI ENV vars</p>
+<blockquote>
+<p>If no branch could be found, this action will return an empty string</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>git_branch</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">git_branch
+</code></pre>
+
+<p></details></p>
 <h3 id="reset_git_repo"><a name="user-content-reset_git_repo" href="#reset_git_repo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>reset_git_repo</h3>
 <p>Resets git repo to a clean state by discarding uncommitted changes</p>
 <blockquote>
@@ -7194,35 +7231,6 @@ some other actions like <code>reset_git_repo</code>.</p>
 </tr>
 </tbody>
 </table>
-<p></details></p>
-<h3 id="git_branch"><a name="user-content-git_branch" href="#git_branch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_branch</h3>
-<p>Returns the name of the current git branch, possibly as managed by CI ENV vars</p>
-<blockquote>
-<p>If no branch could be found, this action will return an empty string</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>git_branch</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">git_branch
-</code></pre>
-
 <p></details></p>
 <h3 id="last_git_commit"><a name="user-content-last_git_commit" href="#last_git_commit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>last_git_commit</h3>
 <p>Return last git commit hash, abbreviated commit hash, commit message and author</p>
@@ -9895,7 +9903,7 @@ Keychains can be replaced with <code>add_to_search_list: :replace</code></p>
 <h3 id="update_fastlane"><a name="user-content-update_fastlane" href="#update_fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_fastlane</h3>
 <p>Makes sure fastlane-tools are up-to-date when running fastlane</p>
 <blockquote>
-<p>This action will look at all installed fastlane tools and update them to the next available minor version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.
+<p>This action will update fastlane to the most recent version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.
 If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in <code>sudo</code> mode.
 The simplest possible fix for this is putting the following lines into your <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
 </blockquote>
@@ -9904,7 +9912,7 @@ export PATH=$PATH:~/.gems/bin
 </code></pre>
 
 <p>After the above changes, restart your terminal, then run <code>mkdir $GEM_HOME</code> to create the new gem directory. After this, you're good to go!
-Recommended usage of the <code>update_fastlane</code> action is at the top of the <code>before_all</code> block, before running any other action</p>
+Recommended usage of the <code>update_fastlane</code> action is at the top inside of the <code>before_all</code> block, before running any other action</p>
 <table>
 <thead>
 <tr>
@@ -9919,7 +9927,7 @@ Recommended usage of the <code>update_fastlane</code> action is at the top of th
 </tr>
 <tr>
 <td>Author</td>
-<td>@milch</td>
+<td>@milch, @KrauseFx</td>
 </tr>
 </tbody>
 </table>
@@ -9943,12 +9951,16 @@ end
 </thead>
 <tbody>
 <tr>
-<td><code>tools</code></td>
-<td>Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh). If not specified, all currently installed fastlane-tools will be updated</td>
+<td><code>nightly</code></td>
+<td>Opt-in to install and use nightly fastlane builds</td>
 </tr>
 <tr>
 <td><code>no_update</code></td>
-<td>Don't update during this run. Defaults to false</td>
+<td>Don't update during this run. Defaults to false. This is used internally</td>
+</tr>
+<tr>
+<td><code>tools</code></td>
+<td>[DEPRECATED!] true - Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh)</td>
 </tr>
 </tbody>
 </table>
@@ -13231,35 +13243,6 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </tbody>
 </table>
 <p></details></p>
-<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
-<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
-<blockquote>
-<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>opt_out_crash_reporting</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@mpirri, @ohayon</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
-</code></pre>
-
-<p></details></p>
 <h3 id="opt_out_usage"><a name="user-content-opt_out_usage" href="#opt_out_usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_usage</h3>
 <p>This will stop uploading the information which actions were run</p>
 <blockquote>
@@ -13289,6 +13272,35 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </code></pre>
 
 <p></details></p>
+<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
+<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
+<blockquote>
+<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>opt_out_crash_reporting</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@mpirri, @ohayon</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
+</code></pre>
+
+<p></details></p>
 <h1 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h1>
 <table>
 <thead>
@@ -13304,61 +13316,61 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>update_provisioning_profile_specifier</td>
 <td><a href="https://github.com/faithfracture/update_provisioning_profile_specifier">update_provisioning_profile_specifier</a></td>
 <td>Update the provisioning profile in the Xcode Project file for a specified target</td>
-<td>68464</td>
+<td>69177</td>
 </tr>
 <tr>
 <td>update_project_codesigning</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning">update_project_codesigning</a></td>
 <td>Updates the Xcode 8 Automatic Codesigning Flag</td>
-<td>66345</td>
+<td>66743</td>
 </tr>
 <tr>
 <td>download_file</td>
 <td><a href="https://github.com/maxoly/fastlane-plugin-download_file">download_file</a></td>
 <td>This action downloads a file from an HTTP/HTTPS url (e.g. ZIP file) and puts it in a destination path</td>
-<td>45632</td>
+<td>45638</td>
 </tr>
 <tr>
 <td>github_job_status</td>
 <td><a href="https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status">github_job_status</a></td>
 <td>Post the status of your test jobs to your pull requests</td>
-<td>35519</td>
+<td>36142</td>
 </tr>
 <tr>
 <td>trainer</td>
 <td><a href="https://github.com/KrauseFx/trainer">trainer</a></td>
 <td>Convert xcodebuild plist files to JUnit reports</td>
-<td>35412</td>
+<td>35676</td>
 </tr>
 <tr>
 <td>increment_build_number_in_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>30449</td>
+<td>30553</td>
 </tr>
 <tr>
 <td>act</td>
 <td><a href="https://github.com/richardszalay/fastlane-plugin-act">act</a></td>
 <td>Applies changes to plists and app icons inside a compiled IPA</td>
-<td>22607</td>
+<td>22800</td>
 </tr>
 <tr>
 <td>get_version_number_from_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>18474</td>
+<td>18616</td>
 </tr>
 <tr>
 <td>synx</td>
 <td><a href="https://github.com/afonsograca/fastlane-plugin-synx">synx</a></td>
 <td>Organise your Xcode project folder to match your Xcode groups.</td>
-<td>18229</td>
+<td>18289</td>
 </tr>
 <tr>
 <td>increment_version_number_in_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>14915</td>
+<td>14960</td>
 </tr>
 <tr>
 <td>ascii_art</td>
@@ -13370,37 +13382,37 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>appicon</td>
 <td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
 <td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>13463</td>
+<td>13616</td>
 </tr>
 <tr>
 <td>get_build_number_from_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>10726</td>
+<td>10815</td>
 </tr>
 <tr>
 <td>setup_fragile_tests_for_rescan</td>
 <td><a href="https://github.com/lyndsey-ferguson/setup_fragile_tests_for_rescan/">setup_fragile_tests_for_rescan</a></td>
 <td>Suppress stabile tests so that 'scan' can run the fragile tests again</td>
-<td>10660</td>
+<td>10707</td>
 </tr>
 <tr>
 <td>read_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>9928</td>
-</tr>
-<tr>
-<td>ftp</td>
-<td><a href="https://github.com/PoissonBallon/fastlane-ftp-plugin">ftp</a></td>
-<td>Simple ftp upload and download for Fastlane</td>
-<td>8721</td>
+<td>9964</td>
 </tr>
 <tr>
 <td>msbuild</td>
 <td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
 <td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
-<td>8607</td>
+<td>8865</td>
+</tr>
+<tr>
+<td>ftp</td>
+<td><a href="https://github.com/PoissonBallon/fastlane-ftp-plugin">ftp</a></td>
+<td>Simple ftp upload and download for Fastlane</td>
+<td>8829</td>
 </tr>
 <tr>
 <td>onesky_download</td>
@@ -13409,28 +13421,28 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>8417</td>
 </tr>
 <tr>
-<td>pixie</td>
-<td><code>pixie</code></td>
-<td>Show your build status on PIXIE!</td>
-<td>7984</td>
-</tr>
-<tr>
 <td>aws_s3</td>
 <td><a href="https://github.com/joshdholtz/fastlane-plugin-s3">aws_s3</a></td>
 <td>Upload IPA and APK to S3</td>
-<td>7962</td>
+<td>8108</td>
+</tr>
+<tr>
+<td>pixie</td>
+<td><code>pixie</code></td>
+<td>Show your build status on PIXIE!</td>
+<td>8042</td>
 </tr>
 <tr>
 <td>get_version_name</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-get-version-name">get_version_name</a></td>
 <td>Get the version name of an Android project.</td>
-<td>7188</td>
+<td>7279</td>
 </tr>
 <tr>
 <td>yarn</td>
 <td><a href="https://github.com/joshrlesch/fastlane-plugin-yarn">yarn</a></td>
 <td>Execute Yarn commands from your Fastfile</td>
-<td>5950</td>
+<td>6122</td>
 </tr>
 <tr>
 <td>poeditor_export</td>
@@ -13442,31 +13454,31 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>increment_version_code</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-increment_version_code">increment_version_code</a></td>
 <td>Increment the version code of your android project.</td>
-<td>5881</td>
+<td>5904</td>
 </tr>
 <tr>
 <td>cordova</td>
 <td><a href="https://github.com/almouro/fastlane-plugin-cordova">cordova</a></td>
 <td>Build your Cordova app</td>
-<td>5295</td>
+<td>5385</td>
 </tr>
 <tr>
 <td>get_info_plist_path</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>5079</td>
-</tr>
-<tr>
-<td>update_xcodeproj</td>
-<td><a href="https://github.com/nafu/fastlane-plugin-update_xcodeproj">update_xcodeproj</a></td>
-<td>Update Xcode projects</td>
-<td>4976</td>
+<td>5094</td>
 </tr>
 <tr>
 <td>onesky_upload</td>
 <td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
 <td>Helps to update the translations of your app using the OneSky service.</td>
-<td>4972</td>
+<td>5023</td>
+</tr>
+<tr>
+<td>update_xcodeproj</td>
+<td><a href="https://github.com/nafu/fastlane-plugin-update_xcodeproj">update_xcodeproj</a></td>
+<td>Update Xcode projects</td>
+<td>4984</td>
 </tr>
 <tr>
 <td>automated_test_emulator_run</td>
@@ -13478,13 +13490,13 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>carthage_cache_install</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>4578</td>
+<td>4613</td>
 </tr>
 <tr>
 <td>android_appicon</td>
 <td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
 <td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>4279</td>
+<td>4411</td>
 </tr>
 <tr>
 <td>rocket_chat</td>
@@ -13496,67 +13508,67 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>get_version_code</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-get_version_code">get_version_code</a></td>
 <td>Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file</td>
-<td>4009</td>
+<td>4079</td>
 </tr>
 <tr>
 <td>carthage_cache_exist</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>3844</td>
+<td>3879</td>
 </tr>
 <tr>
 <td>merge_junit_report</td>
 <td><a href="https://github.com/dyang/merge_junit_report">merge_junit_report</a></td>
 <td>Merges multiple junit reports into one</td>
-<td>3650</td>
+<td>3651</td>
 </tr>
 <tr>
 <td>stamp_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>3376</td>
+<td>3384</td>
 </tr>
 <tr>
 <td>sentry_upload_dsym</td>
 <td><a href="https://github.com/getsentry/sentry-fastlane">sentry</a></td>
 <td>Upload symbols to Sentry</td>
-<td>3282</td>
+<td>3283</td>
 </tr>
 <tr>
 <td>profile_expiration_info</td>
 <td><a href="https://github.com/schung7/fastlane-plugin-profile_expiration_info">profile_expiration_info</a></td>
 <td>Returns if the provisioning profile has expired and the DateTime it expires</td>
-<td>3150</td>
+<td>3200</td>
 </tr>
 <tr>
 <td>pretty_junit</td>
 <td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
 <td>Pretty JUnit test results for your Android projects.</td>
-<td>3089</td>
+<td>3091</td>
 </tr>
 <tr>
 <td>add_prefix_schema</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
-<td>3018</td>
+<td>3024</td>
 </tr>
 <tr>
 <td>remove_provisioning_profile</td>
 <td><a href="https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile">remove_provisioning_profile</a></td>
 <td>Remove provision profile from your local machine</td>
-<td>2956</td>
+<td>2968</td>
 </tr>
 <tr>
 <td>humanable_build_number</td>
 <td><a href="https://github.com/icyleaf/fastlane-plugin-humanable_build_number">humanable_build_number</a></td>
 <td>Automatic generate app build number unque and human readable friendly, like yymmHHMM. both support iOS and Android.</td>
-<td>2815</td>
+<td>2857</td>
 </tr>
 <tr>
 <td>release_notes</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
-<td>2813</td>
+<td>2814</td>
 </tr>
 <tr>
 <td>xamarin_build</td>
@@ -13568,31 +13580,31 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>pgyer</td>
 <td><a href="https://github.com/shishirui/fastlane-plugin-pgyer">pgyer</a></td>
 <td>distribute app to pgyer beta testing service</td>
-<td>2443</td>
+<td>2505</td>
 </tr>
 <tr>
 <td>shuttle</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
-<td>2281</td>
+<td>2282</td>
 </tr>
 <tr>
 <td>code_static_analyzer</td>
 <td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
 <td>Runs different Static Analyzers and generate report</td>
-<td>2265</td>
+<td>2272</td>
 </tr>
 <tr>
 <td>extract_app_info</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
-<td>2221</td>
+<td>2222</td>
 </tr>
 <tr>
 <td>unzip</td>
 <td><a href="https://github.com/maxoly/fastlane-plugin-unzip">unzip</a></td>
 <td>Extract compressed files in a ZIP</td>
-<td>2103</td>
+<td>2116</td>
 </tr>
 <tr>
 <td>latest_hockeyapp_version_number</td>
@@ -13610,13 +13622,13 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>xcpretty_report</td>
 <td><a href="https://github.com/fsaragoca/fastlane-plugin-xcpretty_report">xcpretty_report</a></td>
 <td>Generate xcodebuild reports using xcpretty</td>
-<td>1818</td>
+<td>1824</td>
 </tr>
 <tr>
 <td>upload_symbols_to_new_relic</td>
 <td><code>upload_symbols_to_new_relic</code></td>
 <td>Uploads dSym to New Relic</td>
-<td>1810</td>
+<td>1814</td>
 </tr>
 <tr>
 <td>onesky_download_itunes</td>
@@ -13625,34 +13637,34 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>1799</td>
 </tr>
 <tr>
+<td>rome</td>
+<td><a href="https://github.com/netbe/fastlane-plugin-rome">rome</a></td>
+<td>An S3 cache tool for Carthage</td>
+<td>1770</td>
+</tr>
+<tr>
 <td>ci_changelog</td>
 <td><a href="https://github.com/icyleaf/fastlane-plugin-ci_changelog">ci_changelog</a></td>
 <td>Automate generate changelog between previous build failed and the latest commit of scm in CI</td>
 <td>1769</td>
 </tr>
 <tr>
-<td>rome</td>
-<td><a href="https://github.com/netbe/fastlane-plugin-rome">rome</a></td>
-<td>An S3 cache tool for Carthage</td>
-<td>1742</td>
-</tr>
-<tr>
 <td>get_binary_size</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
-<td>1716</td>
+<td>1717</td>
 </tr>
 <tr>
 <td>get_android_version</td>
 <td><a href="https://github.com/MaximusMcCann/fastlane-plugin-get_android_version">get_android_version</a></td>
 <td>gets the android versionName and versionCode from the <code>AndroidManifest.xml</code> file located in the provided apk</td>
-<td>1706</td>
+<td>1708</td>
 </tr>
 <tr>
 <td>droidicon</td>
 <td><a href="https://github.com/chrhsmt/fastlane-plugin-droidicon">droidicon</a></td>
 <td>Generate required icon sizes and iconset from a master application icon</td>
-<td>1654</td>
+<td>1666</td>
 </tr>
 <tr>
 <td>upload_folder_to_s3</td>
@@ -13703,58 +13715,64 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>1426</td>
 </tr>
 <tr>
-<td>firim</td>
-<td><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim">firim</a></td>
-<td>firim</td>
-<td>1377</td>
-</tr>
-<tr>
 <td>latest_hockey_build_number</td>
 <td><a href="https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number">latest_hockey_build_number</a></td>
 <td>Gets latest version number of the app with the bundle id from HockeyApp</td>
-<td>1363</td>
+<td>1389</td>
+</tr>
+<tr>
+<td>firim</td>
+<td><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim">firim</a></td>
+<td>firim</td>
+<td>1378</td>
 </tr>
 <tr>
 <td>applivery</td>
 <td><a href="https://github.com/applivery/fastlane-applivery-plugin">applivery</a></td>
 <td>Upload new build to Applivery</td>
-<td>1360</td>
+<td>1372</td>
 </tr>
 <tr>
 <td>cryptex</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-cryptex">cryptex</a></td>
 <td>fastlane Crypt Store Git repo</td>
-<td>1339</td>
+<td>1349</td>
 </tr>
 <tr>
 <td>commit_android_version_bump</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-commit_android_version_bump">commit_android_version_bump</a></td>
 <td>This Android plugins allow you to commit every modification done in your build.gradle file during the execution of a lane. In fast, it do the same as the commit_version_bump action, but for Android</td>
-<td>1310</td>
+<td>1316</td>
 </tr>
 <tr>
 <td>tpa</td>
 <td><a href="https://github.com/mbogh/fastlane-plugin-tpa">tpa</a></td>
 <td>TPA gives you advanced user behaviour analytics, app distribution, crash analytics and more</td>
-<td>1269</td>
+<td>1281</td>
 </tr>
 <tr>
 <td>install_profiles</td>
 <td><a href="https://github.com/paweljankowski/fastlane-plugin-provisioning">provisioning</a></td>
 <td>Helps provision your app in the CI environment</td>
-<td>1245</td>
+<td>1257</td>
 </tr>
 <tr>
 <td>clang_analyzer</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer">clang_analyzer</a></td>
 <td>Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report</td>
-<td>1210</td>
+<td>1212</td>
 </tr>
 <tr>
 <td>ensure_xcode_build_version</td>
 <td><a href="https://github.com/nafu/fastlane-plugin-ensure_xcode_build_version">ensure_xcode_build_version</a></td>
 <td>Ensure Xcode Build Version for working with Beta, GM and Release</td>
-<td>1208</td>
+<td>1212</td>
+</tr>
+<tr>
+<td>get_unprovisioned_devices_from_hockey</td>
+<td><a href="https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey">get_unprovisioned_devices_from_hockey</a></td>
+<td>Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices.</td>
+<td>1184</td>
 </tr>
 <tr>
 <td>google_cloud_storage_check_file</td>
@@ -13763,28 +13781,22 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>1184</td>
 </tr>
 <tr>
-<td>get_unprovisioned_devices_from_hockey</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey">get_unprovisioned_devices_from_hockey</a></td>
-<td>Retrieves a list of unprovisioned devices from Hockey which can be passed directly into register_devices.</td>
-<td>1172</td>
-</tr>
-<tr>
 <td>jira_transition</td>
 <td><a href="https://github.com/valeriomazzeo/fastlane-plugin-jira_transition">jira_transition</a></td>
 <td>Apply a JIRA transition to issues mentioned in the changelog</td>
-<td>1114</td>
+<td>1129</td>
 </tr>
 <tr>
 <td>souyuz</td>
 <td><a href="http://rubygems.org/gems/fastlane-plugin-souyuz">souyuz</a></td>
 <td>A fastlane component to make Xamarin builds a breeze</td>
-<td>1068</td>
+<td>1076</td>
 </tr>
 <tr>
 <td>upload_to_onesky</td>
 <td><a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky">upload_to_onesky</a></td>
 <td>Upload a strings file to OneSky</td>
-<td>1042</td>
+<td>1052</td>
 </tr>
 <tr>
 <td>app_info</td>
@@ -13799,28 +13811,28 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>971</td>
 </tr>
 <tr>
-<td>get_version_code</td>
-<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
-<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>933</td>
-</tr>
-<tr>
 <td>git_tags</td>
 <td><a href="https://github.com/fsaragoca/fastlane-plugin-git_tags">git_tags</a></td>
 <td>List git tags sorted by taggerdate</td>
-<td>930</td>
+<td>944</td>
+</tr>
+<tr>
+<td>get_version_code</td>
+<td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
+<td>Allows to set/get app version name and version code directly to/from build.gradle</td>
+<td>935</td>
 </tr>
 <tr>
 <td>set_value_in_build</td>
 <td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
 <td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>906</td>
+<td>908</td>
 </tr>
 <tr>
 <td>find_replace_string</td>
 <td><a href="https://github.com/jonathanneilritchie/fastlane-plugin-find_replace_string">find_replace_string</a></td>
 <td>Find a string in a file and replace it with a new one.</td>
-<td>891</td>
+<td>901</td>
 </tr>
 <tr>
 <td>update_build_settings_key</td>
@@ -13835,22 +13847,28 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>871</td>
 </tr>
 <tr>
+<td>nuget_pack</td>
+<td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
+<td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
+<td>855</td>
+</tr>
+<tr>
 <td>fetch_itc_versions</td>
 <td><a href="https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions">fetch_itc_versions</a></td>
 <td>Returns a listing of all app versions and their latest builds from iTunes Connect.</td>
 <td>845</td>
 </tr>
 <tr>
-<td>nuget_pack</td>
-<td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
-<td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
-<td>841</td>
-</tr>
-<tr>
 <td>giffy_random_gif_url</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy">giffy</a></td>
 <td>Fastlane plugin for Giffy.com API</td>
-<td>836</td>
+<td>838</td>
+</tr>
+<tr>
+<td>wait_xcrun</td>
+<td><a href="https://github.com/mgrebenets/fastlane-plugin-wait_xcrun">wait_xcrun</a></td>
+<td>Wait for Xcode toolchain to come back online after switching Xcode versions.</td>
+<td>820</td>
 </tr>
 <tr>
 <td>xamarin_update_configuration</td>
@@ -13862,19 +13880,25 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>get_version_name</td>
 <td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
 <td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>812</td>
-</tr>
-<tr>
-<td>wait_xcrun</td>
-<td><a href="https://github.com/mgrebenets/fastlane-plugin-wait_xcrun">wait_xcrun</a></td>
-<td>Wait for Xcode toolchain to come back online after switching Xcode versions.</td>
-<td>810</td>
+<td>814</td>
 </tr>
 <tr>
 <td>xcake</td>
 <td><a href="https://github.com/jcampbell05/xcake/">xcake</a></td>
 <td>Create your Xcode projects automatically using a stupid simple DSL.</td>
-<td>794</td>
+<td>795</td>
+</tr>
+<tr>
+<td>aws_device_farm</td>
+<td><a href="https://github.com/hjanuschka/fastlane-plugin-aws_device_farm">aws_device_farm</a></td>
+<td>Run UI Tests on AWS Devicefarm</td>
+<td>782</td>
+</tr>
+<tr>
+<td>update_settings_bundle</td>
+<td><a href="https://github.com/jdee/settings-bundle">settings_bundle</a></td>
+<td>Fastlane plugin to update static settings in an iOS settings bundle</td>
+<td>777</td>
 </tr>
 <tr>
 <td>branding</td>
@@ -13883,28 +13907,16 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>772</td>
 </tr>
 <tr>
+<td>goodify_info_plist</td>
+<td><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist">goodify_info_plist</a></td>
+<td>This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management.</td>
+<td>768</td>
+</tr>
+<tr>
 <td>clubmate</td>
 <td><a href="https://github.com/KrauseFx/fastlane-plugin-clubmate">clubmate</a></td>
 <td>Print the Club Mate logo in your build output</td>
 <td>766</td>
-</tr>
-<tr>
-<td>goodify_info_plist</td>
-<td><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist">goodify_info_plist</a></td>
-<td>This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management.</td>
-<td>764</td>
-</tr>
-<tr>
-<td>update_settings_bundle</td>
-<td><a href="https://github.com/jdee/settings-bundle">settings_bundle</a></td>
-<td>Fastlane plugin to update static settings in an iOS settings bundle</td>
-<td>756</td>
-</tr>
-<tr>
-<td>aws_device_farm</td>
-<td><a href="https://github.com/hjanuschka/fastlane-plugin-aws_device_farm">aws_device_farm</a></td>
-<td>Run UI Tests on AWS Devicefarm</td>
-<td>755</td>
 </tr>
 <tr>
 <td>google_cloud_storage_download</td>
@@ -13916,19 +13928,19 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>cosigner</td>
 <td><a href="https://github.com/Mindera/fastlane-plugin-cosigner">cosigner</a></td>
 <td>A fastlane plugin to help you sign your iOS builds</td>
-<td>744</td>
+<td>748</td>
 </tr>
 <tr>
 <td>rubocop</td>
 <td><a href="https://github.com/KrauseFx/fastlane-plugin-ruby">ruby</a></td>
 <td>Useful fastlane actions for Ruby projects</td>
-<td>723</td>
+<td>724</td>
 </tr>
 <tr>
 <td>aws_sns</td>
 <td><a href="https://github.com/joshdholtz/fastlane-plugin-aws_sns">aws_sns</a></td>
 <td>Creates AWS SNS platform applications</td>
-<td>709</td>
+<td>710</td>
 </tr>
 <tr>
 <td>extract_certificate</td>
@@ -13946,7 +13958,13 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>prepare_build_resources</td>
 <td><a href="https://github.com/trifork/fastlane-plugin-prepare_build_resources">prepare_build_resources</a></td>
 <td>Prepares certificates and provisioning profiles for building and removes them afterwards.</td>
-<td>654</td>
+<td>658</td>
+</tr>
+<tr>
+<td>android_change_string_app_name</td>
+<td><a href="https://github.com/MaximusMcCann/fastlane-plugin-android_change_string_app_name">android_change_string_app_name</a></td>
+<td>Change the app_name in the strings.xml file &amp; revert method</td>
+<td>620</td>
 </tr>
 <tr>
 <td>raven</td>
@@ -13958,37 +13976,31 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>instrumented_tests</td>
 <td><a href="https://github.com/joshrlesch/fastlane-plugin-instrumented_tests">instrumented_tests</a></td>
 <td>New action to run instrumented tests for android. This plugin creates and boots an emulator before running a gradle command so that you can run instrumented tests against that emulator. After the gradle command is executed, the avd gets shut down and deleted. This is really helpful on CI services, keeping them clean and always having a fresh avd for testing.</td>
-<td>601</td>
-</tr>
-<tr>
-<td>android_change_string_app_name</td>
-<td><a href="https://github.com/MaximusMcCann/fastlane-plugin-android_change_string_app_name">android_change_string_app_name</a></td>
-<td>Change the app_name in the strings.xml file &amp; revert method</td>
-<td>600</td>
+<td>607</td>
 </tr>
 <tr>
 <td>s3_upload</td>
 <td><a href="https://github.com/fsaragoca/fastlane-plugin-s3_actions">s3_actions</a></td>
 <td>Download and upload files to AWS S3</td>
-<td>586</td>
+<td>596</td>
 </tr>
 <tr>
 <td>verify_ipa_files</td>
 <td><a href="https://github.com/dyang/verify_ipa">verify_ipa</a></td>
 <td>Verify various aspects of iOS ipa file</td>
-<td>580</td>
+<td>595</td>
 </tr>
 <tr>
 <td>emojify_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>548</td>
+<td>551</td>
 </tr>
 <tr>
 <td>increment_version_code</td>
 <td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
 <td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>532</td>
+<td>534</td>
 </tr>
 <tr>
 <td>onesky_order_translation</td>
@@ -14000,7 +14012,7 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>export_localizations</td>
 <td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
 <td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
-<td>514</td>
+<td>516</td>
 </tr>
 <tr>
 <td>code_push_release_react</td>
@@ -14039,16 +14051,16 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>426</td>
 </tr>
 <tr>
+<td>generate_changelog</td>
+<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
+<td>Changelog generation based on merged pull requests &amp; tags</td>
+<td>416</td>
+</tr>
+<tr>
 <td>code_push_login</td>
 <td><a href="https://github.com/manuelkch/fastlane-plugin-code_push">code_push</a></td>
 <td>CodePush functionality for fastlane</td>
 <td>415</td>
-</tr>
-<tr>
-<td>generate_changelog</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
-<td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>412</td>
 </tr>
 <tr>
 <td>upload_symbols_to_bugsee</td>
@@ -14090,7 +14102,7 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>create_jira_version</td>
 <td><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions">jira_versions</a></td>
 <td>Manage your JIRA project's releases/versions with this plugin.</td>
-<td>311</td>
+<td>312</td>
 </tr>
 <tr>
 <td>git_info_extract</td>
@@ -14108,7 +14120,7 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>onesky_upload_itunes</td>
 <td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
 <td>Helps to update the translations of your app using the OneSky service.</td>
-<td>278</td>
+<td>280</td>
 </tr>
 <tr>
 <td>gs_increment_rc_version</td>
@@ -14132,19 +14144,19 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>apply_xcode8_srgb_workaround</td>
 <td><a href="https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround">xcode8_srgb_workaround</a></td>
 <td>Converts PNGs and JPEGs in your project to sRGB format to avoid crashes when building with Xcode 8 for iOS 8 and earlier deployment target</td>
-<td>254</td>
+<td>256</td>
 </tr>
 <tr>
 <td>release_jira_version</td>
 <td><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions">jira_versions</a></td>
 <td>Manage your JIRA project's releases/versions with this plugin.</td>
-<td>243</td>
+<td>244</td>
 </tr>
 <tr>
 <td>trim_localizations</td>
 <td><a href="https://github.com/vmalyi/fastlane-plugin-localization">localization</a></td>
 <td>Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool</td>
-<td>230</td>
+<td>232</td>
 </tr>
 <tr>
 <td>diawi</td>
@@ -14168,7 +14180,7 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>version_from_last_tag</td>
 <td><code>version_from_last_tag</code></td>
 <td>Perform a regex on last (latest) git tag and perform a regex to extract a version number such as Release 1.2.3</td>
-<td>190</td>
+<td>191</td>
 </tr>
 <tr>
 <td>download_circleci_artifacts</td>
@@ -14264,13 +14276,13 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>generate_release_changelog</td>
 <td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
 <td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>117</td>
+<td>119</td>
 </tr>
 <tr>
 <td>translation</td>
 <td><a href="https://github.com/trifork/fastlane-plugin-translation">translation</a></td>
 <td>Handling translations from Google sheet.</td>
-<td>116</td>
+<td>119</td>
 </tr>
 <tr>
 <td>get_product_bundle_id</td>
@@ -14312,7 +14324,7 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>ionic_ios_snapshot</td>
 <td><a href="https://github.com/knocknarea/fastlane-plugin-ionic_integration">ionic_integration</a></td>
 <td>Integrating Fastlane with Ionic Generated Projects</td>
-<td>93</td>
+<td>94</td>
 </tr>
 <tr>
 <td>influxdb</td>
@@ -14555,6 +14567,12 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>30</td>
 </tr>
 <tr>
+<td>upload_symbols_to_bugsnag</td>
+<td><a href="https://github.com/bugsnag/bugsnag-upload">bugsnag</a></td>
+<td>Uploads dSYM files to Bugsnag</td>
+<td>29</td>
+</tr>
+<tr>
 <td>ya_tu_sabes</td>
 <td><a href="https://github.com/neonichu/fastlane-plugin-ya_tu_sabes">ya_tu_sabes</a></td>
 <td>Ya tu sabes.</td>
@@ -14612,12 +14630,6 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>ios_readme_generate</td>
 <td><a href="https://github.com/erikfloresq/fastlane-plugin-ios_readme_generate">ios_readme_generate</a></td>
 <td>Create readme for ios projects</td>
-<td>24</td>
-</tr>
-<tr>
-<td>upload_symbols_to_bugsnag</td>
-<td><a href="https://github.com/bugsnag/bugsnag-upload">bugsnag</a></td>
-<td>Uploads dSYM files to Bugsnag</td>
 <td>24</td>
 </tr>
 <tr>
@@ -14765,6 +14777,12 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>6</td>
 </tr>
 <tr>
+<td>nexus_promote</td>
+<td><code>elux_actions</code></td>
+<td>Plugin including actions for releasing the android SDK</td>
+<td>6</td>
+</tr>
+<tr>
 <td>devresponse</td>
 <td><code>devresponse</code></td>
 <td>Enables Spaceship to deal with developer response</td>
@@ -14828,12 +14846,6 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <td>create_translation</td>
 <td><a href="https://github.com/trifork/fastlane-plugin-translation">translation</a></td>
 <td>Handling translations from Google sheet.</td>
-<td>3</td>
-</tr>
-<tr>
-<td>nexus_promote</td>
-<td><code>elux_actions</code></td>
-<td>Plugin including actions for releasing the android SDK</td>
 <td>3</td>
 </tr>
 <tr>
