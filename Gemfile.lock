@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 8c10231d34cdd1ddf6842adb1f1f49039139629c
+  revision: 5fd58a89ce6844d40d0764f4f23bcb2ec42062a3
   specs:
-    fastlane (2.35.1)
+    fastlane (2.36.0)
       CFPropertyList (>= 2.3, < 3.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -67,7 +67,7 @@ GEM
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
-    excon (0.55.0)
+    excon (0.56.0)
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     faraday-cookie_jar (0.0.6)
