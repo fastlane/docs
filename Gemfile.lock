@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: a7a65021f39344ba35e98f4c73a2e9cb8e1d5196
+  revision: b8e0869a7ef268f45a9e6a357d6b56034a8c1818
   specs:
-    fastlane (2.38.0)
+    fastlane (2.39.0)
       CFPropertyList (>= 2.3, < 3.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -16,7 +16,7 @@ GIT
       faraday_middleware (~> 0.9)
       fastimage (>= 1.6)
       gh_inspector (>= 1.0.1, < 2.0.0)
-      google-api-client (~> 0.11)
+      google-api-client (>= 0.12.0, < 0.13.0)
       highline (>= 1.7.2, < 2.0.0)
       json (< 3.0.0)
       mini_magick (~> 4.5.1)
@@ -69,7 +69,7 @@ GEM
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
-    excon (0.56.0)
+    excon (0.57.0)
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     faraday-cookie_jar (0.0.6)
