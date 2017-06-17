@@ -13289,35 +13289,6 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </tbody>
 </table>
 <p></details></p>
-<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
-<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
-<blockquote>
-<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>opt_out_crash_reporting</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@mpirri, @ohayon</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
-</code></pre>
-
-<p></details></p>
 <h3 id="opt_out_usage"><a name="user-content-opt_out_usage" href="#opt_out_usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_usage</h3>
 <p>This will stop uploading the information which actions were run</p>
 <blockquote>
@@ -13344,6 +13315,35 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <p><details>
 <summary>1 Example</summary></p>
 <pre><code class="ruby">opt_out_usage # add this to the top of your Fastfile
+</code></pre>
+
+<p></details></p>
+<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
+<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
+<blockquote>
+<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>opt_out_crash_reporting</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@mpirri, @ohayon</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
 </code></pre>
 
 <p></details></p>
@@ -13392,103 +13392,103 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>update_provisioning_profile_specifier</td>
 <td><a href="https://github.com/faithfracture/update_provisioning_profile_specifier">update_provisioning_profile_specifier</a></td>
 <td>Update the provisioning profile in the Xcode Project file for a specified target</td>
-<td>73187</td>
+<td>73397</td>
 </tr>
 <tr>
 <td>update_project_codesigning</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-update_project_codesigning">update_project_codesigning</a></td>
 <td>Updates the Xcode 8 Automatic Codesigning Flag</td>
-<td>68203</td>
+<td>68259</td>
 </tr>
 <tr>
 <td>download_file</td>
 <td><a href="https://github.com/maxoly/fastlane-plugin-download_file">download_file</a></td>
 <td>This action downloads a file from an HTTP/HTTPS url (e.g. ZIP file) and puts it in a destination path</td>
-<td>46416</td>
+<td>46418</td>
 </tr>
 <tr>
 <td>trainer</td>
 <td><a href="https://github.com/KrauseFx/trainer">trainer</a></td>
 <td>Convert xcodebuild plist files to JUnit reports</td>
-<td>38196</td>
+<td>38345</td>
 </tr>
 <tr>
 <td>github_job_status</td>
 <td><a href="https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status">github_job_status</a></td>
 <td>Post the status of your test jobs to your pull requests</td>
-<td>36946</td>
+<td>36994</td>
 </tr>
 <tr>
 <td>increment_build_number_in_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>31200</td>
+<td>31217</td>
 </tr>
 <tr>
 <td>act</td>
 <td><a href="https://github.com/richardszalay/fastlane-plugin-act">act</a></td>
 <td>Applies changes to plists and app icons inside a compiled IPA</td>
-<td>26367</td>
+<td>26695</td>
 </tr>
 <tr>
 <td>get_version_number_from_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>19035</td>
+<td>19055</td>
 </tr>
 <tr>
 <td>synx</td>
 <td><a href="https://github.com/afonsograca/fastlane-plugin-synx">synx</a></td>
 <td>Organise your Xcode project folder to match your Xcode groups.</td>
-<td>18494</td>
+<td>18501</td>
 </tr>
 <tr>
 <td>increment_version_number_in_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>15232</td>
+<td>15242</td>
 </tr>
 <tr>
 <td>ascii_art</td>
 <td><a href="https://github.com/neonichu/fastlane-ascii-art">ascii_art</a></td>
 <td>Add some fun to your fastlane output.</td>
-<td>14775</td>
+<td>14776</td>
 </tr>
 <tr>
 <td>appicon</td>
 <td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
 <td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>14016</td>
+<td>14043</td>
 </tr>
 <tr>
 <td>get_build_number_from_plist</td>
 <td><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning">versioning</a></td>
 <td>Allows to set/get app version and build number directly to/from Info.plist</td>
-<td>11231</td>
+<td>11253</td>
 </tr>
 <tr>
 <td>setup_fragile_tests_for_rescan</td>
 <td><a href="https://github.com/lyndsey-ferguson/setup_fragile_tests_for_rescan/">setup_fragile_tests_for_rescan</a></td>
 <td>Suppress stabile tests so that 'scan' can run the fragile tests again</td>
-<td>11031</td>
+<td>11041</td>
 </tr>
 <tr>
 <td>read_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>10323</td>
+<td>10352</td>
 </tr>
 <tr>
 <td>ftp</td>
 <td><a href="https://github.com/PoissonBallon/fastlane-ftp-plugin">ftp</a></td>
 <td>Simple ftp upload and download for Fastlane</td>
-<td>9361</td>
+<td>9363</td>
 </tr>
 <tr>
 <td>msbuild</td>
 <td><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild">msbuild</a></td>
 <td>Build a Xamarin.iOS or Xamarin.Android project using msbuild</td>
-<td>9323</td>
+<td>9356</td>
 </tr>
 <tr>
 <td>onesky_download</td>
@@ -13500,31 +13500,31 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>aws_s3</td>
 <td><a href="https://github.com/joshdholtz/fastlane-plugin-s3">aws_s3</a></td>
 <td>Upload IPA and APK to S3</td>
-<td>8825</td>
+<td>8870</td>
 </tr>
 <tr>
 <td>pixie</td>
 <td><code>pixie</code></td>
 <td>Show your build status on PIXIE!</td>
-<td>8561</td>
+<td>8567</td>
 </tr>
 <tr>
 <td>get_version_name</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-get-version-name">get_version_name</a></td>
 <td>Get the version name of an Android project.</td>
-<td>7823</td>
+<td>7842</td>
 </tr>
 <tr>
 <td>yarn</td>
 <td><a href="https://github.com/joshrlesch/fastlane-plugin-yarn">yarn</a></td>
 <td>Execute Yarn commands from your Fastfile</td>
-<td>6509</td>
+<td>6515</td>
 </tr>
 <tr>
 <td>increment_version_code</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-increment_version_code">increment_version_code</a></td>
 <td>Increment the version code of your android project.</td>
-<td>6050</td>
+<td>6061</td>
 </tr>
 <tr>
 <td>poeditor_export</td>
@@ -13536,13 +13536,13 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>cordova</td>
 <td><a href="https://github.com/almouro/fastlane-plugin-cordova">cordova</a></td>
 <td>Build your Cordova app</td>
-<td>5789</td>
+<td>5791</td>
 </tr>
 <tr>
 <td>onesky_upload</td>
 <td><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky">onesky</a></td>
 <td>Helps to update the translations of your app using the OneSky service.</td>
-<td>5661</td>
+<td>5788</td>
 </tr>
 <tr>
 <td>get_info_plist_path</td>
@@ -13554,13 +13554,19 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>update_xcodeproj</td>
 <td><a href="https://github.com/nafu/fastlane-plugin-update_xcodeproj">update_xcodeproj</a></td>
 <td>Update Xcode projects</td>
-<td>5085</td>
+<td>5087</td>
 </tr>
 <tr>
 <td>carthage_cache_install</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>4918</td>
+<td>4944</td>
+</tr>
+<tr>
+<td>android_appicon</td>
+<td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
+<td>Generate required icon sizes and iconset from a master application icon.</td>
+<td>4674</td>
 </tr>
 <tr>
 <td>automated_test_emulator_run</td>
@@ -13569,22 +13575,16 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>4664</td>
 </tr>
 <tr>
-<td>android_appicon</td>
-<td><a href="https://github.com/neonichu/fastlane-plugin-appicon">appicon</a></td>
-<td>Generate required icon sizes and iconset from a master application icon.</td>
-<td>4657</td>
-</tr>
-<tr>
 <td>get_version_code</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-get_version_code">get_version_code</a></td>
 <td>Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file</td>
-<td>4572</td>
+<td>4593</td>
 </tr>
 <tr>
 <td>carthage_cache_exist</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>4193</td>
+<td>4220</td>
 </tr>
 <tr>
 <td>rocket_chat</td>
@@ -13602,19 +13602,25 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>stamp_changelog</td>
 <td><a href="https://github.com/pajapro/fastlane-plugin-changelog">changelog</a></td>
 <td>Automate changes to your project CHANGELOG.md</td>
-<td>3488</td>
+<td>3490</td>
 </tr>
 <tr>
 <td>profile_expiration_info</td>
 <td><a href="https://github.com/schung7/fastlane-plugin-profile_expiration_info">profile_expiration_info</a></td>
 <td>Returns if the provisioning profile has expired and the DateTime it expires</td>
-<td>3422</td>
+<td>3430</td>
+</tr>
+<tr>
+<td>pretty_junit</td>
+<td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
+<td>Pretty JUnit test results for your Android projects.</td>
+<td>3340</td>
 </tr>
 <tr>
 <td>humanable_build_number</td>
 <td><a href="https://github.com/icyleaf/fastlane-plugin-humanable_build_number">humanable_build_number</a></td>
 <td>Automatic generate app build number unque and human readable friendly, like yymmHHMM. both support iOS and Android.</td>
-<td>3304</td>
+<td>3312</td>
 </tr>
 <tr>
 <td>sentry_upload_dsym</td>
@@ -13623,16 +13629,10 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>3296</td>
 </tr>
 <tr>
-<td>pretty_junit</td>
-<td><a href="https://github.com/leandog/fastlane-plugin-pretty_junit">pretty_junit</a></td>
-<td>Pretty JUnit test results for your Android projects.</td>
-<td>3281</td>
-</tr>
-<tr>
 <td>remove_provisioning_profile</td>
 <td><a href="https://github.com/Antondomashnev/fastlane-plugin-remove-provisioning-profile">remove_provisioning_profile</a></td>
 <td>Remove provision profile from your local machine</td>
-<td>3178</td>
+<td>3196</td>
 </tr>
 <tr>
 <td>add_prefix_schema</td>
@@ -13650,7 +13650,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>pgyer</td>
 <td><a href="https://github.com/shishirui/fastlane-plugin-pgyer">pgyer</a></td>
 <td>distribute app to pgyer beta testing service</td>
-<td>2853</td>
+<td>2870</td>
 </tr>
 <tr>
 <td>xamarin_build</td>
@@ -13662,25 +13662,25 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>rome</td>
 <td><a href="https://github.com/netbe/fastlane-plugin-rome">rome</a></td>
 <td>An S3 cache tool for Carthage</td>
-<td>2405</td>
+<td>2466</td>
+</tr>
+<tr>
+<td>unzip</td>
+<td><a href="https://github.com/maxoly/fastlane-plugin-unzip">unzip</a></td>
+<td>Extract compressed files in a ZIP</td>
+<td>2343</td>
 </tr>
 <tr>
 <td>code_static_analyzer</td>
 <td><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer">code_static_analyzer</a></td>
 <td>Runs different Static Analyzers and generate report</td>
-<td>2333</td>
+<td>2334</td>
 </tr>
 <tr>
 <td>shuttle</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
 <td>2330</td>
-</tr>
-<tr>
-<td>unzip</td>
-<td><a href="https://github.com/maxoly/fastlane-plugin-unzip">unzip</a></td>
-<td>Extract compressed files in a ZIP</td>
-<td>2307</td>
 </tr>
 <tr>
 <td>extract_app_info</td>
@@ -13734,7 +13734,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>get_android_version</td>
 <td><a href="https://github.com/MaximusMcCann/fastlane-plugin-get_android_version">get_android_version</a></td>
 <td>gets the android versionName and versionCode from the <code>AndroidManifest.xml</code> file located in the provided apk</td>
-<td>1718</td>
+<td>1719</td>
 </tr>
 <tr>
 <td>get_binary_size</td>
@@ -13782,7 +13782,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>install_profiles</td>
 <td><a href="https://github.com/paweljankowski/fastlane-plugin-provisioning">provisioning</a></td>
 <td>Helps provision your app in the CI environment</td>
-<td>1460</td>
+<td>1477</td>
 </tr>
 <tr>
 <td>extract_app_name</td>
@@ -13791,16 +13791,16 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>1444</td>
 </tr>
 <tr>
+<td>applivery</td>
+<td><a href="https://github.com/applivery/fastlane-applivery-plugin">applivery</a></td>
+<td>Upload new build to Applivery</td>
+<td>1434</td>
+</tr>
+<tr>
 <td>extract_version</td>
 <td><code>polidea</code></td>
 <td>Polidea's fastlane action</td>
 <td>1434</td>
-</tr>
-<tr>
-<td>applivery</td>
-<td><a href="https://github.com/applivery/fastlane-applivery-plugin">applivery</a></td>
-<td>Upload new build to Applivery</td>
-<td>1428</td>
 </tr>
 <tr>
 <td>delete_files</td>
@@ -13812,7 +13812,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>firim</td>
 <td><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim">firim</a></td>
 <td>firim</td>
-<td>1418</td>
+<td>1424</td>
 </tr>
 <tr>
 <td>cryptex</td>
@@ -13824,13 +13824,13 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>commit_android_version_bump</td>
 <td><a href="https://github.com/Jems22/fastlane-plugin-commit_android_version_bump">commit_android_version_bump</a></td>
 <td>This Android plugins allow you to commit every modification done in your build.gradle file during the execution of a lane. In fast, it do the same as the commit_version_bump action, but for Android</td>
-<td>1341</td>
+<td>1343</td>
 </tr>
 <tr>
 <td>tpa</td>
 <td><a href="https://github.com/mbogh/fastlane-plugin-tpa">tpa</a></td>
 <td>TPA gives you advanced user behaviour analytics, app distribution, crash analytics and more</td>
-<td>1333</td>
+<td>1337</td>
 </tr>
 <tr>
 <td>get_unprovisioned_devices_from_hockey</td>
@@ -13878,7 +13878,13 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>git_tags</td>
 <td><a href="https://github.com/fsaragoca/fastlane-plugin-git_tags">git_tags</a></td>
 <td>List git tags sorted by taggerdate</td>
-<td>992</td>
+<td>994</td>
+</tr>
+<tr>
+<td>update_build_settings_key</td>
+<td><a href="https://github.com/ungacy/update_build_settings_key">update_build_settings_key</a></td>
+<td>Updated code signing settings from 'Automatic' to a specific profile</td>
+<td>975</td>
 </tr>
 <tr>
 <td>app_info</td>
@@ -13897,12 +13903,6 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
 <td>Allows to set/get app version name and version code directly to/from build.gradle</td>
 <td>960</td>
-</tr>
-<tr>
-<td>update_build_settings_key</td>
-<td><a href="https://github.com/ungacy/update_build_settings_key">update_build_settings_key</a></td>
-<td>Updated code signing settings from 'Automatic' to a specific profile</td>
-<td>953</td>
 </tr>
 <tr>
 <td>set_value_in_build</td>
@@ -13926,7 +13926,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>wait_xcrun</td>
 <td><a href="https://github.com/mgrebenets/fastlane-plugin-wait_xcrun">wait_xcrun</a></td>
 <td>Wait for Xcode toolchain to come back online after switching Xcode versions.</td>
-<td>874</td>
+<td>876</td>
 </tr>
 <tr>
 <td>import_localizations</td>
@@ -13944,7 +13944,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>aws_device_farm</td>
 <td><a href="https://github.com/hjanuschka/fastlane-plugin-aws_device_farm">aws_device_farm</a></td>
 <td>Run UI Tests on AWS Devicefarm</td>
-<td>845</td>
+<td>847</td>
 </tr>
 <tr>
 <td>fetch_itc_versions</td>
@@ -13986,7 +13986,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>cosigner</td>
 <td><a href="https://github.com/Mindera/fastlane-plugin-cosigner">cosigner</a></td>
 <td>A fastlane plugin to help you sign your iOS builds</td>
-<td>804</td>
+<td>806</td>
 </tr>
 <tr>
 <td>branding</td>
@@ -14028,7 +14028,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>prepare_build_resources</td>
 <td><a href="https://github.com/trifork/fastlane-plugin-prepare_build_resources">prepare_build_resources</a></td>
 <td>Prepares certificates and provisioning profiles for building and removes them afterwards.</td>
-<td>690</td>
+<td>695</td>
 </tr>
 <tr>
 <td>get_app_store_version_number</td>
@@ -14046,13 +14046,13 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>android_change_string_app_name</td>
 <td><a href="https://github.com/MaximusMcCann/fastlane-plugin-android_change_string_app_name">android_change_string_app_name</a></td>
 <td>Change the app_name in the strings.xml file &amp; revert method</td>
-<td>645</td>
+<td>651</td>
 </tr>
 <tr>
 <td>s3_upload</td>
 <td><a href="https://github.com/fsaragoca/fastlane-plugin-s3_actions">s3_actions</a></td>
 <td>Download and upload files to AWS S3</td>
-<td>628</td>
+<td>630</td>
 </tr>
 <tr>
 <td>raven</td>
@@ -14100,7 +14100,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>increment_version_name</td>
 <td><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning">android_versioning</a></td>
 <td>Allows to set/get app version name and version code directly to/from build.gradle</td>
-<td>511</td>
+<td>513</td>
 </tr>
 <tr>
 <td>google_cloud_storage_upload</td>
@@ -14148,7 +14148,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>carthage_cache_publish</td>
 <td><a href="https://github.com/thii/fastlane-plugin-carthage_cache">carthage_cache</a></td>
 <td>A Fastlane plugin that allows to cache Carthage/Build folder in Amazon S3.</td>
-<td>396</td>
+<td>397</td>
 </tr>
 <tr>
 <td>run_lane</td>
@@ -14166,7 +14166,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>create_jira_version</td>
 <td><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions">jira_versions</a></td>
 <td>Manage your JIRA project's releases/versions with this plugin.</td>
-<td>337</td>
+<td>339</td>
 </tr>
 <tr>
 <td>gs_get_release_notes</td>
@@ -14184,7 +14184,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>git_info_extract</td>
 <td><a href="https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract">git_info_extract</a></td>
 <td>Extract JIRA information from git merge</td>
-<td>312</td>
+<td>313</td>
 </tr>
 <tr>
 <td>onesky_upload_itunes</td>
@@ -14202,7 +14202,7 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>release_jira_version</td>
 <td><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions">jira_versions</a></td>
 <td>Manage your JIRA project's releases/versions with this plugin.</td>
-<td>269</td>
+<td>271</td>
 </tr>
 <tr>
 <td>gs_increment_rc_version</td>
@@ -14325,16 +14325,16 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>138</td>
 </tr>
 <tr>
+<td>generate_release_changelog</td>
+<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
+<td>Changelog generation based on merged pull requests &amp; tags</td>
+<td>137</td>
+</tr>
+<tr>
 <td>export_xliff</td>
 <td><a href="https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen">xliff_en_gen</a></td>
 <td>gen Localizable.strings file from xliff</td>
 <td>137</td>
-</tr>
-<tr>
-<td>generate_release_changelog</td>
-<td><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator">changelog_generator</a></td>
-<td>Changelog generation based on merged pull requests &amp; tags</td>
-<td>136</td>
 </tr>
 <tr>
 <td>intentconfirmation</td>
@@ -14619,6 +14619,12 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>33</td>
 </tr>
 <tr>
+<td>download_github_release_asset</td>
+<td><a href="https://github.com/Antondomashnev/fastlane-plugin-download_github_release_asset">download_github_release_asset</a></td>
+<td>This action downloads a GitHub release's asset using the GitHub API and puts it in a destination path.\nIf the file has been previously downloaded, it will be overrided.</td>
+<td>33</td>
+</tr>
+<tr>
 <td>bluepill</td>
 <td><a href="https://github.com/tbrand/fastlane-plugin-bluepill">bluepill</a></td>
 <td>Fastlane plugin to use bluepill in fastlane</td>
@@ -14700,12 +14706,6 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 <td>report</td>
 <td><a href="https://github.com/BrunoMiguens/fastlane-plugin-report">report</a></td>
 <td>After an action, like scan for instance, you're able to generate a report file. This fastlane plugin gives you a way to upload and share your report using Slack.</td>
-<td>25</td>
-</tr>
-<tr>
-<td>download_github_release_asset</td>
-<td><a href="https://github.com/Antondomashnev/fastlane-plugin-download_github_release_asset">download_github_release_asset</a></td>
-<td>This action downloads a GitHub release's asset using the GitHub API and puts it in a destination path.\nIf the file has been previously downloaded, it will be overrided.</td>
 <td>25</td>
 </tr>
 <tr>
