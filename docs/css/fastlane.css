@@ -51,6 +51,32 @@ h3, h4, h5, h6 {
   display: none;
 }
 
+/* For plugins quality index */
+.quality-index {
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  float: left;
+  margin-right: 25px;
+  background-color: #DDD;
+  text-align: center;
+  padding-top: 13px;
+}
+
+.via-text {
+  color: #666;
+  margin-top: -10px;
+}
+
+.score-details {
+  font-size: 14px;
+  color: #666;
+  float: right;
+  top: -20px;
+}
+
 /* Foldable parts */
 details > * {
   margin-left: 20px;
