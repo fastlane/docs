@@ -723,7 +723,6 @@ Key | Description
   `skip_package_ipa` | Should we skip packaging the ipa?
   `include_symbols` | Should the ipa file include symbols?
   `include_bitcode` | Should the ipa include bitcode?
-  `use_legacy_build_api` | [DEPRECATED!] Don't use this option any more, as it's deprecated by Apple - Don't use this option any more, as it's deprecated by Apple
   `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
   `export_options` | Specifies path to export options plist. User xcodebuild -help to print the full set of available options
   `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
@@ -735,7 +734,6 @@ Key | Description
   `buildlog_path` | The directory where to store the build log
   `sdk` | The SDK that should be used for building the application
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
-  `provisioning_profile_path` | [DEPRECATED!] Use target specific provisioning profiles instead - The path to the provisioning profile (optional)
   `destination` | Use a custom destination for building the app
   `export_team_id` | Optional: Sometimes you need to specify a team id when exporting the ipa file
   `xcargs` | Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
@@ -1368,68 +1366,6 @@ verify_pod_keys
 
 
 
-### xctest
-
-Runs tests on the given simulator
-
-
-
-
-
-xctest | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xctest(
-  destination: "name=iPhone 7s,OS=10.0"
-)
-```
-
-
-</details>
-
-
-
-
-
-
-### xcbuild
-
-Builds the project using `xcodebuild`
-
-
-
-
-
-xcbuild | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcbuild
-```
-
-
-</details>
-
-
-
-
-
-
 ### xcclean
 
 Cleans the project using `xcodebuild`
@@ -1490,6 +1426,38 @@ xcarchive
 
 
 
+### xctest
+
+Runs tests on the given simulator
+
+
+
+
+
+xctest | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xctest(
+  destination: "name=iPhone 7s,OS=10.0"
+)
+```
+
+
+</details>
+
+
+
+
+
+
 ### xcexport
 
 Exports the project using `xcodebuild`
@@ -1510,6 +1478,36 @@ Author | @dtrenz
 
 ```ruby
 xcexport
+```
+
+
+</details>
+
+
+
+
+
+
+### xcbuild
+
+Builds the project using `xcodebuild`
+
+
+
+
+
+xcbuild | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcbuild
 ```
 
 
@@ -4240,6 +4238,7 @@ Key | Description
   `force` | Skip the HTML report file verification
   `submit_for_review` | Submit the new version for Review after uploading everything
   `automatic_release` | Should the app be automatically released once it's approved?
+  `phased_release` | Enable phased the phased release feature of iTC
   `price_tier` | The price tier of this application
   `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one
   `app_rating_config_path` | Path to the app rating's config
@@ -4388,6 +4387,7 @@ Key | Description
   `force` | Skip the HTML report file verification
   `submit_for_review` | Submit the new version for Review after uploading everything
   `automatic_release` | Should the app be automatically released once it's approved?
+  `phased_release` | Enable phased the phased release feature of iTC
   `price_tier` | The price tier of this application
   `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one
   `app_rating_config_path` | Path to the app rating's config
@@ -9202,65 +9202,6 @@ Key | Description
 
 
 
-### plugin_scores
-
-[31mNo description provided[0m
-
-
-
-
-
-plugin_scores | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-
-</details>
-
-
-
-
-
-### opt_out_usage
-
-This will stop uploading the information which actions were run
-
-
-
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
-
-opt_out_usage | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_usage # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
-
-
 ### opt_out_crash_reporting
 
 This will prevent reports from being uploaded when _fastlane_ crashes
@@ -9291,6 +9232,35 @@ opt_out_crash_reporting # add this to the top of your Fastfile
 
 
 
+### plugin_scores
+
+[31mNo description provided[0m
+
+
+
+
+
+plugin_scores | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+
+</details>
+
+
+
+
+
 ### ruby_version
 
 Verifies the minimum ruby version required
@@ -9312,6 +9282,36 @@ Author | @sebastianvarela
 
 ```ruby
 ruby_version "2.4.0"
+```
+
+
+</details>
+
+
+
+
+
+
+### opt_out_usage
+
+This will stop uploading the information which actions were run
+
+
+
+> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+
+opt_out_usage | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_usage # add this to the top of your Fastfile
 ```
 
 
