@@ -723,7 +723,6 @@ Key | Description
   `skip_package_ipa` | Should we skip packaging the ipa?
   `include_symbols` | Should the ipa file include symbols?
   `include_bitcode` | Should the ipa include bitcode?
-  `use_legacy_build_api` | [DEPRECATED!] Don't use this option any more, as it's deprecated by Apple - Don't use this option any more, as it's deprecated by Apple
   `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
   `export_options` | Specifies path to export options plist. User xcodebuild -help to print the full set of available options
   `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
@@ -735,7 +734,6 @@ Key | Description
   `buildlog_path` | The directory where to store the build log
   `sdk` | The SDK that should be used for building the application
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
-  `provisioning_profile_path` | [DEPRECATED!] Use target specific provisioning profiles instead - The path to the provisioning profile (optional)
   `destination` | Use a custom destination for building the app
   `export_team_id` | Optional: Sometimes you need to specify a team id when exporting the ipa file
   `xcargs` | Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
@@ -1430,36 +1428,6 @@ xcbuild
 
 
 
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
-```
-
-
-</details>
-
-
-
-
-
-
 ### xcarchive
 
 Archives the project using `xcodebuild`
@@ -1480,6 +1448,36 @@ Author | @dtrenz
 
 ```ruby
 xcarchive
+```
+
+
+</details>
+
+
+
+
+
+
+### xcclean
+
+Cleans the project using `xcodebuild`
+
+
+
+
+
+xcclean | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcclean
 ```
 
 
@@ -4240,6 +4238,7 @@ Key | Description
   `force` | Skip the HTML report file verification
   `submit_for_review` | Submit the new version for Review after uploading everything
   `automatic_release` | Should the app be automatically released once it's approved?
+  `phased_release` | Enable phased the phased release feature of iTC
   `price_tier` | The price tier of this application
   `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one
   `app_rating_config_path` | Path to the app rating's config
@@ -4388,6 +4387,7 @@ Key | Description
   `force` | Skip the HTML report file verification
   `submit_for_review` | Submit the new version for Review after uploading everything
   `automatic_release` | Should the app be automatically released once it's approved?
+  `phased_release` | Enable phased the phased release feature of iTC
   `price_tier` | The price tier of this application
   `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one
   `app_rating_config_path` | Path to the app rating's config
@@ -9202,6 +9202,37 @@ Key | Description
 
 
 
+### ruby_version
+
+Verifies the minimum ruby version required
+
+
+
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+
+ruby_version | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @sebastianvarela
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ruby_version "2.4.0"
+```
+
+
+</details>
+
+
+
+
+
+
 ### plugin_scores
 
 [31mNo description provided[0m
@@ -9281,37 +9312,6 @@ Author | @mpirri, @ohayon
 
 ```ruby
 opt_out_crash_reporting # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
-
-
-### ruby_version
-
-Verifies the minimum ruby version required
-
-
-
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
-
-ruby_version | 
------|----
-Supported platforms | ios, android, mac
-Author | @sebastianvarela
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ruby_version "2.4.0"
 ```
 
 
