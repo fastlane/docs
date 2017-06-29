@@ -1368,15 +1368,15 @@ verify_pod_keys
 
 
 
-### xcarchive
+### xctest
 
-Archives the project using `xcodebuild`
-
-
+Runs tests on the given simulator
 
 
 
-xcarchive | 
+
+
+xctest | 
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1387,7 +1387,9 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcarchive
+xctest(
+  destination: "name=iPhone 7s,OS=10.0"
+)
 ```
 
 
@@ -1428,38 +1430,6 @@ xcbuild
 
 
 
-### xctest
-
-Runs tests on the given simulator
-
-
-
-
-
-xctest | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xctest(
-  destination: "name=iPhone 7s,OS=10.0"
-)
-```
-
-
-</details>
-
-
-
-
-
-
 ### xcclean
 
 Cleans the project using `xcodebuild`
@@ -1480,6 +1450,36 @@ Author | @dtrenz
 
 ```ruby
 xcclean
+```
+
+
+</details>
+
+
+
+
+
+
+### xcarchive
+
+Archives the project using `xcodebuild`
+
+
+
+
+
+xcarchive | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcarchive
 ```
 
 
@@ -9202,32 +9202,30 @@ Key | Description
 
 
 
-### ruby_version
+### plugin_scores
 
-Verifies the minimum ruby version required
+[31mNo description provided[0m
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
-ruby_version | 
+
+plugin_scores | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @sebastianvarela
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ruby_version "2.4.0"
-```
+Author | @KrauseFx
 
 
 </details>
 
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+
+</details>
 
 
 
@@ -9293,30 +9291,32 @@ opt_out_crash_reporting # add this to the top of your Fastfile
 
 
 
-### plugin_scores
+### ruby_version
 
-[31mNo description provided[0m
-
-
+Verifies the minimum ruby version required
 
 
 
-plugin_scores | 
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+
+ruby_version | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @KrauseFx
+Author | @sebastianvarela
 
-
-</details>
 
 
 <details>
-<summary>Parameters</summary>
+<summary>1 Example</summary>
 
-Key | Description
-----|------------
+```ruby
+ruby_version "2.4.0"
+```
+
 
 </details>
+
 
 
 
