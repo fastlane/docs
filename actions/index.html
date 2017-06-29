@@ -2389,12 +2389,12 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
-<h3 id="xcarchive"><a name="user-content-xcarchive" href="#xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcarchive</h3>
-<p>Archives the project using <code>xcodebuild</code></p>
+<h3 id="xctest"><a name="user-content-xctest" href="#xctest" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xctest</h3>
+<p>Runs tests on the given simulator</p>
 <table>
 <thead>
 <tr>
-<th>xcarchive</th>
+<th>xctest</th>
 <th></th>
 </tr>
 </thead>
@@ -2411,7 +2411,9 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">xcarchive
+<pre><code class="ruby">xctest(
+  destination: &quot;name=iPhone 7s,OS=10.0&quot;
+)
 </code></pre>
 
 <p></details></p>
@@ -2441,34 +2443,6 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
-<h3 id="xctest"><a name="user-content-xctest" href="#xctest" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xctest</h3>
-<p>Runs tests on the given simulator</p>
-<table>
-<thead>
-<tr>
-<th>xctest</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xctest(
-  destination: &quot;name=iPhone 7s,OS=10.0&quot;
-)
-</code></pre>
-
-<p></details></p>
 <h3 id="xcclean"><a name="user-content-xcclean" href="#xcclean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcclean</h3>
 <p>Cleans the project using <code>xcodebuild</code></p>
 <table>
@@ -2492,6 +2466,32 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 <p><details>
 <summary>1 Example</summary></p>
 <pre><code class="ruby">xcclean
+</code></pre>
+
+<p></details></p>
+<h3 id="xcarchive"><a name="user-content-xcarchive" href="#xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcarchive</h3>
+<p>Archives the project using <code>xcodebuild</code></p>
+<table>
+<thead>
+<tr>
+<th>xcarchive</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcarchive
 </code></pre>
 
 <p></details></p>
@@ -13422,16 +13422,12 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </tbody>
 </table>
 <p></details></p>
-<h3 id="ruby_version"><a name="user-content-ruby_version" href="#ruby_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ruby_version</h3>
-<p>Verifies the minimum ruby version required</p>
-<blockquote>
-<p>Add this to your <code>Fastfile</code> to require a certain version of <em>ruby</em>.
-Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed appropriately.</p>
-</blockquote>
+<h3 id="plugin_scores"><a name="user-content-plugin_scores" href="#plugin_scores" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>plugin_scores</h3>
+<p>[31mNo description provided[0m</p>
 <table>
 <thead>
 <tr>
-<th>ruby_version</th>
+<th>plugin_scores</th>
 <th></th>
 </tr>
 </thead>
@@ -13442,15 +13438,22 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 </tr>
 <tr>
 <td>Author</td>
-<td>@sebastianvarela</td>
+<td>@KrauseFx</td>
 </tr>
 </tbody>
 </table>
+<p></details></p>
 <p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">ruby_version &quot;2.4.0&quot;
-</code></pre>
-
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
 <p></details></p>
 <h3 id="opt_out_usage"><a name="user-content-opt_out_usage" href="#opt_out_usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_usage</h3>
 <p>This will stop uploading the information which actions were run</p>
@@ -13510,12 +13513,16 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 </code></pre>
 
 <p></details></p>
-<h3 id="plugin_scores"><a name="user-content-plugin_scores" href="#plugin_scores" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>plugin_scores</h3>
-<p>[31mNo description provided[0m</p>
+<h3 id="ruby_version"><a name="user-content-ruby_version" href="#ruby_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ruby_version</h3>
+<p>Verifies the minimum ruby version required</p>
+<blockquote>
+<p>Add this to your <code>Fastfile</code> to require a certain version of <em>ruby</em>.
+Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed appropriately.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>plugin_scores</th>
+<th>ruby_version</th>
 <th></th>
 </tr>
 </thead>
@@ -13526,22 +13533,15 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx</td>
+<td>@sebastianvarela</td>
 </tr>
 </tbody>
 </table>
-<p></details></p>
 <p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">ruby_version &quot;2.4.0&quot;
+</code></pre>
+
 <p></details></p>
               
             </div>
