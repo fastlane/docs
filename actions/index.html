@@ -457,11 +457,11 @@ scan(
 <tbody>
 <tr>
 <td><code>workspace</code></td>
-<td>Path the workspace file</td>
+<td>Path to the workspace file</td>
 </tr>
 <tr>
 <td><code>project</code></td>
-<td>Path the project file</td>
+<td>Path to the project file</td>
 </tr>
 <tr>
 <td><code>device</code></td>
@@ -485,19 +485,19 @@ scan(
 </tr>
 <tr>
 <td><code>code_coverage</code></td>
-<td>Should generate code coverage (Xcode 7 only)?</td>
+<td>Should code coverage be generated (Xcode 7 only)?</td>
 </tr>
 <tr>
 <td><code>address_sanitizer</code></td>
-<td>Should turn on the address sanitizer?</td>
+<td>Should the address sanitizer be turned on?</td>
 </tr>
 <tr>
 <td><code>thread_sanitizer</code></td>
-<td>Should turn on the thread sanitizer?</td>
+<td>Should the thread sanitizer be turned on?</td>
 </tr>
 <tr>
 <td><code>skip_build</code></td>
-<td>Should skip debug build before test build?</td>
+<td>Should debug build be skipped before test build?</td>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
@@ -517,7 +517,7 @@ scan(
 </tr>
 <tr>
 <td><code>buildlog_path</code></td>
-<td>The directory were to store the raw log</td>
+<td>The directory where to store the raw log</td>
 </tr>
 <tr>
 <td><code>include_simulator_logs</code></td>
@@ -553,7 +553,7 @@ scan(
 </tr>
 <tr>
 <td><code>open_report</code></td>
-<td>Should the HTML report be opened when tests are completed</td>
+<td>Should the HTML report be opened when tests are completed?</td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
@@ -1456,11 +1456,11 @@ xctool :test, [
 <tbody>
 <tr>
 <td><code>workspace</code></td>
-<td>Path the workspace file</td>
+<td>Path to the workspace file</td>
 </tr>
 <tr>
 <td><code>project</code></td>
-<td>Path the project file</td>
+<td>Path to the project file</td>
 </tr>
 <tr>
 <td><code>scheme</code></td>
@@ -1500,7 +1500,7 @@ xctool :test, [
 </tr>
 <tr>
 <td><code>include_bitcode</code></td>
-<td>Should the ipa include bitcode?</td>
+<td>Should the ipa file include bitcode?</td>
 </tr>
 <tr>
 <td><code>export_method</code></td>
@@ -1508,7 +1508,7 @@ xctool :test, [
 </tr>
 <tr>
 <td><code>export_options</code></td>
-<td>Specifies path to export options plist. User xcodebuild -help to print the full set of available options</td>
+<td>Specifies path to export options plist. Use 'xcodebuild -help' to print the full set of available options</td>
 </tr>
 <tr>
 <td><code>export_xcargs</code></td>
@@ -1516,7 +1516,7 @@ xctool :test, [
 </tr>
 <tr>
 <td><code>skip_build_archive</code></td>
-<td>Export ipa from previously build xarchive. Uses archive_path as source</td>
+<td>Export ipa from previously built xarchive. Uses archive_path as source</td>
 </tr>
 <tr>
 <td><code>build_path</code></td>
@@ -1528,7 +1528,7 @@ xctool :test, [
 </tr>
 <tr>
 <td><code>derived_data_path</code></td>
-<td>The directory where build products and other derived data will go</td>
+<td>The directory where built products and other derived data will go</td>
 </tr>
 <tr>
 <td><code>result_bundle</code></td>
@@ -1592,7 +1592,7 @@ xctool :test, [
 </tr>
 <tr>
 <td><code>analyze_build_time</code></td>
-<td>Analyze the project build time and store the output in culprits.txt file</td>
+<td>Analyze the project build time and store the output in 'culprits.txt' file</td>
 </tr>
 <tr>
 <td><code>xcpretty_utf</code></td>
@@ -1904,7 +1904,7 @@ gradle(
 <tbody>
 <tr>
 <td><code>serial</code></td>
-<td>Android serial, which device should be used for this command</td>
+<td>Android serial of the device to use for this command</td>
 </tr>
 <tr>
 <td><code>command</code></td>
@@ -2381,6 +2381,32 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
+<h3 id="xcarchive"><a name="user-content-xcarchive" href="#xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcarchive</h3>
+<p>Archives the project using <code>xcodebuild</code></p>
+<table>
+<thead>
+<tr>
+<th>xcarchive</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcarchive
+</code></pre>
+
+<p></details></p>
 <h3 id="xctest"><a name="user-content-xctest" href="#xctest" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xctest</h3>
 <p>Runs tests on the given simulator</p>
 <table>
@@ -2409,12 +2435,12 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
-<h3 id="xcbuild"><a name="user-content-xcbuild" href="#xcbuild" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcbuild</h3>
-<p>Builds the project using <code>xcodebuild</code></p>
+<h3 id="xcexport"><a name="user-content-xcexport" href="#xcexport" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcexport</h3>
+<p>Exports the project using <code>xcodebuild</code></p>
 <table>
 <thead>
 <tr>
-<th>xcbuild</th>
+<th>xcexport</th>
 <th></th>
 </tr>
 </thead>
@@ -2431,33 +2457,7 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">xcbuild
-</code></pre>
-
-<p></details></p>
-<h3 id="xcarchive"><a name="user-content-xcarchive" href="#xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcarchive</h3>
-<p>Archives the project using <code>xcodebuild</code></p>
-<table>
-<thead>
-<tr>
-<th>xcarchive</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xcarchive
+<pre><code class="ruby">xcexport
 </code></pre>
 
 <p></details></p>
@@ -2487,12 +2487,12 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
-<h3 id="xcexport"><a name="user-content-xcexport" href="#xcexport" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcexport</h3>
-<p>Exports the project using <code>xcodebuild</code></p>
+<h3 id="xcbuild"><a name="user-content-xcbuild" href="#xcbuild" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcbuild</h3>
+<p>Builds the project using <code>xcodebuild</code></p>
 <table>
 <thead>
 <tr>
-<th>xcexport</th>
+<th>xcbuild</th>
 <th></th>
 </tr>
 </thead>
@@ -2509,7 +2509,7 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">xcexport
+<pre><code class="ruby">xcbuild
 </code></pre>
 
 <p></details></p>
@@ -2869,7 +2869,7 @@ or emails. You can add background and titles to the framed screenshots as well.<
 </tr>
 <tr>
 <td><code>use_legacy_iphone5s</code></td>
-<td>use iPhone 5s instead of iPhone SE frames</td>
+<td>Use iPhone 5s instead of iPhone SE frames</td>
 </tr>
 <tr>
 <td><code>use_legacy_iphone6s</code></td>
@@ -3461,7 +3461,7 @@ https://developer.apple.com/library/ios/qa/qa1827/_index.html</p>
 </tr>
 <tr>
 <td><code>teamid</code></td>
-<td>The Team ID  you want to use</td>
+<td>The Team ID you want to use</td>
 </tr>
 </tbody>
 </table>
@@ -3851,7 +3851,7 @@ There is an option, <code>:use_hg_revision_number</code>, which allows to use me
 </tr>
 <tr>
 <td><code>skip_install</code></td>
-<td>By default, the certificate will be added on your local machine. Setting this flag will skip this action</td>
+<td>By default, the certificate will be added to your local machine. Setting this flag will skip this action</td>
 </tr>
 <tr>
 <td><code>force</code></td>
@@ -4995,7 +4995,7 @@ This integration will only do the TestFlight upload</p>
 </tr>
 <tr>
 <td><code>changelog</code></td>
-<td>Provide the what's new text when uploading a new build</td>
+<td>Provide the 'what's new' text when uploading a new build</td>
 </tr>
 <tr>
 <td><code>beta_app_description</code></td>
@@ -5388,7 +5388,7 @@ More information about the available options can be found in the <a href="http:/
 </tr>
 <tr>
 <td><code>changelog</code></td>
-<td>Provide the what's new text when uploading a new build</td>
+<td>Provide the 'what's new' text when uploading a new build</td>
 </tr>
 <tr>
 <td><code>beta_app_description</code></td>
@@ -5843,11 +5843,11 @@ groups. We accept iOS and Android applications.</p>
 </tr>
 <tr>
 <td><code>locale</code></td>
-<td>Select the folder locale for yours screenshots</td>
+<td>Select the folder locale for your screenshots</td>
 </tr>
 <tr>
 <td><code>device</code></td>
-<td>Select the device format for yours screenshots</td>
+<td>Select the device format for your screenshots</td>
 </tr>
 <tr>
 <td><code>description</code></td>
@@ -6610,7 +6610,7 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 </tr>
 <tr>
 <td><code>skip_metadata</code></td>
-<td>Don't upload the metadata (e.g. title, description), this will still upload screenshots</td>
+<td>Don't upload the metadata (e.g. title, description). This will still upload screenshots</td>
 </tr>
 <tr>
 <td><code>skip_app_version_update</code></td>
@@ -6694,27 +6694,27 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 </tr>
 <tr>
 <td><code>primary_category</code></td>
-<td>Metadata: The english name of the primary category(e.g. <code>Business</code>, <code>Books</code>)</td>
+<td>Metadata: The english name of the primary category (e.g. <code>Business</code>, <code>Books</code>)</td>
 </tr>
 <tr>
 <td><code>secondary_category</code></td>
-<td>Metadata: The english name of the secondary category(e.g. <code>Business</code>, <code>Books</code>)</td>
+<td>Metadata: The english name of the secondary category (e.g. <code>Business</code>, <code>Books</code>)</td>
 </tr>
 <tr>
 <td><code>primary_first_sub_category</code></td>
-<td>Metadata: The english name of the primary first sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the primary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>primary_second_sub_category</code></td>
-<td>Metadata: The english name of the primary second sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the primary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>secondary_first_sub_category</code></td>
-<td>Metadata: The english name of the secondary first sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the secondary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>secondary_second_sub_category</code></td>
-<td>Metadata: The english name of the secondary second sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the secondary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>trade_representative_contact_information</code></td>
@@ -6804,11 +6804,11 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 <tbody>
 <tr>
 <td><code>package_name</code></td>
-<td>The package name of the Application to modify</td>
+<td>The package name of the application to use</td>
 </tr>
 <tr>
 <td><code>track</code></td>
-<td>The Track to upload the Application to: production, beta, alpha, rollout</td>
+<td>The track of the application to use: production, beta, alpha, rollout</td>
 </tr>
 <tr>
 <td><code>rollout</code></td>
@@ -6860,11 +6860,11 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 </tr>
 <tr>
 <td><code>track_promote_to</code></td>
-<td>The Track to promote to: production, beta, alpha, rollout</td>
+<td>The track to promote to: production, beta, alpha, rollout</td>
 </tr>
 <tr>
 <td><code>validate_only</code></td>
-<td>Indicate that changes will only be validated with Google Play rather than actually published</td>
+<td>Only validate changes with Google Play rather than actually publish</td>
 </tr>
 <tr>
 <td><code>mapping</code></td>
@@ -6974,7 +6974,7 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 </tr>
 <tr>
 <td><code>skip_metadata</code></td>
-<td>Don't upload the metadata (e.g. title, description), this will still upload screenshots</td>
+<td>Don't upload the metadata (e.g. title, description). This will still upload screenshots</td>
 </tr>
 <tr>
 <td><code>skip_app_version_update</code></td>
@@ -7058,27 +7058,27 @@ which 'provider' to use, you can set the <code>itc_provider</code> option to pas
 </tr>
 <tr>
 <td><code>primary_category</code></td>
-<td>Metadata: The english name of the primary category(e.g. <code>Business</code>, <code>Books</code>)</td>
+<td>Metadata: The english name of the primary category (e.g. <code>Business</code>, <code>Books</code>)</td>
 </tr>
 <tr>
 <td><code>secondary_category</code></td>
-<td>Metadata: The english name of the secondary category(e.g. <code>Business</code>, <code>Books</code>)</td>
+<td>Metadata: The english name of the secondary category (e.g. <code>Business</code>, <code>Books</code>)</td>
 </tr>
 <tr>
 <td><code>primary_first_sub_category</code></td>
-<td>Metadata: The english name of the primary first sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the primary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>primary_second_sub_category</code></td>
-<td>Metadata: The english name of the primary second sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the primary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>secondary_first_sub_category</code></td>
-<td>Metadata: The english name of the secondary first sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the secondary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>secondary_second_sub_category</code></td>
-<td>Metadata: The english name of the secondary second sub category(e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td>Metadata: The english name of the secondary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
 </tr>
 <tr>
 <td><code>trade_representative_contact_information</code></td>
@@ -7312,7 +7312,7 @@ short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 </tr>
 <tr>
 <td><code>exclude</code></td>
-<td>You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk. E.g. to leave the <code>artifacts</code> directory you would specify <code>exclude: 'artifacts'</code>. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns</td>
+<td>You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk, e.g. to leave the <code>artifacts</code> directory you would specify <code>exclude: 'artifacts'</code>. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns</td>
 </tr>
 </tbody>
 </table>
@@ -7415,7 +7415,7 @@ short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 <h3 id="number_of_commits"><a name="user-content-number_of_commits" href="#number_of_commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>number_of_commits</h3>
 <p>Return the number of commits in current git branch</p>
 <blockquote>
-<p>You can use this action to get the number of commits of this branch. This is useful if you want to set the build number to the number of commits. See <code>faslane actions number_of_commits</code> for more details</p>
+<p>You can use this action to get the number of commits of this branch. This is useful if you want to set the build number to the number of commits. See <code>fastlane actions number_of_commits</code> for more details</p>
 </blockquote>
 <table>
 <thead>
@@ -7515,7 +7515,7 @@ increment_build_number(build_number: number_of_commits)
 <h3 id="last_git_tag"><a name="user-content-last_git_tag" href="#last_git_tag" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>last_git_tag</h3>
 <p>Get the most recent git tag</p>
 <blockquote>
-<p>If you are using this action on a <strong>shallow clone</strong>, <em>the default with some CI systems like Bamboo</em>, you need to ensure that you have also have pulled all the git tags appropriately.  Assuming your git repo has the correct remote set you can issue <code>sh('git fetch --tags')</code></p>
+<p>If you are using this action on a <strong>shallow clone</strong>, <em>the default with some CI systems like Bamboo</em>, you need to ensure that you have also have pulled all the git tags appropriately. Assuming your git repo has the correct remote set you can issue <code>sh('git fetch --tags')</code></p>
 </blockquote>
 <table>
 <thead>
@@ -8361,7 +8361,7 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tr>
 <tr>
 <td><code>test_expected_files</code></td>
-<td>A list of expected changed files passed in for testin</td>
+<td>A list of expected changed files passed in for testing</td>
 </tr>
 </tbody>
 </table>
@@ -8537,7 +8537,7 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tr>
 <tr>
 <td><code>use_webhook_configured_username_and_icon</code></td>
-<td>Use webook's default username and icon settings? (true/false)</td>
+<td>Use webhook's default username and icon settings? (true/false)</td>
 </tr>
 <tr>
 <td><code>slack_url</code></td>
@@ -8545,11 +8545,11 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tr>
 <tr>
 <td><code>username</code></td>
-<td>Overrides the webook's username property if use_webhook_configured_username_and_icon is false</td>
+<td>Overrides the webhook's username property if use_webhook_configured_username_and_icon is false</td>
 </tr>
 <tr>
 <td><code>icon_url</code></td>
-<td>Overrides the webook's image property if use_webhook_configured_username_and_icon is false</td>
+<td>Overrides the webhook's image property if use_webhook_configured_username_and_icon is false</td>
 </tr>
 <tr>
 <td><code>payload</code></td>
@@ -8731,7 +8731,7 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tr>
 <tr>
 <td><code>from</code></td>
-<td>Name the message will appear be sent from</td>
+<td>Name the message will appear to be sent from</td>
 </tr>
 </tbody>
 </table>
@@ -9694,7 +9694,7 @@ in a remote git repository.</p>
 <p><details>
 <summary>1 Example</summary></p>
 <pre><code class="ruby">import_from_git(
-  url: &quot;git@github.com:fastlane/fastlane.git&quot;, # The url of the repository to import the Fastfile from.
+  url: &quot;git@github.com:fastlane/fastlane.git&quot;, # The URL of the repository to import the Fastfile from.
   branch: &quot;HEAD&quot;, # The branch to checkout on the repository. Defaults to `HEAD`.
   path: &quot;fastlane/Fastfile&quot; # The path of the Fastfile in the repository. Defaults to `fastlane/Fastfile`.
 )
@@ -9713,7 +9713,7 @@ in a remote git repository.</p>
 <tbody>
 <tr>
 <td><code>url</code></td>
-<td>The url of the repository to import the Fastfile from</td>
+<td>The URL of the repository to import the Fastfile from</td>
 </tr>
 <tr>
 <td><code>branch</code></td>
@@ -9856,7 +9856,7 @@ Useful if you quickly want to send out a test build by dropping down to the comm
 </tr>
 <tr>
 <td><code>bundle_identifier_suffix</code></td>
-<td>App Identifier Suffix (Ignored if App Identifier does not ends with .*)</td>
+<td>App Identifier Suffix (Ignored if App Identifier does not end with .*)</td>
 </tr>
 <tr>
 <td><code>app_name</code></td>
@@ -10037,7 +10037,7 @@ will be automatically unlocked and the selected code signing identity will be us
 </tr>
 <tr>
 <td><code>derived_data_path</code></td>
-<td>The directory where build products and other derived data will go</td>
+<td>The directory where built products and other derived data will go</td>
 </tr>
 <tr>
 <td><code>result_bundle</code></td>
@@ -10111,7 +10111,7 @@ Keychains can be replaced with <code>add_to_search_list: :replace</code></p>
 <tbody>
 <tr>
 <td><code>path</code></td>
-<td>Path to the Keychain file</td>
+<td>Path to the keychain file</td>
 </tr>
 <tr>
 <td><code>password</code></td>
@@ -10608,7 +10608,7 @@ end
 </tr>
 <tr>
 <td><code>path</code></td>
-<td>Path to Keychain</td>
+<td>Path to keychain</td>
 </tr>
 <tr>
 <td><code>password</code></td>
@@ -12592,7 +12592,7 @@ See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://git
 </table>
 <p></details></p>
 <h3 id="adb_devices"><a name="user-content-adb_devices" href="#adb_devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>adb_devices</h3>
-<p>Get an Array of Connected android device serials</p>
+<p>Get an array of Connected android device serials</p>
 <blockquote>
 <p>Fetches device list via adb, e.g. run an adb command on all connected devices.</p>
 </blockquote>
@@ -13422,35 +13422,6 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </tbody>
 </table>
 <p></details></p>
-<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
-<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
-<blockquote>
-<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>opt_out_crash_reporting</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@mpirri, @ohayon</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
-</code></pre>
-
-<p></details></p>
 <h3 id="ruby_version"><a name="user-content-ruby_version" href="#ruby_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ruby_version</h3>
 <p>Verifies the minimum ruby version required</p>
 <blockquote>
@@ -13510,6 +13481,72 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 </code></pre>
 
 <p></details></p>
+<h3 id="google_play_track_version_codes"><a name="user-content-google_play_track_version_codes" href="#google_play_track_version_codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>google_play_track_version_codes</h3>
+<p>Retrieves version codes for a Google Play track</p>
+<blockquote>
+<p>More information: https://github.com/fastlane/fastlane/tree/master/supply</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>google_play_track_version_codes</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@panthomakos</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>Array of integers representing the version codes for the given Google Play track</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">google_play_track_version_codes
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>package_name</code></td>
+<td>The package name of the application to use</td>
+</tr>
+<tr>
+<td><code>track</code></td>
+<td>The track of the application to use: production, beta, alpha, rollout</td>
+</tr>
+<tr>
+<td><code>json_key</code></td>
+<td>The service account json file used to authenticate with Google</td>
+</tr>
+<tr>
+<td><code>json_key_data</code></td>
+<td>The service account json used to authenticate with Google</td>
+</tr>
+<tr>
+<td><code>root_url</code></td>
+<td>Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
 <h3 id="plugin_scores"><a name="user-content-plugin_scores" href="#plugin_scores" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>plugin_scores</h3>
 <p>[31mNo description provided[0m</p>
 <table>
@@ -13542,6 +13579,35 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 </thead>
 <tbody></tbody>
 </table>
+<p></details></p>
+<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
+<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
+<blockquote>
+<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>opt_out_crash_reporting</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@mpirri, @ohayon</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
+</code></pre>
+
 <p></details></p>
               
             </div>
