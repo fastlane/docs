@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 9a4ad3ad1567ad456d8e8255b795e16f396caaa3
+  revision: 7a87b8ad761dc739be941611721e7616e2b66824
   specs:
-    fastlane (2.44.1)
+    fastlane (2.45.0)
       CFPropertyList (>= 2.3, < 3.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -53,7 +53,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.3.0)
       colored2 (~> 3.1)
-    danger (5.3.2)
+    danger (5.3.3)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
@@ -62,14 +62,14 @@ GEM
       faraday-http-cache (~> 1.0)
       git (~> 1)
       kramdown (~> 1.5)
-      octokit (~> 4.2)
+      octokit (~> 4.7)
       terminal-table (~> 1)
     declarative (0.0.9)
     declarative-option (0.1.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.2.1)
-    excon (0.57.0)
+    excon (0.57.1)
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
     faraday-cookie_jar (0.0.6)
