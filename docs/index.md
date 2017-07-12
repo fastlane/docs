@@ -98,7 +98,7 @@ All fastlane related questions, problems and feature ideas should be posted as [
 
 ## System requirements
 
-_fastlane_ requires macOS or Linux with Ruby 2.0.0 or above
+Currently, _fastlane_ is officially supported to run on macOS. Support for other operating systems is limited and untested at this point in time. _fastlane_ uses system APIs that may not be implemented on other platforms, for example, we use the Ruby `fork` method for sub-process management, which isn't available on Windows.
 
 ## License
 
