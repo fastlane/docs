@@ -1,5 +1,25 @@
 # Setting up your Xcode Project
 
+# Xcode 9 and up
+
+Additionally to the instructions of Xcode 8, you can now also explictly define what provisioning profile to use for which target. _fastlane_ will automatically detect those settings if you use _match_, or will try to fetch it from your Xcode project if possible. 
+
+If you don't use _match_, we recommend defining what provisioning profiles to use in your `Fastfile`:
+
+```ruby
+lane :beta do
+  gym(
+    export_method: "app-store",
+    export_options: {
+      provisioningProfiles: { 
+        "com.example.bundleid": "Provisioning Profile Name",
+        "com.example.bundleid2": "Provisioning Profile Name 2"
+      }
+    }
+  )
+end
+```
+
 # Xcode 8 and up
 
 With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)
