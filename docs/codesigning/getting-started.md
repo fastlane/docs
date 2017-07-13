@@ -46,14 +46,6 @@ Occasionally the `Automatic` setting as the provisioning profile doesn't work re
 
 That's why it is recommended to specify a specific provisioning profile somehow:
 
-#### Xcode 7 and lower
-
-You should avoid clicking the `Fix Issue` button (There is an [Xcode plugin](https://github.com/neonichu/FixCode#readme) that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.
-
-Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).
-
-To work around this issue, check out [Setting up your Xcode Project](xcode-project.md) on how to pass a provisioning profile to Xcode when building your app.
-
 #### Xcode 8 and up
 
 Apple improved code signing a lot with the release of Xcode 8, the following has changed:
@@ -84,6 +76,14 @@ end
 ```
 
 this way you can profit of the automatic code signing on development machines. and also stay in control on release builds to be sure the right cert/provisioning profiles are used.
+
+#### Xcode 7 and lower
+
+You should avoid clicking the `Fix Issue` button (There is an [Xcode plugin](https://github.com/neonichu/FixCode#readme) that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.
+
+Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).
+
+To work around this issue, check out [Setting up your Xcode Project](xcode-project.md) on how to pass a provisioning profile to Xcode when building your app.
 
 ## Manually
 
