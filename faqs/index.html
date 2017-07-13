@@ -334,6 +334,13 @@
 <p>For more information about the recommended setup with Jenkins open the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Jenkins.md">Jenkins Guide</a>.</p>
 <h3 id="code-signing-issues"><a name="user-content-code-signing-issues" href="#code-signing-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code signing issues</h3>
 <p>Check out the <a href="https://codesigning.guide">codesigning.guide</a> website for more information on how to properly setup code-signing in your team using <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>.</p>
+<h3 id="when-should-i-use-cert-sigh-and-match"><a name="user-content-when-should-i-use-cert-sigh-and-match" href="#when-should-i-use-cert-sigh-and-match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>When should I use <em>cert</em>, <em>sigh</em> and <em>match</em>?</h3>
+<ul>
+<li><em>cert</em> allows you to create a new code signing certificate + private key (note that the private key is only stored on your machine and won't be synced to any other mac)</li>
+<li><em>sigh</em> allows you to create and download a provisioning profile (those are synced via the  developer portal)</li>
+<li><em>match</em> uses those 2 tools in combination with a git repo you provide, to sync all private key, certificates and provisioning profiles across all your team's Macs and CI servers</li>
+</ul>
+<p>We recommend using <em>match</em> as it removes the complexity out of code signing, while still being in full control. This way you can sync all the signing identities across your team and your CI server. For more information check out <a href="https://codesigning.guide">codesigning.guide</a>.</p>
 <h3 id="multiple-targets-of-the-same-underlying-app"><a name="user-content-multiple-targets-of-the-same-underlying-app" href="#multiple-targets-of-the-same-underlying-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Multiple targets of the same underlying app</h3>
 <p>If you have one code base, but multiple branded applications</p>
 <p>Create different <code>.env</code> files for each environment and reference those environment variables in the <code>Deliverfile</code>, <code>Fastfile</code>, etc. </p>
