@@ -1366,36 +1366,6 @@ verify_pod_keys
 
 
 
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
-```
-
-
-</details>
-
-
-
-
-
-
 ### xctest
 
 Runs tests on the given simulator
@@ -1418,6 +1388,36 @@ Author | @dtrenz
 xctest(
   destination: "name=iPhone 7s,OS=10.0"
 )
+```
+
+
+</details>
+
+
+
+
+
+
+### xcexport
+
+Exports the project using `xcodebuild`
+
+
+
+
+
+xcexport | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcexport
 ```
 
 
@@ -1458,15 +1458,15 @@ xcbuild
 
 
 
-### xcexport
+### xcclean
 
-Exports the project using `xcodebuild`
-
-
+Cleans the project using `xcodebuild`
 
 
 
-xcexport | 
+
+
+xcclean | 
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1477,7 +1477,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcexport
+xcclean
 ```
 
 
@@ -9215,18 +9215,19 @@ Key | Description
 
 
 
-### opt_out_usage
+### ruby_version
 
-This will stop uploading the information which actions were run
+Verifies the minimum ruby version required
 
 
 
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
-opt_out_usage | 
+ruby_version | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @KrauseFx
+Author | @sebastianvarela
 
 
 
@@ -9234,7 +9235,7 @@ Author | @KrauseFx
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_usage # add this to the top of your Fastfile
+ruby_version "2.4.0"
 ```
 
 
@@ -9274,19 +9275,18 @@ Key | Description
 
 
 
-### ruby_version
+### opt_out_crash_reporting
 
-Verifies the minimum ruby version required
+This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
 
-ruby_version | 
+opt_out_crash_reporting | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @sebastianvarela
+Author | @mpirri, @ohayon
 
 
 
@@ -9294,7 +9294,7 @@ Author | @sebastianvarela
 <summary>1 Example</summary>
 
 ```ruby
-ruby_version "2.4.0"
+opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
 
@@ -9351,18 +9351,18 @@ Key | Description
 
 
 
-### opt_out_crash_reporting
+### opt_out_usage
 
-This will prevent reports from being uploaded when _fastlane_ crashes
+This will stop uploading the information which actions were run
 
 
 
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
 
-opt_out_crash_reporting | 
+opt_out_usage | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
+Author | @KrauseFx
 
 
 
@@ -9370,7 +9370,7 @@ Author | @mpirri, @ohayon
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
+opt_out_usage # add this to the top of your Fastfile
 ```
 
 
