@@ -1366,15 +1366,15 @@ verify_pod_keys
 
 
 
-### xcbuild
+### xcclean
 
-Builds the project using `xcodebuild`
-
-
+Cleans the project using `xcodebuild`
 
 
 
-xcbuild | 
+
+
+xcclean | 
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1385,7 +1385,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcbuild
+xcclean
 ```
 
 
@@ -1428,15 +1428,15 @@ xctest(
 
 
 
-### xcarchive
+### xcbuild
 
-Archives the project using `xcodebuild`
-
-
+Builds the project using `xcodebuild`
 
 
 
-xcarchive | 
+
+
+xcbuild | 
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1447,7 +1447,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcarchive
+xcbuild
 ```
 
 
@@ -1488,15 +1488,15 @@ xcexport
 
 
 
-### xcclean
+### xcarchive
 
-Cleans the project using `xcodebuild`
-
-
+Archives the project using `xcodebuild`
 
 
 
-xcclean | 
+
+
+xcarchive | 
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1507,7 +1507,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcclean
+xcarchive
 ```
 
 
@@ -9215,52 +9215,6 @@ Key | Description
 
 
 
-### google_play_track_version_codes
-
-Retrieves version codes for a Google Play track
-
-
-
-> More information: https://github.com/fastlane/fastlane/tree/master/supply
-
-google_play_track_version_codes | 
------|----
-Supported platforms | android
-Author | @panthomakos
-Returns | Array of integers representing the version codes for the given Google Play track
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-google_play_track_version_codes
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `package_name` | The package name of the application to use
-  `track` | The track of the application to use: production, beta, alpha, rollout
-  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google
-  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account)
-  `json_key` | The service account json file used to authenticate with Google
-  `json_key_data` | The service account json used to authenticate with Google
-  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
-
-</details>
-
-
-
-
-
 ### opt_out_usage
 
 This will stop uploading the information which actions were run
@@ -9281,36 +9235,6 @@ Author | @KrauseFx
 
 ```ruby
 opt_out_usage # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
-
-
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting | 
------|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
 
@@ -9371,6 +9295,82 @@ Author | @sebastianvarela
 
 ```ruby
 ruby_version "2.4.0"
+```
+
+
+</details>
+
+
+
+
+
+
+### google_play_track_version_codes
+
+Retrieves version codes for a Google Play track
+
+
+
+> More information: https://github.com/fastlane/fastlane/tree/master/supply
+
+google_play_track_version_codes | 
+-----|----
+Supported platforms | android
+Author | @panthomakos
+Returns | Array of integers representing the version codes for the given Google Play track
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+google_play_track_version_codes
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `package_name` | The package name of the application to use
+  `track` | The track of the application to use: production, beta, alpha, rollout
+  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google
+  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account)
+  `json_key` | The service account json file used to authenticate with Google
+  `json_key_data` | The service account json used to authenticate with Google
+  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
+
+</details>
+
+
+
+
+
+### opt_out_crash_reporting
+
+This will prevent reports from being uploaded when _fastlane_ crashes
+
+
+
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+
+opt_out_crash_reporting | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
 
