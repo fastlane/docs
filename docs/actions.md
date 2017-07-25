@@ -1366,36 +1366,6 @@ verify_pod_keys
 
 
 
-### xcbuild
-
-Builds the project using `xcodebuild`
-
-
-
-
-
-xcbuild | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcbuild
-```
-
-
-</details>
-
-
-
-
-
-
 ### xctest
 
 Runs tests on the given simulator
@@ -1418,36 +1388,6 @@ Author | @dtrenz
 xctest(
   destination: "name=iPhone 7s,OS=10.0"
 )
-```
-
-
-</details>
-
-
-
-
-
-
-### xcarchive
-
-Archives the project using `xcodebuild`
-
-
-
-
-
-xcarchive | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcarchive
 ```
 
 
@@ -1508,6 +1448,66 @@ Author | @dtrenz
 
 ```ruby
 xcclean
+```
+
+
+</details>
+
+
+
+
+
+
+### xcarchive
+
+Archives the project using `xcodebuild`
+
+
+
+
+
+xcarchive | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcarchive
+```
+
+
+</details>
+
+
+
+
+
+
+### xcbuild
+
+Builds the project using `xcodebuild`
+
+
+
+
+
+xcbuild | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcbuild
 ```
 
 
@@ -9215,6 +9215,37 @@ Key | Description
 
 
 
+### ruby_version
+
+Verifies the minimum ruby version required
+
+
+
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+
+ruby_version | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @sebastianvarela
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ruby_version "2.4.0"
+```
+
+
+</details>
+
+
+
+
+
+
 ### google_play_track_version_codes
 
 Retrieves version codes for a Google Play track
@@ -9291,36 +9322,6 @@ opt_out_usage # add this to the top of your Fastfile
 
 
 
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting | 
------|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
-
-
 ### plugin_scores
 
 [31mNo description provided[0m
@@ -9350,19 +9351,18 @@ Key | Description
 
 
 
-### ruby_version
+### opt_out_crash_reporting
 
-Verifies the minimum ruby version required
+This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
 
-ruby_version | 
+opt_out_crash_reporting | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @sebastianvarela
+Author | @mpirri, @ohayon
 
 
 
@@ -9370,7 +9370,7 @@ Author | @sebastianvarela
 <summary>1 Example</summary>
 
 ```ruby
-ruby_version "2.4.0"
+opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
 
