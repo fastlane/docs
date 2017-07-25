@@ -1458,36 +1458,6 @@ xcbuild
 
 
 
-### xcexport
-
-Exports the project using `xcodebuild`
-
-
-
-
-
-xcexport | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcexport
-```
-
-
-</details>
-
-
-
-
-
-
 ### xcarchive
 
 Archives the project using `xcodebuild`
@@ -1508,6 +1478,36 @@ Author | @dtrenz
 
 ```ruby
 xcarchive
+```
+
+
+</details>
+
+
+
+
+
+
+### xcexport
+
+Exports the project using `xcodebuild`
+
+
+
+
+
+xcexport | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcexport
 ```
 
 
@@ -9215,65 +9215,6 @@ Key | Description
 
 
 
-### opt_out_usage
-
-This will stop uploading the information which actions were run
-
-
-
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
-
-opt_out_usage | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_usage # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
-
-
-### plugin_scores
-
-[31mNo description provided[0m
-
-
-
-
-
-plugin_scores | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-
-</details>
-
-
-
-
-
 ### ruby_version
 
 Verifies the minimum ruby version required
@@ -9295,6 +9236,36 @@ Author | @sebastianvarela
 
 ```ruby
 ruby_version "2.4.0"
+```
+
+
+</details>
+
+
+
+
+
+
+### opt_out_usage
+
+This will stop uploading the information which actions were run
+
+
+
+> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+
+opt_out_usage | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_usage # add this to the top of your Fastfile
 ```
 
 
@@ -9344,6 +9315,35 @@ Key | Description
   `json_key` | The service account json file used to authenticate with Google
   `json_key_data` | The service account json used to authenticate with Google
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
+
+</details>
+
+
+
+
+
+### plugin_scores
+
+[31mNo description provided[0m
+
+
+
+
+
+plugin_scores | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
 
 </details>
 
