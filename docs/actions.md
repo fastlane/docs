@@ -118,7 +118,7 @@ Key | Description
   `build_for_testing` | Build for testing only, does not run tests
   `xctestrun` | Run tests using the provided .xctestrun file
   `derived_data_path` | The directory where build products and other derived data will go
-  `result_bundle` | Produce the result bundle describing what occurred will be placed
+  `result_bundle` | Location of the Xcode result bundle
   `sdk` | The SDK that should be used for building the application
   `open_report` | Should the HTML report be opened when tests are completed?
   `configuration` | The configuration to use when building the app. Defaults to 'Release'
@@ -730,7 +730,7 @@ Key | Description
   `build_path` | The directory in which the archive should be stored in
   `archive_path` | The path to the created archive
   `derived_data_path` | The directory where built products and other derived data will go
-  `result_bundle` | Produce the result bundle describing what occurred will be placed
+  `result_bundle` | Location of the Xcode result bundle
   `buildlog_path` | The directory where to store the build log
   `sdk` | The SDK that should be used for building the application
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
@@ -1366,15 +1366,15 @@ verify_pod_keys
 
 
 
-### xcarchive
+### xcbuild
 
-Archives the project using `xcodebuild`
-
-
+Builds the project using `xcodebuild`
 
 
 
-xcarchive | 
+
+
+xcbuild | 
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1385,7 +1385,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcarchive
+xcbuild
 ```
 
 
@@ -1418,6 +1418,36 @@ Author | @dtrenz
 xctest(
   destination: "name=iPhone 7s,OS=10.0"
 )
+```
+
+
+</details>
+
+
+
+
+
+
+### xcarchive
+
+Archives the project using `xcodebuild`
+
+
+
+
+
+xcarchive | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcarchive
 ```
 
 
@@ -1478,36 +1508,6 @@ Author | @dtrenz
 
 ```ruby
 xcclean
-```
-
-
-</details>
-
-
-
-
-
-
-### xcbuild
-
-Builds the project using `xcodebuild`
-
-
-
-
-
-xcbuild | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcbuild
 ```
 
 
@@ -5143,7 +5143,7 @@ Key | Description
 
 ### git_add
 
-Directly add the given file
+Directly add the given file or all files
 
 
 
@@ -5152,12 +5152,16 @@ Directly add the given file
 git_add | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @4brunu
+Author | @4brunu, @antondomashnev
 
 
 
 <details>
-<summary>2 Examples</summary>
+<summary>5 Examples</summary>
+
+```ruby
+git_add
+```
 
 ```ruby
 git_add(path: "./version.txt")
@@ -5165,6 +5169,14 @@ git_add(path: "./version.txt")
 
 ```ruby
 git_add(path: ["./version.txt", "./changelog.txt"])
+```
+
+```ruby
+git_add(pathspec: "./Frameworks/*")
+```
+
+```ruby
+git_add(pathspec: "*.txt")
 ```
 
 
@@ -5177,6 +5189,7 @@ git_add(path: ["./version.txt", "./changelog.txt"])
 Key | Description
 ----|------------
   `path` | The file you want to add
+  `pathspec` | The pathspec you want to add files from
 
 </details>
 
@@ -9202,19 +9215,19 @@ Key | Description
 
 
 
-### ruby_version
+### google_play_track_version_codes
 
-Verifies the minimum ruby version required
+Retrieves version codes for a Google Play track
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> More information: https://github.com/fastlane/fastlane/tree/master/supply
 
-ruby_version | 
+google_play_track_version_codes | 
 -----|----
-Supported platforms | ios, android, mac
-Author | @sebastianvarela
+Supported platforms | android
+Author | @panthomakos
+Returns | Array of integers representing the version codes for the given Google Play track
 
 
 
@@ -9222,12 +9235,27 @@ Author | @sebastianvarela
 <summary>1 Example</summary>
 
 ```ruby
-ruby_version "2.4.0"
+google_play_track_version_codes
 ```
 
 
 </details>
 
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `package_name` | The package name of the application to use
+  `track` | The track of the application to use: production, beta, alpha, rollout
+  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google
+  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account)
+  `json_key` | The service account json file used to authenticate with Google
+  `json_key_data` | The service account json used to authenticate with Google
+  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
+
+</details>
 
 
 
@@ -9263,19 +9291,18 @@ opt_out_usage # add this to the top of your Fastfile
 
 
 
-### google_play_track_version_codes
+### opt_out_crash_reporting
 
-Retrieves version codes for a Google Play track
+This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> More information: https://github.com/fastlane/fastlane/tree/master/supply
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
 
-google_play_track_version_codes | 
+opt_out_crash_reporting | 
 -----|----
-Supported platforms | android
-Author | @panthomakos
-Returns | Array of integers representing the version codes for the given Google Play track
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
 
 
 
@@ -9283,25 +9310,12 @@ Returns | Array of integers representing the version codes for the given Google 
 <summary>1 Example</summary>
 
 ```ruby
-google_play_track_version_codes
+opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
 
 </details>
 
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `package_name` | The package name of the application to use
-  `track` | The track of the application to use: production, beta, alpha, rollout
-  `json_key` | The service account json file used to authenticate with Google
-  `json_key_data` | The service account json used to authenticate with Google
-  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
-
-</details>
 
 
 
@@ -9336,18 +9350,19 @@ Key | Description
 
 
 
-### opt_out_crash_reporting
+### ruby_version
 
-This will prevent reports from being uploaded when _fastlane_ crashes
+Verifies the minimum ruby version required
 
 
 
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
-opt_out_crash_reporting | 
+ruby_version | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
+Author | @sebastianvarela
 
 
 
@@ -9355,7 +9370,7 @@ Author | @mpirri, @ohayon
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
+ruby_version "2.4.0"
 ```
 
 
