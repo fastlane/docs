@@ -1804,7 +1804,7 @@ set_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier", value: "co
 ```
 
 ```ruby
-set_info_plist_value(path: "./MyApp-Info.plist", key: "NSAppTransportSecurity", subkey: "NSAllowsArbitraryLoads", value: true)
+set_info_plist_value(path: "./MyApp-Info.plist", key: "NSAppTransportSecurity", subkey: "NSAllowsArbitraryLoads", value: true, output_file_name: "./Info.plist")
 ```
 
 
@@ -1820,6 +1820,7 @@ Key | Description
   `subkey` | Name of subkey in plist
   `value` | Value to setup
   `path` | Path to plist file you want to update
+  `output_file_name` | Path to the output file you want to generate
 
 </details>
 
