@@ -46,12 +46,14 @@ Occasionally the `Automatic` setting as the provisioning profile doesn't work re
 
 That's why it is recommended to specify a specific provisioning profile somehow:
 
-#### Xcode 8
+#### Xcode 8 and Xcode 9
+
+The instructions below are more advanced, and take more time to setup than other approaches.
 
 ##### Automatic & Manual Signing
 
 To simplify development workflow you could use `Automatic` code signing for development, and `Manual` for release builds.
-You have to configure your xcode project to use automatic code signing, and on the release configuration specify the `$()` match env variable.
+You have to configure your Xcode project to use automatic code signing, and on the release configuration specify the `$()` match env variable.
 
 e.g: 
 <img src="/img/codesigning/auto_signing.png" width=500 />
