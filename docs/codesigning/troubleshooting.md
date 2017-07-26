@@ -1,6 +1,6 @@
 # Debugging codesigning issues
 
-This guide will help you resolve the most common code signing errors.
+This guide will help you resolve the most common code signing errors. In general, make sure to read the **complete** output when something goes wrong, in particular the very top and the very bottom of the build output. You'll always get access to the raw `xcodebuild` output, make sure to analyze it, as _fastlane_ can only assist with helping you resolve problems.
 
 ## Error message
 
