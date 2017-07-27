@@ -2,9 +2,9 @@
 
 # Xcode 9 and up
 
-Additionally to the instructions of Xcode 8, you can now also explictly define what provisioning profile to use for which target. _fastlane_ will automatically detect those settings if you use _match_, or will try to fetch it from your Xcode project if possible. 
+In most cases, _fastlane_ will work out of the box with Xcode 9 if you selected manual code signing, and chose a provisioning profile name for each of your targets ([see Xcode 8 section](#xcode-8)).
 
-If you don't use _match_, we recommend defining what provisioning profiles to use in your `Fastfile`:
+If you don't use _match_, we recommend defining a mapping of app target to provisioning profile in your `Fastfile`. By defining those profiles, you can guarantee reproducible builds every time you run it.
 
 ```ruby
 lane :beta do
@@ -20,7 +20,7 @@ lane :beta do
 end
 ```
 
-# Xcode 8 and up
+# Xcode 8
 
 With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)
 

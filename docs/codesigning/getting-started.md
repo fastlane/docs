@@ -46,19 +46,14 @@ Occasionally the `Automatic` setting as the provisioning profile doesn't work re
 
 That's why it is recommended to specify a specific provisioning profile somehow:
 
-#### Xcode 8 and up
+#### Xcode 8 and Xcode 9
 
-Apple improved code signing a lot with the release of Xcode 8, the following has changed:
-
-- No more `Fix Issue` button, instead all code signing processes run in the background and show the log right in Xcode
-- You can now specify the provisioning profile by name, instead of the UUID (Check out [Setting up your Xcode Project](xcode-project.md) for more information)
-- Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out [Debugging codesigning issues](troubleshooting.md) for more information)
-- Improved Automatic Provisioning that can create per-machine development private keys, certificates, and provisioning profiles. (Check out [Setting up your Xcode Project](xcode-project.md) for more information)
+The instructions below are more advanced, and take more time to setup than other approaches.
 
 ##### Automatic & Manual Signing
 
 To simplify development workflow you could use `Automatic` code signing for development, and `Manual` for release builds.
-You have to configure your xcode project to use automatic code signing, and on the release configuration specify the `$()` match env variable.
+You have to configure your Xcode project to use automatic code signing, and on the release configuration specify the `$()` match env variable.
 
 e.g: 
 <img src="/img/codesigning/auto_signing.png" width=500 />
@@ -96,4 +91,4 @@ You can always download the certificate (`.cer`) and provisioning profile (`.mob
 - [Setting up your Xcode Project](xcode-project.md)
 - [Debugging codesigning issues](troubleshooting.md)
 - [Common code signing issues](common-issues.md)
-- [Upgrading to Xcode 8](xcode-project.md#xcode-8-and-up)
+- [Upgrading to Xcode 9](xcode-project.md#xcode-9-and-up)
