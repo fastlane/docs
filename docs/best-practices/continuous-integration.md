@@ -49,6 +49,7 @@ To store the password in the Keychain of your remote machine, it is recommended 
 ## Plugins
 
 You'll find the following Jenkins plugins to be useful:
+
 (note: We do not recommend installing the Xcode plugin)
 
 - **[HTML Publisher Plugin](https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin):** Can be used to show the generated screenshots right inside Jenkins.
