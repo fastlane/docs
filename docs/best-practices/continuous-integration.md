@@ -77,6 +77,11 @@ Under the hood `setup_jenkins` configures other actions like: _gym_, _scan_, `xc
 
 You can use `commit_version_bump` or `git_commit` action to commit changes to your repository in your fastlane setup. When you are using webhooks to trigger your build on a push this will cause an infinite loop of triggering builds.
 
+#### Gitlab
+
+When you are using Gitlab you will need the [GitLab Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin). Inside the job you want to configure you go to `Build Triggers > Build when a change is pushed to GitLab > Enable [ci-skip]`.
+When you include `[ci-skip]` in your build this commit won't trigger the build in jenkins at all.
+
 **Example**  
 ```ruby
 build_number = increment_build_number
