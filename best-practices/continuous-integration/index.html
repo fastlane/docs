@@ -263,6 +263,10 @@
       
     
       
+      <li class="toctree-l3"><a href="#travis-integration">Travis Integration</a></li>
+      
+    
+      
       <li class="toctree-l3"><a href="#bamboo-integration">Bamboo Integration</a></li>
       
     
@@ -392,7 +396,7 @@
 <h3 id="commit_version_bump-git_commit"><a name="user-content-commit_version_bump-git_commit" href="#commit_version_bump-git_commit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>commit_version_bump || git_commit</h3>
 <p>You can use <code>commit_version_bump</code> or <code>git_commit</code> action to commit changes to your repository in your fastlane setup. When you are using webhooks to trigger your build on a push this will cause an infinite loop of triggering builds.</p>
 <h4 id="gitlab"><a name="user-content-gitlab" href="#gitlab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gitlab</h4>
-<p>When you are using Gitlab you will need the <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin">GitLab Plugin</a>. Inside the job you want to configure you go to <code>Build Triggers &gt; Build when a change is pushed to GitLab &gt; Enable [ci-skip]</code>. 
+<p>When you are using Gitlab you will need the <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin">GitLab Plugin</a>. Inside the job you want to configure you go to <code>Build Triggers &gt; Build when a change is pushed to GitLab &gt; Enable [ci-skip]</code>.
 When you include <code>[ci-skip]</code> in your build this commit won't trigger the build in jenkins at all.</p>
 <p><strong>Example</strong>  </p>
 <pre><code class="ruby">build_number = increment_build_number
@@ -444,6 +448,23 @@ test:
 </code></pre>
 
 <p>This will automatically cache the installed gems on Circle, making your CI builds much faster!</p>
+<h1 id="travis-integration"><a name="user-content-travis-integration" href="#travis-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Travis Integration</h1>
+<p>Update your <code>.travis.yml</code> to look like this:</p>
+<pre><code class="yml">language: objective-c
+osx_image: xcode8.3
+install:
+- bundle install
+script:
+- fastlane beta
+</code></pre>
+
+<p>The above config files assume you have a <code>Gemfile</code> set up, if you don't have one yet, make sure to follow our <a href="https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile">Gemfile guide</a> and run <code>bundle update</code> to make sure you're using the most recent <em>fastlane</em> release.</p>
+<p>Replace <code>beta</code> with the lane you want to run for your setup. If you want to build, sign and distribute builds from Travis, you'll need to add one more action to your <code>Fastfile</code>, as by default, the Travis keychain is locked.</p>
+<p>At the top of your <code>Fastfile</code>, add</p>
+<pre><code class="ruby">setup_travis
+</code></pre>
+
+<p>which will setup the keychain to work well with <em>match</em> and <em>gym</em>. This action will also enable the <code>readonly</code> mode for <em>match</em>, so your CI doesn't create new certificates or provisioning profiles.</p>
 <h1 id="bamboo-integration"><a name="user-content-bamboo-integration" href="#bamboo-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bamboo Integration</h1>
 <h2 id="repository-setup"><a name="user-content-repository-setup" href="#repository-setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repository setup</h2>
 <p>In bamboo under <strong>Linked Repositories</strong> (where you configure your git repo) under <strong>Advanced Settings</strong> is an option called <strong>Exclude changesets</strong></p>
