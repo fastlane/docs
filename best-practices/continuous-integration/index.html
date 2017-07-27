@@ -367,6 +367,9 @@
 </code></pre>
 
 <p>To store the password in the Keychain of your remote machine, it is recommended that you run <em>match</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
+<h2 id="ruby-environment"><a name="user-content-ruby-environment" href="#ruby-environment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ruby Environment</h2>
+<p>We recommend using <a href="https://github.com/rbenv/rbenv">rbenv</a> for installing Ruby, though <a href="https://rvm.io/">rvm</a> and the version of Ruby that comes bundled on macOS are fine too.</p>
+<p>If using a Gemfile in your project, add an "Execute shell" step as your first build step and call <code>bundle update</code>.</p>
 <h2 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h2>
 <p>You'll find the following Jenkins plugins to be useful:</p>
 <p>(note: We do not recommend installing the Xcode plugin)</p>
@@ -382,6 +385,7 @@
 </code></pre>
 
 <p>Replace <code>appstore</code> with the lane you want to use.</p>
+<p>(note: if using a Gemfile, prefix that command with <code>bundle exec</code>)</p>
 <h3 id="setup_jenkins"><a name="user-content-setup_jenkins" href="#setup_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_jenkins</h3>
 <p>You can use <code>setup_jenkins</code> action which integrates well with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>. Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the <code>./output</code> folder in the job workspace. In additions <code>setup_jenkins</code> will create separate derived data folder for each job (in the <code>./derivedData</code>).</p>
 <p>Under the hood <code>setup_jenkins</code> configures other actions like: <em>gym</em>, <em>scan</em>, <code>xcodebuild</code>, <code>backup_xcarchive</code> and <code>clear_derived_data</code>.</p>
