@@ -192,7 +192,7 @@
       
     
       
-      <li class="toctree-l3"><a href="#xcode-8-and-up">Xcode 8 and up</a></li>
+      <li class="toctree-l3"><a href="#xcode-8">Xcode 8</a></li>
       
     
       
@@ -327,8 +327,8 @@
               
                 <h1 id="setting-up-your-xcode-project"><a name="user-content-setting-up-your-xcode-project" href="#setting-up-your-xcode-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up your Xcode Project</h1>
 <h1 id="xcode-9-and-up"><a name="user-content-xcode-9-and-up" href="#xcode-9-and-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 9 and up</h1>
-<p>Additionally to the instructions of Xcode 8, you can now also explictly define what provisioning profile to use for which target. <em>fastlane</em> will automatically detect those settings if you use <em>match</em>, or will try to fetch it from your Xcode project if possible. </p>
-<p>If you don't use <em>match</em>, we recommend defining what provisioning profiles to use in your <code>Fastfile</code>:</p>
+<p>In most cases, <em>fastlane</em> will work out of the box with Xcode 9 if you selected manual code signing, and chose a provisioning profile name for each of your targets (<a href="#xcode-8">see Xcode 8 section</a>).</p>
+<p>If you don't use <em>match</em>, we recommend defining a mapping of app target to provisioning profile in your <code>Fastfile</code>. By defining those profiles, you can guarantee reproducible builds every time you run it.</p>
 <pre><code class="ruby">lane :beta do
   gym(
     export_method: &quot;app-store&quot;,
@@ -342,7 +342,7 @@
 end
 </code></pre>
 
-<h1 id="xcode-8-and-up"><a name="user-content-xcode-8-and-up" href="#xcode-8-and-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8 and up</h1>
+<h1 id="xcode-8"><a name="user-content-xcode-8" href="#xcode-8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8</h1>
 <p>With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)</p>
 <p>You can now specify which provisioning profile to use in the <code>General</code> tab after disabling <code>Automatically manage signing</code>.</p>
 <p><img src="/img/codesigning/ProvisioningProfileSelectionNew.png" width=500 /></p>

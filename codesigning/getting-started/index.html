@@ -346,17 +346,11 @@ end
 <h2 id="using-xcodes-code-signing-feature"><a name="user-content-using-xcodes-code-signing-feature" href="#using-xcodes-code-signing-feature" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Xcode's code signing feature</h2>
 <p>Occasionally the <code>Automatic</code> setting as the provisioning profile doesn't work reliably as it will just select the most recently updated provisioning profile, no matter if the certificate is installed. </p>
 <p>That's why it is recommended to specify a specific provisioning profile somehow:</p>
-<h4 id="xcode-8-and-up"><a name="user-content-xcode-8-and-up" href="#xcode-8-and-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8 and up</h4>
-<p>Apple improved code signing a lot with the release of Xcode 8, the following has changed:</p>
-<ul>
-<li>No more <code>Fix Issue</code> button, instead all code signing processes run in the background and show the log right in Xcode</li>
-<li>You can now specify the provisioning profile by name, instead of the UUID (Check out <a href="../xcode-project/">Setting up your Xcode Project</a> for more information)</li>
-<li>Improved error messages when something goes wrong. If you run into code signing errors you should always try building and signing with Xcode to get more detailed error information. (Check out <a href="../troubleshooting/">Debugging codesigning issues</a> for more information)</li>
-<li>Improved Automatic Provisioning that can create per-machine development private keys, certificates, and provisioning profiles. (Check out <a href="../xcode-project/">Setting up your Xcode Project</a> for more information)</li>
-</ul>
+<h4 id="xcode-8-and-xcode-9"><a name="user-content-xcode-8-and-xcode-9" href="#xcode-8-and-xcode-9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8 and Xcode 9</h4>
+<p>The instructions below are more advanced, and take more time to setup than other approaches.</p>
 <h5 id="automatic-manual-signing"><a name="user-content-automatic-manual-signing" href="#automatic-manual-signing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatic &amp; Manual Signing</h5>
 <p>To simplify development workflow you could use <code>Automatic</code> code signing for development, and <code>Manual</code> for release builds.
-You have to configure your xcode project to use automatic code signing, and on the release configuration specify the <code>$()</code> match env variable.</p>
+You have to configure your Xcode project to use automatic code signing, and on the release configuration specify the <code>$()</code> match env variable.</p>
 <p>e.g: 
 <img src="/img/codesigning/auto_signing.png" width=500 /></p>
 <p>in your Fastfile you then use a lane like this:</p>
@@ -382,7 +376,7 @@ end
 <li><a href="../xcode-project/">Setting up your Xcode Project</a></li>
 <li><a href="../troubleshooting/">Debugging codesigning issues</a></li>
 <li><a href="../common-issues/">Common code signing issues</a></li>
-<li><a href="../xcode-project/#xcode-8-and-up">Upgrading to Xcode 8</a></li>
+<li><a href="../xcode-project/#xcode-9-and-up">Upgrading to Xcode 9</a></li>
 </ul>
               
             </div>
