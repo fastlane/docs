@@ -369,6 +369,7 @@
 <p>To store the password in the Keychain of your remote machine, it is recommended that you run <em>match</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
 <h2 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h2>
 <p>You'll find the following Jenkins plugins to be useful:</p>
+<p>(note: We do not recommend installing the Xcode plugin)</p>
 <ul>
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin">HTML Publisher Plugin</a>:</strong> Can be used to show the generated screenshots right inside Jenkins.</li>
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin">AnsiColor Plugin</a>:</strong> Used to show the coloured output of the fastlane tools. Don’t forget to enable <code>Color ANSI Console Output</code> in the <code>Build Environment</code> or your project.</li>
@@ -376,7 +377,7 @@
 <li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>:</strong> Manages keychains across Jenkins installations.</li>
 </ul>
 <h2 id="build-step"><a name="user-content-build-step" href="#build-step" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build Step</h2>
-<p>Use the following as your build step:</p>
+<p>Add an "Execute shell" build step using your appropriate <em>fastlane</em> command per the example below:</p>
 <pre><code class="no-highlight">fastlane appstore
 </code></pre>
 
