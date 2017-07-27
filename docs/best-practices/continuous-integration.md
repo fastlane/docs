@@ -46,6 +46,11 @@ jenkins
 
 To store the password in the Keychain of your remote machine, it is recommended that you run _match_ or _deliver_ using ssh or remote desktop at least once.
 
+## Ruby Environment
+We recommend using [rbenv](https://github.com/rbenv/rbenv) for installing Ruby, though [rvm](https://rvm.io/) and the version of Ruby that comes bundled on macOS are fine too.
+
+If using a Gemfile in your project, add an "Execute shell" step as your first build step and call `bundle update`.
+
 ## Plugins
 
 You'll find the following Jenkins plugins to be useful:
@@ -66,6 +71,8 @@ fastlane appstore
 ```
 
 Replace `appstore` with the lane you want to use.
+
+(note: if using a Gemfile, prefix that command with `bundle exec`)
 
 ### setup_jenkins
 
