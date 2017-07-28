@@ -12,7 +12,7 @@
     {% endif %}
     {% if current_page %}<li>{{ current_page.title }}</li>{% endif %}
 
-    {% if current_page %}
+    {% if current_page and current_page.input_path != "actions.md" and current_page.input_path != "plugins/available-plugins.md" %}
       <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/fastlane/docs/edit/master/docs/{{ current_page.input_path }}" class="icon icon-github" target="_blank">
           Edit on GitHub
