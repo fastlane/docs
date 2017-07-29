@@ -6799,10 +6799,10 @@ Key | Description
   `dark` | Adds a dark flavored badge ontop of your icon
   `custom` | Add your custom overlay/badge image
   `no_badge` | Hides the beta badge
-  `shield` | Add a shield to your app icon from shield.io
+  `shield` | Add a shield to your app icon from shields.io
   `alpha` | Adds and alpha badge instead of the default beta one
   `path` | Sets the root path to look for AppIcons
-  `shield_io_timeout` | Set custom duration for the timeout of the shield.io request in seconds
+  `shield_io_timeout` | Set custom duration for the timeout of the shields.io request in seconds
   `glob` | Glob pattern for finding image files
   `alpha_channel` | Keeps/adds an alpha channel to the icon (useful for android icons)
   `shield_gravity` | Position of shield on icon. Default: North - Choices include: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast
