@@ -15,6 +15,8 @@ You can import another `Fastfile` by using the `import` action. This is useful i
 import './path/to/other/Fastfile'
 ```
 
+For _fastlane_ plugins, check out the [available plugins](https://docs.fastlane.tools/plugins/available-plugins) page.
+
 - [Testing](#testing)
 - [Building](#building)
 - [Screenshots](#screenshots)
@@ -31,8 +33,12 @@ import './path/to/other/Fastfile'
 - [Plugins](https://docs.fastlane.tools/plugins/available-plugins)
 
 
-
 # Testing
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### scan
 
@@ -137,10 +143,12 @@ Key | Description
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### slather
 
@@ -208,10 +216,12 @@ Key | Description
   `decimals` | The amount of decimals to use for % coverage reporting
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### swiftlint
 
@@ -264,10 +274,12 @@ Key | Description
   `executable` | Path to the `swiftlint` executable on your machine
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### xcov
 
@@ -302,7 +314,7 @@ xcov(
 
 
 
-
+<div class='action'>
 
 ### sonar
 
@@ -353,10 +365,12 @@ Key | Description
   `sonar_login` | Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### oclint
 
@@ -430,10 +444,12 @@ Key | Description
   `allow_duplicated_violations` | Allow duplicated violations in the OCLint report
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### gcovr
 
@@ -467,7 +483,7 @@ gcovr(
 
 
 
-
+<div class='action'>
 
 ### lcov
 
@@ -510,10 +526,12 @@ Key | Description
   `output_dir` | The output directory that coverage data will be stored. If not passed will use coverage_reports as default value
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### appium
 
@@ -564,10 +582,12 @@ Key | Description
   `caps` | Hash of caps for Appium::Driver
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### xctool
 
@@ -608,7 +628,7 @@ xctool :test, [
 
 
 
-
+<div class='action'>
 
 ### xcode_server_get_assets
 
@@ -658,13 +678,20 @@ Key | Description
   `trust_self_signed_certs` | Whether to trust self-signed certs on your Xcode Server
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Building
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### gym
 
@@ -749,10 +776,12 @@ Key | Description
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### cocoapods
 
@@ -803,10 +832,12 @@ Key | Description
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### gradle
 
@@ -893,10 +924,12 @@ Key | Description
   `print_command_output` | Control whether the output produced by given Gradle command is printed while running (true/false)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### clear_derived_data
 
@@ -936,10 +969,12 @@ Key | Description
   `derived_data_path` | Custom path for derivedData
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### adb
 
@@ -980,10 +1015,12 @@ Key | Description
   `adb_path` | The path to your `adb` binary
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### xcversion
 
@@ -1023,10 +1060,12 @@ Key | Description
   `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0')
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### xcodebuild
 
@@ -1061,7 +1100,7 @@ xcodebuild(
 
 
 
-
+<div class='action'>
 
 ### carthage
 
@@ -1131,10 +1170,12 @@ Key | Description
   `project_directory` | Define the directory containing the Carthage project
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### xcode_select
 
@@ -1164,7 +1205,7 @@ xcode_select "/Applications/Xcode-8.3.2.app"
 
 
 
-
+<div class='action'>
 
 ### ensure_xcode_version
 
@@ -1201,10 +1242,12 @@ Key | Description
   `version` | Xcode version to verify that is selected
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### clean_cocoapods_cache
 
@@ -1244,10 +1287,12 @@ Key | Description
   `name` | Pod name to be removed from cache
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### verify_xcode
 
@@ -1289,10 +1334,12 @@ Key | Description
   `xcode_path` | The path to the Xcode installation to test
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### xcode_install
 
@@ -1331,10 +1378,12 @@ Key | Description
   `team_id` | The ID of your team if you're in multiple teams
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### verify_pod_keys
 
@@ -1364,7 +1413,7 @@ verify_pod_keys
 
 
 
-
+<div class='action'>
 
 ### xctest
 
@@ -1396,67 +1445,7 @@ xctest(
 
 
 
-
-
-### xcexport
-
-Exports the project using `xcodebuild`
-
-
-
-
-
-xcexport | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcexport
-```
-
-
-</details>
-
-
-
-
-
-
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
-```
-
-
-</details>
-
-
-
-
-
+<div class='action'>
 
 ### xcarchive
 
@@ -1486,7 +1475,7 @@ xcarchive
 
 
 
-
+<div class='action'>
 
 ### xcbuild
 
@@ -1516,10 +1505,75 @@ xcbuild
 
 
 
+<div class='action'>
 
+### xcexport
+
+Exports the project using `xcodebuild`
+
+
+
+
+
+xcexport | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcexport
+```
+
+
+</details>
+
+
+
+
+<div class='action'>
+
+### xcclean
+
+Cleans the project using `xcodebuild`
+
+
+
+
+
+xcclean | 
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcclean
+```
+
+
+</details>
+
+
+
+
+</div>
 
 
 # Screenshots
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### snapshot
 
@@ -1590,10 +1644,12 @@ Key | Description
   `namespace_log_files` | Separate the log files per device and per language
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### screengrab
 
@@ -1656,10 +1712,12 @@ Key | Description
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### frameit
 
@@ -1715,13 +1773,20 @@ Key | Description
   `path` | The path to the directory containing the screenshots
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Project
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### increment_build_number
 
@@ -1776,10 +1841,12 @@ Key | Description
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### set_info_plist_value
 
@@ -1822,10 +1889,12 @@ Key | Description
   `path` | Path to plist file you want to update
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### get_version_number
 
@@ -1866,10 +1935,12 @@ Key | Description
   `target` | Specify a specific target if you have multiple per project, optional
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### get_info_plist_value
 
@@ -1906,10 +1977,12 @@ Key | Description
   `path` | Path to plist file you want to read
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_info_plist
 
@@ -1986,10 +2059,12 @@ Key | Description
   `block` | A block to process plist with custom logic
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_app_identifier
 
@@ -2031,10 +2106,12 @@ Key | Description
   `app_identifier` | The app Identifier you want to set
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### get_build_number
 
@@ -2070,10 +2147,12 @@ Key | Description
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### increment_version_number
 
@@ -2149,10 +2228,12 @@ Key | Description
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_project_team
 
@@ -2192,10 +2273,12 @@ Key | Description
   `teamid` | The Team ID you want to use
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_app_group_identifiers
 
@@ -2235,10 +2318,12 @@ Key | Description
   `app_group_identifiers` | An Array of unique identifiers for the app groups. Eg. ['group.com.test.testapp']
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### get_ipa_info_plist_value
 
@@ -2276,10 +2361,12 @@ Key | Description
   `ipa` | Path to IPA
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### recreate_schemes
 
@@ -2315,10 +2402,12 @@ Key | Description
   `project` | The Xcode project
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_url_schemes
 
@@ -2360,10 +2449,12 @@ Key | Description
   `url_schemes` | The new URL schemes
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### set_build_number_repository
 
@@ -2408,10 +2499,12 @@ Key | Description
   `xcodeproj` | explicitly specify which xcodeproj to use
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### set_pod_key
 
@@ -2454,13 +2547,20 @@ Key | Description
   `project` | The project name
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Code Signing
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### sigh
 
@@ -2521,10 +2621,12 @@ Key | Description
   `platform` | Set the provisioning profile's platform (i.e. ios, tvos)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### match
 
@@ -2587,10 +2689,12 @@ Key | Description
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### cert
 
@@ -2642,10 +2746,12 @@ Key | Description
   `platform` | Set the provisioning profile's platform (ios, macos)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### import_certificate
 
@@ -2692,10 +2798,12 @@ Key | Description
   `log_output` | If output should be logged to the console
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_project_provisioning
 
@@ -2747,10 +2855,12 @@ Key | Description
   `certificate` | Path to apple root certificate
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### resign
 
@@ -2821,10 +2931,12 @@ and combine with entitlements from new provisionin profile
   `keychain_path` | Provide a path to a keychain file that should be used by /usr/bin/codesign
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### register_devices
 
@@ -2885,10 +2997,12 @@ Key | Description
   `username` | Optional: Your Apple ID
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### automatic_code_signing
 
@@ -2979,10 +3093,12 @@ Key | Description
   `targets` | Specify targets you want to toggle the signing mech. (default to all targets)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### register_device
 
@@ -3036,13 +3152,20 @@ Key | Description
   `username` | Optional: Your Apple ID
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Documentation
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### jazzy
 
@@ -3078,10 +3201,12 @@ Key | Description
   `config` | Path to jazzy config file
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### appledoc
 
@@ -3170,13 +3295,20 @@ Key | Description
   `verbose` | Log verbosity level [0-6,xcode]
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Beta
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### pilot
 
@@ -3250,10 +3382,12 @@ Key | Description
   `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### crashlytics
 
@@ -3309,10 +3443,12 @@ Key | Description
   `debug` | Crashlytics debug option (true/false)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### hockey
 
@@ -3389,10 +3525,12 @@ Key | Description
   `dsa_signature` | DSA signature for sparkle updates for macOS
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### testflight
 
@@ -3465,10 +3603,12 @@ Key | Description
   `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### deploygate
 
@@ -3528,10 +3668,12 @@ Key | Description
   `disable_notify` | Disables Push notification emails
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### apteligent
 
@@ -3572,10 +3714,12 @@ Key | Description
   `api_key` | Apteligent App API key e.g. IXPQIi8yCbHaLliqzRoo065tH0lxxxxx
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### appetize
 
@@ -3621,10 +3765,12 @@ Key | Description
   `note` | Notes you wish to add to the uploaded app
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### testfairy
 
@@ -3673,10 +3819,12 @@ Key | Description
   `options` | Array of options (shake,video_only_wifi,anonymous)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### appaloosa
 
@@ -3739,10 +3887,12 @@ Key | Description
   `description` | Your app description
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### nexus_upload
 
@@ -3803,10 +3953,12 @@ Key | Description
   `proxy_port` | Proxy port
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### installr
 
@@ -3852,10 +4004,12 @@ Key | Description
   `add` | Groups to add (e.g. 'exec,ops')
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### set_changelog
 
@@ -3897,10 +4051,12 @@ Key | Description
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### splunkmint
 
@@ -3948,10 +4104,12 @@ Key | Description
   `proxy_port` | Proxy port
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### podio_item
 
@@ -4003,13 +4161,20 @@ Key | Description
   `other_fields` | Dictionary of your app fields. Podio supports several field types, see https://developers.podio.com/doc/items
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Push
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### pem
 
@@ -4075,10 +4240,12 @@ Key | Description
   `new_profile` | Block that is called if there is a new profile
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_urban_airship_configuration
 
@@ -4123,10 +4290,12 @@ Key | Description
   `detect_provisioning_mode` | Automatically detect provisioning mode
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### onesignal
 
@@ -4174,13 +4343,20 @@ Key | Description
   `apns_env` | APNS environment
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Releasing your app
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### deliver
 
@@ -4273,10 +4449,12 @@ Key | Description
   `marketing_url` | Metadata: Localised marketing url
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### supply
 
@@ -4331,10 +4509,12 @@ Key | Description
   `check_superseded_tracks` | Check the other tracks for superseded versions and disable them
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### appstore
 
@@ -4422,13 +4602,20 @@ Key | Description
   `marketing_url` | Metadata: Localised marketing url
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Source Control
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### ensure_git_status_clean
 
@@ -4468,10 +4655,12 @@ Key | Description
   `show_uncommitted_changes` | The flag whether to show uncommitted changes if the repo is dirty
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### git_branch
 
@@ -4501,7 +4690,7 @@ git_branch
 
 
 
-
+<div class='action'>
 
 ### last_git_commit
 
@@ -4536,7 +4725,7 @@ short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 
 
 
-
+<div class='action'>
 
 ### reset_git_repo
 
@@ -4593,10 +4782,12 @@ Key | Description
   `exclude` | You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk, e.g. to leave the `artifacts` directory you would specify `exclude: 'artifacts'`. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### changelog_from_git_commits
 
@@ -4644,6 +4835,7 @@ Key | Description
   `commits_count` | Number of commits to include in changelog, you mustn't use it with :between key at the same time
   `pretty` | The format applied to each commit while generating the collected value
   `date_format` | The date format applied to each commit while generating the collected value
+  `ancestry_path` | Whether or not to use ancestry-path param
   `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag
   `match_lightweight_tag` | Whether or not to match a lightweight tag when searching for the last one
   `include_merges` | Whether or not to include any commits that are merges
@@ -4652,10 +4844,12 @@ Key | Description
 Valid values: 'include_merges', 'exclude_merges', 'only_include_merges'
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### number_of_commits
 
@@ -4697,10 +4891,12 @@ Key | Description
   `all` | Returns number of all commits instead of current branch
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### git_pull
 
@@ -4740,10 +4936,12 @@ Key | Description
   `only_tags` | Simply pull the tags, and not bring new commits to the current branch from the remote
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### last_git_tag
 
@@ -4773,7 +4971,7 @@ last_git_tag
 
 
 
-
+<div class='action'>
 
 ### push_to_git_remote
 
@@ -4823,10 +5021,12 @@ Key | Description
   `remote` | The remote to push to. Defaults to `origin`
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### add_git_tag
 
@@ -4889,10 +5089,12 @@ Key | Description
   `sign` | Make a GPG-signed tag, using the default e-mail address's key
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### commit_version_bump
 
@@ -4963,10 +5165,12 @@ Key | Description
   `ignore` | A regular expression used to filter matched plist files to be modified
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### git_tag_exists
 
@@ -5005,10 +5209,12 @@ Key | Description
   `tag` | The tag name that should be checked
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### ensure_git_branch
 
@@ -5052,10 +5258,12 @@ Key | Description
   `branch` | The branch that should be checked for. String that can be either the full name of the branch or a regex to match
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### git_commit
 
@@ -5073,7 +5281,7 @@ Author | @KrauseFx
 
 
 <details>
-<summary>2 Examples</summary>
+<summary>3 Examples</summary>
 
 ```ruby
 git_commit(path: "./version.txt", message: "Version Bump")
@@ -5081,6 +5289,10 @@ git_commit(path: "./version.txt", message: "Version Bump")
 
 ```ruby
 git_commit(path: ["./version.txt", "./changelog.txt"], message: "Version Bump")
+```
+
+```ruby
+git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
 ```
 
 
@@ -5096,10 +5308,12 @@ Key | Description
   `message` | The commit message that should be used
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### push_git_tags
 
@@ -5136,10 +5350,12 @@ Key | Description
   `remote` | The remote to push tags to
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### git_add
 
@@ -5192,10 +5408,12 @@ Key | Description
   `pathspec` | The pathspec you want to add files from
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### get_build_number_repository
 
@@ -5234,10 +5452,76 @@ Key | Description
   `use_hg_revision_number` | Use hg revision number instead of hash (ignored for non-hg repos)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
+
+### set_github_release
+
+This will create a new release on GitHub and upload assets for it
+
+
+
+> Creates a new release on GitHub. You must provide your GitHub Personal token
+        (get one from https://github.com/settings/tokens/new), the repository name
+        and tag name. By default that's 'master'. If the tag doesn't exist, one will be created on the commit or branch passed-in as
+        commitish. Out parameters provide the release's id, which can be used for later editing and the
+        release html link to GitHub. You can also specify a list of assets to be uploaded to the release with the upload_assets parameter.
+
+set_github_release | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @czechboy0, @tommeier
+Returns | A hash containing all relevant information of this release
+Access things like 'html_url', 'tag_name', 'name', 'body'
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+github_release = set_github_release(
+  repository_name: "fastlane/fastlane",
+  api_token: ENV["GITHUB_TOKEN"],
+  name: "Super New actions",
+  tag_name: "v1.22.0",
+  description: (File.read("changelog") rescue "No changelog provided"),
+  commitish: "master",
+  upload_assets: ["example_integration.ipa", "./pkg/built.gem"]
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `repository_name` | The path to your repo, e.g. 'fastlane/fastlane'
+  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
+  `tag_name` | Pass in the tag name
+  `name` | Name of this release
+  `commitish` | Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually master)
+  `description` | Description of this release
+  `is_draft` | Whether the release should be marked as draft
+  `is_prerelease` | Whether the release should be marked as prerelease
+  `upload_assets` | Path to assets to be uploaded with the release
+
+</details>
+</div>
+
+
+
+
+<div class='action'>
 
 ### create_pull_request
 
@@ -5250,7 +5534,8 @@ This will create a new pull request on GitHub
 create_pull_request | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @seei
+Author | @seei, @tommeier
+Returns | The parsed JSON when successful
 
 
 
@@ -5287,10 +5572,12 @@ Key | Description
   `api_url` | The URL of Github API - used when the Enterprise (default to `https://api.github.com`)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### get_github_release
 
@@ -5339,7 +5626,7 @@ This will verify if a given release version is available on GitHub
 get_github_release | 
 -----|----
 Supported platforms | ios, android, mac
-Author | @KrauseFx, @czechboy0, @jaleksynas
+Author | @KrauseFx, @czechboy0, @jaleksynas, @tommeier
 
 
 
@@ -5366,10 +5653,12 @@ Key | Description
   `api_token` | GitHub Personal Token (required for private repositories)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### hg_ensure_clean_status
 
@@ -5399,7 +5688,7 @@ hg_ensure_clean_status
 
 
 
-
+<div class='action'>
 
 ### hg_commit_version_bump
 
@@ -5452,10 +5741,12 @@ Key | Description
   `test_expected_files` | A list of expected changed files passed in for testing
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### hg_push
 
@@ -5499,10 +5790,12 @@ Key | Description
   `destination` | The destination to push to
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### hg_add_tag
 
@@ -5538,13 +5831,159 @@ Key | Description
   `tag` | Tag to create
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
+
+### github_api
+
+Call a GitHub API endpoint and get the resulting JSON response
+
+
+
+> Calls any GitHub API endpoint. You must provide your GitHub Personal token (get one from https://github.com/settings/tokens/new).
+          Out parameters provide the status code and the full response JSON if valid, otherwise the raw response body.
+          Documentation: https://developer.github.com/v3
+
+github_api | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @tommeier
+Returns | A hash including the HTTP status code (:status), the response body (:body), and if valid JSON has been returned the parsed JSON (:json).
+
+
+
+<details>
+<summary>2 Examples</summary>
+
+```ruby
+result = github_api(
+  server_url: "https://api.github.com",
+  api_token: ENV["GITHUB_TOKEN"],
+  http_method: "GET",
+  path: "/repos/:owner/:repo/readme",
+  body: { ref: "master" }
+)
+```
+
+```ruby
+# Alternatively call directly with optional error handling or block usage
+  GithubApiAction.run(
+    server_url: "https://api.github.com",
+    api_token: ENV["GITHUB_TOKEN"],
+    http_method: "GET",
+    path: "/repos/:owner/:repo/readme",
+    error_handlers: {
+      404 => proc do |result|
+        UI.message("Something went wrong - I couldn't find it...")
+      end,
+      '*' => proc do |result|
+        UI.message("Handle all error codes other than 404")
+      end
+    }
+  ) do |result|
+    UI.message("JSON returned: #{result[:json]}")
+  end
+
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
+  `http_method` | The HTTP method. e.g. GET / POST
+  `body` | The request body in JSON or hash format
+  `raw_body` | The request body taken vertabim instead of as JSON, useful for file uploads
+  `path` | The endpoint path. e.g. '/repos/:owner/:repo/readme'
+  `url` | The complete full url - used instead of path. e.g. 'https://uploads.github.com/repos/fastlane...'
+  `error_handlers` | Optional error handling hash based on status code, or pass '*' to handle all errors
+  `headers` | Optional headers to apply
+  `secure` | Optionally disable secure requests (ssl_verify_peer)
+
+</details>
+</div>
+
+
+
+
+<div class='action'>
+
+### commit_github_file
+
+This will commit a file directly on GitHub via the API
+
+
+
+> Commits a file directly to GitHub. You must provide your GitHub Personal token
+        (get one from https://github.com/settings/tokens/new), the repository name and the relative file path from the root git project.
+        Out parameters provide the commit sha created, which can be used for later usage for examples such as releases, the direct download link and the full response JSON.
+        Documentation: https://developer.github.com/v3/repos/contents/#create-a-file
+
+commit_github_file | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @tommeier
+Returns | A hash containing all relevant information for this commit
+Access things like 'html_url', 'sha', 'message'
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+response = commit_github_file(
+  repository_name: "fastlane/fastlane",
+  server_url: "https://api.github.com",
+  api_token: ENV["GITHUB_TOKEN"],
+  message: "Add my new file",
+  branch: "master",
+  path: "assets/my_new_file.xcarchive"
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `repository_name` | The path to your repo, e.g. 'fastlane/fastlane'
+  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
+  `branch` | The branch that the file should be committed on (default: master)
+  `path` | The relative path to your file from project root e.g. assets/my_app.xcarchive
+  `message` | The commit message. Defaults to the file name
+  `secure` | Optionally disable secure requests (ssl_verify_peer)
+
+</details>
+</div>
+
+
+
+
+</div>
 
 
 # Notifications
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### slack
 
@@ -5612,10 +6051,12 @@ Key | Description
   `success` | Was this build successful? (true/false)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### notification
 
@@ -5659,10 +6100,12 @@ Key | Description
   `execute` | Shell command to run when the notification is clicked
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### hipchat
 
@@ -5713,10 +6156,12 @@ Key | Description
   `from` | Name the message will appear to be sent from
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### mailgun
 
@@ -5786,10 +6231,12 @@ Key | Description
   `attachment` | Mail Attachment filenames, either an array or just one string
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### chatwork
 
@@ -5833,10 +6280,12 @@ Key | Description
   `success` | Was this build successful? (true/false)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### ifttt
 
@@ -5882,10 +6331,12 @@ Key | Description
   `value3` | Extra data sent with the event
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### flock
 
@@ -5927,10 +6378,12 @@ Key | Description
   `base_url` | Base URL of the Flock incoming message webhook
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### twitter
 
@@ -5976,10 +6429,12 @@ Key | Description
   `message` | The tweet
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### typetalk
 
@@ -6015,10 +6470,15 @@ typetalk(
 
 
 
-
+</div>
 
 
 # Deprecated
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### s3
 
@@ -6085,10 +6545,12 @@ Key | Description
   `acl` | Uploaded object permissions e.g public_read (default), private, public_read_write, authenticated_read 
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### notify
 
@@ -6109,7 +6571,7 @@ Author | @champo, @KrauseFx
 
 
 
-
+<div class='action'>
 
 ### update_project_code_signing
 
@@ -6140,10 +6602,12 @@ Key | Description
   `uuid` | The UUID of the provisioning profile you want to use
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### ipa
 
@@ -6207,10 +6671,12 @@ Key | Description
   `xcargs` | Pass additional arguments to xcodebuild when building the app. Be sure to quote multiple args
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### upload_symbols_to_sentry
 
@@ -6260,13 +6726,20 @@ Key | Description
   `dsym_paths` | Path to an array of your symbols file. For iOS and Mac provide path to app.dSYM.zip
 
 </details>
+</div>
 
 
 
 
+</div>
 
 
 # Misc
+
+<div class='category-actions'>
+
+
+<div class='action'>
 
 ### puts
 
@@ -6296,7 +6769,7 @@ puts "Hi there"
 
 
 
-
+<div class='action'>
 
 ### default_platform
 
@@ -6326,7 +6799,7 @@ default_platform :android
 
 
 
-
+<div class='action'>
 
 ### fastlane_version
 
@@ -6357,7 +6830,7 @@ fastlane_version "1.50.0"
 
 
 
-
+<div class='action'>
 
 ### lane_context
 
@@ -6378,7 +6851,7 @@ Author | @KrauseFx
 
 
 
-
+<div class='action'>
 
 ### import
 
@@ -6409,7 +6882,7 @@ import "./path/to/other/Fastfile"
 
 
 
-
+<div class='action'>
 
 ### import_from_git
 
@@ -6452,10 +6925,12 @@ Key | Description
   `path` | The path of the Fastfile in the repository
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### clean_build_artifacts
 
@@ -6492,10 +6967,12 @@ Key | Description
   `exclude_pattern` | Exclude all files from clearing that match the given Regex pattern: e.g. '.*.mobileprovision'
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### skip_docs
 
@@ -6525,7 +7002,7 @@ skip_docs
 
 
 
-
+<div class='action'>
 
 ### produce
 
@@ -6585,10 +7062,12 @@ Key | Description
   `itc_team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### is_ci
 
@@ -6623,7 +7102,7 @@ end
 
 
 
-
+<div class='action'>
 
 ### setup_jenkins
 
@@ -6676,10 +7155,12 @@ Key | Description
   `result_bundle` | Produce the result bundle describing what occurred will be placed
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### unlock_keychain
 
@@ -6745,10 +7226,12 @@ Key | Description
   `set_default` | Set as default keychain
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### badge
 
@@ -6799,20 +7282,22 @@ Key | Description
   `dark` | Adds a dark flavored badge ontop of your icon
   `custom` | Add your custom overlay/badge image
   `no_badge` | Hides the beta badge
-  `shield` | Add a shield to your app icon from shield.io
+  `shield` | Add a shield to your app icon from shields.io
   `alpha` | Adds and alpha badge instead of the default beta one
   `path` | Sets the root path to look for AppIcons
-  `shield_io_timeout` | Set custom duration for the timeout of the shield.io request in seconds
+  `shield_io_timeout` | Set custom duration for the timeout of the shields.io request in seconds
   `glob` | Glob pattern for finding image files
   `alpha_channel` | Keeps/adds an alpha channel to the icon (useful for android icons)
   `shield_gravity` | Position of shield on icon. Default: North - Choices include: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast
   `shield_no_resize` | Shield image will no longer be resized to aspect fill the full icon. Instead it will only be shrunk to not exceed the icon graphic
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_fastlane
 
@@ -6861,10 +7346,12 @@ Key | Description
   `tools` | [DEPRECATED!] true - Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### precheck
 
@@ -6917,10 +7404,12 @@ Key | Description
   `unreachable_urls` | unreachable URLs in app metadata
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### bundle_install
 
@@ -6964,10 +7453,12 @@ Key | Description
   `with` | Include gems that are part of the specified named group
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### upload_symbols_to_crashlytics
 
@@ -7006,10 +7497,12 @@ Key | Description
   `platform` | The platform of the app (ios, appletvos, mac)
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### create_keychain
 
@@ -7051,7 +7544,7 @@ Key | Description
   `name` | Keychain name
   `path` | Path to keychain
   `password` | Password for the keychain
-  `default_keychain` | Set the default keychain
+  `default_keychain` | Should the newly created Keychain be the new system default keychain
   `unlock` | Unlock keychain after create
   `timeout` | timeout interval in seconds. Set `false` if you want to specify "no time-out"
   `lock_when_sleeps` | Lock keychain when the system sleeps
@@ -7059,10 +7552,12 @@ Key | Description
   `add_to_search_list` | Add keychain to search list
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### delete_keychain
 
@@ -7103,10 +7598,12 @@ Key | Description
   `keychain_path` | Keychain path
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### latest_testflight_build_number
 
@@ -7156,10 +7653,12 @@ Key | Description
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### backup_file
 
@@ -7195,10 +7694,12 @@ Key | Description
   `path` | Path to the file you want to backup
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### copy_artifacts
 
@@ -7246,10 +7747,12 @@ Key | Description
   `fail_on_missing` | Fail when a source file isn't found
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### prompt
 
@@ -7299,10 +7802,12 @@ Key | Description
   `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### reset_simulator_contents
 
@@ -7338,10 +7843,12 @@ Key | Description
   `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### restore_file
 
@@ -7377,10 +7884,12 @@ Key | Description
   `path` | Original file name you want to restore
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### say
 
@@ -7410,7 +7919,7 @@ say "I can speak"
 
 
 
-
+<div class='action'>
 
 ### zip
 
@@ -7464,10 +7973,12 @@ Key | Description
   `verbose` | Enable verbose output of zipped file
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### danger
 
@@ -7521,10 +8032,12 @@ Key | Description
   `head` | A branch/tag/commit to use as the head. [master|dev|stable]
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### artifactory
 
@@ -7579,10 +8092,12 @@ Key | Description
   `proxy_port` | Proxy port
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### download_dsyms
 
@@ -7636,10 +8151,12 @@ Key | Description
   `build_number` | The app build_number for dSYMs you wish to download
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### version_bump_podspec
 
@@ -7685,10 +8202,12 @@ Key | Description
   `version_appendix` | Change version appendix to a specific value. For example 1.4.14.4.1 -> 1.4.14.5
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### team_id
 
@@ -7718,7 +8237,7 @@ team_id "Q2CBPK58CA"
 
 
 
-
+<div class='action'>
 
 ### backup_xcarchive
 
@@ -7762,10 +8281,12 @@ Key | Description
   `versioned` | Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### pod_lib_lint
 
@@ -7823,10 +8344,12 @@ Key | Description
   `quick` | Lint skips checks that would require to download and build the spec
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### erb
 
@@ -7881,10 +8404,12 @@ Key | Description
   `placeholders` | Placeholders given as a hash
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### download
 
@@ -7922,10 +8447,12 @@ Key | Description
   `url` | The URL that should be downloaded
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### rocket
 
@@ -7955,7 +8482,7 @@ rocket
 
 
 
-
+<div class='action'>
 
 ### debug
 
@@ -7985,7 +8512,7 @@ debug
 
 
 
-
+<div class='action'>
 
 ### make_changelog_from_jenkins
 
@@ -8025,72 +8552,12 @@ Key | Description
   `include_commit_body` | Include the commit body along with the summary
 
 </details>
+</div>
 
 
 
 
-
-### set_github_release
-
-This will create a new release on GitHub and upload assets for it
-
-
-
-> Creates a new release on GitHub. You must provide your GitHub Personal token
-        (get one from https://github.com/settings/tokens/new), the repository name
-        and tag name. By default that's 'master'. If the tag doesn't exist, one will be created on the commit or branch passed-in as
-        commitish. Out parameters provide the release's id, which can be used for later editing and the
-        release html link to GitHub. You can also specify a list of assets to be uploaded to the release with the upload_assets parameter.
-
-set_github_release | 
------|----
-Supported platforms | ios, android, mac
-Author | @czechboy0
-Returns | A hash containing all relevant information of this release
-Access things like 'html_url', 'tag_name', 'name', 'body'
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-github_release = set_github_release(
-  repository_name: "fastlane/fastlane",
-  api_token: ENV["GITHUB_TOKEN"],
-  name: "Super New actions",
-  tag_name: "v1.22.0",
-  description: (File.read("changelog") rescue "No changelog provided"),
-  commitish: "master",
-  upload_assets: ["example_integration.ipa", "./pkg/built.gem"]
-)
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `repository_name` | The path to your repo, e.g. 'fastlane/fastlane'
-  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
-  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
-  `tag_name` | Pass in the tag name
-  `name` | Name of this release
-  `commitish` | Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually master)
-  `description` | Description of this release
-  `is_draft` | Whether the release should be marked as draft
-  `is_prerelease` | Whether the release should be marked as prerelease
-  `upload_assets` | Path to assets to be uploaded with the release
-
-</details>
-
-
-
-
+<div class='action'>
 
 ### pod_push
 
@@ -8147,10 +8614,12 @@ Key | Description
   `verbose` | Show more debugging information
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### dsym_zip
 
@@ -8194,10 +8663,12 @@ Key | Description
   `all` | Whether or not all dSYM files are to be included. Optional, default is false in which only your app dSYM is included
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### ensure_no_debug_code
 
@@ -8262,10 +8733,12 @@ Key | Description
   `exclude_dirs` | An array of dirs that should not be included in the search
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### cloc
 
@@ -8310,10 +8783,12 @@ Key | Description
   `xml` | Should we generate an XML File (if false, it will generate a plain text file)?
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### team_name
 
@@ -8343,7 +8818,7 @@ team_name "Felix Krause"
 
 
 
-
+<div class='action'>
 
 ### scp
 
@@ -8402,10 +8877,12 @@ Key | Description
   `download` | Download
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### verify_build
 
@@ -8450,10 +8927,12 @@ Key | Description
   `ipa_path` | Explicitly set the ipa path
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### install_on_device
 
@@ -8495,10 +8974,12 @@ Key | Description
   `ipa` | The IPA file to put on the device
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### version_get_podspec
 
@@ -8534,10 +9015,12 @@ Key | Description
   `path` | You must specify the path to the podspec file
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### rsync
 
@@ -8578,10 +9061,12 @@ Key | Description
   `destination` | destination file/folder
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### adb_devices
 
@@ -8623,10 +9108,12 @@ Key | Description
   `adb_path` | The path to your `adb` binary
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### dotgpg_environment
 
@@ -8662,10 +9149,12 @@ Key | Description
   `dotgpg_file` | Path to your gpg file
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### jira
 
@@ -8711,10 +9200,12 @@ Key | Description
   `comment_text` | Text to add to the ticket as a comment
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### read_podspec
 
@@ -8761,10 +9252,12 @@ Key | Description
   `path` | Path to the podspec to be read
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### ssh
 
@@ -8812,10 +9305,12 @@ Key | Description
   `log` | Log commands and output
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### app_store_build_number
 
@@ -8872,10 +9367,12 @@ Key | Description
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### appetize_viewing_url_generator
 
@@ -8910,10 +9407,12 @@ Key | Description
   `os_version` | The operating system version on which to run your app, e.g. 10.3, 8.0
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### install_xcode_plugin
 
@@ -8926,7 +9425,7 @@ Install an Xcode plugin for the current user
 install_xcode_plugin | 
 -----|----
 Supported platforms | ios, mac
-Author | @NeoNachoSoto
+Author | @NeoNachoSoto, @tommeier
 
 
 
@@ -8954,10 +9453,12 @@ Key | Description
   `github` | GitHub repository URL for Xcode plugin
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### add_extra_platforms
 
@@ -8995,10 +9496,12 @@ Key | Description
   `platforms` | The optional extra platforms to support
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### clipboard
 
@@ -9038,10 +9541,12 @@ Key | Description
   `value` | The string that should be copied into the clipboard
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### build_and_upload_to_appetize
 
@@ -9071,10 +9576,12 @@ Key | Description
   `api_token` | Appetize.io API Token
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### update_icloud_container_identifiers
 
@@ -9114,10 +9621,12 @@ Key | Description
   `icloud_container_identifiers` | An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp']
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### sh
 
@@ -9161,10 +9670,12 @@ Key | Description
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### tryouts
 
@@ -9210,10 +9721,12 @@ Key | Description
   `status` | 2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update
 
 </details>
+</div>
 
 
 
 
+<div class='action'>
 
 ### ruby_version
 
@@ -9244,20 +9757,22 @@ ruby_version "2.4.0"
 
 
 
+<div class='action'>
+
+### setup_travis
+
+Setup the keychain and match to work with Travis CI
 
 
-### opt_out_crash_reporting
 
-This will prevent reports from being uploaded when _fastlane_ crashes
+> - Creates a new temporary keychain for use with match
+- Switches match to `readonly` mode to not create new profiles/cert on CI
+This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
 
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting | 
+setup_travis | 
 -----|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
+Supported platforms | ios, mac
+Author | @KrauseFx
 
 
 
@@ -9265,16 +9780,58 @@ Author | @mpirri, @ohayon
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
+setup_travis
 ```
 
 
 </details>
 
 
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `force` | Force setup, even if not executed by travis
+
+</details>
+</div>
 
 
 
+
+<div class='action'>
+
+### plugin_scores
+
+[31mNo description provided[0m
+
+
+
+
+
+plugin_scores | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+
+</details>
+</div>
+
+
+
+
+<div class='action'>
 
 ### google_play_track_version_codes
 
@@ -9317,39 +9874,12 @@ Key | Description
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
 
 </details>
+</div>
 
 
 
 
-
-### plugin_scores
-
-[31mNo description provided[0m
-
-
-
-
-
-plugin_scores | 
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-
-</details>
-
-
-
-
+<div class='action'>
 
 ### opt_out_usage
 
@@ -9379,6 +9909,36 @@ opt_out_usage # add this to the top of your Fastfile
 
 
 
+<div class='action'>
 
+### opt_out_crash_reporting
+
+This will prevent reports from being uploaded when _fastlane_ crashes
+
+
+
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+
+opt_out_crash_reporting | 
+-----|----
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_crash_reporting # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
+</div>
 
 
