@@ -35,10 +35,6 @@ For _fastlane_ plugins, check out the [available plugins](https://docs.fastlane.
 
 # Testing
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### scan
 
@@ -48,7 +44,7 @@ Easily run tests of your iOS app using _scan_
 
 > More information: https://github.com/fastlane/fastlane/tree/master/scan
 
-scan | 
+scan |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -143,12 +139,9 @@ Key | Description
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### slather
 
@@ -160,7 +153,7 @@ Use slather to generate a code coverage report
 Slather is available at https://github.com/SlatherOrg/slather
 
 
-slather | 
+slather |
 -----|----
 Supported platforms | ios, mac
 Author | @mattdelves
@@ -216,12 +209,9 @@ Key | Description
   `decimals` | The amount of decimals to use for % coverage reporting
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### swiftlint
 
@@ -231,7 +221,7 @@ Run swift code validation using SwiftLint
 
 
 
-swiftlint | 
+swiftlint |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -274,12 +264,9 @@ Key | Description
   `executable` | Path to the `swiftlint` executable on your machine
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### xcov
 
@@ -290,7 +277,7 @@ Nice code coverage reports without hassle
 > Create nice code coverage reports and post coverage summaries on Slack *(xcov gem is required)*.
 More information: https://github.com/nakiostudio/xcov
 
-xcov | 
+xcov |
 -----|----
 Supported platforms | ios, mac
 Author | @nakiostudio
@@ -314,8 +301,6 @@ xcov(
 
 
 
-<div class='action'>
-
 ### sonar
 
 Invokes sonar-scanner to programmatically run SonarQube analysis
@@ -325,7 +310,7 @@ Invokes sonar-scanner to programmatically run SonarQube analysis
 > See http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner for details.
 It can process unit test results if formatted as junit report as shown in [xctest](#xctest) action. It can also integrate coverage reports in Cobertura format, which can be transformed into by [slather](#slather) action.
 
-sonar | 
+sonar |
 -----|----
 Supported platforms | ios, android, mac
 Author | @c_gretzki
@@ -365,12 +350,9 @@ Key | Description
   `sonar_login` | Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### oclint
 
@@ -380,7 +362,7 @@ Lints implementation files with OCLint
 
 > Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your _fastlane_ directory or pass a path to your file
 
-oclint | 
+oclint |
 -----|----
 Supported platforms | ios, android, mac
 Author | @HeEAaD
@@ -444,12 +426,9 @@ Key | Description
   `allow_duplicated_violations` | Allow duplicated violations in the OCLint report
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### gcovr
 
@@ -459,7 +438,7 @@ Runs test coverage reports for your Xcode project
 
 > Generate summarized code coverage reports using [gcovr](http://gcovr.com/)
 
-gcovr | 
+gcovr |
 -----|----
 Supported platforms | ios
 Author | @dtrenz
@@ -483,8 +462,6 @@ gcovr(
 
 
 
-<div class='action'>
-
 ### lcov
 
 Generates coverage data using lcov
@@ -493,7 +470,7 @@ Generates coverage data using lcov
 
 
 
-lcov | 
+lcov |
 -----|----
 Supported platforms | ios, mac
 Author | @thiagolioy
@@ -526,12 +503,9 @@ Key | Description
   `output_dir` | The output directory that coverage data will be stored. If not passed will use coverage_reports as default value
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### appium
 
@@ -541,7 +515,7 @@ Run UI test by Appium with RSpec
 
 
 
-appium | 
+appium |
 -----|----
 Supported platforms | ios
 Author | @yonekawa
@@ -582,12 +556,9 @@ Key | Description
   `caps` | Hash of caps for Appium::Driver
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### xctool
 
@@ -597,7 +568,7 @@ Run tests using xctool
 
 > You can run any `xctool` action. This will require having [xctool](https://github.com/facebook/xctool) installed through [homebrew](http://brew.sh/). It is recommended to store the build configuration in the `.xctool-args` file. More information available on GitHub: https://docs.fastlane.tools/actions#xctool
 
-xctool | 
+xctool |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -628,8 +599,6 @@ xctool :test, [
 
 
 
-<div class='action'>
-
 ### xcode_server_get_assets
 
 Downloads Xcode Bot assets like the `.xcarchive` and logs
@@ -642,7 +611,7 @@ Downloads Xcode Bot assets like the `.xcarchive` and logs
           assets, pass `:keep_all_assets: true`. This action returns the path to the downloaded
           assets folder and puts into shared values the paths to the asset folder and to the `.xcarchive` inside it
 
-xcode_server_get_assets | 
+xcode_server_get_assets |
 -----|----
 Supported platforms | ios, mac
 Author | @czechboy0
@@ -678,20 +647,14 @@ Key | Description
   `trust_self_signed_certs` | Whether to trust self-signed certs on your Xcode Server
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Building
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### gym
 
@@ -701,7 +664,7 @@ Easily build and sign your app using _gym_
 
 > More information: https://fastlane.tools/gym
 
-gym | 
+gym |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -776,12 +739,9 @@ Key | Description
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### cocoapods
 
@@ -791,7 +751,7 @@ Runs `pod install` for the project
 
 > If you use [CocoaPods](http://cocoapods.org) you can use the `cocoapods` integration to run `pod install` before building your app.
 
-cocoapods | 
+cocoapods |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx, @tadpol, @birmacher, @Liquidsoul
@@ -832,12 +792,9 @@ Key | Description
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### gradle
 
@@ -847,7 +804,7 @@ All gradle related actions, including building and testing your Android app
 
 > Run `./gradlew tasks` to get a list of all available gradle tasks for your project
 
-gradle | 
+gradle |
 -----|----
 Supported platforms | ios, android
 Author | @KrauseFx, @lmirosevic
@@ -924,12 +881,9 @@ Key | Description
   `print_command_output` | Control whether the output produced by given Gradle command is printed while running (true/false)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### clear_derived_data
 
@@ -939,7 +893,7 @@ Deletes the Xcode Derived Data
 
 > Deletes the Derived Data from '~/Library/Developer/Xcode/DerivedData' or a supplied path
 
-clear_derived_data | 
+clear_derived_data |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -969,12 +923,9 @@ Key | Description
   `derived_data_path` | Custom path for derivedData
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### adb
 
@@ -984,7 +935,7 @@ Run ADB Actions
 
 > see adb --help for more details
 
-adb | 
+adb |
 -----|----
 Supported platforms | android
 Author | @hjanuschka
@@ -1015,12 +966,9 @@ Key | Description
   `adb_path` | The path to your `adb` binary
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### xcversion
 
@@ -1030,7 +978,7 @@ Select an Xcode to use by version specifier
 
 > Finds and selects a version of an installed Xcode that best matches the provided [`Gem::Version` requirement specifier](http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version)
 
-xcversion | 
+xcversion |
 -----|----
 Supported platforms | ios, mac
 Author | @oysta
@@ -1060,12 +1008,9 @@ Key | Description
   `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0')
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### xcodebuild
 
@@ -1075,7 +1020,7 @@ Use the `xcodebuild` command to build and sign your app
 
 > **Note**: `xcodebuild` is a complex command, so it is recommended to use [gym](https://github.com/fastlane/fastlane/tree/master/gym) for building your ipa file and [scan](https://github.com/fastlane/fastlane/tree/master/scan) for testing your app instead.
 
-xcodebuild | 
+xcodebuild |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1100,8 +1045,6 @@ xcodebuild(
 
 
 
-<div class='action'>
-
 ### carthage
 
 Runs `carthage` for your project
@@ -1110,7 +1053,7 @@ Runs `carthage` for your project
 
 
 
-carthage | 
+carthage |
 -----|----
 Supported platforms | ios, mac
 Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev
@@ -1170,12 +1113,9 @@ Key | Description
   `project_directory` | Define the directory containing the Carthage project
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### xcode_select
 
@@ -1185,7 +1125,7 @@ Change the xcode-path to use. Useful for beta versions of Xcode
 
 > Select and build with the Xcode installed at the provided path. Use the `xcversion` action if you want to select an Xcode based on a version specifier or you don't have known, stable paths as may happen in a CI environment.
 
-xcode_select | 
+xcode_select |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1205,8 +1145,6 @@ xcode_select "/Applications/Xcode-8.3.2.app"
 
 
 
-<div class='action'>
-
 ### ensure_xcode_version
 
 Ensure the selected Xcode version with xcode-select matches a value
@@ -1216,7 +1154,7 @@ Ensure the selected Xcode version with xcode-select matches a value
 > If building your app requires a specific version of Xcode, you can invoke this command before using gym.
         For example, to ensure that a beta version is not accidentally selected to build, which would make uploading to TestFlight fail.
 
-ensure_xcode_version | 
+ensure_xcode_version |
 -----|----
 Supported platforms | ios, mac
 Author | @JaviSoto
@@ -1242,12 +1180,9 @@ Key | Description
   `version` | Xcode version to verify that is selected
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### clean_cocoapods_cache
 
@@ -1257,7 +1192,7 @@ Remove the cache for pods
 
 
 
-clean_cocoapods_cache | 
+clean_cocoapods_cache |
 -----|----
 Supported platforms | ios, mac
 Author | @alexmx
@@ -1287,12 +1222,9 @@ Key | Description
   `name` | Pod name to be removed from cache
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### verify_xcode
 
@@ -1304,7 +1236,7 @@ Verifies that the Xcode installation is properly signed by Apple
 you're not using a hacked Xcode installation.
 http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/
 
-verify_xcode | 
+verify_xcode |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -1334,12 +1266,9 @@ Key | Description
   `xcode_path` | The path to the Xcode installation to test
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### xcode_install
 
@@ -1349,7 +1278,7 @@ Make sure a certain version of Xcode is installed
 
 > Makes sure a specific version of Xcode is installed. If that's not the case, it will automatically be downloaded by the [xcode_install](https://github.com/neonichu/xcode-install) gem. This will make sure to use the correct Xcode for later actions.
 
-xcode_install | 
+xcode_install |
 -----|----
 Supported platforms | ios, mac
 Author | @Krausefx
@@ -1378,12 +1307,9 @@ Key | Description
   `team_id` | The ID of your team if you're in multiple teams
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### verify_pod_keys
 
@@ -1393,7 +1319,7 @@ Verifies all keys referenced from the Podfile are non-empty
 
 > Runs a check against all keys specified in your Podfile to make sure they're more than a single character long. This is to ensure you don't deploy with stubbed keys.
 
-verify_pod_keys | 
+verify_pod_keys |
 -----|----
 Supported platforms | ios, mac
 Author | @ashfurrow
@@ -1413,7 +1339,89 @@ verify_pod_keys
 
 
 
-<div class='action'>
+### xcbuild
+
+Builds the project using `xcodebuild`
+
+
+
+
+
+xcbuild |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcbuild
+```
+
+
+</details>
+
+
+
+
+### xcclean
+
+Cleans the project using `xcodebuild`
+
+
+
+
+
+xcclean |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcclean
+```
+
+
+</details>
+
+
+
+
+### xcexport
+
+Exports the project using `xcodebuild`
+
+
+
+
+
+xcexport |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcexport
+```
+
+
+</details>
+
+
+
 
 ### xctest
 
@@ -1423,7 +1431,7 @@ Runs tests on the given simulator
 
 
 
-xctest | 
+xctest |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1445,8 +1453,6 @@ xctest(
 
 
 
-<div class='action'>
-
 ### xcarchive
 
 Archives the project using `xcodebuild`
@@ -1455,7 +1461,7 @@ Archives the project using `xcodebuild`
 
 
 
-xcarchive | 
+xcarchive |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1475,105 +1481,10 @@ xcarchive
 
 
 
-<div class='action'>
-
-### xcbuild
-
-Builds the project using `xcodebuild`
-
-
-
-
-
-xcbuild | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcbuild
-```
-
-
-</details>
-
-
-
-
-<div class='action'>
-
-### xcexport
-
-Exports the project using `xcodebuild`
-
-
-
-
-
-xcexport | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcexport
-```
-
-
-</details>
-
-
-
-
-<div class='action'>
-
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean | 
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
-```
-
-
-</details>
-
-
-
-
-</div>
 
 
 # Screenshots
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### snapshot
 
@@ -1583,7 +1494,7 @@ Generate new localised screenshots on multiple devices
 
 
 
-snapshot | 
+snapshot |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -1644,12 +1555,9 @@ Key | Description
   `namespace_log_files` | Separate the log files per device and per language
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### screengrab
 
@@ -1659,7 +1567,7 @@ Automated localized screenshots of your Android app on every device
 
 
 
-screengrab | 
+screengrab |
 -----|----
 Supported platforms | android
 Author | @asfalcone, @i2amsam, @mfurtak
@@ -1712,12 +1620,9 @@ Key | Description
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### frameit
 
@@ -1728,7 +1633,7 @@ Adds device frames around the screenshots using frameit
 > Use [frameit](https://github.com/fastlane/fastlane/tree/master/frameit) to prepare perfect screenshots for the App Store, your website, QA
 or emails. You can add background and titles to the framed screenshots as well.
 
-frameit | 
+frameit |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -1773,20 +1678,14 @@ Key | Description
   `path` | The path to the directory containing the screenshots
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Project
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### increment_build_number
 
@@ -1796,7 +1695,7 @@ Increment the build number of your project
 
 
 
-increment_build_number | 
+increment_build_number |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -1841,12 +1740,9 @@ Key | Description
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### set_info_plist_value
 
@@ -1856,7 +1752,7 @@ Sets value to Info.plist of your project as native Ruby data structures
 
 
 
-set_info_plist_value | 
+set_info_plist_value |
 -----|----
 Supported platforms | ios, mac
 Author | @kohtenko, @uwehollatz
@@ -1889,12 +1785,9 @@ Key | Description
   `path` | Path to plist file you want to update
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### get_version_number
 
@@ -1904,7 +1797,7 @@ Get the version number of your project
 
 > This action will return the current version number set on your project. You first have to set up your Xcode project, if you haven't done it already: https://developer.apple.com/library/ios/qa/qa1827/_index.html
 
-get_version_number | 
+get_version_number |
 -----|----
 Supported platforms | ios, mac
 Author | @Liquidsoul
@@ -1935,12 +1828,9 @@ Key | Description
   `target` | Specify a specific target if you have multiple per project, optional
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### get_info_plist_value
 
@@ -1950,7 +1840,7 @@ Returns value from Info.plist of your project as native Ruby data structures
 
 > Get a value from a plist file, which can be used to fetch the app identifier and more information about your app
 
-get_info_plist_value | 
+get_info_plist_value |
 -----|----
 Supported platforms | ios, mac
 Author | @kohtenko
@@ -1977,12 +1867,9 @@ Key | Description
   `path` | Path to plist file you want to read
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_info_plist
 
@@ -1992,7 +1879,7 @@ Update a Info.plist file with bundle identifier and display name
 
 > This action allows you to modify your `Info.plist` file before building. This may be useful if you want a separate build for alpha, beta or nightly builds, but don't want a separate target.
 
-update_info_plist | 
+update_info_plist |
 -----|----
 Supported platforms | ios
 Author | @tobiasstrebitzer
@@ -2059,12 +1946,9 @@ Key | Description
   `block` | A block to process plist with custom logic
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_app_identifier
 
@@ -2074,7 +1958,7 @@ Update the project's bundle identifier
 
 > Update an app identifier by either setting `CFBundleIdentifier` or `PRODUCT_BUNDLE_IDENTIFIER`, depending on which is already in use.
 
-update_app_identifier | 
+update_app_identifier |
 -----|----
 Supported platforms | ios
 Author | @squarefrog, @tobiasstrebitzer
@@ -2106,12 +1990,9 @@ Key | Description
   `app_identifier` | The app Identifier you want to set
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### get_build_number
 
@@ -2121,7 +2002,7 @@ Get the build number of your project
 
 > This action will return the current build number set on your project. You first have to set up your Xcode project, if you haven't done it already: https://developer.apple.com/library/ios/qa/qa1827/_index.html
 
-get_build_number | 
+get_build_number |
 -----|----
 Supported platforms | ios, mac
 Author | @Liquidsoul
@@ -2147,12 +2028,9 @@ Key | Description
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### increment_version_number
 
@@ -2164,7 +2042,7 @@ Increment the version number of your project
 You first have to set up your Xcode project, if you haven't done it already:
 https://developer.apple.com/library/ios/qa/qa1827/_index.html
 
-increment_version_number | 
+increment_version_number |
 -----|----
 Supported platforms | ios, mac
 Author | @serluca
@@ -2228,12 +2106,9 @@ Key | Description
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_project_team
 
@@ -2243,7 +2118,7 @@ Update Xcode Development Team ID
 
 > This action update the Developer Team ID of your Xcode Project.
 
-update_project_team | 
+update_project_team |
 -----|----
 Supported platforms | ios, mac
 Author | @lgaches
@@ -2273,12 +2148,9 @@ Key | Description
   `teamid` | The Team ID you want to use
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_app_group_identifiers
 
@@ -2288,7 +2160,7 @@ This action changes the app group identifiers in the entitlements file
 
 > Updates the App Group Identifiers in the given Entitlements file, so you can have app groups for the app store build and app groups for an enterprise build.
 
-update_app_group_identifiers | 
+update_app_group_identifiers |
 -----|----
 Supported platforms | ios
 Author | @mathiasAichinger
@@ -2318,12 +2190,9 @@ Key | Description
   `app_group_identifiers` | An Array of unique identifiers for the app groups. Eg. ['group.com.test.testapp']
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### get_ipa_info_plist_value
 
@@ -2333,7 +2202,7 @@ Returns a value from Info.plist inside a .ipa file
 
 > This is useful for introspecting Info.plist files for .ipa files that have already been built.
 
-get_ipa_info_plist_value | 
+get_ipa_info_plist_value |
 -----|----
 Supported platforms | ios, mac
 Author | @johnboiles
@@ -2361,12 +2230,9 @@ Key | Description
   `ipa` | Path to IPA
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### recreate_schemes
 
@@ -2376,7 +2242,7 @@ Recreate not shared Xcode project schemes
 
 
 
-recreate_schemes | 
+recreate_schemes |
 -----|----
 Supported platforms | ios, mac
 Author | @jerolimov
@@ -2402,12 +2268,9 @@ Key | Description
   `project` | The Xcode project
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_url_schemes
 
@@ -2419,7 +2282,7 @@ Updates the URL schemes in the given Info.plist
 For example, you can use this to set a different url scheme for the alpha
 or beta version of the app.
 
-update_url_schemes | 
+update_url_schemes |
 -----|----
 Supported platforms | ios, mac
 Author | @kmikael
@@ -2449,12 +2312,9 @@ Key | Description
   `url_schemes` | The new URL schemes
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### set_build_number_repository
 
@@ -2466,7 +2326,7 @@ Set the build number from the current repository
 Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision) and git (uses short hash) and mercurial (uses short hash or revision number).
 There is an option, `:use_hg_revision_number`, which allows to use mercurial revision number instead of hash
 
-set_build_number_repository | 
+set_build_number_repository |
 -----|----
 Supported platforms | ios, mac
 Author | @pbrooks, @armadsen, @AndrewSB
@@ -2499,12 +2359,9 @@ Key | Description
   `xcodeproj` | explicitly specify which xcodeproj to use
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### set_pod_key
 
@@ -2514,7 +2371,7 @@ Sets a value for a key with cocoapods-keys
 
 > Adds a key to [cocoapods-keys](https://github.com/orta/cocoapods-keys)
 
-set_pod_key | 
+set_pod_key |
 -----|----
 Supported platforms | ios, mac
 Author | @marcelofabri
@@ -2547,20 +2404,14 @@ Key | Description
   `project` | The project name
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Code Signing
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### sigh
 
@@ -2570,7 +2421,7 @@ Generates a provisioning profile. Stores the profile in the current folder
 
 > **Note**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use _sigh_ directly only if you want full control over what's going on and know more about codesigning.
 
-sigh | 
+sigh |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -2621,12 +2472,9 @@ Key | Description
   `platform` | Set the provisioning profile's platform (i.e. ios, tvos)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### match
 
@@ -2636,7 +2484,7 @@ Easily sync your certificates and profiles across your team using git
 
 > More details https://github.com/fastlane/fastlane/tree/master/match
 
-match | 
+match |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -2689,12 +2537,9 @@ Key | Description
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### cert
 
@@ -2705,7 +2550,7 @@ Fetch or generate the latest available code signing identity
 > **Important**: It is recommended to use [match](https://github.com/fastlane/fastlane/tree/master/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your certificates. Use _cert_ directly only if you want full control over what's going on and know more about codesigning.
 Use this action to download the latest code signing identity
 
-cert | 
+cert |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -2746,12 +2591,9 @@ Key | Description
   `platform` | Set the provisioning profile's platform (ios, macos)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### import_certificate
 
@@ -2761,7 +2603,7 @@ Import certificate from inputfile into a keychain
 
 > Import certificates into the current default keychain. Use `create_keychain` to create a new keychain.
 
-import_certificate | 
+import_certificate |
 -----|----
 Supported platforms | ios, android, mac
 Author | @gin0606
@@ -2798,12 +2640,9 @@ Key | Description
   `log_output` | If output should be logged to the console
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_project_provisioning
 
@@ -2819,7 +2658,7 @@ The `build_configuration` value can be used to only update code signing for spec
 Example Usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles
 Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".*WatchKit App.*")
 
-update_project_provisioning | 
+update_project_provisioning |
 -----|----
 Supported platforms | ios, mac
 Author | @tobiasstrebitzer, @czechboy0
@@ -2855,12 +2694,9 @@ Key | Description
   `certificate` | Path to apple root certificate
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### resign
 
@@ -2877,7 +2713,7 @@ resign(ipa: "path", signing_identity: "identity", provisioning_profile: {
   "com.example.awesome-app.app-extension" => "Extension.mobileprovision"
 })
 
-resign | 
+resign |
 -----|----
 Supported platforms | ios
 Author | @lmirosevic
@@ -2931,12 +2767,9 @@ and combine with entitlements from new provisionin profile
   `keychain_path` | Provide a path to a keychain file that should be used by /usr/bin/codesign
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### register_devices
 
@@ -2948,7 +2781,7 @@ Registers new devices to the Apple Dev Portal
 This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.
 The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option, or by setting the env variable `ENV['DELIVER_USER']`.
 
-register_devices | 
+register_devices |
 -----|----
 Supported platforms | ios
 Author | @lmirosevic
@@ -2997,12 +2830,9 @@ Key | Description
   `username` | Optional: Your Apple ID
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### automatic_code_signing
 
@@ -3012,7 +2842,7 @@ Updates the Xcode 8 Automatic Codesigning Flag
 
 > Updates the Xcode 8 Automatic Codesigning Flag of all targets in the project
 
-automatic_code_signing | 
+automatic_code_signing |
 -----|----
 Supported platforms | ios, mac
 Author | @mathiasAichinger, @hjanuschka
@@ -3093,12 +2923,9 @@ Key | Description
   `targets` | Specify targets you want to toggle the signing mech. (default to all targets)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### register_device
 
@@ -3110,7 +2937,7 @@ Registers a new device to the Apple Dev Portal
 This is an optimistic action, in that it will only ever add a device to the member center. If the device has already been registered within the member center, it will be left alone in the member center.
 The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option.
 
-register_device | 
+register_device |
 -----|----
 Supported platforms | ios
 Author | @pvinis
@@ -3152,20 +2979,14 @@ Key | Description
   `username` | Optional: Your Apple ID
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Documentation
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### jazzy
 
@@ -3175,7 +2996,7 @@ Generate docs using Jazzy
 
 
 
-jazzy | 
+jazzy |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -3201,12 +3022,9 @@ Key | Description
   `config` | Path to jazzy config file
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### appledoc
 
@@ -3216,7 +3034,7 @@ Generate Apple-like source code documentation from the source code
 
 > Runs `appledoc [OPTIONS] <paths to source dirs or files>` for the project
 
-appledoc | 
+appledoc |
 -----|----
 Supported platforms | ios, mac
 Author | @alexmx
@@ -3295,20 +3113,14 @@ Key | Description
   `verbose` | Log verbosity level [0-6,xcode]
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Beta
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### pilot
 
@@ -3319,7 +3131,7 @@ Upload a new binary to iTunes Connect for TestFlight beta testing
 > More details can be found on https://github.com/fastlane/fastlane/tree/master/pilot
 This integration will only do the TestFlight upload
 
-pilot | 
+pilot |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -3382,12 +3194,9 @@ Key | Description
   `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### crashlytics
 
@@ -3398,7 +3207,7 @@ Upload a new build to Crashlytics Beta
 > Additionally you can specify `notes`, `emails`, `groups` and `notifications`.
 Distributing to Groups: When using the `groups` parameter, it's important to use the group **alias** names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog here:
 
-crashlytics | 
+crashlytics |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx, @pedrogimenez
@@ -3443,12 +3252,9 @@ Key | Description
   `debug` | Crashlytics debug option (true/false)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### hockey
 
@@ -3459,7 +3265,7 @@ Upload a new build to HockeyApp
 > Symbols will also be uploaded automatically if a `app.dSYM.zip` file is found next to `app.ipa`. In case it is located in a different place you can specify the path explicitly in `:dsym` parameter.
 More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
 
-hockey | 
+hockey |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx, @modzelewski, @lacostej
@@ -3525,12 +3331,9 @@ Key | Description
   `dsa_signature` | DSA signature for sparkle updates for macOS
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### testflight
 
@@ -3540,7 +3343,7 @@ Alias for the pilot action
 
 
 
-testflight | 
+testflight |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -3603,12 +3406,9 @@ Key | Description
   `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### deploygate
 
@@ -3619,7 +3419,7 @@ Upload a new build to [DeployGate](https://deploygate.com/)
 > You can retrieve your username and API token on [your settings page](https://deploygate.com/settings)
 More information about the available options can be found in the [DeployGate Push API document](https://deploygate.com/docs/api).
 
-deploygate | 
+deploygate |
 -----|----
 Supported platforms | ios, android
 Author | @tnj, @tomorrowkey
@@ -3668,12 +3468,9 @@ Key | Description
   `disable_notify` | Disables Push notification emails
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### apteligent
 
@@ -3683,7 +3480,7 @@ Upload dSYM file to Apteligent (Crittercism)
 
 
 
-apteligent | 
+apteligent |
 -----|----
 Supported platforms | ios
 Author | @Mo7amedFouad
@@ -3714,12 +3511,9 @@ Key | Description
   `api_key` | Apteligent App API key e.g. IXPQIi8yCbHaLliqzRoo065tH0lxxxxx
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### appetize
 
@@ -3730,7 +3524,7 @@ Upload your app to Appetize.io to stream it in the browser
 > If you provide a `public_key`, this will overwrite an existing application. If you want to have this build as a new app version, you shouldn't provide this value.
 To integrate appetize into your GitHub workflow check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
 
-appetize | 
+appetize |
 -----|----
 Supported platforms | ios, android
 Author | @klundberg, @giginet
@@ -3765,12 +3559,9 @@ Key | Description
   `note` | Notes you wish to add to the uploaded app
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### testfairy
 
@@ -3780,7 +3571,7 @@ Upload a new build to TestFairy
 
 > You can retrieve your API key on [your settings page](https://free.testfairy.com/settings/)
 
-testfairy | 
+testfairy |
 -----|----
 Supported platforms | ios, android
 Author | @taka0125, @tcurdt
@@ -3819,12 +3610,9 @@ Key | Description
   `options` | Array of options (shake,video_only_wifi,anonymous)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### appaloosa
 
@@ -3837,7 +3625,7 @@ offers a quick deployment on the platform. You can create an
 account, push to your existing account, or manage your user 
 groups. We accept iOS and Android applications.
 
-appaloosa | 
+appaloosa |
 -----|----
 Supported platforms | ios, android, mac
 Author | @Appaloosa
@@ -3887,12 +3675,9 @@ Key | Description
   `description` | Your app description
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### nexus_upload
 
@@ -3902,7 +3687,7 @@ Upload a file to Sonatype Nexus platform
 
 
 
-nexus_upload | 
+nexus_upload |
 -----|----
 Supported platforms | ios, android, mac
 Author | @xfreebird
@@ -3953,12 +3738,9 @@ Key | Description
   `proxy_port` | Proxy port
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### installr
 
@@ -3968,7 +3750,7 @@ Upload a new build to Installr
 
 
 
-installr | 
+installr |
 -----|----
 Supported platforms | ios
 Author | @scottrhoyt
@@ -4004,12 +3786,9 @@ Key | Description
   `add` | Groups to add (e.g. 'exec,ops')
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### set_changelog
 
@@ -4020,7 +3799,7 @@ Set the changelog for all languages on iTunes Connect
 > This is useful if you have only one changelog for all languages.
 You can store the changelog in `./fastlane/changelog.txt` and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.
 
-set_changelog | 
+set_changelog |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -4051,12 +3830,9 @@ Key | Description
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### splunkmint
 
@@ -4066,7 +3842,7 @@ Upload dSYM file to Splunk MINT
 
 
 
-splunkmint | 
+splunkmint |
 -----|----
 Supported platforms | ios
 Author | @xfreebird
@@ -4104,12 +3880,9 @@ Key | Description
   `proxy_port` | Proxy port
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### podio_item
 
@@ -4123,7 +3896,7 @@ Creates or updates an item within your Podio app
         Field key is located under Modify app -> Advanced -> Developer -> External ID
         (see https://developers.podio.com/examples/items)
 
-podio_item | 
+podio_item |
 -----|----
 Supported platforms | ios, android, mac
 Author | @pprochazka72, @laugejepsen
@@ -4161,20 +3934,14 @@ Key | Description
   `other_fields` | Dictionary of your app fields. Podio supports several field types, see https://developers.podio.com/doc/items
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Push
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### pem
 
@@ -4191,7 +3958,7 @@ pem(
   end
 )
 
-pem | 
+pem |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -4240,12 +4007,9 @@ Key | Description
   `new_profile` | Block that is called if there is a new profile
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_urban_airship_configuration
 
@@ -4255,7 +4019,7 @@ Set the Urban Airship plist configuration values
 
 > This action updates the AirshipConfig.plist need to configure the Urban Airship SDK at runtime, allowing keys and secrets to easily be set for Enterprise and Production versions of the application.
 
-update_urban_airship_configuration | 
+update_urban_airship_configuration |
 -----|----
 Supported platforms | ios
 Author | @kcharwood
@@ -4290,12 +4054,9 @@ Key | Description
   `detect_provisioning_mode` | Automatically detect provisioning mode
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### onesignal
 
@@ -4305,7 +4066,7 @@ Create a new OneSignal application
 
 > You can use this action to automatically create a OneSignal application. You can also upload a .p12 with password, a GCM key, or both
 
-onesignal | 
+onesignal |
 -----|----
 Supported platforms | ios
 Author | @timothybarraclough, @smartshowltd
@@ -4343,20 +4104,14 @@ Key | Description
   `apns_env` | APNS environment
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Releasing your app
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### deliver
 
@@ -4371,7 +4126,7 @@ This is useful when running _fastlane_ on your Continuous Integration server: `d
 If your account is on multiple teams and you need to tell the `iTMSTransporter`
 which 'provider' to use, you can set the `itc_provider` option to pass this info.
 
-deliver | 
+deliver |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -4449,12 +4204,9 @@ Key | Description
   `marketing_url` | Metadata: Localised marketing url
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### supply
 
@@ -4464,7 +4216,7 @@ Upload metadata, screenshots and binaries to Google Play
 
 > More information: https://github.com/fastlane/fastlane/tree/master/supply
 
-supply | 
+supply |
 -----|----
 Supported platforms | android
 Author | @KrauseFx
@@ -4509,12 +4261,9 @@ Key | Description
   `check_superseded_tracks` | Check the other tracks for superseded versions and disable them
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### appstore
 
@@ -4524,7 +4273,7 @@ Alias for the deliver action
 
 
 
-appstore | 
+appstore |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -4602,20 +4351,14 @@ Key | Description
   `marketing_url` | Metadata: Localised marketing url
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Source Control
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### ensure_git_status_clean
 
@@ -4629,7 +4372,7 @@ some of your other actions will touch your filesystem, do things to your git rep
 or just as a general reminder to save your work. Also needed as a prerequisite for
 some other actions like `reset_git_repo`.
 
-ensure_git_status_clean | 
+ensure_git_status_clean |
 -----|----
 Supported platforms | ios, android, mac
 Author | @lmirosevic, @antondomashnev
@@ -4655,12 +4398,9 @@ Key | Description
   `show_uncommitted_changes` | The flag whether to show uncommitted changes if the repo is dirty
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### git_branch
 
@@ -4670,7 +4410,7 @@ Returns the name of the current git branch, possibly as managed by CI ENV vars
 
 > If no branch could be found, this action will return an empty string
 
-git_branch | 
+git_branch |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -4690,8 +4430,6 @@ git_branch
 
 
 
-<div class='action'>
-
 ### last_git_commit
 
 Return last git commit hash, abbreviated commit hash, commit message and author
@@ -4700,7 +4438,7 @@ Return last git commit hash, abbreviated commit hash, commit message and author
 
 
 
-last_git_commit | 
+last_git_commit |
 -----|----
 Supported platforms | ios, android, mac
 Author | @ngutman
@@ -4725,8 +4463,6 @@ short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 
 
 
-<div class='action'>
-
 ### reset_git_repo
 
 Resets git repo to a clean state by discarding uncommitted changes
@@ -4735,7 +4471,7 @@ Resets git repo to a clean state by discarding uncommitted changes
 
 > This action will reset your git repo to a clean state, discarding any uncommitted and untracked changes. Useful in case you need to revert the repo back to a clean state, e.g. after the fastlane run. Untracked files like `.env` will also be deleted, unless `:skip_clean` is true. It's a pretty drastic action so it comes with a sort of safety latch. It will only proceed with the reset if either of these conditions are met: You have called the ensure_git_status_clean action prior to calling this action. This ensures that your repo started off in a clean state, so the only things that will get destroyed by this action are files that are created as a byproduct of the fastlane run.
 
-reset_git_repo | 
+reset_git_repo |
 -----|----
 Supported platforms | ios, android, mac
 Author | @lmirosevic
@@ -4782,12 +4518,9 @@ Key | Description
   `exclude` | You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk, e.g. to leave the `artifacts` directory you would specify `exclude: 'artifacts'`. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### changelog_from_git_commits
 
@@ -4797,7 +4530,7 @@ Collect git commit messages into a changelog
 
 > By default, messages will be collected back to the last tag, but the range can be controlled
 
-changelog_from_git_commits | 
+changelog_from_git_commits |
 -----|----
 Supported platforms | ios, android, mac
 Author | @mfurtak, @asfalcone, @SiarheiFedartsou, @allewun
@@ -4844,12 +4577,9 @@ Key | Description
 Valid values: 'include_merges', 'exclude_merges', 'only_include_merges'
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### number_of_commits
 
@@ -4859,7 +4589,7 @@ Return the number of commits in current git branch
 
 > You can use this action to get the number of commits of this branch. This is useful if you want to set the build number to the number of commits. See `fastlane actions number_of_commits` for more details
 
-number_of_commits | 
+number_of_commits |
 -----|----
 Supported platforms | ios, android, mac
 Author | @onevcat, @samuelbeek
@@ -4891,12 +4621,9 @@ Key | Description
   `all` | Returns number of all commits instead of current branch
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### git_pull
 
@@ -4906,7 +4633,7 @@ Executes a simple git pull command
 
 
 
-git_pull | 
+git_pull |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx, @JaviSoto
@@ -4936,12 +4663,9 @@ Key | Description
   `only_tags` | Simply pull the tags, and not bring new commits to the current branch from the remote
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### last_git_tag
 
@@ -4951,7 +4675,7 @@ Get the most recent git tag
 
 > If you are using this action on a **shallow clone**, *the default with some CI systems like Bamboo*, you need to ensure that you have also have pulled all the git tags appropriately. Assuming your git repo has the correct remote set you can issue `sh('git fetch --tags')`
 
-last_git_tag | 
+last_git_tag |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -4971,8 +4695,6 @@ last_git_tag
 
 
 
-<div class='action'>
-
 ### push_to_git_remote
 
 Push local changes to the remote branch
@@ -4981,7 +4703,7 @@ Push local changes to the remote branch
 
 > Lets you push your local commits to a remote git repo. Useful if you make local changes such as adding a version bump commit (using `commit_version_bump`) or a git tag (using 'add_git_tag') on a CI server, and you want to push those changes back to your canonical/main repo.
 
-push_to_git_remote | 
+push_to_git_remote |
 -----|----
 Supported platforms | ios, android, mac
 Author | @lmirosevic
@@ -5021,12 +4743,9 @@ Key | Description
   `remote` | The remote to push to. Defaults to `origin`
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### add_git_tag
 
@@ -5041,7 +4760,7 @@ This will add an annotated git tag to the current branch
 - `build_number` is the build number, which defaults to the value emitted by the `increment_build_number` action
 For example for build 1234 in the 'appstore' lane it will tag the commit with `builds/appstore/1234`
 
-add_git_tag | 
+add_git_tag |
 -----|----
 Supported platforms | ios, android, mac
 Author | @lmirosevic, @maschall
@@ -5089,12 +4808,9 @@ Key | Description
   `sign` | Make a GPG-signed tag, using the default e-mail address's key
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### commit_version_bump
 
@@ -5110,7 +4826,7 @@ Then commits those files to the repo.
 Customise the message with the `:message` option, defaults to 'Version Bump'
 If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
 
-commit_version_bump | 
+commit_version_bump |
 -----|----
 Supported platforms | ios, mac
 Author | @lmirosevic
@@ -5165,12 +4881,9 @@ Key | Description
   `ignore` | A regular expression used to filter matched plist files to be modified
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### git_tag_exists
 
@@ -5180,7 +4893,7 @@ Checks if the git tag with the given name exists in the current repo
 
 
 
-git_tag_exists | 
+git_tag_exists |
 -----|----
 Supported platforms | ios, android, mac
 Author | @antondomashnev
@@ -5209,12 +4922,9 @@ Key | Description
   `tag` | The tag name that should be checked
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### ensure_git_branch
 
@@ -5226,7 +4936,7 @@ Raises an exception if not on a specific git branch
 You may only want to make releases from a specific branch, so `ensure_git_branch`
 will stop a lane if it was accidentally executed on an incorrect branch.
 
-ensure_git_branch | 
+ensure_git_branch |
 -----|----
 Supported platforms | ios, android, mac
 Author | @dbachrach, @Liquidsoul
@@ -5258,12 +4968,9 @@ Key | Description
   `branch` | The branch that should be checked for. String that can be either the full name of the branch or a regex to match
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### git_commit
 
@@ -5273,7 +4980,7 @@ Directly commit the given file with the given message
 
 
 
-git_commit | 
+git_commit |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -5308,12 +5015,9 @@ Key | Description
   `message` | The commit message that should be used
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### push_git_tags
 
@@ -5323,7 +5027,7 @@ Push local tags to the remote - this will only push tags
 
 > If you only want to push the tags and nothing else, you can use the `push_git_tags` action
 
-push_git_tags | 
+push_git_tags |
 -----|----
 Supported platforms | ios, android, mac
 Author | @vittoriom
@@ -5350,12 +5054,9 @@ Key | Description
   `remote` | The remote to push tags to
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### git_add
 
@@ -5365,7 +5066,7 @@ Directly add the given file or all files
 
 
 
-git_add | 
+git_add |
 -----|----
 Supported platforms | ios, android, mac
 Author | @4brunu, @antondomashnev
@@ -5408,12 +5109,9 @@ Key | Description
   `pathspec` | The pathspec you want to add files from
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### get_build_number_repository
 
@@ -5425,7 +5123,7 @@ Get the build number from the current repository
 Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision) and git (uses short hash) and mercurial (uses short hash or revision number).
 There is an option, `:use_hg_revision_number`, which allows to use mercurial revision number instead of hash.
 
-get_build_number_repository | 
+get_build_number_repository |
 -----|----
 Supported platforms | ios, mac
 Author | @bartoszj, @pbrooks, @armadsen
@@ -5452,12 +5150,9 @@ Key | Description
   `use_hg_revision_number` | Use hg revision number instead of hash (ignored for non-hg repos)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### set_github_release
 
@@ -5471,7 +5166,7 @@ This will create a new release on GitHub and upload assets for it
         commitish. Out parameters provide the release's id, which can be used for later editing and the
         release html link to GitHub. You can also specify a list of assets to be uploaded to the release with the upload_assets parameter.
 
-set_github_release | 
+set_github_release |
 -----|----
 Supported platforms | ios, android, mac
 Author | @czechboy0, @tommeier
@@ -5516,12 +5211,9 @@ Key | Description
   `upload_assets` | Path to assets to be uploaded with the release
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### create_pull_request
 
@@ -5531,7 +5223,7 @@ This will create a new pull request on GitHub
 
 
 
-create_pull_request | 
+create_pull_request |
 -----|----
 Supported platforms | ios, android, mac
 Author | @seei, @tommeier
@@ -5572,12 +5264,9 @@ Key | Description
   `api_url` | The URL of Github API - used when the Enterprise (default to `https://api.github.com`)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### get_github_release
 
@@ -5623,7 +5312,7 @@ This will verify if a given release version is available on GitHub
                 "This is one of the biggest updates of _fastlane_ yet"
               }
 
-get_github_release | 
+get_github_release |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx, @czechboy0, @jaleksynas, @tommeier
@@ -5653,12 +5342,9 @@ Key | Description
   `api_token` | GitHub Personal Token (required for private repositories)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### hg_ensure_clean_status
 
@@ -5668,7 +5354,7 @@ Raises an exception if there are uncommitted hg changes
 
 > Along the same lines as the [`ensure_git_status_clean`](#ensure_git_status_clean) action, this is a sanity check to ensure the working mercurial repo is clean. Especially useful to put at the beginning of your Fastfile in the `before_all` block.
 
-hg_ensure_clean_status | 
+hg_ensure_clean_status |
 -----|----
 Supported platforms | ios, android, mac
 Author | @sjrmanning
@@ -5688,8 +5374,6 @@ hg_ensure_clean_status
 
 
 
-<div class='action'>
-
 ### hg_commit_version_bump
 
 This will commit a version bump to the hg repo
@@ -5704,7 +5388,7 @@ Then commits those files to the repo.
 Customise the message with the `:message` option, defaults to 'Version Bump'
 If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the [`clean_build_artifacts`](#clean_build_artifacts) action to clean those temporary files up before running this action.
 
-hg_commit_version_bump | 
+hg_commit_version_bump |
 -----|----
 Supported platforms | ios, android, mac
 Author | @sjrmanning
@@ -5741,12 +5425,9 @@ Key | Description
   `test_expected_files` | A list of expected changed files passed in for testing
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### hg_push
 
@@ -5756,7 +5437,7 @@ This will push changes to the remote hg repository
 
 > The mercurial equivalent of [`push_to_git_remote`](#push_to_git_remote) — pushes your local commits to a remote mercurial repo. Useful when local changes such as adding a version bump commit or adding a tag are part of your lane’s actions.
 
-hg_push | 
+hg_push |
 -----|----
 Supported platforms | ios, android, mac
 Author | @sjrmanning
@@ -5790,12 +5471,9 @@ Key | Description
   `destination` | The destination to push to
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### hg_add_tag
 
@@ -5805,7 +5483,7 @@ This will add a hg tag to the current branch
 
 
 
-hg_add_tag | 
+hg_add_tag |
 -----|----
 Supported platforms | ios, android, mac
 Author | @sjrmanning
@@ -5831,12 +5509,9 @@ Key | Description
   `tag` | Tag to create
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### github_api
 
@@ -5848,7 +5523,7 @@ Call a GitHub API endpoint and get the resulting JSON response
           Out parameters provide the status code and the full response JSON if valid, otherwise the raw response body.
           Documentation: https://developer.github.com/v3
 
-github_api | 
+github_api |
 -----|----
 Supported platforms | ios, android, mac
 Author | @tommeier
@@ -5911,12 +5586,9 @@ Key | Description
   `secure` | Optionally disable secure requests (ssl_verify_peer)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### commit_github_file
 
@@ -5929,7 +5601,7 @@ This will commit a file directly on GitHub via the API
         Out parameters provide the commit sha created, which can be used for later usage for examples such as releases, the direct download link and the full response JSON.
         Documentation: https://developer.github.com/v3/repos/contents/#create-a-file
 
-commit_github_file | 
+commit_github_file |
 -----|----
 Supported platforms | ios, android, mac
 Author | @tommeier
@@ -5970,20 +5642,14 @@ Key | Description
   `secure` | Optionally disable secure requests (ssl_verify_peer)
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Notifications
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### slack
 
@@ -5993,7 +5659,7 @@ Send a success/error message to your Slack group
 
 > Create an Incoming WebHook and export this as `SLACK_URL`. Can send a message to **#channel** (by default), a direct message to **@username** or a message to a private group **group** with success (green) or failure (red) status.
 
-slack | 
+slack |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -6051,12 +5717,9 @@ Key | Description
   `success` | Was this build successful? (true/false)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### notification
 
@@ -6066,7 +5729,7 @@ Display a macOS notification with custom message and title
 
 
 
-notification | 
+notification |
 -----|----
 Supported platforms | ios, android, mac
 Author | @champo, @cbowns, @KrauseFx, @amarcadet, @dusek
@@ -6100,12 +5763,9 @@ Key | Description
   `execute` | Shell command to run when the notification is clicked
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### hipchat
 
@@ -6115,7 +5775,7 @@ Send a error/success message to HipChat
 
 > Send a message to **room** (by default) or a direct message to **@username** with success (green) or failure (red) status.
 
-hipchat | 
+hipchat |
 -----|----
 Supported platforms | ios, android, mac
 Author | @jingx23
@@ -6156,12 +5816,9 @@ Key | Description
   `from` | Name the message will appear to be sent from
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### mailgun
 
@@ -6171,7 +5828,7 @@ Send a success/error message to an email group
 
 
 
-mailgun | 
+mailgun |
 -----|----
 Supported platforms | ios, android, mac
 Author | @thiagolioy
@@ -6231,12 +5888,9 @@ Key | Description
   `attachment` | Mail Attachment filenames, either an array or just one string
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### chatwork
 
@@ -6246,7 +5900,7 @@ Send a success/error message to ChatWork
 
 > Information on how to obtain an API token: http://developer.chatwork.com/ja/authenticate.html
 
-chatwork | 
+chatwork |
 -----|----
 Supported platforms | ios, android, mac
 Author | @astronaughts
@@ -6280,12 +5934,9 @@ Key | Description
   `success` | Was this build successful? (true/false)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### ifttt
 
@@ -6295,7 +5946,7 @@ Connect to the IFTTT Maker Channel. https://ifttt.com/maker
 
 > Connect to the IFTTT [Maker Channel](https://ifttt.com/maker). An IFTTT Recipe has two components: a Trigger and an Action. In this case, the Trigger will fire every time the Maker Channel receives a web request (made by this _fastlane_ action) to notify it of an event. The Action can be anything that IFTTT supports: email, SMS, etc.
 
-ifttt | 
+ifttt |
 -----|----
 Supported platforms | ios, android, mac
 Author | @vpolouchkine
@@ -6331,12 +5982,9 @@ Key | Description
   `value3` | Extra data sent with the event
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### flock
 
@@ -6347,7 +5995,7 @@ Send a message to a Flock group
 > To obtain the token, create a new [incoming message webhook](https://dev.flock.co/wiki/display/FlockAPI/Incoming+Webhooks)
 in your Flock admin panel.
 
-flock | 
+flock |
 -----|----
 Supported platforms | ios, android, mac
 Author | @Manav
@@ -6378,12 +6026,9 @@ Key | Description
   `base_url` | Base URL of the Flock incoming message webhook
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### twitter
 
@@ -6393,7 +6038,7 @@ Post a tweet on Twitter.com
 
 > Post a tweet on twitter. Requires you to setup an app on twitter.com and obtain consumer and access_token.
 
-twitter | 
+twitter |
 -----|----
 Supported platforms | ios, android, mac
 Author | @hjanuschka
@@ -6429,12 +6074,9 @@ Key | Description
   `message` | The tweet
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### typetalk
 
@@ -6444,7 +6086,7 @@ Post a message to Typetalk
 
 
 
-typetalk | 
+typetalk |
 -----|----
 Supported platforms | ios, android, mac
 Author | @Nulab Inc.
@@ -6470,15 +6112,10 @@ typetalk(
 
 
 
-</div>
 
 
 # Deprecated
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### s3
 
@@ -6489,7 +6126,7 @@ Install using `fastlane add_plugin aws_s3`.
 
 > Upload a new build to Amazon S3 to distribute the build to beta testers.  Works for both Ad Hoc and Enterprise signed applications. This step will generate the necessary HTML, plist, and version files for you. It is recommended to **not** store the AWS access keys in the `Fastfile`. The uploaded `version.json` file provides an easy way for apps to poll if a new update is available.
 
-s3 | 
+s3 |
 -----|----
 Supported platforms | ios
 Author | @joshdholtz
@@ -6545,12 +6182,9 @@ Key | Description
   `acl` | Uploaded object permissions e.g public_read (default), private, public_read_write, authenticated_read 
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### notify
 
@@ -6560,7 +6194,7 @@ Shows a macOS notification - use `notification` instead
 
 
 
-notify | 
+notify |
 -----|----
 Supported platforms | ios, android, mac
 Author | @champo, @KrauseFx
@@ -6570,8 +6204,6 @@ Author | @champo, @KrauseFx
 
 
 
-
-<div class='action'>
 
 ### update_project_code_signing
 
@@ -6583,7 +6215,7 @@ https://docs.fastlane.tools/codesigning/getting-started/
 
 
 
-update_project_code_signing | 
+update_project_code_signing |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -6602,12 +6234,9 @@ Key | Description
   `uuid` | The UUID of the provisioning profile you want to use
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### ipa
 
@@ -6620,7 +6249,7 @@ To make code signing work, follow https://docs.fastlane.tools/codesigning/xcode-
 
 
 
-ipa | 
+ipa |
 -----|----
 Supported platforms | ios
 Author | @joshdholtz
@@ -6671,12 +6300,9 @@ Key | Description
   `xcargs` | Pass additional arguments to xcodebuild when building the app. Be sure to quote multiple args
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### upload_symbols_to_sentry
 
@@ -6688,7 +6314,7 @@ Replace `upload_symbols_to_sentry` with `sentry_upload_dsym`
 
 > This action allows you to upload symbolication files to Sentry. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode
 
-upload_symbols_to_sentry | 
+upload_symbols_to_sentry |
 -----|----
 Supported platforms | ios
 Author | @joshdholtz
@@ -6726,20 +6352,14 @@ Key | Description
   `dsym_paths` | Path to an array of your symbols file. For iOS and Mac provide path to app.dSYM.zip
 
 </details>
-</div>
 
 
 
 
-</div>
 
 
 # Misc
 
-<div class='category-actions'>
-
-
-<div class='action'>
 
 ### puts
 
@@ -6749,7 +6369,7 @@ Prints out the given text
 
 
 
-puts | 
+puts |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -6769,8 +6389,6 @@ puts "Hi there"
 
 
 
-<div class='action'>
-
 ### default_platform
 
 Defines a default platform to not have to specify the platform
@@ -6779,7 +6397,7 @@ Defines a default platform to not have to specify the platform
 
 
 
-default_platform | 
+default_platform |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -6799,8 +6417,6 @@ default_platform :android
 
 
 
-<div class='action'>
-
 ### fastlane_version
 
 Verifies the minimum fastlane version required
@@ -6810,7 +6426,7 @@ Verifies the minimum fastlane version required
 > Add this to your `Fastfile` to require a certain version of _fastlane_.
 Use it if you use an action that just recently came out and you need it
 
-fastlane_version | 
+fastlane_version |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -6830,8 +6446,6 @@ fastlane_version "1.50.0"
 
 
 
-<div class='action'>
-
 ### lane_context
 
 An alias to `Actions.lane_context`
@@ -6840,7 +6454,7 @@ An alias to `Actions.lane_context`
 
 
 
-lane_context | 
+lane_context |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -6851,8 +6465,6 @@ Author | @KrauseFx
 
 
 
-<div class='action'>
-
 ### import
 
 Import another Fastfile to use its lanes
@@ -6862,7 +6474,7 @@ Import another Fastfile to use its lanes
 > This is useful if you have shared lanes across multiple apps and you want to store a Fastfile
 in a separate folder. The path must be relative to the Fastfile this is called from.
 
-import | 
+import |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -6882,8 +6494,6 @@ import "./path/to/other/Fastfile"
 
 
 
-<div class='action'>
-
 ### import_from_git
 
 Import another Fastfile from a remote git repository to use its lanes
@@ -6893,7 +6503,7 @@ Import another Fastfile from a remote git repository to use its lanes
 > This is useful if you have shared lanes across multiple apps and you want to store the Fastfile
 in a remote git repository.
 
-import_from_git | 
+import_from_git |
 -----|----
 Supported platforms | ios, android, mac
 Author | @fabiomassimo, @KrauseFx, @Liquidsoul
@@ -6925,12 +6535,9 @@ Key | Description
   `path` | The path of the Fastfile in the repository
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### clean_build_artifacts
 
@@ -6941,7 +6548,7 @@ Deletes files created as result of running gym, cert, sigh or download_dsyms
 > This action deletes the files that get created in your repo as a result of running the _gym_ and _sigh_ commands. It doesn't delete the `fastlane/report.xml` though, this is probably more suited for the .gitignore.
 Useful if you quickly want to send out a test build by dropping down to the command line and typing something like `fastlane beta`, without leaving your repo in a messy state afterwards.
 
-clean_build_artifacts | 
+clean_build_artifacts |
 -----|----
 Supported platforms | ios, mac
 Author | @lmirosevic
@@ -6967,12 +6574,9 @@ Key | Description
   `exclude_pattern` | Exclude all files from clearing that match the given Regex pattern: e.g. '.*.mobileprovision'
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### skip_docs
 
@@ -6982,7 +6586,7 @@ Skip the creation of the fastlane/README.md file when running fastlane
 
 > Tell _fastlane_ to not automatically create a `fastlane/README.md` when running _fastlane_. You can always trigger the creation of this file manually by running `fastlane docs`
 
-skip_docs | 
+skip_docs |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -7002,8 +6606,6 @@ skip_docs
 
 
 
-<div class='action'>
-
 ### produce
 
 Creates the given application on iTC and the Dev Portal if necessary
@@ -7012,7 +6614,7 @@ Creates the given application on iTC and the Dev Portal if necessary
 
 
 
-produce | 
+produce |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -7062,12 +6664,9 @@ Key | Description
   `itc_team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### is_ci
 
@@ -7078,7 +6677,7 @@ Is the current run being executed on a CI system, like Jenkins or Travis
 > The return value of this method is true if fastlane is currently executed on
 Travis, Jenkins, Circle or a similar CI service
 
-is_ci | 
+is_ci |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -7102,8 +6701,6 @@ end
 
 
 
-<div class='action'>
-
 ### setup_jenkins
 
 Setup xcodebuild, gym and scan for easier Jenkins integration
@@ -7119,7 +6716,7 @@ This action helps with Jenkins integration. Creates own derived data for each jo
 The action also works with [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin), selected keychain
 will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when fastlane is executed on a CI system.
 
-setup_jenkins | 
+setup_jenkins |
 -----|----
 Supported platforms | ios, mac
 Author | @bartoszj
@@ -7155,12 +6752,9 @@ Key | Description
   `result_bundle` | Produce the result bundle describing what occurred will be placed
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### unlock_keychain
 
@@ -7171,7 +6765,7 @@ Unlock a keychain
 > Unlocks the given keychain file and adds it to the keychain search list
 Keychains can be replaced with `add_to_search_list: :replace`
 
-unlock_keychain | 
+unlock_keychain |
 -----|----
 Supported platforms | ios, android, mac
 Author | @xfreebird
@@ -7226,12 +6820,9 @@ Key | Description
   `set_default` | Set as default keychain
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### badge
 
@@ -7244,7 +6835,7 @@ You can also provide your custom badge/overlay or add an shield for more customi
 https://github.com/HazAT/badge
 **Note** If you want to reset the badge back to default you can use `sh 'git checkout -- <path>/Assets.xcassets/'`
 
-badge | 
+badge |
 -----|----
 Supported platforms | ios, android, mac
 Author | @DanielGri
@@ -7292,12 +6883,9 @@ Key | Description
   `shield_no_resize` | Shield image will no longer be resized to aspect fill the full icon. Instead it will only be shrunk to not exceed the icon graphic
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_fastlane
 
@@ -7315,7 +6903,7 @@ export PATH=$PATH:~/.gems/bin
 After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!
 Recommended usage of the `update_fastlane` action is at the top inside of the `before_all` block, before running any other action
 
-update_fastlane | 
+update_fastlane |
 -----|----
 Supported platforms | ios, android, mac
 Author | @milch, @KrauseFx
@@ -7346,12 +6934,9 @@ Key | Description
   `tools` | [DEPRECATED!] true - Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### precheck
 
@@ -7361,7 +6946,7 @@ Check your app's metadata before you submit your app to review using _precheck_
 
 > More information: https://fastlane.tools/precheck
 
-precheck | 
+precheck |
 -----|----
 Supported platforms | ios
 Author | @taquitos
@@ -7404,12 +6989,9 @@ Key | Description
   `unreachable_urls` | unreachable URLs in app metadata
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### bundle_install
 
@@ -7419,7 +7001,7 @@ This action runs `bundle install` (if available)
 
 
 
-bundle_install | 
+bundle_install |
 -----|----
 Supported platforms | ios, android, mac
 Author | @birmacher, @koglinjg
@@ -7453,12 +7035,9 @@ Key | Description
   `with` | Include gems that are part of the specified named group
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### upload_symbols_to_crashlytics
 
@@ -7468,7 +7047,7 @@ Upload dSYM symbolication files to Crashlytics
 
 > This action allows you to upload symbolication files to Crashlytics. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode. This action will not fail the build if one of the uploads failed. The reason for that is that sometimes some of dSYM files are invalid, and we don't want them to fail the complete build.
 
-upload_symbols_to_crashlytics | 
+upload_symbols_to_crashlytics |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -7497,12 +7076,9 @@ Key | Description
   `platform` | The platform of the app (ios, appletvos, mac)
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### create_keychain
 
@@ -7512,7 +7088,7 @@ Create a new Keychain
 
 
 
-create_keychain | 
+create_keychain |
 -----|----
 Supported platforms | ios, android, mac
 Author | @gin0606
@@ -7552,12 +7128,9 @@ Key | Description
   `add_to_search_list` | Add keychain to search list
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### delete_keychain
 
@@ -7567,7 +7140,7 @@ Delete keychains and remove them from the search list
 
 > Keychains can be deleted after being creating with `create_keychain`
 
-delete_keychain | 
+delete_keychain |
 -----|----
 Supported platforms | ios, android, mac
 Author | @gin0606, @koenpunt
@@ -7598,12 +7171,9 @@ Key | Description
   `keychain_path` | Keychain path
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### latest_testflight_build_number
 
@@ -7614,7 +7184,7 @@ Fetches most recent build number from TestFlight
 > Provides a way to have increment_build_number be based on the latest build you uploaded to iTC.
 Fetches most recent build number from TestFlight based on the version number. Provides a way to have `increment_build_number` be based on the latest build you uploaded to iTC.
 
-latest_testflight_build_number | 
+latest_testflight_build_number |
 -----|----
 Supported platforms | ios
 Author | @daveanderson
@@ -7653,12 +7223,9 @@ Key | Description
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### backup_file
 
@@ -7668,7 +7235,7 @@ This action backs up your file to "[path].back"
 
 
 
-backup_file | 
+backup_file |
 -----|----
 Supported platforms | ios, android, mac
 Author | @gin0606
@@ -7694,12 +7261,9 @@ Key | Description
   `path` | Path to the file you want to backup
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### copy_artifacts
 
@@ -7710,7 +7274,7 @@ Small action to save your build artifacts. Useful when you use reset_git_repo
 > This action copies artifacts to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your `.ipa`s, `.dSYM.zip`s, `.mobileprovision`s, `.cert`s
 Make sure your target_path is gitignored, and if you use `reset_git_repo`, make sure the artifacts are added to the exclude list
 
-copy_artifacts | 
+copy_artifacts |
 -----|----
 Supported platforms | ios, android, mac
 Author | @lmirosevic
@@ -7747,12 +7311,9 @@ Key | Description
   `fail_on_missing` | Fail when a source file isn't found
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### prompt
 
@@ -7764,7 +7325,7 @@ Ask the user for a value or for confirmation
 When this is executed on a CI service, the passed `ci_input` value will be returned
 This action also supports multi-line inputs using the `multi_line_end_keyword` option.
 
-prompt | 
+prompt |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -7802,12 +7363,9 @@ Key | Description
   `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### reset_simulator_contents
 
@@ -7817,7 +7375,7 @@ Shutdown and reset running simulators
 
 
 
-reset_simulator_contents | 
+reset_simulator_contents |
 -----|----
 Supported platforms | ios
 Author | @danramteke
@@ -7843,12 +7401,9 @@ Key | Description
   `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### restore_file
 
@@ -7858,7 +7413,7 @@ This action restore your file that was backuped with the `backup_file` action
 
 
 
-restore_file | 
+restore_file |
 -----|----
 Supported platforms | ios, android, mac
 Author | @gin0606
@@ -7884,12 +7439,9 @@ Key | Description
   `path` | Original file name you want to restore
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### say
 
@@ -7899,7 +7451,7 @@ This action speaks out loud the given text
 
 
 
-say | 
+say |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -7919,8 +7471,6 @@ say "I can speak"
 
 
 
-<div class='action'>
-
 ### zip
 
 Compress a file or folder to a zip
@@ -7929,7 +7479,7 @@ Compress a file or folder to a zip
 
 
 
-zip | 
+zip |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -7973,12 +7523,9 @@ Key | Description
   `verbose` | Enable verbose output of zipped file
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### danger
 
@@ -7989,7 +7536,7 @@ Runs `danger` for the project
 > Formalize your Pull Request etiquette.
 More information: https://github.com/danger/danger
 
-danger | 
+danger |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -8032,12 +7579,9 @@ Key | Description
   `head` | A branch/tag/commit to use as the head. [master|dev|stable]
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### artifactory
 
@@ -8047,7 +7591,7 @@ This action uploads an artifact to artifactory
 
 
 
-artifactory | 
+artifactory |
 -----|----
 Supported platforms | ios, android, mac
 Author | @koglinjg, @tommeier
@@ -8092,12 +7636,9 @@ Key | Description
   `proxy_port` | Proxy port
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### download_dsyms
 
@@ -8115,7 +7656,7 @@ lane :refresh_dsyms do
 end
 ```
 
-download_dsyms | 
+download_dsyms |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -8151,12 +7692,9 @@ Key | Description
   `build_number` | The app build_number for dSYMs you wish to download
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### version_bump_podspec
 
@@ -8169,7 +7707,7 @@ For example, you can use it to bump the version of a cocoapods' podspec file.
 It also supports versions that are not semantic: 1.4.14.4.1
 For such versions there is an option to change appendix (4.1)
 
-version_bump_podspec | 
+version_bump_podspec |
 -----|----
 Supported platforms | ios, mac
 Author | @Liquidsoul, @KrauseFx
@@ -8202,12 +7740,9 @@ Key | Description
   `version_appendix` | Change version appendix to a specific value. For example 1.4.14.4.1 -> 1.4.14.5
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### team_id
 
@@ -8217,7 +7752,7 @@ Specify the Team ID you want to use for the Apple Developer Portal
 
 
 
-team_id | 
+team_id |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -8237,8 +7772,6 @@ team_id "Q2CBPK58CA"
 
 
 
-<div class='action'>
-
 ### backup_xcarchive
 
 Save your [zipped] xcarchive elsewhere from default path
@@ -8247,7 +7780,7 @@ Save your [zipped] xcarchive elsewhere from default path
 
 
 
-backup_xcarchive | 
+backup_xcarchive |
 -----|----
 Supported platforms | ios, mac
 Author | @dral3x
@@ -8281,12 +7814,9 @@ Key | Description
   `versioned` | Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### pod_lib_lint
 
@@ -8296,7 +7826,7 @@ Pod lib lint
 
 > Test the syntax of your Podfile by linting the pod against the files of its directory
 
-pod_lib_lint | 
+pod_lib_lint |
 -----|----
 Supported platforms | ios, mac
 Author | @thierryxing
@@ -8344,12 +7874,9 @@ Key | Description
   `quick` | Lint skips checks that would require to download and build the spec
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### erb
 
@@ -8360,7 +7887,7 @@ Allows to Generate output files based on ERB templates
 > Renders an ERB template with `placeholders` given as a hash via parameter,
 if no :destination is set, returns rendered template as string
 
-erb | 
+erb |
 -----|----
 Supported platforms | ios, android, mac
 Author | @hjanuschka
@@ -8404,12 +7931,9 @@ Key | Description
   `placeholders` | Placeholders given as a hash
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### download
 
@@ -8421,7 +7945,7 @@ Download a file from a remote server (e.g. JSON file)
 For more advanced networking code, use the Ruby functions instead:
 http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html
 
-download | 
+download |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -8447,12 +7971,9 @@ Key | Description
   `url` | The URL that should be downloaded
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### rocket
 
@@ -8462,7 +7983,7 @@ Outputs ascii-art for a rocket 🚀
 
 > Print an ascii Rocket :rocket:. Useful after using _crashlytics_ or _pilot_ to indicate that your new build has been shipped to outer-space.
 
-rocket | 
+rocket |
 -----|----
 Supported platforms | ios, android, mac
 Author | @JaviSoto, @radex
@@ -8482,8 +8003,6 @@ rocket
 
 
 
-<div class='action'>
-
 ### debug
 
 Print out an overview of the lane context values
@@ -8492,7 +8011,7 @@ Print out an overview of the lane context values
 
 
 
-debug | 
+debug |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -8512,8 +8031,6 @@ debug
 
 
 
-<div class='action'>
-
 ### make_changelog_from_jenkins
 
 Generate a changelog using the Changes section from the current Jenkins build
@@ -8522,7 +8039,7 @@ Generate a changelog using the Changes section from the current Jenkins build
 
 > This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.
 
-make_changelog_from_jenkins | 
+make_changelog_from_jenkins |
 -----|----
 Supported platforms | ios, android, mac
 Author | @mandrizzle
@@ -8552,12 +8069,9 @@ Key | Description
   `include_commit_body` | Include the commit body along with the summary
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### pod_push
 
@@ -8567,7 +8081,7 @@ Push a Podspec to Trunk or a private repository
 
 
 
-pod_push | 
+pod_push |
 -----|----
 Supported platforms | ios, mac
 Author | @squarefrog
@@ -8614,12 +8128,9 @@ Key | Description
   `verbose` | Show more debugging information
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### dsym_zip
 
@@ -8629,7 +8140,7 @@ Creates a zipped dSYM in the project root from the .xcarchive
 
 > You can manually specify the path to the xcarchive (not needed if you use `xcodebuild`/`xcarchive` to build your archive)
 
-dsym_zip | 
+dsym_zip |
 -----|----
 Supported platforms | ios, mac
 Author | @lmirosevic
@@ -8663,12 +8174,9 @@ Key | Description
   `all` | Whether or not all dSYM files are to be included. Optional, default is false in which only your app dSYM is included
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### ensure_no_debug_code
 
@@ -8680,7 +8188,7 @@ Ensures the given text is nowhere in the code base
 to check if there is any debug code still in your code base or if you have
 things like // TO DO or similar
 
-ensure_no_debug_code | 
+ensure_no_debug_code |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -8733,12 +8241,9 @@ Key | Description
   `exclude_dirs` | An array of dirs that should not be included in the search
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### cloc
 
@@ -8749,7 +8254,7 @@ Generates a Code Count that can be read by Jenkins (xml format)
 > This action will run cloc to generate a SLOC report that the Jenkins SLOCCount plugin can read.
 See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.
 
-cloc | 
+cloc |
 -----|----
 Supported platforms | ios, mac
 Author | @intere
@@ -8783,12 +8288,9 @@ Key | Description
   `xml` | Should we generate an XML File (if false, it will generate a plain text file)?
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### team_name
 
@@ -8798,7 +8300,7 @@ Set a team to use by its name
 
 
 
-team_name | 
+team_name |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -8818,8 +8320,6 @@ team_name "Felix Krause"
 
 
 
-<div class='action'>
-
 ### scp
 
 Transfer files via SCP
@@ -8828,7 +8328,7 @@ Transfer files via SCP
 
 
 
-scp | 
+scp |
 -----|----
 Supported platforms | ios, android, mac
 Author | @hjanuschka
@@ -8877,12 +8377,9 @@ Key | Description
   `download` | Download
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### verify_build
 
@@ -8892,7 +8389,7 @@ Able to verify various settings in ipa file
 
 > Verifies that the built app was built using the expected build resources. This is relevant for people who build on machines that are used to build apps with different profiles, certificates and/or bundle identifiers to guard against configuration mistakes.
 
-verify_build | 
+verify_build |
 -----|----
 Supported platforms | ios
 Author | @CodeReaper
@@ -8927,12 +8424,9 @@ Key | Description
   `ipa_path` | Explicitly set the ipa path
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### install_on_device
 
@@ -8942,7 +8436,7 @@ Installs an .ipa file on a connected iOS-device via usb or wifi
 
 > Installs the ipa on the device, if no id is given, the first found iOS device will be used, works via USB or Wi-Fi. This requires `ios-deploy` to be installed please have a look at [ios-deploy](https://github.com/phonegap/ios-deploy). to quickly install it, use `npm -g i ios-deploy`
 
-install_on_device | 
+install_on_device |
 -----|----
 Supported platforms | ios
 Author | @hjanuschka
@@ -8974,12 +8468,9 @@ Key | Description
   `ipa` | The IPA file to put on the device
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### version_get_podspec
 
@@ -8989,7 +8480,7 @@ Receive the version number from a podspec file
 
 
 
-version_get_podspec | 
+version_get_podspec |
 -----|----
 Supported platforms | ios, mac
 Author | @Liquidsoul, @KrauseFx
@@ -9015,12 +8506,9 @@ Key | Description
   `path` | You must specify the path to the podspec file
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### rsync
 
@@ -9030,7 +8518,7 @@ Rsync files from :source to :destination
 
 > A wrapper around rsync, rsync is a tool that lets you synchronize files, including permissions and so on for a more detailed information about rsync please see rsync(1) manpage.
 
-rsync | 
+rsync |
 -----|----
 Supported platforms | ios, android, mac
 Author | @hjanuschka
@@ -9061,12 +8549,9 @@ Key | Description
   `destination` | destination file/folder
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### adb_devices
 
@@ -9076,7 +8561,7 @@ Get an array of Connected android device serials
 
 > Fetches device list via adb, e.g. run an adb command on all connected devices.
 
-adb_devices | 
+adb_devices |
 -----|----
 Supported platforms | android
 Author | @hjanuschka
@@ -9108,12 +8593,9 @@ Key | Description
   `adb_path` | The path to your `adb` binary
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### dotgpg_environment
 
@@ -9123,7 +8605,7 @@ Reads in production secrets set in a dotgpg file and puts them in ENV
 
 > More information about dotgpg can be found at https://github.com/ConradIrwin/dotgpg
 
-dotgpg_environment | 
+dotgpg_environment |
 -----|----
 Supported platforms | ios, android, mac
 Author | @simonlevy5
@@ -9149,12 +8631,9 @@ Key | Description
   `dotgpg_file` | Path to your gpg file
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### jira
 
@@ -9164,7 +8643,7 @@ Leave a comment on JIRA tickets
 
 
 
-jira | 
+jira |
 -----|----
 Supported platforms | ios, android, mac
 Author | @iAmChrisTruman
@@ -9200,12 +8679,9 @@ Key | Description
   `comment_text` | Text to add to the ticket as a comment
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### read_podspec
 
@@ -9220,7 +8696,7 @@ Loads the specified (or the first found) podspec in the folder as JSON, so that 
 This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of 
 the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).
 
-read_podspec | 
+read_podspec |
 -----|----
 Supported platforms | ios, mac
 Author | @czechboy0
@@ -9252,12 +8728,9 @@ Key | Description
   `path` | Path to the podspec to be read
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### ssh
 
@@ -9267,7 +8740,7 @@ Allows remote command execution using ssh
 
 > Lets you execute remote commands via ssh using username/password or ssh-agent. If one of the commands in command-array returns non 0 - it fails.
 
-ssh | 
+ssh |
 -----|----
 Supported platforms | ios, android, mac
 Author | @hjanuschka
@@ -9305,12 +8778,9 @@ Key | Description
   `log` | Log commands and output
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### app_store_build_number
 
@@ -9320,7 +8790,7 @@ Returns the current build_number of either live or edit version
 
 > Returns the current build number of either the live or testflight version - it is useful for getting the build_number of the current or ready-for-sale app version, and it also works on non-live testflight version. If you need to handle more build-trains please see `latest_testflight_build_number`
 
-app_store_build_number | 
+app_store_build_number |
 -----|----
 Supported platforms | ios, mac
 Author | @hjanuschka
@@ -9367,12 +8837,9 @@ Key | Description
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### appetize_viewing_url_generator
 
@@ -9382,7 +8849,7 @@ Generate an URL for appetize simulator
 
 > Check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md) for more information
 
-appetize_viewing_url_generator | 
+appetize_viewing_url_generator |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -9407,12 +8874,9 @@ Key | Description
   `os_version` | The operating system version on which to run your app, e.g. 10.3, 8.0
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### install_xcode_plugin
 
@@ -9422,7 +8886,7 @@ Install an Xcode plugin for the current user
 
 
 
-install_xcode_plugin | 
+install_xcode_plugin |
 -----|----
 Supported platforms | ios, mac
 Author | @NeoNachoSoto, @tommeier
@@ -9453,12 +8917,9 @@ Key | Description
   `github` | GitHub repository URL for Xcode plugin
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### add_extra_platforms
 
@@ -9468,7 +8929,7 @@ Modify the default list of supported platforms
 
 
 
-add_extra_platforms | 
+add_extra_platforms |
 -----|----
 Supported platforms | ios, android, mac
 Author | @lacostej
@@ -9496,12 +8957,9 @@ Key | Description
   `platforms` | The optional extra platforms to support
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### clipboard
 
@@ -9511,7 +8969,7 @@ Copies a given string into the clipboard. Works only on macOS
 
 
 
-clipboard | 
+clipboard |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -9541,12 +8999,9 @@ Key | Description
   `value` | The string that should be copied into the clipboard
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### build_and_upload_to_appetize
 
@@ -9557,7 +9012,7 @@ Generate and upload an ipa file to appetize.io
 > This should be called from danger
 More information in the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
 
-build_and_upload_to_appetize | 
+build_and_upload_to_appetize |
 -----|----
 Supported platforms | ios
 Author | @KrauseFx
@@ -9576,12 +9031,9 @@ Key | Description
   `api_token` | Appetize.io API Token
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### update_icloud_container_identifiers
 
@@ -9591,7 +9043,7 @@ This action changes the iCloud container identifiers in the entitlements file
 
 > Updates the iCloud Container Identifiers in the given Entitlements file, so you can use different iCloud containers for different builds like Adhoc, App Store, etc.
 
-update_icloud_container_identifiers | 
+update_icloud_container_identifiers |
 -----|----
 Supported platforms | ios
 Author | @JamesKuang
@@ -9621,12 +9073,9 @@ Key | Description
   `icloud_container_identifiers` | An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp']
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### sh
 
@@ -9637,7 +9086,7 @@ Runs a shell command
 > Allows running an arbitrary shell command.
 Be aware of a specific behavior of 'sh' action with regard to the working directory. For details refer to Advanced.md
 
-sh | 
+sh |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -9670,12 +9119,9 @@ Key | Description
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### tryouts
 
@@ -9685,7 +9131,7 @@ Upload a new build to Tryouts
 
 > More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release
 
-tryouts | 
+tryouts |
 -----|----
 Supported platforms | ios, android
 Author | @alicertel
@@ -9721,26 +9167,22 @@ Key | Description
   `status` | 2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update
 
 </details>
-</div>
 
 
 
 
-<div class='action'>
+### opt_out_crash_reporting
 
-### ruby_version
-
-Verifies the minimum ruby version required
+This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
 
-ruby_version | 
+opt_out_crash_reporting |
 -----|----
 Supported platforms | ios, android, mac
-Author | @sebastianvarela
+Author | @mpirri, @ohayon
 
 
 
@@ -9748,7 +9190,7 @@ Author | @sebastianvarela
 <summary>1 Example</summary>
 
 ```ruby
-ruby_version "2.4.0"
+opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
 
@@ -9756,8 +9198,6 @@ ruby_version "2.4.0"
 
 
 
-
-<div class='action'>
 
 ### setup_travis
 
@@ -9769,7 +9209,7 @@ Setup the keychain and match to work with Travis CI
 - Switches match to `readonly` mode to not create new profiles/cert on CI
 This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
 
-setup_travis | 
+setup_travis |
 -----|----
 Supported platforms | ios, mac
 Author | @KrauseFx
@@ -9795,12 +9235,9 @@ Key | Description
   `force` | Force setup, even if not executed by travis
 
 </details>
-</div>
 
 
 
-
-<div class='action'>
 
 ### plugin_scores
 
@@ -9810,7 +9247,7 @@ Key | Description
 
 
 
-plugin_scores | 
+plugin_scores |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -9826,12 +9263,37 @@ Key | Description
 ----|------------
 
 </details>
-</div>
 
 
 
 
-<div class='action'>
+### opt_out_usage
+
+This will stop uploading the information which actions were run
+
+
+
+> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+
+opt_out_usage |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_usage # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
 
 ### google_play_track_version_codes
 
@@ -9841,7 +9303,7 @@ Retrieves version codes for a Google Play track
 
 > More information: https://github.com/fastlane/fastlane/tree/master/supply
 
-google_play_track_version_codes | 
+google_play_track_version_codes |
 -----|----
 Supported platforms | android
 Author | @panthomakos
@@ -9874,25 +9336,23 @@ Key | Description
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
 
 </details>
-</div>
 
 
 
 
-<div class='action'>
+### ruby_version
 
-### opt_out_usage
-
-This will stop uploading the information which actions were run
+Verifies the minimum ruby version required
 
 
 
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
-opt_out_usage | 
+ruby_version |
 -----|----
 Supported platforms | ios, android, mac
-Author | @KrauseFx
+Author | @sebastianvarela
 
 
 
@@ -9900,7 +9360,7 @@ Author | @KrauseFx
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_usage # add this to the top of your Fastfile
+ruby_version "2.4.0"
 ```
 
 
@@ -9909,36 +9369,5 @@ opt_out_usage # add this to the top of your Fastfile
 
 
 
-<div class='action'>
-
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting | 
------|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
-</div>
 
 
