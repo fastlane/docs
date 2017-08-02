@@ -160,9 +160,9 @@ Update your `.travis.yml` to look like this:
 language: objective-c
 osx_image: xcode8.3
 install:
-- bundle install
+  - bundle install
 script:
-- fastlane beta
+  - fastlane beta
 ```
 
 The above config files assume you have a `Gemfile` set up, if you don't have one yet, make sure to follow our [Gemfile guide](https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile) and run `bundle update` to make sure you're using the most recent _fastlane_ release.
