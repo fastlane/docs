@@ -33,7 +33,7 @@ _fastlane_ is an open platform and we enable every developer to extend it to fit
 
 ### Find a plugin
 
-Head over to [Available Plugins](https://docs.fastlane.tools/actions/#plugins) for a list of plugins you can use.
+Head over to [Available Plugins](https://docs.fastlane.tools/plugins/available-plugins) for a list of plugins you can use.
 
 List all available plugins using
 
