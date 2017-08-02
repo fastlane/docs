@@ -453,9 +453,9 @@ test:
 <pre><code class="yml">language: objective-c
 osx_image: xcode8.3
 install:
-- bundle install
+  - bundle install
 script:
-- fastlane beta
+  - fastlane beta
 </code></pre>
 
 <p>The above config files assume you have a <code>Gemfile</code> set up, if you don't have one yet, make sure to follow our <a href="https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile">Gemfile guide</a> and run <code>bundle update</code> to make sure you're using the most recent <em>fastlane</em> release.</p>
