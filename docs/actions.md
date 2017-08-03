@@ -1367,6 +1367,34 @@ xcexport
 
 
 
+### xcclean
+
+Cleans the project using `xcodebuild`
+
+
+
+
+
+xcclean |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcclean
+```
+
+
+</details>
+
+
+
+
 ### xctest
 
 Runs tests on the given simulator
@@ -1389,34 +1417,6 @@ Author | @dtrenz
 xctest(
   destination: "name=iPhone 7s,OS=10.0"
 )
-```
-
-
-</details>
-
-
-
-
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
 ```
 
 
@@ -9171,102 +9171,6 @@ Key | Description
 
 
 
-### setup_travis
-
-Setup the keychain and match to work with Travis CI
-
-
-
-> - Creates a new temporary keychain for use with match
-- Switches match to `readonly` mode to not create new profiles/cert on CI
-This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
-
-setup_travis |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-setup_travis
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by travis
-
-</details>
-
-
-
-
-### plugin_scores
-
-[31mNo description provided[0m
-
-
-
-
-
-plugin_scores |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-
-</details>
-
-
-
-
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting |
------|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
 ### ruby_version
 
 Verifies the minimum ruby version required
@@ -9288,34 +9192,6 @@ Author | @sebastianvarela
 
 ```ruby
 ruby_version "2.4.0"
-```
-
-
-</details>
-
-
-
-
-### opt_out_usage
-
-This will stop uploading the information which actions were run
-
-
-
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
-
-opt_out_usage |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_usage # add this to the top of your Fastfile
 ```
 
 
@@ -9363,6 +9239,130 @@ Key | Description
   `json_key` | The service account json file used to authenticate with Google
   `json_key_data` | The service account json used to authenticate with Google
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
+
+</details>
+
+
+
+
+### opt_out_usage
+
+This will stop uploading the information which actions were run
+
+
+
+> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+
+opt_out_usage |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_usage # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
+### setup_travis
+
+Setup the keychain and match to work with Travis CI
+
+
+
+> - Creates a new temporary keychain for use with match
+- Switches match to `readonly` mode to not create new profiles/cert on CI
+This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
+
+setup_travis |
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+setup_travis
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `force` | Force setup, even if not executed by travis
+
+</details>
+
+
+
+
+### opt_out_crash_reporting
+
+This will prevent reports from being uploaded when _fastlane_ crashes
+
+
+
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+
+opt_out_crash_reporting |
+-----|----
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_crash_reporting # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
+### plugin_scores
+
+[31mNo description provided[0m
+
+
+
+
+
+plugin_scores |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
 
 </details>
 
