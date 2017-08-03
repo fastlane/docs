@@ -1339,62 +1339,6 @@ verify_pod_keys
 
 
 
-### xcbuild
-
-Builds the project using `xcodebuild`
-
-
-
-
-
-xcbuild |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcbuild
-```
-
-
-</details>
-
-
-
-
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
-```
-
-
-</details>
-
-
-
-
 ### xcexport
 
 Exports the project using `xcodebuild`
@@ -1453,6 +1397,34 @@ xctest(
 
 
 
+### xcclean
+
+Cleans the project using `xcodebuild`
+
+
+
+
+
+xcclean |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcclean
+```
+
+
+</details>
+
+
+
+
 ### xcarchive
 
 Archives the project using `xcodebuild`
@@ -1473,6 +1445,34 @@ Author | @dtrenz
 
 ```ruby
 xcarchive
+```
+
+
+</details>
+
+
+
+
+### xcbuild
+
+Builds the project using `xcodebuild`
+
+
+
+
+
+xcbuild |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcbuild
 ```
 
 
@@ -9171,34 +9171,6 @@ Key | Description
 
 
 
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting |
------|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
 ### setup_travis
 
 Setup the keychain and match to work with Travis CI
@@ -9261,6 +9233,63 @@ Author | @KrauseFx
 
 Key | Description
 ----|------------
+
+</details>
+
+
+
+
+### opt_out_crash_reporting
+
+This will prevent reports from being uploaded when _fastlane_ crashes
+
+
+
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+
+opt_out_crash_reporting |
+-----|----
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_crash_reporting # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
+### ruby_version
+
+Verifies the minimum ruby version required
+
+
+
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+
+ruby_version |
+-----|----
+Supported platforms | ios, android, mac
+Author | @sebastianvarela
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ruby_version "2.4.0"
+```
+
 
 </details>
 
@@ -9334,35 +9363,6 @@ Key | Description
   `json_key` | The service account json file used to authenticate with Google
   `json_key_data` | The service account json used to authenticate with Google
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
-
-</details>
-
-
-
-
-### ruby_version
-
-Verifies the minimum ruby version required
-
-
-
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
-
-ruby_version |
------|----
-Supported platforms | ios, android, mac
-Author | @sebastianvarela
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ruby_version "2.4.0"
-```
-
 
 </details>
 
