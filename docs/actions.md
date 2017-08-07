@@ -1339,15 +1339,15 @@ verify_pod_keys
 
 
 
-### xcexport
+### xcbuild
 
-Exports the project using `xcodebuild`
-
-
+Builds the project using `xcodebuild`
 
 
 
-xcexport |
+
+
+xcbuild |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1358,35 +1358,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcexport
-```
-
-
-</details>
-
-
-
-
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
+xcbuild
 ```
 
 
@@ -1425,6 +1397,34 @@ xctest(
 
 
 
+### xcexport
+
+Exports the project using `xcodebuild`
+
+
+
+
+
+xcexport |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcexport
+```
+
+
+</details>
+
+
+
+
 ### xcarchive
 
 Archives the project using `xcodebuild`
@@ -1453,15 +1453,15 @@ xcarchive
 
 
 
-### xcbuild
+### xcclean
 
-Builds the project using `xcodebuild`
-
-
+Cleans the project using `xcodebuild`
 
 
 
-xcbuild |
+
+
+xcclean |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1472,7 +1472,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcbuild
+xcclean
 ```
 
 
@@ -2634,6 +2634,7 @@ import_certificate(
 Key | Description
 ----|------------
   `keychain_name` | Keychain the items should be imported to
+  `keychain_path` | Path to the Keychain file to which the items should be imported
   `keychain_password` | The password for the keychain. Note that for the login keychain this is your user's password
   `certificate_path` | Path to certificate
   `certificate_password` | Certificate password
@@ -3995,7 +3996,8 @@ Key | Description
 ----|------------
   `development` | Renew the development push certificate instead of the production one
   `generate_p12` | Generate a p12 file additionally to a PEM file
-  `force` | Create a new push certificate, even if the current one is active for 30 more days
+  `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one. Default value is 30 days
+  `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days
   `save_private_key` | Set to save the private RSA key
   `app_identifier` | The bundle identifier of your app
   `username` | Your Apple ID Username
@@ -8865,6 +8867,7 @@ Returns | The URL to preview the iPhone app
 Key | Description
 ----|------------
   `public_key` | Public key of the app you wish to update
+  `base_url` | Base URL of Appetize service
   `device` | Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9
   `scale` | Scale of the simulator
   `orientation` | Device orientation
@@ -8872,6 +8875,8 @@ Key | Description
   `color` | Color of the device
   `launch_url` | Specify a deep link to open when your app is launched
   `os_version` | The operating system version on which to run your app, e.g. 10.3, 8.0
+  `params` | Specifiy params value to be passed to Appetize
+  `proxy` | Specify a HTTP proxy to be passed to Appetize
 
 </details>
 
@@ -9171,19 +9176,20 @@ Key | Description
 
 
 
-### ruby_version
+### setup_travis
 
-Verifies the minimum ruby version required
+Setup the keychain and match to work with Travis CI
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> - Creates a new temporary keychain for use with match
+- Switches match to `readonly` mode to not create new profiles/cert on CI
+This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
 
-ruby_version |
+setup_travis |
 -----|----
-Supported platforms | ios, android, mac
-Author | @sebastianvarela
+Supported platforms | ios, mac
+Author | @KrauseFx
 
 
 
@@ -9191,9 +9197,19 @@ Author | @sebastianvarela
 <summary>1 Example</summary>
 
 ```ruby
-ruby_version "2.4.0"
+setup_travis
 ```
 
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `force` | Force setup, even if not executed by travis
 
 </details>
 
@@ -9273,58 +9289,19 @@ opt_out_usage # add this to the top of your Fastfile
 
 
 
-### setup_travis
+### ruby_version
 
-Setup the keychain and match to work with Travis CI
-
-
-
-> - Creates a new temporary keychain for use with match
-- Switches match to `readonly` mode to not create new profiles/cert on CI
-This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
-
-setup_travis |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
+Verifies the minimum ruby version required
 
 
 
-<details>
-<summary>1 Example</summary>
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
-```ruby
-setup_travis
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by travis
-
-</details>
-
-
-
-
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting |
+ruby_version |
 -----|----
 Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
+Author | @sebastianvarela
 
 
 
@@ -9332,7 +9309,7 @@ Author | @mpirri, @ohayon
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
+ruby_version "2.4.0"
 ```
 
 
@@ -9363,6 +9340,34 @@ Author | @KrauseFx
 
 Key | Description
 ----|------------
+
+</details>
+
+
+
+
+### opt_out_crash_reporting
+
+This will prevent reports from being uploaded when _fastlane_ crashes
+
+
+
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+
+opt_out_crash_reporting |
+-----|----
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_crash_reporting # add this to the top of your Fastfile
+```
+
 
 </details>
 
