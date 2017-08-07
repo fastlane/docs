@@ -2376,12 +2376,12 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
-<h3 id="xcexport"><a name="user-content-xcexport" href="#xcexport" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcexport</h3>
-<p>Exports the project using <code>xcodebuild</code></p>
+<h3 id="xcbuild"><a name="user-content-xcbuild" href="#xcbuild" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcbuild</h3>
+<p>Builds the project using <code>xcodebuild</code></p>
 <table>
 <thead>
 <tr>
-<th>xcexport</th>
+<th>xcbuild</th>
 <th></th>
 </tr>
 </thead>
@@ -2398,33 +2398,7 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">xcexport
-</code></pre>
-
-<p></details></p>
-<h3 id="xcclean"><a name="user-content-xcclean" href="#xcclean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcclean</h3>
-<p>Cleans the project using <code>xcodebuild</code></p>
-<table>
-<thead>
-<tr>
-<th>xcclean</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@dtrenz</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">xcclean
+<pre><code class="ruby">xcbuild
 </code></pre>
 
 <p></details></p>
@@ -2456,6 +2430,32 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
+<h3 id="xcexport"><a name="user-content-xcexport" href="#xcexport" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcexport</h3>
+<p>Exports the project using <code>xcodebuild</code></p>
+<table>
+<thead>
+<tr>
+<th>xcexport</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">xcexport
+</code></pre>
+
+<p></details></p>
 <h3 id="xcarchive"><a name="user-content-xcarchive" href="#xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcarchive</h3>
 <p>Archives the project using <code>xcodebuild</code></p>
 <table>
@@ -2482,12 +2482,12 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </code></pre>
 
 <p></details></p>
-<h3 id="xcbuild"><a name="user-content-xcbuild" href="#xcbuild" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcbuild</h3>
-<p>Builds the project using <code>xcodebuild</code></p>
+<h3 id="xcclean"><a name="user-content-xcclean" href="#xcclean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcclean</h3>
+<p>Cleans the project using <code>xcodebuild</code></p>
 <table>
 <thead>
 <tr>
-<th>xcbuild</th>
+<th>xcclean</th>
 <th></th>
 </tr>
 </thead>
@@ -2504,7 +2504,7 @@ http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modi
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">xcbuild
+<pre><code class="ruby">xcclean
 </code></pre>
 
 <p></details></p>
@@ -4168,6 +4168,10 @@ Use this action to download the latest code signing identity</p>
 <tr>
 <td><code>keychain_name</code></td>
 <td>Keychain the items should be imported to</td>
+</tr>
+<tr>
+<td><code>keychain_path</code></td>
+<td>Path to the Keychain file to which the items should be imported</td>
 </tr>
 <tr>
 <td><code>keychain_password</code></td>
@@ -6322,8 +6326,12 @@ pem(
 <td>Generate a p12 file additionally to a PEM file</td>
 </tr>
 <tr>
+<td><code>active_days_limit</code></td>
+<td>If the current certificate is active for less than this number of days, generate a new one. Default value is 30 days</td>
+</tr>
+<tr>
 <td><code>force</code></td>
-<td>Create a new push certificate, even if the current one is active for 30 more days</td>
+<td>Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days</td>
 </tr>
 <tr>
 <td><code>save_private_key</code></td>
@@ -13233,6 +13241,10 @@ puts &quot;Using Version #{version}&quot;
 <td>Public key of the app you wish to update</td>
 </tr>
 <tr>
+<td><code>base_url</code></td>
+<td>Base URL of Appetize service</td>
+</tr>
+<tr>
 <td><code>device</code></td>
 <td>Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9</td>
 </tr>
@@ -13259,6 +13271,14 @@ puts &quot;Using Version #{version}&quot;
 <tr>
 <td><code>os_version</code></td>
 <td>The operating system version on which to run your app, e.g. 10.3, 8.0</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td>Specifiy params value to be passed to Appetize</td>
+</tr>
+<tr>
+<td><code>proxy</code></td>
+<td>Specify a HTTP proxy to be passed to Appetize</td>
 </tr>
 </tbody>
 </table>
@@ -13643,35 +13663,55 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 </tbody>
 </table>
 <p></details></p>
-<h3 id="ruby_version"><a name="user-content-ruby_version" href="#ruby_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ruby_version</h3>
-<p>Verifies the minimum ruby version required</p>
+<h3 id="setup_travis"><a name="user-content-setup_travis" href="#setup_travis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_travis</h3>
+<p>Setup the keychain and match to work with Travis CI</p>
 <blockquote>
-<p>Add this to your <code>Fastfile</code> to require a certain version of <em>ruby</em>.
-Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed appropriately.</p>
+<ul>
+<li>Creates a new temporary keychain for use with match</li>
+<li>Switches match to <code>readonly</code> mode to not create new profiles/cert on CI
+This action helps with Travis integration, add this to the top of your Fastfile if you use Travis</li>
+</ul>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>ruby_version</th>
+<th>setup_travis</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, android, mac</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@sebastianvarela</td>
+<td>@KrauseFx</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">ruby_version &quot;2.4.0&quot;
+<pre><code class="ruby">setup_travis
 </code></pre>
 
+<p></details></p>
+<p><details>
+<summary>Parameters</summary></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>force</code></td>
+<td>Force setup, even if not executed by travis</td>
+</tr>
+</tbody>
+</table>
 <p></details></p>
 <h3 id="google_play_track_version_codes"><a name="user-content-google_play_track_version_codes" href="#google_play_track_version_codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>google_play_track_version_codes</h3>
 <p>Retrieves version codes for a Google Play track</p>
@@ -13776,65 +13816,16 @@ Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed
 </code></pre>
 
 <p></details></p>
-<h3 id="setup_travis"><a name="user-content-setup_travis" href="#setup_travis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_travis</h3>
-<p>Setup the keychain and match to work with Travis CI</p>
+<h3 id="ruby_version"><a name="user-content-ruby_version" href="#ruby_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ruby_version</h3>
+<p>Verifies the minimum ruby version required</p>
 <blockquote>
-<ul>
-<li>Creates a new temporary keychain for use with match</li>
-<li>Switches match to <code>readonly</code> mode to not create new profiles/cert on CI
-This action helps with Travis integration, add this to the top of your Fastfile if you use Travis</li>
-</ul>
+<p>Add this to your <code>Fastfile</code> to require a certain version of <em>ruby</em>.
+Put it at the top of your `Fastfile to ensure that <em>fastlane</em> is executed appropriately.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>setup_travis</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-</tbody>
-</table>
-<p><details>
-<summary>1 Example</summary></p>
-<pre><code class="ruby">setup_travis
-</code></pre>
-
-<p></details></p>
-<p><details>
-<summary>Parameters</summary></p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>force</code></td>
-<td>Force setup, even if not executed by travis</td>
-</tr>
-</tbody>
-</table>
-<p></details></p>
-<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
-<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
-<blockquote>
-<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>opt_out_crash_reporting</th>
+<th>ruby_version</th>
 <th></th>
 </tr>
 </thead>
@@ -13845,13 +13836,13 @@ This action helps with Travis integration, add this to the top of your Fastfile 
 </tr>
 <tr>
 <td>Author</td>
-<td>@mpirri, @ohayon</td>
+<td>@sebastianvarela</td>
 </tr>
 </tbody>
 </table>
 <p><details>
 <summary>1 Example</summary></p>
-<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
+<pre><code class="ruby">ruby_version &quot;2.4.0&quot;
 </code></pre>
 
 <p></details></p>
@@ -13887,6 +13878,35 @@ This action helps with Travis integration, add this to the top of your Fastfile 
 </thead>
 <tbody></tbody>
 </table>
+<p></details></p>
+<h3 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h3>
+<p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
+<blockquote>
+<p>By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>opt_out_crash_reporting</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@mpirri, @ohayon</td>
+</tr>
+</tbody>
+</table>
+<p><details>
+<summary>1 Example</summary></p>
+<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
+</code></pre>
+
 <p></details></p>
               
             </div>
