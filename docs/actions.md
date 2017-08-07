@@ -1339,6 +1339,34 @@ verify_pod_keys
 
 
 
+### xcbuild
+
+Builds the project using `xcodebuild`
+
+
+
+
+
+xcbuild |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcbuild
+```
+
+
+</details>
+
+
+
+
 ### xcexport
 
 Exports the project using `xcodebuild`
@@ -1359,6 +1387,34 @@ Author | @dtrenz
 
 ```ruby
 xcexport
+```
+
+
+</details>
+
+
+
+
+### xcarchive
+
+Archives the project using `xcodebuild`
+
+
+
+
+
+xcarchive |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcarchive
 ```
 
 
@@ -1417,62 +1473,6 @@ Author | @dtrenz
 xctest(
   destination: "name=iPhone 7s,OS=10.0"
 )
-```
-
-
-</details>
-
-
-
-
-### xcarchive
-
-Archives the project using `xcodebuild`
-
-
-
-
-
-xcarchive |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcarchive
-```
-
-
-</details>
-
-
-
-
-### xcbuild
-
-Builds the project using `xcodebuild`
-
-
-
-
-
-xcbuild |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcbuild
 ```
 
 
@@ -2634,6 +2634,7 @@ import_certificate(
 Key | Description
 ----|------------
   `keychain_name` | Keychain the items should be imported to
+  `keychain_path` | Path to the Keychain file to which the items should be imported
   `keychain_password` | The password for the keychain. Note that for the login keychain this is your user's password
   `certificate_path` | Path to certificate
   `certificate_password` | Certificate password
@@ -3995,7 +3996,8 @@ Key | Description
 ----|------------
   `development` | Renew the development push certificate instead of the production one
   `generate_p12` | Generate a p12 file additionally to a PEM file
-  `force` | Create a new push certificate, even if the current one is active for 30 more days
+  `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one. Default value is 30 days
+  `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days
   `save_private_key` | Set to save the private RSA key
   `app_identifier` | The bundle identifier of your app
   `username` | Your Apple ID Username
@@ -8865,6 +8867,7 @@ Returns | The URL to preview the iPhone app
 Key | Description
 ----|------------
   `public_key` | Public key of the app you wish to update
+  `base_url` | Base URL of Appetize service
   `device` | Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9
   `scale` | Scale of the simulator
   `orientation` | Device orientation
@@ -8872,6 +8875,8 @@ Key | Description
   `color` | Color of the device
   `launch_url` | Specify a deep link to open when your app is launched
   `os_version` | The operating system version on which to run your app, e.g. 10.3, 8.0
+  `params` | Specifiy params value to be passed to Appetize
+  `proxy` | Specify a HTTP proxy to be passed to Appetize
 
 </details>
 
@@ -9171,19 +9176,18 @@ Key | Description
 
 
 
-### ruby_version
+### opt_out_usage
 
-Verifies the minimum ruby version required
+This will stop uploading the information which actions were run
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
 
-ruby_version |
+opt_out_usage |
 -----|----
 Supported platforms | ios, android, mac
-Author | @sebastianvarela
+Author | @KrauseFx
 
 
 
@@ -9191,9 +9195,37 @@ Author | @sebastianvarela
 <summary>1 Example</summary>
 
 ```ruby
-ruby_version "2.4.0"
+opt_out_usage # add this to the top of your Fastfile
 ```
 
+
+</details>
+
+
+
+
+### plugin_scores
+
+[31mNo description provided[0m
+
+
+
+
+
+plugin_scores |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
 
 </details>
 
@@ -9245,18 +9277,18 @@ Key | Description
 
 
 
-### opt_out_usage
+### opt_out_crash_reporting
 
-This will stop uploading the information which actions were run
+This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
 
-opt_out_usage |
+opt_out_crash_reporting |
 -----|----
 Supported platforms | ios, android, mac
-Author | @KrauseFx
+Author | @mpirri, @ohayon
 
 
 
@@ -9264,7 +9296,7 @@ Author | @KrauseFx
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_usage # add this to the top of your Fastfile
+opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
 
@@ -9313,18 +9345,19 @@ Key | Description
 
 
 
-### opt_out_crash_reporting
+### ruby_version
 
-This will prevent reports from being uploaded when _fastlane_ crashes
+Verifies the minimum ruby version required
 
 
 
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
-opt_out_crash_reporting |
+ruby_version |
 -----|----
 Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
+Author | @sebastianvarela
 
 
 
@@ -9332,37 +9365,9 @@ Author | @mpirri, @ohayon
 <summary>1 Example</summary>
 
 ```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
+ruby_version "2.4.0"
 ```
 
-
-</details>
-
-
-
-
-### plugin_scores
-
-[31mNo description provided[0m
-
-
-
-
-
-plugin_scores |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
 
 </details>
 
