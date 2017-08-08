@@ -94,7 +94,13 @@ If you're not familiar with the terminal and prefer a graphical user interface, 
 
 ## Questions and support
 
-All fastlane related questions, problems and feature ideas should be posted as [GitHub issue](https://github.com/fastlane/fastlane/issues/new). This way, other users can search existing discussions, and everybody can jump in.
+Before submitting a new GitHub issue, please make sure to
+
+- Check out [docs.fastlane.tools](https://docs.fastlane.tools)
+- Check out the README pages on [this repo](https://github.com/fastlane/fastlane)
+- Search for [existing GitHub issues](https://github.com/fastlane/fastlane/issues)
+
+If the above doesn't help, please [submit an issue](https://github.com/fastlane/fastlane/issues) on GitHub and provide information about your setup, in particular the output of the `fastlane env` command.
 
 ## System requirements
 
