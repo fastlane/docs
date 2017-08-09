@@ -1339,15 +1339,15 @@ verify_pod_keys
 
 
 
-### xcbuild
+### xcarchive
 
-Builds the project using `xcodebuild`
-
-
+Archives the project using `xcodebuild`
 
 
 
-xcbuild |
+
+
+xcarchive |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1358,7 +1358,35 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcbuild
+xcarchive
+```
+
+
+</details>
+
+
+
+
+### xcclean
+
+Cleans the project using `xcodebuild`
+
+
+
+
+
+xcclean |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcclean
 ```
 
 
@@ -1425,15 +1453,15 @@ xcexport
 
 
 
-### xcarchive
+### xcbuild
 
-Archives the project using `xcodebuild`
-
-
+Builds the project using `xcodebuild`
 
 
 
-xcarchive |
+
+
+xcbuild |
 -----|----
 Supported platforms | ios, mac
 Author | @dtrenz
@@ -1444,35 +1472,7 @@ Author | @dtrenz
 <summary>1 Example</summary>
 
 ```ruby
-xcarchive
-```
-
-
-</details>
-
-
-
-
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
+xcbuild
 ```
 
 
@@ -6657,6 +6657,7 @@ Key | Description
   `language` | Primary Language (e.g. 'English', 'German')
   `company_name` | The name of your company. Only required if it's the first app you create
   `skip_itc` | Skip the creation of the app on iTunes Connect
+  `itc_users` | Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles
   `enabled_features` | [DEPRECATED!] Please use `enable_services` instead - Array with Spaceship App Services
   `enable_services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off))
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal
@@ -9176,91 +9177,6 @@ Key | Description
 
 
 
-### setup_travis
-
-Setup the keychain and match to work with Travis CI
-
-
-
-> - Creates a new temporary keychain for use with match
-- Switches match to `readonly` mode to not create new profiles/cert on CI
-This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
-
-setup_travis |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-setup_travis
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by travis
-
-</details>
-
-
-
-
-### google_play_track_version_codes
-
-Retrieves version codes for a Google Play track
-
-
-
-> More information: https://github.com/fastlane/fastlane/tree/master/supply
-
-google_play_track_version_codes |
------|----
-Supported platforms | android
-Author | @panthomakos
-Returns | Array of integers representing the version codes for the given Google Play track
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-google_play_track_version_codes
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `package_name` | The package name of the application to use
-  `track` | The track of the application to use: production, beta, alpha, rollout
-  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google
-  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account)
-  `json_key` | The service account json file used to authenticate with Google
-  `json_key_data` | The service account json used to authenticate with Google
-  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
-
-</details>
-
-
-
-
 ### opt_out_usage
 
 This will stop uploading the information which actions were run
@@ -9318,34 +9234,6 @@ ruby_version "2.4.0"
 
 
 
-### plugin_scores
-
-[31mNo description provided[0m
-
-
-
-
-
-plugin_scores |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-
-</details>
-
-
-
-
 ### opt_out_crash_reporting
 
 This will prevent reports from being uploaded when _fastlane_ crashes
@@ -9368,6 +9256,169 @@ Author | @mpirri, @ohayon
 opt_out_crash_reporting # add this to the top of your Fastfile
 ```
 
+
+</details>
+
+
+
+
+### setup_travis
+
+Setup the keychain and match to work with Travis CI
+
+
+
+> - Creates a new temporary keychain for use with match
+- Switches match to `readonly` mode to not create new profiles/cert on CI
+This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
+
+setup_travis |
+-----|----
+Supported platforms | ios, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+setup_travis
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `force` | Force setup, even if not executed by travis
+
+</details>
+
+
+
+
+### modify_services
+
+Modifies the services of the app created on Developer Portal
+
+
+
+> Options are same as 'enable_services' in produce action
+https://github.com/fastlane/fastlane/tree/master/produce
+
+modify_services |
+-----|----
+Supported platforms | ios
+Author | @bhimsenpadalkar
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+modify_services(
+  username: "test.account@gmail.com",
+  app_identifier: "com.someorg.app",
+  services: {
+    push_notifications: "on",
+    associated_domains: "off"
+  }
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `username` | Your Apple ID Username
+  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app)
+  `services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off))
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams
+  `team_name` | The name of your Developer Portal team if you're in multiple teams
+
+</details>
+
+
+
+
+### google_play_track_version_codes
+
+Retrieves version codes for a Google Play track
+
+
+
+> More information: https://github.com/fastlane/fastlane/tree/master/supply
+
+google_play_track_version_codes |
+-----|----
+Supported platforms | android
+Author | @panthomakos
+Returns | Array of integers representing the version codes for the given Google Play track
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+google_play_track_version_codes
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `package_name` | The package name of the application to use
+  `track` | The track of the application to use: production, beta, alpha, rollout
+  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google
+  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account)
+  `json_key` | The service account json file used to authenticate with Google
+  `json_key_data` | The service account json used to authenticate with Google
+  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
+
+</details>
+
+
+
+
+### plugin_scores
+
+[31mNo description provided[0m
+
+
+
+
+
+plugin_scores |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
 
 </details>
 
