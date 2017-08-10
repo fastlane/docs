@@ -1339,6 +1339,34 @@ verify_pod_keys
 
 
 
+### xcexport
+
+Exports the project using `xcodebuild`
+
+
+
+
+
+xcexport |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcexport
+```
+
+
+</details>
+
+
+
+
 ### xcbuild
 
 Builds the project using `xcodebuild`
@@ -1359,6 +1387,34 @@ Author | @dtrenz
 
 ```ruby
 xcbuild
+```
+
+
+</details>
+
+
+
+
+### xcarchive
+
+Archives the project using `xcodebuild`
+
+
+
+
+
+xcarchive |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcarchive
 ```
 
 
@@ -1389,62 +1445,6 @@ Author | @dtrenz
 xctest(
   destination: "name=iPhone 7s,OS=10.0"
 )
-```
-
-
-</details>
-
-
-
-
-### xcexport
-
-Exports the project using `xcodebuild`
-
-
-
-
-
-xcexport |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcexport
-```
-
-
-</details>
-
-
-
-
-### xcarchive
-
-Archives the project using `xcodebuild`
-
-
-
-
-
-xcarchive |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcarchive
 ```
 
 
@@ -6657,6 +6657,7 @@ Key | Description
   `language` | Primary Language (e.g. 'English', 'German')
   `company_name` | The name of your company. Only required if it's the first app you create
   `skip_itc` | Skip the creation of the app on iTunes Connect
+  `itc_users` | Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles
   `enabled_features` | [DEPRECATED!] Please use `enable_services` instead - Array with Spaceship App Services
   `enable_services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off))
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal
@@ -9216,6 +9217,169 @@ Key | Description
 
 
 
+### ruby_version
+
+Verifies the minimum ruby version required
+
+
+
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+
+ruby_version |
+-----|----
+Supported platforms | ios, android, mac
+Author | @sebastianvarela
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+ruby_version "2.4.0"
+```
+
+
+</details>
+
+
+
+
+### opt_out_crash_reporting
+
+This will prevent reports from being uploaded when _fastlane_ crashes
+
+
+
+> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+
+opt_out_crash_reporting |
+-----|----
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_crash_reporting # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
+### plugin_scores
+
+[31mNo description provided[0m
+
+
+
+
+
+plugin_scores |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+
+</details>
+
+
+
+
+### opt_out_usage
+
+This will stop uploading the information which actions were run
+
+
+
+> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+
+opt_out_usage |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_usage # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
+### modify_services
+
+Modifies the services of the app created on Developer Portal
+
+
+
+> Options are same as 'enable_services' in produce action
+https://github.com/fastlane/fastlane/tree/master/produce
+
+modify_services |
+-----|----
+Supported platforms | ios
+Author | @bhimsenpadalkar
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+modify_services(
+  username: "test.account@gmail.com",
+  app_identifier: "com.someorg.app",
+  services: {
+    push_notifications: "on",
+    associated_domains: "off"
+  }
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `username` | Your Apple ID Username
+  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app)
+  `services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off))
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams
+  `team_name` | The name of your Developer Portal team if you're in multiple teams
+
+</details>
+
+
+
+
 ### google_play_track_version_codes
 
 Retrieves version codes for a Google Play track
@@ -9255,119 +9419,6 @@ Key | Description
   `json_key` | The service account json file used to authenticate with Google
   `json_key_data` | The service account json used to authenticate with Google
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
-
-</details>
-
-
-
-
-### opt_out_usage
-
-This will stop uploading the information which actions were run
-
-
-
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://github.com/fastlane/fastlane#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
-
-opt_out_usage |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_usage # add this to the top of your Fastfile
-```
-
-
-</details>
-
-
-
-
-### ruby_version
-
-Verifies the minimum ruby version required
-
-
-
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
-
-ruby_version |
------|----
-Supported platforms | ios, android, mac
-Author | @sebastianvarela
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-ruby_version "2.4.0"
-```
-
-
-</details>
-
-
-
-
-### plugin_scores
-
-[31mNo description provided[0m
-
-
-
-
-
-plugin_scores |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-
-</details>
-
-
-
-
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting |
------|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
-```
-
 
 </details>
 
