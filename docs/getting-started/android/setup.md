@@ -55,6 +55,7 @@ Setting it up requires downloading a credentials file from your Google Developer
 
 1. Open the [Google Play Console](https://play.google.com/apps/publish/)
 1. Select **Settings** tab, followed by the **API access** tab
+1. Click the **Create New Project** button
 1. Click the **Create Service Account** button and follow the **Google Developers Console** link in the dialog
 1. Click the **Create Service account** button at the top of the developers console screen
 1. Provide a name for the service account
