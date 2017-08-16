@@ -25,7 +25,9 @@ After _screengrab_ completes, it will show you summary of the screenshots you ca
 
 ## Getting Started Using Espresso
 
-_screengrab_ uses the capabilities of Android's built-in [Instrumented tests](https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests.html) combined with [Espresso](https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso) to drive interactions with your app. To get familiar with writing UI Tests with Espresso, check out [Testing UI for a Single App](http://developer.android.com/training/testing/ui-testing/espresso-testing.html).
+_screengrab_ uses the capabilities of Android's built-in [Instrumented tests](https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests.html) combined with [Espresso](https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso) to drive interactions with your app. 
+
+To get started with writing UI Tests with Espresso, [Create UI tests with Espresso Test Recorder](https://www.youtube.com/watch?v=JRkDVvB106k) video gives a quick intro to Espresso Recording feature for writing UI tests. For more details regrading UI testing, refer to the Anroid guide: [Testing UI for a Single App](http://developer.android.com/training/testing/ui-testing/espresso-testing.html).
 
 ## Installing _screengrab_
 
@@ -63,15 +65,42 @@ Ensure that the following permissions exist in your `src/debug/AndroidManifest.x
 
 ## Configuring your UI Tests for _screengrab_
 
-1. Add `@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();` to your tests class to handle automatic switching of locales
+1. To handle automatic switching of locales, add `@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();` to /app/java/<com.your.package>(AndroidTest)/ExampleInstrumentedTest.java or to your tests class 
 2. To capture screenshots, add the following to your tests `Screengrab.screenshot("name_of_screenshot_here");` on the appropriate screens
 
-## Generating Screenshots with Screengrab
+##### Example UI Test Class (Using JUnit4)
+```java
+@RunWith(JUnit4.class)
+public class ExampleInstrumentedTest {
+    @ClassRule
+    public static final LocaleTestRule localeTestRule = new LocaleTestRule();
 
-- Run `./gradlew assembleDebug assembleAndroidTest` to generate debug and test APKs
-- Run `fastlane screengrab` in your app project directory to generate screenshots
-    - You will be prompted to provide any required parameters which are not in your `Screengrabfile`, or provided as command line arguments
-- Your screenshots will be saved to `fastlane/metadata/android` in the directory where you ran `fastlane screengrab`
+    @Rule
+    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+
+    @Test
+    public void testTakeScreenshot() {
+        Screengrab.screenshot("before_button_click");
+
+        // Your custom onView...
+        onView(withId(R.id.fab)).perform(click());
+
+        Screengrab.screenshot("after_button_click");
+    }
+}
+
+```
+There is an [example project](https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester) showing how to use use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.
+
+Using JUnit 4 is preferable because of its ability to perform actions before and after the entire test class is run. This means you will change the device's locale far fewer times when compared with JUnit 3 running those commands before and after each test method.
+
+When using JUnit 3 you'll need to add a bit more code:
+
+- Use `LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getTestLocale());` in `setUp()`
+- Use `LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getEndingLocale());` in `tearDown()`
+- Use `Screengrab.screenshot("name_of_screenshot_here");` to capture screenshots at the appropriate points in your tests
+
+If you're having trouble getting your device unlocked and the screen activated to run tests, try using `ScreenUtil.activateScreenForTesting(activity);` in your test setup.
 
 ### Improved screenshot capture with UI Automator
 
@@ -86,6 +115,19 @@ However, UI Automator requires a device with **API level >= 18**, so it is not y
 ```java
 Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());
 ```
+
+## Clean Status Bar
+
+You can use [QuickDemo](https://github.com/PSPDFKit-labs/QuickDemo) to clean up the status bar for your screenshots.
+
+
+## Generating Screenshots with Screengrab
+
+- Run `./gradlew assembleDebug assembleAndroidTest` to generate debug and test APKs
+- Run `fastlane screengrab` in your app project directory to generate screenshots
+    - You will be prompted to provide any required parameters which are not in your `Screengrabfile`, or provided as command line arguments
+- Your screenshots will be saved to `fastlane/metadata/android` in the directory where you ran `fastlane screengrab`
+
 
 # Upload Screenshots to Google Play
 
