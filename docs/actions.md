@@ -1152,7 +1152,7 @@ Ensure the selected Xcode version with xcode-select matches a value
 
 
 > If building your app requires a specific version of Xcode, you can invoke this command before using gym.
-        For example, to ensure that a beta version is not accidentally selected to build, which would make uploading to TestFlight fail.
+        For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.
 
 ensure_xcode_version |
 -----|----
@@ -1367,6 +1367,62 @@ xcbuild
 
 
 
+### xcclean
+
+Cleans the project using `xcodebuild`
+
+
+
+
+
+xcclean |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcclean
+```
+
+
+</details>
+
+
+
+
+### xcarchive
+
+Archives the project using `xcodebuild`
+
+
+
+
+
+xcarchive |
+-----|----
+Supported platforms | ios, mac
+Author | @dtrenz
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+xcarchive
+```
+
+
+</details>
+
+
+
+
 ### xctest
 
 Runs tests on the given simulator
@@ -1417,62 +1473,6 @@ Author | @dtrenz
 
 ```ruby
 xcexport
-```
-
-
-</details>
-
-
-
-
-### xcarchive
-
-Archives the project using `xcodebuild`
-
-
-
-
-
-xcarchive |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcarchive
-```
-
-
-</details>
-
-
-
-
-### xcclean
-
-Cleans the project using `xcodebuild`
-
-
-
-
-
-xcclean |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-xcclean
 ```
 
 
@@ -1553,6 +1553,7 @@ Key | Description
   `derived_data_path` | The directory where build products and other derived data will go
   `test_target_name` | The name of the target you want to test (if you desire to override the Target Application from Xcode)
   `namespace_log_files` | Separate the log files per device and per language
+  `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9
 
 </details>
 
@@ -1767,7 +1768,7 @@ set_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier", value: "co
 ```
 
 ```ruby
-set_info_plist_value(path: "./MyApp-Info.plist", key: "NSAppTransportSecurity", subkey: "NSAllowsArbitraryLoads", value: true)
+set_info_plist_value(path: "./MyApp-Info.plist", key: "NSAppTransportSecurity", subkey: "NSAllowsArbitraryLoads", value: true, output_file_name: "./Info.plist")
 ```
 
 
@@ -1783,6 +1784,7 @@ Key | Description
   `subkey` | Name of subkey in plist
   `value` | Value to setup
   `path` | Path to plist file you want to update
+  `output_file_name` | Path to the output file you want to generate
 
 </details>
 
@@ -3885,6 +3887,54 @@ Key | Description
 
 
 
+### tryouts
+
+Upload a new build to Tryouts
+
+
+
+> More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release
+
+tryouts |
+-----|----
+Supported platforms | ios, android
+Author | @alicertel
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+tryouts(
+  api_token: "...",
+  app_id: "application-id",
+  build_file: "test.ipa",
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `app_id` | Tryouts application hash
+  `api_token` | API Token for Tryouts Access
+  `build_file` | Path to your IPA or APK file. Optional if you use the _gym_ or _xcodebuild_ action
+  `notes` | Release notes
+  `notes_path` | Release notes text file path. Overrides the :notes parameter
+  `notify` | Notify testers? 0 for no
+  `status` | 2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update
+
+</details>
+
+
+
+
 ### podio_item
 
 Creates or updates an item within your Podio app
@@ -4204,6 +4254,7 @@ Key | Description
   `privacy_url` | Metadata: Localised privacy url
   `support_url` | Metadata: Localised support url
   `marketing_url` | Metadata: Localised marketing url
+  `languages` | Metadata: List of languages to activate
 
 </details>
 
@@ -4351,6 +4402,7 @@ Key | Description
   `privacy_url` | Metadata: Localised privacy url
   `support_url` | Metadata: Localised support url
   `marketing_url` | Metadata: Localised marketing url
+  `languages` | Metadata: List of languages to activate
 
 </details>
 
@@ -6657,6 +6709,7 @@ Key | Description
   `language` | Primary Language (e.g. 'English', 'German')
   `company_name` | The name of your company. Only required if it's the first app you create
   `skip_itc` | Skip the creation of the app on iTunes Connect
+  `itc_users` | Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles
   `enabled_features` | [DEPRECATED!] Please use `enable_services` instead - Array with Spaceship App Services
   `enable_services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off))
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal
@@ -9128,18 +9181,19 @@ Key | Description
 
 
 
-### tryouts
+### ruby_version
 
-Upload a new build to Tryouts
+Verifies the minimum ruby version required
 
 
 
-> More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release
+> Add this to your `Fastfile` to require a certain version of _ruby_.
+Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
-tryouts |
+ruby_version |
 -----|----
-Supported platforms | ios, android
-Author | @alicertel
+Supported platforms | ios, android, mac
+Author | @sebastianvarela
 
 
 
@@ -9147,69 +9201,9 @@ Author | @alicertel
 <summary>1 Example</summary>
 
 ```ruby
-tryouts(
-  api_token: "...",
-  app_id: "application-id",
-  build_file: "test.ipa",
-)
+ruby_version "2.4.0"
 ```
 
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `app_id` | Tryouts application hash
-  `api_token` | API Token for Tryouts Access
-  `build_file` | Path to your IPA or APK file. Optional if you use the _gym_ or _xcodebuild_ action
-  `notes` | Release notes
-  `notes_path` | Release notes text file path. Overrides the :notes parameter
-  `notify` | Notify testers? 0 for no
-  `status` | 2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update
-
-</details>
-
-
-
-
-### setup_travis
-
-Setup the keychain and match to work with Travis CI
-
-
-
-> - Creates a new temporary keychain for use with match
-- Switches match to `readonly` mode to not create new profiles/cert on CI
-This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
-
-setup_travis |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-setup_travis
-```
-
-
-</details>
-
-
-<details>
-<summary>Parameters</summary>
-
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by travis
 
 </details>
 
@@ -9261,6 +9255,34 @@ Key | Description
 
 
 
+### opt_out_crash_reporting
+
+This will prevent reports from being uploaded when _fastlane_ crashes
+
+
+
+> By default, fastlane will send a report when it crashes The stack trace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+
+opt_out_crash_reporting |
+-----|----
+Supported platforms | ios, android, mac
+Author | @mpirri, @ohayon
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+opt_out_crash_reporting # add this to the top of your Fastfile
+```
+
+
+</details>
+
+
+
+
 ### opt_out_usage
 
 This will stop uploading the information which actions were run
@@ -9289,19 +9311,20 @@ opt_out_usage # add this to the top of your Fastfile
 
 
 
-### ruby_version
+### setup_travis
 
-Verifies the minimum ruby version required
+Setup the keychain and match to work with Travis CI
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.
-Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> - Creates a new temporary keychain for use with match
+- Switches match to `readonly` mode to not create new profiles/cert on CI
+This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
 
-ruby_version |
+setup_travis |
 -----|----
-Supported platforms | ios, android, mac
-Author | @sebastianvarela
+Supported platforms | ios, mac
+Author | @KrauseFx
 
 
 
@@ -9309,9 +9332,69 @@ Author | @sebastianvarela
 <summary>1 Example</summary>
 
 ```ruby
-ruby_version "2.4.0"
+setup_travis
 ```
 
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `force` | Force setup, even if not executed by travis
+
+</details>
+
+
+
+
+### modify_services
+
+Modifies the services of the app created on Developer Portal
+
+
+
+> Options are same as 'enable_services' in produce action
+https://github.com/fastlane/fastlane/tree/master/produce
+
+modify_services |
+-----|----
+Supported platforms | ios
+Author | @bhimsenpadalkar
+
+
+
+<details>
+<summary>1 Example</summary>
+
+```ruby
+modify_services(
+  username: "test.account@gmail.com",
+  app_identifier: "com.someorg.app",
+  services: {
+    push_notifications: "on",
+    associated_domains: "off"
+  }
+)
+```
+
+
+</details>
+
+
+<details>
+<summary>Parameters</summary>
+
+Key | Description
+----|------------
+  `username` | Your Apple ID Username
+  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app)
+  `services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off))
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams
+  `team_name` | The name of your Developer Portal team if you're in multiple teams
 
 </details>
 
@@ -9340,34 +9423,6 @@ Author | @KrauseFx
 
 Key | Description
 ----|------------
-
-</details>
-
-
-
-
-### opt_out_crash_reporting
-
-This will prevent reports from being uploaded when _fastlane_ crashes
-
-
-
-> By default, fastlane will send a report when it crashes The stacktrace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
-
-opt_out_crash_reporting |
------|----
-Supported platforms | ios, android, mac
-Author | @mpirri, @ohayon
-
-
-
-<details>
-<summary>1 Example</summary>
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
-```
-
 
 </details>
 
