@@ -12,8 +12,8 @@ lane :beta do
     export_method: "app-store",
     export_options: {
       provisioningProfiles: { 
-        "com.example.bundleid": "Provisioning Profile Name",
-        "com.example.bundleid2": "Provisioning Profile Name 2"
+        "com.example.bundleid" => "Provisioning Profile Name",
+        "com.example.bundleid2" => "Provisioning Profile Name 2"
       }
     }
   )
