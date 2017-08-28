@@ -1,6 +1,6 @@
 # Getting started with _fastlane_ for iOS
 
-## Installing fastlane
+## Installing _fastlane_
 Make sure you have the latest version of the Xcode command line tools installed:
 
 ```no-highlight
@@ -27,7 +27,7 @@ xcode-select --install
 </tr>
 </table>
 
-## Setting up fastlane
+## Setting up _fastlane_
 
 Navigate your terminal to your project's directory and run
 
