@@ -2,6 +2,8 @@
 
 ## Installing _fastlane_
 
+### Choose your installation method:
+
 <table width="100%">
 <tr>
 <th width="33%"><a href="http://brew.sh">Homebrew</a></td>
