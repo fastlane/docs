@@ -102,7 +102,7 @@ fastlane action crashlytics
 ---
 </details>
 
-More information about additonal supported beta testing services can be found in the [list of "Beta" actions](https://docs.fastlane.tools/actions/#beta)
+More information about additional supported beta testing services can be found in the [list of "Beta" actions](https://docs.fastlane.tools/actions/#beta)
 
 # Release Notes
 
