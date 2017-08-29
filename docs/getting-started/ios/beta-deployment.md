@@ -175,6 +175,7 @@ fastlane action testfairy
 More information about the service on [TestFairy.com](https://testfairy.com).
 </details>
 
+More information about additonal supported beta testing services can be found in the [list of "Beta" actions](https://docs.fastlane.tools/actions/#beta)
 
 # Release Notes
 
