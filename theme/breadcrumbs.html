@@ -17,9 +17,17 @@
 
     {% if current_page and current_page.input_path != "actions.md" and current_page.input_path != "plugins/available-plugins.md" %}
       <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/fastlane/docs/edit/master/docs/{{ current_page.input_path }}" class="icon icon-github" target="_blank">
-          Edit on GitHub
-        </a>
+        {% if "actions/" in current_page.input_path %}
+          <!-- custom edit link for all actions -->
+          <!-- Edit the action, from which we generate the docs -->
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/{{ current_page.title }}.rb" class="icon icon-github" target="_blank">
+            Edit on GitHub
+          </a>
+        {% else %}
+          <a href="https://github.com/fastlane/docs/edit/master/docs/{{ current_page.input_path }}" class="icon icon-github" target="_blank">
+            Edit on GitHub
+          </a>
+        {% endif %}
       </li>
     {% endif %}
   </ul>
