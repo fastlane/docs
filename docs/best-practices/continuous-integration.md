@@ -18,6 +18,14 @@ fastlane spaceauth -u user@email.com
 
 This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system.
 
+## Environment variables to set
+
+Most setups will need the following environment variables
+
+- `FASTLANE_USER`: Your iTunes Connect / Dev Portal user, if your _fastlane_ setup accesses iTC or the DevPortal (e.g. submit a TestFlight build, create a profile, ...)
+- `MATCH_PASSWORD`: You need to provide the password of your _match_ encryption if you use _match_
+- `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`: You need to provide an [application specific password](#two-step-or-two-factor-auth) if you have 2-factor enabled and use _pilot_ or _deliver_ to upload a binary to iTunes Connect
+
 ## Deploy Strategy
 
 You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.
