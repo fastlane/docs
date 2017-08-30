@@ -355,6 +355,13 @@
 </code></pre>
 
 <p>This will generate a token you can set using the <code>FASTLANE_SESSION</code> environment variable on your CI system.</p>
+<h2 id="environment-variables-to-set"><a name="user-content-environment-variables-to-set" href="#environment-variables-to-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment variables to set</h2>
+<p>Most setups will need the following environment variables</p>
+<ul>
+<li><code>FASTLANE_USER</code>: Your iTunes Connect / Dev Portal user, if your <em>fastlane</em> setup accesses iTC or the DevPortal (e.g. submit a TestFlight build, create a profile, ...)</li>
+<li><code>MATCH_PASSWORD</code>: You need to provide the password of your <em>match</em> encryption if you use <em>match</em></li>
+<li><code>FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD</code>: You need to provide an <a href="#two-step-or-two-factor-auth">application specific password</a> if you have 2-factor enabled and use <em>pilot</em> or <em>deliver</em> to upload a binary to iTunes Connect</li>
+</ul>
 <h2 id="deploy-strategy"><a name="user-content-deploy-strategy" href="#deploy-strategy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy Strategy</h2>
 <p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.</p>
 <p>You can set up your own <code>Release</code> job, which is only triggered manually.</p>
