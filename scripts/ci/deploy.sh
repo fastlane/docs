@@ -9,9 +9,9 @@ echo "Starting deploy to https://docs.fastlane.tools"
 # Replace all the ```ruby-skip-tests
 # with ```ruby
 # This is only used to skip running the tests for this one
-# The `-e` is necessary to make the command work on macOS also
 # The markdown parsing only works with the exact string ```ruby
-find ../../docs/actions/ -type f | xargs sed -i '' -e 's/\`\`\`ruby\-skip\-tests/\`\`\`ruby/g'
+# This only works on Linux
+find ./docs/actions/ -type f | xargs sed -i 's/\`\`\`ruby\-skip\-tests/\`\`\`ruby/g'
 
 # Build the docs page locally
 mkdocs build --clean
