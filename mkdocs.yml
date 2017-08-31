@@ -26,6 +26,8 @@ pages:
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
 - Actions: actions.md
+- _Actions:
+  - Test: actions.md
 - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
