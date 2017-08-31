@@ -141,7 +141,7 @@ export_options "./ExportOptions.plist"
 
 or you can provide hash of values directly in the `Gymfile`:
 
-```ruby
+```ruby-skip-tests
 export_options(
   method: "ad-hoc",
   manifest: {
@@ -153,7 +153,7 @@ export_options(
 
 Optional: If _gym_ can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:
 
-```ruby
+```ruby-skip-tests
 export_options(
   method: "app-store",
   provisioningProfiles: { 
