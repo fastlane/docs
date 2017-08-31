@@ -1,0 +1,66 @@
+# danger
+
+
+Runs `danger` for the project
+
+
+
+
+> Formalize your Pull Request etiquette.
+More information: https://github.com/danger/danger
+
+
+danger |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+**2 Examples**
+
+```ruby
+danger
+```
+
+```ruby
+danger(
+  danger_id: "unit-tests",
+  dangerfile: "tests/MyOtherDangerFile",
+  github_api_token: ENV["GITHUB_API_TOKEN"],
+  verbose: true
+)
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented
+  `verbose` | Show more debugging information
+  `danger_id` | The identifier of this Danger instance
+  `dangerfile` | The location of your Dangerfile
+  `github_api_token` | GitHub API token for danger
+  `fail_on_errors` | Should always fail the build process, defaults to false
+  `new_comment` | Makes Danger post a new comment instead of editing its previous one
+  `base` | A branch/tag/commit to use as the base of the diff. [master|dev|stable]
+  `head` | A branch/tag/commit to use as the head. [master|dev|stable]
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action danger
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/danger.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>

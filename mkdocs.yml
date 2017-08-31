@@ -1,17 +1,20 @@
+---
 site_name: fastlane docs
 theme: readthedocs
 copyright: Copyright &copy; 2017 <a href="https://fastlane.tools">fastlane</a>
-site_author: "fastlane team"
-site_description: "Documentation for fastlane tools, the easiest way to automate building and releasing your iOS and Android apps"
-site_favicon: "img/favicon.ico"
-repo_url: "https://github.com/fastlane/docs"
-google_analytics: ["UA-18658848-13", "docs.fastlane.tools"]
+site_author: fastlane team
+site_description: Documentation for fastlane tools, the easiest way to automate building
+  and releasing your iOS and Android apps
+site_favicon: img/favicon.ico
+repo_url: https://github.com/fastlane/docs
+google_analytics:
+- UA-18658848-13
+- docs.fastlane.tools
 strict: true
 markdown_extensions:
-  - pymdownx.headeranchor
-  - markdown.extensions.attr_list
+- pymdownx.headeranchor
+- markdown.extensions.attr_list
 theme_dir: theme
-
 pages:
 - Home: index.md
 - Getting Started:
@@ -26,6 +29,202 @@ pages:
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
 - Actions: actions.md
+- _Actions:
+  - adb: actions/adb.md
+  - adb_devices: actions/adb_devices.md
+  - add_extra_platforms: actions/add_extra_platforms.md
+  - add_git_tag: actions/add_git_tag.md
+  - app_store_build_number: actions/app_store_build_number.md
+  - appaloosa: actions/appaloosa.md
+  - appetize: actions/appetize.md
+  - appetize_viewing_url_generator: actions/appetize_viewing_url_generator.md
+  - appium: actions/appium.md
+  - appledoc: actions/appledoc.md
+  - appstore: actions/appstore.md
+  - apteligent: actions/apteligent.md
+  - artifactory: actions/artifactory.md
+  - automatic_code_signing: actions/automatic_code_signing.md
+  - backup_file: actions/backup_file.md
+  - backup_xcarchive: actions/backup_xcarchive.md
+  - badge: actions/badge.md
+  - build_and_upload_to_appetize: actions/build_and_upload_to_appetize.md
+  - bundle_install: actions/bundle_install.md
+  - carthage: actions/carthage.md
+  - cert: actions/cert.md
+  - changelog_from_git_commits: actions/changelog_from_git_commits.md
+  - chatwork: actions/chatwork.md
+  - clean_build_artifacts: actions/clean_build_artifacts.md
+  - clean_cocoapods_cache: actions/clean_cocoapods_cache.md
+  - clear_derived_data: actions/clear_derived_data.md
+  - clipboard: actions/clipboard.md
+  - cloc: actions/cloc.md
+  - clubmate: actions/clubmate.md
+  - cocoapods: actions/cocoapods.md
+  - commit_github_file: actions/commit_github_file.md
+  - commit_version_bump: actions/commit_version_bump.md
+  - copy_artifacts: actions/copy_artifacts.md
+  - crashlytics: actions/crashlytics.md
+  - create_keychain: actions/create_keychain.md
+  - create_pull_request: actions/create_pull_request.md
+  - danger: actions/danger.md
+  - debug: actions/debug.md
+  - default_platform: actions/default_platform.md
+  - delete_keychain: actions/delete_keychain.md
+  - deliver: actions/deliver.md
+  - deploygate: actions/deploygate.md
+  - dotgpg_environment: actions/dotgpg_environment.md
+  - download: actions/download.md
+  - download_dsyms: actions/download_dsyms.md
+  - dsym_zip: actions/dsym_zip.md
+  - ensure_git_branch: actions/ensure_git_branch.md
+  - ensure_git_status_clean: actions/ensure_git_status_clean.md
+  - ensure_no_debug_code: actions/ensure_no_debug_code.md
+  - ensure_xcode_version: actions/ensure_xcode_version.md
+  - erb: actions/erb.md
+  - fastlane_version: actions/fastlane_version.md
+  - flock: actions/flock.md
+  - frameit: actions/frameit.md
+  - gcovr: actions/gcovr.md
+  - get_build_number: actions/get_build_number.md
+  - get_build_number_repository: actions/get_build_number_repository.md
+  - get_github_release: actions/get_github_release.md
+  - get_info_plist_value: actions/get_info_plist_value.md
+  - get_ipa_info_plist_value: actions/get_ipa_info_plist_value.md
+  - get_version_number: actions/get_version_number.md
+  - git_add: actions/git_add.md
+  - git_branch: actions/git_branch.md
+  - git_commit: actions/git_commit.md
+  - git_pull: actions/git_pull.md
+  - git_tag_exists: actions/git_tag_exists.md
+  - github_api: actions/github_api.md
+  - google_play_track_version_codes: actions/google_play_track_version_codes.md
+  - gradle: actions/gradle.md
+  - gym: actions/gym.md
+  - hg_add_tag: actions/hg_add_tag.md
+  - hg_commit_version_bump: actions/hg_commit_version_bump.md
+  - hg_ensure_clean_status: actions/hg_ensure_clean_status.md
+  - hg_push: actions/hg_push.md
+  - hipchat: actions/hipchat.md
+  - hockey: actions/hockey.md
+  - ifttt: actions/ifttt.md
+  - import: actions/import.md
+  - import_certificate: actions/import_certificate.md
+  - import_from_git: actions/import_from_git.md
+  - increment_build_number: actions/increment_build_number.md
+  - increment_version_number: actions/increment_version_number.md
+  - install_on_device: actions/install_on_device.md
+  - install_xcode_plugin: actions/install_xcode_plugin.md
+  - installr: actions/installr.md
+  - ipa: actions/ipa.md
+  - is_ci: actions/is_ci.md
+  - jazzy: actions/jazzy.md
+  - jira: actions/jira.md
+  - lane_context: actions/lane_context.md
+  - last_git_commit: actions/last_git_commit.md
+  - last_git_tag: actions/last_git_tag.md
+  - latest_testflight_build_number: actions/latest_testflight_build_number.md
+  - lcov: actions/lcov.md
+  - mailgun: actions/mailgun.md
+  - make_changelog_from_jenkins: actions/make_changelog_from_jenkins.md
+  - match: actions/match.md
+  - modify_services: actions/modify_services.md
+  - nexus_upload: actions/nexus_upload.md
+  - notification: actions/notification.md
+  - notify: actions/notify.md
+  - number_of_commits: actions/number_of_commits.md
+  - oclint: actions/oclint.md
+  - onesignal: actions/onesignal.md
+  - opt_out_crash_reporting: actions/opt_out_crash_reporting.md
+  - opt_out_usage: actions/opt_out_usage.md
+  - pem: actions/pem.md
+  - pilot: actions/pilot.md
+  - plugin_scores: actions/plugin_scores.md
+  - pod_lib_lint: actions/pod_lib_lint.md
+  - pod_push: actions/pod_push.md
+  - podio_item: actions/podio_item.md
+  - precheck: actions/precheck.md
+  - produce: actions/produce.md
+  - prompt: actions/prompt.md
+  - push_git_tags: actions/push_git_tags.md
+  - push_to_git_remote: actions/push_to_git_remote.md
+  - puts: actions/puts.md
+  - read_podspec: actions/read_podspec.md
+  - recreate_schemes: actions/recreate_schemes.md
+  - register_device: actions/register_device.md
+  - register_devices: actions/register_devices.md
+  - reset_git_repo: actions/reset_git_repo.md
+  - reset_simulator_contents: actions/reset_simulator_contents.md
+  - resign: actions/resign.md
+  - restore_file: actions/restore_file.md
+  - rocket: actions/rocket.md
+  - rspec: actions/rspec.md
+  - rsync: actions/rsync.md
+  - rubocop: actions/rubocop.md
+  - ruby_version: actions/ruby_version.md
+  - s3: actions/s3.md
+  - say: actions/say.md
+  - scan: actions/scan.md
+  - scp: actions/scp.md
+  - screengrab: actions/screengrab.md
+  - set_build_number_repository: actions/set_build_number_repository.md
+  - set_changelog: actions/set_changelog.md
+  - set_github_release: actions/set_github_release.md
+  - set_info_plist_value: actions/set_info_plist_value.md
+  - set_pod_key: actions/set_pod_key.md
+  - setup_jenkins: actions/setup_jenkins.md
+  - setup_travis: actions/setup_travis.md
+  - sh: actions/sh.md
+  - sigh: actions/sigh.md
+  - skip_docs: actions/skip_docs.md
+  - slack: actions/slack.md
+  - slack_train: actions/slack_train.md
+  - slack_train_crash: actions/slack_train_crash.md
+  - slack_train_start: actions/slack_train_start.md
+  - slather: actions/slather.md
+  - snapshot: actions/snapshot.md
+  - sonar: actions/sonar.md
+  - splunkmint: actions/splunkmint.md
+  - ssh: actions/ssh.md
+  - supply: actions/supply.md
+  - swiftlint: actions/swiftlint.md
+  - team_id: actions/team_id.md
+  - team_name: actions/team_name.md
+  - testfairy: actions/testfairy.md
+  - testflight: actions/testflight.md
+  - tryouts: actions/tryouts.md
+  - twitter: actions/twitter.md
+  - typetalk: actions/typetalk.md
+  - unlock_keychain: actions/unlock_keychain.md
+  - update_app_group_identifiers: actions/update_app_group_identifiers.md
+  - update_app_identifier: actions/update_app_identifier.md
+  - update_fastlane: actions/update_fastlane.md
+  - update_icloud_container_identifiers: actions/update_icloud_container_identifiers.md
+  - update_info_plist: actions/update_info_plist.md
+  - update_project_code_signing: actions/update_project_code_signing.md
+  - update_project_provisioning: actions/update_project_provisioning.md
+  - update_project_team: actions/update_project_team.md
+  - update_urban_airship_configuration: actions/update_urban_airship_configuration.md
+  - update_url_schemes: actions/update_url_schemes.md
+  - upload_symbols_to_crashlytics: actions/upload_symbols_to_crashlytics.md
+  - upload_symbols_to_sentry: actions/upload_symbols_to_sentry.md
+  - verify_build: actions/verify_build.md
+  - verify_pod_keys: actions/verify_pod_keys.md
+  - verify_xcode: actions/verify_xcode.md
+  - version_bump_podspec: actions/version_bump_podspec.md
+  - version_get_podspec: actions/version_get_podspec.md
+  - xcarchive: actions/xcarchive.md
+  - xcbuild: actions/xcbuild.md
+  - xcclean: actions/xcclean.md
+  - xcexport: actions/xcexport.md
+  - xcode_install: actions/xcode_install.md
+  - xcode_select: actions/xcode_select.md
+  - xcode_server_get_assets: actions/xcode_server_get_assets.md
+  - xcodebuild: actions/xcodebuild.md
+  - xcov: actions/xcov.md
+  - xctest: actions/xctest.md
+  - xctool: actions/xctool.md
+  - xcversion: actions/xcversion.md
+  - zip: actions/zip.md
 - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
@@ -37,7 +236,7 @@ pages:
   - Create Your Own Plugin: plugins/create-plugin.md
   - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
-  - Source Control: "best-practices/source-control.md"
-  - Continuous Integration: "best-practices/continuous-integration.md"
-  - Keys: "best-practices/keys.md"
-- Advanced: "advanced.md"
+  - Source Control: best-practices/source-control.md
+  - Continuous Integration: best-practices/continuous-integration.md
+  - Keys: best-practices/keys.md
+- Advanced: advanced.md

@@ -1,0 +1,50 @@
+# add_extra_platforms
+
+
+Modify the default list of supported platforms
+
+
+
+
+
+
+
+add_extra_platforms |
+-----|----
+Supported platforms | ios, android, mac
+Author | @lacostej
+
+
+
+**1 Example**
+
+```ruby
+add_extra_platforms(
+  platforms: [:windows,:neogeo]
+)
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `platforms` | The optional extra platforms to support
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action add_extra_platforms
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/add_extra_platforms.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>

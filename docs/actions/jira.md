@@ -1,0 +1,58 @@
+# jira
+
+
+Leave a comment on JIRA tickets
+
+
+
+
+
+
+
+jira |
+-----|----
+Supported platforms | ios, android, mac
+Author | @iAmChrisTruman
+
+
+
+**1 Example**
+
+```ruby
+jira(
+  url: "https://bugs.yourdomain.com",
+  username: "Your username",
+  password: "Your password",
+  ticket_id: "Ticket ID, i.e. IOS-123",
+  comment_text: "Text to post as a comment"
+)
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `url` | URL for Jira instance
+  `username` | Username for JIRA instance
+  `password` | Password for Jira
+  `ticket_id` | Ticket ID for Jira, i.e. IOS-123
+  `comment_text` | Text to add to the ticket as a comment
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action jira
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/jira.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>

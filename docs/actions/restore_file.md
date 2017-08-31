@@ -1,0 +1,48 @@
+# restore_file
+
+
+This action restore your file that was backuped with the `backup_file` action
+
+
+
+
+
+
+
+restore_file |
+-----|----
+Supported platforms | ios, android, mac
+Author | @gin0606
+
+
+
+**1 Example**
+
+```ruby
+restore_file(path: "/path/to/file")
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `path` | Original file name you want to restore
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action restore_file
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/restore_file.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>
