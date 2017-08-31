@@ -2,7 +2,7 @@ module Fastlane
   module Actions
     class TestSampleCodeAction < Action
       def self.run(params)
-        content = File.read(params[:path])
+        content = params[:content] || File.read(params[:path])
         ENV["CI"] = 1.to_s
         fill_in_env_variables
 
@@ -84,14 +84,16 @@ module Fastlane
           :refresh_dsyms,
           :lane,
           :before_all,
-          :verify_xcode
+          :verify_xcode,
+          :error
         ]
       end
 
       # Metadata
       def self.available_options
         [
-          FastlaneCore::ConfigItem.new(key: :path)
+          FastlaneCore::ConfigItem.new(key: :path),
+          FastlaneCore::ConfigItem.new(key: :content),
         ]
       end
 
