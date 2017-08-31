@@ -1,0 +1,72 @@
+# deploygate
+
+
+Upload a new build to [DeployGate](https://deploygate.com/)
+
+
+
+
+> You can retrieve your username and API token on [your settings page](https://deploygate.com/settings)
+More information about the available options can be found in the [DeployGate Push API document](https://deploygate.com/docs/api).
+
+
+deploygate |
+-----|----
+Supported platforms | ios, android
+Author | @tnj, @tomorrowkey
+
+
+
+**2 Examples**
+
+```ruby
+deploygate(
+  api_token: "...",
+  user: "target username or organization name",
+  ipa: "./ipa_file.ipa",
+  message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
+  distribution_key: "(Optional) Target Distribution Key"
+)
+```
+
+```ruby
+deploygate(
+  api_token: "...",
+  user: "target username or organization name",
+  apk: "./apk_file.apk",
+  message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
+  distribution_key: "(Optional) Target Distribution Key"
+)
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `api_token` | Deploygate API Token
+  `user` | Target username or organization name
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
+  `apk` | Path to your APK file
+  `message` | Release Notes
+  `distribution_key` | Target Distribution Key
+  `release_note` | Release note for distribution page
+  `disable_notify` | Disables Push notification emails
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action deploygate
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/deploygate.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>

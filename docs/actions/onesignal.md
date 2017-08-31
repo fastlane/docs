@@ -1,0 +1,60 @@
+# onesignal
+
+
+Create a new OneSignal application
+
+
+
+
+> You can use this action to automatically create a OneSignal application. You can also upload a .p12 with password, a GCM key, or both
+
+
+onesignal |
+-----|----
+Supported platforms | ios
+Author | @timothybarraclough, @smartshowltd
+
+
+
+**1 Example**
+
+```ruby
+onesignal(
+  auth_token: "Your OneSignal Auth Token",
+  app_name: "Name for OneSignal App",
+  android_token: "Your Android GCM key (optional)",
+  apns_p12: "Path to Apple .p12 file (optional)",
+  apns_p12_password: "Password for .p12 file (optional)",
+  apns_env: "production/sandbox (defaults to production)"
+)
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `auth_token` | OneSignal Authorization Key
+  `app_name` | OneSignal App Name
+  `android_token` | ANDROID GCM KEY
+  `apns_p12` | APNS P12 File (in .p12 format)
+  `apns_p12_password` | APNS P12 password
+  `apns_env` | APNS environment
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action onesignal
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/onesignal.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>

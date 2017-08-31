@@ -1,0 +1,52 @@
+# clipboard
+
+
+Copies a given string into the clipboard. Works only on macOS
+
+
+
+
+
+
+
+clipboard |
+-----|----
+Supported platforms | ios, android, mac
+Author | @KrauseFx
+
+
+
+**2 Examples**
+
+```ruby
+clipboard(value: "https://docs.fastlane.tools/")
+```
+
+```ruby
+clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `value` | The string that should be copied into the clipboard
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action clipboard
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/clipboard.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>

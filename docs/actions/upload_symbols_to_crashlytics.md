@@ -1,0 +1,51 @@
+# upload_symbols_to_crashlytics
+
+
+Upload dSYM symbolication files to Crashlytics
+
+
+
+
+> This action allows you to upload symbolication files to Crashlytics. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode. This action will not fail the build if one of the uploads failed. The reason for that is that sometimes some of dSYM files are invalid, and we don't want them to fail the complete build.
+
+
+upload_symbols_to_crashlytics |
+-----|----
+Supported platforms | ios
+Author | @KrauseFx
+
+
+
+**1 Example**
+
+```ruby
+upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `dsym_path` | Path to the DSYM file or zip to upload
+  `api_token` | Crashlytics API Key
+  `binary_path` | The path to the upload-symbols file of the Fabric app
+  `platform` | The platform of the app (ios, appletvos, mac)
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action upload_symbols_to_crashlytics
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/upload_symbols_to_crashlytics.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>
