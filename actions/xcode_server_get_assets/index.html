@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>xcode_server_get_assets - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/breadcrumbs.css" rel="stylesheet">
+  <link href="../../css/code.css" rel="stylesheet">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+  <link href="../../css/sidenav.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "xcode_server_get_assets";
+    var mkdocs_page_input_path = "actions/xcode_server_get_assets.md";
+    var mkdocs_page_url = "/actions/xcode_server_get_assets/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../..">Home</a>
+      
+    </li>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Getting Started</span></li>
+      
+      
+  
+    <ul class="subnav">
+      <li><span>iOS</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/setup/">Setup</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/screenshots/">Screenshots</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+      
+      
+  
+    <ul class="subnav">
+      <li><span>Android</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/setup/">Setup</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/screenshots/">Screenshots</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/beta-deployment/">Beta Deployment</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/release-deployment/">Release Deployment</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../">Actions</a>
+      
+    </li>
+  
+<li>
+          
+            <li>
+  
+<li>
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../faqs/">FAQs</a>
+      
+    </li>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Codesigning</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/getting-started/">Getting Started</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/xcode-project/">Xcode Project</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/troubleshooting/">Troubleshooting</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/common-issues/">Common Issues</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Plugins</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../plugins/available-plugins/">Available Plugins</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../plugins/create-plugin/">Create Your Own Plugin</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Best Practices</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../best-practices/source-control/">Source Control</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../best-practices/continuous-integration/">Continuous Integration</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../best-practices/keys/">Keys</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../advanced/">Advanced</a>
+      
+    </li>
+  
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <!-- Special case for the hidden action pages -->
+          <li><a href="/actions">Actions</a> &raquo;</li>
+        
+      
+    
+    <li>xcode_server_get_assets</li>
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <!-- custom edit link for all actions -->
+          <!-- Edit the action, from which we generate the docs -->
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/xcode_server_get_assets.rb" class="icon icon-github" target="_blank">
+            Edit on GitHub
+          </a>
+        
+      </li>
+    
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="xcode_server_get_assets"><a name="user-content-xcode_server_get_assets" href="#xcode_server_get_assets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>xcode_server_get_assets</h1>
+<p>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</p>
+<blockquote>
+<p>This action downloads assets from your Xcode Server Bot (works with Xcode Server
+          using Xcode 6 and 7. By default this action downloads all assets, unzips them and
+          deletes everything except for the <code>.xcarchive</code>. If you'd like to keep all downloaded
+          assets, pass <code>:keep_all_assets: true</code>. This action returns the path to the downloaded
+          assets folder and puts into shared values the paths to the asset folder and to the <code>.xcarchive</code> inside it</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>xcode_server_get_assets</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@czechboy0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1 Example</strong></p>
+<pre><code class="ruby">xcode_server_get_assets(
+  host: &quot;10.99.0.59&quot;, # Specify Xcode Server's Host or IP Address
+  bot_name: &quot;release-1.3.4&quot; # Specify the particular Bot
+)
+</code></pre>
+
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>host</code></td>
+<td>IP Address/Hostname of Xcode Server</td>
+</tr>
+<tr>
+<td><code>bot_name</code></td>
+<td>Name of the Bot to pull assets from</td>
+</tr>
+<tr>
+<td><code>integration_number</code></td>
+<td>Optionally you can override which integration's assets should be downloaded. If not provided, the latest integration is used</td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Username for your Xcode Server</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>Password for your Xcode Server</td>
+</tr>
+<tr>
+<td><code>target_folder</code></td>
+<td>Relative path to a folder into which to download assets</td>
+</tr>
+<tr>
+<td><code>keep_all_assets</code></td>
+<td>Whether to keep all assets or let the script delete everything except for the .xcarchive</td>
+</tr>
+<tr>
+<td><code>trust_self_signed_certs</code></td>
+<td>Whether to trust self-signed certs on your Xcode Server</td>
+</tr>
+</tbody>
+</table>
+<p><hr />
+To show the documentation in your terminal, run</p>
+<pre><code class="no-highlight">fastlane action xcode_server_get_assets
+</code></pre>
+
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcode_server_get_assets.rb" target="_blank">View source code</a></p>
+<hr />
+
+<p><a href="/actions"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../xcodebuild/" class="btn btn-neutral float-right" title="xcodebuild">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../xcode_select/" class="btn btn-neutral" title="xcode_select"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2017 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../xcode_select/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../xcodebuild/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
