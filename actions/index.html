@@ -232,11 +232,11 @@
           
         
           
-          <li class="toctree-l3"><a href="#deprecated">Deprecated</a></li>
+          <li class="toctree-l3"><a href="#misc">Misc</a></li>
           
         
           
-          <li class="toctree-l3"><a href="#misc">Misc</a></li>
+          <li class="toctree-l3"><a href="#deprecated">Deprecated</a></li>
           
         
       </ul>
@@ -439,8 +439,8 @@ fastlane action [action_name] # more information for a specific action
 <li><a href="#releasing-your-app">Releasing your app</a></li>
 <li><a href="#source-control">Source Control</a></li>
 <li><a href="#notifications">Notifications</a></li>
-<li><a href="#deprecated">Deprecated</a></li>
 <li><a href="#misc">Misc</a></li>
+<li><a href="#deprecated">Deprecated</a></li>
 <li><a href="https://docs.fastlane.tools/plugins/available-plugins">Plugins</a></li>
 </ul>
 <h1 id="testing"><a name="user-content-testing" href="#testing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testing</h1>
@@ -564,24 +564,24 @@ fastlane action [action_name] # more information for a specific action
 <td>Verifies all keys referenced from the Podfile are non-empty</td>
 </tr>
 <tr>
-<td><a href="/actions/xcexport">xcexport</a></td>
-<td>Exports the project using <code>xcodebuild</code></td>
-</tr>
-<tr>
-<td><a href="/actions/xcclean">xcclean</a></td>
-<td>Cleans the project using <code>xcodebuild</code></td>
-</tr>
-<tr>
 <td><a href="/actions/xcarchive">xcarchive</a></td>
 <td>Archives the project using <code>xcodebuild</code></td>
+</tr>
+<tr>
+<td><a href="/actions/xctest">xctest</a></td>
+<td>Runs tests on the given simulator</td>
 </tr>
 <tr>
 <td><a href="/actions/xcbuild">xcbuild</a></td>
 <td>Builds the project using <code>xcodebuild</code></td>
 </tr>
 <tr>
-<td><a href="/actions/xctest">xctest</a></td>
-<td>Runs tests on the given simulator</td>
+<td><a href="/actions/xcclean">xcclean</a></td>
+<td>Cleans the project using <code>xcodebuild</code></td>
+</tr>
+<tr>
+<td><a href="/actions/xcexport">xcexport</a></td>
+<td>Exports the project using <code>xcodebuild</code></td>
 </tr>
 </tbody>
 </table>
@@ -1024,41 +1024,6 @@ fastlane action [action_name] # more information for a specific action
 </tr>
 </tbody>
 </table>
-<h1 id="deprecated"><a name="user-content-deprecated" href="#deprecated" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deprecated</h1>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="/actions/badge">badge</a></td>
-<td>Automatically add a badge to your app icon</td>
-</tr>
-<tr>
-<td><a href="/actions/s3">s3</a></td>
-<td>Generates a plist file and uploads all to AWS S3</td>
-</tr>
-<tr>
-<td><a href="/actions/notify">notify</a></td>
-<td>Shows a macOS notification - use <code>notification</code> instead</td>
-</tr>
-<tr>
-<td><a href="/actions/update_project_code_signing">update_project_code_signing</a></td>
-<td>Updated code signing settings from 'Automatic' to a specific profile</td>
-</tr>
-<tr>
-<td><a href="/actions/ipa">ipa</a></td>
-<td>Easily build and sign your app using shenzhen</td>
-</tr>
-<tr>
-<td><a href="/actions/upload_symbols_to_sentry">upload_symbols_to_sentry</a></td>
-<td>Upload dSYM symbolication files to Sentry</td>
-</tr>
-</tbody>
-</table>
 <h1 id="misc"><a name="user-content-misc" href="#misc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Misc</h1>
 <table>
 <thead>
@@ -1313,6 +1278,10 @@ fastlane action [action_name] # more information for a specific action
 <td>Runs a shell command</td>
 </tr>
 <tr>
+<td><a href="/actions/ruby_version">ruby_version</a></td>
+<td>Verifies the minimum ruby version required</td>
+</tr>
+<tr>
 <td><a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a></td>
 <td>This will prevent reports from being uploaded when <em>fastlane</em> crashes</td>
 </tr>
@@ -1321,24 +1290,55 @@ fastlane action [action_name] # more information for a specific action
 <td>Modifies the services of the app created on Developer Portal</td>
 </tr>
 <tr>
-<td><a href="/actions/ruby_version">ruby_version</a></td>
-<td>Verifies the minimum ruby version required</td>
-</tr>
-<tr>
-<td><a href="/actions/plugin_scores">plugin_scores</a></td>
-<td>[31mNo description provided[0m</td>
-</tr>
-<tr>
 <td><a href="/actions/google_play_track_version_codes">google_play_track_version_codes</a></td>
 <td>Retrieves version codes for a Google Play track</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_travis">setup_travis</a></td>
+<td>Setup the keychain and match to work with Travis CI</td>
 </tr>
 <tr>
 <td><a href="/actions/opt_out_usage">opt_out_usage</a></td>
 <td>This will stop uploading the information which actions were run</td>
 </tr>
 <tr>
-<td><a href="/actions/setup_travis">setup_travis</a></td>
-<td>Setup the keychain and match to work with Travis CI</td>
+<td><a href="/actions/plugin_scores">plugin_scores</a></td>
+<td>[31mNo description provided[0m</td>
+</tr>
+</tbody>
+</table>
+<h1 id="deprecated"><a name="user-content-deprecated" href="#deprecated" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deprecated</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/badge">badge</a></td>
+<td>Automatically add a badge to your app icon</td>
+</tr>
+<tr>
+<td><a href="/actions/s3">s3</a></td>
+<td>Generates a plist file and uploads all to AWS S3</td>
+</tr>
+<tr>
+<td><a href="/actions/notify">notify</a></td>
+<td>Shows a macOS notification - use <code>notification</code> instead</td>
+</tr>
+<tr>
+<td><a href="/actions/update_project_code_signing">update_project_code_signing</a></td>
+<td>Updated code signing settings from 'Automatic' to a specific profile</td>
+</tr>
+<tr>
+<td><a href="/actions/ipa">ipa</a></td>
+<td>Easily build and sign your app using shenzhen</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_symbols_to_sentry">upload_symbols_to_sentry</a></td>
+<td>Upload dSYM symbolication files to Sentry</td>
 </tr>
 </tbody>
 </table>
