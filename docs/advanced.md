@@ -215,7 +215,7 @@ Import from another git repository, which you can use to have one git repo with 
 
 
 ```ruby
-import_from_git(url: 'https://github.com/fastlane/fastlane/tree/master/fastlane')
+import_from_git(url: 'https://github.com/fastlane/fastlane')
 # or
 import_from_git(url: 'git@github.com:MyAwesomeRepo/MyAwesomeFastlaneStandardSetup.git',
                path: 'fastlane/Fastfile')
