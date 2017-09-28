@@ -200,17 +200,6 @@
   margin-bottom: .809em
 }
 
-.wy-side-nav-search input[type=text] {
-  width: 100%;
-  color: #333;
-  border-radius: 3px;
-  outline: 0;
-  padding: 10px;
-  background-color: #fff;
-  border: solid 1px #6d6d6d;
-  box-shadow: none
-}
-
 .wy-side-nav-search img {
   display: block;
   margin: auto auto .809em;

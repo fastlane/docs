@@ -4,6 +4,11 @@
 
 .wy-breadcrumbs li.wy-breadcrumbs-aside {
   float: right;
+  padding-left: 20px;
+}
+
+.wy-breadcrumbs li.wy-breadcrumbs-aside input {
+  width: 250px;
 }
 
 .wy-breadcrumbs li a {
@@ -20,6 +25,18 @@
   color: #b3b3b3;
   font-size: 80%;
   display: inline-block;
+}
+
+.wy-breadcrumbs input[type=text] {
+  width: 100%;
+  color: #333;
+  border-radius: 3px;
+  outline: 0;
+  padding: 10px;
+  height: 30px;
+  background-color: #fff;
+  border: solid 1px #6d6d6d;
+  box-shadow: none
 }
 
 @media screen and (max-width: 480px) {
