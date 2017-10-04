@@ -30,6 +30,20 @@
         {% endif %}
       </li>
     {% endif %}
+    <li class="wy-breadcrumbs-aside">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
   </ul>
   <hr/>
 </div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
