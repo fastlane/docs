@@ -11,7 +11,7 @@ Alias for the pilot action
 
 testflight |
 -----|----
-Supported platforms | ios, android, mac
+Supported platforms | ios
 Author | @KrauseFx
 
 

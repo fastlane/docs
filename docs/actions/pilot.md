@@ -12,7 +12,7 @@ This integration will only do the TestFlight upload
 
 pilot |
 -----|----
-Supported platforms | ios, android, mac
+Supported platforms | ios
 Author | @KrauseFx
 
 

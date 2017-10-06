@@ -68,7 +68,7 @@ Key | Description
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air'])
   `scheme` | The project's scheme. Make sure it's marked as `Shared`
   `clean` | Should the project be cleaned before building it?
-  `code_coverage` | Should code coverage be generated (Xcode 7 only)?
+  `code_coverage` | Should code coverage be generated? (Xcode 7 and up)
   `address_sanitizer` | Should the address sanitizer be turned on?
   `thread_sanitizer` | Should the thread sanitizer be turned on?
   `skip_build` | Should debug build be skipped before test build?
