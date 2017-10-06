@@ -108,7 +108,7 @@ Currently, _fastlane_ is officially supported to run on macOS. Support for other
 
 ## Special Thanks
 
-Thanks to all [contributors](https://github.com/fastlane/fastlane/graphs/contributors) for extending and improving `fastlane`.
+Thanks to all [contributors](https://github.com/fastlane/fastlane/graphs/contributors) for extending and improving _fastlane_.
 
 ## Speakers
 
