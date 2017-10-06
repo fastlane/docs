@@ -106,6 +106,35 @@ If the above doesn't help, please [submit an issue](https://github.com/fastlane/
 
 Currently, _fastlane_ is officially supported to run on macOS. Support for other operating systems is limited and untested at this point in time. _fastlane_ uses system APIs that may not be implemented on other platforms, for example, we use the Ruby `fork` method for sub-process management, which isn't available on Windows.
 
+## Special Thanks
+
+Thanks to all [contributors](https://github.com/fastlane/fastlane/graphs/contributors) for extending and improving `fastlane`.
+
+## Speakers
+
+Are you giving a talk on fastlane? Great! [Let us know](https://fastlane.tools/speaking) so we can help you give the best possible presentation. 
+
+## Metrics
+
+_fastlane_ tracks a few key metrics to understand how developers are using the tool and to help us know what areas need improvement. No personal/sensitive information is ever collected. Metrics that are collected include: 
+
+* The number of successes, errors, and crashes for _fastlane_ and each action run in a Fastfile
+* The running time of _fastlane_
+* The method by which _fastlane_ was installed
+* Whether _fastlane_ is being run on CI
+* The platform (e.g. iOS, Android) for which _fastlane_ is run
+* A hash of the app identifier or package name, which helps us anonymously identify unique usage of _fastlane_
+
+We have recently changed the destination service to which these metrics are reported, as well as the format of the data, but the data that is collected has not changed.
+
+You can easily opt-out of metrics collection by adding `opt_out_usage` at the top of your `Fastfile` or by setting the environment variable `FASTLANE_OPT_OUT_USAGE`. Participating helps us provide the best possible support for _fastlane_, so we hope you'll consider it a plus! :heavy_plus_sign:
+
+## Crash Reporting
+
+In order to continuously improve stability, _fastlane_ will record crash reports with sanitized stack traces. Sanitization removes personal information from the stack trace and error message (including home directories, _fastlane_ path, gem paths, environment variables, and parameters).
+
+You can easily opt-out of crash reporting by adding `opt_out_crash_reporting` at the top of your `Fastfile` or by setting the environment variable `FASTLANE_OPT_OUT_CRASH_REPORTING`. Just like metrics mentioned above, participating helps us provide the best possible support for _fastlane_, so we hope you'll consider it a plus! :heavy_plus_sign:
+
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](https://github.com/fastlane/fastlane/blob/master/LICENSE) file.
