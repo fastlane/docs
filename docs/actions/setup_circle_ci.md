@@ -1,0 +1,51 @@
+# setup_circle_ci
+
+
+Setup the keychain and match to work with CircleCI
+
+
+
+
+> - Creates a new temporary keychain for use with match
+- Switches match to `readonly` mode to not create new profiles/cert on CI
+- Sets up log and test result paths to be easily collectible
+This action helps with CircleCI integration, add this to the top of your Fastfile if you use CircleCI
+
+
+setup_circle_ci |
+-----|----
+Supported platforms | ios, mac
+Author | @dantoml
+
+
+
+**1 Example**
+
+```ruby
+setup_circle_ci
+```
+
+
+
+
+
+**Parameters**
+
+Key | Description
+----|------------
+  `force` | Force setup, even if not executed by CircleCI
+
+
+
+
+<hr />
+To show the documentation in your terminal, run
+```no-highlight
+fastlane action setup_circle_ci
+```
+
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/setup_circle_ci.rb" target="_blank">View source code</a>
+
+<hr />
+
+<a href="/actions"><b>Back to actions</b></a>
