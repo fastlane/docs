@@ -55,7 +55,7 @@ Key | Description
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes
   `shallow_clone` | Make a shallow clone of the repository (truncate the history to 1 revision)
   `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail
-  `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed
+  `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore'
   `skip_docs` | Skip generation of a README.md for the created git repository
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos)
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile
