@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 12be116d7c1a8ac3d833a87953106f7332af8c69
+  revision: 4150b61f2545781aa5e1b44ba4158e1028c81c9e
   specs:
     fastlane (2.60.1)
       CFPropertyList (>= 2.3, < 3.0.0)
