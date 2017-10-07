@@ -384,9 +384,167 @@
               
                 <h1 id="scan"><a name="user-content-scan" href="#scan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>scan</h1>
 <p>Easily run tests of your iOS app using <em>scan</em></p>
-<blockquote>
-<p>More information: https://github.com/fastlane/fastlane/tree/master/scan</p>
-</blockquote>
+<p align="center">
+  <img src="/img/actions/scan.png" height="110">
+</p>
+
+<h6 id="the-easiest-way-to-run-tests-of-your-ios-and-mac-app"><a name="user-content-the-easiest-way-to-run-tests-of-your-ios-and-mac-app" href="#the-easiest-way-to-run-tests-of-your-ios-and-mac-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The easiest way to run tests of your iOS and Mac app</h6>
+<p><em>scan</em> makes it easy to run tests of your iOS and Mac app on a simulator or connected device.</p>
+<hr />
+<p align="center">
+    <a href="#whats-scan">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#scanfile">Scanfile</a>
+</p>
+
+<hr />
+<h1 id="whats-scan"><a name="user-content-whats-scan" href="#whats-scan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What's scan?</h1>
+<p><img alt="https://pbs.twimg.com/media/CURcEpuWoAArE3d.png:large" src="https://pbs.twimg.com/media/CURcEpuWoAArE3d.png:large" /></p>
+<h3 id="before-scan"><a name="user-content-before-scan" href="#before-scan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Before <em>scan</em></h3>
+<pre><code class="no-highlight">xcodebuild \
+  -workspace MyApp.xcworkspace \
+  -scheme &quot;MyApp&quot; \
+  -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' \
+  test
+</code></pre>
+
+<p>As the output will look like this</p>
+<pre><code class="no-highlight">/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.o Example/main.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/felixkrause/Developer/fastlane/gym/example/cocoapods
+    export LANG=en_US.US-ASCII
+    export PATH=&quot;/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode-beta.app/Contents/Developer/usr/bin:/Users/felixkrause/.rvm/gems/ruby-2.2.0/bin:/Users/felixkrause/.rvm/gems/ruby-2.2.0@global/bin:/Users/felixkrause/.rvm/rubies/ruby-2.2.0/bin:/Users/felixkrause/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin&quot;
+    /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch arm64 -fmessage-length=126 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -gmodules -fmodules-cache-path=/Users/felixkrause/Library/Developer/Xcode/DerivedData/ModuleCache -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/Users/felixkrause/Library/Developer/Xcode/DerivedData/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -Os -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -DOBJC_OLD_DISPATCH_PROTOTYPES=0 -isysroot /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -miphoneos-version-min=9.0 -g -fvisibility=hidden -Wno-sign-conversion -fembed-bitcode -iquote /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-generated-files.hmap -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-own-target-headers.hmap -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-all-target-headers.hmap -iquote /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-project-headers.hmap -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/BuildProductsPath/Release-iphoneos/include -I/Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public -I/Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public/HexColors -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/DerivedSources/arm64 -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/DerivedSources -F/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/BuildProductsPath/Release-iphoneos -isystem /Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public -isystem /Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public/HexColors -MMD -MT dependencies -MF /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.d --serialize-diagnostics /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.dia -c /Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Example/main.m -o /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.o
+</code></pre>
+
+<p>you'll probably want to use something like <a href="https://github.com/supermarin/xcpretty">xcpretty</a>, which will look like this:</p>
+<pre><code class="no-highlight">set -o pipefail &amp;&amp;
+  xcodebuild \
+    -workspace MyApp.xcworkspace \
+    -scheme &quot;MyApp&quot; \
+    -sdk iphonesimulator \
+    -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' \
+    test \
+  | xcpretty \
+    -r &quot;html&quot; \
+    -o &quot;tests.html&quot;
+</code></pre>
+
+<h3 id="with-scan"><a name="user-content-with-scan" href="#with-scan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>With <em>scan</em></h3>
+<pre><code class="no-highlight">fastlane scan
+</code></pre>
+
+<h3 id="why-scan"><a name="user-content-why-scan" href="#why-scan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why <em>scan</em>?</h3>
+<p><em>scan</em> uses the latest APIs and tools to make running tests plain simple and offer a great integration into your existing workflow, like <a href="https://fastlane.tools">fastlane</a> or Jenkins.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>scan Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏁</td>
+<td>Beautiful inline build output while running the tests</td>
+</tr>
+<tr>
+<td>🚠</td>
+<td>Sensible defaults: Automatically detect the project, schemes and more</td>
+</tr>
+<tr>
+<td>📊</td>
+<td>Support for HTML, JSON and JUnit reports</td>
+</tr>
+<tr>
+<td>🔎</td>
+<td>Xcode duplicated your simulators again? <em>scan</em> will handle this for you</td>
+</tr>
+<tr>
+<td>🔗</td>
+<td>Works perfectly with <a href="https://fastlane.tools">fastlane</a> and other tools</td>
+</tr>
+<tr>
+<td>🚅</td>
+<td>Don't remember any complicated build commands, just <em>scan</em></td>
+</tr>
+<tr>
+<td>🔧</td>
+<td>Easy and dynamic configuration using parameters and environment variables</td>
+</tr>
+<tr>
+<td>📢</td>
+<td>Beautiful slack notifications of the test results</td>
+</tr>
+<tr>
+<td>💾</td>
+<td>Store common build settings in a <code>Scanfile</code></td>
+</tr>
+<tr>
+<td>📤</td>
+<td>The raw <code>xcodebuild</code> outputs are stored in <code>~/Library/Logs/scan</code></td>
+</tr>
+<tr>
+<td>💻</td>
+<td>Supports both iOS and Mac applications</td>
+</tr>
+<tr>
+<td>👱</td>
+<td>Automatically switches to the <a href="https://github.com/kattrali/xcpretty-travis-formatter">travis formatter</a> when running on Travis</td>
+</tr>
+<tr>
+<td>📖</td>
+<td>Helps you resolve common test errors like simulator not responding</td>
+</tr>
+</tbody>
+</table>
+<p><em>scan</em> uses a plain <code>xcodebuild</code> command, therefore keeping 100% compatible with <code>xcodebuild</code>. To generate the nice output, <em>scan</em> uses <a href="https://github.com/supermarin/xcpretty">xcpretty</a>. You can alway access the raw output in <code>~/Library/Logs/scan</code>.</p>
+<p><img alt="img/actions/scanScreenshot.png" src="../../img/actions/scanScreenshot.png" />
+<img alt="img/actions/slack.png" src="../../img/actions/slack.png" />
+<img alt="img/actions/scanHTML.png" src="../../img/actions/scanHTML.png" />
+<img alt="img/actions/scanHTMLFailing.png" src="../../img/actions/scanHTMLFailing.png" /></p>
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<pre><code>fastlane scan
+</code></pre>
+<p>That's all you need to run your tests. If you want more control, here are some available parameters:</p>
+<pre><code>fastlane scan --workspace "Example.xcworkspace" --scheme "AppName" --device "iPhone 6" --clean
+</code></pre>
+<p>If you need to use a different xcode install, use <code>xcode-select</code> or define <code>DEVELOPER_DIR</code>:</p>
+<pre><code>DEVELOPER_DIR="/Applications/Xcode6.2.app" scan
+</code></pre>
+<p>To run <em>scan</em> on multiple devices via <a href="https://fastlane.tools">fastlane</a>, add this to your <code>Fastfile</code>:</p>
+<pre><code class="ruby">scan(
+  workspace: &quot;Example.xcworkspace&quot;,
+  devices: [&quot;iPhone 6s&quot;, &quot;iPad Air&quot;]
+)
+</code></pre>
+
+<p>For a list of all available parameters use</p>
+<pre><code>fastlane action scan
+</code></pre>
+<p>To access the raw <code>xcodebuild</code> output open <code>~/Library/Logs/scan</code></p>
+<h1 id="scanfile"><a name="user-content-scanfile" href="#scanfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Scanfile</h1>
+<p>Since you might want to manually trigger the tests but don't want to specify all the parameters every time, you can store your defaults in a so called <code>Scanfile</code>.</p>
+<p>Run <code>fastlane scan init</code> to create a new configuration file. Example:</p>
+<pre><code class="ruby-skip-tests">scheme &quot;Example&quot;
+devices [&quot;iPhone 6s&quot;, &quot;iPad Air&quot;]
+
+clean true
+
+output_types &quot;html&quot;
+</code></pre>
+
+<h1 id="automating-the-whole-process"><a name="user-content-automating-the-whole-process" href="#automating-the-whole-process" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automating the whole process</h1>
+<p><em>scan</em> works great together with <a href="https://fastlane.tools">fastlane</a>, which connects all deployment tools into one streamlined workflow.</p>
+<p>Using <em>fastlane</em> you can define a configuration like</p>
+<pre><code class="ruby">lane :test do
+  scan(scheme: &quot;Example&quot;)
+end
+</code></pre>
+
+<p>For more information visit the <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">fastlane GitHub page</a>.</p>
+<hr />
+
 <table>
 <thead>
 <tr>
@@ -475,7 +633,7 @@ scan(
 </tr>
 <tr>
 <td><code>code_coverage</code></td>
-<td>Should code coverage be generated (Xcode 7 only)?</td>
+<td>Should code coverage be generated? (Xcode 7 and up)</td>
 </tr>
 <tr>
 <td><code>address_sanitizer</code></td>

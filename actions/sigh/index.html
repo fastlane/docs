@@ -384,9 +384,138 @@
               
                 <h1 id="sigh"><a name="user-content-sigh" href="#sigh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sigh</h1>
 <p>Generates a provisioning profile. Stores the profile in the current folder</p>
-<blockquote>
+<p align="center">
+  <img src="/img/actions/sigh.png" height="110">
+</p>
+
+<h6 id="because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning"><a name="user-content-because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning" href="#because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Because you would rather spend your time building stuff than fighting provisioning</h6>
+<p><em>sigh</em> can create, renew, download and repair provisioning profiles (with one command). It supports App Store, Ad Hoc, Development and Enterprise profiles and supports nice features, like auto-adding all test devices.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#resign">Resign</a> &bull;
+    <a href="#how-does-it-work">How does it work?</a>
+</p>
+
+<hr />
+<h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
+<ul>
+<li><strong>Download</strong> the latest provisioning profile for your app</li>
+<li><strong>Renew</strong> a provisioning profile, when it has expired</li>
+<li><strong>Repair</strong> a provisioning profile, when it is broken</li>
+<li><strong>Create</strong> a new provisioning profile, if it doesn't exist already</li>
+<li>Supports <strong>App Store</strong>, <strong>Ad Hoc</strong> and <strong>Development</strong> profiles</li>
+<li>Support for <strong>multiple Apple accounts</strong>, storing your credentials securely in the Keychain</li>
+<li>Support for <strong>multiple Teams</strong></li>
+<li>Support for <strong>Enterprise Profiles</strong></li>
+</ul>
+<p>To automate iOS Push profiles you can use <a href="https://github.com/fastlane/fastlane/tree/master/pem">pem</a>.</p>
+<h3 id="why-not-let-xcode-do-the-work"><a name="user-content-why-not-let-xcode-do-the-work" href="#why-not-let-xcode-do-the-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why not let Xcode do the work?</h3>
+<ul>
+<li><em>sigh</em> can easily be integrated into your CI-server (e.g. Jenkins)</li>
+<li>Xcode sometimes invalidates <a href="../../img/actions/SignErrors.png">all existing profiles</a></li>
+<li>You have control over what happens</li>
+<li>You still get to have the signing files, which you can then use for your build scripts or store in git</li>
+</ul>
+<p>See <em>sigh</em> in action:</p>
+<p><img alt="img/actions/sighRecording.gif" src="../../img/actions/sighRecording.gif" /></p>
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
 <p><strong>Note</strong>: It is recommended to use <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your provisioning profiles. Use <em>sigh</em> directly only if you want full control over what's going on and know more about codesigning.</p>
-</blockquote>
+<pre><code class="no-highlight">fastlane sigh
+</code></pre>
+
+<p>Yes, that's the whole command!</p>
+<p><em>sigh</em> will create, repair and download profiles for the App Store by default.</p>
+<p>You can pass your bundle identifier and username like this:</p>
+<pre><code>fastlane sigh -a com.krausefx.app -u username
+</code></pre>
+<p>If you want to generate an <strong>Ad Hoc</strong> profile instead of an App Store profile:</p>
+<pre><code>fastlane sigh --adhoc
+</code></pre>
+<p>If you want to generate a <strong>Development</strong> profile:</p>
+<pre><code>fastlane sigh --development
+</code></pre>
+<p>To generate the profile in a specific directory:</p>
+<pre><code>fastlane sigh -o "~/Certificates/"
+</code></pre>
+<p>To download all your provisioning profiles use</p>
+<pre><code>fastlane sigh download_all
+</code></pre>
+<p>Optionally, use <code>fastlane sigh download_all --download_xcode_profiles</code> to also include the Xcode managed provisioning profiles</p>
+<p>For a list of available parameters and commands run</p>
+<pre><code>fastlane action sigh
+</code></pre>
+<h3 id="advanced"><a name="user-content-advanced" href="#advanced" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced</h3>
+<p>By default, <em>sigh</em> will install the downloaded profile on your machine. If you just want to generate the profile and skip the installation, use the following flag:</p>
+<pre><code>fastlane sigh --skip_install
+</code></pre>
+<p>To save the provisioning profile under a specific name, use the -q option:</p>
+<pre><code>fastlane sigh -a com.krausefx.app -u username -q "myProfile.mobileprovision"
+</code></pre>
+<p>If for some reason you don't want <em>sigh</em> to verify that the code signing identity is installed on your local machine:</p>
+<pre><code>fastlane sigh --skip_certificate_verification
+</code></pre>
+<p>If you need the provisioning profile to be renewed regardless of its state use the <code>--force</code> option. This gives you a profile with the maximum lifetime. <code>--force</code> will also add all available devices to this profile.</p>
+<pre><code>fastlane sigh --force
+</code></pre>
+<p>By default, <em>sigh</em> will include all certificates on development profiles, and first certificate on other types. If you need to specify which certificate to use you can either use the environment variable <code>SIGH_CERTIFICATE</code>, or pass the name or expiry date of the certificate as argument:</p>
+<pre><code>fastlane sigh -c "SunApps GmbH"
+</code></pre>
+<p>For a list of available parameters and commands run</p>
+<pre><code>fastlane action sigh
+</code></pre>
+<h3 id="use-with-fastlane"><a name="user-content-use-with-fastlane" href="#use-with-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use with <a href="https://github.com/fastlane/fastlane/tree/master/fastlane"><em>fastlane</em></a></h3>
+<p><em>sigh</em> becomes really interesting when used in <a href="https://github.com/fastlane/fastlane/tree/master/fastlane"><em>fastlane</em></a> in combination with <a href="https://github.com/fastlane/fastlane/tree/master/cert"><em>cert</em></a>.</p>
+<p>Update your <code>Fastfile</code> to contain the following code:</p>
+<pre><code class="ruby">lane :beta do
+  cert
+  sigh(force: true)
+end
+</code></pre>
+
+<p><code>force: true</code> will make sure to re-generate the provisioning profile on each run.
+This will result in <em>sigh</em> always using the correct signing certificate, which is installed on the local machine.</p>
+<h1 id="repair"><a name="user-content-repair" href="#repair" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repair</h1>
+<p><em>sigh</em> can automatically repair all your existing provisioning profiles which are expired or just invalid.</p>
+<pre><code>fastlane sigh repair
+</code></pre>
+<h1 id="resign"><a name="user-content-resign" href="#resign" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resign</h1>
+<p>If you generated your <code>ipa</code> file but want to apply a different code signing onto the ipa file, you can use <code>sigh resign</code>:</p>
+<pre><code>fastlane sigh resign
+</code></pre>
+<p><em>sigh</em> will find the ipa file and the provisioning profile for you if they are located in the current folder.</p>
+<p>You can pass more information using the command line:</p>
+<pre><code>fastlane sigh resign ./path/app.ipa --signing_identity "iPhone Distribution: Felix Krause" -p "my.mobileprovision"
+</code></pre>
+<h1 id="manage"><a name="user-content-manage" href="#manage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manage</h1>
+<p>With <code>sigh manage</code> you can list all provisioning profiles installed locally.</p>
+<pre><code>fastlane sigh manage
+</code></pre>
+<p>Delete all expired provisioning profiles</p>
+<pre><code>fastlane sigh manage -e
+</code></pre>
+<p>Or delete all <code>iOS Team Provisioning Profile</code> by using a regular expression</p>
+<pre><code>fastlane sigh manage -p "iOS\ ?Team Provisioning Profile:"
+</code></pre>
+<h2 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h2>
+<p>Run <code>fastlane action sigh</code> to get a list of all available environment variables.</p>
+<p>If you're using <a href="https://github.com/fastlane/fastlane/tree/master/cert">cert</a> in combination with <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">fastlane</a> the signing certificate will automatically be selected for you. (make sure to run <em>cert</em> before <em>sigh</em>)</p>
+<h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>
+<p><em>sigh</em> will access the <code>iOS Dev Center</code> to download, renew or generate the <code>.mobileprovision</code> file. It uses <a href="https://spaceship.airforce">spaceship</a> to communicate with Apple's web services.</p>
+<h2 id="how-is-my-password-stored"><a name="user-content-how-is-my-password-stored" href="#how-is-my-password-stored" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How is my password stored?</h2>
+<p><em>sigh</em> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> from <em>fastlane</em>.</p>
+<h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
+<h2 id="use-the-provisioning-quicklook-plugin"><a name="user-content-use-the-provisioning-quicklook-plugin" href="#use-the-provisioning-quicklook-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the 'Provisioning Quicklook plugin'</h2>
+<p>Download and install the <a href="https://github.com/chockenberry/Provisioning">Provisioning Plugin</a>.</p>
+<p>It will show you the <code>mobileprovision</code> files like this:
+<img alt="img/actions/QuickLookScreenshot.png" src="../../img/actions/QuickLookScreenshot.png" /></p>
+<h2 id="app-identifier-couldnt-be-found"><a name="user-content-app-identifier-couldnt-be-found" href="#app-identifier-couldnt-be-found" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Identifier couldn't be found</h2>
+<p>If you also want to create a new App Identifier on the Apple Developer Portal, check out <a href="https://github.com/fastlane/fastlane/tree/master/produce">produce</a>, which does exactly that.</p>
+<h2 id="what-happens-to-my-xcode-managed-profiles"><a name="user-content-what-happens-to-my-xcode-managed-profiles" href="#what-happens-to-my-xcode-managed-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What happens to my Xcode managed profiles?</h2>
+<p><em>sigh</em> will never touch or use the profiles which are created and managed by Xcode. Instead <em>sigh</em> will manage its own set of provisioning profiles.</p>
+<hr />
+
 <table>
 <thead>
 <tr>

@@ -384,9 +384,298 @@
               
                 <h1 id="match"><a name="user-content-match" href="#match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>match</h1>
 <p>Easily sync your certificates and profiles across your team using git</p>
+<p align="center">
+  <img src="/img/actions/match.png" height="110">
+</p>
+
+<h6 id="easily-sync-your-certificates-and-profiles-across-your-team-using-git"><a name="user-content-easily-sync-your-certificates-and-profiles-across-your-team-using-git" href="#easily-sync-your-certificates-and-profiles-across-your-team-using-git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily sync your certificates and profiles across your team using git</h6>
+<p>A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.</p>
+<p><em>match</em> is the implementation of the https://codesigning.guide concept. <em>match</em> creates all required certificates &amp; provisioning profiles and stores them in a separate git repository. Every team member with access to the repo can use those credentials for code signing. <em>match</em> also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams</p>
+<p><a href="https://docs.fastlane.tools/codesigning/getting-started/">More information on how to get started with codesigning</a></p>
+<hr />
+<p align="center">
+    <a href="#why-match">Why?</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#is-this-secure">Is this secure?</a>
+</p>
+
+<hr />
+<h5 align="center"><code>match</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
+
+<h2 id="why-match"><a name="user-content-why-match" href="#why-match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why match?</h2>
+<p>Before starting to use <em>match</em>, make sure to read the <a href="https://codesigning.guide">codesigning.guide</a></p>
 <blockquote>
-<p>More details https://github.com/fastlane/fastlane/tree/master/match</p>
+<p>When deploying an app to the App Store, beta testing service or even installing it on a device, most development teams have separate code signing identities for every member. This results in dozens of profiles including a lot of duplicates.</p>
+<p>You have to manually renew and download the latest set of provisioning profiles every time you add a new device or a certificate expires. Additionally this requires spending a lot of time when setting up a new machine that will build your app.</p>
 </blockquote>
+<p><strong>A new approach</strong></p>
+<blockquote>
+<p>Share one code signing identity across your development team to simplify your setup and prevent code signing issues. What if there was a central place where your code signing identity and profiles are kept, so anyone in the team can access them during the build process?</p>
+</blockquote>
+<h3 id="why-not-let-xcode-handle-all-this"><a name="user-content-why-not-let-xcode-handle-all-this" href="#why-not-let-xcode-handle-all-this" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why not let Xcode handle all this?</h3>
+<ul>
+<li>You have full control over what happens</li>
+<li>You have access to all the certificates and profiles, which are all securely stored in git</li>
+<li>You share one code signing identity across the team to have fewer certificates and profiles</li>
+<li>Xcode sometimes revokes certificates which breaks your setup causing failed builds</li>
+<li>More predictable builds by settings profiles in an explicit way instead of using the <code>Automatic</code> setting</li>
+<li>It just works™</li>
+</ul>
+<h3 id="what-does-match-do-for-you"><a name="user-content-what-does-match-do-for-you" href="#what-does-match-do-for-you" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What does <em>match</em> do for you?</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>match</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔄</td>
+<td>Automatically sync your iOS keys and profiles across all your team members using git</td>
+</tr>
+<tr>
+<td>📦</td>
+<td>Handle all the heavy lifting of creating and storing your certificates and profiles</td>
+</tr>
+<tr>
+<td>💻</td>
+<td>Setup codesigning on a new machine in under a minute</td>
+</tr>
+<tr>
+<td>🎯</td>
+<td>Designed to work with apps with multiple targets and bundle identifiers</td>
+</tr>
+<tr>
+<td>🔒</td>
+<td>You have full control over your files and Git repo, no third party service involved</td>
+</tr>
+<tr>
+<td>✨</td>
+<td>Provisioning profile will always match the correct certificate</td>
+</tr>
+<tr>
+<td>💥</td>
+<td>Easily reset your existing profiles and certificates if your current account has expired or invalid profiles</td>
+</tr>
+<tr>
+<td>♻️</td>
+<td>Automatically renew your provisioning profiles to include all your devices using the <code>--force</code> option</td>
+</tr>
+<tr>
+<td>👥</td>
+<td>Support for multiple Apple accounts and multiple teams</td>
+</tr>
+<tr>
+<td>✨</td>
+<td>Tightly integrated with <a href="https://fastlane.tools">fastlane</a> to work seamlessly with <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> and other build tools</td>
+</tr>
+</tbody>
+</table>
+<p>For more information about the concept, visit <a href="https://codesigning.guide">codesigning.guide</a>.</p>
+<h2 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h2>
+<h3 id="setup"><a name="user-content-setup" href="#setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup</h3>
+<ol>
+<li>
+<p>Create a <strong>new, private Git repo</strong> (e.g. on <a href="https://github.com/new">GitHub</a> or <a href="https://bitbucket.org/repo/create">BitBucket</a>) and name it something like <code>certificates</code>. <strong>Important:</strong> Make sure the repository is set to <em>private</em>.</p>
+</li>
+<li>
+<p>Optional: Create a <strong>new, shared Apple Developer Portal account</strong>, something like <code>office@company.com</code> that will be shared across your team from now on (for more information visit <a href="https://codesigning.guide">codesigning.guide</a>)</p>
+</li>
+<li>
+<p>Run the following in your project folder to start using <em>match</em>:</p>
+</li>
+</ol>
+<pre><code class="no-highlight">fastlane match init
+</code></pre>
+
+<p><img src="/img/actions/match_init.gif" width="550" /></p>
+<p>You'll be asked to enter the URL to your Git repo. This can be either a <code>https://</code> or a <code>git</code> URL. (If your machine is currently using SSH to authenticate with Github, you'll want to use a <code>git</code> URL, otherwise you may see an authentication error when you attempt to use match.) <code>fastlane match init</code> won't read or modify your certificates or profiles.</p>
+<p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
+<p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
+<pre><code class="ruby-skip-tests">git_url &quot;https://github.com/fastlane/fastlane/tree/master/certificates&quot;
+
+app_identifier &quot;tools.fastlane.app&quot;
+username &quot;user@fastlane.tools&quot;
+</code></pre>
+
+<h4 id="important-use-one-git-branch-per-team"><a name="user-content-important-use-one-git-branch-per-team" href="#important-use-one-git-branch-per-team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Important: Use one git branch per team</h4>
+<p><em>match</em> also supports storing certificates of multiple teams in one repo, by using separate git branches. If you work in multiple teams, make sure to set the <code>git_branch</code> parameter to a unique value per team. From there, <em>match</em> will automatically create and use the specified branch for you.</p>
+<pre><code class="ruby">match(git_branch: &quot;team1&quot;, username: &quot;user@team1.com&quot;)
+match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
+</code></pre>
+
+<h3 id="run"><a name="user-content-run" href="#run" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run</h3>
+<blockquote>
+<p>Before running <em>match</em> for the first time, you should consider clearing your existing profiles and certificates using the <a href="#nuke">match nuke command</a>.</p>
+</blockquote>
+<p>After running <code>fastlane match init</code> you can run the following to generate new certificates and profiles:</p>
+<pre><code class="no-highlight">fastlane match appstore
+</code></pre>
+
+<pre><code class="no-highlight">fastlane match development
+</code></pre>
+
+<p><img src="/img/actions/match_appstore_small.gif" width="550" /></p>
+<p>This will create a new certificate and provisioning profile (if required) and store them in your Git repo. If you previously ran <em>match</em> it will automatically install the existing profiles from the Git repo.</p>
+<p>The provisioning profiles are installed in <code>~/Library/MobileDevice/Provisioning Profiles</code> while the certificates and private keys are installed in your Keychain.</p>
+<p>To get a more detailed output of what <em>match</em> is doing use</p>
+<pre><code class="no-highlight">fastlane match --verbose
+</code></pre>
+
+<p>For a list of all available options run</p>
+<pre><code class="no-highlight">fastlane action match
+</code></pre>
+
+<h4 id="handle-multiple-targets"><a name="user-content-handle-multiple-targets" href="#handle-multiple-targets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Handle multiple targets</h4>
+<p>If you have several targets with different bundle identifiers, supply them as a comma-separated list to   :</p>
+<pre><code class="no-highlight">fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp
+</code></pre>
+
+<p>You can make this even easier using <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">fastlane</a> by creating a <code>certificates</code> lane like this:</p>
+<pre><code class="ruby">lane :certificates do
+  match(app_identifier: [&quot;com.krausefx.app1&quot;, &quot;com.krausefx.app2&quot;, &quot;com.krausefx.app3&quot;], readonly: true)
+end
+</code></pre>
+
+<p>Then all your team has to do is <code>fastlane certificates</code> and keys, certs and profiles for all targets will be synced.</p>
+<h4 id="passphrase"><a name="user-content-passphrase" href="#passphrase" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passphrase</h4>
+<p>When running <em>match</em> for the first time on a new machine, it will ask you for the passphrase for the Git repository. This is an additional layer of security: each of the files will be encrypted using <code>openssl</code>. Make sure to remember the password, as you'll need it when you run match on a different machine.</p>
+<p>To set the passphrase to decrypt your profiles using an environment variable, use <code>MATCH_PASSWORD</code>.</p>
+<h4 id="new-machine"><a name="user-content-new-machine" href="#new-machine" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New machine</h4>
+<p>To set up the certificates and provisioning profiles on a new machine, you just run the same command using:</p>
+<pre><code class="no-highlight">fastlane match development
+</code></pre>
+
+<p>You can also run <em>match</em> in a <code>readonly</code> mode to be sure it won't create any new certificates or profiles.</p>
+<pre><code class="no-highlightno-highlight">fastlane match development --readonly
+</code></pre>
+
+<h4 id="access-control"><a name="user-content-access-control" href="#access-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Access Control</h4>
+<p>A benefit of using <em>match</em> is that it enables you to give the developers of your team access to the code signing certificates without having to give everyone access to the Developer Portal:</p>
+<ol>
+<li>Run <em>match</em> to store the certificates in a Git repo</li>
+<li>Grant access to the Git repo to your developers and give them the passphrase</li>
+<li>The developers can now run <em>match</em> which will install the latest code signing profiles so they can build and sign the application without having to have access to the developer portal</li>
+<li>Every time you run <em>match</em> to update the profiles (e.g. add a new device), all your developers will automatically get the latest profiles when running <em>match</em></li>
+</ol>
+<p>If you decide to run <em>match</em> without access to the developer portal, make sure to use the <code>--readonly</code> option so that the commands don't ask you for the password to the developer portal.</p>
+<p>The advantage of this approach is that no one in your team will revoke a certificate by mistake. Additionally it is recommended to install the <a href="https://github.com/neonichu/FixCode">FixCode Xcode Plugin</a> to disable the <code>Fix Issue</code> button.</p>
+<h4 id="git-repo"><a name="user-content-git-repo" href="#git-repo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Repo</h4>
+<p>After running <em>match</em> for the first time, your Git repo will contain 2 directories:</p>
+<ul>
+<li>The <code>certs</code> folder contains all certificates with their private keys</li>
+<li>The <code>profiles</code> folder contains all provisioning profiles</li>
+</ul>
+<p>Additionally, <em>match</em> creates a nice repo <code>README.md</code> for you, making it easy to onboard new team members:</p>
+<p align="center">
+  <img src="/img/actions/github_repo.png" width="700" />
+</p>
+
+<h4 id="fastlane"><a name="user-content-fastlane" href="#fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane</h4>
+<p>Add <em>match</em> to your <code>Fastfile</code> to automatically fetch the latest code signing certificates with <a href="https://fastlane.tools">fastlane</a>.</p>
+<pre><code>match(type: &quot;appstore&quot;)
+
+match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
+      type: &quot;development&quot;)
+
+match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
+      type: &quot;adhoc&quot;,
+      app_identifier: &quot;tools.fastlane.app&quot;)
+
+match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
+      type: &quot;enterprise&quot;,
+      app_identifier: &quot;tools.fastlane.app&quot;)
+
+# _match_ should be called before building the app with _gym_
+gym
+# ...
+</code></pre>
+
+<h5 id="registering-new-devices"><a name="user-content-registering-new-devices" href="#registering-new-devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Registering new devices</h5>
+<p>By using <em>match</em>, you'll save a lot of time every time you add new device to your Ad Hoc or Development profiles. Use <em>match</em> in combination with the <a href="https://docs.fastlane.tools/actions#register_devices"><code>register_devices</code></a> action.</p>
+<pre><code class="ruby">lane :beta do
+  register_devices(devices_file: &quot;./devices.txt&quot;)
+  match(type: &quot;adhoc&quot;, force_for_new_devices: true)
+end
+</code></pre>
+
+<p>By using the <code>force_for_new_devices</code> parameter, <em>match</em> will check if the device count has changed since the last time you ran <em>match</em>, and automatically re-generate the provisioning profile if necessary. You can also use <code>force: true</code> to re-generate the provisioning profile on each run.</p>
+<p><em><strong>Important:</strong> The <code>force_for_new_devices</code> parameter is ignored for App Store provisioning profiles since they don't contain any device information.</em></p>
+<p>If you're not using <em>fastlane</em>, you can also use the <code>force_for_new_devices</code> option from the command line:</p>
+<pre><code class="no-highlight">fastlane match adhoc --force_for_new_devices
+</code></pre>
+
+<h5 id="multiple-targets"><a name="user-content-multiple-targets" href="#multiple-targets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Multiple Targets</h5>
+<p>If your app has multiple targets (e.g. Today Widget or WatchOS Extension)</p>
+<pre><code class="ruby">match(app_identifier: [&quot;tools.fastlane.app&quot;, &quot;tools.fastlane.app.today_widget&quot;], type: &quot;appstore&quot;)
+</code></pre>
+
+<p><em>match</em> can even use the same one Git repository for all bundle identifiers.</p>
+<h3 id="setup-xcode-project"><a name="user-content-setup-xcode-project" href="#setup-xcode-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup Xcode project</h3>
+<p><a href="https://docs.fastlane.tools/codesigning/XcodeProject/">Docs on how to set up your Xcode project</a></p>
+<h4 id="to-build-from-the-command-line-using-fastlane"><a name="user-content-to-build-from-the-command-line-using-fastlane" href="#to-build-from-the-command-line-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from the command line using <a href="https://fastlane.tools">fastlane</a></h4>
+<p><em>match</em> automatically pre-fills environment variables with the UUIDs of the correct provisioning profiles, ready to be used in your Xcode project.</p>
+<p>More information about how to setup your Xcode project can be found <a href="https://docs.fastlane.tools/codesigning/XcodeProject/">here</a></p>
+<h4 id="to-build-from-xcode-manually"><a name="user-content-to-build-from-xcode-manually" href="#to-build-from-xcode-manually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from Xcode manually</h4>
+<p>This is useful when installing your application on your device using the Development profile.</p>
+<p>You can statically select the right provisioning profile in your Xcode project (the name will be <code>match Development tools.fastlane.app</code>).</p>
+<p><a href="../../codesigning/xcode-project/.md">Docs on how to set up your Xcode project</a></p>
+<h3 id="continuous-integration"><a name="user-content-continuous-integration" href="#continuous-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Continuous Integration</h3>
+<h4 id="repo-access"><a name="user-content-repo-access" href="#repo-access" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repo access</h4>
+<p>There is one tricky part of setting up a CI system to work with <em>match</em>, which is enabling the CI to access the repo. Usually you'd just add your CI's public ssh key as a deploy key to your <em>match</em> repo, but since your CI will already likely be using its public ssh key to access the codebase repo, <a href="https://help.github.com/articles/error-key-already-in-use/">you won't be able to do that</a>.</p>
+<p>Some repo hosts might allow you to use the same deploy key for different repos, but GitHub will not. If your host does, you don't need to worry about this, just add your CI's public ssh key as a deploy key for your <em>match</em> repo and scroll down to "<em>Encryption password</em>".</p>
+<p>There are a few ways around this:</p>
+<ol>
+<li>Create a new account on your repo host with read-only access to your <em>match</em> repo. Bitrise have a good description of this <a href="http://devcenter.bitrise.io/faq/adding-projects-with-submodules/">here</a>.</li>
+<li>Some CIs allow you to upload your signing credentials manually, but obviously this means that you'll have to re-upload the profiles/keys/certs each time they change.</li>
+</ol>
+<p>Neither solution is pretty. It's one of those <em>trade-off</em> things. Do you care more about <strong>not</strong> having an extra account sitting around, or do you care more about having the :sparkles: of auto-syncing of credentials.</p>
+<h4 id="encryption-password"><a name="user-content-encryption-password" href="#encryption-password" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Encryption password</h4>
+<p>Once you've decided which approach to take, all that's left to do is to set your encryption password as secret environment variable named <code>MATCH_PASSWORD</code>. <em>match</em> will pick this up when it's run.</p>
+<h3 id="nuke"><a name="user-content-nuke" href="#nuke" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Nuke</h3>
+<p>If you never really cared about code signing and have a messy Apple Developer account with a lot of invalid, expired or Xcode managed profiles/certificates, you can use the <code>match nuke</code> command to revoke your certificates and provisioning profiles. Don't worry, apps that are already available in the App Store / TestFlight will still work. Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build. After clearing your account you'll start from a clean state, and you can run <em>match</em> to generate your certificates and profiles again.</p>
+<p>To revoke all certificates and provisioning profiles for a specific environment:</p>
+<pre><code class="no-highlight">fastlane match nuke development
+fastlane match nuke distribution
+</code></pre>
+
+<p><img src="/img/actions/match_nuke.gif" width="550" /></p>
+<p>You'll have to confirm a list of profiles / certificates that will be deleted.</p>
+<h3 id="change-password"><a name="user-content-change-password" href="#change-password" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Change Password</h3>
+<p>To change the password of your repo and therefore decrypting and encrypting all files run</p>
+<pre><code class="no-highlight">fastlane match change_password
+</code></pre>
+
+<p>You'll be asked for the new password on all your machines on the next run.</p>
+<h3 id="manual-decrypt"><a name="user-content-manual-decrypt" href="#manual-decrypt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manual Decrypt</h3>
+<p>If you want to manually decrypt a file you can.</p>
+<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;&lt;fileYouWantToDecryptPath&gt;&quot; -out &quot;&lt;decryptedFilePath&gt;&quot; -a -d
+</code></pre>
+
+<h2 id="is-this-secure"><a name="user-content-is-this-secure" href="#is-this-secure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Is this secure?</h2>
+<p>Both your keys and provisioning profiles are encrypted using OpenSSL using a passphrase.</p>
+<p>Storing your private keys in a Git repo may sound off-putting at first. We did an in-depth analysis of potential security issues and came to the following conclusions:</p>
+<h4 id="what-could-happen-if-someone-stole-a-private-key"><a name="user-content-what-could-happen-if-someone-stole-a-private-key" href="#what-could-happen-if-someone-stole-a-private-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What could happen if someone stole a private key?</h4>
+<p>If attackers would have your certificate and provisioning profile, they could codesign an application with the same bundle identifier.</p>
+<p>What's the worst that could happen for each of the profile types?</p>
+<h5 id="app-store-profiles"><a name="user-content-app-store-profiles" href="#app-store-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Store Profiles</h5>
+<p>An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days (checkout <a href="http://appreviewtimes.com">appreviewtimes.com</a> for up-to-date expectations). Attackers could only submit an app for review, if they also got access to your iTunes Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.</p>
+<h5 id="development-and-ad-hoc-profiles"><a name="user-content-development-and-ad-hoc-profiles" href="#development-and-ad-hoc-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Development and Ad Hoc Profiles</h5>
+<p>In general those profiles are harmless as they can only be used to install a signed application on a small subset of devices. To add new devices, the attacker would also need your Apple Developer Portal credentials (which are not stored in git, but in your local keychain).</p>
+<h5 id="enterprise-profiles"><a name="user-content-enterprise-profiles" href="#enterprise-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enterprise Profiles</h5>
+<p>Attackers could use an In-House profile to distribute signed application to a potentially unlimited number of devices. All this would run under your company name and it could eventually lead to Apple revoking your In-House account. However it is very easy to revoke a certificate to remotely break the app on all devices.</p>
+<p>Because of the potentially dangerous nature of In-House profiles please use <em>match</em> with enterprise profiles with caution, ensure your git repository is private and use a secure password.</p>
+<h5 id="to-sum-up"><a name="user-content-to-sum-up" href="#to-sum-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To sum up</h5>
+<ul>
+<li>You have full control over the access list of your Git repo, no third party service involved</li>
+<li>Even if your certificates are leaked, they can't be used to cause any harm without your iTunes Connect login credentials</li>
+<li>Use In-House enterprise profile with <em>match</em> with caution</li>
+<li>If you use GitHub or Bitbucket we encourage enabling 2 factor authentication for all accounts that have access to the certificates repo</li>
+<li>The complete source code of <em>match</em> is fully open source on <a href="https://github.com/fastlane/fastlane/tree/master/match">GitHub</a></li>
+</ul>
+<hr />
+
 <table>
 <thead>
 <tr>
@@ -494,7 +783,7 @@
 </tr>
 <tr>
 <td><code>force_for_new_devices</code></td>
-<td>Renew the provisioning profiles if the device count on the developer portal has changed</td>
+<td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore'</td>
 </tr>
 <tr>
 <td><code>skip_docs</code></td>

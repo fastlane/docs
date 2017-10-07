@@ -384,9 +384,126 @@
               
                 <h1 id="supply"><a name="user-content-supply" href="#supply" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>supply</h1>
 <p>Upload metadata, screenshots and binaries to Google Play</p>
-<blockquote>
-<p>More information: https://github.com/fastlane/fastlane/tree/master/supply</p>
-</blockquote>
+<p align="center">
+  <img src="/img/actions/supply.png" height="110">
+</p>
+
+<h6 id="command-line-tool-for-updating-android-apps-and-their-metadata-on-the-google-play-store"><a name="user-content-command-line-tool-for-updating-android-apps-and-their-metadata-on-the-google-play-store" href="#command-line-tool-for-updating-android-apps-and-their-metadata-on-the-google-play-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Command line tool for updating Android apps and their metadata on the Google Play Store</h6>
+<p><em>supply</em> uploads app metadata, screenshots and binaries to Google Play. You can also select tracks for builds and promote builds to production.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#setup">Setup</a> &bull;
+    <a href="#quick-start">Quick Start</a> &bull;
+    <a href="#available-commands">Commands</a> &bull;
+    <a href="#uploading-an-apk">Uploading an APK</a> &bull;
+    <a href="#images-and-screenshots">Images</a>
+</p>
+
+<hr />
+<h2 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h2>
+<ul>
+<li>Update existing Android applications on Google Play via the command line</li>
+<li>Upload new builds (APKs)</li>
+<li>Retrieve and edit metadata, such as title and description, for multiple languages</li>
+<li>Upload the app icon, promo graphics and screenshots for multiple languages</li>
+<li>Have a local copy of the metadata in your git repository</li>
+<li>Retrieve version code numbers from existing Google Play tracks</li>
+</ul>
+<h2 id="setup"><a name="user-content-setup" href="#setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup</h2>
+<p>Setup consists of setting up your Google Developers Service Account</p>
+<ol>
+<li>Open the <a href="https://play.google.com/apps/publish/">Google Play Console</a></li>
+<li>Select <strong>Settings</strong> tab, followed by the <strong>API access</strong> tab</li>
+<li>Click the <strong>Create Service Account</strong> button and follow the <strong>Google API Console</strong> link in the dialog</li>
+<li>Click the <strong>Create Service account</strong> button at the top of the developers console screen</li>
+<li>Provide a name for the service account</li>
+<li>Click <strong>Select a role</strong> and choose <strong>Project &gt; Service Account Actor</strong></li>
+<li>Check the <strong>Furnish a new private key</strong> checkbox</li>
+<li>Select <strong>JSON</strong> as the Key type</li>
+<li>Click <strong>Create</strong> to close the dialog</li>
+<li>Make a note of the file name of the JSON file downloaded to your computer</li>
+<li>Back on the Google Play developer console, click <strong>Done</strong> to close the dialog</li>
+<li>Click on <strong>Grant Access</strong> for the newly added service account</li>
+<li>Choose <strong>Release Manager</strong> from the <strong>Role</strong> dropdown</li>
+<li>Click <strong>Add user</strong> to close the dialog</li>
+</ol>
+<h3 id="migrating-google-credential-format-from-p12-key-file-to-json"><a name="user-content-migrating-google-credential-format-from-p12-key-file-to-json" href="#migrating-google-credential-format-from-p12-key-file-to-json" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migrating Google credential format (from .p12 key file to .json)</h3>
+<p>In previous versions of supply, credentials to your Play Console were stored as <code>.p12</code> files. Since version 0.4.0, supply now supports the recommended <code>.json</code> key Service Account credential files. If you wish to upgrade:</p>
+<ul>
+<li>follow the <a href="#setup">Setup</a> procedure once again to make sure you create the appropriate JSON file</li>
+<li>update your fastlane configuration or your command line invocation to use the appropriate argument if necessary.
+  Note that you don't need to take note nor pass the <code>issuer</code> argument anymore.</li>
+</ul>
+<p>The previous p12 configuration is still currently supported.</p>
+<h2 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick Start</h2>
+<ul>
+<li><code>cd [your_project_folder]</code></li>
+<li><code>fastlane supply init</code></li>
+<li>Make changes to the downloaded metadata, add images, screenshots and/or an APK</li>
+<li><code>fastlane supply run</code></li>
+</ul>
+<h2 id="available-commands"><a name="user-content-available-commands" href="#available-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available Commands</h2>
+<ul>
+<li><code>fastlane supply</code>: update an app with metadata, a build, images and screenshots</li>
+<li><code>fastlane supply init</code>: download metadata for an existing app to a local directory</li>
+<li><code>fastlane action supply</code>: show information on available commands, arguments and environment variables</li>
+</ul>
+<p>You can either run <em>supply</em> on its own and use it interactively, or you can pass arguments or specify environment variables for all the options to skip the questions.</p>
+<h2 id="uploading-an-apk"><a name="user-content-uploading-an-apk" href="#uploading-an-apk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading an APK</h2>
+<p>To upload a new binary to Google Play, simply run</p>
+<pre><code class="no-highlight">fastlane supply --apk path/to/app.apk
+</code></pre>
+
+<p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
+<p>To gradually roll out a new build use</p>
+<pre><code class="no-highlight">fastlane supply --apk path/app.apk --track rollout --rollout 0.5
+</code></pre>
+
+<p>Expansion files (obbs) found under the same directory as your APK will also be uploaded together with your APK as long as:</p>
+<ul>
+<li>they are identified as type 'main' or 'patch' (by containing 'main' or 'patch' in their file name)</li>
+<li>you have at most one of each type</li>
+</ul>
+<h2 id="images-and-screenshots"><a name="user-content-images-and-screenshots" href="#images-and-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Images and Screenshots</h2>
+<p>After running <code>fastlane supply init</code>, you will have a metadata directory. This directory contains one or more locale directories (e.g. en-US, en-GB, etc.), and inside this directory are text files such as <code>title.txt</code> and <code>short_description.txt</code>.</p>
+<p>Inside of a given locale directory is a folder called <code>images</code>. Here you can supply images with the following file names (extension can be png, jpg or jpeg):</p>
+<ul>
+<li><code>featureGraphic</code></li>
+<li><code>icon</code></li>
+<li><code>promoGraphic</code></li>
+<li><code>tvBanner</code></li>
+</ul>
+<p>And you can supply screenshots by creating directories with the following names, containing PNGs or JPEGs (image names are irrelevant):</p>
+<ul>
+<li><code>phoneScreenshots/</code></li>
+<li><code>sevenInchScreenshots/</code> (7-inch tablets)</li>
+<li><code>tenInchScreenshots/</code> (10-inch tablets)</li>
+<li><code>tvScreenshots/</code></li>
+<li><code>wearScreenshots/</code></li>
+</ul>
+<p>Note that these will replace the current images and screenshots on the play store listing, not add to them.</p>
+<h2 id="changelogs-whats-new"><a name="user-content-changelogs-whats-new" href="#changelogs-whats-new" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changelogs (What's new)</h2>
+<p>You can add changelog files under the <code>changelogs/</code> directory for each locale. The filename should exactly match the version code of the APK that it represents. <code>fastlane supply init</code> will populate changelog files from existing data on Google Play if no <code>metadata/</code> directory exists when it is run.</p>
+<pre><code class="no-highlight">└── fastlane
+    └── metadata
+        └── android
+            ├── en-US
+            │   └── changelogs
+            │       ├── 100000.txt
+            │       └── 100100.txt
+            └── fr-FR
+                └── changelogs
+                    └── 100100.txt
+</code></pre>
+
+<h2 id="track-promotion"><a name="user-content-track-promotion" href="#track-promotion" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Track Promotion</h2>
+<p>A common Play publishing scenario might involve uploading an APK version to a test track, testing it, and finally promoting that version to production.</p>
+<p>This can be done using the <code>--track_promote_to</code> parameter.  The <code>--track_promote_to</code> parameter works with the <code>--track</code> parameter to command the Play API to promote existing Play track APK version(s) (those active on the track identified by the <code>--track</code> param value) to a new track (<code>--track_promote_to</code> value).</p>
+<h2 id="retrieve-track-version-codes"><a name="user-content-retrieve-track-version-codes" href="#retrieve-track-version-codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Retrieve Track Version Codes</h2>
+<p>Before performing a new APK upload you may want to check existing track version codes, or you may simply want to provide an informational lane that displays the currently promoted version codes for the production track. You can use the <code>google_play_track_version_codes</code> action to retrieve existing version codes for a package and track. For more information, see <code>fastlane action google_play_track_version_codes</code> help output.</p>
+<hr />
+
 <table>
 <thead>
 <tr>

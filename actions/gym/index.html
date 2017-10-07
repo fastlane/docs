@@ -399,10 +399,10 @@
 <h5 align="center"><code>gym</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
 <h1 id="whats-gym"><a name="user-content-whats-gym" href="#whats-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What's gym?</h1>
-<p><em>gym</em> builds and packages iOS apps for you. It takes care of all the heavy lifting and makes it super easy to generate a signed <code>ipa</code> or <code>app</code> file :muscle:</p>
+<p><em>gym</em> builds and packages iOS apps for you. It takes care of all the heavy lifting and makes it super easy to generate a signed <code>ipa</code> or <code>app</code> file 💪</p>
 <p><em>gym</em> is a replacement for <a href="https://github.com/nomad/shenzhen">shenzhen</a>.</p>
 <h3 id="before-gym"><a name="user-content-before-gym" href="#before-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Before <em>gym</em></h3>
-<pre><code>xcodebuild clean archive -archivePath build/MyApp \
+<pre><code class="no-highlight">xcodebuild clean archive -archivePath build/MyApp \
                          -scheme MyApp
 xcodebuild -exportArchive \
            -exportFormat ipa \
@@ -412,7 +412,7 @@ xcodebuild -exportArchive \
 </code></pre>
 
 <h3 id="with-gym"><a name="user-content-with-gym" href="#with-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>With <em>gym</em></h3>
-<pre><code>fastlane gym
+<pre><code class="no-highlight">fastlane gym
 </code></pre>
 
 <h3 id="why-gym"><a name="user-content-why-gym" href="#why-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why <em>gym</em>?</h3>
@@ -426,47 +426,47 @@ xcodebuild -exportArchive \
 </thead>
 <tbody>
 <tr>
-<td>:rocket:</td>
+<td>🚀</td>
 <td><em>gym</em> builds 30% faster than other build tools like <a href="https://github.com/nomad/shenzhen">shenzhen</a></td>
 </tr>
 <tr>
-<td>:checkered_flag:</td>
+<td>🏁</td>
 <td>Beautiful inline build output</td>
 </tr>
 <tr>
-<td>:book:</td>
+<td>📖</td>
 <td>Helps you resolve common build errors like code signing issues</td>
 </tr>
 <tr>
-<td>:mountain_cableway:</td>
+<td>🚠</td>
 <td>Sensible defaults: Automatically detect the project, its schemes and more</td>
 </tr>
 <tr>
-<td>:link:</td>
+<td>🔗</td>
 <td>Works perfectly with <a href="https://fastlane.tools">fastlane</a> and other tools</td>
 </tr>
 <tr>
-<td>:package:</td>
+<td>📦</td>
 <td>Automatically generates an <code>ipa</code> and a compressed <code>dSYM</code> file</td>
 </tr>
 <tr>
-<td>:bullettrain_side:</td>
+<td>🚅</td>
 <td>Don't remember any complicated build commands, just <em>gym</em></td>
 </tr>
 <tr>
-<td>:wrench:</td>
+<td>🔧</td>
 <td>Easy and dynamic configuration using parameters and environment variables</td>
 </tr>
 <tr>
-<td>:floppy_disk:</td>
+<td>💾</td>
 <td>Store common build settings in a <code>Gymfile</code></td>
 </tr>
 <tr>
-<td>:outbox_tray:</td>
+<td>📤</td>
 <td>All archives are stored and accessible in the Xcode Organizer</td>
 </tr>
 <tr>
-<td>:computer:</td>
+<td>💻</td>
 <td>Supports both iOS and Mac applications</td>
 </tr>
 </tbody>
@@ -487,7 +487,7 @@ xcodebuild -exportArchive \
 </code></pre>
 
 <p>For a list of all available parameters use</p>
-<pre><code>fastlane action gym
+<pre><code class="no-highlight">fastlane action gym
 </code></pre>
 
 <p>If you run into any issues, use the <code>verbose</code> mode to get more information</p>
@@ -581,7 +581,7 @@ in case you want to display the error in 3rd party tools such as Slack.</p>
 </ul>
 <p>When you run <em>gym</em> without the <code>--silent</code> mode it will print out every command it executes.</p>
 <p>To build the archive <em>gym</em> uses the following command:</p>
-<pre><code>set -o pipefail &amp;&amp; \
+<pre><code class="no-highlight">set -o pipefail &amp;&amp; \
 xcodebuild -scheme 'Example' \
 -project './Example.xcodeproj' \
 -configuration 'Release' \
@@ -593,7 +593,7 @@ archive | xcpretty
 <p>After building the archive it is being checked by <em>gym</em>. If it's valid, it gets packaged up and signed into an <code>ipa</code> file.</p>
 <p><em>gym</em> automatically chooses a different packaging method depending on the version of Xcode you're using.</p>
 <h3 id="xcode-7-and-above"><a name="user-content-xcode-7-and-above" href="#xcode-7-and-above" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 7 and above</h3>
-<pre><code>/usr/bin/xcrun path/to/xcbuild-safe.sh -exportArchive \
+<pre><code class="no-highlight">/usr/bin/xcrun path/to/xcbuild-safe.sh -exportArchive \
 -exportOptionsPlist '/tmp/gym_config_1442852529.plist' \
 -archivePath '/Users/fkrause/Library/Developer/Xcode/Archives/2015-09-21/App 2015-09-21 09.21.56.xcarchive' \
 -exportPath '/tmp/1442852529'

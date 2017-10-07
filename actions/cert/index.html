@@ -400,10 +400,9 @@
 
 <p><img alt="/img/actions/cert.gif" src="../../img/actions/cert.gif" /></p>
 <p>In the gif we used <code>cert &amp;&amp; sigh</code>, which will first create an iOS code signing certificate and then a provisioning profile for your app if <em>cert</em> succeeded.</p>
-<h5 id="do-you-like-fastlane-be-the-first-to-know-about-updates-and-new-fastlane-tools"><a href="https://tinyletter.com/fastlane-tools">Do you like fastlane? Be the first to know about updates and new fastlane tools</a></h5>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
 <p><strong>Note</strong>: It is recommended to use <a href="../../actions/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your certificates. Use <em>cert</em> directly only if you want full control over what's going on and know more about codesigning.</p>
-<pre><code>fastlane cert
+<pre><code class="no-highlight">fastlane cert
 </code></pre>
 
 <p>This will check if any of the available signing certificates is installed on your local machine.</p>
@@ -420,7 +419,7 @@
 </code></pre>
 
 <p>For a list of available commands run</p>
-<pre><code class="no-highlight">fastlane cert --help
+<pre><code class="no-highlight">fastlane action cert
 </code></pre>
 
 <p>Keep in mind, there is no way for <em>cert</em> to download existing certificates + private keys from the Apple Developer Portal, as the private key never leaves your computer.</p>

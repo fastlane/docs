@@ -384,6 +384,196 @@
               
                 <h1 id="produce"><a name="user-content-produce" href="#produce" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>produce</h1>
 <p>Creates the given application on iTC and the Dev Portal if necessary</p>
+<p align="center">
+  <img src="/img/actions/produce.png" height="110">
+</p>
+
+<h6 id="create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line"><a name="user-content-create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line" href="#create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create new iOS apps on iTunes Connect and Dev Portal using your command line</h6>
+<p><em>produce</em> creates new iOS apps on both the Apple Developer Portal and iTunes Connect with the minimum required information.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#how-does-it-work">How does it work?</a>
+</p>
+
+<hr />
+<h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
+<ul>
+<li><strong>Create</strong> new apps on both iTunes Connect and the Apple Developer Portal</li>
+<li><strong>Modify</strong> Application Services on the Apple Developer Portal</li>
+<li><strong>Create</strong> App Groups on the Apple Developer Portal</li>
+<li><strong>Associate</strong> apps with App Groups on the Apple Developer Portal</li>
+<li><strong>Create</strong> Merchant Identifiers on the Apple Developer Portal</li>
+<li><strong>Associate</strong> apps with Merchant Identifiers on the Apple Developer Portal</li>
+<li>Support for <strong>multiple Apple accounts</strong>, storing your credentials securely in the Keychain</li>
+</ul>
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<h2 id="creating-a-new-application"><a name="user-content-creating-a-new-application" href="#creating-a-new-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating a new application</h2>
+<pre><code>fastlane produce
+</code></pre>
+<p>To get a list of all available parameters:</p>
+<pre><code>fastlane produce --help
+</code></pre>
+<pre><code class="no-highlight">  Commands: (* default)
+    associate_group      Associate with a group, which is created if needed or simply located otherwise
+    associate_merchant   Associate with a merchant for use with Apple Pay. Apple Pay will be enabled for this app
+    create             * Creates a new app on iTunes Connect and the Apple Developer Portal
+    disable_services     Disable specific Application Services for a specific app on the Apple Developer Portal
+    enable_services      Enable specific Application Services for a specific app on the Apple Developer Portal
+    group                Ensure that a specific App Group exists
+    help                 Display global or [command] help documentation
+    merchant             Ensure that a specific Merchant exists
+
+  Global Options:
+    --verbose
+    -h, --help           Display help documentation
+    -v, --version        Display version information
+
+  Options for create:
+    -u, --username STRING Your Apple ID Username (PRODUCE_USERNAME)
+    -a, --app_identifier STRING App Identifier (Bundle ID, e.g. com.krausefx.app) (PRODUCE_APP_IDENTIFIER)
+    -e, --bundle_identifier_suffix STRING App Identifier Suffix (Ignored if App Identifier does not ends with .*) (PRODUCE_APP_IDENTIFIER_SUFFIX)
+    -q, --app_name STRING App Name (PRODUCE_APP_NAME)
+    -z, --app_version STRING Initial version number (e.g. '1.0') (PRODUCE_VERSION)
+    -y, --sku STRING     SKU Number (e.g. '1234') (PRODUCE_SKU)
+    -j, --platform STRING The platform to use (optional) (PRODUCE_PLATFORM)
+    -m, --language STRING Primary Language (e.g. 'English', 'German') (PRODUCE_LANGUAGE)
+    -c, --company_name STRING The name of your company. Only required if it's the first app you create (PRODUCE_COMPANY_NAME)
+    -i, --skip_itc [VALUE] Skip the creation of the app on iTunes Connect (PRODUCE_SKIP_ITC)
+    -d, --skip_devcenter [VALUE] Skip the creation of the app on the Apple Developer Portal (PRODUCE_SKIP_DEVCENTER)
+    -s, --itc_users ARRAY Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
+    -b, --team_id STRING The ID of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_ID)
+    -l, --team_name STRING The name of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_NAME)
+    -k, --itc_team_id [VALUE] The ID of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_ID)
+    -p, --itc_team_name STRING The name of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_NAME)
+</code></pre>
+
+<h2 id="enabling-disabling-application-services"><a name="user-content-enabling-disabling-application-services" href="#enabling-disabling-application-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enabling / Disabling Application Services</h2>
+<p>If you want to enable Application Services for an App ID (HomeKit and HealthKit in this example):</p>
+<pre><code>fastlane produce enable_services --homekit --healthkit
+</code></pre>
+<p>If you want to disable Application Services for an App ID (iCloud in this case):</p>
+<pre><code>fastlane produce disable_services --icloud
+</code></pre>
+<p>If you want to create a new App Group:</p>
+<pre><code>fastlane produce group -g group.krausefx -n "Example App Group"
+</code></pre>
+<p>If you want to associate an app with an App Group:</p>
+<pre><code>fastlane produce associate_group -a com.krausefx.app group.krausefx
+</code></pre>
+<h1 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h1>
+<p>Get a list of all available options using</p>
+<pre><code class="no-highlight">fastlane produce enable_services --help
+</code></pre>
+
+<pre><code class="no-highlight">    --app-group          Enable App Groups
+    --apple-pay          Enable Apple Pay
+    --associated-domains Enable Associated Domains
+    --data-protection STRING Enable Data Protection, suitable values are &quot;complete&quot;, &quot;unlessopen&quot; and &quot;untilfirstauth&quot;
+    --game-center        Enable Game Center
+    --healthkit          Enable HealthKit
+    --homekit            Enable HomeKit
+    --wireless-conf      Enable Wireless Accessory Configuration
+    --icloud STRING      Enable iCloud, suitable values are &quot;legacy&quot; and &quot;cloudkit&quot;
+    --in-app-purchase    Enable In-App Purchase
+    --inter-app-audio    Enable Inter-App-Audio
+    --passbook           Enable Passbook
+    --push-notification  Enable Push notification (only enables the service, does not configure certificates)
+    --sirikit            Enable SiriKit
+    --vpn-conf           Enable VPN Configuration
+</code></pre>
+
+<pre><code class="no-highlight">fastlane produce disable_services --help
+</code></pre>
+
+<pre><code>    --app-group          Disable App Groups
+    --apple-pay          Disable Apple Pay
+    --associated-domains Disable Associated Domains
+    --data-protection    Disable Data Protection
+    --game-center        Disable Game Center
+    --healthkit          Disable HealthKit
+    --homekit            Disable HomeKit
+    --wireless-conf      Disable Wireless Accessory Configuration
+    --icloud             Disable iCloud
+    --in-app-purchase    Disable In-App Purchase
+    --inter-app-audio    Disable Inter-App-Audio
+    --passbook           Disable Passbook
+    --push-notification  Disable Push notifications
+    --sirikit            Disable SiriKit
+    --vpn-conf           Disable VPN Configuration
+</code></pre>
+
+<h2 id="creating-apple-pay-merchants-and-associating-them-with-an-app-id"><a name="user-content-creating-apple-pay-merchants-and-associating-them-with-an-app-id" href="#creating-apple-pay-merchants-and-associating-them-with-an-app-id" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating Apple Pay merchants and associating them with an App ID</h2>
+<p>If you want to create a new Apple Pay Merchant Identifier:</p>
+<pre><code class="no-highlight">fastlane produce merchant -o merchant.com.example.production -r &quot;Example Merchant Production&quot;
+</code></pre>
+
+<p>Use <code>--help</code> for more information about all available parameters</p>
+<pre><code>fastlane produce merchant --help
+</code></pre>
+
+<p>If you want to associate an app with a Merchant Identifier:</p>
+<pre><code class="no-highlight">fastlane produce associate_merchant -a com.krausefx.app merchant.com.example.production
+</code></pre>
+
+<p>If you want to associate an app with multiple Merchant Identifiers:</p>
+<pre><code class="no-highlight">fastlane produce associate_merchant -a com.krausefx.app merchant.com.example.production merchant.com.example.sandbox
+</code></pre>
+
+<p>Use --help for more information about all available parameters</p>
+<pre><code class="no-highlight">fastlane produce associate_merchant --help
+</code></pre>
+
+<h2 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h2>
+<p>All available values can also be passed using environment variables, run <code>fastlane produce --help</code> to get a list of all available parameters.</p>
+<h2 id="fastlane-integration"><em>fastlane</em> Integration</h2>
+<p>Your <code>Fastfile</code> should look like this</p>
+<pre><code class="ruby">lane :release do
+  produce(
+    username: 'felix@krausefx.com',
+    app_identifier: 'com.krausefx.app',
+    app_name: 'MyApp',
+    language: 'English',
+    app_version: '1.0',
+    sku: '123',
+    team_name: 'SunApps GmbH', # only necessary when in multiple teams
+
+    # Optional
+    # App services can be enabled during app creation
+    enable_services: {
+      app_group: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
+      apple_pay: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
+      associated_domains: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
+      data_protection: &quot;complete&quot;,   # Valid values: &quot;complete&quot;, &quot;unlessopen&quot;, &quot;untilfirstauth&quot;,
+      game_center: &quot;on&quot;,             # Valid values: &quot;on&quot;, &quot;off&quot;
+      health_kit: &quot;on&quot;,              # Valid values: &quot;on&quot;, &quot;off&quot;
+      home_kit: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
+      wireless_accessory: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
+      icloud: &quot;cloudkit&quot;,            # Valid values: &quot;legacy&quot;, &quot;cloudkit&quot;
+      in_app_purchase: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
+      inter_app_audio: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
+      passbook: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
+      push_notification: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
+      siri_kit: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
+      vpn_configuration: &quot;on&quot;       # Valid values: &quot;on&quot;, &quot;off&quot;
+    }
+  )
+
+  deliver
+end
+</code></pre>
+
+<p>To use the newly generated app in <em>deliver</em>, you need to add this line to your <code>Deliverfile</code>:</p>
+<pre><code class="ruby-skip-tests">apple_id ENV['PRODUCE_APPLE_ID']
+</code></pre>
+
+<p>This will tell <em>deliver</em>, which <code>App ID</code> to use, since the app is not yet available in the App Store.</p>
+<p>You'll still have to fill out the remaining information (like screenshots, app description and pricing). You can use <a href="https://github.com/fastlane/fastlane/tree/master/deliver">deliver</a> to upload your app metadata using a CLI</p>
+<h2 id="how-is-my-password-stored"><a name="user-content-how-is-my-password-stored" href="#how-is-my-password-stored" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How is my password stored?</h2>
+<p><em>produce</em> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">password manager</a> from <em>fastlane</em>. Take a look the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager README</a> for more information.</p>
+<hr />
+
 <table>
 <thead>
 <tr>

@@ -384,6 +384,129 @@
               
                 <h1 id="screengrab"><a name="user-content-screengrab" href="#screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>screengrab</h1>
 <p>Automated localized screenshots of your Android app on every device</p>
+<p align="center">
+  <img src="/img/actions/screengrab.png" height="110">
+</p>
+
+<h6 id="automated-localized-screenshots-of-your-android-app-on-every-device"><a name="user-content-automated-localized-screenshots-of-your-android-app-on-every-device" href="#automated-localized-screenshots-of-your-android-app-on-every-device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automated localized screenshots of your Android app on every device</h6>
+<p><em>screengrab</em> generates localized screenshots of your Android app for different device types and languages for Google Play and can be uploaded using <a href="https://fastlane.tools/supply"><em>supply</em></a>.</p>
+<p><img src="/img/actions/running-screengrab.gif" width="640"></p>
+<h3 id="why-should-i-automate-this-process"><a name="user-content-why-should-i-automate-this-process" href="#why-should-i-automate-this-process" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why should I automate this process?</h3>
+<ul>
+<li>Create hundreds of screenshots in multiple languages on emulators or real devices, saving you hours</li>
+<li>Easily verify that localizations fit into labels on all screen dimensions to find UI mistakes before you ship</li>
+<li>You only need to configure it once for anyone on your team to run it</li>
+<li>Keep your screenshots perfectly up-to-date with every app update. Your customers deserve it!</li>
+<li>Fully integrates with <a href="https://fastlane.tools"><em>fastlane</em></a> and <a href="https://fastlane.tools/supply"><em>supply</em></a></li>
+</ul>
+<h1 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h1>
+<p>Install the gem</p>
+<pre><code class="no-highlight">sudo gem install fastlane
+</code></pre>
+
+<h5 id="gradle-dependency"><a name="user-content-gradle-dependency" href="#gradle-dependency" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gradle dependency</h5>
+<pre><code class="java">androidTestCompile 'tools.fastlane:screengrab:x.x.x'
+</code></pre>
+
+<p>The latest version is <a href="https://bintray.com/fastlane/fastlane/screengrab/_latestVersion"> <img alt="Download" src="https://api.bintray.com/packages/fastlane/fastlane/screengrab/images/download.svg" /> </a></p>
+<h5 id="configuring-your-manifest-permissions"><a name="user-content-configuring-your-manifest-permissions" href="#configuring-your-manifest-permissions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your Manifest Permissions</h5>
+<p>Ensure that the following permissions exist in your <strong>src/debug/AndroidManifest.xml</strong></p>
+<pre><code class="xml">&lt;!-- Allows unlocking your device and activating its screen so UI tests can succeed --&gt;
+&lt;uses-permission android:name=&quot;android.permission.DISABLE_KEYGUARD&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;/&gt;
+
+&lt;!-- Allows for storing and retrieving screenshots --&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+
+&lt;!-- Allows changing locales --&gt;
+&lt;uses-permission android:name=&quot;android.permission.CHANGE_CONFIGURATION&quot; /&gt;
+</code></pre>
+
+<h5 id="configuring-your-ui-tests-for-screenshots"><a name="user-content-configuring-your-ui-tests-for-screenshots" href="#configuring-your-ui-tests-for-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots</h5>
+<ol>
+<li>Add <code>@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();</code> to your tests class to handle automatic switching of locales</li>
+<li>To capture screenshots, add the following to your tests <code>Screengrab.screenshot("name_of_screenshot_here");</code> on the appropriate screens</li>
+</ol>
+<h1 id="generating-screenshots-with-screengrab"><a name="user-content-generating-screenshots-with-screengrab" href="#generating-screenshots-with-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating Screenshots with Screengrab</h1>
+<ul>
+<li>Then, before running <code>fastlane screengrab</code> you'll need a debug and test apk</li>
+<li>You can create your APKs with <code>./gradlew assembleDebug assembleAndroidTest</code></li>
+<li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
+<li>You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments</li>
+</ul>
+</li>
+<li>Your screenshots will be saved to <code>fastlane/metadata/android</code> in the directory where you ran <em>screengrab</em></li>
+</ul>
+<h2 id="improved-screenshot-capture-with-ui-automator"><a name="user-content-improved-screenshot-capture-with-ui-automator" href="#improved-screenshot-capture-with-ui-automator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Improved screenshot capture with UI Automator</h2>
+<p>As of <em>screengrab</em> 0.5.0, you can specify different strategies to control the way <em>screengrab</em> captures screenshots. The newer strategy delegates to <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator">UI Automator</a> which fixes a number of problems compared to the original strategy:</p>
+<ul>
+<li>Shadows/elevation are correctly captured for Material UI</li>
+<li>Multi-window situations are correctly captured (dialogs, etc.)</li>
+<li>Works on Android N</li>
+</ul>
+<p>However, UI Automator requires a device with <strong>API level &gt;= 18</strong>, so it is not yet the default strategy. To enable it for all screenshots by default, make the following call before your tests run:</p>
+<pre><code class="java">Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());
+</code></pre>
+
+<h2 id="advanced-screengrabfile-configuration"><a name="user-content-advanced-screengrabfile-configuration" href="#advanced-screengrabfile-configuration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced Screengrabfile Configuration</h2>
+<p>Running <code>fastlane screengrab init</code> generated a Screengrabfile which can store all of your configuration options. Since most values will not change often for your project, it is recommended to store them there.</p>
+<p>The <code>Screengrabfile</code> is written in Ruby, so you may find it helpful to use an editor that highlights Ruby syntax to modify this file.</p>
+<pre><code class="ruby-skip-tests"># remove the leading '#' to uncomment lines
+
+# app_package_name 'your.app.package'
+# use_tests_in_packages ['your.screenshot.tests.package']
+
+# app_apk_path 'path/to/your/app.apk'
+# tests_apk_path 'path/to/your/tests.apk'
+
+locales ['en-US', 'fr-FR', 'it-IT']
+
+# clear all previously generated screenshots in your local output directory before creating new ones
+clear_previous_screenshots true
+</code></pre>
+
+<p>For more information about all available options run</p>
+<pre><code class="no-highlight">fastlane action screengrab
+</code></pre>
+
+<h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
+<h2 id="ui-tests"><a name="user-content-ui-tests" href="#ui-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UI Tests</h2>
+<p>Check out <a href="http://developer.android.com/training/testing/ui-testing/espresso-testing.html">Testing UI for a Single App</a> for an introduction to using Espresso for UI testing.</p>
+<h5 id="example-ui-test-class-using-junit4"><a name="user-content-example-ui-test-class-using-junit4" href="#example-ui-test-class-using-junit4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example UI Test Class (Using JUnit4)</h5>
+<pre><code class="java">@RunWith(JUnit4.class)
+public class JUnit4StyleTests {
+    @ClassRule
+    public static final LocaleTestRule localeTestRule = new LocaleTestRule();
+
+    @Rule
+    public ActivityTestRule&lt;MainActivity&gt; activityRule = new ActivityTestRule&lt;&gt;(MainActivity.class);
+
+    @Test
+    public void testTakeScreenshot() {
+        Screengrab.screenshot(&quot;before_button_click&quot;);
+
+        onView(withId(R.id.fab)).perform(click());
+
+        Screengrab.screenshot(&quot;after_button_click&quot;);
+    }
+}
+
+</code></pre>
+
+<p>There is an <a href="https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester">example project</a> showing how to use use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.</p>
+<p>Using JUnit 4 is preferable because of its ability to perform actions before and after the entire test class is run. This means you will change the device's locale far fewer times when compared with JUnit 3 running those commands before and after each test method.</p>
+<p>When using JUnit 3 you'll need to add a bit more code:</p>
+<ul>
+<li>Use <code>LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getTestLocale());</code> in <code>setUp()</code></li>
+<li>Use <code>LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getEndingLocale());</code> in <code>tearDown()</code></li>
+<li>Use <code>Screengrab.screenshot("name_of_screenshot_here");</code> to capture screenshots at the appropriate points in your tests</li>
+</ul>
+<p>If you're having trouble getting your device unlocked and the screen activated to run tests, try using <code>ScreenUtil.activateScreenForTesting(activity);</code> in your test setup.</p>
+<h2 id="clean-status-bar"><a name="user-content-clean-status-bar" href="#clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Clean Status Bar</h2>
+<p>You can use <a href="https://github.com/PSPDFKit-labs/QuickDemo">QuickDemo</a> to clean up the status bar for your screenshots.</p>
+<hr />
+
 <table>
 <thead>
 <tr>

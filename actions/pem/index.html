@@ -384,16 +384,96 @@
               
                 <h1 id="pem"><a name="user-content-pem" href="#pem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pem</h1>
 <p>Makes sure a valid push profile is active and creates a new one if needed</p>
-<blockquote>
-<p>Additionally to the available options, you can also specify a block that only gets executed if a new
-profile was created. You can use it to upload the new profile to your server.
-Use it like this: 
-pem(
-  new_profile: proc do 
-    # your upload code
-  end
-)</p>
-</blockquote>
+<p align="center">
+  <img src="/img/actions/pem.png" height="110">
+</p>
+
+<h6 id="automatically-generate-and-renew-your-push-notification-profiles"><a name="user-content-automatically-generate-and-renew-your-push-notification-profiles" href="#automatically-generate-and-renew-your-push-notification-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatically generate and renew your push notification profiles</h6>
+<p>Tired of manually creating and maintaining your push notification profiles for your iOS apps? Tired of generating a <em>pem</em> file for your server?</p>
+<p><em>pem</em> does all that for you, just by simply running <em>pem</em>.</p>
+<p><em>pem</em> creates new .pem, .cer, and .p12 files to be uploaded to your push server if a valid push notification profile is needed. <em>pem</em> does not cover uploading the file to your server.</p>
+<p>To automate iOS Provisioning profiles you can use <a href="https://github.com/fastlane/fastlane/tree/master/match">match</a>.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#how-does-it-work">How does it work?</a> &bull;
+    <a href="#tips">Tips</a> &bull;
+    <a href="#need-help">Need help?</a>
+</p>
+
+<hr />
+<h5 align="center"><code>pem</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
+
+<h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
+<p>Well, it's actually just one: Generate the <code>_pem_</code> file for your server.</p>
+<p>Check out this gif:</p>
+<p><img alt="img/actions/PEMRecording.gif" src="../../img/actions/PEMRecording.gif" /></p>
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<pre><code>fastlane pem
+</code></pre>
+<p>Yes, that's the whole command!</p>
+<p>This does the following:</p>
+<ul>
+<li>Create a new signing request</li>
+<li>Create a new push certification</li>
+<li>Downloads the certificate</li>
+<li>Generates a new <code>.pem</code> file in the current working directory, which you can upload to your server</li>
+</ul>
+<p>Note that <code>_pem_</code> will never revoke your existing certificates. <em>pem</em> can't download any of your existing push certificates, as the private key is only available on the machine it was created on. </p>
+<p>If you already have a push certificate enabled, which is active for at least 30 more days, <em>pem</em> will not create a new certificate. If you still want to create one, use the <code>force</code>:</p>
+<pre><code>fastlane pem --force
+</code></pre>
+<p>You can pass parameters like this:</p>
+<pre><code>fastlane pem -a com.krausefx.app -u username
+</code></pre>
+<p>If you want to generate a development certificate instead:</p>
+<pre><code>fastlane pem --development
+</code></pre>
+<p>Set a password for your <code>p12</code> file:</p>
+<pre><code>fastlane pem -p "MyPass"
+</code></pre>
+<p>You can specify a name for the output file:</p>
+<pre><code>fastlane pem -o my.pem
+</code></pre>
+<p>To get a list of available options run:</p>
+<pre><code>fastlane action pem
+</code></pre>
+<h3 id="note-about-empty-p12-passwords-and-keychain-accessapp"><a name="user-content-note-about-empty-p12-passwords-and-keychain-accessapp" href="#note-about-empty-p12-passwords-and-keychain-accessapp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note about empty <code>p12</code> passwords and Keychain Access.app</h3>
+<p><em>pem</em> will produce a valid <code>p12</code> without specifying a password, or using the empty-string as the password.
+While the file is valid, the Mac's Keychain Access will not allow you to open the file without specifying a passphrase.</p>
+<p>Instead, you may verify the file is valid using OpenSSL:</p>
+<pre><code>openssl pkcs12 -info -in my.p12
+</code></pre>
+<p>If you need the <code>p12</code> in your keychain, perhaps to test push with an app like <a href="https://github.com/KnuffApp/Knuff">Knuff</a> or <a href="https://github.com/noodlewerk/NWPusher">Pusher</a>, you can use <code>openssl</code> to export the <code>p12</code> to <em>pem</em> and back to <code>p12</code>:</p>
+<pre><code>% openssl pkcs12 -in my.p12 -out my.pem
+Enter Import Password:
+  &lt;hit enter: the p12 has no password&gt;
+MAC verified OK
+Enter PEM pass phrase:
+  &lt;enter a temporary password to encrypt the pem file&gt;
+
+% openssl pkcs12 -export -in my.pem -out my-with-passphrase.p12
+Enter pass phrase for temp.pem:
+  &lt;enter the temporary password to decrypt the pem file&gt;
+
+Enter Export Password:
+  &lt;enter a password for encrypting the new p12 file&gt;
+</code></pre>
+<h5 id="do-you-like-fastlane-be-the-first-to-know-about-updates-and-new-fastlane-tools"><a href="https://tinyletter.com/fastlane-tools">Do you like fastlane? Be the first to know about updates and new fastlane tools</a></h5>
+<h2 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h2>
+<p>Run <code>fastlane action pem</code> to get a list of available environment variables.</p>
+<h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>
+<p><em>pem</em> uses <a href="https://spaceship.airforce">spaceship</a> to communicate with the Apple Developer Portal to request a new push certificate for you.</p>
+<h2 id="how-is-my-password-stored"><a name="user-content-how-is-my-password-stored" href="#how-is-my-password-stored" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How is my password stored?</h2>
+<p><code>_pem_</code> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">password manager</a> from <em>fastlane</em>. Take a look the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager README</a> for more information.</p>
+<h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
+<h2 id="use-the-provisioning-quicklook-plugin"><a name="user-content-use-the-provisioning-quicklook-plugin" href="#use-the-provisioning-quicklook-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the 'Provisioning Quicklook plugin'</h2>
+<p>Download and install the <a href="https://github.com/chockenberry/Provisioning">Provisioning Plugin</a>.</p>
+<p>It will show you the <code>_pem_</code> files like this:
+<img alt="img/actions/QuickLookScreenshot.png" src="../../img/actions/QuickLookScreenshot.png" /></p>
+<hr />
+
 <table>
 <thead>
 <tr>

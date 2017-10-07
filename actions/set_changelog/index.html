@@ -386,7 +386,8 @@
 <p>Set the changelog for all languages on iTunes Connect</p>
 <blockquote>
 <p>This is useful if you have only one changelog for all languages.
-You can store the changelog in <code>./changelog.txt</code> and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.</p>
+You can store the changelog in <code>./fastlane/changelog.txt</code> and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.
+Defining the version is optional, fastlane will try to automatically detect it if you don't provide one</p>
 </blockquote>
 <table>
 <thead>
@@ -406,8 +407,11 @@ You can store the changelog in <code>./changelog.txt</code> and it will automati
 </tr>
 </tbody>
 </table>
-<p><strong>1 Example</strong></p>
-<pre><code class="ruby">set_changelog(app_identifier: &quot;com.krausefx.app&quot;, version: &quot;1.0&quot;, changelog: &quot;All Languages&quot;)
+<p><strong>2 Examples</strong></p>
+<pre><code class="ruby">set_changelog(changelog: &quot;Changelog for all Languages&quot;)
+</code></pre>
+
+<pre><code class="ruby">set_changelog(app_identifier: &quot;com.krausefx.app&quot;, version: &quot;1.0&quot;, changelog: &quot;Changelog for all Languages&quot;)
 </code></pre>
 
 <p><strong>Parameters</strong></p>
