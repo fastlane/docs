@@ -70,6 +70,7 @@ Key | Description
   `upload_dsym_only` | Flag to upload only the dSYM file to hockey app
   `owner_id` | ID for the owner of the app
   `strategy` | Strategy: 'add' = to add the build as a new build even if it has the same build number (default); 'replace' = to replace a build with the same build number
+  `timeout` | Request timeout in seconds
   `bypass_cdn` | Flag to bypass Hockey CDN when it uploads successfully but reports error
   `dsa_signature` | DSA signature for sparkle updates for macOS
 
