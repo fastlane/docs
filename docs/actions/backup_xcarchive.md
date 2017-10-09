@@ -38,6 +38,7 @@ Key | Description
   `xcarchive` | Path to your xcarchive file. Optional if you use the `xcodebuild` action
   `destination` | Where your archive will be placed
   `zip` | Enable compression of the archive. Default value `true`
+  `zip_filename` | Filename of the compressed archive. Will be appended by `.xcarchive.zip`. Default value is the output xcarchive filename
   `versioned` | Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
 
 
