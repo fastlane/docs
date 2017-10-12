@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>setup_jenkins - fastlane docs</title>
+  <title>setup_circle_ci - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "setup_jenkins";
-    var mkdocs_page_input_path = "actions/setup_jenkins.md";
-    var mkdocs_page_url = "/actions/setup_jenkins/";
+    var mkdocs_page_name = "setup_circle_ci";
+    var mkdocs_page_input_path = "actions/setup_circle_ci.md";
+    var mkdocs_page_url = "/actions/setup_circle_ci/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -349,14 +349,14 @@
         
       
     
-    <li>setup_jenkins</li>
+    <li>setup_circle_ci</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/setup_jenkins.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/setup_circle_ci.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -382,24 +382,20 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="setup_jenkins"><a name="user-content-setup_jenkins" href="#setup_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_jenkins</h1>
-<p>Setup xcodebuild, gym and scan for easier Jenkins integration</p>
+                <h1 id="setup_circle_ci"><a name="user-content-setup_circle_ci" href="#setup_circle_ci" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_circle_ci</h1>
+<p>Setup the keychain and match to work with CircleCI</p>
 <blockquote>
 <ul>
-<li>Adds and unlocks keychains from Jenkins 'Keychains and Provisioning Profiles Plugin'</li>
-<li>Sets code signing identity from Jenkins 'Keychains and Provisioning Profiles Plugin'</li>
-<li>Sets output directory to './output' (gym, scan and backup_xcarchive).</li>
-<li>Sets derived data path to './derivedData' (xcodebuild, gym, scan and clear_derived_data, carthage).</li>
-<li>Produce result bundle (gym and scan).
-This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the <code>./output</code> directory.
-The action also works with <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>, selected keychain
-will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when fastlane is executed on a CI system.</li>
+<li>Creates a new temporary keychain for use with match</li>
+<li>Switches match to <code>readonly</code> mode to not create new profiles/cert on CI</li>
+<li>Sets up log and test result paths to be easily collectible
+This action helps with CircleCI integration, add this to the top of your Fastfile if you use CircleCI</li>
 </ul>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>setup_jenkins</th>
+<th>setup_circle_ci</th>
 <th></th>
 </tr>
 </thead>
@@ -410,12 +406,12 @@ will be automatically unlocked and the selected code signing identity will be us
 </tr>
 <tr>
 <td>Author</td>
-<td>@bartoszj</td>
+<td>@dantoml</td>
 </tr>
 </tbody>
 </table>
 <p><strong>1 Example</strong></p>
-<pre><code class="ruby">setup_jenkins
+<pre><code class="ruby">setup_circle_ci
 </code></pre>
 
 <p><strong>Parameters</strong></p>
@@ -429,56 +425,16 @@ will be automatically unlocked and the selected code signing identity will be us
 <tbody>
 <tr>
 <td><code>force</code></td>
-<td>Force setup, even if not executed by Jenkins</td>
-</tr>
-<tr>
-<td><code>unlock_keychain</code></td>
-<td>Unlocks keychain</td>
-</tr>
-<tr>
-<td><code>add_keychain_to_search_list</code></td>
-<td>Add to keychain search list</td>
-</tr>
-<tr>
-<td><code>set_default_keychain</code></td>
-<td>Set keychain as default</td>
-</tr>
-<tr>
-<td><code>keychain_path</code></td>
-<td>Path to keychain</td>
-</tr>
-<tr>
-<td><code>keychain_password</code></td>
-<td>Keychain password</td>
-</tr>
-<tr>
-<td><code>set_code_signing_identity</code></td>
-<td>Set code signing identity from CODE_SIGNING_IDENTITY environment</td>
-</tr>
-<tr>
-<td><code>code_signing_identity</code></td>
-<td>Code signing identity</td>
-</tr>
-<tr>
-<td><code>output_directory</code></td>
-<td>The directory in which the ipa file should be stored in</td>
-</tr>
-<tr>
-<td><code>derived_data_path</code></td>
-<td>The directory where built products and other derived data will go</td>
-</tr>
-<tr>
-<td><code>result_bundle</code></td>
-<td>Produce the result bundle describing what occurred will be placed</td>
+<td>Force setup, even if not executed by CircleCI</td>
 </tr>
 </tbody>
 </table>
 <p><hr />
 To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action setup_jenkins
+<pre><code class="no-highlight">fastlane action setup_circle_ci
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/setup_jenkins.rb" target="_blank">View source code</a></p>
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/setup_circle_ci.rb" target="_blank">View source code</a></p>
 <hr />
 
 <p><a href="/actions"><b>Back to actions</b></a></p>
@@ -489,10 +445,10 @@ To show the documentation in your terminal, run</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../setup_travis/" class="btn btn-neutral float-right" title="setup_travis">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../setup_jenkins/" class="btn btn-neutral float-right" title="setup_jenkins">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../setup_circle_ci/" class="btn btn-neutral" title="setup_circle_ci"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../set_pod_key/" class="btn btn-neutral" title="set_pod_key"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -525,10 +481,10 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../setup_circle_ci/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../set_pod_key/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../setup_travis/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../setup_jenkins/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
