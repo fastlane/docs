@@ -171,6 +171,7 @@ pages:
   - set_github_release: actions/set_github_release.md
   - set_info_plist_value: actions/set_info_plist_value.md
   - set_pod_key: actions/set_pod_key.md
+  - setup_circle_ci: actions/setup_circle_ci.md
   - setup_jenkins: actions/setup_jenkins.md
   - setup_travis: actions/setup_travis.md
   - sh: actions/sh.md

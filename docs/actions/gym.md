@@ -321,6 +321,7 @@ Key | Description
   `xcpretty_report_json` | Have xcpretty create a JSON compilation database at the provided path
   `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds
+  `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used
 
 
 
