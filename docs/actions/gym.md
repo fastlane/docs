@@ -283,18 +283,18 @@ gym(
 
 **Parameters**
 
-Key | Description
-----|------------
+Key | Description | Default
+----|-------------|--------
   `workspace` | Path to the workspace file
   `project` | Path to the project file
   `scheme` | The project's scheme. Make sure it's marked as `Shared`
-  `clean` | Should the project be cleaned before building it?
-  `output_directory` | The directory in which the ipa file should be stored in
+  `clean` | Should the project be cleaned before building it? | false
+  `output_directory` | The directory in which the ipa file should be stored in | .
   `output_name` | The name of the resulting ipa file
   `configuration` | The configuration to use when building the app. Defaults to 'Release'
-  `silent` | Hide all information that's not necessary while building
+  `silent` | Hide all information that's not necessary while building | false
   `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH'
-  `skip_package_ipa` | Should we skip packaging the ipa?
+  `skip_package_ipa` | Should we skip packaging the ipa? | false
   `include_symbols` | Should the ipa file include symbols?
   `include_bitcode` | Should the ipa file include bitcode?
   `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
@@ -305,7 +305,7 @@ Key | Description
   `archive_path` | The path to the created archive
   `derived_data_path` | The directory where built products and other derived data will go
   `result_bundle` | Location of the Xcode result bundle
-  `buildlog_path` | The directory where to store the build log
+  `buildlog_path` | The directory where to store the build log | ~/Library/Logs/gym
   `sdk` | The SDK that should be used for building the application
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
   `destination` | Use a custom destination for building the app
