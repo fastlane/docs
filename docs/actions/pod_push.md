@@ -51,6 +51,7 @@ Key | Description
   `allow_warnings` | Allow warnings during pod push
   `use_libraries` | Allow lint to use static libraries to install the spec
   `sources` | The sources of repos you want the pod spec to lint with, separated by commas
+  `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file
   `verbose` | Show more debugging information
 
 
