@@ -59,7 +59,7 @@ Key | Description
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID!
   `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones
   `run_precheck_before_submit` | Run precheck before submitting to app review
   `precheck_default_rule_level` | The default rule level unless otherwise configured

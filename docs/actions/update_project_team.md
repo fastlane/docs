@@ -16,7 +16,11 @@ Author | @lgaches
 
 
 
-**1 Example**
+**2 Examples**
+
+```ruby
+update_project_team
+```
 
 ```ruby
 update_project_team(
