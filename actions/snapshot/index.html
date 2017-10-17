@@ -464,7 +464,7 @@
 <li>In your UI Test class, click the <code>Record</code> button on the bottom left and record your interaction</li>
 <li>To take a snapshot, call the following between interactions</li>
 <li>Swift: <code>snapshot("01LoginScreen")</code></li>
-<li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];</code></li>
+<li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];</code></li>
 <li>Add the following code to your <code>setUp()</code> method</li>
 </ul>
 <p><strong>Swift</strong></p>

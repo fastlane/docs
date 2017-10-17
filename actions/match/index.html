@@ -613,14 +613,14 @@ end
 
 <p><em>match</em> can even use the same one Git repository for all bundle identifiers.</p>
 <h3 id="setup-xcode-project"><a name="user-content-setup-xcode-project" href="#setup-xcode-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup Xcode project</h3>
-<p><a href="https://docs.fastlane.tools/codesigning/XcodeProject/">Docs on how to set up your Xcode project</a></p>
+<p><a href="../../codesigning/xcode-project/">Docs on how to set up your Xcode project</a></p>
 <h4 id="to-build-from-the-command-line-using-fastlane"><a name="user-content-to-build-from-the-command-line-using-fastlane" href="#to-build-from-the-command-line-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from the command line using <a href="https://fastlane.tools">fastlane</a></h4>
 <p><em>match</em> automatically pre-fills environment variables with the UUIDs of the correct provisioning profiles, ready to be used in your Xcode project.</p>
-<p>More information about how to setup your Xcode project can be found <a href="https://docs.fastlane.tools/codesigning/XcodeProject/">here</a></p>
+<p>More information about how to setup your Xcode project can be found <a href="../../codesigning/xcode-project/">here</a></p>
 <h4 id="to-build-from-xcode-manually"><a name="user-content-to-build-from-xcode-manually" href="#to-build-from-xcode-manually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from Xcode manually</h4>
 <p>This is useful when installing your application on your device using the Development profile.</p>
 <p>You can statically select the right provisioning profile in your Xcode project (the name will be <code>match Development tools.fastlane.app</code>).</p>
-<p><a href="../../codesigning/xcode-project/.md">Docs on how to set up your Xcode project</a></p>
+<p><a href="../../codesigning/xcode-project/">Docs on how to set up your Xcode project</a></p>
 <h3 id="continuous-integration"><a name="user-content-continuous-integration" href="#continuous-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Continuous Integration</h3>
 <h4 id="repo-access"><a name="user-content-repo-access" href="#repo-access" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repo access</h4>
 <p>There is one tricky part of setting up a CI system to work with <em>match</em>, which is enabling the CI to access the repo. Usually you'd just add your CI's public ssh key as a deploy key to your <em>match</em> repo, but since your CI will already likely be using its public ssh key to access the codebase repo, <a href="https://help.github.com/articles/error-key-already-in-use/">you won't be able to do that</a>.</p>
