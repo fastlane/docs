@@ -405,7 +405,7 @@
 </tr>
 </tbody>
 </table>
-<p><strong>5 Examples</strong></p>
+<p><strong>4 Examples</strong></p>
 <pre><code class="ruby">update_info_plist( # update app identifier string
   plist_path: &quot;path/to/Info.plist&quot;,
   app_identifier: &quot;com.example.newappidentifier&quot;
@@ -432,12 +432,6 @@
     urlScheme = plist[&quot;CFBundleURLTypes&quot;].find{|scheme| scheme[&quot;CFBundleURLName&quot;] == &quot;com.acme.default-url-handler&quot;}
     urlScheme[:CFBundleURLSchemes] = [&quot;acme-production&quot;]
   }
-)
-</code></pre>
-
-<pre><code class="ruby">zip(
-  path: &quot;MyApp.app&quot;,
-  output_path: &quot;Latest.app.zip&quot;
 )
 </code></pre>
 
