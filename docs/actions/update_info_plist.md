@@ -16,7 +16,7 @@ Author | @tobiasstrebitzer
 
 
 
-**5 Examples**
+**4 Examples**
 
 ```ruby
 update_info_plist( # update app identifier string
@@ -48,13 +48,6 @@ update_info_plist( # Advanced processing: find URL scheme for particular key and
     urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "com.acme.default-url-handler"}
     urlScheme[:CFBundleURLSchemes] = ["acme-production"]
   }
-)
-```
-
-```ruby
-zip(
-  path: "MyApp.app",
-  output_path: "Latest.app.zip"
 )
 ```
 
