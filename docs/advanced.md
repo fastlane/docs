@@ -503,9 +503,9 @@ This behavior isn't great, and has been like this since the very early days of _
 
 ## Appfile
 
-The `Appfile` stores useful information that are used across all `fastlane` tools like your *Apple ID* or the application *Bundle Identifier*, to deploy your lanes faster and tailored on your project needs. 
+The `Appfile` stores useful information that are used across all _fastlane_ tools like your *Apple ID* or the application *Bundle Identifier*, to deploy your lanes faster and tailored on your project needs. 
 
-The `Appfile` has to be inside your `fastlane` directory.
+The `Appfile` has to be inside your `./fastlane` directory.
 
 By default an `Appfile` looks like:
 
@@ -552,7 +552,7 @@ end
 
 You only have to use `for_platform` if you're using `platform [platform_name] do` in your `Fastfile`.
 
-`fastlane` will always use the lane specific value if given, otherwise fall back to the value on the top of the file. Therefore, while driving the `:test` lane, this configuration is loaded:
+_fastlane_ will always use the lane specific value if given, otherwise fall back to the value on the top of the file. Therefore, while driving the `:test` lane, this configuration is loaded:
 
 ```ruby
 app_identifier "com.app.test"
