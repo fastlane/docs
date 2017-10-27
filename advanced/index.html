@@ -835,6 +835,58 @@ end
 </code></pre>
 
 <p>This behavior isn't great, and has been like this since the very early days of <em>fastlane</em>. As much as we'd like to change it, there is no good way to do so, without breaking thousands of production setups, so we decided to keep it as is for now.</p>
+<h2 id="appfile"><a name="user-content-appfile" href="#appfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Appfile</h2>
+<p>The <code>Appfile</code> stores useful information that are used across all <em>fastlane</em> tools like your <em>Apple ID</em> or the application <em>Bundle Identifier</em>, to deploy your lanes faster and tailored on your project needs. </p>
+<p>The <code>Appfile</code> has to be inside your <code>./fastlane</code> directory.</p>
+<p>By default an <code>Appfile</code> looks like:</p>
+<pre><code class="ruby">app_identifier &quot;net.sunapps.1&quot; # The bundle identifier of your app
+apple_id &quot;felix@krausefx.com&quot;  # Your Apple email address
+
+# You can uncomment the lines below and add your own 
+# team selection in case you're in multiple teams
+# team_name &quot;Felix Krause&quot;
+# team_id &quot;Q2CBPJ58CA&quot;
+
+# To select a team for iTunes Connect use
+# itc_team_name &quot;Company Name&quot;
+# itc_team_id &quot;18742801&quot;
+</code></pre>
+
+<p>If you have different credentials for iTunes Connect and the Apple Developer Portal use the following code:</p>
+<pre><code class="ruby">app_identifier &quot;tools.fastlane.app&quot;       # The bundle identifier of your app
+
+apple_dev_portal_id &quot;portal@company.com&quot;  # Apple Developer Account
+itunes_connect_id &quot;tunes@company.com&quot;     # iTunes Connect Account
+
+team_id &quot;Q2CBPJ58CA&quot; # Developer Portal Team ID
+itc_team_id &quot;18742801&quot; # iTunes Connect Team ID
+</code></pre>
+
+<p>If your project has different bundle identifiers per environment (i.e. beta, app store), you can define that by using <code>for_platform</code> and/or <code>for_lane</code> block declaration. </p>
+<pre><code class="ruby">app_identifier &quot;net.sunapps.1&quot;
+apple_id &quot;felix@krausefx.com&quot;
+team_id &quot;Q2CBPJ58CC&quot;
+
+for_platform :ios do
+  team_id '123' # for all iOS related things
+  for_lane :test do
+    app_identifier 'com.app.test'
+  end
+end
+</code></pre>
+
+<p>You only have to use <code>for_platform</code> if you're using <code>platform [platform_name] do</code> in your <code>Fastfile</code>.</p>
+<p><em>fastlane</em> will always use the lane specific value if given, otherwise fall back to the value on the top of the file. Therefore, while driving the <code>:test</code> lane, this configuration is loaded:</p>
+<pre><code class="ruby">app_identifier &quot;com.app.test&quot;
+apple_id &quot;felix@krausefx.com&quot;
+team_id &quot;123&quot;
+</code></pre>
+
+<h3 id="accessing-from-fastlane"><a name="user-content-accessing-from-fastlane" href="#accessing-from-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Accessing from fastlane</h3>
+<p>If you want to access those values from within your <code>Fastfile</code> use</p>
+<pre><code class="ruby">identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+</code></pre>
               
             </div>
           </div>
