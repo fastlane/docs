@@ -304,7 +304,7 @@ This is received by the action as `"key1=value1 key2=value2"`.
 
 ##### Configuration files
 
-Many built-in actions such as `deliver`, `gym` and `scan` support configuration files
+Many built-in actions such as _deliver_, _gym_ and _scan_ support configuration files
 (`Deliverfile`, `Gymfile`, `Scanfile`). This is useful for actions with many options.
 To add support for a configuration file to a custom action, call `load_configuration_file`
 early, usually as the first line of `run`:
@@ -468,7 +468,7 @@ In particular:
 - If you're calling one plugin action from another plugin action, you should
   probably refactor your plugin helper to be more easily called from all actions
   in the plugin.
-- Avoid wrapping complex built-in actions like `deliver` and `gym`.
+- Avoid wrapping complex built-in actions like _deliver_ and _gym_.
 - Certain simple built-in utility actions may be used with `other_action` in your
   action, such as: `other_action.sh`, `other_action.git_add`, `other_action.git_commit`.
 - Think twice before calling an action from another action. There is often a better
