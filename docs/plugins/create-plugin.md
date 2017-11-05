@@ -41,7 +41,7 @@ List all available plugins using
 fastlane search_plugins
 ```
 
-To search for something specific 
+To search for something specific
 ```no-highlight
 fastlane search_plugins [query]
 ```
@@ -154,3 +154,148 @@ gem "fastlane-plugin-[plugin_name]", git: "https://github.com/[user]/[plugin_nam
 #### Multiple actions in one plugin
 
 Let's assume you work on a _fastlane_ plugin for project management software. You could call it `fastlane-plugin-pm` and it may contain any number of actions and helpers, just add them to your `actions` folder. Make sure to mention the available actions in your plugin's `README.md`.
+
+#### Using FastlaneCore::Configuration
+
+Most actions accept one or more parameters to customize their behavior. Actions define their
+parameters in an `available_options` method. This method returns an array of `FastlaneCore::ConfigItem`
+objects to describe supported options. Each option is declared by creating a new
+`ConfigItem`, e.g.:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :file,
+  env_name: "MY_NEW_ACTION_FILE",
+  description: "A file to operate on",
+  type: String,
+  optional: false
+)
+```
+
+This declares a `file` option for use with the action in a Fastfile, e.g.:
+
+```ruby
+my_new_action(file: "file.txt")
+```
+
+If the optional `env_name` is present, an environment variable with the specified
+name may also be used in place of an option in the Fastfile:
+
+```bash
+MY_NEW_ACTION_FILE=file.txt fastlane run my_new_action
+```
+
+The `type` argument to the `FastlaneCore::ConfigItem` initializer specifies the
+name of a Ruby class representing a standard
+data type. Supplied arguments will be coerced to the specified type. Some standard types
+support default conversions.
+
+##### Boolean parameters
+
+Ruby does not have a single class to represent a Boolean type. When specifying
+Boolean parameters, use `is_string: false`, without specifying a `type`, e.g.:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :commit,
+  env_name: "MY_NEW_ACTION_COMMIT",
+  description: "Commit the results if true",
+  optional: true,
+  default_value: false,
+  is_string: false
+)
+```
+
+When passing a string value, e.g. from an environment variable, certain set
+string values are recognized:
+
+```bash
+MY_NEW_ACTION_COMMIT=true
+MY_NEW_ACTION_COMMIT=false
+MY_NEW_ACTION_COMMIT=yes
+MY_NEW_ACTION_COMMIT=no
+```
+
+These values may also be passed in all caps, e.g. `MY_NEW_ACTION_COMMIT=YES`.
+
+##### Array parameters
+
+If a parameter is declared with `type: Array` and a `String` argument is passed,
+an array will be produced by splitting the string using the comma character
+as a delimiter:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :files,
+  env_name: "MY_NEW_ACTION_FILES",
+  description: "One or more files to operate on",
+  type: Array,
+  optional: false
+)
+```
+
+```ruby
+my_new_action(files: "file1.txt,file2.txt")
+```
+
+This is received by the action as `["file1.txt", "file2.txt"]`.
+
+This also means a parameter that accepts an array may take a single string as an
+argument:
+
+```ruby
+my_new_action(files: "file.txt")
+```
+
+This is received by the action as `["file.txt"]`.
+
+Comma-separated lists are particularly useful when using environment variables:
+
+```bash
+export MY_NEW_ACTION_FILES=file1.txt,file2.txt
+```
+
+##### String parameters
+
+Certain special processing applies to any `ConfigItem` that specifies
+`allow_shell_conversion: true`.
+
+If a parameter is declared with `type: String` and an `Array` argument is passed,
+a string will be produced by converting each array element to a string and then
+joining them using the space character as a delimiter.
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :command,
+  description: "A command to execute",
+  type: String,
+  allow_shell_conversion: true,
+  optional: false
+)
+```
+
+```ruby
+my_new_action(command: ["ls", "-la"])
+```
+
+This is received by the action as `"ls -la"`.
+
+If a `Hash` argument is passed, each key and value will be converted to a string. Keys
+and values will be joined using the equals character and joined using the space
+character:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :metadata,
+  description: "Metadata for the command",
+  type: String,
+  allow_shell_conversion: true,
+  optional: true
+)
+```
+
+```ruby
+my_new_action(metadata: { "key1": "value1", "key2", "value2" })
+```
+
+This is received by the action as `"key1=value1 key2=value2"`.
