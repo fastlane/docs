@@ -391,3 +391,70 @@ end
 |confirm|Ask the user a binary question|
 |select|Prompt the user to select from a list of options|
 |password|Prompt the user for a password (masks output)|
+
+#### Invoking shell commands
+
+If your action needs to run a shell command, there are several methods. You can
+easily determine the exit status of the command and capture all terminal output
+from the command.
+
+##### Using Kernel::system
+
+Use the Ruby `system` method call to invoke a command string. This does not
+redirect stdin, stdout or stderr, so output formatting will be unaffected. It executes
+the command in a subshell.
+
+```ruby
+system "cat fastlane/Fastfile"
+```
+
+Upon command completion, the method returns. The `$?` global variable will
+indicate the exit status of the command.
+
+```ruby
+system "cat fastlane/Fastfile"
+UI.user_error! "Could not execute command" unless $?.exitstatus == 0
+```
+
+If the command to be executed is not found,
+`$?.exitstatus` will be nonzero.
+
+##### Using backticks
+
+To capture the output of a command, enclose the command in backticks:
+
+```ruby
+pod_cmd = `which pod`
+UI.important "'pod' command not found" if pod_cmd.empty?
+```
+
+Because you are capturing stdout, the command output will not appear at
+the terminal unless you log it using `UI`. Formatting may be lost when
+capturing command output. The entire output will be captured after the command
+returns.
+
+If the command to be executed is not found, `Errro::ENOENT` is raised.
+
+##### Using the sh action
+
+You can also use the built-in `sh` Fastlane action:
+
+```ruby
+other_action.sh "pwd"
+```
+
+Within a Fastfile, just call `sh`, e.g.: `sh "pwd"`. This provides consistent
+logging of command output.
+
+To be notified when an error occurs, use the `error_callback` parameter:
+
+```ruby
+success = true
+other_action.sh("pwd", error_callback: ->(result) { success = false })
+UI.user_error "Command failed" unless success
+```
+
+The `result` argument to the `error_callback` is the entire string output
+of the command. The exit status of the command will be available in `$?`.
+
+If the command to be executed is not found, `Errno::ENOENT` is raised.
