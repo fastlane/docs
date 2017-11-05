@@ -299,3 +299,26 @@ my_new_action(metadata: { "key1": "value1", "key2", "value2" })
 ```
 
 This is received by the action as `"key1=value1 key2=value2"`.
+
+##### Configuration files
+
+Many built-in actions such as `deliver`, `gym` and `scan` support configuration files
+(`Deliverfile`, `Gymfile`, `Scanfile`). This is useful for actions with many options.
+To add support for a configuration file to a custom action, call `load_configuration_file`
+early, usually as the first line of `run`:
+
+```ruby
+def self.run(params)
+  params.load_configuration_file("MyNewActionfile")
+  # ...
+```
+
+This will load any parameters specified in `MyNewActionfile`. This method looks for
+the specified file in `.` and `./fastlane`. The file is evaluated by the Ruby interpreter.
+You may specify they `key` from any `FastlaneCore::ConfigItem` as a method call in the
+configuration file:
+
+```ruby
+command "ls -la"
+files %w{file1.txt file2.txt}
+```
