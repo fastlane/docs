@@ -157,6 +157,8 @@ Let's assume you work on a _fastlane_ plugin for project management software. Yo
 
 #### Using FastlaneCore::Configuration
 
+Note that it is not necessary to `require "fastlane_core"` in a plugin.
+
 Most actions accept one or more parameters to customize their behavior. Actions define their
 parameters in an `available_options` method. This method returns an array of `FastlaneCore::ConfigItem`
 objects to describe supported options. Each option is declared by creating a new
@@ -322,3 +324,70 @@ configuration file:
 command "ls -la"
 files %w{file1.txt file2.txt}
 ```
+
+#### User input and output
+
+The `FastlaneCore::UI` utility may be used to display output to the user and also
+request input from an action.
+`UI` includes a number of methods to customize the output for different purposes:
+
+```ruby
+UI.message "Hello from my_new_action."
+UI.important "Warning: This is a new action."
+UI.error "Something unexpected happened in my_new_action. Attempting to continue."
+```
+
+|method|description|
+|------|-----------|
+|error|Displays an error message in red|
+|important|Displays a warning or other important message in yellow|
+|success|Displays a success message in green|
+|message|Displays a message in the default output color|
+|deprecated|Displays a deprecation message in bold blue|
+|command|Displays a command being executed in cyan|
+|command_output|Displays command output in magenta|
+|verbose|Displays verbose output in the default output color|
+|header|Displays a message in a box for emphasis|
+
+Methods ending in and exclamation point (`!`) terminate execution of the current
+lane and report an error:
+
+```ruby
+UI.user_error! "Could not open file #{file_path}"
+```
+
+|method|description|
+|------|-----------|
+|crash!|Report a catastrophic error|
+|user_error!|Rescue an exception in your action and report a nice message to the user|
+|shell_error!|Report failure of a shell command|
+|build_failure!|Report a build failure|
+|test_failure!|Report a test failure|
+|abort_with_message!|Report a failure condition that prevents continuing|
+
+Note that these methods raise exceptions that are rescued in the runner context for
+the lane. This terminates further lane execution, so it is not necessary to return.
+
+```ruby
+# No need for "and return" here
+UI.user_error!("Could not open file #{file_path}") and return if file.nil?
+```
+
+The following methods may be used to prompt the user for input.
+
+```ruby
+if UI.interactive?
+  name = UI.input "Please enter your name: "
+  is_correct = UI.confirm "Is this correct? "
+  choice = UI.select "Please choose from the following list:", %w{alpha beta gamma}
+  password = UI.password "Please enter your password: "
+end
+```
+
+|method|description|
+|------|-----------|
+|interactive?|Indicates whether interactive input is possible|
+|input|Prompt the user for string input|
+|confirm|Ask the user a binary question|
+|select|Prompt the user to select from a list of options|
+|password|Prompt the user for a password (masks output)|
