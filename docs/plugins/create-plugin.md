@@ -458,3 +458,18 @@ The `result` argument to the `error_callback` is the entire string output
 of the command. The exit status of the command will be available in `$?`.
 
 If the command to be executed is not found, `Errno::ENOENT` is raised.
+
+#### Calling other actions
+
+Some built-in utility actions, such as `sh`, may be used in custom actions (e.g., in
+plugins). It's not generally a good idea to call a complex action from another action.
+In particular:
+
+- If you're calling one plugin action from another plugin action, you should
+  probably refactor your plugin helper to be more easily called from all actions
+  in the plugin.
+- Avoid wrapping complex built-in actions like `deliver` and `gym`.
+- Certain simple built-in utility actions may be used with `other_action` in your
+  action, such as: `other_action.sh`, `other_action.git_add`, `other_action.git_commit`.
+- Think twice before calling an action from another action. There is often a better
+  solution.
