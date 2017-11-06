@@ -390,7 +390,7 @@ It checks the repo to make sure that only the relevant files have changed, these
 - All .plist files
 - The <code>.xcodeproj/project.pbxproj</code> file
 Then commits those files to the repo.
-Customise the message with the <code>:message</code> option, defaults to 'Version Bump'
+Customize the message with the <code>:message</code> option, defaults to 'Version Bump'
 If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <em>ipa</em> and or <em>sigh</em> actions, then you can use the <code>clean_build_artifacts</code> action to clean those temporary files up before running this action.</p>
 </blockquote>
 <table>
@@ -411,7 +411,7 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 </tr>
 </tbody>
 </table>
-<p><strong>5 Examples</strong></p>
+<p><strong>7 Examples</strong></p>
 <pre><code class="ruby">commit_version_bump
 </code></pre>
 
@@ -433,6 +433,16 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 
 <pre><code class="ruby">commit_version_bump(
   settings: %w[About.plist Root.plist] # Include more than one plist from Settings.bundle
+)
+</code></pre>
+
+<pre><code class="ruby">commit_version_bump(
+  include: %w[package.json custom.cfg] # include other updated files as part of the version bump
+)
+</code></pre>
+
+<pre><code class="ruby">commit_version_bump(
+  ignore: /OtherProject/ # ignore files matching a regular expression
 )
 </code></pre>
 
@@ -464,6 +474,10 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 <tr>
 <td><code>ignore</code></td>
 <td>A regular expression used to filter matched plist files to be modified</td>
+</tr>
+<tr>
+<td><code>include</code></td>
+<td>A list of extra files to be included in the version bump (string array or comma-separated string)</td>
 </tr>
 </tbody>
 </table>

@@ -402,7 +402,7 @@
 
 <h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
 <ul>
-<li>Upload hundreds of localised screenshots completely automatically</li>
+<li>Upload hundreds of localized screenshots completely automatically</li>
 <li>Upload a new ipa/pkg file to iTunes Connect without Xcode from any Mac</li>
 <li>Maintain your app metadata locally and push changes back to iTunes Connect</li>
 <li>Easily implement a real Continuous Deployment process using <a href="https://fastlane.tools">fastlane</a></li>
@@ -499,7 +499,7 @@
 
 <h5 id="skip_app_version_update"><a name="user-content-skip_app_version_update" href="#skip_app_version_update" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>skip_app_version_update</h5>
 <p>In the case if <em>deliver</em> uploads your application to iTunes Connect it will automatically update "Prepare for submission" app version (which could be found on iTunes Connect-&gt;My Apps-&gt;App Store page)</p>
-<p>The option allows uploading your app without updating "Prepare for submission" version. </p>
+<p>The option allows uploading your app without updating "Prepare for submission" version.</p>
 <p>This could be useful in the case if you are generating a lot of uploads while not submitting the latest build for Apple review.</p>
 <p>The default value is false.</p>
 <pre><code class="ruby-skip-tests">skip_app_version_update true
@@ -547,7 +547,7 @@
 <p>You can also provide these values by creating files in a <code>metadata/trade_representative_contact_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>first_name.txt</code>, <code>address_line1.txt</code> etc.). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will be take priority over values from these files.</p>
 <p><code>is_displayed_on_app_store</code> is the option on iTunes Connect described as: <code>Display Trade Representative Contact Information on the Korean App Store</code></p>
 <h5 id="app_review_information"><a name="user-content-app_review_information" href="#app_review_information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_review_information</h5>
-<p>Contact information for the app review team. Available options: <code>first_name</code>, <code>last_name</code>, <code>phone_number</code>, <code>email_address</code>, <code>demo_user</code>, <code>demo_password</code>, <code>notes</code>. </p>
+<p>Contact information for the app review team. Available options: <code>first_name</code>, <code>last_name</code>, <code>phone_number</code>, <code>email_address</code>, <code>demo_user</code>, <code>demo_password</code>, <code>notes</code>.</p>
 <pre><code class="ruby-skip-tests">app_review_information(
   first_name: &quot;Felix&quot;,
   last_name: &quot;Krause&quot;,
@@ -571,24 +571,24 @@
 <h5 id="automatic_release"><a name="user-content-automatic_release" href="#automatic_release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>automatic_release</h5>
 <p>Should the app be released to all users once Apple approves it? If set to <code>false</code>, you'll have to manually release the update once it got approved.</p>
 <pre><code class="ruby-skip-tests">automatic_release true
-# or 
+# or
 automatic_release false
 </code></pre>
 
 <h5 id="phased_release"><a name="user-content-phased_release" href="#phased_release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>phased_release</h5>
 <p>Enable or disable the phased releases feature of iTunes Connect. If set to <code>true</code>, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on iTunes Connect.</p>
 <pre><code class="ruby-skip-tests">phased_release true
-# or 
+# or
 phased_release false
 </code></pre>
 
 <h5 id="app_rating_config_path"><a name="user-content-app_rating_config_path" href="#app_rating_config_path" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_rating_config_path</h5>
-<p>You can set the app age ratings using <em>deliver</em>. You'll have to create and store a <code>JSON</code> configuration file. Copy the <a href="https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json">template</a> to your project folder and pass the path to the <code>JSON</code> file using the <code>app_rating_config_path</code> option. </p>
+<p>You can set the app age ratings using <em>deliver</em>. You'll have to create and store a <code>JSON</code> configuration file. Copy the <a href="https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json">template</a> to your project folder and pass the path to the <code>JSON</code> file using the <code>app_rating_config_path</code> option.</p>
 <p>The keys/values on the top allow values from 0-2, and the items on the bottom allow only 0 or 1. More information in <a href="#reference">#reference</a>.</p>
 <h2 id="metadata"><a name="user-content-metadata" href="#metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Metadata</h2>
 <p>All options below are useful if you want to specify certain app metadata in your <code>Deliverfile</code> or <code>Fastfile</code></p>
-<h3 id="localised"><a name="user-content-localised" href="#localised" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Localised</h3>
-<p>Localised values should be set like this</p>
+<h3 id="localized"><a name="user-content-localized" href="#localized" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Localized</h3>
+<p>Localized values should be set like this</p>
 <pre><code class="ruby-skip-tests">description({
   'en-US' =&gt; &quot;English Description here&quot;,
   'de-DE' =&gt; &quot;Deutsche Beschreibung hier&quot;
@@ -598,7 +598,7 @@ phased_release false
 <h5 id="name"><a name="user-content-name" href="#name" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>name</h5>
 <p>The title/name of the app</p>
 <h5 id="subtitle"><a name="user-content-subtitle" href="#subtitle" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>subtitle</h5>
-<p>Localised subtitle of the app</p>
+<p>Localized subtitle of the app</p>
 <pre><code class="ruby-skip-tests">subtitle(
   &quot;en-US&quot; =&gt; &quot;Awesome English subtitle here&quot;,
   &quot;de-DE&quot; =&gt; &quot;Jetzt mit deutschen Untertiteln!&quot;
@@ -619,7 +619,7 @@ phased_release false
 </code></pre>
 
 <h5 id="promotional_text"><a name="user-content-promotional_text" href="#promotional_text" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>promotional_text</h5>
-<p>Localised promotional text</p>
+<p>Localized promotional text</p>
 <pre><code class="ruby-skip-tests">promotional_text(
   &quot;en-US&quot; =&gt; &quot;Hey, you should totally buy our app, it's the best&quot;,
   &quot;de-DE&quot; =&gt; &quot;App kaufen bitte&quot;
@@ -637,16 +637,16 @@ phased_release false
 </code></pre>
 
 <h5 id="platform"><a name="user-content-platform" href="#platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>platform</h5>
-<p>The platform of your application (a.e. ios, osx). </p>
+<p>The platform of your application (a.e. ios, osx).</p>
 <p>This option is optional. The default value is "ios" and deliver should be able to figure out the platform from your binary.</p>
 <p>However, in the case if multiple binaries present, you can specify a platform which you want to deliver explicitly.</p>
-<p>The available options: </p>
+<p>The available options:</p>
 <ul>
 <li>'ios'</li>
 <li>'appletvos'</li>
 <li>'osx'</li>
 </ul>
-<h3 id="non-localised"><a name="user-content-non-localised" href="#non-localised" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Non-Localised</h3>
+<h3 id="non-localized"><a name="user-content-non-localized" href="#non-localized" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Non-Localized</h3>
 <h5 id="copyright"><a name="user-content-copyright" href="#copyright" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>copyright</h5>
 <p>The up to date copyright information.</p>
 <pre><code class="ruby-skip-tests">copyright &quot;#{Time.now.year} Felix Krause&quot;
@@ -845,12 +845,12 @@ phased_release false
 </ul>
 <p><br /></p>
 <h2 id="default-values"><a name="user-content-default-values" href="#default-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Default values</h2>
-<p>Deliver has a special <code>default</code> language code which allows you to provide values that are not localised, and which will be used as defaults when you don’t provide a specific localised value.</p>
+<p>Deliver has a special <code>default</code> language code which allows you to provide values that are not localized, and which will be used as defaults when you don’t provide a specific localized value.</p>
 <p>In order to use <code>default</code>, you will need to tell <em>deliver</em> which languages your app uses. You can do this in either of two ways:
 1. Create the folders named with the language in the metadata folder (i.e. fastlane/metadata/en-US or fastlane/metadata/de-DE)
-2. Add the following to your <code>Deliverfile</code> <code>languages(['en-US','de-DE'])</code> </p>
+2. Add the following to your <code>Deliverfile</code> <code>languages(['en-US','de-DE'])</code></p>
 <p>You can use this either in json within your <code>Deliverfile</code> and/or as folders in your metadata folder. <em>deliver</em> will take the union of both language sets from the <code>Deliverfile</code> and from the metadata folder and create on single set of languages which will be enabled.</p>
-<p>Imagine that you have localised data for the following language codes:  <code>en-US, de-DE, el, it</code></p>
+<p>Imagine that you have localized data for the following language codes:  <code>en-US, de-DE, el, it</code></p>
 <p>You can set the following in your <code>Deliverfile</code></p>
 <pre><code class="ruby-skip-tests">release_notes({
   'default' =&gt; &quot;Shiny and new&quot;,
@@ -878,7 +878,7 @@ phased_release false
       description.txt
 </code></pre>
 
-<p>In this case, default values for keywords, urls, name and release notes are used in all localisations, but each language has a fully localised description</p>
+<p>In this case, default values for keywords, urls, name and release notes are used in all localizations, but each language has a fully localized description</p>
 <h2 id="automatically-create-screenshots"><a name="user-content-automatically-create-screenshots" href="#automatically-create-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatically create screenshots</h2>
 <p>If you want to integrate <em>deliver</em> with <a href="https://github.com/fastlane/fastlane/tree/master/snapshot">snapshot</a>, check out <a href="https://fastlane.tools">fastlane</a>!</p>
 <h2 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins integration</h2>
@@ -1007,6 +1007,10 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>automatic_release</code></td>
 <td>Should the app be automatically released once it's approved?</td>
+</tr>
+<tr>
+<td><code>auto_release_date</code></td>
+<td>Date in milliseconds for automatically releasing on pending approval</td>
 </tr>
 <tr>
 <td><code>phased_release</code></td>
@@ -1147,6 +1151,10 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>ignore_language_directory_validation</code></td>
 <td>Ignore errors when invalid languages are found in metadata and screeenshot directories</td>
+</tr>
+<tr>
+<td><code>precheck_include_in_app_purchases</code></td>
+<td>Should precheck check in-app purchases?</td>
 </tr>
 </tbody>
 </table>
