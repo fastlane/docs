@@ -503,7 +503,7 @@ This behavior isn't great, and has been like this since the very early days of _
 
 ## Appfile
 
-The `Appfile` stores useful information that are used across all _fastlane_ tools like your *Apple ID* or the application *Bundle Identifier*, to deploy your lanes faster and tailored on your project needs. 
+The `Appfile` stores useful information that are used across all _fastlane_ tools like your *Apple ID* or the application *Bundle Identifier*, to deploy your lanes faster and tailored on your project needs.
 
 The `Appfile` has to be inside your `./fastlane` directory.
 
@@ -513,7 +513,7 @@ By default an `Appfile` looks like:
 app_identifier "net.sunapps.1" # The bundle identifier of your app
 apple_id "felix@krausefx.com"  # Your Apple email address
 
-# You can uncomment the lines below and add your own 
+# You can uncomment the lines below and add your own
 # team selection in case you're in multiple teams
 # team_name "Felix Krause"
 # team_id "Q2CBPJ58CA"
@@ -535,7 +535,7 @@ team_id "Q2CBPJ58CA" # Developer Portal Team ID
 itc_team_id "18742801" # iTunes Connect Team ID
 ```
 
-If your project has different bundle identifiers per environment (i.e. beta, app store), you can define that by using `for_platform` and/or `for_lane` block declaration. 
+If your project has different bundle identifiers per environment (i.e. beta, app store), you can define that by using `for_platform` and/or `for_lane` block declaration.
 
 ```ruby
 app_identifier "net.sunapps.1"
@@ -569,3 +569,321 @@ identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 ```
 
+# Building Actions
+
+## Using FastlaneCore::Configuration
+
+Most actions accept one or more parameters to customize their behavior. Actions define their
+parameters in an `available_options` method. This method returns an array of `FastlaneCore::ConfigItem`
+objects to describe supported options. Each option is declared by creating a new
+`ConfigItem`, e.g.:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :file,
+  env_name: "MY_NEW_ACTION_FILE",
+  description: "A file to operate on",
+  type: String,
+  optional: false
+)
+```
+
+This declares a `file` option for use with the action in a Fastfile, e.g.:
+
+```ruby
+my_new_action(file: "file.txt")
+```
+
+If the optional `env_name` is present, an environment variable with the specified
+name may also be used in place of an option in the Fastfile:
+
+```bash
+MY_NEW_ACTION_FILE=file.txt fastlane run my_new_action
+```
+
+The `type` argument to the `FastlaneCore::ConfigItem` initializer specifies the
+name of a Ruby class representing a standard
+data type. Supplied arguments will be coerced to the specified type. Some standard types
+support default conversions.
+
+### Boolean parameters
+
+Ruby does not have a single class to represent a Boolean type. When specifying
+Boolean parameters, use `is_string: false`, without specifying a `type`, e.g.:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :commit,
+  env_name: "MY_NEW_ACTION_COMMIT",
+  description: "Commit the results if true",
+  optional: true,
+  default_value: false,
+  is_string: false
+)
+```
+
+When passing a string value, e.g. from an environment variable, certain set
+string values are recognized:
+
+```bash
+MY_NEW_ACTION_COMMIT=true
+MY_NEW_ACTION_COMMIT=false
+MY_NEW_ACTION_COMMIT=yes
+MY_NEW_ACTION_COMMIT=no
+```
+
+These values may also be passed in all caps, e.g. `MY_NEW_ACTION_COMMIT=YES`.
+
+### Array parameters
+
+If a parameter is declared with `type: Array` and a `String` argument is passed,
+an array will be produced by splitting the string using the comma character
+as a delimiter:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :files,
+  env_name: "MY_NEW_ACTION_FILES",
+  description: "One or more files to operate on",
+  type: Array,
+  optional: false
+)
+```
+
+```ruby
+my_new_action(files: "file1.txt,file2.txt")
+```
+
+This is received by the action as `["file1.txt", "file2.txt"]`.
+
+This also means a parameter that accepts an array may take a single string as an
+argument:
+
+```ruby
+my_new_action(files: "file.txt")
+```
+
+This is received by the action as `["file.txt"]`.
+
+Comma-separated lists are particularly useful when using environment variables:
+
+```bash
+export MY_NEW_ACTION_FILES=file1.txt,file2.txt
+```
+
+### String parameters
+
+Certain special processing applies to any `ConfigItem` that specifies
+`allow_shell_conversion: true`.
+
+If a parameter is declared with `type: String` and an `Array` argument is passed,
+a string will be produced by converting each array element to a string and then
+joining them using the space character as a delimiter.
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :command,
+  description: "A command to execute",
+  type: String,
+  allow_shell_conversion: true,
+  optional: false
+)
+```
+
+```ruby
+my_new_action(command: ["ls", "-la"])
+```
+
+This is received by the action as `"ls -la"`.
+
+If a `Hash` argument is passed, each key and value will be converted to a string. Keys
+and values will be joined using the equals character and joined using the space
+character:
+
+```ruby
+FastlaneCore::ConfigItem.new(
+  key: :metadata,
+  description: "Metadata for the command",
+  type: String,
+  allow_shell_conversion: true,
+  optional: true
+)
+```
+
+```ruby
+my_new_action(metadata: { "key1": "value1", "key2", "value2" })
+```
+
+This is received by the action as `"key1=value1 key2=value2"`.
+
+### Configuration files
+
+Many built-in actions such as _deliver_, _gym_ and _scan_ support configuration files
+(`Deliverfile`, `Gymfile`, `Scanfile`). This is useful for actions with many options.
+To add support for a configuration file to a custom action, call `load_configuration_file`
+early, usually as the first line of `run`:
+
+```ruby
+def self.run(params)
+  params.load_configuration_file("MyNewActionfile")
+  # ...
+```
+
+This will load any parameters specified in `MyNewActionfile`. This method looks for
+the specified file in `.` and `./fastlane`. The file is evaluated by the Ruby interpreter.
+You may specify they `key` from any `FastlaneCore::ConfigItem` as a method call in the
+configuration file:
+
+```ruby
+command "ls -la"
+files %w{file1.txt file2.txt}
+```
+
+## User input and output
+
+The `FastlaneCore::UI` utility may be used to display output to the user and also
+request input from an action.
+`UI` includes a number of methods to customize the output for different purposes:
+
+```ruby
+UI.message "Hello from my_new_action."
+UI.important "Warning: This is a new action."
+UI.error "Something unexpected happened in my_new_action. Attempting to continue."
+```
+
+|method|description|
+|------|-----------|
+|error|Displays an error message in red|
+|important|Displays a warning or other important message in yellow|
+|success|Displays a success message in green|
+|message|Displays a message in the default output color|
+|deprecated|Displays a deprecation message in bold blue|
+|command|Displays a command being executed in cyan|
+|command_output|Displays command output in magenta|
+|verbose|Displays verbose output in the default output color|
+|header|Displays a message in a box for emphasis|
+
+Methods ending in and exclamation point (`!`) terminate execution of the current
+lane and report an error:
+
+```ruby
+UI.user_error! "Could not open file #{file_path}"
+```
+
+|method|description|
+|------|-----------|
+|crash!|Report a catastrophic error|
+|user_error!|Rescue an exception in your action and report a nice message to the user|
+|shell_error!|Report failure of a shell command|
+|build_failure!|Report a build failure|
+|test_failure!|Report a test failure|
+|abort_with_message!|Report a failure condition that prevents continuing|
+
+Note that these methods raise exceptions that are rescued in the runner context for
+the lane. This terminates further lane execution, so it is not necessary to return.
+
+```ruby
+# No need for "and return" here
+UI.user_error!("Could not open file #{file_path}") and return if file.nil?
+```
+
+The following methods may be used to prompt the user for input.
+
+```ruby
+if UI.interactive?
+  name = UI.input "Please enter your name: "
+  is_correct = UI.confirm "Is this correct? "
+  choice = UI.select "Please choose from the following list:", %w{alpha beta gamma}
+  password = UI.password "Please enter your password: "
+end
+```
+
+|method|description|
+|------|-----------|
+|interactive?|Indicates whether interactive input is possible|
+|input|Prompt the user for string input|
+|confirm|Ask the user a binary question|
+|select|Prompt the user to select from a list of options|
+|password|Prompt the user for a password (masks output)|
+
+## Invoking shell commands
+
+If your action needs to run a shell command, there are several methods. You can
+easily determine the exit status of the command and capture all terminal output
+from the command.
+
+### Using Kernel::system
+
+Use the Ruby `system` method call to invoke a command string. This does not
+redirect stdin, stdout or stderr, so output formatting will be unaffected. It executes
+the command in a subshell.
+
+```ruby
+system "cat fastlane/Fastfile"
+```
+
+Upon command completion, the method returns. The `$?` global variable will
+indicate the exit status of the command.
+
+```ruby
+system "cat fastlane/Fastfile"
+UI.user_error! "Could not execute command" unless $?.exitstatus == 0
+```
+
+If the command to be executed is not found,
+`$?.exitstatus` will be nonzero.
+
+### Using backticks
+
+To capture the output of a command, enclose the command in backticks:
+
+```ruby
+pod_cmd = `which pod`
+UI.important "'pod' command not found" if pod_cmd.empty?
+```
+
+Because you are capturing stdout, the command output will not appear at
+the terminal unless you log it using `UI`. Formatting may be lost when
+capturing command output. The entire output will be captured after the command
+returns.
+
+If the command to be executed is not found, `Errro::ENOENT` is raised.
+
+### Using the sh action
+
+You can also use the built-in `sh` Fastlane action:
+
+```ruby
+other_action.sh "pwd"
+```
+
+Within a Fastfile, just call `sh`, e.g.: `sh "pwd"`. This provides consistent
+logging of command output.
+
+To be notified when an error occurs, use the `error_callback` parameter:
+
+```ruby
+success = true
+other_action.sh("pwd", error_callback: ->(result) { success = false })
+UI.user_error "Command failed" unless success
+```
+
+The `result` argument to the `error_callback` is the entire string output
+of the command. The exit status of the command will be available in `$?`.
+
+If the command to be executed is not found, `Errno::ENOENT` is raised.
+
+## Calling other actions
+
+Some built-in utility actions, such as `sh`, may be used in custom actions (e.g., in
+plugins). It's not generally a good idea to call a complex action from another action.
+In particular:
+
+- If you're calling one plugin action from another plugin action, you should
+  probably refactor your plugin helper to be more easily called from all actions
+  in the plugin.
+- Avoid wrapping complex built-in actions like _deliver_ and _gym_.
+- Certain simple built-in utility actions may be used with `other_action` in your
+  action, such as: `other_action.sh`, `other_action.git_add`, `other_action.git_commit`.
+- Think twice before calling an action from another action. There is often a better
+  solution.
