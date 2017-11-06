@@ -847,7 +847,7 @@ the terminal unless you log it using `UI`. Formatting may be lost when
 capturing command output. The entire output will be captured after the command
 returns.
 
-If the command to be executed is not found, `Errro::ENOENT` is raised.
+If the command to be executed is not found, `Errno::ENOENT` is raised.
 
 ### Using the sh action
 
