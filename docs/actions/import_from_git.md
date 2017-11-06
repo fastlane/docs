@@ -24,6 +24,7 @@ import_from_git(
   url: "git@github.com:fastlane/fastlane.git", # The URL of the repository to import the Fastfile from.
   branch: "HEAD", # The branch to checkout on the repository. Defaults to `HEAD`.
   path: "fastlane/Fastfile" # The path of the Fastfile in the repository. Defaults to `fastlane/Fastfile`.
+  version: "~> 1.0.0" #The version to checkout on the respository. Optimistic operator can be used to select the latest version within constraints.
 )
 ```
 
@@ -38,6 +39,7 @@ Key | Description
   `url` | The URL of the repository to import the Fastfile from
   `branch` | The branch or tag to check-out on the repository
   `path` | The path of the Fastfile in the repository
+  `version` | The version to checkout on the respository. Optimistic operator can be used to select the latest version within constraints
 
 
 

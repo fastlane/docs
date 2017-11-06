@@ -55,6 +55,7 @@ Key | Description
   `notes` | Beta Notes
   `notify` | Notify testers? "1" for yes
   `status` | Download status: "1" = No user can download; "2" = Available for download (only possible with full-access token)
+  `create_status` | Download status for initial version creation when create_update is true: "1" = No user can download; "2" = Available for download (only possible with full-access token)
   `notes_type` | Notes type for your :notes, "0" = Textile, "1" = Markdown (default)
   `release_type` | Release type of the app: "0" = Beta (default), "1" = Store, "2" = Alpha, "3" = Enterprise
   `mandatory` | Set to "1" to make this update mandatory
