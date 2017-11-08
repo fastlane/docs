@@ -331,6 +331,14 @@
           
         
           
+          <li class="toctree-l3"><a href="#timestamps">Timestamps</a></li>
+          
+        
+          
+          <li class="toctree-l3"><a href="#interacting-with-the-user">Interacting with the user</a></li>
+          
+        
+          
           <li class="toctree-l3"><a href="#run-actions-directly">Run actions directly</a></li>
           
         
@@ -580,6 +588,51 @@ end
 lane :upload do
   # ...
 end
+</code></pre>
+
+<h1 id="timestamps"><a name="user-content-timestamps" href="#timestamps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Timestamps</h1>
+<p>To hide timestamps in each row, set the <code>FASTLANE_HIDE_TIMESTAMP</code> environment variable.</p>
+<h1 id="interacting-with-the-user"><a name="user-content-interacting-with-the-user" href="#interacting-with-the-user" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Interacting with the user</h1>
+<p>Instead of using <code>puts</code>, <code>raise</code> and <code>gets</code>, please use the helper class <code>UI</code> across all fastlane tools:</p>
+<pre><code class="ruby">UI.message &quot;Neutral message (usually white)&quot;
+UI.success &quot;Successfully finished processing (usually green)&quot;
+UI.error &quot;Wahaha, what's going on here! (usually red)&quot;
+UI.important &quot;Make sure to use Windows (usually yellow)&quot;
+
+UI.header &quot;Inputs&quot; # a big box
+
+name = UI.input(&quot;What's your name? &quot;)
+if UI.confirm(&quot;Are you '#{name}'?&quot;)
+  UI.success &quot;Oh yeah&quot;
+else
+  UI.error &quot;Wups, invalid&quot;
+end
+
+UI.password(&quot;Your password please: &quot;) # password inputs are hidden
+
+###### A &quot;Dropdown&quot; for the user
+project = UI.select(&quot;Select your project: &quot;, [&quot;Test Project&quot;, &quot;Test Workspace&quot;])
+
+UI.success(&quot;Okay #{name}, you selected '#{project}'&quot;)
+
+###### To run a command use
+FastlaneCore::CommandExecutor.execute(command: &quot;ls&quot;,
+                                    print_all: true,
+                                        error: proc do |error_output|
+                                          # handle error here
+                                        end)
+
+###### or if you just want to receive a simple value use this only if the command doesn't take long
+diff = Helper.backticks(&quot;git diff&quot;)
+
+###### fastlane &quot;crash&quot; because of a user error everything that is caused by the user and is not unexpected
+UI.user_error!(&quot;You don't have a project in the current directory&quot;)
+
+###### an actual crash when something unexpected happened
+UI.crash!(&quot;Network timeout&quot;)
+
+###### a deprecation message
+UI.deprecated(&quot;The '--key' parameter is deprecated&quot;)
 </code></pre>
 
 <h1 id="run-actions-directly"><a name="user-content-run-actions-directly" href="#run-actions-directly" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run actions directly</h1>
