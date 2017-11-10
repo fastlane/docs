@@ -160,10 +160,12 @@ You can use [QuickDemo](https://github.com/PSPDFKit-labs/QuickDemo) to clean up 
 You can provide additional arguments to your testcases on launch. These strings will be available in your tests through `InstrumentationRegistry.getArguments()`.
 
 ```ruby
-launch_arguments([
-  "username hjanuschka",
-  "build_number 201"
-])
+screengrab(
+  launch_arguments: {
+    "username hjanuschka",
+    "build_number 201"
+  }
+)
 ```
 
 ```java
