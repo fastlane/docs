@@ -716,6 +716,122 @@ my_new_action(metadata: { "key1": "value1", "key2", "value2" })
 
 This is received by the action as `"key1=value1 key2=value2"`.
 
+### Polymorphic parameters
+
+To allow for different types to be passed to a parameter (beyond what is
+provided above), specify `is_string: false` without a `type` field. Use
+an optional `verify_block` argument (see below) or verify the argument within
+your action. If the block does not raise, the option is considered verified.
+The `UI.user_error!` method is a convenient way to handle verification failure.
+
+```Ruby
+FastlaneCore::ConfigItem.new(
+  key: :polymorphic_option,
+  is_string: false,
+  verify_block: ->(value) { verify_option(value) }
+)
+
+def verify_option(value)
+  case value
+  when String
+    @polymorphic_option = value
+  when Array
+    @polymorphic_option = value.join(" ")
+  when Hash
+    @polymorphic_option = value.to_s
+  else
+    UI.user_error! "Invalid option: #{value.inspect}"
+  end
+end
+```
+
+### Verify blocks
+
+Use a `verify_block` argument with your `ConfigItem` to provide special
+argument verification:
+
+```Ruby
+FastlaneCore::ConfigItem.new(
+  key: :url,
+  type: String,
+  verify_block: lambda do |value|
+    # Has to be a String to get this far
+    uri = URI(value)
+    UI.error "Invalid scheme #{uri.scheme}" unless uri.scheme == "http" || uri.scheme == "https"
+  end
+)
+```
+
+Note that `verify_block` requires an argument of type `Proc`, which may be
+obtained any of three ways.
+
+Using the `lambda` operator:
+```Ruby
+verify_block: lambda do |value|
+  ...
+end
+```
+
+Using `Proc.new`:
+```Ruby
+verify_block: Proc.new do |value|
+  ...
+end
+```
+
+Using the `Proc` literal notation:
+```Ruby
+verify_block: ->(value) { ... }
+```
+
+Note that you cannot pass a block literal as a `Proc`.
+
+### Conflicting options
+
+If your action includes multiple conflicting options, use `conflicting_options`
+in the `ConfigItem` for each. Make sure conflicting options are optional.
+
+```Ruby
+FastlaneCore::ConfigItem.new(
+  key: :text,
+  type: String,
+  optional: true,
+  conflicting_options: [:text_file]
+),
+FastlaneCore::ConfigItem.new(
+  key: :text_file,
+  type: String,
+  optional: true,
+  conflicting_options: [:text]
+)
+```
+
+You can also pass a `conflict_block` (a `Proc`, see above) if you want to
+implement special handling of conflicting options:
+
+```Ruby
+FastlaneCore::ConfigItem.new(
+  key: :text,
+  type: String,
+  optional: true,
+  conflicting_options: [:text_file],
+  conflict_block: Proc.new do |other|
+    UI.user_error! "Unexpected conflict with option #{other}" unless other == :text_file
+    UI.message "Ignoring :text_file in favor of :text"
+  end
+),
+FastlaneCore::ConfigItem.new(
+  key: :text_file,
+  type: String,
+  optional: true,
+  conflicting_options: [:text],
+  conflict_block: Proc.new do |other|
+    UI.user_error! "Unexpected conflict with option #{other}" unless other == :text
+    UI.message "Ignoring :text_file in favor of :text"
+  end
+)
+```
+
 ### Configuration files
 
 Many built-in actions such as _deliver_, _gym_ and _scan_ support configuration files
