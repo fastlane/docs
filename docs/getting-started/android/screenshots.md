@@ -171,10 +171,10 @@ You can provide additional arguments to your testcases on launch. These strings 
 
 ```ruby
 screengrab(
-  launch_arguments: {
+  launch_arguments: [
     "username hjanuschka",
     "build_number 201"
-  }
+  ]
 )
 ```
 
