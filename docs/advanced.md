@@ -846,7 +846,8 @@ def self.run(params)
 ```
 
 This will load any parameters specified in `MyNewActionfile`. This method looks for
-the specified file in `.` and `./fastlane`. The file is evaluated by the Ruby interpreter.
+the specified file in `./fastlane`, `./.fastlane` and `.`, in that order. The
+file is evaluated by the Ruby interpreter.
 You may specify they `key` from any `FastlaneCore::ConfigItem` as a method call in the
 configuration file:
 
