@@ -751,15 +751,16 @@ Use a `verify_block` argument with your `ConfigItem` to provide special
 argument verification:
 
 ```Ruby
+verify_block = lambda do |value|
+  # Has to be a String to get this far
+  uri = URI(value)
+  UI.error "Invalid scheme #{uri.scheme}" unless uri.scheme == "http" || uri.scheme == "https"
+end
+
 FastlaneCore::ConfigItem.new(
   key: :url,
   type: String,
-  verify_block: lambda do |value|
-    # Has to be a String to get this far
-    uri = URI(value)
-    UI.error "Invalid scheme #{uri.scheme}" unless uri.scheme == "http" || uri.scheme == "https"
-  end
-)
+  verify_block: verify_block)
 ```
 
 Note that `verify_block` requires an argument of type `Proc`, which may be
@@ -767,21 +768,21 @@ obtained any of three ways.
 
 Using the `lambda` operator:
 ```Ruby
-verify_block: lambda do |value|
+verify_block = lambda do |value|
   ...
 end
 ```
 
 Using `Proc.new`:
 ```Ruby
-verify_block: Proc.new do |value|
+verify_block = Proc.new do |value|
   ...
 end
 ```
 
 Using the `Proc` literal notation:
 ```Ruby
-verify_block: ->(value) { ... }
+verify_block = ->(value) { ... }
 ```
 
 Note that you cannot pass a block literal as a `Proc`.
@@ -810,25 +811,24 @@ You can also pass a `conflict_block` (a `Proc`, see above) if you want to
 implement special handling of conflicting options:
 
 ```Ruby
+conflict_block = Proc.new do |other|
+  UI.user_error! "Unexpected conflict with option #{other}" unless [:text, :text_file].include?(other)
+  UI.message "Ignoring :text_file in favor of :text"
+end
+
 FastlaneCore::ConfigItem.new(
   key: :text,
   type: String,
   optional: true,
   conflicting_options: [:text_file],
-  conflict_block: Proc.new do |other|
-    UI.user_error! "Unexpected conflict with option #{other}" unless other == :text_file
-    UI.message "Ignoring :text_file in favor of :text"
-  end
+  conflict_block: conflict_block
 ),
 FastlaneCore::ConfigItem.new(
   key: :text_file,
   type: String,
   optional: true,
   conflicting_options: [:text],
-  conflict_block: Proc.new do |other|
-    UI.user_error! "Unexpected conflict with option #{other}" unless other == :text
-    UI.message "Ignoring :text_file in favor of :text"
-  end
+  conflict_block: conflict_block
 )
 ```
 
