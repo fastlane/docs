@@ -78,7 +78,8 @@ Key | Description
   `flags` | All parameter flags you want to pass to the gradle command, e.g. `--exitcode --xml file.xml`
   `project_dir` | The root directory of the gradle project. Defaults to `.`
   `gradle_path` | The path to your `gradlew`. If you specify a relative path, it is assumed to be relative to the `project_dir`
-  `properties` | Gradle properties to be exposed to the gradle script
+  `properties` | Gradle project properties to be exposed to the gradle script (-P)
+  `system_properties` | Gradle system properties to be exposed to the gradle script (-D)
   `serial` | Android serial, which device should be used for this command
   `print_command` | Control whether the generated Gradle command is printed as output before running it (true/false)
   `print_command_output` | Control whether the output produced by given Gradle command is printed while running (true/false)
