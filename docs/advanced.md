@@ -375,6 +375,10 @@ actions_path '../custom_actions_folder/'
 
 You can set the environment variable `FASTLANE_SKIP_UPDATE_CHECK` to skip the update check.
 
+# Hide changelog information at the end of running _fastlane_
+
+You can set the environment variable `FASTLANE_HIDE_CHANGELOG` to hide the detailed changelog information when new _fastlane_ versions are available.
+
 # Adding Credentials
 
 You can add credentials for use by _fastlane_ to your keychain using the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) command line interface. This is useful for situations like CI environments.
@@ -618,4 +622,3 @@ If you want to access those values from within your `Fastfile` use
 identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 ```
-
