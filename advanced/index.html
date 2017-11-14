@@ -386,6 +386,10 @@
           <li class="toctree-l3"><a href="#manually-manage-the-fastlane-match-repo">Manually Manage the fastlane match Repo</a></li>
           
         
+          
+          <li class="toctree-l3"><a href="#appfile">Appfile</a></li>
+          
+        
       </ul>
       
     </li>
@@ -888,7 +892,7 @@ end
 </code></pre>
 
 <p>This behavior isn't great, and has been like this since the very early days of <em>fastlane</em>. As much as we'd like to change it, there is no good way to do so, without breaking thousands of production setups, so we decided to keep it as is for now.</p>
-<h2 id="appfile"><a name="user-content-appfile" href="#appfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Appfile</h2>
+<h1 id="appfile"><a name="user-content-appfile" href="#appfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Appfile</h1>
 <p>The <code>Appfile</code> stores useful information that are used across all <em>fastlane</em> tools like your <em>Apple ID</em> or the application <em>Bundle Identifier</em>, to deploy your lanes faster and tailored on your project needs. </p>
 <p>The <code>Appfile</code> has to be inside your <code>./fastlane</code> directory.</p>
 <p>By default an <code>Appfile</code> looks like:</p>
@@ -935,7 +939,7 @@ apple_id &quot;felix@krausefx.com&quot;
 team_id &quot;123&quot;
 </code></pre>
 
-<h3 id="accessing-from-fastlane"><a name="user-content-accessing-from-fastlane" href="#accessing-from-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Accessing from fastlane</h3>
+<h2 id="accessing-from-fastlane"><a name="user-content-accessing-from-fastlane" href="#accessing-from-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Accessing from fastlane</h2>
 <p>If you want to access those values from within your <code>Fastfile</code> use</p>
 <pre><code class="ruby">identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
