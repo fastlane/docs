@@ -551,7 +551,7 @@ end
 
 This behavior isn't great, and has been like this since the very early days of _fastlane_. As much as we'd like to change it, there is no good way to do so, without breaking thousands of production setups, so we decided to keep it as is for now.
 
-## Appfile
+# Appfile
 
 The `Appfile` stores useful information that are used across all _fastlane_ tools like your *Apple ID* or the application *Bundle Identifier*, to deploy your lanes faster and tailored on your project needs. 
 
@@ -610,7 +610,7 @@ apple_id "felix@krausefx.com"
 team_id "123"
 ```
 
-### Accessing from fastlane
+## Accessing from fastlane
 
 If you want to access those values from within your `Fastfile` use
 
