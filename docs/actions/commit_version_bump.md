@@ -11,7 +11,7 @@ It checks the repo to make sure that only the relevant files have changed, these
 - All .plist files
 - The `.xcodeproj/project.pbxproj` file
 Then commits those files to the repo.
-Customise the message with the `:message` option, defaults to 'Version Bump'
+Customize the message with the `:message` option, defaults to 'Version Bump'
 If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the `clean_build_artifacts` action to clean those temporary files up before running this action.
 
 
@@ -22,7 +22,7 @@ Author | @lmirosevic
 
 
 
-**5 Examples**
+**7 Examples**
 
 ```ruby
 commit_version_bump
@@ -53,6 +53,18 @@ commit_version_bump(
 )
 ```
 
+```ruby
+commit_version_bump(
+  include: %w[package.json custom.cfg] # include other updated files as part of the version bump
+)
+```
+
+```ruby
+commit_version_bump(
+  ignore: /OtherProject/ # ignore files matching a regular expression
+)
+```
+
 
 
 
@@ -66,6 +78,7 @@ Key | Description
   `force` | Forces the commit, even if other files than the ones containing the version number have been modified
   `settings` | Include Settings.bundle/Root.plist with version bump
   `ignore` | A regular expression used to filter matched plist files to be modified
+  `include` | A list of extra files to be included in the version bump (string array or comma-separated string)
 
 
 

@@ -27,7 +27,7 @@ carthage(
   frameworks: ["MyFramework1", "MyFramework2"],   # Specify which frameworks to archive (only for the archive command)
   output: "MyFrameworkBundle.framework.zip",      # Specify the output archive name (only for the archive command)
   command: "bootstrap",       # One of: build, bootstrap, update, archive. (default: bootstrap)
-  dependencies: ["Alamofire", "Notice"],# Specify which dependencies to update (only for the update command)
+  dependencies: ["Alamofire", "Notice"],# Specify which dependencies to update or build (only for update and build commands)
   use_ssh: false,   # Use SSH for downloading GitHub repositories.
   use_submodules: false,      # Add dependencies as Git submodules.
   use_binaries: true,         # Check out dependency repositories even when prebuilt frameworks exist
@@ -50,7 +50,7 @@ carthage(
 Key | Description
 ----|------------
   `command` | Carthage command (one of: build, bootstrap, update, archive)
-  `dependencies` | Carthage dependencies to update
+  `dependencies` | Carthage dependencies to update or build
   `use_ssh` | Use SSH for downloading GitHub repositories
   `use_submodules` | Add dependencies as Git submodules
   `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist

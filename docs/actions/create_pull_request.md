@@ -27,7 +27,7 @@ create_pull_request(
   head: "my-feature",       # optional, defaults to current branch name
   base: "master", # optional, defaults to "master"
   body: "Please pull this in!",       # optional
-  api_url: "http://yourdomain/api/v3" # optional, for Github Enterprise, defaults to "https://api.github.com"
+  api_url: "http://yourdomain/api/v3" # optional, for GitHub Enterprise, defaults to "https://api.github.com"
 )
 ```
 
@@ -45,7 +45,7 @@ Key | Description
   `body` | The contents of the pull request
   `head` | The name of the branch where your changes are implemented (defaults to the current branch name)
   `base` | The name of the branch you want your changes pulled into (defaults to `master`)
-  `api_url` | The URL of Github API - used when the Enterprise (default to `https://api.github.com`)
+  `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`)
 
 
 

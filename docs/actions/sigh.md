@@ -244,6 +244,7 @@ Key | Description
   `skip_fetch_profiles` | Skips the verification of existing profiles which is useful if you have thousands of profiles
   `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine
   `platform` | Set the provisioning profile's platform (i.e. ios, tvos)
+  `readonly` | Only fetch existing profile, don't generate new ones
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile
 
 

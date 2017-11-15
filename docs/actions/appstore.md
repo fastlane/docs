@@ -50,6 +50,7 @@ Key | Description
   `force` | Skip the HTML report file verification
   `submit_for_review` | Submit the new version for Review after uploading everything
   `automatic_release` | Should the app be automatically released once it's approved?
+  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval
   `phased_release` | Enable the phased release feature of iTC
   `price_tier` | The price tier of this application
   `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one
@@ -85,6 +86,7 @@ Key | Description
   `marketing_url` | Metadata: Localised marketing url
   `languages` | Metadata: List of languages to activate
   `ignore_language_directory_validation` | Ignore errors when invalid languages are found in metadata and screeenshot directories
+  `precheck_include_in_app_purchases` | Should precheck check in-app purchases?
 
 
 

@@ -167,6 +167,56 @@ lane :upload do
 end
 ```
 
+# Timestamps
+
+To hide timestamps in each row, set the `FASTLANE_HIDE_TIMESTAMP` environment variable.
+
+# Interacting with the user
+
+Instead of using `puts`, `raise` and `gets`, please use the helper class `UI` across all fastlane tools:
+
+```ruby
+UI.message "Neutral message (usually white)"
+UI.success "Successfully finished processing (usually green)"
+UI.error "Wahaha, what's going on here! (usually red)"
+UI.important "Make sure to use Windows (usually yellow)"
+
+UI.header "Inputs" # a big box
+
+name = UI.input("What's your name? ")
+if UI.confirm("Are you '#{name}'?")
+  UI.success "Oh yeah"
+else
+  UI.error "Wups, invalid"
+end
+
+UI.password("Your password please: ") # password inputs are hidden
+
+###### A "Dropdown" for the user
+project = UI.select("Select your project: ", ["Test Project", "Test Workspace"])
+
+UI.success("Okay #{name}, you selected '#{project}'")
+
+###### To run a command use
+FastlaneCore::CommandExecutor.execute(command: "ls",
+                                    print_all: true,
+                                        error: proc do |error_output|
+                                          # handle error here
+                                        end)
+
+###### or if you just want to receive a simple value use this only if the command doesn't take long
+diff = Helper.backticks("git diff")
+
+###### fastlane "crash" because of a user error everything that is caused by the user and is not unexpected
+UI.user_error!("You don't have a project in the current directory")
+
+###### an actual crash when something unexpected happened
+UI.crash!("Network timeout")
+
+###### a deprecation message
+UI.deprecated("The '--key' parameter is deprecated")
+```
+
 # Run actions directly
 
 If you just want to try an action without adding them to your `Fastfile` yet, you can use
@@ -324,6 +374,10 @@ actions_path '../custom_actions_folder/'
 # Skip update check when launching _fastlane_
 
 You can set the environment variable `FASTLANE_SKIP_UPDATE_CHECK` to skip the update check.
+
+# Hide changelog information at the end of running _fastlane_
+
+You can set the environment variable `FASTLANE_HIDE_CHANGELOG` to hide the detailed changelog information when new _fastlane_ versions are available.
 
 # Adding Credentials
 
@@ -501,7 +555,7 @@ end
 
 This behavior isn't great, and has been like this since the very early days of _fastlane_. As much as we'd like to change it, there is no good way to do so, without breaking thousands of production setups, so we decided to keep it as is for now.
 
-## Appfile
+# Appfile
 
 The `Appfile` stores useful information that are used across all _fastlane_ tools like your *Apple ID* or the application *Bundle Identifier*, to deploy your lanes faster and tailored on your project needs.
 
@@ -560,7 +614,7 @@ apple_id "felix@krausefx.com"
 team_id "123"
 ```
 
-### Accessing from fastlane
+## Accessing from fastlane
 
 If you want to access those values from within your `Fastfile` use
 
