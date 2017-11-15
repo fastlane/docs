@@ -799,26 +799,44 @@ def verify_option(value)
 end
 ```
 
-### Verify blocks
+### Callback parameters
 
-Use a `verify_block` argument with your `ConfigItem` to provide special
-argument verification:
+If your action needs to provide a callback, specify `Proc` for the `type` field.
 
 ```Ruby
-verify_block = lambda do |value|
-  # Has to be a String to get this far
-  uri = URI(value)
-  UI.error "Invalid scheme #{uri.scheme}" unless uri.scheme == "http" || uri.scheme == "https"
-end
-
 FastlaneCore::ConfigItem.new(
-  key: :url,
-  type: String,
-  verify_block: verify_block)
+  key: :callback,
+  description: "Optional callback argument",
+  optional: true,
+  type: Proc
+)
 ```
 
-Note that `verify_block` requires an argument of type `Proc`, which may be
-obtained any of three ways.
+To invoke the callback in your action, use the `Proc#call` method and pass
+any arguments:
+
+```Ruby
+params[:callback].call(result) if params[:callback]
+```
+
+To notify the user of success or failure, it's usually best just to return a
+value such as `true` or `false` from your action. Use a callback for contextual
+error handling. For example, the built-in `sh` action passes the entire command
+output to an optional `error_callback`:
+
+```Ruby
+callback = lambda do |result|
+  handle_missing_file if result =~ /file not found/i
+  handle_auth_failure if result =~ /login failed/i
+end
+
+sh "some_cmd", error_callback: callback
+```
+
+### Note on Procs
+
+When passing a block as a parameter to an action or ConfigItem, use
+a Proc object. There are three ways to create an instance of Proc in Ruby.
 
 Using the `lambda` operator:
 ```Ruby
@@ -840,6 +858,27 @@ verify_block = ->(value) { ... }
 ```
 
 Note that you cannot pass a block literal as a `Proc`.
+
+### Verify blocks
+
+Use a `verify_block` argument with your `ConfigItem` to provide special
+argument verification:
+
+```Ruby
+verify_block = lambda do |value|
+  # Has to be a String to get this far
+  uri = URI(value)
+  UI.error "Invalid scheme #{uri.scheme}" unless uri.scheme == "http" || uri.scheme == "https"
+end
+
+FastlaneCore::ConfigItem.new(
+  key: :url,
+  type: String,
+  verify_block: verify_block
+)
+```
+
+The `verify_block` requires a `Proc` argument (see above).
 
 ### Conflicting options
 
@@ -886,6 +925,45 @@ FastlaneCore::ConfigItem.new(
 )
 ```
 
+### Optional parameters
+
+Parameters with `optional: true` will be `nil` unless a `default_value` field
+is present. Make sure the `default_value` is reasonable unless it's acceptable
+for the key to be absent.
+
+```Ruby
+FastlaneCore::ConfigItem.new(
+  key: :build_configuration,
+  description: "Which build configuration to use",
+  type: String,
+  optional: true,
+  default_value: "Release"
+),
+FastlaneCore::ConfigItem.new(
+  key: :offset,
+  description: "Offset to start from",
+  type: Integer,
+  optional: true,
+  default_value: 0
+),
+FastlaneCore::ConfigItem.new(
+  key: :workspace,
+  description: "Optional workspace path",
+  type: String,
+  optional: true
+  # Not every project has a workspace, so nil is a good default value here.
+)
+```
+
+Within the action `params[:build_configuration]` will never be nil. Specifying
+the `default_value` is preferable to something in code like:
+
+```Ruby
+config = params[:build_configuration] || "Release"
+```
+
+Default values are included in the documentation for action parameters.
+
 ### Configuration files
 
 Many built-in actions such as _deliver_, _gym_ and _scan_ support configuration files
@@ -909,6 +987,17 @@ configuration file:
 command "ls -la"
 files %w{file1.txt file2.txt}
 ```
+
+### Resolution order
+
+Parameters are resolved from different sources in the following order:
+
+1. A parameter directly passed to an action using the `key`, usually from the
+    `Fastfile`.
+2. An environment variable, if the `env_name` is set.
+3. A configuration file used in `load_configuration_file`.
+4. The `default_value` of the `ConfigItem`. If not explicitly set, this will be
+    `nil`.
 
 ## User input and output
 
