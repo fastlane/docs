@@ -1133,6 +1133,14 @@ of the command. The exit status of the command will be available in `$?`.
 
 If the command to be executed is not found, `Errno::ENOENT` is raised.
 
+### Escaping in shell commands
+
+Use `shellwords` to escape arguments to shell commands.
+
+```Ruby
+`git commit -aqm#{Shellwords.escape commit_message}`
+```
+
 ## Calling other actions
 
 Some built-in utility actions, such as `sh`, may be used in custom actions (e.g., in
