@@ -41,7 +41,7 @@ List all available plugins using
 fastlane search_plugins
 ```
 
-To search for something specific 
+To search for something specific
 ```no-highlight
 fastlane search_plugins [query]
 ```
