@@ -725,51 +725,6 @@ Comma-separated lists are particularly useful when using environment variables:
 export MY_NEW_ACTION_FILES=file1.txt,file2.txt
 ```
 
-### String parameters
-
-Certain special processing applies to any `ConfigItem` that specifies
-`allow_shell_conversion: true`.
-
-If a parameter is declared with `type: String` and an `Array` argument is passed,
-a string will be produced by converting each array element to a string and then
-joining them using the space character as a delimiter.
-
-```ruby
-FastlaneCore::ConfigItem.new(
-  key: :command,
-  description: "A command to execute",
-  type: String,
-  allow_shell_conversion: true,
-  optional: false
-)
-```
-
-```ruby
-my_new_action(command: ["ls", "-la"])
-```
-
-This is received by the action as `"ls -la"`.
-
-If a `Hash` argument is passed, each key and value will be converted to a string. Keys
-and values will be joined using the equals character and joined using the space
-character:
-
-```ruby
-FastlaneCore::ConfigItem.new(
-  key: :metadata,
-  description: "Metadata for the command",
-  type: String,
-  allow_shell_conversion: true,
-  optional: true
-)
-```
-
-```ruby
-my_new_action(metadata: { "key1": "value1", "key2", "value2" })
-```
-
-This is received by the action as `"key1=value1 key2=value2"`.
-
 ### Polymorphic parameters
 
 To allow for different types to be passed to a parameter (beyond what is
