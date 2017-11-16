@@ -1104,8 +1104,9 @@ UI.important "'pod' command not found" if pod_cmd.empty?
 
 Because you are capturing stdout, the command output will not appear at
 the terminal unless you log it using `UI`. Formatting may be lost when
-capturing command output. The entire output will be captured after the command
-returns.
+capturing command output. The entire output to stdout will be captured after the
+command returns. Output to stderr is not captured or redirected. The `$?`
+global variable will indicate the completion status of the command.
 
 If the command to be executed is not found, `Errno::ENOENT` is raised.
 
@@ -1118,7 +1119,7 @@ other_action.sh "pwd"
 ```
 
 Within a Fastfile, just call `sh`, e.g.: `sh "pwd"`. This provides consistent
-logging of command output.
+logging of command output. All output to stdout and stderr is logged via `UI`.
 
 To be notified when an error occurs, use the `error_callback` parameter:
 
