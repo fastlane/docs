@@ -1141,6 +1141,10 @@ Use `shellwords` to escape arguments to shell commands.
 `git commit -aqm#{Shellwords.escape commit_message}`
 ```
 
+```Ruby
+system "cat #{path.shellescape}"
+```
+
 ## Calling other actions
 
 Some built-in utility actions, such as `sh`, may be used in custom actions (e.g., in
