@@ -394,6 +394,10 @@
           <li class="toctree-l3"><a href="#appfile">Appfile</a></li>
           
         
+          
+          <li class="toctree-l3"><a href="#building-actions">Building Actions</a></li>
+          
+        
       </ul>
       
     </li>
@@ -899,13 +903,13 @@ end
 
 <p>This behavior isn't great, and has been like this since the very early days of <em>fastlane</em>. As much as we'd like to change it, there is no good way to do so, without breaking thousands of production setups, so we decided to keep it as is for now.</p>
 <h1 id="appfile"><a name="user-content-appfile" href="#appfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Appfile</h1>
-<p>The <code>Appfile</code> stores useful information that are used across all <em>fastlane</em> tools like your <em>Apple ID</em> or the application <em>Bundle Identifier</em>, to deploy your lanes faster and tailored on your project needs. </p>
+<p>The <code>Appfile</code> stores useful information that are used across all <em>fastlane</em> tools like your <em>Apple ID</em> or the application <em>Bundle Identifier</em>, to deploy your lanes faster and tailored on your project needs.</p>
 <p>The <code>Appfile</code> has to be inside your <code>./fastlane</code> directory.</p>
 <p>By default an <code>Appfile</code> looks like:</p>
 <pre><code class="ruby">app_identifier &quot;net.sunapps.1&quot; # The bundle identifier of your app
 apple_id &quot;felix@krausefx.com&quot;  # Your Apple email address
 
-# You can uncomment the lines below and add your own 
+# You can uncomment the lines below and add your own
 # team selection in case you're in multiple teams
 # team_name &quot;Felix Krause&quot;
 # team_id &quot;Q2CBPJ58CA&quot;
@@ -925,7 +929,7 @@ team_id &quot;Q2CBPJ58CA&quot; # Developer Portal Team ID
 itc_team_id &quot;18742801&quot; # iTunes Connect Team ID
 </code></pre>
 
-<p>If your project has different bundle identifiers per environment (i.e. beta, app store), you can define that by using <code>for_platform</code> and/or <code>for_lane</code> block declaration. </p>
+<p>If your project has different bundle identifiers per environment (i.e. beta, app store), you can define that by using <code>for_platform</code> and/or <code>for_lane</code> block declaration.</p>
 <pre><code class="ruby">app_identifier &quot;net.sunapps.1&quot;
 apple_id &quot;felix@krausefx.com&quot;
 team_id &quot;Q2CBPJ58CC&quot;
@@ -950,6 +954,484 @@ team_id &quot;123&quot;
 <pre><code class="ruby">identifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 </code></pre>
+
+<h1 id="building-actions"><a name="user-content-building-actions" href="#building-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building Actions</h1>
+<h2 id="using-fastlanecoreconfiguration"><a name="user-content-using-fastlanecoreconfiguration" href="#using-fastlanecoreconfiguration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using FastlaneCore::Configuration</h2>
+<p>Most actions accept one or more parameters to customize their behavior. Actions define their
+parameters in an <code>available_options</code> method. This method returns an array of <code>FastlaneCore::ConfigItem</code>
+objects to describe supported options. Each option is declared by creating a new
+<code>ConfigItem</code>, e.g.:</p>
+<pre><code class="ruby">FastlaneCore::ConfigItem.new(
+  key: :file,
+  env_name: &quot;MY_NEW_ACTION_FILE&quot;,
+  description: &quot;A file to operate on&quot;,
+  type: String,
+  optional: false
+)
+</code></pre>
+
+<p>This declares a <code>file</code> option for use with the action in a Fastfile, e.g.:</p>
+<pre><code class="ruby">my_new_action(file: &quot;file.txt&quot;)
+</code></pre>
+
+<p>If the optional <code>env_name</code> is present, an environment variable with the specified
+name may also be used in place of an option in the Fastfile:</p>
+<pre><code class="bash">MY_NEW_ACTION_FILE=file.txt fastlane run my_new_action
+</code></pre>
+
+<p>The <code>type</code> argument to the <code>FastlaneCore::ConfigItem</code> initializer specifies the
+name of a Ruby class representing a standard
+data type. Supplied arguments will be coerced to the specified type. Some standard types
+support default conversions.</p>
+<h3 id="boolean-parameters"><a name="user-content-boolean-parameters" href="#boolean-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Boolean parameters</h3>
+<p>Ruby does not have a single class to represent a Boolean type. When specifying
+Boolean parameters, use <code>is_string: false</code>, without specifying a <code>type</code>, e.g.:</p>
+<pre><code class="ruby">FastlaneCore::ConfigItem.new(
+  key: :commit,
+  env_name: &quot;MY_NEW_ACTION_COMMIT&quot;,
+  description: &quot;Commit the results if true&quot;,
+  optional: true,
+  default_value: false,
+  is_string: false
+)
+</code></pre>
+
+<p>When passing a string value, e.g. from an environment variable, certain set
+string values are recognized:</p>
+<pre><code class="bash">MY_NEW_ACTION_COMMIT=true
+MY_NEW_ACTION_COMMIT=false
+MY_NEW_ACTION_COMMIT=yes
+MY_NEW_ACTION_COMMIT=no
+</code></pre>
+
+<p>These values may also be passed in all caps, e.g. <code>MY_NEW_ACTION_COMMIT=YES</code>.</p>
+<h3 id="array-parameters"><a name="user-content-array-parameters" href="#array-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Array parameters</h3>
+<p>If a parameter is declared with <code>type: Array</code> and a <code>String</code> argument is passed,
+an array will be produced by splitting the string using the comma character
+as a delimiter:</p>
+<pre><code class="ruby">FastlaneCore::ConfigItem.new(
+  key: :files,
+  env_name: &quot;MY_NEW_ACTION_FILES&quot;,
+  description: &quot;One or more files to operate on&quot;,
+  type: Array,
+  optional: false
+)
+</code></pre>
+
+<pre><code class="ruby">my_new_action(files: &quot;file1.txt,file2.txt&quot;)
+</code></pre>
+
+<p>This is received by the action as <code>["file1.txt", "file2.txt"]</code>.</p>
+<p>This also means a parameter that accepts an array may take a single string as an
+argument:</p>
+<pre><code class="ruby">my_new_action(files: &quot;file.txt&quot;)
+</code></pre>
+
+<p>This is received by the action as <code>["file.txt"]</code>.</p>
+<p>Comma-separated lists are particularly useful when using environment variables:</p>
+<pre><code class="bash">export MY_NEW_ACTION_FILES=file1.txt,file2.txt
+</code></pre>
+
+<h3 id="polymorphic-parameters"><a name="user-content-polymorphic-parameters" href="#polymorphic-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Polymorphic parameters</h3>
+<p>To allow for different types to be passed to a parameter (beyond what is
+provided above), specify <code>is_string: false</code> without a <code>type</code> field. Use
+an optional <code>verify_block</code> argument (see below) or verify the argument within
+your action. If the block does not raise, the option is considered verified.
+The <code>UI.user_error!</code> method is a convenient way to handle verification failure.</p>
+<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+  key: :polymorphic_option,
+  is_string: false,
+  verify_block: -&gt;(value) { verify_option(value) }
+)
+
+def verify_option(value)
+  case value
+  when String
+    @polymorphic_option = value
+  when Array
+    @polymorphic_option = value.join(&quot; &quot;)
+  when Hash
+    @polymorphic_option = value.to_s
+  else
+    UI.user_error! &quot;Invalid option: #{value.inspect}&quot;
+  end
+end
+</code></pre>
+
+<h3 id="callback-parameters"><a name="user-content-callback-parameters" href="#callback-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Callback parameters</h3>
+<p>If your action needs to provide a callback, specify <code>Proc</code> for the <code>type</code> field.</p>
+<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+  key: :callback,
+  description: &quot;Optional callback argument&quot;,
+  optional: true,
+  type: Proc
+)
+</code></pre>
+
+<p>To invoke the callback in your action, use the <code>Proc#call</code> method and pass
+any arguments:</p>
+<pre><code class="Ruby">params[:callback].call(result) if params[:callback]
+</code></pre>
+
+<p>To notify the user of success or failure, it's usually best just to return a
+value such as <code>true</code> or <code>false</code> from your action. Use a callback for contextual
+error handling. For example, the built-in <code>sh</code> action passes the entire command
+output to an optional <code>error_callback</code>:</p>
+<pre><code class="Ruby">callback = lambda do |result|
+  handle_missing_file if result =~ /file not found/i
+  handle_auth_failure if result =~ /login failed/i
+end
+
+sh &quot;some_cmd&quot;, error_callback: callback
+</code></pre>
+
+<h3 id="note-on-procs"><a name="user-content-note-on-procs" href="#note-on-procs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note on Procs</h3>
+<p>When passing a block as a parameter to an action or ConfigItem, use
+a Proc object. There are three ways to create an instance of Proc in Ruby.</p>
+<p>Using the <code>lambda</code> operator:</p>
+<pre><code class="Ruby">verify_block = lambda do |value|
+  ...
+end
+</code></pre>
+
+<p>Using <code>Proc.new</code>:</p>
+<pre><code class="Ruby">verify_block = Proc.new do |value|
+  ...
+end
+</code></pre>
+
+<p>Using the <code>Proc</code> literal notation:</p>
+<pre><code class="Ruby">verify_block = -&gt;(value) { ... }
+</code></pre>
+
+<p>Note that you cannot pass a block literal as a <code>Proc</code>.</p>
+<h3 id="verify-blocks"><a name="user-content-verify-blocks" href="#verify-blocks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Verify blocks</h3>
+<p>Use a <code>verify_block</code> argument with your <code>ConfigItem</code> to provide special
+argument verification:</p>
+<pre><code class="Ruby">verify_block = lambda do |value|
+  # Has to be a String to get this far
+  uri = URI(value)
+  UI.error &quot;Invalid scheme #{uri.scheme}&quot; unless uri.scheme == &quot;http&quot; || uri.scheme == &quot;https&quot;
+end
+
+FastlaneCore::ConfigItem.new(
+  key: :url,
+  type: String,
+  verify_block: verify_block
+)
+</code></pre>
+
+<p>The <code>verify_block</code> requires a <code>Proc</code> argument (see above).</p>
+<h3 id="conflicting-options"><a name="user-content-conflicting-options" href="#conflicting-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conflicting options</h3>
+<p>If your action includes multiple conflicting options, use <code>conflicting_options</code>
+in the <code>ConfigItem</code> for each. Make sure conflicting options are optional.</p>
+<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+  key: :text,
+  type: String,
+  optional: true,
+  conflicting_options: [:text_file]
+),
+FastlaneCore::ConfigItem.new(
+  key: :text_file,
+  type: String,
+  optional: true,
+  conflicting_options: [:text]
+)
+</code></pre>
+
+<p>You can also pass a <code>conflict_block</code> (a <code>Proc</code>, see above) if you want to
+implement special handling of conflicting options:</p>
+<pre><code class="Ruby">conflict_block = Proc.new do |other|
+  UI.user_error! &quot;Unexpected conflict with option #{other}&quot; unless [:text, :text_file].include?(other)
+  UI.message &quot;Ignoring :text_file in favor of :text&quot;
+end
+
+FastlaneCore::ConfigItem.new(
+  key: :text,
+  type: String,
+  optional: true,
+  conflicting_options: [:text_file],
+  conflict_block: conflict_block
+),
+FastlaneCore::ConfigItem.new(
+  key: :text_file,
+  type: String,
+  optional: true,
+  conflicting_options: [:text],
+  conflict_block: conflict_block
+)
+</code></pre>
+
+<h3 id="optional-parameters"><a name="user-content-optional-parameters" href="#optional-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Optional parameters</h3>
+<p>Parameters with <code>optional: true</code> will be <code>nil</code> unless a <code>default_value</code> field
+is present. Make sure the <code>default_value</code> is reasonable unless it's acceptable
+for the key to be absent.</p>
+<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+  key: :build_configuration,
+  description: &quot;Which build configuration to use&quot;,
+  type: String,
+  optional: true,
+  default_value: &quot;Release&quot;
+),
+FastlaneCore::ConfigItem.new(
+  key: :offset,
+  description: &quot;Offset to start from&quot;,
+  type: Integer,
+  optional: true,
+  default_value: 0
+),
+FastlaneCore::ConfigItem.new(
+  key: :workspace,
+  description: &quot;Optional workspace path&quot;,
+  type: String,
+  optional: true
+  # Not every project has a workspace, so nil is a good default value here.
+)
+</code></pre>
+
+<p>Within the action <code>params[:build_configuration]</code> will never be nil. Specifying
+the <code>default_value</code> is preferable to something in code like:</p>
+<pre><code class="Ruby">config = params[:build_configuration] || &quot;Release&quot;
+</code></pre>
+
+<p>Default values are included in the documentation for action parameters.</p>
+<h3 id="configuration-files"><a name="user-content-configuration-files" href="#configuration-files" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuration files</h3>
+<p>Many built-in actions such as <em>deliver</em>, <em>gym</em> and <em>scan</em> support configuration files
+(<code>Deliverfile</code>, <code>Gymfile</code>, <code>Scanfile</code>). This is useful for actions with many options.
+To add support for a configuration file to a custom action, call <code>load_configuration_file</code>
+early, usually as the first line of <code>run</code>:</p>
+<pre><code class="ruby">def self.run(params)
+  params.load_configuration_file(&quot;MyNewActionfile&quot;)
+  # ...
+</code></pre>
+
+<p>This will load any parameters specified in <code>MyNewActionfile</code>. This method looks for
+the specified file in <code>./fastlane</code>, <code>./.fastlane</code> and <code>.</code>, in that order. The
+file is evaluated by the Ruby interpreter.
+You may specify they <code>key</code> from any <code>FastlaneCore::ConfigItem</code> as a method call in the
+configuration file:</p>
+<pre><code class="ruby">command &quot;ls -la&quot;
+files %w{file1.txt file2.txt}
+</code></pre>
+
+<h3 id="resolution-order"><a name="user-content-resolution-order" href="#resolution-order" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resolution order</h3>
+<p>Parameters are resolved from different sources in the following order:</p>
+<ol>
+<li>A parameter directly passed to an action using the <code>key</code>, usually from the
+    <code>Fastfile</code>.</li>
+<li>An environment variable, if the <code>env_name</code> is set.</li>
+<li>A configuration file used in <code>load_configuration_file</code>.</li>
+<li>The <code>default_value</code> of the <code>ConfigItem</code>. If not explicitly set, this will be
+    <code>nil</code>.</li>
+</ol>
+<h2 id="user-input-and-output"><a name="user-content-user-input-and-output" href="#user-input-and-output" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>User input and output</h2>
+<p>The <code>FastlaneCore::UI</code> utility may be used to display output to the user and also
+request input from an action.
+<code>UI</code> includes a number of methods to customize the output for different purposes:</p>
+<pre><code class="ruby">UI.message &quot;Hello from my_new_action.&quot;
+UI.important &quot;Warning: This is a new action.&quot;
+UI.error &quot;Something unexpected happened in my_new_action. Attempting to continue.&quot;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>Displays an error message in red</td>
+</tr>
+<tr>
+<td>important</td>
+<td>Displays a warning or other important message in yellow</td>
+</tr>
+<tr>
+<td>success</td>
+<td>Displays a success message in green</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Displays a message in the default output color</td>
+</tr>
+<tr>
+<td>deprecated</td>
+<td>Displays a deprecation message in bold blue</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Displays a command being executed in cyan</td>
+</tr>
+<tr>
+<td>command_output</td>
+<td>Displays command output in magenta</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>Displays verbose output in the default output color</td>
+</tr>
+<tr>
+<td>header</td>
+<td>Displays a message in a box for emphasis</td>
+</tr>
+</tbody>
+</table>
+<p>Methods ending in and exclamation point (<code>!</code>) terminate execution of the current
+lane and report an error:</p>
+<pre><code class="ruby">UI.user_error! &quot;Could not open file #{file_path}&quot;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>crash!</td>
+<td>Report a catastrophic error</td>
+</tr>
+<tr>
+<td>user_error!</td>
+<td>Rescue an exception in your action and report a nice message to the user</td>
+</tr>
+<tr>
+<td>shell_error!</td>
+<td>Report failure of a shell command</td>
+</tr>
+<tr>
+<td>build_failure!</td>
+<td>Report a build failure</td>
+</tr>
+<tr>
+<td>test_failure!</td>
+<td>Report a test failure</td>
+</tr>
+<tr>
+<td>abort_with_message!</td>
+<td>Report a failure condition that prevents continuing</td>
+</tr>
+</tbody>
+</table>
+<p>Note that these methods raise exceptions that are rescued in the runner context for
+the lane. This terminates further lane execution, so it is not necessary to return.</p>
+<pre><code class="ruby"># No need for &quot;and return&quot; here
+UI.user_error!(&quot;Could not open file #{file_path}&quot;) and return if file.nil?
+</code></pre>
+
+<p>The following methods may be used to prompt the user for input.</p>
+<pre><code class="ruby">if UI.interactive?
+  name = UI.input &quot;Please enter your name: &quot;
+  is_correct = UI.confirm &quot;Is this correct? &quot;
+  choice = UI.select &quot;Please choose from the following list:&quot;, %w{alpha beta gamma}
+  password = UI.password &quot;Please enter your password: &quot;
+end
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interactive?</td>
+<td>Indicates whether interactive input is possible</td>
+</tr>
+<tr>
+<td>input</td>
+<td>Prompt the user for string input</td>
+</tr>
+<tr>
+<td>confirm</td>
+<td>Ask the user a binary question</td>
+</tr>
+<tr>
+<td>select</td>
+<td>Prompt the user to select from a list of options</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Prompt the user for a password (masks output)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="invoking-shell-commands"><a name="user-content-invoking-shell-commands" href="#invoking-shell-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Invoking shell commands</h2>
+<p>If your action needs to run a shell command, there are several methods. You can
+easily determine the exit status of the command and capture all terminal output
+from the command.</p>
+<h3 id="using-kernelsystem"><a name="user-content-using-kernelsystem" href="#using-kernelsystem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Kernel::system</h3>
+<p>Use the Ruby <code>system</code> method call to invoke a command string. This does not
+redirect stdin, stdout or stderr, so output formatting will be unaffected. It executes
+the command in a subshell.</p>
+<pre><code class="ruby">system &quot;cat fastlane/Fastfile&quot;
+</code></pre>
+
+<p>Upon command completion, the method returns. The <code>$?</code> global variable will
+indicate the exit status of the command.</p>
+<pre><code class="ruby">system &quot;cat fastlane/Fastfile&quot;
+UI.user_error! &quot;Could not execute command&quot; unless $?.exitstatus == 0
+</code></pre>
+
+<p>If the command to be executed is not found,
+<code>$?.exitstatus</code> will be nonzero.</p>
+<h3 id="using-backticks"><a name="user-content-using-backticks" href="#using-backticks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using backticks</h3>
+<p>To capture the output of a command, enclose the command in backticks:</p>
+<pre><code class="ruby">pod_cmd = `which pod`
+UI.important &quot;'pod' command not found&quot; if pod_cmd.empty?
+</code></pre>
+
+<p>Because you are capturing stdout, the command output will not appear at
+the terminal unless you log it using <code>UI</code>. Formatting may be lost when
+capturing command output. The entire output to stdout will be captured after the
+command returns. Output to stderr is not captured or redirected. The <code>$?</code>
+global variable will indicate the completion status of the command.</p>
+<p>If the command to be executed is not found, <code>Errno::ENOENT</code> is raised.</p>
+<h3 id="using-the-sh-action"><a name="user-content-using-the-sh-action" href="#using-the-sh-action" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using the sh action</h3>
+<p>You can also use the built-in <code>sh</code> Fastlane action:</p>
+<pre><code class="ruby">other_action.sh &quot;pwd&quot;
+</code></pre>
+
+<p>Within a Fastfile, just call <code>sh</code>, e.g.: <code>sh "pwd"</code>. This provides consistent
+logging of command output. All output to stdout and stderr is logged via <code>UI</code>.</p>
+<p>To be notified when an error occurs, use the <code>error_callback</code> parameter:</p>
+<pre><code class="ruby">success = true
+other_action.sh(&quot;pwd&quot;, error_callback: -&gt;(result) { success = false })
+UI.user_error &quot;Command failed&quot; unless success
+</code></pre>
+
+<p>The <code>result</code> argument to the <code>error_callback</code> is the entire string output
+of the command. The exit status of the command will be available in <code>$?</code>.</p>
+<p>If the command to be executed is not found, <code>Errno::ENOENT</code> is raised.</p>
+<h3 id="escaping-in-shell-commands"><a name="user-content-escaping-in-shell-commands" href="#escaping-in-shell-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Escaping in shell commands</h3>
+<p>Use <code>shellwords</code> to escape arguments to shell commands.</p>
+<pre><code class="Ruby">`git commit -aqm#{Shellwords.escape commit_message}`
+</code></pre>
+
+<pre><code class="Ruby">system &quot;cat #{path.shellescape}&quot;
+</code></pre>
+
+<h2 id="calling-other-actions"><a name="user-content-calling-other-actions" href="#calling-other-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Calling other actions</h2>
+<p>Some built-in utility actions, such as <code>sh</code>, may be used in custom actions (e.g., in
+plugins). It's not generally a good idea to call a complex action from another action.
+In particular:</p>
+<ul>
+<li>If you're calling one plugin action from another plugin action, you should
+  probably refactor your plugin helper to be more easily called from all actions
+  in the plugin.</li>
+<li>Avoid wrapping complex built-in actions like <em>deliver</em> and <em>gym</em>.</li>
+<li>Certain simple built-in utility actions may be used with <code>other_action</code> in your
+  action, such as: <code>other_action.sh</code>, <code>other_action.git_add</code>, <code>other_action.git_commit</code>.</li>
+<li>Think twice before calling an action from another action. There is often a better
+  solution.</li>
+</ul>
               
             </div>
           </div>
