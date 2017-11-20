@@ -1,3 +1,8 @@
+<!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane.
+-->
+
 # gradle
 
 
@@ -39,8 +44,23 @@ gradle(
 )
 ```
 
+You can use this to automatically [sign and zipalign](https://developer.android.com/studio/publish/app-signing.html) your app:
 ```ruby
-# If you need to pass sensitive information through the `gradle` action, and don"t want the generated command to be printed before it is run, you can suppress that:
+gradle(
+  task: "assemble",
+  build_type: "Release",
+  print_command: false,
+  properties: {
+    "android.injected.signing.store.file" => "keystore.jks",
+    "android.injected.signing.store.password" => "store_password",
+    "android.injected.signing.key.alias" => "key_alias",
+    "android.injected.signing.key.password" => "key_password",
+  }
+)
+```
+
+```ruby
+# If you need to pass sensitive information through the `gradle` action, and don't want the generated command to be printed before it is run, you can suppress that:
 gradle(
   # ...
   print_command: false
@@ -79,6 +99,7 @@ Key | Description
   `project_dir` | The root directory of the gradle project. Defaults to `.`
   `gradle_path` | The path to your `gradlew`. If you specify a relative path, it is assumed to be relative to the `project_dir`
   `properties` | Gradle properties to be exposed to the gradle script
+  `system_properties` | Gradle system properties to be exposed to the gradle script
   `serial` | Android serial, which device should be used for this command
   `print_command` | Control whether the generated Gradle command is printed as output before running it (true/false)
   `print_command_output` | Control whether the output produced by given Gradle command is printed while running (true/false)

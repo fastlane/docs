@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: b338867c60660ef728b832a7e5354b87df788e7d
+  revision: e4a10ba222604f12d026723ced0e53234c9d42ec
   specs:
-    fastlane (2.64.0)
+    fastlane (2.65.0)
       CFPropertyList (>= 2.3, < 3.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -32,7 +32,7 @@ GIT
       terminal-table (>= 1.4.5, < 2.0.0)
       tty-screen (~> 0.5.0)
       word_wrap (~> 1.0.0)
-      xcodeproj (>= 1.5.0, < 2.0.0)
+      xcodeproj (>= 1.5.2, < 2.0.0)
       xcpretty (>= 0.2.4, < 1.0.0)
       xcpretty-travis-formatter (>= 0.0.3)
 
@@ -54,7 +54,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.3.0)
       colored2 (~> 3.1)
-    danger (5.5.3)
+    danger (5.5.5)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
@@ -91,7 +91,7 @@ GEM
       mime-types (~> 3.0)
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
-    googleauth (0.6.1)
+    googleauth (0.6.2)
       faraday (~> 0.12)
       jwt (>= 1.4, < 3.0)
       logging (~> 2.0)

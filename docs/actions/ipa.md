@@ -1,3 +1,8 @@
+<!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane.
+-->
+
 # ipa
 
 
@@ -6,7 +11,7 @@ Easily build and sign your app using shenzhen
 > You are using legacy `shenzhen` to build your app, which will be removed soon!
 It is recommended to upgrade to _gym_
 To do so, just replace `ipa(...)` with `gym(...)` in your Fastfile
-To make code signing work, follow https://docs.fastlane.tools/codesigning/xcode-project/#
+To make code signing work, follow https://docs.fastlane.tools/codesigning/xcode-project
 
 
 
