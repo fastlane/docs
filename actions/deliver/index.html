@@ -382,7 +382,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="deliver"><a name="user-content-deliver" href="#deliver" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>deliver</h1>
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane.
+-->
+
+<h1 id="deliver"><a name="user-content-deliver" href="#deliver" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>deliver</h1>
 <p>Uses deliver to upload new app metadata and builds to iTunes Connect</p>
 <p align="center">
   <img src="/img/actions/deliver.png" width="250">
@@ -561,7 +566,7 @@
 
 <p>You can also provide these values by creating files in a <code>metadata/review_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>first_name.txt</code>, <code>notes.txt</code> etc.). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will be take priority over values from these files.</p>
 <h5 id="submission_information"><a name="user-content-submission_information" href="#submission_information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>submission_information</h5>
-<p>Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb#L18-L69">A list of available options</a>.</p>
+<p>Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb">A list of available options</a>.</p>
 <pre><code class="ruby-skip-tests">submission_information({
   add_id_info_serves_ads: true,
   ...
@@ -882,7 +887,7 @@ phased_release false
 <h2 id="automatically-create-screenshots"><a name="user-content-automatically-create-screenshots" href="#automatically-create-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatically create screenshots</h2>
 <p>If you want to integrate <em>deliver</em> with <a href="https://github.com/fastlane/fastlane/tree/master/snapshot">snapshot</a>, check out <a href="https://fastlane.tools">fastlane</a>!</p>
 <h2 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins integration</h2>
-<p>Detailed instructions about how to set up <em>deliver</em> and <em>fastlane</em> in <code>Jenkins</code> can be found in the <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Jenkins.md">fastlane README</a>.</p>
+<p>Detailed instructions about how to set up <em>deliver</em> and <em>fastlane</em> in <code>Jenkins</code> can be found in the <a href="https://docs.fastlane.tools/best-practices/continuous-integration/#jenkins-integration">fastlane README</a>.</p>
 <h2 id="firewall-issues"><a name="user-content-firewall-issues" href="#firewall-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Firewall Issues</h2>
 <p><em>deliver</em> uses the iTunes Transporter to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol using</p>
 <pre><code>DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; fastlane deliver
