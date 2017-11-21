@@ -1,3 +1,8 @@
+<!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane.
+-->
+
 # latest_testflight_build_number
 
 
@@ -42,6 +47,7 @@ Key | Description
   `app_identifier` | The bundle identifier of your app
   `username` | Your Apple ID Username
   `version` | The version number whose latest build number we want
+  `platform` | The platform to use (optional)
   `initial_build_number` | sets the build number to given value if no build is in current train
   `team_id` | The ID of your iTunes Connect team if you're in multiple teams
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
