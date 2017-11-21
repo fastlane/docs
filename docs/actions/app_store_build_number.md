@@ -1,3 +1,8 @@
+<!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane.
+-->
+
 # app_store_build_number
 
 
@@ -51,6 +56,7 @@ Key | Description
   `team_id` | The ID of your iTunes Connect team if you're in multiple teams
   `live` | Query the live version (ready-for-sale)
   `version` | The version number whose latest build number we want
+  `platform` | The platform to use (optional)
   `team_name` | The name of your iTunes Connect team if you're in multiple teams
 
 
