@@ -283,7 +283,8 @@ You should import the other `Fastfile` on the top above your lane declarations. 
 
 
 # Environment Variables
-You can define environment variables in a `.env` or `.env.default` file in the same directory as your `Fastfile`. Environment variables are loading using [dotenv](https://github.com/bkeepers/dotenv). Here's an example.
+
+You can define environment variables in a `.env` or `.env.default` file in the same directory as your `Fastfile`. Environment variables are loaded using [dotenv](https://github.com/bkeepers/dotenv). Here's an example:
 
 ```no-highlight
 WORKSPACE=YourApp.xcworkspace
@@ -293,6 +294,25 @@ HOCKEYAPP_API_TOKEN=your-hockey-api-token
 _fastlane_ also has a `--env` option that allows loading of environment specific `dotenv` files. `.env` and `.env.default` will be loaded before environment specific `dotenv` files are loaded. The naming convention for environment specific `dotenv` files is `.env.<environment>`
 
 For example, `fastlane <lane-name> --env development` will load `.env`, `.env.default`, and `.env.development`
+
+Alternatively, as environment variables are not a fastlane specific thing, you can also use standard methods to set them:
+
+```
+DELIVER_USER="felix@krausefx.com" fastlane test
+```
+
+or
+
+```
+export DELIVER_USER="felix@krausefx.com";
+fastlane test
+```
+
+Although it kind of defeats the purpose of using them in the first place (not to have their content in any files), you can also set them in your `Fastfile`:
+
+```
+ENV["DELIVER_USER"] = "felix@krausefx.com"
+```
 
 # Lane Context
 
