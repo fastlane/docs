@@ -62,10 +62,10 @@ private_lane :ensure_headers do
   errors = []
   Dir["docs/**/*.md"].each do |current_file|
     next if exceptions.include?(current_file)
-    errors << "File '#{current_file}' doesn't start with #" unless File.read(current_file).start_with?("#")
+    errors << "File '#{current_file}' doesn't start with #" unless File.read(current_file) =~ /^(#|<!--)/
   end
   errors.each { |e| UI.error(e) }
-  UI.user_error!("At least one file doesn't start with header one (#), the first line must always be # title") unless errors.empty?
+  UI.user_error!("At least one file doesn't start with header one (# or <!--), the first line must always be # title or <!-- comment") unless errors.empty?
   UI.success "✅  All doc files start with a header"
 end
 
