@@ -1,3 +1,8 @@
+<!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane.
+-->
+
 # pilot
 
 
@@ -287,6 +292,7 @@ Key | Description
   `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID!
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column
   `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'
+  `wait_for_uploaded_build` | Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used
 
 
 
