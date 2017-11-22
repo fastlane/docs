@@ -29,7 +29,7 @@ xcode-select --install
 
 ### Set up environment variables
 
-fastlane requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:
+_fastlane_ requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:
 
 ```sh
 export LC_ALL=en_US.UTF-8
