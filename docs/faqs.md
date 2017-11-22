@@ -114,3 +114,6 @@ Follow the on screen prompt to add a line to your _bash_/_zsh_ profile.
 
 This error can occur when you run _fastlane_ via SSH. To fix it check out [this reply on StackOverflow](https://stackoverflow.com/a/22637896/445598).
 
+### Some fastlane commands like _deliver_, _scan_, _gym_, or _pilot_ hang indefinitely or produce strange errors and symbols 
+
+Make sure your `LC_ALL` and `LANG` variables are set up correctly. _fastlane_ requires an UTF-8 environment, so setting those variables to `en_US.UTF-8` should fix your issues. Refer to the _fastlane_ [setup instructions](/getting-started/ios/setup/#set-up-environment-variables) for details.

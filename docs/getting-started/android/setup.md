@@ -22,6 +22,17 @@
 </tr>
 </table>
 
+### Set up environment variables
+
+_fastlane_ requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:
+
+```sh
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
+
+You can find your shell profile at `~/.bashrc`, `~/.bash_profile` or `~/.zshrc` depending on your system. 
+
 ## Setting up _fastlane_
 
 Navigate your terminal to your project's directory and run
