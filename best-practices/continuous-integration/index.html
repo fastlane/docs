@@ -433,6 +433,7 @@
 <li><code>FASTLANE_USER</code>: Your iTunes Connect / Dev Portal user, if your <em>fastlane</em> setup accesses iTC or the DevPortal (e.g. submit a TestFlight build, create a profile, ...)</li>
 <li><code>MATCH_PASSWORD</code>: You need to provide the password of your <em>match</em> encryption if you use <em>match</em></li>
 <li><code>FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD</code>: You need to provide an <a href="#two-step-or-two-factor-auth">application specific password</a> if you have 2-factor enabled and use <em>pilot</em> or <em>deliver</em> to upload a binary to iTunes Connect</li>
+<li><code>LANG</code> and <code>LC_ALL</code>: These set up the locale your shell and all the commands you execute run at. <em>fastlane</em> needs these to be set to an UTF-8 locale to work correctly, for example <code>en_US.UTF-8</code>. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.</li>
 </ul>
 <h2 id="deploy-strategy"><a name="user-content-deploy-strategy" href="#deploy-strategy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy Strategy</h2>
 <p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.</p>

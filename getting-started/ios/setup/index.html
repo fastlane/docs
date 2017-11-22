@@ -414,6 +414,13 @@
 </tr>
 </table>
 
+<h3 id="set-up-environment-variables"><a name="user-content-set-up-environment-variables" href="#set-up-environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Set up environment variables</h3>
+<p><em>fastlane</em> requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:</p>
+<pre><code class="sh">export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+</code></pre>
+
+<p>You can find your shell profile at <code>~/.bashrc</code>, <code>~/.bash_profile</code> or <code>~/.zshrc</code> depending on your system. </p>
 <h2 id="setting-up-fastlane"><a name="user-content-setting-up-fastlane" href="#setting-up-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em></h2>
 <p>Navigate your terminal to your project's directory and run</p>
 <pre><code class="no-highlight">fastlane init
