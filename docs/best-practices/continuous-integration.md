@@ -25,6 +25,7 @@ Most setups will need the following environment variables
 - `FASTLANE_USER`: Your iTunes Connect / Dev Portal user, if your _fastlane_ setup accesses iTC or the DevPortal (e.g. submit a TestFlight build, create a profile, ...)
 - `MATCH_PASSWORD`: You need to provide the password of your _match_ encryption if you use _match_
 - `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`: You need to provide an [application specific password](#two-step-or-two-factor-auth) if you have 2-factor enabled and use _pilot_ or _deliver_ to upload a binary to iTunes Connect
+- `LANG` and `LC_ALL`: These set up the locale your shell and all the commands you execute run at. _fastlane_ needs these to be set to an UTF-8 locale to work correctly, for example `en_US.UTF-8`. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.
 
 ## Deploy Strategy
 
