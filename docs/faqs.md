@@ -102,7 +102,7 @@ Set the `FASTLANE_DISABLE_COLORS` environment variable to disable ANSI colors (e
 export FASTLANE_DISABLE_COLORS=1
 ```
 
-### Enable _bash_/_zsh_ tab completion for fastlane lane names
+### Enable _bash_/_zsh_/_fish_ tab auto complete for fastlane lane names
 
 ```no-highlight
 fastlane enable_auto_complete
