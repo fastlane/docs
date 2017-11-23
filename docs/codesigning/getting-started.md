@@ -70,7 +70,7 @@ lane :release do
 end
 ```
 
-this way you can profit of the automatic code signing on development machines. and also stay in control on release builds to be sure the right cert/provisioning profiles are used.
+this way you can profit off of the automatic code signing on development machines, and also stay in control on release builds to be sure the right cert/provisioning profiles are used.
 
 #### Xcode 7 and lower
 
