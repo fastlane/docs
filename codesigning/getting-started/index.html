@@ -435,7 +435,7 @@ You have to configure your Xcode project to use automatic code signing, and on t
 end
 </code></pre>
 
-<p>this way you can profit of the automatic code signing on development machines. and also stay in control on release builds to be sure the right cert/provisioning profiles are used.</p>
+<p>this way you can profit off of the automatic code signing on development machines, and also stay in control on release builds to be sure the right cert/provisioning profiles are used.</p>
 <h4 id="xcode-7-and-lower"><a name="user-content-xcode-7-and-lower" href="#xcode-7-and-lower" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 7 and lower</h4>
 <p>You should avoid clicking the <code>Fix Issue</code> button (There is an <a href="https://github.com/neonichu/FixCode#readme">Xcode plugin</a> that disables the button), as it sometimes revokes existing certificates, and with it the provisioning profiles.</p>
 <p>Unfortunately you can't specify the name of the provisioning profile in Xcode 7. Instead you can specify the UUID of the profile, which changes every time the profile gets re-generated (e.g. when you add a new device).</p>
