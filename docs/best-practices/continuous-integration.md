@@ -355,7 +355,7 @@ Microsoft Visual Studio Team Services (VSTS) and Team Foundation Server (TFS) us
 Once you have created or retrieved credentials for your App Store account, then perform the following steps to automate releasing updates from a VSTS build or release definition:
 1. Install the App Store extension from the VSTS Marketplace
 1. Go to your VSTS or TFS project, click on the **Build** tab, and create a new build definition (the "+" icon) that is hooked up to your project's appropriate source repo
-1. Click **Add build step...** and select the neccessary tasks to generate your release assets (e.g. Gulp, Cordova Build)
+1. Click **Add build step...** and select the necessary tasks to generate your release assets (e.g. Gulp, Cordova Build)
 1. Click **Add build step...** and select **App Store Release** from the **Deploy** category
 1. Configure the **App Store Release** task with the desired authentication method, the generated IPA file path, and the desired release track.
 
