@@ -55,6 +55,9 @@ Make sure you have the latest version of the Xcode command line tools installed:
 xcode-select --install
 ```
 
+Alternatively, you can install the command line tools manually by visiting the following page:
+https://developer.apple.com/download/more/?name=command%20line%20tools
+
 ### Choose your installation method:
 
 <table width="100%">
