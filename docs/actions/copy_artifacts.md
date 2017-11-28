@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # copy_artifacts
 
 
-Small action to save your build artifacts. Useful when you use reset_git_repo
+Copy and save your build artifacts (useful when you use reset_git_repo)
 
 
 
@@ -22,17 +22,26 @@ Author | @lmirosevic
 
 
 
-**1 Example**
+**2 Examples**
 
 ```ruby
 copy_artifacts(
   target_path: "artifacts",
-  artifacts: ["*.cer", "*.mobileprovision", "*.ipa", "*.dSYM.zip"]
+  artifacts: ["*.cer", "*.mobileprovision", "*.ipa", "*.dSYM.zip", "path/to/file.txt", "another/path/*.extension"]
 )
 
 # Reset the git repo to a clean state, but leave our artifacts in place
 reset_git_repo(
   exclude: "artifacts"
+)
+```
+
+```ruby
+# Copy the .ipa created by `gym` if it was successfully created
+artifacts = []
+artifacts << lane_context[SharedValues::IPA_OUTPUT_PATH] if lane_context[SharedValues::IPA_OUTPUT_PATH]
+copy_artifacts(
+   artifacts: artifacts
 )
 ```
 
@@ -44,7 +53,7 @@ reset_git_repo(
 
 Key | Description
 ----|------------
-  `keep_original` | Set this to true if you want copy, rather than move, semantics
+  `keep_original` | Set this to false if you want move, rather than copy, the found artifacts
   `target_path` | The directory in which you want your artifacts placed
   `artifacts` | An array of file patterns of the files/folders you want to preserve
   `fail_on_missing` | Fail when a source file isn't found

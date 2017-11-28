@@ -12,7 +12,7 @@ Check your app's metadata before you submit your app to review using _precheck_
 
 
 <p align="center">
-  <img src="/img/actions/precheck.png" height="110">
+  <img src="/img/actions/precheck.png" width="250">
 </p>
 
 Precheck

@@ -12,7 +12,7 @@ Generate new localized screenshots on multiple devices
 
 
 <p align="center">
-  <img src="/img/actions/snapshot.png" height="110">
+  <img src="/img/actions/snapshot.png" width="250">
 </p>
 
 ###### Automate taking localized screenshots of your iOS and tvOS apps on every device

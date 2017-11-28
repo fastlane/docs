@@ -12,7 +12,7 @@ Easily sync your certificates and profiles across your team using git
 
 
 <p align="center">
-  <img src="/img/actions/match.png" height="110">
+  <img src="/img/actions/match.png" width="250">
 </p>
 
 ###### Easily sync your certificates and profiles across your team using git

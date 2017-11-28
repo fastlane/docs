@@ -12,7 +12,7 @@ Easily run tests of your iOS app using _scan_
 
 
 <p align="center">
-  <img src="/img/actions/scan.png" height="110">
+  <img src="/img/actions/scan.png" width="250">
 </p>
 
 ###### The easiest way to run tests of your iOS and Mac app

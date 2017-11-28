@@ -12,7 +12,7 @@ Makes sure a valid push profile is active and creates a new one if needed
 
 
 <p align="center">
-  <img src="/img/actions/pem.png" height="110">
+  <img src="/img/actions/pem.png" width="250">
 </p>
 
 ###### Automatically generate and renew your push notification profiles

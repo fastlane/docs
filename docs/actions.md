@@ -74,11 +74,11 @@ Action | Description
 <a href="/actions/verify_xcode">verify_xcode</a> | Verifies that the Xcode installation is properly signed by Apple
 <a href="/actions/xcode_install">xcode_install</a> | Make sure a certain version of Xcode is installed
 <a href="/actions/verify_pod_keys">verify_pod_keys</a> | Verifies all keys referenced from the Podfile are non-empty
-<a href="/actions/xcbuild">xcbuild</a> | Builds the project using `xcodebuild`
-<a href="/actions/xcarchive">xcarchive</a> | Archives the project using `xcodebuild`
-<a href="/actions/xcclean">xcclean</a> | Cleans the project using `xcodebuild`
 <a href="/actions/xctest">xctest</a> | Runs tests on the given simulator
 <a href="/actions/xcexport">xcexport</a> | Exports the project using `xcodebuild`
+<a href="/actions/xcarchive">xcarchive</a> | Archives the project using `xcodebuild`
+<a href="/actions/xcclean">xcclean</a> | Cleans the project using `xcodebuild`
+<a href="/actions/xcbuild">xcbuild</a> | Builds the project using `xcodebuild`
 
 
 
@@ -254,7 +254,7 @@ Action | Description
 <a href="/actions/delete_keychain">delete_keychain</a> | Delete keychains and remove them from the search list
 <a href="/actions/latest_testflight_build_number">latest_testflight_build_number</a> | Fetches most recent build number from TestFlight
 <a href="/actions/backup_file">backup_file</a> | This action backs up your file to "[path].back"
-<a href="/actions/copy_artifacts">copy_artifacts</a> | Small action to save your build artifacts. Useful when you use reset_git_repo
+<a href="/actions/copy_artifacts">copy_artifacts</a> | Copy and save your build artifacts (useful when you use reset_git_repo)
 <a href="/actions/prompt">prompt</a> | Ask the user for a value or for confirmation
 <a href="/actions/reset_simulator_contents">reset_simulator_contents</a> | Shutdown and reset running simulators
 <a href="/actions/restore_file">restore_file</a> | This action restore your file that was backuped with the `backup_file` action
@@ -295,14 +295,14 @@ Action | Description
 <a href="/actions/build_and_upload_to_appetize">build_and_upload_to_appetize</a> | Generate and upload an ipa file to appetize.io
 <a href="/actions/update_icloud_container_identifiers">update_icloud_container_identifiers</a> | This action changes the iCloud container identifiers in the entitlements file
 <a href="/actions/sh">sh</a> | Runs a shell command
+<a href="/actions/google_play_track_version_codes">google_play_track_version_codes</a> | Retrieves version codes for a Google Play track
+<a href="/actions/plugin_scores">plugin_scores</a> | [31mNo description provided[0m
+<a href="/actions/setup_travis">setup_travis</a> | Setup the keychain and match to work with Travis CI
 <a href="/actions/opt_out_usage">opt_out_usage</a> | This will stop uploading the information which actions were run
-<a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a> | This will prevent reports from being uploaded when _fastlane_ crashes
 <a href="/actions/setup_circle_ci">setup_circle_ci</a> | Setup the keychain and match to work with CircleCI
 <a href="/actions/modify_services">modify_services</a> | Modifies the services of the app created on Developer Portal
-<a href="/actions/setup_travis">setup_travis</a> | Setup the keychain and match to work with Travis CI
+<a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a> | This will prevent reports from being uploaded when _fastlane_ crashes
 <a href="/actions/ruby_version">ruby_version</a> | Verifies the minimum ruby version required
-<a href="/actions/plugin_scores">plugin_scores</a> | [31mNo description provided[0m
-<a href="/actions/google_play_track_version_codes">google_play_track_version_codes</a> | Retrieves version codes for a Google Play track
 
 
 

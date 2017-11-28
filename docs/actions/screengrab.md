@@ -12,7 +12,7 @@ Automated localized screenshots of your Android app on every device
 
 
 <p align="center">
-  <img src="/img/actions/screengrab.png" height="110">
+  <img src="/img/actions/screengrab.png" width="250">
 </p>
 
 ###### Automated localized screenshots of your Android app on every device
