@@ -316,7 +316,7 @@ ENV["DELIVER_USER"] = "felix@krausefx.com"
 
 # Lane Properties
 
-It can be useful to dynamically access properties of the current lane. These are available in `lane_context`
+It can be useful to dynamically access properties of the current lane. These are available in `lane_context`:
 
 ```ruby
 lane_context[SharedValues::PLATFORM_NAME]        # Platform name, e.g. `ios`, `android` or empty (for root level lanes)
@@ -324,7 +324,7 @@ lane_context[SharedValues::LANE_NAME]            # The name of the current 
 lane_context[SharedValues::DEFAULT_PLATFORM]     # Default platform
 ```
 
-and environment variables
+and environment variables:
 
 ```ruby
 ENV["FASTLANE_PLATFORM_NAME"]
