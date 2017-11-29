@@ -203,51 +203,16 @@ jobs:
           path: /Users/distiller/output
       - store_test_results:
           path: /Users/distiller/output/scan
-
-  adhoc:
-    macos:
-      xcode: "9.0"
-    working_directory: /Users/distiller/output
-    environment:
-      FL_OUTPUT_DIR: $CIRCLE_WORKING_DIRECTORY
-      FASTLANE_LANE: adhoc
-    shell: /bin/bash --login -o pipefail
-    steps:
-      - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-      - run:
-          name: Fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
-      - store_artifacts:
-          path: /Users/distiller/output
-
-workflows:
-  version: 2
-  build-plus-adhoc:
-    jobs:
-      - build
-      - adhoc:
-          filters:
-            branches:
-              only: development
-          requires:
-            - build
-
 ```
 
 This will do the following:
 * Create and use a Ruby gems cache.
 * Run the test lane on all pushes.
-* Create the ad-hoc build on each push (or merge) to the `development` branch.
+* Collect Junit test results and store log output in the Artifacts tab.
 
-Check out [the CircleCI iOS doc](https://circleci.com/docs/2.0/testing-ios/#example-configuration-for-using-fastlane-on-circleci)
-for more detailed instructions and examples.
+Check out [the CircleCI iOS
+doc](https://circleci.com/docs/2.0/testing-ios/#example-configuration-for-using-fastlane-on-circleci)
+for more detailed examples of using fastlane on CircleCI.
 
 # Travis Integration
 
