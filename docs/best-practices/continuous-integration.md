@@ -125,11 +125,12 @@ Save and run. The result should look like this:
 
 ![/img/best-practices/JenkinsIntegration.png](/img/best-practices/JenkinsIntegration.png)
 
-# Circle Integration
+# CircleCI Integration
 
-To run fastlane on Circle as your CI, first create a `Gemfile` in the root of your project with the following content
+To run fastlane on CircleCI, first create a `Gemfile` in the root of your project with the following content:
 
 ```ruby
+# Gemfile
 source "https://rubygems.org"
 
 gem "fastlane"
@@ -141,25 +142,112 @@ and run
 gem install bundler && bundle update
 ```
 
-This will create a `Gemfile.lock`, that defines all Ruby dependencies. Make sure to commit both files to version control.
+This will create a `Gemfile.lock` that defines all Ruby dependencies.  Make sure
+to commit both files to version control.
 
-Next, use the following `circle.yml` file
+Next, add the following to your `Fastfile`:
 
-```yml
-machine:
-  xcode:
-    version: "7.3"
-dependencies:
-  override:
-    - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
-  cache_directories:
-    - vendor/bundle
-test:
-  override:
-    - bundle exec fastlane test
+```ruby
+# fastlane/Fastfile
+
+...
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+  ...
+end
 ```
 
-This will automatically cache the installed gems on Circle, making your CI builds much faster!
+The `setup_circle_ci` Fastlane action will perform the following actions:
+
+* Create a new temporary keychain for use with Fastlane Match (see the
+  [CircleCI code signing doc](https://circleci.com/docs/2.0/ios-codesigning/)
+  for more details).
+* Switch Fastlane Match to readonly mode to make sure CI does not create new
+  code signing certificates or provisioning profiles.
+* Set up log and test result paths to be easily collectible.
+
+Next, create a `.circleci` directory in your project and add a
+`.circleci/config.yml` with the following content:
+
+```yml
+# .circleci/config.yml
+
+version: 2
+jobs:
+  build:
+    macos:
+      xcode: "9.0"
+    working_directory: /Users/distiller/output
+    environment:
+      FL_OUTPUT_DIR: $CIRCLE_WORKING_DIRECTORY
+      FASTLANE_LANE: test
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - run:
+          command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
+          when: always
+      - store_artifacts:
+          path: /Users/distiller/output
+      - store_test_results:
+          path: /Users/distiller/output/scan
+
+  adhoc:
+    macos:
+      xcode: "9.0"
+    working_directory: /Users/distiller/output
+    environment:
+      FL_OUTPUT_DIR: $CIRCLE_WORKING_DIRECTORY
+      FASTLANE_LANE: adhoc
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - store_artifacts:
+          path: /Users/distiller/output
+
+workflows:
+  version: 2
+  build-plus-adhoc:
+    jobs:
+      - build
+      - adhoc:
+          filters:
+            branches:
+              only: development
+          requires:
+            - build
+
+```
+
+This will do the following:
+* Create and use a Ruby gems cache.
+* Run the test lane on all pushes.
+* Create the ad-hoc build on each push (or merge) to the `development` branch.
+
+Check out [the CircleCI iOS doc](https://circleci.com/docs/2.0/testing-ios) for
+more detailed instructions and examples.
 
 # Travis Integration
 
