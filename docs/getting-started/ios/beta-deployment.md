@@ -2,11 +2,11 @@
 
 # Building your app
 
-_fastlane_ takes care of building your app using a feature called _gym_, just add the following to your `Fastfile`:
+_fastlane_ takes care of building your app using an action called _build_app_, just add the following to your `Fastfile`:
 
 ```ruby
 lane :beta do
-  gym(scheme: "MyApp")
+  build_app(scheme: "MyApp")
 end
 ```
 
@@ -14,9 +14,9 @@ Additionally you can specify more options for building your app, for example
 
 ```ruby
 lane :beta do
-  gym(scheme: "MyApp",
-      workspace: "Example.xcworkspace",
-      include_bitcode: true)
+  build_app(scheme: "MyApp",
+            workspace: "Example.xcworkspace",
+            include_bitcode: true)
 end
 ```
 
@@ -26,7 +26,7 @@ Try running the lane using
 fastlane beta
 ```
 
-If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _gym_, run `fastlane action gym`.
+If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _build_app_, run `fastlane action build_app`.
 
 ## Codesigning
 
@@ -36,18 +36,18 @@ Chances are that something went wrong because of code signing at the previous st
 
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.
 
-All you have to do is to put the name of the beta testing provider of your choice after building the app using _gym_:
+All you have to do is to put the name of the beta testing provider of your choice after building the app using _build_app_:
 
 ```ruby
 lane :beta do
-  match(type: "appstore")       # see code signing guide for more information
-  gym(scheme: "MyApp")          # build your app
-  testflight                    # upload your app to TestFlight
+  sync_code_signing(type: "appstore")    # see code signing guide for more information
+  build_app(scheme: "MyApp")
+  upload_to_testflight
   slack(message: "Successfully distributed a new beta build")
 end
 ```
 
-_fastlane_ automatically passes on information about the generated `.ipa` file from _gym_ to the beta testing provider of your choice.
+_fastlane_ automatically passes on information about the generated `.ipa` file from _build_app_ to the beta testing provider of your choice.
 
 To get a list of all available parameters for a given action, run
 ```no-highlight
@@ -65,8 +65,8 @@ You can easily upload new builds to TestFlight (which is part of iTunes Connect)
 ```ruby
 lane :beta do
   # ...
-  gym
-  testflight
+  build_app
+  upload_to_testflight
 end
 ```
 
@@ -75,24 +75,24 @@ Some example use cases
 ```ruby
 lane :beta do
   # ...
-  gym
+  build_app
 
   # Variant 1: Provide a changelog to your build
-  testflight(changelog: "Add rocket emoji")
+  upload_to_testflight(changelog: "Add rocket emoji")
 
   # Variant 2: Skip the "Waiting for processing" of the binary
   #   While this will speed up your build, it will not distribute
   #   the binary to your tests, nor set a changelog
-  testflight(skip_waiting_for_build_processing: true)
+  upload_to_testflight(skip_waiting_for_build_processing: true)
 end
 ```
 
-If you used `fastlane init` to setup _fastlane_, your Apple ID is stored in the `fastlane/Appfile`. You can also overwrite the username, using `testflight(username: "bot@fastlane.tools")`.
+If you used `fastlane init` to setup _fastlane_, your Apple ID is stored in the `fastlane/Appfile`. You can also overwrite the username, using `upload_to_testflight(username: "bot@fastlane.tools")`.
 
 To get a list of all available options, run
 
 ```no-highlight
-fastlane action testflight
+fastlane action upload_to_testflight
 ```
 
 With _fastlane_, you can also automatically manage your beta testers, check out TODO for more information.
@@ -106,7 +106,7 @@ With _fastlane_, you can also automatically manage your beta testers, check out 
 ```ruby
 lane :beta do
   # ...
-  gym
+  build_app
   crashlytics(api_token: "[insert_key_here]",
               build_secret: "[insert_key_here]")
 end
@@ -132,7 +132,7 @@ TODO: Also mention the other onboarding method
 ```ruby
 lane :beta do
   # ...
-  gym
+  build_app
   hockey(api_token: "[insert_key_here]")
 end
 ```
@@ -153,7 +153,7 @@ fastlane action hockey
 ```ruby
 lane :beta do
   # ...
-  gym
+  build_app
 
   testfairy(api_key: "[insert_key_here]")
 
@@ -186,11 +186,11 @@ Your changelog changes, so it doesn't make a lot of sense to store a static rele
 
 ```ruby
 lane :beta do
-  match
-  gym
+  sync_code_signing
+  build_app
 
   changelog_from_git_commits # this will generate the changelog based on your last commits
-  testflight
+  upload_to_testflight
 end
 ```
 
@@ -222,10 +222,10 @@ lane :beta do
     multi_line_end_keyword: "END"
   )
 
-  match
-  gym
+  sync_code_signing
+  build_app
 
-  testflight(changelog: changelog)
+  upload_to_testflight(changelog: changelog)
 end
 ```
 
@@ -246,10 +246,10 @@ lane :beta do
   # Variant 2: Fetch data from a remote web server
   changelog = download(url: "https://lookatmycms.com/changelog.txt")
 
-  match
-  gym
+  sync_code_signing
+  build_app
 
-  testflight(changelog: changelog)
+  upload_to_testflight(changelog: changelog)
 end
 ```
 
@@ -303,8 +303,8 @@ lane :beta do
 
   # After registering the new devices, we'll make sure to update the provisioning profile if necessary
   # Note how we make sure to pass "adhoc" to get and use a provisioning profile for Ad Hoc distribution
-  match(force_for_new_devices: true, type: "adhoc")
-  gym
+  sync_code_signing(force_for_new_devices: true, type: "adhoc")
+  build_app
   # ...
 end
 ```

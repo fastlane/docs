@@ -150,16 +150,16 @@ Add the following code to your `fastlane/Fastfile`:
 
 ```ruby
 lane :screenshots do
-  screengrab
-  supply
+  capture_android_screenshots
+  upload_to_play_store
 end
 ```
 
 To get a list of all available options for each of the steps, run
 
 ```no-highlight
-fastlane action screengrab
-fastlane action supply
+fastlane action capture_android_screenshots
+fastlane action upload_to_play_store
 ```
 
 # Advanced _screengrab_

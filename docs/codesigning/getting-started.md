@@ -32,9 +32,9 @@ Add the following lines to your `Fastfile`
 
 ```ruby
 lane :beta do
-  cert
-  sigh
-  gym
+  get_certificates           # invokes cert
+  get_provisioning_profile   # invokes sigh
+  build_app
 end
 ```
 
@@ -62,11 +62,11 @@ in your Fastfile you then use a lane like this:
 
 ```ruby
 lane :release do
-  match
+  sync_code_signing
   disable_automatic_code_signing(path: "my_project.xcodeproj")
-  gym
+  build_app
   enable_automatic_code_signing(path: "my_project.xcodeproj")
-  pilot
+  upload_to_testflight
 end
 ```
 
