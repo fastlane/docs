@@ -246,8 +246,8 @@ This will do the following:
 * Run the test lane on all pushes.
 * Create the ad-hoc build on each push (or merge) to the `development` branch.
 
-Check out [the CircleCI iOS doc](https://circleci.com/docs/2.0/testing-ios) for
-more detailed instructions and examples.
+Check out [the CircleCI iOS doc](https://circleci.com/docs/2.0/testing-ios/#example-configuration-for-using-fastlane-on-circleci)
+for more detailed instructions and examples.
 
 # Travis Integration
 
