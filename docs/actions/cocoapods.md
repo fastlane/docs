@@ -21,7 +21,7 @@ Author | @KrauseFx, @tadpol, @birmacher, @Liquidsoul
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 cocoapods
@@ -38,7 +38,7 @@ cocoapods(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

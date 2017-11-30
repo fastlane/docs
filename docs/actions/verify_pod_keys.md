@@ -21,7 +21,7 @@ Author | @ashfurrow
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 verify_pod_keys

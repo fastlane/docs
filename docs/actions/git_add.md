@@ -21,7 +21,7 @@ Author | @4brunu, @antondomashnev
 
 
 
-**5 Examples**
+## 5 Examples
 
 ```ruby
 git_add
@@ -47,7 +47,7 @@ git_add(pathspec: "*.txt")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -21,7 +21,7 @@ Author | @kohtenko, @uwehollatz
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 set_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier", value: "com.krausefx.app.beta")
@@ -35,7 +35,7 @@ set_info_plist_value(path: "./MyApp-Info.plist", key: "NSAppTransportSecurity", 
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

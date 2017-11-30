@@ -21,7 +21,7 @@ Author | @alexmx
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 appledoc(
@@ -41,7 +41,7 @@ appledoc(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

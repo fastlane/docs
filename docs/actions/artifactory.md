@@ -21,7 +21,7 @@ Author | @koglinjg, @tommeier
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 artifactory(
@@ -38,7 +38,7 @@ artifactory(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

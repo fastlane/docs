@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # deliver
 
 
-Uses deliver to upload new app metadata and builds to iTunes Connect
+Alias for the `upload_to_app_store` action
 
 
 
@@ -694,20 +694,28 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 3 Examples
 
 ```ruby
-deliver(
+upload_to_app_store(
   force: true, # Set to true to skip PDF verification
   itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
 )
+```
+
+```ruby
+deliver   # alias for "upload_to_app_store"
+```
+
+```ruby
+appstore  # alias for "upload_to_app_store"
 ```
 
 
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

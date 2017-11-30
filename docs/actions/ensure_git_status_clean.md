@@ -25,7 +25,7 @@ Author | @lmirosevic, @antondomashnev
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 ensure_git_status_clean
@@ -35,7 +35,7 @@ ensure_git_status_clean
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

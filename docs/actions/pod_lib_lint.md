@@ -21,7 +21,7 @@ Author | @thierryxing
 
 
 
-**4 Examples**
+## 4 Examples
 
 ```ruby
 pod_lib_lint
@@ -46,7 +46,7 @@ pod_lib_lint(sources: ["https://github.com/username/Specs", "https://github.com/
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

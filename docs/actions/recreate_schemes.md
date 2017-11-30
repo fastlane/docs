@@ -21,7 +21,7 @@ Author | @jerolimov
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 recreate_schemes(project: "./path/to/MyApp.xcodeproj")
@@ -31,7 +31,7 @@ recreate_schemes(project: "./path/to/MyApp.xcodeproj")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

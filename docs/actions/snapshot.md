@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # snapshot
 
 
-Generate new localized screenshots on multiple devices
+Alias for the `capture_ios_screenshots` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/snapshot.png" height="110">
+  <img src="/img/actions/snapshot.png" width="250">
 </p>
 
 ###### Automate taking localized screenshots of your iOS and tvOS apps on every device
@@ -354,14 +354,18 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 3 Examples
 
 ```ruby
-snapshot
+capture_ios_screenshots
 ```
 
 ```ruby
-snapshot(
+snapshot # alias for "capture_ios_screenshots"
+```
+
+```ruby
+capture_ios_screenshots(
   skip_open_summary: true,
   clean: true
 )
@@ -371,7 +375,7 @@ snapshot(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

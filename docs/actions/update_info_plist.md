@@ -21,7 +21,7 @@ Author | @tobiasstrebitzer
 
 
 
-**4 Examples**
+## 4 Examples
 
 ```ruby
 update_info_plist( # update app identifier string
@@ -60,7 +60,7 @@ update_info_plist( # Advanced processing: find URL scheme for particular key and
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
