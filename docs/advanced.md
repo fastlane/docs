@@ -1018,7 +1018,7 @@ UI.error "Something unexpected happened in my_new_action. Attempting to continue
 |verbose|Displays verbose output in the default output color|
 |header|Displays a message in a box for emphasis|
 
-Methods ending in and exclamation point (`!`) terminate execution of the current
+Methods ending in an exclamation point (`!`) terminate execution of the current
 lane and report an error:
 
 ```ruby
@@ -1067,7 +1067,7 @@ If your action needs to run a shell command, there are several methods. You can
 easily determine the exit status of the command and capture all terminal output
 from the command.
 
-### Using Kernel::system
+### Using Kernel#system
 
 Use the Ruby `system` method call to invoke a command string. This does not
 redirect stdin, stdout or stderr, so output formatting will be unaffected. It executes
@@ -1077,8 +1077,9 @@ the command in a subshell.
 system "cat fastlane/Fastfile"
 ```
 
-Upon command completion, the method returns. The `$?` global variable will
-indicate the exit status of the command.
+Upon command completion, the method returns true or false to indicate completion
+status. The `$?` global variable will also indicate the exit status of the
+command.
 
 ```ruby
 system "cat fastlane/Fastfile"
@@ -1105,27 +1106,28 @@ global variable will indicate the completion status of the command.
 
 If the command to be executed is not found, `Errno::ENOENT` is raised.
 
-### Using the sh action
+### Using the sh method
 
-You can also use the built-in `sh` Fastlane action:
+You can also use the built-in `Actions.sh` method:
 
 ```ruby
-other_action.sh "pwd"
+sh "pwd"
 ```
 
-Within a Fastfile, just call `sh`, e.g.: `sh "pwd"`. This provides consistent
+This is called the same way as in a Fastfile. This provides consistent
 logging of command output. All output to stdout and stderr is logged via `UI`.
 
 To be notified when an error occurs, use the `error_callback` parameter:
 
 ```ruby
 success = true
-other_action.sh("pwd", error_callback: ->(result) { success = false })
+sh("pwd", error_callback: ->(result) { success = false })
 UI.user_error "Command failed" unless success
 ```
 
 The `result` argument to the `error_callback` is the entire string output
 of the command. The exit status of the command will be available in `$?`.
+The return value of the method is the output of the command.
 
 If the command to be executed is not found, `Errno::ENOENT` is raised.
 
@@ -1141,6 +1143,19 @@ Use `shellwords` to escape arguments to shell commands.
 system "cat #{path.shellescape}"
 ```
 
+When using `sh`, pass the arguments as an array. Each array element will be
+converted to a string, shell-escaped, and the resulting array joined to form
+the command.
+
+```Ruby
+sh ["git", "commit", "-aqm#{commit_message}"]
+sh ["cat", path]
+```
+
+Array elements need not be strings. Each element will be converted to a string
+using `#to_s` before shell-escaping. This is convenient when working with
+utility classes such as `Pathname`.
+
 ## Calling other actions
 
 Some built-in utility actions, such as `sh`, may be used in custom actions (e.g., in
@@ -1151,7 +1166,8 @@ In particular:
   probably refactor your plugin helper to be more easily called from all actions
   in the plugin.
 - Avoid wrapping complex built-in actions like _deliver_ and _gym_.
+- There can be issues with one plugin depending on another plugin.
 - Certain simple built-in utility actions may be used with `other_action` in your
-  action, such as: `other_action.sh`, `other_action.git_add`, `other_action.git_commit`.
+  action, such as: `other_action.git_add`, `other_action.git_commit`.
 - Think twice before calling an action from another action. There is often a better
   solution.
