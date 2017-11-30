@@ -14,14 +14,14 @@ You can start by creating a `Fastfile` file in your repository, here’s one tha
 ```ruby
 lane :beta do
   increment_build_number
-  gym                       # Build your app
-  testflight                # Upload to TestFlight
+  build_app
+  upload_to_testflight
 end
 
 lane :appstore do
-  snapshot                  # Generate screenshots for the App Store
-  gym                       # Build your app
-  deliver                   # Upload the screenshots and the binary to iTunes
+  capture_screenshots
+  build_app
+  upload_to_app_store       # Upload the screenshots and the binary to iTunes
   slack                     # Let your team-mates know the new version is live
 end
 ```

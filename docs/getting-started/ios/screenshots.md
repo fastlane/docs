@@ -161,16 +161,16 @@ Add the following code to your `fastlane/Fastfile`:
 
 ```ruby
 lane :screenshots do
-  snapshot
-  deliver
+  capture_screenshots
+  upload_to_app_store
 end
 ```
 
 To get a list of all available options for each of the steps, run
 
 ```no-highlight
-fastlane action snapshot
-fastlane action deliver
+fastlane action capture_screenshots
+fastlane action upload_to_app_store
 ```
 
 # Put Your Screenshots Into Device Frames
@@ -245,16 +245,16 @@ To add the framing to your deployment process, use the following code in your `F
 
 ```ruby
 lane :screenshots do
-  snapshot
-  frameit(white: true)
-  deliver
+  capture_screenshots
+  frame_screenshots(white: true)
+  upload_to_app_store
 end
 ```
 
-To get a list of all available options for _frameit_
+To get a list of all available options for _frame_screenshots_ (which calls into _frameit_)
 
 ```no-highlight
-fastlane action frameit
+fastlane action frame_screenshots
 ```
 
 # Advanced _snapshot_
@@ -264,7 +264,7 @@ fastlane action frameit
 
 ```ruby
 lane :screenshots do
-  snapshot
+  capture_screenshots
 end
 ```
 
@@ -273,43 +273,43 @@ Your screenshots will be stored in the `./screenshots/` folder by default (or `.
 If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and _snapshot_ will continue with the next device or language. To stop the flow after the first error, run
 
 ```ruby
-snapshot(stop_after_first_error: true)
+capture_screenshots(stop_after_first_error: true)
 ```
 
 Also by default, _snapshot_ will open the HTML after all is done. This can be skipped with the following command
 
 ```ruby
-snapshot(skip_open_summary: true)
+capture_screenshots(skip_open_summary: true)
 ```
 
 There are a lot of options available that define how to build your app, for example
 
 ```ruby
-snapshot(scheme: "UITests", configuration: "Release", sdk: "iphonesimulator")
+capture_screenshots(scheme: "UITests", configuration: "Release", sdk: "iphonesimulator")
 ```
 
 Reinstall the app before running _snapshot_
 
 ```ruby
-snapshot(reinstall_app: true, app_identifier: "tools.fastlane.app")
+capture_screenshots(reinstall_app: true, app_identifier: "tools.fastlane.app")
 ```
 
 By default _snapshot_ automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. [#372](https://github.com/fastlane/snapshot/issues/372)). You can adapt this number using
 
 ```ruby
-snapshot(number_of_retries: 3)
+capture_screenshots(number_of_retries: 3)
 ```
 
 Add photos and/or videos to the simulator before running _snapshot_
 
 ```ruby
-snapshot(add_photos: "MyTestApp/demo.jpg", add_videos: "MyTestApp/demo.mp4")
+capture_screenshots(add_photos: "MyTestApp/demo.jpg", add_videos: "MyTestApp/demo.mp4")
 ```
 
 For a list for all available options run
 
 ```no-highlight
-fastlane action snapshot
+fastlane action capture_screenshots
 ```
 </details>
 

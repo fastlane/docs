@@ -2,11 +2,11 @@
 
 # Building your app
 
-_fastlane_ takes care of building your app using a feature called _gym_, just add the following to your `Fastfile`:
+_fastlane_ takes care of building your app using an action called _build_app_, just add the following to your `Fastfile`:
 
 ```
 lane :appstore do
-  gym(scheme: "MyApp")
+  build_app(scheme: "MyApp")
 end
 ```
 
@@ -14,9 +14,9 @@ Additionally you can specify more options for building your app, for example
 
 ```ruby
 lane :appstore do
-  gym(scheme: "MyApp",
-      workspace: "Example.xcworkspace",
-      include_bitcode: true)
+  build_app(scheme: "MyApp",
+            workspace: "Example.xcworkspace",
+            include_bitcode: true)
 end
 ```
 
@@ -26,7 +26,7 @@ Try running the lane using
 fastlane appstore
 ```
 
-If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _gym_, run `fastlane action gym`.
+If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _build_app_, run `fastlane action build_app`.
 
 ## Codesigning
 
@@ -44,15 +44,15 @@ After building your app, it's ready to be uploaded to the App Store. If you've a
 
 ```ruby
 lane :appstore do
-  snapshot                      # generate new screenshots for the App Store
-  match(type: "appstore")       # see code signing guide for more information
-  gym(scheme: "MyApp")          # build your app
-  appstore                      # upload your app to iTunes Connect
+  capture_screenshots                  # generate new screenshots for the App Store
+  sync_code_signing(type: "appstore")  # see code signing guide for more information
+  build_app(scheme: "MyApp")
+  upload_to_app_store                  # upload your app to iTunes Connect
   slack(message: "Successfully uploaded a new App Store build")
 end
 ```
 
-_fastlane_ automatically passes on information about the generated screenshots and the binary to the `appstore` action of your `Fastfile`.
+_fastlane_ automatically passes on information about the generated screenshots and the binary to the `upload_to_app_store` action of your `Fastfile`.
 
 For a list of all options for each of the steps run `fastlane action [action_name]`.
 
@@ -65,14 +65,14 @@ To make sure your latest push notification certificate is still valid during you
 
 ```ruby
 lane :appstore do
-  pem
+  get_push_certificate
   # ...
 end
 ```
 
-_pem_ will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.
+_get_push_certificate_ will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.
 
-If you don't have any push certificates already, _pem_ will create one for you and store locally in your project's directory. To get more information about the available options run `fastlane action pem`.
+If you don't have any push certificates already, _get_push_certificate_ will create one for you and store locally in your project's directory. To get more information about the available options run `fastlane action get_push_certificate`.
 
 </details>
 
