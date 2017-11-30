@@ -12,7 +12,7 @@ Generates a provisioning profile. Stores the profile in the current folder
 
 
 <p align="center">
-  <img src="/img/actions/sigh.png" height="110">
+  <img src="/img/actions/sigh.png" width="250">
 </p>
 
 ###### Because you would rather spend your time building stuff than fighting provisioning

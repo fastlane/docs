@@ -12,7 +12,7 @@ Adds device frames around the screenshots using frameit
 
 
 <p align="center">
-  <img src="/img/actions/frameit.png" height="110">
+  <img src="/img/actions/frameit.png" width="250">
 </p>
 
 ###### Quickly put your screenshots into the right device frames
