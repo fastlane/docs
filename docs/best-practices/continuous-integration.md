@@ -181,7 +181,7 @@ jobs:
       xcode: "9.0"
     working_directory: /Users/distiller/project
     environment:
-      FL_OUTPUT_DIR: $CIRCLE_WORKING_DIRECTORY/output
+      FL_OUTPUT_DIR: /Users/distiller/project/output
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
