@@ -23,7 +23,7 @@ Author | @lmirosevic
 
 
 
-**3 Examples**
+## 3 Examples
 
 ```ruby
 register_devices(
@@ -52,7 +52,7 @@ register_devices(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

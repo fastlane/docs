@@ -22,7 +22,7 @@ Author | @fabiomassimo, @KrauseFx, @Liquidsoul
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 import_from_git(
@@ -37,7 +37,7 @@ import_from_git(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

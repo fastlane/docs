@@ -21,7 +21,7 @@ Author | @lmirosevic
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 dsym_zip
@@ -37,7 +37,7 @@ dsym_zip(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

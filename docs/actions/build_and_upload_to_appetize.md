@@ -24,7 +24,7 @@ Author | @KrauseFx
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

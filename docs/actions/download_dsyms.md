@@ -29,7 +29,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 download_dsyms
@@ -43,7 +43,7 @@ download_dsyms(version: "1.0.0", build_number: "345")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

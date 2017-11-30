@@ -23,7 +23,7 @@ Returns | The exit code of the sonar-scanner binary
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 sonar(
@@ -38,7 +38,7 @@ sonar(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

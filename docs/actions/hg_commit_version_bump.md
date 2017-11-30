@@ -27,7 +27,7 @@ Author | @sjrmanning
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 hg_commit_version_bump
@@ -44,7 +44,7 @@ hg_commit_version_bump(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

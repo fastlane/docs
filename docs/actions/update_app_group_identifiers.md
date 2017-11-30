@@ -21,7 +21,7 @@ Author | @mathiasAichinger
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 update_app_group_identifiers(
@@ -34,7 +34,7 @@ update_app_group_identifiers(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

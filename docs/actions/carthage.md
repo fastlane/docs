@@ -21,7 +21,7 @@ Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampt
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 carthage
@@ -50,7 +50,7 @@ carthage(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

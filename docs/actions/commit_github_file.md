@@ -26,7 +26,7 @@ Access things like 'html_url', 'sha', 'message'
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 response = commit_github_file(
@@ -43,7 +43,7 @@ response = commit_github_file(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

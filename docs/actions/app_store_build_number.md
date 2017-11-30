@@ -21,7 +21,7 @@ Author | @hjanuschka
 
 
 
-**3 Examples**
+## 3 Examples
 
 ```ruby
 app_store_build_number
@@ -46,7 +46,7 @@ app_store_build_number(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

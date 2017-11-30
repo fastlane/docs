@@ -24,7 +24,7 @@ Returns | The uploaded dSYM path(s)
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 upload_symbols_to_sentry(
@@ -39,7 +39,7 @@ upload_symbols_to_sentry(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

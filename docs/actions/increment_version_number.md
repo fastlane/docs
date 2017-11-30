@@ -24,7 +24,7 @@ Returns | The new version number
 
 
 
-**7 Examples**
+## 7 Examples
 
 ```ruby
 increment_version_number # Automatically increment patch version number
@@ -69,7 +69,7 @@ version = increment_version_number
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

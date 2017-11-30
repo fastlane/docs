@@ -22,7 +22,7 @@ Author | @JaviSoto
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 ensure_xcode_version(version: "7.2")
@@ -32,7 +32,7 @@ ensure_xcode_version(version: "7.2")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

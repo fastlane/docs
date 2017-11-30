@@ -24,7 +24,7 @@ Returns | The URL to preview the iPhone app
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -57,7 +57,7 @@ Author | @KrauseFx, @czechboy0, @jaleksynas, @tommeier
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 release = get_github_release(url: "fastlane/fastlane", version: "1.0.0")
@@ -68,7 +68,7 @@ puts release["name"]
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

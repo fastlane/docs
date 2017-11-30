@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # sigh
 
 
-Generates a provisioning profile. Stores the profile in the current folder
+Alias for the `get_provisioning_profile` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/sigh.png" height="110">
+  <img src="/img/actions/sigh.png" width="250">
 </p>
 
 ###### Because you would rather spend your time building stuff than fighting provisioning
@@ -210,14 +210,18 @@ Returns | The UUID of the profile sigh just fetched/generated
 
 
 
-**2 Examples**
+## 3 Examples
 
 ```ruby
-sigh
+get_provisioning_profile
 ```
 
 ```ruby
-sigh(
+sigh # alias for "get_provisioning_profile"
+```
+
+```ruby
+get_provisioning_profile(
   adhoc: true,
   force: true,
   filename: "myFile.mobileprovision"
@@ -228,7 +232,7 @@ sigh(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
