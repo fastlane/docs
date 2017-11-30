@@ -21,7 +21,7 @@ Author | @squarefrog, @tobiasstrebitzer
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 update_app_identifier(
@@ -35,7 +35,7 @@ update_app_identifier(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

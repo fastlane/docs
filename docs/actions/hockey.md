@@ -22,7 +22,7 @@ Author | @KrauseFx, @modzelewski, @lacostej
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 hockey(
@@ -48,7 +48,7 @@ hockey(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

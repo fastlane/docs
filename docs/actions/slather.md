@@ -23,7 +23,7 @@ Author | @mattdelves
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 slather(
@@ -38,7 +38,7 @@ slather(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

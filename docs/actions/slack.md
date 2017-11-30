@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 slack(message: "App successfully released!")
@@ -54,7 +54,7 @@ slack(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

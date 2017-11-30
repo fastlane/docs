@@ -22,7 +22,7 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 fastlane_version "1.50.0"

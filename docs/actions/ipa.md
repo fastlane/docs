@@ -24,7 +24,7 @@ Author | @joshdholtz
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 ipa(
@@ -47,7 +47,7 @@ ipa(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

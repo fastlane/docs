@@ -21,7 +21,7 @@ Author | @hjanuschka
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 install_on_device(
@@ -34,7 +34,7 @@ install_on_device(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

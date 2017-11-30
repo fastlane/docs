@@ -24,7 +24,7 @@ Author | @Appaloosa
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 appaloosa(
@@ -51,7 +51,7 @@ appaloosa(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -25,7 +25,7 @@ Author | @czechboy0
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 xcode_server_get_assets(
@@ -38,7 +38,7 @@ xcode_server_get_assets(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

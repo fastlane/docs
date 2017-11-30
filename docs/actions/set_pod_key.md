@@ -21,7 +21,7 @@ Author | @marcelofabri
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 set_pod_key(
@@ -35,7 +35,7 @@ set_pod_key(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

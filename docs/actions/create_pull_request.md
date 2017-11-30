@@ -22,7 +22,7 @@ Returns | The parsed JSON when successful
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 create_pull_request(
@@ -40,7 +40,7 @@ create_pull_request(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -21,7 +21,7 @@ Author | @Liquidsoul, @KrauseFx
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 version = version_get_podspec(path: "TSMessages.podspec")
@@ -31,7 +31,7 @@ version = version_get_podspec(path: "TSMessages.podspec")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -21,7 +21,7 @@ Author | @mandrizzle
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 make_changelog_from_jenkins(
@@ -34,7 +34,7 @@ make_changelog_from_jenkins(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

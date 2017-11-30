@@ -21,7 +21,7 @@ Author | @gin0606
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 import_certificate(certificate_path: "certs/AppleWWDRCA.cer")
@@ -38,7 +38,7 @@ import_certificate(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -22,7 +22,7 @@ Author | @bhimsenpadalkar
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 modify_services(
@@ -39,7 +39,7 @@ modify_services(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -21,7 +21,7 @@ Author | @Liquidsoul
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 version = get_version_number(xcodeproj: "Project.xcodeproj")
@@ -31,7 +31,7 @@ version = get_version_number(xcodeproj: "Project.xcodeproj")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

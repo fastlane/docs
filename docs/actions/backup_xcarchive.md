@@ -21,7 +21,7 @@ Author | @dral3x
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 backup_xcarchive(
@@ -36,7 +36,7 @@ backup_xcarchive(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

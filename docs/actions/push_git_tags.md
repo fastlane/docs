@@ -21,7 +21,7 @@ Author | @vittoriom
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 push_git_tags
@@ -31,7 +31,7 @@ push_git_tags
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
