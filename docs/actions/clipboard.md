@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 clipboard(value: "https://docs.fastlane.tools/")
@@ -35,7 +35,7 @@ clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

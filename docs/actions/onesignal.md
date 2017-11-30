@@ -21,7 +21,7 @@ Author | @timothybarraclough, @smartshowltd
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 onesignal(
@@ -38,7 +38,7 @@ onesignal(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

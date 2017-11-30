@@ -22,7 +22,7 @@ Author | @klundberg, @giginet
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 appetize(
@@ -36,7 +36,7 @@ appetize(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

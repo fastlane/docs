@@ -21,7 +21,7 @@ Author | @astronaughts
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 chatwork(
@@ -36,7 +36,7 @@ chatwork(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

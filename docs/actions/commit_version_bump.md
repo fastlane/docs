@@ -27,7 +27,7 @@ Author | @lmirosevic
 
 
 
-**7 Examples**
+## 7 Examples
 
 ```ruby
 commit_version_bump
@@ -74,7 +74,7 @@ commit_version_bump(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

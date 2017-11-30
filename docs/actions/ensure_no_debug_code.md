@@ -23,7 +23,7 @@ Author | @KrauseFx
 
 
 
-**5 Examples**
+## 5 Examples
 
 ```ruby
 ensure_no_debug_code(text: "// TODO")
@@ -55,7 +55,7 @@ ensure_no_debug_code(text: "<<<<<<",
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

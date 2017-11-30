@@ -22,7 +22,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 danger
@@ -41,7 +41,7 @@ danger(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

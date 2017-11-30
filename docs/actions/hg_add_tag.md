@@ -21,7 +21,7 @@ Author | @sjrmanning
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 hg_add_tag(tag: "1.3")
@@ -31,7 +31,7 @@ hg_add_tag(tag: "1.3")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

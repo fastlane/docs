@@ -22,7 +22,7 @@ Returns | The path to the newly installed Xcode version
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 xcode_install(version: "7.1")
@@ -32,7 +32,7 @@ xcode_install(version: "7.1")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

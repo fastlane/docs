@@ -22,7 +22,7 @@ Returns | Returns a String containing your formatted git commits
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 changelog_from_git_commits
@@ -42,7 +42,7 @@ changelog_from_git_commits(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

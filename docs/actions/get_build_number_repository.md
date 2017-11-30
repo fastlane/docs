@@ -24,7 +24,7 @@ Returns | The build number from the current repository
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 get_build_number_repository
@@ -34,7 +34,7 @@ get_build_number_repository
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

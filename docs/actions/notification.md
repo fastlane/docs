@@ -21,7 +21,7 @@ Author | @champo, @cbowns, @KrauseFx, @amarcadet, @dusek
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 notification(subtitle: "Finished Building", message: "Ready to upload...")
@@ -31,7 +31,7 @@ notification(subtitle: "Finished Building", message: "Ready to upload...")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # gym
 
 
-Easily build and sign your app using _gym_
+Alias for the `build_ios_app` action
 
 
 
@@ -263,14 +263,14 @@ Returns | The absolute path to the generated ipa file
 
 
 
-**2 Examples**
+## 4 Examples
 
 ```ruby
-gym(scheme: "MyApp", workspace: "MyApp.xcworkspace")
+build_ios_app(scheme: "MyApp", workspace: "MyApp.xcworkspace")
 ```
 
 ```ruby
-gym(
+build_ios_app(
   workspace: "MyApp.xcworkspace",
   configuration: "Debug",
   scheme: "MyApp",
@@ -282,11 +282,19 @@ gym(
 )
 ```
 
+```ruby
+gym(...) # alias for "build_ios_app"
+```
+
+```ruby
+build_app(...) # alias for "build_ios_app"
+```
 
 
 
 
-**Parameters**
+
+## Parameters
 
 Key | Description
 ----|------------
