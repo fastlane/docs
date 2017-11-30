@@ -21,7 +21,7 @@ Author | @hjanuschka
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 ssh(
@@ -38,7 +38,7 @@ ssh(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

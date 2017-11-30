@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # produce
 
 
-Creates the given application on iTC and the Dev Portal if necessary
+Alias for the `create_app_online` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/produce.png" height="110">
+  <img src="/img/actions/produce.png" width="250">
 </p>
 
 ###### Create new iOS apps on iTunes Connect and Dev Portal using your command line
@@ -249,10 +249,10 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 2 Examples
 
 ```ruby
-produce(
+create_app_online(
   username: "felix@krausefx.com",
   app_identifier: "com.krausefx.app",
   app_name: "MyApp",
@@ -263,11 +263,15 @@ produce(
 )
 ```
 
+```ruby
+produce(...) # alias for "create_app_online"
+```
 
 
 
 
-**Parameters**
+
+## Parameters
 
 Key | Description
 ----|------------

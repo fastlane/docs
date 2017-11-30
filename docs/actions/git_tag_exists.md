@@ -22,7 +22,7 @@ Returns | Boolean value whether the tag exists or not
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 if git_tag_exists(tag: "1.1.0")
@@ -34,7 +34,7 @@ end
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

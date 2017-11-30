@@ -26,7 +26,7 @@ Author | @czechboy0
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 spec = read_podspec
@@ -42,7 +42,7 @@ spec = read_podspec(path: "./XcodeServerSDK.podspec")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

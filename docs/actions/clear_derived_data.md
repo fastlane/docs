@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 clear_derived_data
@@ -35,7 +35,7 @@ clear_derived_data(derived_data_path: "/custom/")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

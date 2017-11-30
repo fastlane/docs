@@ -21,7 +21,7 @@ Author | @taka0125, @tcurdt
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 testfairy(
@@ -35,7 +35,7 @@ testfairy(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

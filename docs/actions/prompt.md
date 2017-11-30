@@ -23,7 +23,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 changelog = prompt(text: "Changelog: ")
@@ -42,7 +42,7 @@ crashlytics(notes: changelog)
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

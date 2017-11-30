@@ -21,7 +21,7 @@ Author | @Liquidsoul
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 build_number = get_build_number(xcodeproj: "Project.xcodeproj")
@@ -31,7 +31,7 @@ build_number = get_build_number(xcodeproj: "Project.xcodeproj")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

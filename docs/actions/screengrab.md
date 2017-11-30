@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # screengrab
 
 
-Automated localized screenshots of your Android app on every device
+Alias for the `capture_android_screenshots` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/screengrab.png" height="110">
+  <img src="/img/actions/screengrab.png" width="250">
 </p>
 
 ###### Automated localized screenshots of your Android app on every device
@@ -167,14 +167,18 @@ Author | @asfalcone, @i2amsam, @mfurtak
 
 
 
-**2 Examples**
+## 3 Examples
 
 ```ruby
-screengrab
+capture_android_screenshots
 ```
 
 ```ruby
-screengrab(
+screengrab # alias for "capture_android_screenshots"
+```
+
+```ruby
+capture_android_screenshots(
   locales: ["en-US", "fr-FR", "ja-JP"],
   clear_previous_screenshots: true,
   app_apk_path: "build/outputs/apk/example-debug.apk",
@@ -186,7 +190,7 @@ screengrab(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -21,7 +21,7 @@ Author | @gin0606
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 backup_file(path: "/path/to/file")
@@ -31,7 +31,7 @@ backup_file(path: "/path/to/file")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

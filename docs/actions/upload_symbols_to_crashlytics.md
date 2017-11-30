@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
@@ -31,7 +31,7 @@ upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

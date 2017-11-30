@@ -21,7 +21,7 @@ Author | @mpirri, @ohayon
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 opt_out_crash_reporting # add this to the top of your Fastfile

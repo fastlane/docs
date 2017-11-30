@@ -21,7 +21,7 @@ Author | @kohtenko
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 identifier = get_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier")
@@ -31,7 +31,7 @@ identifier = get_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

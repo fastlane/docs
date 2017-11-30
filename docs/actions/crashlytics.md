@@ -22,7 +22,7 @@ Author | @KrauseFx, @pedrogimenez
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 crashlytics
@@ -41,7 +41,7 @@ crashlytics(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

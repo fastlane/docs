@@ -22,7 +22,7 @@ Returns | The total number of all commits in current git branch
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 increment_build_number(build_number: number_of_commits)
@@ -37,7 +37,7 @@ increment_build_number(build_number: number_of_commits)
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

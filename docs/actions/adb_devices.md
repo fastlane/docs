@@ -22,7 +22,7 @@ Returns | Returns an array of all currently connected android devices
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 adb_devices.each do |device|
@@ -37,7 +37,7 @@ end
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
