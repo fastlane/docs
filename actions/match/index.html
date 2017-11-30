@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="match"><a name="user-content-match" href="#match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>match</h1>
-<p>Easily sync your certificates and profiles across your team using git</p>
+<p>Alias for the <code>sync_code_signing</code> action</p>
 <p align="center">
-  <img src="/img/actions/match.png" height="110">
+  <img src="/img/actions/match.png" width="250">
 </p>
 
 <h6 id="easily-sync-your-certificates-and-profiles-across-your-team-using-git"><a name="user-content-easily-sync-your-certificates-and-profiles-across-your-team-using-git" href="#easily-sync-your-certificates-and-profiles-across-your-team-using-git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily sync your certificates and profiles across your team using git</h6>
@@ -699,17 +699,20 @@ fastlane match nuke distribution
 </tr>
 </tbody>
 </table>
-<p><strong>3 Examples</strong></p>
-<pre><code class="ruby">match(type: &quot;appstore&quot;, app_identifier: &quot;tools.fastlane.app&quot;)
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
+<pre><code class="ruby">sync_code_signing(type: &quot;appstore&quot;, app_identifier: &quot;tools.fastlane.app&quot;)
 </code></pre>
 
-<pre><code class="ruby">match(type: &quot;development&quot;, readonly: true)
+<pre><code class="ruby">sync_code_signing(type: &quot;development&quot;, readonly: true)
 </code></pre>
 
-<pre><code class="ruby">match(app_identifier: [&quot;tools.fastlane.app&quot;, &quot;tools.fastlane.sleepy&quot;])
+<pre><code class="ruby">sync_code_signing(app_identifier: [&quot;tools.fastlane.app&quot;, &quot;tools.fastlane.sleepy&quot;])
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby">match   # alias for &quot;sync_code_signing&quot;
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="frameit"><a name="user-content-frameit" href="#frameit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>frameit</h1>
-<p>Adds device frames around the screenshots using frameit</p>
+<p>Alias for the <code>frame_screenshots</code> action</p>
 <p align="center">
-  <img src="/img/actions/frameit.png" height="110">
+  <img src="/img/actions/frameit.png" width="250">
 </p>
 
 <h6 id="quickly-put-your-screenshots-into-the-right-device-frames"><a name="user-content-quickly-put-your-screenshots-into-the-right-device-frames" href="#quickly-put-your-screenshots-into-the-right-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quickly put your screenshots into the right device frames</h6>
@@ -406,10 +406,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <h5 align="center"><code>frameit</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
 <h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
-<p>Put a gorgeous device frame around your iOS and macOS screenshots just by running one simple command. Support for:
-- iPhone, iPad and Mac
-- Portrait and Landscape modes
-- Several colors</p>
+<p>Put a gorgeous device frame around your iOS and macOS screenshots just by running one simple command. Support for:</p>
+<ul>
+<li>iPhone, iPad and Mac</li>
+<li>Portrait and Landscape modes</li>
+<li>Several colors</li>
+</ul>
 <p>The complete and updated list of supported devices and colors can be found <a href="https://github.com/fastlane/frameit-frames/tree/gh-pages/latest">here</a></p>
 <p>Here is a nice gif, that shows <em>frameit</em> in action:</p>
 <p><img alt="img/actions/FrameitGit.gif" src="../../img/actions/FrameitGit.gif?raw=1" /></p>
@@ -421,7 +423,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p><img alt="img/actions/MacExample.png" src="../../img/actions/MacExample.png?raw=1" /></p>
 <h5 align="center">The <code>frameit</code> 2.0 update was kindly sponsored by <a href="https://mindnode.com/">MindNode</a>, seen in the screenshots above.</h5>
 
-<p>The first time that <em>frameit</em> is executed the frames will be downloaded automatically. Originally the frames are coming from <a href="http://facebook.design/devices">Facebook frameset</a> and they are kept on this repo: https://github.com/fastlane/frameit-frames</p>
+<p>The first time that <em>frameit</em> is executed the frames will be downloaded automatically. Originally the frames are coming from <a href="http://facebook.design/devices">Facebook frameset</a> and they are kept on <a href="https://github.com/fastlane/frameit-frames">this repo</a>.</p>
 <p>More information about this process and how to update the frames can be found <a href="https://github.com/fastlane/fastlane/tree/master/frameit/frames_generator">here</a></p>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
 <p>Why should you have to use Photoshop, just to add a frame around your screenshots?</p>
@@ -570,20 +572,23 @@ brew install imagemagick
 </tr>
 </tbody>
 </table>
-<p><strong>4 Examples</strong></p>
-<pre><code class="ruby">frameit
+<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<pre><code class="ruby">frame_screenshots
 </code></pre>
 
-<pre><code class="ruby">frameit(silver: true)
+<pre><code class="ruby">frameit # alias for &quot;frame_screenshots&quot;
 </code></pre>
 
-<pre><code class="ruby">frameit(path: &quot;/screenshots&quot;)
+<pre><code class="ruby">frame_screenshots(silver: true)
 </code></pre>
 
-<pre><code class="ruby">frameit(rose_gold: true)
+<pre><code class="ruby">frame_screenshots(path: &quot;/screenshots&quot;)
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby">frame_screenshots(rose_gold: true)
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>
@@ -645,7 +650,7 @@ To show the documentation in your terminal, run</p>
         <a href="../gcovr/" class="btn btn-neutral float-right" title="gcovr">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../flock/" class="btn btn-neutral" title="flock"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../frame_screenshots/" class="btn btn-neutral" title="frame_screenshots"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -678,7 +683,7 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../flock/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../frame_screenshots/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../gcovr/" style="color: #fcfcfc">Next &raquo;</a></span>

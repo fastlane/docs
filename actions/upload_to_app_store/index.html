@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>upload_to_app_store - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/breadcrumbs.css" rel="stylesheet">
+  <link href="../../css/code.css" rel="stylesheet">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+  <link href="../../css/sidenav.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "upload_to_app_store";
+    var mkdocs_page_input_path = "actions/upload_to_app_store.md";
+    var mkdocs_page_url = "/actions/upload_to_app_store/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../..">Home</a>
+      
+    </li>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Getting Started</span></li>
+      
+      
+  
+    <ul class="subnav">
+      <li><span>iOS</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/setup/">Setup</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/screenshots/">Screenshots</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+      
+      
+  
+    <ul class="subnav">
+      <li><span>Android</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/setup/">Setup</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/screenshots/">Screenshots</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/beta-deployment/">Beta Deployment</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../getting-started/android/release-deployment/">Release Deployment</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../">Actions</a>
+      
+    </li>
+  
+<li>
+          
+            <li>
+  
+<li>
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../faqs/">FAQs</a>
+      
+    </li>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Codesigning</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/getting-started/">Getting Started</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/xcode-project/">Xcode Project</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/troubleshooting/">Troubleshooting</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../codesigning/common-issues/">Common Issues</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Plugins</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../plugins/available-plugins/">Available Plugins</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../plugins/create-plugin/">Create Your Own Plugin</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <ul class="subnav">
+      <li><span>Best Practices</span></li>
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../best-practices/source-control/">Source Control</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../best-practices/continuous-integration/">Continuous Integration</a>
+      
+    </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../best-practices/keys/">Keys</a>
+      
+    </li>
+  
+
+      
+    </ul>
+  
+<li>
+          
+            <li>
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../advanced/">Advanced</a>
+      
+    </li>
+  
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <!-- Special case for the hidden action pages -->
+          <li><a href="/actions">Actions</a> &raquo;</li>
+        
+      
+    
+    <li>upload_to_app_store</li>
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <!-- custom edit link for all actions -->
+          <!-- Edit the action, from which we generate the docs -->
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/upload_to_app_store.rb" class="icon icon-github" target="_blank">
+            Edit on GitHub
+          </a>
+        
+      </li>
+    
+    <li class="wy-breadcrumbs-aside">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane.
+-->
+
+<h1 id="upload_to_app_store"><a name="user-content-upload_to_app_store" href="#upload_to_app_store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>upload_to_app_store</h1>
+<p>Upload metadata and binary to iTunes Connect (via <em>deliver</em>)</p>
+<blockquote>
+<p>Using <em>upload_to_app_store</em> after <em>build_app</em> and <em>capture_screenshots</em> will automatically upload the
+latest ipa and screenshots with no other configuration
+If you don't want a PDF report for App Store builds, use the <code>:force</code> option.
+This is useful when running <em>fastlane</em> on your Continuous Integration server:
+<code>_upload_to_app_store_(force: true)</code>
+If your account is on multiple teams and you need to tell the <code>iTMSTransporter</code>
+which 'provider' to use, you can set the <code>itc_provider</code> option to pass this info.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>upload_to_app_store</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">upload_to_app_store(
+  force: true, # Set to true to skip PDF verification
+  itc_provider: &quot;abcde12345&quot; # pass a specific value to the iTMSTransporter -itc_provider option
+)
+</code></pre>
+
+<pre><code class="ruby">deliver   # alias for &quot;upload_to_app_store&quot;
+</code></pre>
+
+<pre><code class="ruby">appstore  # alias for &quot;upload_to_app_store&quot;
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>username</code></td>
+<td>Your Apple ID Username</td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier of your app</td>
+</tr>
+<tr>
+<td><code>app</code></td>
+<td>The app ID of the app you want to use/modify</td>
+</tr>
+<tr>
+<td><code>edit_live</code></td>
+<td>Modify live metadata, this option disables ipa upload and screenshot upload</td>
+</tr>
+<tr>
+<td><code>ipa</code></td>
+<td>Path to your ipa file</td>
+</tr>
+<tr>
+<td><code>pkg</code></td>
+<td>Path to your pkg file</td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td>The platform to use (optional)</td>
+</tr>
+<tr>
+<td><code>metadata_path</code></td>
+<td>Path to the folder containing the metadata files</td>
+</tr>
+<tr>
+<td><code>screenshots_path</code></td>
+<td>Path to the folder containing the screenshots</td>
+</tr>
+<tr>
+<td><code>skip_binary_upload</code></td>
+<td>Skip uploading an ipa or pkg to iTunes Connect</td>
+</tr>
+<tr>
+<td><code>skip_screenshots</code></td>
+<td>Don't upload the screenshots</td>
+</tr>
+<tr>
+<td><code>app_version</code></td>
+<td>The version that should be edited or created</td>
+</tr>
+<tr>
+<td><code>skip_metadata</code></td>
+<td>Don't upload the metadata (e.g. title, description). This will still upload screenshots</td>
+</tr>
+<tr>
+<td><code>skip_app_version_update</code></td>
+<td>Don't update app version for submission</td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>Skip the HTML report file verification</td>
+</tr>
+<tr>
+<td><code>submit_for_review</code></td>
+<td>Submit the new version for Review after uploading everything</td>
+</tr>
+<tr>
+<td><code>automatic_release</code></td>
+<td>Should the app be automatically released once it's approved?</td>
+</tr>
+<tr>
+<td><code>auto_release_date</code></td>
+<td>Date in milliseconds for automatically releasing on pending approval</td>
+</tr>
+<tr>
+<td><code>phased_release</code></td>
+<td>Enable the phased release feature of iTC</td>
+</tr>
+<tr>
+<td><code>price_tier</code></td>
+<td>The price tier of this application</td>
+</tr>
+<tr>
+<td><code>build_number</code></td>
+<td>If set the given build number (already uploaded to iTC) will be used instead of the current built one</td>
+</tr>
+<tr>
+<td><code>app_rating_config_path</code></td>
+<td>Path to the app rating's config</td>
+</tr>
+<tr>
+<td><code>submission_information</code></td>
+<td>Extra information for the submission (e.g. third party content)</td>
+</tr>
+<tr>
+<td><code>team_id</code></td>
+<td>The ID of your iTunes Connect team if you're in multiple teams</td>
+</tr>
+<tr>
+<td><code>team_name</code></td>
+<td>The name of your iTunes Connect team if you're in multiple teams</td>
+</tr>
+<tr>
+<td><code>dev_portal_team_id</code></td>
+<td>The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID!</td>
+</tr>
+<tr>
+<td><code>dev_portal_team_name</code></td>
+<td>The name of your Developer Portal team if you're in multiple teams</td>
+</tr>
+<tr>
+<td><code>itc_provider</code></td>
+<td>The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
+</tr>
+<tr>
+<td><code>overwrite_screenshots</code></td>
+<td>Clear all previously uploaded screenshots before uploading the new ones</td>
+</tr>
+<tr>
+<td><code>run_precheck_before_submit</code></td>
+<td>Run precheck before submitting to app review</td>
+</tr>
+<tr>
+<td><code>precheck_default_rule_level</code></td>
+<td>The default rule level unless otherwise configured</td>
+</tr>
+<tr>
+<td><code>app_icon</code></td>
+<td>Metadata: The path to the app icon</td>
+</tr>
+<tr>
+<td><code>apple_watch_app_icon</code></td>
+<td>Metadata: The path to the Apple Watch app icon</td>
+</tr>
+<tr>
+<td><code>copyright</code></td>
+<td>Metadata: The copyright notice</td>
+</tr>
+<tr>
+<td><code>primary_category</code></td>
+<td>Metadata: The english name of the primary category (e.g. <code>Business</code>, <code>Books</code>)</td>
+</tr>
+<tr>
+<td><code>secondary_category</code></td>
+<td>Metadata: The english name of the secondary category (e.g. <code>Business</code>, <code>Books</code>)</td>
+</tr>
+<tr>
+<td><code>primary_first_sub_category</code></td>
+<td>Metadata: The english name of the primary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+</tr>
+<tr>
+<td><code>primary_second_sub_category</code></td>
+<td>Metadata: The english name of the primary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+</tr>
+<tr>
+<td><code>secondary_first_sub_category</code></td>
+<td>Metadata: The english name of the secondary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+</tr>
+<tr>
+<td><code>secondary_second_sub_category</code></td>
+<td>Metadata: The english name of the secondary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+</tr>
+<tr>
+<td><code>trade_representative_contact_information</code></td>
+<td>Metadata: A hash containing the trade representative contact information</td>
+</tr>
+<tr>
+<td><code>app_review_information</code></td>
+<td>Metadata: A hash containing the review information</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Metadata: The localised app description</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Metadata: The localised app name</td>
+</tr>
+<tr>
+<td><code>subtitle</code></td>
+<td>Metadata: The localised app subtitle</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>Metadata: An array of localised keywords</td>
+</tr>
+<tr>
+<td><code>promotional_text</code></td>
+<td>Metadata: An array of localised promotional texts</td>
+</tr>
+<tr>
+<td><code>release_notes</code></td>
+<td>Metadata: Localised release notes for this version</td>
+</tr>
+<tr>
+<td><code>privacy_url</code></td>
+<td>Metadata: Localised privacy url</td>
+</tr>
+<tr>
+<td><code>support_url</code></td>
+<td>Metadata: Localised support url</td>
+</tr>
+<tr>
+<td><code>marketing_url</code></td>
+<td>Metadata: Localised marketing url</td>
+</tr>
+<tr>
+<td><code>languages</code></td>
+<td>Metadata: List of languages to activate</td>
+</tr>
+<tr>
+<td><code>ignore_language_directory_validation</code></td>
+<td>Ignore errors when invalid languages are found in metadata and screeenshot directories</td>
+</tr>
+<tr>
+<td><code>precheck_include_in_app_purchases</code></td>
+<td>Should precheck check in-app purchases?</td>
+</tr>
+</tbody>
+</table>
+<p><hr />
+To show the documentation in your terminal, run</p>
+<pre><code class="no-highlight">fastlane action upload_to_app_store
+</code></pre>
+
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/upload_to_app_store.rb" target="_blank">View source code</a></p>
+<hr />
+
+<p><a href="/actions"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../upload_to_play_store/" class="btn btn-neutral float-right" title="upload_to_play_store">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../upload_symbols_to_sentry/" class="btn btn-neutral" title="upload_symbols_to_sentry"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2017 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../upload_symbols_to_sentry/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../upload_to_play_store/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -388,7 +388,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="copy_artifacts"><a name="user-content-copy_artifacts" href="#copy_artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>copy_artifacts</h1>
-<p>Small action to save your build artifacts. Useful when you use reset_git_repo</p>
+<p>Copy and save your build artifacts (useful when you use reset_git_repo)</p>
 <blockquote>
 <p>This action copies artifacts to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your <code>.ipa</code>s, <code>.dSYM.zip</code>s, <code>.mobileprovision</code>s, <code>.cert</code>s
 Make sure your target_path is gitignored, and if you use <code>reset_git_repo</code>, make sure the artifacts are added to the exclude list</p>
@@ -411,10 +411,10 @@ Make sure your target_path is gitignored, and if you use <code>reset_git_repo</c
 </tr>
 </tbody>
 </table>
-<p><strong>1 Example</strong></p>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">copy_artifacts(
   target_path: &quot;artifacts&quot;,
-  artifacts: [&quot;*.cer&quot;, &quot;*.mobileprovision&quot;, &quot;*.ipa&quot;, &quot;*.dSYM.zip&quot;]
+  artifacts: [&quot;*.cer&quot;, &quot;*.mobileprovision&quot;, &quot;*.ipa&quot;, &quot;*.dSYM.zip&quot;, &quot;path/to/file.txt&quot;, &quot;another/path/*.extension&quot;]
 )
 
 # Reset the git repo to a clean state, but leave our artifacts in place
@@ -423,7 +423,15 @@ reset_git_repo(
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby"># Copy the .ipa created by _gym_ if it was successfully created
+artifacts = []
+artifacts &lt;&lt; lane_context[SharedValues::IPA_OUTPUT_PATH] if lane_context[SharedValues::IPA_OUTPUT_PATH]
+copy_artifacts(
+   artifacts: artifacts
+)
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>
@@ -434,7 +442,7 @@ reset_git_repo(
 <tbody>
 <tr>
 <td><code>keep_original</code></td>
-<td>Set this to true if you want copy, rather than move, semantics</td>
+<td>Set this to false if you want move, rather than copy, the found artifacts</td>
 </tr>
 <tr>
 <td><code>target_path</code></td>

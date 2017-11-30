@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="produce"><a name="user-content-produce" href="#produce" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>produce</h1>
-<p>Creates the given application on iTC and the Dev Portal if necessary</p>
+<p>Alias for the <code>create_app_online</code> action</p>
 <p align="center">
-  <img src="/img/actions/produce.png" height="110">
+  <img src="/img/actions/produce.png" width="250">
 </p>
 
 <h6 id="create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line"><a name="user-content-create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line" href="#create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create new iOS apps on iTunes Connect and Dev Portal using your command line</h6>
@@ -597,8 +597,8 @@ end
 </tr>
 </tbody>
 </table>
-<p><strong>1 Example</strong></p>
-<pre><code class="ruby">produce(
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">create_app_online(
   username: &quot;felix@krausefx.com&quot;,
   app_identifier: &quot;com.krausefx.app&quot;,
   app_name: &quot;MyApp&quot;,
@@ -609,7 +609,10 @@ end
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby">produce   # alias for &quot;create_app_online&quot;
+</code></pre>
+
+<h2 id="parameters_1"><a name="user-content-parameters_1" href="#parameters_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

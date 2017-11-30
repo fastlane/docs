@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="scan"><a name="user-content-scan" href="#scan" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>scan</h1>
-<p>Easily run tests of your iOS app using <em>scan</em></p>
+<p>Alias for the <code>run_tests</code> action</p>
 <p align="center">
-  <img src="/img/actions/scan.png" height="110">
+  <img src="/img/actions/scan.png" width="250">
 </p>
 
 <h6 id="the-easiest-way-to-run-tests-of-your-ios-and-mac-app"><a name="user-content-the-easiest-way-to-run-tests-of-your-ios-and-mac-app" href="#the-easiest-way-to-run-tests-of-your-ios-and-mac-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The easiest way to run tests of your iOS and Mac app</h6>
@@ -568,11 +568,14 @@ end
 </tr>
 </tbody>
 </table>
-<p><strong>5 Examples</strong></p>
-<pre><code class="ruby">scan
+<h2 id="6-examples"><a name="user-content-6-examples" href="#6-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6 Examples</h2>
+<pre><code class="ruby">run_tests
 </code></pre>
 
-<pre><code class="ruby">scan(
+<pre><code class="ruby">scan # alias for &quot;run_tests&quot;
+</code></pre>
+
+<pre><code class="ruby">run_tests(
   workspace: &quot;App.xcworkspace&quot;,
   scheme: &quot;MyTests&quot;,
   clean: false
@@ -580,26 +583,26 @@ end
 </code></pre>
 
 <pre><code class="ruby"># Build For Testing
-scan(
+run_tests(
    derived_data_path: &quot;my_folder&quot;,
    build_for_testing: true
 )
 </code></pre>
 
 <pre><code class="ruby"># run tests using derived data from prev. build
-scan(
+run_tests(
    derived_data_path: &quot;my_folder&quot;,
    test_without_building: true
 )
 </code></pre>
 
 <pre><code class="ruby"># or run it from an existing xctestrun package
-scan(
+run_tests(
    xctestrun: &quot;/path/to/mytests.xctestrun&quot;
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

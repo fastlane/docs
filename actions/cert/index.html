@@ -388,7 +388,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="cert"><a name="user-content-cert" href="#cert" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>cert</h1>
-<p>Fetch or generate the latest available code signing identity</p>
+<p>Alias for the <code>get_certificates</code> action</p>
 <p align="center">
   <img src="/img/actions/cert.png" width="250">
 </p>
@@ -466,17 +466,20 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 </tr>
 </tbody>
 </table>
-<p><strong>2 Examples</strong></p>
-<pre><code class="ruby">cert
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">get_certificates
 </code></pre>
 
-<pre><code class="ruby">cert(
+<pre><code class="ruby">cert # alias for &quot;get_certificates&quot;
+</code></pre>
+
+<pre><code class="ruby">get_certificates(
   development: true,
   username: &quot;user@email.com&quot;
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

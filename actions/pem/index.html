@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="pem"><a name="user-content-pem" href="#pem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pem</h1>
-<p>Makes sure a valid push profile is active and creates a new one if needed</p>
+<p>Alias for the <code>get_push_certificate</code> action</p>
 <p align="center">
-  <img src="/img/actions/pem.png" height="110">
+  <img src="/img/actions/pem.png" width="250">
 </p>
 
 <h6 id="automatically-generate-and-renew-your-push-notification-profiles"><a name="user-content-automatically-generate-and-renew-your-push-notification-profiles" href="#automatically-generate-and-renew-your-push-notification-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatically generate and renew your push notification profiles</h6>
@@ -497,11 +497,14 @@ Enter Export Password:
 </tr>
 </tbody>
 </table>
-<p><strong>2 Examples</strong></p>
-<pre><code class="ruby">pem
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">get_push_certificate
 </code></pre>
 
-<pre><code class="ruby">pem(
+<pre><code class="ruby">pem # alias for &quot;get_push_certificate&quot;
+</code></pre>
+
+<pre><code class="ruby">get_push_certificate(
   force: true, # create a new profile, even if the old one is still valid
   app_identifier: &quot;net.sunapps.9&quot;, # optional app identifier,
   save_private_key: true,
@@ -512,7 +515,7 @@ Enter Export Password:
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

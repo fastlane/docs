@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="sigh"><a name="user-content-sigh" href="#sigh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sigh</h1>
-<p>Generates a provisioning profile. Stores the profile in the current folder</p>
+<p>Alias for the <code>get_provisioning_profile</code> action</p>
 <p align="center">
-  <img src="/img/actions/sigh.png" height="110">
+  <img src="/img/actions/sigh.png" width="250">
 </p>
 
 <h6 id="because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning"><a name="user-content-because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning" href="#because-you-would-rather-spend-your-time-building-stuff-than-fighting-provisioning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Because you would rather spend your time building stuff than fighting provisioning</h6>
@@ -543,18 +543,21 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 </tr>
 </tbody>
 </table>
-<p><strong>2 Examples</strong></p>
-<pre><code class="ruby">sigh
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">get_provisioning_profile
 </code></pre>
 
-<pre><code class="ruby">sigh(
+<pre><code class="ruby">sigh # alias for &quot;get_provisioning_profile&quot;
+</code></pre>
+
+<pre><code class="ruby">get_provisioning_profile(
   adhoc: true,
   force: true,
   filename: &quot;myFile.mobileprovision&quot;
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

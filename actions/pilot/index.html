@@ -388,7 +388,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="pilot"><a name="user-content-pilot" href="#pilot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pilot</h1>
-<p>Upload a new binary to iTunes Connect for TestFlight beta testing</p>
+<p>Alias for the <code>upload_to_testflight</code> action</p>
 <p align="center">
   <img src="/img/actions/PilotTextTransparentSmall.png" width="500">
 </p>
@@ -567,24 +567,27 @@ pilot...
 </tr>
 </tbody>
 </table>
-<p><strong>4 Examples</strong></p>
-<pre><code class="ruby">testflight
+<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<pre><code class="ruby">upload_to_testflight
 </code></pre>
 
-<pre><code class="ruby">pilot # alias for &quot;testflight&quot;
+<pre><code class="ruby">testflight # alias for &quot;upload_to_testflight&quot;
 </code></pre>
 
-<pre><code class="ruby">testflight(skip_submission: true) # to only upload the build
+<pre><code class="ruby">pilot # alias for &quot;upload_to_testflight&quot;
 </code></pre>
 
-<pre><code class="ruby">testflight(
+<pre><code class="ruby">upload_to_testflight(skip_submission: true) # to only upload the build
+</code></pre>
+
+<pre><code class="ruby">upload_to_testflight(
   username: &quot;felix@krausefx.com&quot;,
   app_identifier: &quot;com.krausefx.app&quot;,
   itc_provider: &quot;abcde12345&quot; # pass a specific value to the iTMSTransporter -itc_provider option
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

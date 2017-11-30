@@ -388,7 +388,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="gym"><a name="user-content-gym" href="#gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>gym</h1>
-<p>Easily build and sign your app using <em>gym</em></p>
+<p>Alias for the <code>build_ios_app</code> action</p>
 <p align="center">
   <img src="/img/actions/gym.png" width="250">
 </p>
@@ -633,11 +633,11 @@ archive | xcpretty
 </tr>
 </tbody>
 </table>
-<p><strong>2 Examples</strong></p>
-<pre><code class="ruby">gym(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
+<pre><code class="ruby">build_ios_app(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
 </code></pre>
 
-<pre><code class="ruby">gym(
+<pre><code class="ruby">build_ios_app(
   workspace: &quot;MyApp.xcworkspace&quot;,
   configuration: &quot;Debug&quot;,
   scheme: &quot;MyApp&quot;,
@@ -649,7 +649,13 @@ archive | xcpretty
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby">gym         # alias for &quot;build_ios_app&quot;
+</code></pre>
+
+<pre><code class="ruby">build_app   # alias for &quot;build_ios_app&quot;
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

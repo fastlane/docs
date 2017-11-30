@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="precheck"><a name="user-content-precheck" href="#precheck" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>precheck</h1>
-<p>Check your app's metadata before you submit your app to review using <em>precheck</em></p>
+<p>Alias for the <code>check_app_store_metadata</code> action</p>
 <p align="center">
-  <img src="/img/actions/precheck.png" height="110">
+  <img src="/img/actions/precheck.png" width="250">
 </p>
 
 <h1 id="precheck_1"><a name="user-content-precheck_1" href="#precheck_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Precheck</h1>
@@ -524,14 +524,17 @@ end
 </tr>
 </tbody>
 </table>
-<p><strong>1 Example</strong></p>
-<pre><code class="ruby">precheck(
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">check_app_store_metadata(
   negative_apple_sentiment(level: :skip), # Set to skip to not run the `negative_apple_sentiment` rule
   curse_words(level: :warn) # Set to warn to only warn on curse word check failures
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby">precheck   # alias for &quot;check_app_store_metadata&quot;
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="screengrab"><a name="user-content-screengrab" href="#screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>screengrab</h1>
-<p>Automated localized screenshots of your Android app on every device</p>
+<p>Alias for the <code>capture_android_screenshots</code> action</p>
 <p align="center">
-  <img src="/img/actions/screengrab.png" height="110">
+  <img src="/img/actions/screengrab.png" width="250">
 </p>
 
 <h6 id="automated-localized-screenshots-of-your-android-app-on-every-device"><a name="user-content-automated-localized-screenshots-of-your-android-app-on-every-device" href="#automated-localized-screenshots-of-your-android-app-on-every-device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automated localized screenshots of your Android app on every device</h6>
@@ -530,11 +530,14 @@ public class JUnit4StyleTests {
 </tr>
 </tbody>
 </table>
-<p><strong>2 Examples</strong></p>
-<pre><code class="ruby">screengrab
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">capture_android_screenshots
 </code></pre>
 
-<pre><code class="ruby">screengrab(
+<pre><code class="ruby">screengrab # alias for &quot;capture_android_screenshots&quot;
+</code></pre>
+
+<pre><code class="ruby">capture_android_screenshots(
   locales: [&quot;en-US&quot;, &quot;fr-FR&quot;, &quot;ja-JP&quot;],
   clear_previous_screenshots: true,
   app_apk_path: &quot;build/outputs/apk/example-debug.apk&quot;,
@@ -542,7 +545,7 @@ public class JUnit4StyleTests {
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

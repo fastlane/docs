@@ -388,9 +388,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="snapshot"><a name="user-content-snapshot" href="#snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>snapshot</h1>
-<p>Generate new localized screenshots on multiple devices</p>
+<p>Alias for the <code>capture_ios_screenshots</code> action</p>
 <p align="center">
-  <img src="/img/actions/snapshot.png" height="110">
+  <img src="/img/actions/snapshot.png" width="250">
 </p>
 
 <h6 id="automate-taking-localized-screenshots-of-your-ios-and-tvos-apps-on-every-device"><a name="user-content-automate-taking-localized-screenshots-of-your-ios-and-tvos-apps-on-every-device" href="#automate-taking-localized-screenshots-of-your-ios-and-tvos-apps-on-every-device" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automate taking localized screenshots of your iOS and tvOS apps on every device</h6>
@@ -656,17 +656,20 @@ launch_arguments([
 </tr>
 </tbody>
 </table>
-<p><strong>2 Examples</strong></p>
-<pre><code class="ruby">snapshot
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">capture_ios_screenshots
 </code></pre>
 
-<pre><code class="ruby">snapshot(
+<pre><code class="ruby">snapshot # alias for &quot;capture_ios_screenshots&quot;
+</code></pre>
+
+<pre><code class="ruby">capture_ios_screenshots(
   skip_open_summary: true,
   clean: true
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

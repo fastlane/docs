@@ -388,7 +388,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="deliver"><a name="user-content-deliver" href="#deliver" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>deliver</h1>
-<p>Uses deliver to upload new app metadata and builds to iTunes Connect</p>
+<p>Alias for the <code>upload_to_app_store</code> action</p>
 <p align="center">
   <img src="/img/actions/deliver.png" width="250">
 </p>
@@ -929,14 +929,20 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tr>
 </tbody>
 </table>
-<p><strong>1 Example</strong></p>
-<pre><code class="ruby">deliver(
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">upload_to_app_store(
   force: true, # Set to true to skip PDF verification
   itc_provider: &quot;abcde12345&quot; # pass a specific value to the iTMSTransporter -itc_provider option
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby">deliver   # alias for &quot;upload_to_app_store&quot;
+</code></pre>
+
+<pre><code class="ruby">appstore  # alias for &quot;upload_to_app_store&quot;
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>

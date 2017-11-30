@@ -144,7 +144,43 @@
     </url>
         
     <url>
+     <loc>None/actions/build_android_app/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/build_app/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/build_ios_app/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/actions/bundle_install/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/capture_android_screenshots/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/capture_ios_screenshots/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/capture_screenshots/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -169,6 +205,12 @@
         
     <url>
      <loc>None/actions/chatwork/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/check_app_store_metadata/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -235,6 +277,12 @@
         
     <url>
      <loc>None/actions/crashlytics/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/create_app_online/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -354,6 +402,12 @@
     </url>
         
     <url>
+     <loc>None/actions/frame_screenshots/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/actions/frameit/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
@@ -378,6 +432,12 @@
     </url>
         
     <url>
+     <loc>None/actions/get_certificates/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/actions/get_github_release/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
@@ -391,6 +451,18 @@
         
     <url>
      <loc>None/actions/get_ipa_info_plist_value/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/get_provisioning_profile/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/get_push_certificate/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -822,6 +894,12 @@
     </url>
         
     <url>
+     <loc>None/actions/run_tests/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/actions/s3/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
@@ -984,6 +1062,12 @@
     </url>
         
     <url>
+     <loc>None/actions/sync_code_signing/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/actions/team_id/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
@@ -1099,6 +1183,24 @@
         
     <url>
      <loc>None/actions/upload_symbols_to_sentry/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/upload_to_app_store/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/upload_to_play_store/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/upload_to_testflight/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>

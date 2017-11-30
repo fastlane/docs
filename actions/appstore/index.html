@@ -388,7 +388,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="appstore"><a name="user-content-appstore" href="#appstore" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appstore</h1>
-<p>Alias for the deliver action</p>
+<p>Alias for the <code>upload_to_app_store</code> action</p>
+<blockquote>
+<p>Using <em>upload_to_app_store</em> after <em>build_app</em> and <em>capture_screenshots</em> will automatically upload the
+latest ipa and screenshots with no other configuration
+If you don't want a PDF report for App Store builds, use the <code>:force</code> option.
+This is useful when running <em>fastlane</em> on your Continuous Integration server:
+<code>_upload_to_app_store_(force: true)</code>
+If your account is on multiple teams and you need to tell the <code>iTMSTransporter</code>
+which 'provider' to use, you can set the <code>itc_provider</code> option to pass this info.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -407,14 +416,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 </tbody>
 </table>
-<p><strong>1 Example</strong></p>
-<pre><code class="ruby">deliver(
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<pre><code class="ruby">upload_to_app_store(
   force: true, # Set to true to skip PDF verification
   itc_provider: &quot;abcde12345&quot; # pass a specific value to the iTMSTransporter -itc_provider option
 )
 </code></pre>
 
-<p><strong>Parameters</strong></p>
+<pre><code class="ruby">deliver   # alias for &quot;upload_to_app_store&quot;
+</code></pre>
+
+<pre><code class="ruby">appstore  # alias for &quot;upload_to_app_store&quot;
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
 <tr>
