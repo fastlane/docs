@@ -309,7 +309,7 @@
           
         
           
-          <li class="toctree-l3"><a href="#circle-integration">Circle Integration</a></li>
+          <li class="toctree-l3"><a href="#circleci-integration">CircleCI Integration</a></li>
           
         
           
@@ -501,9 +501,10 @@ push_to_git_remote
 </ul>
 <p>Save and run. The result should look like this:</p>
 <p><img alt="/img/best-practices/JenkinsIntegration.png" src="../../img/best-practices/JenkinsIntegration.png" /></p>
-<h1 id="circle-integration"><a name="user-content-circle-integration" href="#circle-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Circle Integration</h1>
-<p>To run fastlane on Circle as your CI, first create a <code>Gemfile</code> in the root of your project with the following content</p>
-<pre><code class="ruby">source &quot;https://rubygems.org&quot;
+<h1 id="circleci-integration"><a name="user-content-circleci-integration" href="#circleci-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CircleCI Integration</h1>
+<p>To run fastlane on CircleCI, first create a <code>Gemfile</code> in the root of your project with the following content:</p>
+<pre><code class="ruby"># Gemfile
+source &quot;https://rubygems.org&quot;
 
 gem &quot;fastlane&quot;
 </code></pre>
@@ -512,22 +513,71 @@ gem &quot;fastlane&quot;
 <pre><code class="no-highlight">gem install bundler &amp;&amp; bundle update
 </code></pre>
 
-<p>This will create a <code>Gemfile.lock</code>, that defines all Ruby dependencies. Make sure to commit both files to version control.</p>
-<p>Next, use the following <code>circle.yml</code> file</p>
-<pre><code class="yml">machine:
-  xcode:
-    version: &quot;7.3&quot;
-dependencies:
-  override:
-    - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3 --without development
-  cache_directories:
-    - vendor/bundle
-test:
-  override:
-    - bundle exec fastlane test
+<p>This will create a <code>Gemfile.lock</code> that defines all Ruby dependencies.  Make sure
+to commit both files to version control.</p>
+<p>Next, add the following to your <code>Fastfile</code>:</p>
+<pre><code class="ruby"># fastlane/Fastfile
+
+...
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+  ...
+end
 </code></pre>
 
-<p>This will automatically cache the installed gems on Circle, making your CI builds much faster!</p>
+<p>The <code>setup_circle_ci</code> <em>fastlane</em> action will perform the following actions:</p>
+<ul>
+<li>Create a new temporary keychain for use with
+  <a href="https://fastlane.tools/match">match</a> (see the <a href="https://circleci.com/docs/2.0/ios-codesigning/">CircleCI code signing
+  doc</a> for more details).</li>
+<li>Switch <em>match</em> to readonly mode to make sure CI does not create new
+  code signing certificates or provisioning profiles.</li>
+<li>Set up log and test result paths to be easily collectible.</li>
+</ul>
+<p>Next, create a <code>.circleci</code> directory in your project and add a
+<code>.circleci/config.yml</code> with the following content:</p>
+<pre><code class="yml"># .circleci/config.yml
+
+version: 2
+jobs:
+  build:
+    macos:
+      xcode: &quot;9.0&quot;
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+      FASTLANE_LANE: test
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - restore_cache:
+          key: 1-gems-{{ checksum &quot;Gemfile.lock&quot; }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum &quot;Gemfile.lock&quot; }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      - run:
+          command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
+          when: always
+      - store_artifacts:
+          path: /Users/distiller/project/output
+      - store_test_results:
+          path: /Users/distiller/project/output/scan
+</code></pre>
+
+<p>This will do the following:
+<em> Create and use a Ruby gems cache.
+</em> Run the test lane on all pushes.
+* Collect Junit test results and store log output in the Artifacts tab.</p>
+<p>Check out <a href="https://circleci.com/docs/2.0/testing-ios/#example-configuration-for-using-fastlane-on-circleci">the CircleCI iOS
+doc</a>
+for more detailed examples of using fastlane on CircleCI.</p>
 <h1 id="travis-integration"><a name="user-content-travis-integration" href="#travis-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Travis Integration</h1>
 <p>Update your <code>.travis.yml</code> to look like this:</p>
 <pre><code class="yml">language: objective-c
