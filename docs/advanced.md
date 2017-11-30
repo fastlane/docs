@@ -1136,23 +1136,23 @@ If the command to be executed is not found, `Errno::ENOENT` is raised.
 Use `shellwords` to escape arguments to shell commands.
 
 ```Ruby
-`git commit -aqm#{Shellwords.escape commit_message}`
+`git commit -aqm #{Shellwords.escape commit_message}`
 ```
 
 ```Ruby
 system "cat #{path.shellescape}"
 ```
 
-When using `sh`, pass the arguments as an array. Each array element will be
+When using `sh`, pass a list of arguments. Each argument will be
 converted to a string, shell-escaped, and the resulting array joined to form
 the command.
 
 ```Ruby
-sh ["git", "commit", "-aqm#{commit_message}"]
-sh ["cat", path]
+sh "git", "commit", "-aqm", commit_message
+sh "cat", path
 ```
 
-Array elements need not be strings. Each element will be converted to a string
+Arguments need not be strings. Each element will be converted to a string
 using `#to_s` before shell-escaping. This is convenient when working with
 utility classes such as `Pathname`.
 
