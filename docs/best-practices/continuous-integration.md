@@ -179,9 +179,9 @@ jobs:
   build:
     macos:
       xcode: "9.0"
-    working_directory: /Users/distiller/output
+    working_directory: /Users/distiller/project
     environment:
-      FL_OUTPUT_DIR: $CIRCLE_WORKING_DIRECTORY
+      FL_OUTPUT_DIR: $CIRCLE_WORKING_DIRECTORY/output
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
@@ -200,7 +200,7 @@ jobs:
           command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
           when: always
       - store_artifacts:
-          path: /Users/distiller/output
+          path: /Users/distiller/project/output
       - store_test_results:
           path: /Users/distiller/output/scan
 ```
