@@ -26,7 +26,7 @@ Author | @lmirosevic, @maschall
 
 
 
-**3 Examples**
+## 3 Examples
 
 ```ruby
 add_git_tag # simple tag with default values
@@ -51,7 +51,7 @@ add_git_tag(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

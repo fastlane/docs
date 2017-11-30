@@ -24,7 +24,7 @@ Returns | A hash including the HTTP status code (:status), the response body (:b
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 result = github_api(
@@ -61,7 +61,7 @@ result = github_api(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

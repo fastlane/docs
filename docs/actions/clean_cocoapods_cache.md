@@ -21,7 +21,7 @@ Author | @alexmx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 clean_cocoapods_cache
@@ -35,7 +35,7 @@ clean_cocoapods_cache(name: "CACHED_POD")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

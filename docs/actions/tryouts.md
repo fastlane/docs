@@ -21,7 +21,7 @@ Author | @alicertel
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 tryouts(
@@ -35,7 +35,7 @@ tryouts(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

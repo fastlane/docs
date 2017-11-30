@@ -21,7 +21,7 @@ Author | @simonlevy5
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 dotgpg_environment(dotgpg_file: './path/to/gpgfile')
@@ -31,7 +31,7 @@ dotgpg_environment(dotgpg_file: './path/to/gpgfile')
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

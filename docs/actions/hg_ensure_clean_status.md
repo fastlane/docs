@@ -21,7 +21,7 @@ Author | @sjrmanning
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 hg_ensure_clean_status

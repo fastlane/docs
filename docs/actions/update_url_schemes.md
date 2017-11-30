@@ -23,7 +23,7 @@ Author | @kmikael
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 update_url_schemes(
@@ -36,7 +36,7 @@ update_url_schemes(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

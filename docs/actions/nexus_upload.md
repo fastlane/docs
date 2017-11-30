@@ -21,7 +21,7 @@ Author | @xfreebird
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 nexus_upload(
@@ -41,7 +41,7 @@ nexus_upload(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -23,7 +23,7 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 data = download(url: "https://host.com/api.json")
@@ -33,7 +33,7 @@ data = download(url: "https://host.com/api.json")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

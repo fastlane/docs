@@ -22,7 +22,7 @@ Returns | The new build number
 
 
 
-**4 Examples**
+## 4 Examples
 
 ```ruby
 increment_build_number # automatically increment by one
@@ -49,7 +49,7 @@ build_number = increment_build_number
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

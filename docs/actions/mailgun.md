@@ -21,7 +21,7 @@ Author | @thiagolioy
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 mailgun(
@@ -51,7 +51,7 @@ mailgun(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

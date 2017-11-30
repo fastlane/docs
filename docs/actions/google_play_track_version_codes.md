@@ -22,7 +22,7 @@ Returns | Array of integers representing the version codes for the given Google 
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 google_play_track_version_codes
@@ -32,7 +32,7 @@ google_play_track_version_codes
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

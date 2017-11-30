@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # match
 
 
-Easily sync your certificates and profiles across your team using git
+Alias for the `sync_code_signing` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/match.png" height="110">
+  <img src="/img/actions/match.png" width="250">
 </p>
 
 ###### Easily sync your certificates and profiles across your team using git
@@ -374,25 +374,29 @@ Author | @KrauseFx
 
 
 
-**3 Examples**
+## 4 Examples
 
 ```ruby
-match(type: "appstore", app_identifier: "tools.fastlane.app")
+sync_code_signing(type: "appstore", app_identifier: "tools.fastlane.app")
 ```
 
 ```ruby
-match(type: "development", readonly: true)
+sync_code_signing(type: "development", readonly: true)
 ```
 
 ```ruby
-match(app_identifier: ["tools.fastlane.app", "tools.fastlane.sleepy"])
+sync_code_signing(app_identifier: ["tools.fastlane.app", "tools.fastlane.sleepy"])
+```
+
+```ruby
+match(...) # alias for "sync_code_signing"
 ```
 
 
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -21,7 +21,7 @@ Author | @iAmChrisTruman
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 jira(
@@ -37,7 +37,7 @@ jira(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

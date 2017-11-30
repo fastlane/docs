@@ -22,7 +22,7 @@ Returns | The output of running the gradle task
 
 
 
-**3 Examples**
+## 3 Examples
 
 ```ruby
 gradle(
@@ -88,7 +88,7 @@ gradle(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

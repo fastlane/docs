@@ -23,7 +23,7 @@ Author | @birmacher, @koglinjg
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

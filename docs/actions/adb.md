@@ -22,7 +22,7 @@ Returns | The output of the adb command
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 adb(
@@ -34,7 +34,7 @@ adb(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

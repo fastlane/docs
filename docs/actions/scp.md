@@ -21,7 +21,7 @@ Author | @hjanuschka
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 scp(
@@ -49,7 +49,7 @@ scp(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -22,7 +22,7 @@ Author | @intere
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 cloc(
@@ -36,7 +36,7 @@ cloc(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -21,7 +21,7 @@ Author | @lacostej
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 add_extra_platforms(
@@ -33,7 +33,7 @@ add_extra_platforms(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

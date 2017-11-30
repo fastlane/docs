@@ -21,7 +21,7 @@ Author | @xfreebird
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 splunkmint(
@@ -35,7 +35,7 @@ splunkmint(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

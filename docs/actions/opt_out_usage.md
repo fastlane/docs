@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 opt_out_usage # add this to the top of your Fastfile
