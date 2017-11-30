@@ -23,7 +23,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 set_changelog(changelog: "Changelog for all Languages")
@@ -37,7 +37,7 @@ set_changelog(app_identifier: "com.krausefx.app", version: "1.0", changelog: "Ch
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

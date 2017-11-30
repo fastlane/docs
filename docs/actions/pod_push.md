@@ -21,7 +21,7 @@ Author | @squarefrog
 
 
 
-**4 Examples**
+## 4 Examples
 
 ```ruby
 # If no path is supplied then Trunk will attempt to find the first Podspec in the current directory.
@@ -47,7 +47,7 @@ pod_push(path: "TMessages.podspec", repo: "MyRepo", sources: ["https://github.co
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

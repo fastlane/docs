@@ -24,7 +24,7 @@ Author | @Liquidsoul, @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 version = version_bump_podspec(path: "TSMessages.podspec", bump_type: "patch")
@@ -38,7 +38,7 @@ version = version_bump_podspec(path: "TSMessages.podspec", version_number: "1.4"
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

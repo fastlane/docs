@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # cert
 
 
-Fetch or generate the latest available code signing identity
+Alias for the `get_certificates` action
 
 
 
@@ -104,14 +104,18 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 3 Examples
 
 ```ruby
-cert
+get_certificates
 ```
 
 ```ruby
-cert(
+cert # alias for "get_certificates"
+```
+
+```ruby
+get_certificates(
   development: true,
   username: "user@email.com"
 )
@@ -121,7 +125,7 @@ cert(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

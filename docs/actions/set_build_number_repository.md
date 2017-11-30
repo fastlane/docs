@@ -23,7 +23,7 @@ Author | @pbrooks, @armadsen, @AndrewSB
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 set_build_number_repository
@@ -39,7 +39,7 @@ set_build_number_repository(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

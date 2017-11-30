@@ -23,7 +23,7 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 verify_xcode
@@ -37,7 +37,7 @@ verify_xcode(xcode_path: "/Applications/Xcode.app")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

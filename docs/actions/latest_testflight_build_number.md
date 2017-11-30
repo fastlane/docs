@@ -23,7 +23,7 @@ Returns | Integer representation of the latest build number uploaded to TestFlig
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 latest_testflight_build_number(version: "1.3")
@@ -39,7 +39,7 @@ increment_build_number({
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

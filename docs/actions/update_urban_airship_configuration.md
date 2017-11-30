@@ -21,7 +21,7 @@ Author | @kcharwood
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 update_urban_airship_configuration(
@@ -35,7 +35,7 @@ update_urban_airship_configuration(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

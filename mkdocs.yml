@@ -48,11 +48,18 @@ pages:
   - backup_xcarchive: actions/backup_xcarchive.md
   - badge: actions/badge.md
   - build_and_upload_to_appetize: actions/build_and_upload_to_appetize.md
+  - build_android_app: actions/build_android_app.md
+  - build_app: actions/build_app.md
+  - build_ios_app: actions/build_ios_app.md
   - bundle_install: actions/bundle_install.md
+  - capture_android_screenshots: actions/capture_android_screenshots.md
+  - capture_ios_screenshots: actions/capture_ios_screenshots.md
+  - capture_screenshots: actions/capture_screenshots.md
   - carthage: actions/carthage.md
   - cert: actions/cert.md
   - changelog_from_git_commits: actions/changelog_from_git_commits.md
   - chatwork: actions/chatwork.md
+  - check_app_store_metadata: actions/check_app_store_metadata.md
   - clean_build_artifacts: actions/clean_build_artifacts.md
   - clean_cocoapods_cache: actions/clean_cocoapods_cache.md
   - clear_derived_data: actions/clear_derived_data.md
@@ -64,6 +71,7 @@ pages:
   - commit_version_bump: actions/commit_version_bump.md
   - copy_artifacts: actions/copy_artifacts.md
   - crashlytics: actions/crashlytics.md
+  - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
   - create_pull_request: actions/create_pull_request.md
   - danger: actions/danger.md
@@ -83,13 +91,17 @@ pages:
   - erb: actions/erb.md
   - fastlane_version: actions/fastlane_version.md
   - flock: actions/flock.md
+  - frame_screenshots: actions/frame_screenshots.md
   - frameit: actions/frameit.md
   - gcovr: actions/gcovr.md
   - get_build_number: actions/get_build_number.md
   - get_build_number_repository: actions/get_build_number_repository.md
+  - get_certificates: actions/get_certificates.md
   - get_github_release: actions/get_github_release.md
   - get_info_plist_value: actions/get_info_plist_value.md
   - get_ipa_info_plist_value: actions/get_ipa_info_plist_value.md
+  - get_provisioning_profile: actions/get_provisioning_profile.md
+  - get_push_certificate: actions/get_push_certificate.md
   - get_version_number: actions/get_version_number.md
   - git_add: actions/git_add.md
   - git_branch: actions/git_branch.md
@@ -161,6 +173,7 @@ pages:
   - rsync: actions/rsync.md
   - rubocop: actions/rubocop.md
   - ruby_version: actions/ruby_version.md
+  - run_tests: actions/run_tests.md
   - s3: actions/s3.md
   - say: actions/say.md
   - scan: actions/scan.md
@@ -188,6 +201,7 @@ pages:
   - ssh: actions/ssh.md
   - supply: actions/supply.md
   - swiftlint: actions/swiftlint.md
+  - sync_code_signing: actions/sync_code_signing.md
   - team_id: actions/team_id.md
   - team_name: actions/team_name.md
   - testfairy: actions/testfairy.md
@@ -208,6 +222,9 @@ pages:
   - update_url_schemes: actions/update_url_schemes.md
   - upload_symbols_to_crashlytics: actions/upload_symbols_to_crashlytics.md
   - upload_symbols_to_sentry: actions/upload_symbols_to_sentry.md
+  - upload_to_app_store: actions/upload_to_app_store.md
+  - upload_to_play_store: actions/upload_to_play_store.md
+  - upload_to_testflight: actions/upload_to_testflight.md
   - verify_build: actions/verify_build.md
   - verify_pod_keys: actions/verify_pod_keys.md
   - verify_xcode: actions/verify_xcode.md

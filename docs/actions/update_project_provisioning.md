@@ -27,7 +27,7 @@ Author | @tobiasstrebitzer, @czechboy0
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 update_project_provisioning(
@@ -42,7 +42,7 @@ update_project_provisioning(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

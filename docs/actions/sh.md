@@ -23,7 +23,7 @@ Returns | Outputs the string and executes it. When running in tests, it returns 
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 sh("ls")
@@ -37,7 +37,7 @@ sh("git commit -m 'My message'")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

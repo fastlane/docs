@@ -22,7 +22,7 @@ Returns | Returns the value in the .ipa's Info.plist corresponding to the passed
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 get_ipa_info_plist_value(ipa: "path.ipa", key: "KEY_YOU_READ")
@@ -32,7 +32,7 @@ get_ipa_info_plist_value(ipa: "path.ipa", key: "KEY_YOU_READ")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

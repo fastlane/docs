@@ -21,7 +21,7 @@ Author | @lmirosevic
 
 
 
-**4 Examples**
+## 4 Examples
 
 ```ruby
 reset_git_repo
@@ -48,7 +48,7 @@ reset_git_repo(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
