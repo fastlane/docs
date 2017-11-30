@@ -159,12 +159,12 @@ platform :ios do
 end
 ```
 
-The `setup_circle_ci` Fastlane action will perform the following actions:
+The `setup_circle_ci` _fastlane_ action will perform the following actions:
 
-* Create a new temporary keychain for use with Fastlane Match (see the
-  [CircleCI code signing doc](https://circleci.com/docs/2.0/ios-codesigning/)
-  for more details).
-* Switch Fastlane Match to readonly mode to make sure CI does not create new
+* Create a new temporary keychain for use with
+  [match](https://fastlane.tools/match) (see the [CircleCI code signing
+  doc](https://circleci.com/docs/2.0/ios-codesigning/) for more details).
+* Switch _match_ to readonly mode to make sure CI does not create new
   code signing certificates or provisioning profiles.
 * Set up log and test result paths to be easily collectible.
 
@@ -194,7 +194,7 @@ jobs:
           paths:
             - vendor/bundle
       - run:
-          name: Fastlane
+          name: fastlane
           command: bundle exec fastlane $FASTLANE_LANE
       - run:
           command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
