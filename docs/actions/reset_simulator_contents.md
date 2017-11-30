@@ -21,7 +21,7 @@ Author | @danramteke
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 reset_simulator_contents
@@ -31,7 +31,7 @@ reset_simulator_contents
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

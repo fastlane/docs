@@ -22,7 +22,7 @@ Returns | The path to the output zip file
 
 
 
-**3 Examples**
+## 3 Examples
 
 ```ruby
 zip
@@ -47,7 +47,7 @@ zip(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

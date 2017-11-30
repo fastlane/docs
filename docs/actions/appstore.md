@@ -6,12 +6,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # appstore
 
 
-Alias for the deliver action
+Alias for the `upload_to_app_store` action
 
 
 
 
-
+> Using _upload_to_app_store_ after _build_app_ and _capture_screenshots_ will automatically upload the
+latest ipa and screenshots with no other configuration
+If you don't want a PDF report for App Store builds, use the `:force` option.
+This is useful when running _fastlane_ on your Continuous Integration server:
+`_upload_to_app_store_(force: true)`
+If your account is on multiple teams and you need to tell the `iTMSTransporter`
+which 'provider' to use, you can set the `itc_provider` option to pass this info.
 
 
 appstore |
@@ -21,20 +27,28 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 3 Examples
 
 ```ruby
-deliver(
+upload_to_app_store(
   force: true, # Set to true to skip PDF verification
   itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
 )
+```
+
+```ruby
+deliver   # alias for "upload_to_app_store"
+```
+
+```ruby
+appstore  # alias for "upload_to_app_store"
 ```
 
 
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

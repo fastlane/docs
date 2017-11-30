@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # pilot
 
 
-Upload a new binary to iTunes Connect for TestFlight beta testing
+Alias for the `upload_to_testflight` action
 
 
 
@@ -240,22 +240,26 @@ Author | @KrauseFx
 
 
 
-**4 Examples**
+## 5 Examples
 
 ```ruby
-testflight
+upload_to_testflight
 ```
 
 ```ruby
-pilot # alias for "testflight"
+testflight # alias for "upload_to_testflight"
 ```
 
 ```ruby
-testflight(skip_submission: true) # to only upload the build
+pilot # alias for "upload_to_testflight"
 ```
 
 ```ruby
-testflight(
+upload_to_testflight(skip_submission: true) # to only upload the build
+```
+
+```ruby
+upload_to_testflight(
   username: "felix@krausefx.com",
   app_identifier: "com.krausefx.app",
   itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
@@ -266,7 +270,7 @@ testflight(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

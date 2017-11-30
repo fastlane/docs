@@ -21,7 +21,7 @@ Author | @gin0606
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 create_keychain(
@@ -37,7 +37,7 @@ create_keychain(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

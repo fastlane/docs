@@ -21,7 +21,7 @@ Author | @thiagolioy
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 lcov(
@@ -35,7 +35,7 @@ lcov(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

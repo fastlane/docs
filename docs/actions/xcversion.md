@@ -21,7 +21,7 @@ Author | @oysta
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 xcversion(version: "8.1") # Selects Xcode 8.1.0
@@ -35,7 +35,7 @@ xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

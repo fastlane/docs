@@ -22,7 +22,7 @@ Returns | Returns the following dict: {commit_hash: "commit hash", abbreviated_c
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 commit = last_git_commit

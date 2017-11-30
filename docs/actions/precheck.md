@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # precheck
 
 
-Check your app's metadata before you submit your app to review using _precheck_
+Alias for the `check_app_store_metadata` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/precheck.png" height="110">
+  <img src="/img/actions/precheck.png" width="250">
 </p>
 
 Precheck
@@ -126,20 +126,24 @@ Returns | true if precheck passes, else, false
 
 
 
-**1 Example**
+## 2 Examples
 
 ```ruby
-precheck(
+check_app_store_metadata(
   negative_apple_sentiment(level: :skip), # Set to skip to not run the `negative_apple_sentiment` rule
   curse_words(level: :warn) # Set to warn to only warn on curse word check failures
 )
+```
+
+```ruby
+precheck   # alias for "check_app_store_metadata"
 ```
 
 
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

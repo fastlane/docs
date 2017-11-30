@@ -28,7 +28,7 @@ Author | @bartoszj
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 setup_jenkins
@@ -38,7 +38,7 @@ setup_jenkins
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

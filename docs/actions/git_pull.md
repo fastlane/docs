@@ -21,7 +21,7 @@ Author | @KrauseFx, @JaviSoto
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 git_pull
@@ -35,7 +35,7 @@ git_pull(only_tags: true) # only the tags, no commits
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

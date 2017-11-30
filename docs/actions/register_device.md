@@ -23,7 +23,7 @@ Author | @pvinis
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 register_device(
@@ -45,7 +45,7 @@ register_device(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

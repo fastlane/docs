@@ -25,7 +25,7 @@ Author | @pprochazka72, @laugejepsen
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 podio_item(
@@ -41,7 +41,7 @@ podio_item(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

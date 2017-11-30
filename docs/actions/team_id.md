@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 team_id "Q2CBPK58CA"

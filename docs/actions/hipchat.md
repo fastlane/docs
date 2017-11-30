@@ -21,7 +21,7 @@ Author | @jingx23
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 hipchat(
@@ -36,7 +36,7 @@ hipchat(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

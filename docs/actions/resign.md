@@ -28,7 +28,7 @@ Author | @lmirosevic
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 resign(
@@ -53,7 +53,7 @@ resign(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

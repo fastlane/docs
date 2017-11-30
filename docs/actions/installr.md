@@ -21,7 +21,7 @@ Author | @scottrhoyt
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 installr(
@@ -37,7 +37,7 @@ installr(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

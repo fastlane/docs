@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: d95c791936bd622217bc565686a97661fb60056e
+  revision: 2cf1fde48bb0875502233675e7bc1a17eb0063b2
   specs:
-    fastlane (2.66.2)
+    fastlane (2.68.0)
       CFPropertyList (>= 2.3, < 3.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -99,13 +99,13 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
-    highline (1.7.8)
+    highline (1.7.10)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httpclient (2.8.3)
     json (2.1.0)
     jwt (2.1.0)
-    kramdown (1.15.0)
+    kramdown (1.16.2)
     little-plugger (1.1.4)
     logging (2.2.2)
       little-plugger (~> 1.1)
@@ -147,7 +147,7 @@ GEM
     terminal-notifier (1.8.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    tty-screen (0.6.2)
+    tty-screen (0.6.3)
     uber (0.1.0)
     unf (0.1.4)
       unf_ext

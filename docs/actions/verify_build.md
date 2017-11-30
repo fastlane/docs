@@ -21,7 +21,7 @@ Author | @CodeReaper
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 verify_build(
@@ -34,7 +34,7 @@ verify_build(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

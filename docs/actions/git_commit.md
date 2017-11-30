@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-**3 Examples**
+## 3 Examples
 
 ```ruby
 git_commit(path: "./version.txt", message: "Version Bump")
@@ -39,7 +39,7 @@ git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

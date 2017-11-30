@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # frameit
 
 
-Adds device frames around the screenshots using frameit
+Alias for the `frame_screenshots` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/frameit.png" height="110">
+  <img src="/img/actions/frameit.png" width="250">
 </p>
 
 ###### Quickly put your screenshots into the right device frames
@@ -35,6 +35,7 @@ _frameit_ allows you to put a gorgeous device frame around your iOS and macOS sc
 # Features
 
 Put a gorgeous device frame around your iOS and macOS screenshots just by running one simple command. Support for:
+
 - iPhone, iPad and Mac
 - Portrait and Landscape modes
 - Several colors
@@ -60,7 +61,7 @@ Here is a nice gif, that shows _frameit_ in action:
 <h5 align="center">The <code>frameit</code> 2.0 update was kindly sponsored by <a href="https://mindnode.com/">MindNode</a>, seen in the screenshots above.</h5>
 
 
-The first time that _frameit_ is executed the frames will be downloaded automatically. Originally the frames are coming from [Facebook frameset](http://facebook.design/devices) and they are kept on this repo: https://github.com/fastlane/frameit-frames
+The first time that _frameit_ is executed the frames will be downloaded automatically. Originally the frames are coming from [Facebook frameset](http://facebook.design/devices) and they are kept on [this repo](https://github.com/fastlane/frameit-frames).
 
 More information about this process and how to update the frames can be found [here](https://github.com/fastlane/fastlane/tree/master/frameit/frames_generator)
 
@@ -237,29 +238,33 @@ Author | @KrauseFx
 
 
 
-**4 Examples**
+## 5 Examples
 
 ```ruby
-frameit
+frame_screenshots
 ```
 
 ```ruby
-frameit(silver: true)
+frameit # alias for "frame_screenshots"
 ```
 
 ```ruby
-frameit(path: "/screenshots")
+frame_screenshots(silver: true)
 ```
 
 ```ruby
-frameit(rose_gold: true)
+frame_screenshots(path: "/screenshots")
+```
+
+```ruby
+frame_screenshots(rose_gold: true)
 ```
 
 
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
