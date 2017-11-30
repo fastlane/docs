@@ -202,7 +202,7 @@ jobs:
       - store_artifacts:
           path: /Users/distiller/project/output
       - store_test_results:
-          path: /Users/distiller/output/scan
+          path: /Users/distiller/project/output/scan
 ```
 
 This will do the following:
