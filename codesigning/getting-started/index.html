@@ -408,9 +408,9 @@
 </ul>
 <p>Add the following lines to your <code>Fastfile</code></p>
 <pre><code class="ruby">lane :beta do
-  cert
-  sigh
-  gym
+  get_certificates           # invokes cert
+  get_provisioning_profile   # invokes sigh
+  build_app
 end
 </code></pre>
 
@@ -427,11 +427,11 @@ You have to configure your Xcode project to use automatic code signing, and on t
 <img src="/img/codesigning/auto_signing.png" width=500 /></p>
 <p>in your Fastfile you then use a lane like this:</p>
 <pre><code class="ruby">lane :release do
-  match
+  sync_code_signing
   disable_automatic_code_signing(path: &quot;my_project.xcodeproj&quot;)
-  gym
+  build_app
   enable_automatic_code_signing(path: &quot;my_project.xcodeproj&quot;)
-  pilot
+  upload_to_testflight
 end
 </code></pre>
 

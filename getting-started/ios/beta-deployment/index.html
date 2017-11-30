@@ -407,17 +407,17 @@
               
                 <h1 id="ios-beta-deployment-using-fastlane"><a name="user-content-ios-beta-deployment-using-fastlane" href="#ios-beta-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS Beta deployment using <em>fastlane</em></h1>
 <h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
-<p><em>fastlane</em> takes care of building your app using a feature called <em>gym</em>, just add the following to your <code>Fastfile</code>:</p>
+<p><em>fastlane</em> takes care of building your app using an action called <em>build_app</em>, just add the following to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :beta do
-  gym(scheme: &quot;MyApp&quot;)
+  build_app(scheme: &quot;MyApp&quot;)
 end
 </code></pre>
 
 <p>Additionally you can specify more options for building your app, for example</p>
 <pre><code class="ruby">lane :beta do
-  gym(scheme: &quot;MyApp&quot;,
-      workspace: &quot;Example.xcworkspace&quot;,
-      include_bitcode: true)
+  build_app(scheme: &quot;MyApp&quot;,
+            workspace: &quot;Example.xcworkspace&quot;,
+            include_bitcode: true)
 end
 </code></pre>
 
@@ -425,21 +425,21 @@ end
 <pre><code class="no-highlight">fastlane beta
 </code></pre>
 
-<p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>gym</em>, run <code>fastlane action gym</code>.</p>
+<p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>build_app</em>, run <code>fastlane action build_app</code>.</p>
 <h2 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h2>
 <p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/GettingStarted">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
 <h1 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h1>
 <p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <em>fastlane</em> is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.</p>
-<p>All you have to do is to put the name of the beta testing provider of your choice after building the app using <em>gym</em>:</p>
+<p>All you have to do is to put the name of the beta testing provider of your choice after building the app using <em>build_app</em>:</p>
 <pre><code class="ruby">lane :beta do
-  match(type: &quot;appstore&quot;)       # see code signing guide for more information
-  gym(scheme: &quot;MyApp&quot;)          # build your app
-  testflight                    # upload your app to TestFlight
+  sync_code_signing(type: &quot;appstore&quot;)    # see code signing guide for more information
+  build_app(scheme: &quot;MyApp&quot;)
+  upload_to_testflight
   slack(message: &quot;Successfully distributed a new beta build&quot;)
 end
 </code></pre>
 
-<p><em>fastlane</em> automatically passes on information about the generated <code>.ipa</code> file from <em>gym</em> to the beta testing provider of your choice.</p>
+<p><em>fastlane</em> automatically passes on information about the generated <code>.ipa</code> file from <em>build_app</em> to the beta testing provider of your choice.</p>
 <p>To get a list of all available parameters for a given action, run</p>
 <pre><code class="no-highlight">fastlane action slack
 </code></pre>
@@ -450,29 +450,29 @@ end
 <p>You can easily upload new builds to TestFlight (which is part of iTunes Connect) using <em>fastlane</em>. To do so, just use the built-in <code>testflight</code> action after building your app</p>
 <pre><code class="ruby">lane :beta do
   # ...
-  gym
-  testflight
+  build_app
+  upload_to_testflight
 end
 </code></pre>
 
 <p>Some example use cases</p>
 <pre><code class="ruby">lane :beta do
   # ...
-  gym
+  build_app
 
   # Variant 1: Provide a changelog to your build
-  testflight(changelog: &quot;Add rocket emoji&quot;)
+  upload_to_testflight(changelog: &quot;Add rocket emoji&quot;)
 
   # Variant 2: Skip the &quot;Waiting for processing&quot; of the binary
   #   While this will speed up your build, it will not distribute
   #   the binary to your tests, nor set a changelog
-  testflight(skip_waiting_for_build_processing: true)
+  upload_to_testflight(skip_waiting_for_build_processing: true)
 end
 </code></pre>
 
-<p>If you used <code>fastlane init</code> to setup <em>fastlane</em>, your Apple ID is stored in the <code>fastlane/Appfile</code>. You can also overwrite the username, using <code>testflight(username: "bot@fastlane.tools")</code>.</p>
+<p>If you used <code>fastlane init</code> to setup <em>fastlane</em>, your Apple ID is stored in the <code>fastlane/Appfile</code>. You can also overwrite the username, using <code>upload_to_testflight(username: "bot@fastlane.tools")</code>.</p>
 <p>To get a list of all available options, run</p>
-<pre><code class="no-highlight">fastlane action testflight
+<pre><code class="no-highlight">fastlane action upload_to_testflight
 </code></pre>
 
 <p>With <em>fastlane</em>, you can also automatically manage your beta testers, check out TODO for more information.</p>
@@ -482,7 +482,7 @@ end
 <summary>Crashlytics</summary></p>
 <pre><code class="ruby">lane :beta do
   # ...
-  gym
+  build_app
   crashlytics(api_token: &quot;[insert_key_here]&quot;,
               build_secret: &quot;[insert_key_here]&quot;)
 end
@@ -500,7 +500,7 @@ end
 <summary>HockeyApp</summary></p>
 <pre><code class="ruby">lane :beta do
   # ...
-  gym
+  build_app
   hockey(api_token: &quot;[insert_key_here]&quot;)
 end
 </code></pre>
@@ -515,7 +515,7 @@ end
 <summary>TestFairy</summary></p>
 <pre><code class="ruby">lane :beta do
   # ...
-  gym
+  build_app
 
   testfairy(api_key: &quot;[insert_key_here]&quot;)
 
@@ -540,11 +540,11 @@ end
 <summary>Automatically based on git commits</summary></p>
 <p>Your changelog changes, so it doesn't make a lot of sense to store a static release note in the <code>Fastfile</code>.</p>
 <pre><code class="ruby">lane :beta do
-  match
-  gym
+  sync_code_signing
+  build_app
 
   changelog_from_git_commits # this will generate the changelog based on your last commits
-  testflight
+  upload_to_testflight
 end
 </code></pre>
 
@@ -571,10 +571,10 @@ end
     multi_line_end_keyword: &quot;END&quot;
   )
 
-  match
-  gym
+  sync_code_signing
+  build_app
 
-  testflight(changelog: changelog)
+  upload_to_testflight(changelog: changelog)
 end
 </code></pre>
 
@@ -591,10 +591,10 @@ end
   # Variant 2: Fetch data from a remote web server
   changelog = download(url: &quot;https://lookatmycms.com/changelog.txt&quot;)
 
-  match
-  gym
+  sync_code_signing
+  build_app
 
-  testflight(changelog: changelog)
+  upload_to_testflight(changelog: changelog)
 end
 </code></pre>
 
@@ -631,8 +631,8 @@ fastlane pilot add email@invite.com -a com.app.name
 
   # After registering the new devices, we'll make sure to update the provisioning profile if necessary
   # Note how we make sure to pass &quot;adhoc&quot; to get and use a provisioning profile for Ad Hoc distribution
-  match(force_for_new_devices: true, type: &quot;adhoc&quot;)
-  gym
+  sync_code_signing(force_for_new_devices: true, type: &quot;adhoc&quot;)
+  build_app
   # ...
 end
 </code></pre>

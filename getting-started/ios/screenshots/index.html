@@ -539,14 +539,14 @@ fastlane snapshot                               # Generate screenshots for the s
 </ol>
 <p>Add the following code to your <code>fastlane/Fastfile</code>:</p>
 <pre><code class="ruby">lane :screenshots do
-  snapshot
-  deliver
+  capture_screenshots
+  upload_to_app_store
 end
 </code></pre>
 
 <p>To get a list of all available options for each of the steps, run</p>
-<pre><code class="no-highlight">fastlane action snapshot
-fastlane action deliver
+<pre><code class="no-highlight">fastlane action capture_screenshots
+fastlane action upload_to_app_store
 </code></pre>
 
 <h1 id="put-your-screenshots-into-device-frames"><a name="user-content-put-your-screenshots-into-device-frames" href="#put-your-screenshots-into-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Put Your Screenshots Into Device Frames</h1>
@@ -597,51 +597,51 @@ fastlane action deliver
 <p></details></p>
 <p>To add the framing to your deployment process, use the following code in your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :screenshots do
-  snapshot
-  frameit(white: true)
-  deliver
+  capture_screenshots
+  frame_screenshots(white: true)
+  upload_to_app_store
 end
 </code></pre>
 
-<p>To get a list of all available options for <em>frameit</em></p>
-<pre><code class="no-highlight">fastlane action frameit
+<p>To get a list of all available options for <em>frame_screenshots</em> (which calls into <em>frameit</em>)</p>
+<pre><code class="no-highlight">fastlane action frame_screenshots
 </code></pre>
 
 <h1 id="advanced-snapshot"><a name="user-content-advanced-snapshot" href="#advanced-snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced <em>snapshot</em></h1>
 <p><details> 
 <summary>Sample uses</summary></p>
 <pre><code class="ruby">lane :screenshots do
-  snapshot
+  capture_screenshots
 end
 </code></pre>
 
 <p>Your screenshots will be stored in the <code>./screenshots/</code> folder by default (or <code>./fastlane/screenshots</code> if you're using <a href="https://fastlane.tools">fastlane</a>)</p>
 <p>If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and <em>snapshot</em> will continue with the next device or language. To stop the flow after the first error, run</p>
-<pre><code class="ruby">snapshot(stop_after_first_error: true)
+<pre><code class="ruby">capture_screenshots(stop_after_first_error: true)
 </code></pre>
 
 <p>Also by default, <em>snapshot</em> will open the HTML after all is done. This can be skipped with the following command</p>
-<pre><code class="ruby">snapshot(skip_open_summary: true)
+<pre><code class="ruby">capture_screenshots(skip_open_summary: true)
 </code></pre>
 
 <p>There are a lot of options available that define how to build your app, for example</p>
-<pre><code class="ruby">snapshot(scheme: &quot;UITests&quot;, configuration: &quot;Release&quot;, sdk: &quot;iphonesimulator&quot;)
+<pre><code class="ruby">capture_screenshots(scheme: &quot;UITests&quot;, configuration: &quot;Release&quot;, sdk: &quot;iphonesimulator&quot;)
 </code></pre>
 
 <p>Reinstall the app before running <em>snapshot</em></p>
-<pre><code class="ruby">snapshot(reinstall_app: true, app_identifier: &quot;tools.fastlane.app&quot;)
+<pre><code class="ruby">capture_screenshots(reinstall_app: true, app_identifier: &quot;tools.fastlane.app&quot;)
 </code></pre>
 
 <p>By default <em>snapshot</em> automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. <a href="https://github.com/fastlane/snapshot/issues/372">#372</a>). You can adapt this number using</p>
-<pre><code class="ruby">snapshot(number_of_retries: 3)
+<pre><code class="ruby">capture_screenshots(number_of_retries: 3)
 </code></pre>
 
 <p>Add photos and/or videos to the simulator before running <em>snapshot</em></p>
-<pre><code class="ruby">snapshot(add_photos: &quot;MyTestApp/demo.jpg&quot;, add_videos: &quot;MyTestApp/demo.mp4&quot;)
+<pre><code class="ruby">capture_screenshots(add_photos: &quot;MyTestApp/demo.jpg&quot;, add_videos: &quot;MyTestApp/demo.mp4&quot;)
 </code></pre>
 
 <p>For a list for all available options run</p>
-<pre><code class="no-highlight">fastlane action snapshot
+<pre><code class="no-highlight">fastlane action capture_screenshots
 </code></pre>
 
 <p></details></p>

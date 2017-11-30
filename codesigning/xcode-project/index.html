@@ -402,7 +402,7 @@
 <p>In most cases, <em>fastlane</em> will work out of the box with Xcode 9 if you selected manual code signing, and chose a provisioning profile name for each of your targets (<a href="#xcode-8">see Xcode 8 section</a>).</p>
 <p>If you don't use <em>match</em>, we recommend defining a mapping of app target to provisioning profile in your <code>Fastfile</code>. By defining those profiles, you can guarantee reproducible builds every time you run it.</p>
 <pre><code class="ruby">lane :beta do
-  gym(
+  build_app(
     export_method: &quot;app-store&quot;,
     export_options: {
       provisioningProfiles: { 

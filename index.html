@@ -390,14 +390,14 @@
 <p>You can start by creating a <code>Fastfile</code> file in your repository, here’s one that defines your beta or App Store release process:</p>
 <pre><code class="ruby">lane :beta do
   increment_build_number
-  gym                       # Build your app
-  testflight                # Upload to TestFlight
+  build_app
+  upload_to_testflight
 end
 
 lane :appstore do
-  snapshot                  # Generate screenshots for the App Store
-  gym                       # Build your app
-  deliver                   # Upload the screenshots and the binary to iTunes
+  capture_screenshots
+  build_app
+  upload_to_app_store       # Upload the screenshots and the binary to iTunes
   slack                     # Let your team-mates know the new version is live
 end
 </code></pre>
@@ -579,5 +579,5 @@ end
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2017-11-30 18:11:09.701585
+Build Date UTC : 2017-11-30 19:54:15.280137
 -->

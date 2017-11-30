@@ -429,7 +429,7 @@ end
 <p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <em>fastlane</em> is that you can easily switch beta providers, or even upload to multiple at once, with a minimum of configuration. Follow that with a notification posted to the group messaging service of your choice to let the team know that you've shipped.</p>
 <pre><code class="ruby">lane :beta do
   gradle(task: 'assemble', build_type: 'Release')
-  supply(track: 'beta')
+  upload_to_play_store(track: 'beta')
   slack(message: 'Successfully distributed a new beta build')
 end
 </code></pre>
@@ -437,20 +437,20 @@ end
 <h2 id="supported-beta-testing-services"><a name="user-content-supported-beta-testing-services" href="#supported-beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Supported beta testing services</h2>
 <p><details>
 <summary>Google Play</summary></p>
-<p>In order to distribute to Google Play with <em>supply</em> you will need to have your Google credentials set up. Make sure you've gone through <a href="../setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing!</p>
+<p>In order to distribute to Google Play with <em>upload_to_play_store</em> you will need to have your Google credentials set up. Make sure you've gone through <a href="../setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing!</p>
 <pre><code class="ruby">lane :beta do
   # ...
   gradle(
     task: 'assemble',
     build_type: 'Release'
   )
-  supply(track: 'beta')
+  upload_to_play_store(track: 'beta')
   # ...
 end
 </code></pre>
 
 <p>To get a list of all available options, run:</p>
-<pre><code class="no-highlight">fastlane action supply
+<pre><code class="no-highlight">fastlane action upload_to_play_store
 </code></pre>
 
 <hr />

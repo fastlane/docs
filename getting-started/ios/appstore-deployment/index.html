@@ -403,17 +403,17 @@
               
                 <h1 id="ios-app-store-deployment-using-fastlane"><a name="user-content-ios-app-store-deployment-using-fastlane" href="#ios-app-store-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS App Store deployment using <em>fastlane</em></h1>
 <h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
-<p><em>fastlane</em> takes care of building your app using a feature called <em>gym</em>, just add the following to your <code>Fastfile</code>:</p>
+<p><em>fastlane</em> takes care of building your app using an action called <em>build_app</em>, just add the following to your <code>Fastfile</code>:</p>
 <pre><code>lane :appstore do
-  gym(scheme: &quot;MyApp&quot;)
+  build_app(scheme: &quot;MyApp&quot;)
 end
 </code></pre>
 
 <p>Additionally you can specify more options for building your app, for example</p>
 <pre><code class="ruby">lane :appstore do
-  gym(scheme: &quot;MyApp&quot;,
-      workspace: &quot;Example.xcworkspace&quot;,
-      include_bitcode: true)
+  build_app(scheme: &quot;MyApp&quot;,
+            workspace: &quot;Example.xcworkspace&quot;,
+            include_bitcode: true)
 end
 </code></pre>
 
@@ -421,7 +421,7 @@ end
 <pre><code class="no-highlight">fastlane appstore
 </code></pre>
 
-<p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>gym</em>, run <code>fastlane action gym</code>.</p>
+<p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>build_app</em>, run <code>fastlane action build_app</code>.</p>
 <h2 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h2>
 <p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/GettingStarted">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
 <h1 id="submitting-your-app"><a name="user-content-submitting-your-app" href="#submitting-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submitting your app</h1>
@@ -430,28 +430,28 @@ end
 <h2 id="upload-the-binary-and-app-metadata"><a name="user-content-upload-the-binary-and-app-metadata" href="#upload-the-binary-and-app-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload the binary and app metadata</h2>
 <p>After building your app, it's ready to be uploaded to the App Store. If you've already followed <a href="../beta-deployment/">iOS Beta deployment using <em>fastlane</em></a>, the following code might look similar already.</p>
 <pre><code class="ruby">lane :appstore do
-  snapshot                      # generate new screenshots for the App Store
-  match(type: &quot;appstore&quot;)       # see code signing guide for more information
-  gym(scheme: &quot;MyApp&quot;)          # build your app
-  appstore                      # upload your app to iTunes Connect
+  capture_screenshots                  # generate new screenshots for the App Store
+  sync_code_signing(type: &quot;appstore&quot;)  # see code signing guide for more information
+  build_app(scheme: &quot;MyApp&quot;)
+  upload_to_app_store                  # upload your app to iTunes Connect
   slack(message: &quot;Successfully uploaded a new App Store build&quot;)
 end
 </code></pre>
 
-<p><em>fastlane</em> automatically passes on information about the generated screenshots and the binary to the <code>appstore</code> action of your <code>Fastfile</code>.</p>
+<p><em>fastlane</em> automatically passes on information about the generated screenshots and the binary to the <code>upload_to_app_store</code> action of your <code>Fastfile</code>.</p>
 <p>For a list of all options for each of the steps run <code>fastlane action [action_name]</code>.</p>
 <h1 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h1>
 <p><details>
 <summary>Push Notifications</summary></p>
 <p>To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:</p>
 <pre><code class="ruby">lane :appstore do
-  pem
+  get_push_certificate
   # ...
 end
 </code></pre>
 
-<p><em>pem</em> will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.</p>
-<p>If you don't have any push certificates already, <em>pem</em> will create one for you and store locally in your project's directory. To get more information about the available options run <code>fastlane action pem</code>.</p>
+<p><em>get_push_certificate</em> will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.</p>
+<p>If you don't have any push certificates already, <em>get_push_certificate</em> will create one for you and store locally in your project's directory. To get more information about the available options run <code>fastlane action get_push_certificate</code>.</p>
 <p></details></p>
               
             </div>

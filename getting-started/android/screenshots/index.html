@@ -524,14 +524,14 @@ public class ExampleInstrumentedTest {
 </ol>
 <p>Add the following code to your <code>fastlane/Fastfile</code>:</p>
 <pre><code class="ruby">lane :screenshots do
-  screengrab
-  supply
+  capture_android_screenshots
+  upload_to_play_store
 end
 </code></pre>
 
 <p>To get a list of all available options for each of the steps, run</p>
-<pre><code class="no-highlight">fastlane action screengrab
-fastlane action supply
+<pre><code class="no-highlight">fastlane action capture_android_screenshots
+fastlane action upload_to_play_store
 </code></pre>
 
 <h1 id="advanced-screengrab"><a name="user-content-advanced-screengrab" href="#advanced-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced <em>screengrab</em></h1>

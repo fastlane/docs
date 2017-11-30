@@ -424,7 +424,7 @@ end
     task: 'assemble',
     build_type: 'Release'
   )
-  supply # Uploads the APK built in the gradle step above
+  upload_to_play_store # Uploads the APK built in the gradle step above
 end
 </code></pre>
 
@@ -442,15 +442,15 @@ end
 <p>To gradually roll out a new build you can use:</p>
 <pre><code class="ruby">lane :playstore do
   # ...
-  supply(
+  upload_to_play_store(
     track: 'rollout',
     rollout: '0.5'
   )
 end
 </code></pre>
 
-<p>To get a list of all available parameters for the <em>supply</em> action, run:</p>
-<pre><code class="no-highlight">fastlane action supply
+<p>To get a list of all available parameters for the <em>upload_to_play_store</em> action, run:</p>
+<pre><code class="no-highlight">fastlane action upload_to_play_store
 </code></pre>
               
             </div>
