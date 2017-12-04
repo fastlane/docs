@@ -399,7 +399,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios</td>
+<td>ios, android</td>
 </tr>
 <tr>
 <td>Author</td>
@@ -415,6 +415,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
   caps: {
     versionNumber: &quot;9.1&quot;,
     deviceName:    &quot;iPhone 6&quot;
+  },
+  appium_lib: {
+    wait: 10
   }
 )
 </code></pre>
@@ -459,6 +462,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <td><code>caps</code></td>
 <td>Hash of caps for Appium::Driver</td>
+</tr>
+<tr>
+<td><code>appium_lib</code></td>
+<td>Hash of appium_lib for Appium::Driver</td>
 </tr>
 </tbody>
 </table>
