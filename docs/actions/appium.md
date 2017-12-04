@@ -32,7 +32,7 @@ appium(
     versionNumber: "9.1",
     deviceName:    "iPhone 6"
   },
-  appium_lib {
+  appium_lib: {
     wait: 10
   }
 )
