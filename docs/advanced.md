@@ -1135,8 +1135,7 @@ If an `error_callback` is not provided, an exception is raised if the command
 returns an error, and lane execution is terminated.
 
 Anywhere other than an action or a Fastfile (e.g. in helper code), you can
-invoke this method as `Fastlane::Actions.sh` (or just `Actions.sh` within the
-`Fastlane` module).
+invoke this method as `Actions.sh`.
 
 ### Escaping in shell commands
 
