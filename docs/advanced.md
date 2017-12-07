@@ -1108,13 +1108,13 @@ If the command to be executed is not found, `Errno::ENOENT` is raised.
 
 ### Using the sh method
 
-You can also use the built-in `Actions.sh` method:
+You can also use the built-in `sh` method:
 
 ```ruby
 sh "pwd"
 ```
 
-This is called the same way as in a Fastfile. This provides consistent
+This is called the same way in an action as in a Fastfile. This provides consistent
 logging of command output. All output to stdout and stderr is logged via `UI`.
 
 To be notified when an error occurs, use the `error_callback` parameter:
@@ -1131,6 +1131,13 @@ The return value of the method is the output of the command.
 
 If the command to be executed is not found, `Errno::ENOENT` is raised.
 
+If an `error_callback` is not provided, an exception is raised if the command
+returns an error, and lane execution is terminated.
+
+Anywhere other than an action or a Fastfile (e.g. in helper code), you can
+invoke this method as `Fastlane::Actions.sh` (or just `Actions.sh` within the
+`Fastlane` module).
+
 ### Escaping in shell commands
 
 Use `shellwords` to escape arguments to shell commands.
@@ -1143,18 +1150,13 @@ Use `shellwords` to escape arguments to shell commands.
 system "cat #{path.shellescape}"
 ```
 
-When using `sh`, pass a list of arguments. Each argument will be
-converted to a string, shell-escaped, and the resulting array joined to form
-the command.
+When using `system` or `sh`, pass a list of arguments instead of shell-escaping
+individual arguments.
 
 ```Ruby
 sh "git", "commit", "-aqm", commit_message
-sh "cat", path
+system "cat", path
 ```
-
-Arguments need not be strings. Each element will be converted to a string
-using `#to_s` before shell-escaping. This is convenient when working with
-utility classes such as `Pathname`.
 
 ## Calling other actions
 
