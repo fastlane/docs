@@ -21,7 +21,7 @@ Author | @sjrmanning
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 hg_push
@@ -38,7 +38,7 @@ hg_push(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

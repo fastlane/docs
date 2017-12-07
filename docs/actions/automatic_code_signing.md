@@ -22,7 +22,7 @@ Returns | The current status (boolean) of codesigning after modification
 
 
 
-**8 Examples**
+## 8 Examples
 
 ```ruby
 # enable automatic code signing
@@ -83,7 +83,7 @@ automatic_code_signing(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # supply
 
 
-Upload metadata, screenshots and binaries to Google Play
+Alias for the `upload_to_play_store` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/supply.png" height="110">
+  <img src="/img/actions/supply.png" width="250">
 </p>
 
 ###### Command line tool for updating Android apps and their metadata on the Google Play Store
@@ -166,17 +166,21 @@ Author | @KrauseFx
 
 
 
-**1 Example**
+## 2 Examples
 
 ```ruby
-supply
+upload_to_play_store
+```
+
+```ruby
+supply # alias for "upload_to_play_store"
 ```
 
 
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

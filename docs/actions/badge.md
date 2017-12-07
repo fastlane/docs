@@ -24,7 +24,7 @@ Author | @DanielGri
 
 
 
-**4 Examples**
+## 4 Examples
 
 ```ruby
 badge(dark: true)
@@ -46,7 +46,7 @@ badge(shield: "Version-0.0.3-blue", no_badge: true)
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

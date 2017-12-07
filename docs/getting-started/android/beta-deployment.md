@@ -39,7 +39,7 @@ After building your app, it's ready to be uploaded to a beta testing service of 
 ```ruby
 lane :beta do
   gradle(task: 'assemble', build_type: 'Release')
-  supply(track: 'beta')
+  upload_to_play_store(track: 'beta')
   slack(message: 'Successfully distributed a new beta build')
 end
 ```
@@ -49,7 +49,7 @@ end
 <details>
 <summary>Google Play</summary>
 
-In order to distribute to Google Play with _supply_ you will need to have your Google credentials set up. Make sure you've gone through [Setting up _supply_](setup/#setting-up-supply) before continuing!
+In order to distribute to Google Play with _upload_to_play_store_ you will need to have your Google credentials set up. Make sure you've gone through [Setting up _supply_](setup/#setting-up-supply) before continuing!
 
 ```ruby
 lane :beta do
@@ -58,7 +58,7 @@ lane :beta do
     task: 'assemble',
     build_type: 'Release'
   )
-  supply(track: 'beta')
+  upload_to_play_store(track: 'beta')
   # ...
 end
 ```
@@ -66,7 +66,7 @@ end
 To get a list of all available options, run:
 
 ```no-highlight
-fastlane action supply
+fastlane action upload_to_play_store
 ```
 
 ---

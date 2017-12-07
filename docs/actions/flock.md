@@ -22,7 +22,7 @@ Author | @Manav
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 flock(
@@ -35,7 +35,7 @@ flock(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

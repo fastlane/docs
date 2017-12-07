@@ -22,7 +22,7 @@ Author | @hjanuschka
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 # Example `erb` template:
@@ -48,7 +48,7 @@ erb(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

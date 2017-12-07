@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # scan
 
 
-Easily run tests of your iOS app using _scan_
+Alias for the `run_tests` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/scan.png" height="110">
+  <img src="/img/actions/scan.png" width="250">
 </p>
 
 ###### The easiest way to run tests of your iOS and Mac app
@@ -167,14 +167,18 @@ Author | @KrauseFx
 
 
 
-**5 Examples**
+## 6 Examples
 
 ```ruby
-scan
+run_tests
 ```
 
 ```ruby
-scan(
+scan # alias for "run_tests"
+```
+
+```ruby
+run_tests(
   workspace: "App.xcworkspace",
   scheme: "MyTests",
   clean: false
@@ -183,7 +187,7 @@ scan(
 
 ```ruby
 # Build For Testing
-scan(
+run_tests(
    derived_data_path: "my_folder",
    build_for_testing: true
 )
@@ -191,7 +195,7 @@ scan(
 
 ```ruby
 # run tests using derived data from prev. build
-scan(
+run_tests(
    derived_data_path: "my_folder",
    test_without_building: true
 )
@@ -199,7 +203,7 @@ scan(
 
 ```ruby
 # or run it from an existing xctestrun package
-scan(
+run_tests(
    xctestrun: "/path/to/mytests.xctestrun"
 )
 ```
@@ -208,7 +212,7 @@ scan(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

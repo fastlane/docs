@@ -21,7 +21,7 @@ Author | @vpolouchkine
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 ifttt(
@@ -37,7 +37,7 @@ ifttt(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

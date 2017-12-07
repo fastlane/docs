@@ -21,7 +21,7 @@ Author | @Mo7amedFouad
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 apteligent(
@@ -34,7 +34,7 @@ apteligent(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

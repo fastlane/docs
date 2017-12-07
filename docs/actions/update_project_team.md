@@ -21,7 +21,7 @@ Author | @lgaches
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 update_project_team
@@ -38,7 +38,7 @@ update_project_team(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -16,12 +16,12 @@ Run UI test by Appium with RSpec
 
 appium |
 -----|----
-Supported platforms | ios
+Supported platforms | ios, android
 Author | @yonekawa
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 appium(
@@ -31,6 +31,9 @@ appium(
   caps: {
     versionNumber: "9.1",
     deviceName:    "iPhone 6"
+  },
+  appium_lib: {
+    wait: 10
   }
 )
 ```
@@ -39,7 +42,7 @@ appium(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
@@ -51,6 +54,7 @@ Key | Description
   `port` | HTTP port of Appium server
   `appium_path` | Path to Appium executable
   `caps` | Hash of caps for Appium::Driver
+  `appium_lib` | Hash of appium_lib for Appium::Driver
 
 
 

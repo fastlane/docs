@@ -22,7 +22,7 @@ Author | @xfreebird
 
 
 
-**4 Examples**
+## 4 Examples
 
 ```ruby
 unlock_keychain( # Unlock an existing keychain and add it to the keychain search list
@@ -58,7 +58,7 @@ unlock_keychain( # If the keychain file is located in the standard location `~/L
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

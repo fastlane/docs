@@ -21,7 +21,7 @@ Author | @NeoNachoSoto, @tommeier
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 install_xcode_plugin(url: "https://example.com/clubmate/plugin.zip")
@@ -35,7 +35,7 @@ install_xcode_plugin(github: "https://github.com/contentful/ContentfulXcodePlugi
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -24,7 +24,7 @@ Author | @dantoml
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 setup_circle_ci
@@ -34,7 +34,7 @@ setup_circle_ci
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -22,7 +22,7 @@ Author | @tnj, @tomorrowkey
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 deploygate(
@@ -48,7 +48,7 @@ deploygate(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

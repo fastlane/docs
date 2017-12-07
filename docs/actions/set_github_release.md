@@ -27,7 +27,7 @@ Access things like 'html_url', 'tag_name', 'name', 'body'
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 github_release = set_github_release(
@@ -45,7 +45,7 @@ github_release = set_github_release(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

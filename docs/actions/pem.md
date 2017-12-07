@@ -6,13 +6,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # pem
 
 
-Makes sure a valid push profile is active and creates a new one if needed
+Alias for the `get_push_certificate` action
 
 
 
 
 <p align="center">
-  <img src="/img/actions/pem.png" height="110">
+  <img src="/img/actions/pem.png" width="250">
 </p>
 
 ###### Automatically generate and renew your push notification profiles
@@ -142,14 +142,18 @@ Author | @KrauseFx
 
 
 
-**2 Examples**
+## 3 Examples
 
 ```ruby
-pem
+get_push_certificate
 ```
 
 ```ruby
-pem(
+pem # alias for "get_push_certificate"
+```
+
+```ruby
+get_push_certificate(
   force: true, # create a new profile, even if the old one is still valid
   app_identifier: "net.sunapps.9", # optional app identifier,
   save_private_key: true,
@@ -164,7 +168,7 @@ pem(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -8,7 +8,7 @@ If you don't use _match_, we recommend defining a mapping of app target to provi
 
 ```ruby
 lane :beta do
-  gym(
+  build_app(
     export_method: "app-store",
     export_options: {
       provisioningProfiles: { 

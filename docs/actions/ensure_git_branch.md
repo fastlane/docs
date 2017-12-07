@@ -23,7 +23,7 @@ Author | @dbachrach, @Liquidsoul
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 ensure_git_branch # defaults to `master` branch
@@ -39,7 +39,7 @@ ensure_git_branch(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

@@ -22,7 +22,7 @@ Author | @lmirosevic
 
 
 
-**1 Example**
+## 1 Example
 
 ```ruby
 clean_build_artifacts
@@ -32,7 +32,7 @@ clean_build_artifacts
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

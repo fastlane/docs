@@ -21,7 +21,7 @@ Author | @gin0606, @koenpunt
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 delete_keychain(name: "KeychainName")
@@ -35,7 +35,7 @@ delete_keychain(keychain_path: "/keychains/project.keychain")
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------

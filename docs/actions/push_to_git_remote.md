@@ -21,7 +21,7 @@ Author | @lmirosevic
 
 
 
-**2 Examples**
+## 2 Examples
 
 ```ruby
 push_to_git_remote # simple version. pushes "master" branch to "origin" remote
@@ -41,7 +41,7 @@ push_to_git_remote(
 
 
 
-**Parameters**
+## Parameters
 
 Key | Description
 ----|------------
