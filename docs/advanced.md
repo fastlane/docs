@@ -1117,7 +1117,21 @@ sh "pwd"
 This is called the same way in an action as in a Fastfile. This provides consistent
 logging of command output. All output to stdout and stderr is logged via `UI`.
 
-To be notified when an error occurs, use the `error_callback` parameter:
+The `sh` method can accept a block, which will receive the `Process::Status`
+returned by the command, the complete output of the command, and an equivalent
+shell command upon completion of the command.
+
+```ruby
+sh "ls", "-la" do |status, result, command|
+  unless status.success?
+    UI.error "Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}"
+  end
+  UI.message "Output is #{result.inspect}"
+end
+```
+
+To be notified only when an error occurs, use the `error_callback` parameter
+(a Proc):
 
 ```ruby
 success = true
@@ -1131,8 +1145,8 @@ The return value of the method is the output of the command.
 
 If the command to be executed is not found, `Errno::ENOENT` is raised.
 
-If an `error_callback` is not provided, an exception is raised if the command
-returns an error, and lane execution is terminated.
+If an `error_callback` or block is not provided, an exception is raised if the
+command returns an error, and lane execution is terminated.
 
 Anywhere other than an action or a Fastfile (e.g. in helper code), you can
 invoke this method as `Actions.sh`.
