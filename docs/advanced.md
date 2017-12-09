@@ -1086,7 +1086,7 @@ system "cat fastlane/Fastfile"
 UI.user_error! "Could not execute command" unless $?.exitstatus == 0
 ```
 
-If the command to be executed is not found,
+If the command to be executed is not found, system will return `nil`, and
 `$?.exitstatus` will be nonzero.
 
 ### Using backticks
