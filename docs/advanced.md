@@ -1140,13 +1140,27 @@ UI.user_error "Command failed" unless success
 ```
 
 The `result` argument to the `error_callback` is the entire string output
-of the command. The exit status of the command will be available in `$?`.
-The return value of the method is the output of the command.
+of the command.
 
-If the command to be executed is not found, `Errno::ENOENT` is raised.
+If the command to be executed is not found, `Errno::ENOENT` is raised without
+calling the block or `error_callback`.
 
-If an `error_callback` or block is not provided, an exception is raised if the
-command returns an error, and lane execution is terminated.
+If an `error_callback` or block is not provided, and the command executes and
+returns an error, an exception is raised, and lane execution is terminated
+unless the exception is rescued. The exit status of the command will be available in `$?`. It is also available
+as the first argument to a block.
+
+The return value of the method is the output of the command, unless a block is
+given. Then the output is available within the block, and the return value of
+`sh` is the return value of the block. This enables usage like:
+
+```ruby
+if sh command { |s| s.success? }
+  UI.success "Command succeeded"
+else
+  UI.error "Command failed"
+end
+```
 
 Anywhere other than an action or a Fastfile (e.g. in helper code), you can
 invoke this method as `Actions.sh`.
