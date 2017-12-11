@@ -4,7 +4,7 @@ Welcome to Fastlane.swift. Fastlane.swift allows you to write your _fastlane_ co
 
 ## Currently Supported:
 
-Fastlane.swift currently supports all actions in the main, [_fastlane_](https://github.com/fastlane/fastlane) repository. The API for each action is automatically generated and will accept all options and parameters.
+Fastlane.swift currently supports all actions in the main, [_fastlane_](https://github.com/fastlane/fastlane) repository.
 
 ## Get Started:
 
