@@ -12,7 +12,7 @@ Fastlane.swift currently supports all actions in the main, [_fastlane_](https://
 
 Run the following command in your terminal:
 
-```
+``` no-highlight
 fastlane init swift
 ```
 
