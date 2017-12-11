@@ -1314,7 +1314,7 @@ UI.error &quot;Something unexpected happened in my_new_action. Attempting to con
 </tr>
 </tbody>
 </table>
-<p>Methods ending in and exclamation point (<code>!</code>) terminate execution of the current
+<p>Methods ending in an exclamation point (<code>!</code>) terminate execution of the current
 lane and report an error:</p>
 <pre><code class="ruby">UI.user_error! &quot;Could not open file #{file_path}&quot;
 </code></pre>
@@ -1402,20 +1402,21 @@ end
 <p>If your action needs to run a shell command, there are several methods. You can
 easily determine the exit status of the command and capture all terminal output
 from the command.</p>
-<h3 id="using-kernelsystem"><a name="user-content-using-kernelsystem" href="#using-kernelsystem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Kernel::system</h3>
+<h3 id="using-kernelsystem"><a name="user-content-using-kernelsystem" href="#using-kernelsystem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Kernel#system</h3>
 <p>Use the Ruby <code>system</code> method call to invoke a command string. This does not
 redirect stdin, stdout or stderr, so output formatting will be unaffected. It executes
 the command in a subshell.</p>
 <pre><code class="ruby">system &quot;cat fastlane/Fastfile&quot;
 </code></pre>
 
-<p>Upon command completion, the method returns. The <code>$?</code> global variable will
-indicate the exit status of the command.</p>
+<p>Upon command completion, the method returns true or false to indicate completion
+status. The <code>$?</code> global variable will also indicate the exit status of the
+command.</p>
 <pre><code class="ruby">system &quot;cat fastlane/Fastfile&quot;
 UI.user_error! &quot;Could not execute command&quot; unless $?.exitstatus == 0
 </code></pre>
 
-<p>If the command to be executed is not found,
+<p>If the command to be executed is not found, system will return <code>nil</code>, and
 <code>$?.exitstatus</code> will be nonzero.</p>
 <h3 id="using-backticks"><a name="user-content-using-backticks" href="#using-backticks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using backticks</h3>
 <p>To capture the output of a command, enclose the command in backticks:</p>
@@ -1429,28 +1430,63 @@ capturing command output. The entire output to stdout will be captured after the
 command returns. Output to stderr is not captured or redirected. The <code>$?</code>
 global variable will indicate the completion status of the command.</p>
 <p>If the command to be executed is not found, <code>Errno::ENOENT</code> is raised.</p>
-<h3 id="using-the-sh-action"><a name="user-content-using-the-sh-action" href="#using-the-sh-action" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using the sh action</h3>
-<p>You can also use the built-in <code>sh</code> Fastlane action:</p>
-<pre><code class="ruby">other_action.sh &quot;pwd&quot;
+<h3 id="using-the-sh-method"><a name="user-content-using-the-sh-method" href="#using-the-sh-method" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using the sh method</h3>
+<p>You can also use the built-in <code>sh</code> method:</p>
+<pre><code class="ruby">sh &quot;pwd&quot;
 </code></pre>
 
-<p>Within a Fastfile, just call <code>sh</code>, e.g.: <code>sh "pwd"</code>. This provides consistent
+<p>This is called the same way in an action as in a Fastfile. This provides consistent
 logging of command output. All output to stdout and stderr is logged via <code>UI</code>.</p>
-<p>To be notified when an error occurs, use the <code>error_callback</code> parameter:</p>
+<p>The <code>sh</code> method can accept a block, which will receive the <code>Process::Status</code>
+returned by the command, the complete output of the command, and an equivalent
+shell command upon completion of the command.</p>
+<pre><code class="ruby">sh &quot;ls&quot;, &quot;-la&quot; do |status, result, command|
+  unless status.success?
+    UI.error &quot;Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}&quot;
+  end
+  UI.message &quot;Output is #{result.inspect}&quot;
+end
+</code></pre>
+
+<p>To be notified only when an error occurs, use the <code>error_callback</code> parameter
+(a Proc):</p>
 <pre><code class="ruby">success = true
-other_action.sh(&quot;pwd&quot;, error_callback: -&gt;(result) { success = false })
+sh(&quot;pwd&quot;, error_callback: -&gt;(result) { success = false })
 UI.user_error &quot;Command failed&quot; unless success
 </code></pre>
 
 <p>The <code>result</code> argument to the <code>error_callback</code> is the entire string output
-of the command. The exit status of the command will be available in <code>$?</code>.</p>
-<p>If the command to be executed is not found, <code>Errno::ENOENT</code> is raised.</p>
+of the command.</p>
+<p>If the command to be executed is not found, <code>Errno::ENOENT</code> is raised without
+calling the block or <code>error_callback</code>.</p>
+<p>If an <code>error_callback</code> or block is not provided, and the command executes and
+returns an error, an exception is raised, and lane execution is terminated
+unless the exception is rescued. The exit status of the command will be available in <code>$?</code>. It is also available
+as the first argument to a block.</p>
+<p>The return value of the method is the output of the command, unless a block is
+given. Then the output is available within the block, and the return value of
+<code>sh</code> is the return value of the block. This enables usage like:</p>
+<pre><code class="ruby">if sh command { |s| s.success? }
+  UI.success &quot;Command succeeded&quot;
+else
+  UI.error &quot;Command failed&quot;
+end
+</code></pre>
+
+<p>Anywhere other than an action or a Fastfile (e.g. in helper code), you can
+invoke this method as <code>Actions.sh</code>.</p>
 <h3 id="escaping-in-shell-commands"><a name="user-content-escaping-in-shell-commands" href="#escaping-in-shell-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Escaping in shell commands</h3>
 <p>Use <code>shellwords</code> to escape arguments to shell commands.</p>
-<pre><code class="Ruby">`git commit -aqm#{Shellwords.escape commit_message}`
+<pre><code class="Ruby">`git commit -aqm #{Shellwords.escape commit_message}`
 </code></pre>
 
 <pre><code class="Ruby">system &quot;cat #{path.shellescape}&quot;
+</code></pre>
+
+<p>When using <code>system</code> or <code>sh</code>, pass a list of arguments instead of shell-escaping
+individual arguments.</p>
+<pre><code class="Ruby">sh &quot;git&quot;, &quot;commit&quot;, &quot;-aqm&quot;, commit_message
+system &quot;cat&quot;, path
 </code></pre>
 
 <h2 id="calling-other-actions"><a name="user-content-calling-other-actions" href="#calling-other-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Calling other actions</h2>
@@ -1462,8 +1498,9 @@ In particular:</p>
   probably refactor your plugin helper to be more easily called from all actions
   in the plugin.</li>
 <li>Avoid wrapping complex built-in actions like <em>deliver</em> and <em>gym</em>.</li>
+<li>There can be issues with one plugin depending on another plugin.</li>
 <li>Certain simple built-in utility actions may be used with <code>other_action</code> in your
-  action, such as: <code>other_action.sh</code>, <code>other_action.git_add</code>, <code>other_action.git_commit</code>.</li>
+  action, such as: <code>other_action.git_add</code>, <code>other_action.git_commit</code>.</li>
 <li>Think twice before calling an action from another action. There is often a better
   solution.</li>
 </ul>
