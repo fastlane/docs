@@ -1,6 +1,6 @@
 # Getting Started with Fastlane.swift
 
-Welcome to Fastlane.swift. Fastlane.swift allows you to write your _fastlane_ configuration in Swift, using Xcode and the language you have come to know and love from the world of iOS development.
+Welcome to Fastlane.swift. Fastlane.swift allows you to write your _fastlane_ configuration using Xcode, in Swift - the language you have come to know and love from the world of iOS development..
 
 ## Currently Supported:
 

@@ -54,7 +54,7 @@ _for Swift setup:_
 fastlane init swift
 ```
 
-** Swift setup is still in beta. See [Fastlane.swift docs](http://localhost:8000/getting-started/ios/fastlane-swift/) for more information.
+** Swift setup is still in beta. See [Fastlane.swift docs](https://docs.fastlane.tools/getting-started/ios/fastlane-swift/) for more information.
 
 You'll be asked for your Apple ID, and _fastlane_ will automatically generate a fastlane configuration for you, based on the information provided.
 
