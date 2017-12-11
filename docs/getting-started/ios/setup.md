@@ -42,9 +42,19 @@ You can find your shell profile at `~/.bashrc`, `~/.bash_profile` or `~/.zshrc` 
 
 Navigate your terminal to your project's directory and run
 
+_for Ruby setup_:
+
 ```no-highlight
 fastlane init
 ```
+
+_for Swift setup:_
+
+```
+fastlane init swift
+```
+
+** Swift setup is still in beta. See [Fastlane.swift docs](http://localhost:8000/getting-started/ios/fastlane-swift/) for more information.
 
 You'll be asked for your Apple ID, and _fastlane_ will automatically generate a fastlane configuration for you, based on the information provided.
 
