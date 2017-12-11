@@ -18,7 +18,7 @@ fastlane init swift
 
 ### Step 2:
 
-Open the file located at `<path/to/your/project>/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj` to configure `Fastfile.swift` to your liking.
+Open the file located at `[project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj` to configure `Fastfile.swift` to your liking.
 
 ### Step 3:
 
