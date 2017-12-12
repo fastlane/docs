@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>App Store Deployment - fastlane docs</title>
+  <title>_Swift - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "App Store Deployment";
-    var mkdocs_page_input_path = "getting-started/ios/appstore-deployment.md";
-    var mkdocs_page_url = "/getting-started/ios/appstore-deployment/";
+    var mkdocs_page_name = "_Swift";
+    var mkdocs_page_input_path = "getting-started/ios/fastlane-swift.md";
+    var mkdocs_page_url = "/getting-started/ios/fastlane-swift/";
   </script>
   
   <script src="../../../js/jquery-2.1.1.min.js"></script>
@@ -118,26 +118,8 @@
       
       
   
-    <li class="toctree-l1 current">
-      <a class="current" href="./">App Store Deployment</a>
-      
-      <ul>
-        
-          
-        
-          
-          <li class="toctree-l3"><a href="#building-your-app">Building your app</a></li>
-          
-        
-          
-          <li class="toctree-l3"><a href="#submitting-your-app">Submitting your app</a></li>
-          
-        
-          
-          <li class="toctree-l3"><a href="#best-practices">Best Practices</a></li>
-          
-        
-      </ul>
+    <li class="toctree-l1 ">
+      <a class="" href="../appstore-deployment/">App Store Deployment</a>
       
     </li>
   
@@ -374,12 +356,12 @@
         
       
     
-    <li>App Store Deployment</li>
+    <li>_Swift</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/fastlane/docs/edit/master/docs/getting-started/ios/appstore-deployment.md" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/docs/edit/master/docs/getting-started/ios/fastlane-swift.md" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -405,58 +387,38 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ios-app-store-deployment-using-fastlane"><a name="user-content-ios-app-store-deployment-using-fastlane" href="#ios-app-store-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS App Store deployment using <em>fastlane</em></h1>
-<h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
-<p><em>fastlane</em> takes care of building your app using an action called <em>build_app</em>, just add the following to your <code>Fastfile</code>:</p>
-<pre><code>lane :appstore do
-  build_app(scheme: &quot;MyApp&quot;)
-end
+                <h1 id="getting-started-with-fastlaneswift-beta"><a name="user-content-getting-started-with-fastlaneswift-beta" href="#getting-started-with-fastlaneswift-beta" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started with Fastlane.swift (beta)</h1>
+<p>Welcome to Fastlane.swift. Fastlane.swift allows you to write your <em>fastlane</em> configuration using Xcode, in Swift - the language you have come to know and love from the world of iOS development.</p>
+<p>Fastlane.swift is currently in beta. Please provide feedback by opening an issue in the <a href="https://github.com/fastlane/fastlane"><em>fastlane</em> repo</a>.</p>
+<h2 id="currently-supported"><a name="user-content-currently-supported" href="#currently-supported" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Currently Supported:</h2>
+<p>Fastlane.swift currently supports all actions in the main, <a href="https://github.com/fastlane/fastlane"><em>fastlane</em></a> repository.</p>
+<h2 id="get-started"><a name="user-content-get-started" href="#get-started" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Get Started:</h2>
+<h3 id="step-1"><a name="user-content-step-1" href="#step-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1:</h3>
+<p>Run the following command in your terminal:</p>
+<pre><code class="no-highlight">fastlane init swift
 </code></pre>
 
-<p>Additionally you can specify more options for building your app, for example</p>
-<pre><code class="ruby">lane :appstore do
-  build_app(scheme: &quot;MyApp&quot;,
-            workspace: &quot;Example.xcworkspace&quot;,
-            include_bitcode: true)
-end
+<h3 id="step-2"><a name="user-content-step-2" href="#step-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2:</h3>
+<p>Open the file located at <code>[project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj</code> to configure your lanes in <code>Fastfile.swift</code>.</p>
+<pre><code class="swift">func betaLane() {
+    desc(&quot;Submit a new Beta Build to Apple TestFlight. This will also make sure the profile is up to date&quot;)
+
+    syncCodeSigning(gitUrl: &quot;URL/for/your/git/repo&quot;, appIdentifier: [appIdentifier], username: appleID)
+    // Build your app - more options available
+    buildIosApp(scheme: &quot;SchemeName&quot;)
+    uploadToTestflight(username: appleID)
+    // You can also use other beta testing services here (run `fastlane actions`)
+}
 </code></pre>
 
-<p>Try running the lane using</p>
-<pre><code class="no-highlight">fastlane appstore
-</code></pre>
-
-<p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>build_app</em>, run <code>fastlane action build_app</code>.</p>
-<h2 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h2>
-<p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/GettingStarted">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
-<h1 id="submitting-your-app"><a name="user-content-submitting-your-app" href="#submitting-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submitting your app</h1>
-<h2 id="generating-screenshots"><a name="user-content-generating-screenshots" href="#generating-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating screenshots</h2>
-<p>To find out more about how to automatically generate screenshots for the App Store, check out <a href="../screenshots/"><em>fastlane</em> screenshots for iOS and tvOS</a>.</p>
-<h2 id="upload-the-binary-and-app-metadata"><a name="user-content-upload-the-binary-and-app-metadata" href="#upload-the-binary-and-app-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload the binary and app metadata</h2>
-<p>After building your app, it's ready to be uploaded to the App Store. If you've already followed <a href="../beta-deployment/">iOS Beta deployment using <em>fastlane</em></a>, the following code might look similar already.</p>
-<pre><code class="ruby">lane :appstore do
-  capture_screenshots                  # generate new screenshots for the App Store
-  sync_code_signing(type: &quot;appstore&quot;)  # see code signing guide for more information
-  build_app(scheme: &quot;MyApp&quot;)
-  upload_to_app_store                  # upload your app to iTunes Connect
-  slack(message: &quot;Successfully uploaded a new App Store build&quot;)
-end
-</code></pre>
-
-<p><em>fastlane</em> automatically passes on information about the generated screenshots and the binary to the <code>upload_to_app_store</code> action of your <code>Fastfile</code>.</p>
-<p>For a list of all options for each of the steps run <code>fastlane action [action_name]</code>.</p>
-<h1 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h1>
-<p><details>
-<summary>Push Notifications</summary></p>
-<p>To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:</p>
-<pre><code class="ruby">lane :appstore do
-  get_push_certificate
-  # ...
-end
-</code></pre>
-
-<p><em>get_push_certificate</em> will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.</p>
-<p>If you don't have any push certificates already, <em>get_push_certificate</em> will create one for you and store locally in your project's directory. To get more information about the available options run <code>fastlane action get_push_certificate</code>.</p>
-<p></details></p>
+<h3 id="step-3"><a name="user-content-step-3" href="#step-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3:</h3>
+<p>Run <code>fastlane &lt;laneName&gt;</code> in your terminal to execute <em>fastlane</em>.</p>
+<h3 id="step-4"><a name="user-content-step-4" href="#step-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4:</h3>
+<p>🎉</p>
+<h2 id="known-limitations"><a name="user-content-known-limitations" href="#known-limitations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Known Limitations:</h2>
+<p>Currently, Fastlane.swift does not have support for plugins. This is a work in progress and we will continue to update this doc with the current working condition of each feature as we move from beta to general availability.</p>
+<h2 id="we-would-love-your-feedback"><a name="user-content-we-would-love-your-feedback" href="#we-would-love-your-feedback" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>We Would Love Your Feedback</h2>
+<p>Please feel free to [open an issue on GitHub]((https://github.com/fastlane/fastlane) to report any problems you are having with Fastlane.swift and we will respond as quickly as possible.</p>
               
             </div>
           </div>
@@ -464,10 +426,10 @@ end
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../android/setup/" class="btn btn-neutral float-right" title="Setup">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../screenshots/" class="btn btn-neutral float-right" title="Screenshots">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../beta-deployment/" class="btn btn-neutral" title="Beta Deployment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setup/" class="btn btn-neutral" title="Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -500,10 +462,10 @@ end
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../beta-deployment/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../setup/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../android/setup/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../screenshots/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

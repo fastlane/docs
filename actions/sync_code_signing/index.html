@@ -96,6 +96,10 @@
       
       
   
+
+      
+      
+  
     <li class="toctree-l1 ">
       <a class="" href="../../getting-started/ios/screenshots/">Screenshots</a>
       
@@ -411,7 +415,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tbody>
 </table>
 <h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
-<pre><code class="ruby">sync_code_signing(type: &quot;appstore&quot;, app_identifier: &quot;tools.fastlane.app&quot;)
+<pre><code class="ruby">sync_code_signing(type: &quot;appstore&quot;, app_identifier: [&quot;tools.fastlane.app&quot;])
 </code></pre>
 
 <pre><code class="ruby">sync_code_signing(type: &quot;development&quot;, readonly: true)

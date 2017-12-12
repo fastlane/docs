@@ -102,6 +102,10 @@
       
       
   
+
+      
+      
+  
     <li class="toctree-l1 ">
       <a class="" href="../screenshots/">Screenshots</a>
       
@@ -423,9 +427,15 @@ export LANG=en_US.UTF-8
 <p>You can find your shell profile at <code>~/.bashrc</code>, <code>~/.bash_profile</code> or <code>~/.zshrc</code> depending on your system. </p>
 <h2 id="setting-up-fastlane"><a name="user-content-setting-up-fastlane" href="#setting-up-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em></h2>
 <p>Navigate your terminal to your project's directory and run</p>
+<p><em>for Ruby setup</em>:</p>
 <pre><code class="no-highlight">fastlane init
 </code></pre>
 
+<p><em>for Swift setup:</em></p>
+<pre><code>fastlane init swift
+</code></pre>
+
+<p>** Swift setup is still in beta. See <a href="https://docs.fastlane.tools/getting-started/ios/fastlane-swift/">Fastlane.swift docs</a> for more information.</p>
 <p>You'll be asked for your Apple ID, and <em>fastlane</em> will automatically generate a fastlane configuration for you, based on the information provided.</p>
 <p>You can see the newly created <em>fastlane</em> directory, with all your existing metadata fetched from iTunes Connect.</p>
 <p><img src="/img/getting-started/ios/fastlane-init.png" width="800" /></p>
@@ -461,7 +471,7 @@ gem &quot;fastlane&quot;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../screenshots/" class="btn btn-neutral float-right" title="Screenshots">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../fastlane-swift/" class="btn btn-neutral float-right" title="_Swift">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -500,7 +510,7 @@ gem &quot;fastlane&quot;
         <span><a href="../../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../screenshots/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../fastlane-swift/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
