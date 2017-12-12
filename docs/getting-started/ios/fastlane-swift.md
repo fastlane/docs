@@ -50,4 +50,4 @@ Currently, Fastlane.swift does not have support for plugins. This is a work in p
 
 ## We Would Love Your Feedback
 
-Please feel free to [open an issue on GitHub]((https://github.com/fastlane/fastlane) to report any issues you are having with Fastlane.swift and we will respond as quickly as possible.
+Please feel free to [open an issue on GitHub]((https://github.com/fastlane/fastlane) to report any problems you are having with Fastlane.swift and we will respond as quickly as possible.
