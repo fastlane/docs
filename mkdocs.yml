@@ -20,6 +20,7 @@ pages:
 - Getting Started:
   - iOS:
     - Setup: getting-started/ios/setup.md
+    - _Swift: getting-started/ios/fastlane-swift.md
     - Screenshots: getting-started/ios/screenshots.md
     - Beta Deployment: getting-started/ios/beta-deployment.md
     - App Store Deployment: getting-started/ios/appstore-deployment.md
