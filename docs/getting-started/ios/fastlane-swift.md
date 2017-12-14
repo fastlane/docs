@@ -4,13 +4,13 @@ Welcome to Fastlane.swift. Fastlane.swift allows you to write your _fastlane_ co
 
 Fastlane.swift is currently in beta. Please provide feedback by opening an issue in the [_fastlane_ repo](https://github.com/fastlane/fastlane).
 
-## Currently Supported:
+## Currently Supported
 
 Fastlane.swift currently supports all actions in the main, [_fastlane_](https://github.com/fastlane/fastlane) repository.
 
-## Get Started:
+## Get Started
 
-### Step 1:
+### Step 1
 
 Run the following command in your terminal:
 
@@ -18,7 +18,7 @@ Run the following command in your terminal:
 fastlane init swift
 ```
 
-### Step 2:
+### Step 2
 
 Open the file located at `[project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj` to configure your lanes in `Fastfile.swift`.
 
@@ -34,17 +34,17 @@ func betaLane() {
 }
 ```
 
-### Step 3:
+### Step 3
 
 Run `fastlane <laneName>` in your terminal to execute _fastlane_.
 
-### Step 4:
+### Step 4
 
 🎉
 
 
 
-## Known Limitations:
+## Known Limitations
 
 Currently, Fastlane.swift does not have support for plugins. This is a work in progress and we will continue to update this doc with the current working condition of each feature as we move from beta to general availability.
 
