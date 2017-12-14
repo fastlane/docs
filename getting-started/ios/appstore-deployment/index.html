@@ -408,13 +408,13 @@
                 <h1 id="ios-app-store-deployment-using-fastlane"><a name="user-content-ios-app-store-deployment-using-fastlane" href="#ios-app-store-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS App Store deployment using <em>fastlane</em></h1>
 <h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app using an action called <em>build_app</em>, just add the following to your <code>Fastfile</code>:</p>
-<pre><code>lane :appstore do
+<pre><code>lane :release do
   build_app(scheme: &quot;MyApp&quot;)
 end
 </code></pre>
 
 <p>Additionally you can specify more options for building your app, for example</p>
-<pre><code class="ruby">lane :appstore do
+<pre><code class="ruby">lane :release do
   build_app(scheme: &quot;MyApp&quot;,
             workspace: &quot;Example.xcworkspace&quot;,
             include_bitcode: true)

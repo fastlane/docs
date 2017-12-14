@@ -398,7 +398,7 @@
   upload_to_testflight
 end
 
-lane :appstore do
+lane :release do
   capture_screenshots
   build_app
   upload_to_app_store       # Upload the screenshots and the binary to iTunes
@@ -407,7 +407,7 @@ end
 </code></pre>
 
 <p>You just defined 2 different lanes, one for beta deployment, one for App Store. To release your app in the App Store, all you have to do is</p>
-<pre><code class="no-highlight">fastlane appstore
+<pre><code class="no-highlight">fastlane release
 </code></pre>
 
 <h2 id="why-fastlane"><a name="user-content-why-fastlane" href="#why-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why fastlane?</h2>
@@ -583,5 +583,5 @@ end
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2017-12-14 14:38:51.561836
+Build Date UTC : 2017-12-14 17:38:33.114391
 -->
