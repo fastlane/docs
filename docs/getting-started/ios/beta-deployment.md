@@ -95,7 +95,7 @@ To get a list of all available options, run
 fastlane action upload_to_testflight
 ```
 
-With _fastlane_, you can also automatically manage your beta testers, check out TODO for more information.
+With _fastlane_, you can also automatically manage your beta testers, check out the other actions available.
 
 ---
 </details>
@@ -120,8 +120,6 @@ To get a list of all available options, run
 ```no-highlight
 fastlane action crashlytics
 ```
-
-TODO: Also mention the other onboarding method
 
 ---
 </details>
