@@ -107,7 +107,7 @@
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/", 
-            "text": "Getting Started with Fastlane.swift (beta)\n\n\nWelcome to Fastlane.swift. Fastlane.swift allows you to write your \nfastlane\n configuration using Xcode, in Swift - the language you have come to know and love from the world of iOS development.\n\n\nFastlane.swift is currently in beta. Please provide feedback by opening an issue in the \nfastlane\n repo\n.\n\n\nCurrently Supported:\n\n\nFastlane.swift currently supports all actions in the main, \nfastlane\n repository.\n\n\nGet Started:\n\n\nStep 1:\n\n\nRun the following command in your terminal:\n\n\nfastlane init swift\n\n\n\n\nStep 2:\n\n\nOpen the file located at \n[project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj\n to configure your lanes in \nFastfile.swift\n.\n\n\nfunc betaLane() {\n    desc(\nSubmit a new Beta Build to Apple TestFlight. This will also make sure the profile is up to date\n)\n\n    syncCodeSigning(gitUrl: \nURL/for/your/git/repo\n, appIdentifier: [appIdentifier], username: appleID)\n    // Build your app - more options available\n    buildIosApp(scheme: \nSchemeName\n)\n    uploadToTestflight(username: appleID)\n    // You can also use other beta testing services here (run `fastlane actions`)\n}\n\n\n\n\nStep 3:\n\n\nRun \nfastlane \nlaneName\n in your terminal to execute \nfastlane\n.\n\n\nStep 4:\n\n\n\ud83c\udf89\n\n\nKnown Limitations:\n\n\nCurrently, Fastlane.swift does not have support for plugins. This is a work in progress and we will continue to update this doc with the current working condition of each feature as we move from beta to general availability.\n\n\nWe Would Love Your Feedback\n\n\nPlease feel free to [open an issue on GitHub]((https://github.com/fastlane/fastlane) to report any problems you are having with Fastlane.swift and we will respond as quickly as possible.", 
+            "text": "Getting Started with Fastlane.swift (beta)\n\n\nWelcome to Fastlane.swift. Fastlane.swift allows you to write your \nfastlane\n configuration using Xcode, in Swift - the language you have come to know and love from the world of iOS development.\n\n\nFastlane.swift is currently in beta. Please provide feedback by opening an issue in the \nfastlane\n repo\n.\n\n\nCurrently Supported\n\n\nFastlane.swift currently supports all actions in the main, \nfastlane\n repository.\n\n\nGet Started\n\n\nStep 1\n\n\nRun the following command in your terminal:\n\n\nfastlane init swift\n\n\n\n\nStep 2\n\n\nOpen the file located at \n[project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj\n to configure your lanes in \nFastfile.swift\n.\n\n\nfunc betaLane() {\n    desc(\nSubmit a new Beta Build to Apple TestFlight. This will also make sure the profile is up to date\n)\n\n    syncCodeSigning(gitUrl: \nURL/for/your/git/repo\n, appIdentifier: [appIdentifier], username: appleID)\n    // Build your app - more options available\n    buildIosApp(scheme: \nSchemeName\n)\n    uploadToTestflight(username: appleID)\n    // You can also use other beta testing services here (run `fastlane actions`)\n}\n\n\n\n\nStep 3\n\n\nRun \nfastlane \nlaneName\n in your terminal to execute \nfastlane\n.\n\n\nStep 4\n\n\n\ud83c\udf89\n\n\nKnown Limitations\n\n\nCurrently, Fastlane.swift does not have support for plugins. This is a work in progress and we will continue to update this doc with the current working condition of each feature as we move from beta to general availability.\n\n\nWe Would Love Your Feedback\n\n\nPlease feel free to [open an issue on GitHub]((https://github.com/fastlane/fastlane) to report any problems you are having with Fastlane.swift and we will respond as quickly as possible.", 
             "title": "_Swift"
         }, 
         {
@@ -118,37 +118,37 @@
         {
             "location": "/getting-started/ios/fastlane-swift/#currently-supported", 
             "text": "Fastlane.swift currently supports all actions in the main,  fastlane  repository.", 
-            "title": "Currently Supported:"
+            "title": "Currently Supported"
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/#get-started", 
             "text": "", 
-            "title": "Get Started:"
+            "title": "Get Started"
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/#step-1", 
             "text": "Run the following command in your terminal:  fastlane init swift", 
-            "title": "Step 1:"
+            "title": "Step 1"
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/#step-2", 
             "text": "Open the file located at  [project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj  to configure your lanes in  Fastfile.swift .  func betaLane() {\n    desc( Submit a new Beta Build to Apple TestFlight. This will also make sure the profile is up to date )\n\n    syncCodeSigning(gitUrl:  URL/for/your/git/repo , appIdentifier: [appIdentifier], username: appleID)\n    // Build your app - more options available\n    buildIosApp(scheme:  SchemeName )\n    uploadToTestflight(username: appleID)\n    // You can also use other beta testing services here (run `fastlane actions`)\n}", 
-            "title": "Step 2:"
+            "title": "Step 2"
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/#step-3", 
             "text": "Run  fastlane  laneName  in your terminal to execute  fastlane .", 
-            "title": "Step 3:"
+            "title": "Step 3"
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/#step-4", 
             "text": "\ud83c\udf89", 
-            "title": "Step 4:"
+            "title": "Step 4"
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/#known-limitations", 
             "text": "Currently, Fastlane.swift does not have support for plugins. This is a work in progress and we will continue to update this doc with the current working condition of each feature as we move from beta to general availability.", 
-            "title": "Known Limitations:"
+            "title": "Known Limitations"
         }, 
         {
             "location": "/getting-started/ios/fastlane-swift/#we-would-love-your-feedback", 
