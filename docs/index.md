@@ -18,7 +18,7 @@ lane :beta do
   upload_to_testflight
 end
 
-lane :appstore do
+lane :release do
   capture_screenshots
   build_app
   upload_to_app_store       # Upload the screenshots and the binary to iTunes
@@ -29,7 +29,7 @@ end
 You just defined 2 different lanes, one for beta deployment, one for App Store. To release your app in the App Store, all you have to do is
 
 ```no-highlight
-fastlane appstore
+fastlane release
 ```
 
 ## Why fastlane?

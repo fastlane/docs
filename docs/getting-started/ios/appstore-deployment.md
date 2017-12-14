@@ -5,7 +5,7 @@
 _fastlane_ takes care of building your app using an action called _build_app_, just add the following to your `Fastfile`:
 
 ```
-lane :appstore do
+lane :release do
   build_app(scheme: "MyApp")
 end
 ```
@@ -13,7 +13,7 @@ end
 Additionally you can specify more options for building your app, for example
 
 ```ruby
-lane :appstore do
+lane :release do
   build_app(scheme: "MyApp",
             workspace: "Example.xcworkspace",
             include_bitcode: true)
