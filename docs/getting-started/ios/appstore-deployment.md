@@ -23,7 +23,7 @@ end
 Try running the lane using
 
 ```no-highlight
-fastlane appstore
+fastlane release
 ```
 
 If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _build_app_, run `fastlane action build_app`.
@@ -43,7 +43,7 @@ To find out more about how to automatically generate screenshots for the App Sto
 After building your app, it's ready to be uploaded to the App Store. If you've already followed [iOS Beta deployment using _fastlane_](beta-deployment.md), the following code might look similar already.
 
 ```ruby
-lane :appstore do
+lane :release do
   capture_screenshots                  # generate new screenshots for the App Store
   sync_code_signing(type: "appstore")  # see code signing guide for more information
   build_app(scheme: "MyApp")
@@ -64,7 +64,7 @@ For a list of all options for each of the steps run `fastlane action [action_nam
 To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:
 
 ```ruby
-lane :appstore do
+lane :release do
   get_push_certificate
   # ...
 end
