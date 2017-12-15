@@ -6,7 +6,7 @@ Fastlane.swift is currently in beta. Please provide feedback by opening an issue
 
 ## Currently Supported
 
-Fastlane.swift currently supports all actions in the main, [_fastlane_](https://github.com/fastlane/fastlane) repository.
+Fastlane.swift currently supports all built-in [fastlane actions](https://docs.fastlane.tools/actions/). Make sure to update to the most recent _fastlane_ release to try this feature.
 
 ## Get Started
 
