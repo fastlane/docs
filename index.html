@@ -467,24 +467,32 @@ end
 </code></pre>
 
 <h3 id="choose-your-installation-method"><a name="user-content-choose-your-installation-method" href="#choose-your-installation-method" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Choose your installation method:</h3>
-<table width="100%">
+<table>
+<thead>
 <tr>
-<th width="33%"><a href="http://brew.sh">Homebrew</a></td>
-<th width="33%">Installer Script</td>
-<th width="33%">Rubygems</td>
+<th>Method</th>
+<th>OS support</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://brew.sh">Homebrew</a></td>
+<td>macOS</td>
+<td><code>brew cask install fastlane</code></td>
 </tr>
 <tr>
-<td width="33%" align="center">macOS</td>
-<td width="33%" align="center">macOS</td>
-<td width="33%" align="center">macOS or Linux with Ruby 2.0.0 or above</td>
+<td>Installer Script</td>
+<td>macOS</td>
+<td><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
 </tr>
-<tr> 
-<td width="33%"><code>brew cask install fastlane</code></td>
-<td width="33%"><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
-<td width="33%"><code>sudo gem install fastlane -NV</code></td>
+<tr>
+<td>RubyGems</td>
+<td>macOS or Linux with Ruby 2.0.0 or above</td>
+<td><code>sudo gem install fastlane -NV</code></td>
 </tr>
+</tbody>
 </table>
-
 <p>Navigate to your iOS or Android app and run</p>
 <pre><code class="no-highlight">fastlane init
 </code></pre>
@@ -583,5 +591,5 @@ end
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2017-12-15 20:34:21.787322
+Build Date UTC : 2017-12-18 16:43:57.737641
 -->

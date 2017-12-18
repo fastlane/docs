@@ -400,24 +400,32 @@
 </code></pre>
 
 <h3 id="choose-your-installation-method"><a name="user-content-choose-your-installation-method" href="#choose-your-installation-method" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Choose your installation method:</h3>
-<table width="100%">
+<table>
+<thead>
 <tr>
-<th width="33%"><a href="http://brew.sh">Homebrew</a></td>
-<th width="33%">Installer Script</td>
-<th width="33%">Rubygems</td>
+<th>Method</th>
+<th>OS support</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://brew.sh">Homebrew</a></td>
+<td>macOS</td>
+<td><code>brew cask install fastlane</code></td>
 </tr>
 <tr>
-<td width="33%" align="center">macOS</td>
-<td width="33%" align="center">macOS</td>
-<td width="33%" align="center">macOS or Linux with Ruby 2.0.0 or above</td>
+<td>Installer Script</td>
+<td>macOS</td>
+<td><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
 </tr>
-<tr> 
-<td width="33%"><code>brew cask install fastlane</code></td>
-<td width="33%"><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
-<td width="33%"><code>sudo gem install fastlane -NV</code></td>
+<tr>
+<td>RubyGems</td>
+<td>macOS or Linux with Ruby 2.0.0 or above</td>
+<td><code>sudo gem install fastlane -NV</code></td>
 </tr>
+</tbody>
 </table>
-
 <h3 id="set-up-environment-variables"><a name="user-content-set-up-environment-variables" href="#set-up-environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Set up environment variables</h3>
 <p><em>fastlane</em> requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:</p>
 <pre><code class="sh">export LC_ALL=en_US.UTF-8
