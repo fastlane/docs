@@ -4,6 +4,22 @@
 
 ## Two-step or Two-factor auth
 
+### Separate Apple ID for CI
+
+The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that doesn't have 2-factor auth enabled, with a long, randomly generated password. Additionally make sure the newly created Apple account has limited access to only the apps and resources it needs.
+
+There are multiple reasons on why this approach is much easier:
+- An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you'll run into issues
+- An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing
+
+There is nothing _fastlane_ can do better in that regard, as these are technical limitations on how iTunes Connect sessions are handled.
+
+Creating a separate Apple ID allows you to limit the permission scope, have a randomly generated password, and will make it much easier for you to set up CI using _fastlane_.
+
+### Use of application specific passwords and `spaceauth`
+
+Before going through this guide, make sure to read the section above.
+
 If you want to upload builds to TestFlight/iTunes Connect from your CI machine, you need to generate an application specific password:
 
 1. Visit [appleid.apple.com/account/manage](https://appleid.apple.com/account/manage)
@@ -23,6 +39,7 @@ This will generate a token you can set using the `FASTLANE_SESSION` environment 
 Most setups will need the following environment variables
 
 - `FASTLANE_USER`: Your iTunes Connect / Dev Portal user, if your _fastlane_ setup accesses iTC or the DevPortal (e.g. submit a TestFlight build, create a profile, ...)
+- `FASTLANE_PASSWORD`: Your iTunes Connect / Dev Portal password, usually only needed if you also set the `FASTLANE_USER` variable
 - `MATCH_PASSWORD`: You need to provide the password of your _match_ encryption if you use _match_
 - `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`: You need to provide an [application specific password](#two-step-or-two-factor-auth) if you have 2-factor enabled and use _pilot_ or _deliver_ to upload a binary to iTunes Connect
 - `LANG` and `LC_ALL`: These set up the locale your shell and all the commands you execute run at. _fastlane_ needs these to be set to an UTF-8 locale to work correctly, for example `en_US.UTF-8`. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.
