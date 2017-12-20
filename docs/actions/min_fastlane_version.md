@@ -3,10 +3,10 @@ This file is auto-generated and will be re-generated every time the docs are upd
 To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
-# fastlane_version
+# min_fastlane_version
 
 
-Alias for the `min_fastlane_version` action
+Verifies the minimum fastlane version required
 
 
 
@@ -15,7 +15,7 @@ Alias for the `min_fastlane_version` action
 Use it if you use an action that just recently came out and you need it.
 
 
-fastlane_version |
+min_fastlane_version |
 -----|----
 Supported platforms | ios, android, mac
 Author | @KrauseFx
@@ -35,10 +35,10 @@ min_fastlane_version "1.50.0"
 <hr />
 To show the documentation in your terminal, run
 ```no-highlight
-fastlane action fastlane_version
+fastlane action min_fastlane_version
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/fastlane_version.rb" target="_blank">View source code</a>
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/min_fastlane_version.rb" target="_blank">View source code</a>
 
 <hr />
 

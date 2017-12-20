@@ -30,7 +30,7 @@ sh("ls")
 ```
 
 ```ruby
-sh("git commit -m 'My message'")
+sh("git", "commit", "-m", "My message")
 ```
 
 

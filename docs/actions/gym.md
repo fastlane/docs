@@ -278,7 +278,7 @@ build_ios_app(
   clean: true,
   output_directory: "path/to/dir", # Destination directory. Defaults to current directory.
   output_name: "my-app.ipa",       # specify the name of the .ipa file to generate (including file extension)
-  sdk: "10.0"  # use SDK as the name or path of the base SDK when building the project.
+  sdk: "iOS 11.1"        # use SDK as the name or path of the base SDK when building the project.
 )
 ```
 
@@ -314,6 +314,7 @@ Key | Description
   `export_options` | Specifies path to export options plist. Use 'xcodebuild -help' to print the full set of available options
   `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
   `skip_build_archive` | Export ipa from previously built xarchive. Uses archive_path as source
+  `skip_archive` | After building, don't archive, effectively not including -archivePath param
   `build_path` | The directory in which the archive should be stored in
   `archive_path` | The path to the created archive
   `derived_data_path` | The directory where built products and other derived data will go
