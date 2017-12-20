@@ -37,6 +37,7 @@ Key | Description
 ----|------------
   `force` | Force push to remote. Defaults to false
   `remote` | The remote to push tags to
+  `tag` | The tag to push to remote
 
 
 

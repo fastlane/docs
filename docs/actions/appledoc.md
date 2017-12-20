@@ -61,6 +61,7 @@ Key | Description
   `create_docset` | Create documentation set
   `install_docset` | Install documentation set to Xcode
   `publish_docset` | Prepare DocSet for publishing
+  `no_create_docset` | Create HTML and skip creating a DocSet
   `html_anchors` | The html anchor format to use in DocSet HTML
   `clean_output` | Remove contents of output path before starting
   `docset_bundle_id` | DocSet bundle identifier
