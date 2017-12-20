@@ -58,6 +58,7 @@ Key | Description
   `simple_output` | Tell slather that it should output results to the terminal
   `gutter_json` | Tell slather that it should output results as Gutter JSON format
   `cobertura_xml` | Tell slather that it should output results as Cobertura XML format
+  `llvm_cov` | Tell slather that it should output results as llvm-cov show format
   `html` | Tell slather that it should output results as static HTML pages
   `show` | Tell slather that it should open static html pages automatically
   `source_directory` | Tell slather the location of your source files

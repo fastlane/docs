@@ -54,6 +54,7 @@ Key | Description
   `new_comment` | Makes Danger post a new comment instead of editing its previous one
   `base` | A branch/tag/commit to use as the base of the diff. [master|dev|stable]
   `head` | A branch/tag/commit to use as the head. [master|dev|stable]
+  `pr` | Run danger on a specific pull request. e.g. "https://github.com/danger/danger/pull/518"
 
 
 

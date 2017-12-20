@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 4 Examples
 
 ```ruby
-sync_code_signing(type: "appstore", app_identifier: ["tools.fastlane.app"])
+sync_code_signing(type: "appstore", app_identifier: "tools.fastlane.app")
 ```
 
 ```ruby

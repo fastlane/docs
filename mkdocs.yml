@@ -89,6 +89,7 @@ pages:
   - ensure_git_status_clean: actions/ensure_git_status_clean.md
   - ensure_no_debug_code: actions/ensure_no_debug_code.md
   - ensure_xcode_version: actions/ensure_xcode_version.md
+  - environment_variable: actions/environment_variable.md
   - erb: actions/erb.md
   - fastlane_version: actions/fastlane_version.md
   - flock: actions/flock.md
@@ -140,6 +141,7 @@ pages:
   - mailgun: actions/mailgun.md
   - make_changelog_from_jenkins: actions/make_changelog_from_jenkins.md
   - match: actions/match.md
+  - min_fastlane_version: actions/min_fastlane_version.md
   - modify_services: actions/modify_services.md
   - nexus_upload: actions/nexus_upload.md
   - notification: actions/notification.md
