@@ -384,6 +384,12 @@
     </url>
         
     <url>
+     <loc>None/actions/environment_variable/</loc>
+     <lastmod>2017-12-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/actions/erb/</loc>
      <lastmod>2017-12-20</lastmod>
      <changefreq>daily</changefreq>
@@ -685,6 +691,12 @@
         
     <url>
      <loc>None/actions/match/</loc>
+     <lastmod>2017-12-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/min_fastlane_version/</loc>
      <lastmod>2017-12-20</lastmod>
      <changefreq>daily</changefreq>
     </url>

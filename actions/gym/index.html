@@ -649,7 +649,7 @@ archive | xcpretty
   clean: true,
   output_directory: &quot;path/to/dir&quot;, # Destination directory. Defaults to current directory.
   output_name: &quot;my-app.ipa&quot;,       # specify the name of the .ipa file to generate (including file extension)
-  sdk: &quot;10.0&quot;  # use SDK as the name or path of the base SDK when building the project.
+  sdk: &quot;iOS 11.1&quot;        # use SDK as the name or path of the base SDK when building the project.
 )
 </code></pre>
 
@@ -731,6 +731,10 @@ archive | xcpretty
 <tr>
 <td><code>skip_build_archive</code></td>
 <td>Export ipa from previously built xarchive. Uses archive_path as source</td>
+</tr>
+<tr>
+<td><code>skip_archive</code></td>
+<td>After building, don't archive, effectively not including -archivePath param</td>
 </tr>
 <tr>
 <td><code>build_path</code></td>

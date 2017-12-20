@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>erb - fastlane docs</title>
+  <title>environment_variable - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "erb";
-    var mkdocs_page_input_path = "actions/erb.md";
-    var mkdocs_page_url = "/actions/erb/";
+    var mkdocs_page_name = "environment_variable";
+    var mkdocs_page_input_path = "actions/environment_variable.md";
+    var mkdocs_page_url = "/actions/environment_variable/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -353,14 +353,14 @@
         
       
     
-    <li>erb</li>
+    <li>environment_variable</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/erb.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/environment_variable.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -391,16 +391,12 @@ This file is auto-generated and will be re-generated every time the docs are upd
 To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
-<h1 id="erb"><a name="user-content-erb" href="#erb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>erb</h1>
-<p>Allows to Generate output files based on ERB templates</p>
-<blockquote>
-<p>Renders an ERB template with <code>placeholders</code> given as a hash via parameter,
-if no :destination is set, returns rendered template as string</p>
-</blockquote>
+<h1 id="environment_variable"><a name="user-content-environment_variable" href="#environment_variable" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>environment_variable</h1>
+<p>Sets/gets env vars for Fastlane.swift. Don't use in ruby, use <code>ENV[key] = val</code></p>
 <table>
 <thead>
 <tr>
-<th>erb</th>
+<th>environment_variable</th>
 <th></th>
 </tr>
 </thead>
@@ -411,30 +407,10 @@ if no :destination is set, returns rendered template as string</p>
 </tr>
 <tr>
 <td>Author</td>
-<td>@hjanuschka</td>
+<td>@taquitos</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby"># Example `erb` template:
-
-# Variable1 &lt;%= var1 %&gt;
-# Variable2 &lt;%= var2 %&gt;
-# &lt;% for item in var3 %&gt;
-#        &lt;%= item %&gt;
-# &lt;% end %&gt;
-
-erb(
-  template: &quot;1.erb&quot;,
-  destination: &quot;/tmp/rendered.out&quot;,
-  placeholders: {
-    :var1 =&gt; 123,
-    :var2 =&gt; &quot;string&quot;,
-    :var3 =&gt; [&quot;element1&quot;, &quot;element2&quot;]
-  }
-)
-</code></pre>
-
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
@@ -445,25 +421,25 @@ erb(
 </thead>
 <tbody>
 <tr>
-<td><code>template</code></td>
-<td>ERB Template File</td>
+<td><code>set</code></td>
+<td>Set the environment variables named</td>
 </tr>
 <tr>
-<td><code>destination</code></td>
-<td>Destination file</td>
+<td><code>get</code></td>
+<td>Get the environment variable named</td>
 </tr>
 <tr>
-<td><code>placeholders</code></td>
-<td>Placeholders given as a hash</td>
+<td><code>remove</code></td>
+<td>Remove the environment variable named</td>
 </tr>
 </tbody>
 </table>
 <p><hr />
 To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action erb
+<pre><code class="no-highlight">fastlane action environment_variable
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/erb.rb" target="_blank">View source code</a></p>
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/environment_variable.rb" target="_blank">View source code</a></p>
 <hr />
 
 <p><a href="/actions"><b>Back to actions</b></a></p>
@@ -474,10 +450,10 @@ To show the documentation in your terminal, run</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../fastlane_version/" class="btn btn-neutral float-right" title="fastlane_version">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../erb/" class="btn btn-neutral float-right" title="erb">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../environment_variable/" class="btn btn-neutral" title="environment_variable"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ensure_xcode_version/" class="btn btn-neutral" title="ensure_xcode_version"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -510,10 +486,10 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../environment_variable/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ensure_xcode_version/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../fastlane_version/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../erb/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
