@@ -68,6 +68,7 @@ Key | Description
   `default_payloads` | Remove some of the default payloads. More information about the available payloads on GitHub
   `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments
   `success` | Was this build successful? (true/false)
+  `fail_on_error` | Should an error sending the slack notification cause a failure? (true/false)
 
 
 

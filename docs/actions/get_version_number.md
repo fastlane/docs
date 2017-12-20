@@ -36,10 +36,7 @@ version = get_version_number(xcodeproj: "Project.xcodeproj")
 Key | Description
 ----|------------
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
-  `scheme` | [DEPRECATED!] true - Specify a specific scheme if you have multiple per project, optional.
-                                          This parameter is deprecated and will be removed in a future release.
-                                          Please use the 'target' parameter instead. The behavior of this parameter
-                                          is currently undefined if your scheme name doesn't match your target name
+  `scheme` | [DEPRECATED!] true - Specify a specific scheme if you have multiple per project, optional. This parameter is deprecated and will be removed in a future release. Please use the 'target' parameter instead. The behavior of this parameter is currently undefined if your scheme name doesn't match your target name
   `target` | Specify a specific target if you have multiple per project, optional
 
 
