@@ -124,3 +124,8 @@ You can easily opt-out of crash reporting by adding `opt_out_crash_reporting` at
 This project is licensed under the terms of the MIT license. See the [LICENSE](https://github.com/fastlane/fastlane/blob/master/LICENSE) file.
 
 > This project and all fastlane tools are in no way affiliated with Apple Inc. This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. All fastlane tools run on your own computer or server, so your credentials or other sensitive information will never leave your own computer. You are responsible for how you use fastlane tools.
+
+----
+### Where to go from here?
+- [fastlane Getting Started guide for iOS](getting-started/ios/setup.md)
+- [fastlane Getting Started guide for Android](getting-started/android/setup.md)
