@@ -62,6 +62,8 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
 1. Create a new UI Test target in your Xcode project (See the top part of [this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
 1. Run `fastlane snapshot init` in your project folder
 1. Add the `./SnapshotHelper.swift` file to your UI Test target (You can move the file anywhere you want)
+1. Add a new Xcode scheme for the newly created UI Test target
+1. Enable the `Shared` box of the newly created scheme
 1. (Objective C only) Add the bridging header to your test class.
     - `#import "MYUITests-Swift.h"`
     - The bridging header is named after your test target with -Swift.h appended.
