@@ -652,6 +652,16 @@ B123456789012345678901234567890123456789  DeviceName2
 <summary>Incrementing the build number</summary></p>
 <p>Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.</p>
 <p>To do so, there are some built-in fastlane actions available, here are some examples</p>
+<h3 id="fetching-the-latest-build-number-from-testflight"><a name="user-content-fetching-the-latest-build-number-from-testflight" href="#fetching-the-latest-build-number-from-testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fetching the latest build number from TestFlight</h3>
+<p>The code sample below will use the latest build number from TestFlight and temporarily set it. </p>
+<pre><code class="ruby">lane :beta do
+  increment_build_number(
+    build_number: latest_testflight_build_number + 1,
+    xcodeproj: &quot;Example.xcodeproj&quot;
+  )
+end
+</code></pre>
+
 <h3 id="committing-the-build-number-to-version-control"><a name="user-content-committing-the-build-number-to-version-control" href="#committing-the-build-number-to-version-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Committing the build number to version control</h3>
 <p>The code sample below will increment the build number and commit the project changes to version control.</p>
 <pre><code class="ruby">lane :beta do
@@ -671,16 +681,6 @@ B123456789012345678901234567890123456789  DeviceName2
 
   # Push the new commit and tag back to your git remote
   push_to_git_remote
-end
-</code></pre>
-
-<h3 id="fetching-the-latest-build-number-from-testflight"><a name="user-content-fetching-the-latest-build-number-from-testflight" href="#fetching-the-latest-build-number-from-testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fetching the latest build number from TestFlight</h3>
-<p>The code sample below will use the latest build number from TestFlight and temporarily set it. </p>
-<pre><code class="ruby">lane :beta do
-  increment_build_number(
-    build_number: latest_testflight_build_number + 1,
-    xcodeproj: &quot;Example.xcodeproj&quot;
-  )
 end
 </code></pre>
 
