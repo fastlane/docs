@@ -408,7 +408,7 @@
                 <h1 id="ios-app-store-deployment-using-fastlane"><a name="user-content-ios-app-store-deployment-using-fastlane" href="#ios-app-store-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS App Store deployment using <em>fastlane</em></h1>
 <h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app using an action called <em>build_app</em>, just add the following to your <code>Fastfile</code>:</p>
-<pre><code>lane :release do
+<pre><code class="ruby">lane :release do
   build_app(scheme: &quot;MyApp&quot;)
 end
 </code></pre>
@@ -457,6 +457,20 @@ end
 <p><em>get_push_certificate</em> will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.</p>
 <p>If you don't have any push certificates already, <em>get_push_certificate</em> will create one for you and store locally in your project's directory. To get more information about the available options run <code>fastlane action get_push_certificate</code>.</p>
 <p></details></p>
+<p><details>
+<summary>Incrementing the build number</summary></p>
+<p>The code sample below will use the latest build number from iTunes Connect and temporarily set it. </p>
+<pre><code class="ruby">lane :beta do
+  increment_build_number(
+    build_number: app_store_build_number + 1,
+    xcodeproj: &quot;Example.xcodeproj&quot;
+  )
+end
+</code></pre>
+
+<p>For all the steps above, there are more parameters available, run the following to get a full list:</p>
+<pre><code class="no-highlight">fastlane action [action_name]
+</code></pre>
               
             </div>
           </div>
