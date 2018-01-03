@@ -4,7 +4,7 @@
 
 _fastlane_ takes care of building your app using an action called _build_app_, just add the following to your `Fastfile`:
 
-```
+```ruby
 lane :release do
   build_app(scheme: "MyApp")
 end
@@ -76,4 +76,23 @@ If you don't have any push certificates already, _get_push_certificate_ will cre
 
 </details>
 
+<details>
+<summary>Incrementing the build number</summary>
+
+The code sample below will use the latest build number from iTunes Connect and temporarily set it. 
+
+```ruby
+lane :beta do
+  increment_build_number(
+    build_number: app_store_build_number + 1,
+    xcodeproj: "Example.xcodeproj"
+  )
+end
+```
+
+For all the steps above, there are more parameters available, run the following to get a full list:
+
+```no-highlight
+fastlane action [action_name]
+```
 
