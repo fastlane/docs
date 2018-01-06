@@ -1,8 +1,8 @@
 # fastlane keys
 
-This guide will show you the best ways to store and use your keys for services like Crashlytics, Slack, etc.
+This guide will show you the best ways to store and use your keys and sensitive secrets for services like Crashlytics, Slack, etc.
 
-# In your `Fastfile`
+# In your Fastfile
 
 ```ruby
 lane :beta do
