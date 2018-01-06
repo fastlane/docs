@@ -17,7 +17,7 @@ Runs `carthage` for your project
 carthage |
 -----|----
 Supported platforms | ios, mac
-Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev
+Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev, @gbrhaz
 
 
 
@@ -42,7 +42,8 @@ carthage(
   platform: "all",  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
   configuration: "Release",   # Build configuration to use when building
   cache_builds: true,         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
-  toolchain: "com.apple.dt.toolchain.Swift_2_3"   # Specify the xcodebuild toolchain
+  toolchain: "com.apple.dt.toolchain.Swift_2_3",  # Specify the xcodebuild toolchain
+  new_resolver: false         # Use the new resolver to resolve depdendency graph
 )
 ```
 
@@ -70,6 +71,7 @@ Key | Description
   `configuration` | Define which build configuration to use when building
   `toolchain` | Define which xcodebuild toolchain to use when building
   `project_directory` | Define the directory containing the Carthage project
+  `new_resolver` | Use new resolver when resolving dependency graph
 
 
 

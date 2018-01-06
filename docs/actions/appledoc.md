@@ -27,7 +27,10 @@ Author | @alexmx
 appledoc(
   project_name: "MyProjectName",
   project_company: "Company Name",
-  input: "MyProjectSources",
+  input: [
+    "MyProjectSources",
+    "MyProjectSourceFile.h"
+  ],
   ignore: [
     "ignore/path/1",
     "ingore/path/2"
@@ -45,7 +48,7 @@ appledoc(
 
 Key | Description
 ----|------------
-  `input` | Path to source files
+  `input` | Path(s) to source file directories or individual source files. Accepts a single path or an array of paths
   `output` | Output path
   `templates` | Template files path
   `docset_install_path` | DocSet installation path
