@@ -1,3 +1,5 @@
+{!docs/setup-fastlane-header.md!}
+
 # _fastlane_ screenshots for Android
 
 Your app screenshots are probably the most important thing when it comes to convincing potential users to download or purchase your app. Unfortunately, many apps don't do screenshots well. This is often because taking screenshots of your app and then preparing them for display is time consuming, and it's hard to get everything right and consistent! For example:

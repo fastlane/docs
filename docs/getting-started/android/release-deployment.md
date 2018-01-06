@@ -1,3 +1,5 @@
+{!docs/setup-fastlane-header.md!}
+
 # Deploy to Google Play using _fastlane_
 
 # Building your app
