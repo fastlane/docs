@@ -7,7 +7,6 @@ lane :test do |options|
     build_site unless options[:skip_building]
     ensure_filenames
     ensure_redirects
-    ensure_headers
     ensure_image_assets
     ensure_assets_location
     ensure_tool_name_formatting
@@ -55,19 +54,6 @@ private_lane :ensure_redirects do
   UI.success "✅  All forwards are cool"
 end
 
-private_lane :ensure_headers do
-  UI.message "🕗  Investigating all docs files and their headers..."
-  exceptions = ["docs/index.md"]
-
-  errors = []
-  Dir["docs/**/*.md"].each do |current_file|
-    next if exceptions.include?(current_file)
-    errors << "File '#{current_file}' doesn't start with #" unless File.read(current_file) =~ /\A(#|<!--)/
-  end
-  errors.each { |e| UI.error(e) }
-  UI.user_error!("At least one file doesn't start with header one (# or <!--), the first line must always be # title or <!-- comment") unless errors.empty?
-  UI.success "✅  All doc files start with a header"
-end
 
 private_lane :ensure_image_assets do
   UI.message "🕗  Checking docs for dead image references..."
