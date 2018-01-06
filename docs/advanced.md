@@ -1,3 +1,5 @@
+{!docs/setup-fastlane-header.md!}
+
 # Advanced fastlane
 
 # Passing Parameters

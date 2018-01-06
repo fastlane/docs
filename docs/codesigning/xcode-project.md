@@ -1,3 +1,5 @@
+{!docs/setup-fastlane-header.md!}
+
 # Setting up your Xcode Project
 
 # Xcode 9 and up

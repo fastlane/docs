@@ -1,3 +1,5 @@
+{!docs/setup-fastlane-header.md!}
+
 # iOS Beta deployment using _fastlane_
 
 # Building your app

@@ -1,3 +1,5 @@
+{!docs/setup-fastlane-header.md!}
+
 # Codesigning concepts
 
 If you are just starting a new project, it's important to think about how you want to handle code signing. This guide will help you choose the best approach for you.
