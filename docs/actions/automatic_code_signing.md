@@ -6,18 +6,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 # automatic_code_signing
 
 
-Updates the Xcode 8 Automatic Codesigning Flag
+Configures Xcode's Codesigning options
 
 
 
 
-> Updates the Xcode 8 Automatic Codesigning Flag of all targets in the project
+> Configures Xcode's Codesigning options of all targets in the project
 
 
 automatic_code_signing |
 -----|----
 Supported platforms | ios, mac
-Author | @mathiasAichinger, @hjanuschka
+Author | @mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons
 Returns | The current status (boolean) of codesigning after modification
 
 
@@ -91,6 +91,10 @@ Key | Description
   `use_automatic_signing` | Defines if project should use automatic signing
   `team_id` | Team ID, is used when upgrading project
   `targets` | Specify targets you want to toggle the signing mech. (default to all targets)
+  `code_sign_identity` | Code signing identity type (iPhone Development, iPhone Distribution)
+  `profile_name` | Provisioning profile name to use for code signing
+  `profile_uuid` | Provisioning profile UUID to use for code signing
+  `bundle_identifier` | Application Product Bundle Identifier
 
 
 
