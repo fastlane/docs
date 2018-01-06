@@ -418,7 +418,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <pre><code class="ruby">appledoc(
   project_name: &quot;MyProjectName&quot;,
   project_company: &quot;Company Name&quot;,
-  input: &quot;MyProjectSources&quot;,
+  input: [
+    &quot;MyProjectSources&quot;,
+    &quot;MyProjectSourceFile.h&quot;
+  ],
   ignore: [
     &quot;ignore/path/1&quot;,
     &quot;ingore/path/2&quot;
@@ -439,7 +442,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tbody>
 <tr>
 <td><code>input</code></td>
-<td>Path to source files</td>
+<td>Path(s) to source file directories or individual source files. Accepts a single path or an array of paths</td>
 </tr>
 <tr>
 <td><code>output</code></td>

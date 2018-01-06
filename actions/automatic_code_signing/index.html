@@ -392,9 +392,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="automatic_code_signing"><a name="user-content-automatic_code_signing" href="#automatic_code_signing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>automatic_code_signing</h1>
-<p>Updates the Xcode 8 Automatic Codesigning Flag</p>
+<p>Configures Xcode's Codesigning options</p>
 <blockquote>
-<p>Updates the Xcode 8 Automatic Codesigning Flag of all targets in the project</p>
+<p>Configures Xcode's Codesigning options of all targets in the project</p>
 </blockquote>
 <table>
 <thead>
@@ -410,7 +410,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td>Author</td>
-<td>@mathiasAichinger, @hjanuschka</td>
+<td>@mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons</td>
 </tr>
 <tr>
 <td>Returns</td>
@@ -490,6 +490,22 @@ automatic_code_signing(
 <tr>
 <td><code>targets</code></td>
 <td>Specify targets you want to toggle the signing mech. (default to all targets)</td>
+</tr>
+<tr>
+<td><code>code_sign_identity</code></td>
+<td>Code signing identity type (iPhone Development, iPhone Distribution)</td>
+</tr>
+<tr>
+<td><code>profile_name</code></td>
+<td>Provisioning profile name to use for code signing</td>
+</tr>
+<tr>
+<td><code>profile_uuid</code></td>
+<td>Provisioning profile UUID to use for code signing</td>
+</tr>
+<tr>
+<td><code>bundle_identifier</code></td>
+<td>Application Product Bundle Identifier</td>
 </tr>
 </tbody>
 </table>

@@ -407,7 +407,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td>Author</td>
-<td>@bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev</td>
+<td>@bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev, @gbrhaz</td>
 </tr>
 </tbody>
 </table>
@@ -429,7 +429,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
   platform: &quot;all&quot;,  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
   configuration: &quot;Release&quot;,   # Build configuration to use when building
   cache_builds: true,         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
-  toolchain: &quot;com.apple.dt.toolchain.Swift_2_3&quot;   # Specify the xcodebuild toolchain
+  toolchain: &quot;com.apple.dt.toolchain.Swift_2_3&quot;,  # Specify the xcodebuild toolchain
+  new_resolver: false         # Use the new resolver to resolve depdendency graph
 )
 </code></pre>
 
@@ -505,6 +506,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <td><code>project_directory</code></td>
 <td>Define the directory containing the Carthage project</td>
+</tr>
+<tr>
+<td><code>new_resolver</code></td>
+<td>Use new resolver when resolving dependency graph</td>
 </tr>
 </tbody>
 </table>
