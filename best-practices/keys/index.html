@@ -402,8 +402,8 @@
             <div class="section">
               
                 <h1 id="fastlane-keys"><a name="user-content-fastlane-keys" href="#fastlane-keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane keys</h1>
-<p>This guide will show you the best ways to store and use your keys for services like Crashlytics, Slack, etc.</p>
-<h1 id="in-your-fastfile"><a name="user-content-in-your-fastfile" href="#in-your-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In your <code>Fastfile</code></h1>
+<p>This guide will show you the best ways to store and use your keys and sensitive secrets for services like Crashlytics, Slack, etc.</p>
+<h1 id="in-your-fastfile"><a name="user-content-in-your-fastfile" href="#in-your-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>In your Fastfile</h1>
 <pre><code class="ruby">lane :beta do
   crashlytics(api_token: &quot;123abc&quot;, build_secret: &quot;secret_key&quot;)
 end
