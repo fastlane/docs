@@ -392,7 +392,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
 <h1 id="lane_context"><a name="user-content-lane_context" href="#lane_context" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>lane_context</h1>
-<p>An alias to <code>Actions.lane_context</code></p>
+<p>Access lane context values</p>
+<blockquote>
+<p>Access the fastlane lane context values
+More information about how the lane context works: https://docs.fastlane.tools/advanced/#lane-context</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -411,6 +415,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 </tbody>
 </table>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">lane_context[SharedValues::BUILD_NUMBER]
+</code></pre>
+
+<pre><code class="ruby">lane_context[SharedValues::IPA_OUTPUT_PATH]
+</code></pre>
+
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action lane_context

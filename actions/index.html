@@ -431,9 +431,57 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/Actions.md.erb
+To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
+<style type="text/css">
+  .fastlane-setup {
+    border-left: .4rem solid #00b0ff;
+    border-bottom: .1rem solid rgba(0,176,255,.1);
+    background-color: rgba(0,176,255,.1);
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  .fastlane-setup-wrapper {
+    background-color: rgba(0,176,255,.05);
+  }
+  .fastlane-setup-wrapper[open] {
+    padding-bottom: 1px;
+  }
+  .fastlane-setup-header {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .fastlane-setup-more-details {
+    font-size: 18px;
+    font-weight: 350;
+  }
+</style>
+
+<p><details class="fastlane-setup-wrapper">
+  <summary class="fastlane-setup">New to fastlane? Click here to open the installation &amp; setup instructions first</summary></p>
+<p class="fastlane-setup-header">1) Install the latest Xcode command line tools</p>
+
+<pre><code class="no-highlight">xcode-select --install
+</code></pre>
+
+<p class="fastlane-setup-header">2) Install _fastlane_</p>
+
+<pre><code class="sh"># Using RubyGems
+sudo gem install fastlane -NV
+
+# Alternatively using Homebrew
+brew cask install fastlane
+</code></pre>
+
+<p class="fastlane-setup-header">3) Navigate to your project and run</p>
+
+<pre><code class="no-highlight">fastlane init
+</code></pre>
+
+<p class="fastlane-setup-more-details"><a href="/getting-started/ios/setup/">More Details</a></p>
+
+<p></details></p>
 <h1 id="fastlane-actions"><a name="user-content-fastlane-actions" href="#fastlane-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane actions</h1>
 <p>This page contains a list of all built-in fastlane actions and their available options.</p>
 <p>To get the most up-to-date information from the command line on your current version you can also run</p>
@@ -591,12 +639,8 @@ fastlane action [action_name] # more information for a specific action
 <td>Runs tests on the given simulator</td>
 </tr>
 <tr>
-<td><a href="/actions/build_app">build_app</a></td>
-<td>Alias for the <code>build_ios_app</code> action</td>
-</tr>
-<tr>
-<td><a href="/actions/xcarchive">xcarchive</a></td>
-<td>Archives the project using <code>xcodebuild</code></td>
+<td><a href="/actions/build_android_app">build_android_app</a></td>
+<td>Alias for the <code>gradle</code> action</td>
 </tr>
 <tr>
 <td><a href="/actions/xcbuild">xcbuild</a></td>
@@ -607,16 +651,24 @@ fastlane action [action_name] # more information for a specific action
 <td>Cleans the project using <code>xcodebuild</code></td>
 </tr>
 <tr>
+<td><a href="/actions/spm">spm</a></td>
+<td>Runs Swift Package Manager on your project</td>
+</tr>
+<tr>
+<td><a href="/actions/build_app">build_app</a></td>
+<td>Alias for the <code>build_ios_app</code> action</td>
+</tr>
+<tr>
 <td><a href="/actions/xcexport">xcexport</a></td>
 <td>Exports the project using <code>xcodebuild</code></td>
 </tr>
 <tr>
-<td><a href="/actions/build_ios_app">build_ios_app</a></td>
-<td>Easily build and sign your app (via <em>gym</em>)</td>
+<td><a href="/actions/xcarchive">xcarchive</a></td>
+<td>Archives the project using <code>xcodebuild</code></td>
 </tr>
 <tr>
-<td><a href="/actions/build_android_app">build_android_app</a></td>
-<td>Alias for the <code>gradle</code> action</td>
+<td><a href="/actions/build_ios_app">build_ios_app</a></td>
+<td>Easily build and sign your app (via <em>gym</em>)</td>
 </tr>
 </tbody>
 </table>
@@ -642,20 +694,20 @@ fastlane action [action_name] # more information for a specific action
 <td>Alias for the <code>frame_screenshots</code> action</td>
 </tr>
 <tr>
-<td><a href="/actions/frame_screenshots">frame_screenshots</a></td>
-<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
+<td><a href="/actions/capture_ios_screenshots">capture_ios_screenshots</a></td>
+<td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
 </tr>
 <tr>
 <td><a href="/actions/capture_android_screenshots">capture_android_screenshots</a></td>
 <td>Automated localized screenshots of your Android app (via <em>screengrab</em>)</td>
 </tr>
 <tr>
-<td><a href="/actions/capture_ios_screenshots">capture_ios_screenshots</a></td>
-<td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
-</tr>
-<tr>
 <td><a href="/actions/capture_screenshots">capture_screenshots</a></td>
 <td>Alias for the <code>capture_ios_screenshots</code> action</td>
+</tr>
+<tr>
+<td><a href="/actions/frame_screenshots">frame_screenshots</a></td>
+<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
 </tr>
 </tbody>
 </table>
@@ -1126,7 +1178,7 @@ fastlane action [action_name] # more information for a specific action
 </tr>
 <tr>
 <td><a href="/actions/lane_context">lane_context</a></td>
-<td>An alias to <code>Actions.lane_context</code></td>
+<td>Access lane context values</td>
 </tr>
 <tr>
 <td><a href="/actions/import">import</a></td>
@@ -1357,8 +1409,32 @@ fastlane action [action_name] # more information for a specific action
 <td>Runs a shell command</td>
 </tr>
 <tr>
+<td><a href="/actions/check_app_store_metadata">check_app_store_metadata</a></td>
+<td>Check your app's metadata before you submit your app to review (via <em>precheck</em>)</td>
+</tr>
+<tr>
+<td><a href="/actions/environment_variable">environment_variable</a></td>
+<td>Sets/gets env vars for Fastlane.swift. Don't use in ruby, use <code>ENV[key] = val</code></td>
+</tr>
+<tr>
+<td><a href="/actions/min_fastlane_version">min_fastlane_version</a></td>
+<td>Verifies the minimum fastlane version required</td>
+</tr>
+<tr>
+<td><a href="/actions/ruby_version">ruby_version</a></td>
+<td>Verifies the minimum ruby version required</td>
+</tr>
+<tr>
+<td><a href="/actions/create_app_online">create_app_online</a></td>
+<td>Creates the given application on iTC and the Dev Portal (via <em>produce</em>)</td>
+</tr>
+<tr>
 <td><a href="/actions/google_play_track_version_codes">google_play_track_version_codes</a></td>
 <td>Retrieves version codes for a Google Play track</td>
+</tr>
+<tr>
+<td><a href="/actions/plugin_scores">plugin_scores</a></td>
+<td>[31mNo description provided[0m</td>
 </tr>
 <tr>
 <td><a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a></td>
@@ -1369,40 +1445,16 @@ fastlane action [action_name] # more information for a specific action
 <td>Modifies the services of the app created on Developer Portal</td>
 </tr>
 <tr>
-<td><a href="/actions/create_app_online">create_app_online</a></td>
-<td>Creates the given application on iTC and the Dev Portal (via <em>produce</em>)</td>
-</tr>
-<tr>
-<td><a href="/actions/min_fastlane_version">min_fastlane_version</a></td>
-<td>Verifies the minimum fastlane version required</td>
-</tr>
-<tr>
-<td><a href="/actions/plugin_scores">plugin_scores</a></td>
-<td>[31mNo description provided[0m</td>
-</tr>
-<tr>
 <td><a href="/actions/setup_travis">setup_travis</a></td>
 <td>Setup the keychain and match to work with Travis CI</td>
-</tr>
-<tr>
-<td><a href="/actions/environment_variable">environment_variable</a></td>
-<td>Sets/gets env vars for Fastlane.swift. Don't use in ruby, use <code>ENV[key] = val</code></td>
-</tr>
-<tr>
-<td><a href="/actions/ruby_version">ruby_version</a></td>
-<td>Verifies the minimum ruby version required</td>
-</tr>
-<tr>
-<td><a href="/actions/opt_out_usage">opt_out_usage</a></td>
-<td>This will stop uploading the information which actions were run</td>
 </tr>
 <tr>
 <td><a href="/actions/setup_circle_ci">setup_circle_ci</a></td>
 <td>Setup the keychain and match to work with CircleCI</td>
 </tr>
 <tr>
-<td><a href="/actions/check_app_store_metadata">check_app_store_metadata</a></td>
-<td>Check your app's metadata before you submit your app to review (via <em>precheck</em>)</td>
+<td><a href="/actions/opt_out_usage">opt_out_usage</a></td>
+<td>This will stop uploading the information which actions were run</td>
 </tr>
 </tbody>
 </table>

@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>get_provisioning_profile - fastlane docs</title>
+  <title>spm - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "get_provisioning_profile";
-    var mkdocs_page_input_path = "actions/get_provisioning_profile.md";
-    var mkdocs_page_url = "/actions/get_provisioning_profile/";
+    var mkdocs_page_name = "spm";
+    var mkdocs_page_input_path = "actions/spm.md";
+    var mkdocs_page_url = "/actions/spm/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -353,14 +353,14 @@
         
       
     
-    <li>get_provisioning_profile</li>
+    <li>spm</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/get_provisioning_profile.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/spm.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -391,44 +391,34 @@ This file is auto-generated and will be re-generated every time the docs are upd
 To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
-<h1 id="get_provisioning_profile"><a name="user-content-get_provisioning_profile" href="#get_provisioning_profile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>get_provisioning_profile</h1>
-<p>Generates a provisioning profile, saving it in the current folder (via <em>sigh</em>)</p>
-<blockquote>
-<p><strong>Note</strong>: It is recommended to use <a href="https://docs.fastlane.tools/actions/match/">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your provisioning profiles. Use <em>sigh</em> directly only if you want full control over what's going on and know more about codesigning.</p>
-</blockquote>
+<h1 id="spm"><a name="user-content-spm" href="#spm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>spm</h1>
+<p>Runs Swift Package Manager on your project</p>
 <table>
 <thead>
 <tr>
-<th>get_provisioning_profile</th>
+<th>spm</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios</td>
+<td>ios, android, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-<tr>
-<td>Returns</td>
-<td>The UUID of the profile sigh just fetched/generated</td>
+<td>@Flávio Caetano (@fjcaetano)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
-<pre><code class="ruby">get_provisioning_profile
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">spm
 </code></pre>
 
-<pre><code class="ruby">sigh # alias for &quot;get_provisioning_profile&quot;
-</code></pre>
-
-<pre><code class="ruby">get_provisioning_profile(
-  adhoc: true,
-  force: true,
-  filename: &quot;myFile.mobileprovision&quot;
+<pre><code class="ruby">spm(
+  command: &quot;build&quot;,
+  build_path: &quot;./build&quot;,
+  configuration: &quot;release&quot;
 )
 </code></pre>
 
@@ -442,89 +432,33 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </thead>
 <tbody>
 <tr>
-<td><code>adhoc</code></td>
-<td>Setting this flag will generate AdHoc profiles instead of App Store Profiles</td>
+<td><code>command</code></td>
+<td>The swift command (one of: build, test, clean, reset, update)</td>
 </tr>
 <tr>
-<td><code>development</code></td>
-<td>Renew the development certificate instead of the production one</td>
+<td><code>build_path</code></td>
+<td>Specify build/cache directory [default: ./.build]</td>
 </tr>
 <tr>
-<td><code>skip_install</code></td>
-<td>By default, the certificate will be added to your local machine. Setting this flag will skip this action</td>
+<td><code>package_path</code></td>
+<td>Change working directory before any other operation</td>
 </tr>
 <tr>
-<td><code>force</code></td>
-<td>Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles</td>
+<td><code>configuration</code></td>
+<td>Build with configuration (debug</td>
 </tr>
 <tr>
-<td><code>app_identifier</code></td>
-<td>The bundle identifier of your app</td>
-</tr>
-<tr>
-<td><code>username</code></td>
-<td>Your Apple ID Username</td>
-</tr>
-<tr>
-<td><code>team_id</code></td>
-<td>The ID of your Developer Portal team if you're in multiple teams</td>
-</tr>
-<tr>
-<td><code>team_name</code></td>
-<td>The name of your Developer Portal team if you're in multiple teams</td>
-</tr>
-<tr>
-<td><code>provisioning_name</code></td>
-<td>The name of the profile that is used on the Apple Developer Portal</td>
-</tr>
-<tr>
-<td><code>ignore_profiles_with_different_name</code></td>
-<td>Use in combination with :provisioning_name - when true only profiles matching this exact name will be downloaded</td>
-</tr>
-<tr>
-<td><code>output_path</code></td>
-<td>Directory in which the profile should be stored</td>
-</tr>
-<tr>
-<td><code>cert_id</code></td>
-<td>The ID of the code signing certificate to use (e.g. 78ADL6LVAA)</td>
-</tr>
-<tr>
-<td><code>cert_owner_name</code></td>
-<td>The certificate name to use for new profiles, or to renew with. (e.g. "Felix Krause")</td>
-</tr>
-<tr>
-<td><code>filename</code></td>
-<td>Filename to use for the generated provisioning profile (must include .mobileprovision)</td>
-</tr>
-<tr>
-<td><code>skip_fetch_profiles</code></td>
-<td>Skips the verification of existing profiles which is useful if you have thousands of profiles</td>
-</tr>
-<tr>
-<td><code>skip_certificate_verification</code></td>
-<td>Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine</td>
-</tr>
-<tr>
-<td><code>platform</code></td>
-<td>Set the provisioning profile's platform (i.e. ios, tvos)</td>
-</tr>
-<tr>
-<td><code>readonly</code></td>
-<td>Only fetch existing profile, don't generate new ones</td>
-</tr>
-<tr>
-<td><code>template_name</code></td>
-<td>The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile</td>
+<td><code>verbose</code></td>
+<td>Increase verbosity of informational output</td>
 </tr>
 </tbody>
 </table>
 <p><hr />
 To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action get_provisioning_profile
+<pre><code class="no-highlight">fastlane action spm
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_provisioning_profile.rb" target="_blank">View source code</a></p>
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/spm.rb" target="_blank">View source code</a></p>
 <hr />
 
 <p><a href="/actions"><b>Back to actions</b></a></p>
@@ -535,10 +469,10 @@ To show the documentation in your terminal, run</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../get_push_certificate/" class="btn btn-neutral float-right" title="get_push_certificate">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ssh/" class="btn btn-neutral float-right" title="ssh">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../get_ipa_info_plist_value/" class="btn btn-neutral" title="get_ipa_info_plist_value"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../splunkmint/" class="btn btn-neutral" title="splunkmint"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -571,10 +505,10 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../get_ipa_info_plist_value/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../splunkmint/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../get_push_certificate/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ssh/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
