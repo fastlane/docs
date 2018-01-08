@@ -11,7 +11,7 @@ Easily sync your certificates and profiles across your team (via _match_)
 
 
 
-> More details https://github.com/fastlane/fastlane/tree/master/match
+> More information: https://docs.fastlane.tools/actions/match/
 
 
 sync_code_signing |

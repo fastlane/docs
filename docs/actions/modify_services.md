@@ -12,7 +12,7 @@ Modifies the services of the app created on Developer Portal
 
 
 > Options are same as 'enable_services' in produce action
-https://github.com/fastlane/fastlane/tree/master/produce
+https://docs.fastlane.tools/actions/produce/
 
 
 modify_services |

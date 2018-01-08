@@ -11,7 +11,7 @@ Adds device frames around all screenshots (via _frameit_)
 
 
 
-> Uses [frameit](https://github.com/fastlane/fastlane/tree/master/frameit) to prepare perfect screenshots for the App Store, your website, QA
+> Uses [frameit](https://docs.fastlane.tools/actions/frameit/) to prepare perfect screenshots for the App Store, your website, QA
 or emails. You can add background and titles to the framed screenshots as well.
 
 

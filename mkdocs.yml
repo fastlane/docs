@@ -202,6 +202,7 @@ pages:
   - snapshot: actions/snapshot.md
   - sonar: actions/sonar.md
   - splunkmint: actions/splunkmint.md
+  - spm: actions/spm.md
   - ssh: actions/ssh.md
   - supply: actions/supply.md
   - swiftlint: actions/swiftlint.md
