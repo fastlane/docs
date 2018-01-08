@@ -399,6 +399,7 @@ Key | Description
   `add_videos` | A list of videos that should be added to the simulator before running the application
   `buildlog_path` | The directory where to store the build log
   `clean` | Should the project be cleaned before building it?
+  `test_without_building` | Test without building, requires a derived data path
   `configuration` | The configuration to use when building the app. Defaults to 'Release'
   `xcpretty_args` | Additional xcpretty arguments
   `sdk` | The SDK that should be used for building the application

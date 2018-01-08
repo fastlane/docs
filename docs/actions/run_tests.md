@@ -11,7 +11,7 @@ Easily run tests of your iOS app (via _scan_)
 
 
 
-> More information: https://github.com/fastlane/fastlane/tree/master/scan
+> More information: https://docs.fastlane.tools/actions/scan/
 
 
 run_tests |

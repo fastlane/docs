@@ -11,7 +11,7 @@ Upload metadata, screenshots and binaries to Google Play (via _supply_)
 
 
 
-> More information: https://github.com/fastlane/fastlane/tree/master/supply
+> More information: https://docs.fastlane.tools/actions/supply/
 
 
 upload_to_play_store |
