@@ -71,7 +71,8 @@ If you're using Slack, this is already built-into the default `run_tests` action
 ```ruby
 lane :tests do
   run_tests(scheme: "MyAppTests",
-         slack_url: "https://hooks.slack.com/services/T03N...")
+            slack_url: "https://hooks.slack.com/services/T03N...",
+            slack_channel: "#channel")
 end
 ```
 
