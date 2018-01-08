@@ -33,7 +33,7 @@
 xcode-select --install
 ```
 
-<p class="fastlane-setup-header">2) Install _fastlane_</p>
+<p class="fastlane-setup-header">2) Install <i>fastlane</i></p>
 
 ```sh
 # Using RubyGems
