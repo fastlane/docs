@@ -23,7 +23,7 @@ fastlane tests
 
 To run iOS tests using _fastlane_ on a Continuous Integration service, check out [the Continuous Integration docs](/best-practices/continuous-integration/).
 
-Since _fastlane_ stores all configuration in the form of configuration files, and it runs via the command line, it supports every kind of CI system.
+Since _fastlane_ stores all configuration in simple configuration files, and runs via the command line, it supports every kind of CI system.
 
 We also prepared some docs to help you get started with some of the popular CI systems.
 
