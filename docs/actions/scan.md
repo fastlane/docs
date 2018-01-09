@@ -155,8 +155,6 @@ lane :test do
 end
 ```
 
-For more information visit the [fastlane GitHub page](https://github.com/fastlane/fastlane/tree/master/fastlane).
-
 <hr />
 
 

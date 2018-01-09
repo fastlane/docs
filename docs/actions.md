@@ -77,15 +77,15 @@ Action | Description
 <a href="/actions/verify_xcode">verify_xcode</a> | Verifies that the Xcode installation is properly signed by Apple
 <a href="/actions/xcode_install">xcode_install</a> | Make sure a certain version of Xcode is installed
 <a href="/actions/verify_pod_keys">verify_pod_keys</a> | Verifies all keys referenced from the Podfile are non-empty
-<a href="/actions/xctest">xctest</a> | Runs tests on the given simulator
-<a href="/actions/build_android_app">build_android_app</a> | Alias for the `gradle` action
-<a href="/actions/xcbuild">xcbuild</a> | Builds the project using `xcodebuild`
-<a href="/actions/xcclean">xcclean</a> | Cleans the project using `xcodebuild`
-<a href="/actions/spm">spm</a> | Runs Swift Package Manager on your project
-<a href="/actions/build_app">build_app</a> | Alias for the `build_ios_app` action
-<a href="/actions/xcexport">xcexport</a> | Exports the project using `xcodebuild`
 <a href="/actions/xcarchive">xcarchive</a> | Archives the project using `xcodebuild`
+<a href="/actions/build_app">build_app</a> | Alias for the `build_ios_app` action
+<a href="/actions/xcbuild">xcbuild</a> | Builds the project using `xcodebuild`
 <a href="/actions/build_ios_app">build_ios_app</a> | Easily build and sign your app (via _gym_)
+<a href="/actions/xcclean">xcclean</a> | Cleans the project using `xcodebuild`
+<a href="/actions/build_android_app">build_android_app</a> | Alias for the `gradle` action
+<a href="/actions/spm">spm</a> | Runs Swift Package Manager on your project
+<a href="/actions/xcexport">xcexport</a> | Exports the project using `xcodebuild`
+<a href="/actions/xctest">xctest</a> | Runs tests on the given simulator
 
 
 
@@ -138,9 +138,9 @@ Action | Description
 <a href="/actions/register_devices">register_devices</a> | Registers new devices to the Apple Dev Portal
 <a href="/actions/automatic_code_signing">automatic_code_signing</a> | Configures Xcode's Codesigning options
 <a href="/actions/register_device">register_device</a> | Registers a new device to the Apple Dev Portal
+<a href="/actions/get_provisioning_profile">get_provisioning_profile</a> | Generates a provisioning profile, saving it in the current folder (via _sigh_)
 <a href="/actions/sync_code_signing">sync_code_signing</a> | Easily sync your certificates and profiles across your team (via _match_)
 <a href="/actions/get_certificates">get_certificates</a> | Create new iOS code signing certificates (via _cert_)
-<a href="/actions/get_provisioning_profile">get_provisioning_profile</a> | Generates a provisioning profile, saving it in the current folder (via _sigh_)
 
 
 
@@ -171,8 +171,8 @@ Action | Description
 <a href="/actions/set_changelog">set_changelog</a> | Set the changelog for all languages on iTunes Connect
 <a href="/actions/splunkmint">splunkmint</a> | Upload dSYM file to Splunk MINT
 <a href="/actions/tryouts">tryouts</a> | Upload a new build to Tryouts
-<a href="/actions/podio_item">podio_item</a> | Creates or updates an item within your Podio app
 <a href="/actions/upload_to_testflight">upload_to_testflight</a> | Upload a new binary to iTunes Connect for TestFlight beta testing (via _pilot_)
+<a href="/actions/podio_item">podio_item</a> | Creates or updates an item within your Podio app
 
 
 
@@ -313,18 +313,18 @@ Action | Description
 <a href="/actions/build_and_upload_to_appetize">build_and_upload_to_appetize</a> | Generate and upload an ipa file to appetize.io
 <a href="/actions/update_icloud_container_identifiers">update_icloud_container_identifiers</a> | This action changes the iCloud container identifiers in the entitlements file
 <a href="/actions/sh">sh</a> | Runs a shell command
-<a href="/actions/check_app_store_metadata">check_app_store_metadata</a> | Check your app's metadata before you submit your app to review (via _precheck_)
-<a href="/actions/environment_variable">environment_variable</a> | Sets/gets env vars for Fastlane.swift. Don't use in ruby, use `ENV[key] = val`
-<a href="/actions/min_fastlane_version">min_fastlane_version</a> | Verifies the minimum fastlane version required
 <a href="/actions/ruby_version">ruby_version</a> | Verifies the minimum ruby version required
-<a href="/actions/create_app_online">create_app_online</a> | Creates the given application on iTC and the Dev Portal (via _produce_)
-<a href="/actions/google_play_track_version_codes">google_play_track_version_codes</a> | Retrieves version codes for a Google Play track
-<a href="/actions/plugin_scores">plugin_scores</a> | [31mNo description provided[0m
-<a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a> | This will prevent reports from being uploaded when _fastlane_ crashes
 <a href="/actions/modify_services">modify_services</a> | Modifies the services of the app created on Developer Portal
-<a href="/actions/setup_travis">setup_travis</a> | Setup the keychain and match to work with Travis CI
-<a href="/actions/setup_circle_ci">setup_circle_ci</a> | Setup the keychain and match to work with CircleCI
+<a href="/actions/create_app_online">create_app_online</a> | Creates the given application on iTC and the Dev Portal (via _produce_)
+<a href="/actions/min_fastlane_version">min_fastlane_version</a> | Verifies the minimum fastlane version required
 <a href="/actions/opt_out_usage">opt_out_usage</a> | This will stop uploading the information which actions were run
+<a href="/actions/setup_travis">setup_travis</a> | Setup the keychain and match to work with Travis CI
+<a href="/actions/environment_variable">environment_variable</a> | Sets/gets env vars for Fastlane.swift. Don't use in ruby, use `ENV[key] = val`
+<a href="/actions/check_app_store_metadata">check_app_store_metadata</a> | Check your app's metadata before you submit your app to review (via _precheck_)
+<a href="/actions/plugin_scores">plugin_scores</a> | [31mNo description provided[0m
+<a href="/actions/setup_circle_ci">setup_circle_ci</a> | Setup the keychain and match to work with CircleCI
+<a href="/actions/google_play_track_version_codes">google_play_track_version_codes</a> | Retrieves version codes for a Google Play track
+<a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a> | This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 

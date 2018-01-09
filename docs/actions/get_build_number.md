@@ -36,6 +36,7 @@ build_number = get_build_number(xcodeproj: "Project.xcodeproj")
 Key | Description
 ----|------------
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
+  `hide_error_when_versioning_disabled` | Used during `fastlane init` to hide the error message
 
 
 
