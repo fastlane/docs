@@ -21,12 +21,14 @@ pages:
 - Getting Started:
   - iOS:
     - Setup: getting-started/ios/setup.md
+    - Running Tests: getting-started/ios/running-tests.md
     - _Swift: getting-started/ios/fastlane-swift.md
     - Screenshots: getting-started/ios/screenshots.md
     - Beta Deployment: getting-started/ios/beta-deployment.md
     - App Store Deployment: getting-started/ios/appstore-deployment.md
   - Android:
     - Setup: getting-started/android/setup.md
+    - Running Tests: getting-started/android/running-tests.md
     - Screenshots: getting-started/android/screenshots.md
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
