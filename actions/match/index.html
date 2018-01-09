@@ -495,7 +495,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td>✨</td>
-<td>Tightly integrated with <a href="https://fastlane.tools">fastlane</a> to work seamlessly with <a href="https://github.com/fastlane/fastlane/tree/master/gym">gym</a> and other build tools</td>
+<td>Tightly integrated with <a href="https://fastlane.tools">fastlane</a> to work seamlessly with <a href="https://docs.fastlane.tools/actions/gym">gym</a> and other build tools</td>
 </tr>
 </tbody>
 </table>
@@ -520,7 +520,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p>You'll be asked to enter the URL to your Git repo. This can be either a <code>https://</code> or a <code>git</code> URL. (If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise you may see an authentication error when you attempt to use match.) <code>fastlane match init</code> won't read or modify your certificates or profiles.</p>
 <p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
 <p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
-<pre><code class="ruby-skip-tests">git_url &quot;https://github.com/fastlane/fastlane/tree/master/certificates&quot;
+<pre><code class="ruby-skip-tests">git_url &quot;https://github.com/fastlane/certs&quot;
 
 app_identifier &quot;tools.fastlane.app&quot;
 username &quot;user@fastlane.tools&quot;
@@ -559,7 +559,7 @@ match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 <pre><code class="no-highlight">fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp
 </code></pre>
 
-<p>You can make this even easier using <a href="https://github.com/fastlane/fastlane/tree/master/fastlane">fastlane</a> by creating a <code>certificates</code> lane like this:</p>
+<p>You can make this even easier using <a href="https://fastlane.tools">fastlane</a> by creating a <code>certificates</code> lane like this:</p>
 <pre><code class="ruby">lane :certificates do
   match(app_identifier: [&quot;com.krausefx.app1&quot;, &quot;com.krausefx.app2&quot;, &quot;com.krausefx.app3&quot;], readonly: true)
 end
@@ -699,7 +699,7 @@ fastlane match nuke distribution
 <li>Even if your certificates are leaked, they can't be used to cause any harm without your iTunes Connect login credentials</li>
 <li>Use In-House enterprise profile with <em>match</em> with caution</li>
 <li>If you use GitHub or Bitbucket we encourage enabling 2 factor authentication for all accounts that have access to the certificates repo</li>
-<li>The complete source code of <em>match</em> is fully open source on <a href="https://github.com/fastlane/fastlane/tree/master/match">GitHub</a></li>
+<li>The complete source code of <em>match</em> is fully open source on <a href="https://docs.fastlane.tools/actions/match">GitHub</a></li>
 </ul>
 <hr />
 

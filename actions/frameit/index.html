@@ -522,7 +522,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p><strong>Note:</strong> These <code>.strings</code> files <strong>MUST</strong> be utf-16 encoded (UTF-16 BE with BOM).  They also must begin with an empty line. If you are having trouble see <a href="https://github.com/fastlane/fastlane/issues/1740">issue #1740</a></p>
 <p><strong>Note:</strong> You <strong>MUST</strong> provide a background if you want titles. <em>frameit</em> will not add the tiles if a background is not specified.</p>
 <h4 id="uploading-screenshots-to-itc"><a name="user-content-uploading-screenshots-to-itc" href="#uploading-screenshots-to-itc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading screenshots to iTC</h4>
-<p>Use <a href="https://github.com/fastlane/fastlane/tree/master/deliver">deliver</a> to upload all screenshots to iTunes Connect completely automatically 🚀</p>
+<p>Use <a href="https://docs.fastlane.tools/actions/deliver">deliver</a> to upload all screenshots to iTunes Connect completely automatically 🚀</p>
 <h3 id="mac"><a name="user-content-mac" href="#mac" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mac</h3>
 <p>With <em>frameit</em> 2.0 it's possible to also frame macOS Application screenshots. You have to provide the following:</p>
 <ul>
@@ -556,7 +556,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p>Check out the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">MindNode example project</a>.</p>
 <h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
 <h2 id="generate-localized-screenshots"><a name="user-content-generate-localized-screenshots" href="#generate-localized-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generate localized screenshots</h2>
-<p>Check out <a href="https://github.com/fastlane/fastlane/tree/master/snapshot"><em>snapshot</em></a> to automatically generate screenshots using <code>UI Automation</code>.</p>
+<p>Check out <a href="https://docs.fastlane.tools/actions/snapshot"><em>snapshot</em></a> to automatically generate screenshots using <code>UI Automation</code>.</p>
 <h2 id="alternative-location-to-store-device_frames"><a name="user-content-alternative-location-to-store-device_frames" href="#alternative-location-to-store-device_frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Alternative location to store device_frames</h2>
 <p>Device frames can also be stored in a <code>./fastlane/screenshots/devices_frames</code> directory if you prefer rather than in the <code>~/.frameit/device_frames</code> directory. If doing so please be aware that Apple's images are copyrighted and should not be redistributed as part of a repository so you may want to include them in your .gitignore file.</p>
 <h2 id="white-background-of-frames"><a name="user-content-white-background-of-frames" href="#white-background-of-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>White background of frames</h2>
