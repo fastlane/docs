@@ -31,7 +31,7 @@ fastlane tests
 
 To run iOS tests using _fastlane_ on a Continuous Integration service, check out [the Continuous Integration docs](/best-practices/continuous-integration/).
 
-Since _fastlane_ stores all configuration in the form of configuration files, and it runs via the command line, it supports every kind of CI system.
+Since _fastlane_ stores all configuration in simple configuration files, and runs via the command line, it supports every kind of CI system.
 
 We also prepared some docs to help you get started with some of the popular CI systems.
 
@@ -60,7 +60,7 @@ fastlane tests
 
 ## Posting build results
 
-If you want to post test results on Slack, Hipchat or similar, check out the available [fastlane actions](/actions/#notifications).
+If you want to post test results on Slack, Hipchat or other team chat client, check out the available [fastlane actions](/actions/#notifications).
 
 ### Build failures
 
@@ -80,7 +80,7 @@ To get the `slack_url`, create an `Incoming WebHook` for your Slack group.
 
 #### Other services
 
-To post a message on test or build failures, add the following to your `Fastfile`:
+To post a message when _fastlane_ encounters a test or build failure, add the following to your `Fastfile`:
 
 ```ruby
 error do |ex|
