@@ -67,7 +67,7 @@ To get the `slack_url`, create an `Incoming WebHook` for your Slack group.
 
 #### Other services
 
-To post a message on test or build failures, add the following to your `Fastfile`:
+To post a message when _fastlane_ encounters a test or build failure, add the following to your `Fastfile`:
 
 ```ruby
 error do |ex|
