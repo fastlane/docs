@@ -58,6 +58,10 @@ _fastlane_ automatically passes on information about the generated screenshots a
 
 For a list of all options for each of the steps run `fastlane action [action_name]`.
 
+## More details
+
+For more details on how `upload_to_app_store` works, how you can define more options, check out [upload_to_app_store](/actions/upload_to_app_store).
+
 # Best Practices
 
 <details>
