@@ -178,6 +178,9 @@ Currently, _fastlane_ is officially supported to run on macOS. Support for other
 </td>
 </table>
 
+Special thanks to all [contributors](https://github.com/fastlane/fastlane/graphs/contributors) for extending and improving _fastlane_.
+ 
+
 ## Metrics
 
 _fastlane_ tracks a few key metrics to understand how developers are using the tool and to help us know what areas need improvement. No personal/sensitive information is ever collected. Metrics that are collected include: 
