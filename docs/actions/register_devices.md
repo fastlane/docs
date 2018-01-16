@@ -37,7 +37,7 @@ register_devices(
 ```ruby
 register_devices(
   devices_file: "./devices.txt"
-) # Alternatively provide a standard UDID export .txt file, see the Apple Sample (https://devimages.apple.com.edgekey.net/downloads/devices/Multiple-Upload-Samples.zip)
+) # Alternatively provide a standard UDID export .txt file, see the Apple Sample (http://devimages.apple.com/downloads/devices/Multiple-Upload-Samples.zip)
 ```
 
 ```ruby

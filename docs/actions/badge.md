@@ -11,7 +11,8 @@ Automatically add a badge to your app icon
 
 
 
-> This action will add a light/dark badge onto your app icon.
+> [Please use the badge fastlane plugin instead: https://github.com/HazAT/fastlane-plugin-badge]
+This action will add a light/dark badge onto your app icon.
 You can also provide your custom badge/overlay or add an shield for more customization more info:
 https://github.com/HazAT/badge
 **Note** If you want to reset the badge back to default you can use `sh 'git checkout -- <path>/Assets.xcassets/'`
