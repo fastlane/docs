@@ -411,10 +411,171 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 
 <h1 id="frame_screenshots"><a name="user-content-frame_screenshots" href="#frame_screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>frame_screenshots</h1>
 <p>Adds device frames around all screenshots (via <em>frameit</em>)</p>
-<blockquote>
-<p>Uses <a href="https://docs.fastlane.tools/actions/frameit/">frameit</a> to prepare perfect screenshots for the App Store, your website, QA
-or emails. You can add background and titles to the framed screenshots as well.</p>
-</blockquote>
+<p align="center">
+  <img src="/img/actions/frameit.png" width="250">
+</p>
+
+<h6 id="quickly-put-your-screenshots-into-the-right-device-frames"><a name="user-content-quickly-put-your-screenshots-into-the-right-device-frames" href="#quickly-put-your-screenshots-into-the-right-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quickly put your screenshots into the right device frames</h6>
+<p><em>frameit</em> allows you to put a gorgeous device frame around your iOS and macOS screenshots just by running one simple command. Use <em>frameit</em> to prepare perfect screenshots for the App Store, your website, QA or emails.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#tips">Tips</a>
+</p>
+
+<hr />
+<h5 align="center"><code>frameit</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
+
+<h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
+<p>Put a gorgeous device frame around your iOS and macOS screenshots just by running one simple command. Support for:</p>
+<ul>
+<li>iPhone, iPad and Mac</li>
+<li>Portrait and Landscape modes</li>
+<li>Several colors</li>
+</ul>
+<p>The complete and updated list of supported devices and colors can be found <a href="https://github.com/fastlane/frameit-frames/tree/gh-pages/latest">here</a></p>
+<p>Here is a nice gif, that shows <em>frameit</em> in action:</p>
+<p><img alt="img/actions/FrameitGit.gif" src="../../img/actions/FrameitGit.gif?raw=1" /></p>
+<h3 id="results"><a name="user-content-results" href="#results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Results</h3>
+<p><img alt="img/actions/ScreenshotsBig.png" src="../../img/actions/ScreenshotsBig.png?raw=1" /></p>
+<hr />
+<p><img alt="img/actions/ScreenshotsOverview.png" src="../../img/actions/ScreenshotsOverview.png?raw=1" /></p>
+<hr />
+<p><img alt="img/actions/MacExample.png" src="../../img/actions/MacExample.png?raw=1" /></p>
+<h5 align="center">The <code>frameit</code> 2.0 update was kindly sponsored by <a href="https://mindnode.com/">MindNode</a>, seen in the screenshots above.</h5>
+
+<p>The first time that <em>frameit</em> is executed the frames will be downloaded automatically. Originally the frames are coming from <a href="http://facebook.design/devices">Facebook frameset</a> and they are kept on <a href="https://github.com/fastlane/frameit-frames">this repo</a>.</p>
+<p>More information about this process and how to update the frames can be found <a href="https://github.com/fastlane/fastlane/tree/master/frameit/frames_generator">here</a></p>
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<p>Why should you have to use Photoshop, just to add a frame around your screenshots?</p>
+<p>Just navigate to your folder of screenshots and use the following command:</p>
+<pre><code>fastlane frameit
+</code></pre>
+<p>To use the silver version of the frames:</p>
+<pre><code>fastlane frameit silver
+</code></pre>
+<p>To download the latest frames</p>
+<pre><code>fastlane frameit download_frames
+</code></pre>
+<p>When using <em>frameit</em> without titles on top, the screenshots will have the full resolution, which means they can't be uploaded to the App Store directly. They are supposed to be used for websites, print media and emails. Check out the section below to use the screenshots for the App Store.</p>
+<h1 id="titles-and-background-optional"><a name="user-content-titles-and-background-optional" href="#titles-and-background-optional" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Titles and Background (optional)</h1>
+<p>With <em>frameit</em> 2.0 you are now able to add a custom background, title and text colors to your screenshots.</p>
+<p>A working example can be found in the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">fastlane examples</a> project.</p>
+<h4 id="framefilejson"><code>Framefile.json</code></h4>
+<p>Use it to define the general information:</p>
+<pre><code class="json">{
+  &quot;device_frame_version&quot;: &quot;latest&quot;,
+  &quot;default&quot;: {
+    &quot;keyword&quot;: {
+      &quot;font&quot;: &quot;./fonts/MyFont-Rg.otf&quot;
+    },
+    &quot;title&quot;: {
+      &quot;font&quot;: &quot;./fonts/MyFont-Th.otf&quot;,
+      &quot;color&quot;: &quot;#545454&quot;
+    },
+    &quot;background&quot;: &quot;./background.jpg&quot;,
+    &quot;padding&quot;: 50,
+    &quot;show_complete_frame&quot;: false,
+    &quot;stack_title&quot; : false,
+    &quot;title_below_image&quot;: true
+  },
+
+  &quot;data&quot;: [
+    {
+      &quot;filter&quot;: &quot;Brainstorming&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#d21559&quot;
+      }
+    },
+    {
+      &quot;filter&quot;: &quot;Organizing&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#feb909&quot;
+      }
+    },
+    {
+      &quot;filter&quot;: &quot;Sharing&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#aa4dbc&quot;
+      }
+    },
+    {
+      &quot;filter&quot;: &quot;Styling&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#31bb48&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p>The <code>stack_title</code> value specifies whether <em>frameit</em> should display the keyword above the title when both keyword and title are defined.</p>
+<p>The <code>show_complete_frame</code> value specifies whether <em>frameit</em> should shrink the device and frame so that they show in full in the framed screenshot. If it is false, then they can hang over the bottom of the screenshot.</p>
+<p>The <code>title_below_image</code> value specifies whether <em>frameit</em> should place the title below the screenshot. If it is false, it will be placed above the screenshot.</p>
+<p>The <code>filter</code> value is a part of the screenshot named for which the given option should be used. If a screenshot is named <code>iPhone5_Brainstorming.png</code> the first entry in the <code>data</code> array will be used.</p>
+<p>You can find a more complex <a href="https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json">configuration</a> to also support Chinese, Japanese and Korean languages.</p>
+<p>The <code>Framefile.json</code> should be in the <code>screenshots</code> folder, as seen in the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">example</a>.</p>
+<h4 id="strings-files"><code>.strings</code> files</h4>
+<p>To define the title and optionally the keyword, put two <code>.strings</code> files into the language folder (e.g. <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots/en-US">en-US in the example project</a>)</p>
+<p>The <code>keyword.strings</code> and <code>title.strings</code> are standard <code>.strings</code> file you already use for your iOS apps, making it easy to use your existing translation service to get localized titles.</p>
+<p><strong>Note:</strong> These <code>.strings</code> files <strong>MUST</strong> be utf-16 encoded (UTF-16 BE with BOM).  They also must begin with an empty line. If you are having trouble see <a href="https://github.com/fastlane/fastlane/issues/1740">issue #1740</a></p>
+<p><strong>Note:</strong> You <strong>MUST</strong> provide a background if you want titles. <em>frameit</em> will not add the tiles if a background is not specified.</p>
+<h4 id="uploading-screenshots-to-itc"><a name="user-content-uploading-screenshots-to-itc" href="#uploading-screenshots-to-itc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading screenshots to iTC</h4>
+<p>Use <a href="https://docs.fastlane.tools/actions/deliver">deliver</a> to upload all screenshots to iTunes Connect completely automatically 🚀</p>
+<h3 id="mac"><a name="user-content-mac" href="#mac" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mac</h3>
+<p>With <em>frameit</em> 2.0 it's possible to also frame macOS Application screenshots. You have to provide the following:</p>
+<ul>
+<li>The <code>offset</code> information so <em>frameit</em> knows where to put your screenshots</li>
+<li>A path to a <code>background</code>, which should contain both the background and the Mac</li>
+<li><code>titleHeight</code>: The height in px that should be used for the title</li>
+</ul>
+<h5 id="example"><a name="user-content-example" href="#example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h5>
+<pre><code class="json">{
+  &quot;default&quot;: {
+    &quot;title&quot;: {
+      &quot;color&quot;: &quot;#545454&quot;
+    },
+    &quot;background&quot;: &quot;Mac.jpg&quot;,
+    &quot;offset&quot;: {
+      &quot;offset&quot;: &quot;+676+479&quot;,
+      &quot;titleHeight&quot;: 320
+    }
+  },
+  &quot;data&quot;: [
+    {
+      &quot;filter&quot;: &quot;Brainstorming&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#d21559&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p>Check out the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">MindNode example project</a>.</p>
+<h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
+<h2 id="generate-localized-screenshots"><a name="user-content-generate-localized-screenshots" href="#generate-localized-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generate localized screenshots</h2>
+<p>Check out <a href="https://docs.fastlane.tools/actions/snapshot"><em>snapshot</em></a> to automatically generate screenshots using <code>UI Automation</code>.</p>
+<h2 id="alternative-location-to-store-device_frames"><a name="user-content-alternative-location-to-store-device_frames" href="#alternative-location-to-store-device_frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Alternative location to store device_frames</h2>
+<p>Device frames can also be stored in a <code>./fastlane/screenshots/devices_frames</code> directory if you prefer rather than in the <code>~/.frameit/device_frames</code> directory. If doing so please be aware that Apple's images are copyrighted and should not be redistributed as part of a repository so you may want to include them in your .gitignore file.</p>
+<h2 id="white-background-of-frames"><a name="user-content-white-background-of-frames" href="#white-background-of-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>White background of frames</h2>
+<p>Some stock images provided by Apple still have a white background instead of a transparent one. You'll have to edit the Photoshop file to remove the white background, delete the generated <code>.png</code> file and run <code>fastlane frameit</code> again.</p>
+<h2 id="use-a-clean-status-bar"><a name="user-content-use-a-clean-status-bar" href="#use-a-clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a clean status bar</h2>
+<p>You can use <a href="https://github.com/shinydevelopment/SimulatorStatusMagic">SimulatorStatusMagic</a> to clean up the status bar.</p>
+<h2 id="gray-artifacts-around-text"><a name="user-content-gray-artifacts-around-text" href="#gray-artifacts-around-text" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gray artifacts around text</h2>
+<p>If you run into any quality issues, like having a border around the font, it usually helps to just re-install <code>imagemagick</code>. You can do so by running</p>
+<pre><code class="sh">brew uninstall imagemagick
+brew install imagemagick
+</code></pre>
+
+<h2 id="uninstall"><a name="user-content-uninstall" href="#uninstall" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uninstall</h2>
+<ul>
+<li><code>sudo gem uninstall fastlane</code></li>
+<li><code>rm -rf ~/.frameit</code></li>
+</ul>
+<hr />
+
 <table>
 <thead>
 <tr>

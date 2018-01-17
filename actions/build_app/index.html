@@ -411,9 +411,227 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 
 <h1 id="build_app"><a name="user-content-build_app" href="#build_app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>build_app</h1>
 <p>Alias for the <code>build_ios_app</code> action</p>
-<blockquote>
-<p>More information: https://fastlane.tools/gym</p>
-</blockquote>
+<p align="center">
+  <img src="/img/actions/gym.png" width="250">
+</p>
+
+<hr />
+<p align="center">
+    <a href="#whats-gym">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#tips">Tips</a>
+</p>
+
+<hr />
+<h5 align="center"><code>gym</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
+
+<h1 id="whats-gym"><a name="user-content-whats-gym" href="#whats-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What's gym?</h1>
+<p><em>gym</em> builds and packages iOS apps for you. It takes care of all the heavy lifting and makes it super easy to generate a signed <code>ipa</code> or <code>app</code> file 💪</p>
+<p><em>gym</em> is a replacement for <a href="https://github.com/nomad/shenzhen">shenzhen</a>.</p>
+<h3 id="before-gym"><a name="user-content-before-gym" href="#before-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Before <em>gym</em></h3>
+<pre><code class="no-highlight">xcodebuild clean archive -archivePath build/MyApp \
+                         -scheme MyApp
+xcodebuild -exportArchive \
+           -exportFormat ipa \
+           -archivePath &quot;build/MyApp.xcarchive&quot; \
+           -exportPath &quot;build/MyApp.ipa&quot; \
+           -exportProvisioningProfile &quot;ProvisioningProfileName&quot;
+</code></pre>
+
+<h3 id="with-gym"><a name="user-content-with-gym" href="#with-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>With <em>gym</em></h3>
+<pre><code class="no-highlight">fastlane gym
+</code></pre>
+
+<h3 id="why-gym"><a name="user-content-why-gym" href="#why-gym" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why <em>gym</em>?</h3>
+<p><em>gym</em> uses the latest APIs to build and sign your application which results in much faster build times.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Gym Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🚀</td>
+<td><em>gym</em> builds 30% faster than other build tools like <a href="https://github.com/nomad/shenzhen">shenzhen</a></td>
+</tr>
+<tr>
+<td>🏁</td>
+<td>Beautiful inline build output</td>
+</tr>
+<tr>
+<td>📖</td>
+<td>Helps you resolve common build errors like code signing issues</td>
+</tr>
+<tr>
+<td>🚠</td>
+<td>Sensible defaults: Automatically detect the project, its schemes and more</td>
+</tr>
+<tr>
+<td>🔗</td>
+<td>Works perfectly with <a href="https://fastlane.tools">fastlane</a> and other tools</td>
+</tr>
+<tr>
+<td>📦</td>
+<td>Automatically generates an <code>ipa</code> and a compressed <code>dSYM</code> file</td>
+</tr>
+<tr>
+<td>🚅</td>
+<td>Don't remember any complicated build commands, just <em>gym</em></td>
+</tr>
+<tr>
+<td>🔧</td>
+<td>Easy and dynamic configuration using parameters and environment variables</td>
+</tr>
+<tr>
+<td>💾</td>
+<td>Store common build settings in a <code>Gymfile</code></td>
+</tr>
+<tr>
+<td>📤</td>
+<td>All archives are stored and accessible in the Xcode Organizer</td>
+</tr>
+<tr>
+<td>💻</td>
+<td>Supports both iOS and Mac applications</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="/img/actions/gymScreenshot.png" src="../../img/actions/gymScreenshot.png" /></p>
+<hr />
+<p><img alt="/img/actions/gym.gif" src="../../img/actions/gym.gif" /></p>
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<pre><code class="no-highlight">fastlane gym
+</code></pre>
+
+<p>That's all you need to build your application. If you want more control, here are some available parameters:</p>
+<pre><code class="no-highlight">fastlane gym --workspace &quot;Example.xcworkspace&quot; --scheme &quot;AppName&quot; --clean
+</code></pre>
+
+<p>If you need to use a different Xcode installation, use <code>xcode-select</code> or define <code>DEVELOPER_DIR</code>:</p>
+<pre><code class="no-highlight">DEVELOPER_DIR=&quot;/Applications/Xcode6.2.app&quot; fastlane gym
+</code></pre>
+
+<p>For a list of all available parameters use</p>
+<pre><code class="no-highlight">fastlane action gym
+</code></pre>
+
+<p>If you run into any issues, use the <code>verbose</code> mode to get more information</p>
+<pre><code class="no-highlight">fastlane gym --verbose
+</code></pre>
+
+<p>Set the right export method if you're not uploading to App Store or TestFlight:</p>
+<pre><code class="no-highlight">fastlane gym --export_method ad-hoc
+</code></pre>
+
+<p>To pass boolean parameters make sure to use <em>gym</em> like this:</p>
+<pre><code class="no-highlight">fastlane gym --include_bitcode true --include_symbols false
+</code></pre>
+
+<p>To access the raw <code>xcodebuild</code> output open <code>~/Library/Logs/gym</code></p>
+<h1 id="gymfile"><a name="user-content-gymfile" href="#gymfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gymfile</h1>
+<p>Since you might want to manually trigger a new build but don't want to specify all the parameters every time, you can store your defaults in a so called <code>Gymfile</code>.</p>
+<p>Run <code>fastlane gym init</code> to create a new configuration file. Example:</p>
+<pre><code class="ruby-skip-tests">scheme &quot;Example&quot;
+
+sdk &quot;iphoneos9.0&quot;
+
+clean true
+
+output_directory &quot;./build&quot;    # store the ipa in this folder
+output_name &quot;MyApp&quot;           # the name of the ipa file
+</code></pre>
+
+<h2 id="export-options"><a name="user-content-export-options" href="#export-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Export options</h2>
+<p>Since Xcode 7, <em>gym</em> is using new Xcode API which allows us to specify export options using <code>plist</code> file. By default <em>gym</em> creates this file for you and you are able to modify some parameters by using <code>export_method</code>, <code>export_team_id</code>, <code>include_symbols</code> or <code>include_bitcode</code>. If you want to have more options, like creating manifest file for app thinning, you can provide your own <code>plist</code> file:</p>
+<pre><code class="ruby-skip-tests">export_options &quot;./ExportOptions.plist&quot;
+</code></pre>
+
+<p>or you can provide hash of values directly in the <code>Gymfile</code>:</p>
+<pre><code class="ruby-skip-tests">export_options(
+  method: &quot;ad-hoc&quot;,
+  manifest: {
+    appURL: &quot;https://example.com/My App.ipa&quot;,
+  },
+  thinning: &quot;&lt;thin-for-all-variants&gt;&quot;
+)
+</code></pre>
+
+<p>Optional: If <em>gym</em> can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:</p>
+<pre><code class="ruby-skip-tests">export_options(
+  method: &quot;app-store&quot;,
+  provisioningProfiles: { 
+    &quot;com.example.bundleid&quot; =&gt; &quot;Provisioning Profile Name&quot;,
+    &quot;com.example.bundleid2&quot; =&gt; &quot;Provisioning Profile Name 2&quot;
+  }
+)
+</code></pre>
+
+<p><strong>Note</strong>: If you use <a href="https://fastlane.tools">fastlane</a> with <a href="https://fastlane.tools/match">match</a> you don't need to provide those values manually.</p>
+<p>For the list of available options run <code>xcodebuild -help</code>.</p>
+<h2 id="setup-code-signing"><a name="user-content-setup-code-signing" href="#setup-code-signing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup code signing</h2>
+<ul>
+<li><a href="https://docs.fastlane.tools/codesigning/getting-started/">More information on how to get started with codesigning</a></li>
+<li><a href="https://docs.fastlane.tools/codesigning/xcode-project/">Docs on how to set up your Xcode project</a></li>
+</ul>
+<h2 id="automating-the-whole-process"><a name="user-content-automating-the-whole-process" href="#automating-the-whole-process" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automating the whole process</h2>
+<p><em>gym</em> works great together with <a href="https://fastlane.tools">fastlane</a>, which connects all deployment tools into one streamlined workflow.</p>
+<p>Using <em>fastlane</em> you can define a configuration like</p>
+<pre><code class="ruby">lane :beta do
+  scan
+  gym(scheme: &quot;MyApp&quot;)
+  crashlytics
+end
+
+# error block is executed when a error occurs
+error do |lane, exception|
+  slack(
+    # message with short human friendly message
+    message: exception.to_s, 
+    success: false, 
+    # Output containing extended log output
+    payload: { &quot;Output&quot; =&gt; exception.error_info.to_s } 
+  )
+end
+</code></pre>
+
+<p>When <em>gym</em> raises an error the <code>error_info</code> property will contain the process output
+in case you want to display the error in 3rd party tools such as Slack.</p>
+<p>You can then easily switch between the beta provider (e.g. <code>testflight</code>, <code>hockey</code>, <code>s3</code> and more).</p>
+<h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>
+<p><em>gym</em> uses the latest APIs to build and sign your application. The 2 main components are</p>
+<ul>
+<li><code>xcodebuild</code></li>
+<li><a href="https://github.com/supermarin/xcpretty">xcpretty</a></li>
+</ul>
+<p>When you run <em>gym</em> without the <code>--silent</code> mode it will print out every command it executes.</p>
+<p>To build the archive <em>gym</em> uses the following command:</p>
+<pre><code class="no-highlight">set -o pipefail &amp;&amp; \
+xcodebuild -scheme 'Example' \
+-project './Example.xcodeproj' \
+-configuration 'Release' \
+-destination 'generic/platform=iOS' \
+-archivePath '/Users/felixkrause/Library/Developer/Xcode/Archives/2015-08-11/ExampleProductName 2015-08-11 18.15.30.xcarchive' \
+archive | xcpretty
+</code></pre>
+
+<p>After building the archive it is being checked by <em>gym</em>. If it's valid, it gets packaged up and signed into an <code>ipa</code> file.</p>
+<p><em>gym</em> automatically chooses a different packaging method depending on the version of Xcode you're using.</p>
+<h3 id="xcode-7-and-above"><a name="user-content-xcode-7-and-above" href="#xcode-7-and-above" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 7 and above</h3>
+<pre><code class="no-highlight">/usr/bin/xcrun path/to/xcbuild-safe.sh -exportArchive \
+-exportOptionsPlist '/tmp/gym_config_1442852529.plist' \
+-archivePath '/Users/fkrause/Library/Developer/Xcode/Archives/2015-09-21/App 2015-09-21 09.21.56.xcarchive' \
+-exportPath '/tmp/1442852529'
+</code></pre>
+
+<p><em>gym</em> makes use of the new Xcode 7 API which allows us to specify the export options using a <code>plist</code> file. You can find more information about the available options by running <code>xcodebuild --help</code>.</p>
+<p>Using this method there are no workarounds for WatchKit or Swift required, as it uses the same technique Xcode uses when exporting your binary.</p>
+<p>Note: the <a href="https://github.com/fastlane/fastlane/tree/master/gym/lib/img/actions/wrap_xcodebuild/xcbuild-safe.sh">xcbuild-safe.sh script</a> wraps around xcodebuild to workaround some incompatibilities.</p>
+<h2 id="use-the-provisioning-quicklook-plugin"><a name="user-content-use-the-provisioning-quicklook-plugin" href="#use-the-provisioning-quicklook-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the 'Provisioning Quicklook plugin'</h2>
+<p>Download and install the <a href="https://github.com/chockenberry/Provisioning">Provisioning Plugin</a>.</p>
+<hr />
+
 <table>
 <thead>
 <tr>

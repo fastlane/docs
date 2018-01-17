@@ -411,10 +411,166 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 
 <h1 id="testflight"><a name="user-content-testflight" href="#testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>testflight</h1>
 <p>Alias for the <code>upload_to_testflight</code> action</p>
-<blockquote>
-<p>More details can be found on https://docs.fastlane.tools/actions/pilot/
-This integration will only do the TestFlight upload</p>
-</blockquote>
+<p align="center">
+  <img src="/img/actions/PilotTextTransparentSmall.png" width="500">
+</p>
+
+<h6 id="the-best-way-to-manage-your-testflight-testers-and-builds-from-your-terminal"><a name="user-content-the-best-way-to-manage-your-testflight-testers-and-builds-from-your-terminal" href="#the-best-way-to-manage-your-testflight-testers-and-builds-from-your-terminal" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The best way to manage your TestFlight testers and builds from your terminal</h6>
+<p>Pilot makes it easier to manage your app on Apple’s TestFlight. You can:</p>
+<ul>
+<li>Upload &amp; distribute builds</li>
+<li>Add &amp; remove testers</li>
+<li>Retrieve information about testers &amp; devices</li>
+<li>Import/export all available testers</li>
+</ul>
+<p><em>pilot</em> uses <a href="https://spaceship.airforce">spaceship.airforce</a> to interact with iTunes Connect 🚀</p>
+<hr />
+<p align="center">
+    <a href="#usage">Usage</a> &bull;
+    <a href="#tips">Tips</a>
+</p>
+
+<hr />
+<h5 align="center"><code>pilot</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
+
+<h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
+<p>For all commands you can specify the Apple ID to use using <code>-u felix@krausefx.com</code>. If you execute <em>pilot</em> in a project already using <a href="https://fastlane.tools">fastlane</a> the username and app identifier will automatically be determined.</p>
+<h2 id="uploading-builds"><a name="user-content-uploading-builds" href="#uploading-builds" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading builds</h2>
+<p>To upload a new build, just run</p>
+<pre><code class="no-highlight">fastlane pilot upload
+</code></pre>
+
+<p>This will automatically look for an <code>ipa</code> in your current directory and tries to fetch the login credentials from your <a href="https://fastlane.tools">fastlane setup</a>.</p>
+<p>You'll be asked for any missing information. Additionally, you can pass all kinds of parameters:</p>
+<pre><code class="no-highlight">fastlane action pilot
+</code></pre>
+
+<p>You can pass a changelog using</p>
+<pre><code class="no-highlight">fastlane pilot upload --changelog &quot;Something that is new here&quot;
+</code></pre>
+
+<p>You can also skip the submission of the binary, which means, the <code>ipa</code> file will only be uploaded and not distributed to testers:</p>
+<pre><code class="no-highlight">fastlane pilot upload --skip_submission
+</code></pre>
+
+<p><em>pilot</em> does all kinds of magic for you:</p>
+<ul>
+<li>Automatically detects the bundle identifier from your <code>ipa</code> file</li>
+<li>Automatically fetch the AppID of your app based on the bundle identifier</li>
+</ul>
+<p><em>pilot</em> uses <a href="https://spaceship.airforce">spaceship</a> to submit the build metadata and the iTunes Transporter to upload the binary. Because iTunes Transporter's upload capability is only supported on OS X, <code>pilot upload</code> does not work on Linux, as described <a href="https://github.com/fastlane/fastlane/issues/5789">in this issue</a></p>
+<h2 id="list-builds"><a name="user-content-list-builds" href="#list-builds" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>List builds</h2>
+<p>To list all builds for specific application use</p>
+<pre><code class="no-highlight">fastlane pilot builds
+</code></pre>
+
+<p>The result lists all active builds and processing builds:</p>
+<pre><code class="no-highlight">+-----------+---------+----------+
+|      Great App Builds          |
++-----------+---------+----------+
+| Version # | Build # | Installs |
++-----------+---------+----------+
+| 0.9.13    | 1       | 0        |
+| 0.9.13    | 2       | 0        |
+| 0.9.20    | 3       | 0        |
+| 0.9.20    | 4       | 3        |
++-----------+---------+----------+
+</code></pre>
+
+<h2 id="managing-beta-testers"><a name="user-content-managing-beta-testers" href="#managing-beta-testers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing beta testers</h2>
+<h3 id="list-of-testers"><a name="user-content-list-of-testers" href="#list-of-testers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>List of Testers</h3>
+<p>This command will list all your testers, both internal and external.</p>
+<pre><code class="no-highlight">fastlane pilot list
+</code></pre>
+
+<p>The output will look like this:</p>
+<pre><code class="no-highlight">+--------+--------+--------------------------+-----------+
+|                    Internal Testers                    |
++--------+--------+--------------------------+-----------+
+| First  | Last   | Email                    | # Devices |
++--------+--------+--------------------------+-----------+
+| Felix  | Krause | felix@krausefx.com       | 2         |
++--------+--------+--------------------------+-----------+
+
++-----------+---------+----------------------------+-----------+
+|                       External Testers                       |
++-----------+---------+----------------------------+-----------+
+| First     | Last    | Email                      | # Devices |
++-----------+---------+----------------------------+-----------+
+| Max       | Manfred | email@email.com            | 0         |
+| Detlef    | Müller  | detlef@krausefx.com        | 1         |
++-----------+---------+----------------------------+-----------+
+</code></pre>
+
+<h3 id="add-a-new-tester"><a name="user-content-add-a-new-tester" href="#add-a-new-tester" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Add a new tester</h3>
+<p>To add a new tester to both your iTunes Connect account and to your app (if given), use the <code>pilot add</code> command. This will create a new tester (if necessary) or add an existing tester to the app to test.</p>
+<pre><code class="no-highlight">fastlane pilot add email@invite.com
+</code></pre>
+
+<p>Additionally you can specify the app identifier (if necessary):</p>
+<pre><code class="no-highlight">fastlane pilot add email@email.com -a com.krausefx.app
+</code></pre>
+
+<h3 id="find-a-tester"><a name="user-content-find-a-tester" href="#find-a-tester" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Find a tester</h3>
+<p>To find a specific tester use</p>
+<pre><code class="no-highlight">fastlane pilot find felix@krausefx.com
+</code></pre>
+
+<p>The resulting output will look like this:</p>
+<pre><code class="no-highlight">+---------------------+---------------------+
+|            felix@krausefx.com             |
++---------------------+---------------------+
+| First name          | Felix               |
+| Last name           | Krause              |
+| Email               | felix@krausefx.com  |
+| Latest Version      | 0.9.14 (23          |
+| Latest Install Date | 03/28/15 19:00      |
+| 2 Devices           | • iPhone 6, iOS 8.3 |
+|                     | • iPhone 5, iOS 7.0 |
++---------------------+---------------------+
+</code></pre>
+
+<h3 id="remove-a-tester"><a name="user-content-remove-a-tester" href="#remove-a-tester" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Remove a tester</h3>
+<p>This command will only remove external beta testers.</p>
+<pre><code class="no-highlight">fastlane pilot remove felix@krausefx.com
+</code></pre>
+
+<h3 id="export-testers"><a name="user-content-export-testers" href="#export-testers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Export testers</h3>
+<p>To export all external testers to a CSV file. Useful if you need to import tester info to another system or a new account.</p>
+<pre><code class="no-highlight">fastlane pilot export
+</code></pre>
+
+<h3 id="import-testers"><a name="user-content-import-testers" href="#import-testers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Import testers</h3>
+<p>Add external testers from a CSV file. Sample CSV file available <a href="https://itunesconnect.apple.com/itc/docs/tester_import.csv">here</a>.</p>
+<pre><code class="no-highlight">fastlane pilot import
+</code></pre>
+
+<p>You can also specify the directory using</p>
+<pre><code class="no-highlight">fastlane pilot export -c ~/Desktop/testers.csv
+fastlane pilot import -c ~/Desktop/testers.csv
+</code></pre>
+
+<h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
+<h2 id="debug-information"><a name="user-content-debug-information" href="#debug-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Debug information</h2>
+<p>If you run into any issues you can use the <code>verbose</code> mode to get a more detailed output:</p>
+<pre><code>fastlane pilot upload --verbose
+</code></pre>
+<h2 id="firewall-issues"><a name="user-content-firewall-issues" href="#firewall-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Firewall Issues</h2>
+<p><em>pilot</em> uses the iTunes Transporter to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol from the command line using</p>
+<pre><code class="no-highlight">DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; pilot ...
+</code></pre>
+
+<p>If you are using <em>pilot</em> via the <a href="https://docs.fastlane.tools/actions#pilot">fastlane action</a>, add the following to your <code>Fastfile</code></p>
+<pre><code class="no-highlight">ENV[&quot;DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS&quot;] = &quot;-t DAV&quot;
+pilot...
+</code></pre>
+
+<h2 id="credentials-issues"><a name="user-content-credentials-issues" href="#credentials-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Credentials Issues</h2>
+<p>If your password contains special characters, <em>pilot</em> may throw a confusing error saying your "Your Apple ID or password was entered incorrectly". The easiest way to fix this error is to change your password to something that <strong>does not</strong> contains special characters.</p>
+<h2 id="how-is-my-password-stored"><a name="user-content-how-is-my-password-stored" href="#how-is-my-password-stored" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How is my password stored?</h2>
+<p><em>pilot</em> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> from <em>fastlane</em>.</p>
+<hr />
+
 <table>
 <thead>
 <tr>
