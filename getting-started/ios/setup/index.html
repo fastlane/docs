@@ -417,33 +417,15 @@
 <pre><code class="no-highlight">xcode-select --install
 </code></pre>
 
-<h3 id="choose-your-installation-method"><a name="user-content-choose-your-installation-method" href="#choose-your-installation-method" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Choose your installation method:</h3>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>OS support</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://brew.sh">Homebrew</a></td>
-<td>macOS</td>
-<td><code>brew cask install fastlane</code></td>
-</tr>
-<tr>
-<td>Installer Script</td>
-<td>macOS</td>
-<td><a href="https://download.fastlane.tools">Download the zip file</a>. Then double click on the <code>install</code> script (or run it in a terminal window).</td>
-</tr>
-<tr>
-<td>RubyGems</td>
-<td>macOS or Linux with Ruby 2.0.0 or above</td>
-<td><code>sudo gem install fastlane -NV</code></td>
-</tr>
-</tbody>
-</table>
+<p>Install <em>fastlane</em> using </p>
+<pre><code class="no-highlight">[sudo] gem install fastlane -NV
+</code></pre>
+
+<p>or alternatively using <code>brew cask install fastlane</code></p>
+<p>Navigate to your project directory and run</p>
+<pre><code class="no-highlight">fastlane init
+</code></pre>
+
 <h2 id="setting-up-fastlane"><a name="user-content-setting-up-fastlane" href="#setting-up-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em></h2>
 <p>Navigate your terminal to your project's directory and run</p>
 <p><em>for Ruby setup</em>:</p>
@@ -475,7 +457,6 @@ export LANG=en_US.UTF-8
 <h3 id="use-a-gemfile"><a name="user-content-use-a-gemfile" href="#use-a-gemfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a Gemfile</h3>
 <p>It is recommended that you use a <code>Gemfile</code> to define your dependency on <em>fastlane</em>. This will clearly define the used <em>fastlane</em> version, and its dependencies, and will also speed up using <em>fastlane</em>.</p>
 <ul>
-<li>Install <a href="https://bundler.io/">bundler</a> using <code>sudo gem install bundler</code></li>
 <li>Create a <code>./Gemfile</code> in the root directory of your project with the content</li>
 </ul>
 <pre><code class="ruby">source &quot;https://rubygems.org&quot;
@@ -487,7 +468,7 @@ gem &quot;fastlane&quot;
 <li>Run <code>[sudo] bundle update</code> and add both the <code>./Gemfile</code> and the <code>./Gemfile.lock</code> to version control</li>
 <li>Every time you run <em>fastlane</em>, use <code>bundle exec fastlane [lane]</code></li>
 <li>On your CI, add <code>[sudo] bundle install</code> as your first build step</li>
-<li>To update <em>fastlane</em>, just run <code>[sudo] bundle update</code></li>
+<li>To update <em>fastlane</em>, just run <code>[sudo] bundle update fastlane</code></li>
 </ul>
               
             </div>
