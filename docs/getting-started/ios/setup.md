@@ -1,19 +1,24 @@
 # Getting started with _fastlane_ for iOS
 
 ## Installing _fastlane_
+
 Make sure you have the latest version of the Xcode command line tools installed:
 
 ```no-highlight
 xcode-select --install
 ```
 
-### Choose your installation method:
+Install _fastlane_ using 
+```no-highlight
+[sudo] gem install fastlane -NV
+```
+or alternatively using `brew cask install fastlane`
 
-| Method                     | OS support                              | Description                                                                                                                           |
-|----------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| [Homebrew](http://brew.sh) | macOS                                   | `brew cask install fastlane`                                                                                                          |
-| Installer Script           | macOS                                   | [Download the zip file](https://download.fastlane.tools). Then double click on the `install` script (or run it in a terminal window). |
-| RubyGems                   | macOS or Linux with Ruby 2.0.0 or above | `sudo gem install fastlane -NV`                                                                                                       |
+Navigate to your project directory and run
+
+```no-highlight
+fastlane init
+```
 
 ## Setting up _fastlane_
 
@@ -62,7 +67,6 @@ You can find your shell profile at `~/.bashrc`, `~/.bash_profile` or `~/.zshrc` 
 
 It is recommended that you use a `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
 
-- Install [bundler](https://bundler.io/) using `sudo gem install bundler`
 - Create a `./Gemfile` in the root directory of your project with the content
 ```ruby
 source "https://rubygems.org"
@@ -72,4 +76,4 @@ gem "fastlane"
 - Run `[sudo] bundle update` and add both the `./Gemfile` and the `./Gemfile.lock` to version control
 - Every time you run _fastlane_, use `bundle exec fastlane [lane]`
 - On your CI, add `[sudo] bundle install` as your first build step
-- To update _fastlane_, just run `[sudo] bundle update`
+- To update _fastlane_, just run `[sudo] bundle update fastlane`

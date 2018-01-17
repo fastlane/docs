@@ -2,24 +2,11 @@
 
 ## Installing _fastlane_
 
-### Choose your installation method:
-
-| Method                     | OS support                              | Description                                                                                                                           |
-|----------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| [Homebrew](http://brew.sh) | macOS                                   | `brew cask install fastlane`                                                                                                          |
-| Installer Script           | macOS                                   | [Download the zip file](https://download.fastlane.tools). Then double click on the `install` script (or run it in a terminal window). |
-| RubyGems                   | macOS or Linux with Ruby 2.0.0 or above | `sudo gem install fastlane -NV`                                                                                                       |
-
-### Set up environment variables
-
-_fastlane_ requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:
-
-```sh
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+Install _fastlane_ using 
+```no-highlight
+[sudo] gem install fastlane -NV
 ```
-
-You can find your shell profile at `~/.bashrc`, `~/.bash_profile` or `~/.zshrc` depending on your system. 
+or alternatively using `brew cask install fastlane`
 
 ## Setting up _fastlane_
 
@@ -99,11 +86,21 @@ _fastlane_ is ready to generate screenshots and automatically distribute new bui
 - [_fastlane_ screenshots for Android](screenshots.md)
 - [Deploy to Google Play using _fastlane_](release-deployment.md)
 
+### Set up environment variables
+
+_fastlane_ requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:
+
+```sh
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+```
+
+You can find your shell profile at `~/.bashrc`, `~/.bash_profile` or `~/.zshrc` depending on your system. 
+
 ### Use a Gemfile
 
 It is recommended that you use a `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
 
-- Install [bundler](https://bundler.io/) using `sudo gem install bundler`
 - Create a `./Gemfile` in the root directory of your project with the content
 ```ruby
 source "https://rubygems.org"
@@ -113,4 +110,4 @@ gem "fastlane"
 - Run `[sudo] bundle update` and add both the `./Gemfile` and the `./Gemfile.lock` to version control
 - Every time you run _fastlane_, use `bundle exec fastlane [lane]`
 - On your CI, add `[sudo] bundle install` as your first build step
-- To update _fastlane_, just run `[sudo] bundle update`
+- To update _fastlane_, just run `[sudo] bundle update fastlane`
