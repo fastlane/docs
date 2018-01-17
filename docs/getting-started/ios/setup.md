@@ -1,6 +1,7 @@
 # Getting started with _fastlane_ for iOS
 
 ## Installing _fastlane_
+
 Make sure you have the latest version of the Xcode command line tools installed:
 
 ```no-highlight
@@ -13,7 +14,7 @@ Install _fastlane_ using
 ```
 or alternatively using `brew cask install fastlane`
 
-Navigate to your iOS or Android app and run
+Navigate to your project directory and run
 
 ```no-highlight
 fastlane init
@@ -66,7 +67,6 @@ You can find your shell profile at `~/.bashrc`, `~/.bash_profile` or `~/.zshrc` 
 
 It is recommended that you use a `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
 
-- Install [bundler](https://bundler.io/) using `sudo gem install bundler`
 - Create a `./Gemfile` in the root directory of your project with the content
 ```ruby
 source "https://rubygems.org"
@@ -76,4 +76,4 @@ gem "fastlane"
 - Run `[sudo] bundle update` and add both the `./Gemfile` and the `./Gemfile.lock` to version control
 - Every time you run _fastlane_, use `bundle exec fastlane [lane]`
 - On your CI, add `[sudo] bundle install` as your first build step
-- To update _fastlane_, just run `[sudo] bundle update`
+- To update _fastlane_, just run `[sudo] bundle update fastlane`
