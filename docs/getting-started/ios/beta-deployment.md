@@ -103,7 +103,7 @@ With _fastlane_, you can also automatically manage your beta testers, check out 
 </details>
 
 <details>
-<summary>Crashlytics</summary>
+<summary>Crashlytics (Fabric Beta)</summary>
 
 ```ruby
 lane :beta do
