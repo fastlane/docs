@@ -65,6 +65,8 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
 1. Run `fastlane snapshot init` in your project folder
 1. Add the `./SnapshotHelper.swift` file to your UI Test target (You can move the file anywhere you want)
 1. Add a new Xcode scheme for the newly created UI Test target
+1. Edit the scheme
+1. In the list on the left click "Build", and enable the checkbox under the "Run" column for your target. 
 1. Enable the `Shared` box of the newly created scheme
 1. (Objective C only) Add the bridging header to your test class.
     - `#import "MYUITests-Swift.h"`
@@ -90,7 +92,7 @@ XCUIApplication *app = [[XCUIApplication alloc] init];
 [Snapshot setupSnapshot:app];
 [app launch];
 ```
-
+1. In the terminal run `fastlane snapshot`.  WARNING: Running the test in Xcode will not create the snapshots is insufficient and will not generate the correct results - although no tests will fail.  The command line program creates the necessary subdirectories and renames the files as appropriate.
 
 The setup process will also generate a `Snapfile`, looking similar to
 
