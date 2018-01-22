@@ -88,6 +88,7 @@ pages:
   - download: actions/download.md
   - download_dsyms: actions/download_dsyms.md
   - dsym_zip: actions/dsym_zip.md
+  - echo: actions/echo.md
   - ensure_git_branch: actions/ensure_git_branch.md
   - ensure_git_status_clean: actions/ensure_git_status_clean.md
   - ensure_no_debug_code: actions/ensure_no_debug_code.md
@@ -161,6 +162,7 @@ pages:
   - pod_push: actions/pod_push.md
   - podio_item: actions/podio_item.md
   - precheck: actions/precheck.md
+  - println: actions/println.md
   - produce: actions/produce.md
   - prompt: actions/prompt.md
   - push_git_tags: actions/push_git_tags.md

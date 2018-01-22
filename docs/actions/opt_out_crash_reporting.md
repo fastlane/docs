@@ -11,7 +11,7 @@ This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> By default, fastlane will send a report when it crashes The stack trace is sanitized so no personal information is sent. Learn more at https://github.com/fastlane/fastlane#crash-reporting Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+> By default, fastlane will send a report when it crashes The stack trace is sanitized so no personal information is sent. Learn more at https://docs.fastlane.tools/actions/opt_out_crash_reporting/ Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
 
 
 opt_out_crash_reporting |
