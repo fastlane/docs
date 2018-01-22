@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>dsym_zip - fastlane docs</title>
+  <title>echo - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "dsym_zip";
-    var mkdocs_page_input_path = "actions/dsym_zip.md";
-    var mkdocs_page_url = "/actions/dsym_zip/";
+    var mkdocs_page_name = "echo";
+    var mkdocs_page_input_path = "actions/echo.md";
+    var mkdocs_page_url = "/actions/echo/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -371,14 +371,14 @@
         
       
     
-    <li>dsym_zip</li>
+    <li>echo</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/dsym_zip.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/echo.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -409,67 +409,36 @@ This file is auto-generated and will be re-generated every time the docs are upd
 To modify it, go to its source at https://github.com/fastlane/fastlane.
 -->
 
-<h1 id="dsym_zip"><a name="user-content-dsym_zip" href="#dsym_zip" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>dsym_zip</h1>
-<p>Creates a zipped dSYM in the project root from the .xcarchive</p>
-<blockquote>
-<p>You can manually specify the path to the xcarchive (not needed if you use <code>xcodebuild</code>/<code>xcarchive</code> to build your archive)</p>
-</blockquote>
+<h1 id="echo"><a name="user-content-echo" href="#echo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>echo</h1>
+<p>Alias for the <code>puts</code> action</p>
 <table>
 <thead>
 <tr>
-<th>dsym_zip</th>
+<th>echo</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, mac</td>
+<td>ios, android, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@lmirosevic</td>
+<td>@KrauseFx</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
-<pre><code class="ruby">dsym_zip
+<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<pre><code class="ruby">puts &quot;Hi there&quot;
 </code></pre>
 
-<pre><code class="ruby">dsym_zip(
-  archive_path: &quot;MyApp.xcarchive&quot;
-)
-</code></pre>
-
-<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>archive_path</code></td>
-<td>Path to your xcarchive file. Optional if you use the <code>xcodebuild</code> action</td>
-</tr>
-<tr>
-<td><code>dsym_path</code></td>
-<td>Path for generated dsym. Optional, default is your apps root directory</td>
-</tr>
-<tr>
-<td><code>all</code></td>
-<td>Whether or not all dSYM files are to be included. Optional, default is false in which only your app dSYM is included</td>
-</tr>
-</tbody>
-</table>
 <p><hr />
 To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action dsym_zip
+<pre><code class="no-highlight">fastlane action echo
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/dsym_zip.rb" target="_blank">View source code</a></p>
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/echo.rb" target="_blank">View source code</a></p>
 <hr />
 
 <p><a href="/actions"><b>Back to actions</b></a></p>
@@ -480,10 +449,10 @@ To show the documentation in your terminal, run</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../echo/" class="btn btn-neutral float-right" title="echo">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ensure_git_branch/" class="btn btn-neutral float-right" title="ensure_git_branch">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../download_dsyms/" class="btn btn-neutral" title="download_dsyms"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../dsym_zip/" class="btn btn-neutral" title="dsym_zip"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -516,10 +485,10 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../download_dsyms/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../dsym_zip/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../echo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ensure_git_branch/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

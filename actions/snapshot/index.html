@@ -421,7 +421,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
   Check out the new <a href="https://docs.fastlane.tools/getting-started/ios/screenshots">fastlane documentation</a> on how to generate screenshots
 </h4>
 <hr /></p>
-<p><em>snapshot</em> generates localized iOS and tvOS screenshots for different device types and languages for the App Store and can be uploaded using (<a href="https://docs.fastlane.tools/actions/deliver"><em>deliver</em></a>).</p>
+<p><em>snapshot</em> generates localized iOS and tvOS screenshots for different device types and languages for the App Store and can be uploaded using (<a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a>).</p>
 <p>You have to manually create 20 (languages) x 6 (devices) x 5 (screenshots) = <strong>600 screenshots</strong>.</p>
 <p>It's hard to get everything right!</p>
 <ul>
@@ -429,7 +429,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li>No loading indicators</li>
 <li>Same content / screens</li>
 <li><a href="#use-a-clean-status-bar">Clean Status Bar</a></li>
-<li>Uploading screenshots (<a href="https://docs.fastlane.tools/actions/deliver"><em>deliver</em></a> is your friend)</li>
+<li>Uploading screenshots (<a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> is your friend)</li>
 </ul>
 <p>More information about <a href="https://krausefx.com/blog/creating-perfect-app-store-screenshots-of-your-ios-app">creating perfect screenshots</a>.</p>
 <p><em>snapshot</em> runs completely in the background - you can do something else, while your computer takes the screenshots for you.</p>
@@ -450,7 +450,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li>Take screenshots in multiple device simulators concurrently to cut down execution time (Xcode 9 only)</li>
 <li>Configure it once, store the configuration in git</li>
 <li>Do something else, while the computer takes the screenshots for you</li>
-<li>Integrates with <a href="https://fastlane.tools"><em>fastlane</em></a> and <a href="https://docs.fastlane.tools/actions/deliver"><em>deliver</em></a></li>
+<li>Integrates with <a href="https://fastlane.tools"><em>fastlane</em></a> and <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a></li>
 <li>Generates a beautiful web page, which shows all screenshots on all devices. This is perfect to send to QA or the marketing team</li>
 <li><em>snapshot</em> automatically waits for network requests to be finished before taking a screenshot (we don't want loading images in the App Store screenshots)</li>
 </ul>
@@ -533,7 +533,7 @@ app.launch()
 <pre><code class="no-highlight">fastlane snapshot --reinstall_app --app_identifier &quot;tools.fastlane.app&quot;
 </code></pre>
 
-<p>By default <em>snapshot</em> automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. <a href="https://github.com/fastlane/snapshot/issues/372">#372</a>). You can adapt this number using</p>
+<p>By default <em>snapshot</em> automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. <a href="https://github.com/fastlane/fastlane/issues/2517">#2517</a>). You can adapt this number using</p>
 <pre><code class="no-highlight">fastlane snapshot --number_of_retries 3
 </code></pre>
 
@@ -640,7 +640,7 @@ launch_arguments([
 </h4>
 <hr /></p>
 <h2 id="frame-the-screenshots"><a name="user-content-frame-the-screenshots" href="#frame-the-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Frame the screenshots</h2>
-<p>If you want to add frames around the screenshots and even put a title on top, check out <a href="https://docs.fastlane.tools/actions/frameit">frameit</a>.</p>
+<p>If you want to add frames around the screenshots and even put a title on top, check out <a href="https://docs.fastlane.tools/actions/frameit/">frameit</a>.</p>
 <h2 id="available-language-codes"><a name="user-content-available-language-codes" href="#available-language-codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available language codes</h2>
 <pre><code class="ruby">ALL_LANGUAGES = [&quot;da&quot;, &quot;de-DE&quot;, &quot;el&quot;, &quot;en-AU&quot;, &quot;en-CA&quot;, &quot;en-GB&quot;, &quot;en-US&quot;, &quot;es-ES&quot;, &quot;es-MX&quot;, &quot;fi&quot;, &quot;fr-CA&quot;, &quot;fr-FR&quot;, &quot;id&quot;, &quot;it&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;ms&quot;, &quot;nl-NL&quot;, &quot;no&quot;, &quot;pt-BR&quot;, &quot;pt-PT&quot;, &quot;ru&quot;, &quot;sv&quot;, &quot;th&quot;, &quot;tr&quot;, &quot;vi&quot;, &quot;zh-Hans&quot;, &quot;zh-Hant&quot;]
 </code></pre>
