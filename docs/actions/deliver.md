@@ -648,7 +648,7 @@ In this case, default values for keywords, urls, name and release notes are used
 
 ## Automatically create screenshots
 
-If you want to integrate _deliver_ with [snapshot](https://docs.fastlane.tools/actions/snapshot), check out [fastlane](https://fastlane.tools)!
+If you want to integrate _deliver_ with [snapshot](https://docs.fastlane.tools/actions/snapshot/), check out [fastlane](https://fastlane.tools)!
 
 ## Jenkins integration
 Detailed instructions about how to set up _deliver_ and _fastlane_ in `Jenkins` can be found in the [fastlane README](https://docs.fastlane.tools/best-practices/continuous-integration/#jenkins-integration).
@@ -729,6 +729,7 @@ Key | Description
   `metadata_path` | Path to the folder containing the metadata files
   `screenshots_path` | Path to the folder containing the screenshots
   `skip_binary_upload` | Skip uploading an ipa or pkg to iTunes Connect
+  `use_live_version` | Force usage of live version rather than edit version
   `skip_screenshots` | Don't upload the screenshots
   `app_version` | The version that should be edited or created
   `skip_metadata` | Don't upload the metadata (e.g. title, description). This will still upload screenshots
