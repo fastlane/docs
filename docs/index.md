@@ -94,7 +94,7 @@ If the above doesn't help, please [submit an issue](https://github.com/fastlane/
 
 Currently, _fastlane_ is officially supported to run on 🍎 macOS. 
 
-But we are actively working on 🐧 Linux and 🖥️ Windows support for parts of fastlane. Some underlying software like Xcode or iTunes Transporter is only available for macOS, but many other tools and actions can theoretically also work on other platforms. Please see [this Github issue for further information](https://github.com/fastlane/fastlane/issues/11687).
+But we are actively working on 🐧 Linux and 🖥️ Windows support for parts of _fastlane_. Some underlying software like Xcode or iTunes Transporter is only available for macOS, but many other tools and actions can theoretically also work on other platforms. Please see [this Github issue for further information](https://github.com/fastlane/fastlane/issues/11687).
 
 ## _fastlane_ team
 
