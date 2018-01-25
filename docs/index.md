@@ -76,10 +76,6 @@ For more details about how to get up and running, check out the getting started 
 - [fastlane Getting Started guide for iOS](getting-started/ios/setup.md)
 - [fastlane Getting Started guide for Android](getting-started/android/setup.md)
 
-### Using the Fabric app
-
-If you're not familiar with the terminal and prefer a graphical user interface, download the [Fabric app](https://get.fabric.io/) and use the built-in _fastlane_ button.
-
 ## Questions and support
 
 Before submitting a new GitHub issue, please make sure to
