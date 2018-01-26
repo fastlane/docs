@@ -200,7 +200,7 @@ fastlane frameit
 
 This will only add a device frame around the screenshots, not the background and title. Those images can be used for your website, email newsletter and similar.
 
-If you want to implement the custom titles and background, you'll have to setup a `Framefile.json`, more information can be found [here](https://github.com/fastlane/fastlane/tree/master/frameit#titles-and-background-optional).
+If you want to implement the custom titles and background, you'll have to setup a `Framefile.json`, more information can be found [here](https://docs.fastlane.tools/actions/frameit/#titles-and-background-optional).
 
 If you want to upload the screenshots to the App Store, you **have** to provide a `Framefile.json`, with titles and background, otherwise the resolution of the framed screenshots doesn't match the requirements of iTunes Connect.
 
