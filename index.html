@@ -509,7 +509,8 @@ end
 </ul>
 <p>If the above doesn't help, please <a href="https://github.com/fastlane/fastlane/issues">submit an issue</a> on GitHub and provide information about your setup, in particular the output of the <code>fastlane env</code> command.</p>
 <h2 id="system-requirements"><a name="user-content-system-requirements" href="#system-requirements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>System requirements</h2>
-<p>Currently, <em>fastlane</em> is officially supported to run on macOS. Support for other operating systems is limited and untested at this point in time. <em>fastlane</em> uses system APIs that may not be implemented on other platforms, for example, we use the Ruby <code>fork</code> method for sub-process management, which isn't available on Windows.</p>
+<p>Currently, <em>fastlane</em> is officially supported to run on macOS. </p>
+<p>But we are working on 🐧 Linux and 🖥️ Windows support for parts of <em>fastlane</em>. Some underlying software like Xcode or iTunes Transporter is only available for macOS, but many other tools and actions can theoretically also work on other platforms. Please see <a href="https://github.com/fastlane/fastlane/issues/11687">this Github issue for further information</a>.</p>
 <h2 id="fastlane-team"><em>fastlane</em> team</h2>
 <table>
 <tr>
@@ -672,5 +673,5 @@ end
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2018-01-25 19:35:25.176670
+Build Date UTC : 2018-01-26 16:33:43.349821
 -->
