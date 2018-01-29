@@ -46,6 +46,7 @@ Key | Description
   `bump_type` | The type of this version bump. Available: patch, minor, major
   `version_number` | Change to a specific version. This will replace the bump type value
   `version_appendix` | Change version appendix to a specific value. For example 1.4.14.4.1 -> 1.4.14.5
+  `require_variable_prefix` | true by default, this is used for non CocoaPods version bumps only
 
 
 

@@ -31,6 +31,15 @@ puts "Hi there"
 
 
 
+## Parameters
+
+Key | Description
+----|------------
+  `message` | Message to be printed out. Fastlane.swift only
+
+
+
+
 <hr />
 To show the documentation in your terminal, run
 ```no-highlight
