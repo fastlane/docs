@@ -36,6 +36,7 @@ version = version_get_podspec(path: "TSMessages.podspec")
 Key | Description
 ----|------------
   `path` | You must specify the path to the podspec file
+  `require_variable_prefix` | true by default, this is used for non CocoaPods version bumps only
 
 
 

@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 0abd1392e1a00e544225a2d8696580e3f38ffeff
+  revision: 9bd9c505f33ab9b6bb81a98bedfd06dc6c890b27
   specs:
-    fastlane (2.78.0)
+    fastlane (2.79.0)
       CFPropertyList (>= 2.3, < 3.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -55,7 +55,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.3.0)
       colored2 (~> 3.1)
-    danger (5.5.6)
+    danger (5.5.8)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
