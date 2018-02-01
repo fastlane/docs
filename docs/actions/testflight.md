@@ -286,6 +286,7 @@ Key | Description
   `update_build_info_on_upload` | [DEPRECATED!] true - Update build info immediately after validation. This is deprecated and will be removed in a future release. iTunesConnect no longer supports setting build info until after build processing has completed, which is when build info is updated by default
   `apple_id` | The unique App ID provided by iTunes Connect
   `distribute_external` | Should the build be distributed to external testers?
+  `demo_account_required` | Do you need a demo account when Apple does review?
   `first_name` | The tester's first name
   `last_name` | The tester's last name
   `email` | The tester's email
