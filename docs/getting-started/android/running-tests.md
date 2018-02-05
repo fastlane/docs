@@ -21,7 +21,7 @@ fastlane tests
 
 ## Setting up _fastlane_ to run on CI
 
-To run iOS tests using _fastlane_ on a Continuous Integration service, check out [the Continuous Integration docs](/best-practices/continuous-integration/).
+To run Android tests using _fastlane_ on a Continuous Integration service, check out [the Continuous Integration docs](/best-practices/continuous-integration/).
 
 Since _fastlane_ stores all configuration in simple configuration files, and runs via the command line, it supports every kind of CI system.
 
