@@ -20,6 +20,17 @@ If you use `rvm`, try the following
 rvm osx-ssl-certs update all
 ```
 
+If you are uploading to Hockey and still receive an SSL error (especially on a corporate firewall), try bypassing the CDN:
+
+```ruby
+hockey(
+  api_token: "...",
+  ipa: "./app.ipa",
+  notes: "Changelog",
+  bypass_cdn: true
+)
+```
+
 ### fastlane is slow (to start)
 
 If you experience slow launch times of _fastlane_, there are 2 solutions to solve this problem:
