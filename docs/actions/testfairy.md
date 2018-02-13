@@ -44,9 +44,8 @@ Key | Description
   `symbols_file` | Symbols mapping file
   `testers_groups` | Array of tester groups to be notified
   `metrics` | Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi)
-  `icon_watermark` | Add a small watermark to app icon
   `comment` | Additional release notes for this upload. This text will be added to email notifications
-  `auto_update` | Allows easy upgrade of all users to current version
+  `auto_update` | Allows an easy upgrade of all users to the current version. The default is 'off', to enable set as 'on'
   `notify` | Send email to testers
   `options` | Array of options (shake,video_only_wifi,anonymous)
 
