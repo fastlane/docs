@@ -403,7 +403,7 @@ test_flight_build:
      - master
 ```
 
-See [the ``.gitlab-ci.yml` documentation](https://docs.gitlab.com/ce/ci/yaml/README.html)
+See [the `.gitlab-ci.yml` documentation](https://docs.gitlab.com/ce/ci/yaml/README.html)
 for more information on how this file works.
 
 ## Setting up the lanes
