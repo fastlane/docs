@@ -163,7 +163,7 @@ Then all your team has to do is `fastlane certificates` and keys, certs and prof
 
 #### Handle multiple apps per developer/distribution certificate
 
-If you want to use a single developer and distribution certificate for multiple apps belonging to the same development team, you may use the same signing identities repository and branch to store the signing identities for your apps:
+If you want to use a single developer and/or distribution certificate for multiple apps belonging to the same development team, you may use the same signing identities repository and branch to store the signing identities for your apps:
 
 Matchfile for App #1:
 ```no-highlight
