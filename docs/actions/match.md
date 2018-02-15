@@ -163,7 +163,7 @@ Then all your team has to do is `fastlane certificates` and keys, certs and prof
 
 #### Handle multiple apps per developer/distribution certificate
 
-If you want to use single developer and distribution certificate for multiple apps belonging to the same development team, you may use the same signing identities repo and branch to store signing identities for your apps:
+If you want to use a single developer and distribution certificate for multiple apps belonging to the same development team, you may use the same signing identities repository and branch to store the signing identities for your apps:
 
 Matchfile for App #1:
 ```no-highlight
@@ -176,7 +176,7 @@ Matchfile for App #2:
 git_url "https://github.com/example/example-repo.git"
 git_branch "master"
 ```
-Match will reuse developer/distribution certificate and will create separate provisioning profiles for each app.
+_match_ will reuse certificates and will create separate provisioning profiles for each app.
 
 #### Passphrase
 
