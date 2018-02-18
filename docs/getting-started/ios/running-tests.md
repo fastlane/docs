@@ -15,7 +15,7 @@ Additionally you can specify more options for building and testing your app, for
 ```ruby
 lane :tests do
   run_tests(workspace: "Example.xcworkspace",
-            devices: ["iPhone 6s", "iPad Air"]
+            devices: ["iPhone 6s", "iPad Air"],
             scheme: "MyAppTests")
 end
 ```
