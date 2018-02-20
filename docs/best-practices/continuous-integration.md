@@ -52,6 +52,12 @@ You should **not** deploy a new App Store update after every commit, since you s
 
 You can set up your own ```Release``` job, which is only triggered manually.
 
+# [fastlane.ci](https://github.com/fastlane/ci)
+
+Since January 2018, the _fastlane_ team started working on [fastlane.ci](https://github.com/fastlane/ci), an open source, self hosted, mobile optimized CI powered by _fastlane_.
+
+It's still an early work in progress, and will take some time to be ready for production.
+
 # Jenkins Integration
 
 Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.
