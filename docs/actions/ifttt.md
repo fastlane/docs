@@ -39,15 +39,16 @@ ifttt(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_key` | API key
-  `event_name` | The name of the event that will be triggered
-  `value1` | Extra data sent with the event
-  `value2` | Extra data sent with the event
-  `value3` | Extra data sent with the event
+Key | Description | Default
+----|-------------|--------
+  `api_key` | API key | -
+  `event_name` | The name of the event that will be triggered | -
+  `value1` | Extra data sent with the event | -
+  `value2` | Extra data sent with the event | -
+  `value3` | Extra data sent with the event | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

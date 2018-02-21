@@ -57,16 +57,17 @@ ensure_no_debug_code(text: "<<<<<<",
 
 ## Parameters
 
-Key | Description
-----|------------
-  `text` | The text that must not be in the code base
-  `path` | The directory containing all the source files
-  `extension` | The extension that should be searched for
-  `extensions` | An array of file extensions that should be searched for
-  `exclude` | Exclude a certain pattern from the search
-  `exclude_dirs` | An array of dirs that should not be included in the search
+Key | Description | Default
+----|-------------|--------
+  `text` | The text that must not be in the code base | -
+  `path` | The directory containing all the source files | .
+  `extension` | The extension that should be searched for | -
+  `extensions` | An array of file extensions that should be searched for | -
+  `exclude` | Exclude a certain pattern from the search | -
+  `exclude_dirs` | An array of dirs that should not be included in the search | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

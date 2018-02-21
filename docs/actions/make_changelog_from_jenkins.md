@@ -36,12 +36,13 @@ make_changelog_from_jenkins(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `fallback_changelog` | Fallback changelog if there is not one on Jenkins, or it couldn't be read
-  `include_commit_body` | Include the commit body along with the summary
+Key | Description | Default
+----|-------------|--------
+  `fallback_changelog` | Fallback changelog if there is not one on Jenkins, or it couldn't be read | 
+  `include_commit_body` | Include the commit body along with the summary | true
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -37,19 +37,20 @@ splunkmint(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `dsym` | dSYM.zip file to upload to Splunk MINT
-  `api_key` | Splunk MINT App API key e.g. f57a57ca
-  `api_token` | Splunk MINT API token e.g. e05ba40754c4869fb7e0b61
-  `verbose` | Make detailed output
-  `upload_progress` | Show upload progress
-  `proxy_username` | Proxy username
-  `proxy_password` | Proxy password
-  `proxy_address` | Proxy address
-  `proxy_port` | Proxy port
+Key | Description | Default
+----|-------------|--------
+  `dsym` | dSYM.zip file to upload to Splunk MINT | -
+  `api_key` | Splunk MINT App API key e.g. f57a57ca | -
+  `api_token` | Splunk MINT API token e.g. e05ba40754c4869fb7e0b61 | -
+  `verbose` | Make detailed output | false
+  `upload_progress` | Show upload progress | false
+  `proxy_username` | Proxy username | -
+  `proxy_password` | Proxy password | -
+  `proxy_address` | Proxy address | -
+  `proxy_port` | Proxy port | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

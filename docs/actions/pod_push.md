@@ -49,17 +49,18 @@ pod_push(path: "TMessages.podspec", repo: "MyRepo", sources: ["https://github.co
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | The Podspec you want to push
-  `repo` | The repo you want to push. Pushes to Trunk by default
-  `allow_warnings` | Allow warnings during pod push
-  `use_libraries` | Allow lint to use static libraries to install the spec
-  `sources` | The sources of repos you want the pod spec to lint with, separated by commas
-  `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file
-  `verbose` | Show more debugging information
+Key | Description | Default
+----|-------------|--------
+  `path` | The Podspec you want to push | -
+  `repo` | The repo you want to push. Pushes to Trunk by default | -
+  `allow_warnings` | Allow warnings during pod push | -
+  `use_libraries` | Allow lint to use static libraries to install the spec | -
+  `sources` | The sources of repos you want the pod spec to lint with, separated by commas | -
+  `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | -
+  `verbose` | Show more debugging information | false
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -40,16 +40,17 @@ ssh(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `username` | Username
-  `password` | Password
-  `host` | Hostname
-  `port` | Port
-  `commands` | Commands
-  `log` | Log commands and output
+Key | Description | Default
+----|-------------|--------
+  `username` | Username | -
+  `password` | Password | -
+  `host` | Hostname | -
+  `port` | Port | 22
+  `commands` | Commands | -
+  `log` | Log commands and output | true
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

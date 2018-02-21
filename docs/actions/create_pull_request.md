@@ -42,17 +42,18 @@ create_pull_request(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
-  `repo` | The name of the repository you want to submit the pull request to
-  `title` | The title of the pull request
-  `body` | The contents of the pull request
-  `head` | The name of the branch where your changes are implemented (defaults to the current branch name)
-  `base` | The name of the branch you want your changes pulled into (defaults to `master`)
-  `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`)
+Key | Description | Default
+----|-------------|--------
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | *
+  `repo` | The name of the repository you want to submit the pull request to | -
+  `title` | The title of the pull request | -
+  `body` | The contents of the pull request | -
+  `head` | The name of the branch where your changes are implemented (defaults to the current branch name) | *
+  `base` | The name of the branch you want your changes pulled into (defaults to `master`) | master
+  `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`) | https://api.github.com
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

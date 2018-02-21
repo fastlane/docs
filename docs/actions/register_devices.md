@@ -54,15 +54,16 @@ register_devices(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `devices` | A hash of devices, with the name as key and the UDID as value
-  `devices_file` | Provide a path to a file with the devices to register. For the format of the file see the examples
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `username` | Optional: Your Apple ID
+Key | Description | Default
+----|-------------|--------
+  `devices` | A hash of devices, with the name as key and the UDID as value | -
+  `devices_file` | Provide a path to a file with the devices to register. For the format of the file see the examples | -
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | -
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | -
+  `username` | Optional: Your Apple ID | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

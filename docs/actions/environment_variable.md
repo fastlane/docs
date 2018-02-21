@@ -25,13 +25,14 @@ Author | @taquitos
 
 ## Parameters
 
-Key | Description
-----|------------
-  `set` | Set the environment variables named
-  `get` | Get the environment variable named
-  `remove` | Remove the environment variable named
+Key | Description | Default
+----|-------------|--------
+  `set` | Set the environment variables named | -
+  `get` | Get the environment variable named | -
+  `remove` | Remove the environment variable named | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -37,11 +37,12 @@ git_pull(only_tags: true) # only the tags, no commits
 
 ## Parameters
 
-Key | Description
-----|------------
-  `only_tags` | Simply pull the tags, and not bring new commits to the current branch from the remote
+Key | Description | Default
+----|-------------|--------
+  `only_tags` | Simply pull the tags, and not bring new commits to the current branch from the remote | false
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

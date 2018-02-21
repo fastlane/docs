@@ -33,12 +33,13 @@ build_number = get_build_number(xcodeproj: "Project.xcodeproj")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
-  `hide_error_when_versioning_disabled` | Used during `fastlane init` to hide the error message
+Key | Description | Default
+----|-------------|--------
+  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory | -
+  `hide_error_when_versioning_disabled` | Used during `fastlane init` to hide the error message | false
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

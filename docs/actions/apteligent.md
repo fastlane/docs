@@ -36,13 +36,14 @@ apteligent(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `dsym` | dSYM.zip file to upload to Apteligent
-  `app_id` | Apteligent App ID key e.g. 569f5c87cb99e10e00c7xxxx
-  `api_key` | Apteligent App API key e.g. IXPQIi8yCbHaLliqzRoo065tH0lxxxxx
+Key | Description | Default
+----|-------------|--------
+  `dsym` | dSYM.zip file to upload to Apteligent | -
+  `app_id` | Apteligent App ID key e.g. 569f5c87cb99e10e00c7xxxx | -
+  `api_key` | Apteligent App API key e.g. IXPQIi8yCbHaLliqzRoo065tH0lxxxxx | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

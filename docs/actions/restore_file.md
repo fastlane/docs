@@ -33,11 +33,12 @@ restore_file(path: "/path/to/file")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Original file name you want to restore
+Key | Description | Default
+----|-------------|--------
+  `path` | Original file name you want to restore | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

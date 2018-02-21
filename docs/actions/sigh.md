@@ -41,7 +41,7 @@ _sigh_ can create, renew, download and repair provisioning profiles (with one co
 - Support for **multiple Teams**
 - Support for **Enterprise Profiles**
 
-To automate iOS Push profiles you can use [pem](https://docs.fastlane.tools/actions/pem/).
+To automate iOS Push profiles you can use [_pem_](https://docs.fastlane.tools/actions/pem/).
 
 
 ### Why not let Xcode do the work?
@@ -57,7 +57,7 @@ See _sigh_ in action:
 
 # Usage
 
-**Note**: It is recommended to use [match](https://docs.fastlane.tools/actions/match/) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use _sigh_ directly only if you want full control over what's going on and know more about codesigning.
+**Note**: It is recommended to use [_match_](https://docs.fastlane.tools/actions/match/) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your provisioning profiles. Use _sigh_ directly only if you want full control over what's going on and know more about codesigning.
 
 ```no-highlight
 fastlane sigh
@@ -173,11 +173,11 @@ Or delete all `iOS Team Provisioning Profile` by using a regular expression
 
 Run `fastlane action sigh` to get a list of all available environment variables.
 
-If you're using [cert](https://docs.fastlane.tools/actions/cert/) in combination with [fastlane](https://fastlane.tools) the signing certificate will automatically be selected for you. (make sure to run _cert_ before _sigh_)
+If you're using [_cert_](https://docs.fastlane.tools/actions/cert/) in combination with [_fastlane_](https://fastlane.tools) the signing certificate will automatically be selected for you. (make sure to run _cert_ before _sigh_)
 
 # How does it work?
 
-_sigh_ will access the `iOS Dev Center` to download, renew or generate the `.mobileprovision` file. It uses [spaceship](https://spaceship.airforce) to communicate with Apple's web services.
+_sigh_ will access the `iOS Dev Center` to download, renew or generate the `.mobileprovision` file. It uses [_spaceship_](https://spaceship.airforce) to communicate with Apple's web services.
 
 ## How is my password stored?
 _sigh_ uses the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) from _fastlane_.
@@ -193,7 +193,7 @@ It will show you the `mobileprovision` files like this:
 
 ## App Identifier couldn't be found
 
-If you also want to create a new App Identifier on the Apple Developer Portal, check out [produce](https://docs.fastlane.tools/actions/produce/), which does exactly that.
+If you also want to create a new App Identifier on the Apple Developer Portal, check out [_produce_](https://docs.fastlane.tools/actions/produce/), which does exactly that.
 
 ## What happens to my Xcode managed profiles?
 
@@ -234,29 +234,30 @@ get_provisioning_profile(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `adhoc` | Setting this flag will generate AdHoc profiles instead of App Store Profiles
-  `development` | Renew the development certificate instead of the production one
-  `skip_install` | By default, the certificate will be added to your local machine. Setting this flag will skip this action
-  `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `provisioning_name` | The name of the profile that is used on the Apple Developer Portal
-  `ignore_profiles_with_different_name` | Use in combination with :provisioning_name - when true only profiles matching this exact name will be downloaded
-  `output_path` | Directory in which the profile should be stored
-  `cert_id` | The ID of the code signing certificate to use (e.g. 78ADL6LVAA) 
-  `cert_owner_name` | The certificate name to use for new profiles, or to renew with. (e.g. "Felix Krause")
-  `filename` | Filename to use for the generated provisioning profile (must include .mobileprovision)
-  `skip_fetch_profiles` | Skips the verification of existing profiles which is useful if you have thousands of profiles
-  `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine
-  `platform` | Set the provisioning profile's platform (i.e. ios, tvos)
-  `readonly` | Only fetch existing profile, don't generate new ones
-  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile
+Key | Description | Default
+----|-------------|--------
+  `adhoc` | Setting this flag will generate AdHoc profiles instead of App Store Profiles | false
+  `development` | Renew the development certificate instead of the production one | false
+  `skip_install` | By default, the certificate will be added to your local machine. Setting this flag will skip this action | false
+  `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles | false
+  `app_identifier` | The bundle identifier of your app | -
+  `username` | Your Apple ID Username | -
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | -
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | -
+  `provisioning_name` | The name of the profile that is used on the Apple Developer Portal | -
+  `ignore_profiles_with_different_name` | Use in combination with :provisioning_name - when true only profiles matching this exact name will be downloaded | false
+  `output_path` | Directory in which the profile should be stored | .
+  `cert_id` | The ID of the code signing certificate to use (e.g. 78ADL6LVAA)  | -
+  `cert_owner_name` | The certificate name to use for new profiles, or to renew with. (e.g. "Felix Krause") | -
+  `filename` | Filename to use for the generated provisioning profile (must include .mobileprovision) | -
+  `skip_fetch_profiles` | Skips the verification of existing profiles which is useful if you have thousands of profiles | false
+  `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine | false
+  `platform` | Set the provisioning profile's platform (i.e. ios, tvos) | ios
+  `readonly` | Only fetch existing profile, don't generate new ones | false
+  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

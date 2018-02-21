@@ -39,16 +39,17 @@ set_changelog(app_identifier: "com.krausefx.app", version: "1.0", changelog: "Ch
 
 ## Parameters
 
-Key | Description
-----|------------
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `version` | The version number to create/update
-  `changelog` | Changelog text that should be uploaded to iTunes Connect
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+Key | Description | Default
+----|-------------|--------
+  `app_identifier` | The bundle identifier of your app | -
+  `username` | Your Apple ID Username | -
+  `version` | The version number to create/update | -
+  `changelog` | Changelog text that should be uploaded to iTunes Connect | -
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | -
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

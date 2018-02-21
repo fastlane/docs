@@ -51,16 +51,17 @@ scp(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `username` | Username
-  `password` | Password
-  `host` | Hostname
-  `port` | Port
-  `upload` | Upload
-  `download` | Download
+Key | Description | Default
+----|-------------|--------
+  `username` | Username | -
+  `password` | Password | -
+  `host` | Hostname | -
+  `port` | Port | 22
+  `upload` | Upload | -
+  `download` | Download | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

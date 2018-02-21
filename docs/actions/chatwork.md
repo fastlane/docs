@@ -38,14 +38,15 @@ chatwork(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_token` | ChatWork API Token
-  `message` | The message to post on ChatWork
-  `roomid` | The room ID
-  `success` | Was this build successful? (true/false)
+Key | Description | Default
+----|-------------|--------
+  `api_token` | ChatWork API Token | -
+  `message` | The message to post on ChatWork | -
+  `roomid` | The room ID | -
+  `success` | Was this build successful? (true/false) | true
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

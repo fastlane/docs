@@ -41,18 +41,19 @@ increment_build_number({
 
 ## Parameters
 
-Key | Description
-----|------------
-  `live` | Query the live version (ready-for-sale)
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `version` | The version number whose latest build number we want
-  `platform` | The platform to use (optional)
-  `initial_build_number` | sets the build number to given value if no build is in current train
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+Key | Description | Default
+----|-------------|--------
+  `live` | Query the live version (ready-for-sale) | false
+  `app_identifier` | The bundle identifier of your app | -
+  `username` | Your Apple ID Username | -
+  `version` | The version number whose latest build number we want | -
+  `platform` | The platform to use (optional) | ios
+  `initial_build_number` | sets the build number to given value if no build is in current train | 1
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | -
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

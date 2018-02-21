@@ -33,16 +33,17 @@ upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `dsym_path` | Path to the DSYM file or zip to upload
-  `api_token` | Crashlytics API Key
-  `gsp_path` | Path to GoogleService-Info.plist
-  `binary_path` | The path to the upload-symbols file of the Fabric app
-  `platform` | The platform of the app (ios, appletvos, mac)
-  `dsym_worker_threads` | The number of threads to use for simultaneous dSYM upload
+Key | Description | Default
+----|-------------|--------
+  `dsym_path` | Path to the DSYM file or zip to upload | -
+  `api_token` | Crashlytics API Key | -
+  `gsp_path` | Path to GoogleService-Info.plist | -
+  `binary_path` | The path to the upload-symbols file of the Fabric app | -
+  `platform` | The platform of the app (ios, appletvos, mac) | ios
+  `dsym_worker_threads` | The number of threads to use for simultaneous dSYM upload | 1
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

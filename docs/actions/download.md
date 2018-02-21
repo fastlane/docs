@@ -35,11 +35,12 @@ data = download(url: "https://host.com/api.json")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `url` | The URL that should be downloaded
+Key | Description | Default
+----|-------------|--------
+  `url` | The URL that should be downloaded | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

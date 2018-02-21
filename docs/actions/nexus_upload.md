@@ -43,26 +43,27 @@ nexus_upload(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `file` | File to be uploaded to Nexus
-  `repo_id` | Nexus repository id e.g. artefacts
-  `repo_group_id` | Nexus repository group id e.g. com.company
-  `repo_project_name` | Nexus repository commandect name. Only letters, digits, underscores(_), hyphens(-), and dots(.) are allowed
-  `repo_project_version` | Nexus repository commandect version
-  `repo_classifier` | Nexus repository artifact classifier (optional)
-  `endpoint` | Nexus endpoint e.g. http://nexus:8081
-  `mount_path` | Nexus mount path. Defaults to /nexus
-  `username` | Nexus username
-  `password` | Nexus password
-  `ssl_verify` | Verify SSL
-  `verbose` | Make detailed output
-  `proxy_username` | Proxy username
-  `proxy_password` | Proxy password
-  `proxy_address` | Proxy address
-  `proxy_port` | Proxy port
+Key | Description | Default
+----|-------------|--------
+  `file` | File to be uploaded to Nexus | -
+  `repo_id` | Nexus repository id e.g. artefacts | -
+  `repo_group_id` | Nexus repository group id e.g. com.company | -
+  `repo_project_name` | Nexus repository commandect name. Only letters, digits, underscores(_), hyphens(-), and dots(.) are allowed | -
+  `repo_project_version` | Nexus repository commandect version | -
+  `repo_classifier` | Nexus repository artifact classifier (optional) | -
+  `endpoint` | Nexus endpoint e.g. http://nexus:8081 | -
+  `mount_path` | Nexus mount path. Defaults to /nexus | /nexus
+  `username` | Nexus username | -
+  `password` | Nexus password | -
+  `ssl_verify` | Verify SSL | true
+  `verbose` | Make detailed output | false
+  `proxy_username` | Proxy username | -
+  `proxy_password` | Proxy password | -
+  `proxy_address` | Proxy address | -
+  `proxy_port` | Proxy port | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

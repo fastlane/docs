@@ -37,12 +37,13 @@ install_xcode_plugin(github: "https://github.com/contentful/ContentfulXcodePlugi
 
 ## Parameters
 
-Key | Description
-----|------------
-  `url` | URL for Xcode plugin ZIP file
-  `github` | GitHub repository URL for Xcode plugin
+Key | Description | Default
+----|-------------|--------
+  `url` | URL for Xcode plugin ZIP file | -
+  `github` | GitHub repository URL for Xcode plugin | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

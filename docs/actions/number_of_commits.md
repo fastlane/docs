@@ -39,11 +39,12 @@ increment_build_number(build_number: number_of_commits)
 
 ## Parameters
 
-Key | Description
-----|------------
-  `all` | Returns number of all commits instead of current branch
+Key | Description | Default
+----|-------------|--------
+  `all` | Returns number of all commits instead of current branch | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

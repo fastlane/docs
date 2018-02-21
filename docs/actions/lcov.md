@@ -37,14 +37,15 @@ lcov(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `project_name` | Name of the project
-  `scheme` | Scheme of the project
-  `arch` | The build arch where will search .gcda files
-  `output_dir` | The output directory that coverage data will be stored. If not passed will use coverage_reports as default value
+Key | Description | Default
+----|-------------|--------
+  `project_name` | Name of the project | -
+  `scheme` | Scheme of the project | -
+  `arch` | The build arch where will search .gcda files | i386
+  `output_dir` | The output directory that coverage data will be stored. If not passed will use coverage_reports as default value | coverage_reports
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

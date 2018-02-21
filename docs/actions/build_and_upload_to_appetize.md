@@ -26,13 +26,14 @@ Author | @KrauseFx
 
 ## Parameters
 
-Key | Description
-----|------------
-  `xcodebuild` | Parameters that are passed to the xcodebuild action
-  `scheme` | The scheme to build. Can also be passed using the `xcodebuild` parameter
-  `api_token` | Appetize.io API Token
+Key | Description | Default
+----|-------------|--------
+  `xcodebuild` | Parameters that are passed to the xcodebuild action | {}
+  `scheme` | The scheme to build. Can also be passed using the `xcodebuild` parameter | -
+  `api_token` | Appetize.io API Token | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

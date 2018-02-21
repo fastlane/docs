@@ -47,15 +47,16 @@ register_device(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `name` | Provide the name of the device to register as
-  `udid` | Provide the UDID of the device to register as
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `username` | Optional: Your Apple ID
+Key | Description | Default
+----|-------------|--------
+  `name` | Provide the name of the device to register as | -
+  `udid` | Provide the UDID of the device to register as | -
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | -
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | -
+  `username` | Optional: Your Apple ID | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -38,15 +38,16 @@ backup_xcarchive(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `xcarchive` | Path to your xcarchive file. Optional if you use the `xcodebuild` action
-  `destination` | Where your archive will be placed
-  `zip` | Enable compression of the archive. Default value `true`
-  `zip_filename` | Filename of the compressed archive. Will be appended by `.xcarchive.zip`. Default value is the output xcarchive filename
-  `versioned` | Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
+Key | Description | Default
+----|-------------|--------
+  `xcarchive` | Path to your xcarchive file. Optional if you use the `xcodebuild` action | -
+  `destination` | Where your archive will be placed | -
+  `zip` | Enable compression of the archive. Default value `true` | true
+  `zip_filename` | Filename of the compressed archive. Will be appended by `.xcarchive.zip`. Default value is the output xcarchive filename | -
+  `versioned` | Create a versioned (date and app version) subfolder where to put the archive. Default value `true` | true
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

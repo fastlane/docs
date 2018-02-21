@@ -70,14 +70,15 @@ puts release["name"]
 
 ## Parameters
 
-Key | Description
-----|------------
-  `url` | The path to your repo, e.g. 'KrauseFx/fastlane'
-  `server_url` | The server url. e.g. 'https://your.github.server/api/v3' (Default: 'https://api.github.com')
-  `version` | The version tag of the release to check
-  `api_token` | GitHub Personal Token (required for private repositories)
+Key | Description | Default
+----|-------------|--------
+  `url` | The path to your repo, e.g. 'KrauseFx/fastlane' | -
+  `server_url` | The server url. e.g. 'https://your.github.server/api/v3' (Default: 'https://api.github.com') | https://api.github.com
+  `version` | The version tag of the release to check | -
+  `api_token` | GitHub Personal Token (required for private repositories) | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -36,12 +36,13 @@ update_icloud_container_identifiers(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `entitlements_file` | The path to the entitlement file which contains the iCloud container identifiers
-  `icloud_container_identifiers` | An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp']
+Key | Description | Default
+----|-------------|--------
+  `entitlements_file` | The path to the entitlement file which contains the iCloud container identifiers | -
+  `icloud_container_identifiers` | An Array of unique identifiers for the iCloud containers. Eg. ['iCloud.com.test.testapp'] | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

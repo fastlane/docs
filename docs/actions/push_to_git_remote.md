@@ -43,15 +43,16 @@ push_to_git_remote(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `local_branch` | The local branch to push from. Defaults to the current branch
-  `remote_branch` | The remote branch to push to. Defaults to the local branch
-  `force` | Force push to remote. Defaults to false
-  `tags` | Whether tags are pushed to remote. Defaults to true
-  `remote` | The remote to push to. Defaults to `origin`
+Key | Description | Default
+----|-------------|--------
+  `local_branch` | The local branch to push from. Defaults to the current branch | -
+  `remote_branch` | The remote branch to push to. Defaults to the local branch | -
+  `force` | Force push to remote. Defaults to false | false
+  `tags` | Whether tags are pushed to remote. Defaults to true | true
+  `remote` | The remote to push to. Defaults to `origin` | origin
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

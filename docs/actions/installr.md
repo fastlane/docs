@@ -39,15 +39,16 @@ installr(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_token` | API Token for Installr Access
-  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
-  `notes` | Release notes
-  `notify` | Groups to notify (e.g. 'dev,qa')
-  `add` | Groups to add (e.g. 'exec,ops')
+Key | Description | Default
+----|-------------|--------
+  `api_token` | API Token for Installr Access | -
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action | -
+  `notes` | Release notes | -
+  `notify` | Groups to notify (e.g. 'dev,qa') | -
+  `add` | Groups to add (e.g. 'exec,ops') | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

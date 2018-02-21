@@ -40,23 +40,24 @@ artifactory(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `file` | File to be uploaded to artifactory
-  `repo` | Artifactory repo to put the file in
-  `repo_path` | Path to deploy within the repo, including filename
-  `endpoint` | Artifactory endpoint
-  `username` | Artifactory username
-  `password` | Artifactory password
-  `properties` | Artifact properties hash
-  `ssl_pem_file` | Location of pem file to use for ssl verification
-  `ssl_verify` | Verify SSL
-  `proxy_username` | Proxy username
-  `proxy_password` | Proxy password
-  `proxy_address` | Proxy address
-  `proxy_port` | Proxy port
+Key | Description | Default
+----|-------------|--------
+  `file` | File to be uploaded to artifactory | -
+  `repo` | Artifactory repo to put the file in | -
+  `repo_path` | Path to deploy within the repo, including filename | -
+  `endpoint` | Artifactory endpoint | -
+  `username` | Artifactory username | -
+  `password` | Artifactory password | -
+  `properties` | Artifact properties hash | {}
+  `ssl_pem_file` | Location of pem file to use for ssl verification | -
+  `ssl_verify` | Verify SSL | true
+  `proxy_username` | Proxy username | -
+  `proxy_password` | Proxy password | -
+  `proxy_address` | Proxy address | -
+  `proxy_port` | Proxy port | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />
