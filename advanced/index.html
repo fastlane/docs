@@ -353,7 +353,7 @@
           
         
           
-          <li class="toctree-l3"><a href="#timestamps">Timestamps</a></li>
+          <li class="toctree-l3"><a href="#output-environment-variables">Output environment variables</a></li>
           
         
           
@@ -681,8 +681,11 @@ lane :upload do
 end
 </code></pre>
 
-<h1 id="timestamps"><a name="user-content-timestamps" href="#timestamps" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Timestamps</h1>
-<p>To hide timestamps in each row, set the <code>FASTLANE_HIDE_TIMESTAMP</code> environment variable.</p>
+<h1 id="output-environment-variables"><a name="user-content-output-environment-variables" href="#output-environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Output environment variables</h1>
+<ul>
+<li>To hide timestamps in each row, set the <code>FASTLANE_HIDE_TIMESTAMP</code> environment variable to true.</li>
+<li>To disable output formatting, set the <code>FASTLANE_DISABLE_OUTPUT_FORMAT</code> environment variable to true.</li>
+</ul>
 <h1 id="interacting-with-the-user"><a name="user-content-interacting-with-the-user" href="#interacting-with-the-user" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Interacting with the user</h1>
 <p>Instead of using <code>puts</code>, <code>raise</code> and <code>gets</code>, please use the helper class <code>UI</code> across all fastlane tools:</p>
 <pre><code class="ruby">UI.message &quot;Neutral message (usually white)&quot;
