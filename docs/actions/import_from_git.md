@@ -48,14 +48,15 @@ import_from_git(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `url` | The URL of the repository to import the Fastfile from
-  `branch` | The branch or tag to check-out on the repository
-  `path` | The path of the Fastfile in the repository
-  `version` | The version to checkout on the respository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints
+Key | Description | Default
+----|-------------|--------
+  `url` | The URL of the repository to import the Fastfile from | -
+  `branch` | The branch or tag to check-out on the repository | HEAD
+  `path` | The path of the Fastfile in the repository | fastlane/Fastfile
+  `version` | The version to checkout on the respository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

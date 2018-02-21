@@ -51,14 +51,15 @@ copy_artifacts(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `keep_original` | Set this to false if you want move, rather than copy, the found artifacts
-  `target_path` | The directory in which you want your artifacts placed
-  `artifacts` | An array of file patterns of the files/folders you want to preserve
-  `fail_on_missing` | Fail when a source file isn't found
+Key | Description | Default
+----|-------------|--------
+  `keep_original` | Set this to false if you want move, rather than copy, the found artifacts | true
+  `target_path` | The directory in which you want your artifacts placed | artifacts
+  `artifacts` | An array of file patterns of the files/folders you want to preserve | []
+  `fail_on_missing` | Fail when a source file isn't found | false
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

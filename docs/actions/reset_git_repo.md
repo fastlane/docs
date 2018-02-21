@@ -50,15 +50,16 @@ reset_git_repo(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `files` | Array of files the changes should be discarded. If not given, all files will be discarded
-  `force` | Skip verifying of previously clean state of repo. Only recommended in combination with `files` option
-  `skip_clean` | Skip 'git clean' to avoid removing untracked files like `.env`. Defaults to false
-  `disregard_gitignore` | Setting this to true will clean the whole repository, ignoring anything in your local .gitignore. Set this to true if you want the equivalent of a fresh clone, and for all untracked and ignore files to also be removed
-  `exclude` | You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk, e.g. to leave the `artifacts` directory you would specify `exclude: 'artifacts'`. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns
+Key | Description | Default
+----|-------------|--------
+  `files` | Array of files the changes should be discarded. If not given, all files will be discarded | -
+  `force` | Skip verifying of previously clean state of repo. Only recommended in combination with `files` option | false
+  `skip_clean` | Skip 'git clean' to avoid removing untracked files like `.env`. Defaults to false | false
+  `disregard_gitignore` | Setting this to true will clean the whole repository, ignoring anything in your local .gitignore. Set this to true if you want the equivalent of a fresh clone, and for all untracked and ignore files to also be removed | true
+  `exclude` | You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk, e.g. to leave the `artifacts` directory you would specify `exclude: 'artifacts'`. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

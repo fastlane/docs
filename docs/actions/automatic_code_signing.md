@@ -85,18 +85,19 @@ automatic_code_signing(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Path to your Xcode project
-  `use_automatic_signing` | Defines if project should use automatic signing
-  `team_id` | Team ID, is used when upgrading project
-  `targets` | Specify targets you want to toggle the signing mech. (default to all targets)
-  `code_sign_identity` | Code signing identity type (iPhone Development, iPhone Distribution)
-  `profile_name` | Provisioning profile name to use for code signing
-  `profile_uuid` | Provisioning profile UUID to use for code signing
-  `bundle_identifier` | Application Product Bundle Identifier
+Key | Description | Default
+----|-------------|--------
+  `path` | Path to your Xcode project | -
+  `use_automatic_signing` | Defines if project should use automatic signing | false
+  `team_id` | Team ID, is used when upgrading project | -
+  `targets` | Specify targets you want to toggle the signing mech. (default to all targets) | -
+  `code_sign_identity` | Code signing identity type (iPhone Development, iPhone Distribution) | -
+  `profile_name` | Provisioning profile name to use for code signing | -
+  `profile_uuid` | Provisioning profile UUID to use for code signing | -
+  `bundle_identifier` | Application Product Bundle Identifier | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

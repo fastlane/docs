@@ -37,13 +37,14 @@ flock(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `message` | Message text
-  `token` | Token for the Flock incoming webhook
-  `base_url` | Base URL of the Flock incoming message webhook
+Key | Description | Default
+----|-------------|--------
+  `message` | Message text | -
+  `token` | Token for the Flock incoming webhook | -
+  `base_url` | Base URL of the Flock incoming message webhook | https://api.flock.co/hooks/sendMessage
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -40,12 +40,13 @@ update_project_team(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Path to your Xcode project
-  `teamid` | The Team ID you want to use
+Key | Description | Default
+----|-------------|--------
+  `path` | Path to your Xcode project | -
+  `teamid` | The Team ID you want to use | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -54,28 +54,29 @@ oclint(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `oclint_path` | The path to oclint binary
-  `compile_commands` | The json compilation database, use xctool reporter 'json-compilation-database'
-  `select_reqex` | Select all files matching this reqex
-  `select_regex` | Select all files matching this regex
-  `exclude_regex` | Exclude all files matching this regex
-  `report_type` | The type of the report (default: html)
-  `report_path` | The reports file path
-  `list_enabled_rules` | List enabled rules
-  `rc` | Override the default behavior of rules
-  `thresholds` | List of rule thresholds to override the default behavior of rules
-  `enable_rules` | List of rules to pick explicitly
-  `disable_rules` | List of rules to disable
-  `max_priority_1` | The max allowed number of priority 1 violations
-  `max_priority_2` | The max allowed number of priority 2 violations
-  `max_priority_3` | The max allowed number of priority 3 violations
-  `enable_clang_static_analyzer` | Enable Clang Static Analyzer, and integrate results into OCLint report
-  `enable_global_analysis` | Compile every source, and analyze across global contexts (depends on number of source files, could results in high memory load)
-  `allow_duplicated_violations` | Allow duplicated violations in the OCLint report
+Key | Description | Default
+----|-------------|--------
+  `oclint_path` | The path to oclint binary | oclint
+  `compile_commands` | The json compilation database, use xctool reporter 'json-compilation-database' | compile_commands.json
+  `select_reqex` | Select all files matching this reqex | -
+  `select_regex` | Select all files matching this regex | -
+  `exclude_regex` | Exclude all files matching this regex | -
+  `report_type` | The type of the report (default: html) | html
+  `report_path` | The reports file path | -
+  `list_enabled_rules` | List enabled rules | false
+  `rc` | Override the default behavior of rules | -
+  `thresholds` | List of rule thresholds to override the default behavior of rules | -
+  `enable_rules` | List of rules to pick explicitly | -
+  `disable_rules` | List of rules to disable | -
+  `max_priority_1` | The max allowed number of priority 1 violations | -
+  `max_priority_2` | The max allowed number of priority 2 violations | -
+  `max_priority_3` | The max allowed number of priority 3 violations | -
+  `enable_clang_static_analyzer` | Enable Clang Static Analyzer, and integrate results into OCLint report | false
+  `enable_global_analysis` | Compile every source, and analyze across global contexts (depends on number of source files, could results in high memory load) | false
+  `allow_duplicated_violations` | Allow duplicated violations in the OCLint report | false
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

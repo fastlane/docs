@@ -33,11 +33,12 @@ puts "Hi there"
 
 ## Parameters
 
-Key | Description
-----|------------
-  `message` | Message to be printed out. Fastlane.swift only
+Key | Description | Default
+----|-------------|--------
+  `message` | Message to be printed out. Fastlane.swift only | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

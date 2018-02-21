@@ -33,11 +33,12 @@ jazzy
 
 ## Parameters
 
-Key | Description
-----|------------
-  `config` | Path to jazzy config file
+Key | Description | Default
+----|-------------|--------
+  `config` | Path to jazzy config file | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

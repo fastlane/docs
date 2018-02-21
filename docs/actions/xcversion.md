@@ -37,11 +37,12 @@ xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8
 
 ## Parameters
 
-Key | Description
-----|------------
-  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0')
+Key | Description | Default
+----|-------------|--------
+  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0') | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

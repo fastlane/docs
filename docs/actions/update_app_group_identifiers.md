@@ -36,12 +36,13 @@ update_app_group_identifiers(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `entitlements_file` | The path to the entitlement file which contains the app group identifiers
-  `app_group_identifiers` | An Array of unique identifiers for the app groups. Eg. ['group.com.test.testapp']
+Key | Description | Default
+----|-------------|--------
+  `entitlements_file` | The path to the entitlement file which contains the app group identifiers | -
+  `app_group_identifiers` | An Array of unique identifiers for the app groups. Eg. ['group.com.test.testapp'] | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -40,20 +40,21 @@ cocoapods(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `clean` | Remove SCM directories
-  `integrate` | Integrate the Pods libraries into the Xcode project(s)
-  `repo_update` | Run `pod repo update` before install
-  `silent` | Execute command without logging output
-  `verbose` | Show more debugging information
-  `ansi` | Show output with ANSI codes
-  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented
-  `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file
-  `error_callback` | A callback invoked with the command output if there is a non-zero exit status
-  `try_repo_update_on_error` | Retry with --repo-update if action was finished with error
+Key | Description | Default
+----|-------------|--------
+  `clean` | Remove SCM directories | true
+  `integrate` | Integrate the Pods libraries into the Xcode project(s) | true
+  `repo_update` | Run `pod repo update` before install | false
+  `silent` | Execute command without logging output | false
+  `verbose` | Show more debugging information | false
+  `ansi` | Show output with ANSI codes | true
+  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | true
+  `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file | -
+  `error_callback` | A callback invoked with the command output if there is a non-zero exit status | -
+  `try_repo_update_on_error` | Retry with --repo-update if action was finished with error | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

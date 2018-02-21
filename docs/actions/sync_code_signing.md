@@ -69,7 +69,7 @@ Before starting to use _match_, make sure to read the [codesigning.guide](https:
 💥  | Easily reset your existing profiles and certificates if your current account has expired or invalid profiles
 ♻️  | Automatically renew your provisioning profiles to include all your devices using the `--force` option
 👥  | Support for multiple Apple accounts and multiple teams
-✨ | Tightly integrated with [fastlane](https://fastlane.tools) to work seamlessly with [gym](https://docs.fastlane.tools/actions/gym/) and other build tools
+✨ | Tightly integrated with [_fastlane_](https://fastlane.tools) to work seamlessly with [_gym_](https://docs.fastlane.tools/actions/gym/) and other build tools
 
 For more information about the concept, visit [codesigning.guide](https://codesigning.guide).
 
@@ -96,10 +96,10 @@ This will create a `Matchfile` in your current directory (or in your `./fastlane
 Example content (for more advanced setups check out the [fastlane section](#fastlane)):
 
 ```ruby-skip-tests
-git_url "https://github.com/fastlane/certificates"
+git_url("https://github.com/fastlane/certificates")
 
-app_identifier "tools.fastlane.app"
-username "user@fastlane.tools"
+app_identifier("tools.fastlane.app")
+username("user@fastlane.tools")
 ```
 
 #### Important: Use one git branch per team
@@ -151,7 +151,7 @@ If you have several targets with different bundle identifiers, supply them as a 
 fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp
 ```
 
-You can make this even easier using [fastlane](https://fastlane.tools) by creating a `certificates` lane like this:
+You can make this even easier using [_fastlane_](https://fastlane.tools) by creating a `certificates` lane like this:
 
 ```ruby
 lane :certificates do
@@ -209,7 +209,7 @@ Additionally, _match_ creates a nice repo `README.md` for you, making it easy to
 
 #### fastlane
 
-Add _match_ to your `Fastfile` to automatically fetch the latest code signing certificates with [fastlane](https://fastlane.tools).
+Add _match_ to your `Fastfile` to automatically fetch the latest code signing certificates with [_fastlane_](https://fastlane.tools).
 
 ```
 match(type: "appstore")
@@ -265,7 +265,7 @@ _match_ can even use the same one Git repository for all bundle identifiers.
 
 [Docs on how to set up your Xcode project](/codesigning/xcode-project/)
 
-#### To build from the command line using [fastlane](https://fastlane.tools)
+#### To build from the command line using [_fastlane_](https://fastlane.tools)
 
 _match_ automatically pre-fills environment variables with the UUIDs of the correct provisioning profiles, ready to be used in your Xcode project.
 
@@ -399,31 +399,32 @@ match   # alias for "sync_code_signing"
 
 ## Parameters
 
-Key | Description
-----|------------
-  `git_url` | URL to the git repo containing all the certificates
-  `git_branch` | Specific git branch to use
-  `type` | Define the profile type, can be appstore, adhoc, development, enterprise
-  `app_identifier` | The bundle identifier(s) of your app (comma-separated)
-  `username` | Your Apple ID Username
-  `keychain_name` | Keychain the items should be imported to
-  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password
-  `readonly` | Only fetch existing certificates and profiles, don't generate new ones
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `git_full_name` | git user full name to commit
-  `git_user_email` | git user email to commit
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `verbose` | Print out extra information and all commands
-  `force` | Renew the provisioning profiles every time you run match
-  `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes
-  `shallow_clone` | Make a shallow clone of the repository (truncate the history to 1 revision)
-  `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail
-  `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore'
-  `skip_docs` | Skip generation of a README.md for the created git repository
-  `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos)
-  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile
+Key | Description | Default
+----|-------------|--------
+  `git_url` | URL to the git repo containing all the certificates | -
+  `git_branch` | Specific git branch to use | master
+  `type` | Define the profile type, can be appstore, adhoc, development, enterprise | development
+  `app_identifier` | The bundle identifier(s) of your app (comma-separated) | -
+  `username` | Your Apple ID Username | -
+  `keychain_name` | Keychain the items should be imported to | login.keychain
+  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | -
+  `readonly` | Only fetch existing certificates and profiles, don't generate new ones | false
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | -
+  `git_full_name` | git user full name to commit | -
+  `git_user_email` | git user email to commit | -
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | -
+  `verbose` | Print out extra information and all commands | false
+  `force` | Renew the provisioning profiles every time you run match | false
+  `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | false
+  `shallow_clone` | Make a shallow clone of the repository (truncate the history to 1 revision) | false
+  `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail | false
+  `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore' | false
+  `skip_docs` | Skip generation of a README.md for the created git repository | false
+  `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos) | ios
+  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

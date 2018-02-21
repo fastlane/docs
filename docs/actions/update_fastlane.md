@@ -44,13 +44,14 @@ end
 
 ## Parameters
 
-Key | Description
-----|------------
-  `nightly` | Opt-in to install and use nightly fastlane builds
-  `no_update` | Don't update during this run. Defaults to false. This is used internally
-  `tools` | [DEPRECATED!] true - Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh)
+Key | Description | Default
+----|-------------|--------
+  `nightly` | Opt-in to install and use nightly fastlane builds | false
+  `no_update` | Don't update during this run. Defaults to false. This is used internally | false
+  `tools` | [DEPRECATED!] true - Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh) | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

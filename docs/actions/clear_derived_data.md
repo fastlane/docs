@@ -37,11 +37,12 @@ clear_derived_data(derived_data_path: "/custom/")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `derived_data_path` | Custom path for derivedData
+Key | Description | Default
+----|-------------|--------
+  `derived_data_path` | Custom path for derivedData | ~/Library/Developer/Xcode/DerivedData
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

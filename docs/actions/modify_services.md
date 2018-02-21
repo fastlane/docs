@@ -41,15 +41,16 @@ modify_services(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `username` | Your Apple ID Username
-  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app)
-  `services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off), network_extension: (on|off), hotspot: (on|off), multipath: (on|off), nfc_tag_reading: (on|off))
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
+Key | Description | Default
+----|-------------|--------
+  `username` | Your Apple ID Username | -
+  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app) | -
+  `services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off), network_extension: (on|off), hotspot: (on|off), multipath: (on|off), nfc_tag_reading: (on|off)) | {}
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | -
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

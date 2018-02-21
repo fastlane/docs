@@ -39,19 +39,20 @@ create_keychain(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `name` | Keychain name
-  `path` | Path to keychain
-  `password` | Password for the keychain
-  `default_keychain` | Should the newly created Keychain be the new system default keychain
-  `unlock` | Unlock keychain after create
-  `timeout` | timeout interval in seconds. Set `false` if you want to specify "no time-out"
-  `lock_when_sleeps` | Lock keychain when the system sleeps
-  `lock_after_timeout` | Lock keychain after timeout interval
-  `add_to_search_list` | Add keychain to search list
+Key | Description | Default
+----|-------------|--------
+  `name` | Keychain name | -
+  `path` | Path to keychain | -
+  `password` | Password for the keychain | -
+  `default_keychain` | Should the newly created Keychain be the new system default keychain | false
+  `unlock` | Unlock keychain after create | false
+  `timeout` | timeout interval in seconds. Set `false` if you want to specify "no time-out" | 300
+  `lock_when_sleeps` | Lock keychain when the system sleeps | false
+  `lock_after_timeout` | Lock keychain after timeout interval | false
+  `add_to_search_list` | Add keychain to search list | true
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -63,20 +63,21 @@ result = github_api(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
-  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
-  `http_method` | The HTTP method. e.g. GET / POST
-  `body` | The request body in JSON or hash format
-  `raw_body` | The request body taken vertabim instead of as JSON, useful for file uploads
-  `path` | The endpoint path. e.g. '/repos/:owner/:repo/readme'
-  `url` | The complete full url - used instead of path. e.g. 'https://uploads.github.com/repos/fastlane...'
-  `error_handlers` | Optional error handling hash based on status code, or pass '*' to handle all errors
-  `headers` | Optional headers to apply
-  `secure` | Optionally disable secure requests (ssl_verify_peer)
+Key | Description | Default
+----|-------------|--------
+  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com') | https://api.github.com
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | *
+  `http_method` | The HTTP method. e.g. GET / POST | GET
+  `body` | The request body in JSON or hash format | {}
+  `raw_body` | The request body taken vertabim instead of as JSON, useful for file uploads | -
+  `path` | The endpoint path. e.g. '/repos/:owner/:repo/readme' | -
+  `url` | The complete full url - used instead of path. e.g. 'https://uploads.github.com/repos/fastlane...' | -
+  `error_handlers` | Optional error handling hash based on status code, or pass '*' to handle all errors | {}
+  `headers` | Optional headers to apply | {}
+  `secure` | Optionally disable secure requests (ssl_verify_peer) | true
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -42,19 +42,20 @@ swiftlint(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `mode` | SwiftLint mode: :lint (default) or :autocorrect; default is :lint
-  `output_file` | Path to output SwiftLint result
-  `config_file` | Custom configuration file of SwiftLint
-  `strict` | Fail on warnings? (true/false)
-  `files` | List of files to process
-  `ignore_exit_status` | Ignore the exit status of the SwiftLint command, so that serious violations                                                     don't fail the build (true/false)
-  `reporter` | Choose output reporter
-  `quiet` | Don't print status logs like 'Linting <file>' & 'Done linting'
-  `executable` | Path to the `swiftlint` executable on your machine
+Key | Description | Default
+----|-------------|--------
+  `mode` | SwiftLint mode: :lint (default) or :autocorrect; default is :lint | lint
+  `output_file` | Path to output SwiftLint result | -
+  `config_file` | Custom configuration file of SwiftLint | -
+  `strict` | Fail on warnings? (true/false) | false
+  `files` | List of files to process | -
+  `ignore_exit_status` | Ignore the exit status of the SwiftLint command, so that serious violations                                                     don't fail the build (true/false) | false
+  `reporter` | Choose output reporter | -
+  `quiet` | Don't print status logs like 'Linting <file>' & 'Done linting' | false
+  `executable` | Path to the `swiftlint` executable on your machine | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

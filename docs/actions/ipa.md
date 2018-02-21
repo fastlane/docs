@@ -49,23 +49,24 @@ ipa(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `workspace` | WORKSPACE Workspace (.xcworkspace) file to use to build app (automatically detected in current directory)
-  `project` | Project (.xcodeproj) file to use to build app (automatically detected in current directory, overridden by --workspace option, if passed)
-  `configuration` | Configuration used to build
-  `scheme` | Scheme used to build app
-  `clean` | Clean project before building
-  `archive` | Archive project after building
-  `destination` | Build destination. Defaults to current directory
-  `embed` | Sign .ipa file with .mobileprovision
-  `identity` | Identity to be used along with --embed
-  `sdk` | Use SDK as the name or path of the base SDK when building the project
-  `ipa` | Specify the name of the .ipa file to generate (including file extension)
-  `xcconfig` | Use an extra XCCONFIG file to build the app
-  `xcargs` | Pass additional arguments to xcodebuild when building the app. Be sure to quote multiple args
+Key | Description | Default
+----|-------------|--------
+  `workspace` | WORKSPACE Workspace (.xcworkspace) file to use to build app (automatically detected in current directory) | -
+  `project` | Project (.xcodeproj) file to use to build app (automatically detected in current directory, overridden by --workspace option, if passed) | -
+  `configuration` | Configuration used to build | -
+  `scheme` | Scheme used to build app | -
+  `clean` | Clean project before building | -
+  `archive` | Archive project after building | -
+  `destination` | Build destination. Defaults to current directory | -
+  `embed` | Sign .ipa file with .mobileprovision | -
+  `identity` | Identity to be used along with --embed | -
+  `sdk` | Use SDK as the name or path of the base SDK when building the project | -
+  `ipa` | Specify the name of the .ipa file to generate (including file extension) | -
+  `xcconfig` | Use an extra XCCONFIG file to build the app | -
+  `xcargs` | Pass additional arguments to xcodebuild when building the app. Be sure to quote multiple args | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

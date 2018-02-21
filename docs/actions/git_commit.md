@@ -41,12 +41,13 @@ git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | The file you want to commit
-  `message` | The commit message that should be used
+Key | Description | Default
+----|-------------|--------
+  `path` | The file you want to commit | -
+  `message` | The commit message that should be used | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

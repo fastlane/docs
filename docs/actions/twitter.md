@@ -39,15 +39,16 @@ twitter(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `consumer_key` | Consumer Key
-  `consumer_secret` | Consumer Secret
-  `access_token` | Access Token
-  `access_token_secret` | Access Token Secret
-  `message` | The tweet
+Key | Description | Default
+----|-------------|--------
+  `consumer_key` | Consumer Key | -
+  `consumer_secret` | Consumer Secret | -
+  `access_token` | Access Token | -
+  `access_token_secret` | Access Token Secret | -
+  `message` | The tweet | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

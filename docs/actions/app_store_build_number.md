@@ -48,18 +48,19 @@ app_store_build_number(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `initial_build_number` | sets the build number to given value if no build is in current train
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `live` | Query the live version (ready-for-sale)
-  `version` | The version number whose latest build number we want
-  `platform` | The platform to use (optional)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
+Key | Description | Default
+----|-------------|--------
+  `initial_build_number` | sets the build number to given value if no build is in current train | -
+  `app_identifier` | The bundle identifier of your app | -
+  `username` | Your Apple ID Username | -
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | -
+  `live` | Query the live version (ready-for-sale) | true
+  `version` | The version number whose latest build number we want | -
+  `platform` | The platform to use (optional) | ios
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

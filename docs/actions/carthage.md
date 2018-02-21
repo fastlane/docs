@@ -53,27 +53,28 @@ carthage(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `command` | Carthage command (one of: build, bootstrap, update, archive)
-  `dependencies` | Carthage dependencies to update or build
-  `use_ssh` | Use SSH for downloading GitHub repositories
-  `use_submodules` | Add dependencies as Git submodules
-  `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist
-  `no_build` | When bootstrapping Carthage do not build
-  `no_skip_current` | Don't skip building the Carthage project (in addition to its dependencies)
-  `derived_data` | Use derived data folder at path
-  `verbose` | Print xcodebuild output inline
-  `platform` | Define which platform to build for
-  `cache_builds` | By default Carthage will rebuild a dependency regardless of whether it's the same resolved version as before. Passing the --cache-builds will cause carthage to avoid rebuilding a dependency if it can
-  `frameworks` | Framework name or names to archive, could be applied only along with the archive command
-  `output` | Output name for the archive, could be applied only along with the archive command. Use following format *.framework.zip
-  `configuration` | Define which build configuration to use when building
-  `toolchain` | Define which xcodebuild toolchain to use when building
-  `project_directory` | Define the directory containing the Carthage project
-  `new_resolver` | Use new resolver when resolving dependency graph
+Key | Description | Default
+----|-------------|--------
+  `command` | Carthage command (one of: build, bootstrap, update, archive) | bootstrap
+  `dependencies` | Carthage dependencies to update or build | []
+  `use_ssh` | Use SSH for downloading GitHub repositories | -
+  `use_submodules` | Add dependencies as Git submodules | -
+  `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist | -
+  `no_build` | When bootstrapping Carthage do not build | -
+  `no_skip_current` | Don't skip building the Carthage project (in addition to its dependencies) | -
+  `derived_data` | Use derived data folder at path | -
+  `verbose` | Print xcodebuild output inline | -
+  `platform` | Define which platform to build for | -
+  `cache_builds` | By default Carthage will rebuild a dependency regardless of whether it's the same resolved version as before. Passing the --cache-builds will cause carthage to avoid rebuilding a dependency if it can | false
+  `frameworks` | Framework name or names to archive, could be applied only along with the archive command | []
+  `output` | Output name for the archive, could be applied only along with the archive command. Use following format *.framework.zip | -
+  `configuration` | Define which build configuration to use when building | -
+  `toolchain` | Define which xcodebuild toolchain to use when building | -
+  `project_directory` | Define the directory containing the Carthage project | -
+  `new_resolver` | Use new resolver when resolving dependency graph | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

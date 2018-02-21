@@ -33,7 +33,7 @@ In the gif we used `cert && sigh`, which will first create an iOS code signing c
 
 # Usage
 
-**Note**: It is recommended to use [match](/actions/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your certificates. Use _cert_ directly only if you want full control over what's going on and know more about codesigning.
+**Note**: It is recommended to use [_match_](/actions/match) according to the [codesigning.guide](https://codesigning.guide) for generating and maintaining your certificates. Use _cert_ directly only if you want full control over what's going on and know more about codesigning.
 
 ```no-highlight
 fastlane cert
@@ -127,19 +127,20 @@ get_certificates(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `development` | Create a development certificate instead of a distribution one
-  `force` | Create a certificate even if an existing certificate exists
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `output_path` | The path to a directory in which all certificates and private keys should be stored
-  `keychain_path` | Path to a custom keychain
-  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password
-  `platform` | Set the provisioning profile's platform (ios, macos)
+Key | Description | Default
+----|-------------|--------
+  `development` | Create a development certificate instead of a distribution one | false
+  `force` | Create a certificate even if an existing certificate exists | false
+  `username` | Your Apple ID Username | -
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | -
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | -
+  `output_path` | The path to a directory in which all certificates and private keys should be stored | .
+  `keychain_path` | Path to a custom keychain | *
+  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | -
+  `platform` | Set the provisioning profile's platform (ios, macos) | ios
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

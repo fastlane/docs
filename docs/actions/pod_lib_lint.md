@@ -48,18 +48,19 @@ pod_lib_lint(sources: ["https://github.com/username/Specs", "https://github.com/
 
 ## Parameters
 
-Key | Description
-----|------------
-  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented
-  `verbose` | Allow output detail in console
-  `allow_warnings` | Allow warnings during pod lint
-  `sources` | The sources of repos you want the pod spec to lint with, separated by commas
-  `use_libraries` | Lint uses static libraries to install the spec
-  `fail_fast` | Lint stops on the first failing platform or subspec
-  `private` | Lint skips checks that apply only to public specs
-  `quick` | Lint skips checks that would require to download and build the spec
+Key | Description | Default
+----|-------------|--------
+  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | true
+  `verbose` | Allow output detail in console | -
+  `allow_warnings` | Allow warnings during pod lint | -
+  `sources` | The sources of repos you want the pod spec to lint with, separated by commas | -
+  `use_libraries` | Lint uses static libraries to install the spec | false
+  `fail_fast` | Lint stops on the first failing platform or subspec | false
+  `private` | Lint skips checks that apply only to public specs | false
+  `quick` | Lint skips checks that would require to download and build the spec | false
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

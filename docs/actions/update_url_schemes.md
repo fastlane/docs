@@ -38,12 +38,13 @@ update_url_schemes(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | The Plist file's path
-  `url_schemes` | The new URL schemes
+Key | Description | Default
+----|-------------|--------
+  `path` | The Plist file's path | -
+  `url_schemes` | The new URL schemes | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

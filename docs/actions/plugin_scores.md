@@ -25,10 +25,11 @@ Author | @KrauseFx
 
 ## Parameters
 
-Key | Description
-----|------------
+Key | Description | Default
+----|-------------|--------
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -36,13 +36,14 @@ adb(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `serial` | Android serial of the device to use for this command
-  `command` | All commands you want to pass to the adb command, e.g. `kill-server`
-  `adb_path` | The path to your `adb` binary
+Key | Description | Default
+----|-------------|--------
+  `serial` | Android serial of the device to use for this command | 
+  `command` | All commands you want to pass to the adb command, e.g. `kill-server` | -
+  `adb_path` | The path to your `adb` binary | adb
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -23,7 +23,7 @@ _pem_ does all that for you, just by simply running _pem_.
 
 _pem_ creates new .pem, .cer, and .p12 files to be uploaded to your push server if a valid push notification profile is needed. _pem_ does not cover uploading the file to your server.
 
-To automate iOS Provisioning profiles you can use [match](https://docs.fastlane.tools/actions/match/).
+To automate iOS Provisioning profiles you can use [_match_](https://docs.fastlane.tools/actions/match/).
 
 -------
 
@@ -117,7 +117,7 @@ Run `fastlane action pem` to get a list of available environment variables.
 
 # How does it work?
 
-_pem_ uses [spaceship](https://spaceship.airforce) to communicate with the Apple Developer Portal to request a new push certificate for you.
+_pem_ uses [_spaceship_](https://spaceship.airforce) to communicate with the Apple Developer Portal to request a new push certificate for you.
 
 ## How is my password stored?
 ``_pem_`` uses the [password manager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) from _fastlane_. Take a look the [CredentialsManager README](https://github.com/fastlane/fastlane/tree/master/credentials_manager) for more information.
@@ -168,23 +168,24 @@ get_push_certificate(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `development` | Renew the development push certificate instead of the production one
-  `generate_p12` | Generate a p12 file additionally to a PEM file
-  `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one. Default value is 30 days
-  `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days
-  `save_private_key` | Set to save the private RSA key
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams
-  `team_name` | The name of your Developer Portal team if you're in multiple teams
-  `p12_password` | The password that is used for your p12 file
-  `pem_name` | The file name of the generated .pem file
-  `output_path` | The path to a directory in which all certificates and private keys should be stored
-  `new_profile` | Block that is called if there is a new profile
+Key | Description | Default
+----|-------------|--------
+  `development` | Renew the development push certificate instead of the production one | false
+  `generate_p12` | Generate a p12 file additionally to a PEM file | true
+  `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one. Default value is 30 days | 30
+  `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days | false
+  `save_private_key` | Set to save the private RSA key | true
+  `app_identifier` | The bundle identifier of your app | -
+  `username` | Your Apple ID Username | -
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | -
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | -
+  `p12_password` | The password that is used for your p12 file | 
+  `pem_name` | The file name of the generated .pem file | -
+  `output_path` | The path to a directory in which all certificates and private keys should be stored | .
+  `new_profile` | Block that is called if there is a new profile | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

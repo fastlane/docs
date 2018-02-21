@@ -33,11 +33,12 @@ reset_simulator_contents
 
 ## Parameters
 
-Key | Description
-----|------------
-  `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators
+Key | Description | Default
+----|-------------|--------
+  `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

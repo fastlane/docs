@@ -33,13 +33,14 @@ push_git_tags
 
 ## Parameters
 
-Key | Description
-----|------------
-  `force` | Force push to remote. Defaults to false
-  `remote` | The remote to push tags to
-  `tag` | The tag to push to remote
+Key | Description | Default
+----|-------------|--------
+  `force` | Force push to remote. Defaults to false | false
+  `remote` | The remote to push tags to | origin
+  `tag` | The tag to push to remote | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

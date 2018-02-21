@@ -37,11 +37,12 @@ clean_cocoapods_cache(name: "CACHED_POD")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `name` | Pod name to be removed from cache
+Key | Description | Default
+----|-------------|--------
+  `name` | Pod name to be removed from cache | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

@@ -34,17 +34,18 @@ google_play_track_version_codes
 
 ## Parameters
 
-Key | Description
-----|------------
-  `package_name` | The package name of the application to use
-  `track` | The track of the application to use: production, beta, alpha, rollout
-  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google
-  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account)
-  `json_key` | The service account json file used to authenticate with Google
-  `json_key_data` | The service account json used to authenticate with Google
-  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/
+Key | Description | Default
+----|-------------|--------
+  `package_name` | The package name of the application to use | -
+  `track` | The track of the application to use: production, beta, alpha, rollout | production
+  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google | -
+  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account) | -
+  `json_key` | The service account json file used to authenticate with Google | -
+  `json_key_data` | The service account json used to authenticate with Google | -
+  `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

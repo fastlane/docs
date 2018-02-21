@@ -51,12 +51,13 @@ build_number = increment_build_number
 
 ## Parameters
 
-Key | Description
-----|------------
-  `build_number` | Change to a specific version
-  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
+Key | Description | Default
+----|-------------|--------
+  `build_number` | Change to a specific version | -
+  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

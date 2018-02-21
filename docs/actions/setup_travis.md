@@ -35,11 +35,12 @@ setup_travis
 
 ## Parameters
 
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by travis
+Key | Description | Default
+----|-------------|--------
+  `force` | Force setup, even if not executed by travis | false
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

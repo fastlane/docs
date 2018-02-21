@@ -38,15 +38,16 @@ cloc(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `binary_path` | Where the cloc binary lives on your system (full path including 'cloc')
-  `exclude_dir` | Comma separated list of directories to exclude
-  `output_directory` | Where to put the generated report file
-  `source_directory` | Where to look for the source code (relative to the project root folder)
-  `xml` | Should we generate an XML File (if false, it will generate a plain text file)?
+Key | Description | Default
+----|-------------|--------
+  `binary_path` | Where the cloc binary lives on your system (full path including 'cloc') | /usr/local/bin/cloc
+  `exclude_dir` | Comma separated list of directories to exclude | -
+  `output_directory` | Where to put the generated report file | build
+  `source_directory` | Where to look for the source code (relative to the project root folder) | 
+  `xml` | Should we generate an XML File (if false, it will generate a plain text file)? | true
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

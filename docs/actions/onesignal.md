@@ -40,16 +40,17 @@ onesignal(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `auth_token` | OneSignal Authorization Key
-  `app_name` | OneSignal App Name
-  `android_token` | ANDROID GCM KEY
-  `apns_p12` | APNS P12 File (in .p12 format)
-  `apns_p12_password` | APNS P12 password
-  `apns_env` | APNS environment
+Key | Description | Default
+----|-------------|--------
+  `auth_token` | OneSignal Authorization Key | -
+  `app_name` | OneSignal App Name | -
+  `android_token` | ANDROID GCM KEY | -
+  `apns_p12` | APNS P12 File (in .p12 format) | -
+  `apns_p12_password` | APNS P12 password | -
+  `apns_env` | APNS environment | production
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />

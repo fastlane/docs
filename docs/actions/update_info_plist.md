@@ -62,16 +62,17 @@ update_info_plist( # Advanced processing: find URL scheme for particular key and
 
 ## Parameters
 
-Key | Description
-----|------------
-  `xcodeproj` | Path to your Xcode project
-  `plist_path` | Path to info plist
-  `scheme` | Scheme of info plist
-  `app_identifier` | The App Identifier of your app
-  `display_name` | The Display Name of your app
-  `block` | A block to process plist with custom logic
+Key | Description | Default
+----|-------------|--------
+  `xcodeproj` | Path to your Xcode project | -
+  `plist_path` | Path to info plist | -
+  `scheme` | Scheme of info plist | -
+  `app_identifier` | The App Identifier of your app | -
+  `display_name` | The Display Name of your app | -
+  `block` | A block to process plist with custom logic | -
 
-
+_- = this parameter doesn't have a default value_<br/>
+_* = this default value is dependent on the user's system_
 
 
 <hr />
