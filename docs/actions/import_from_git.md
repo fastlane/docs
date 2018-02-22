@@ -28,7 +28,7 @@ Author | @fabiomassimo, @KrauseFx, @Liquidsoul
 import_from_git(
   url: "git@github.com:fastlane/fastlane.git", # The URL of the repository to import the Fastfile from.
   branch: "HEAD", # The branch to checkout on the repository
-  path: "fastlane/Fastfile" # The path of the Fastfile in the repository
+  path: "fastlane/Fastfile", # The path of the Fastfile in the repository
   version: "~> 1.0.0" # The version to checkout on the repository. Optimistic match operator can be used to select the latest version within constraints.
 )
 ```
@@ -37,7 +37,7 @@ import_from_git(
 import_from_git(
   url: "git@github.com:fastlane/fastlane.git", # The URL of the repository to import the Fastfile from.
   branch: "HEAD", # The branch to checkout on the repository
-  path: "fastlane/Fastfile" # The path of the Fastfile in the repository
+  path: "fastlane/Fastfile", # The path of the Fastfile in the repository
   version: [">= 1.1.0", "< 2.0.0"] # The version to checkout on the repository. Multiple conditions can be used to select the latest version within constraints.
 )
 ```
@@ -50,10 +50,10 @@ import_from_git(
 
 Key | Description | Default
 ----|-------------|--------
-  `url` | The URL of the repository to import the Fastfile from | 
+  `url` | The URL of the repository to import the Fastfile from |
   `branch` | The branch or tag to check-out on the repository | `HEAD`
   `path` | The path of the Fastfile in the repository | `fastlane/Fastfile`
-  `version` | The version to checkout on the respository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints | 
+  `version` | The version to checkout on the respository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints |
 
 <em id="dynamic">* = default value is dependent on the user's system</em>
 
