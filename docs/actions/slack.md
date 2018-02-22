@@ -58,14 +58,14 @@ slack(
 
 Key | Description | Default
 ----|-------------|--------
-  `message` | The message that should be displayed on Slack. This supports the standard Slack markup language | 
-  `channel` | #channel or @username | 
+  `message` | The message that should be displayed on Slack. This supports the standard Slack markup language |
+  `channel` | #channel or @username |
   `use_webhook_configured_username_and_icon` | Use webhook's default username and icon settings? (true/false) | `false`
-  `slack_url` | Create an Incoming WebHook for your Slack group | 
-  `username` | Overrides the webhook's username property if use_webhook_configured_username_and_icon is false | `fastlane`
+  `slack_url` | Create an Incoming WebHook for your Slack group |
+  `username` | Overrides the webhook's username property if use_webhook_configured_username_and_icon is false | _fastlane_
   `icon_url` | Overrides the webhook's image property if use_webhook_configured_username_and_icon is false | `https://s3-eu-west-1.amazonaws.com/fastlane.tools/fastlane.png`
   `payload` | Add additional information to this post. payload must be a hash containing any key with any value | `{}`
-  `default_payloads` | Remove some of the default payloads. More information about the available payloads on GitHub | 
+  `default_payloads` | Remove some of the default payloads. More information about the available payloads on GitHub |
   `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments | `{}`
   `success` | Was this build successful? (true/false) | `true`
   `fail_on_error` | Should an error sending the slack notification cause a failure? (true/false) | `true`
