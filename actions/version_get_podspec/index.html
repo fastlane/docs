@@ -439,19 +439,23 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>path</code></td>
 <td>You must specify the path to the podspec file</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>require_variable_prefix</code></td>
 <td>true by default, this is used for non CocoaPods version bumps only</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action version_get_podspec

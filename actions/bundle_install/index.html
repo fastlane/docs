@@ -435,83 +435,103 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>binstubs</code></td>
 <td>Generate bin stubs for bundled gems to ./bin</td>
+<td></td>
 </tr>
 <tr>
 <td><code>clean</code></td>
 <td>Run bundle clean automatically after install</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>full_index</code></td>
 <td>Use the rubygems modern index instead of the API endpoint</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>gemfile</code></td>
 <td>Use the specified gemfile instead of Gemfile</td>
+<td></td>
 </tr>
 <tr>
 <td><code>jobs</code></td>
 <td>Install gems using parallel workers</td>
+<td></td>
 </tr>
 <tr>
 <td><code>local</code></td>
 <td>Do not attempt to fetch gems remotely and use the gem cache instead</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>deployment</code></td>
 <td>Install using defaults tuned for deployment and CI environments</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>no_cache</code></td>
 <td>Don't update the existing gem cache</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>no_prune</code></td>
 <td>Don't remove stale gems from the cache</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>Specify a different path than the system default ($BUNDLE_PATH or $GEM_HOME). Bundler will remember this value for future installs on this machine</td>
+<td></td>
 </tr>
 <tr>
 <td><code>system</code></td>
 <td>Install to the system location ($BUNDLE_PATH or $GEM_HOME) even if the bundle was previously installed somewhere else for this application</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>quiet</code></td>
 <td>Only output warnings and errors</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>retry</code></td>
 <td>Retry network and git requests that have failed</td>
+<td></td>
 </tr>
 <tr>
 <td><code>shebang</code></td>
 <td>Specify a different shebang executable name than the default (usually 'ruby')</td>
+<td></td>
 </tr>
 <tr>
 <td><code>standalone</code></td>
 <td>Make a bundle that can work without the Bundler runtime</td>
+<td></td>
 </tr>
 <tr>
 <td><code>trust_policy</code></td>
 <td>Sets level of security when dealing with signed gems. Accepts <code>LowSecurity</code>, <code>MediumSecurity</code> and <code>HighSecurity</code> as values</td>
+<td></td>
 </tr>
 <tr>
 <td><code>without</code></td>
 <td>Exclude gems that are part of the specified named group</td>
+<td></td>
 </tr>
 <tr>
 <td><code>with</code></td>
 <td>Include gems that are part of the specified named group</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action bundle_install

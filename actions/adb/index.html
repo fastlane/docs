@@ -448,23 +448,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>serial</code></td>
 <td>Android serial of the device to use for this command</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>command</code></td>
 <td>All commands you want to pass to the adb command, e.g. <code>kill-server</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>adb_path</code></td>
 <td>The path to your <code>adb</code> binary</td>
+<td><code>adb</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action adb

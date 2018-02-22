@@ -446,63 +446,78 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>file</code></td>
 <td>File to be uploaded to artifactory</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo</code></td>
 <td>Artifactory repo to put the file in</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo_path</code></td>
 <td>Path to deploy within the repo, including filename</td>
+<td></td>
 </tr>
 <tr>
 <td><code>endpoint</code></td>
 <td>Artifactory endpoint</td>
+<td></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Artifactory username</td>
+<td></td>
 </tr>
 <tr>
 <td><code>password</code></td>
 <td>Artifactory password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>properties</code></td>
 <td>Artifact properties hash</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>ssl_pem_file</code></td>
 <td>Location of pem file to use for ssl verification</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ssl_verify</code></td>
 <td>Verify SSL</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>proxy_username</code></td>
 <td>Proxy username</td>
+<td></td>
 </tr>
 <tr>
 <td><code>proxy_password</code></td>
 <td>Proxy password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>proxy_address</code></td>
 <td>Proxy address</td>
+<td></td>
 </tr>
 <tr>
 <td><code>proxy_port</code></td>
 <td>Proxy port</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action artifactory

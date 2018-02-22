@@ -432,12 +432,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li>Upload hundreds of localized screenshots completely automatically</li>
 <li>Upload a new ipa/pkg file to iTunes Connect without Xcode from any Mac</li>
 <li>Maintain your app metadata locally and push changes back to iTunes Connect</li>
-<li>Easily implement a real Continuous Deployment process using <a href="https://fastlane.tools">fastlane</a></li>
+<li>Easily implement a real Continuous Deployment process using <a href="https://fastlane.tools"><em>fastlane</em></a></li>
 <li>Store the configuration in git to easily deploy from <strong>any</strong> Mac, including your Continuous Integration server</li>
 <li>Get a HTML preview of the fetched metadata before uploading the app metadata and screenshots to iTC</li>
-<li>Automatically uses <a href="../../actions/precheck">precheck</a> to ensure your app has the highest chances of passing app review the first time</li>
+<li>Automatically uses <a href="../../actions/precheck"><em>precheck</em></a> to ensure your app has the highest chances of passing app review the first time</li>
 </ul>
-<p>To upload builds to TestFlight check out <a href="../../actions/pilot">pilot</a>.</p>
+<p>To upload builds to TestFlight check out <a href="../../actions/pilot"><em>pilot</em></a>.</p>
 <h1 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick Start</h1>
 <p>The guide will create all the necessary files for you, using the existing app metadata from iTunes Connect.</p>
 <ul>
@@ -449,7 +449,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </ul>
 <p>From now on, you can run <code>fastlane deliver</code> to deploy a new update, or just upload new app metadata and screenshots.</p>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<p>Check out your local <code>./fastlane/metadata</code> and <code>./fastlane/screenshots</code> folders (if you don't use <a href="https://fastlane.tools">fastlane</a> it's <code>./metadata</code> instead)</p>
+<p>Check out your local <code>./fastlane/metadata</code> and <code>./fastlane/screenshots</code> folders (if you don't use <a href="https://fastlane.tools"><em>fastlane</em></a> it's <code>./metadata</code> instead)</p>
 <p><img alt="/img/actions/deliver_metadata.png" src="../../img/actions/deliver_metadata.png" /></p>
 <p>You'll see your metadata from iTunes Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to iTunes Connect.</p>
 <p>Run <code>fastlane deliver</code> to upload the app metadata from your local machine</p>
@@ -464,7 +464,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <pre><code class="no-highlight">fastlane deliver --pkg &quot;MacApp.pkg&quot;
 </code></pre>
 
-<p>If you use <a href="https://fastlane.tools">fastlane</a> you don't have to manually specify the path to your <code>ipa</code>/<code>pkg</code> file.</p>
+<p>If you use <a href="https://fastlane.tools"><em>fastlane</em></a> you don't have to manually specify the path to your <code>ipa</code>/<code>pkg</code> file.</p>
 <p>This is just a small sub-set of what you can do with <em>deliver</em>, check out the full documentation in <a href="#more-options">#more-options</a></p>
 <p>Download existing screenshots from iTunes Connect</p>
 <pre><code class="no-highlight">fastlane deliver download_screenshots
@@ -510,18 +510,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p>Your Apple ID email address</p>
 <h5 id="ipa"><a name="user-content-ipa" href="#ipa" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ipa</h5>
 <p>A path to a signed ipa file, which will be uploaded. If you don't provide this value, only app metadata will be uploaded. If you want to submit the app for review make sure to either use <code>fastlane deliver --submit_for_review</code> or add <code>submit_for_review true</code> to your <code>Deliverfile</code></p>
-<pre><code class="ruby-skip-tests">ipa &quot;App.ipa&quot;
+<pre><code class="ruby-skip-tests">ipa(&quot;App.ipa&quot;)
 </code></pre>
 
-<p>if you use <a href="https://fastlane.tools">fastlane</a> the ipa file will automatically be detected.</p>
+<p>if you use <a href="https://fastlane.tools"><em>fastlane</em></a> the ipa file will automatically be detected.</p>
 <h5 id="pkg"><a name="user-content-pkg" href="#pkg" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pkg</h5>
 <p>A path to a signed pkg file, which will be uploaded. Submission logic of ipa applies to pkg files.</p>
-<pre><code class="ruby-skip-tests">pkg &quot;MacApp.pkg&quot;
+<pre><code class="ruby-skip-tests">pkg(&quot;MacApp.pkg&quot;)
 </code></pre>
 
 <h5 id="app_version"><a name="user-content-app_version" href="#app_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_version</h5>
 <p>Optional, as it is usually automatically detected. Specify the version that should be created / edited on iTunes Connect:</p>
-<pre><code class="ruby-skip-tests">app_version &quot;2.0&quot;
+<pre><code class="ruby-skip-tests">app_version(&quot;2.0&quot;)
 </code></pre>
 
 <h5 id="skip_app_version_update"><a name="user-content-skip_app_version_update" href="#skip_app_version_update" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>skip_app_version_update</h5>
@@ -529,12 +529,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p>The option allows uploading your app without updating "Prepare for submission" version.</p>
 <p>This could be useful in the case if you are generating a lot of uploads while not submitting the latest build for Apple review.</p>
 <p>The default value is false.</p>
-<pre><code class="ruby-skip-tests">skip_app_version_update true
+<pre><code class="ruby-skip-tests">skip_app_version_update(true)
 </code></pre>
 
 <h5 id="submit_for_review"><a name="user-content-submit_for_review" href="#submit_for_review" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>submit_for_review</h5>
 <p>Add this to your <code>Deliverfile</code> to automatically submit the app for review after uploading metadata/binary. This will select the latest build.</p>
-<pre><code class="ruby-skip-tests">submit_for_review true
+<pre><code class="ruby-skip-tests">submit_for_review(true)
 </code></pre>
 
 <h5 id="screenshots_path"><a name="user-content-screenshots_path" href="#screenshots_path" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>screenshots_path</h5>
@@ -545,7 +545,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p><img alt="/img/actions/deliver_metadata.png" src="../../img/actions/deliver_metadata.png" /></p>
 <p>If you run <code>deliver init</code> this will automatically be created for you.</p>
 <h5 id="force"><a name="user-content-force" href="#force" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>force</h5>
-<pre><code class="ruby-skip-tests">force true
+<pre><code class="ruby-skip-tests">force(true)
 </code></pre>
 
 <p>If set to <code>true</code>, no HTML report will be generated before the actual upload. You can also pass <code>--force</code> when calling <em>deliver</em>.</p>
@@ -597,16 +597,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 
 <h5 id="automatic_release"><a name="user-content-automatic_release" href="#automatic_release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>automatic_release</h5>
 <p>Should the app be released to all users once Apple approves it? If set to <code>false</code>, you'll have to manually release the update once it got approved.</p>
-<pre><code class="ruby-skip-tests">automatic_release true
+<pre><code class="ruby-skip-tests">automatic_release(true)
 # or
-automatic_release false
+automatic_release(false)
 </code></pre>
 
 <h5 id="phased_release"><a name="user-content-phased_release" href="#phased_release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>phased_release</h5>
 <p>Enable or disable the phased releases feature of iTunes Connect. If set to <code>true</code>, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on iTunes Connect.</p>
-<pre><code class="ruby-skip-tests">phased_release true
+<pre><code class="ruby-skip-tests">phased_release(true)
 # or
-phased_release false
+phased_release(false)
 </code></pre>
 
 <h5 id="app_rating_config_path"><a name="user-content-app_rating_config_path" href="#app_rating_config_path" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_rating_config_path</h5>
@@ -655,12 +655,12 @@ phased_release false
 
 <h5 id="app_icon"><a name="user-content-app_icon" href="#app_icon" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_icon</h5>
 <p>A path to a new app icon, which must be exactly 1024x1024px</p>
-<pre><code class="ruby-skip-tests">app_icon './AppIcon.png'
+<pre><code class="ruby-skip-tests">app_icon('./AppIcon.png')
 </code></pre>
 
 <h5 id="apple_watch_app_icon"><a name="user-content-apple_watch_app_icon" href="#apple_watch_app_icon" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>apple_watch_app_icon</h5>
 <p>A path to a new app icon for the  Watch, which must be exactly 1024x1024px</p>
-<pre><code class="ruby-skip-tests">apple_watch_app_icon './AppleWatchAppIcon.png'
+<pre><code class="ruby-skip-tests">apple_watch_app_icon('./AppleWatchAppIcon.png')
 </code></pre>
 
 <h5 id="platform"><a name="user-content-platform" href="#platform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>platform</h5>
@@ -676,7 +676,7 @@ phased_release false
 <h3 id="non-localized"><a name="user-content-non-localized" href="#non-localized" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Non-Localized</h3>
 <h5 id="copyright"><a name="user-content-copyright" href="#copyright" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>copyright</h5>
 <p>The up to date copyright information.</p>
-<pre><code class="ruby-skip-tests">copyright &quot;#{Time.now.year} Felix Krause&quot;
+<pre><code class="ruby-skip-tests">copyright(&quot;#{Time.now.year} Felix Krause&quot;)
 </code></pre>
 
 <h5 id="primary_category"><a name="user-content-primary_category" href="#primary_category" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>primary_category</h5>
@@ -701,7 +701,7 @@ phased_release false
 <p><em>deliver</em> uses the following techniques under the hood:</p>
 <ul>
 <li>The iTMSTransporter tool is used to upload the binary to iTunes Connect. iTMSTransporter is a command line tool provided by Apple.</li>
-<li>For all metadata related actions <em>deliver</em> uses <a href="https://github.com/fastlane/fastlane/tree/master/spaceship">spaceship</a></li>
+<li>For all metadata related actions <em>deliver</em> uses <a href="https://github.com/fastlane/fastlane/tree/master/spaceship"><em>spaceship</em></a></li>
 </ul>
 <h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
 <h2 id="available-language-codes"><a name="user-content-available-language-codes" href="#available-language-codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available language codes</h2>
@@ -907,7 +907,7 @@ phased_release false
 
 <p>In this case, default values for keywords, urls, name and release notes are used in all localizations, but each language has a fully localized description</p>
 <h2 id="automatically-create-screenshots"><a name="user-content-automatically-create-screenshots" href="#automatically-create-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatically create screenshots</h2>
-<p>If you want to integrate <em>deliver</em> with <a href="https://docs.fastlane.tools/actions/snapshot/">snapshot</a>, check out <a href="https://fastlane.tools">fastlane</a>!</p>
+<p>If you want to integrate <em>deliver</em> with <a href="https://docs.fastlane.tools/actions/snapshot/"><em>snapshot</em></a>, check out <a href="https://fastlane.tools"><em>fastlane</em></a>!</p>
 <h2 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins integration</h2>
 <p>Detailed instructions about how to set up <em>deliver</em> and <em>fastlane</em> in <code>Jenkins</code> can be found in the <a href="https://docs.fastlane.tools/best-practices/continuous-integration/#jenkins-integration">fastlane README</a>.</p>
 <h2 id="firewall-issues"><a name="user-content-firewall-issues" href="#firewall-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Firewall Issues</h2>
@@ -970,231 +970,288 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of your app</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>app</code></td>
 <td>The app ID of the app you want to use/modify</td>
+<td></td>
 </tr>
 <tr>
 <td><code>edit_live</code></td>
 <td>Modify live metadata, this option disables ipa upload and screenshot upload</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
 <td>Path to your ipa file</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>pkg</code></td>
 <td>Path to your pkg file</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
 <td>The platform to use (optional)</td>
+<td><code>ios</code></td>
 </tr>
 <tr>
 <td><code>metadata_path</code></td>
 <td>Path to the folder containing the metadata files</td>
+<td></td>
 </tr>
 <tr>
 <td><code>screenshots_path</code></td>
 <td>Path to the folder containing the screenshots</td>
+<td></td>
 </tr>
 <tr>
 <td><code>skip_binary_upload</code></td>
 <td>Skip uploading an ipa or pkg to iTunes Connect</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>use_live_version</code></td>
 <td>Force usage of live version rather than edit version</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_screenshots</code></td>
 <td>Don't upload the screenshots</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>app_version</code></td>
 <td>The version that should be edited or created</td>
+<td></td>
 </tr>
 <tr>
 <td><code>skip_metadata</code></td>
 <td>Don't upload the metadata (e.g. title, description). This will still upload screenshots</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_app_version_update</code></td>
 <td>Don't update app version for submission</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Skip the HTML report file verification</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>submit_for_review</code></td>
 <td>Submit the new version for Review after uploading everything</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>automatic_release</code></td>
 <td>Should the app be automatically released once it's approved?</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>auto_release_date</code></td>
 <td>Date in milliseconds for automatically releasing on pending approval</td>
+<td></td>
 </tr>
 <tr>
 <td><code>phased_release</code></td>
 <td>Enable the phased release feature of iTC</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>price_tier</code></td>
 <td>The price tier of this application</td>
+<td></td>
 </tr>
 <tr>
 <td><code>build_number</code></td>
 <td>If set the given build number (already uploaded to iTC) will be used instead of the current built one</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_rating_config_path</code></td>
 <td>Path to the app rating's config</td>
+<td></td>
 </tr>
 <tr>
 <td><code>submission_information</code></td>
 <td>Extra information for the submission (e.g. third party content)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>dev_portal_team_id</code></td>
 <td>The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID!</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>dev_portal_team_name</code></td>
 <td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>itc_provider</code></td>
 <td>The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
+<td></td>
 </tr>
 <tr>
 <td><code>overwrite_screenshots</code></td>
 <td>Clear all previously uploaded screenshots before uploading the new ones</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>run_precheck_before_submit</code></td>
 <td>Run precheck before submitting to app review</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>precheck_default_rule_level</code></td>
 <td>The default rule level unless otherwise configured</td>
+<td><code>warn</code></td>
 </tr>
 <tr>
 <td><code>app_icon</code></td>
 <td>Metadata: The path to the app icon</td>
+<td></td>
 </tr>
 <tr>
 <td><code>apple_watch_app_icon</code></td>
 <td>Metadata: The path to the Apple Watch app icon</td>
+<td></td>
 </tr>
 <tr>
 <td><code>copyright</code></td>
 <td>Metadata: The copyright notice</td>
+<td></td>
 </tr>
 <tr>
 <td><code>primary_category</code></td>
 <td>Metadata: The english name of the primary category (e.g. <code>Business</code>, <code>Books</code>)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>secondary_category</code></td>
 <td>Metadata: The english name of the secondary category (e.g. <code>Business</code>, <code>Books</code>)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>primary_first_sub_category</code></td>
 <td>Metadata: The english name of the primary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>primary_second_sub_category</code></td>
 <td>Metadata: The english name of the primary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>secondary_first_sub_category</code></td>
 <td>Metadata: The english name of the secondary first sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>secondary_second_sub_category</code></td>
 <td>Metadata: The english name of the secondary second sub category (e.g. <code>Educational</code>, <code>Puzzle</code>)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>trade_representative_contact_information</code></td>
 <td>Metadata: A hash containing the trade representative contact information</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_review_information</code></td>
 <td>Metadata: A hash containing the review information</td>
+<td></td>
 </tr>
 <tr>
 <td><code>description</code></td>
 <td>Metadata: The localised app description</td>
+<td></td>
 </tr>
 <tr>
 <td><code>name</code></td>
 <td>Metadata: The localised app name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>subtitle</code></td>
 <td>Metadata: The localised app subtitle</td>
+<td></td>
 </tr>
 <tr>
 <td><code>keywords</code></td>
 <td>Metadata: An array of localised keywords</td>
+<td></td>
 </tr>
 <tr>
 <td><code>promotional_text</code></td>
 <td>Metadata: An array of localised promotional texts</td>
+<td></td>
 </tr>
 <tr>
 <td><code>release_notes</code></td>
 <td>Metadata: Localised release notes for this version</td>
+<td></td>
 </tr>
 <tr>
 <td><code>privacy_url</code></td>
 <td>Metadata: Localised privacy url</td>
+<td></td>
 </tr>
 <tr>
 <td><code>support_url</code></td>
 <td>Metadata: Localised support url</td>
+<td></td>
 </tr>
 <tr>
 <td><code>marketing_url</code></td>
 <td>Metadata: Localised marketing url</td>
+<td></td>
 </tr>
 <tr>
 <td><code>languages</code></td>
 <td>Metadata: List of languages to activate</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ignore_language_directory_validation</code></td>
 <td>Ignore errors when invalid languages are found in metadata and screeenshot directories</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>precheck_include_in_app_purchases</code></td>
 <td>Should precheck check in-app purchases?</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action upload_to_app_store

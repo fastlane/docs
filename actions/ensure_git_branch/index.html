@@ -449,15 +449,18 @@ will stop a lane if it was accidentally executed on an incorrect branch.</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>branch</code></td>
 <td>The branch that should be checked for. String that can be either the full name of the branch or a regex to match</td>
+<td><code>master</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action ensure_git_branch

@@ -455,191 +455,238 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>input</code></td>
 <td>Path(s) to source file directories or individual source files. Accepts a single path or an array of paths</td>
+<td></td>
 </tr>
 <tr>
 <td><code>output</code></td>
 <td>Output path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>templates</code></td>
 <td>Template files path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_install_path</code></td>
 <td>DocSet installation path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>include</code></td>
 <td>Include static doc(s) at path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ignore</code></td>
 <td>Ignore given path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>exclude_output</code></td>
 <td>Exclude given path from output</td>
+<td></td>
 </tr>
 <tr>
 <td><code>index_desc</code></td>
 <td>File including main index description</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_name</code></td>
 <td>Project name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_version</code></td>
 <td>Project version</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_company</code></td>
 <td>Project company</td>
+<td></td>
 </tr>
 <tr>
 <td><code>company_id</code></td>
 <td>Company UTI (i.e. reverse DNS name)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>create_html</code></td>
 <td>Create HTML</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>create_docset</code></td>
 <td>Create documentation set</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>install_docset</code></td>
 <td>Install documentation set to Xcode</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>publish_docset</code></td>
 <td>Prepare DocSet for publishing</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>no_create_docset</code></td>
 <td>Create HTML and skip creating a DocSet</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>html_anchors</code></td>
 <td>The html anchor format to use in DocSet HTML</td>
+<td></td>
 </tr>
 <tr>
 <td><code>clean_output</code></td>
 <td>Remove contents of output path before starting</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>docset_bundle_id</code></td>
 <td>DocSet bundle identifier</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_bundle_name</code></td>
 <td>DocSet bundle name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_desc</code></td>
 <td>DocSet description</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_copyright</code></td>
 <td>DocSet copyright message</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_feed_name</code></td>
 <td>DocSet feed name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_feed_url</code></td>
 <td>DocSet feed URL</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_feed_formats</code></td>
 <td>DocSet feed formats. Separated by a comma [atom,xml]</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_package_url</code></td>
 <td>DocSet package (.xar) URL</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_fallback_url</code></td>
 <td>DocSet fallback URL</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_publisher_id</code></td>
 <td>DocSet publisher identifier</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_publisher_name</code></td>
 <td>DocSet publisher name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_min_xcode_version</code></td>
 <td>DocSet min. Xcode version</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_platform_family</code></td>
 <td>DocSet platform family</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_cert_issuer</code></td>
 <td>DocSet certificate issuer</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_cert_signer</code></td>
 <td>DocSet certificate signer</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_bundle_filename</code></td>
 <td>DocSet bundle filename</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_atom_filename</code></td>
 <td>DocSet atom feed filename</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_xml_filename</code></td>
 <td>DocSet xml feed filename</td>
+<td></td>
 </tr>
 <tr>
 <td><code>docset_package_filename</code></td>
 <td>DocSet package (.xar,.tgz) filename</td>
+<td></td>
 </tr>
 <tr>
 <td><code>options</code></td>
 <td>Documentation generation options</td>
+<td></td>
 </tr>
 <tr>
 <td><code>crossref_format</code></td>
 <td>Cross reference template regex</td>
+<td></td>
 </tr>
 <tr>
 <td><code>exit_threshold</code></td>
 <td>Exit code threshold below which 0 is returned</td>
+<td><code>2</code></td>
 </tr>
 <tr>
 <td><code>docs_section_title</code></td>
 <td>Title of the documentation section (defaults to "Programming Guides"</td>
+<td></td>
 </tr>
 <tr>
 <td><code>warnings</code></td>
 <td>Documentation generation warnings</td>
+<td></td>
 </tr>
 <tr>
 <td><code>logformat</code></td>
 <td>Log format [0-3]</td>
+<td></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Log verbosity level [0-6,xcode]</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action appledoc

@@ -458,79 +458,98 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>command</code></td>
 <td>Carthage command (one of: build, bootstrap, update, archive)</td>
+<td><code>bootstrap</code></td>
 </tr>
 <tr>
 <td><code>dependencies</code></td>
 <td>Carthage dependencies to update or build</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>use_ssh</code></td>
 <td>Use SSH for downloading GitHub repositories</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_submodules</code></td>
 <td>Add dependencies as Git submodules</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_binaries</code></td>
 <td>Check out dependency repositories even when prebuilt frameworks exist</td>
+<td></td>
 </tr>
 <tr>
 <td><code>no_build</code></td>
 <td>When bootstrapping Carthage do not build</td>
+<td></td>
 </tr>
 <tr>
 <td><code>no_skip_current</code></td>
 <td>Don't skip building the Carthage project (in addition to its dependencies)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>derived_data</code></td>
 <td>Use derived data folder at path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Print xcodebuild output inline</td>
+<td></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
 <td>Define which platform to build for</td>
+<td></td>
 </tr>
 <tr>
 <td><code>cache_builds</code></td>
 <td>By default Carthage will rebuild a dependency regardless of whether it's the same resolved version as before. Passing the --cache-builds will cause carthage to avoid rebuilding a dependency if it can</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>frameworks</code></td>
 <td>Framework name or names to archive, could be applied only along with the archive command</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>output</code></td>
 <td>Output name for the archive, could be applied only along with the archive command. Use following format *.framework.zip</td>
+<td></td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
 <td>Define which build configuration to use when building</td>
+<td></td>
 </tr>
 <tr>
 <td><code>toolchain</code></td>
 <td>Define which xcodebuild toolchain to use when building</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_directory</code></td>
 <td>Define the directory containing the Carthage project</td>
+<td></td>
 </tr>
 <tr>
 <td><code>new_resolver</code></td>
 <td>Use new resolver when resolving dependency graph</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action carthage

@@ -463,67 +463,83 @@ resign(ipa: "path", signing_identity: "identity", provisioning_profile: {
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>ipa</code></td>
 <td>Path to the ipa file to resign. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>signing_identity</code></td>
 <td>Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)"</td>
+<td></td>
 </tr>
 <tr>
 <td><code>entitlements</code></td>
 <td>Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements"</td>
+<td></td>
 </tr>
 <tr>
 <td><code>provisioning_profile</code></td>
 <td>Path to your provisioning_profile. Optional if you use <em>sigh</em></td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>version</code></td>
 <td>Version number to force resigned ipa to use.</td>
+<td></td>
 </tr>
 <tr>
 <td>Updates both CFBundleShortVersionString and CFBundleVersion values in Info.plist.</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td>Applies for main app and all nested apps or extensions</td>
 <td></td>
+<td></td>
 </tr>
 <tr>
 <td><code>display_name</code></td>
 <td>Display name to force resigned ipa to use</td>
+<td></td>
 </tr>
 <tr>
 <td><code>short_version</code></td>
 <td>Short version string to force resigned ipa to use (CFBundleShortVersionString)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>bundle_version</code></td>
 <td>Bundle version to force resigned ipa to use (CFBundleVersion)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>bundle_id</code></td>
 <td>Set new bundle ID during resign (CFBundleIdentifier)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_app_entitlements</code></td>
 <td>Extract app bundle codesigning entitlements</td>
+<td></td>
 </tr>
 <tr>
 <td>and combine with entitlements from new provisionin profile</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td><code>keychain_path</code></td>
 <td>Provide a path to a keychain file that should be used by /usr/bin/codesign</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action resign

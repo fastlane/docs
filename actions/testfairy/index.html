@@ -446,47 +446,58 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>api_key</code></td>
 <td>API Key for TestFairy</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
 <td>Path to your IPA file for iOS or APK for Android</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>symbols_file</code></td>
 <td>Symbols mapping file</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>testers_groups</code></td>
 <td>Array of tester groups to be notified</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>metrics</code></td>
 <td>Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi)</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>comment</code></td>
 <td>Additional release notes for this upload. This text will be added to email notifications</td>
+<td><code>No comment provided</code></td>
 </tr>
 <tr>
 <td><code>auto_update</code></td>
 <td>Allows an easy upgrade of all users to the current version. The default is 'off', to enable set as 'on'</td>
+<td><code>off</code></td>
 </tr>
 <tr>
 <td><code>notify</code></td>
 <td>Send email to testers</td>
+<td><code>off</code></td>
 </tr>
 <tr>
 <td><code>options</code></td>
 <td>Array of options (shake,video_only_wifi,anonymous)</td>
+<td><code>[]</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action testfairy

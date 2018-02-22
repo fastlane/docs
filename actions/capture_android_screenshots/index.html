@@ -432,7 +432,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </code></pre>
 
 <h5 id="gradle-dependency"><a name="user-content-gradle-dependency" href="#gradle-dependency" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gradle dependency</h5>
-<pre><code class="java">androidTestCompile 'tools.fastlane:screengrab:x.x.x'
+<pre><code class="java">androidTestCompile('tools.fastlane:screengrab:x.x.x')
 </code></pre>
 
 <p>The latest version is <a href="https://bintray.com/fastlane/fastlane/screengrab/_latestVersion"> <img alt="Download" src="https://api.bintray.com/packages/fastlane/fastlane/screengrab/images/download.svg" /> </a></p>
@@ -481,16 +481,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p>The <code>Screengrabfile</code> is written in Ruby, so you may find it helpful to use an editor that highlights Ruby syntax to modify this file.</p>
 <pre><code class="ruby-skip-tests"># remove the leading '#' to uncomment lines
 
-# app_package_name 'your.app.package'
-# use_tests_in_packages ['your.screenshot.tests.package']
+# app_package_name('your.app.package')
+# use_tests_in_packages(['your.screenshot.tests.package'])
 
-# app_apk_path 'path/to/your/app.apk'
-# tests_apk_path 'path/to/your/tests.apk'
+# app_apk_path('path/to/your/app.apk')
+# tests_apk_path('path/to/your/tests.apk')
 
-locales ['en-US', 'fr-FR', 'it-IT']
+locales(['en-US', 'fr-FR', 'it-IT'])
 
 # clear all previously generated screenshots in your local output directory before creating new ones
-clear_previous_screenshots true
+clear_previous_screenshots(true)
 </code></pre>
 
 <p>For more information about all available options run</p>
@@ -573,87 +573,108 @@ public class JUnit4StyleTests {
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>android_home</code></td>
 <td>Path to the root of your Android SDK installation, e.g. ~/tools/android-sdk-macosx</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>build_tools_version</code></td>
 <td>The Android build tools version to use, e.g. '23.0.2'</td>
+<td></td>
 </tr>
 <tr>
 <td><code>locales</code></td>
 <td>A list of locales which should be used</td>
+<td><code>["en-US"]</code></td>
 </tr>
 <tr>
 <td><code>clear_previous_screenshots</code></td>
 <td>Enabling this option will automatically clear previously generated screenshots before running screengrab</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
 <td>The directory where to store the screenshots</td>
+<td><code>fastlane/metadata/android</code></td>
 </tr>
 <tr>
 <td><code>skip_open_summary</code></td>
 <td>Don't open the summary after running <em>screengrab</em></td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>app_package_name</code></td>
 <td>The package name of the app under test (e.g. com.yourcompany.yourapp)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>tests_package_name</code></td>
 <td>The package name of the tests bundle (e.g. com.yourcompany.yourapp.test)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_tests_in_packages</code></td>
 <td>Only run tests in these Java packages</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_tests_in_classes</code></td>
 <td>Only run tests in these Java classes</td>
+<td></td>
 </tr>
 <tr>
 <td><code>launch_arguments</code></td>
 <td>Additional launch arguments</td>
+<td></td>
 </tr>
 <tr>
 <td><code>test_instrumentation_runner</code></td>
 <td>The fully qualified class name of your test instrumentation runner</td>
+<td><code>android.support.test.runner.AndroidJUnitRunner</code></td>
 </tr>
 <tr>
 <td><code>ending_locale</code></td>
 <td>Return the device to this locale after running tests</td>
+<td><code>en-US</code></td>
 </tr>
 <tr>
 <td><code>app_apk_path</code></td>
 <td>The path to the APK for the app under test</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>tests_apk_path</code></td>
 <td>The path to the APK for the the tests bundle</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>specific_device</code></td>
 <td>Use the device or emulator with the given serial number or qualifier</td>
+<td></td>
 </tr>
 <tr>
 <td><code>device_type</code></td>
 <td>Type of device used for screenshots. Matches Google Play Types (phone, sevenInch, tenInch, tv, wear)</td>
+<td><code>phone</code></td>
 </tr>
 <tr>
 <td><code>exit_on_test_failure</code></td>
 <td>Whether or not to exit Screengrab on test failure. Exiting on failure will not copy sceenshots to local machine nor open sceenshots summary</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>reinstall_app</code></td>
 <td>Enabling this option will automatically uninstall the application before running it</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action capture_android_screenshots

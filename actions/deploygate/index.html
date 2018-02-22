@@ -458,43 +458,53 @@ More information about the available options can be found in the <a href="https:
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>api_token</code></td>
 <td>Deploygate API Token</td>
+<td></td>
 </tr>
 <tr>
 <td><code>user</code></td>
 <td>Target username or organization name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
 <td>Path to your IPA file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>apk</code></td>
 <td>Path to your APK file</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>message</code></td>
 <td>Release Notes</td>
+<td><code>No changelog provided</code></td>
 </tr>
 <tr>
 <td><code>distribution_key</code></td>
 <td>Target Distribution Key</td>
+<td></td>
 </tr>
 <tr>
 <td><code>release_note</code></td>
 <td>Release note for distribution page</td>
+<td></td>
 </tr>
 <tr>
 <td><code>disable_notify</code></td>
 <td>Disables Push notification emails</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action deploygate

@@ -454,31 +454,38 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>message</code></td>
 <td>The commit message when committing the version bump</td>
+<td><code>Version Bump</code></td>
 </tr>
 <tr>
 <td><code>xcodeproj</code></td>
 <td>The path to your project file (Not the workspace). If you have only one, this is optional</td>
+<td></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Forces the commit, even if other files than the ones containing the version number have been modified</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>test_dirty_files</code></td>
 <td>A list of dirty files passed in for testing</td>
+<td><code>file1, file2</code></td>
 </tr>
 <tr>
 <td><code>test_expected_files</code></td>
 <td>A list of expected changed files passed in for testing</td>
+<td><code>file1, file2</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action hg_commit_version_bump

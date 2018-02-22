@@ -462,35 +462,43 @@ things like // TO DO or similar</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>text</code></td>
 <td>The text that must not be in the code base</td>
+<td></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>The directory containing all the source files</td>
+<td><code>.</code></td>
 </tr>
 <tr>
 <td><code>extension</code></td>
 <td>The extension that should be searched for</td>
+<td></td>
 </tr>
 <tr>
 <td><code>extensions</code></td>
 <td>An array of file extensions that should be searched for</td>
+<td></td>
 </tr>
 <tr>
 <td><code>exclude</code></td>
 <td>Exclude a certain pattern from the search</td>
+<td></td>
 </tr>
 <tr>
 <td><code>exclude_dirs</code></td>
 <td>An array of dirs that should not be included in the search</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action ensure_no_debug_code

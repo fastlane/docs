@@ -466,27 +466,33 @@ Keychains can be replaced with <code>add_to_search_list: :replace</code></p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>path</code></td>
 <td>Path to the keychain file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>password</code></td>
 <td>Keychain password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>add_to_search_list</code></td>
 <td>Add to keychain search list</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>set_default</code></td>
 <td>Set as default keychain</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action unlock_keychain

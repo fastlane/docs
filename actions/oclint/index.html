@@ -463,83 +463,103 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>oclint_path</code></td>
 <td>The path to oclint binary</td>
+<td><code>oclint</code></td>
 </tr>
 <tr>
 <td><code>compile_commands</code></td>
 <td>The json compilation database, use xctool reporter 'json-compilation-database'</td>
+<td><code>compile_commands.json</code></td>
 </tr>
 <tr>
 <td><code>select_reqex</code></td>
 <td>Select all files matching this reqex</td>
+<td></td>
 </tr>
 <tr>
 <td><code>select_regex</code></td>
 <td>Select all files matching this regex</td>
+<td></td>
 </tr>
 <tr>
 <td><code>exclude_regex</code></td>
 <td>Exclude all files matching this regex</td>
+<td></td>
 </tr>
 <tr>
 <td><code>report_type</code></td>
 <td>The type of the report (default: html)</td>
+<td><code>html</code></td>
 </tr>
 <tr>
 <td><code>report_path</code></td>
 <td>The reports file path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>list_enabled_rules</code></td>
 <td>List enabled rules</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>rc</code></td>
 <td>Override the default behavior of rules</td>
+<td></td>
 </tr>
 <tr>
 <td><code>thresholds</code></td>
 <td>List of rule thresholds to override the default behavior of rules</td>
+<td></td>
 </tr>
 <tr>
 <td><code>enable_rules</code></td>
 <td>List of rules to pick explicitly</td>
+<td></td>
 </tr>
 <tr>
 <td><code>disable_rules</code></td>
 <td>List of rules to disable</td>
+<td></td>
 </tr>
 <tr>
 <td><code>max_priority_1</code></td>
 <td>The max allowed number of priority 1 violations</td>
+<td></td>
 </tr>
 <tr>
 <td><code>max_priority_2</code></td>
 <td>The max allowed number of priority 2 violations</td>
+<td></td>
 </tr>
 <tr>
 <td><code>max_priority_3</code></td>
 <td>The max allowed number of priority 3 violations</td>
+<td></td>
 </tr>
 <tr>
 <td><code>enable_clang_static_analyzer</code></td>
 <td>Enable Clang Static Analyzer, and integrate results into OCLint report</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>enable_global_analysis</code></td>
 <td>Compile every source, and analyze across global contexts (depends on number of source files, could results in high memory load)</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>allow_duplicated_violations</code></td>
 <td>Allow duplicated violations in the OCLint report</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action oclint

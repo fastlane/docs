@@ -451,55 +451,68 @@ will be automatically unlocked and the selected code signing identity will be us
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>force</code></td>
 <td>Force setup, even if not executed by Jenkins</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>unlock_keychain</code></td>
 <td>Unlocks keychain</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>add_keychain_to_search_list</code></td>
 <td>Add to keychain search list</td>
+<td><code>replace</code></td>
 </tr>
 <tr>
 <td><code>set_default_keychain</code></td>
 <td>Set keychain as default</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>keychain_path</code></td>
 <td>Path to keychain</td>
+<td></td>
 </tr>
 <tr>
 <td><code>keychain_password</code></td>
 <td>Keychain password</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>set_code_signing_identity</code></td>
 <td>Set code signing identity from CODE_SIGNING_IDENTITY environment</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>code_signing_identity</code></td>
 <td>Code signing identity</td>
+<td></td>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
 <td>The directory in which the ipa file should be stored in</td>
+<td><code>./output</code></td>
 </tr>
 <tr>
 <td><code>derived_data_path</code></td>
 <td>The directory where built products and other derived data will go</td>
+<td><code>./derivedData</code></td>
 </tr>
 <tr>
 <td><code>result_bundle</code></td>
 <td>Produce the result bundle describing what occurred will be placed</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action setup_jenkins

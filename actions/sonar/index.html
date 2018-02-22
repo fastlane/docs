@@ -452,47 +452,58 @@ It can process unit test results if formatted as junit report as shown in <a hre
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>project_configuration_path</code></td>
 <td>The path to your sonar project configuration file; defaults to <code>sonar-project.properties</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_key</code></td>
 <td>The key sonar uses to identify the project, e.g. <code>name.gretzki.awesomeApp</code>. Must either be specified here or inside the sonar project configuration file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_name</code></td>
 <td>The name of the project that gets displayed on the sonar report page. Must either be specified here or inside the sonar project configuration file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_version</code></td>
 <td>The project's version that gets displayed on the sonar report page. Must either be specified here or inside the sonar project configuration file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sources_path</code></td>
 <td>Comma-separated paths to directories containing source files. Must either be specified here or inside the sonar project configuration file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_language</code></td>
 <td>Language key, e.g. objc</td>
+<td></td>
 </tr>
 <tr>
 <td><code>source_encoding</code></td>
 <td>Used encoding of source files, e.g., UTF-8</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sonar_runner_args</code></td>
 <td>Pass additional arguments to sonar-scanner. Be sure to provide the arguments with a leading <code>-D</code> e.g. FL_SONAR_RUNNER_ARGS="-Dsonar.verbose=true"</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sonar_login</code></td>
 <td>Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action sonar

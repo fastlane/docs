@@ -447,31 +447,38 @@ See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://git
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>binary_path</code></td>
 <td>Where the cloc binary lives on your system (full path including 'cloc')</td>
+<td><code>/usr/local/bin/cloc</code></td>
 </tr>
 <tr>
 <td><code>exclude_dir</code></td>
 <td>Comma separated list of directories to exclude</td>
+<td></td>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
 <td>Where to put the generated report file</td>
+<td><code>build</code></td>
 </tr>
 <tr>
 <td><code>source_directory</code></td>
 <td>Where to look for the source code (relative to the project root folder)</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>xml</code></td>
 <td>Should we generate an XML File (if false, it will generate a plain text file)?</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action cloc

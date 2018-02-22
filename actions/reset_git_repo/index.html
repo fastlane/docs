@@ -456,31 +456,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>files</code></td>
 <td>Array of files the changes should be discarded. If not given, all files will be discarded</td>
+<td></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Skip verifying of previously clean state of repo. Only recommended in combination with <code>files</code> option</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_clean</code></td>
-<td>Skip 'git clean' to avoid removing untracked files like <code>.env</code>. Defaults to false</td>
+<td>Skip 'git clean' to avoid removing untracked files like <code>.env</code></td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>disregard_gitignore</code></td>
 <td>Setting this to true will clean the whole repository, ignoring anything in your local .gitignore. Set this to true if you want the equivalent of a fresh clone, and for all untracked and ignore files to also be removed</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>exclude</code></td>
 <td>You can pass a string, or array of, file pattern(s) here which you want to have survive the cleaning process, and remain on disk, e.g. to leave the <code>artifacts</code> directory you would specify <code>exclude: 'artifacts'</code>. Make sure this pattern is also in your gitignore! See the gitignore documentation for info on patterns</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action reset_git_repo

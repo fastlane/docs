@@ -451,39 +451,48 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>api_token</code></td>
 <td>Personal API Token for GitHub - generate one at https://github.com/settings/tokens</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>repo</code></td>
 <td>The name of the repository you want to submit the pull request to</td>
+<td></td>
 </tr>
 <tr>
 <td><code>title</code></td>
 <td>The title of the pull request</td>
+<td></td>
 </tr>
 <tr>
 <td><code>body</code></td>
 <td>The contents of the pull request</td>
+<td></td>
 </tr>
 <tr>
 <td><code>head</code></td>
 <td>The name of the branch where your changes are implemented (defaults to the current branch name)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>base</code></td>
 <td>The name of the branch you want your changes pulled into (defaults to <code>master</code>)</td>
+<td><code>master</code></td>
 </tr>
 <tr>
 <td><code>api_url</code></td>
 <td>The URL of GitHub API - used when the Enterprise (default to <code>https://api.github.com</code>)</td>
+<td><code>https://api.github.com</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action create_pull_request

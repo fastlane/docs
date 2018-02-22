@@ -497,55 +497,68 @@ gradle(
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>task</code></td>
 <td>The gradle task you want to execute, e.g. <code>assemble</code> or <code>test</code>. For tasks such as <code>assembleMyFlavorRelease</code> you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release')</td>
+<td></td>
 </tr>
 <tr>
 <td><code>flavor</code></td>
 <td>The flavor that you want the task for, e.g. <code>MyFlavor</code>. If you are running the <code>assemble</code> task in a multi-flavor project, and you rely on Actions.lane_context[Actions.SharedValues::GRADLE_APK_OUTPUT_PATH] then you must specify a flavor here or else this value will be undefined</td>
+<td></td>
 </tr>
 <tr>
 <td><code>build_type</code></td>
 <td>The build type that you want the task for, e.g. <code>Release</code>. Useful for some tasks such as <code>assemble</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>flags</code></td>
 <td>All parameter flags you want to pass to the gradle command, e.g. <code>--exitcode --xml file.xml</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_dir</code></td>
-<td>The root directory of the gradle project. Defaults to <code>.</code></td>
+<td>The root directory of the gradle project</td>
+<td><code>.</code></td>
 </tr>
 <tr>
 <td><code>gradle_path</code></td>
 <td>The path to your <code>gradlew</code>. If you specify a relative path, it is assumed to be relative to the <code>project_dir</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>properties</code></td>
 <td>Gradle properties to be exposed to the gradle script</td>
+<td></td>
 </tr>
 <tr>
 <td><code>system_properties</code></td>
 <td>Gradle system properties to be exposed to the gradle script</td>
+<td></td>
 </tr>
 <tr>
 <td><code>serial</code></td>
 <td>Android serial, which device should be used for this command</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>print_command</code></td>
 <td>Control whether the generated Gradle command is printed as output before running it (true/false)</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>print_command_output</code></td>
 <td>Control whether the output produced by given Gradle command is printed while running (true/false)</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action gradle

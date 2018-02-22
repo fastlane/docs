@@ -477,23 +477,28 @@ https://developer.apple.com/library/ios/qa/qa1827/_index.html</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>bump_type</code></td>
 <td>The type of this version bump. Available: patch, minor, major</td>
+<td><code>patch</code></td>
 </tr>
 <tr>
 <td><code>version_number</code></td>
 <td>Change to a specific version. This will replace the bump type value</td>
+<td></td>
 </tr>
 <tr>
 <td><code>xcodeproj</code></td>
 <td>optional, you must specify the path to your main Xcode project if it is not in the project root directory</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action increment_version_number

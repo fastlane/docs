@@ -490,43 +490,53 @@ automatic_code_signing(
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>path</code></td>
 <td>Path to your Xcode project</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>use_automatic_signing</code></td>
 <td>Defines if project should use automatic signing</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>Team ID, is used when upgrading project</td>
+<td></td>
 </tr>
 <tr>
 <td><code>targets</code></td>
 <td>Specify targets you want to toggle the signing mech. (default to all targets)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>code_sign_identity</code></td>
 <td>Code signing identity type (iPhone Development, iPhone Distribution)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>profile_name</code></td>
 <td>Provisioning profile name to use for code signing</td>
+<td></td>
 </tr>
 <tr>
 <td><code>profile_uuid</code></td>
 <td>Provisioning profile UUID to use for code signing</td>
+<td></td>
 </tr>
 <tr>
 <td><code>bundle_identifier</code></td>
 <td>Application Product Bundle Identifier</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action automatic_code_signing

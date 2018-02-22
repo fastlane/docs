@@ -447,55 +447,68 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>message</code></td>
 <td>The message to post on HipChat</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>channel</code></td>
 <td>The room or @username</td>
+<td></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>Hipchat API Token</td>
+<td></td>
 </tr>
 <tr>
 <td><code>custom_color</code></td>
 <td>Specify a custom color, this overrides the success boolean. Can be one of 'yellow', 'red', 'green', 'purple', 'gray', or 'random'</td>
+<td></td>
 </tr>
 <tr>
 <td><code>success</code></td>
 <td>Was this build successful? (true/false)</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>version</code></td>
 <td>Version of the Hipchat API. Must be 1 or 2</td>
+<td></td>
 </tr>
 <tr>
 <td><code>notify_room</code></td>
 <td>Should the people in the room be notified? (true/false)</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>api_host</code></td>
 <td>The host of the HipChat-Server API</td>
+<td><code>api.hipchat.com</code></td>
 </tr>
 <tr>
 <td><code>message_format</code></td>
 <td>Format of the message to post. Must be either 'html' or 'text'</td>
+<td><code>html</code></td>
 </tr>
 <tr>
 <td><code>include_html_header</code></td>
 <td>Should html formatted messages include a preformatted header? (true/false)</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>from</code></td>
 <td>Name the message will appear to be sent from</td>
+<td><em>fastlane</em></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action hipchat

@@ -461,31 +461,38 @@ The action will connect to the Apple Developer Portal using the username you spe
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>devices</code></td>
 <td>A hash of devices, with the name as key and the UDID as value</td>
+<td></td>
 </tr>
 <tr>
 <td><code>devices_file</code></td>
 <td>Provide a path to a file with the devices to register. For the format of the file see the examples</td>
+<td></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Optional: Your Apple ID</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action register_devices

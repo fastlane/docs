@@ -460,39 +460,48 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>repository_name</code></td>
 <td>The path to your repo, e.g. 'fastlane/fastlane'</td>
+<td></td>
 </tr>
 <tr>
 <td><code>server_url</code></td>
 <td>The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')</td>
+<td><code>https://api.github.com</code></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>Personal API Token for GitHub - generate one at https://github.com/settings/tokens</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>branch</code></td>
 <td>The branch that the file should be committed on (default: master)</td>
+<td><code>master</code></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>The relative path to your file from project root e.g. assets/my_app.xcarchive</td>
+<td></td>
 </tr>
 <tr>
 <td><code>message</code></td>
 <td>The commit message. Defaults to the file name</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>secure</code></td>
 <td>Optionally disable secure requests (ssl_verify_peer)</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action commit_github_file

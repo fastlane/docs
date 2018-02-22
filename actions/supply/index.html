@@ -562,91 +562,113 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>package_name</code></td>
 <td>The package name of the application to use</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>track</code></td>
 <td>The track of the application to use: production, beta, alpha, rollout</td>
+<td><code>production</code></td>
 </tr>
 <tr>
 <td><code>rollout</code></td>
 <td>The percentage of the user fraction when uploading to the rollout track</td>
+<td></td>
 </tr>
 <tr>
 <td><code>metadata_path</code></td>
 <td>Path to the directory containing the metadata files</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>key</code></td>
 <td>[DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>issuer</code></td>
 <td>[DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>json_key</code></td>
 <td>The service account json file used to authenticate with Google</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>json_key_data</code></td>
 <td>The service account json used to authenticate with Google</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>apk</code></td>
 <td>Path to the APK file to upload</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>apk_paths</code></td>
 <td>An array of paths to APK files to upload</td>
+<td></td>
 </tr>
 <tr>
 <td><code>skip_upload_apk</code></td>
 <td>Whether to skip uploading APK</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_upload_metadata</code></td>
 <td>Whether to skip uploading metadata</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_upload_images</code></td>
 <td>Whether to skip uploading images, screenshots not included</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_upload_screenshots</code></td>
 <td>Whether to skip uploading SCREENSHOTS</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>track_promote_to</code></td>
 <td>The track to promote to: production, beta, alpha, rollout</td>
+<td></td>
 </tr>
 <tr>
 <td><code>validate_only</code></td>
 <td>Only validate changes with Google Play rather than actually publish</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>mapping</code></td>
 <td>Path to the mapping file to upload</td>
+<td></td>
 </tr>
 <tr>
 <td><code>mapping_paths</code></td>
 <td>An array of paths to mapping files to upload</td>
+<td></td>
 </tr>
 <tr>
 <td><code>root_url</code></td>
 <td>Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/</td>
+<td></td>
 </tr>
 <tr>
 <td><code>check_superseded_tracks</code></td>
 <td>Check the other tracks for superseded versions and disable them</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action supply

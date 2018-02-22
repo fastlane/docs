@@ -442,23 +442,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>xcodeproj</code></td>
 <td>optional, you must specify the path to your main Xcode project if it is not in the project root directory</td>
+<td></td>
 </tr>
 <tr>
 <td><code>scheme</code></td>
 <td>[DEPRECATED!] true - Specify a specific scheme if you have multiple per project, optional. This parameter is deprecated and will be removed in a future release. Please use the 'target' parameter instead. The behavior of this parameter is currently undefined if your scheme name doesn't match your target name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>target</code></td>
 <td>Specify a specific target if you have multiple per project, optional</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action get_version_number

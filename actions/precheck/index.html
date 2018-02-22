@@ -519,7 +519,7 @@ end
 </code></pre>
 
 <h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>
-<p><em>precheck</em> will access <code>iTunes Connect</code> to download your app's metadata. It uses <a href="https://spaceship.airforce">spaceship</a> to communicate with Apple's web services.</p>
+<p><em>precheck</em> will access <code>iTunes Connect</code> to download your app's metadata. It uses <a href="https://spaceship.airforce"><em>spaceship</em></a> to communicate with Apple's web services.</p>
 <h1 id="want-to-improve-prechecks-rules"><a name="user-content-want-to-improve-prechecks-rules" href="#want-to-improve-prechecks-rules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Want to improve precheck's rules?</h1>
 <p>Please submit an issue on GitHub and provide information about your App Store rejection! Make sure you scrub out any personally identifiable information since this will be public.</p>
 <hr />
@@ -562,75 +562,93 @@ end
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of your app</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>default_rule_level</code></td>
 <td>The default rule level unless otherwise configured</td>
+<td><code>error</code></td>
 </tr>
 <tr>
 <td><code>include_in_app_purchases</code></td>
 <td>Should check in-app purchases?</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>negative_apple_sentiment</code></td>
 <td>mentioning  in a way that could be considered negative</td>
+<td></td>
 </tr>
 <tr>
 <td><code>placeholder_text</code></td>
 <td>using placeholder text (e.g.:"lorem ipsum", "text here", etc...)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>other_platforms</code></td>
 <td>mentioning other platforms, like Android or Blackberry</td>
+<td></td>
 </tr>
 <tr>
 <td><code>future_functionality</code></td>
 <td>mentioning features or content that is not currently available in your app</td>
+<td></td>
 </tr>
 <tr>
 <td><code>test_words</code></td>
 <td>using text indicating this release is a test</td>
+<td></td>
 </tr>
 <tr>
 <td><code>curse_words</code></td>
 <td>including words that might be considered objectionable</td>
+<td></td>
 </tr>
 <tr>
 <td><code>free_stuff_in_iap</code></td>
 <td>using text indicating that your IAP is free</td>
+<td></td>
 </tr>
 <tr>
 <td><code>custom_text</code></td>
 <td>mentioning any of the user-specified words passed to custom_text(data: [words])</td>
+<td></td>
 </tr>
 <tr>
 <td><code>copyright_date</code></td>
 <td>using a copyright date that is any different from this current year, or missing a date</td>
+<td></td>
 </tr>
 <tr>
 <td><code>unreachable_urls</code></td>
 <td>unreachable URLs in app metadata</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action precheck

@@ -448,31 +448,38 @@ For such versions there is an option to change appendix (4.1)</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>path</code></td>
 <td>You must specify the path to the podspec file to update</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>bump_type</code></td>
 <td>The type of this version bump. Available: patch, minor, major</td>
+<td><code>patch</code></td>
 </tr>
 <tr>
 <td><code>version_number</code></td>
 <td>Change to a specific version. This will replace the bump type value</td>
+<td></td>
 </tr>
 <tr>
 <td><code>version_appendix</code></td>
 <td>Change version appendix to a specific value. For example 1.4.14.4.1 -&gt; 1.4.14.5</td>
+<td></td>
 </tr>
 <tr>
 <td><code>require_variable_prefix</code></td>
 <td>true by default, this is used for non CocoaPods version bumps only</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action version_bump_podspec

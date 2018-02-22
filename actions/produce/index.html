@@ -600,7 +600,7 @@ end
 </code></pre>
 
 <p>This will tell <em>deliver</em>, which <code>App ID</code> to use, since the app is not yet available in the App Store.</p>
-<p>You'll still have to fill out the remaining information (like screenshots, app description and pricing). You can use <a href="https://docs.fastlane.tools/actions/deliver/">deliver</a> to upload your app metadata using a CLI</p>
+<p>You'll still have to fill out the remaining information (like screenshots, app description and pricing). You can use <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> to upload your app metadata using a CLI</p>
 <h2 id="how-is-my-password-stored"><a name="user-content-how-is-my-password-stored" href="#how-is-my-password-stored" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How is my password stored?</h2>
 <p><em>produce</em> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">password manager</a> from <em>fastlane</em>. Take a look the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager README</a> for more information.</p>
 <hr />
@@ -644,83 +644,103 @@ end
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
 <td>App Identifier (Bundle ID, e.g. com.krausefx.app)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>bundle_identifier_suffix</code></td>
 <td>App Identifier Suffix (Ignored if App Identifier does not end with .*)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_name</code></td>
 <td>App Name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_version</code></td>
 <td>Initial version number (e.g. '1.0')</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sku</code></td>
 <td>SKU Number (e.g. '1234')</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
 <td>The platform to use (optional)</td>
+<td><code>ios</code></td>
 </tr>
 <tr>
 <td><code>language</code></td>
 <td>Primary Language (e.g. 'English', 'German')</td>
+<td><code>English</code></td>
 </tr>
 <tr>
 <td><code>company_name</code></td>
 <td>The name of your company. Only required if it's the first app you create</td>
+<td></td>
 </tr>
 <tr>
 <td><code>skip_itc</code></td>
 <td>Skip the creation of the app on iTunes Connect</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>itc_users</code></td>
 <td>Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles</td>
+<td></td>
 </tr>
 <tr>
 <td><code>enabled_features</code></td>
 <td>[DEPRECATED!] Please use <code>enable_services</code> instead - Array with Spaceship App Services</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>enable_services</code></td>
 <td>Array with Spaceship App Services (e.g. app_group: (on</td>
+<td>off), apple_pay: (on</td>
 </tr>
 <tr>
 <td><code>skip_devcenter</code></td>
 <td>Skip the creation of the app on the Apple Developer Portal</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>itc_team_id</code></td>
 <td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>itc_team_name</code></td>
 <td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action produce

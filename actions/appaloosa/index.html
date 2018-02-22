@@ -462,43 +462,53 @@ groups. We accept iOS and Android applications.</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>binary</code></td>
 <td>Binary path. Optional for ipa if you use the <code>ipa</code> or <code>xcodebuild</code> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>Your API token</td>
+<td></td>
 </tr>
 <tr>
 <td><code>store_id</code></td>
 <td>Your Store id</td>
+<td></td>
 </tr>
 <tr>
 <td><code>group_ids</code></td>
 <td>Your app is limited to special users? Give us the group ids</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>screenshots</code></td>
 <td>Add some screenshots application to your store or hit [enter]</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>locale</code></td>
 <td>Select the folder locale for your screenshots</td>
+<td><code>en-US</code></td>
 </tr>
 <tr>
 <td><code>device</code></td>
 <td>Select the device format for your screenshots</td>
+<td></td>
 </tr>
 <tr>
 <td><code>description</code></td>
 <td>Your app description</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action appaloosa

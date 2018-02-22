@@ -439,23 +439,28 @@ More information in the <a href="https://github.com/fastlane/fastlane/blob/maste
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>xcodebuild</code></td>
 <td>Parameters that are passed to the xcodebuild action</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>scheme</code></td>
 <td>The scheme to build. Can also be passed using the <code>xcodebuild</code> parameter</td>
+<td></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>Appetize.io API Token</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action build_and_upload_to_appetize

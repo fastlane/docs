@@ -428,7 +428,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p><img alt="/img/actions/cert.gif" src="../../img/actions/cert.gif" /></p>
 <p>In the gif we used <code>cert &amp;&amp; sigh</code>, which will first create an iOS code signing certificate and then a provisioning profile for your app if <em>cert</em> succeeded.</p>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<p><strong>Note</strong>: It is recommended to use <a href="../../actions/match">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your certificates. Use <em>cert</em> directly only if you want full control over what's going on and know more about codesigning.</p>
+<p><strong>Note</strong>: It is recommended to use <a href="../../actions/match"><em>match</em></a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your certificates. Use <em>cert</em> directly only if you want full control over what's going on and know more about codesigning.</p>
 <pre><code class="no-highlight">fastlane cert
 </code></pre>
 
@@ -507,47 +507,58 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>development</code></td>
 <td>Create a development certificate instead of a distribution one</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Create a certificate even if an existing certificate exists</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>output_path</code></td>
 <td>The path to a directory in which all certificates and private keys should be stored</td>
+<td><code>.</code></td>
 </tr>
 <tr>
 <td><code>keychain_path</code></td>
 <td>Path to a custom keychain</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>keychain_password</code></td>
 <td>This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
 <td>Set the provisioning profile's platform (ios, macos)</td>
+<td><code>ios</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action cert

@@ -479,27 +479,33 @@ puts release[&quot;name&quot;]
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>url</code></td>
 <td>The path to your repo, e.g. 'KrauseFx/fastlane'</td>
+<td></td>
 </tr>
 <tr>
 <td><code>server_url</code></td>
 <td>The server url. e.g. 'https://your.github.server/api/v3' (Default: 'https://api.github.com')</td>
+<td><code>https://api.github.com</code></td>
 </tr>
 <tr>
 <td><code>version</code></td>
 <td>The version tag of the release to check</td>
+<td></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>GitHub Personal Token (required for private repositories)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action get_github_release

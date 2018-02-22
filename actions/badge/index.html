@@ -455,55 +455,68 @@ https://github.com/HazAT/badge
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>dark</code></td>
 <td>Adds a dark flavored badge ontop of your icon</td>
+<td></td>
 </tr>
 <tr>
 <td><code>custom</code></td>
 <td>Add your custom overlay/badge image</td>
+<td></td>
 </tr>
 <tr>
 <td><code>no_badge</code></td>
 <td>Hides the beta badge</td>
+<td></td>
 </tr>
 <tr>
 <td><code>shield</code></td>
 <td>Add a shield to your app icon from shields.io</td>
+<td></td>
 </tr>
 <tr>
 <td><code>alpha</code></td>
 <td>Adds and alpha badge instead of the default beta one</td>
+<td></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>Sets the root path to look for AppIcons</td>
+<td><code>.</code></td>
 </tr>
 <tr>
 <td><code>shield_io_timeout</code></td>
 <td>Set custom duration for the timeout of the shields.io request in seconds</td>
+<td></td>
 </tr>
 <tr>
 <td><code>glob</code></td>
 <td>Glob pattern for finding image files</td>
+<td></td>
 </tr>
 <tr>
 <td><code>alpha_channel</code></td>
 <td>Keeps/adds an alpha channel to the icon (useful for android icons)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>shield_gravity</code></td>
 <td>Position of shield on icon. Default: North - Choices include: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast</td>
+<td></td>
 </tr>
 <tr>
 <td><code>shield_no_resize</code></td>
 <td>Shield image will no longer be resized to aspect fill the full icon. Instead it will only be shrunk to not exceed the icon graphic</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action badge

@@ -484,28 +484,26 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li>Create a new UI Test target in your Xcode project (<a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">top part of this article</a>)</li>
 <li>Run <code>fastlane snapshot init</code> in your project folder</li>
 <li>Add the ./SnapshotHelper.swift to your UI Test target (You can move the file anywhere you want)</li>
-<li><strong>Note:</strong> if you're using Xcode 8, add the ./SnapshotHelperXcode8.swift to your UI Test target</li>
-<li>(Objective C only) add the bridging header to your test class.</li>
-<li><code>#import "MYUITests-Swift.h"</code></li>
-<li>The bridging header is named after your test target with -Swift.h appended.</li>
+<li>(Xcode 8 only) add the ./SnapshotHelperXcode8.swift to your UI Test target</li>
+<li>(Objective C only) add the bridging header to your test class:</li>
+<li><code>#import "MYUITests-Swift.h"</code><br />
+    (The bridging header is named after your test target with <code>-Swift.h</code> appended.)</li>
 <li>In your UI Test class, click the <code>Record</code> button on the bottom left and record your interaction</li>
 <li>To take a snapshot, call the following between interactions</li>
 <li>Swift: <code>snapshot("01LoginScreen")</code></li>
 <li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];</code></li>
-<li>Add the following code to your <code>setUp()</code> method</li>
+<li>Add the following code to your <code>setUp()</code> method:</li>
+<li>Swift:
+    <code>swift
+    let app = XCUIApplication()
+    setupSnapshot(app)
+    app.launch()</code></li>
+<li>Objective C:<br />
+<code>objective-c
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [Snapshot setupSnapshot:app];
+    [app launch];</code></li>
 </ul>
-<p><strong>Swift</strong></p>
-<pre><code class="swift">let app = XCUIApplication()
-setupSnapshot(app)
-app.launch()
-</code></pre>
-
-<p><strong>Objective C</strong></p>
-<pre><code class="objective-c">XCUIApplication *app = [[XCUIApplication alloc] init];
-[Snapshot setupSnapshot:app];
-[app launch];
-</code></pre>
-
 <p><em>Make sure you only have one <code>launch</code> call in your test class, as Xcode adds one automatically on new test files.</em></p>
 <p><img alt="img/actions/snapshot.gif" src="../../img/actions/snapshot.gif" /></p>
 <p>You can try the <em>snapshot</em> <a href="https://github.com/fastlane/fastlane/tree/master/snapshot/example">example project</a> by cloning this repo.</p>
@@ -514,7 +512,7 @@ app.launch()
 <pre><code class="no-highlight">fastlane snapshot
 </code></pre>
 
-<p>Your screenshots will be stored in the <code>./screenshots/</code> folder by default (or <code>./fastlane/screenshots</code> if you're using <a href="https://fastlane.tools">fastlane</a>)</p>
+<p>Your screenshots will be stored in the <code>./screenshots/</code> folder by default (or <code>./fastlane/screenshots</code> if you're using <a href="https://fastlane.tools"><em>fastlane</em></a>)</p>
 <p>New with Xcode 9, <em>snapshot</em> can run multiple simulators concurrently. This is the default behavior in order to take your screenshots as quickly as possible. This can be disabled to run each device, one at a time, by setting the <code>:concurrent_simulators</code> option to <code>false</code>.</p>
 <p><strong>Note:</strong> While running <em>snapshot</em> with Xcode 9, the simulators will not be visibly spawned. So, while you wont see the simulators running your tests, they will, in fact, be taking your screenshots.</p>
 <p>If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and <em>snapshot</em> will continue with the next device or language. To stop the flow after the first error, run</p>
@@ -551,7 +549,7 @@ app.launch()
 <p>All of the available options can also be stored in a configuration file called the <code>Snapfile</code>. Since most values will not change often for your project, it is recommended to store them there:</p>
 <p>First make sure to have a <code>Snapfile</code> (you get it for free when running <code>fastlane snapshot init</code>)</p>
 <p>The <code>Snapfile</code> can contain all the options that are also available on <code>fastlane action snapshot</code></p>
-<pre><code class="ruby-skip-tests">scheme &quot;UITests&quot;
+<pre><code class="ruby-skip-tests">scheme(&quot;UITests&quot;)
 
 devices([
   &quot;iPhone 6&quot;,
@@ -570,11 +568,11 @@ languages([
 launch_arguments([&quot;-username Felix&quot;])
 
 # The directory in which the screenshots should be stored
-output_directory './screenshots'
+output_directory('./screenshots')
 
-clear_previous_screenshots true
+clear_previous_screenshots(true)
 
-add_photos [&quot;MyTestApp/Assets/demo.jpg&quot;]
+add_photos([&quot;MyTestApp/Assets/demo.jpg&quot;])
 </code></pre>
 
 <h3 id="completely-reset-all-simulators"><a name="user-content-completely-reset-all-simulators" href="#completely-reset-all-simulators" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Completely reset all simulators</h3>
@@ -640,7 +638,7 @@ launch_arguments([
 </h4>
 <hr /></p>
 <h2 id="frame-the-screenshots"><a name="user-content-frame-the-screenshots" href="#frame-the-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Frame the screenshots</h2>
-<p>If you want to add frames around the screenshots and even put a title on top, check out <a href="https://docs.fastlane.tools/actions/frameit/">frameit</a>.</p>
+<p>If you want to add frames around the screenshots and even put a title on top, check out <a href="https://docs.fastlane.tools/actions/frameit/"><em>frameit</em></a>.</p>
 <h2 id="available-language-codes"><a name="user-content-available-language-codes" href="#available-language-codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available language codes</h2>
 <pre><code class="ruby">ALL_LANGUAGES = [&quot;da&quot;, &quot;de-DE&quot;, &quot;el&quot;, &quot;en-AU&quot;, &quot;en-CA&quot;, &quot;en-GB&quot;, &quot;en-US&quot;, &quot;es-ES&quot;, &quot;es-MX&quot;, &quot;fi&quot;, &quot;fr-CA&quot;, &quot;fr-FR&quot;, &quot;id&quot;, &quot;it&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;ms&quot;, &quot;nl-NL&quot;, &quot;no&quot;, &quot;pt-BR&quot;, &quot;pt-PT&quot;, &quot;ru&quot;, &quot;sv&quot;, &quot;th&quot;, &quot;tr&quot;, &quot;vi&quot;, &quot;zh-Hans&quot;, &quot;zh-Hant&quot;]
 </code></pre>
@@ -697,135 +695,168 @@ launch_arguments([
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>workspace</code></td>
 <td>Path the workspace file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project</code></td>
 <td>Path the project file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>xcargs</code></td>
 <td>Pass additional arguments to xcodebuild for the test phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"</td>
+<td></td>
 </tr>
 <tr>
 <td><code>devices</code></td>
 <td>A list of devices you want to take the screenshots from</td>
+<td></td>
 </tr>
 <tr>
 <td><code>languages</code></td>
 <td>A list of languages which should be used</td>
+<td><code>["en-US"]</code></td>
 </tr>
 <tr>
 <td><code>launch_arguments</code></td>
 <td>A list of launch arguments which should be used</td>
+<td><code>[""]</code></td>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
 <td>The directory where to store the screenshots</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>output_simulator_logs</code></td>
 <td>If the logs generated by the app (e.g. using NSLog, perror, etc.) in the Simulator should be written to the output_directory</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>ios_version</code></td>
 <td>By default, the latest version should be used automatically. If you want to change it, do it here</td>
+<td></td>
 </tr>
 <tr>
 <td><code>skip_open_summary</code></td>
 <td>Don't open the HTML summary after running <em>snapshot</em></td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_helper_version_check</code></td>
 <td>Do not check for most recent SnapshotHelper code</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>clear_previous_screenshots</code></td>
 <td>Enabling this option will automatically clear previously generated screenshots before running snapshot</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>reinstall_app</code></td>
 <td>Enabling this option will automatically uninstall the application before running it</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>erase_simulator</code></td>
 <td>Enabling this option will automatically erase the simulator before running the application</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>localize_simulator</code></td>
 <td>Enabling this option will configure the Simulator's system language</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of the app to uninstall (only needed when enabling reinstall_app)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>add_photos</code></td>
 <td>A list of photos that should be added to the simulator before running the application</td>
+<td></td>
 </tr>
 <tr>
 <td><code>add_videos</code></td>
 <td>A list of videos that should be added to the simulator before running the application</td>
+<td></td>
 </tr>
 <tr>
 <td><code>buildlog_path</code></td>
 <td>The directory where to store the build log</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>clean</code></td>
 <td>Should the project be cleaned before building it?</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>test_without_building</code></td>
 <td>Test without building, requires a derived data path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
 <td>The configuration to use when building the app. Defaults to 'Release'</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>xcpretty_args</code></td>
 <td>Additional xcpretty arguments</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sdk</code></td>
 <td>The SDK that should be used for building the application</td>
+<td></td>
 </tr>
 <tr>
 <td><code>scheme</code></td>
 <td>The scheme you want to use, this must be the scheme for the UI Tests</td>
+<td></td>
 </tr>
 <tr>
 <td><code>number_of_retries</code></td>
 <td>The number of times a test can fail before snapshot should stop retrying</td>
+<td><code>1</code></td>
 </tr>
 <tr>
 <td><code>stop_after_first_error</code></td>
 <td>Should snapshot stop immediately after the tests completely failed on one device?</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>derived_data_path</code></td>
 <td>The directory where build products and other derived data will go</td>
+<td></td>
 </tr>
 <tr>
 <td><code>test_target_name</code></td>
 <td>The name of the target you want to test (if you desire to override the Target Application from Xcode)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>namespace_log_files</code></td>
 <td>Separate the log files per device and per language</td>
+<td></td>
 </tr>
 <tr>
 <td><code>concurrent_simulators</code></td>
 <td>Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action capture_ios_screenshots

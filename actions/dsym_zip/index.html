@@ -447,23 +447,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>archive_path</code></td>
 <td>Path to your xcarchive file. Optional if you use the <code>xcodebuild</code> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>dsym_path</code></td>
 <td>Path for generated dsym. Optional, default is your apps root directory</td>
+<td></td>
 </tr>
 <tr>
 <td><code>all</code></td>
 <td>Whether or not all dSYM files are to be included. Optional, default is false in which only your app dSYM is included</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action dsym_zip

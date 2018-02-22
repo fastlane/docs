@@ -445,31 +445,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>api_token</code></td>
 <td>API Token for Installr Access</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
 <td>Path to your IPA file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>notes</code></td>
 <td>Release notes</td>
+<td></td>
 </tr>
 <tr>
 <td><code>notify</code></td>
 <td>Groups to notify (e.g. 'dev,qa')</td>
+<td></td>
 </tr>
 <tr>
 <td><code>add</code></td>
 <td>Groups to add (e.g. 'exec,ops')</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action installr

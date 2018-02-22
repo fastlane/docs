@@ -495,7 +495,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td>✨</td>
-<td>Tightly integrated with <a href="https://fastlane.tools">fastlane</a> to work seamlessly with <a href="https://docs.fastlane.tools/actions/gym/">gym</a> and other build tools</td>
+<td>Tightly integrated with <a href="https://fastlane.tools"><em>fastlane</em></a> to work seamlessly with <a href="https://docs.fastlane.tools/actions/gym/"><em>gym</em></a> and other build tools</td>
 </tr>
 </tbody>
 </table>
@@ -520,10 +520,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p>You'll be asked to enter the URL to your Git repo. This can be either a <code>https://</code> or a <code>git</code> URL. (If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise you may see an authentication error when you attempt to use match.) <code>fastlane match init</code> won't read or modify your certificates or profiles.</p>
 <p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
 <p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
-<pre><code class="ruby-skip-tests">git_url &quot;https://github.com/fastlane/certificates&quot;
+<pre><code class="ruby-skip-tests">git_url(&quot;https://github.com/fastlane/certificates&quot;)
 
-app_identifier &quot;tools.fastlane.app&quot;
-username &quot;user@fastlane.tools&quot;
+app_identifier(&quot;tools.fastlane.app&quot;)
+username(&quot;user@fastlane.tools&quot;)
 </code></pre>
 
 <h4 id="important-use-one-git-branch-per-team"><a name="user-content-important-use-one-git-branch-per-team" href="#important-use-one-git-branch-per-team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Important: Use one git branch per team</h4>
@@ -559,7 +559,7 @@ match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 <pre><code class="no-highlight">fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp
 </code></pre>
 
-<p>You can make this even easier using <a href="https://fastlane.tools">fastlane</a> by creating a <code>certificates</code> lane like this:</p>
+<p>You can make this even easier using <a href="https://fastlane.tools"><em>fastlane</em></a> by creating a <code>certificates</code> lane like this:</p>
 <pre><code class="ruby">lane :certificates do
   match(app_identifier: [&quot;com.krausefx.app1&quot;, &quot;com.krausefx.app2&quot;, &quot;com.krausefx.app3&quot;], readonly: true)
 end
@@ -600,7 +600,7 @@ end
 </p>
 
 <h4 id="fastlane"><a name="user-content-fastlane" href="#fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane</h4>
-<p>Add <em>match</em> to your <code>Fastfile</code> to automatically fetch the latest code signing certificates with <a href="https://fastlane.tools">fastlane</a>.</p>
+<p>Add <em>match</em> to your <code>Fastfile</code> to automatically fetch the latest code signing certificates with <a href="https://fastlane.tools"><em>fastlane</em></a>.</p>
 <pre><code>match(type: &quot;appstore&quot;)
 
 match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
@@ -641,7 +641,7 @@ end
 <p><em>match</em> can even use the same one Git repository for all bundle identifiers.</p>
 <h3 id="setup-xcode-project"><a name="user-content-setup-xcode-project" href="#setup-xcode-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup Xcode project</h3>
 <p><a href="../../codesigning/xcode-project/">Docs on how to set up your Xcode project</a></p>
-<h4 id="to-build-from-the-command-line-using-fastlane"><a name="user-content-to-build-from-the-command-line-using-fastlane" href="#to-build-from-the-command-line-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from the command line using <a href="https://fastlane.tools">fastlane</a></h4>
+<h4 id="to-build-from-the-command-line-using-fastlane"><a name="user-content-to-build-from-the-command-line-using-fastlane" href="#to-build-from-the-command-line-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from the command line using <a href="https://fastlane.tools"><em>fastlane</em></a></h4>
 <p><em>match</em> automatically pre-fills environment variables with the UUIDs of the correct provisioning profiles, ready to be used in your Xcode project.</p>
 <p>More information about how to setup your Xcode project can be found <a href="../../codesigning/xcode-project/">here</a></p>
 <h4 id="to-build-from-xcode-manually"><a name="user-content-to-build-from-xcode-manually" href="#to-build-from-xcode-manually" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from Xcode manually</h4>
@@ -741,95 +741,118 @@ fastlane match nuke enterprise
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>git_url</code></td>
 <td>URL to the git repo containing all the certificates</td>
+<td></td>
 </tr>
 <tr>
 <td><code>git_branch</code></td>
 <td>Specific git branch to use</td>
+<td><code>master</code></td>
 </tr>
 <tr>
 <td><code>type</code></td>
 <td>Define the profile type, can be appstore, adhoc, development, enterprise</td>
+<td><code>development</code></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier(s) of your app (comma-separated)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>keychain_name</code></td>
 <td>Keychain the items should be imported to</td>
+<td><code>login.keychain</code></td>
 </tr>
 <tr>
 <td><code>keychain_password</code></td>
 <td>This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>readonly</code></td>
 <td>Only fetch existing certificates and profiles, don't generate new ones</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>git_full_name</code></td>
 <td>git user full name to commit</td>
+<td></td>
 </tr>
 <tr>
 <td><code>git_user_email</code></td>
 <td>git user email to commit</td>
+<td></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Print out extra information and all commands</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Renew the provisioning profiles every time you run match</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_confirmation</code></td>
 <td>Disables confirmation prompts during nuke, answering them with yes</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>shallow_clone</code></td>
 <td>Make a shallow clone of the repository (truncate the history to 1 revision)</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>clone_branch_directly</code></td>
 <td>Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>force_for_new_devices</code></td>
 <td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore'</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_docs</code></td>
 <td>Skip generation of a README.md for the created git repository</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
 <td>Set the provisioning profile's platform to work with (i.e. ios, tvos)</td>
+<td><code>ios</code></td>
 </tr>
 <tr>
 <td><code>template_name</code></td>
 <td>The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action match

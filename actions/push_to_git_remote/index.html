@@ -451,31 +451,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>local_branch</code></td>
 <td>The local branch to push from. Defaults to the current branch</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>remote_branch</code></td>
 <td>The remote branch to push to. Defaults to the local branch</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>force</code></td>
-<td>Force push to remote. Defaults to false</td>
+<td>Force push to remote</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td>Whether tags are pushed to remote. Defaults to true</td>
+<td>Whether tags are pushed to remote</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>remote</code></td>
-<td>The remote to push to. Defaults to <code>origin</code></td>
+<td>The remote to push to</td>
+<td><code>origin</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action push_to_git_remote

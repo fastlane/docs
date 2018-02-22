@@ -453,35 +453,43 @@ Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".</em>Wat
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>xcodeproj</code></td>
 <td>Path to your Xcode project</td>
+<td></td>
 </tr>
 <tr>
 <td><code>profile</code></td>
 <td>Path to provisioning profile (.mobileprovision)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>target_filter</code></td>
 <td>A filter for the target name. Use a standard regex</td>
+<td></td>
 </tr>
 <tr>
 <td><code>build_configuration_filter</code></td>
 <td>Legacy option, use 'target_filter' instead</td>
+<td></td>
 </tr>
 <tr>
 <td><code>build_configuration</code></td>
 <td>A filter for the build configuration name. Use a standard regex. Applied to all configurations if not specified</td>
+<td></td>
 </tr>
 <tr>
 <td><code>certificate</code></td>
 <td>Path to apple root certificate</td>
+<td><code>/tmp/AppleIncRootCertificate.cer</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action update_project_provisioning

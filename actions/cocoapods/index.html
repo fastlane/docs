@@ -448,51 +448,63 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>clean</code></td>
 <td>Remove SCM directories</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>integrate</code></td>
 <td>Integrate the Pods libraries into the Xcode project(s)</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>repo_update</code></td>
 <td>Run <code>pod repo update</code> before install</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>silent</code></td>
 <td>Execute command without logging output</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Show more debugging information</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>ansi</code></td>
 <td>Show output with ANSI codes</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>use_bundle_exec</code></td>
 <td>Use bundle exec when there is a Gemfile presented</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>podfile</code></td>
 <td>Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>error_callback</code></td>
 <td>A callback invoked with the command output if there is a non-zero exit status</td>
+<td></td>
 </tr>
 <tr>
 <td><code>try_repo_update_on_error</code></td>
 <td>Retry with --repo-update if action was finished with error</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action cocoapods

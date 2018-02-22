@@ -459,27 +459,33 @@ copy_artifacts(
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>keep_original</code></td>
 <td>Set this to false if you want move, rather than copy, the found artifacts</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>target_path</code></td>
 <td>The directory in which you want your artifacts placed</td>
+<td><code>artifacts</code></td>
 </tr>
 <tr>
 <td><code>artifacts</code></td>
 <td>An array of file patterns of the files/folders you want to preserve</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>fail_on_missing</code></td>
 <td>Fail when a source file isn't found</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action copy_artifacts

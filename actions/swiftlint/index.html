@@ -448,47 +448,58 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>mode</code></td>
 <td>SwiftLint mode: :lint (default) or :autocorrect; default is :lint</td>
+<td><code>lint</code></td>
 </tr>
 <tr>
 <td><code>output_file</code></td>
 <td>Path to output SwiftLint result</td>
+<td></td>
 </tr>
 <tr>
 <td><code>config_file</code></td>
 <td>Custom configuration file of SwiftLint</td>
+<td></td>
 </tr>
 <tr>
 <td><code>strict</code></td>
 <td>Fail on warnings? (true/false)</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>files</code></td>
 <td>List of files to process</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ignore_exit_status</code></td>
 <td>Ignore the exit status of the SwiftLint command, so that serious violations                                                     don't fail the build (true/false)</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>reporter</code></td>
 <td>Choose output reporter</td>
+<td></td>
 </tr>
 <tr>
 <td><code>quiet</code></td>
 <td>Don't print status logs like 'Linting <file>' &amp; 'Done linting'</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>executable</code></td>
 <td>Path to the <code>swiftlint</code> executable on your machine</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action swiftlint

@@ -455,31 +455,38 @@ The action will connect to the Apple Developer Portal using the username you spe
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>name</code></td>
 <td>Provide the name of the device to register as</td>
+<td></td>
 </tr>
 <tr>
 <td><code>udid</code></td>
 <td>Provide the UDID of the device to register as</td>
+<td></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Optional: Your Apple ID</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action register_device

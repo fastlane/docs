@@ -451,51 +451,63 @@ More information: https://github.com/danger/danger</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>use_bundle_exec</code></td>
 <td>Use bundle exec when there is a Gemfile presented</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Show more debugging information</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>danger_id</code></td>
 <td>The identifier of this Danger instance</td>
+<td></td>
 </tr>
 <tr>
 <td><code>dangerfile</code></td>
 <td>The location of your Dangerfile</td>
+<td></td>
 </tr>
 <tr>
 <td><code>github_api_token</code></td>
 <td>GitHub API token for danger</td>
+<td></td>
 </tr>
 <tr>
 <td><code>fail_on_errors</code></td>
 <td>Should always fail the build process, defaults to false</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>new_comment</code></td>
 <td>Makes Danger post a new comment instead of editing its previous one</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>base</code></td>
 <td>A branch/tag/commit to use as the base of the diff. [master</td>
+<td>dev</td>
 </tr>
 <tr>
 <td><code>head</code></td>
 <td>A branch/tag/commit to use as the head. [master</td>
+<td>dev</td>
 </tr>
 <tr>
 <td><code>pr</code></td>
 <td>Run danger on a specific pull request. e.g. "https://github.com/danger/danger/pull/518"</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action danger

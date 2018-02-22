@@ -450,47 +450,58 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>platform</code></td>
 <td>Appium platform name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>spec_path</code></td>
 <td>Path to Appium spec directory</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_path</code></td>
 <td>Path to Appium target app file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>invoke_appium_server</code></td>
 <td>Use local Appium server with invoke automatically</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>host</code></td>
 <td>Hostname of Appium server</td>
+<td><code>0.0.0.0</code></td>
 </tr>
 <tr>
 <td><code>port</code></td>
 <td>HTTP port of Appium server</td>
+<td><code>4723</code></td>
 </tr>
 <tr>
 <td><code>appium_path</code></td>
 <td>Path to Appium executable</td>
+<td></td>
 </tr>
 <tr>
 <td><code>caps</code></td>
 <td>Hash of caps for Appium::Driver</td>
+<td></td>
 </tr>
 <tr>
 <td><code>appium_lib</code></td>
 <td>Hash of appium_lib for Appium::Driver</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action appium

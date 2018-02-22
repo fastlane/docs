@@ -474,51 +474,63 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>server_url</code></td>
 <td>The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')</td>
+<td><code>https://api.github.com</code></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>Personal API Token for GitHub - generate one at https://github.com/settings/tokens</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>http_method</code></td>
 <td>The HTTP method. e.g. GET / POST</td>
+<td><code>GET</code></td>
 </tr>
 <tr>
 <td><code>body</code></td>
 <td>The request body in JSON or hash format</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>raw_body</code></td>
 <td>The request body taken vertabim instead of as JSON, useful for file uploads</td>
+<td></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>The endpoint path. e.g. '/repos/:owner/:repo/readme'</td>
+<td></td>
 </tr>
 <tr>
 <td><code>url</code></td>
 <td>The complete full url - used instead of path. e.g. 'https://uploads.github.com/repos/fastlane...'</td>
+<td></td>
 </tr>
 <tr>
 <td><code>error_handlers</code></td>
 <td>Optional error handling hash based on status code, or pass '*' to handle all errors</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>headers</code></td>
 <td>Optional headers to apply</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>secure</code></td>
 <td>Optionally disable secure requests (ssl_verify_peer)</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action github_api

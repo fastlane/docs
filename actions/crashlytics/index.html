@@ -451,55 +451,68 @@ Distributing to Groups: When using the <code>groups</code> parameter, it's impor
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>ipa_path</code></td>
 <td>Path to your IPA file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>apk_path</code></td>
 <td>Path to your APK file</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>crashlytics_path</code></td>
 <td>Path to the submit binary in the Crashlytics bundle (iOS) or <code>crashlytics-devtools.jar</code> file (Android)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>Crashlytics API Key</td>
+<td></td>
 </tr>
 <tr>
 <td><code>build_secret</code></td>
 <td>Crashlytics Build Secret</td>
+<td></td>
 </tr>
 <tr>
 <td><code>notes_path</code></td>
 <td>Path to the release notes</td>
+<td></td>
 </tr>
 <tr>
 <td><code>notes</code></td>
 <td>The release notes as string - uses :notes_path under the hood</td>
+<td></td>
 </tr>
 <tr>
 <td><code>groups</code></td>
 <td>The groups used for distribution, separated by commas</td>
+<td></td>
 </tr>
 <tr>
 <td><code>emails</code></td>
 <td>Pass email addresses of testers, separated by commas</td>
+<td></td>
 </tr>
 <tr>
 <td><code>notifications</code></td>
 <td>Crashlytics notification option (true/false)</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>debug</code></td>
 <td>Crashlytics debug option (true/false)</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action crashlytics

@@ -446,23 +446,28 @@ in your Flock admin panel.</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>message</code></td>
 <td>Message text</td>
+<td></td>
 </tr>
 <tr>
 <td><code>token</code></td>
 <td>Token for the Flock incoming webhook</td>
+<td></td>
 </tr>
 <tr>
 <td><code>base_url</code></td>
 <td>Base URL of the Flock incoming message webhook</td>
+<td><code>https://api.flock.co/hooks/sendMessage</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action flock

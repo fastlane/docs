@@ -464,55 +464,68 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>message</code></td>
 <td>The message that should be displayed on Slack. This supports the standard Slack markup language</td>
+<td></td>
 </tr>
 <tr>
 <td><code>channel</code></td>
 <td>#channel or @username</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_webhook_configured_username_and_icon</code></td>
 <td>Use webhook's default username and icon settings? (true/false)</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>slack_url</code></td>
 <td>Create an Incoming WebHook for your Slack group</td>
+<td></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Overrides the webhook's username property if use_webhook_configured_username_and_icon is false</td>
+<td><em>fastlane</em></td>
 </tr>
 <tr>
 <td><code>icon_url</code></td>
 <td>Overrides the webhook's image property if use_webhook_configured_username_and_icon is false</td>
+<td><code>https://s3-eu-west-1.amazonaws.com/fastlane.tools/fastlane.png</code></td>
 </tr>
 <tr>
 <td><code>payload</code></td>
 <td>Add additional information to this post. payload must be a hash containing any key with any value</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>default_payloads</code></td>
 <td>Remove some of the default payloads. More information about the available payloads on GitHub</td>
+<td></td>
 </tr>
 <tr>
 <td><code>attachment_properties</code></td>
 <td>Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>success</code></td>
 <td>Was this build successful? (true/false)</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>fail_on_error</code></td>
 <td>Should an error sending the slack notification cause a failure? (true/false)</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action slack

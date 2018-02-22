@@ -452,39 +452,48 @@ pod_push(path: &quot;TMessages.podspec&quot;, repo: &quot;MyRepo&quot;, sources:
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>path</code></td>
 <td>The Podspec you want to push</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo</code></td>
 <td>The repo you want to push. Pushes to Trunk by default</td>
+<td></td>
 </tr>
 <tr>
 <td><code>allow_warnings</code></td>
 <td>Allow warnings during pod push</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_libraries</code></td>
 <td>Allow lint to use static libraries to install the spec</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sources</code></td>
 <td>The sources of repos you want the pod spec to lint with, separated by commas</td>
+<td></td>
 </tr>
 <tr>
 <td><code>swift_version</code></td>
 <td>The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file</td>
+<td></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Show more debugging information</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action pod_push

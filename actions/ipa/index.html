@@ -458,63 +458,78 @@ To make code signing work, follow https://docs.fastlane.tools/codesigning/xcode-
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>workspace</code></td>
 <td>WORKSPACE Workspace (.xcworkspace) file to use to build app (automatically detected in current directory)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project</code></td>
 <td>Project (.xcodeproj) file to use to build app (automatically detected in current directory, overridden by --workspace option, if passed)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
 <td>Configuration used to build</td>
+<td></td>
 </tr>
 <tr>
 <td><code>scheme</code></td>
 <td>Scheme used to build app</td>
+<td></td>
 </tr>
 <tr>
 <td><code>clean</code></td>
 <td>Clean project before building</td>
+<td></td>
 </tr>
 <tr>
 <td><code>archive</code></td>
 <td>Archive project after building</td>
+<td></td>
 </tr>
 <tr>
 <td><code>destination</code></td>
 <td>Build destination. Defaults to current directory</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>embed</code></td>
 <td>Sign .ipa file with .mobileprovision</td>
+<td></td>
 </tr>
 <tr>
 <td><code>identity</code></td>
 <td>Identity to be used along with --embed</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sdk</code></td>
 <td>Use SDK as the name or path of the base SDK when building the project</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
 <td>Specify the name of the .ipa file to generate (including file extension)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>xcconfig</code></td>
 <td>Use an extra XCCONFIG file to build the app</td>
+<td></td>
 </tr>
 <tr>
 <td><code>xcargs</code></td>
 <td>Pass additional arguments to xcodebuild when building the app. Be sure to quote multiple args</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action ipa

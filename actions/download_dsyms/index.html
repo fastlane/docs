@@ -453,43 +453,53 @@ end
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username for iTunes Connect</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of your app</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
 <td>The app platform for dSYMs you wish to download (ios, appletvos)</td>
+<td><code>ios</code></td>
 </tr>
 <tr>
 <td><code>version</code></td>
 <td>The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs</td>
+<td></td>
 </tr>
 <tr>
 <td><code>build_number</code></td>
 <td>The app build_number for dSYMs you wish to download</td>
+<td></td>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
 <td>Where to save the download dSYMs, defaults to the current path</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action download_dsyms

@@ -454,39 +454,48 @@ Replace <code>upload_symbols_to_sentry</code> with <code>sentry_upload_dsym</cod
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>api_host</code></td>
 <td>API host url for Sentry</td>
+<td><code>https://app.getsentry.com/api/0</code></td>
 </tr>
 <tr>
 <td><code>api_key</code></td>
 <td>API key for Sentry</td>
+<td></td>
 </tr>
 <tr>
 <td><code>auth_token</code></td>
 <td>Authentication token for Sentry</td>
+<td></td>
 </tr>
 <tr>
 <td><code>org_slug</code></td>
 <td>Organization slug for Sentry project</td>
+<td></td>
 </tr>
 <tr>
 <td><code>project_slug</code></td>
 <td>Project slug for Sentry</td>
+<td></td>
 </tr>
 <tr>
 <td><code>dsym_path</code></td>
 <td>Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>dsym_paths</code></td>
 <td>Path to an array of your symbols file. For iOS and Mac provide path to app.dSYM.zip</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action upload_symbols_to_sentry

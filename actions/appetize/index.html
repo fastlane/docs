@@ -447,35 +447,43 @@ To integrate appetize into your GitHub workflow check out the <a href="https://g
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>api_token</code></td>
 <td>Appetize.io API Token</td>
+<td></td>
 </tr>
 <tr>
 <td><code>url</code></td>
 <td>URL from which the ipa file can be fetched. Alternative to :path</td>
+<td></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
-<td>Platform. Either <code>ios</code> or <code>android</code>. Default is <code>ios</code></td>
+<td>Platform. Either <code>ios</code> or <code>android</code></td>
+<td><code>ios</code></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>Path to zipped build on the local filesystem. Either this or <code>url</code> must be specified</td>
+<td></td>
 </tr>
 <tr>
 <td><code>public_key</code></td>
 <td>If not provided, a new app will be created. If provided, the existing build will be overwritten</td>
+<td></td>
 </tr>
 <tr>
 <td><code>note</code></td>
 <td>Notes you wish to add to the uploaded app</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action appetize

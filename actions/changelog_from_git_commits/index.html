@@ -455,55 +455,68 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>between</code></td>
 <td>Array containing two Git revision values between which to collect messages, you mustn't use it with :commits_count key at the same time</td>
+<td></td>
 </tr>
 <tr>
 <td><code>commits_count</code></td>
 <td>Number of commits to include in changelog, you mustn't use it with :between key at the same time</td>
+<td></td>
 </tr>
 <tr>
 <td><code>pretty</code></td>
 <td>The format applied to each commit while generating the collected value</td>
+<td><code>%B</code></td>
 </tr>
 <tr>
 <td><code>date_format</code></td>
 <td>The date format applied to each commit while generating the collected value</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ancestry_path</code></td>
 <td>Whether or not to use ancestry-path param</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>tag_match_pattern</code></td>
 <td>A glob(7) pattern to match against when finding the last git tag</td>
+<td></td>
 </tr>
 <tr>
 <td><code>match_lightweight_tag</code></td>
 <td>Whether or not to match a lightweight tag when searching for the last one</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>include_merges</code></td>
 <td>Whether or not to include any commits that are merges</td>
+<td></td>
 </tr>
 <tr>
 <td>[31m(DEPRECATED - use :merge_commit_filtering)[0m</td>
+<td></td>
 <td></td>
 </tr>
 <tr>
 <td><code>merge_commit_filtering</code></td>
 <td>Controls inclusion of merge commits when collecting the changelog.</td>
+<td></td>
 </tr>
 <tr>
 <td>Valid values: 'include_merges', 'exclude_merges', 'only_include_merges'</td>
+<td><code>include_merges</code></td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action changelog_from_git_commits

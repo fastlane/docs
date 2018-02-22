@@ -522,7 +522,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p><strong>Note:</strong> These <code>.strings</code> files <strong>MUST</strong> be utf-16 encoded (UTF-16 BE with BOM).  They also must begin with an empty line. If you are having trouble see <a href="https://github.com/fastlane/fastlane/issues/1740">issue #1740</a></p>
 <p><strong>Note:</strong> You <strong>MUST</strong> provide a background if you want titles. <em>frameit</em> will not add the tiles if a background is not specified.</p>
 <h4 id="uploading-screenshots-to-itc"><a name="user-content-uploading-screenshots-to-itc" href="#uploading-screenshots-to-itc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading screenshots to iTC</h4>
-<p>Use <a href="https://docs.fastlane.tools/actions/deliver/">deliver</a> to upload all screenshots to iTunes Connect completely automatically 🚀</p>
+<p>Use <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> to upload all screenshots to iTunes Connect completely automatically 🚀</p>
 <h3 id="mac"><a name="user-content-mac" href="#mac" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mac</h3>
 <p>With <em>frameit</em> 2.0 it's possible to also frame macOS Application screenshots. You have to provide the following:</p>
 <ul>
@@ -616,47 +616,58 @@ brew install imagemagick
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>white</code></td>
 <td>Use white device frames</td>
+<td></td>
 </tr>
 <tr>
 <td><code>silver</code></td>
 <td>Use white device frames. Alias for :white</td>
+<td></td>
 </tr>
 <tr>
 <td><code>rose_gold</code></td>
 <td>Use rose gold device frames. Alias for :rose_gold</td>
+<td></td>
 </tr>
 <tr>
 <td><code>gold</code></td>
 <td>Use gold device frames. Alias for :gold</td>
+<td></td>
 </tr>
 <tr>
 <td><code>force_device_type</code></td>
 <td>Forces a given device type, useful for Mac screenshots, as their sizes vary</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_legacy_iphone5s</code></td>
 <td>Use iPhone 5s instead of iPhone SE frames</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>use_legacy_iphone6s</code></td>
 <td>Use iPhone 6s frames instead of iPhone 7 frames</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>force_orientation_block</code></td>
 <td>[Advanced] A block to customize your screnshots' device orientation</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>The path to the directory containing the screenshots</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action frameit

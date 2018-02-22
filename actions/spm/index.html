@@ -446,31 +446,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>command</code></td>
 <td>The swift command (one of: build, test, clean, reset, update)</td>
+<td><code>build</code></td>
 </tr>
 <tr>
 <td><code>build_path</code></td>
 <td>Specify build/cache directory [default: ./.build]</td>
+<td></td>
 </tr>
 <tr>
 <td><code>package_path</code></td>
 <td>Change working directory before any other operation</td>
+<td></td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
 <td>Build with configuration (debug</td>
+<td>release) [default: debug]</td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Increase verbosity of informational output</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action spm

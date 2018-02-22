@@ -453,23 +453,28 @@ end
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>nightly</code></td>
 <td>Opt-in to install and use nightly fastlane builds</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>no_update</code></td>
-<td>Don't update during this run. Defaults to false. This is used internally</td>
+<td>Don't update during this run. This is used internally</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>tools</code></td>
 <td>[DEPRECATED!] true - Comma separated list of fastlane tools to update (e.g. fastlane,deliver,sigh)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action update_fastlane

@@ -434,7 +434,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
   xcarchive: &quot;/path/to/file.xcarchive&quot;, # Optional if you use the `xcodebuild` action
   destination: &quot;/somewhere/else/file.xcarchive&quot;, # Where the backup should be created
   zip: false, # Enable compression of the archive. Defaults to `true`.
-  versioned: true # Create a versioned (date and app version) subfolder where to put the archive. Default value `true`
+  versioned: true # Create a versioned (date and app version) subfolder where to put the archive
 )
 </code></pre>
 
@@ -444,31 +444,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>xcarchive</code></td>
 <td>Path to your xcarchive file. Optional if you use the <code>xcodebuild</code> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>destination</code></td>
 <td>Where your archive will be placed</td>
+<td></td>
 </tr>
 <tr>
 <td><code>zip</code></td>
-<td>Enable compression of the archive. Default value <code>true</code></td>
+<td>Enable compression of the archive</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>zip_filename</code></td>
 <td>Filename of the compressed archive. Will be appended by <code>.xcarchive.zip</code>. Default value is the output xcarchive filename</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>versioned</code></td>
-<td>Create a versioned (date and app version) subfolder where to put the archive. Default value <code>true</code></td>
+<td>Create a versioned (date and app version) subfolder where to put the archive</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action backup_xcarchive

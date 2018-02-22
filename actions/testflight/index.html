@@ -434,7 +434,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <h5 align="center"><code>pilot</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<p>For all commands you can specify the Apple ID to use using <code>-u felix@krausefx.com</code>. If you execute <em>pilot</em> in a project already using <a href="https://fastlane.tools">fastlane</a> the username and app identifier will automatically be determined.</p>
+<p>For all commands you can specify the Apple ID to use using <code>-u felix@krausefx.com</code>. If you execute <em>pilot</em> in a project already using <a href="https://fastlane.tools"><em>fastlane</em></a> the username and app identifier will automatically be determined.</p>
 <h2 id="uploading-builds"><a name="user-content-uploading-builds" href="#uploading-builds" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading builds</h2>
 <p>To upload a new build, just run</p>
 <pre><code class="no-highlight">fastlane pilot upload
@@ -458,7 +458,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li>Automatically detects the bundle identifier from your <code>ipa</code> file</li>
 <li>Automatically fetch the AppID of your app based on the bundle identifier</li>
 </ul>
-<p><em>pilot</em> uses <a href="https://spaceship.airforce">spaceship</a> to submit the build metadata and the iTunes Transporter to upload the binary. Because iTunes Transporter's upload capability is only supported on OS X, <code>pilot upload</code> does not work on Linux, as described <a href="https://github.com/fastlane/fastlane/issues/5789">in this issue</a></p>
+<p><em>pilot</em> uses <a href="https://spaceship.airforce"><em>spaceship</em></a> to submit the build metadata and the iTunes Transporter to upload the binary. Because iTunes Transporter's upload capability is only supported on OS X, <code>pilot upload</code> does not work on Linux, as described <a href="https://github.com/fastlane/fastlane/issues/5789">in this issue</a></p>
 <h2 id="list-builds"><a name="user-content-list-builds" href="#list-builds" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>List builds</h2>
 <p>To list all builds for specific application use</p>
 <pre><code class="no-highlight">fastlane pilot builds
@@ -615,107 +615,133 @@ pilot...
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of the app to upload or manage testers (optional)</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>app_platform</code></td>
 <td>The platform to use (optional)</td>
+<td><code>ios</code></td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
 <td>Path to the ipa file to upload</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>changelog</code></td>
 <td>Provide the 'what's new' text when uploading a new build</td>
+<td></td>
 </tr>
 <tr>
 <td><code>beta_app_description</code></td>
 <td>Provide the beta app description when uploading a new build</td>
+<td></td>
 </tr>
 <tr>
 <td><code>beta_app_feedback_email</code></td>
 <td>Provide the beta app email when uploading a new build</td>
+<td></td>
 </tr>
 <tr>
 <td><code>skip_submission</code></td>
 <td>Skip the distributing action of pilot and only upload the ipa file</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_waiting_for_build_processing</code></td>
 <td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work and no build will be distributed to testers</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>update_build_info_on_upload</code></td>
 <td>[DEPRECATED!] true - Update build info immediately after validation. This is deprecated and will be removed in a future release. iTunesConnect no longer supports setting build info until after build processing has completed, which is when build info is updated by default</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>apple_id</code></td>
 <td>The unique App ID provided by iTunes Connect</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>distribute_external</code></td>
 <td>Should the build be distributed to external testers?</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>demo_account_required</code></td>
 <td>Do you need a demo account when Apple does review?</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>first_name</code></td>
 <td>The tester's first name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>last_name</code></td>
 <td>The tester's last name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>email</code></td>
 <td>The tester's email</td>
+<td></td>
 </tr>
 <tr>
 <td><code>testers_file_path</code></td>
 <td>Path to a CSV file of testers</td>
+<td><code>./testers.csv</code></td>
 </tr>
 <tr>
 <td><code>wait_processing_interval</code></td>
 <td>Interval in seconds to wait for iTunes Connect processing</td>
+<td><code>30</code></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>dev_portal_team_id</code></td>
 <td>The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID!</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>itc_provider</code></td>
 <td>The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
+<td></td>
 </tr>
 <tr>
 <td><code>groups</code></td>
 <td>Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"'</td>
+<td></td>
 </tr>
 <tr>
 <td><code>wait_for_uploaded_build</code></td>
 <td>Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action testflight

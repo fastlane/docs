@@ -437,7 +437,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li>Support for <strong>multiple Teams</strong></li>
 <li>Support for <strong>Enterprise Profiles</strong></li>
 </ul>
-<p>To automate iOS Push profiles you can use <a href="https://docs.fastlane.tools/actions/pem/">pem</a>.</p>
+<p>To automate iOS Push profiles you can use <a href="https://docs.fastlane.tools/actions/pem/"><em>pem</em></a>.</p>
 <h3 id="why-not-let-xcode-do-the-work"><a name="user-content-why-not-let-xcode-do-the-work" href="#why-not-let-xcode-do-the-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why not let Xcode do the work?</h3>
 <ul>
 <li><em>sigh</em> can easily be integrated into your CI-server (e.g. Jenkins)</li>
@@ -448,7 +448,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <p>See <em>sigh</em> in action:</p>
 <p><img alt="img/actions/sighRecording.gif" src="../../img/actions/sighRecording.gif" /></p>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<p><strong>Note</strong>: It is recommended to use <a href="https://docs.fastlane.tools/actions/match/">match</a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your provisioning profiles. Use <em>sigh</em> directly only if you want full control over what's going on and know more about codesigning.</p>
+<p><strong>Note</strong>: It is recommended to use <a href="https://docs.fastlane.tools/actions/match/"><em>match</em></a> according to the <a href="https://codesigning.guide">codesigning.guide</a> for generating and maintaining your provisioning profiles. Use <em>sigh</em> directly only if you want full control over what's going on and know more about codesigning.</p>
 <pre><code class="no-highlight">fastlane sigh
 </code></pre>
 
@@ -527,9 +527,9 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 </code></pre>
 <h2 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h2>
 <p>Run <code>fastlane action sigh</code> to get a list of all available environment variables.</p>
-<p>If you're using <a href="https://docs.fastlane.tools/actions/cert/">cert</a> in combination with <a href="https://fastlane.tools">fastlane</a> the signing certificate will automatically be selected for you. (make sure to run <em>cert</em> before <em>sigh</em>)</p>
+<p>If you're using <a href="https://docs.fastlane.tools/actions/cert/"><em>cert</em></a> in combination with <a href="https://fastlane.tools"><em>fastlane</em></a> the signing certificate will automatically be selected for you. (make sure to run <em>cert</em> before <em>sigh</em>)</p>
 <h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>
-<p><em>sigh</em> will access the <code>iOS Dev Center</code> to download, renew or generate the <code>.mobileprovision</code> file. It uses <a href="https://spaceship.airforce">spaceship</a> to communicate with Apple's web services.</p>
+<p><em>sigh</em> will access the <code>iOS Dev Center</code> to download, renew or generate the <code>.mobileprovision</code> file. It uses <a href="https://spaceship.airforce"><em>spaceship</em></a> to communicate with Apple's web services.</p>
 <h2 id="how-is-my-password-stored"><a name="user-content-how-is-my-password-stored" href="#how-is-my-password-stored" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How is my password stored?</h2>
 <p><em>sigh</em> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> from <em>fastlane</em>.</p>
 <h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
@@ -538,7 +538,7 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 <p>It will show you the <code>mobileprovision</code> files like this:
 <img alt="img/actions/QuickLookScreenshot.png" src="../../img/actions/QuickLookScreenshot.png" /></p>
 <h2 id="app-identifier-couldnt-be-found"><a name="user-content-app-identifier-couldnt-be-found" href="#app-identifier-couldnt-be-found" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Identifier couldn't be found</h2>
-<p>If you also want to create a new App Identifier on the Apple Developer Portal, check out <a href="https://docs.fastlane.tools/actions/produce/">produce</a>, which does exactly that.</p>
+<p>If you also want to create a new App Identifier on the Apple Developer Portal, check out <a href="https://docs.fastlane.tools/actions/produce/"><em>produce</em></a>, which does exactly that.</p>
 <h2 id="what-happens-to-my-xcode-managed-profiles"><a name="user-content-what-happens-to-my-xcode-managed-profiles" href="#what-happens-to-my-xcode-managed-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What happens to my Xcode managed profiles?</h2>
 <p><em>sigh</em> will never touch or use the profiles which are created and managed by Xcode. Instead <em>sigh</em> will manage its own set of provisioning profiles.</p>
 <hr />
@@ -585,87 +585,108 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>adhoc</code></td>
 <td>Setting this flag will generate AdHoc profiles instead of App Store Profiles</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>development</code></td>
 <td>Renew the development certificate instead of the production one</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_install</code></td>
 <td>By default, the certificate will be added to your local machine. Setting this flag will skip this action</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of your app</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
 <td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
 <td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>provisioning_name</code></td>
 <td>The name of the profile that is used on the Apple Developer Portal</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ignore_profiles_with_different_name</code></td>
 <td>Use in combination with :provisioning_name - when true only profiles matching this exact name will be downloaded</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>output_path</code></td>
 <td>Directory in which the profile should be stored</td>
+<td><code>.</code></td>
 </tr>
 <tr>
 <td><code>cert_id</code></td>
 <td>The ID of the code signing certificate to use (e.g. 78ADL6LVAA)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>cert_owner_name</code></td>
 <td>The certificate name to use for new profiles, or to renew with. (e.g. "Felix Krause")</td>
+<td></td>
 </tr>
 <tr>
 <td><code>filename</code></td>
 <td>Filename to use for the generated provisioning profile (must include .mobileprovision)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>skip_fetch_profiles</code></td>
 <td>Skips the verification of existing profiles which is useful if you have thousands of profiles</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_certificate_verification</code></td>
 <td>Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
 <td>Set the provisioning profile's platform (i.e. ios, tvos)</td>
+<td><code>ios</code></td>
 </tr>
 <tr>
 <td><code>readonly</code></td>
 <td>Only fetch existing profile, don't generate new ones</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>template_name</code></td>
 <td>The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action sigh

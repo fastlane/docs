@@ -479,35 +479,43 @@ If you have other uncommitted changes in your repo, this action will fail. If yo
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>message</code></td>
 <td>The commit message when committing the version bump</td>
+<td></td>
 </tr>
 <tr>
 <td><code>xcodeproj</code></td>
 <td>The path to your project file (Not the workspace). If you have only one, this is optional</td>
+<td></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Forces the commit, even if other files than the ones containing the version number have been modified</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>settings</code></td>
 <td>Include Settings.bundle/Root.plist with version bump</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>ignore</code></td>
 <td>A regular expression used to filter matched plist files to be modified</td>
+<td></td>
 </tr>
 <tr>
 <td><code>include</code></td>
 <td>A list of extra files to be included in the version bump (string array or comma-separated string)</td>
+<td><code>[]</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action commit_version_bump

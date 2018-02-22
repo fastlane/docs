@@ -449,75 +449,93 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>file</code></td>
 <td>File to be uploaded to Nexus</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo_id</code></td>
 <td>Nexus repository id e.g. artefacts</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo_group_id</code></td>
 <td>Nexus repository group id e.g. com.company</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo_project_name</code></td>
 <td>Nexus repository commandect name. Only letters, digits, underscores(_), hyphens(-), and dots(.) are allowed</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo_project_version</code></td>
 <td>Nexus repository commandect version</td>
+<td></td>
 </tr>
 <tr>
 <td><code>repo_classifier</code></td>
 <td>Nexus repository artifact classifier (optional)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>endpoint</code></td>
 <td>Nexus endpoint e.g. http://nexus:8081</td>
+<td></td>
 </tr>
 <tr>
 <td><code>mount_path</code></td>
-<td>Nexus mount path. Defaults to /nexus</td>
+<td>Nexus mount path</td>
+<td><code>/nexus</code></td>
 </tr>
 <tr>
 <td><code>username</code></td>
 <td>Nexus username</td>
+<td></td>
 </tr>
 <tr>
 <td><code>password</code></td>
 <td>Nexus password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ssl_verify</code></td>
 <td>Verify SSL</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Make detailed output</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>proxy_username</code></td>
 <td>Proxy username</td>
+<td></td>
 </tr>
 <tr>
 <td><code>proxy_password</code></td>
 <td>Proxy password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>proxy_address</code></td>
 <td>Proxy address</td>
+<td></td>
 </tr>
 <tr>
 <td><code>proxy_port</code></td>
 <td>Proxy port</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action nexus_upload

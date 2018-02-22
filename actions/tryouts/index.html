@@ -446,39 +446,48 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>app_id</code></td>
 <td>Tryouts application hash</td>
+<td></td>
 </tr>
 <tr>
 <td><code>api_token</code></td>
 <td>API Token for Tryouts Access</td>
+<td></td>
 </tr>
 <tr>
 <td><code>build_file</code></td>
 <td>Path to your IPA or APK file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>notes</code></td>
 <td>Release notes</td>
+<td></td>
 </tr>
 <tr>
 <td><code>notes_path</code></td>
 <td>Release notes text file path. Overrides the :notes parameter</td>
+<td></td>
 </tr>
 <tr>
 <td><code>notify</code></td>
 <td>Notify testers? 0 for no</td>
+<td><code>1</code></td>
 </tr>
 <tr>
 <td><code>status</code></td>
 <td>2 to make your release public. Release will be distributed to available testers. 1 to make your release private. Release won't be distributed to testers. This also prevents release from showing up for SDK update</td>
+<td><code>2</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action tryouts

@@ -416,6 +416,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 - <code>grouping</code> is just to keep your tags organised under one 'folder', defaults to 'builds'
 - <code>lane</code> is the name of the current fastlane lane
 - <code>prefix</code> is anything you want to stick in front of the version number, e.g. 'v'
+- <code>postfix</code> is anything you want to stick at the end of the version number, e.g. '-RC1'
 - <code>build_number</code> is the build number, which defaults to the value emitted by the <code>increment_build_number</code> action
 For example for build 1234 in the 'appstore' lane it will tag the commit with <code>builds/appstore/1234</code></p>
 </blockquote>
@@ -444,6 +445,7 @@ For example for build 1234 in the 'appstore' lane it will tag the commit with <c
 <pre><code class="ruby">add_git_tag(
   grouping: &quot;fastlane-builds&quot;,
   prefix: &quot;v&quot;,
+  postfix: &quot;-RC1&quot;,
   build_number: 123
 )
 </code></pre>
@@ -460,43 +462,58 @@ add_git_tag(
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>tag</code></td>
 <td>Define your own tag text. This will replace all other parameters</td>
+<td></td>
 </tr>
 <tr>
 <td><code>grouping</code></td>
-<td>Is used to keep your tags organised under one 'folder'. Defaults to 'builds'</td>
+<td>Is used to keep your tags organised under one 'folder'</td>
+<td><code>builds</code></td>
 </tr>
 <tr>
 <td><code>prefix</code></td>
 <td>Anything you want to put in front of the version number (e.g. 'v')</td>
+<td><code>''</code></td>
+</tr>
+<tr>
+<td><code>postfix</code></td>
+<td>Anything you want to put at the end of the version number (e.g. '-RC1')</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>build_number</code></td>
 <td>The build number. Defaults to the result of increment_build_number if you're using it</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>message</code></td>
 <td>The tag message. Defaults to the tag's name</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>commit</code></td>
 <td>The commit or object where the tag will be set. Defaults to the current HEAD</td>
+<td><a href="#dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>force</code></td>
 <td>Force adding the tag</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>sign</code></td>
 <td>Make a GPG-signed tag, using the default e-mail address's key</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action add_git_tag

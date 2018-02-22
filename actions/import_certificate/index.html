@@ -448,35 +448,43 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>keychain_name</code></td>
 <td>Keychain the items should be imported to</td>
+<td></td>
 </tr>
 <tr>
 <td><code>keychain_path</code></td>
 <td>Path to the Keychain file to which the items should be imported</td>
+<td></td>
 </tr>
 <tr>
 <td><code>keychain_password</code></td>
 <td>The password for the keychain. Note that for the login keychain this is your user's password</td>
+<td></td>
 </tr>
 <tr>
 <td><code>certificate_path</code></td>
 <td>Path to certificate</td>
+<td></td>
 </tr>
 <tr>
 <td><code>certificate_password</code></td>
 <td>Certificate password</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>log_output</code></td>
 <td>If output should be logged to the console</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action import_certificate

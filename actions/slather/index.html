@@ -448,123 +448,153 @@ Slather is available at https://github.com/SlatherOrg/slather</p>
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>build_directory</code></td>
 <td>The location of the build output</td>
+<td></td>
 </tr>
 <tr>
 <td><code>proj</code></td>
 <td>The project file that slather looks at</td>
+<td></td>
 </tr>
 <tr>
 <td><code>workspace</code></td>
 <td>The workspace that slather looks at</td>
+<td></td>
 </tr>
 <tr>
 <td><code>scheme</code></td>
 <td>Scheme to use when calling slather</td>
+<td></td>
 </tr>
 <tr>
 <td><code>configuration</code></td>
 <td>Configuration to use when calling slather (since slather-2.4.1)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>input_format</code></td>
 <td>The input format that slather should look for</td>
+<td></td>
 </tr>
 <tr>
 <td><code>buildkite</code></td>
 <td>Tell slather that it is running on Buildkite</td>
+<td></td>
 </tr>
 <tr>
 <td><code>teamcity</code></td>
 <td>Tell slather that it is running on TeamCity</td>
+<td></td>
 </tr>
 <tr>
 <td><code>jenkins</code></td>
 <td>Tell slather that it is running on Jenkins</td>
+<td></td>
 </tr>
 <tr>
 <td><code>travis</code></td>
 <td>Tell slather that it is running on TravisCI</td>
+<td></td>
 </tr>
 <tr>
 <td><code>travis_pro</code></td>
 <td>Tell slather that it is running on TravisCI Pro</td>
+<td></td>
 </tr>
 <tr>
 <td><code>circleci</code></td>
 <td>Tell slather that it is running on CircleCI</td>
+<td></td>
 </tr>
 <tr>
 <td><code>coveralls</code></td>
 <td>Tell slather that it should post data to Coveralls</td>
+<td></td>
 </tr>
 <tr>
 <td><code>simple_output</code></td>
 <td>Tell slather that it should output results to the terminal</td>
+<td></td>
 </tr>
 <tr>
 <td><code>gutter_json</code></td>
 <td>Tell slather that it should output results as Gutter JSON format</td>
+<td></td>
 </tr>
 <tr>
 <td><code>cobertura_xml</code></td>
 <td>Tell slather that it should output results as Cobertura XML format</td>
+<td></td>
 </tr>
 <tr>
 <td><code>llvm_cov</code></td>
 <td>Tell slather that it should output results as llvm-cov show format</td>
+<td></td>
 </tr>
 <tr>
 <td><code>html</code></td>
 <td>Tell slather that it should output results as static HTML pages</td>
+<td></td>
 </tr>
 <tr>
 <td><code>show</code></td>
 <td>Tell slather that it should open static html pages automatically</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>source_directory</code></td>
 <td>Tell slather the location of your source files</td>
+<td></td>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
 <td>Tell slather the location of for your output files</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ignore</code></td>
 <td>Tell slather to ignore files matching a path or any path from an array of paths</td>
+<td></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Tell slather to enable verbose mode</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_bundle_exec</code></td>
 <td>Use bundle exec to execute slather. Make sure it is in the Gemfile</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>binary_basename</code></td>
 <td>Basename of the binary file, this should match the name of your bundle excluding its extension (i.e. YourApp [for YourApp.app bundle])</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>binary_file</code></td>
 <td>Binary file name to be used for code coverage</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>source_files</code></td>
 <td>A Dir.glob compatible pattern used to limit the lookup to specific source files. Ignored in gcov mode</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>decimals</code></td>
 <td>The amount of decimals to use for % coverage reporting</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action slather

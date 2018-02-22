@@ -450,23 +450,28 @@ Be aware of a specific behavior of 'sh' action with regard to the working direct
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>command</code></td>
 <td>Shell command to be executed</td>
+<td></td>
 </tr>
 <tr>
 <td><code>log</code></td>
 <td>Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>error_callback</code></td>
 <td>A callback invoked with the command output if there is a non-zero exit status</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action sh

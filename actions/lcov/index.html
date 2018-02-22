@@ -443,27 +443,33 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>project_name</code></td>
 <td>Name of the project</td>
+<td></td>
 </tr>
 <tr>
 <td><code>scheme</code></td>
 <td>Scheme of the project</td>
+<td></td>
 </tr>
 <tr>
 <td><code>arch</code></td>
 <td>The build arch where will search .gcda files</td>
+<td><code>i386</code></td>
 </tr>
 <tr>
 <td><code>output_dir</code></td>
 <td>The output directory that coverage data will be stored. If not passed will use coverage_reports as default value</td>
+<td><code>coverage_reports</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action lcov

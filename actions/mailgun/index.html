@@ -458,71 +458,88 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>mailgun_sandbox_domain</code></td>
 <td>Mailgun sandbox domain postmaster for your mail. Please use postmaster instead</td>
+<td></td>
 </tr>
 <tr>
 <td><code>mailgun_sandbox_postmaster</code></td>
 <td>Mailgun sandbox domain postmaster for your mail. Please use postmaster instead</td>
+<td></td>
 </tr>
 <tr>
 <td><code>mailgun_apikey</code></td>
 <td>Mailgun apikey for your mail. Please use postmaster instead</td>
+<td></td>
 </tr>
 <tr>
 <td><code>postmaster</code></td>
 <td>Mailgun sandbox domain postmaster for your mail</td>
+<td></td>
 </tr>
 <tr>
 <td><code>apikey</code></td>
 <td>Mailgun apikey for your mail</td>
+<td></td>
 </tr>
 <tr>
 <td><code>to</code></td>
 <td>Destination of your mail</td>
+<td></td>
 </tr>
 <tr>
 <td><code>from</code></td>
 <td>Mailgun sender name</td>
+<td><code>Mailgun Sandbox</code></td>
 </tr>
 <tr>
 <td><code>message</code></td>
 <td>Message of your mail</td>
+<td></td>
 </tr>
 <tr>
 <td><code>subject</code></td>
 <td>Subject of your mail</td>
+<td><code>fastlane build</code></td>
 </tr>
 <tr>
 <td><code>success</code></td>
 <td>Was this build successful? (true/false)</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>app_link</code></td>
 <td>App Release link</td>
+<td></td>
 </tr>
 <tr>
 <td><code>ci_build_link</code></td>
 <td>CI Build Link</td>
+<td></td>
 </tr>
 <tr>
 <td><code>template_path</code></td>
 <td>Mail HTML template</td>
+<td></td>
 </tr>
 <tr>
 <td><code>reply_to</code></td>
 <td>Mail Reply to</td>
+<td></td>
 </tr>
 <tr>
 <td><code>attachment</code></td>
 <td>Mail Attachment filenames, either an array or just one string</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action mailgun

@@ -439,47 +439,58 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>title</code></td>
 <td>The title to display in the notification</td>
+<td><em>fastlane</em></td>
 </tr>
 <tr>
 <td><code>subtitle</code></td>
 <td>A subtitle to display in the notification</td>
+<td></td>
 </tr>
 <tr>
 <td><code>message</code></td>
 <td>The message to display in the notification</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sound</code></td>
 <td>The name of a sound to play when the notification appears (names are listed in Sound Preferences)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>activate</code></td>
 <td>Bundle identifier of application to be opened when the notification is clicked</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_icon</code></td>
 <td>The URL of an image to display instead of the application icon (Mavericks+ only)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>content_image</code></td>
 <td>The URL of an image to display attached to the notification (Mavericks+ only)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>open</code></td>
 <td>URL of the resource to be opened when the notification is clicked</td>
+<td></td>
 </tr>
 <tr>
 <td><code>execute</code></td>
 <td>Shell command to run when the notification is clicked</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action notification

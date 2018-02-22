@@ -454,43 +454,53 @@ pod_lib_lint(sources: [&quot;https://github.com/username/Specs&quot;, &quot;http
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>use_bundle_exec</code></td>
 <td>Use bundle exec when there is a Gemfile presented</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>
 <td>Allow output detail in console</td>
+<td></td>
 </tr>
 <tr>
 <td><code>allow_warnings</code></td>
 <td>Allow warnings during pod lint</td>
+<td></td>
 </tr>
 <tr>
 <td><code>sources</code></td>
 <td>The sources of repos you want the pod spec to lint with, separated by commas</td>
+<td></td>
 </tr>
 <tr>
 <td><code>use_libraries</code></td>
 <td>Lint uses static libraries to install the spec</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>fail_fast</code></td>
 <td>Lint stops on the first failing platform or subspec</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>private</code></td>
 <td>Lint skips checks that apply only to public specs</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>quick</code></td>
 <td>Lint skips checks that would require to download and build the spec</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action pod_lib_lint

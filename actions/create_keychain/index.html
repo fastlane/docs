@@ -445,47 +445,58 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>name</code></td>
 <td>Keychain name</td>
+<td></td>
 </tr>
 <tr>
 <td><code>path</code></td>
 <td>Path to keychain</td>
+<td></td>
 </tr>
 <tr>
 <td><code>password</code></td>
 <td>Password for the keychain</td>
+<td></td>
 </tr>
 <tr>
 <td><code>default_keychain</code></td>
 <td>Should the newly created Keychain be the new system default keychain</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>unlock</code></td>
 <td>Unlock keychain after create</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>timeout</code></td>
 <td>timeout interval in seconds. Set <code>false</code> if you want to specify "no time-out"</td>
+<td><code>300</code></td>
 </tr>
 <tr>
 <td><code>lock_when_sleeps</code></td>
 <td>Lock keychain when the system sleeps</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>lock_after_timeout</code></td>
 <td>Lock keychain after timeout interval</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>add_to_search_list</code></td>
 <td>Add keychain to search list</td>
+<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action create_keychain

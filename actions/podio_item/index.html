@@ -452,39 +452,48 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <tr>
 <th>Key</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>client_id</code></td>
 <td>Client ID for Podio API (see https://developers.podio.com/api-key)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>client_secret</code></td>
 <td>Client secret for Podio API (see https://developers.podio.com/api-key)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_id</code></td>
 <td>App ID of the app you intend to authenticate with (see https://developers.podio.com/authentication/app_auth)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>app_token</code></td>
 <td>App token of the app you intend to authenticate with (see https://developers.podio.com/authentication/app_auth)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>identifying_field</code></td>
 <td>String specifying the field key used for identification of an item</td>
+<td></td>
 </tr>
 <tr>
 <td><code>identifying_value</code></td>
 <td>String uniquely specifying an item within the app</td>
+<td></td>
 </tr>
 <tr>
 <td><code>other_fields</code></td>
 <td>Dictionary of your app fields. Podio supports several field types, see https://developers.podio.com/doc/items</td>
+<td></td>
 </tr>
 </tbody>
 </table>
+<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action podio_item
