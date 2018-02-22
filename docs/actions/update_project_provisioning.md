@@ -44,16 +44,16 @@ update_project_provisioning(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `xcodeproj` | Path to your Xcode project
-  `profile` | Path to provisioning profile (.mobileprovision)
-  `target_filter` | A filter for the target name. Use a standard regex
-  `build_configuration_filter` | Legacy option, use 'target_filter' instead
-  `build_configuration` | A filter for the build configuration name. Use a standard regex. Applied to all configurations if not specified
-  `certificate` | Path to apple root certificate
+Key | Description | Default
+----|-------------|--------
+  `xcodeproj` | Path to your Xcode project | 
+  `profile` | Path to provisioning profile (.mobileprovision) | [*](#dynamic)
+  `target_filter` | A filter for the target name. Use a standard regex | 
+  `build_configuration_filter` | Legacy option, use 'target_filter' instead | 
+  `build_configuration` | A filter for the build configuration name. Use a standard regex. Applied to all configurations if not specified | 
+  `certificate` | Path to apple root certificate | `/tmp/AppleIncRootCertificate.cer`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

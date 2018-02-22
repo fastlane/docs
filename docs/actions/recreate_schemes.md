@@ -33,11 +33,11 @@ recreate_schemes(project: "./path/to/MyApp.xcodeproj")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `project` | The Xcode project
+Key | Description | Default
+----|-------------|--------
+  `project` | The Xcode project | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

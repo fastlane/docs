@@ -33,12 +33,12 @@ version = version_get_podspec(path: "TSMessages.podspec")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | You must specify the path to the podspec file
-  `require_variable_prefix` | true by default, this is used for non CocoaPods version bumps only
+Key | Description | Default
+----|-------------|--------
+  `path` | You must specify the path to the podspec file | [*](#dynamic)
+  `require_variable_prefix` | true by default, this is used for non CocoaPods version bumps only | `true`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

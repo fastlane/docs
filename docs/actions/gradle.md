@@ -90,21 +90,21 @@ gradle(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `task` | The gradle task you want to execute, e.g. `assemble` or `test`. For tasks such as `assembleMyFlavorRelease` you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release')
-  `flavor` | The flavor that you want the task for, e.g. `MyFlavor`. If you are running the `assemble` task in a multi-flavor project, and you rely on Actions.lane_context[Actions.SharedValues::GRADLE_APK_OUTPUT_PATH] then you must specify a flavor here or else this value will be undefined
-  `build_type` | The build type that you want the task for, e.g. `Release`. Useful for some tasks such as `assemble`
-  `flags` | All parameter flags you want to pass to the gradle command, e.g. `--exitcode --xml file.xml`
-  `project_dir` | The root directory of the gradle project. Defaults to `.`
-  `gradle_path` | The path to your `gradlew`. If you specify a relative path, it is assumed to be relative to the `project_dir`
-  `properties` | Gradle properties to be exposed to the gradle script
-  `system_properties` | Gradle system properties to be exposed to the gradle script
-  `serial` | Android serial, which device should be used for this command
-  `print_command` | Control whether the generated Gradle command is printed as output before running it (true/false)
-  `print_command_output` | Control whether the output produced by given Gradle command is printed while running (true/false)
+Key | Description | Default
+----|-------------|--------
+  `task` | The gradle task you want to execute, e.g. `assemble` or `test`. For tasks such as `assembleMyFlavorRelease` you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release') | 
+  `flavor` | The flavor that you want the task for, e.g. `MyFlavor`. If you are running the `assemble` task in a multi-flavor project, and you rely on Actions.lane_context[Actions.SharedValues::GRADLE_APK_OUTPUT_PATH] then you must specify a flavor here or else this value will be undefined | 
+  `build_type` | The build type that you want the task for, e.g. `Release`. Useful for some tasks such as `assemble` | 
+  `flags` | All parameter flags you want to pass to the gradle command, e.g. `--exitcode --xml file.xml` | 
+  `project_dir` | The root directory of the gradle project | `.`
+  `gradle_path` | The path to your `gradlew`. If you specify a relative path, it is assumed to be relative to the `project_dir` | 
+  `properties` | Gradle properties to be exposed to the gradle script | 
+  `system_properties` | Gradle system properties to be exposed to the gradle script | 
+  `serial` | Android serial, which device should be used for this command | `''`
+  `print_command` | Control whether the generated Gradle command is printed as output before running it (true/false) | `true`
+  `print_command_output` | Control whether the output produced by given Gradle command is printed while running (true/false) | `true`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

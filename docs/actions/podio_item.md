@@ -43,17 +43,17 @@ podio_item(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `client_id` | Client ID for Podio API (see https://developers.podio.com/api-key)
-  `client_secret` | Client secret for Podio API (see https://developers.podio.com/api-key)
-  `app_id` | App ID of the app you intend to authenticate with (see https://developers.podio.com/authentication/app_auth)
-  `app_token` | App token of the app you intend to authenticate with (see https://developers.podio.com/authentication/app_auth)
-  `identifying_field` | String specifying the field key used for identification of an item
-  `identifying_value` | String uniquely specifying an item within the app
-  `other_fields` | Dictionary of your app fields. Podio supports several field types, see https://developers.podio.com/doc/items
+Key | Description | Default
+----|-------------|--------
+  `client_id` | Client ID for Podio API (see https://developers.podio.com/api-key) | 
+  `client_secret` | Client secret for Podio API (see https://developers.podio.com/api-key) | 
+  `app_id` | App ID of the app you intend to authenticate with (see https://developers.podio.com/authentication/app_auth) | 
+  `app_token` | App token of the app you intend to authenticate with (see https://developers.podio.com/authentication/app_auth) | 
+  `identifying_field` | String specifying the field key used for identification of an item | 
+  `identifying_value` | String uniquely specifying an item within the app | 
+  `other_fields` | Dictionary of your app fields. Podio supports several field types, see https://developers.podio.com/doc/items | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

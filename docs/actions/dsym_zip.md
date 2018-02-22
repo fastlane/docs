@@ -39,13 +39,13 @@ dsym_zip(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `archive_path` | Path to your xcarchive file. Optional if you use the `xcodebuild` action
-  `dsym_path` | Path for generated dsym. Optional, default is your apps root directory
-  `all` | Whether or not all dSYM files are to be included. Optional, default is false in which only your app dSYM is included
+Key | Description | Default
+----|-------------|--------
+  `archive_path` | Path to your xcarchive file. Optional if you use the `xcodebuild` action | [*](#dynamic)
+  `dsym_path` | Path for generated dsym. Optional, default is your apps root directory | 
+  `all` | Whether or not all dSYM files are to be included. Optional, default is false in which only your app dSYM is included | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

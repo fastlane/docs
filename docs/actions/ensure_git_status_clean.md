@@ -37,11 +37,11 @@ ensure_git_status_clean
 
 ## Parameters
 
-Key | Description
-----|------------
-  `show_uncommitted_changes` | The flag whether to show uncommitted changes if the repo is dirty
+Key | Description | Default
+----|-------------|--------
+  `show_uncommitted_changes` | The flag whether to show uncommitted changes if the repo is dirty | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

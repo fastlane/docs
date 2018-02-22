@@ -36,11 +36,11 @@ setup_circle_ci
 
 ## Parameters
 
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by CircleCI
+Key | Description | Default
+----|-------------|--------
+  `force` | Force setup, even if not executed by CircleCI | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

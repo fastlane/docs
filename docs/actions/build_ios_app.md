@@ -61,7 +61,7 @@ _gym_ uses the latest APIs to build and sign your application which results in m
 🏁 | Beautiful inline build output
 📖    | Helps you resolve common build errors like code signing issues
 🚠 | Sensible defaults: Automatically detect the project, its schemes and more
-🔗  | Works perfectly with [fastlane](https://fastlane.tools) and other tools
+🔗  | Works perfectly with [_fastlane_](https://fastlane.tools) and other tools
 📦 | Automatically generates an `ipa` and a compressed `dSYM` file
 🚅 | Don't remember any complicated build commands, just _gym_
 🔧  | Easy and dynamic configuration using parameters and environment variables
@@ -126,14 +126,14 @@ Since you might want to manually trigger a new build but don't want to specify a
 Run `fastlane gym init` to create a new configuration file. Example:
 
 ```ruby-skip-tests
-scheme "Example"
+scheme("Example")
 
-sdk "iphoneos9.0"
+sdk("iphoneos9.0")
 
-clean true
+clean(true)
 
-output_directory "./build"    # store the ipa in this folder
-output_name "MyApp"           # the name of the ipa file
+output_directory("./build")    # store the ipa in this folder
+output_name("MyApp")           # the name of the ipa file
 ```
 
 ## Export options
@@ -141,7 +141,7 @@ output_name "MyApp"           # the name of the ipa file
 Since Xcode 7, _gym_ is using new Xcode API which allows us to specify export options using `plist` file. By default _gym_ creates this file for you and you are able to modify some parameters by using `export_method`, `export_team_id`, `include_symbols` or `include_bitcode`. If you want to have more options, like creating manifest file for app thinning, you can provide your own `plist` file:
 
 ```ruby-skip-tests
-export_options "./ExportOptions.plist"
+export_options("./ExportOptions.plist")
 ```
 
 or you can provide hash of values directly in the `Gymfile`:
@@ -168,7 +168,7 @@ export_options(
 )
 ```
 
-**Note**: If you use [fastlane](https://fastlane.tools) with [match](https://fastlane.tools/match) you don't need to provide those values manually.
+**Note**: If you use [_fastlane_](https://fastlane.tools) with [_match_](https://fastlane.tools/match) you don't need to provide those values manually.
 
 For the list of available options run `xcodebuild -help`.
 
@@ -179,7 +179,7 @@ For the list of available options run `xcodebuild -help`.
 
 ## Automating the whole process
 
-_gym_ works great together with [fastlane](https://fastlane.tools), which connects all deployment tools into one streamlined workflow.
+_gym_ works great together with [_fastlane_](https://fastlane.tools), which connects all deployment tools into one streamlined workflow.
 
 Using _fastlane_ you can define a configuration like
 
@@ -294,48 +294,48 @@ build_app   # alias for "build_ios_app"
 
 ## Parameters
 
-Key | Description
-----|------------
-  `workspace` | Path to the workspace file
-  `project` | Path to the project file
-  `scheme` | The project's scheme. Make sure it's marked as `Shared`
-  `clean` | Should the project be cleaned before building it?
-  `output_directory` | The directory in which the ipa file should be stored in
-  `output_name` | The name of the resulting ipa file
-  `configuration` | The configuration to use when building the app. Defaults to 'Release'
-  `silent` | Hide all information that's not necessary while building
-  `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH'
-  `skip_package_ipa` | Should we skip packaging the ipa?
-  `include_symbols` | Should the ipa file include symbols?
-  `include_bitcode` | Should the ipa file include bitcode?
-  `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id
-  `export_options` | Specifies path to export options plist. Use 'xcodebuild -help' to print the full set of available options
-  `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
-  `skip_build_archive` | Export ipa from previously built xarchive. Uses archive_path as source
-  `skip_archive` | After building, don't archive, effectively not including -archivePath param
-  `build_path` | The directory in which the archive should be stored in
-  `archive_path` | The path to the created archive
-  `derived_data_path` | The directory where built products and other derived data will go
-  `result_bundle` | Location of the Xcode result bundle
-  `buildlog_path` | The directory where to store the build log
-  `sdk` | The SDK that should be used for building the application
-  `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)
-  `destination` | Use a custom destination for building the app
-  `export_team_id` | Optional: Sometimes you need to specify a team id when exporting the ipa file
-  `xcargs` | Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"
-  `xcconfig` | Use an extra XCCONFIG file to build your app
-  `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path
-  `disable_xcpretty` | Disable xcpretty formatting of build output
-  `xcpretty_test_format` | Use the test (RSpec style) format for build output
-  `xcpretty_formatter` | A custom xcpretty formatter to use
-  `xcpretty_report_junit` | Have xcpretty create a JUnit-style XML report at the provided path
-  `xcpretty_report_html` | Have xcpretty create a simple HTML report at the provided path
-  `xcpretty_report_json` | Have xcpretty create a JSON compilation database at the provided path
-  `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file
-  `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds
-  `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used
+Key | Description | Default
+----|-------------|--------
+  `workspace` | Path to the workspace file | 
+  `project` | Path to the project file | 
+  `scheme` | The project's scheme. Make sure it's marked as `Shared` | 
+  `clean` | Should the project be cleaned before building it? | `false`
+  `output_directory` | The directory in which the ipa file should be stored in | `.`
+  `output_name` | The name of the resulting ipa file | 
+  `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#dynamic)
+  `silent` | Hide all information that's not necessary while building | `false`
+  `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH' | 
+  `skip_package_ipa` | Should we skip packaging the ipa? | `false`
+  `include_symbols` | Should the ipa file include symbols? | 
+  `include_bitcode` | Should the ipa file include bitcode? | 
+  `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id | 
+  `export_options` | Specifies path to export options plist. Use 'xcodebuild -help' to print the full set of available options | 
+  `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
+  `skip_build_archive` | Export ipa from previously built xarchive. Uses archive_path as source | 
+  `skip_archive` | After building, don't archive, effectively not including -archivePath param | 
+  `build_path` | The directory in which the archive should be stored in | 
+  `archive_path` | The path to the created archive | 
+  `derived_data_path` | The directory where built products and other derived data will go | 
+  `result_bundle` | Location of the Xcode result bundle | 
+  `buildlog_path` | The directory where to store the build log | [*](#dynamic)
+  `sdk` | The SDK that should be used for building the application | 
+  `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a) | 
+  `destination` | Use a custom destination for building the app | 
+  `export_team_id` | Optional: Sometimes you need to specify a team id when exporting the ipa file | 
+  `xcargs` | Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
+  `xcconfig` | Use an extra XCCONFIG file to build your app | 
+  `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
+  `disable_xcpretty` | Disable xcpretty formatting of build output | 
+  `xcpretty_test_format` | Use the test (RSpec style) format for build output | 
+  `xcpretty_formatter` | A custom xcpretty formatter to use | 
+  `xcpretty_report_junit` | Have xcpretty create a JUnit-style XML report at the provided path | 
+  `xcpretty_report_html` | Have xcpretty create a simple HTML report at the provided path | 
+  `xcpretty_report_json` | Have xcpretty create a JSON compilation database at the provided path | 
+  `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file | 
+  `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
+  `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

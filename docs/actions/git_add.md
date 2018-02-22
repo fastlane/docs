@@ -49,12 +49,12 @@ git_add(pathspec: "*.txt")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | The file you want to add
-  `pathspec` | The pathspec you want to add files from
+Key | Description | Default
+----|-------------|--------
+  `path` | The file you want to add | 
+  `pathspec` | The pathspec you want to add files from | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

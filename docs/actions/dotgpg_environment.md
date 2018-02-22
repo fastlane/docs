@@ -33,11 +33,11 @@ dotgpg_environment(dotgpg_file: './path/to/gpgfile')
 
 ## Parameters
 
-Key | Description
-----|------------
-  `dotgpg_file` | Path to your gpg file
+Key | Description | Default
+----|-------------|--------
+  `dotgpg_file` | Path to your gpg file | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

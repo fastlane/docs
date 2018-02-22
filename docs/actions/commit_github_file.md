@@ -45,17 +45,17 @@ response = commit_github_file(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `repository_name` | The path to your repo, e.g. 'fastlane/fastlane'
-  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com')
-  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens
-  `branch` | The branch that the file should be committed on (default: master)
-  `path` | The relative path to your file from project root e.g. assets/my_app.xcarchive
-  `message` | The commit message. Defaults to the file name
-  `secure` | Optionally disable secure requests (ssl_verify_peer)
+Key | Description | Default
+----|-------------|--------
+  `repository_name` | The path to your repo, e.g. 'fastlane/fastlane' | 
+  `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com') | `https://api.github.com`
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | [*](#dynamic)
+  `branch` | The branch that the file should be committed on (default: master) | `master`
+  `path` | The relative path to your file from project root e.g. assets/my_app.xcarchive | 
+  `message` | The commit message. Defaults to the file name | [*](#dynamic)
+  `secure` | Optionally disable secure requests (ssl_verify_peer) | `true`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

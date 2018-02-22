@@ -110,7 +110,7 @@ end
 
 # How does it work?
 
-_precheck_ will access `iTunes Connect` to download your app's metadata. It uses [spaceship](https://spaceship.airforce) to communicate with Apple's web services.
+_precheck_ will access `iTunes Connect` to download your app's metadata. It uses [_spaceship_](https://spaceship.airforce) to communicate with Apple's web services.
 
 # Want to improve precheck's rules?
 Please submit an issue on GitHub and provide information about your App Store rejection! Make sure you scrub out any personally identifiable information since this will be public.
@@ -145,26 +145,26 @@ precheck   # alias for "check_app_store_metadata"
 
 ## Parameters
 
-Key | Description
-----|------------
-  `app_identifier` | The bundle identifier of your app
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
-  `default_rule_level` | The default rule level unless otherwise configured
-  `include_in_app_purchases` | Should check in-app purchases?
-  `negative_apple_sentiment` | mentioning  in a way that could be considered negative
-  `placeholder_text` | using placeholder text (e.g.:"lorem ipsum", "text here", etc...)
-  `other_platforms` | mentioning other platforms, like Android or Blackberry
-  `future_functionality` | mentioning features or content that is not currently available in your app
-  `test_words` | using text indicating this release is a test
-  `curse_words` | including words that might be considered objectionable
-  `free_stuff_in_iap` | using text indicating that your IAP is free
-  `custom_text` | mentioning any of the user-specified words passed to custom_text(data: [words])
-  `copyright_date` | using a copyright date that is any different from this current year, or missing a date
-  `unreachable_urls` | unreachable URLs in app metadata
+Key | Description | Default
+----|-------------|--------
+  `app_identifier` | The bundle identifier of your app | [*](#dynamic)
+  `username` | Your Apple ID Username | [*](#dynamic)
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
+  `default_rule_level` | The default rule level unless otherwise configured | `error`
+  `include_in_app_purchases` | Should check in-app purchases? | `true`
+  `negative_apple_sentiment` | mentioning  in a way that could be considered negative | 
+  `placeholder_text` | using placeholder text (e.g.:"lorem ipsum", "text here", etc...) | 
+  `other_platforms` | mentioning other platforms, like Android or Blackberry | 
+  `future_functionality` | mentioning features or content that is not currently available in your app | 
+  `test_words` | using text indicating this release is a test | 
+  `curse_words` | including words that might be considered objectionable | 
+  `free_stuff_in_iap` | using text indicating that your IAP is free | 
+  `custom_text` | mentioning any of the user-specified words passed to custom_text(data: [words]) | 
+  `copyright_date` | using a copyright date that is any different from this current year, or missing a date | 
+  `unreachable_urls` | unreachable URLs in app metadata | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

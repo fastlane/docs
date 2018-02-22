@@ -34,11 +34,11 @@ clean_build_artifacts
 
 ## Parameters
 
-Key | Description
-----|------------
-  `exclude_pattern` | Exclude all files from clearing that match the given Regex pattern: e.g. '.*.mobileprovision'
+Key | Description | Default
+----|-------------|--------
+  `exclude_pattern` | Exclude all files from clearing that match the given Regex pattern: e.g. '.*.mobileprovision' | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -40,18 +40,18 @@ xcode_server_get_assets(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `host` | IP Address/Hostname of Xcode Server
-  `bot_name` | Name of the Bot to pull assets from
-  `integration_number` | Optionally you can override which integration's assets should be downloaded. If not provided, the latest integration is used
-  `username` | Username for your Xcode Server
-  `password` | Password for your Xcode Server
-  `target_folder` | Relative path to a folder into which to download assets
-  `keep_all_assets` | Whether to keep all assets or let the script delete everything except for the .xcarchive
-  `trust_self_signed_certs` | Whether to trust self-signed certs on your Xcode Server
+Key | Description | Default
+----|-------------|--------
+  `host` | IP Address/Hostname of Xcode Server | 
+  `bot_name` | Name of the Bot to pull assets from | 
+  `integration_number` | Optionally you can override which integration's assets should be downloaded. If not provided, the latest integration is used | 
+  `username` | Username for your Xcode Server | `''`
+  `password` | Password for your Xcode Server | `''`
+  `target_folder` | Relative path to a folder into which to download assets | `./xcs_assets`
+  `keep_all_assets` | Whether to keep all assets or let the script delete everything except for the .xcarchive | `false`
+  `trust_self_signed_certs` | Whether to trust self-signed certs on your Xcode Server | `true`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

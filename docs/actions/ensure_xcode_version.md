@@ -34,11 +34,11 @@ ensure_xcode_version(version: "7.2")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `version` | Xcode version to verify that is selected
+Key | Description | Default
+----|-------------|--------
+  `version` | Xcode version to verify that is selected | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

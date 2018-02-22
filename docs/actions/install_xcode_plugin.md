@@ -37,12 +37,12 @@ install_xcode_plugin(github: "https://github.com/contentful/ContentfulXcodePlugi
 
 ## Parameters
 
-Key | Description
-----|------------
-  `url` | URL for Xcode plugin ZIP file
-  `github` | GitHub repository URL for Xcode plugin
+Key | Description | Default
+----|-------------|--------
+  `url` | URL for Xcode plugin ZIP file | 
+  `github` | GitHub repository URL for Xcode plugin | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

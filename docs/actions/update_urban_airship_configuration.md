@@ -37,16 +37,16 @@ update_urban_airship_configuration(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `plist_path` | Path to Urban Airship configuration Plist
-  `development_app_key` | The development app key
-  `development_app_secret` | The development app secret
-  `production_app_key` | The production app key
-  `production_app_secret` | The production app secret
-  `detect_provisioning_mode` | Automatically detect provisioning mode
+Key | Description | Default
+----|-------------|--------
+  `plist_path` | Path to Urban Airship configuration Plist | 
+  `development_app_key` | The development app key | 
+  `development_app_secret` | The development app secret | 
+  `production_app_key` | The production app key | 
+  `production_app_secret` | The production app secret | 
+  `detect_provisioning_mode` | Automatically detect provisioning mode | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

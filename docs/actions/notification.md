@@ -33,19 +33,19 @@ notification(subtitle: "Finished Building", message: "Ready to upload...")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `title` | The title to display in the notification
-  `subtitle` | A subtitle to display in the notification
-  `message` | The message to display in the notification
-  `sound` | The name of a sound to play when the notification appears (names are listed in Sound Preferences)
-  `activate` | Bundle identifier of application to be opened when the notification is clicked
-  `app_icon` | The URL of an image to display instead of the application icon (Mavericks+ only)
-  `content_image` | The URL of an image to display attached to the notification (Mavericks+ only)
-  `open` | URL of the resource to be opened when the notification is clicked
-  `execute` | Shell command to run when the notification is clicked
+Key | Description | Default
+----|-------------|--------
+  `title` | The title to display in the notification | `fastlane`
+  `subtitle` | A subtitle to display in the notification | 
+  `message` | The message to display in the notification | 
+  `sound` | The name of a sound to play when the notification appears (names are listed in Sound Preferences) | 
+  `activate` | Bundle identifier of application to be opened when the notification is clicked | 
+  `app_icon` | The URL of an image to display instead of the application icon (Mavericks+ only) | 
+  `content_image` | The URL of an image to display attached to the notification (Mavericks+ only) | 
+  `open` | URL of the resource to be opened when the notification is clicked | 
+  `execute` | Shell command to run when the notification is clicked | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

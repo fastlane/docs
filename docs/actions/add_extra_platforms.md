@@ -35,11 +35,11 @@ add_extra_platforms(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `platforms` | The optional extra platforms to support
+Key | Description | Default
+----|-------------|--------
+  `platforms` | The optional extra platforms to support | `''`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

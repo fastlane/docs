@@ -40,21 +40,21 @@ setup_jenkins
 
 ## Parameters
 
-Key | Description
-----|------------
-  `force` | Force setup, even if not executed by Jenkins
-  `unlock_keychain` | Unlocks keychain
-  `add_keychain_to_search_list` | Add to keychain search list
-  `set_default_keychain` | Set keychain as default
-  `keychain_path` | Path to keychain
-  `keychain_password` | Keychain password
-  `set_code_signing_identity` | Set code signing identity from CODE_SIGNING_IDENTITY environment
-  `code_signing_identity` | Code signing identity
-  `output_directory` | The directory in which the ipa file should be stored in
-  `derived_data_path` | The directory where built products and other derived data will go
-  `result_bundle` | Produce the result bundle describing what occurred will be placed
+Key | Description | Default
+----|-------------|--------
+  `force` | Force setup, even if not executed by Jenkins | `false`
+  `unlock_keychain` | Unlocks keychain | `true`
+  `add_keychain_to_search_list` | Add to keychain search list | `replace`
+  `set_default_keychain` | Set keychain as default | `true`
+  `keychain_path` | Path to keychain | 
+  `keychain_password` | Keychain password | `''`
+  `set_code_signing_identity` | Set code signing identity from CODE_SIGNING_IDENTITY environment | `true`
+  `code_signing_identity` | Code signing identity | 
+  `output_directory` | The directory in which the ipa file should be stored in | `./output`
+  `derived_data_path` | The directory where built products and other derived data will go | `./derivedData`
+  `result_bundle` | Produce the result bundle describing what occurred will be placed | `true`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

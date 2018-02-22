@@ -39,13 +39,13 @@ sh("git", "commit", "-m", "My message")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `command` | Shell command to be executed
-  `log` | Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true
-  `error_callback` | A callback invoked with the command output if there is a non-zero exit status
+Key | Description | Default
+----|-------------|--------
+  `command` | Shell command to be executed | 
+  `log` | Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true | `true`
+  `error_callback` | A callback invoked with the command output if there is a non-zero exit status | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

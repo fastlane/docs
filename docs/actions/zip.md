@@ -49,13 +49,13 @@ zip(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Path to the directory or file to be zipped
-  `output_path` | The name of the resulting zip file
-  `verbose` | Enable verbose output of zipped file
+Key | Description | Default
+----|-------------|--------
+  `path` | Path to the directory or file to be zipped | 
+  `output_path` | The name of the resulting zip file | 
+  `verbose` | Enable verbose output of zipped file | `true`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -36,13 +36,13 @@ rsync(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `extra` | Port
-  `source` | source file/folder
-  `destination` | destination file/folder
+Key | Description | Default
+----|-------------|--------
+  `extra` | Port | `-av`
+  `source` | source file/folder | 
+  `destination` | destination file/folder | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

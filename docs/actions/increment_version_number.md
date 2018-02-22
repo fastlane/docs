@@ -71,13 +71,13 @@ version = increment_version_number
 
 ## Parameters
 
-Key | Description
-----|------------
-  `bump_type` | The type of this version bump. Available: patch, minor, major
-  `version_number` | Change to a specific version. This will replace the bump type value
-  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory
+Key | Description | Default
+----|-------------|--------
+  `bump_type` | The type of this version bump. Available: patch, minor, major | `patch`
+  `version_number` | Change to a specific version. This will replace the bump type value | 
+  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
