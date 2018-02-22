@@ -40,12 +40,12 @@ hg_push(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `force` | Force push to remote. Defaults to false
-  `destination` | The destination to push to
+Key | Description | Default
+----|-------------|--------
+  `force` | Force push to remote | `false`
+  `destination` | The destination to push to | `''`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

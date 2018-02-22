@@ -37,11 +37,11 @@ clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `value` | The string that should be copied into the clipboard
+Key | Description | Default
+----|-------------|--------
+  `value` | The string that should be copied into the clipboard | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

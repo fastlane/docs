@@ -34,12 +34,12 @@ get_ipa_info_plist_value(ipa: "path.ipa", key: "KEY_YOU_READ")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `key` | Name of parameter
-  `ipa` | Path to IPA
+Key | Description | Default
+----|-------------|--------
+  `key` | Name of parameter | 
+  `ipa` | Path to IPA | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

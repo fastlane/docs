@@ -50,13 +50,13 @@ erb(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `template` | ERB Template File
-  `destination` | Destination file
-  `placeholders` | Placeholders given as a hash
+Key | Description | Default
+----|-------------|--------
+  `template` | ERB Template File | 
+  `destination` | Destination file | 
+  `placeholders` | Placeholders given as a hash | `{}`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

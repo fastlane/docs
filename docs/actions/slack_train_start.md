@@ -25,14 +25,14 @@ Author | @@KrauseFx
 
 ## Parameters
 
-Key | Description
-----|------------
-  `distance` | How many rails do we need?
-  `train` | Train emoji
-  `rail` | Character or emoji for the rail
-  `reverse_direction` | Pass true if you want the train to go from left to right
+Key | Description | Default
+----|-------------|--------
+  `distance` | How many rails do we need? | `5`
+  `train` | Train emoji | `🚝`
+  `rail` | Character or emoji for the rail | `=`
+  `reverse_direction` | Pass true if you want the train to go from left to right | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

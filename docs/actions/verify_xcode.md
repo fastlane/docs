@@ -39,11 +39,11 @@ verify_xcode(xcode_path: "/Applications/Xcode.app")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `xcode_path` | The path to the Xcode installation to test
+Key | Description | Default
+----|-------------|--------
+  `xcode_path` | The path to the Xcode installation to test | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

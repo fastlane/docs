@@ -38,16 +38,16 @@ appetize(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_token` | Appetize.io API Token
-  `url` | URL from which the ipa file can be fetched. Alternative to :path
-  `platform` | Platform. Either `ios` or `android`. Default is `ios`
-  `path` | Path to zipped build on the local filesystem. Either this or `url` must be specified
-  `public_key` | If not provided, a new app will be created. If provided, the existing build will be overwritten
-  `note` | Notes you wish to add to the uploaded app
+Key | Description | Default
+----|-------------|--------
+  `api_token` | Appetize.io API Token | 
+  `url` | URL from which the ipa file can be fetched. Alternative to :path | 
+  `platform` | Platform. Either `ios` or `android` | `ios`
+  `path` | Path to zipped build on the local filesystem. Either this or `url` must be specified | 
+  `public_key` | If not provided, a new app will be created. If provided, the existing build will be overwritten | 
+  `note` | Notes you wish to add to the uploaded app | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

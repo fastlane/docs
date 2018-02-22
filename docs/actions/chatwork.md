@@ -38,14 +38,14 @@ chatwork(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_token` | ChatWork API Token
-  `message` | The message to post on ChatWork
-  `roomid` | The room ID
-  `success` | Was this build successful? (true/false)
+Key | Description | Default
+----|-------------|--------
+  `api_token` | ChatWork API Token | 
+  `message` | The message to post on ChatWork | 
+  `roomid` | The room ID | 
+  `success` | Was this build successful? (true/false) | `true`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

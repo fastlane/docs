@@ -37,14 +37,14 @@ set_pod_key(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented
-  `key` | The key to be saved with cocoapods-keys
-  `value` | The value to be saved with cocoapods-keys
-  `project` | The project name
+Key | Description | Default
+----|-------------|--------
+  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | `true`
+  `key` | The key to be saved with cocoapods-keys | 
+  `value` | The value to be saved with cocoapods-keys | 
+  `project` | The project name | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

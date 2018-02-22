@@ -76,16 +76,16 @@ commit_version_bump(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `message` | The commit message when committing the version bump
-  `xcodeproj` | The path to your project file (Not the workspace). If you have only one, this is optional
-  `force` | Forces the commit, even if other files than the ones containing the version number have been modified
-  `settings` | Include Settings.bundle/Root.plist with version bump
-  `ignore` | A regular expression used to filter matched plist files to be modified
-  `include` | A list of extra files to be included in the version bump (string array or comma-separated string)
+Key | Description | Default
+----|-------------|--------
+  `message` | The commit message when committing the version bump | 
+  `xcodeproj` | The path to your project file (Not the workspace). If you have only one, this is optional | 
+  `force` | Forces the commit, even if other files than the ones containing the version number have been modified | `false`
+  `settings` | Include Settings.bundle/Root.plist with version bump | `false`
+  `ignore` | A regular expression used to filter matched plist files to be modified | 
+  `include` | A list of extra files to be included in the version bump (string array or comma-separated string) | `[]`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

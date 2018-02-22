@@ -53,25 +53,25 @@ mailgun(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `mailgun_sandbox_domain` | Mailgun sandbox domain postmaster for your mail. Please use postmaster instead
-  `mailgun_sandbox_postmaster` | Mailgun sandbox domain postmaster for your mail. Please use postmaster instead
-  `mailgun_apikey` | Mailgun apikey for your mail. Please use postmaster instead
-  `postmaster` | Mailgun sandbox domain postmaster for your mail
-  `apikey` | Mailgun apikey for your mail
-  `to` | Destination of your mail
-  `from` | Mailgun sender name
-  `message` | Message of your mail
-  `subject` | Subject of your mail
-  `success` | Was this build successful? (true/false)
-  `app_link` | App Release link
-  `ci_build_link` | CI Build Link
-  `template_path` | Mail HTML template
-  `reply_to` | Mail Reply to
-  `attachment` | Mail Attachment filenames, either an array or just one string
+Key | Description | Default
+----|-------------|--------
+  `mailgun_sandbox_domain` | Mailgun sandbox domain postmaster for your mail. Please use postmaster instead | 
+  `mailgun_sandbox_postmaster` | Mailgun sandbox domain postmaster for your mail. Please use postmaster instead | 
+  `mailgun_apikey` | Mailgun apikey for your mail. Please use postmaster instead | 
+  `postmaster` | Mailgun sandbox domain postmaster for your mail | 
+  `apikey` | Mailgun apikey for your mail | 
+  `to` | Destination of your mail | 
+  `from` | Mailgun sender name | `Mailgun Sandbox`
+  `message` | Message of your mail | 
+  `subject` | Subject of your mail | `fastlane build`
+  `success` | Was this build successful? (true/false) | `true`
+  `app_link` | App Release link | 
+  `ci_build_link` | CI Build Link | 
+  `template_path` | Mail HTML template | 
+  `reply_to` | Mail Reply to | 
+  `attachment` | Mail Attachment filenames, either an array or just one string | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

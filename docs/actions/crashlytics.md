@@ -43,21 +43,21 @@ crashlytics(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `ipa_path` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
-  `apk_path` | Path to your APK file
-  `crashlytics_path` | Path to the submit binary in the Crashlytics bundle (iOS) or `crashlytics-devtools.jar` file (Android)
-  `api_token` | Crashlytics API Key
-  `build_secret` | Crashlytics Build Secret
-  `notes_path` | Path to the release notes
-  `notes` | The release notes as string - uses :notes_path under the hood
-  `groups` | The groups used for distribution, separated by commas
-  `emails` | Pass email addresses of testers, separated by commas
-  `notifications` | Crashlytics notification option (true/false)
-  `debug` | Crashlytics debug option (true/false)
+Key | Description | Default
+----|-------------|--------
+  `ipa_path` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action | [*](#dynamic)
+  `apk_path` | Path to your APK file | [*](#dynamic)
+  `crashlytics_path` | Path to the submit binary in the Crashlytics bundle (iOS) or `crashlytics-devtools.jar` file (Android) | 
+  `api_token` | Crashlytics API Key | 
+  `build_secret` | Crashlytics Build Secret | 
+  `notes_path` | Path to the release notes | 
+  `notes` | The release notes as string - uses :notes_path under the hood | 
+  `groups` | The groups used for distribution, separated by commas | 
+  `emails` | Pass email addresses of testers, separated by commas | 
+  `notifications` | Crashlytics notification option (true/false) | `true`
+  `debug` | Crashlytics debug option (true/false) | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

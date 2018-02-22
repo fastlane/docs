@@ -39,11 +39,11 @@ end
 
 ## Parameters
 
-Key | Description
-----|------------
-  `adb_path` | The path to your `adb` binary
+Key | Description | Default
+----|-------------|--------
+  `adb_path` | The path to your `adb` binary | `adb`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

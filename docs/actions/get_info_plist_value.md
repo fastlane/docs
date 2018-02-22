@@ -33,12 +33,12 @@ identifier = get_info_plist_value(path: "./Info.plist", key: "CFBundleIdentifier
 
 ## Parameters
 
-Key | Description
-----|------------
-  `key` | Name of parameter
-  `path` | Path to plist file you want to read
+Key | Description | Default
+----|-------------|--------
+  `key` | Name of parameter | 
+  `path` | Path to plist file you want to read | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

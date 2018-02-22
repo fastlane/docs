@@ -39,15 +39,15 @@ jira(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `url` | URL for Jira instance
-  `username` | Username for JIRA instance
-  `password` | Password for Jira
-  `ticket_id` | Ticket ID for Jira, i.e. IOS-123
-  `comment_text` | Text to add to the ticket as a comment
+Key | Description | Default
+----|-------------|--------
+  `url` | URL for Jira instance | 
+  `username` | Username for JIRA instance | 
+  `password` | Password for Jira | 
+  `ticket_id` | Ticket ID for Jira, i.e. IOS-123 | 
+  `comment_text` | Text to add to the ticket as a comment | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

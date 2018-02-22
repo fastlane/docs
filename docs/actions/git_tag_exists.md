@@ -36,11 +36,11 @@ end
 
 ## Parameters
 
-Key | Description
-----|------------
-  `tag` | The tag name that should be checked
+Key | Description | Default
+----|-------------|--------
+  `tag` | The tag name that should be checked | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

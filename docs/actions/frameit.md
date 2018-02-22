@@ -163,7 +163,7 @@ The `keyword.strings` and `title.strings` are standard `.strings` file you alrea
 
 #### Uploading screenshots to iTC
 
-Use [deliver](https://docs.fastlane.tools/actions/deliver/) to upload all screenshots to iTunes Connect completely automatically 🚀
+Use [_deliver_](https://docs.fastlane.tools/actions/deliver/) to upload all screenshots to iTunes Connect completely automatically 🚀
 
 ### Mac
 
@@ -266,19 +266,19 @@ frame_screenshots(rose_gold: true)
 
 ## Parameters
 
-Key | Description
-----|------------
-  `white` | Use white device frames
-  `silver` | Use white device frames. Alias for :white
-  `rose_gold` | Use rose gold device frames. Alias for :rose_gold
-  `gold` | Use gold device frames. Alias for :gold
-  `force_device_type` | Forces a given device type, useful for Mac screenshots, as their sizes vary
-  `use_legacy_iphone5s` | Use iPhone 5s instead of iPhone SE frames
-  `use_legacy_iphone6s` | Use iPhone 6s frames instead of iPhone 7 frames
-  `force_orientation_block` | [Advanced] A block to customize your screnshots' device orientation
-  `path` | The path to the directory containing the screenshots
+Key | Description | Default
+----|-------------|--------
+  `white` | Use white device frames | 
+  `silver` | Use white device frames. Alias for :white | 
+  `rose_gold` | Use rose gold device frames. Alias for :rose_gold | 
+  `gold` | Use gold device frames. Alias for :gold | 
+  `force_device_type` | Forces a given device type, useful for Mac screenshots, as their sizes vary | 
+  `use_legacy_iphone5s` | Use iPhone 5s instead of iPhone SE frames | `false`
+  `use_legacy_iphone6s` | Use iPhone 6s frames instead of iPhone 7 frames | `false`
+  `force_orientation_block` | [Advanced] A block to customize your screnshots' device orientation | [*](#dynamic)
+  `path` | The path to the directory containing the screenshots | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

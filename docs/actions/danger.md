@@ -43,20 +43,20 @@ danger(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented
-  `verbose` | Show more debugging information
-  `danger_id` | The identifier of this Danger instance
-  `dangerfile` | The location of your Dangerfile
-  `github_api_token` | GitHub API token for danger
-  `fail_on_errors` | Should always fail the build process, defaults to false
-  `new_comment` | Makes Danger post a new comment instead of editing its previous one
-  `base` | A branch/tag/commit to use as the base of the diff. [master|dev|stable]
-  `head` | A branch/tag/commit to use as the head. [master|dev|stable]
-  `pr` | Run danger on a specific pull request. e.g. "https://github.com/danger/danger/pull/518"
+Key | Description | Default
+----|-------------|--------
+  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | `true`
+  `verbose` | Show more debugging information | `false`
+  `danger_id` | The identifier of this Danger instance | 
+  `dangerfile` | The location of your Dangerfile | 
+  `github_api_token` | GitHub API token for danger | 
+  `fail_on_errors` | Should always fail the build process, defaults to false | `false`
+  `new_comment` | Makes Danger post a new comment instead of editing its previous one | `false`
+  `base` | A branch/tag/commit to use as the base of the diff. [master|dev|stable] | 
+  `head` | A branch/tag/commit to use as the head. [master|dev|stable] | 
+  `pr` | Run danger on a specific pull request. e.g. "https://github.com/danger/danger/pull/518" | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

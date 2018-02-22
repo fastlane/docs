@@ -44,11 +44,11 @@ spec = read_podspec(path: "./XcodeServerSDK.podspec")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Path to the podspec to be read
+Key | Description | Default
+----|-------------|--------
+  `path` | Path to the podspec to be read | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

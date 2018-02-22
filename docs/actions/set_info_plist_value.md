@@ -37,15 +37,15 @@ set_info_plist_value(path: "./MyApp-Info.plist", key: "NSAppTransportSecurity", 
 
 ## Parameters
 
-Key | Description
-----|------------
-  `key` | Name of key in plist
-  `subkey` | Name of subkey in plist
-  `value` | Value to setup
-  `path` | Path to plist file you want to update
-  `output_file_name` | Path to the output file you want to generate
+Key | Description | Default
+----|-------------|--------
+  `key` | Name of key in plist | 
+  `subkey` | Name of subkey in plist | 
+  `value` | Value to setup | 
+  `path` | Path to plist file you want to update | 
+  `output_file_name` | Path to the output file you want to generate | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

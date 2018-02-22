@@ -41,12 +41,12 @@ set_build_number_repository(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `use_hg_revision_number` | Use hg revision number instead of hash (ignored for non-hg repos)
-  `xcodeproj` | explicitly specify which xcodeproj to use
+Key | Description | Default
+----|-------------|--------
+  `use_hg_revision_number` | Use hg revision number instead of hash (ignored for non-hg repos) | `false`
+  `xcodeproj` | explicitly specify which xcodeproj to use | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

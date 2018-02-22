@@ -40,12 +40,12 @@ update_project_team(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Path to your Xcode project
-  `teamid` | The Team ID you want to use
+Key | Description | Default
+----|-------------|--------
+  `path` | Path to your Xcode project | [*](#dynamic)
+  `teamid` | The Team ID you want to use | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

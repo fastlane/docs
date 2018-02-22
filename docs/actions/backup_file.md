@@ -33,11 +33,11 @@ backup_file(path: "/path/to/file")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Path to the file you want to backup
+Key | Description | Default
+----|-------------|--------
+  `path` | Path to the file you want to backup | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -46,15 +46,15 @@ hg_commit_version_bump(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `message` | The commit message when committing the version bump
-  `xcodeproj` | The path to your project file (Not the workspace). If you have only one, this is optional
-  `force` | Forces the commit, even if other files than the ones containing the version number have been modified
-  `test_dirty_files` | A list of dirty files passed in for testing
-  `test_expected_files` | A list of expected changed files passed in for testing
+Key | Description | Default
+----|-------------|--------
+  `message` | The commit message when committing the version bump | `Version Bump`
+  `xcodeproj` | The path to your project file (Not the workspace). If you have only one, this is optional | 
+  `force` | Forces the commit, even if other files than the ones containing the version number have been modified | `false`
+  `test_dirty_files` | A list of dirty files passed in for testing | `file1, file2`
+  `test_expected_files` | A list of expected changed files passed in for testing | `file1, file2`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

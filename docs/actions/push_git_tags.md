@@ -33,13 +33,13 @@ push_git_tags
 
 ## Parameters
 
-Key | Description
-----|------------
-  `force` | Force push to remote. Defaults to false
-  `remote` | The remote to push tags to
-  `tag` | The tag to push to remote
+Key | Description | Default
+----|-------------|--------
+  `force` | Force push to remote | `false`
+  `remote` | The remote to push tags to | `origin`
+  `tag` | The tag to push to remote | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

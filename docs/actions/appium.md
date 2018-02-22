@@ -44,19 +44,19 @@ appium(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `platform` | Appium platform name
-  `spec_path` | Path to Appium spec directory
-  `app_path` | Path to Appium target app file
-  `invoke_appium_server` | Use local Appium server with invoke automatically
-  `host` | Hostname of Appium server
-  `port` | HTTP port of Appium server
-  `appium_path` | Path to Appium executable
-  `caps` | Hash of caps for Appium::Driver
-  `appium_lib` | Hash of appium_lib for Appium::Driver
+Key | Description | Default
+----|-------------|--------
+  `platform` | Appium platform name | 
+  `spec_path` | Path to Appium spec directory | 
+  `app_path` | Path to Appium target app file | 
+  `invoke_appium_server` | Use local Appium server with invoke automatically | `true`
+  `host` | Hostname of Appium server | `0.0.0.0`
+  `port` | HTTP port of Appium server | `4723`
+  `appium_path` | Path to Appium executable | 
+  `caps` | Hash of caps for Appium::Driver | 
+  `appium_lib` | Hash of appium_lib for Appium::Driver | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

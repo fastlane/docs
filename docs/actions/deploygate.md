@@ -50,18 +50,18 @@ deploygate(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_token` | Deploygate API Token
-  `user` | Target username or organization name
-  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action
-  `apk` | Path to your APK file
-  `message` | Release Notes
-  `distribution_key` | Target Distribution Key
-  `release_note` | Release note for distribution page
-  `disable_notify` | Disables Push notification emails
+Key | Description | Default
+----|-------------|--------
+  `api_token` | Deploygate API Token | 
+  `user` | Target username or organization name | 
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action | [*](#dynamic)
+  `apk` | Path to your APK file | [*](#dynamic)
+  `message` | Release Notes | `No changelog provided`
+  `distribution_key` | Target Distribution Key | 
+  `release_note` | Release note for distribution page | 
+  `disable_notify` | Disables Push notification emails | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

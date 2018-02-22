@@ -41,15 +41,15 @@ spm(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `command` | The swift command (one of: build, test, clean, reset, update)
-  `build_path` | Specify build/cache directory [default: ./.build]
-  `package_path` | Change working directory before any other operation
-  `configuration` | Build with configuration (debug|release) [default: debug]
-  `verbose` | Increase verbosity of informational output
+Key | Description | Default
+----|-------------|--------
+  `command` | The swift command (one of: build, test, clean, reset, update) | `build`
+  `build_path` | Specify build/cache directory [default: ./.build] | 
+  `package_path` | Change working directory before any other operation | 
+  `configuration` | Build with configuration (debug|release) [default: debug] | 
+  `verbose` | Increase verbosity of informational output | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

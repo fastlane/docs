@@ -55,24 +55,24 @@ resign(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `ipa` | Path to the ipa file to resign. Optional if you use the _gym_ or _xcodebuild_ action
-  `signing_identity` | Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)"
-  `entitlements` | Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements"
-  `provisioning_profile` | Path to your provisioning_profile. Optional if you use _sigh_
+Key | Description | Default
+----|-------------|--------
+  `ipa` | Path to the ipa file to resign. Optional if you use the _gym_ or _xcodebuild_ action | [*](#dynamic)
+  `signing_identity` | Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)" | 
+  `entitlements` | Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements" | 
+  `provisioning_profile` | Path to your provisioning_profile. Optional if you use _sigh_ | [*](#dynamic)
   `version` | Version number to force resigned ipa to use.
 Updates both CFBundleShortVersionString and CFBundleVersion values in Info.plist.
-Applies for main app and all nested apps or extensions
-  `display_name` | Display name to force resigned ipa to use
-  `short_version` | Short version string to force resigned ipa to use (CFBundleShortVersionString)
-  `bundle_version` | Bundle version to force resigned ipa to use (CFBundleVersion)
-  `bundle_id` | Set new bundle ID during resign (CFBundleIdentifier)
+Applies for main app and all nested apps or extensions | 
+  `display_name` | Display name to force resigned ipa to use | 
+  `short_version` | Short version string to force resigned ipa to use (CFBundleShortVersionString) | 
+  `bundle_version` | Bundle version to force resigned ipa to use (CFBundleVersion) | 
+  `bundle_id` | Set new bundle ID during resign (CFBundleIdentifier) | 
   `use_app_entitlements` | Extract app bundle codesigning entitlements
-and combine with entitlements from new provisionin profile
-  `keychain_path` | Provide a path to a keychain file that should be used by /usr/bin/codesign
+and combine with entitlements from new provisionin profile | 
+  `keychain_path` | Provide a path to a keychain file that should be used by /usr/bin/codesign | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

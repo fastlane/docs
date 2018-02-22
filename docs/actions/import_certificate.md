@@ -40,16 +40,16 @@ import_certificate(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `keychain_name` | Keychain the items should be imported to
-  `keychain_path` | Path to the Keychain file to which the items should be imported
-  `keychain_password` | The password for the keychain. Note that for the login keychain this is your user's password
-  `certificate_path` | Path to certificate
-  `certificate_password` | Certificate password
-  `log_output` | If output should be logged to the console
+Key | Description | Default
+----|-------------|--------
+  `keychain_name` | Keychain the items should be imported to | 
+  `keychain_path` | Path to the Keychain file to which the items should be imported | 
+  `keychain_password` | The password for the keychain. Note that for the login keychain this is your user's password | 
+  `certificate_path` | Path to certificate | 
+  `certificate_password` | Certificate password | `''`
+  `log_output` | If output should be logged to the console | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

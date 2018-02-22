@@ -37,12 +37,12 @@ delete_keychain(keychain_path: "/keychains/project.keychain")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `name` | Keychain name
-  `keychain_path` | Keychain path
+Key | Description | Default
+----|-------------|--------
+  `name` | Keychain name | 
+  `keychain_path` | Keychain path | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

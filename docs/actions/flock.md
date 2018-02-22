@@ -37,13 +37,13 @@ flock(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `message` | Message text
-  `token` | Token for the Flock incoming webhook
-  `base_url` | Base URL of the Flock incoming message webhook
+Key | Description | Default
+----|-------------|--------
+  `message` | Message text | 
+  `token` | Token for the Flock incoming webhook | 
+  `base_url` | Base URL of the Flock incoming message webhook | `https://api.flock.co/hooks/sendMessage`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

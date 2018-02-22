@@ -36,17 +36,17 @@ verify_build(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `provisioning_type` | Required type of provisioning
-  `provisioning_uuid` | Required UUID of provisioning profile
-  `team_identifier` | Required team identifier
-  `team_name` | Required team name
-  `app_name` | Required app name
-  `bundle_identifier` | Required bundle identifier
-  `ipa_path` | Explicitly set the ipa path
+Key | Description | Default
+----|-------------|--------
+  `provisioning_type` | Required type of provisioning | 
+  `provisioning_uuid` | Required UUID of provisioning profile | 
+  `team_identifier` | Required team identifier | 
+  `team_name` | Required team name | 
+  `app_name` | Required app name | 
+  `bundle_identifier` | Required bundle identifier | 
+  `ipa_path` | Explicitly set the ipa path | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

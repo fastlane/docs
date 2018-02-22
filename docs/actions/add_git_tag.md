@@ -15,6 +15,7 @@ This will add an annotated git tag to the current branch
 - `grouping` is just to keep your tags organised under one 'folder', defaults to 'builds'
 - `lane` is the name of the current fastlane lane
 - `prefix` is anything you want to stick in front of the version number, e.g. 'v'
+- `postfix` is anything you want to stick at the end of the version number, e.g. '-RC1'
 - `build_number` is the build number, which defaults to the value emitted by the `increment_build_number` action
 For example for build 1234 in the 'appstore' lane it will tag the commit with `builds/appstore/1234`
 
@@ -36,6 +37,7 @@ add_git_tag # simple tag with default values
 add_git_tag(
   grouping: "fastlane-builds",
   prefix: "v",
+  postfix: "-RC1",
   build_number: 123
 )
 ```
@@ -53,18 +55,19 @@ add_git_tag(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `tag` | Define your own tag text. This will replace all other parameters
-  `grouping` | Is used to keep your tags organised under one 'folder'. Defaults to 'builds'
-  `prefix` | Anything you want to put in front of the version number (e.g. 'v')
-  `build_number` | The build number. Defaults to the result of increment_build_number if you're using it
-  `message` | The tag message. Defaults to the tag's name
-  `commit` | The commit or object where the tag will be set. Defaults to the current HEAD
-  `force` | Force adding the tag
-  `sign` | Make a GPG-signed tag, using the default e-mail address's key
+Key | Description | Default
+----|-------------|--------
+  `tag` | Define your own tag text. This will replace all other parameters | 
+  `grouping` | Is used to keep your tags organised under one 'folder' | `builds`
+  `prefix` | Anything you want to put in front of the version number (e.g. 'v') | `''`
+  `postfix` | Anything you want to put at the end of the version number (e.g. '-RC1') | `''`
+  `build_number` | The build number. Defaults to the result of increment_build_number if you're using it | [*](#dynamic)
+  `message` | The tag message. Defaults to the tag's name | [*](#dynamic)
+  `commit` | The commit or object where the tag will be set. Defaults to the current HEAD | [*](#dynamic)
+  `force` | Force adding the tag | `false`
+  `sign` | Make a GPG-signed tag, using the default e-mail address's key | `false`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

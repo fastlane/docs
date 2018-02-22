@@ -33,11 +33,11 @@ hg_add_tag(tag: "1.3")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `tag` | Tag to create
+Key | Description | Default
+----|-------------|--------
+  `tag` | Tag to create | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -41,11 +41,11 @@ ensure_git_branch(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `branch` | The branch that should be checked for. String that can be either the full name of the branch or a regex to match
+Key | Description | Default
+----|-------------|--------
+  `branch` | The branch that should be checked for. String that can be either the full name of the branch or a regex to match | `master`
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

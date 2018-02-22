@@ -34,13 +34,13 @@ xcode_install(version: "7.1")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `version` | The version number of the version of Xcode to install
-  `username` | Your Apple ID Username
-  `team_id` | The ID of your team if you're in multiple teams
+Key | Description | Default
+----|-------------|--------
+  `version` | The version number of the version of Xcode to install | 
+  `username` | Your Apple ID Username | [*](#dynamic)
+  `team_id` | The ID of your team if you're in multiple teams | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

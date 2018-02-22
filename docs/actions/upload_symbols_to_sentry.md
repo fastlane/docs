@@ -41,17 +41,17 @@ upload_symbols_to_sentry(
 
 ## Parameters
 
-Key | Description
-----|------------
-  `api_host` | API host url for Sentry
-  `api_key` | API key for Sentry
-  `auth_token` | Authentication token for Sentry
-  `org_slug` | Organization slug for Sentry project
-  `project_slug` | Project slug for Sentry
-  `dsym_path` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip
-  `dsym_paths` | Path to an array of your symbols file. For iOS and Mac provide path to app.dSYM.zip
+Key | Description | Default
+----|-------------|--------
+  `api_host` | API host url for Sentry | `https://app.getsentry.com/api/0`
+  `api_key` | API key for Sentry | 
+  `auth_token` | Authentication token for Sentry | 
+  `org_slug` | Organization slug for Sentry project | 
+  `project_slug` | Project slug for Sentry | 
+  `dsym_path` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip | [*](#dynamic)
+  `dsym_paths` | Path to an array of your symbols file. For iOS and Mac provide path to app.dSYM.zip | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -44,14 +44,14 @@ crashlytics(notes: changelog)
 
 ## Parameters
 
-Key | Description
-----|------------
-  `text` | The text that will be displayed to the user
-  `ci_input` | The default text that will be used when being executed on a CI service
-  `boolean` | Is that a boolean question (yes/no)? This will add (y/n) at the end
-  `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input
+Key | Description | Default
+----|-------------|--------
+  `text` | The text that will be displayed to the user | `Please enter some text: `
+  `ci_input` | The default text that will be used when being executed on a CI service | `''`
+  `boolean` | Is that a boolean question (yes/no)? This will add (y/n) at the end | `false`
+  `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

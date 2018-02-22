@@ -45,18 +45,18 @@ download_dsyms(version: "1.0.0", build_number: "345")
 
 ## Parameters
 
-Key | Description
-----|------------
-  `username` | Your Apple ID Username for iTunes Connect
-  `app_identifier` | The bundle identifier of your app
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams
-  `platform` | The app platform for dSYMs you wish to download (ios, appletvos)
-  `version` | The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs
-  `build_number` | The app build_number for dSYMs you wish to download
-  `output_directory` | Where to save the download dSYMs, defaults to the current path
+Key | Description | Default
+----|-------------|--------
+  `username` | Your Apple ID Username for iTunes Connect | [*](#dynamic)
+  `app_identifier` | The bundle identifier of your app | [*](#dynamic)
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
+  `platform` | The app platform for dSYMs you wish to download (ios, appletvos) | `ios`
+  `version` | The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs | 
+  `build_number` | The app build_number for dSYMs you wish to download | 
+  `output_directory` | Where to save the download dSYMs, defaults to the current path | 
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -27,13 +27,13 @@ Author | @KrauseFx
 
 ## Parameters
 
-Key | Description
-----|------------
-  `path` | Path to your Xcode project
-  `udid` | DEPRECATED: see :uuid
-  `uuid` | The UUID of the provisioning profile you want to use
+Key | Description | Default
+----|-------------|--------
+  `path` | Path to your Xcode project | 
+  `udid` | DEPRECATED: see :uuid | [*](#dynamic)
+  `uuid` | The UUID of the provisioning profile you want to use | [*](#dynamic)
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

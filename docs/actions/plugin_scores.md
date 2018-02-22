@@ -25,10 +25,10 @@ Author | @KrauseFx
 
 ## Parameters
 
-Key | Description
-----|------------
+Key | Description | Default
+----|-------------|--------
 
-
+<em id="dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
