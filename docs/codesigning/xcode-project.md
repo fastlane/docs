@@ -57,7 +57,7 @@ It is recommended to select the provisioning profile in the `General` tab in you
 
 You could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.
 
-If you're using [match](https://fastlane.tools/match) the following environment variables are being set for you:
+If you're using [_match_](https://fastlane.tools/match) the following environment variables are being set for you:
 
 ```
 +---------------------+------------------------------------------------+--------------------------------------+
@@ -103,7 +103,7 @@ To do so, open your target settings, open the dropdown for `Provisioning Profile
 
 Using the `$(...)` notation, Xcode will use the provisioning profile matching the UUID, and fallback to `Automatic` if it's not provided.
 
-If you use [fastlane](https://fastlane.tools) you don't have to do any extra work, since the environment variable for the latest profile are automatically set by [match](https://fastlane.tools/match)
+If you use [_fastlane_](https://fastlane.tools) you don't have to do any extra work, since the environment variable for the latest profile are automatically set by [_match_](https://fastlane.tools/match)
 
 ```ruby
 lane :beta do
