@@ -507,7 +507,7 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
 <p>It is recommended to select the provisioning profile in the <code>General</code> tab in your Xcode project, so Xcode will automatically set the values mentioned above for you.</p>
 <h4 id="set-using-environment-variable"><a name="user-content-set-using-environment-variable" href="#set-using-environment-variable" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Set using environment variable</h4>
 <p>You could pass the profile specifier via environment variables too (See Xcode 7 approach below), however in most cases it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.</p>
-<p>If you're using <a href="https://fastlane.tools/match">match</a> the following environment variables are being set for you:</p>
+<p>If you're using <a href="https://fastlane.tools/match"><em>match</em></a> the following environment variables are being set for you:</p>
 <pre><code>+---------------------+------------------------------------------------+--------------------------------------+
 |                                       Installed Provisioning Profile                                        |
 +---------------------+------------------------------------------------+--------------------------------------+
@@ -536,7 +536,7 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
 <p>To do so, open your target settings, open the dropdown for <code>Provisioning Profile</code> and select <code>Other</code>:</p>
 <p><img src="/img/codesigning/XcodeProjectSettings.png" width="700" /></p>
 <p>Using the <code>$(...)</code> notation, Xcode will use the provisioning profile matching the UUID, and fallback to <code>Automatic</code> if it's not provided.</p>
-<p>If you use <a href="https://fastlane.tools">fastlane</a> you don't have to do any extra work, since the environment variable for the latest profile are automatically set by <a href="https://fastlane.tools/match">match</a></p>
+<p>If you use <a href="https://fastlane.tools"><em>fastlane</em></a> you don't have to do any extra work, since the environment variable for the latest profile are automatically set by <a href="https://fastlane.tools/match"><em>match</em></a></p>
 <pre><code class="ruby">lane :beta do
   match(type: &quot;adhoc&quot;)
   gym

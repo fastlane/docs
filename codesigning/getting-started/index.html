@@ -466,16 +466,16 @@ brew cask install fastlane
 <li><a href="#using-xcodes-code-signing-feature">Using Xcode's code signing feature</a></li>
 <li><a href="#manually">Manually</a></li>
 </ul>
-<h2 id="using-match"><a name="user-content-using-match" href="#using-match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/match">match</a></h2>
-<p>The concept of <a href="https://fastlane.tools/match">match</a> is described in the <a href="https://codesigning.guide">codesigning guide</a>. </p>
-<p>With <a href="https://fastlane.tools/match">match</a> you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach <a href="https://docs.fastlane.tools/actions/match/#is-this-secure">is secure</a> and uses technology you already use.</p>
-<p>Getting started with <a href="https://fastlane.tools/match">match</a> requires you to revoke your existing certificates.</p>
+<h2 id="using-match"><a name="user-content-using-match" href="#using-match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/match"><em>match</em></a></h2>
+<p>The concept of <a href="https://fastlane.tools/match"><em>match</em></a> is described in the <a href="https://codesigning.guide">codesigning guide</a>. </p>
+<p>With <a href="https://fastlane.tools/match"><em>match</em></a> you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach <a href="https://docs.fastlane.tools/actions/match/#is-this-secure">is secure</a> and uses technology you already use.</p>
+<p>Getting started with <a href="https://fastlane.tools/match"><em>match</em></a> requires you to revoke your existing certificates.</p>
 <p>Make sure to follow <a href="../xcode-project/">Setting up your Xcode Project</a> to set up your project properly.</p>
-<h2 id="using-cert-and-sigh"><a name="user-content-using-cert-and-sigh" href="#using-cert-and-sigh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a></h2>
-<p>If you don't want to revoke your existing certificates, but still want an automated setup, <a href="https://fastlane.tools/cert">cert</a> and <a href="https://fastlane.tools/sigh">sigh</a> are for you. </p>
+<h2 id="using-cert-and-sigh"><a name="user-content-using-cert-and-sigh" href="#using-cert-and-sigh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <a href="https://fastlane.tools/cert"><em>cert</em></a> and <a href="https://fastlane.tools/sigh"><em>sigh</em></a></h2>
+<p>If you don't want to revoke your existing certificates, but still want an automated setup, <a href="https://fastlane.tools/cert"><em>cert</em></a> and <a href="https://fastlane.tools/sigh"><em>sigh</em></a> are for you. </p>
 <ul>
-<li><a href="https://fastlane.tools/cert">cert</a> will make sure you have a valid certificate and its private key installed on the local machine</li>
-<li><a href="https://fastlane.tools/sigh">sigh</a> will make sure you have a valid provisioning profile installed locally, that matches the installed certificate</li>
+<li><a href="https://fastlane.tools/cert"><em>cert</em></a> will make sure you have a valid certificate and its private key installed on the local machine</li>
+<li><a href="https://fastlane.tools/sigh"><em>sigh</em></a> will make sure you have a valid provisioning profile installed locally, that matches the installed certificate</li>
 </ul>
 <p>Add the following lines to your <code>Fastfile</code></p>
 <pre><code class="ruby">lane :beta do
