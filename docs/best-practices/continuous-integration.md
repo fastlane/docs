@@ -187,7 +187,7 @@ end
 The `setup_circle_ci` _fastlane_ action will perform the following actions:
 
 * Create a new temporary keychain for use with
-  [match](https://fastlane.tools/match) (see the [CircleCI code signing
+  [_match_](https://fastlane.tools/match) (see the [CircleCI code signing
   doc](https://circleci.com/docs/2.0/ios-codesigning/) for more details).
 * Switch _match_ to readonly mode to make sure CI does not create new
   code signing certificates or provisioning profiles.

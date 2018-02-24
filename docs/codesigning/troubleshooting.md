@@ -33,8 +33,8 @@ If a certificate gets revoked, all connected provisioning profiles get invalidat
 - Verify your certificates are valid, and didn't expire or get revoked
 - Switch to the Provisioning Profiles and make sure the profiles you want to use are all still valid
   1. If your profile is invalid or expired, you can easily fix it:
-    1. If you're using [match](https://fastlane.tools/match), run _match_ with `force` enabled
-    - If you're using [sigh](https://fastlane.tools/sigh), run _sigh_ with `force` enabled
+    1. If you're using [_match_](https://fastlane.tools/match), run _match_ with `force` enabled
+    - If you're using [_sigh_](https://fastlane.tools/sigh), run _sigh_ with `force` enabled
     - If you're doing manual code signing, edit the provisioning profile, and click on `Generate` on the bottom of the screen. Make sure to select the correct certificate, then download and open the new provisioning profile
   - If your profile is valid, but you still have issues make sure
     1. that the certificate matches the certificate you have installed locally. You can view the used certificate by editing the profile (Don't click `Generate`, unless you want to re-generate the provisioning profile)

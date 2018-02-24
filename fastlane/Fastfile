@@ -72,7 +72,7 @@ private_lane :ensure_image_assets do
       else
         path = File.join(File.expand_path("..", current_file), match.first)
       end
-      
+
       if File.exist?(path)
         UI.message("- ✔ Verified image named '#{File.basename(match.first)}'")
         next
@@ -103,14 +103,16 @@ private_lane :ensure_assets_location do
   UI.success "✅  All assets are in the correct subfolder"
 end
 
+# This ensures the correct formatting for the fastlane tools
 private_lane :ensure_tool_name_formatting do
-  UI.message "🕗  Verifying tool name formatting..."
+  UI.message("🕗  Verifying tool name formatting...")
   require 'fastlane/tools'
   errors = []
   Dir["docs/**/*.md"].each do |path|
     content = File.read(path)
     Fastlane::TOOLS.each do |tool|
       errors << "Use _#{tool}_ instead of `#{tool}` to mention a tool in the docs in '#{path}'" if content.include?("`#{tool}`")
+      errors << "Use [_#{tool}_] instead of [#{tool}] to mention a tool in the docs in '#{path}'" if content.include?("[#{tool}]")
       if content.include?("_#{tool.to_s.capitalize}_") || content.include?("`#{tool.to_s.capitalize}`")
         errors << "fastlane tools have to be formatted in lower case: #{tool} in '#{path}'"
       end
@@ -118,7 +120,7 @@ private_lane :ensure_tool_name_formatting do
   end
   errors.each { |a| UI.error(a) }
   UI.user_error!("Invalid formatting of one of the fastlane tools") unless errors.empty?
-  UI.success "✅  fastlane formatting is correct"
+  UI.success("✅  fastlane tools formatting is correct")
 end
 
 # Run the code samples, yo

@@ -13,23 +13,23 @@ If you are new to code signing, check out the [WWDC session](https://developer.a
 - [Using Xcode's code signing feature](#using-xcodes-code-signing-feature)
 - [Manually](#manually)
 
-## Using [match](https://fastlane.tools/match)
+## Using [_match_](https://fastlane.tools/match)
 
-The concept of [match](https://fastlane.tools/match) is described in the [codesigning guide](https://codesigning.guide). 
+The concept of [_match_](https://fastlane.tools/match) is described in the [codesigning guide](https://codesigning.guide). 
 
-With [match](https://fastlane.tools/match) you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach [is secure](https://docs.fastlane.tools/actions/match/#is-this-secure) and uses technology you already use.
+With [_match_](https://fastlane.tools/match) you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach [is secure](https://docs.fastlane.tools/actions/match/#is-this-secure) and uses technology you already use.
 
 
-Getting started with [match](https://fastlane.tools/match) requires you to revoke your existing certificates.
+Getting started with [_match_](https://fastlane.tools/match) requires you to revoke your existing certificates.
 
 Make sure to follow [Setting up your Xcode Project](xcode-project.md) to set up your project properly.
 
-## Using [cert](https://fastlane.tools/cert) and [sigh](https://fastlane.tools/sigh)
+## Using [_cert_](https://fastlane.tools/cert) and [_sigh_](https://fastlane.tools/sigh)
 
-If you don't want to revoke your existing certificates, but still want an automated setup, [cert](https://fastlane.tools/cert) and [sigh](https://fastlane.tools/sigh) are for you. 
+If you don't want to revoke your existing certificates, but still want an automated setup, [_cert_](https://fastlane.tools/cert) and [_sigh_](https://fastlane.tools/sigh) are for you. 
 
-- [cert](https://fastlane.tools/cert) will make sure you have a valid certificate and its private key installed on the local machine
-- [sigh](https://fastlane.tools/sigh) will make sure you have a valid provisioning profile installed locally, that matches the installed certificate
+- [_cert_](https://fastlane.tools/cert) will make sure you have a valid certificate and its private key installed on the local machine
+- [_sigh_](https://fastlane.tools/sigh) will make sure you have a valid provisioning profile installed locally, that matches the installed certificate
 
 Add the following lines to your `Fastfile`
 
