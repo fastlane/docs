@@ -40,13 +40,13 @@ backup_xcarchive(
 
 Key | Description | Default
 ----|-------------|--------
-  `xcarchive` | Path to your xcarchive file. Optional if you use the `xcodebuild` action | [*](#dynamic)
+  `xcarchive` | Path to your xcarchive file. Optional if you use the `xcodebuild` action | [*](#parameters-legend-dynamic)
   `destination` | Where your archive will be placed | 
   `zip` | Enable compression of the archive | `true`
-  `zip_filename` | Filename of the compressed archive. Will be appended by `.xcarchive.zip`. Default value is the output xcarchive filename | [*](#dynamic)
+  `zip_filename` | Filename of the compressed archive. Will be appended by `.xcarchive.zip`. Default value is the output xcarchive filename | [*](#parameters-legend-dynamic)
   `versioned` | Create a versioned (date and app version) subfolder where to put the archive | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

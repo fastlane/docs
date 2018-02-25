@@ -43,7 +43,7 @@ Key | Description | Default
   `path` | The Plist file's path | 
   `url_schemes` | The new URL schemes | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

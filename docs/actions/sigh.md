@@ -240,10 +240,10 @@ Key | Description | Default
   `development` | Renew the development certificate instead of the production one | `false`
   `skip_install` | By default, the certificate will be added to your local machine. Setting this flag will skip this action | `false`
   `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles | `false`
-  `app_identifier` | The bundle identifier of your app | [*](#dynamic)
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#dynamic)
-  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#dynamic)
+  `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `provisioning_name` | The name of the profile that is used on the Apple Developer Portal | 
   `ignore_profiles_with_different_name` | Use in combination with :provisioning_name - when true only profiles matching this exact name will be downloaded | `false`
   `output_path` | Directory in which the profile should be stored | `.`
@@ -256,7 +256,7 @@ Key | Description | Default
   `readonly` | Only fetch existing profile, don't generate new ones | `false`
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

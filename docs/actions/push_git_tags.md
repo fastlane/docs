@@ -39,7 +39,7 @@ Key | Description | Default
   `remote` | The remote to push tags to | `origin`
   `tag` | The tag to push to remote | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

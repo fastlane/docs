@@ -28,7 +28,7 @@ Returns | The URL to preview the iPhone app
 
 Key | Description | Default
 ----|-------------|--------
-  `public_key` | Public key of the app you wish to update | [*](#dynamic)
+  `public_key` | Public key of the app you wish to update | [*](#parameters-legend-dynamic)
   `base_url` | Base URL of Appetize service | `https://appetize.io/embed`
   `device` | Device type: iphone4s, iphone5s, iphone6, iphone6plus, ipadair, iphone6s, iphone6splus, ipadair2, nexus5, nexus7 or nexus9 | `iphone5s`
   `scale` | Scale of the simulator | 
@@ -40,7 +40,7 @@ Key | Description | Default
   `params` | Specifiy params value to be passed to Appetize | 
   `proxy` | Specify a HTTP proxy to be passed to Appetize | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -104,7 +104,7 @@ Key | Description | Default
   `print_command` | Control whether the generated Gradle command is printed as output before running it (true/false) | `true`
   `print_command_output` | Control whether the output produced by given Gradle command is printed while running (true/false) | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

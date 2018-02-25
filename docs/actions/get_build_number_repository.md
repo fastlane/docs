@@ -40,7 +40,7 @@ Key | Description | Default
 ----|-------------|--------
   `use_hg_revision_number` | Use hg revision number instead of hash (ignored for non-hg repos) | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

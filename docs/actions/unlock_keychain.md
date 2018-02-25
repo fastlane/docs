@@ -67,7 +67,7 @@ Key | Description | Default
   `add_to_search_list` | Add to keychain search list | `true`
   `set_default` | Set as default keychain | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -71,7 +71,7 @@ Key | Description | Default
   `reply_to` | Mail Reply to | 
   `attachment` | Mail Attachment filenames, either an array or just one string | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -87,7 +87,7 @@ automatic_code_signing(
 
 Key | Description | Default
 ----|-------------|--------
-  `path` | Path to your Xcode project | [*](#dynamic)
+  `path` | Path to your Xcode project | [*](#parameters-legend-dynamic)
   `use_automatic_signing` | Defines if project should use automatic signing | `false`
   `team_id` | Team ID, is used when upgrading project | 
   `targets` | Specify targets you want to toggle the signing mech. (default to all targets) | 
@@ -96,7 +96,7 @@ Key | Description | Default
   `profile_uuid` | Provisioning profile UUID to use for code signing | 
   `bundle_identifier` | Application Product Bundle Identifier | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

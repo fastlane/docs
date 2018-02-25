@@ -46,7 +46,7 @@ Key | Description | Default
   `bundle_identifier` | Required bundle identifier | 
   `ipa_path` | Explicitly set the ipa path | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -46,7 +46,7 @@ Key | Description | Default
   `without` | Exclude gems that are part of the specified named group | 
   `with` | Include gems that are part of the specified named group | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

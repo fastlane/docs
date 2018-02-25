@@ -41,7 +41,7 @@ Key | Description | Default
 ----|-------------|--------
   `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0') | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -47,7 +47,7 @@ Key | Description | Default
   `public_key` | If not provided, a new app will be created. If provided, the existing build will be overwritten | 
   `note` | Notes you wish to add to the uploaded app | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

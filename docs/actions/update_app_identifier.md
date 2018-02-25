@@ -39,11 +39,11 @@ update_app_identifier(
 
 Key | Description | Default
 ----|-------------|--------
-  `xcodeproj` | Path to your Xcode project | [*](#dynamic)
+  `xcodeproj` | Path to your Xcode project | [*](#parameters-legend-dynamic)
   `plist_path` | Path to info plist, relative to your Xcode project | 
-  `app_identifier` | The app Identifier you want to set | [*](#dynamic)
+  `app_identifier` | The app Identifier you want to set | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

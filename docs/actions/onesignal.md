@@ -49,7 +49,7 @@ Key | Description | Default
   `apns_p12_password` | APNS P12 password | 
   `apns_env` | APNS environment | `production`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

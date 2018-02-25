@@ -53,7 +53,7 @@ Key | Description | Default
   `identifying_value` | String uniquely specifying an item within the app | 
   `other_fields` | Dictionary of your app fields. Podio supports several field types, see https://developers.podio.com/doc/items | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
