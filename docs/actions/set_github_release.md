@@ -51,16 +51,16 @@ Key | Description | Default
 ----|-------------|--------
   `repository_name` | The path to your repo, e.g. 'fastlane/fastlane' | 
   `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com') | `https://api.github.com`
-  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | [*](#dynamic)
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | [*](#parameters-legend-dynamic)
   `tag_name` | Pass in the tag name | 
   `name` | Name of this release | 
   `commitish` | Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually master) | 
-  `description` | Description of this release | [*](#dynamic)
+  `description` | Description of this release | [*](#parameters-legend-dynamic)
   `is_draft` | Whether the release should be marked as draft | `false`
   `is_prerelease` | Whether the release should be marked as prerelease | `false`
   `upload_assets` | Path to assets to be uploaded with the release | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

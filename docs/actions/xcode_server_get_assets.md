@@ -51,7 +51,7 @@ Key | Description | Default
   `keep_all_assets` | Whether to keep all assets or let the script delete everything except for the .xcarchive | `false`
   `trust_self_signed_certs` | Whether to trust self-signed certs on your Xcode Server | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

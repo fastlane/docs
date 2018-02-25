@@ -28,7 +28,7 @@ Author | @KrauseFx
 Key | Description | Default
 ----|-------------|--------
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

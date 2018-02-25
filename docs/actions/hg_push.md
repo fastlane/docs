@@ -45,7 +45,7 @@ Key | Description | Default
   `force` | Force push to remote | `false`
   `destination` | The destination to push to | `''`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

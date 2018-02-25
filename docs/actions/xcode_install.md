@@ -37,10 +37,10 @@ xcode_install(version: "7.1")
 Key | Description | Default
 ----|-------------|--------
   `version` | The version number of the version of Xcode to install | 
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `team_id` | The ID of your team if you're in multiple teams | [*](#dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your team if you're in multiple teams | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

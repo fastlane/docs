@@ -56,7 +56,7 @@ Key | Description | Default
   `head` | A branch/tag/commit to use as the head. [master|dev|stable] | 
   `pr` | Run danger on a specific pull request. e.g. "https://github.com/danger/danger/pull/518" | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

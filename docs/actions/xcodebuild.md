@@ -11,7 +11,7 @@ Use the `xcodebuild` command to build and sign your app
 
 
 
-> **Note**: `xcodebuild` is a complex command, so it is recommended to use [_gym_](https://docs.fastlane.tools/actions/gym/) for building your ipa file and [_scan_](https://docs.fastlane.tools/actions/scan/) for testing your app instead.
+> **Note**: `xcodebuild` is a complex command, so it is recommended to use [gym](https://docs.fastlane.tools/actions/gym/) for building your ipa file and [scan](https://docs.fastlane.tools/actions/scan/) for testing your app instead.
 
 
 xcodebuild |

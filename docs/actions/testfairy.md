@@ -40,16 +40,16 @@ testfairy(
 Key | Description | Default
 ----|-------------|--------
   `api_key` | API Key for TestFairy | 
-  `ipa` | Path to your IPA file for iOS or APK for Android | [*](#dynamic)
-  `symbols_file` | Symbols mapping file | [*](#dynamic)
+  `ipa` | Path to your IPA file for iOS or APK for Android | [*](#parameters-legend-dynamic)
+  `symbols_file` | Symbols mapping file | [*](#parameters-legend-dynamic)
   `testers_groups` | Array of tester groups to be notified | `[]`
   `metrics` | Array of metrics to record (cpu,memory,network,phone_signal,gps,battery,mic,wifi) | `[]`
   `comment` | Additional release notes for this upload. This text will be added to email notifications | `No comment provided`
-  `auto_update` | Allows an easy upgrade of all users to the current version. The default is 'off', to enable set as 'on' | `off`
+  `auto_update` | Allows an easy upgrade of all users to the current version. To enable set to 'on' | `off`
   `notify` | Send email to testers | `off`
   `options` | Array of options (shake,video_only_wifi,anonymous) | `[]`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

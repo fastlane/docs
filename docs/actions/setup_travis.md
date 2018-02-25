@@ -39,7 +39,7 @@ Key | Description | Default
 ----|-------------|--------
   `force` | Force setup, even if not executed by travis | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

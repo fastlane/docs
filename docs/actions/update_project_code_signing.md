@@ -30,10 +30,10 @@ Author | @KrauseFx
 Key | Description | Default
 ----|-------------|--------
   `path` | Path to your Xcode project | 
-  `udid` | DEPRECATED: see :uuid | [*](#dynamic)
-  `uuid` | The UUID of the provisioning profile you want to use | [*](#dynamic)
+  `udid` | DEPRECATED: see :uuid | [*](#parameters-legend-dynamic)
+  `uuid` | The UUID of the provisioning profile you want to use | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

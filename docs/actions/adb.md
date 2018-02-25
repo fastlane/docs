@@ -42,7 +42,7 @@ Key | Description | Default
   `command` | All commands you want to pass to the adb command, e.g. `kill-server` | 
   `adb_path` | The path to your `adb` binary | `adb`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

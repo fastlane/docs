@@ -71,7 +71,7 @@ Key | Description | Default
   `source_files` | A Dir.glob compatible pattern used to limit the lookup to specific source files. Ignored in gcov mode | `false`
   `decimals` | The amount of decimals to use for % coverage reporting | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

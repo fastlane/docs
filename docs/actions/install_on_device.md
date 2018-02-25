@@ -41,9 +41,9 @@ Key | Description | Default
   `extra` | Extra Commandline arguments passed to ios-deploy | 
   `device_id` | id of the device / if not set defaults to first found device | 
   `skip_wifi` | Do not search for devices via WiFi | 
-  `ipa` | The IPA file to put on the device | [*](#dynamic)
+  `ipa` | The IPA file to put on the device | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

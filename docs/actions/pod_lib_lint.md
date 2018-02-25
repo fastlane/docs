@@ -59,7 +59,7 @@ Key | Description | Default
   `private` | Lint skips checks that apply only to public specs | `false`
   `quick` | Lint skips checks that would require to download and build the spec | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

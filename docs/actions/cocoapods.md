@@ -53,7 +53,7 @@ Key | Description | Default
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status | 
   `try_repo_update_on_error` | Retry with --repo-update if action was finished with error | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

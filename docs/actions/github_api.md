@@ -66,7 +66,7 @@ result = github_api(
 Key | Description | Default
 ----|-------------|--------
   `server_url` | The server url. e.g. 'https://your.internal.github.host/api/v3' (Default: 'https://api.github.com') | `https://api.github.com`
-  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | [*](#dynamic)
+  `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | [*](#parameters-legend-dynamic)
   `http_method` | The HTTP method. e.g. GET / POST | `GET`
   `body` | The request body in JSON or hash format | `{}`
   `raw_body` | The request body taken vertabim instead of as JSON, useful for file uploads | 
@@ -76,7 +76,7 @@ Key | Description | Default
   `headers` | Optional headers to apply | `{}`
   `secure` | Optionally disable secure requests (ssl_verify_peer) | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

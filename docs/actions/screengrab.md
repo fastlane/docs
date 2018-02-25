@@ -194,27 +194,27 @@ capture_android_screenshots(
 
 Key | Description | Default
 ----|-------------|--------
-  `android_home` | Path to the root of your Android SDK installation, e.g. ~/tools/android-sdk-macosx | [*](#dynamic)
+  `android_home` | Path to the root of your Android SDK installation, e.g. ~/tools/android-sdk-macosx | [*](#parameters-legend-dynamic)
   `build_tools_version` | The Android build tools version to use, e.g. '23.0.2' | 
   `locales` | A list of locales which should be used | `["en-US"]`
   `clear_previous_screenshots` | Enabling this option will automatically clear previously generated screenshots before running screengrab | `false`
   `output_directory` | The directory where to store the screenshots | `fastlane/metadata/android`
-  `skip_open_summary` | Don't open the summary after running _screengrab_ | [*](#dynamic)
-  `app_package_name` | The package name of the app under test (e.g. com.yourcompany.yourapp) | [*](#dynamic)
+  `skip_open_summary` | Don't open the summary after running _screengrab_ | [*](#parameters-legend-dynamic)
+  `app_package_name` | The package name of the app under test (e.g. com.yourcompany.yourapp) | [*](#parameters-legend-dynamic)
   `tests_package_name` | The package name of the tests bundle (e.g. com.yourcompany.yourapp.test) | 
   `use_tests_in_packages` | Only run tests in these Java packages | 
   `use_tests_in_classes` | Only run tests in these Java classes | 
   `launch_arguments` | Additional launch arguments | 
   `test_instrumentation_runner` | The fully qualified class name of your test instrumentation runner | `android.support.test.runner.AndroidJUnitRunner`
   `ending_locale` | Return the device to this locale after running tests | `en-US`
-  `app_apk_path` | The path to the APK for the app under test | [*](#dynamic)
-  `tests_apk_path` | The path to the APK for the the tests bundle | [*](#dynamic)
+  `app_apk_path` | The path to the APK for the app under test | [*](#parameters-legend-dynamic)
+  `tests_apk_path` | The path to the APK for the the tests bundle | [*](#parameters-legend-dynamic)
   `specific_device` | Use the device or emulator with the given serial number or qualifier | 
   `device_type` | Type of device used for screenshots. Matches Google Play Types (phone, sevenInch, tenInch, tv, wear) | `phone`
   `exit_on_test_failure` | Whether or not to exit Screengrab on test failure. Exiting on failure will not copy sceenshots to local machine nor open sceenshots summary | `true`
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

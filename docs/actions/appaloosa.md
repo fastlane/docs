@@ -55,16 +55,16 @@ appaloosa(
 
 Key | Description | Default
 ----|-------------|--------
-  `binary` | Binary path. Optional for ipa if you use the `ipa` or `xcodebuild` action | [*](#dynamic)
+  `binary` | Binary path. Optional for ipa if you use the `ipa` or `xcodebuild` action | [*](#parameters-legend-dynamic)
   `api_token` | Your API token | 
   `store_id` | Your Store id | 
   `group_ids` | Your app is limited to special users? Give us the group ids | `''`
-  `screenshots` | Add some screenshots application to your store or hit [enter] | [*](#dynamic)
+  `screenshots` | Add some screenshots application to your store or hit [enter] | [*](#parameters-legend-dynamic)
   `locale` | Select the folder locale for your screenshots | `en-US`
   `device` | Select the device format for your screenshots | 
   `description` | Your app description | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

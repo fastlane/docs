@@ -58,7 +58,7 @@ Key | Description | Default
   `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog.
 Valid values: 'include_merges', 'exclude_merges', 'only_include_merges' | `include_merges`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

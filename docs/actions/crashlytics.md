@@ -45,8 +45,8 @@ crashlytics(
 
 Key | Description | Default
 ----|-------------|--------
-  `ipa_path` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action | [*](#dynamic)
-  `apk_path` | Path to your APK file | [*](#dynamic)
+  `ipa_path` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action | [*](#parameters-legend-dynamic)
+  `apk_path` | Path to your APK file | [*](#parameters-legend-dynamic)
   `crashlytics_path` | Path to the submit binary in the Crashlytics bundle (iOS) or `crashlytics-devtools.jar` file (Android) | 
   `api_token` | Crashlytics API Key | 
   `build_secret` | Crashlytics Build Secret | 
@@ -57,7 +57,7 @@ Key | Description | Default
   `notifications` | Crashlytics notification option (true/false) | `true`
   `debug` | Crashlytics debug option (true/false) | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

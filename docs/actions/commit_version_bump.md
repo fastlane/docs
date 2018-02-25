@@ -85,7 +85,7 @@ Key | Description | Default
   `ignore` | A regular expression used to filter matched plist files to be modified | 
   `include` | A list of extra files to be included in the version bump (string array or comma-separated string) | `[]`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -56,7 +56,7 @@ Key | Description | Default
   `build_number` | Change to a specific version | 
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

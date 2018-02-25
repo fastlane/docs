@@ -47,7 +47,7 @@ Key | Description | Default
   `ticket_id` | Ticket ID for Jira, i.e. IOS-123 | 
   `comment_text` | Text to add to the ticket as a comment | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

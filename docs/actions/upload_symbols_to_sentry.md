@@ -48,10 +48,10 @@ Key | Description | Default
   `auth_token` | Authentication token for Sentry | 
   `org_slug` | Organization slug for Sentry project | 
   `project_slug` | Project slug for Sentry | 
-  `dsym_path` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip | [*](#dynamic)
-  `dsym_paths` | Path to an array of your symbols file. For iOS and Mac provide path to app.dSYM.zip | [*](#dynamic)
+  `dsym_path` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip | [*](#parameters-legend-dynamic)
+  `dsym_paths` | Path to an array of your symbols file. For iOS and Mac provide path to app.dSYM.zip | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
