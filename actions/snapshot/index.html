@@ -582,6 +582,9 @@ add_photos([&quot;MyTestApp/Assets/demo.jpg&quot;])
 
 <p><strong>Warning</strong>: This will delete <strong>all</strong> your simulators and replace by new ones! This is useful, if you run into weird problems when running <em>snapshot</em>.</p>
 <p>You can use the environment variable <code>SNAPSHOT_FORCE_DELETE</code> to stop asking for confirmation before deleting.</p>
+<pre><code class="no-highlight">SNAPSHOT_FORCE_DELETE=1 fastlane snapshot reset_simulators
+</code></pre>
+
 <h2 id="update-snapshot-helpers"><a name="user-content-update-snapshot-helpers" href="#update-snapshot-helpers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Update snapshot helpers</h2>
 <p>Some updates require the helper files to be updated. <em>snapshot</em> will automatically warn you and tell you how to update.</p>
 <p>Basically you can run</p>
@@ -732,7 +735,7 @@ launch_arguments([
 <tr>
 <td><code>output_directory</code></td>
 <td>The directory where to store the screenshots</td>
-<td><a href="#dynamic">*</a></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>output_simulator_logs</code></td>
@@ -777,7 +780,7 @@ launch_arguments([
 <tr>
 <td><code>app_identifier</code></td>
 <td>The bundle identifier of the app to uninstall (only needed when enabling reinstall_app)</td>
-<td><a href="#dynamic">*</a></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>add_photos</code></td>
@@ -792,7 +795,7 @@ launch_arguments([
 <tr>
 <td><code>buildlog_path</code></td>
 <td>The directory where to store the build log</td>
-<td><a href="#dynamic">*</a></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>clean</code></td>
@@ -807,7 +810,7 @@ launch_arguments([
 <tr>
 <td><code>configuration</code></td>
 <td>The configuration to use when building the app. Defaults to 'Release'</td>
-<td><a href="#dynamic">*</a></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>xcpretty_args</code></td>
@@ -856,7 +859,7 @@ launch_arguments([
 </tr>
 </tbody>
 </table>
-<p><em id="dynamic">* = default value is dependent on the user's system</em></p>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action snapshot
