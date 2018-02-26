@@ -302,7 +302,7 @@ Key | Description | Default
   `clean` | Should the project be cleaned before building it? | `false`
   `output_directory` | The directory in which the ipa file should be stored in | `.`
   `output_name` | The name of the resulting ipa file | 
-  `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#dynamic)
+  `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#parameters-legend-dynamic)
   `silent` | Hide all information that's not necessary while building | `false`
   `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH' | 
   `skip_package_ipa` | Should we skip packaging the ipa? | `false`
@@ -317,7 +317,7 @@ Key | Description | Default
   `archive_path` | The path to the created archive | 
   `derived_data_path` | The directory where built products and other derived data will go | 
   `result_bundle` | Location of the Xcode result bundle | 
-  `buildlog_path` | The directory where to store the build log | [*](#dynamic)
+  `buildlog_path` | The directory where to store the build log | [*](#parameters-legend-dynamic)
   `sdk` | The SDK that should be used for building the application | 
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a) | 
   `destination` | Use a custom destination for building the app | 
@@ -335,7 +335,7 @@ Key | Description | Default
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

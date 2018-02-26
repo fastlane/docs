@@ -131,15 +131,15 @@ Key | Description | Default
 ----|-------------|--------
   `development` | Create a development certificate instead of a distribution one | `false`
   `force` | Create a certificate even if an existing certificate exists | `false`
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#dynamic)
-  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `output_path` | The path to a directory in which all certificates and private keys should be stored | `.`
-  `keychain_path` | Path to a custom keychain | [*](#dynamic)
+  `keychain_path` | Path to a custom keychain | [*](#parameters-legend-dynamic)
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
   `platform` | Set the provisioning profile's platform (ios, macos) | `ios`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

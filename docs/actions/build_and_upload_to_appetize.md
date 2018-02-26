@@ -32,7 +32,7 @@ Key | Description | Default
   `scheme` | The scheme to build. Can also be passed using the `xcodebuild` parameter | 
   `api_token` | Appetize.io API Token | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

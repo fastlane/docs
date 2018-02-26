@@ -55,7 +55,7 @@ Key | Description | Default
   `output_path` | The name of the resulting zip file | 
   `verbose` | Enable verbose output of zipped file | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

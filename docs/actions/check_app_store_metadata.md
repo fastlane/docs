@@ -147,11 +147,11 @@ precheck   # alias for "check_app_store_metadata"
 
 Key | Description | Default
 ----|-------------|--------
-  `app_identifier` | The bundle identifier of your app | [*](#dynamic)
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
-  `default_rule_level` | The default rule level unless otherwise configured | `error`
+  `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `default_rule_level` | The default rule level unless otherwise configured | `:error`
   `include_in_app_purchases` | Should check in-app purchases? | `true`
   `negative_apple_sentiment` | mentioning  in a way that could be considered negative | 
   `placeholder_text` | using placeholder text (e.g.:"lorem ipsum", "text here", etc...) | 
@@ -164,7 +164,7 @@ Key | Description | Default
   `copyright_date` | using a copyright date that is any different from this current year, or missing a date | 
   `unreachable_urls` | unreachable URLs in app metadata | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

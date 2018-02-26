@@ -46,9 +46,9 @@ spec = read_podspec(path: "./XcodeServerSDK.podspec")
 
 Key | Description | Default
 ----|-------------|--------
-  `path` | Path to the podspec to be read | [*](#dynamic)
+  `path` | Path to the podspec to be read | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

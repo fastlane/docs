@@ -175,16 +175,16 @@ Key | Description | Default
   `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one | `30`
   `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days | `false`
   `save_private_key` | Set to save the private RSA key | `true`
-  `app_identifier` | The bundle identifier of your app | [*](#dynamic)
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#dynamic)
-  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#dynamic)
+  `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `p12_password` | The password that is used for your p12 file | `''`
   `pem_name` | The file name of the generated .pem file | 
   `output_path` | The path to a directory in which all certificates and private keys should be stored | `.`
   `new_profile` | Block that is called if there is a new profile | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

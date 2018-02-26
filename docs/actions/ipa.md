@@ -57,7 +57,7 @@ Key | Description | Default
   `scheme` | Scheme used to build app | 
   `clean` | Clean project before building | 
   `archive` | Archive project after building | 
-  `destination` | Build destination. Defaults to current directory | [*](#dynamic)
+  `destination` | Build destination. Defaults to current directory | [*](#parameters-legend-dynamic)
   `embed` | Sign .ipa file with .mobileprovision | 
   `identity` | Identity to be used along with --embed | 
   `sdk` | Use SDK as the name or path of the base SDK when building the project | 
@@ -65,7 +65,7 @@ Key | Description | Default
   `xcconfig` | Use an extra XCCONFIG file to build the app | 
   `xcargs` | Pass additional arguments to xcodebuild when building the app. Be sure to quote multiple args | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

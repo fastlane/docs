@@ -42,13 +42,13 @@ version = version_bump_podspec(path: "TSMessages.podspec", version_number: "1.4"
 
 Key | Description | Default
 ----|-------------|--------
-  `path` | You must specify the path to the podspec file to update | [*](#dynamic)
+  `path` | You must specify the path to the podspec file to update | [*](#parameters-legend-dynamic)
   `bump_type` | The type of this version bump. Available: patch, minor, major | `patch`
   `version_number` | Change to a specific version. This will replace the bump type value | 
   `version_appendix` | Change version appendix to a specific value. For example 1.4.14.4.1 -> 1.4.14.5 | 
   `require_variable_prefix` | true by default, this is used for non CocoaPods version bumps only | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

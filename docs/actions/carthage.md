@@ -73,7 +73,7 @@ Key | Description | Default
   `project_directory` | Define the directory containing the Carthage project | 
   `new_resolver` | Use new resolver when resolving dependency graph | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

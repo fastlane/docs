@@ -35,9 +35,9 @@ dotgpg_environment(dotgpg_file: './path/to/gpgfile')
 
 Key | Description | Default
 ----|-------------|--------
-  `dotgpg_file` | Path to your gpg file | [*](#dynamic)
+  `dotgpg_file` | Path to your gpg file | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

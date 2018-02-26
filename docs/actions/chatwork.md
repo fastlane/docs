@@ -45,7 +45,7 @@ Key | Description | Default
   `roomid` | The room ID | 
   `success` | Was this build successful? (true/false) | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

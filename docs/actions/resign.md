@@ -57,10 +57,10 @@ resign(
 
 Key | Description | Default
 ----|-------------|--------
-  `ipa` | Path to the ipa file to resign. Optional if you use the _gym_ or _xcodebuild_ action | [*](#dynamic)
+  `ipa` | Path to the ipa file to resign. Optional if you use the _gym_ or _xcodebuild_ action | [*](#parameters-legend-dynamic)
   `signing_identity` | Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)" | 
   `entitlements` | Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements" | 
-  `provisioning_profile` | Path to your provisioning_profile. Optional if you use _sigh_ | [*](#dynamic)
+  `provisioning_profile` | Path to your provisioning_profile. Optional if you use _sigh_ | [*](#parameters-legend-dynamic)
   `version` | Version number to force resigned ipa to use.
 Updates both CFBundleShortVersionString and CFBundleVersion values in Info.plist.
 Applies for main app and all nested apps or extensions | 
@@ -72,7 +72,7 @@ Applies for main app and all nested apps or extensions |
 and combine with entitlements from new provisionin profile | 
   `keychain_path` | Provide a path to a keychain file that should be used by /usr/bin/codesign | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
