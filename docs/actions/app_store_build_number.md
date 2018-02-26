@@ -51,15 +51,15 @@ app_store_build_number(
 Key | Description | Default
 ----|-------------|--------
   `initial_build_number` | sets the build number to given value if no build is in current train | 
-  `app_identifier` | The bundle identifier of your app | [*](#dynamic)
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
+  `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `live` | Query the live version (ready-for-sale) | `true`
   `version` | The version number whose latest build number we want | 
   `platform` | The platform to use (optional) | `ios`
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

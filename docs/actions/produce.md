@@ -279,12 +279,12 @@ produce   # alias for "create_app_online"
 
 Key | Description | Default
 ----|-------------|--------
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app) | [*](#dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app) | [*](#parameters-legend-dynamic)
   `bundle_identifier_suffix` | App Identifier Suffix (Ignored if App Identifier does not end with .*) | 
   `app_name` | App Name | 
   `app_version` | Initial version number (e.g. '1.0') | 
-  `sku` | SKU Number (e.g. '1234') | [*](#dynamic)
+  `sku` | SKU Number (e.g. '1234') | [*](#parameters-legend-dynamic)
   `platform` | The platform to use (optional) | `ios`
   `language` | Primary Language (e.g. 'English', 'German') | `English`
   `company_name` | The name of your company. Only required if it's the first app you create | 
@@ -293,12 +293,12 @@ Key | Description | Default
   `enabled_features` | [DEPRECATED!] Please use `enable_services` instead - Array with Spaceship App Services | `{}`
   `enable_services` | Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), wireless_accessory: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off), network_extension: (on|off), hotspot: (on|off), multipath: (on|off), nfc_tag_reading: (on|off)) | `{}`
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal | `false`
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#dynamic)
-  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#dynamic)
-  `itc_team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
-  `itc_team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `itc_team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `itc_team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

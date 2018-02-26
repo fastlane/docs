@@ -75,7 +75,7 @@ Key | Description | Default
   `enable_global_analysis` | Compile every source, and analyze across global contexts (depends on number of source files, could results in high memory load) | `false`
   `allow_duplicated_violations` | Allow duplicated violations in the OCLint report | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

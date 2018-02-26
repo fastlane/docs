@@ -51,7 +51,7 @@ Key | Description | Default
   `boolean` | Is that a boolean question (yes/no)? This will add (y/n) at the end | `false`
   `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

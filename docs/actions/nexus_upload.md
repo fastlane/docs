@@ -62,7 +62,7 @@ Key | Description | Default
   `proxy_address` | Proxy address | 
   `proxy_port` | Proxy port | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

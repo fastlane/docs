@@ -94,7 +94,7 @@ Key | Description | Default
   `logformat` | Log format [0-3] | 
   `verbose` | Log verbosity level [0-6,xcode] | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -77,7 +77,7 @@ Key | Description | Default
   `version` | The version tag of the release to check | 
   `api_token` | GitHub Personal Token (required for private repositories) | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

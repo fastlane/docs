@@ -32,7 +32,7 @@ Key | Description | Default
   `rail` | Character or emoji for the rail | `=`
   `reverse_direction` | Pass true if you want the train to go from left to right | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

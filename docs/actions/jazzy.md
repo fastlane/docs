@@ -37,7 +37,7 @@ Key | Description | Default
 ----|-------------|--------
   `config` | Path to jazzy config file | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

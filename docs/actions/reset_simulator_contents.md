@@ -37,7 +37,7 @@ Key | Description | Default
 ----|-------------|--------
   `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

@@ -41,7 +41,7 @@ Key | Description | Default
   `fallback_changelog` | Fallback changelog if there is not one on Jenkins, or it couldn't be read | `''`
   `include_commit_body` | Include the commit body along with the summary | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

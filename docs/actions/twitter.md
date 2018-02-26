@@ -47,7 +47,7 @@ Key | Description | Default
   `access_token_secret` | Access Token Secret | 
   `message` | The tweet | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

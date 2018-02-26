@@ -67,11 +67,11 @@ Key | Description | Default
   `xcodeproj` | Path to your Xcode project | 
   `plist_path` | Path to info plist | 
   `scheme` | Scheme of info plist | 
-  `app_identifier` | The App Identifier of your app | [*](#dynamic)
+  `app_identifier` | The App Identifier of your app | [*](#parameters-legend-dynamic)
   `display_name` | The Display Name of your app | 
   `block` | A block to process plist with custom logic | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

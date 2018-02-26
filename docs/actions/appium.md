@@ -56,7 +56,7 @@ Key | Description | Default
   `caps` | Hash of caps for Appium::Driver | 
   `appium_lib` | Hash of appium_lib for Appium::Driver | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

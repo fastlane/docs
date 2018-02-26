@@ -404,15 +404,15 @@ Key | Description | Default
   `git_url` | URL to the git repo containing all the certificates | 
   `git_branch` | Specific git branch to use | `master`
   `type` | Define the profile type, can be appstore, adhoc, development, enterprise | `development`
-  `app_identifier` | The bundle identifier(s) of your app (comma-separated) | [*](#dynamic)
-  `username` | Your Apple ID Username | [*](#dynamic)
+  `app_identifier` | The bundle identifier(s) of your app (comma-separated) | [*](#parameters-legend-dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
-  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#dynamic)
+  `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `git_full_name` | git user full name to commit | 
   `git_user_email` | git user email to commit | 
-  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#dynamic)
+  `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `verbose` | Print out extra information and all commands | `false`
   `force` | Renew the provisioning profiles every time you run match | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
@@ -423,7 +423,7 @@ Key | Description | Default
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos) | `ios`
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

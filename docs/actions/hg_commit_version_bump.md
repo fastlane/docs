@@ -54,7 +54,7 @@ Key | Description | Default
   `test_dirty_files` | A list of dirty files passed in for testing | `file1, file2`
   `test_expected_files` | A list of expected changed files passed in for testing | `file1, file2`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

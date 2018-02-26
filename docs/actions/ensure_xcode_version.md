@@ -38,7 +38,7 @@ Key | Description | Default
 ----|-------------|--------
   `version` | Xcode version to verify that is selected | 
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

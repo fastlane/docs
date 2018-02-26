@@ -52,12 +52,12 @@ hockey(
 
 Key | Description | Default
 ----|-------------|--------
-  `apk` | Path to your APK file | [*](#dynamic)
+  `apk` | Path to your APK file | [*](#parameters-legend-dynamic)
   `api_token` | API Token for Hockey Access | 
-  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action. For Mac zip the .app. For Android provide path to .apk file. In addition you could use this to upload .msi, .zip, .pkg, etc if you use the 'create_update' mechanism | [*](#dynamic)
-  `dsym` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip. For Android provide path to mappings.txt file | [*](#dynamic)
+  `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action. For Mac zip the .app. For Android provide path to .apk file. In addition you could use this to upload .msi, .zip, .pkg, etc if you use the 'create_update' mechanism | [*](#parameters-legend-dynamic)
+  `dsym` | Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip. For Android provide path to mappings.txt file | [*](#parameters-legend-dynamic)
   `create_update` | Set true if you want to create then update your app as opposed to just upload it. You will need the 'public_identifier', 'bundle_version' and 'bundle_short_version' | `false`
-  `notes` | Beta Notes | [*](#dynamic)
+  `notes` | Beta Notes | [*](#parameters-legend-dynamic)
   `notify` | Notify testers? "1" for yes | `1`
   `status` | Download status: "1" = No user can download; "2" = Available for download (only possible with full-access token) | `2`
   `create_status` | Download status for initial version creation when create_update is true: "1" = No user can download; "2" = Available for download (only possible with full-access token) | `2`
@@ -80,7 +80,7 @@ Key | Description | Default
   `bypass_cdn` | Flag to bypass Hockey CDN when it uploads successfully but reports error | `false`
   `dsa_signature` | DSA signature for sparkle updates for macOS | `''`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

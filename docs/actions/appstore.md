@@ -719,12 +719,12 @@ appstore  # alias for "upload_to_app_store"
 
 Key | Description | Default
 ----|-------------|--------
-  `username` | Your Apple ID Username | [*](#dynamic)
-  `app_identifier` | The bundle identifier of your app | [*](#dynamic)
+  `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `app` | The app ID of the app you want to use/modify | 
   `edit_live` | Modify live metadata, this option disables ipa upload and screenshot upload | `false`
-  `ipa` | Path to your ipa file | [*](#dynamic)
-  `pkg` | Path to your pkg file | [*](#dynamic)
+  `ipa` | Path to your ipa file | [*](#parameters-legend-dynamic)
+  `pkg` | Path to your pkg file | [*](#parameters-legend-dynamic)
   `platform` | The platform to use (optional) | `ios`
   `metadata_path` | Path to the folder containing the metadata files | 
   `screenshots_path` | Path to the folder containing the screenshots | 
@@ -743,14 +743,14 @@ Key | Description | Default
   `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one | 
   `app_rating_config_path` | Path to the app rating's config | 
   `submission_information` | Extra information for the submission (e.g. third party content) | 
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#dynamic)
-  `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#dynamic)
-  `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#dynamic)
+  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
+  `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
-  `precheck_default_rule_level` | The default rule level unless otherwise configured | `warn`
+  `precheck_default_rule_level` | The default rule level unless otherwise configured | `:warn`
   `app_icon` | Metadata: The path to the app icon | 
   `apple_watch_app_icon` | Metadata: The path to the Apple Watch app icon | 
   `copyright` | Metadata: The copyright notice | 
@@ -775,7 +775,7 @@ Key | Description | Default
   `ignore_language_directory_validation` | Ignore errors when invalid languages are found in metadata and screeenshot directories | `false`
   `precheck_include_in_app_purchases` | Should precheck check in-app purchases? | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

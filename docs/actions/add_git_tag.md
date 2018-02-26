@@ -61,13 +61,13 @@ Key | Description | Default
   `grouping` | Is used to keep your tags organised under one 'folder' | `builds`
   `prefix` | Anything you want to put in front of the version number (e.g. 'v') | `''`
   `postfix` | Anything you want to put at the end of the version number (e.g. '-RC1') | `''`
-  `build_number` | The build number. Defaults to the result of increment_build_number if you're using it | [*](#dynamic)
-  `message` | The tag message. Defaults to the tag's name | [*](#dynamic)
-  `commit` | The commit or object where the tag will be set. Defaults to the current HEAD | [*](#dynamic)
+  `build_number` | The build number. Defaults to the result of increment_build_number if you're using it | [*](#parameters-legend-dynamic)
+  `message` | The tag message. Defaults to the tag's name | [*](#parameters-legend-dynamic)
+  `commit` | The commit or object where the tag will be set. Defaults to the current HEAD | [*](#parameters-legend-dynamic)
   `force` | Force adding the tag | `false`
   `sign` | Make a GPG-signed tag, using the default e-mail address's key | `false`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

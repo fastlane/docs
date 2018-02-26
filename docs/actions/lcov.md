@@ -44,7 +44,7 @@ Key | Description | Default
   `arch` | The build arch where will search .gcda files | `i386`
   `output_dir` | The output directory that coverage data will be stored. If not passed will use coverage_reports as default value | `coverage_reports`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

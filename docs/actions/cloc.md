@@ -46,7 +46,7 @@ Key | Description | Default
   `source_directory` | Where to look for the source code (relative to the project root folder) | `''`
   `xml` | Should we generate an XML File (if false, it will generate a plain text file)? | `true`
 
-<em id="dynamic">* = default value is dependent on the user's system</em>
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
