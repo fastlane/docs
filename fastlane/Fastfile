@@ -16,7 +16,7 @@ end
 
 lane :post_slack_deploy_message do
   slack(message: "Deployed a new version of [docs.fastlane.tools](https://docs.fastlane.tools)",
-        channel: "#new-docs",
+        channel: "#docs",
         default_payloads: [])
 end
 
