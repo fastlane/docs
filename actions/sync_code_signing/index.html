@@ -639,6 +639,13 @@ end
 </code></pre>
 
 <p><em>match</em> can even use the same one Git repository for all bundle identifiers.</p>
+<h5 id="templates-aka-custom-entitlements"><a name="user-content-templates-aka-custom-entitlements" href="#templates-aka-custom-entitlements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Templates (aka: custom entitlements)</h5>
+<p>Match can generate profiles that contain custom entitlements by passing in the entitlement's name with the <code>template_name</code> parameter.</p>
+<pre><code>match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
+      type: &quot;development&quot;,
+      template_name: &quot;Apple Pay Pass Suppression Development&quot;)
+</code></pre>
+
 <h3 id="setup-xcode-project"><a name="user-content-setup-xcode-project" href="#setup-xcode-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup Xcode project</h3>
 <p><a href="../../codesigning/xcode-project/">Docs on how to set up your Xcode project</a></p>
 <h4 id="to-build-from-the-command-line-using-fastlane"><a name="user-content-to-build-from-the-command-line-using-fastlane" href="#to-build-from-the-command-line-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To build from the command line using <a href="https://fastlane.tools"><em>fastlane</em></a></h4>
@@ -847,7 +854,7 @@ fastlane match nuke enterprise
 </tr>
 <tr>
 <td><code>template_name</code></td>
-<td>The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile</td>
+<td>The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
 <td></td>
 </tr>
 </tbody>
