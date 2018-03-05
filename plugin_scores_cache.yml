@@ -374,7 +374,7 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 503
+  :age_in_days: 511
   :readme_score: 100
   :tests: 1
   :actions:
@@ -388,12 +388,12 @@ fastlane-plugin-aws_device_farm:
     category: 
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: 961614b0c94f3019f8f72eb602b3a5ca4e0513c024a52cc39b0465a76cdaf69e
+  :sha: 0f50a2e614b6fe7c2468de26abddd27938a0bbe74451a4233ed3b707c3afb4ac
   :github_stars: 44
   :github_subscribers: 5
   :github_issues: 1
-  :github_forks: 12
-  :github_contributors: 7
+  :github_forks: 13
+  :github_contributors: 8
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
   :age_in_days: 497
@@ -946,7 +946,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 125
+  :age_in_days: 133
   :readme_score: 100
   :tests: 77
   :actions:
@@ -990,11 +990,11 @@ fastlane-plugin-test_center:
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: 1051e91792fc337f44c5056f0b25252b33e87f16254990bbf7fbcfee6f08a500
+  :sha: 643f04dc9d83a7c09f10b4057e081653eef43d5bb4530426e5cb18c2d80245a4
   :github_stars: 10
   :github_subscribers: 2
-  :github_issues: 5
-  :github_forks: 1
+  :github_issues: 8
+  :github_forks: 2
   :github_contributors: 1
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -2054,7 +2054,7 @@ fastlane-plugin-docker:
   :github_contributors: 2
 fastlane-plugin-diawi:
   :initial_commit: 2017-04-09
-  :age_in_days: 322
+  :age_in_days: 330
   :readme_score: 100
   :tests: 1
   :actions:
@@ -2064,10 +2064,10 @@ fastlane-plugin-diawi:
     description: Upload .ipa/.apk file to diawi.com
     details: This action upload .ipa/.apk file to https://www.diawi.com and return
       link to uploaded file.
-  :sha: 79b602c68341d56432e366b2e7be98c8512b88a480f7dae4bccf53e274e09efd
+  :sha: eed5346079f9f17bce380e1bcc7a5e537702867248cc399f92ef11cf6fff314f
   :github_stars: 11
   :github_subscribers: 2
-  :github_issues: 1
+  :github_issues: 0
   :github_forks: 1
   :github_contributors: 1
 fastlane-plugin-git_tags:
@@ -3524,20 +3524,19 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 30
+  :age_in_days: 38
   :readme_score: 100
-  :tests: 1
+  :tests: 14
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: lizard
     category: 
-    description: Lizard is an extensible Cyclomatic Complexity Analyzer for many imperative
-      programming languages including C/C++
+    description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: bf4bda219de819bdebf5eb6972948da7599064e34b498088a8c22d181fe0caa2
+  :sha: f5fad4c1aada7e9e63c08c525ec1538a23b9e164f81f2c4217d84c71fbc8c25a
   :github_stars: 2
-  :github_subscribers: 4
+  :github_subscribers: 3
   :github_issues: 1
   :github_forks: 0
   :github_contributors: 1
