@@ -427,6 +427,86 @@ _deliver_ uses the following techniques under the hood:
 no, en-US, en-CA, fi, ru, zh-Hans, nl-NL, zh-Hant, en-AU, id, de-DE, sv, ko, ms, pt-BR, el, es-ES, it, fr-CA, es-MX, pt-PT, vi, th, ja, fr-FR, da, tr, en-GB
 ```
 
+## Available Metadata Folder Options
+
+_deliver_ allows for metadata to be set through `.txt` files in the metadata folder. This metadata folder location is defaulted to `./fastlane/metadata` but can be overridden through the `metadata_path` parameter. Below are all allowed metadata options.
+
+### Non-Localized Metadata
+
+<details>
+<summary>View all</summary>
+
+Key | Editable While Live | Directory | Filename
+----|--------|--------|--------
+  `copyright` | No | `<metadata_path>` | `copyright.txt`
+  `primary_category` | No | `<metadata_path>` | `primary_category.txt`
+  `secondary_category` | No | `<metadata_path>` | `secondary_category.txt`
+  `primary_first_sub_category` | No | `<metadata_path>` | `primary_first_sub_category.txt`
+  `primary_second_sub_category` | No | `<metadata_path>` | `primary_second_sub_category.txt`
+  `secondary_first_sub_category` | No | `<metadata_path>` | `secondary_first_sub_category.txt`
+  `secondary_second_sub_category` | No | `<metadata_path>` | `secondary_second_sub_category.txt`
+
+</details>
+
+### Localized Metadata
+
+<details>
+<summary>View all</summary>
+
+Key | Editable While Live | Directory | Filename
+----|--------|--------|--------
+  `name` | No | `<metadata_path>/<lang>` | `name.txt`
+  `subtitle` | No | `<metadata_path>/<lang>` | `subtitle.txt`
+  `privacy_url` | Yes | `<metadata_path>/<lang>` | `privacy_url.txt`
+  `description` | Yes | `<metadata_path>/<lang>` | `description.txt`
+  `keywords` | No | `<metadata_path>/<lang>` | `keywords.txt`
+  `release_notes` | Yes | `<metadata_path>/<lang>` | `release_notes.txt`
+  `support_url` | Yes | `<metadata_path>/<lang>` | `support_url.txt`
+  `marketing_url` | Yes | `<metadata_path>/<lang>` | `marketing_url.txt`
+  `promotional_text` | Yes | `<metadata_path>/<lang>` | `promotional_text.txt`
+
+</details>
+
+### Trade Representative Contact Information Metadata
+
+<details>
+<summary>View all</summary>
+
+Key | Editable While Live | Directory | Filename
+----|--------|--------|--------
+  `trade_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `trade_name.txt`
+  `first_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `first_name.txt`
+  `last_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `last_name.txt`
+  `address_line1` | Yes | `<metadata_path>/trade_representative_contact_information` | `address_line1.txt`
+  `address_line2` | Yes | `<metadata_path>/trade_representative_contact_information` | `address_line2.txt`
+  `address_line3` | Yes | `<metadata_path>/trade_representative_contact_information` | `address_line3.txt`
+  `city_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `city_name.txt`
+  `state` | Yes | `<metadata_path>/trade_representative_contact_information` | `state.txt`
+  `country` | Yes | `<metadata_path>/trade_representative_contact_information` | `country.txt`
+  `postal_code` | Yes | `<metadata_path>/trade_representative_contact_information` | `postal_code.txt`
+  `phone_number` | Yes | `<metadata_path>/trade_representative_contact_information` | `phone_number.txt`
+  `email_address` | Yes | `<metadata_path>/trade_representative_contact_information` | `email_address.txt`
+  `is_displayed_on_app_store` | Yes | `<metadata_path>/trade_representative_contact_information` | `is_displayed_on_app_store.txt`
+
+</details>
+
+### Review Information Metadata
+
+<details>
+<summary>View all</summary>
+
+Key | Editable While Live | Directory | Filename
+----|--------|--------|--------
+  `first_name` | Yes | `<metadata_path>/review_information` | `first_name.txt`
+  `last_name` | Yes | `<metadata_path>/review_information` | `last_name.txt`
+  `phone_number` | Yes | `<metadata_path>/review_information` | `phone_number.txt`
+  `email_address` | Yes | `<metadata_path>/review_information` | `email_address.txt`
+  `demo_user` | Yes | `<metadata_path>/review_information` | `demo_user.txt`
+  `demo_password` | Yes | `<metadata_path>/review_information` | `demo_password.txt`
+  `notes` | Yes | `<metadata_path>/review_information` | `notes.txt`
+
+</details>
+
 ## Reference
 
 <details>
