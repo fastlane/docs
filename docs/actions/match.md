@@ -261,6 +261,16 @@ match(app_identifier: ["tools.fastlane.app", "tools.fastlane.app.today_widget"],
 
 _match_ can even use the same one Git repository for all bundle identifiers.
 
+##### Templates (aka: custom entitlements)
+
+Match can generate profiles that contain custom entitlements by passing in the entitlement's name with the `template_name` parameter.
+
+```
+match(git_url: "https://github.com/fastlane/certificates",
+      type: "development",
+      template_name: "Apple Pay Pass Suppression Development")
+```
+
 ### Setup Xcode project
 
 [Docs on how to set up your Xcode project](/codesigning/xcode-project/)
@@ -421,7 +431,7 @@ Key | Description | Default
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore' | `false`
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos) | `ios`
-  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile | 
+  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

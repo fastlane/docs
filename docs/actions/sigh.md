@@ -254,7 +254,7 @@ Key | Description | Default
   `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine | `false`
   `platform` | Set the provisioning profile's platform (i.e. ios, tvos) | `ios`
   `readonly` | Only fetch existing profile, don't generate new ones | `false`
-  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates, template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile | 
+  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
