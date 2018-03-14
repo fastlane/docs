@@ -102,13 +102,15 @@ Set the `FASTLANE_DISABLE_COLORS` environment variable to disable ANSI colors (e
 export FASTLANE_DISABLE_COLORS=1
 ```
 
-### Enable _bash_/_zsh_/_fish_ tab auto complete for fastlane lane names
+### Enable tab auto complete for fastlane lane names
+
+Supported shells: _bash_, _zsh_, _fish_.
 
 ```no-highlight
 fastlane enable_auto_complete
 ```
 
-Follow the on screen prompt to add a line to your _bash_/_zsh_ profile.
+Follow the on screen prompt to add a line to your _bash_/_zsh_/_fish_ profile.
 
 ### "User interaction is not allowed" when using _fastlane_ via SSH
 
