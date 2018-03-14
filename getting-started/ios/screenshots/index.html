@@ -529,6 +529,8 @@ brew cask install fastlane
 <li>Run <code>fastlane snapshot init</code> in your project folder</li>
 <li>Add the <code>./SnapshotHelper.swift</code> file to your UI Test target (You can move the file anywhere you want)</li>
 <li>Add a new Xcode scheme for the newly created UI Test target</li>
+<li>Edit the scheme</li>
+<li>In the list on the left click "Build", and enable the checkbox under the "Run" column for your target. </li>
 <li>Enable the <code>Shared</code> box of the newly created scheme</li>
 <li>(Objective C only) Add the bridging header to your test class.<ul>
 <li><code>#import "MYUITests-Swift.h"</code></li>
@@ -541,20 +543,22 @@ brew cask install fastlane
 <li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];</code></li>
 </ul>
 </li>
-<li>Add the following code to your <code>setUp()</code> method:</li>
-</ol>
+<li>
+<p>Add the following code to your <code>setUp()</code> method:</p>
 <p><strong>Swift</strong></p>
-<pre><code class="swift">let app = XCUIApplication()
+<p><code>swift
+let app = XCUIApplication()
 setupSnapshot(app)
-app.launch()
-</code></pre>
-
+app.launch()</code></p>
 <p><strong>Objective C</strong></p>
-<pre><code class="objective-c">XCUIApplication *app = [[XCUIApplication alloc] init];
+<p><code>objective-c
+XCUIApplication *app = [[XCUIApplication alloc] init];
 [Snapshot setupSnapshot:app];
-[app launch];
-</code></pre>
-
+[app launch];</code>
+1. In the terminal run <code>fastlane snapshot</code>.<br />
+WARNING: Running the test in Xcode does not create the snapshots and will not generate the correct results - although no tests will fail.  The command line program creates the necessary subdirectories, renames the files as appropriate, and generates the overview html page.</p>
+</li>
+</ol>
 <p>The setup process will also generate a <code>Snapfile</code>, looking similar to</p>
 <pre><code class="ruby"># A list of devices you want to take the screenshots from
 # devices([
