@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/ActionDetails.md.erb
 -->
 
 # capture_screenshots
@@ -384,6 +384,7 @@ Key | Description | Default
   `workspace` | Path the workspace file | 
   `project` | Path the project file | 
   `xcargs` | Pass additional arguments to xcodebuild for the test phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
+  `xcconfig` | Use an extra XCCONFIG file to build your app | 
   `devices` | A list of devices you want to take the screenshots from | 
   `languages` | A list of languages which should be used | `["en-US"]`
   `launch_arguments` | A list of launch arguments which should be used | `[""]`

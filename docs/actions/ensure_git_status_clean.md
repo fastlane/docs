@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/ActionDetails.md.erb
 -->
 
 # ensure_git_status_clean
@@ -40,6 +40,7 @@ ensure_git_status_clean
 Key | Description | Default
 ----|-------------|--------
   `show_uncommitted_changes` | The flag whether to show uncommitted changes if the repo is dirty | `false`
+  `show_diff` | The flag whether to show the git diff if the repo is dirty | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
