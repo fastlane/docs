@@ -70,7 +70,7 @@ fastlane-plugin-aws_s3:
   :github_contributors: 12
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
-  :age_in_days: 551
+  :age_in_days: 573
   :readme_score: 100
   :tests: 0
   :actions:
@@ -86,12 +86,12 @@ fastlane-plugin-bugsnag:
     description: Notifies Bugsnag of a build
     details: Notifies Bugsnag of a new build being released including app version
       and source control details
-  :sha: eb2835582247fcaeed7910b8d8380e3dc9aed40bef10ae4eb470c790bb02f142
+  :sha: 2c50dfcf2b3faf2c3f563f4725ce8474d91539b53ad97469a141b1f661bb5b74
   :github_stars: 9
-  :github_subscribers: 16
+  :github_subscribers: 15
   :github_issues: 1
-  :github_forks: 3
-  :github_contributors: 5
+  :github_forks: 4
+  :github_contributors: 0
 fastlane-plugin-trainer:
   :initial_commit: 2016-07-20
   :age_in_days: 585
@@ -797,7 +797,7 @@ fastlane-plugin-settings_bundle:
   :github_contributors: 2
 fastlane-plugin-android_versioning:
   :initial_commit: 2017-02-18
-  :age_in_days: 372
+  :age_in_days: 394
   :readme_score: 50
   :tests: 11
   :actions:
@@ -831,12 +831,12 @@ fastlane-plugin-android_versioning:
     category: 
     description: Get the version code of your project
     details: " "
-  :sha: 28bc991ed64f119860c51e5dea452833297276d600774fcbfe7ffd4b3c052166
+  :sha: 9ee1321f15c61709f28726b4d5ab7bcbce0b423238404278b44b278cec7b060b
   :github_stars: 12
   :github_subscribers: 2
   :github_issues: 1
   :github_forks: 1
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-upload_folder_to_s3:
   :initial_commit: 2016-05-28
   :age_in_days: 638
@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 133
+  :age_in_days: 147
   :readme_score: 100
-  :tests: 77
+  :tests: 79
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -990,12 +990,12 @@ fastlane-plugin-test_center:
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: 643f04dc9d83a7c09f10b4057e081653eef43d5bb4530426e5cb18c2d80245a4
-  :github_stars: 10
+  :sha: 6558f53750edf29aae1fc672087d3b75bb68d9f50ca5d4ab24de664f0165aa2e
+  :github_stars: 12
   :github_subscribers: 2
   :github_issues: 8
   :github_forks: 2
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -1629,7 +1629,7 @@ fastlane-plugin-bugsee:
   :github_contributors: 1
 fastlane-plugin-souyuz:
   :initial_commit: 2016-05-11
-  :age_in_days: 655
+  :age_in_days: 677
   :readme_score: 50
   :tests: 0
   :actions:
@@ -1643,12 +1643,12 @@ fastlane-plugin-souyuz:
     category: 
     description: Easily build and sign your app using `souyuz`
     details: 
-  :sha: 4cd63e02ae26ee41bb3e5281ec17e380ca0c1e439c9a2fa1cddb616e34f9e8d0
+  :sha: 45280d3176a4d45ebba3abfab57b41029a7412f52e55ad55408f8f90e2eda732
   :github_stars: 27
   :github_subscribers: 3
-  :github_issues: 10
-  :github_forks: 5
-  :github_contributors: 3
+  :github_issues: 4
+  :github_forks: 6
+  :github_contributors: 0
 fastlane-plugin-upgrade_super_old_xcode_project:
   :initial_commit: 2017-10-10
   :age_in_days: 138
@@ -3354,7 +3354,7 @@ fastlane-plugin-blackberry_mam:
   :github_contributors: 1
 fastlane-plugin-influxdb:
   :initial_commit: 2017-03-06
-  :age_in_days: 356
+  :age_in_days: 378
   :readme_score: 100
   :tests: 2
   :actions:
@@ -3363,12 +3363,12 @@ fastlane-plugin-influxdb:
     category: 
     description: Post values to IndluxDB
     details: Post values to InfluxDB
-  :sha: 3db1d10ec0485ef76499cbe95fd73708a6019519750a4a8257b7e29884f32464
+  :sha: 4cea507ddd3c1a92f932d3c9d1d9f686e61a9096731f828caa6c93261c40b8e6
   :github_stars: 1
   :github_subscribers: 1
-  :github_issues: 4
+  :github_issues: 0
   :github_forks: 2
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-telegram:
   :initial_commit: 2017-08-19
   :age_in_days: 190
@@ -3524,9 +3524,9 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 38
+  :age_in_days: 52
   :readme_score: 100
-  :tests: 14
+  :tests: 15
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: lizard
@@ -3534,12 +3534,12 @@ fastlane-plugin-lizard:
     description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: f5fad4c1aada7e9e63c08c525ec1538a23b9e164f81f2c4217d84c71fbc8c25a
-  :github_stars: 2
-  :github_subscribers: 3
-  :github_issues: 1
-  :github_forks: 0
-  :github_contributors: 1
+  :sha: e433bc173f41451480b7d5cba5139515dceb72d646b09612d6a942b838b5c801
+  :github_stars: 3
+  :github_subscribers: 4
+  :github_issues: 2
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-updateplistfromstrings:
   :initial_commit: 2017-11-24
   :age_in_days: 93
@@ -4334,7 +4334,7 @@ fastlane-plugin-localize:
   :github_contributors: 2
 fastlane-plugin-device_image_selector:
   :initial_commit: 2018-02-23
-  :age_in_days: 2
+  :age_in_days: 24
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4342,7 +4342,7 @@ fastlane-plugin-device_image_selector:
     name: device_image_selector
     category: 
     description: Selects screenshots with specified names for processing with frameit
-    details: Takes the device screenshots which matches the specified names and puts
+    details: Takes the device screenshots which match the specified names and puts
       them in the output directory for frameit to process. The screenshot files can
       then be cleaned up after the device images are created.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
@@ -4351,9 +4351,75 @@ fastlane-plugin-device_image_selector:
     description: Cleanup screenshot files after frameit
     details: Deletes the screenshot files in the output directory which were previously
       selected and processed by frameit
-  :sha: a48901e4f303d1e2b5cd815513d8d4a2dc9e806396b99bf67aa65d142364c7d3
+  :sha: 30de3dbd04a0f18ab69c5d5bdf25c8a74bb6ab56e21b994094f800d27a47abec
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
+fastlane-plugin-retry_tests:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-icon_versioning:
+  :initial_commit: 2017-12-14
+  :age_in_days: 95
+  :readme_score: 100
+  :tests: 34
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: version_icon
+    category: 
+    description: Overlay build information on top of your app icon. Based on original
+      work by Krzysztof Zabłocki (https://github.com/krzysztofzablocki/Bootstrap).
+    details: 
+  :sha: 8b77a7b39020c20784762fcef59d034b848f1475e14c75f4a42b86697aac83e2
+  :github_stars: 23
+  :github_subscribers: 1
+  :github_issues: 2
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-resize_screenshots:
+  :initial_commit: 2018-03-04
+  :age_in_days: 15
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: resize_screenshots
+    category: 
+    description: Resize screenshots taken from your simulator to use for Frameit.
+    details: Take screenshots from your simulator, resize them to their appropriate
+      size, then send the screenshots into Frameit to generate screenshots for the
+      store!
+  :sha: 8ff0911a2f203f31da9b4031ab44e7a269bd51452e5f3bf708429df1b9cd6caf
+  :github_stars: 2
+  :github_subscribers: 0
+  :github_issues: 2
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-remove_git_tag:
+  :initial_commit: 2018-03-15
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: remove_git_tag
+    category: source_control
+    description: This will remove a tag from the remote repository
+    details: "\\n"
+  :sha: 6a98f69a287417e6875ed77c246fa2f2fee14e486a67c9cfb1ad4afa8263a9a5
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-rescan_flaky_tests:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2

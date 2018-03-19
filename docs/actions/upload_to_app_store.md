@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/ActionDetails.md.erb
 -->
 
 # upload_to_app_store
@@ -802,6 +802,7 @@ Key | Description | Default
   `skip_app_version_update` | Don't update app version for submission | `false`
   `force` | Skip the HTML report file verification | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
+  `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
   `automatic_release` | Should the app be automatically released once it's approved? | `false`
   `auto_release_date` | Date in milliseconds for automatically releasing on pending approval | 
   `phased_release` | Enable the phased release feature of iTC | `false`
