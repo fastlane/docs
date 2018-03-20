@@ -113,6 +113,7 @@ pages:
   - git_branch: actions/git_branch.md
   - git_commit: actions/git_commit.md
   - git_pull: actions/git_pull.md
+  - git_submodule_update: actions/git_submodule_update.md
   - git_tag_exists: actions/git_tag_exists.md
   - github_api: actions/github_api.md
   - google_play_track_version_codes: actions/google_play_track_version_codes.md
