@@ -3,33 +3,21 @@ This file is auto-generated and will be re-generated every time the docs are upd
 To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/ActionDetails.md.erb
 -->
 
-# clean_cocoapods_cache
+# git_submodule_update
 
 
-Remove the cache for pods
-
-
-
+Executes a git submodule command
 
 
 
 
-clean_cocoapods_cache |
+
+
+
+git_submodule_update |
 -----|----
-Supported platforms | ios, mac
-Author | @alexmx
-
-
-
-## 2 Examples
-
-```ruby
-clean_cocoapods_cache
-```
-
-```ruby
-clean_cocoapods_cache(name: "CACHED_POD")
-```
+Supported platforms | ios, android, mac
+Author | @braunico
 
 
 
@@ -39,7 +27,8 @@ clean_cocoapods_cache(name: "CACHED_POD")
 
 Key | Description | Default
 ----|-------------|--------
-  `name` | Pod name to be removed from cache | 
+  `recursive` | Should the submodules be updated recursively | `false`
+  `init` | Should the submodules be initiated before update | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
@@ -47,10 +36,10 @@ Key | Description | Default
 <hr />
 To show the documentation in your terminal, run
 ```no-highlight
-fastlane action clean_cocoapods_cache
+fastlane action git_submodule_update
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/clean_cocoapods_cache.rb" target="_blank">View source code</a>
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_submodule_update.rb" target="_blank">View source code</a>
 
 <hr />
 

@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/ActionDetails.md.erb
 -->
 
 # backup_xcarchive
@@ -26,7 +26,8 @@ Author | @dral3x
 ```ruby
 backup_xcarchive(
   xcarchive: "/path/to/file.xcarchive", # Optional if you use the `xcodebuild` action
-  destination: "/somewhere/else/file.xcarchive", # Where the backup should be created
+  destination: "/somewhere/else/", # Where the backup should be created
+  zip_filename: "file.xcarchive", # The name of the backup file
   zip: false, # Enable compression of the archive. Defaults to `true`.
   versioned: true # Create a versioned (date and app version) subfolder where to put the archive
 )
