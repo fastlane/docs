@@ -428,14 +428,14 @@ You can add credentials for use by _fastlane_ to your keychain using the [Creden
 
 **Adding a Credential**
 ```no-highlight
-fastlane-credentials add --username felix@krausefx.com
+fastlane fastlane-credentials add --username felix@krausefx.com
 Password: *********
 Credential felix@krausefx.com:********* added to keychain.
 ```
 
 **Removing a Credential**
 ```no-highlight
-fastlane-credentials remove --username felix@krausefx.com
+fastlane fastlane-credentials remove --username felix@krausefx.com
 password has been deleted.
 ```
 
