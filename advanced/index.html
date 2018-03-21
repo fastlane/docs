@@ -879,13 +879,13 @@ end
 <h1 id="adding-credentials"><a name="user-content-adding-credentials" href="#adding-credentials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Adding Credentials</h1>
 <p>You can add credentials for use by <em>fastlane</em> to your keychain using the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> command line interface. This is useful for situations like CI environments.</p>
 <p><strong>Adding a Credential</strong></p>
-<pre><code class="no-highlight">fastlane-credentials add --username felix@krausefx.com
+<pre><code class="no-highlight">fastlane fastlane-credentials add --username felix@krausefx.com
 Password: *********
 Credential felix@krausefx.com:********* added to keychain.
 </code></pre>
 
 <p><strong>Removing a Credential</strong></p>
-<pre><code class="no-highlight">fastlane-credentials remove --username felix@krausefx.com
+<pre><code class="no-highlight">fastlane fastlane-credentials remove --username felix@krausefx.com
 password has been deleted.
 </code></pre>
 
