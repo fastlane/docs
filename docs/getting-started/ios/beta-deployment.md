@@ -213,7 +213,7 @@ You can automatically be asked for the changelog in your terminal using the `pro
 ```ruby
 lane :beta do
   # Variant 1: Ask for a one line input
-  changelog = prompt("Changelog: ")
+  changelog = prompt(text: "Changelog: ")
 
   # Variant 2: Ask for a multi-line input
   #   The user confirms their input by typing `END` and Enter
