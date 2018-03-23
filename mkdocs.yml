@@ -69,7 +69,6 @@ pages:
   - clear_derived_data: actions/clear_derived_data.md
   - clipboard: actions/clipboard.md
   - cloc: actions/cloc.md
-  - clubmate: actions/clubmate.md
   - cocoapods: actions/cocoapods.md
   - commit_github_file: actions/commit_github_file.md
   - commit_version_bump: actions/commit_version_bump.md
@@ -113,6 +112,7 @@ pages:
   - git_branch: actions/git_branch.md
   - git_commit: actions/git_commit.md
   - git_pull: actions/git_pull.md
+  - git_submodule_update: actions/git_submodule_update.md
   - git_tag_exists: actions/git_tag_exists.md
   - github_api: actions/github_api.md
   - google_play_track_version_codes: actions/google_play_track_version_codes.md
@@ -157,7 +157,6 @@ pages:
   - opt_out_usage: actions/opt_out_usage.md
   - pem: actions/pem.md
   - pilot: actions/pilot.md
-  - plugin_scores: actions/plugin_scores.md
   - pod_lib_lint: actions/pod_lib_lint.md
   - pod_push: actions/pod_push.md
   - podio_item: actions/podio_item.md
@@ -177,9 +176,7 @@ pages:
   - resign: actions/resign.md
   - restore_file: actions/restore_file.md
   - rocket: actions/rocket.md
-  - rspec: actions/rspec.md
   - rsync: actions/rsync.md
-  - rubocop: actions/rubocop.md
   - ruby_version: actions/ruby_version.md
   - run_tests: actions/run_tests.md
   - s3: actions/s3.md
@@ -199,9 +196,6 @@ pages:
   - sigh: actions/sigh.md
   - skip_docs: actions/skip_docs.md
   - slack: actions/slack.md
-  - slack_train: actions/slack_train.md
-  - slack_train_crash: actions/slack_train_crash.md
-  - slack_train_start: actions/slack_train_start.md
   - slather: actions/slather.md
   - snapshot: actions/snapshot.md
   - sonar: actions/sonar.md

@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/opt_out_crash_reporting.rb
 -->
 
 # opt_out_crash_reporting
@@ -11,21 +11,13 @@ This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> By default, fastlane will send a report when it crashes The stack trace is sanitized so no personal information is sent. Learn more at https://docs.fastlane.tools/actions/opt_out_crash_reporting/ Add `opt_out_crash_reporting` at the top of your Fastfile to disable crash reporting
+> fastlane doesn't have crash reporting any more, feel free to remove `opt_out_crash_reporting` from your Fastfile
 
 
 opt_out_crash_reporting |
 -----|----
 Supported platforms | ios, android, mac
 Author | @mpirri, @ohayon
-
-
-
-## 1 Example
-
-```ruby
-opt_out_crash_reporting # add this to the top of your Fastfile
-```
 
 
 
