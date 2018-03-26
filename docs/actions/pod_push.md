@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/pod_push.rb
 -->
 
 # pod_push
@@ -51,6 +51,7 @@ pod_push(path: "TMessages.podspec", repo: "MyRepo", sources: ["https://github.co
 
 Key | Description | Default
 ----|-------------|--------
+  `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | `false`
   `path` | The Podspec you want to push | 
   `repo` | The repo you want to push. Pushes to Trunk by default | 
   `allow_warnings` | Allow warnings during pod push | 

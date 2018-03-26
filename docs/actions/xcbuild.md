@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcodebuild.rb
 -->
 
 # xcbuild
@@ -37,7 +37,7 @@ To show the documentation in your terminal, run
 fastlane action xcbuild
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcbuild.rb" target="_blank">View source code</a>
+<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcodebuild.rb" target="_blank">View source code</a>
 
 <hr />
 

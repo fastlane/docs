@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/appetize_viewing_url_generator.rb
 -->
 
 # appetize_viewing_url_generator

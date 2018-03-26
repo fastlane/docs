@@ -1,6 +1,6 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/Actions.md.erb
 -->
 
 {!docs/setup-fastlane-header.md!}
@@ -54,8 +54,8 @@ Action | Description
 <a href="/actions/lcov">lcov</a> | Generates coverage data using lcov
 <a href="/actions/appium">appium</a> | Run UI test by Appium with RSpec
 <a href="/actions/xctool">xctool</a> | Run tests using xctool
-<a href="/actions/xcode_server_get_assets">xcode_server_get_assets</a> | Downloads Xcode Bot assets like the `.xcarchive` and logs
 <a href="/actions/run_tests">run_tests</a> | Easily run tests of your iOS app (via _scan_)
+<a href="/actions/xcode_server_get_assets">xcode_server_get_assets</a> | Downloads Xcode Bot assets like the `.xcarchive` and logs
 
 
 
@@ -78,14 +78,14 @@ Action | Description
 <a href="/actions/xcode_install">xcode_install</a> | Make sure a certain version of Xcode is installed
 <a href="/actions/verify_pod_keys">verify_pod_keys</a> | Verifies all keys referenced from the Podfile are non-empty
 <a href="/actions/build_app">build_app</a> | Alias for the `build_ios_app` action
-<a href="/actions/xcbuild">xcbuild</a> | Builds the project using `xcodebuild`
-<a href="/actions/xcexport">xcexport</a> | Exports the project using `xcodebuild`
-<a href="/actions/xctest">xctest</a> | Runs tests on the given simulator
 <a href="/actions/build_android_app">build_android_app</a> | Alias for the `gradle` action
-<a href="/actions/spm">spm</a> | Runs Swift Package Manager on your project
-<a href="/actions/xcarchive">xcarchive</a> | Archives the project using `xcodebuild`
-<a href="/actions/xcclean">xcclean</a> | Cleans the project using `xcodebuild`
 <a href="/actions/build_ios_app">build_ios_app</a> | Easily build and sign your app (via _gym_)
+<a href="/actions/xcclean">xcclean</a> | Cleans the project using `xcodebuild`
+<a href="/actions/xctest">xctest</a> | Runs tests on the given simulator
+<a href="/actions/xcexport">xcexport</a> | Exports the project using `xcodebuild`
+<a href="/actions/xcarchive">xcarchive</a> | Archives the project using `xcodebuild`
+<a href="/actions/spm">spm</a> | Runs Swift Package Manager on your project
+<a href="/actions/xcbuild">xcbuild</a> | Builds the project using `xcodebuild`
 
 
 
@@ -96,9 +96,9 @@ Action | Description
 <a href="/actions/snapshot">snapshot</a> | Alias for the `capture_ios_screenshots` action
 <a href="/actions/screengrab">screengrab</a> | Alias for the `capture_android_screenshots` action
 <a href="/actions/frameit">frameit</a> | Alias for the `frame_screenshots` action
+<a href="/actions/capture_android_screenshots">capture_android_screenshots</a> | Automated localized screenshots of your Android app (via _screengrab_)
 <a href="/actions/capture_ios_screenshots">capture_ios_screenshots</a> | Generate new localized screenshots on multiple devices (via _snapshot_)
 <a href="/actions/frame_screenshots">frame_screenshots</a> | Adds device frames around all screenshots (via _frameit_)
-<a href="/actions/capture_android_screenshots">capture_android_screenshots</a> | Automated localized screenshots of your Android app (via _screengrab_)
 <a href="/actions/capture_screenshots">capture_screenshots</a> | Alias for the `capture_ios_screenshots` action
 
 
@@ -138,9 +138,9 @@ Action | Description
 <a href="/actions/register_devices">register_devices</a> | Registers new devices to the Apple Dev Portal
 <a href="/actions/automatic_code_signing">automatic_code_signing</a> | Configures Xcode's Codesigning options
 <a href="/actions/register_device">register_device</a> | Registers a new device to the Apple Dev Portal
-<a href="/actions/sync_code_signing">sync_code_signing</a> | Easily sync your certificates and profiles across your team (via _match_)
-<a href="/actions/get_provisioning_profile">get_provisioning_profile</a> | Generates a provisioning profile, saving it in the current folder (via _sigh_)
 <a href="/actions/get_certificates">get_certificates</a> | Create new iOS code signing certificates (via _cert_)
+<a href="/actions/get_provisioning_profile">get_provisioning_profile</a> | Generates a provisioning profile, saving it in the current folder (via _sigh_)
+<a href="/actions/sync_code_signing">sync_code_signing</a> | Easily sync your certificates and profiles across your team (via _match_)
 
 
 
@@ -171,8 +171,8 @@ Action | Description
 <a href="/actions/set_changelog">set_changelog</a> | Set the changelog for all languages on iTunes Connect
 <a href="/actions/splunkmint">splunkmint</a> | Upload dSYM file to Splunk MINT
 <a href="/actions/tryouts">tryouts</a> | Upload a new build to Tryouts
-<a href="/actions/podio_item">podio_item</a> | Creates or updates an item within your Podio app
 <a href="/actions/upload_to_testflight">upload_to_testflight</a> | Upload a new binary to iTunes Connect for TestFlight beta testing (via _pilot_)
+<a href="/actions/podio_item">podio_item</a> | Creates or updates an item within your Podio app
 
 
 
@@ -194,8 +194,8 @@ Action | Description
 <a href="/actions/deliver">deliver</a> | Alias for the `upload_to_app_store` action
 <a href="/actions/supply">supply</a> | Alias for the `upload_to_play_store` action
 <a href="/actions/appstore">appstore</a> | Alias for the `upload_to_app_store` action
-<a href="/actions/upload_to_play_store">upload_to_play_store</a> | Upload metadata, screenshots and binaries to Google Play (via _supply_)
 <a href="/actions/upload_to_app_store">upload_to_app_store</a> | Upload metadata and binary to iTunes Connect (via _deliver_)
+<a href="/actions/upload_to_play_store">upload_to_play_store</a> | Upload metadata, screenshots and binaries to Google Play (via _supply_)
 
 
 
@@ -228,6 +228,7 @@ Action | Description
 <a href="/actions/hg_push">hg_push</a> | This will push changes to the remote hg repository
 <a href="/actions/hg_add_tag">hg_add_tag</a> | This will add a hg tag to the current branch
 <a href="/actions/github_api">github_api</a> | Call a GitHub API endpoint and get the resulting JSON response
+<a href="/actions/git_submodule_update">git_submodule_update</a> | Executes a git submodule command
 <a href="/actions/commit_github_file">commit_github_file</a> | This will commit a file directly on GitHub via the API
 
 
@@ -313,20 +314,19 @@ Action | Description
 <a href="/actions/build_and_upload_to_appetize">build_and_upload_to_appetize</a> | Generate and upload an ipa file to appetize.io
 <a href="/actions/update_icloud_container_identifiers">update_icloud_container_identifiers</a> | This action changes the iCloud container identifiers in the entitlements file
 <a href="/actions/sh">sh</a> | Runs a shell command
-<a href="/actions/setup_travis">setup_travis</a> | Setup the keychain and match to work with Travis CI
 <a href="/actions/create_app_online">create_app_online</a> | Creates the given application on iTC and the Dev Portal (via _produce_)
-<a href="/actions/ruby_version">ruby_version</a> | Verifies the minimum ruby version required
-<a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a> | This will prevent reports from being uploaded when _fastlane_ crashes
-<a href="/actions/plugin_scores">plugin_scores</a> | [31mNo description provided[0m
-<a href="/actions/modify_services">modify_services</a> | Modifies the services of the app created on Developer Portal
-<a href="/actions/environment_variable">environment_variable</a> | Sets/gets env vars for Fastlane.swift. Don't use in ruby, use `ENV[key] = val`
 <a href="/actions/echo">echo</a> | Alias for the `puts` action
-<a href="/actions/setup_circle_ci">setup_circle_ci</a> | Setup the keychain and match to work with CircleCI
-<a href="/actions/opt_out_usage">opt_out_usage</a> | This will stop uploading the information which actions were run
-<a href="/actions/println">println</a> | Alias for the `puts` action
+<a href="/actions/plugin_scores">plugin_scores</a> | [31mNo description provided[0m
 <a href="/actions/google_play_track_version_codes">google_play_track_version_codes</a> | Retrieves version codes for a Google Play track
 <a href="/actions/min_fastlane_version">min_fastlane_version</a> | Verifies the minimum fastlane version required
+<a href="/actions/environment_variable">environment_variable</a> | Sets/gets env vars for Fastlane.swift. Don't use in ruby, use `ENV[key] = val`
+<a href="/actions/ruby_version">ruby_version</a> | Verifies the minimum ruby version required
 <a href="/actions/check_app_store_metadata">check_app_store_metadata</a> | Check your app's metadata before you submit your app to review (via _precheck_)
+<a href="/actions/setup_travis">setup_travis</a> | Setup the keychain and match to work with Travis CI
+<a href="/actions/opt_out_usage">opt_out_usage</a> | This will stop uploading the information which actions were run
+<a href="/actions/println">println</a> | Alias for the `puts` action
+<a href="/actions/modify_services">modify_services</a> | Modifies the services of the app created on Developer Portal
+<a href="/actions/setup_circle_ci">setup_circle_ci</a> | Setup the keychain and match to work with CircleCI
 
 
 
@@ -340,6 +340,7 @@ Action | Description
 <a href="/actions/update_project_code_signing">update_project_code_signing</a> | Updated code signing settings from 'Automatic' to a specific profile
 <a href="/actions/ipa">ipa</a> | Easily build and sign your app using shenzhen
 <a href="/actions/upload_symbols_to_sentry">upload_symbols_to_sentry</a> | Upload dSYM symbolication files to Sentry
+<a href="/actions/opt_out_crash_reporting">opt_out_crash_reporting</a> | This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
