@@ -206,7 +206,7 @@ jobs:
       xcode: "9.0"
     working_directory: /Users/distiller/project
     environment:
-      FL_OUTPUT_DIR: /Users/distiller/project/output
+      FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
@@ -221,13 +221,10 @@ jobs:
       - run:
           name: fastlane
           command: bundle exec fastlane $FASTLANE_LANE
-      - run:
-          command: cp $FL_OUTPUT_DIR/scan/report.junit $FL_OUTPUT_DIR/scan/results.xml
-          when: always
       - store_artifacts:
-          path: /Users/distiller/project/output
+          path: output
       - store_test_results:
-          path: /Users/distiller/project/output/scan
+          path: output/scan
 ```
 
 This will do the following:
