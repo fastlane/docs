@@ -406,13 +406,13 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/opt_out_crash_reporting.rb
 -->
 
 <h1 id="opt_out_crash_reporting"><a name="user-content-opt_out_crash_reporting" href="#opt_out_crash_reporting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>opt_out_crash_reporting</h1>
 <p>This will prevent reports from being uploaded when <em>fastlane</em> crashes</p>
 <blockquote>
-<p>By default, fastlane will send a report when it crashes The stack trace is sanitized so no personal information is sent. Learn more at https://docs.fastlane.tools/actions/opt_out_crash_reporting/ Add <code>opt_out_crash_reporting</code> at the top of your Fastfile to disable crash reporting</p>
+<p>fastlane doesn't have crash reporting any more, feel free to remove <code>opt_out_crash_reporting</code> from your Fastfile</p>
 </blockquote>
 <table>
 <thead>
@@ -432,10 +432,6 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">opt_out_crash_reporting # add this to the top of your Fastfile
-</code></pre>
-
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action opt_out_crash_reporting

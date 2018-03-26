@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>rspec - fastlane docs</title>
+  <title>git_submodule_update - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "rspec";
-    var mkdocs_page_input_path = "actions/rspec.md";
-    var mkdocs_page_url = "/actions/rspec/";
+    var mkdocs_page_name = "git_submodule_update";
+    var mkdocs_page_input_path = "actions/git_submodule_update.md";
+    var mkdocs_page_url = "/actions/git_submodule_update/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -371,14 +371,14 @@
         
       
     
-    <li>rspec</li>
+    <li>git_submodule_update</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/rspec.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/git_submodule_update.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -406,15 +406,15 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_submodule_update.rb
 -->
 
-<h1 id="rspec"><a name="user-content-rspec" href="#rspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>rspec</h1>
-<p>Run tests using rspec</p>
+<h1 id="git_submodule_update"><a name="user-content-git_submodule_update" href="#git_submodule_update" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_submodule_update</h1>
+<p>Executes a git submodule command</p>
 <table>
 <thead>
 <tr>
-<th>rspec</th>
+<th>git_submodule_update</th>
 <th></th>
 </tr>
 </thead>
@@ -425,16 +425,39 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx</td>
+<td>@braunico</td>
 </tr>
 </tbody>
 </table>
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recursive</code></td>
+<td>Should the submodules be updated recursively</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>init</code></td>
+<td>Should the submodules be initiated before update</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action rspec
+<pre><code class="no-highlight">fastlane action git_submodule_update
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/rspec.rb" target="_blank">View source code</a></p>
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_submodule_update.rb" target="_blank">View source code</a></p>
 <hr />
 
 <p><a href="/actions"><b>Back to actions</b></a></p>
@@ -445,10 +468,10 @@ To show the documentation in your terminal, run</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../rsync/" class="btn btn-neutral float-right" title="rsync">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../git_tag_exists/" class="btn btn-neutral float-right" title="git_tag_exists">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../rocket/" class="btn btn-neutral" title="rocket"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../git_pull/" class="btn btn-neutral" title="git_pull"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -481,10 +504,10 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../rocket/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../git_pull/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../rsync/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../git_tag_exists/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

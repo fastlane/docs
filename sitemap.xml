@@ -246,12 +246,6 @@
     </url>
         
     <url>
-     <loc>None/actions/clubmate/</loc>
-     <lastmod>2018-03-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>None/actions/cocoapods/</loc>
      <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
@@ -505,6 +499,12 @@
         
     <url>
      <loc>None/actions/git_pull/</loc>
+     <lastmod>2018-03-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/actions/git_submodule_update/</loc>
      <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -774,12 +774,6 @@
     </url>
         
     <url>
-     <loc>None/actions/plugin_scores/</loc>
-     <lastmod>2018-03-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>None/actions/pod_lib_lint/</loc>
      <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
@@ -894,19 +888,7 @@
     </url>
         
     <url>
-     <loc>None/actions/rspec/</loc>
-     <lastmod>2018-03-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>None/actions/rsync/</loc>
-     <lastmod>2018-03-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/actions/rubocop/</loc>
      <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -1021,24 +1003,6 @@
         
     <url>
      <loc>None/actions/slack/</loc>
-     <lastmod>2018-03-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/actions/slack_train/</loc>
-     <lastmod>2018-03-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/actions/slack_train_crash/</loc>
-     <lastmod>2018-03-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/actions/slack_train_start/</loc>
      <lastmod>2018-03-26</lastmod>
      <changefreq>daily</changefreq>
     </url>

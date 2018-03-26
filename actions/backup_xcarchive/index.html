@@ -406,7 +406,7 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/backup_xcarchive.rb
 -->
 
 <h1 id="backup_xcarchive"><a name="user-content-backup_xcarchive" href="#backup_xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>backup_xcarchive</h1>
@@ -432,7 +432,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">backup_xcarchive(
   xcarchive: &quot;/path/to/file.xcarchive&quot;, # Optional if you use the `xcodebuild` action
-  destination: &quot;/somewhere/else/file.xcarchive&quot;, # Where the backup should be created
+  destination: &quot;/somewhere/else/&quot;, # Where the backup should be created
+  zip_filename: &quot;file.xcarchive&quot;, # The name of the backup file
   zip: false, # Enable compression of the archive. Defaults to `true`.
   versioned: true # Create a versioned (date and app version) subfolder where to put the archive
 )

@@ -406,7 +406,7 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_url_schemes.rb
 -->
 
 <h1 id="update_url_schemes"><a name="user-content-update_url_schemes" href="#update_url_schemes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_url_schemes</h1>
@@ -434,10 +434,18 @@ or beta version of the app.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">update_url_schemes(
   path: &quot;path/to/Info.plist&quot;,
   url_schemes: [&quot;com.myapp&quot;]
+)
+</code></pre>
+
+<pre><code class="ruby">update_url_schemes(
+  path: &quot;path/to/Info.plist&quot;,
+  update_url_schemes: proc do |schemes|
+    schemes + [&quot;anotherscheme&quot;]
+  end
 )
 </code></pre>
 
@@ -459,6 +467,11 @@ or beta version of the app.</p>
 <tr>
 <td><code>url_schemes</code></td>
 <td>The new URL schemes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>update_url_schemes</code></td>
+<td>Block that is called to update schemes with current schemes passed in as parameter</td>
 <td></td>
 </tr>
 </tbody>

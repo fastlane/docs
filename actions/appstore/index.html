@@ -406,7 +406,7 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/appstore.rb
 -->
 
 <h1 id="appstore"><a name="user-content-appstore" href="#appstore" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>appstore</h1>
@@ -1327,6 +1327,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>submit_for_review</code></td>
 <td>Submit the new version for Review after uploading everything</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reject_if_possible</code></td>
+<td>Rejects the previously submitted build if it's in a state where it's possible</td>
 <td><code>false</code></td>
 </tr>
 <tr>

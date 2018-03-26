@@ -406,7 +406,7 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/supply.rb
 -->
 
 <h1 id="supply"><a name="user-content-supply" href="#supply" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>supply</h1>
@@ -445,7 +445,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li>Click the <strong>Create Service Account</strong> button and follow the <strong>Google API Console</strong> link in the dialog</li>
 <li>Click the <strong>Create Service account</strong> button at the top of the developers console screen</li>
 <li>Provide a name for the service account</li>
-<li>Click <strong>Select a role</strong> and choose <strong>Project &gt; Service Account Actor</strong></li>
+<li>Click <strong>Select a role</strong> and choose <strong>Service Accounts &gt; Service Account User</strong></li>
 <li>Check the <strong>Furnish a new private key</strong> checkbox</li>
 <li>Select <strong>JSON</strong> as the Key type</li>
 <li>Click <strong>Create</strong> to close the dialog</li>
@@ -501,7 +501,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <li><code>promoGraphic</code></li>
 <li><code>tvBanner</code></li>
 </ul>
-<p>And you can supply screenshots by creating directories with the following names, containing PNGs or JPEGs (image names are irrelevant):</p>
+<p>You can also supply screenshots by creating directories within the <code>images</code> directory with the following names, containing PNGs or JPEGs (image names are irrelevant):</p>
 <ul>
 <li><code>phoneScreenshots/</code></li>
 <li><code>sevenInchScreenshots/</code> (7-inch tablets)</li>
@@ -573,7 +573,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td><code>track</code></td>
-<td>The track of the application to use: production, beta, alpha, rollout</td>
+<td>The track of the application to use: production, beta, alpha, internal, rollout</td>
 <td><code>production</code></td>
 </tr>
 <tr>
@@ -638,7 +638,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td><code>track_promote_to</code></td>
-<td>The track to promote to: production, beta, alpha, rollout</td>
+<td>The track to promote to: production, beta, alpha, internal, rollout</td>
 <td></td>
 </tr>
 <tr>

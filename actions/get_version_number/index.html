@@ -406,13 +406,13 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_version_number.rb
 -->
 
 <h1 id="get_version_number"><a name="user-content-get_version_number" href="#get_version_number" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>get_version_number</h1>
 <p>Get the version number of your project</p>
 <blockquote>
-<p>This action will return the current version number set on your project. You first have to set up your Xcode project, if you haven't done it already: https://developer.apple.com/library/ios/qa/qa1827/_index.html</p>
+<p>This action will return the current version number set on your project.</p>
 </blockquote>
 <table>
 <thead>
@@ -428,7 +428,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 </tr>
 <tr>
 <td>Author</td>
-<td>@Liquidsoul</td>
+<td>@Liquidsoul, @joshdholtz</td>
 </tr>
 </tbody>
 </table>
@@ -452,13 +452,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane.
 <td></td>
 </tr>
 <tr>
-<td><code>scheme</code></td>
-<td>[DEPRECATED!] true - Specify a specific scheme if you have multiple per project, optional. This parameter is deprecated and will be removed in a future release. Please use the 'target' parameter instead. The behavior of this parameter is currently undefined if your scheme name doesn't match your target name</td>
+<td><code>target</code></td>
+<td>Specify a specific target if you have multiple per project, optional</td>
 <td></td>
 </tr>
 <tr>
-<td><code>target</code></td>
-<td>Specify a specific target if you have multiple per project, optional</td>
+<td><code>configuration</code></td>
+<td>Specify a specific configuration if you have multiple per target, optional</td>
 <td></td>
 </tr>
 </tbody>
