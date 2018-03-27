@@ -39,6 +39,8 @@ end
 Key | Description | Default
 ----|-------------|--------
   `tag` | The tag name that should be checked | 
+  `remote` | Whether to check remote. Defaults to `false` | `false`
+  `remote_name` | The remote to check. Defaults to `origin` | `origin`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
