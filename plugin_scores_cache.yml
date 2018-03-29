@@ -304,7 +304,7 @@ fastlane-plugin-carthage_cache:
   :github_contributors: 1
 fastlane-plugin-gs_deliver:
   :initial_commit: 2017-01-09
-  :age_in_days: 412
+  :age_in_days: 442
   :readme_score: 50
   :tests: 1
   :actions:
@@ -348,12 +348,12 @@ fastlane-plugin-gs_deliver:
     category: 
     description: Gradoservice plugin to rule apps releases
     details: Gradoservice plugin to rule apps releases for our scheme
-  :sha: 97597c2c62fb2e0bec26eb2d2573f611061666c9863bd7b401f8ca0ac16e2d57
+  :sha: 48f4d2772c1242c6b065ef3442f91c20e7fa4a98c6f2f73f268047cc6eac029b
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-automated_test_emulator_run:
   :initial_commit: 2016-07-26
   :age_in_days: 579
@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 151
+  :age_in_days: 155
   :readme_score: 100
-  :tests: 81
+  :tests: 85
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -990,8 +990,8 @@ fastlane-plugin-test_center:
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: 2e7f20a9606b423b6cf9f7c2b1c05a01961b6c124ab56638624692e8b446ac9e
-  :github_stars: 14
+  :sha: 56ab2038ef0ce5cb6ec5d781cdab9ec51ea83efe7e933d4d22e7bacb99daa1e5
+  :github_stars: 15
   :github_subscribers: 3
   :github_issues: 7
   :github_forks: 2
