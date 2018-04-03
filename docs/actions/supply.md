@@ -190,8 +190,8 @@ Key | Description | Default
   `metadata_path` | Path to the directory containing the metadata files | [*](#parameters-legend-dynamic)
   `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google | [*](#parameters-legend-dynamic)
   `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account) | [*](#parameters-legend-dynamic)
-  `json_key` | The service account json file used to authenticate with Google | [*](#parameters-legend-dynamic)
-  `json_key_data` | The service account json used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
   `apk` | Path to the APK file to upload | [*](#parameters-legend-dynamic)
   `apk_paths` | An array of paths to APK files to upload | 
   `skip_upload_apk` | Whether to skip uploading APK | `false`

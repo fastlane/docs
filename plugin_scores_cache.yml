@@ -2054,7 +2054,7 @@ fastlane-plugin-docker:
   :github_contributors: 2
 fastlane-plugin-diawi:
   :initial_commit: 2017-04-09
-  :age_in_days: 330
+  :age_in_days: 359
   :readme_score: 100
   :tests: 1
   :actions:
@@ -2064,12 +2064,12 @@ fastlane-plugin-diawi:
     description: Upload .ipa/.apk file to diawi.com
     details: This action upload .ipa/.apk file to https://www.diawi.com and return
       link to uploaded file.
-  :sha: eed5346079f9f17bce380e1bcc7a5e537702867248cc399f92ef11cf6fff314f
-  :github_stars: 11
+  :sha: b578f10f79ba03432d1b43c35aa758929c302e7e9f2fee937b29c3021d96159b
+  :github_stars: 13
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 1
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-git_tags:
   :initial_commit: 2016-12-09
   :age_in_days: 443
@@ -3524,9 +3524,9 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 56
+  :age_in_days: 67
   :readme_score: 100
-  :tests: 15
+  :tests: 17
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: lizard
@@ -3534,11 +3534,11 @@ fastlane-plugin-lizard:
     description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: e433bc173f41451480b7d5cba5139515dceb72d646b09612d6a942b838b5c801
+  :sha: b4f08705a468a435ec2ae88e7f43de71b29b60c62d8cac5c6522fd5508382798
   :github_stars: 3
-  :github_subscribers: 4
+  :github_subscribers: 5
   :github_issues: 1
-  :github_forks: 1
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-updateplistfromstrings:
   :initial_commit: 2017-11-24
@@ -4365,9 +4365,9 @@ fastlane-plugin-retry_tests:
   :github_contributors: 2
 fastlane-plugin-icon_versioning:
   :initial_commit: 2017-12-14
-  :age_in_days: 99
+  :age_in_days: 110
   :readme_score: 100
-  :tests: 34
+  :tests: 42
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: version_icon
@@ -4375,10 +4375,10 @@ fastlane-plugin-icon_versioning:
     description: Overlay build information on top of your app icon. Based on original
       work by Krzysztof Zabłocki (https://github.com/krzysztofzablocki/Bootstrap).
     details: 
-  :sha: 8b77a7b39020c20784762fcef59d034b848f1475e14c75f4a42b86697aac83e2
-  :github_stars: 24
+  :sha: 716d807f70d487a9500942e57947b27c641defad3b6c2d526566c45529bc06f9
+  :github_stars: 31
   :github_subscribers: 1
-  :github_issues: 2
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-resize_screenshots:
@@ -4423,3 +4423,48 @@ fastlane-plugin-rescan_flaky_tests:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-automated_test_emulator_run_mik:
+  :initial_commit: 2016-07-26
+  :age_in_days: 616
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: automated_test_emulator_run
+    category: 
+    description: Starts AVD, based on AVD_setup.json file, before test launch and
+      kills it after testing is done.
+    details: 
+  :sha: a305def7922dd0753220fffa55b77092e09bdf2e0ca9ef0bbde987dcf58addcd
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-test_demo:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-git_commit_changelog_to_markdown:
+  :initial_commit: 2018-03-28
+  :age_in_days: 6
+  :readme_score: 50
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: git_commit_changelog_to_markdown
+    category: 
+    description: This plugin will take the output of the 'changelog_from_git_commits'
+      plugin and convert it into markdown
+    details: This plugin will take the output of the 'changelog_from_git_commits'
+      plugin and convert it into markdown. This is useful for gautomatically generating
+      release notes from the git commit log. Supports filtering so that you can include
+      only the messages you want (e.g. only commits that start with 'USxxx:' or 'NOTES').
+  :sha: 66dc813fb6637cf0bfa95ac0d3aa6846ed25e722e357f2b22544fce842c127dc
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
