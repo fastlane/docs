@@ -501,14 +501,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     --game-center        Enable Game Center
     --healthkit          Enable HealthKit
     --homekit            Enable HomeKit
-    --wireless-conf      Enable Wireless Accessory Configuration
+    --hotspot            Enable Hotspot
     --icloud STRING      Enable iCloud, suitable values are &quot;legacy&quot; and &quot;cloudkit&quot;
     --in-app-purchase    Enable In-App Purchase
     --inter-app-audio    Enable Inter-App-Audio
-    --passbook           Enable Passbook
+    --multipath          Enable Multipath
+    --network-extension  Enable Network Extensions
+    --nfc-tag-reading    Enable NFC Tag Reading
+    --personal-vpn       Enable Personal VPN
+    --passbook           Enable Passbook (deprecated)
     --push-notification  Enable Push notification (only enables the service, does not configure certificates)
     --sirikit            Enable SiriKit
-    --vpn-conf           Enable VPN Configuration
+    --vpn-conf           Enable VPN Configuration (deprecated)
+    --wallet             Enable Wallet
+    --wireless-conf      Enable Wireless Accessory Configuration
 </code></pre>
 
 <pre><code class="no-highlight">fastlane produce disable_services --help
@@ -521,14 +527,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     --game-center        Disable Game Center
     --healthkit          Disable HealthKit
     --homekit            Disable HomeKit
-    --wireless-conf      Disable Wireless Accessory Configuration
+    --hotspot            Disable Hotspot
     --icloud             Disable iCloud
     --in-app-purchase    Disable In-App Purchase
     --inter-app-audio    Disable Inter-App-Audio
-    --passbook           Disable Passbook
+    --multipath          Disable Multipath
+    --network-extension  Disable Network Extensions
+    --nfc-tag-reading    Disable NFC Tag Reading
+    --personal-vpn       Disable Personal VPN
+    --passbook           Disable Passbook (deprecated)
     --push-notification  Disable Push notifications
     --sirikit            Disable SiriKit
-    --vpn-conf           Disable VPN Configuration
+    --vpn-conf           Disable VPN Configuration (deprecated)
+    --wallet             Disable Wallet
+    --wireless-conf      Disable Wireless Accessory Configuration
 </code></pre>
 
 <h2 id="creating-apple-pay-merchants-and-associating-them-with-an-app-id"><a name="user-content-creating-apple-pay-merchants-and-associating-them-with-an-app-id" href="#creating-apple-pay-merchants-and-associating-them-with-an-app-id" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating Apple Pay merchants and associating them with an App ID</h2>
@@ -576,18 +588,21 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
       game_center: &quot;on&quot;,             # Valid values: &quot;on&quot;, &quot;off&quot;
       health_kit: &quot;on&quot;,              # Valid values: &quot;on&quot;, &quot;off&quot;
       home_kit: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
-      wireless_accessory: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
+      hotspot: &quot;on&quot;,                 # Valid values: &quot;on&quot;, &quot;off&quot;
       icloud: &quot;cloudkit&quot;,            # Valid values: &quot;legacy&quot;, &quot;cloudkit&quot;
       in_app_purchase: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
       inter_app_audio: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
       passbook: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
+      multipath: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
+      network_extensions: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
+      nfc_tag_reading: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
+      personal_vpn: &quot;on&quot;,            # Valid values: &quot;on&quot;, &quot;off&quot;
+      passbook: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot; (deprecated)
       push_notification: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
       siri_kit: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
-      vpn_configuration: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
-      network_extension: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
-      hotspot: &quot;on&quot;,                 # Valid values: &quot;on&quot;, &quot;off&quot;
-      multipath: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
-      nfc_tag_reading: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
+      vpn_configuration: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot; (deprecated)
+      wallet: &quot;on&quot;,                  # Valid values: &quot;on&quot;, &quot;off&quot;
+      wireless_accessory: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
     }
   )
 

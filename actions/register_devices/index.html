@@ -412,7 +412,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="register_devices"><a name="user-content-register_devices" href="#register_devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>register_devices</h1>
 <p>Registers new devices to the Apple Dev Portal</p>
 <blockquote>
-<p>This will register iOS devices with the Developer Portal so that you can include them in your provisioning profiles.
+<p>This will register iOS/Mac devices with the Developer Portal so that you can include them in your provisioning profiles.
 This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.
 The action will connect to the Apple Developer Portal using the username you specified in your <code>Appfile</code> with <code>apple_id</code>, but you can override it using the <code>username</code> option, or by setting the env variable <code>ENV['DELIVER_USER']</code>.</p>
 </blockquote>
@@ -426,7 +426,7 @@ The action will connect to the Apple Developer Portal using the username you spe
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td>Author</td>
@@ -434,7 +434,7 @@ The action will connect to the Apple Developer Portal using the username you spe
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">register_devices(
   devices: {
     &quot;Luka iPhone 6&quot; =&gt; &quot;1234567890123456789012345678901234567890&quot;,
@@ -453,6 +453,15 @@ The action will connect to the Apple Developer Portal using the username you spe
   team_id: &quot;XXXXXXXXXX&quot;,         # Optional, if you&quot;re a member of multiple teams, then you need to pass the team ID here.
   username: &quot;luka@goonbee.com&quot;   # Optional, lets you override the Apple Member Center username.
 )
+</code></pre>
+
+<pre><code class="ruby">register_devices(
+  devices: {
+    &quot;Luka MacBook&quot; =&gt; &quot;12345678-1234-1234-1234-123456789012&quot;,
+    &quot;Felix MacBook Pro&quot; =&gt; &quot;ABCDEFGH-ABCD-ABCD-ABCD-ABCDEFGHIJKL&quot;
+  },
+  platform: &quot;mac&quot;
+) # Register devices for Mac
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -489,6 +498,11 @@ The action will connect to the Apple Developer Portal using the username you spe
 <td><code>username</code></td>
 <td>Optional: Your Apple ID</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td>The platform to use (optional)</td>
+<td><code>ios</code></td>
 </tr>
 </tbody>
 </table>
