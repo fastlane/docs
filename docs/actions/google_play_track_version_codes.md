@@ -40,8 +40,8 @@ Key | Description | Default
   `track` | The track of the application to use: production, beta, alpha, internal, rollout | `production`
   `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google | [*](#parameters-legend-dynamic)
   `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account) | [*](#parameters-legend-dynamic)
-  `json_key` | The service account json file used to authenticate with Google | [*](#parameters-legend-dynamic)
-  `json_key_data` | The service account json used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

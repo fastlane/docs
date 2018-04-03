@@ -11,19 +11,19 @@ Registers new devices to the Apple Dev Portal
 
 
 
-> This will register iOS devices with the Developer Portal so that you can include them in your provisioning profiles.
+> This will register iOS/Mac devices with the Developer Portal so that you can include them in your provisioning profiles.
 This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.
 The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option, or by setting the env variable `ENV['DELIVER_USER']`.
 
 
 register_devices |
 -----|----
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @lmirosevic
 
 
 
-## 3 Examples
+## 4 Examples
 
 ```ruby
 register_devices(
@@ -48,6 +48,16 @@ register_devices(
 )
 ```
 
+```ruby
+register_devices(
+  devices: {
+    "Luka MacBook" => "12345678-1234-1234-1234-123456789012",
+    "Felix MacBook Pro" => "ABCDEFGH-ABCD-ABCD-ABCD-ABCDEFGHIJKL"
+  },
+  platform: "mac"
+) # Register devices for Mac
+```
+
 
 
 
@@ -61,6 +71,7 @@ Key | Description | Default
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `username` | Optional: Your Apple ID | [*](#parameters-legend-dynamic)
+  `platform` | The platform to use (optional) | `ios`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
