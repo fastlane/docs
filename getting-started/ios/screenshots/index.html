@@ -554,8 +554,10 @@ app.launch()</code></p>
 <p><code>objective-c
 XCUIApplication *app = [[XCUIApplication alloc] init];
 [Snapshot setupSnapshot:app];
-[app launch];</code>
-1. In the terminal run <code>fastlane snapshot</code>.<br />
+[app launch];</code></p>
+</li>
+<li>
+<p>In the terminal run <code>fastlane snapshot</code>.<br />
 WARNING: Running the test in Xcode does not create the snapshots and will not generate the correct results - although no tests will fail.  The command line program creates the necessary subdirectories, renames the files as appropriate, and generates the overview html page.</p>
 </li>
 </ol>
