@@ -93,7 +93,7 @@ XCUIApplication *app = [[XCUIApplication alloc] init];
 [app launch];
 ```
 
-1. In the terminal run `fastlane snapshot`.  
+<span>12.</span> In the terminal run `fastlane snapshot`.  
 WARNING: Running the test in Xcode does not create the snapshots and will not generate the correct results - although no tests will fail.  The command line program creates the necessary subdirectories, renames the files as appropriate, and generates the overview html page.
 
 The setup process will also generate a `Snapfile`, looking similar to
