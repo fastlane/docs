@@ -77,7 +77,7 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
     - Objective C: `[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];`
 1. Add the following code to your `setUp()` method:
 
-**Swift**
+**Swift:**
 
 ```swift
 let app = XCUIApplication()
@@ -85,7 +85,7 @@ setupSnapshot(app)
 app.launch()
 ```
 
-**Objective C**
+**Objective C:**
 
 ```objective-c
 XCUIApplication *app = [[XCUIApplication alloc] init];
