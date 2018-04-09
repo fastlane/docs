@@ -430,7 +430,7 @@
 <ol>
 <li>Open the <a href="https://developer.apple.com/account/ios/certificate/">Developer Portal</a></li>
 <li>Verify your certificates are valid, and didn't expire or get revoked</li>
-<li>Switch to the Provisioning Profiles and make sure the profiles you want to use are all still valid</li>
+<li>Switch to the Provisioning Profiles and make sure the profiles you want to use are all still valid<ol>
 <li>If your profile is invalid or expired, you can easily fix it:<ol>
 <li>If you're using <a href="https://fastlane.tools/match"><em>match</em></a>, run <em>match</em> with <code>force</code> enabled</li>
 <li>If you're using <a href="https://fastlane.tools/sigh"><em>sigh</em></a>, run <em>sigh</em> with <code>force</code> enabled</li>
@@ -441,6 +441,8 @@
 <li>that the certificate matches the certificate you have installed locally. You can view the used certificate by editing the profile (Don't click <code>Generate</code>, unless you want to re-generate the provisioning profile)</li>
 <li>that all devices you need are included (Development and Ad-Hoc only)</li>
 <li>that you are actually looking at the correct provisioning profile, that matches the bundle identifier of your app. You might have multiple provisioning profiles for the same app / certificate combination. By default Xcode will use the last modified one.</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>

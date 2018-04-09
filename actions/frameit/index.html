@@ -441,11 +441,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h2 id="advanced-features"><a name="user-content-advanced-features" href="#advanced-features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced Features</h2>
 <ul>
 <li>Put framed screenshot on colored background, define padding</li>
-<li>add text above or under framed screenshot</li>
+<li>add text above or under framed screenshot<ul>
 <li>keyword + text</li>
 <li>choose text font and color</li>
 <li>multi line text</li>
 <li>"intelligent" positioning of text that always looks good(ish)</li>
+</ul>
+</li>
 </ul>
 <h2 id="results"><a name="user-content-results" href="#results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Results</h2>
 <p><img alt="img/actions/ScreenshotsBig.png" src="../../img/actions/ScreenshotsBig.png?raw=1" /></p>
@@ -658,9 +660,11 @@ These are defined in the <code>data</code> key. This is an array with the follow
 <p>With <em>frameit</em> it's possible to also frame macOS Application screenshots. You have to provide the following:</p>
 <ul>
 <li>A (relative) path to a <code>background</code> image file, which should contain both the background and the Mac.</li>
-<li>The <code>offset</code> information so <em>frameit</em> knows where to position your screenshot on the <code>background</code>:</li>
+<li>The <code>offset</code> information so <em>frameit</em> knows where to position your screenshot on the <code>background</code>:<ul>
 <li><code>offset</code> : A string that specifies the horizontal and vertical offset in pixels, with respect to the top left corner of the <code>background</code> image. The syntax is <code>"+&lt;horizontal&gt;+&lt;vertical&gt;"</code>, e.g. <code>"+200+150"</code>.</li>
 <li><code>titleHeight</code> : The height in pixels that should be used for the title.</li>
+</ul>
+</li>
 </ul>
 <h2 id="example_1"><a name="user-content-example_1" href="#example_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h2>
 <pre><code class="json">{

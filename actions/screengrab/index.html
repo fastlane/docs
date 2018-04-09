@@ -457,12 +457,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ol>
 <h1 id="generating-screenshots-with-screengrab"><a name="user-content-generating-screenshots-with-screengrab" href="#generating-screenshots-with-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating Screenshots with Screengrab</h1>
 <ul>
-<li>Then, before running <code>fastlane screengrab</code> you'll need a debug and test apk</li>
+<li>Then, before running <code>fastlane screengrab</code> you'll need a debug and test apk<ul>
 <li>You can create your APKs with <code>./gradlew assembleDebug assembleAndroidTest</code></li>
-<li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
-<li>You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments</li>
 </ul>
 </li>
+<li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots
+    - You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments</li>
 <li>Your screenshots will be saved to <code>fastlane/metadata/android</code> in the directory where you ran <em>screengrab</em></li>
 </ul>
 <h2 id="improved-screenshot-capture-with-ui-automator"><a name="user-content-improved-screenshot-capture-with-ui-automator" href="#improved-screenshot-capture-with-ui-automator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Improved screenshot capture with UI Automator</h2>

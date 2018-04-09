@@ -1326,12 +1326,10 @@ files %w{file1.txt file2.txt}
 <h3 id="resolution-order"><a name="user-content-resolution-order" href="#resolution-order" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resolution order</h3>
 <p>Parameters are resolved from different sources in the following order:</p>
 <ol>
-<li>A parameter directly passed to an action using the <code>key</code>, usually from the
-    <code>Fastfile</code>.</li>
+<li>A parameter directly passed to an action using the <code>key</code>, usually from the <code>Fastfile</code>.</li>
 <li>An environment variable, if the <code>env_name</code> is set.</li>
 <li>A configuration file used in <code>load_configuration_file</code>.</li>
-<li>The <code>default_value</code> of the <code>ConfigItem</code>. If not explicitly set, this will be
-    <code>nil</code>.</li>
+<li>The <code>default_value</code> of the <code>ConfigItem</code>. If not explicitly set, this will be <code>nil</code>.</li>
 </ol>
 <h2 id="user-input-and-output"><a name="user-content-user-input-and-output" href="#user-input-and-output" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>User input and output</h2>
 <p>The <code>FastlaneCore::UI</code> utility may be used to display output to the user and also
