@@ -990,12 +990,10 @@ files %w{file1.txt file2.txt}
 
 Parameters are resolved from different sources in the following order:
 
-1. A parameter directly passed to an action using the `key`, usually from the
-    `Fastfile`.
+1. A parameter directly passed to an action using the `key`, usually from the `Fastfile`.
 2. An environment variable, if the `env_name` is set.
 3. A configuration file used in `load_configuration_file`.
-4. The `default_value` of the `ConfigItem`. If not explicitly set, this will be
-    `nil`.
+4. The `default_value` of the `ConfigItem`. If not explicitly set, this will be `nil`.
 
 ## User input and output
 

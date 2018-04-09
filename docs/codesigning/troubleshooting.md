@@ -30,16 +30,16 @@ A check list on what you should verify on your Xcode project
 If a certificate gets revoked, all connected provisioning profiles get invalidated. This however might not immediately show up in your local keychain.
 
 1. Open the [Developer Portal](https://developer.apple.com/account/ios/certificate/)
-- Verify your certificates are valid, and didn't expire or get revoked
-- Switch to the Provisioning Profiles and make sure the profiles you want to use are all still valid
+1. Verify your certificates are valid, and didn't expire or get revoked
+1. Switch to the Provisioning Profiles and make sure the profiles you want to use are all still valid
   1. If your profile is invalid or expired, you can easily fix it:
     1. If you're using [_match_](https://fastlane.tools/match), run _match_ with `force` enabled
-    - If you're using [_sigh_](https://fastlane.tools/sigh), run _sigh_ with `force` enabled
-    - If you're doing manual code signing, edit the provisioning profile, and click on `Generate` on the bottom of the screen. Make sure to select the correct certificate, then download and open the new provisioning profile
-  - If your profile is valid, but you still have issues make sure
+    1. If you're using [_sigh_](https://fastlane.tools/sigh), run _sigh_ with `force` enabled
+    1. If you're doing manual code signing, edit the provisioning profile, and click on `Generate` on the bottom of the screen. Make sure to select the correct certificate, then download and open the new provisioning profile
+  1. If your profile is valid, but you still have issues make sure
     1. that the certificate matches the certificate you have installed locally. You can view the used certificate by editing the profile (Don't click `Generate`, unless you want to re-generate the provisioning profile)
-    - that all devices you need are included (Development and Ad-Hoc only)
-    - that you are actually looking at the correct provisioning profile, that matches the bundle identifier of your app. You might have multiple provisioning profiles for the same app / certificate combination. By default Xcode will use the last modified one.
+    1. that all devices you need are included (Development and Ad-Hoc only)
+    1. that you are actually looking at the correct provisioning profile, that matches the bundle identifier of your app. You might have multiple provisioning profiles for the same app / certificate combination. By default Xcode will use the last modified one.
 
 ## Keychain
 
