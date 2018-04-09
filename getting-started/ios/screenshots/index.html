@@ -543,24 +543,22 @@ brew cask install fastlane
 <li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];</code></li>
 </ul>
 </li>
-<li>
-<p>Add the following code to your <code>setUp()</code> method:</p>
-<p><strong>Swift</strong></p>
-<p><code>swift
-let app = XCUIApplication()
-setupSnapshot(app)
-app.launch()</code></p>
-<p><strong>Objective C</strong></p>
-<p><code>objective-c
-XCUIApplication *app = [[XCUIApplication alloc] init];
-[Snapshot setupSnapshot:app];
-[app launch];</code></p>
-</li>
-<li>
-<p>In the terminal run <code>fastlane snapshot</code>.<br />
-WARNING: Running the test in Xcode does not create the snapshots and will not generate the correct results - although no tests will fail.  The command line program creates the necessary subdirectories, renames the files as appropriate, and generates the overview html page.</p>
-</li>
+<li>Add the following code to your <code>setUp()</code> method:</li>
 </ol>
+<p><strong>Swift:</strong></p>
+<pre><code class="swift">let app = XCUIApplication()
+setupSnapshot(app)
+app.launch()
+</code></pre>
+
+<p><strong>Objective C:</strong></p>
+<pre><code class="objective-c">XCUIApplication *app = [[XCUIApplication alloc] init];
+[Snapshot setupSnapshot:app];
+[app launch];
+</code></pre>
+
+<p><span>12.</span> In the terminal run <code>fastlane snapshot</code>.<br />
+WARNING: Running the test in Xcode does not create the snapshots and will not generate the correct results - although no tests will fail.  The command line program creates the necessary subdirectories, renames the files as appropriate, and generates the overview html page.</p>
 <p>The setup process will also generate a <code>Snapfile</code>, looking similar to</p>
 <pre><code class="ruby"># A list of devices you want to take the screenshots from
 # devices([
