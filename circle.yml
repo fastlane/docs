@@ -1,11 +1,12 @@
 machine:
   python:
-    version: 2.7.11
+    version: 3.6.0
   ruby:
     version: 2.3.0
 dependencies:
   pre:
-    - pip install -r requirements.txt
+    - pip install pipenv
+    - pipenv install
 test:
   override:
     - bundle update
