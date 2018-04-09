@@ -77,23 +77,23 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
     - Objective C: `[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];`
 1. Add the following code to your `setUp()` method:
 
-    **Swift**
+**Swift:**
 
-    ```swift
-    let app = XCUIApplication()
-    setupSnapshot(app)
-    app.launch()
-    ```
-    
-    **Objective C**
-    
-    ```objective-c
-    XCUIApplication *app = [[XCUIApplication alloc] init];
-    [Snapshot setupSnapshot:app];
-    [app launch];
-    ```
-    
-1. In the terminal run `fastlane snapshot`.  
+```swift
+let app = XCUIApplication()
+setupSnapshot(app)
+app.launch()
+```
+
+**Objective C:**
+
+```objective-c
+XCUIApplication *app = [[XCUIApplication alloc] init];
+[Snapshot setupSnapshot:app];
+[app launch];
+```
+
+<span>12.</span> In the terminal run `fastlane snapshot`.  
 WARNING: Running the test in Xcode does not create the snapshots and will not generate the correct results - although no tests will fail.  The command line program creates the necessary subdirectories, renames the files as appropriate, and generates the overview html page.
 
 The setup process will also generate a `Snapfile`, looking similar to
