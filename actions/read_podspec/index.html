@@ -419,24 +419,10 @@ Loads the specified (or the first found) podspec in the folder as JSON, so that 
 This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of 
 the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>read_podspec</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@czechboy0</td>
-</tr>
-</tbody>
-</table>
+<p>read_podspec |
+-----|----
+Supported platforms | ios, mac
+Author | @czechboy0</p>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">spec = read_podspec
 version = spec[&quot;version&quot;]

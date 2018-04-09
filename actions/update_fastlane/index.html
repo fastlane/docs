@@ -422,24 +422,10 @@ export PATH=$PATH:~/.gems/bin
 
 <p>After the above changes, restart your terminal, then run <code>mkdir $GEM_HOME</code> to create the new gem directory. After this, you're good to go!
 Recommended usage of the <code>update_fastlane</code> action is at the top inside of the <code>before_all</code> block, before running any other action</p>
-<table>
-<thead>
-<tr>
-<th>update_fastlane</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@milch, @KrauseFx</td>
-</tr>
-</tbody>
-</table>
+<p>update_fastlane |
+-----|----
+Supported platforms | ios, android, mac
+Author | @milch, @KrauseFx</p>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">before_all do
   update_fastlane

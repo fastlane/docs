@@ -418,24 +418,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           assets, pass <code>:keep_all_assets: true</code>. This action returns the path to the downloaded
           assets folder and puts into shared values the paths to the asset folder and to the <code>.xcarchive</code> inside it</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>xcode_server_get_assets</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@czechboy0</td>
-</tr>
-</tbody>
-</table>
+<p>xcode_server_get_assets |
+-----|----
+Supported platforms | ios, mac
+Author | @czechboy0</p>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">xcode_server_get_assets(
   host: &quot;10.99.0.59&quot;, # Specify Xcode Server's Host or IP Address

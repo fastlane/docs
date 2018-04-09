@@ -414,24 +414,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>This action allows you to upload symbolication files to Crashlytics. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode. This action will not fail the build if one of the uploads failed. The reason for that is that sometimes some of dSYM files are invalid, and we don't want them to fail the complete build.</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>upload_symbols_to_crashlytics</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@KrauseFx</td>
-</tr>
-</tbody>
-</table>
+<p>upload_symbols_to_crashlytics |
+-----|----
+Supported platforms | ios
+Author | @KrauseFx</p>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">upload_symbols_to_crashlytics(dsym_path: &quot;./App.dSYM.zip&quot;)
 </code></pre>

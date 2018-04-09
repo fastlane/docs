@@ -414,28 +414,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>You can use this action to get the number of commits of this branch. This is useful if you want to set the build number to the number of commits. See <code>fastlane actions number_of_commits</code> for more details</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>number_of_commits</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@onevcat, @samuelbeek</td>
-</tr>
-<tr>
-<td>Returns</td>
-<td>The total number of all commits in current git branch</td>
-</tr>
-</tbody>
-</table>
+<p>number_of_commits |
+-----|----
+Supported platforms | ios, android, mac
+Author | @onevcat, @samuelbeek
+Returns | The total number of all commits in current git branch</p>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">increment_build_number(build_number: number_of_commits)
 </code></pre>

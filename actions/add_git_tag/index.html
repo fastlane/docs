@@ -420,24 +420,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 - <code>build_number</code> is the build number, which defaults to the value emitted by the <code>increment_build_number</code> action
 For example for build 1234 in the 'appstore' lane it will tag the commit with <code>builds/appstore/1234</code></p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>add_git_tag</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@lmirosevic, @maschall</td>
-</tr>
-</tbody>
-</table>
+<p>add_git_tag |
+-----|----
+Supported platforms | ios, android, mac
+Author | @lmirosevic, @maschall</p>
 <h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">add_git_tag # simple tag with default values
 </code></pre>

@@ -415,24 +415,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>Unlocks the given keychain file and adds it to the keychain search list
 Keychains can be replaced with <code>add_to_search_list: :replace</code></p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>unlock_keychain</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@xfreebird</td>
-</tr>
-</tbody>
-</table>
+<p>unlock_keychain |
+-----|----
+Supported platforms | ios, android, mac
+Author | @xfreebird</p>
 <h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">unlock_keychain( # Unlock an existing keychain and add it to the keychain search list
   path: &quot;/path/to/KeychainName.keychain&quot;,

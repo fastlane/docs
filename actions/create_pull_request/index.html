@@ -411,28 +411,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="create_pull_request"><a name="user-content-create_pull_request" href="#create_pull_request" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>create_pull_request</h1>
 <p>This will create a new pull request on GitHub</p>
-<table>
-<thead>
-<tr>
-<th>create_pull_request</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@seei, @tommeier</td>
-</tr>
-<tr>
-<td>Returns</td>
-<td>The parsed JSON when successful</td>
-</tr>
-</tbody>
-</table>
+<p>create_pull_request |
+-----|----
+Supported platforms | ios, android, mac
+Author | @seei, @tommeier
+Returns | The parsed JSON when successful</p>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">create_pull_request(
   api_token: ENV[&quot;GITHUB_TOKEN&quot;],

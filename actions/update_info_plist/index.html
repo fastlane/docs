@@ -414,24 +414,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>This action allows you to modify your <code>Info.plist</code> file before building. This may be useful if you want a separate build for alpha, beta or nightly builds, but don't want a separate target.</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>update_info_plist</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@tobiasstrebitzer</td>
-</tr>
-</tbody>
-</table>
+<p>update_info_plist |
+-----|----
+Supported platforms | ios
+Author | @tobiasstrebitzer</p>
 <h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">update_info_plist( # update app identifier string
   plist_path: &quot;path/to/Info.plist&quot;,

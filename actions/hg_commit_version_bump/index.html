@@ -420,24 +420,10 @@ Then commits those files to the repo.
 Customize the message with the <code>:message</code> option, defaults to 'Version Bump'
 If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the <em>ipa</em> and or <em>sigh</em> actions, then you can use the <a href="#clean_build_artifacts"><code>clean_build_artifacts</code></a> action to clean those temporary files up before running this action.</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>hg_commit_version_bump</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@sjrmanning</td>
-</tr>
-</tbody>
-</table>
+<p>hg_commit_version_bump |
+-----|----
+Supported platforms | ios, android, mac
+Author | @sjrmanning</p>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">hg_commit_version_bump
 </code></pre>

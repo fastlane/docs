@@ -414,24 +414,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>make_changelog_from_jenkins</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@mandrizzle</td>
-</tr>
-</tbody>
-</table>
+<p>make_changelog_from_jenkins |
+-----|----
+Supported platforms | ios, android, mac
+Author | @mandrizzle</p>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">make_changelog_from_jenkins(
   # Optional, lets you set a changelog in the case is not generated on Jenkins or if ran outside of Jenkins

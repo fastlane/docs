@@ -415,24 +415,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>This action deletes the files that get created in your repo as a result of running the <em>gym</em> and <em>sigh</em> commands. It doesn't delete the <code>fastlane/report.xml</code> though, this is probably more suited for the .gitignore.
 Useful if you quickly want to send out a test build by dropping down to the command line and typing something like <code>fastlane beta</code>, without leaving your repo in a messy state afterwards.</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>clean_build_artifacts</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Supported platforms</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td>Author</td>
-<td>@lmirosevic</td>
-</tr>
-</tbody>
-</table>
+<p>clean_build_artifacts |
+-----|----
+Supported platforms | ios, mac
+Author | @lmirosevic</p>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">clean_build_artifacts
 </code></pre>
