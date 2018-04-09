@@ -47,8 +47,8 @@ This will also upload:
 
 - App metadata from `fastlane/metadata/android` if you previously ran `fastlane supply init`
 - Expansion files (obbs) found under the same directory as your APK as long as:
-    - They are identified by type as **main** or **patch** by containing `main` or `patch` in their file names
-    - There is at most one of each type
+  - They are identified by type as **main** or **patch** by containing `main` or `patch` in their file names
+  - There is at most one of each type
 - Screenshots from `fastlane/metadata/android` if you previously ran _screengrab_
 
 If you would like to capture and upload screenshots automatically as part of your deployment process, check out the [fastlane screenshots for Android](screenshots.md) guide to get started!

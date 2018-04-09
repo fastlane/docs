@@ -69,12 +69,12 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
 1. In the list on the left click "Build", and enable the checkbox under the "Run" column for your target. 
 1. Enable the `Shared` box of the newly created scheme
 1. (Objective C only) Add the bridging header to your test class.
-    - `#import "MYUITests-Swift.h"`
-    - The bridging header is named after your test target with -Swift.h appended.
+  - `#import "MYUITests-Swift.h"`
+  - The bridging header is named after your test target with -Swift.h appended.
 1. In your UI Test class, click the `Record` button on the bottom left and record your interaction
 1. To take a screenshot, call the following between interactions
-    - Swift: `snapshot("01LoginScreen")`
-    - Objective C: `[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];`
+  - Swift: `snapshot("01LoginScreen")`
+  - Objective C: `[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];`
 1. Add the following code to your `setUp()` method:
 
 **Swift:**
