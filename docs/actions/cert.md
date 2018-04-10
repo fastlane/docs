@@ -101,8 +101,8 @@ It will show you `mobileprovision` files like this:
 <hr />
 
 
-cert |
------|----
+cert ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

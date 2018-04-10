@@ -17,8 +17,8 @@ account, push to your existing account, or manage your user
 groups. We accept iOS and Android applications.
 
 
-appaloosa |
------|----
+appaloosa ||
+---|---
 Supported platforms | ios, android, mac
 Author | @Appaloosa
 

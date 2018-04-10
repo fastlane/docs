@@ -14,8 +14,8 @@ Get the most recent git tag
 > If you are using this action on a **shallow clone**, *the default with some CI systems like Bamboo*, you need to ensure that you have also have pulled all the git tags appropriately. Assuming your git repo has the correct remote set you can issue `sh('git fetch --tags')`
 
 
-last_git_tag |
------|----
+last_git_tag ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

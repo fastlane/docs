@@ -15,8 +15,8 @@ Alias for the `min_fastlane_version` action
 Use it if you use an action that just recently came out and you need it.
 
 
-fastlane_version |
------|----
+fastlane_version ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

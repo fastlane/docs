@@ -14,8 +14,8 @@ Remove the cache for pods
 
 
 
-clean_cocoapods_cache |
------|----
+clean_cocoapods_cache ||
+---|---
 Supported platforms | ios, mac
 Author | @alexmx
 

@@ -14,8 +14,8 @@ Push local tags to the remote - this will only push tags
 > If you only want to push the tags and nothing else, you can use the `push_git_tags` action
 
 
-push_git_tags |
------|----
+push_git_tags ||
+---|---
 Supported platforms | ios, android, mac
 Author | @vittoriom
 

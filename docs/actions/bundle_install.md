@@ -14,8 +14,8 @@ This action runs `bundle install` (if available)
 
 
 
-bundle_install |
------|----
+bundle_install ||
+---|---
 Supported platforms | ios, android, mac
 Author | @birmacher, @koglinjg
 

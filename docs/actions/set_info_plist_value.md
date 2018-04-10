@@ -14,8 +14,8 @@ Sets value to Info.plist of your project as native Ruby data structures
 
 
 
-set_info_plist_value |
------|----
+set_info_plist_value ||
+---|---
 Supported platforms | ios, mac
 Author | @kohtenko, @uwehollatz
 

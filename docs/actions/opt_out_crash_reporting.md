@@ -14,8 +14,8 @@ This will prevent reports from being uploaded when _fastlane_ crashes
 > fastlane doesn't have crash reporting any more, feel free to remove `opt_out_crash_reporting` from your Fastfile
 
 
-opt_out_crash_reporting |
------|----
+opt_out_crash_reporting ||
+---|---
 Supported platforms | ios, android, mac
 Author | @mpirri, @ohayon
 

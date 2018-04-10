@@ -14,14 +14,14 @@ Directly add the given file or all files
 
 
 
-git_add |
------|----
+git_add ||
+---|---
 Supported platforms | ios, android, mac
 Author | @4brunu, @antondomashnev
 
 
 
-## 5 Examples
+## 7 Examples
 
 ```ruby
 git_add
@@ -36,11 +36,19 @@ git_add(path: ["./version.txt", "./changelog.txt"])
 ```
 
 ```ruby
-git_add(pathspec: "./Frameworks/*")
+git_add(path: "./Frameworks/*", shell_escape: false)
 ```
 
 ```ruby
-git_add(pathspec: "*.txt")
+git_add(path: ["*.h", "*.m"], shell_escape: false)
+```
+
+```ruby
+git_add(path: "./Frameworks/*", shell_escape: false)
+```
+
+```ruby
+git_add(path: "*.txt", shell_escape: false)
 ```
 
 
@@ -51,8 +59,9 @@ git_add(pathspec: "*.txt")
 
 Key | Description | Default
 ----|-------------|--------
-  `path` | The file you want to add | 
-  `pathspec` | The pathspec you want to add files from | 
+  `path` | The file(s) and path(s) you want to add | 
+  `shell_escape` | Shell escapes paths (set to false if using wildcards or manually escaping spaces in :path) | `true`
+  `pathspec` | [DEPRECATED!] Use --path instead - The pathspec you want to add files from | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

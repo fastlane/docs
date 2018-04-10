@@ -14,8 +14,8 @@ Recreate not shared Xcode project schemes
 
 
 
-recreate_schemes |
------|----
+recreate_schemes ||
+---|---
 Supported platforms | ios, mac
 Author | @jerolimov
 

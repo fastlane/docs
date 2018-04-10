@@ -14,8 +14,8 @@ Alias for the `puts` action
 
 
 
-println |
------|----
+println ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

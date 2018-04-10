@@ -14,8 +14,8 @@ This action changes the iCloud container identifiers in the entitlements file
 > Updates the iCloud Container Identifiers in the given Entitlements file, so you can use different iCloud containers for different builds like Adhoc, App Store, etc.
 
 
-update_icloud_container_identifiers |
------|----
+update_icloud_container_identifiers ||
+---|---
 Supported platforms | ios
 Author | @JamesKuang
 

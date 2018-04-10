@@ -15,8 +15,8 @@ Nice code coverage reports without hassle
 More information: https://github.com/nakiostudio/xcov
 
 
-xcov |
------|----
+xcov ||
+---|---
 Supported platforms | ios, mac
 Author | @nakiostudio
 

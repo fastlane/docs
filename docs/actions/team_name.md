@@ -14,8 +14,8 @@ Set a team to use by its name
 
 
 
-team_name |
------|----
+team_name ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

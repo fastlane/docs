@@ -14,8 +14,8 @@ This will push changes to the remote hg repository
 > The mercurial equivalent of [`push_to_git_remote`](#push_to_git_remote) — pushes your local commits to a remote mercurial repo. Useful when local changes such as adding a version bump commit or adding a tag are part of your lane’s actions.
 
 
-hg_push |
------|----
+hg_push ||
+---|---
 Supported platforms | ios, android, mac
 Author | @sjrmanning
 

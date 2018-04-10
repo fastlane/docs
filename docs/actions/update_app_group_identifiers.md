@@ -14,8 +14,8 @@ This action changes the app group identifiers in the entitlements file
 > Updates the App Group Identifiers in the given Entitlements file, so you can have app groups for the app store build and app groups for an enterprise build.
 
 
-update_app_group_identifiers |
------|----
+update_app_group_identifiers ||
+---|---
 Supported platforms | ios
 Author | @mathiasAichinger
 

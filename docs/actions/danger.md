@@ -15,8 +15,8 @@ Runs `danger` for the project
 More information: https://github.com/danger/danger
 
 
-danger |
------|----
+danger ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

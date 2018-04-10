@@ -160,8 +160,8 @@ end
 <hr />
 
 
-scan |
------|----
+scan ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 

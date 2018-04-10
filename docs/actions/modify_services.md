@@ -15,8 +15,8 @@ Modifies the services of the app created on Developer Portal
 https://docs.fastlane.tools/actions/produce/
 
 
-modify_services |
------|----
+modify_services ||
+---|---
 Supported platforms | ios
 Author | @bhimsenpadalkar
 

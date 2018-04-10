@@ -16,8 +16,8 @@ You first have to set up your Xcode project, if you haven't done it already:
 https://developer.apple.com/library/ios/qa/qa1827/_index.html
 
 
-increment_version_number |
------|----
+increment_version_number ||
+---|---
 Supported platforms | ios, mac
 Author | @serluca
 Returns | The new version number

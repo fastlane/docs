@@ -14,8 +14,8 @@ Upload dSYM file to Apteligent (Crittercism)
 
 
 
-apteligent |
------|----
+apteligent ||
+---|---
 Supported platforms | ios
 Author | @Mo7amedFouad
 

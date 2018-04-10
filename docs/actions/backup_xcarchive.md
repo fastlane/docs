@@ -14,8 +14,8 @@ Save your [zipped] xcarchive elsewhere from default path
 
 
 
-backup_xcarchive |
------|----
+backup_xcarchive ||
+---|---
 Supported platforms | ios, mac
 Author | @dral3x
 

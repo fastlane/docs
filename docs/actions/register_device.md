@@ -16,8 +16,8 @@ This is an optimistic action, in that it will only ever add a device to the memb
 The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option.
 
 
-register_device |
------|----
+register_device ||
+---|---
 Supported platforms | ios
 Author | @pvinis
 

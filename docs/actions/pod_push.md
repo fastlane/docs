@@ -14,8 +14,8 @@ Push a Podspec to Trunk or a private repository
 
 
 
-pod_push |
------|----
+pod_push ||
+---|---
 Supported platforms | ios, mac
 Author | @squarefrog
 

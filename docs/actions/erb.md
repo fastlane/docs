@@ -15,8 +15,8 @@ Allows to Generate output files based on ERB templates
 if no :destination is set, returns rendered template as string
 
 
-erb |
------|----
+erb ||
+---|---
 Supported platforms | ios, android, mac
 Author | @hjanuschka
 

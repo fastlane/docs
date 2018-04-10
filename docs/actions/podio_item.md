@@ -18,8 +18,8 @@ Creates or updates an item within your Podio app
         (see https://developers.podio.com/examples/items)
 
 
-podio_item |
------|----
+podio_item ||
+---|---
 Supported platforms | ios, android, mac
 Author | @pprochazka72, @laugejepsen
 

@@ -16,8 +16,8 @@ https://docs.fastlane.tools/codesigning/getting-started/
 
 
 
-update_project_code_signing |
------|----
+update_project_code_signing ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

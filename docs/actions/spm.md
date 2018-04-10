@@ -14,8 +14,8 @@ Runs Swift Package Manager on your project
 
 
 
-spm |
------|----
+spm ||
+---|---
 Supported platforms | ios, android, mac
 Author | @Flávio Caetano (@fjcaetano)
 

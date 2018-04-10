@@ -15,8 +15,8 @@ Fetches most recent build number from TestFlight
 Fetches most recent build number from TestFlight based on the version number. Provides a way to have `increment_build_number` be based on the latest build you uploaded to iTC.
 
 
-latest_testflight_build_number |
------|----
+latest_testflight_build_number ||
+---|---
 Supported platforms | ios
 Author | @daveanderson
 Returns | Integer representation of the latest build number uploaded to TestFlight

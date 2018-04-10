@@ -21,8 +21,8 @@ resign(ipa: "path", signing_identity: "identity", provisioning_profile: {
 })
 
 
-resign |
------|----
+resign ||
+---|---
 Supported platforms | ios
 Author | @lmirosevic
 

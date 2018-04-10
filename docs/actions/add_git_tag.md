@@ -20,8 +20,8 @@ This will add an annotated git tag to the current branch
 For example for build 1234 in the 'appstore' lane it will tag the commit with `builds/appstore/1234`
 
 
-add_git_tag |
------|----
+add_git_tag ||
+---|---
 Supported platforms | ios, android, mac
 Author | @lmirosevic, @maschall
 

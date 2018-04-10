@@ -16,8 +16,8 @@ Currently supported SCMs are svn (uses root revision), git-svn (uses svn revisio
 There is an option, `:use_hg_revision_number`, which allows to use mercurial revision number instead of hash.
 
 
-get_build_number_repository |
------|----
+get_build_number_repository ||
+---|---
 Supported platforms | ios, mac
 Author | @bartoszj, @pbrooks, @armadsen
 Returns | The build number from the current repository

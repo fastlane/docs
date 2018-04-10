@@ -14,8 +14,8 @@ Reads in production secrets set in a dotgpg file and puts them in ENV
 > More information about dotgpg can be found at https://github.com/ConradIrwin/dotgpg
 
 
-dotgpg_environment |
------|----
+dotgpg_environment ||
+---|---
 Supported platforms | ios, android, mac
 Author | @simonlevy5
 

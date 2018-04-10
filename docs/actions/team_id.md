@@ -14,8 +14,8 @@ Specify the Team ID you want to use for the Apple Developer Portal
 
 
 
-team_id |
------|----
+team_id ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

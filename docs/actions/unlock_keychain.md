@@ -15,8 +15,8 @@ Unlock a keychain
 Keychains can be replaced with `add_to_search_list: :replace`
 
 
-unlock_keychain |
------|----
+unlock_keychain ||
+---|---
 Supported platforms | ios, android, mac
 Author | @xfreebird
 

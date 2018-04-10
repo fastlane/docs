@@ -14,8 +14,8 @@ Delete keychains and remove them from the search list
 > Keychains can be deleted after being creating with `create_keychain`
 
 
-delete_keychain |
------|----
+delete_keychain ||
+---|---
 Supported platforms | ios, android, mac
 Author | @gin0606, @koenpunt
 

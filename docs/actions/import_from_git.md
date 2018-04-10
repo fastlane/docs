@@ -15,8 +15,8 @@ Import another Fastfile from a remote git repository to use its lanes
 in a remote git repository.
 
 
-import_from_git |
------|----
+import_from_git ||
+---|---
 Supported platforms | ios, android, mac
 Author | @fabiomassimo, @KrauseFx, @Liquidsoul
 

@@ -14,8 +14,8 @@ Lints implementation files with OCLint
 > Run the static analyzer tool [OCLint](http://oclint.org) for your project. You need to have a `compile_commands.json` file in your _fastlane_ directory or pass a path to your file
 
 
-oclint |
------|----
+oclint ||
+---|---
 Supported platforms | ios, android, mac
 Author | @HeEAaD
 

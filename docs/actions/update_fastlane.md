@@ -22,8 +22,8 @@ After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to cr
 Recommended usage of the `update_fastlane` action is at the top inside of the `before_all` block, before running any other action
 
 
-update_fastlane |
------|----
+update_fastlane ||
+---|---
 Supported platforms | ios, android, mac
 Author | @milch, @KrauseFx
 

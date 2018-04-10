@@ -14,8 +14,8 @@ Make sure a certain version of Xcode is installed
 > Makes sure a specific version of Xcode is installed. If that's not the case, it will automatically be downloaded by the [xcode_install](https://github.com/neonichu/xcode-install) gem. This will make sure to use the correct Xcode for later actions.
 
 
-xcode_install |
------|----
+xcode_install ||
+---|---
 Supported platforms | ios, mac
 Author | @Krausefx
 Returns | The path to the newly installed Xcode version

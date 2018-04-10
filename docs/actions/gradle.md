@@ -14,8 +14,8 @@ All gradle related actions, including building and testing your Android app
 > Run `./gradlew tasks` to get a list of all available gradle tasks for your project
 
 
-gradle |
------|----
+gradle ||
+---|---
 Supported platforms | ios, android
 Author | @KrauseFx, @lmirosevic
 Returns | The output of running the gradle task

@@ -14,8 +14,8 @@ Upload dSYM file to Splunk MINT
 
 
 
-splunkmint |
------|----
+splunkmint ||
+---|---
 Supported platforms | ios
 Author | @xfreebird
 

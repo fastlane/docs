@@ -14,8 +14,8 @@ This will add a hg tag to the current branch
 
 
 
-hg_add_tag |
------|----
+hg_add_tag ||
+---|---
 Supported platforms | ios, android, mac
 Author | @sjrmanning
 

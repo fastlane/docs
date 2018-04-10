@@ -16,8 +16,8 @@ Replace `upload_symbols_to_sentry` with `sentry_upload_dsym`
 > This action allows you to upload symbolication files to Sentry. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode
 
 
-upload_symbols_to_sentry |
------|----
+upload_symbols_to_sentry ||
+---|---
 Supported platforms | ios
 Author | @joshdholtz
 Returns | The uploaded dSYM path(s)

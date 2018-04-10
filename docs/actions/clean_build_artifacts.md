@@ -15,8 +15,8 @@ Deletes files created as result of running gym, cert, sigh or download_dsyms
 Useful if you quickly want to send out a test build by dropping down to the command line and typing something like `fastlane beta`, without leaving your repo in a messy state afterwards.
 
 
-clean_build_artifacts |
------|----
+clean_build_artifacts ||
+---|---
 Supported platforms | ios, mac
 Author | @lmirosevic
 

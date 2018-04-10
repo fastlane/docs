@@ -125,8 +125,8 @@ _pem_ uses [_spaceship_](https://spaceship.airforce) to communicate with the App
 <hr />
 
 
-pem |
------|----
+pem ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

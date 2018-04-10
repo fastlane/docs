@@ -15,8 +15,8 @@ Upload a new build to Crashlytics Beta
 Distributing to Groups: When using the `groups` parameter, it's important to use the group **alias** names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog here:
 
 
-crashlytics |
------|----
+crashlytics ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx, @pedrogimenez
 

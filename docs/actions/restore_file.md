@@ -14,8 +14,8 @@ This action restore your file that was backuped with the `backup_file` action
 
 
 
-restore_file |
------|----
+restore_file ||
+---|---
 Supported platforms | ios, android, mac
 Author | @gin0606
 

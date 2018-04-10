@@ -17,8 +17,8 @@ It also supports versions that are not semantic: 1.4.14.4.1
 For such versions there is an option to change appendix (4.1)
 
 
-version_bump_podspec |
------|----
+version_bump_podspec ||
+---|---
 Supported platforms | ios, mac
 Author | @Liquidsoul, @KrauseFx
 

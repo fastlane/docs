@@ -14,8 +14,8 @@ Copies a given string into the clipboard. Works only on macOS
 
 
 
-clipboard |
------|----
+clipboard ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

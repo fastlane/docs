@@ -14,8 +14,8 @@ Create a new Keychain
 
 
 
-create_keychain |
------|----
+create_keychain ||
+---|---
 Supported platforms | ios, android, mac
 Author | @gin0606
 

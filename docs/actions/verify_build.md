@@ -14,8 +14,8 @@ Able to verify various settings in ipa file
 > Verifies that the built app was built using the expected build resources. This is relevant for people who build on machines that are used to build apps with different profiles, certificates and/or bundle identifiers to guard against configuration mistakes.
 
 
-verify_build |
------|----
+verify_build ||
+---|---
 Supported platforms | ios
 Author | @CodeReaper
 

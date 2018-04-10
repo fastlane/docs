@@ -14,8 +14,8 @@ Directly commit the given file with the given message
 
 
 
-git_commit |
------|----
+git_commit ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

@@ -15,8 +15,8 @@ Copy and save your build artifacts (useful when you use reset_git_repo)
 Make sure your target_path is gitignored, and if you use `reset_git_repo`, make sure the artifacts are added to the exclude list
 
 
-copy_artifacts |
------|----
+copy_artifacts ||
+---|---
 Supported platforms | ios, android, mac
 Author | @lmirosevic
 

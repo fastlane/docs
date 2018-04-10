@@ -15,8 +15,8 @@ Generate and upload an ipa file to appetize.io
 More information in the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
 
 
-build_and_upload_to_appetize |
------|----
+build_and_upload_to_appetize ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

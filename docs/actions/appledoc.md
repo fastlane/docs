@@ -14,8 +14,8 @@ Generate Apple-like source code documentation from the source code
 > Runs `appledoc [OPTIONS] <paths to source dirs or files>` for the project
 
 
-appledoc |
------|----
+appledoc ||
+---|---
 Supported platforms | ios, mac
 Author | @alexmx
 

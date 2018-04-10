@@ -14,8 +14,8 @@ Generate an URL for appetize simulator
 > Check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md) for more information
 
 
-appetize_viewing_url_generator |
------|----
+appetize_viewing_url_generator ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 Returns | The URL to preview the iPhone app

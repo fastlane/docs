@@ -15,8 +15,8 @@ Upload a new build to [DeployGate](https://deploygate.com/)
 More information about the available options can be found in the [DeployGate Push API document](https://deploygate.com/docs/api).
 
 
-deploygate |
------|----
+deploygate ||
+---|---
 Supported platforms | ios, android
 Author | @tnj, @tomorrowkey
 

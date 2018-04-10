@@ -14,8 +14,8 @@ Modify the default list of supported platforms
 
 
 
-add_extra_platforms |
------|----
+add_extra_platforms ||
+---|---
 Supported platforms | ios, android, mac
 Author | @lacostej
 

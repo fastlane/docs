@@ -15,8 +15,8 @@ Send a message to a Flock group
 in your Flock admin panel.
 
 
-flock |
------|----
+flock ||
+---|---
 Supported platforms | ios, android, mac
 Author | @Manav
 

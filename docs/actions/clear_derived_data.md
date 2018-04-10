@@ -11,11 +11,11 @@ Deletes the Xcode Derived Data
 
 
 
-> Deletes the Derived Data from '~/Library/Developer/Xcode/DerivedData' or a supplied path
+> Deletes the Derived Data from path set on Xcode or a supplied path
 
 
-clear_derived_data |
------|----
+clear_derived_data ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 
@@ -39,7 +39,7 @@ clear_derived_data(derived_data_path: "/custom/")
 
 Key | Description | Default
 ----|-------------|--------
-  `derived_data_path` | Custom path for derivedData | `~/Library/Developer/Xcode/DerivedData`
+  `derived_data_path` | Custom path for derivedData | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

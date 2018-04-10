@@ -14,8 +14,8 @@ Sets/gets env vars for Fastlane.swift. Don't use in ruby, use `ENV[key] = val`
 
 
 
-environment_variable |
------|----
+environment_variable ||
+---|---
 Supported platforms | ios, android, mac
 Author | @taquitos
 

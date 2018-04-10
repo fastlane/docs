@@ -14,8 +14,8 @@ Sets a value for a key with cocoapods-keys
 > Adds a key to [cocoapods-keys](https://github.com/orta/cocoapods-keys)
 
 
-set_pod_key |
------|----
+set_pod_key ||
+---|---
 Supported platforms | ios, mac
 Author | @marcelofabri
 

@@ -14,8 +14,8 @@ Returns value from Info.plist of your project as native Ruby data structures
 > Get a value from a plist file, which can be used to fetch the app identifier and more information about your app
 
 
-get_info_plist_value |
------|----
+get_info_plist_value ||
+---|---
 Supported platforms | ios, mac
 Author | @kohtenko
 

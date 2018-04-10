@@ -233,8 +233,8 @@ _pilot_ uses the [CredentialsManager](https://github.com/fastlane/fastlane/tree/
 <hr />
 
 
-testflight |
------|----
+testflight ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

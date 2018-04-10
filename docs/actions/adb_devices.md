@@ -14,8 +14,8 @@ Get an array of Connected android device serials
 > Fetches device list via adb, e.g. run an adb command on all connected devices.
 
 
-adb_devices |
------|----
+adb_devices ||
+---|---
 Supported platforms | android
 Author | @hjanuschka
 Returns | Returns an array of all currently connected android devices
@@ -41,7 +41,7 @@ end
 
 Key | Description | Default
 ----|-------------|--------
-  `adb_path` | The path to your `adb` binary | `adb`
+  `adb_path` | The path to your `adb` binary (can be left blank if the ANDROID_SDK_ROOT environment variable is set) | `adb`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -14,8 +14,8 @@ Runs `carthage` for your project
 
 
 
-carthage |
------|----
+carthage ||
+---|---
 Supported platforms | ios, mac
 Author | @bassrock, @petester42, @jschmid, @JaviSoto, @uny, @phatblat, @bfcrampton, @antondomashnev, @gbrhaz
 

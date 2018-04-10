@@ -14,8 +14,8 @@ This action backs up your file to "[path].back"
 
 
 
-backup_file |
------|----
+backup_file ||
+---|---
 Supported platforms | ios, android, mac
 Author | @gin0606
 

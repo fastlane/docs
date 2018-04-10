@@ -19,8 +19,8 @@ This can be useful when basing your release process on the version string only s
 the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).
 
 
-read_podspec |
------|----
+read_podspec ||
+---|---
 Supported platforms | ios, mac
 Author | @czechboy0
 

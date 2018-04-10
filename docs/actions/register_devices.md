@@ -16,8 +16,8 @@ This is an optimistic action, in that it will only ever add new devices to the m
 The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option, or by setting the env variable `ENV['DELIVER_USER']`.
 
 
-register_devices |
------|----
+register_devices ||
+---|---
 Supported platforms | ios, mac
 Author | @lmirosevic
 

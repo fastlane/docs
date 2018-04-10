@@ -14,8 +14,8 @@ Compress a file or folder to a zip
 
 
 
-zip |
------|----
+zip ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 Returns | The path to the output zip file

@@ -257,8 +257,8 @@ It will show you `ipa` files like this:
 <hr />
 
 
-gym |
------|----
+gym ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 Returns | The absolute path to the generated ipa file
