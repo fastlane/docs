@@ -412,12 +412,26 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="clear_derived_data"><a name="user-content-clear_derived_data" href="#clear_derived_data" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>clear_derived_data</h1>
 <p>Deletes the Xcode Derived Data</p>
 <blockquote>
-<p>Deletes the Derived Data from '~/Library/Developer/Xcode/DerivedData' or a supplied path</p>
+<p>Deletes the Derived Data from path set on Xcode or a supplied path</p>
 </blockquote>
-<p>clear_derived_data |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>clear_derived_data</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">clear_derived_data
 </code></pre>
@@ -438,7 +452,7 @@ Author | @KrauseFx</p>
 <tr>
 <td><code>derived_data_path</code></td>
 <td>Custom path for derivedData</td>
-<td><code>~/Library/Developer/Xcode/DerivedData</code></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 </tbody>
 </table>

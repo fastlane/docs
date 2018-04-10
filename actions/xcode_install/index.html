@@ -414,11 +414,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>Makes sure a specific version of Xcode is installed. If that's not the case, it will automatically be downloaded by the <a href="https://github.com/neonichu/xcode-install">xcode_install</a> gem. This will make sure to use the correct Xcode for later actions.</p>
 </blockquote>
-<p>xcode_install |
------|----
-Supported platforms | ios, mac
-Author | @Krausefx
-Returns | The path to the newly installed Xcode version</p>
+<table>
+<thead>
+<tr>
+<th>xcode_install</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@Krausefx</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The path to the newly installed Xcode version</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">xcode_install(version: &quot;7.1&quot;)
 </code></pre>

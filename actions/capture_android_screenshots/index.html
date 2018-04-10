@@ -461,8 +461,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>You can create your APKs with <code>./gradlew assembleDebug assembleAndroidTest</code></li>
 </ul>
 </li>
-<li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots
-    - You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments</li>
+<li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
+<li>You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments</li>
+</ul>
+</li>
 <li>Your screenshots will be saved to <code>fastlane/metadata/android</code> in the directory where you ran <em>screengrab</em></li>
 </ul>
 <h2 id="improved-screenshot-capture-with-ui-automator"><a name="user-content-improved-screenshot-capture-with-ui-automator" href="#improved-screenshot-capture-with-ui-automator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Improved screenshot capture with UI Automator</h2>
@@ -474,6 +476,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <p>However, UI Automator requires a device with <strong>API level &gt;= 18</strong>, so it is not yet the default strategy. To enable it for all screenshots by default, make the following call before your tests run:</p>
 <pre><code class="java">Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());
+</code></pre>
+
+<h2 id="improved-screenshot-capture-with-falcon"><a name="user-content-improved-screenshot-capture-with-falcon" href="#improved-screenshot-capture-with-falcon" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Improved screenshot capture with Falcon</h2>
+<p>As of <em>screengrab</em> 1.2.0, you can specify a new strategy to delegate to <a href="https://github.com/jraska/Falcon">Falcon</a>. Falcon may work better than UI Automator in some situations and also provides similar benefits as UI Automator:</p>
+<ul>
+<li>Multi-window situations are correctly captured (dialogs, etc.)</li>
+<li>Works on Android N</li>
+</ul>
+<p>Falcon requires a device with <strong>API level &gt;= 10</strong>. To enable it for all screenshots by default, make the following call before your tests run:</p>
+<pre><code class="java">Screengrab.setDefaultScreenshotStrategy(new FalconScreenshotStrategy(activityRule.getActivity()));
 </code></pre>
 
 <h2 id="advanced-screengrabfile-configuration"><a name="user-content-advanced-screengrabfile-configuration" href="#advanced-screengrabfile-configuration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced Screengrabfile Configuration</h2>
@@ -534,10 +546,24 @@ public class JUnit4StyleTests {
 <p>You can use <a href="https://github.com/PSPDFKit-labs/QuickDemo">QuickDemo</a> to clean up the status bar for your screenshots.</p>
 <hr />
 
-<p>capture_android_screenshots |
------|----
-Supported platforms | android
-Author | @asfalcone, @i2amsam, @mfurtak</p>
+<table>
+<thead>
+<tr>
+<th>capture_android_screenshots</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@asfalcone, @i2amsam, @mfurtak</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">capture_android_screenshots
 </code></pre>

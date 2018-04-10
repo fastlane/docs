@@ -450,10 +450,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
                 "This is one of the biggest updates of <em>fastlane</em> yet"
               }</p>
 </blockquote>
-<p>get_github_release |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx, @czechboy0, @jaleksynas, @tommeier</p>
+<table>
+<thead>
+<tr>
+<th>get_github_release</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx, @czechboy0, @jaleksynas, @tommeier</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">release = get_github_release(url: &quot;fastlane/fastlane&quot;, version: &quot;1.0.0&quot;)
 puts release[&quot;name&quot;]

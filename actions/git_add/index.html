@@ -411,11 +411,25 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="git_add"><a name="user-content-git_add" href="#git_add" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_add</h1>
 <p>Directly add the given file or all files</p>
-<p>git_add |
------|----
-Supported platforms | ios, android, mac
-Author | @4brunu, @antondomashnev</p>
-<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<table>
+<thead>
+<tr>
+<th>git_add</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@4brunu, @antondomashnev</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-examples"><a name="user-content-7-examples" href="#7-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7 Examples</h2>
 <pre><code class="ruby">git_add
 </code></pre>
 
@@ -425,10 +439,16 @@ Author | @4brunu, @antondomashnev</p>
 <pre><code class="ruby">git_add(path: [&quot;./version.txt&quot;, &quot;./changelog.txt&quot;])
 </code></pre>
 
-<pre><code class="ruby">git_add(pathspec: &quot;./Frameworks/*&quot;)
+<pre><code class="ruby">git_add(path: &quot;./Frameworks/*&quot;, shell_escape: false)
 </code></pre>
 
-<pre><code class="ruby">git_add(pathspec: &quot;*.txt&quot;)
+<pre><code class="ruby">git_add(path: [&quot;*.h&quot;, &quot;*.m&quot;], shell_escape: false)
+</code></pre>
+
+<pre><code class="ruby">git_add(path: &quot;./Frameworks/*&quot;, shell_escape: false)
+</code></pre>
+
+<pre><code class="ruby">git_add(path: &quot;*.txt&quot;, shell_escape: false)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -443,12 +463,17 @@ Author | @4brunu, @antondomashnev</p>
 <tbody>
 <tr>
 <td><code>path</code></td>
-<td>The file you want to add</td>
+<td>The file(s) and path(s) you want to add</td>
 <td></td>
 </tr>
 <tr>
+<td><code>shell_escape</code></td>
+<td>Shell escapes paths (set to false if using wildcards or manually escaping spaces in :path)</td>
+<td><code>true</code></td>
+</tr>
+<tr>
 <td><code>pathspec</code></td>
-<td>The pathspec you want to add files from</td>
+<td>[DEPRECATED!] Use --path instead - The pathspec you want to add files from</td>
 <td></td>
 </tr>
 </tbody>

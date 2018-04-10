@@ -414,11 +414,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>Configures Xcode's Codesigning options of all targets in the project</p>
 </blockquote>
-<p>automatic_code_signing |
------|----
-Supported platforms | ios, mac
-Author | @mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons
-Returns | The current status (boolean) of codesigning after modification</p>
+<table>
+<thead>
+<tr>
+<th>automatic_code_signing</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The current status (boolean) of codesigning after modification</td>
+</tr>
+</tbody>
+</table>
 <h2 id="8-examples"><a name="user-content-8-examples" href="#8-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8 Examples</h2>
 <pre><code class="ruby"># enable automatic code signing
 enable_automatic_code_signing
@@ -499,7 +516,7 @@ automatic_code_signing(
 </tr>
 <tr>
 <td><code>code_sign_identity</code></td>
-<td>Code signing identity type (iPhone Development, iPhone Distribution)</td>
+<td>Code signing identity type (iPhone Developer, iPhone Distribution)</td>
 <td></td>
 </tr>
 <tr>

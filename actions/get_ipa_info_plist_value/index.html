@@ -414,11 +414,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>This is useful for introspecting Info.plist files for .ipa files that have already been built.</p>
 </blockquote>
-<p>get_ipa_info_plist_value |
------|----
-Supported platforms | ios, mac
-Author | @johnboiles
-Returns | Returns the value in the .ipa's Info.plist corresponding to the passed in Key</p>
+<table>
+<thead>
+<tr>
+<th>get_ipa_info_plist_value</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@johnboiles</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>Returns the value in the .ipa's Info.plist corresponding to the passed in Key</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">get_ipa_info_plist_value(ipa: &quot;path.ipa&quot;, key: &quot;KEY_YOU_READ&quot;)
 </code></pre>

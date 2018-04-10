@@ -415,10 +415,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>If building your app requires a specific version of Xcode, you can invoke this command before using gym.
         For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.</p>
 </blockquote>
-<p>ensure_xcode_version |
------|----
-Supported platforms | ios, mac
-Author | @JaviSoto</p>
+<table>
+<thead>
+<tr>
+<th>ensure_xcode_version</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@JaviSoto</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">ensure_xcode_version(version: &quot;7.2&quot;)
 </code></pre>

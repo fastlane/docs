@@ -1143,9 +1143,11 @@ phased_release(false)
 <p><br /></p>
 <h2 id="default-values"><a name="user-content-default-values" href="#default-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Default values</h2>
 <p>Deliver has a special <code>default</code> language code which allows you to provide values that are not localized, and which will be used as defaults when you don’t provide a specific localized value.</p>
-<p>In order to use <code>default</code>, you will need to tell <em>deliver</em> which languages your app uses. You can do this in either of two ways:
-1. Create the folders named with the language in the metadata folder (i.e. fastlane/metadata/en-US or fastlane/metadata/de-DE)
-2. Add the following to your <code>Deliverfile</code> <code>languages(['en-US','de-DE'])</code></p>
+<p>In order to use <code>default</code>, you will need to tell <em>deliver</em> which languages your app uses. You can do this in either of two ways:</p>
+<ol>
+<li>Create the folders named with the language in the metadata folder (i.e. fastlane/metadata/en-US or fastlane/metadata/de-DE)</li>
+<li>Add the following to your <code>Deliverfile</code> <code>languages(['en-US','de-DE'])</code></li>
+</ol>
 <p>You can use this either in json within your <code>Deliverfile</code> and/or as folders in your metadata folder. <em>deliver</em> will take the union of both language sets from the <code>Deliverfile</code> and from the metadata folder and create on single set of languages which will be enabled.</p>
 <p>Imagine that you have localized data for the following language codes:  <code>en-US, de-DE, el, it</code></p>
 <p>You can set the following in your <code>Deliverfile</code></p>
@@ -1203,10 +1205,24 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <p>Change syntax highlighting to <em>Ruby</em>.</p>
 <hr />
 
-<p>appstore |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>appstore</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">upload_to_app_store(
   force: true, # Set to true to skip PDF verification

@@ -416,10 +416,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.
 The action will connect to the Apple Developer Portal using the username you specified in your <code>Appfile</code> with <code>apple_id</code>, but you can override it using the <code>username</code> option, or by setting the env variable <code>ENV['DELIVER_USER']</code>.</p>
 </blockquote>
-<p>register_devices |
------|----
-Supported platforms | ios, mac
-Author | @lmirosevic</p>
+<table>
+<thead>
+<tr>
+<th>register_devices</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@lmirosevic</td>
+</tr>
+</tbody>
+</table>
 <h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">register_devices(
   devices: {

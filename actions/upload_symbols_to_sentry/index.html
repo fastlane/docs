@@ -417,11 +417,28 @@ Install using <code>fastlane add_plugin sentry</code>.
 Replace <code>upload_symbols_to_sentry</code> with <code>sentry_upload_dsym</code></p>
 <p>This action allows you to upload symbolication files to Sentry. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode</p>
 </blockquote>
-<p>upload_symbols_to_sentry |
------|----
-Supported platforms | ios
-Author | @joshdholtz
-Returns | The uploaded dSYM path(s)</p>
+<table>
+<thead>
+<tr>
+<th>upload_symbols_to_sentry</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@joshdholtz</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The uploaded dSYM path(s)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">upload_symbols_to_sentry(
   auth_token: &quot;...&quot;,

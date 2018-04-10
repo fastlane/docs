@@ -414,11 +414,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>see adb --help for more details</p>
 </blockquote>
-<p>adb |
------|----
-Supported platforms | android
-Author | @hjanuschka
-Returns | The output of the adb command</p>
+<table>
+<thead>
+<tr>
+<th>adb</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@hjanuschka</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The output of the adb command</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">adb(
   command: &quot;shell ls&quot;
@@ -447,7 +464,7 @@ Returns | The output of the adb command</p>
 </tr>
 <tr>
 <td><code>adb_path</code></td>
-<td>The path to your <code>adb</code> binary</td>
+<td>The path to your <code>adb</code> binary (can be left blank if the ANDROID_SDK_ROOT environment variable is set)</td>
 <td><code>adb</code></td>
 </tr>
 </tbody>

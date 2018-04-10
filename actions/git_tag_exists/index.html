@@ -411,11 +411,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="git_tag_exists"><a name="user-content-git_tag_exists" href="#git_tag_exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_tag_exists</h1>
 <p>Checks if the git tag with the given name exists in the current repo</p>
-<p>git_tag_exists |
------|----
-Supported platforms | ios, android, mac
-Author | @antondomashnev
-Returns | Boolean value whether the tag exists or not</p>
+<table>
+<thead>
+<tr>
+<th>git_tag_exists</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@antondomashnev</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>Boolean value whether the tag exists or not</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">if git_tag_exists(tag: &quot;1.1.0&quot;)
   UI.message(&quot;Found it 🚀&quot;)

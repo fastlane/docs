@@ -415,11 +415,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>Allows running an arbitrary shell command.
 Be aware of a specific behavior of 'sh' action with regard to the working directory. For details refer to Advanced.md</p>
 </blockquote>
-<p>sh |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx
-Returns | Outputs the string and executes it. When running in tests, it returns the actual command instead of executing it</p>
+<table>
+<thead>
+<tr>
+<th>sh</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>Outputs the string and executes it. When running in tests, it returns the actual command instead of executing it</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">sh(&quot;ls&quot;)
 </code></pre>

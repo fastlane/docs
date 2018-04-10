@@ -498,20 +498,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];</code></li>
 </ul>
 </li>
-<li>Add the following code to your <code>setUp()</code> method:<ul>
-<li>Swift:
-  <code>swift
-  let app = XCUIApplication()
-  setupSnapshot(app)
-  app.launch()</code></li>
-<li>Objective C:<br />
-<code>objective-c
-  XCUIApplication *app = [[XCUIApplication alloc] init];
-  [Snapshot setupSnapshot:app];
-  [app launch];</code></li>
+<li>Add the following code to your <code>setUp()</code> method:</li>
 </ul>
-</li>
-</ul>
+<p><strong>Swift:</strong></p>
+<pre><code class="swift">let app = XCUIApplication()
+setupSnapshot(app)
+app.launch()
+</code></pre>
+
+<p><strong>Objective C:</strong></p>
+<pre><code class="objective-c">XCUIApplication *app = [[XCUIApplication alloc] init];
+[Snapshot setupSnapshot:app];
+[app launch];
+</code></pre>
+
 <p><em>Make sure you only have one <code>launch</code> call in your test class, as Xcode adds one automatically on new test files.</em></p>
 <p><img alt="img/actions/snapshot.gif" src="../../img/actions/snapshot.gif" /></p>
 <p>You can try the <em>snapshot</em> <a href="https://github.com/fastlane/fastlane/tree/master/snapshot/example">example project</a> by cloning this repo.</p>
@@ -669,10 +669,24 @@ launch_arguments([
 <p>To detect the currently used localization in your tests, access the <code>deviceLanguage</code> variable from <code>SnapshotHelper.swift</code>.</p>
 <hr />
 
-<p>capture_ios_screenshots |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>capture_ios_screenshots</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">capture_ios_screenshots
 </code></pre>

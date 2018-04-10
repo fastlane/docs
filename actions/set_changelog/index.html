@@ -416,10 +416,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 You can store the changelog in <code>./fastlane/changelog.txt</code> and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.
 Defining the version is optional, fastlane will try to automatically detect it if you don't provide one</p>
 </blockquote>
-<p>set_changelog |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>set_changelog</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">set_changelog(changelog: &quot;Changelog for all Languages&quot;)
 </code></pre>
@@ -466,6 +480,11 @@ Author | @KrauseFx</p>
 <td><code>team_name</code></td>
 <td>The name of your iTunes Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td>The platform of the app (ios, appletvos, mac)</td>
+<td><code>ios</code></td>
 </tr>
 </tbody>
 </table>

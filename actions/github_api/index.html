@@ -416,11 +416,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           Out parameters provide the status code and the full response JSON if valid, otherwise the raw response body.
           Documentation: https://developer.github.com/v3</p>
 </blockquote>
-<p>github_api |
------|----
-Supported platforms | ios, android, mac
-Author | @tommeier
-Returns | A hash including the HTTP status code (:status), the response body (:body), and if valid JSON has been returned the parsed JSON (:json).</p>
+<table>
+<thead>
+<tr>
+<th>github_api</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@tommeier</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>A hash including the HTTP status code (:status), the response body (:body), and if valid JSON has been returned the parsed JSON (:json).</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">result = github_api(
   server_url: &quot;https://api.github.com&quot;,

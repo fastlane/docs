@@ -411,13 +411,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="swiftlint"><a name="user-content-swiftlint" href="#swiftlint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>swiftlint</h1>
 <p>Run swift code validation using SwiftLint</p>
-<p>swiftlint |
------|----
-Supported platforms | ios, mac
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>swiftlint</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">swiftlint(
   mode: :lint,      # SwiftLint mode: :lint (default) or :autocorrect
+  path: &quot;/path/to/lint&quot;,       # Specify path to lint (optional)
   output_file: &quot;swiftlint.result.json&quot;, # The path of the output file (optional)
   config_file: &quot;.swiftlint-ci.yml&quot;,     # The path of the configuration file (optional)
   files: [# List of files to process (optional)
@@ -442,6 +457,11 @@ Author | @KrauseFx</p>
 <td><code>mode</code></td>
 <td>SwiftLint mode: :lint or :autocorrect</td>
 <td><code>:lint</code></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>Specify path to lint</td>
+<td></td>
 </tr>
 <tr>
 <td><code>output_file</code></td>

@@ -414,15 +414,30 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>You can use this action to automatically create a OneSignal application. You can also upload a .p12 with password, a GCM key, or both</p>
 </blockquote>
-<p>onesignal |
------|----
-Supported platforms | ios
-Author | @timothybarraclough, @smartshowltd</p>
+<table>
+<thead>
+<tr>
+<th>onesignal</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@timothybarraclough, @smartshowltd</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">onesignal(
   auth_token: &quot;Your OneSignal Auth Token&quot;,
   app_name: &quot;Name for OneSignal App&quot;,
   android_token: &quot;Your Android GCM key (optional)&quot;,
+  android_gcm_sender_id: &quot;Your Android GCM Sender ID (optional)&quot;,
   apns_p12: &quot;Path to Apple .p12 file (optional)&quot;,
   apns_p12_password: &quot;Password for .p12 file (optional)&quot;,
   apns_env: &quot;production/sandbox (defaults to production)&quot;
@@ -452,6 +467,11 @@ Author | @timothybarraclough, @smartshowltd</p>
 <tr>
 <td><code>android_token</code></td>
 <td>ANDROID GCM KEY</td>
+<td></td>
+</tr>
+<tr>
+<td><code>android_gcm_sender_id</code></td>
+<td>GCM SENDER ID</td>
 <td></td>
 </tr>
 <tr>

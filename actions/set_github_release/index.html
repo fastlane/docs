@@ -418,12 +418,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
         commitish. Out parameters provide the release's id, which can be used for later editing and the
         release html link to GitHub. You can also specify a list of assets to be uploaded to the release with the upload_assets parameter.</p>
 </blockquote>
-<p>set_github_release |
------|----
-Supported platforms | ios, android, mac
-Author | @czechboy0, @tommeier
-Returns | A hash containing all relevant information of this release
-Access things like 'html_url', 'tag_name', 'name', 'body'</p>
+<table>
+<thead>
+<tr>
+<th>set_github_release</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@czechboy0, @tommeier</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>A hash containing all relevant information of this release<br>Access things like 'html_url', 'tag_name', 'name', 'body'</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">github_release = set_github_release(
   repository_name: &quot;fastlane/fastlane&quot;,

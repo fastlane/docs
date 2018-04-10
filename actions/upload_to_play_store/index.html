@@ -526,15 +526,29 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h2 id="track-promotion"><a name="user-content-track-promotion" href="#track-promotion" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Track Promotion</h2>
 <p>A common Play publishing scenario might involve uploading an APK version to a test track, testing it, and finally promoting that version to production.</p>
-<p>This can be done using the <code>--track_promote_to</code> parameter.  The <code>--track_promote_to</code> parameter works with the <code>--track</code> parameter to command the Play API to promote existing Play track APK version(s) (those active on the track identified by the <code>--track</code> param value) to a new track (<code>--track_promote_to</code> value).</p>
+<p>This can be done using the <code>--track_promote_to</code> parameter. The <code>--track_promote_to</code> parameter works with the <code>--track</code> parameter to command the Play API to promote existing Play track APK version(s) (those active on the track identified by the <code>--track</code> param value) to a new track (<code>--track_promote_to</code> value).</p>
 <h2 id="retrieve-track-version-codes"><a name="user-content-retrieve-track-version-codes" href="#retrieve-track-version-codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Retrieve Track Version Codes</h2>
 <p>Before performing a new APK upload you may want to check existing track version codes, or you may simply want to provide an informational lane that displays the currently promoted version codes for the production track. You can use the <code>google_play_track_version_codes</code> action to retrieve existing version codes for a package and track. For more information, see <code>fastlane action google_play_track_version_codes</code> help output.</p>
 <hr />
 
-<p>upload_to_play_store |
------|----
-Supported platforms | android
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>upload_to_play_store</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">upload_to_play_store
 </code></pre>

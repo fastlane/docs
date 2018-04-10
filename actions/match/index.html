@@ -504,11 +504,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h3 id="setup"><a name="user-content-setup" href="#setup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setup</h3>
 <ol>
 <li>Create a <strong>new, private Git repo</strong> (e.g. on <a href="https://github.com/new">GitHub</a> or <a href="https://bitbucket.org/repo/create">BitBucket</a>) and name it something like <code>certificates</code>. <strong>Important:</strong> Make sure the repository is set to <em>private</em>.</li>
-</ol>
-<ol>
 <li>Optional: Create a <strong>new, shared Apple Developer Portal account</strong>, something like <code>office@company.com</code> that will be shared across your team from now on (for more information visit <a href="https://codesigning.guide">codesigning.guide</a>)</li>
-</ol>
-<ol>
 <li>Run the following in your project folder to start using <em>match</em>:</li>
 </ol>
 <pre><code class="no-highlight">fastlane match init
@@ -709,10 +705,24 @@ fastlane match nuke enterprise
 </ul>
 <hr />
 
-<p>match |
------|----
-Supported platforms | ios
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>match</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">sync_code_signing(type: &quot;appstore&quot;, app_identifier: &quot;tools.fastlane.app&quot;)
 </code></pre>

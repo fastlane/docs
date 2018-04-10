@@ -414,10 +414,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>Update an app identifier by either setting <code>CFBundleIdentifier</code> or <code>PRODUCT_BUNDLE_IDENTIFIER</code>, depending on which is already in use.</p>
 </blockquote>
-<p>update_app_identifier |
------|----
-Supported platforms | ios
-Author | @squarefrog, @tobiasstrebitzer</p>
+<table>
+<thead>
+<tr>
+<th>update_app_identifier</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@squarefrog, @tobiasstrebitzer</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">update_app_identifier(
   xcodeproj: &quot;Example.xcodeproj&quot;, # Optional path to xcodeproj, will use the first .xcodeproj if not set

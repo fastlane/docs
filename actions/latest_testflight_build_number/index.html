@@ -415,11 +415,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>Provides a way to have increment_build_number be based on the latest build you uploaded to iTC.
 Fetches most recent build number from TestFlight based on the version number. Provides a way to have <code>increment_build_number</code> be based on the latest build you uploaded to iTC.</p>
 </blockquote>
-<p>latest_testflight_build_number |
------|----
-Supported platforms | ios
-Author | @daveanderson
-Returns | Integer representation of the latest build number uploaded to TestFlight</p>
+<table>
+<thead>
+<tr>
+<th>latest_testflight_build_number</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@daveanderson</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>Integer representation of the latest build number uploaded to TestFlight</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">latest_testflight_build_number(version: &quot;1.3&quot;)
 </code></pre>

@@ -416,10 +416,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 Install using <code>fastlane add_plugin aws_s3</code>.</p>
 <p>Upload a new build to Amazon S3 to distribute the build to beta testers.  Works for both Ad Hoc and Enterprise signed applications. This step will generate the necessary HTML, plist, and version files for you. It is recommended to <strong>not</strong> store the AWS access keys in the <code>Fastfile</code>. The uploaded <code>version.json</code> file provides an easy way for apps to poll if a new update is available.</p>
 </blockquote>
-<p>s3 |
------|----
-Supported platforms | ios
-Author | @joshdholtz</p>
+<table>
+<thead>
+<tr>
+<th>s3</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@joshdholtz</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">s3
 </code></pre>

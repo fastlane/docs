@@ -411,11 +411,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="last_git_commit"><a name="user-content-last_git_commit" href="#last_git_commit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>last_git_commit</h1>
 <p>Return last git commit hash, abbreviated commit hash, commit message and author</p>
-<p>last_git_commit |
------|----
-Supported platforms | ios, android, mac
-Author | @ngutman
-Returns | Returns the following dict: {commit_hash: "commit hash", abbreviated_commit_hash: "abbreviated commit hash" author: "Author", message: "commit message"}</p>
+<table>
+<thead>
+<tr>
+<th>last_git_commit</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@ngutman</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td _Author_="&quot;Author&quot;," _abbreviated="&quot;abbreviated" _commit="&quot;commit" abbreviated_commit_hash:="abbreviated_commit_hash:" author:="author:" commit="commit" commit_hash:="commit_hash:" hash_="hash&quot;" message:="message:" message_="message&quot;">Returns the following dict: </td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">commit = last_git_commit
 crashlytics(notes: commit[:message]) # message of commit

@@ -415,10 +415,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>This action copies artifacts to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your <code>.ipa</code>s, <code>.dSYM.zip</code>s, <code>.mobileprovision</code>s, <code>.cert</code>s
 Make sure your target_path is gitignored, and if you use <code>reset_git_repo</code>, make sure the artifacts are added to the exclude list</p>
 </blockquote>
-<p>copy_artifacts |
------|----
-Supported platforms | ios, android, mac
-Author | @lmirosevic</p>
+<table>
+<thead>
+<tr>
+<th>copy_artifacts</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@lmirosevic</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">copy_artifacts(
   target_path: &quot;artifacts&quot;,

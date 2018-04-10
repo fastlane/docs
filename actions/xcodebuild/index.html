@@ -414,10 +414,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p><strong>Note</strong>: <code>xcodebuild</code> is a complex command, so it is recommended to use <a href="https://docs.fastlane.tools/actions/gym/"><em>gym</em></a> for building your ipa file and <a href="https://docs.fastlane.tools/actions/scan/"><em>scan</em></a> for testing your app instead.</p>
 </blockquote>
-<p>xcodebuild |
------|----
-Supported platforms | ios, mac
-Author | @dtrenz</p>
+<table>
+<thead>
+<tr>
+<th>xcodebuild</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@dtrenz</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">xcodebuild(
   archive: true,

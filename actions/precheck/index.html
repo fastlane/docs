@@ -524,15 +524,32 @@ end
 <p>Please submit an issue on GitHub and provide information about your App Store rejection! Make sure you scrub out any personally identifiable information since this will be public.</p>
 <hr />
 
-<p>precheck |
------|----
-Supported platforms | ios
-Author | @taquitos
-Returns | true if precheck passes, else, false</p>
+<table>
+<thead>
+<tr>
+<th>precheck</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@taquitos</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>true if precheck passes, else, false</td>
+</tr>
+</tbody>
+</table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">check_app_store_metadata(
-  negative_apple_sentiment(level: :skip), # Set to skip to not run the `negative_apple_sentiment` rule
-  curse_words(level: :warn) # Set to warn to only warn on curse word check failures
+  negative_apple_sentiment: [level: :skip], # Set to skip to not run the `negative_apple_sentiment` rule
+  curse_words: [level: :warn] # Set to warn to only warn on curse word check failures
 )
 </code></pre>
 

@@ -414,10 +414,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>This action will reset your git repo to a clean state, discarding any uncommitted and untracked changes. Useful in case you need to revert the repo back to a clean state, e.g. after the fastlane run. Untracked files like <code>.env</code> will also be deleted, unless <code>:skip_clean</code> is true. It's a pretty drastic action so it comes with a sort of safety latch. It will only proceed with the reset if either of these conditions are met: You have called the ensure_git_status_clean action prior to calling this action. This ensures that your repo started off in a clean state, so the only things that will get destroyed by this action are files that are created as a byproduct of the fastlane run.</p>
 </blockquote>
-<p>reset_git_repo |
------|----
-Supported platforms | ios, android, mac
-Author | @lmirosevic</p>
+<table>
+<thead>
+<tr>
+<th>reset_git_repo</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@lmirosevic</td>
+</tr>
+</tbody>
+</table>
 <h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">reset_git_repo
 </code></pre>

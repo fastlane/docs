@@ -415,10 +415,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>The return value of this method is true if fastlane is currently executed on
 Travis, Jenkins, Circle or a similar CI service</p>
 </blockquote>
-<p>is_ci |
------|----
-Supported platforms | ios, android, mac
-Author | @KrauseFx</p>
+<table>
+<thead>
+<tr>
+<th>is_ci</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">if is_ci?
   puts &quot;I'm a computer&quot;

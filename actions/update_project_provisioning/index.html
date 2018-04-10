@@ -420,10 +420,24 @@ The <code>build_configuration</code> value can be used to only update code signi
 Example Usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles
 Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".</em>WatchKit App.*")</p>
 </blockquote>
-<p>update_project_provisioning |
------|----
-Supported platforms | ios, mac
-Author | @tobiasstrebitzer, @czechboy0</p>
+<table>
+<thead>
+<tr>
+<th>update_project_provisioning</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@tobiasstrebitzer, @czechboy0</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">update_project_provisioning(
   xcodeproj: &quot;Project.xcodeproj&quot;,

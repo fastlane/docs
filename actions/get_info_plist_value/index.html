@@ -414,10 +414,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <p>Get a value from a plist file, which can be used to fetch the app identifier and more information about your app</p>
 </blockquote>
-<p>get_info_plist_value |
------|----
-Supported platforms | ios, mac
-Author | @kohtenko</p>
+<table>
+<thead>
+<tr>
+<th>get_info_plist_value</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@kohtenko</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">identifier = get_info_plist_value(path: &quot;./Info.plist&quot;, key: &quot;CFBundleIdentifier&quot;)
 </code></pre>

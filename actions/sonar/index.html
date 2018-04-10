@@ -415,11 +415,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>See http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner for details.
 It can process unit test results if formatted as junit report as shown in <a href="#xctest">xctest</a> action. It can also integrate coverage reports in Cobertura format, which can be transformed into by <a href="#slather">slather</a> action.</p>
 </blockquote>
-<p>sonar |
------|----
-Supported platforms | ios, android, mac
-Author | @c_gretzki
-Returns | The exit code of the sonar-scanner binary</p>
+<table>
+<thead>
+<tr>
+<th>sonar</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@c_gretzki</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The exit code of the sonar-scanner binary</td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">sonar(
   project_key: &quot;name.gretzki.awesomeApp&quot;,
