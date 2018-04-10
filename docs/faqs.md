@@ -34,7 +34,7 @@ If you experience slow launch times of _fastlane_, there are 2 solutions to solv
 
 This is usually caused when running Jenkins as its own user. While this is possible, you'll have to take care of creating a temporary Keychain, filling it and then using it when building your application. 
 
-For more information about the recommended setup with Jenkins open the [Jenkins Guide](https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Jenkins.md).
+For more information about the recommended setup with Jenkins open the [Jenkins Guide](/best-practices/continuous-integration/#jenkins-integration).
 
 ### Code signing issues
 
