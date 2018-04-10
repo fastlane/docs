@@ -15,8 +15,8 @@ Upload a new build to HockeyApp
 More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
 
 
-hockey |
------|----
+hockey ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx, @modzelewski, @lacostej
 

@@ -14,8 +14,8 @@ Set the Urban Airship plist configuration values
 > This action updates the AirshipConfig.plist need to configure the Urban Airship SDK at runtime, allowing keys and secrets to easily be set for Enterprise and Production versions of the application.
 
 
-update_urban_airship_configuration |
------|----
+update_urban_airship_configuration ||
+---|---
 Supported platforms | ios
 Author | @kcharwood
 

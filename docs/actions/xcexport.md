@@ -14,8 +14,8 @@ Exports the project using `xcodebuild`
 
 
 
-xcexport |
------|----
+xcexport ||
+---|---
 Supported platforms | ios, mac
 Author | @dtrenz
 

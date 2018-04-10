@@ -261,8 +261,8 @@ _produce_ uses the [password manager](https://github.com/fastlane/fastlane/tree/
 <hr />
 
 
-produce |
------|----
+produce ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

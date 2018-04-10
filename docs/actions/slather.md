@@ -16,8 +16,8 @@ Slather is available at https://github.com/SlatherOrg/slather
 
 
 
-slather |
------|----
+slather ||
+---|---
 Supported platforms | ios, mac
 Author | @mattdelves
 

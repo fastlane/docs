@@ -14,8 +14,8 @@ This will create a new pull request on GitHub
 
 
 
-create_pull_request |
------|----
+create_pull_request ||
+---|---
 Supported platforms | ios, android, mac
 Author | @seei, @tommeier
 Returns | The parsed JSON when successful

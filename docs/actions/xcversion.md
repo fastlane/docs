@@ -14,8 +14,8 @@ Select an Xcode to use by version specifier
 > Finds and selects a version of an installed Xcode that best matches the provided [`Gem::Version` requirement specifier](http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version)
 
 
-xcversion |
------|----
+xcversion ||
+---|---
 Supported platforms | ios, mac
 Author | @oysta
 

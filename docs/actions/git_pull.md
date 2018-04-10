@@ -14,8 +14,8 @@ Executes a simple git pull command
 
 
 
-git_pull |
------|----
+git_pull ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx, @JaviSoto
 

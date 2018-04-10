@@ -14,8 +14,8 @@ Resets git repo to a clean state by discarding uncommitted changes
 > This action will reset your git repo to a clean state, discarding any uncommitted and untracked changes. Useful in case you need to revert the repo back to a clean state, e.g. after the fastlane run. Untracked files like `.env` will also be deleted, unless `:skip_clean` is true. It's a pretty drastic action so it comes with a sort of safety latch. It will only proceed with the reset if either of these conditions are met: You have called the ensure_git_status_clean action prior to calling this action. This ensures that your repo started off in a clean state, so the only things that will get destroyed by this action are files that are created as a byproduct of the fastlane run.
 
 
-reset_git_repo |
------|----
+reset_git_repo ||
+---|---
 Supported platforms | ios, android, mac
 Author | @lmirosevic
 

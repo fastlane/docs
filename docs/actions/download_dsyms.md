@@ -22,8 +22,8 @@ end
 ```
 
 
-download_dsyms |
------|----
+download_dsyms ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

@@ -14,8 +14,8 @@ Creates a zipped dSYM in the project root from the .xcarchive
 > You can manually specify the path to the xcarchive (not needed if you use `xcodebuild`/`xcarchive` to build your archive)
 
 
-dsym_zip |
------|----
+dsym_zip ||
+---|---
 Supported platforms | ios, mac
 Author | @lmirosevic
 

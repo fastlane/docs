@@ -16,8 +16,8 @@ When this is executed on a CI service, the passed `ci_input` value will be retur
 This action also supports multi-line inputs using the `multi_line_end_keyword` option.
 
 
-prompt |
------|----
+prompt ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

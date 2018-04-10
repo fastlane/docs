@@ -21,8 +21,8 @@ The action also works with [Keychains and Provisioning Profiles Plugin](https://
 will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when fastlane is executed on a CI system.
 
 
-setup_jenkins |
------|----
+setup_jenkins ||
+---|---
 Supported platforms | ios, mac
 Author | @bartoszj
 

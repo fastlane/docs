@@ -202,8 +202,8 @@ _sigh_ will never touch or use the profiles which are created and managed by Xco
 <hr />
 
 
-sigh |
------|----
+sigh ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 Returns | The UUID of the profile sigh just fetched/generated

@@ -14,8 +14,8 @@ Shows a macOS notification - use `notification` instead
 
 
 
-notify |
------|----
+notify ||
+---|---
 Supported platforms | ios, android, mac
 Author | @champo, @KrauseFx
 

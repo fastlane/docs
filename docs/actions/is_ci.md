@@ -15,8 +15,8 @@ Is the current run being executed on a CI system, like Jenkins or Travis
 Travis, Jenkins, Circle or a similar CI service
 
 
-is_ci |
------|----
+is_ci ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

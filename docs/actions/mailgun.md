@@ -14,8 +14,8 @@ Send a success/error message to an email group
 
 
 
-mailgun |
------|----
+mailgun ||
+---|---
 Supported platforms | ios, android, mac
 Author | @thiagolioy
 

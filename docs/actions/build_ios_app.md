@@ -257,8 +257,8 @@ It will show you `ipa` files like this:
 <hr />
 
 
-build_ios_app |
------|----
+build_ios_app ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 Returns | The absolute path to the generated ipa file

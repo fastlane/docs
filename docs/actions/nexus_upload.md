@@ -14,8 +14,8 @@ Upload a file to Sonatype Nexus platform
 
 
 
-nexus_upload |
------|----
+nexus_upload ||
+---|---
 Supported platforms | ios, android, mac
 Author | @xfreebird
 

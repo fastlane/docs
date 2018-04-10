@@ -14,8 +14,8 @@ Post a message to Typetalk
 
 
 
-typetalk |
------|----
+typetalk ||
+---|---
 Supported platforms | ios, android, mac
 Author | @Nulab Inc.
 

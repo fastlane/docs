@@ -14,8 +14,8 @@ Alias for the `puts` action
 
 
 
-echo |
------|----
+echo ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

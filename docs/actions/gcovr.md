@@ -14,8 +14,8 @@ Runs test coverage reports for your Xcode project
 > Generate summarized code coverage reports using [gcovr](http://gcovr.com/)
 
 
-gcovr |
------|----
+gcovr ||
+---|---
 Supported platforms | ios
 Author | @dtrenz
 

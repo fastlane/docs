@@ -14,8 +14,8 @@ Executes a git submodule command
 
 
 
-git_submodule_update |
------|----
+git_submodule_update ||
+---|---
 Supported platforms | ios, android, mac
 Author | @braunico
 

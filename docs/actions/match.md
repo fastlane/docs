@@ -78,9 +78,7 @@ For more information about the concept, visit [codesigning.guide](https://codesi
 ### Setup
 
 1. Create a **new, private Git repo** (e.g. on [GitHub](https://github.com/new) or [BitBucket](https://bitbucket.org/repo/create)) and name it something like `certificates`. **Important:** Make sure the repository is set to *private*.
-
 2. Optional: Create a **new, shared Apple Developer Portal account**, something like `office@company.com` that will be shared across your team from now on (for more information visit [codesigning.guide](https://codesigning.guide))
-
 3. Run the following in your project folder to start using _match_:
 
 ```no-highlight
@@ -378,8 +376,8 @@ Because of the potentially dangerous nature of In-House profiles please use _mat
 <hr />
 
 
-match |
------|----
+match ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

@@ -14,8 +14,8 @@ Verifies all keys referenced from the Podfile are non-empty
 > Runs a check against all keys specified in your Podfile to make sure they're more than a single character long. This is to ensure you don't deploy with stubbed keys.
 
 
-verify_pod_keys |
------|----
+verify_pod_keys ||
+---|---
 Supported platforms | ios, mac
 Author | @ashfurrow
 

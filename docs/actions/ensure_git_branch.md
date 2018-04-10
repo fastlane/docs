@@ -16,8 +16,8 @@ You may only want to make releases from a specific branch, so `ensure_git_branch
 will stop a lane if it was accidentally executed on an incorrect branch.
 
 
-ensure_git_branch |
------|----
+ensure_git_branch ||
+---|---
 Supported platforms | ios, android, mac
 Author | @dbachrach, @Liquidsoul
 

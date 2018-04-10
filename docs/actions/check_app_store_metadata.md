@@ -118,8 +118,8 @@ Please submit an issue on GitHub and provide information about your App Store re
 <hr />
 
 
-check_app_store_metadata |
------|----
+check_app_store_metadata ||
+---|---
 Supported platforms | ios
 Author | @taquitos
 Returns | true if precheck passes, else, false
@@ -130,8 +130,8 @@ Returns | true if precheck passes, else, false
 
 ```ruby
 check_app_store_metadata(
-  negative_apple_sentiment(level: :skip), # Set to skip to not run the `negative_apple_sentiment` rule
-  curse_words(level: :warn) # Set to warn to only warn on curse word check failures
+  negative_apple_sentiment: [level: :skip], # Set to skip to not run the `negative_apple_sentiment` rule
+  curse_words: [level: :warn] # Set to warn to only warn on curse word check failures
 )
 ```
 

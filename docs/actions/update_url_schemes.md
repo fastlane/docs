@@ -16,8 +16,8 @@ For example, you can use this to set a different url scheme for the alpha
 or beta version of the app.
 
 
-update_url_schemes |
------|----
+update_url_schemes ||
+---|---
 Supported platforms | ios, mac
 Author | @kmikael
 

@@ -14,8 +14,8 @@ Alias for the `gradle` action
 > Run `./gradlew tasks` to get a list of all available gradle tasks for your project
 
 
-build_android_app |
------|----
+build_android_app ||
+---|---
 Supported platforms | ios, android
 Author | @KrauseFx, @lmirosevic
 Returns | The output of running the gradle task

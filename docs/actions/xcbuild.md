@@ -14,8 +14,8 @@ Builds the project using `xcodebuild`
 
 
 
-xcbuild |
------|----
+xcbuild ||
+---|---
 Supported platforms | ios, mac
 Author | @dtrenz
 

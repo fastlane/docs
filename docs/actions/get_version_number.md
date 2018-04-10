@@ -14,8 +14,8 @@ Get the version number of your project
 > This action will return the current version number set on your project.
 
 
-get_version_number |
------|----
+get_version_number ||
+---|---
 Supported platforms | ios, mac
 Author | @Liquidsoul, @joshdholtz
 

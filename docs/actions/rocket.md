@@ -14,8 +14,8 @@ Outputs ascii-art for a rocket 🚀
 > Print an ascii Rocket :rocket:. Useful after using _crashlytics_ or _pilot_ to indicate that your new build has been shipped to outer-space.
 
 
-rocket |
------|----
+rocket ||
+---|---
 Supported platforms | ios, android, mac
 Author | @JaviSoto, @radex
 

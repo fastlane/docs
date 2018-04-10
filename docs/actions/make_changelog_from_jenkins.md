@@ -14,8 +14,8 @@ Generate a changelog using the Changes section from the current Jenkins build
 > This is useful when deploying automated builds. The changelog from Jenkins lists all the commit messages since the last build.
 
 
-make_changelog_from_jenkins |
------|----
+make_changelog_from_jenkins ||
+---|---
 Supported platforms | ios, android, mac
 Author | @mandrizzle
 

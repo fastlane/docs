@@ -15,8 +15,8 @@ Upload your app to Appetize.io to stream it in the browser
 To integrate appetize into your GitHub workflow check out the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
 
 
-appetize |
------|----
+appetize ||
+---|---
 Supported platforms | ios, android
 Author | @klundberg, @giginet
 

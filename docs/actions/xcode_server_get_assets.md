@@ -18,8 +18,8 @@ Downloads Xcode Bot assets like the `.xcarchive` and logs
           assets folder and puts into shared values the paths to the asset folder and to the `.xcarchive` inside it
 
 
-xcode_server_get_assets |
------|----
+xcode_server_get_assets ||
+---|---
 Supported platforms | ios, mac
 Author | @czechboy0
 

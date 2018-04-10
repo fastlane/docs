@@ -14,8 +14,8 @@ Returns the name of the current git branch, possibly as managed by CI ENV vars
 > If no branch could be found, this action will return an empty string
 
 
-git_branch |
------|----
+git_branch ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

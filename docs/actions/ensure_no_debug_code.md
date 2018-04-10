@@ -16,8 +16,8 @@ to check if there is any debug code still in your code base or if you have
 things like // TO DO or similar
 
 
-ensure_no_debug_code |
------|----
+ensure_no_debug_code ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

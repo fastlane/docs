@@ -16,8 +16,8 @@ Setup the keychain and match to work with Travis CI
 This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
 
 
-setup_travis |
------|----
+setup_travis ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 

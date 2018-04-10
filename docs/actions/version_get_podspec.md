@@ -14,8 +14,8 @@ Receive the version number from a podspec file
 
 
 
-version_get_podspec |
------|----
+version_get_podspec ||
+---|---
 Supported platforms | ios, mac
 Author | @Liquidsoul, @KrauseFx
 

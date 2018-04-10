@@ -14,8 +14,8 @@ Increment the build number of your project
 
 
 
-increment_build_number |
------|----
+increment_build_number ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 Returns | The new build number

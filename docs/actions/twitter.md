@@ -14,8 +14,8 @@ Post a tweet on Twitter.com
 > Post a tweet on twitter. Requires you to setup an app on twitter.com and obtain consumer and access_token.
 
 
-twitter |
------|----
+twitter ||
+---|---
 Supported platforms | ios, android, mac
 Author | @hjanuschka
 

@@ -20,8 +20,8 @@ Example Usage is the WatchKit Extension or WatchKit App, where you need separate
 Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".*WatchKit App.*")
 
 
-update_project_provisioning |
------|----
+update_project_provisioning ||
+---|---
 Supported platforms | ios, mac
 Author | @tobiasstrebitzer, @czechboy0
 

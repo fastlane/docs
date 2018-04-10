@@ -16,8 +16,8 @@ You can store the changelog in `./fastlane/changelog.txt` and it will automatica
 Defining the version is optional, fastlane will try to automatically detect it if you don't provide one
 
 
-set_changelog |
------|----
+set_changelog ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 
@@ -47,6 +47,7 @@ Key | Description | Default
   `changelog` | Changelog text that should be uploaded to iTunes Connect | 
   `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `platform` | The platform of the app (ios, appletvos, mac) | `ios`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -14,8 +14,8 @@ Print out an overview of the lane context values
 
 
 
-debug |
------|----
+debug ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

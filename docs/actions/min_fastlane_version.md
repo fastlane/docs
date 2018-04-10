@@ -15,8 +15,8 @@ Verifies the minimum fastlane version required
 Use it if you use an action that just recently came out and you need it.
 
 
-min_fastlane_version |
------|----
+min_fastlane_version ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

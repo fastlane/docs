@@ -15,8 +15,8 @@ Verifies the minimum ruby version required
 Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
 
 
-ruby_version |
------|----
+ruby_version ||
+---|---
 Supported platforms | ios, android, mac
 Author | @sebastianvarela
 

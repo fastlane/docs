@@ -15,8 +15,8 @@ Ensure the selected Xcode version with xcode-select matches a value
         For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.
 
 
-ensure_xcode_version |
------|----
+ensure_xcode_version ||
+---|---
 Supported platforms | ios, mac
 Author | @JaviSoto
 

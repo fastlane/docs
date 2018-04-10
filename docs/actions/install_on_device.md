@@ -14,8 +14,8 @@ Installs an .ipa file on a connected iOS-device via usb or wifi
 > Installs the ipa on the device, if no id is given, the first found iOS device will be used, works via USB or Wi-Fi. This requires `ios-deploy` to be installed please have a look at [ios-deploy](https://github.com/phonegap/ios-deploy). to quickly install it, use `npm -g i ios-deploy`
 
 
-install_on_device |
------|----
+install_on_device ||
+---|---
 Supported platforms | ios
 Author | @hjanuschka
 

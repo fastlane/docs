@@ -14,8 +14,8 @@ Leave a comment on JIRA tickets
 
 
 
-jira |
------|----
+jira ||
+---|---
 Supported platforms | ios, android, mac
 Author | @iAmChrisTruman
 

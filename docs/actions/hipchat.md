@@ -14,8 +14,8 @@ Send a error/success message to HipChat
 > Send a message to **room** (by default) or a direct message to **@username** with success (green) or failure (red) status.
 
 
-hipchat |
------|----
+hipchat ||
+---|---
 Supported platforms | ios, android, mac
 Author | @jingx23
 

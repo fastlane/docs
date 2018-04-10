@@ -15,8 +15,8 @@ Import another Fastfile to use its lanes
 in a separate folder. The path must be relative to the Fastfile this is called from.
 
 
-import |
------|----
+import ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

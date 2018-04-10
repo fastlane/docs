@@ -14,8 +14,8 @@ Update the project's bundle identifier
 > Update an app identifier by either setting `CFBundleIdentifier` or `PRODUCT_BUNDLE_IDENTIFIER`, depending on which is already in use.
 
 
-update_app_identifier |
------|----
+update_app_identifier ||
+---|---
 Supported platforms | ios
 Author | @squarefrog, @tobiasstrebitzer
 

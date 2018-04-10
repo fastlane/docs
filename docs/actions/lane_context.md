@@ -15,8 +15,8 @@ Access lane context values
 More information about how the lane context works: https://docs.fastlane.tools/advanced/#lane-context
 
 
-lane_context |
------|----
+lane_context ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

@@ -14,8 +14,8 @@ Install an Xcode plugin for the current user
 
 
 
-install_xcode_plugin |
------|----
+install_xcode_plugin ||
+---|---
 Supported platforms | ios, mac
 Author | @NeoNachoSoto, @tommeier
 

@@ -14,8 +14,8 @@ Run UI test by Appium with RSpec
 
 
 
-appium |
------|----
+appium ||
+---|---
 Supported platforms | ios, android
 Author | @yonekawa
 

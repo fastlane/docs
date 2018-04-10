@@ -16,8 +16,8 @@ you're not using a hacked Xcode installation.
 http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/
 
 
-verify_xcode |
------|----
+verify_xcode ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 

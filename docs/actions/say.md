@@ -14,8 +14,8 @@ This action speaks out loud the given text
 
 
 
-say |
------|----
+say ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

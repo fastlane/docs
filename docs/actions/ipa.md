@@ -17,8 +17,8 @@ To make code signing work, follow https://docs.fastlane.tools/codesigning/xcode-
 
 
 
-ipa |
------|----
+ipa ||
+---|---
 Supported platforms | ios
 Author | @joshdholtz
 

@@ -14,8 +14,8 @@ Generates coverage data using lcov
 
 
 
-lcov |
------|----
+lcov ||
+---|---
 Supported platforms | ios, mac
 Author | @thiagolioy
 

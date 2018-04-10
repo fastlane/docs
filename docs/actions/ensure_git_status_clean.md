@@ -18,8 +18,8 @@ or just as a general reminder to save your work. Also needed as a prerequisite f
 some other actions like `reset_git_repo`.
 
 
-ensure_git_status_clean |
------|----
+ensure_git_status_clean ||
+---|---
 Supported platforms | ios, android, mac
 Author | @lmirosevic, @antondomashnev
 

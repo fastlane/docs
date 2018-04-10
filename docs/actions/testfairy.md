@@ -14,8 +14,8 @@ Upload a new build to TestFairy
 > You can retrieve your API key on [your settings page](https://free.testfairy.com/settings/)
 
 
-testfairy |
------|----
+testfairy ||
+---|---
 Supported platforms | ios, android
 Author | @taka0125, @tcurdt
 

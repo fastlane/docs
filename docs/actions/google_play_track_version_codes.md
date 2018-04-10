@@ -14,8 +14,8 @@ Retrieves version codes for a Google Play track
 > More information: https://docs.fastlane.tools/actions/supply/
 
 
-google_play_track_version_codes |
------|----
+google_play_track_version_codes ||
+---|---
 Supported platforms | android
 Author | @panthomakos
 Returns | Array of integers representing the version codes for the given Google Play track

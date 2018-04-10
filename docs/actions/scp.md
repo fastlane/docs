@@ -14,8 +14,8 @@ Transfer files via SCP
 
 
 
-scp |
------|----
+scp ||
+---|---
 Supported platforms | ios, android, mac
 Author | @hjanuschka
 

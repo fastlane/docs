@@ -14,8 +14,8 @@ Update a Info.plist file with bundle identifier and display name
 > This action allows you to modify your `Info.plist` file before building. This may be useful if you want a separate build for alpha, beta or nightly builds, but don't want a separate target.
 
 
-update_info_plist |
------|----
+update_info_plist ||
+---|---
 Supported platforms | ios
 Author | @tobiasstrebitzer
 

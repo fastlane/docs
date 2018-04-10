@@ -14,8 +14,8 @@ Pod lib lint
 > Test the syntax of your Podfile by linting the pod against the files of its directory
 
 
-pod_lib_lint |
------|----
+pod_lib_lint ||
+---|---
 Supported platforms | ios, mac
 Author | @thierryxing
 

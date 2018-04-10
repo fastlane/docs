@@ -15,8 +15,8 @@ Runs a shell command
 Be aware of a specific behavior of 'sh' action with regard to the working directory. For details refer to Advanced.md
 
 
-sh |
------|----
+sh ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 Returns | Outputs the string and executes it. When running in tests, it returns the actual command instead of executing it

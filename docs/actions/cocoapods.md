@@ -14,8 +14,8 @@ Runs `pod install` for the project
 > If you use [CocoaPods](http://cocoapods.org) you can use the `cocoapods` integration to run `pod install` before building your app.
 
 
-cocoapods |
------|----
+cocoapods ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx, @tadpol, @birmacher, @Liquidsoul
 

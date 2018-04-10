@@ -14,8 +14,8 @@ Returns a value from Info.plist inside a .ipa file
 > This is useful for introspecting Info.plist files for .ipa files that have already been built.
 
 
-get_ipa_info_plist_value |
------|----
+get_ipa_info_plist_value ||
+---|---
 Supported platforms | ios, mac
 Author | @johnboiles
 Returns | Returns the value in the .ipa's Info.plist corresponding to the passed in Key

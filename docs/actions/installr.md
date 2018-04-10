@@ -14,8 +14,8 @@ Upload a new build to Installr
 
 
 
-installr |
------|----
+installr ||
+---|---
 Supported platforms | ios
 Author | @scottrhoyt
 

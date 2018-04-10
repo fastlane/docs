@@ -14,8 +14,8 @@ Shutdown and reset running simulators
 
 
 
-reset_simulator_contents |
------|----
+reset_simulator_contents ||
+---|---
 Supported platforms | ios
 Author | @danramteke
 

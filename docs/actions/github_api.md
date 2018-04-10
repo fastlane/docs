@@ -16,8 +16,8 @@ Call a GitHub API endpoint and get the resulting JSON response
           Documentation: https://developer.github.com/v3
 
 
-github_api |
------|----
+github_api ||
+---|---
 Supported platforms | ios, android, mac
 Author | @tommeier
 Returns | A hash including the HTTP status code (:status), the response body (:body), and if valid JSON has been returned the parsed JSON (:json).

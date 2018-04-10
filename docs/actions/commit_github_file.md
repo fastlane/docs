@@ -17,12 +17,11 @@ This will commit a file directly on GitHub via the API
         Documentation: https://developer.github.com/v3/repos/contents/#create-a-file
 
 
-commit_github_file |
------|----
+commit_github_file ||
+---|---
 Supported platforms | ios, android, mac
 Author | @tommeier
-Returns | A hash containing all relevant information for this commit
-Access things like 'html_url', 'sha', 'message'
+Returns | A hash containing all relevant information for this commit<br>Access things like 'html_url', 'sha', 'message'
 
 
 

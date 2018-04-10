@@ -18,8 +18,8 @@ https://github.com/HazAT/badge
 **Note** If you want to reset the badge back to default you can use `sh 'git checkout -- <path>/Assets.xcassets/'`
 
 
-badge |
------|----
+badge ||
+---|---
 Supported platforms | ios, android, mac
 Author | @DanielGri
 

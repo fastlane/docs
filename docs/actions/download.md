@@ -16,8 +16,8 @@ For more advanced networking code, use the Ruby functions instead:
 http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html
 
 
-download |
------|----
+download ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

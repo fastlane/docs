@@ -14,8 +14,8 @@ Skip the creation of the fastlane/README.md file when running fastlane
 > Tell _fastlane_ to not automatically create a `fastlane/README.md` when running _fastlane_. You can always trigger the creation of this file manually by running `fastlane docs`
 
 
-skip_docs |
------|----
+skip_docs ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

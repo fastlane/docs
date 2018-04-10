@@ -14,8 +14,8 @@ Archives the project using `xcodebuild`
 
 
 
-xcarchive |
------|----
+xcarchive ||
+---|---
 Supported platforms | ios, mac
 Author | @dtrenz
 

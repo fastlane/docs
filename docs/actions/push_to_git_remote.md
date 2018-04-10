@@ -14,8 +14,8 @@ Push local changes to the remote branch
 > Lets you push your local commits to a remote git repo. Useful if you make local changes such as adding a version bump commit (using `commit_version_bump`) or a git tag (using 'add_git_tag') on a CI server, and you want to push those changes back to your canonical/main repo.
 
 
-push_to_git_remote |
------|----
+push_to_git_remote ||
+---|---
 Supported platforms | ios, android, mac
 Author | @lmirosevic
 

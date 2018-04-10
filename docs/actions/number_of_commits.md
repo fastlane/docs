@@ -14,8 +14,8 @@ Return the number of commits in current git branch
 > You can use this action to get the number of commits of this branch. This is useful if you want to set the build number to the number of commits. See `fastlane actions number_of_commits` for more details
 
 
-number_of_commits |
------|----
+number_of_commits ||
+---|---
 Supported platforms | ios, android, mac
 Author | @onevcat, @samuelbeek
 Returns | The total number of all commits in current git branch

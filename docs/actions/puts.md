@@ -14,8 +14,8 @@ Prints out the given text
 
 
 
-puts |
------|----
+puts ||
+---|---
 Supported platforms | ios, android, mac
 Author | @KrauseFx
 

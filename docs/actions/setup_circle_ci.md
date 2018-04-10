@@ -17,8 +17,8 @@ Setup the keychain and match to work with CircleCI
 This action helps with CircleCI integration, add this to the top of your Fastfile if you use CircleCI
 
 
-setup_circle_ci |
------|----
+setup_circle_ci ||
+---|---
 Supported platforms | ios, mac
 Author | @dantoml
 

@@ -14,8 +14,8 @@ Import certificate from inputfile into a keychain
 > Import certificates into the current default keychain. Use `create_keychain` to create a new keychain.
 
 
-import_certificate |
------|----
+import_certificate ||
+---|---
 Supported platforms | ios, android, mac
 Author | @gin0606
 

@@ -14,8 +14,8 @@ Cleans the project using `xcodebuild`
 
 
 
-xcclean |
------|----
+xcclean ||
+---|---
 Supported platforms | ios, mac
 Author | @dtrenz
 

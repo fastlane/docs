@@ -14,8 +14,8 @@ Generate docs using Jazzy
 
 
 
-jazzy |
------|----
+jazzy ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 

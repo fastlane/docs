@@ -101,8 +101,8 @@ It will show you `mobileprovision` files like this:
 <hr />
 
 
-get_certificates |
------|----
+get_certificates ||
+---|---
 Supported platforms | ios
 Author | @KrauseFx
 

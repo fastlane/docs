@@ -14,8 +14,8 @@ This action uploads an artifact to artifactory
 
 
 
-artifactory |
------|----
+artifactory ||
+---|---
 Supported platforms | ios, android, mac
 Author | @koglinjg, @tommeier
 

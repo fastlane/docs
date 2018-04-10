@@ -15,8 +15,8 @@ Invokes sonar-scanner to programmatically run SonarQube analysis
 It can process unit test results if formatted as junit report as shown in [xctest](#xctest) action. It can also integrate coverage reports in Cobertura format, which can be transformed into by [slather](#slather) action.
 
 
-sonar |
------|----
+sonar ||
+---|---
 Supported platforms | ios, android, mac
 Author | @c_gretzki
 Returns | The exit code of the sonar-scanner binary

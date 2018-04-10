@@ -18,12 +18,11 @@ This will create a new release on GitHub and upload assets for it
         release html link to GitHub. You can also specify a list of assets to be uploaded to the release with the upload_assets parameter.
 
 
-set_github_release |
------|----
+set_github_release ||
+---|---
 Supported platforms | ios, android, mac
 Author | @czechboy0, @tommeier
-Returns | A hash containing all relevant information of this release
-Access things like 'html_url', 'tag_name', 'name', 'body'
+Returns | A hash containing all relevant information of this release<br>Access things like 'html_url', 'tag_name', 'name', 'body'
 
 
 

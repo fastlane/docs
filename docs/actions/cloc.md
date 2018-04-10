@@ -15,8 +15,8 @@ Generates a Code Count that can be read by Jenkins (xml format)
 See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.
 
 
-cloc |
------|----
+cloc ||
+---|---
 Supported platforms | ios, mac
 Author | @intere
 

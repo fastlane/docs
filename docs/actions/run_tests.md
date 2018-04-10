@@ -160,8 +160,8 @@ end
 <hr />
 
 
-run_tests |
------|----
+run_tests ||
+---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
 

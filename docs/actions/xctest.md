@@ -14,8 +14,8 @@ Runs tests on the given simulator
 
 
 
-xctest |
------|----
+xctest ||
+---|---
 Supported platforms | ios, mac
 Author | @dtrenz
 
