@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: b26d609399fc632bf1cac7498dc9918b3c0f46da
+  revision: 2be62a784f774652aaddea67deba8bbc0763bf40
   specs:
-    fastlane (2.89.0)
+    fastlane (2.90.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -73,7 +73,7 @@ GEM
     declarative-option (0.1.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
-    dotenv (2.2.1)
+    dotenv (2.2.2)
     excon (0.62.0)
     faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
@@ -121,7 +121,7 @@ GEM
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    nanaimo (0.2.4)
+    nanaimo (0.2.5)
     nap (1.1.0)
     naturally (2.1.0)
     no_proxy_fix (0.1.2)

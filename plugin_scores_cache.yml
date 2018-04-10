@@ -153,7 +153,7 @@ fastlane-plugin-appicon:
   :github_contributors: 14
 fastlane-plugin-badge:
   :initial_commit: 2016-12-16
-  :age_in_days: 436
+  :age_in_days: 480
   :readme_score: 100
   :tests: 1
   :actions:
@@ -162,12 +162,12 @@ fastlane-plugin-badge:
     category: 
     description: Automatically add a badge to your app icon
     details: "\\n"
-  :sha: 1cb8a2bb5883be284f52ad13499a44f1f7be547f4ded12fc0c8c153eca3dc57d
-  :github_stars: 28
+  :sha: b9eb2d8172cd09803d715ff739a6057bc727f21f8f9f0d873bb701d3331b8576
+  :github_stars: 33
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 1
-  :github_contributors: 2
+  :github_forks: 0
+  :github_contributors: 0
 fastlane-plugin-increment_version_code:
   :initial_commit: 2016-07-29
   :age_in_days: 576
@@ -615,7 +615,7 @@ fastlane-plugin-yarn:
     category: 
     description: Execute Yarn commands from your Fastfile
     details: Execute Yarn commands from your Fastfile
-  :sha: '034395cd1476fd3acfea703cb7e167393ca9191e010c726f662f851c7600c5ea'
+  :sha: 034395cd1476fd3acfea703cb7e167393ca9191e010c726f662f851c7600c5ea
   :github_stars: 8
   :github_subscribers: 1
   :github_issues: 0
@@ -3524,9 +3524,9 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 67
+  :age_in_days: 74
   :readme_score: 100
-  :tests: 17
+  :tests: 20
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: lizard
@@ -3534,7 +3534,7 @@ fastlane-plugin-lizard:
     description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: b4f08705a468a435ec2ae88e7f43de71b29b60c62d8cac5c6522fd5508382798
+  :sha: cf05a00be011112d87d5de9f2b41ef8f51e205ba637f817af4910df50e6a9acf
   :github_stars: 3
   :github_subscribers: 5
   :github_issues: 1
@@ -3912,7 +3912,7 @@ fastlane-plugin-download_hockey_ipa:
     category: 
     description: A fastlane plugin that helps downloading .ipa from HockeyApp
     details: 
-  :sha: '0479874defebd9ebd745698c995a922f550a7f040cbd1509a539a8a3f0c19edc'
+  :sha: 0479874defebd9ebd745698c995a922f550a7f040cbd1509a539a8a3f0c19edc
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -4003,7 +4003,7 @@ fastlane-plugin-submit_to_beta_app_review:
     category: 
     description: Submits an already processed build to Beta App Review.
     details: This action submits an already processed build to Beta App Review.
-  :sha: '08b12b0e3c2221307709f7446bb367dcd3503cd03bf4abf529f6e886263cd90b'
+  :sha: 08b12b0e3c2221307709f7446bb367dcd3503cd03bf4abf529f6e886263cd90b
   :github_stars: 2
   :github_subscribers: 0
   :github_issues: 0
@@ -4465,6 +4465,29 @@ fastlane-plugin-git_commit_changelog_to_markdown:
   :sha: 66dc813fb6637cf0bfa95ac0d3aa6846ed25e722e357f2b22544fce842c127dc
   :github_stars: 0
   :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-bluepillarx:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-napp_notifications:
+  :initial_commit: 2018-04-10
+  :age_in_days: 0
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: napp_notifications
+    category: push
+    description: Napp Notifications
+    details: Napp Notifications
+  :sha: 6edf92f71992dd21839adb0477bc5400621267e29bacb1712fddf774d390776f
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
