@@ -11,9 +11,7 @@ Updates the URL schemes in the given Info.plist
 
 
 
-> This action allows you to update the URL schemes of the app before building it.
-For example, you can use this to set a different url scheme for the alpha
-or beta version of the app.
+> This action allows you to update the URL schemes of the app before building it.<br>For example, you can use this to set a different url scheme for the alpha<br>or beta version of the app.
 
 
 update_url_schemes ||
