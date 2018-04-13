@@ -11,11 +11,7 @@ Downloads Xcode Bot assets like the `.xcarchive` and logs
 
 
 
-> This action downloads assets from your Xcode Server Bot (works with Xcode Server
-          using Xcode 6 and 7. By default this action downloads all assets, unzips them and
-          deletes everything except for the `.xcarchive`. If you'd like to keep all downloaded
-          assets, pass `:keep_all_assets: true`. This action returns the path to the downloaded
-          assets folder and puts into shared values the paths to the asset folder and to the `.xcarchive` inside it
+> This action downloads assets from your Xcode Server Bot (works with Xcode Server<br>          using Xcode 6 and 7. By default this action downloads all assets, unzips them and<br>          deletes everything except for the `.xcarchive`. If you'd like to keep all downloaded<br>          assets, pass `:keep_all_assets: true`. This action returns the path to the downloaded<br>          assets folder and puts into shared values the paths to the asset folder and to the `.xcarchive` inside it
 
 
 xcode_server_get_assets ||

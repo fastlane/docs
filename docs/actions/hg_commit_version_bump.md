@@ -11,13 +11,7 @@ This will commit a version bump to the hg repo
 
 
 
-> The mercurial equivalent of the [`commit_version_bump`](#commit_version_bump) git action. Like the git version, it is useful in conjunction with [`increment_build_number`](#increment_build_number).
-It checks the repo to make sure that only the relevant files have changed, these are the files that `increment_build_number` (`agvtool`) touches:
-- All .plist files
-- The `.xcodeproj/project.pbxproj` file
-Then commits those files to the repo.
-Customize the message with the `:message` option, defaults to 'Version Bump'
-If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the [`clean_build_artifacts`](#clean_build_artifacts) action to clean those temporary files up before running this action.
+> The mercurial equivalent of the [`commit_version_bump`](#commit_version_bump) git action. Like the git version, it is useful in conjunction with [`increment_build_number`](#increment_build_number).<br>It checks the repo to make sure that only the relevant files have changed, these are the files that `increment_build_number` (`agvtool`) touches:<br>- All .plist files<br>- The `.xcodeproj/project.pbxproj` file<br>Then commits those files to the repo.<br>Customize the message with the `:message` option, defaults to 'Version Bump'<br>If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the [`clean_build_artifacts`](#clean_build_artifacts) action to clean those temporary files up before running this action.
 
 
 hg_commit_version_bump ||

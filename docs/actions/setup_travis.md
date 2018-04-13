@@ -11,9 +11,7 @@ Setup the keychain and match to work with Travis CI
 
 
 
-> - Creates a new temporary keychain for use with match
-- Switches match to `readonly` mode to not create new profiles/cert on CI
-This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
+> - Creates a new temporary keychain for use with match<br>- Switches match to `readonly` mode to not create new profiles/cert on CI<br><br>This action helps with Travis integration, add this to the top of your Fastfile if you use Travis
 
 
 setup_travis ||

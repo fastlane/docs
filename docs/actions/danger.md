@@ -11,8 +11,7 @@ Runs `danger` for the project
 
 
 
-> Formalize your Pull Request etiquette.
-More information: https://github.com/danger/danger
+> Formalize your Pull Request etiquette.<br>More information: https://github.com/danger/danger
 
 
 danger ||

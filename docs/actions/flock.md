@@ -11,8 +11,7 @@ Send a message to a Flock group
 
 
 
-> To obtain the token, create a new [incoming message webhook](https://dev.flock.co/wiki/display/FlockAPI/Incoming+Webhooks)
-in your Flock admin panel.
+> To obtain the token, create a new [incoming message webhook](https://dev.flock.co/wiki/display/FlockAPI/Incoming+Webhooks)<br>in your Flock admin panel.
 
 
 flock ||
