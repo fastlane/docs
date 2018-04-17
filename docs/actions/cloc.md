@@ -11,8 +11,7 @@ Generates a Code Count that can be read by Jenkins (xml format)
 
 
 
-> This action will run cloc to generate a SLOC report that the Jenkins SLOCCount plugin can read.
-See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.
+> This action will run cloc to generate a SLOC report that the Jenkins SLOCCount plugin can read.<br>See https://wiki.jenkins-ci.org/display/JENKINS/SLOCCount+Plugin and https://github.com/AlDanial/cloc for more information.
 
 
 cloc ||

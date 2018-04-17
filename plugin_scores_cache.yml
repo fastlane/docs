@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 155
+  :age_in_days: 176
   :readme_score: 100
-  :tests: 85
+  :tests: 88
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -986,14 +986,19 @@ fastlane-plugin-test_center:
     description: of batching them, only re-testing failing tests.
     details: batched, or have multiple test targets and need meaningful junit reports.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: collate_html_reports
+    category: 
+    description: Combines and combines tests from multiple html report files
+    details: tests and the subsequent HTML reports will have more passed tests.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_junit_reports
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: 56ab2038ef0ce5cb6ec5d781cdab9ec51ea83efe7e933d4d22e7bacb99daa1e5
-  :github_stars: 15
+  :sha: e36780ca1642e62b4bf34e9fa487ffa3a4ecbe5c069ca13b877ae465ef78b161
+  :github_stars: 17
   :github_subscribers: 3
-  :github_issues: 7
+  :github_issues: 10
   :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
@@ -3323,7 +3328,7 @@ fastlane-plugin-yafirim:
   :github_contributors: 1
 fastlane-plugin-blackberry_mam:
   :initial_commit: 2017-04-26
-  :age_in_days: 305
+  :age_in_days: 356
   :readme_score: 100
   :tests: 42
   :actions:
@@ -3346,12 +3351,12 @@ fastlane-plugin-blackberry_mam:
     category: 
     description: Checks the version of the installed Good framework
     details: 
-  :sha: ab4ac92d8948c0c079be7580cba3e8110d28be34887f9cacbce315512c85a0b3
+  :sha: 39ea71deed96e20fa9cdf34ef9edfd4b2aa2825e9dd8aab3c3be395080efb5bd
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-influxdb:
   :initial_commit: 2017-03-06
   :age_in_days: 382
@@ -4491,3 +4496,74 @@ fastlane-plugin-napp_notifications:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-flutter:
+  :initial_commit: 2018-04-13
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 4
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter
+    category: 
+    description: Flutter actions plugin for Fastlane
+    details: 
+  :sha: 41b46db73428c3a0b3c1b9f32a18b258f93722c525011134aee11d25a3014d76
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ding_talk:
+  :initial_commit: 2018-04-10
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ding_talk
+    category: 
+    description: Send the packaging information to the ding talk.
+    details: Send the packaging information to the ding talk, and provide the qr code
+      for others to install.
+  :sha: e9142e3619ad138747a63ccbb94ac0e6df638aca102f565d4049ddd305a54032
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ti_build_app:
+  :initial_commit: 2018-04-09
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ti_build_app
+    category: 
+    description: Build Axway Appcelerator Mobile Applications from within fastlane
+    details: Leverages appc cli commands to build both iOS and Android Applications
+      built using Axway Appcelerator
+  :sha: b4bfdadcffd982ab8d01b573d29e5e231796884a20591b6ae8c0e890e8e329b3
+  :github_stars: 6
+  :github_subscribers: 3
+  :github_issues: 0
+  :github_forks: 2
+  :github_contributors: 0
+fastlane-plugin-mocha_run_tests:
+  :initial_commit: 2018-04-09
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: mocha_run_tests
+    category: 
+    description: Run Mocha Tests from within fastlane
+    details: Leverages mocha to run tests for both iOS and Android Applications from
+      within fastlane
+  :sha: e9075c8c699e6e0c5c475053305e9da7955ca9a53f23a20059f70ff955edd418
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 1
+  :github_contributors: 0
