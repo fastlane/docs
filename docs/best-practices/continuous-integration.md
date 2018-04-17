@@ -11,6 +11,7 @@
 The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that doesn't have 2-factor auth enabled, with a long, randomly generated password. Additionally make sure the newly created Apple account has limited access to only the apps and resources it needs.
 
 There are multiple reasons on why this approach is much easier:
+
 - An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you'll run into issues
 - An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing
 
