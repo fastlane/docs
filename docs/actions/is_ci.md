@@ -11,8 +11,7 @@ Is the current run being executed on a CI system, like Jenkins or Travis
 
 
 
-> The return value of this method is true if fastlane is currently executed on
-Travis, Jenkins, Circle or a similar CI service
+> The return value of this method is true if fastlane is currently executed on<br>Travis, Jenkins, Circle or a similar CI service
 
 
 is_ci ||

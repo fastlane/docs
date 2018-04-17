@@ -11,13 +11,7 @@ Update projects code signing settings from your provisioning profile
 
 
 
-> You should check out the code signing guide before using this action: https://docs.fastlane.tools/codesigning/getting-started/
-This action retrieves a provisioning profile UUID from a provisioning profile (.mobileprovision) to set
-up the xcode projects' code signing settings in *.xcodeproj/project.pbxproj
-The `target_filter` value can be used to only update code signing for specified targets
-The `build_configuration` value can be used to only update code signing for specified build configurations of the targets passing through the `target_filter`
-Example Usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles
-Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".*WatchKit App.*")
+> You should check out the code signing guide before using this action: https://docs.fastlane.tools/codesigning/getting-started/<br>This action retrieves a provisioning profile UUID from a provisioning profile (.mobileprovision) to set<br>up the xcode projects' code signing settings in *.xcodeproj/project.pbxproj<br>The `target_filter` value can be used to only update code signing for specified targets<br>The `build_configuration` value can be used to only update code signing for specified build configurations of the targets passing through the `target_filter`<br>Example Usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles<br>Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".*WatchKit App.*")
 
 
 update_project_provisioning ||

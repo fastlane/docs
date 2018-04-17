@@ -11,8 +11,7 @@ Modifies the services of the app created on Developer Portal
 
 
 
-> Options are same as 'enable_services' in produce action
-https://docs.fastlane.tools/actions/produce/
+> Options are same as 'enable_services' in produce action<br>https://docs.fastlane.tools/actions/produce/
 
 
 modify_services ||

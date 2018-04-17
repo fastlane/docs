@@ -11,9 +11,7 @@ Set the changelog for all languages on iTunes Connect
 
 
 
-> This is useful if you have only one changelog for all languages.
-You can store the changelog in `./fastlane/changelog.txt` and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.
-Defining the version is optional, fastlane will try to automatically detect it if you don't provide one
+> This is useful if you have only one changelog for all languages.<br>You can store the changelog in `./fastlane/changelog.txt` and it will automatically get loaded from there. This integration is useful if you support e.g. 10 languages and want to use the same "What's new"-text for all languages.<br>Defining the version is optional, fastlane will try to automatically detect it if you don't provide one
 
 
 set_changelog ||

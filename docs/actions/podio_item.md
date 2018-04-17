@@ -11,11 +11,7 @@ Creates or updates an item within your Podio app
 
 
 
-> Use this action to create or update an item within your Podio app
-        (see https://help.podio.com/hc/en-us/articles/201019278-Creating-apps-).
-        Pass in dictionary with field keys and their values.
-        Field key is located under Modify app -> Advanced -> Developer -> External ID
-        (see https://developers.podio.com/examples/items)
+> Use this action to create or update an item within your Podio app<br>        (see https://help.podio.com/hc/en-us/articles/201019278-Creating-apps-).<br>        Pass in dictionary with field keys and their values.<br>        Field key is located under Modify app -> Advanced -> Developer -> External ID<br>        (see https://developers.podio.com/examples/items)
 
 
 podio_item ||
