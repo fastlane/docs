@@ -11,8 +11,7 @@ Nice code coverage reports without hassle
 
 
 
-> Create nice code coverage reports and post coverage summaries on Slack *(xcov gem is required)*.
-More information: https://github.com/nakiostudio/xcov
+> Create nice code coverage reports and post coverage summaries on Slack *(xcov gem is required)*.<br>More information: https://github.com/nakiostudio/xcov
 
 
 xcov ||

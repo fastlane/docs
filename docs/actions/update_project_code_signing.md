@@ -8,9 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Updated code signing settings from 'Automatic' to a specific profile
 
-> You shouldn't use update_project_code_signing.
-Have you considered using the recommended way to do code signing?
-https://docs.fastlane.tools/codesigning/getting-started/
+> You shouldn't use update_project_code_signing.<br>Have you considered using the recommended way to do code signing?<br>https://docs.fastlane.tools/codesigning/getting-started/
 
 
 
