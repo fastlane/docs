@@ -11,9 +11,7 @@ Use slather to generate a code coverage report
 
 
 
-> Slather works with multiple code coverage formats including Xcode7 code coverage.
-Slather is available at https://github.com/SlatherOrg/slather
-
+> Slather works with multiple code coverage formats including Xcode7 code coverage.<br>Slather is available at https://github.com/SlatherOrg/slather<br>
 
 
 slather ||

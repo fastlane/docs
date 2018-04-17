@@ -11,14 +11,7 @@ Codesign an existing ipa file
 
 
 
-> You may provide multiple provisioning profiles if the application contains
-nested applications or app extensions, which need their own provisioning
-profile. You can do so by passing an array of provisiong profile strings or a
-hash that associates provisioning profile values to bundle identifier keys.
-resign(ipa: "path", signing_identity: "identity", provisioning_profile: {
-  "com.example.awesome-app" => "App.mobileprovision",
-  "com.example.awesome-app.app-extension" => "Extension.mobileprovision"
-})
+> You may provide multiple provisioning profiles if the application contains<br>nested applications or app extensions, which need their own provisioning<br>profile. You can do so by passing an array of provisiong profile strings or a<br>hash that associates provisioning profile values to bundle identifier keys.<br><br>resign(ipa: "path", signing_identity: "identity", provisioning_profile: {<br>  "com.example.awesome-app" => "App.mobileprovision",<br>  "com.example.awesome-app.app-extension" => "Extension.mobileprovision"<br>})
 
 
 resign ||

@@ -11,9 +11,7 @@ Registers new devices to the Apple Dev Portal
 
 
 
-> This will register iOS/Mac devices with the Developer Portal so that you can include them in your provisioning profiles.
-This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.
-The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option, or by setting the env variable `ENV['DELIVER_USER']`.
+> This will register iOS/Mac devices with the Developer Portal so that you can include them in your provisioning profiles.<br>This is an optimistic action, in that it will only ever add new devices to the member center, and never remove devices. If a device which has already been registered within the member center is not passed to this action, it will be left alone in the member center and continue to work.<br>The action will connect to the Apple Developer Portal using the username you specified in your `Appfile` with `apple_id`, but you can override it using the `username` option, or by setting the env variable `ENV['DELIVER_USER']`.
 
 
 register_devices ||
