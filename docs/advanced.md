@@ -533,10 +533,10 @@ irb(main):004:0> manual_password = 'example-password'
 => "example-password"
 ```
 
-Now call `GitHelper.clone`, which will clone and decrypt the repo for you. Assign the return value to `workspace`, which we'll need later when we re-encrypt:
+Now call `GitHelper.clone`, which will clone and decrypt the repo for you. Assign the return value to `workspace`, which we'll need later when we re-encrypt. As match commonly creates a branch per developer team (the name of the branch being the team identifier), you can optionally pass in the branch as a parameter to the `clone` method (or omit the parameter to use `master`):
 
 ```ruby
-irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manual_password: manual_password)
+irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manual_password: manual_password, branch: 'ABCDE12345')
 [14:49:30]: Cloning remote git repo...
 [14:49:31]: 🔓  Successfully decrypted certificates repo
 => "/var/folders/0j/29ytx6wx0fg86sznfb4mqdph0000gn/T/d20170314-14350-11hmdro"
@@ -552,10 +552,10 @@ Once your changes are made, we'll need to encrypt the repo and push it.
 
 ### 🔒 Encryption Instructions
 
-In the Ruby console, call `GitHelper.commit_changes`, passing in the commit message you want. For example:
+In the Ruby console, call `GitHelper.commit_changes`, passing in the commit message you want. Again, pass in the branch name if you're changes are not on `master`. For example:
 
 ```ruby
-irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url)
+irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url, 'ABCDE12345')
 ```
 
 Your changes will be encrypted, committed, and pushed.
