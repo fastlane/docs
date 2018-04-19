@@ -563,7 +563,7 @@ In the Ruby console, call `GitHelper.commit_changes`, passing in the commit mess
 ```ruby
 irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url)
 ```
-Again, pass in the branch name if you're changes are not on `master`:
+Again, pass in the branch name if your changes are not on `master`:
 
 ```ruby
 irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url, 'ABCDE12345')
