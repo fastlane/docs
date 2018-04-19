@@ -558,7 +558,7 @@ Once your changes are made, we'll need to encrypt the repo and push it.
 
 ### 🔒 Encryption Instructions
 
-In the Ruby console, call `GitHelper.commit_changes`, passing in the commit message you want.
+In the Ruby console, call `GitHelper.commit_changes`, passing in the commit message you want. For example:
 
 ```ruby
 irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url)
