@@ -542,7 +542,7 @@ irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manu
 => "/var/folders/0j/29ytx6wx0fg86sznfb4mqdph0000gn/T/d20170314-14350-11hmdro"
 ```
 
-The above example checks out the `master` branch by default. Match commonly creates a branch per developer team (the name of the branch being the team identifier), so you can optionally pass in the branch as a parameter to the `clone` method (or you can manually switch branches after the clone completes):
+The above example checks out the `master` branch by default. A common _match_ pattern is to create a separate branch per each developer team (the name of the branch being the team identifier). You can optionally pass in the branch name as a parameter to the `clone` method:
 
 ```ruby
 irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manual_password: manual_password, branch: 'ABCDE12345')
