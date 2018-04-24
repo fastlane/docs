@@ -11,8 +11,7 @@ Import another Fastfile to use its lanes
 
 
 
-> This is useful if you have shared lanes across multiple apps and you want to store a Fastfile
-in a separate folder. The path must be relative to the Fastfile this is called from.
+> This is useful if you have shared lanes across multiple apps and you want to store a Fastfile<br>in a separate folder. The path must be relative to the Fastfile this is called from.
 
 
 import ||

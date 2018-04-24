@@ -238,7 +238,7 @@ Key | Description | Default
   `build_for_testing` | Build for testing only, does not run tests | 
   `xctestrun` | Run tests using the provided .xctestrun file | 
   `derived_data_path` | The directory where build products and other derived data will go | 
-  `result_bundle` | Location of the Xcode result bundle | 
+  `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `sdk` | The SDK that should be used for building the application | 
   `open_report` | Should the HTML report be opened when tests are completed? | `false`
   `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#parameters-legend-dynamic)

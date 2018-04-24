@@ -11,9 +11,7 @@ Increment the version number of your project
 
 
 
-> This action will increment the version number. 
-You first have to set up your Xcode project, if you haven't done it already:
-https://developer.apple.com/library/ios/qa/qa1827/_index.html
+> This action will increment the version number.<br>You first have to set up your Xcode project, if you haven't done it already:<br>https://developer.apple.com/library/ios/qa/qa1827/_index.html
 
 
 increment_version_number ||

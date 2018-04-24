@@ -11,15 +11,7 @@ Makes sure fastlane-tools are up-to-date when running fastlane
 
 
 
-> This action will update fastlane to the most recent version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.
-If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in `sudo` mode.
-The simplest possible fix for this is putting the following lines into your `~/.bashrc` or `~/.zshrc` file:
-```bash
-export GEM_HOME=~/.gems
-export PATH=$PATH:~/.gems/bin
-```
-After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!
-Recommended usage of the `update_fastlane` action is at the top inside of the `before_all` block, before running any other action
+> This action will update fastlane to the most recent version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.<br><br>If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in `sudo` mode.<br><br>The simplest possible fix for this is putting the following lines into your `~/.bashrc` or `~/.zshrc` file:<br><br>```bash<br><br>export GEM_HOME=~/.gems<br><br>export PATH=$PATH:~/.gems/bin<br><br>```<br><br>After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!<br><br>Recommended usage of the `update_fastlane` action is at the top inside of the `before_all` block, before running any other action
 
 
 update_fastlane ||
