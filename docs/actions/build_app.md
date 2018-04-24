@@ -320,7 +320,7 @@ Key | Description | Default
   `build_path` | The directory in which the archive should be stored in | 
   `archive_path` | The path to the created archive | 
   `derived_data_path` | The directory where built products and other derived data will go | 
-  `result_bundle` | Location of the Xcode result bundle | 
+  `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `buildlog_path` | The directory where to store the build log | [*](#parameters-legend-dynamic)
   `sdk` | The SDK that should be used for building the application | 
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a) | 
