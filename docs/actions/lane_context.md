@@ -11,8 +11,7 @@ Access lane context values
 
 
 
-> Access the fastlane lane context values
-More information about how the lane context works: https://docs.fastlane.tools/advanced/#lane-context
+> Access the fastlane lane context values<br>More information about how the lane context works: https://docs.fastlane.tools/advanced/#lane-context
 
 
 lane_context ||
