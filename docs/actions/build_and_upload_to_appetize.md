@@ -11,8 +11,7 @@ Generate and upload an ipa file to appetize.io
 
 
 
-> This should be called from danger
-More information in the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
+> This should be called from danger<br>More information in the [device_grid guide](https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/device_grid/README.md)
 
 
 build_and_upload_to_appetize ||

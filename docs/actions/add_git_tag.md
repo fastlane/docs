@@ -11,13 +11,7 @@ This will add an annotated git tag to the current branch
 
 
 
-> This will automatically tag your build with the following format: `<grouping>/<lane>/<prefix><build_number>`, where:
-- `grouping` is just to keep your tags organised under one 'folder', defaults to 'builds'
-- `lane` is the name of the current fastlane lane
-- `prefix` is anything you want to stick in front of the version number, e.g. 'v'
-- `postfix` is anything you want to stick at the end of the version number, e.g. '-RC1'
-- `build_number` is the build number, which defaults to the value emitted by the `increment_build_number` action
-For example for build 1234 in the 'appstore' lane it will tag the commit with `builds/appstore/1234`
+> This will automatically tag your build with the following format: `<grouping>/<lane>/<prefix><build_number>`, where:<br>- `grouping` is just to keep your tags organised under one 'folder', defaults to 'builds'<br>- `lane` is the name of the current fastlane lane<br>- `prefix` is anything you want to stick in front of the version number, e.g. 'v'<br>- `postfix` is anything you want to stick at the end of the version number, e.g. '-RC1'<br>- `build_number` is the build number, which defaults to the value emitted by the `increment_build_number` action<br><br>For example for build 1234 in the 'appstore' lane it will tag the commit with `builds/appstore/1234`
 
 
 add_git_tag ||

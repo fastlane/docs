@@ -11,15 +11,7 @@ Download dSYM files from Apple iTunes Connect for Bitcode apps
 
 
 
-> This action downloads dSYM files from Apple iTunes Connect after
-the ipa got re-compiled by Apple. Useful if you have Bitcode enabled
-```ruby
-lane :refresh_dsyms do
-  download_dsyms                  # Download dSYM files from iTC
-  upload_symbols_to_crashlytics   # Upload them to Crashlytics
-  clean_build_artifacts           # Delete the local dSYM files
-end
-```
+> This action downloads dSYM files from Apple iTunes Connect after<br>the ipa got re-compiled by Apple. Useful if you have Bitcode enabled<br>```ruby<br>lane :refresh_dsyms do<br>  download_dsyms                  # Download dSYM files from iTC<br>  upload_symbols_to_crashlytics   # Upload them to Crashlytics<br>  clean_build_artifacts           # Delete the local dSYM files<br>end<br>```
 
 
 download_dsyms ||
