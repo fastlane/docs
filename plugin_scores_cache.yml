@@ -53,7 +53,7 @@ fastlane-plugin-versioning:
   :github_contributors: 5
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 632
+  :age_in_days: 691
   :readme_score: 100
   :tests: 5
   :actions:
@@ -62,12 +62,12 @@ fastlane-plugin-aws_s3:
     category: 
     description: Generates a plist file and uploads all to AWS S3
     details: 
-  :sha: 463e6194b84bd04eb50a30b140fc67c5beccb0b72bbec7c8222fc688090585ab
-  :github_stars: 34
+  :sha: 3e0cf57006ed403ce3cd580a43930352e69f5b9504c43e5a865d2501cfc9e862
+  :github_stars: 39
   :github_subscribers: 3
-  :github_issues: 9
-  :github_forks: 25
-  :github_contributors: 12
+  :github_issues: 10
+  :github_forks: 27
+  :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
   :age_in_days: 577
@@ -615,7 +615,7 @@ fastlane-plugin-yarn:
     category: 
     description: Execute Yarn commands from your Fastfile
     details: Execute Yarn commands from your Fastfile
-  :sha: 034395cd1476fd3acfea703cb7e167393ca9191e010c726f662f851c7600c5ea
+  :sha: '034395cd1476fd3acfea703cb7e167393ca9191e010c726f662f851c7600c5ea'
   :github_stars: 8
   :github_subscribers: 1
   :github_issues: 0
@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 155
+  :age_in_days: 184
   :readme_score: 100
-  :tests: 85
+  :tests: 88
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -986,14 +986,19 @@ fastlane-plugin-test_center:
     description: of batching them, only re-testing failing tests.
     details: batched, or have multiple test targets and need meaningful junit reports.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: collate_html_reports
+    category: 
+    description: Combines and combines tests from multiple html report files
+    details: tests and the subsequent HTML reports will have more passed tests.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_junit_reports
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: 56ab2038ef0ce5cb6ec5d781cdab9ec51ea83efe7e933d4d22e7bacb99daa1e5
-  :github_stars: 15
+  :sha: 364db5200a6ac2d238661298f2bc1037c843244a261ae8ed861d727870f4e794
+  :github_stars: 16
   :github_subscribers: 3
-  :github_issues: 7
+  :github_issues: 10
   :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
@@ -1075,7 +1080,7 @@ fastlane-plugin-cosigner:
   :github_contributors: 2
 fastlane-plugin-cryptex:
   :initial_commit: 2016-10-18
-  :age_in_days: 495
+  :age_in_days: 554
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1089,12 +1094,12 @@ fastlane-plugin-cryptex:
     category: 
     description: Generate a new Android Keystore
     details: 
-  :sha: ef8b4e222bc678d8cdbdf41463645082f02691b9dc9ad7256b08c4c80e9fce14
+  :sha: 9e5a6c0c404f020386e5e35586baea247a72be674b2886778c5aabf580252d9e
   :github_stars: 17
   :github_subscribers: 3
   :github_issues: 2
-  :github_forks: 6
-  :github_contributors: 3
+  :github_forks: 7
+  :github_contributors: 0
 fastlane-plugin-update_xcodeproj:
   :initial_commit: 2016-09-15
   :age_in_days: 528
@@ -1114,7 +1119,7 @@ fastlane-plugin-update_xcodeproj:
   :github_contributors: 2
 fastlane-plugin-apprepo:
   :initial_commit: 2016-05-24
-  :age_in_days: 642
+  :age_in_days: 701
   :readme_score: 50
   :tests: 2
   :actions:
@@ -1143,12 +1148,12 @@ fastlane-plugin-apprepo:
     category: 
     description: Submits IPA to Apprepo
     details: 
-  :sha: a44dc1496a055cd98ae6e6c0733fc8f0262c931059d0051cdf3b369d570c617a
+  :sha: c3894dd57facd2f1801d24a2242f666f8666224fadb7a3d280efe4e7b4022d99
   :github_stars: 3
   :github_subscribers: 1
-  :github_issues: 1
+  :github_issues: 2
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-gs_versioning:
   :initial_commit: 2016-11-05
   :age_in_days: 477
@@ -3323,7 +3328,7 @@ fastlane-plugin-yafirim:
   :github_contributors: 1
 fastlane-plugin-blackberry_mam:
   :initial_commit: 2017-04-26
-  :age_in_days: 305
+  :age_in_days: 364
   :readme_score: 100
   :tests: 42
   :actions:
@@ -3346,12 +3351,12 @@ fastlane-plugin-blackberry_mam:
     category: 
     description: Checks the version of the installed Good framework
     details: 
-  :sha: ab4ac92d8948c0c079be7580cba3e8110d28be34887f9cacbce315512c85a0b3
+  :sha: 39ea71deed96e20fa9cdf34ef9edfd4b2aa2825e9dd8aab3c3be395080efb5bd
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-influxdb:
   :initial_commit: 2017-03-06
   :age_in_days: 382
@@ -3912,7 +3917,7 @@ fastlane-plugin-download_hockey_ipa:
     category: 
     description: A fastlane plugin that helps downloading .ipa from HockeyApp
     details: 
-  :sha: 0479874defebd9ebd745698c995a922f550a7f040cbd1509a539a8a3f0c19edc
+  :sha: '0479874defebd9ebd745698c995a922f550a7f040cbd1509a539a8a3f0c19edc'
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -4003,7 +4008,7 @@ fastlane-plugin-submit_to_beta_app_review:
     category: 
     description: Submits an already processed build to Beta App Review.
     details: This action submits an already processed build to Beta App Review.
-  :sha: 08b12b0e3c2221307709f7446bb367dcd3503cd03bf4abf529f6e886263cd90b
+  :sha: '08b12b0e3c2221307709f7446bb367dcd3503cd03bf4abf529f6e886263cd90b'
   :github_stars: 2
   :github_subscribers: 0
   :github_issues: 0
@@ -4160,7 +4165,7 @@ fastlane-plugin-git_authors:
   :github_contributors: 2
 fastlane-plugin-update_jenkins_build:
   :initial_commit: 2018-01-26
-  :age_in_days: 30
+  :age_in_days: 89
   :readme_score: 100
   :tests: 6
   :actions:
@@ -4168,13 +4173,13 @@ fastlane-plugin-update_jenkins_build:
     name: update_jenkins_build
     category: 
     description: Update build's description of jenkins
-    details: 
-  :sha: 8961f0df24ef2008de3fa68c7b8e5cb78afb34ebeffd937b00671cf6c5c3b689
+    details: MUST disable CSRF in Security configure
+  :sha: 254857875155eb5d2a4239f84dd26327362da54bc9001a8c3f9d0bf92e87431c
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-enumerated_translations:
   :initial_commit: 2017-11-27
   :age_in_days: 90
@@ -4299,21 +4304,31 @@ fastlane-plugin-instabug_official:
   :github_contributors: 2
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
-  :age_in_days: 16
+  :age_in_days: 75
   :readme_score: 100
-  :tests: 6
+  :tests: 18
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: google_drive_upload
+    name: upload_google_drive
     category: 
     description: Upload files to Google Drive
     details: "\\n"
-  :sha: ca29d57936d05bc2476d6ccdf785ee99a4dcde89d6ce0f2028dd70a4775a061f
-  :github_stars: 1
-  :github_subscribers: 1
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: google_drive_upload
+    category: deprecated
+    description: Upload files to Google Drive
+    details: "\\n"
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_google_drive_folder
+    category: 
+    description: Create new folder on Google Drive
+    details: "\\n"
+  :sha: be74003514d8183c50af16b9ea2df8f69450ecc996fa3f61bb479484a38546ef
+  :github_stars: 3
+  :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-localize:
   :initial_commit: 2018-02-19
   :age_in_days: 6
@@ -4491,3 +4506,108 @@ fastlane-plugin-napp_notifications:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-flutter:
+  :initial_commit: 2018-04-13
+  :age_in_days: 12
+  :readme_score: 50
+  :tests: 4
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter
+    category: 
+    description: Flutter actions plugin for Fastlane
+    details: 
+  :sha: 206155798f07f59393086aafefb207e793430d629ad6ea1f8df68550bd217ad5
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ding_talk:
+  :initial_commit: 2018-04-10
+  :age_in_days: 15
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ding_talk
+    category: 
+    description: Send the packaging information to the ding talk.
+    details: Send the packaging information to the ding talk, and provide the qr code
+      for others to install.
+  :sha: e9142e3619ad138747a63ccbb94ac0e6df638aca102f565d4049ddd305a54032
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ti_build_app:
+  :initial_commit: 2018-04-09
+  :age_in_days: 16
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ti_build_app
+    category: 
+    description: Build Axway Appcelerator Mobile Applications from within fastlane
+    details: Leverages appc cli commands to build both iOS and Android Applications
+      built using Axway Appcelerator
+  :sha: b4bfdadcffd982ab8d01b573d29e5e231796884a20591b6ae8c0e890e8e329b3
+  :github_stars: 6
+  :github_subscribers: 3
+  :github_issues: 0
+  :github_forks: 2
+  :github_contributors: 0
+fastlane-plugin-mocha_run_tests:
+  :initial_commit: 2018-04-09
+  :age_in_days: 16
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: mocha_run_tests
+    category: 
+    description: Run Mocha Tests from within fastlane
+    details: Leverages mocha to run tests for both iOS and Android Applications from
+      within fastlane
+  :sha: e9075c8c699e6e0c5c475053305e9da7955ca9a53f23a20059f70ff955edd418
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 1
+  :github_contributors: 0
+fastlane-plugin-promo_code:
+  :initial_commit: 2018-04-24
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: promo_code
+    category: 
+    description: promo_code
+    details: A Fastlane plugin that create and get ITC promo code
+  :sha: ce9bcf08fdf066301b766dda50d7ca4efde3792a0518c8120e1648c52d52463d
+  :github_stars: 1
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xcodegen:
+  :initial_commit: 2018-04-25
+  :age_in_days: 0
+  :readme_score: 100
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xcodegen
+    category: 
+    description: Runs `xcodegen` for the project
+    details: "\\n"
+  :sha: d6e5ad01bd625a08094d786a672304996e728ef2f7885afa98c4208040445d2d
+  :github_stars: 0
+  :github_subscribers: 10
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

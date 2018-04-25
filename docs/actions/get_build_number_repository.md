@@ -11,9 +11,7 @@ Get the build number from the current repository
 
 
 
-> This action will get the **build number** according to what the SCM HEAD reports.
-Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision) and git (uses short hash) and mercurial (uses short hash or revision number).
-There is an option, `:use_hg_revision_number`, which allows to use mercurial revision number instead of hash.
+> This action will get the **build number** according to what the SCM HEAD reports.<br>Currently supported SCMs are svn (uses root revision), git-svn (uses svn revision), git (uses short hash) and mercurial (uses short hash or revision number).<br>There is an option, `:use_hg_revision_number`, which allows to use mercurial revision number instead of hash.
 
 
 get_build_number_repository ||

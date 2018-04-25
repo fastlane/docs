@@ -11,7 +11,7 @@ Allows remote command execution using ssh
 
 
 
-> Lets you execute remote commands via ssh using username/password or ssh-agent. If one of the commands in command-array returns non 0 - it fails.
+> Lets you execute remote commands via ssh using username/password or ssh-agent. If one of the commands in command-array returns non 0, it fails.
 
 
 ssh ||

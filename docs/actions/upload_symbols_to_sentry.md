@@ -8,12 +8,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Upload dSYM symbolication files to Sentry
 
-> Please use the `sentry` plugin instead.
-Install using `fastlane add_plugin sentry`.
-Replace `upload_symbols_to_sentry` with `sentry_upload_dsym`
+> Please use the `sentry` plugin instead.<br>Install using `fastlane add_plugin sentry`.<br>Replace `upload_symbols_to_sentry(...)` with `sentry_upload_dsym(...)`.
 
 
-> This action allows you to upload symbolication files to Sentry. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode
+> This action allows you to upload symbolication files to Sentry. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode.
 
 
 upload_symbols_to_sentry ||

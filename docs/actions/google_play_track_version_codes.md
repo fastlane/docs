@@ -11,7 +11,7 @@ Retrieves version codes for a Google Play track
 
 
 
-> More information: https://docs.fastlane.tools/actions/supply/
+> More information: [https://docs.fastlane.tools/actions/supply/](https://docs.fastlane.tools/actions/supply/)
 
 
 google_play_track_version_codes ||

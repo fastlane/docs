@@ -11,8 +11,7 @@ Upload a new build to [DeployGate](https://deploygate.com/)
 
 
 
-> You can retrieve your username and API token on [your settings page](https://deploygate.com/settings)
-More information about the available options can be found in the [DeployGate Push API document](https://deploygate.com/docs/api).
+> You can retrieve your username and API token on [your settings page](https://deploygate.com/settings).<br>More information about the available options can be found in the [DeployGate Push API document](https://deploygate.com/docs/api).
 
 
 deploygate ||

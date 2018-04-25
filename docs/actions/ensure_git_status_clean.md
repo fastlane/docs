@@ -11,11 +11,7 @@ Raises an exception if there are uncommitted git changes
 
 
 
-> A sanity check to make sure you are working in a repo that is clean. Especially
-useful to put at the beginning of your Fastfile in the `before_all` block, if
-some of your other actions will touch your filesystem, do things to your git repo,
-or just as a general reminder to save your work. Also needed as a prerequisite for
-some other actions like `reset_git_repo`.
+> A sanity check to make sure you are working in a repo that is clean.<br>Especially useful to put at the beginning of your Fastfile in the `before_all` block, if some of your other actions will touch your filesystem, do things to your git repo, or just as a general reminder to save your work.<br>Also needed as a prerequisite for some other actions like `reset_git_repo`.
 
 
 ensure_git_status_clean ||

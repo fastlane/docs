@@ -11,8 +11,7 @@ Verifies the minimum fastlane version required
 
 
 
-> Add this to your `Fastfile` to require a certain version of _fastlane_.
-Use it if you use an action that just recently came out and you need it.
+> Add this to your `Fastfile` to require a certain version of _fastlane_.<br>Use it if you use an action that just recently came out and you need it.
 
 
 min_fastlane_version ||

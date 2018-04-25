@@ -11,7 +11,7 @@ Update Xcode Development Team ID
 
 
 
-> This action update the Developer Team ID of your Xcode Project.
+> This action updates the Developer Team ID of your Xcode project.
 
 
 update_project_team ||

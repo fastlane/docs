@@ -11,9 +11,7 @@ Verifies that the Xcode installation is properly signed by Apple
 
 
 
-> This action was implemented after the recent Xcode attack to make sure
-you're not using a hacked Xcode installation.
-http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/
+> This action was implemented after the recent Xcode attack to make sure you're not using a [hacked Xcode installation](http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/).
 
 
 verify_xcode ||

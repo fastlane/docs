@@ -11,7 +11,7 @@ Delete keychains and remove them from the search list
 
 
 
-> Keychains can be deleted after being creating with `create_keychain`
+> Keychains can be deleted after being created with `create_keychain`
 
 
 delete_keychain ||

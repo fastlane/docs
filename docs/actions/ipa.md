@@ -8,10 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Easily build and sign your app using shenzhen
 
-> You are using legacy `shenzhen` to build your app, which will be removed soon!
-It is recommended to upgrade to _gym_
-To do so, just replace `ipa(...)` with `gym(...)` in your Fastfile
-To make code signing work, follow https://docs.fastlane.tools/codesigning/xcode-project
+> You are using legacy `shenzhen` to build your app, which will be removed soon!<br>It is recommended to upgrade to _gym_.<br>To do so, just replace `ipa(...)` with `gym(...)` in your Fastfile.<br>To make code signing work, follow [https://docs.fastlane.tools/codesigning/xcode-project](https://docs.fastlane.tools/codesigning/xcode-project).
 
 
 

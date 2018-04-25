@@ -219,6 +219,7 @@ pages:
   - update_fastlane: actions/update_fastlane.md
   - update_icloud_container_identifiers: actions/update_icloud_container_identifiers.md
   - update_info_plist: actions/update_info_plist.md
+  - update_plist: actions/update_plist.md
   - update_project_code_signing: actions/update_project_code_signing.md
   - update_project_provisioning: actions/update_project_provisioning.md
   - update_project_team: actions/update_project_team.md

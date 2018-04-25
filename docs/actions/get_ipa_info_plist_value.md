@@ -11,7 +11,7 @@ Returns a value from Info.plist inside a .ipa file
 
 
 
-> This is useful for introspecting Info.plist files for .ipa files that have already been built.
+> This is useful for introspecting Info.plist files for `.ipa` files that have already been built.
 
 
 get_ipa_info_plist_value ||
