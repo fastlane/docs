@@ -412,12 +412,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="read_podspec"><a name="user-content-read_podspec" href="#read_podspec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>read_podspec</h1>
 <p>Loads a CocoaPods spec as JSON</p>
 <blockquote>
-<p>This can be used for only specifying a version string in your podspec
-- and during your release process you'd read it from the podspec by running
-<code>version = read_podspec['version']</code> at the beginning of your lane
-Loads the specified (or the first found) podspec in the folder as JSON, so that you can inspect its <code>version</code>, <code>files</code> etc. 
-This can be useful when basing your release process on the version string only stored in one place - in the podspec. As one of 
-the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).</p>
+<p>This can be used for only specifying a version string in your podspec - and during your release process you'd read it from the podspec by running <code>version = read_podspec['version']</code> at the beginning of your lane.<br>Loads the specified (or the first found) podspec in the folder as JSON, so that you can inspect its <code>version</code>, <code>files</code> etc.<br>This can be useful when basing your release process on the version string only stored in one place - in the podspec.<br>As one of the first steps you'd read the podspec and its version and the rest of the workflow can use that version string (when e.g. creating a new git tag or a GitHub Release).</p>
 </blockquote>
 <table>
 <thead>

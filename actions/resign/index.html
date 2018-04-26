@@ -412,15 +412,15 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="resign"><a name="user-content-resign" href="#resign" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>resign</h1>
 <p>Codesign an existing ipa file</p>
 <blockquote>
-<p>You may provide multiple provisioning profiles if the application contains
-nested applications or app extensions, which need their own provisioning
-profile. You can do so by passing an array of provisiong profile strings or a
-hash that associates provisioning profile values to bundle identifier keys.
-resign(ipa: "path", signing_identity: "identity", provisioning_profile: {
-  "com.example.awesome-app" =&gt; "App.mobileprovision",
-  "com.example.awesome-app.app-extension" =&gt; "Extension.mobileprovision"
-})</p>
+<p>You may provide multiple provisioning profiles if the application contains nested applications or app extensions, which need their own provisioning profile. You can do so by passing an array of provisiong profile strings or a hash that associates provisioning profile values to bundle identifier keys.</p>
 </blockquote>
+<pre><code class="ruby">resign(ipa: &quot;path&quot;, signing_identity: &quot;identity&quot;, provisioning_profile: {
+  &quot;com.example.awesome-app&quot; =&gt; &quot;App.mobileprovision&quot;,
+  &quot;com.example.awesome-app.app-extension&quot; =&gt; &quot;Extension.mobileprovision&quot;
+})
+</code></pre>
+
+<blockquote></blockquote>
 <table>
 <thead>
 <tr>

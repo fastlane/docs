@@ -412,13 +412,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="update_project_provisioning"><a name="user-content-update_project_provisioning" href="#update_project_provisioning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_project_provisioning</h1>
 <p>Update projects code signing settings from your provisioning profile</p>
 <blockquote>
-<p>You should check out the code signing guide before using this action: https://docs.fastlane.tools/codesigning/getting-started/
-This action retrieves a provisioning profile UUID from a provisioning profile (.mobileprovision) to set
-up the xcode projects' code signing settings in <em>.xcodeproj/project.pbxproj
-The <code>target_filter</code> value can be used to only update code signing for specified targets
-The <code>build_configuration</code> value can be used to only update code signing for specified build configurations of the targets passing through the <code>target_filter</code>
-Example Usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles
-Example: `update_project_provisioning(xcodeproj: "..", target_filter: ".</em>WatchKit App.*")</p>
+<p>You should check out the <a href="https://docs.fastlane.tools/codesigning/getting-started/">code signing guide</a> before using this action.<br>This action retrieves a provisioning profile UUID from a provisioning profile (<code>.mobileprovision</code>) to set up the Xcode projects' code signing settings in <code>*.xcodeproj/project.pbxproj</code>.<br>The <code>:target_filter</code> value can be used to only update code signing for the specified targets.<br>The <code>:build_configuration</code> value can be used to only update code signing for the specified build configurations of the targets passing through the <code>:target_filter</code>.<br>Example usage is the WatchKit Extension or WatchKit App, where you need separate provisioning profiles.<br>Example: <code>update_project_provisioning(xcodeproj: "..", target_filter: ".*WatchKit App.*")</code>.</p>
 </blockquote>
 <table>
 <thead>

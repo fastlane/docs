@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>download_dsyms - fastlane docs</title>
+  <title>update_plist - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "download_dsyms";
-    var mkdocs_page_input_path = "actions/download_dsyms.md";
-    var mkdocs_page_url = "/actions/download_dsyms/";
+    var mkdocs_page_name = "update_plist";
+    var mkdocs_page_input_path = "actions/update_plist.md";
+    var mkdocs_page_url = "/actions/update_plist/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -371,14 +371,14 @@
         
       
     
-    <li>download_dsyms</li>
+    <li>update_plist</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/download_dsyms.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/update_plist.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -406,26 +406,18 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/download_dsyms.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_plist.rb
 -->
 
-<h1 id="download_dsyms"><a name="user-content-download_dsyms" href="#download_dsyms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>download_dsyms</h1>
-<p>Download dSYM files from Apple iTunes Connect for Bitcode apps</p>
+<h1 id="update_plist"><a name="user-content-update_plist" href="#update_plist" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_plist</h1>
+<p>Update a plist file</p>
 <blockquote>
-<p>This action downloads dSYM files from Apple iTunes Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.</p>
+<p>This action allows you to modify any <code>plist</code> file.</p>
 </blockquote>
-<pre><code class="ruby">lane :refresh_dsyms do
-  download_dsyms                  # Download dSYM files from iTC
-  upload_symbols_to_crashlytics   # Upload them to Crashlytics
-  clean_build_artifacts           # Delete the local dSYM files
-end
-</code></pre>
-
-<blockquote></blockquote>
 <table>
 <thead>
 <tr>
-<th>download_dsyms</th>
+<th>update_plist</th>
 <th></th>
 </tr>
 </thead>
@@ -436,15 +428,18 @@ end
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx</td>
+<td>@rishabhtayal</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
-<pre><code class="ruby">download_dsyms
-</code></pre>
-
-<pre><code class="ruby">download_dsyms(version: &quot;1.0.0&quot;, build_number: &quot;345&quot;)
+<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<pre><code class="ruby">update_plist( # Advanced processing: find URL scheme for particular key and replace value
+  plist_path: &quot;path/to/Info.plist&quot;,
+  block: proc do |plist|
+    urlScheme = plist[&quot;CFBundleURLTypes&quot;].find{|scheme| scheme[&quot;CFBundleURLName&quot;] == &quot;com.acme.default-url-handler&quot;}
+    urlScheme[:CFBundleURLSchemes] = [&quot;acme-production&quot;]
+  end
+)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -458,43 +453,13 @@ end
 </thead>
 <tbody>
 <tr>
-<td><code>username</code></td>
-<td>Your Apple ID Username for iTunes Connect</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>app_identifier</code></td>
-<td>The bundle identifier of your app</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>team_id</code></td>
-<td>The ID of your iTunes Connect team if you're in multiple teams</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>team_name</code></td>
-<td>The name of your iTunes Connect team if you're in multiple teams</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>platform</code></td>
-<td>The app platform for dSYMs you wish to download (ios, appletvos)</td>
-<td><code>:ios</code></td>
-</tr>
-<tr>
-<td><code>version</code></td>
-<td>The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs</td>
+<td><code>plist_path</code></td>
+<td>Path to plist file</td>
 <td></td>
 </tr>
 <tr>
-<td><code>build_number</code></td>
-<td>The app build_number for dSYMs you wish to download</td>
-<td></td>
-</tr>
-<tr>
-<td><code>output_directory</code></td>
-<td>Where to save the download dSYMs, defaults to the current path</td>
+<td><code>block</code></td>
+<td>A block to process plist with custom logic</td>
 <td></td>
 </tr>
 </tbody>
@@ -502,10 +467,10 @@ end
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action download_dsyms
+<pre><code class="no-highlight">fastlane action update_plist
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/download_dsyms.rb" target="_blank">View source code</a></p>
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_plist.rb" target="_blank">View source code</a></p>
 <hr />
 
 <p><a href="/actions"><b>Back to actions</b></a></p>
@@ -516,10 +481,10 @@ To show the documentation in your terminal, run</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../dsym_zip/" class="btn btn-neutral float-right" title="dsym_zip">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../update_project_code_signing/" class="btn btn-neutral float-right" title="update_project_code_signing">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../download/" class="btn btn-neutral" title="download"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../update_info_plist/" class="btn btn-neutral" title="update_info_plist"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -552,10 +517,10 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../download/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../update_info_plist/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../dsym_zip/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../update_project_code_signing/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -412,44 +412,48 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="get_github_release"><a name="user-content-get_github_release" href="#get_github_release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>get_github_release</h1>
 <p>This will verify if a given release version is available on GitHub</p>
 <blockquote>
-<p>This will return all information about a release. For example:
-              {"url"=&gt;"https://api.github.com/repos/KrauseFx/fastlane/releases/1537713",
-                 "assets_url"=&gt;"https://api.github.com/repos/KrauseFx/fastlane/releases/1537713/assets",
-                 "upload_url"=&gt;"https://uploads.github.com/repos/KrauseFx/fastlane/releases/1537713/assets{?name}",
-                 "html_url"=&gt;"https://github.com/fastlane/fastlane/releases/tag/1.8.0",
-                 "id"=&gt;1537713,
-                 "tag_name"=&gt;"1.8.0",
-                 "target_commitish"=&gt;"master",
-                 "name"=&gt;"1.8.0 Switch Lanes &amp; Pass Parameters",
-                 "draft"=&gt;false,
-                 "author"=&gt;
-                  {"login"=&gt;"KrauseFx",
-                   "id"=&gt;869950,
-                   "avatar_url"=&gt;"https://avatars.githubusercontent.com/u/869950?v=3",
-                   "gravatar_id"=&gt;"",
-                   "url"=&gt;"https://api.github.com/users/KrauseFx",
-                   "html_url"=&gt;"https://github.com/fastlane",
-                   "followers_url"=&gt;"https://api.github.com/users/KrauseFx/followers",
-                   "following_url"=&gt;"https://api.github.com/users/KrauseFx/following{/other_user}",
-                   "gists_url"=&gt;"https://api.github.com/users/KrauseFx/gists{/gist_id}",
-                   "starred_url"=&gt;"https://api.github.com/users/KrauseFx/starred{/owner}{/repo}",
-                   "subscriptions_url"=&gt;"https://api.github.com/users/KrauseFx/subscriptions",
-                   "organizations_url"=&gt;"https://api.github.com/users/KrauseFx/orgs",
-                   "repos_url"=&gt;"https://api.github.com/users/KrauseFx/repos",
-                   "events_url"=&gt;"https://api.github.com/users/KrauseFx/events{/privacy}",
-                   "received_events_url"=&gt;"https://api.github.com/users/KrauseFx/received_events",
-                   "type"=&gt;"User",
-                   "site_admin"=&gt;false},
-                 "prerelease"=&gt;false,
-                 "created_at"=&gt;"2015-07-14T23:33:01Z",
-                 "published_at"=&gt;"2015-07-14T23:44:10Z",
-                 "assets"=&gt;[],
-                 "tarball_url"=&gt;"https://api.github.com/repos/KrauseFx/fastlane/tarball/1.8.0",
-                 "zipball_url"=&gt;"https://api.github.com/repos/KrauseFx/fastlane/zipball/1.8.0",
-                 "body"=&gt; ...Markdown...
-                "This is one of the biggest updates of <em>fastlane</em> yet"
-              }</p>
+<p>This will return all information about a release. For example:</p>
 </blockquote>
+<pre><code class="no-highlight">{
+  &quot;url&quot;=&gt;&quot;https://api.github.com/repos/KrauseFx/fastlane/releases/1537713&quot;,
+   &quot;assets_url&quot;=&gt;&quot;https://api.github.com/repos/KrauseFx/fastlane/releases/1537713/assets&quot;,
+   &quot;upload_url&quot;=&gt;&quot;https://uploads.github.com/repos/KrauseFx/fastlane/releases/1537713/assets{?name}&quot;,
+   &quot;html_url&quot;=&gt;&quot;https://github.com/fastlane/fastlane/releases/tag/1.8.0&quot;,
+   &quot;id&quot;=&gt;1537713,
+   &quot;tag_name&quot;=&gt;&quot;1.8.0&quot;,
+   &quot;target_commitish&quot;=&gt;&quot;master&quot;,
+   &quot;name&quot;=&gt;&quot;1.8.0 Switch Lanes &amp; Pass Parameters&quot;,
+   &quot;draft&quot;=&gt;false,
+   &quot;author&quot;=&gt;
+    {&quot;login&quot;=&gt;&quot;KrauseFx&quot;,
+     &quot;id&quot;=&gt;869950,
+     &quot;avatar_url&quot;=&gt;&quot;https://avatars.githubusercontent.com/u/869950?v=3&quot;,
+     &quot;gravatar_id&quot;=&gt;&quot;&quot;,
+     &quot;url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx&quot;,
+     &quot;html_url&quot;=&gt;&quot;https://github.com/fastlane&quot;,
+     &quot;followers_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/followers&quot;,
+     &quot;following_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/following{/other_user}&quot;,
+     &quot;gists_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/gists{/gist_id}&quot;,
+     &quot;starred_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/starred{/owner}{/repo}&quot;,
+     &quot;subscriptions_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/subscriptions&quot;,
+     &quot;organizations_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/orgs&quot;,
+     &quot;repos_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/repos&quot;,
+     &quot;events_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/events{/privacy}&quot;,
+     &quot;received_events_url&quot;=&gt;&quot;https://api.github.com/users/KrauseFx/received_events&quot;,
+     &quot;type&quot;=&gt;&quot;User&quot;,
+     &quot;site_admin&quot;=&gt;false},
+   &quot;prerelease&quot;=&gt;false,
+   &quot;created_at&quot;=&gt;&quot;2015-07-14T23:33:01Z&quot;,
+   &quot;published_at&quot;=&gt;&quot;2015-07-14T23:44:10Z&quot;,
+   &quot;assets&quot;=&gt;[],
+   &quot;tarball_url&quot;=&gt;&quot;https://api.github.com/repos/KrauseFx/fastlane/tarball/1.8.0&quot;,
+   &quot;zipball_url&quot;=&gt;&quot;https://api.github.com/repos/KrauseFx/fastlane/zipball/1.8.0&quot;,
+   &quot;body&quot;=&gt; ...Markdown...
+  &quot;This is one of the biggest updates of _fastlane_ yet&quot;
+}
+</code></pre>
+
+<blockquote></blockquote>
 <table>
 <thead>
 <tr>

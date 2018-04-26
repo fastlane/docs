@@ -412,16 +412,15 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="update_fastlane"><a name="user-content-update_fastlane" href="#update_fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_fastlane</h1>
 <p>Makes sure fastlane-tools are up-to-date when running fastlane</p>
 <blockquote>
-<p>This action will update fastlane to the most recent version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.
-If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in <code>sudo</code> mode.
-The simplest possible fix for this is putting the following lines into your <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
+<p>This action will update fastlane to the most recent version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.<br><br>If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in <code>sudo</code> mode.<br><br>The simplest possible fix for this is putting the following lines into your <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
 </blockquote>
 <pre><code class="bash">export GEM_HOME=~/.gems
 export PATH=$PATH:~/.gems/bin
 </code></pre>
 
-<p>After the above changes, restart your terminal, then run <code>mkdir $GEM_HOME</code> to create the new gem directory. After this, you're good to go!
-Recommended usage of the <code>update_fastlane</code> action is at the top inside of the <code>before_all</code> block, before running any other action</p>
+<blockquote>
+<p>After the above changes, restart your terminal, then run <code>mkdir $GEM_HOME</code> to create the new gem directory. After this, you're good to go!<br><br>Recommended usage of the <code>update_fastlane</code> action is at the top inside of the <code>before_all</code> block, before running any other action.</p>
+</blockquote>
 <table>
 <thead>
 <tr>

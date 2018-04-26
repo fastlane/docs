@@ -412,8 +412,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="copy_artifacts"><a name="user-content-copy_artifacts" href="#copy_artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>copy_artifacts</h1>
 <p>Copy and save your build artifacts (useful when you use reset_git_repo)</p>
 <blockquote>
-<p>This action copies artifacts to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your <code>.ipa</code>s, <code>.dSYM.zip</code>s, <code>.mobileprovision</code>s, <code>.cert</code>s
-Make sure your target_path is gitignored, and if you use <code>reset_git_repo</code>, make sure the artifacts are added to the exclude list</p>
+<p>This action copies artifacts to a target directory. It's useful if you have a CI that will pick up these artifacts and attach them to the build. Useful e.g. for storing your <code>.ipa</code>s, <code>.dSYM.zip</code>s, <code>.mobileprovision</code>s, <code>.cert</code>s.<br>Make sure your <code>:target_path</code> is ignored from git, and if you use <code>reset_git_repo</code>, make sure the artifacts are added to the exclude list.</p>
 </blockquote>
 <table>
 <thead>
