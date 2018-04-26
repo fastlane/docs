@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Shows a macOS notification - use `notification` instead
 
-> It's recommended to use the new 'notification' method instead of 'notify'
+> It's recommended to use the new `notification` action instead of `notify`
 
 
 

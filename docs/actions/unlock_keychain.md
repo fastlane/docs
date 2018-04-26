@@ -11,8 +11,7 @@ Unlock a keychain
 
 
 
-> Unlocks the given keychain file and adds it to the keychain search list
-Keychains can be replaced with `add_to_search_list: :replace`
+> Unlocks the given keychain file and adds it to the keychain search list.<br>Keychains can be replaced with `add_to_search_list: :replace`.
 
 
 unlock_keychain ||

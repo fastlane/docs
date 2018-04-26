@@ -138,6 +138,7 @@ Key | Description | Default
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `filename` | The filename of certificate to store | 
   `output_path` | The path to a directory in which all certificates and private keys should be stored | `.`
   `keychain_path` | Path to a custom keychain | [*](#parameters-legend-dynamic)
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 

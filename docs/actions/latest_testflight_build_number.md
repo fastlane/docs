@@ -11,8 +11,7 @@ Fetches most recent build number from TestFlight
 
 
 
-> Provides a way to have increment_build_number be based on the latest build you uploaded to iTC.
-Fetches most recent build number from TestFlight based on the version number. Provides a way to have `increment_build_number` be based on the latest build you uploaded to iTC.
+> Provides a way to have `increment_build_number` be based on the latest build you uploaded to iTC.<br>Fetches the most recent build number from TestFlight based on the version number. Provides a way to have `increment_build_number` be based on the latest build you uploaded to iTC.
 
 
 latest_testflight_build_number ||

@@ -11,8 +11,7 @@ Import another Fastfile from a remote git repository to use its lanes
 
 
 
-> This is useful if you have shared lanes across multiple apps and you want to store the Fastfile
-in a remote git repository.
+> This is useful if you have shared lanes across multiple apps and you want to store the Fastfile in a remote git repository.
 
 
 import_from_git ||

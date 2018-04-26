@@ -11,7 +11,7 @@ Get the build number of your project
 
 
 
-> This action will return the current build number set on your project. You first have to set up your Xcode project, if you haven't done it already: https://developer.apple.com/library/ios/qa/qa1827/_index.html
+> This action will return the current build number set on your project.<br>You first have to set up your Xcode project, if you haven't done it already: [https://developer.apple.com/library/ios/qa/qa1827/_index.html](https://developer.apple.com/library/ios/qa/qa1827/_index.html).
 
 
 get_build_number ||

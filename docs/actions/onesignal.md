@@ -11,7 +11,7 @@ Create a new OneSignal application
 
 
 
-> You can use this action to automatically create a OneSignal application. You can also upload a .p12 with password, a GCM key, or both
+> You can use this action to automatically create a OneSignal application. You can also upload a `.p12` with password, a GCM key, or both.
 
 
 onesignal ||

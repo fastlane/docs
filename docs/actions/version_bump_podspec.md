@@ -11,10 +11,7 @@ Increment or set the version in a podspec file
 
 
 
-> You can use this action to manipulate any 'version' variable contained in a ruby file.
-For example, you can use it to bump the version of a cocoapods' podspec file.
-It also supports versions that are not semantic: 1.4.14.4.1
-For such versions there is an option to change appendix (4.1)
+> You can use this action to manipulate any 'version' variable contained in a ruby file.<br>For example, you can use it to bump the version of a CocoaPods' podspec file.<br>It also supports versions that are not semantic: `1.4.14.4.1`.<br>For such versions, there is an option to change the appendix (e.g. `4.1`).
 
 
 version_bump_podspec ||

@@ -11,7 +11,7 @@ Send a success/error message to ChatWork
 
 
 
-> Information on how to obtain an API token: http://developer.chatwork.com/ja/authenticate.html
+> Information on how to obtain an API token: [http://developer.chatwork.com/ja/authenticate.html](http://developer.chatwork.com/ja/authenticate.html)
 
 
 chatwork ||

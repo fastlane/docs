@@ -11,9 +11,7 @@ Call a GitHub API endpoint and get the resulting JSON response
 
 
 
-> Calls any GitHub API endpoint. You must provide your GitHub Personal token (get one from https://github.com/settings/tokens/new).
-          Out parameters provide the status code and the full response JSON if valid, otherwise the raw response body.
-          Documentation: https://developer.github.com/v3
+> Calls any GitHub API endpoint. You must provide your GitHub Personal token (get one from [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new)).<br>Out parameters provide the status code and the full response JSON if valid, otherwise the raw response body.<br>Documentation: [https://developer.github.com/v3](https://developer.github.com/v3).
 
 
 github_api ||

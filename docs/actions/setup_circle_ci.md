@@ -14,7 +14,8 @@ Setup the keychain and match to work with CircleCI
 > - Creates a new temporary keychain for use with match
 - Switches match to `readonly` mode to not create new profiles/cert on CI
 - Sets up log and test result paths to be easily collectible
-This action helps with CircleCI integration, add this to the top of your Fastfile if you use CircleCI
+>
+This action helps with CircleCI integration. Add this to the top of your Fastfile if you use CircleCI.
 
 
 setup_circle_ci ||

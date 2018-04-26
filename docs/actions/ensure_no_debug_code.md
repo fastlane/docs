@@ -11,9 +11,7 @@ Ensures the given text is nowhere in the code base
 
 
 
-> You don't want any debug code to slip into production. This can be used
-to check if there is any debug code still in your code base or if you have
-things like // TO DO or similar
+> You don't want any debug code to slip into production.<br>This can be used to check if there is any debug code still in your codebase or if you have things like `// TO DO` or similar.
 
 
 ensure_no_debug_code ||

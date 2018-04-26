@@ -11,7 +11,7 @@ This will stop uploading the information which actions were run
 
 
 
-> By default, fastlane will track what actions are being used No personal/sensitive information is recorded. Learn more at https://docs.fastlane.tools/#metrics Add `opt_out_usage` at the top of your Fastfile to disable metrics collection
+> By default, _fastlane_ will track what actions are being used. No personal/sensitive information is recorded.<br>Learn more at [https://docs.fastlane.tools/#metrics](https://docs.fastlane.tools/#metrics).<br>Add `opt_out_usage` at the top of your Fastfile to disable metrics collection.
 
 
 opt_out_usage ||

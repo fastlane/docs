@@ -11,7 +11,7 @@ Upload a new build to Tryouts
 
 
 
-> More information http://tryouts.readthedocs.org/en/latest/releases.html#create-release
+> More information: [http://tryouts.readthedocs.org/en/latest/releases.html#create-release](http://tryouts.readthedocs.org/en/latest/releases.html#create-release)
 
 
 tryouts ||

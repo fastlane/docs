@@ -11,8 +11,8 @@ Download dSYM files from Apple iTunes Connect for Bitcode apps
 
 
 
-> This action downloads dSYM files from Apple iTunes Connect after
-the ipa got re-compiled by Apple. Useful if you have Bitcode enabled
+> This action downloads dSYM files from Apple iTunes Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.
+
 ```ruby
 lane :refresh_dsyms do
   download_dsyms                  # Download dSYM files from iTC
@@ -20,6 +20,7 @@ lane :refresh_dsyms do
   clean_build_artifacts           # Delete the local dSYM files
 end
 ```
+>
 
 
 download_dsyms ||
