@@ -542,6 +542,12 @@ irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manu
 => "/var/folders/0j/29ytx6wx0fg86sznfb4mqdph0000gn/T/d20170314-14350-11hmdro"
 ```
 
+The above example checks out the `master` branch by default. A common _match_ pattern is to create a separate branch per each developer team (the name of the branch being the team identifier). You can optionally pass in the branch name as a parameter to the `clone` method:
+
+```ruby
+irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manual_password: manual_password, branch: 'ABCDE12345')
+```
+
 The directory beginning with `/var/folders` contains the decrypted git repo. Modify it as needed.
 
 If you are updating a `.p12` file, ensure it's exported from the keychain without a password, since _match_ doesn't support importing private keys with a password.
@@ -556,6 +562,11 @@ In the Ruby console, call `GitHelper.commit_changes`, passing in the commit mess
 
 ```ruby
 irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url)
+```
+Again, pass in the branch name if your changes are not on `master`:
+
+```ruby
+irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url, 'ABCDE12345')
 ```
 
 Your changes will be encrypted, committed, and pushed.
