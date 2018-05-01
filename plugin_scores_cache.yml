@@ -130,7 +130,7 @@ fastlane-plugin-update_provisioning_profile_specifier:
   :github_contributors: 2
 fastlane-plugin-appicon:
   :initial_commit: 2016-07-01
-  :age_in_days: 604
+  :age_in_days: 669
   :readme_score: 100
   :tests: 0
   :actions:
@@ -145,12 +145,12 @@ fastlane-plugin-appicon:
     description: Generate required icon sizes and iconset from a master application
       icon
     details: 
-  :sha: 3255962f0ab5d6f38ccb98a361384172f6adf2e3ae97fb974dbebcc59038dfb1
-  :github_stars: 194
+  :sha: cec243fa2de67308651fa76786a0da3f57e8954c57e7a202374343da219f126c
+  :github_stars: 205
   :github_subscribers: 7
   :github_issues: 10
-  :github_forks: 15
-  :github_contributors: 14
+  :github_forks: 19
+  :github_contributors: 0
 fastlane-plugin-badge:
   :initial_commit: 2016-12-16
   :age_in_days: 480
@@ -374,7 +374,7 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 511
+  :age_in_days: 568
   :readme_score: 100
   :tests: 1
   :actions:
@@ -388,12 +388,12 @@ fastlane-plugin-aws_device_farm:
     category: 
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: 0f50a2e614b6fe7c2468de26abddd27938a0bbe74451a4233ed3b707c3afb4ac
-  :github_stars: 44
+  :sha: d983392161dfd40f0e8defb121ffcacc72cd23848fd27896cca36a29530864c7
+  :github_stars: 47
   :github_subscribers: 5
   :github_issues: 1
   :github_forks: 13
-  :github_contributors: 8
+  :github_contributors: 0
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
   :age_in_days: 497
@@ -4508,7 +4508,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 12
+  :age_in_days: 18
   :readme_score: 50
   :tests: 4
   :actions:
@@ -4517,8 +4517,8 @@ fastlane-plugin-flutter:
     category: 
     description: Flutter actions plugin for Fastlane
     details: 
-  :sha: 206155798f07f59393086aafefb207e793430d629ad6ea1f8df68550bd217ad5
-  :github_stars: 0
+  :sha: bd727f5029cd4a002585a5af511f3d22fef5b916d76812d6a825b73df0c21328
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0

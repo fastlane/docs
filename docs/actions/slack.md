@@ -69,6 +69,7 @@ Key | Description | Default
   `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments | `{}`
   `success` | Was this build successful? (true/false) | `true`
   `fail_on_error` | Should an error sending the slack notification cause a failure? (true/false) | `true`
+  `link_names` | Find and link channel names and usernames (true/false) | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

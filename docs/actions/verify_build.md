@@ -45,6 +45,7 @@ Key | Description | Default
   `app_name` | Required app name | 
   `bundle_identifier` | Required bundle identifier | 
   `ipa_path` | Explicitly set the ipa path | 
+  `build_path` | Explicitly set the ipa, app or xcarchive path | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
