@@ -440,6 +440,159 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 )
 </code></pre>
 
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workspace</code></td>
+<td>Path the workspace file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>project</code></td>
+<td>Path the project file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>The project's scheme. Make sure it's marked as <code>Shared</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>configuration</code></td>
+<td>The configuration used when building the app. Defaults to 'Release'</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source_directory</code></td>
+<td>The path to project's root directory</td>
+<td></td>
+</tr>
+<tr>
+<td><code>derived_data_path</code></td>
+<td>The directory where build products and other derived data will go</td>
+<td></td>
+</tr>
+<tr>
+<td><code>output_directory</code></td>
+<td>The directory in which all reports will be stored</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>html_report</code></td>
+<td>Produce an HTML report</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>markdown_report</code></td>
+<td>Produce a Markdown report</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>json_report</code></td>
+<td>Produce a JSON report</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>minimum_coverage_percentage</code></td>
+<td>Raise exception if overall coverage percentage is under this value (ie. 75)</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>slack_url</code></td>
+<td>Create an Incoming WebHook for your Slack group to post results there</td>
+<td></td>
+</tr>
+<tr>
+<td><code>slack_channel</code></td>
+<td>#channel or @username</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_slack</code></td>
+<td>Don't publish to slack, even when an URL is given</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>slack_username</code></td>
+<td>The username which is used to publish to slack</td>
+<td><code>xcov</code></td>
+</tr>
+<tr>
+<td><code>slack_message</code></td>
+<td>The message which is published together with a successful report</td>
+<td><code>Your *xcov* coverage report</code></td>
+</tr>
+<tr>
+<td><code>ignore_file_path</code></td>
+<td>Relative or absolute path to the file containing the list of ignored files</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>include_test_targets</code></td>
+<td>Enables coverage reports for .xctest targets</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>exclude_targets</code></td>
+<td>Comma separated list of targets to exclude from coverage report</td>
+<td></td>
+</tr>
+<tr>
+<td><code>include_targets</code></td>
+<td>Comma separated list of targets to include in coverage report. If specified then exlude_targets will be ignored</td>
+<td></td>
+</tr>
+<tr>
+<td><code>only_project_targets</code></td>
+<td>Display the coverage only for main project targets (e.g. skip Pods targets)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>disable_coveralls</code></td>
+<td>Add this flag to disable automatic submission to Coveralls</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>coveralls_service_name</code></td>
+<td>Name of the CI service compatible with Coveralls. i.e. travis-ci. This option must be defined along with coveralls_service_job_id</td>
+<td></td>
+</tr>
+<tr>
+<td><code>coveralls_service_job_id</code></td>
+<td>Name of the current job running on a CI service compatible with Coveralls. This option must be defined along with coveralls_service_name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>coveralls_repo_token</code></td>
+<td>Repository token to be used by integrations not compatible with Coveralls</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcconfig</code></td>
+<td>Use an extra XCCONFIG file to build your app</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ideFoundationPath</code></td>
+<td>Absolute path to the IDEFoundation.framework binary</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>legacy_support</code></td>
+<td>Whether xcov should parse a xccoverage file instead on xccovreport</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action xcov

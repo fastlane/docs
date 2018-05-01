@@ -725,6 +725,16 @@ run_tests(
 <td></td>
 </tr>
 <tr>
+<td><code>max_concurrent_simulators</code></td>
+<td>Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations</td>
+<td></td>
+</tr>
+<tr>
+<td><code>disable_concurrent_testing</code></td>
+<td>Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>test_without_building</code></td>
 <td>Test without building, requires a derived data path</td>
 <td></td>
@@ -743,6 +753,11 @@ run_tests(
 <td><code>derived_data_path</code></td>
 <td>The directory where build products and other derived data will go</td>
 <td></td>
+</tr>
+<tr>
+<td><code>should_zip_build_products</code></td>
+<td>Should zip the derived data build products and place in output path?</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>result_bundle</code></td>
