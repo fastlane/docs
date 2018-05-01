@@ -47,6 +47,7 @@ Key | Description | Default
   `text` | The text that will be displayed to the user | `Please enter some text: `
   `ci_input` | The default text that will be used when being executed on a CI service | `''`
   `boolean` | Is that a boolean question (yes/no)? This will add (y/n) at the end | `false`
+  `secure_text` | Is that a secure text (yes/no)? | `false`
   `multi_line_end_keyword` | Enable multi-line inputs by providing an end text (e.g. 'END') which will stop the user input | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
