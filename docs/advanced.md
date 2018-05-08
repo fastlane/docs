@@ -287,7 +287,7 @@ You should import the other `Fastfile` on the top above your lane declarations. 
 
 # Using fastlane_require
 
-If using a "third party" gem, it is recommend to use `fastlane_require` in your `Fastfile` instead of `require`. `fastlane_require` will:
+If you're using a third party gem, it is recommended to use `fastlane_require` in your `Fastfile` instead of `require`. `fastlane_require` will:
 
 - Verify the gem is installed
 - Show installation instructions if not installed
