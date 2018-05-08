@@ -42,7 +42,47 @@ Run `fastlane <laneName>` in your terminal to execute _fastlane_.
 
 🎉
 
+## Defining Lanes
 
+Lanes are defined with functions that end with `Lane` within the `class Fastfile: LaneFile`.
+
+```swift
+class Fastfile: LaneFile {
+    func testLane() {
+        desc("This is a lane")
+    }
+
+    func helper() {
+        // This is not a lane but can be called from a lane
+    }
+}
+```
+
+## Passing Parameters
+
+To pass parameters from the command line to your lane, use the following syntax:
+
+```no-highlight
+fastlane [lane] key:value key2:value2
+
+fastlane deploy submit:false build_number:24
+```
+
+To access those values, change your lane declaration to also include `withOptions options:[String: String]?`
+
+```swift
+class Fastfile: LaneFile {
+    func deployLane(withOptions options:[String: String]?) {
+        // ...
+        if let submit = options?["submit"], submit == "true" {
+            // Only when submit is true
+        }
+        // ...
+        incrementBuildNumber(buildNumber: options?["build_number"])
+        // ...
+    }
+}
+```
 
 ## Known Limitations
 
