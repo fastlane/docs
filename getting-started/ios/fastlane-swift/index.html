@@ -433,6 +433,40 @@
 <p>Run <code>fastlane &lt;laneName&gt;</code> in your terminal to execute <em>fastlane</em>.</p>
 <h3 id="step-4"><a name="user-content-step-4" href="#step-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4</h3>
 <p>🎉</p>
+<h2 id="defining-lanes"><a name="user-content-defining-lanes" href="#defining-lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Defining Lanes</h2>
+<p>Lanes are defined with functions that end with <code>Lane</code> within the <code>class Fastfile: LaneFile</code>.</p>
+<pre><code class="swift">class Fastfile: LaneFile {
+    func testLane() {
+        desc(&quot;This is a lane&quot;)
+    }
+
+    func helper() {
+        // This is not a lane but can be called from a lane
+    }
+}
+</code></pre>
+
+<h2 id="passing-parameters"><a name="user-content-passing-parameters" href="#passing-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passing Parameters</h2>
+<p>To pass parameters from the command line to your lane, use the following syntax:</p>
+<pre><code class="no-highlight">fastlane [lane] key:value key2:value2
+
+fastlane deploy submit:false build_number:24
+</code></pre>
+
+<p>To access those values, change your lane declaration to also include <code>withOptions options:[String: String]?</code></p>
+<pre><code class="swift">class Fastfile: LaneFile {
+    func deployLane(withOptions options:[String: String]?) {
+        // ...
+        if let submit = options?[&quot;submit&quot;], submit == &quot;true&quot; {
+            // Only when submit is true
+        }
+        // ...
+        incrementBuildNumber(buildNumber: options?[&quot;build_number&quot;])
+        // ...
+    }
+}
+</code></pre>
+
 <h2 id="known-limitations"><a name="user-content-known-limitations" href="#known-limitations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Known Limitations</h2>
 <p>Currently, Fastlane.swift does not have support for plugins. This is a work in progress and we will continue to update this doc with the current working condition of each feature as we move from beta to general availability.</p>
 <h2 id="we-would-love-your-feedback"><a name="user-content-we-would-love-your-feedback" href="#we-would-love-your-feedback" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>We Would Love Your Feedback</h2>
