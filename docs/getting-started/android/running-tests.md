@@ -51,21 +51,7 @@ If you want to post test results on Slack, Hipchat or other team chat client, ch
 
 ### Build failures
 
-#### Slack
-
-If you're using Slack, this is already built-into the default `run_tests` action, just provide your Slack URL and the Slack channel:
-
-```ruby
-lane :tests do
-  run_tests(scheme: "MyAppTests",
-            slack_url: "https://hooks.slack.com/services/T03N...",
-            slack_channel: "#channel")
-end
-```
-
-To get the `slack_url`, create an `Incoming WebHook` for your Slack group.
-
-#### Other services
+#### Hipchat
 
 To post a message when _fastlane_ encounters a test or build failure, add the following to your `Fastfile`:
 
