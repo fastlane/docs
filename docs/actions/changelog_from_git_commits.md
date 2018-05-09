@@ -48,6 +48,7 @@ Key | Description | Default
 ----|-------------|--------
   `between` | Array containing two Git revision values between which to collect messages, you mustn't use it with :commits_count key at the same time | 
   `commits_count` | Number of commits to include in changelog, you mustn't use it with :between key at the same time | 
+  `path` | Path of the git repository | `./`
   `pretty` | The format applied to each commit while generating the collected value | `%B`
   `date_format` | The date format applied to each commit while generating the collected value | 
   `ancestry_path` | Whether or not to use ancestry-path param | `false`
