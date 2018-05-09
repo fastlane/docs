@@ -496,17 +496,7 @@ end
 <h2 id="posting-build-results"><a name="user-content-posting-build-results" href="#posting-build-results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Posting build results</h2>
 <p>If you want to post test results on Slack, Hipchat or other team chat client, check out the available <a href="../../../actions/#notifications">fastlane actions</a>.</p>
 <h3 id="build-failures"><a name="user-content-build-failures" href="#build-failures" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build failures</h3>
-<h4 id="slack"><a name="user-content-slack" href="#slack" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Slack</h4>
-<p>If you're using Slack, this is already built-into the default <code>run_tests</code> action, just provide your Slack URL and the Slack channel:</p>
-<pre><code class="ruby">lane :tests do
-  run_tests(scheme: &quot;MyAppTests&quot;,
-            slack_url: &quot;https://hooks.slack.com/services/T03N...&quot;,
-            slack_channel: &quot;#channel&quot;)
-end
-</code></pre>
-
-<p>To get the <code>slack_url</code>, create an <code>Incoming WebHook</code> for your Slack group.</p>
-<h4 id="other-services"><a name="user-content-other-services" href="#other-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other services</h4>
+<h4 id="hipchat"><a name="user-content-hipchat" href="#hipchat" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hipchat</h4>
 <p>To post a message when <em>fastlane</em> encounters a test or build failure, add the following to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">error do |ex|
   hipchat(message: &quot;Tests have failed!&quot;,
@@ -515,6 +505,7 @@ end
 end
 </code></pre>
 
+<h4 id="other-services"><a name="user-content-other-services" href="#other-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other services</h4>
 <p>The above example uses Hipchat, but <em>fastlane</em> supports <a href="../../../actions#notifications">many other services out there</a>. </p>
               
             </div>
