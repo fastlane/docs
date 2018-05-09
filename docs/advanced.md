@@ -285,6 +285,24 @@ This will also automatically import all the local actions from this repo.
 You should import the other `Fastfile` on the top above your lane declarations. When defining a new lane _fastlane_ will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the `override_lane` keyword.
 
 
+# Using fastlane_require
+
+If you're using a third party gem, it is recommended to use `fastlane_require` in your `Fastfile` instead of `require`. `fastlane_require` will:
+
+- Verify the gem is installed
+- Show installation instructions if not installed
+- Require the gem (like `require` does)
+
+## Example
+
+```rb
+fastlane_require 'hike'
+
+lane :release do
+  # Do stuff with hike
+end
+```
+
 # Environment Variables
 
 You can define environment variables in a `.env` or `.env.default` file in the same directory as your `Fastfile`. Environment variables are loaded using [dotenv](https://github.com/bkeepers/dotenv). Here's an example:
