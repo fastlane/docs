@@ -3311,7 +3311,7 @@ fastlane-plugin-pgyer-password:
   :github_contributors: 2
 fastlane-plugin-yafirim:
   :initial_commit: 2017-08-30
-  :age_in_days: 179
+  :age_in_days: 252
   :readme_score: 100
   :tests: 1
   :actions:
@@ -3320,12 +3320,12 @@ fastlane-plugin-yafirim:
     category: 
     description: Yet another fastlane fir.im plugin
     details: A fastlane plugin to help you upload your ipa/apk to fir.im
-  :sha: fe20f80177e6d42e648cdee04dc2052f804d4df4be5a0b8b0d09a954cc8c8217
+  :sha: f4e18dfec03708f9d304e0cdce80fa257b711001fe822f919dab48ba975a6ff8
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-blackberry_mam:
   :initial_commit: 2017-04-26
   :age_in_days: 364
@@ -4304,18 +4304,13 @@ fastlane-plugin-instabug_official:
   :github_contributors: 2
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
-  :age_in_days: 75
+  :age_in_days: 89
   :readme_score: 100
-  :tests: 18
+  :tests: 14
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: upload_google_drive
+    name: upload_to_google_drive
     category: 
-    description: Upload files to Google Drive
-    details: "\\n"
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: google_drive_upload
-    category: deprecated
     description: Upload files to Google Drive
     details: "\\n"
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
@@ -4323,7 +4318,7 @@ fastlane-plugin-google_drive:
     category: 
     description: Create new folder on Google Drive
     details: "\\n"
-  :sha: be74003514d8183c50af16b9ea2df8f69450ecc996fa3f61bb479484a38546ef
+  :sha: ce71fe826a467c8742e81ae2f20e343456e1dd7b6408c3f662c24ed30bc735c6
   :github_stars: 3
   :github_subscribers: 2
   :github_issues: 0
@@ -4609,5 +4604,88 @@ fastlane-plugin-xcodegen:
   :github_stars: 0
   :github_subscribers: 10
   :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xcode_test_reporter:
+  :initial_commit: 2018-05-03
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xcode_test_reporter
+    category: 
+    description: Generates JUnit or HTML report from Xcode `plist` test report files
+    details: The `Xcode Test Reporter` Generates JUnit or HTML report from Xcode `plist`
+      test report files.
+  :sha: c1d6d93b7dc3f85f86aab0bca86ab9d844d972e23d7e51b92c34752bade04eef
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-danger_result:
+  :initial_commit: 2018-05-08
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: danger_result
+    category: 
+    description: Get danger data plugin.
+    details: 
+  :sha: 528d6c69728e5e09e535a148aa703dcab4670c15234d21b1b13de6ad5acc6ddc
+  :github_stars: 1
+  :github_subscribers: 0
+  :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-teak:
+  :initial_commit: 2018-04-23
+  :age_in_days: 16
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: teak_extensions
+    category: 
+    description: Add App Extension
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: teak_sdk
+    category: 
+    description: Download the Teak SDK
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: teak
+    category: 
+    description: Fastlane plugins for the Teak SDK
+    details: A collection of plugins to make your life easier when working with the
+      Teak SDK.
+  :sha: e49730406c9773789bced29cc2b2fdd352680e206e607f361998d0182ea0844a
+  :github_stars: 0
+  :github_subscribers: 3
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-itargetchecker:
+  :initial_commit: 2018-05-06
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: itargetchecker
+    category: 
+    description: Checks the xcodeproj file for targets and points out which files
+      from the project are not present in a certain target.
+    details: Can be used to point out which file from your project is missing from
+      a target. It should be usefull for projects that have multiple targets to make
+      sure all the files from the main target are also present in the other targets.
+  :sha: 55fd6e1758646ece6898f36b0a8322fcae1604655a0008dfb074c5416c9e70e4
+  :github_stars: 1
+  :github_subscribers: 3
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
