@@ -63,5 +63,6 @@ error do |ex|
 end
 ```
 
-The above example uses Hipchat, but _fastlane_ supports [many other services out there](/actions#notifications). 
+#### Other services
 
+The above example uses Hipchat, but _fastlane_ supports [many other services out there](/actions#notifications). 
