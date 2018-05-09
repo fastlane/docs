@@ -377,6 +377,10 @@
           
         
           
+          <li class="toctree-l3"><a href="#using-fastlane_require">Using fastlane_require</a></li>
+          
+        
+          
           <li class="toctree-l3"><a href="#environment-variables">Environment Variables</a></li>
           
         
@@ -775,6 +779,21 @@ end
 <p>This will also automatically import all the local actions from this repo.</p>
 <h2 id="note"><a name="user-content-note" href="#note" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note</h2>
 <p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <em>fastlane</em> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword.</p>
+<h1 id="using-fastlane_require"><a name="user-content-using-fastlane_require" href="#using-fastlane_require" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using fastlane_require</h1>
+<p>If you're using a third party gem, it is recommended to use <code>fastlane_require</code> in your <code>Fastfile</code> instead of <code>require</code>. <code>fastlane_require</code> will:</p>
+<ul>
+<li>Verify the gem is installed</li>
+<li>Show installation instructions if not installed</li>
+<li>Require the gem (like <code>require</code> does)</li>
+</ul>
+<h2 id="example"><a name="user-content-example" href="#example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h2>
+<pre><code class="rb">fastlane_require 'hike'
+
+lane :release do
+  # Do stuff with hike
+end
+</code></pre>
+
 <h1 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h1>
 <p>You can define environment variables in a <code>.env</code> or <code>.env.default</code> file in the same directory as your <code>Fastfile</code>. Environment variables are loaded using <a href="https://github.com/bkeepers/dotenv">dotenv</a>. Here's an example:</p>
 <pre><code class="no-highlight">WORKSPACE=YourApp.xcworkspace
