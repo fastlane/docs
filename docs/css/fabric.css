@@ -2284,6 +2284,19 @@ input[type="checkbox"][disabled] {
   margin-bottom: 24px
 }
 
+@media screen and (max-width: 768px) {
+  .rst-content table.docutils {
+    display: block;
+    overflow-x: scroll;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .rst-content table.docutils code {
+    white-space: normal;
+  }
+}
+
 .wy-table caption,
 .rst-content table.docutils caption,
 .rst-content table.field-list caption {
