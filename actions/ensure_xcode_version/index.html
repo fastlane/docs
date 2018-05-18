@@ -410,9 +410,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="ensure_xcode_version"><a name="user-content-ensure_xcode_version" href="#ensure_xcode_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_xcode_version</h1>
-<p>Ensure the selected Xcode version with xcode-select matches a value</p>
+<p>Ensure the right version of Xcode is used</p>
 <blockquote>
-<p>If building your app requires a specific version of Xcode, you can invoke this command before using gym.<br>For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.</p>
+<p>If building your app requires a specific version of Xcode, you can invoke this command before using gym.<br>For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.<br>You can either manually provide a specific version using <code>version:</code> or you make use of the <code>.xcode-version</code> file.</p>
 </blockquote>
 <table>
 <thead>
@@ -428,7 +428,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@JaviSoto</td>
+<td>@JaviSoto, @KrauseFx</td>
 </tr>
 </tbody>
 </table>

@@ -437,7 +437,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   xcodeproj: &quot;Project.xcodeproj&quot;,
   profile: &quot;./watch_app_store.mobileprovision&quot;, # optional if you use sigh
   target_filter: &quot;.*WatchKit Extension.*&quot;, # matches name or type of a target
-  build_configuration: &quot;Release&quot;
+  build_configuration: &quot;Release&quot;,
+  code_signing_identity: &quot;iPhone Development&quot; # optionally specify the codesigning identity
 )
 </code></pre>
 
@@ -480,6 +481,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>certificate</code></td>
 <td>Path to apple root certificate</td>
 <td><code>/tmp/AppleIncRootCertificate.cer</code></td>
+</tr>
+<tr>
+<td><code>code_signing_identity</code></td>
+<td>Code sign identity for build configuration</td>
+<td></td>
 </tr>
 </tbody>
 </table>

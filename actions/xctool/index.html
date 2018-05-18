@@ -433,17 +433,17 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tbody>
 </table>
 <h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
-<pre><code class="ruby">xctool :test
+<pre><code class="ruby">xctool(:test)
 </code></pre>
 
 <pre><code class="ruby"># If you prefer to have the build configuration stored in the `Fastfile`:
-xctool :test, [
+xctool(:test, [
   &quot;--workspace&quot;, &quot;'AwesomeApp.xcworkspace'&quot;,
   &quot;--scheme&quot;, &quot;'Schema Name'&quot;,
   &quot;--configuration&quot;, &quot;Debug&quot;,
   &quot;--sdk&quot;, &quot;iphonesimulator&quot;,
   &quot;--arch&quot;, &quot;i386&quot;
-].join(&quot; &quot;)
+].join(&quot; &quot;))
 </code></pre>
 
 <p><hr />

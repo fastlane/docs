@@ -463,11 +463,11 @@ disable_automatic_code_signing(
 </code></pre>
 
 <pre><code class="ruby"># Only specific targets
-  disable_automatic_code_signing(
-    path: &quot;demo-project/demo/demo.xcodeproj&quot;,
-    use_automatic_signing: false,
-    targets: [&quot;demo&quot;]
-  )
+disable_automatic_code_signing(
+  path: &quot;demo-project/demo/demo.xcodeproj&quot;,
+  use_automatic_signing: false,
+  targets: [&quot;demo&quot;]
+)
 
 </code></pre>
 

@@ -474,12 +474,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>signing_identity</code></td>
-<td>Code signing identity to use. e.g. "iPhone Distribution: Luka Mirosevic (0123456789)"</td>
+<td>Code signing identity to use. e.g. <code>iPhone Distribution: Luka Mirosevic (0123456789)</code></td>
 <td></td>
 </tr>
 <tr>
 <td><code>entitlements</code></td>
-<td>Path to the entitlement file to use, e.g. "myApp/MyApp.entitlements"</td>
+<td>Path to the entitlement file to use, e.g. <code>myApp/MyApp.entitlements</code></td>
 <td></td>
 </tr>
 <tr>
@@ -489,17 +489,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>version</code></td>
-<td>Version number to force resigned ipa to use.</td>
-<td></td>
-</tr>
-<tr>
-<td>Updates both CFBundleShortVersionString and CFBundleVersion values in Info.plist.</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Applies for main app and all nested apps or extensions</td>
-<td></td>
+<td>Version number to force resigned ipa to use. Updates both <code>CFBundleShortVersionString</code> and <code>CFBundleVersion</code> values in <code>Info.plist</code>. Applies for main app and all nested apps or extensions</td>
 <td></td>
 </tr>
 <tr>
@@ -509,32 +499,27 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>short_version</code></td>
-<td>Short version string to force resigned ipa to use (CFBundleShortVersionString)</td>
+<td>Short version string to force resigned ipa to use (<code>CFBundleShortVersionString</code>)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>bundle_version</code></td>
-<td>Bundle version to force resigned ipa to use (CFBundleVersion)</td>
+<td>Bundle version to force resigned ipa to use (<code>CFBundleVersion</code>)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>bundle_id</code></td>
-<td>Set new bundle ID during resign (CFBundleIdentifier)</td>
+<td>Set new bundle ID during resign (<code>CFBundleIdentifier</code>)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>use_app_entitlements</code></td>
-<td>Extract app bundle codesigning entitlements</td>
-<td></td>
-</tr>
-<tr>
-<td>and combine with entitlements from new provisionin profile</td>
-<td></td>
+<td>Extract app bundle codesigning entitlements and combine with entitlements from new provisionin profile</td>
 <td></td>
 </tr>
 <tr>
 <td><code>keychain_path</code></td>
-<td>Provide a path to a keychain file that should be used by /usr/bin/codesign</td>
+<td>Provide a path to a keychain file that should be used by <code>/usr/bin/codesign</code></td>
 <td></td>
 </tr>
 </tbody>

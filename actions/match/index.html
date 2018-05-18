@@ -682,6 +682,21 @@ fastlane match nuke enterprise
 <pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;&lt;fileYouWantToDecryptPath&gt;&quot; -out &quot;&lt;decryptedFilePath&gt;&quot; -a -d
 </code></pre>
 
+<h4 id="export-distribution-certificate-and-private-key-as-single-p12-file"><a name="user-content-export-distribution-certificate-and-private-key-as-single-p12-file" href="#export-distribution-certificate-and-private-key-as-single-p12-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Export Distribution Certificate and Private Key as Single .p12 File</h4>
+<p><em>match</em> stores the certificate (.cer) and the private key (.p12) files separately. The following steps will repackage the separate certificate and private key into a single .p12 file.</p>
+<p>Decrypt your cert found in certs/<code>&lt;type&gt;</code>/<code>&lt;unique-id&gt;</code>.cer as a pem file</p>
+<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/&lt;type&gt;/&lt;unique-id&gt;.cer&quot; -out &quot;cert.dem&quot; -a -d
+openssl x509 -inform der -in cert.der -out cert.pem
+</code></pre>
+
+<p>Decrypt your private key found in certs/<code>&lt;type&gt;</code>/<code>&lt;unique-id&gt;</code>.p12 as a pem file</p>
+<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/distribution/&lt;unique-id&gt;.p12&quot; -out &quot;key.pem&quot; -a -d
+</code></pre>
+
+<p>Generate an encrypted p12 file with the same or new password</p>
+<pre><code class="no-highlight">openssl pkcs12 -export -out &quot;cert.p12&quot; -inkey &quot;key.pem' -in &quot;cert.pem&quot; -password pass:&lt;password&gt;
+</code></pre>
+
 <h2 id="is-this-secure"><a name="user-content-is-this-secure" href="#is-this-secure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Is this secure?</h2>
 <p>Both your keys and provisioning profiles are encrypted using OpenSSL using a passphrase.</p>
 <p>Storing your private keys in a Git repo may sound off-putting at first. We did an in-depth analysis of potential security issues and came to the following conclusions:</p>
