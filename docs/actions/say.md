@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 1 Example
 
 ```ruby
-say "I can speak"
+say("I can speak")
 ```
 
 

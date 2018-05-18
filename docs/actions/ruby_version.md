@@ -24,7 +24,7 @@ Author | @sebastianvarela
 ## 1 Example
 
 ```ruby
-ruby_version "2.4.0"
+ruby_version("2.4.0")
 ```
 
 

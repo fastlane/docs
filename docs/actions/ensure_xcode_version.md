@@ -6,18 +6,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # ensure_xcode_version
 
 
-Ensure the selected Xcode version with xcode-select matches a value
+Ensure the right version of Xcode is used
 
 
 
 
-> If building your app requires a specific version of Xcode, you can invoke this command before using gym.<br>For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.
+> If building your app requires a specific version of Xcode, you can invoke this command before using gym.<br>For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.<br>You can either manually provide a specific version using `version: ` or you make use of the `.xcode-version` file.
 
 
 ensure_xcode_version ||
 ---|---
 Supported platforms | ios, mac
-Author | @JaviSoto
+Author | @JaviSoto, @KrauseFx
 
 
 

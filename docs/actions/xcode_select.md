@@ -24,7 +24,7 @@ Author | @dtrenz
 ## 1 Example
 
 ```ruby
-xcode_select "/Applications/Xcode-8.3.2.app"
+xcode_select("/Applications/Xcode-8.3.2.app")
 ```
 
 

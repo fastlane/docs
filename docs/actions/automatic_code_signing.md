@@ -56,11 +56,11 @@ disable_automatic_code_signing(
 
 ```ruby
 # Only specific targets
-  disable_automatic_code_signing(
-    path: "demo-project/demo/demo.xcodeproj",
-    use_automatic_signing: false,
-    targets: ["demo"]
-  )
+disable_automatic_code_signing(
+  path: "demo-project/demo/demo.xcodeproj",
+  use_automatic_signing: false,
+  targets: ["demo"]
+)
 
 ```
 

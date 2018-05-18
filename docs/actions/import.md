@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 1 Example
 
 ```ruby
-import "./path/to/other/Fastfile"
+import("./path/to/other/Fastfile")
 ```
 
 

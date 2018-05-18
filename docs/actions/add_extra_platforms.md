@@ -25,7 +25,7 @@ Author | @lacostej
 
 ```ruby
 add_extra_platforms(
-  platforms: [:windows,:neogeo]
+  platforms: [:windows, :neogeo]
 )
 ```
 

@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 1 Example
 
 ```ruby
-min_fastlane_version "1.50.0"
+min_fastlane_version("1.50.0")
 ```
 
 

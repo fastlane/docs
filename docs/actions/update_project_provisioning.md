@@ -28,7 +28,8 @@ update_project_provisioning(
   xcodeproj: "Project.xcodeproj",
   profile: "./watch_app_store.mobileprovision", # optional if you use sigh
   target_filter: ".*WatchKit Extension.*", # matches name or type of a target
-  build_configuration: "Release"
+  build_configuration: "Release",
+  code_signing_identity: "iPhone Development" # optionally specify the codesigning identity
 )
 ```
 
@@ -46,6 +47,7 @@ Key | Description | Default
   `build_configuration_filter` | Legacy option, use 'target_filter' instead | 
   `build_configuration` | A filter for the build configuration name. Use a standard regex. Applied to all configurations if not specified | 
   `certificate` | Path to apple root certificate | `/tmp/AppleIncRootCertificate.cer`
+  `code_signing_identity` | Code sign identity for build configuration | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
