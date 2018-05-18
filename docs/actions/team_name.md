@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 1 Example
 
 ```ruby
-team_name "Felix Krause"
+team_name("Felix Krause")
 ```
 
 

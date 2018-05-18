@@ -47,6 +47,7 @@ Key | Description | Default
   `build_path` | Specify build/cache directory [default: ./.build] | 
   `package_path` | Change working directory before any other operation | 
   `configuration` | Build with configuration (debug|release) [default: debug] | 
+  `xcpretty_output` | Specifies the output type for xcpretty. eg. 'test', or 'simple' | 
   `verbose` | Increase verbosity of informational output | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

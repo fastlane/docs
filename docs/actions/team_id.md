@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 1 Example
 
 ```ruby
-team_id "Q2CBPK58CA"
+team_id("Q2CBPK58CA")
 ```
 
 

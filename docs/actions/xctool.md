@@ -24,18 +24,18 @@ Author | @KrauseFx
 ## 2 Examples
 
 ```ruby
-xctool :test
+xctool(:test)
 ```
 
 ```ruby
 # If you prefer to have the build configuration stored in the `Fastfile`:
-xctool :test, [
+xctool(:test, [
   "--workspace", "'AwesomeApp.xcworkspace'",
   "--scheme", "'Schema Name'",
   "--configuration", "Debug",
   "--sdk", "iphonesimulator",
   "--arch", "i386"
-].join(" ")
+].join(" "))
 ```
 
 

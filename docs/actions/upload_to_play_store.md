@@ -185,11 +185,11 @@ supply # alias for "upload_to_play_store"
 Key | Description | Default
 ----|-------------|--------
   `package_name` | The package name of the application to use | [*](#parameters-legend-dynamic)
-  `track` | The track of the application to use: production, beta, alpha, internal, rollout | `production`
+  `track` | The track of the application to use. The default available tracks are: production, beta, alpha, internal, rollout | `production`
   `rollout` | The percentage of the user fraction when uploading to the rollout track | 
   `metadata_path` | Path to the directory containing the metadata files | [*](#parameters-legend-dynamic)
-  `key` | [DEPRECATED!] Use --json_key instead - The p12 File used to authenticate with Google | [*](#parameters-legend-dynamic)
-  `issuer` | [DEPRECATED!] Use --json_key instead - The issuer of the p12 file (email address of the service account) | [*](#parameters-legend-dynamic)
+  `key` | **DEPRECATED!** Use `--json_key` instead - The p12 File used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `issuer` | **DEPRECATED!** Use `--json_key` instead - The issuer of the p12 file (email address of the service account) | [*](#parameters-legend-dynamic)
   `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
   `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
   `apk` | Path to the APK file to upload | [*](#parameters-legend-dynamic)
@@ -198,7 +198,7 @@ Key | Description | Default
   `skip_upload_metadata` | Whether to skip uploading metadata | `false`
   `skip_upload_images` | Whether to skip uploading images, screenshots not included | `false`
   `skip_upload_screenshots` | Whether to skip uploading SCREENSHOTS | `false`
-  `track_promote_to` | The track to promote to: production, beta, alpha, internal, rollout | 
+  `track_promote_to` | The track to promote to. The default available tracks are: production, beta, alpha, internal, rollout | 
   `validate_only` | Only validate changes with Google Play rather than actually publish | `false`
   `mapping` | Path to the mapping file to upload | 
   `mapping_paths` | An array of paths to mapping files to upload | 

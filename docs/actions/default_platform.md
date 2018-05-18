@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 1 Example
 
 ```ruby
-default_platform :android
+default_platform(:android)
 ```
 
 

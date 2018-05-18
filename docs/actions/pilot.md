@@ -283,7 +283,7 @@ Key | Description | Default
   `beta_app_feedback_email` | Provide the beta app email when uploading a new build | 
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
   `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers | `false`
-  `update_build_info_on_upload` | [DEPRECATED!] true - Update build info immediately after validation. This is deprecated and will be removed in a future release. iTunesConnect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
+  `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. iTunesConnect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
   `apple_id` | The unique App ID provided by iTunes Connect | [*](#parameters-legend-dynamic)
   `distribute_external` | Should the build be distributed to external testers? | `false`
   `notify_external_testers` | Should notify external testers? | `true`
@@ -297,7 +297,7 @@ Key | Description | Default
   `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
-  `groups` | Associate tester to one group or more by group name / group id. E.g. '-g "Team 1","Team 2"' | 
+  `groups` | Associate tester to one group or more by group name / group id. E.g. `-g "Team 1","Team 2"` | 
   `wait_for_uploaded_build` | Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

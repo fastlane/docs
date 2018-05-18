@@ -48,15 +48,14 @@ Key | Description | Default
 ----|-------------|--------
   `between` | Array containing two Git revision values between which to collect messages, you mustn't use it with :commits_count key at the same time | 
   `commits_count` | Number of commits to include in changelog, you mustn't use it with :between key at the same time | 
+  `path` | Path of the git repository | `./`
   `pretty` | The format applied to each commit while generating the collected value | `%B`
   `date_format` | The date format applied to each commit while generating the collected value | 
   `ancestry_path` | Whether or not to use ancestry-path param | `false`
   `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag | 
   `match_lightweight_tag` | Whether or not to match a lightweight tag when searching for the last one | `true`
-  `include_merges` | Whether or not to include any commits that are merges
-[31m(DEPRECATED - use :merge_commit_filtering)[0m | 
-  `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog.
-Valid values: 'include_merges', 'exclude_merges', 'only_include_merges' | `include_merges`
+  `include_merges` | **DEPRECATED!** Use `:merge_commit_filtering` instead - Whether or not to include any commits that are merges | 
+  `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog. Valid values: `:include_merges`, `:exclude_merges`, `:only_include_merges` | `include_merges`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

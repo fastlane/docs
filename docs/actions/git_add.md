@@ -61,7 +61,7 @@ Key | Description | Default
 ----|-------------|--------
   `path` | The file(s) and path(s) you want to add | 
   `shell_escape` | Shell escapes paths (set to false if using wildcards or manually escaping spaces in :path) | `true`
-  `pathspec` | [DEPRECATED!] Use --path instead - The pathspec you want to add files from | 
+  `pathspec` | **DEPRECATED!** Use `--path` instead - The pathspec you want to add files from | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
