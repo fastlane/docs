@@ -44,7 +44,7 @@ Key | Description | Default
 ----|-------------|--------
   `clean` | Remove SCM directories | `true`
   `integrate` | Integrate the Pods libraries into the Xcode project(s) | `true`
-  `repo_update` | Run `pod repo update` before install | `false`
+  `repo_update` | Add `--repo-update` flag to `pod install` command | `false`
   `silent` | Execute command without logging output | `false`
   `verbose` | Show more debugging information | `false`
   `ansi` | Show output with ANSI codes | `true`
