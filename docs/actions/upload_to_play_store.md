@@ -17,7 +17,7 @@ Upload metadata, screenshots and binaries to Google Play (via _supply_)
 
 ###### Command line tool for updating Android apps and their metadata on the Google Play Store
 
-_supply_ uploads app metadata, screenshots and binaries to Google Play. You can also select tracks for builds and promote builds to production.
+_supply_ uploads app metadata, screenshots, binaries, and app bundles to Google Play. You can also select tracks for builds and promote builds to production.
 
 -------
 
@@ -27,6 +27,7 @@ _supply_ uploads app metadata, screenshots and binaries to Google Play. You can 
     <a href="#quick-start">Quick Start</a> &bull;
     <a href="#available-commands">Commands</a> &bull;
     <a href="#uploading-an-apk">Uploading an APK</a> &bull;
+    <a href="#uploading-an-aab">Uploading an AAB</a> &bull;
     <a href="#images-and-screenshots">Images</a>
 </p>
 
@@ -34,7 +35,7 @@ _supply_ uploads app metadata, screenshots and binaries to Google Play. You can 
 
 ## Features
 - Update existing Android applications on Google Play via the command line
-- Upload new builds (APKs)
+- Upload new builds (APKs and AABs)
 - Retrieve and edit metadata, such as title and description, for multiple languages
 - Upload the app icon, promo graphics and screenshots for multiple languages
 - Have a local copy of the metadata in your git repository
@@ -107,6 +108,22 @@ Expansion files (obbs) found under the same directory as your APK will also be u
 
 - they are identified as type 'main' or 'patch' (by containing 'main' or 'patch' in their file name)
 - you have at most one of each type
+
+## Uploading an AAB
+
+To upload a new [Android application bundle](https://developer.android.com/guide/app-bundle/) to Google Play, simply run
+
+```no-highlight
+fastlane supply --aab path/to/app.aab
+```
+
+This will also upload app metadata if you previously ran `fastlane supply init`.
+
+To gradually roll out a new build use
+
+```no-highlight
+fastlane supply --aab path/app.aab --track rollout --rollout 0.5
+```
 
 ## Images and Screenshots
 
@@ -194,7 +211,9 @@ Key | Description | Default
   `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
   `apk` | Path to the APK file to upload | [*](#parameters-legend-dynamic)
   `apk_paths` | An array of paths to APK files to upload | 
+  `aab` | Path to the AAB file to upload | [*](#parameters-legend-dynamic)
   `skip_upload_apk` | Whether to skip uploading APK | `false`
+  `skip_upload_aab` | Whether to skip uploading AAB | `false`
   `skip_upload_metadata` | Whether to skip uploading metadata | `false`
   `skip_upload_images` | Whether to skip uploading images, screenshots not included | `false`
   `skip_upload_screenshots` | Whether to skip uploading SCREENSHOTS | `false`
