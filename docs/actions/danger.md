@@ -51,8 +51,8 @@ Key | Description | Default
   `github_api_token` | GitHub API token for danger | 
   `fail_on_errors` | Should always fail the build process, defaults to false | `false`
   `new_comment` | Makes Danger post a new comment instead of editing its previous one | `false`
-  `base` | A branch/tag/commit to use as the base of the diff. [master|dev|stable] | 
-  `head` | A branch/tag/commit to use as the head. [master|dev|stable] | 
+  `base` | A branch/tag/commit to use as the base of the diff. [master\|dev\|stable] | 
+  `head` | A branch/tag/commit to use as the head. [master\|dev\|stable] | 
   `pr` | Run danger on a specific pull request. e.g. "https://github.com/danger/danger/pull/518" | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

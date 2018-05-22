@@ -910,7 +910,7 @@ fastlane-plugin-mobile_center:
   :github_contributors: 7
 fastlane-plugin-instrumented_tests:
   :initial_commit: 2016-07-04
-  :age_in_days: 601
+  :age_in_days: 687
   :readme_score: 100
   :tests: 1
   :actions:
@@ -920,12 +920,12 @@ fastlane-plugin-instrumented_tests:
     description: Run android instrumented tests via a gradle command againts a newly
       created avd
     details: "\\n"
-  :sha: 5546adae6e253db18a52a17f9f1f519b2573909dbbf83d9ebfc023b2e2bc0401
-  :github_stars: 13
+  :sha: ab5b2db551ee3881db221ea29c042e22391c2a48129f719bd69271ba6b03367c
+  :github_stars: 14
   :github_subscribers: 3
-  :github_issues: 6
+  :github_issues: 4
   :github_forks: 3
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-automated_test_emulator_run_xing:
   :initial_commit: 2016-07-26
   :age_in_days: 579
@@ -3328,7 +3328,7 @@ fastlane-plugin-yafirim:
   :github_contributors: 0
 fastlane-plugin-blackberry_mam:
   :initial_commit: 2017-04-26
-  :age_in_days: 364
+  :age_in_days: 391
   :readme_score: 100
   :tests: 42
   :actions:
@@ -3351,11 +3351,11 @@ fastlane-plugin-blackberry_mam:
     category: 
     description: Checks the version of the installed Good framework
     details: 
-  :sha: 39ea71deed96e20fa9cdf34ef9edfd4b2aa2825e9dd8aab3c3be395080efb5bd
+  :sha: 1fbcc7cc254be7646fe096ad886f3ccf9a7820f5e4b117d385385bcd3d7c0689
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-influxdb:
   :initial_commit: 2017-03-06
@@ -4643,7 +4643,7 @@ fastlane-plugin-danger_result:
   :github_contributors: 0
 fastlane-plugin-itargetchecker:
   :initial_commit: 2018-05-06
-  :age_in_days: 12
+  :age_in_days: 16
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4655,8 +4655,8 @@ fastlane-plugin-itargetchecker:
     details: Can be used to point out which file from your project is missing from
       a target. It should be usefull for projects that have multiple targets to make
       sure all the files from the main target are also present in the other targets.
-  :sha: b98023f507a59ca24a99775d5d78116c0782d371d7d61ef80343dd6c433ed9be
-  :github_stars: 1
+  :sha: f8b52b1d4e43db3606c6cb08aa30ce0721f3fbdcb0148eefce76399db16a2f74
+  :github_stars: 2
   :github_subscribers: 3
   :github_issues: 0
   :github_forks: 0
@@ -4719,6 +4719,40 @@ fastlane-plugin-gradle_properties:
     details: 
   :sha: ab7562fab1fb87ac4787c8f8c4d6fe7016cca9f8cf05f6ef58f6bfc009c93eb4
   :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ding_talk_msg_push:
+  :initial_commit: 2018-05-19
+  :age_in_days: 3
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ding_talk_msg_push
+    category: 
+    description: dingTalk robot msg push tool
+    details: 钉钉推送工具
+  :sha: 508242e6986ccc6f2273be09d7c35d10ec2a0706516cfaa6f6c4309a23f474aa
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-upload_to_server:
+  :initial_commit: 2018-05-17
+  :age_in_days: 5
+  :readme_score: 50
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_server
+    category: 
+    description: 
+    details: 
+  :sha: 1c6c98fc586be525ee5cdb09b5841bb1a7674ab64ddc5c9624aa5988998da89a
+  :github_stars: 2
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
