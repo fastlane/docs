@@ -71,6 +71,6 @@ fastlane beta --env development
 
 and store the configuration in `.env.development` with all keys for the development environment.
 
-Install `[sudo] gem install dotenv` or add `dotenv` to your `Gemfile`. More information about the [recommend way to install gems](https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile).
+Install `[sudo] gem install dotenv` or add `dotenv` to your `Gemfile`. More information about the [recommended way to install gems](https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile).
 
 To get the name of the available environment variables, run `fastlane action [action_name]`.
