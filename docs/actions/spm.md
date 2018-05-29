@@ -46,7 +46,7 @@ Key | Description | Default
   `command` | The swift command (one of: build, test, clean, reset, update) | `build`
   `build_path` | Specify build/cache directory [default: ./.build] | 
   `package_path` | Change working directory before any other operation | 
-  `configuration` | Build with configuration (debug|release) [default: debug] | 
+  `configuration` | Build with configuration (debug\|release) [default: debug] | 
   `xcpretty_output` | Specifies the output type for xcpretty. eg. 'test', or 'simple' | 
   `verbose` | Increase verbosity of informational output | `false`
 

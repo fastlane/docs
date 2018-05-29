@@ -313,7 +313,7 @@ Key | Description | Default
   `include_symbols` | Should the ipa file include symbols? | 
   `include_bitcode` | Should the ipa file include bitcode? | 
   `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id | 
-  `export_options` | Specifies path to export options plist. Use 'xcodebuild -help' to print the full set of available options | 
+  `export_options` | Path to an export options plist or a hash with export options. Use 'xcodebuild -help' to print the full set of available options | 
   `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `skip_build_archive` | Export ipa from previously built xarchive. Uses archive_path as source | 
   `skip_archive` | After building, don't archive, effectively not including -archivePath param | 
