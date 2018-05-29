@@ -672,7 +672,7 @@ fastlane match nuke enterprise
 <p><img src="/img/actions/match_nuke.gif" width="550" /></p>
 <p>You'll have to confirm a list of profiles / certificates that will be deleted.</p>
 <h3 id="change-password"><a name="user-content-change-password" href="#change-password" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Change Password</h3>
-<p>To change the password of your repo and therefore decrypting and encrypting all files run</p>
+<p>To change the password of your repo and therefore decrypting and encrypting all files run:</p>
 <pre><code class="no-highlight">fastlane match change_password
 </code></pre>
 
@@ -683,17 +683,17 @@ fastlane match nuke enterprise
 </code></pre>
 
 <h4 id="export-distribution-certificate-and-private-key-as-single-p12-file"><a name="user-content-export-distribution-certificate-and-private-key-as-single-p12-file" href="#export-distribution-certificate-and-private-key-as-single-p12-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Export Distribution Certificate and Private Key as Single .p12 File</h4>
-<p><em>match</em> stores the certificate (.cer) and the private key (.p12) files separately. The following steps will repackage the separate certificate and private key into a single .p12 file.</p>
-<p>Decrypt your cert found in certs/<code>&lt;type&gt;</code>/<code>&lt;unique-id&gt;</code>.cer as a pem file</p>
+<p><em>match</em> stores the certificate (<code>.cer</code>) and the private key (<code>.p12</code>) files separately. The following steps will repackage the separate certificate and private key into a single <code>.p12</code> file.</p>
+<p>Decrypt your cert found in <code>certs/&lt;type&gt;/&lt;unique-id&gt;.cer</code> as a pem file:</p>
 <pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/&lt;type&gt;/&lt;unique-id&gt;.cer&quot; -out &quot;cert.dem&quot; -a -d
 openssl x509 -inform der -in cert.der -out cert.pem
 </code></pre>
 
-<p>Decrypt your private key found in certs/<code>&lt;type&gt;</code>/<code>&lt;unique-id&gt;</code>.p12 as a pem file</p>
+<p>Decrypt your private key found in <code>certs/&lt;type&gt;/&lt;unique-id&gt;.p12</code> as a pem file:</p>
 <pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/distribution/&lt;unique-id&gt;.p12&quot; -out &quot;key.pem&quot; -a -d
 </code></pre>
 
-<p>Generate an encrypted p12 file with the same or new password</p>
+<p>Generate an encrypted p12 file with the same or new password:</p>
 <pre><code class="no-highlight">openssl pkcs12 -export -out &quot;cert.p12&quot; -inkey &quot;key.pem' -in &quot;cert.pem&quot; -password pass:&lt;password&gt;
 </code></pre>
 

@@ -437,110 +437,116 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
 <h2 id="creating-a-new-application"><a name="user-content-creating-a-new-application" href="#creating-a-new-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating a new application</h2>
-<pre><code>fastlane produce
+<pre><code class="no-highlight">fastlane produce
 </code></pre>
+
 <p>To get a list of all available parameters:</p>
-<pre><code>fastlane produce --help
+<pre><code class="no-highlight">fastlane produce --help
 </code></pre>
-<pre><code class="no-highlight">  Commands: (* default)
-    associate_group      Associate with a group, which is created if needed or simply located otherwise
-    associate_merchant   Associate with a merchant for use with Apple Pay. Apple Pay will be enabled for this app
-    create             * Creates a new app on iTunes Connect and the Apple Developer Portal
-    disable_services     Disable specific Application Services for a specific app on the Apple Developer Portal
-    enable_services      Enable specific Application Services for a specific app on the Apple Developer Portal
-    group                Ensure that a specific App Group exists
-    help                 Display global or [command] help documentation
-    merchant             Ensure that a specific Merchant exists
 
-  Global Options:
-    --verbose
-    -h, --help           Display help documentation
-    -v, --version        Display version information
+<pre><code class="no-highlight">Commands: (* default)
+  associate_group      Associate with a group, which is created if needed or simply located otherwise
+  associate_merchant   Associate with a merchant for use with Apple Pay. Apple Pay will be enabled for this app
+  create             * Creates a new app on iTunes Connect and the Apple Developer Portal
+  disable_services     Disable specific Application Services for a specific app on the Apple Developer Portal
+  enable_services      Enable specific Application Services for a specific app on the Apple Developer Portal
+  group                Ensure that a specific App Group exists
+  help                 Display global or [command] help documentation
+  merchant             Ensure that a specific Merchant exists
 
-  Options for create:
-    -u, --username STRING Your Apple ID Username (PRODUCE_USERNAME)
-    -a, --app_identifier STRING App Identifier (Bundle ID, e.g. com.krausefx.app) (PRODUCE_APP_IDENTIFIER)
-    -e, --bundle_identifier_suffix STRING App Identifier Suffix (Ignored if App Identifier does not ends with .*) (PRODUCE_APP_IDENTIFIER_SUFFIX)
-    -q, --app_name STRING App Name (PRODUCE_APP_NAME)
-    -z, --app_version STRING Initial version number (e.g. '1.0') (PRODUCE_VERSION)
-    -y, --sku STRING     SKU Number (e.g. '1234') (PRODUCE_SKU)
-    -j, --platform STRING The platform to use (optional) (PRODUCE_PLATFORM)
-    -m, --language STRING Primary Language (e.g. 'English', 'German') (PRODUCE_LANGUAGE)
-    -c, --company_name STRING The name of your company. Only required if it's the first app you create (PRODUCE_COMPANY_NAME)
-    -i, --skip_itc [VALUE] Skip the creation of the app on iTunes Connect (PRODUCE_SKIP_ITC)
-    -d, --skip_devcenter [VALUE] Skip the creation of the app on the Apple Developer Portal (PRODUCE_SKIP_DEVCENTER)
-    -s, --itc_users ARRAY Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
-    -b, --team_id STRING The ID of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_ID)
-    -l, --team_name STRING The name of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_NAME)
-    -k, --itc_team_id [VALUE] The ID of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_ID)
-    -p, --itc_team_name STRING The name of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_NAME)
+Global Options:
+  --verbose
+  -h, --help           Display help documentation
+  -v, --version        Display version information
+
+Options for create:
+  -u, --username STRING Your Apple ID Username (PRODUCE_USERNAME)
+  -a, --app_identifier STRING App Identifier (Bundle ID, e.g. com.krausefx.app) (PRODUCE_APP_IDENTIFIER)
+  -e, --bundle_identifier_suffix STRING App Identifier Suffix (Ignored if App Identifier does not ends with .*) (PRODUCE_APP_IDENTIFIER_SUFFIX)
+  -q, --app_name STRING App Name (PRODUCE_APP_NAME)
+  -z, --app_version STRING Initial version number (e.g. '1.0') (PRODUCE_VERSION)
+  -y, --sku STRING     SKU Number (e.g. '1234') (PRODUCE_SKU)
+  -j, --platform STRING The platform to use (optional) (PRODUCE_PLATFORM)
+  -m, --language STRING Primary Language (e.g. 'English', 'German') (PRODUCE_LANGUAGE)
+  -c, --company_name STRING The name of your company. Only required if it's the first app you create (PRODUCE_COMPANY_NAME)
+  -i, --skip_itc [VALUE] Skip the creation of the app on iTunes Connect (PRODUCE_SKIP_ITC)
+  -d, --skip_devcenter [VALUE] Skip the creation of the app on the Apple Developer Portal (PRODUCE_SKIP_DEVCENTER)
+  -s, --itc_users ARRAY Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
+  -b, --team_id STRING The ID of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_ID)
+  -l, --team_name STRING The name of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_NAME)
+  -k, --itc_team_id [VALUE] The ID of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_ID)
+  -p, --itc_team_name STRING The name of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_NAME)
 </code></pre>
 
 <h2 id="enabling-disabling-application-services"><a name="user-content-enabling-disabling-application-services" href="#enabling-disabling-application-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enabling / Disabling Application Services</h2>
 <p>If you want to enable Application Services for an App ID (HomeKit and HealthKit in this example):</p>
-<pre><code>fastlane produce enable_services --homekit --healthkit
+<pre><code class="no-highlight">fastlane produce enable_services --homekit --healthkit
 </code></pre>
+
 <p>If you want to disable Application Services for an App ID (iCloud in this case):</p>
-<pre><code>fastlane produce disable_services --icloud
+<pre><code class="no-highlight">fastlane produce disable_services --icloud
 </code></pre>
+
 <p>If you want to create a new App Group:</p>
-<pre><code>fastlane produce group -g group.krausefx -n "Example App Group"
+<pre><code class="no-highlight">fastlane produce group -g group.krausefx -n &quot;Example App Group&quot;
 </code></pre>
+
 <p>If you want to associate an app with an App Group:</p>
-<pre><code>fastlane produce associate_group -a com.krausefx.app group.krausefx
+<pre><code class="no-highlight">fastlane produce associate_group -a com.krausefx.app group.krausefx
 </code></pre>
+
 <h1 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h1>
 <p>Get a list of all available options using</p>
 <pre><code class="no-highlight">fastlane produce enable_services --help
 </code></pre>
 
-<pre><code class="no-highlight">    --app-group          Enable App Groups
-    --apple-pay          Enable Apple Pay
-    --associated-domains Enable Associated Domains
-    --data-protection STRING Enable Data Protection, suitable values are &quot;complete&quot;, &quot;unlessopen&quot; and &quot;untilfirstauth&quot;
-    --game-center        Enable Game Center
-    --healthkit          Enable HealthKit
-    --homekit            Enable HomeKit
-    --hotspot            Enable Hotspot
-    --icloud STRING      Enable iCloud, suitable values are &quot;legacy&quot; and &quot;cloudkit&quot;
-    --in-app-purchase    Enable In-App Purchase
-    --inter-app-audio    Enable Inter-App-Audio
-    --multipath          Enable Multipath
-    --network-extension  Enable Network Extensions
-    --nfc-tag-reading    Enable NFC Tag Reading
-    --personal-vpn       Enable Personal VPN
-    --passbook           Enable Passbook (deprecated)
-    --push-notification  Enable Push notification (only enables the service, does not configure certificates)
-    --sirikit            Enable SiriKit
-    --vpn-conf           Enable VPN Configuration (deprecated)
-    --wallet             Enable Wallet
-    --wireless-conf      Enable Wireless Accessory Configuration
+<pre><code class="no-highlight">--app-group          Enable App Groups
+--apple-pay          Enable Apple Pay
+--associated-domains Enable Associated Domains
+--data-protection STRING Enable Data Protection, suitable values are &quot;complete&quot;, &quot;unlessopen&quot; and &quot;untilfirstauth&quot;
+--game-center        Enable Game Center
+--healthkit          Enable HealthKit
+--homekit            Enable HomeKit
+--hotspot            Enable Hotspot
+--icloud STRING      Enable iCloud, suitable values are &quot;legacy&quot; and &quot;cloudkit&quot;
+--in-app-purchase    Enable In-App Purchase
+--inter-app-audio    Enable Inter-App-Audio
+--multipath          Enable Multipath
+--network-extension  Enable Network Extensions
+--nfc-tag-reading    Enable NFC Tag Reading
+--personal-vpn       Enable Personal VPN
+--passbook           Enable Passbook (deprecated)
+--push-notification  Enable Push notification (only enables the service, does not configure certificates)
+--sirikit            Enable SiriKit
+--vpn-conf           Enable VPN Configuration (deprecated)
+--wallet             Enable Wallet
+--wireless-conf      Enable Wireless Accessory Configuration
 </code></pre>
 
 <pre><code class="no-highlight">fastlane produce disable_services --help
 </code></pre>
 
-<pre><code>    --app-group          Disable App Groups
-    --apple-pay          Disable Apple Pay
-    --associated-domains Disable Associated Domains
-    --data-protection    Disable Data Protection
-    --game-center        Disable Game Center
-    --healthkit          Disable HealthKit
-    --homekit            Disable HomeKit
-    --hotspot            Disable Hotspot
-    --icloud             Disable iCloud
-    --in-app-purchase    Disable In-App Purchase
-    --inter-app-audio    Disable Inter-App-Audio
-    --multipath          Disable Multipath
-    --network-extension  Disable Network Extensions
-    --nfc-tag-reading    Disable NFC Tag Reading
-    --personal-vpn       Disable Personal VPN
-    --passbook           Disable Passbook (deprecated)
-    --push-notification  Disable Push notifications
-    --sirikit            Disable SiriKit
-    --vpn-conf           Disable VPN Configuration (deprecated)
-    --wallet             Disable Wallet
-    --wireless-conf      Disable Wireless Accessory Configuration
+<pre><code class="no-highlight">--app-group          Disable App Groups
+--apple-pay          Disable Apple Pay
+--associated-domains Disable Associated Domains
+--data-protection    Disable Data Protection
+--game-center        Disable Game Center
+--healthkit          Disable HealthKit
+--homekit            Disable HomeKit
+--hotspot            Disable Hotspot
+--icloud             Disable iCloud
+--in-app-purchase    Disable In-App Purchase
+--inter-app-audio    Disable Inter-App-Audio
+--multipath          Disable Multipath
+--network-extension  Disable Network Extensions
+--nfc-tag-reading    Disable NFC Tag Reading
+--personal-vpn       Disable Personal VPN
+--passbook           Disable Passbook (deprecated)
+--push-notification  Disable Push notifications
+--sirikit            Disable SiriKit
+--vpn-conf           Disable VPN Configuration (deprecated)
+--wallet             Disable Wallet
+--wireless-conf      Disable Wireless Accessory Configuration
 </code></pre>
 
 <h2 id="creating-apple-pay-merchants-and-associating-them-with-an-app-id"><a name="user-content-creating-apple-pay-merchants-and-associating-them-with-an-app-id" href="#creating-apple-pay-merchants-and-associating-them-with-an-app-id" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating Apple Pay merchants and associating them with an App ID</h2>
@@ -549,7 +555,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <p>Use <code>--help</code> for more information about all available parameters</p>
-<pre><code>fastlane produce merchant --help
+<pre><code class="no-highlight">fastlane produce merchant --help
 </code></pre>
 
 <p>If you want to associate an app with a Merchant Identifier:</p>
@@ -725,8 +731,8 @@ end
 </tr>
 <tr>
 <td><code>enable_services</code></td>
-<td>Array with Spaceship App Services (e.g. app_group: (on</td>
-<td>off), apple_pay: (on</td>
+<td>Array with Spaceship App Services (e.g. app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), hotspot: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), multipath: (on|off), network_extension: (on|off), nfc_tag_reading: (on|off), personal_vpn: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off), wallet: (on|off), wireless_accessory: (on|off))</td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>skip_devcenter</code></td>

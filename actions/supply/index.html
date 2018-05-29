@@ -416,7 +416,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </p>
 
 <h6 id="command-line-tool-for-updating-android-apps-and-their-metadata-on-the-google-play-store"><a name="user-content-command-line-tool-for-updating-android-apps-and-their-metadata-on-the-google-play-store" href="#command-line-tool-for-updating-android-apps-and-their-metadata-on-the-google-play-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Command line tool for updating Android apps and their metadata on the Google Play Store</h6>
-<p><em>supply</em> uploads app metadata, screenshots and binaries to Google Play. You can also select tracks for builds and promote builds to production.</p>
+<p><em>supply</em> uploads app metadata, screenshots, binaries, and app bundles to Google Play. You can also select tracks for builds and promote builds to production.</p>
 <hr />
 <p align="center">
     <a href="#features">Features</a> &bull;
@@ -424,6 +424,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     <a href="#quick-start">Quick Start</a> &bull;
     <a href="#available-commands">Commands</a> &bull;
     <a href="#uploading-an-apk">Uploading an APK</a> &bull;
+    <a href="#uploading-an-aab">Uploading an AAB</a> &bull;
     <a href="#images-and-screenshots">Images</a>
 </p>
 
@@ -431,7 +432,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h2 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h2>
 <ul>
 <li>Update existing Android applications on Google Play via the command line</li>
-<li>Upload new builds (APKs)</li>
+<li>Upload new builds (APKs and AABs)</li>
 <li>Retrieve and edit metadata, such as title and description, for multiple languages</li>
 <li>Upload the app icon, promo graphics and screenshots for multiple languages</li>
 <li>Have a local copy of the metadata in your git repository</li>
@@ -492,6 +493,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>they are identified as type 'main' or 'patch' (by containing 'main' or 'patch' in their file name)</li>
 <li>you have at most one of each type</li>
 </ul>
+<h2 id="uploading-an-aab"><a name="user-content-uploading-an-aab" href="#uploading-an-aab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading an AAB</h2>
+<p>To upload a new <a href="https://developer.android.com/guide/app-bundle/">Android application bundle</a> to Google Play, simply run</p>
+<pre><code class="no-highlight">fastlane supply --aab path/to/app.aab
+</code></pre>
+
+<p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
+<p>To gradually roll out a new build use</p>
+<pre><code class="no-highlight">fastlane supply --aab path/app.aab --track rollout --rollout 0.5
+</code></pre>
+
 <h2 id="images-and-screenshots"><a name="user-content-images-and-screenshots" href="#images-and-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Images and Screenshots</h2>
 <p>After running <code>fastlane supply init</code>, you will have a metadata directory. This directory contains one or more locale directories (e.g. en-US, en-GB, etc.), and inside this directory are text files such as <code>title.txt</code> and <code>short_description.txt</code>.</p>
 <p>Inside of a given locale directory is a folder called <code>images</code>. Here you can supply images with the following file names (extension can be png, jpg or jpeg):</p>
@@ -617,8 +628,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td></td>
 </tr>
 <tr>
+<td><code>aab</code></td>
+<td>Path to the AAB file to upload</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
 <td><code>skip_upload_apk</code></td>
 <td>Whether to skip uploading APK</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_upload_aab</code></td>
+<td>Whether to skip uploading AAB</td>
 <td><code>false</code></td>
 </tr>
 <tr>
