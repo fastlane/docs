@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +28,7 @@
     
     <url>
      <loc>None/actions/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -37,1279 +37,1279 @@
         
     <url>
      <loc>None/actions/adb/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/adb_devices/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/add_extra_platforms/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/add_git_tag/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/app_store_build_number/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/appaloosa/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/appetize/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/appetize_viewing_url_generator/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/appium/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/appledoc/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/appstore/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/apteligent/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/artifactory/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/automatic_code_signing/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/backup_file/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/backup_xcarchive/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/badge/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/build_and_upload_to_appetize/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/build_android_app/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/build_app/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/build_ios_app/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/bundle_install/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/capture_android_screenshots/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/capture_ios_screenshots/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/capture_screenshots/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/carthage/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/cert/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/changelog_from_git_commits/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/chatwork/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/check_app_store_metadata/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/clean_build_artifacts/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/clean_cocoapods_cache/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/clear_derived_data/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/clipboard/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/cloc/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/cocoapods/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/commit_github_file/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/commit_version_bump/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/copy_artifacts/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/crashlytics/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/create_app_online/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/create_keychain/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/create_pull_request/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/danger/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/debug/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/default_platform/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/delete_keychain/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/deliver/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/deploygate/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/dotgpg_environment/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/download/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/download_dsyms/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/dsym_zip/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/echo/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ensure_git_branch/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ensure_git_status_clean/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ensure_no_debug_code/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ensure_xcode_version/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/environment_variable/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/erb/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/fastlane_version/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/flock/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/frame_screenshots/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/frameit/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/gcovr/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_build_number/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_build_number_repository/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_certificates/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_github_release/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_info_plist_value/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_ipa_info_plist_value/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_provisioning_profile/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_push_certificate/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/get_version_number/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/git_add/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/git_branch/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/git_commit/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/git_pull/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/git_submodule_update/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/git_tag_exists/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/github_api/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/google_play_track_version_codes/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/gradle/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/gym/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/hg_add_tag/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/hg_commit_version_bump/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/hg_ensure_clean_status/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/hg_push/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/hipchat/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/hockey/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ifttt/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/import/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/import_certificate/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/import_from_git/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/increment_build_number/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/increment_version_number/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/install_on_device/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/install_xcode_plugin/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/installr/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ipa/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/is_ci/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/jazzy/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/jira/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/lane_context/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/last_git_commit/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/last_git_tag/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/latest_testflight_build_number/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/lcov/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/mailgun/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/make_changelog_from_jenkins/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/match/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/min_fastlane_version/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/modify_services/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/nexus_upload/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/notification/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/notify/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/number_of_commits/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/oclint/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/onesignal/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/opt_out_crash_reporting/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/opt_out_usage/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/pem/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/pilot/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/pod_lib_lint/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/pod_push/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/podio_item/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/precheck/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/println/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/produce/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/prompt/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/push_git_tags/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/push_to_git_remote/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/puts/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/read_podspec/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/recreate_schemes/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/register_device/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/register_devices/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/reset_git_repo/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/reset_simulator_contents/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/resign/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/restore_file/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/rocket/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/rsync/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ruby_version/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/run_tests/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/s3/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/say/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/scan/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/scp/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/screengrab/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/set_build_number_repository/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/set_changelog/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/set_github_release/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/set_info_plist_value/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/set_pod_key/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/setup_circle_ci/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/setup_jenkins/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/setup_travis/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/sh/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/sigh/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/skip_docs/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/slack/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/slather/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/snapshot/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/sonar/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/splunkmint/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/spm/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/ssh/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/supply/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/swiftlint/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/sync_code_signing/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/team_id/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/team_name/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/testfairy/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/testflight/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/tryouts/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/twitter/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/typetalk/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/unlock_keychain/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_app_group_identifiers/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_app_identifier/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_fastlane/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_icloud_container_identifiers/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_info_plist/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_plist/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_project_code_signing/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_project_provisioning/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_project_team/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_urban_airship_configuration/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/update_url_schemes/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/upload_symbols_to_crashlytics/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/upload_symbols_to_sentry/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/upload_to_app_store/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/upload_to_play_store/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/upload_to_testflight/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/verify_build/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/verify_pod_keys/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/verify_xcode/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/version_bump_podspec/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/version_get_podspec/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcarchive/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcbuild/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcclean/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcexport/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcode_install/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcode_select/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcode_server_get_assets/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcodebuild/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcov/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xctest/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xctool/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/xcversion/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/actions/zip/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1318,7 +1318,7 @@
     
     <url>
      <loc>None/faqs/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -1327,25 +1327,25 @@
         
     <url>
      <loc>None/codesigning/getting-started/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/codesigning/xcode-project/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/codesigning/troubleshooting/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/codesigning/common-issues/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1355,19 +1355,19 @@
         
     <url>
      <loc>None/plugins/available-plugins/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/create-plugin/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/plugins/plugins-troubleshooting/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1377,19 +1377,19 @@
         
     <url>
      <loc>None/best-practices/source-control/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/best-practices/continuous-integration/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/best-practices/keys/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -1398,7 +1398,7 @@
     
     <url>
      <loc>None/advanced/</loc>
-     <lastmod>2018-05-29</lastmod>
+     <lastmod>2018-06-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
