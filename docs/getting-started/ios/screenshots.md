@@ -74,7 +74,7 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
 1. In your UI Test class, click the `Record` button on the bottom left and record your interaction
 1. To take a screenshot, call the following between interactions
   - Swift: `snapshot("01LoginScreen")`
-  - Objective C: `[Snapshot snapshot:@"01LoginScreen" waitForLoadingIndicator:YES];`
+  - Objective C: `[Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];`
 1. Add the following code to your `setUp()` method:
 
 **Swift:**
