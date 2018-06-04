@@ -59,6 +59,7 @@ slack(
 Key | Description | Default
 ----|-------------|--------
   `message` | The message that should be displayed on Slack. This supports the standard Slack markup language | 
+  `pretext` | This is optional text that appears above the message attachment block. This supports the standard Slack markup language | 
   `channel` | #channel or @username | 
   `use_webhook_configured_username_and_icon` | Use webhook's default username and icon settings? (true/false) | `false`
   `slack_url` | Create an Incoming WebHook for your Slack group | 

@@ -946,7 +946,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 184
+  :age_in_days: 224
   :readme_score: 100
   :tests: 88
   :actions:
@@ -995,11 +995,11 @@ fastlane-plugin-test_center:
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: 364db5200a6ac2d238661298f2bc1037c843244a261ae8ed861d727870f4e794
-  :github_stars: 16
+  :sha: ec298c0cdb19de457fd49e128191cba8f6a3807366e34f13215c7576fbc722f1
+  :github_stars: 21
   :github_subscribers: 3
-  :github_issues: 10
-  :github_forks: 2
+  :github_issues: 15
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -1772,7 +1772,7 @@ fastlane-plugin-upload_to_onesky:
   :github_contributors: 1
 fastlane-plugin-rome:
   :initial_commit: 2017-03-27
-  :age_in_days: 335
+  :age_in_days: 434
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1781,13 +1781,13 @@ fastlane-plugin-rome:
     category: 
     description: An S3 cache tool for Carthage
     details: Rome is a tool that allows developers on Apple platforms to use Amazon's
-      S3 as a shared cache for frameworks built with Carthage.
-  :sha: 75d97de0ea64df8a262896e9dfec94b22810570a919a73f3544676c100f4b130
-  :github_stars: 4
+      S3o and others as a shared cache for frameworks built with Carthage.
+  :sha: bc6317f545dd89cb5ceeff8803991838c4e88d2a25bcdc5109e8cd3238462eab
+  :github_stars: 5
   :github_subscribers: 2
   :github_issues: 1
-  :github_forks: 1
-  :github_contributors: 2
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-git_status:
   :initial_commit: 2016-12-07
   :age_in_days: 445
