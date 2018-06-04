@@ -43,7 +43,8 @@ carthage(
   configuration: "Release",   # Build configuration to use when building
   cache_builds: true,         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
   toolchain: "com.apple.dt.toolchain.Swift_2_3",  # Specify the xcodebuild toolchain
-  new_resolver: false         # Use the new resolver to resolve depdendency graph
+  new_resolver: false,        # Use the new resolver to resolve depdendency graph
+  log_path: "carthage.log"    # Path to the xcode build output
 )
 ```
 
@@ -72,6 +73,7 @@ Key | Description | Default
   `toolchain` | Define which xcodebuild toolchain to use when building | 
   `project_directory` | Define the directory containing the Carthage project | 
   `new_resolver` | Use new resolver when resolving dependency graph | 
+  `log_path` | Path to the xcode build output | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

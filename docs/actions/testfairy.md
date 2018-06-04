@@ -40,7 +40,8 @@ testfairy(
 Key | Description | Default
 ----|-------------|--------
   `api_key` | API Key for TestFairy | 
-  `ipa` | Path to your IPA file for iOS or APK for Android | [*](#parameters-legend-dynamic)
+  `ipa` | Path to your IPA file for iOS | [*](#parameters-legend-dynamic)
+  `apk` | Path to your APK file for Android | [*](#parameters-legend-dynamic)
   `symbols_file` | Symbols mapping file | [*](#parameters-legend-dynamic)
   `upload_url` | API URL for TestFairy | `https://upload.testfairy.com`
   `testers_groups` | Array of tester groups to be notified | `[]`

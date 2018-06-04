@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # say
 
 
-This action speaks out loud the given text
+This action speaks the given text out loud
 
 
 
@@ -29,6 +29,16 @@ say("I can speak")
 
 
 
+
+
+## Parameters
+
+Key | Description | Default
+----|-------------|--------
+  `text` | Text to be spoken out loud (as string or array of strings) | 
+  `mute` | If say should be muted with text printed out | `false`
+
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
