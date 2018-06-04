@@ -448,7 +448,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   configuration: &quot;Release&quot;,   # Build configuration to use when building
   cache_builds: true,         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
   toolchain: &quot;com.apple.dt.toolchain.Swift_2_3&quot;,  # Specify the xcodebuild toolchain
-  new_resolver: false         # Use the new resolver to resolve depdendency graph
+  new_resolver: false,        # Use the new resolver to resolve depdendency graph
+  log_path: &quot;carthage.log&quot;    # Path to the xcode build output
 )
 </code></pre>
 
@@ -545,6 +546,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>new_resolver</code></td>
 <td>Use new resolver when resolving dependency graph</td>
+<td></td>
+</tr>
+<tr>
+<td><code>log_path</code></td>
+<td>Path to the xcode build output</td>
 <td></td>
 </tr>
 </tbody>

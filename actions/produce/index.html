@@ -617,7 +617,7 @@ end
 </code></pre>
 
 <p>To use the newly generated app in <em>deliver</em>, you need to add this line to your <code>Deliverfile</code>:</p>
-<pre><code class="ruby-skip-tests">apple_id ENV['PRODUCE_APPLE_ID']
+<pre><code class="ruby-skip-tests">apple_id(ENV['PRODUCE_APPLE_ID'])
 </code></pre>
 
 <p>This will tell <em>deliver</em>, which <code>App ID</code> to use, since the app is not yet available in the App Store.</p>

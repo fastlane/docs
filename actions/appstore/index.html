@@ -1184,7 +1184,7 @@ phased_release(false)
 <p>Detailed instructions about how to set up <em>deliver</em> and <em>fastlane</em> in <code>Jenkins</code> can be found in the <a href="https://docs.fastlane.tools/best-practices/continuous-integration/#jenkins-integration">fastlane README</a>.</p>
 <h2 id="firewall-issues"><a name="user-content-firewall-issues" href="#firewall-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Firewall Issues</h2>
 <p><em>deliver</em> uses the iTunes Transporter to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol using</p>
-<pre><code>DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; fastlane deliver
+<pre><code class="bash">DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; fastlane deliver
 </code></pre>
 
 <h2 id="http-proxy"><a name="user-content-http-proxy" href="#http-proxy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HTTP Proxy</h2>

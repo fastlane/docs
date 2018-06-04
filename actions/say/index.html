@@ -410,7 +410,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="say"><a name="user-content-say" href="#say" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>say</h1>
-<p>This action speaks out loud the given text</p>
+<p>This action speaks the given text out loud</p>
 <table>
 <thead>
 <tr>
@@ -433,6 +433,29 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="ruby">say(&quot;I can speak&quot;)
 </code></pre>
 
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>Text to be spoken out loud (as string or array of strings)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mute</code></td>
+<td>If say should be muted with text printed out</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action say
