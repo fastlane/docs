@@ -461,10 +461,10 @@ For more documentation, see the [Apple App Store](https://marketplace.visualstud
 After specifying app repository, Nevercode takes a first look at it by listing the `branches` in this repository. The next step for you is to select the branch you want Nevercode to scan for projects.
 
 1. Select a `branch` from the dropdown that Nevercode should scan. **Note** that you can change the branch later if needed.
-2. Click **Scan branch**. 
+1. Click **Scan branch**. 
 Nevercode scans the repository from the specified branch. This includes cloning the repository, looking up the available `Fastfiles` and listing the pre-configured `lanes`. All this can be monitored real-time from your browser via the live log window.
-3. Once scanning the branch has finished, choose the `lane` which will be executed as the main build step by Nevercode.
-4. Finalize the setup by checking the appropriate [build options](https://developer.nevercode.io/docs/build-configuration#section-general-build-settings) and click **Save and start build**.
+1. Once scanning the branch has finished, choose the `lane` which will be executed as the main build step by Nevercode.
+1. Finalize the setup by checking the appropriate [build options](https://developer.nevercode.io/docs/build-configuration#section-general-build-settings) and click **Save and start build**.
 
 ## External dependencies
 
