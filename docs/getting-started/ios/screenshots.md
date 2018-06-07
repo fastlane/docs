@@ -25,7 +25,7 @@ The positive side of this approach is that your screenshots will all be crisp an
 
 ### Scaled Screenshots via iTunes Connect
 
-With the [iTunes Connect screenshot update](https://developer.apple.com/news/?id=08082016a) from August 2016, you can now use one set of screenshots for all available devices and screenshots. iTunes Connect will automatically scale the images for you, so that each device renders the same image.
+iTunes Connect allows you to use one set of screenshots per device type, which will then be scaled to the appropriate size when viewed in the App Store on a user's device.
 
 While this is convenient, this approach has the same problems as the device frame approach: The screenshots don't actually show how the app looks on the user's device. It's a valid way to start though, since you can gradually overwrite screenshots for specific languages and devices.
 
