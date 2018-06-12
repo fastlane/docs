@@ -488,8 +488,9 @@ Testing in Nevercode with _fastlane_ is 100% automatic. By default, [`scan`](htt
 ### Warning
 In case you wish to run tests as part of the main build step, we suggest that you use [Trainer](https://github.com/KrauseFx/trainer#use-with-fastlane) to generate reliable JUnit results from the test run and put the results in a directory where we can discover them:
 
-```trainer(output_directory: ENV["NEVERCODE_XUNIT_RESULTS_DIR"])```
-
+```no-highlight
+trainer(output_directory: ENV["NEVERCODE_XUNIT_RESULTS_DIR"])
+```
 
 ## Publish your build artefacts
 
@@ -500,5 +501,5 @@ You can use either `fastlane` to take care of artefact distribution or choose fr
 To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, your could make use of it within [`increment_version_number `](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build. 
 
 ## More Information
-For more information, see at [Nevercode documentation] (https://developer.nevercode.io/docs)
+Check out [Nevercode documentation](https://developer.nevercode.io/docs) for more. 
 
