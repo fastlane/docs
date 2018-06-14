@@ -56,7 +56,7 @@ fastlane tests
 ### Setting up the environment
 
 - [Support for Two-step or Two-factor auth](/best-practices/continuous-integration/#two-step-or-two-factor-auth)
-- [Environment variables to set](http://127.0.0.1:8000/best-practices/continuous-integration/#environment-variables-to-set)
+- [Environment variables to set](/best-practices/continuous-integration/#environment-variables-to-set)
 
 ## Posting build results
 
