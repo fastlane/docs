@@ -492,13 +492,13 @@ In case you wish to run tests as part of the main build step, we suggest that yo
 trainer(output_directory: ENV["NEVERCODE_XUNIT_RESULTS_DIR"])
 ```
 
-## Publish your build artefacts
+## Publish your build artifacts
 
-You can use either `fastlane` to take care of artefact distribution or choose from a number of [Nevercode's own integartions](https://developer.nevercode.io/docs/what-kind-of-build-distribution-services-does-nevercode-support).
+You can use either `fastlane` to take care of artifact distribution or choose from a number of [Nevercode's own integrations](https://developer.nevercode.io/docs/what-kind-of-build-distribution-services-does-nevercode-support).
 
 ## Manage build versions
 
-To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, your could make use of it within [`increment_version_number `](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build. 
+To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, you could make use of it within [`increment_version_number`](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build. 
 
 ## More Information
 Check out [Nevercode documentation](https://developer.nevercode.io/docs) for more. 
