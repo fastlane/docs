@@ -453,7 +453,7 @@ Key | Editable While Live | Directory | Filename
   `name` | No | `<metadata_path>/<lang>/` | `name.txt`
   `subtitle` | No | `<metadata_path>/<lang>/` | `subtitle.txt`
   `privacy_url` | Yes | `<metadata_path>/<lang>/` | `privacy_url.txt`
-  `description` | Yes | `<metadata_path>/<lang>/` | `description.txt`
+  `description` | No | `<metadata_path>/<lang>/` | `description.txt`
   `keywords` | No | `<metadata_path>/<lang>/` | `keywords.txt`
   `release_notes` | Yes | `<metadata_path>/<lang>/` | `release_notes.txt`
   `support_url` | Yes | `<metadata_path>/<lang>/` | `support_url.txt`
