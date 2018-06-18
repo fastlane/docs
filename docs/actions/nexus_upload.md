@@ -17,14 +17,32 @@ Upload a file to Sonatype Nexus platform
 nexus_upload ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @xfreebird
+Author | @xfreebird, @mdio
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
+# for Nexus 2
 nexus_upload(
+  file: "/path/to/file.ipa",
+  repo_id: "artefacts",
+  repo_group_id: "com.fastlane",
+  repo_project_name: "ipa",
+  repo_project_version: "1.13",
+  repo_classifier: "dSYM", # Optional
+  endpoint: "http://localhost:8081",
+  username: "admin",
+  password: "admin123"
+)
+```
+
+```ruby
+# for Nexus 3
+nexus_upload(
+  nexus_version: 3,
+  mount_path: "",
   file: "/path/to/file.ipa",
   repo_id: "artefacts",
   repo_group_id: "com.fastlane",
@@ -52,10 +70,11 @@ Key | Description | Default
   `repo_project_version` | Nexus repository commandect version | 
   `repo_classifier` | Nexus repository artifact classifier (optional) | 
   `endpoint` | Nexus endpoint e.g. http://nexus:8081 | 
-  `mount_path` | Nexus mount path | `/nexus`
+  `mount_path` | Nexus mount path (Nexus 3 instances have this configured as empty by default) | `/nexus`
   `username` | Nexus username | 
   `password` | Nexus password | 
   `ssl_verify` | Verify SSL | `true`
+  `nexus_version` | Nexus major version | `2`
   `verbose` | Make detailed output | `false`
   `proxy_username` | Proxy username | 
   `proxy_password` | Proxy password | 

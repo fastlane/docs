@@ -205,7 +205,9 @@ fastlane pilot import -c ~/Desktop/testers.csv
 
 If you run into any issues you can use the `verbose` mode to get a more detailed output:
 
-    fastlane pilot upload --verbose
+```no-highlight
+fastlane pilot upload --verbose
+```
 
 ## Firewall Issues
 
@@ -299,6 +301,7 @@ Key | Description | Default
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
   `groups` | Associate tester to one group or more by group name / group id. E.g. `-g "Team 1","Team 2"` | 
   `wait_for_uploaded_build` | Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`
+  `reject_build_waiting_for_review` | Expire previous if it's 'waiting for review' | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

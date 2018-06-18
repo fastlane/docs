@@ -43,6 +43,10 @@ mailgun(
   app_link: "http://www.myapplink.com",
   ci_build_link: "http://www.mycibuildlink.com",
   template_path: "HTML_TEMPLATE_PATH",
+  custom_placeholders: {
+    :var1 => 123,
+    :var2 => "string"
+  },
   attachment: "dirname/filename.ext"
 )
 ```
@@ -70,6 +74,7 @@ Key | Description | Default
   `template_path` | Mail HTML template | 
   `reply_to` | Mail Reply to | 
   `attachment` | Mail Attachment filenames, either an array or just one string | 
+  `custom_placeholders` | Placeholders for template given as a hash | `{}`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
