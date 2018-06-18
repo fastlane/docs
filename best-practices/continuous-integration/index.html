@@ -354,6 +354,10 @@
           <li class="toctree-l3"><a href="#visual-studio-team-services">Visual Studio Team Services</a></li>
           
         
+          
+          <li class="toctree-l3"><a href="#nevercode-integration-for-ios">Nevercode Integration for iOS</a></li>
+          
+        
       </ul>
       
     </li>
@@ -825,6 +829,45 @@ end
 </ol>
 <h2 id="more-information"><a name="user-content-more-information" href="#more-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More Information</h2>
 <p>For more documentation, see the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vsclient.app-store">Apple App Store</a> in the Visual Studio Team Server marketplace.</p>
+<h1 id="nevercode-integration-for-ios"><a name="user-content-nevercode-integration-for-ios" href="#nevercode-integration-for-ios" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Nevercode Integration for iOS</h1>
+<p><a href="https://nevercode.io">Nevercode</a> expects nothing more than a <a href="https://docs.fastlane.tools/#fastlane"><code>Fastfile</code></a> in your repository. </p>
+<h2 id="specify-app-repository"><a name="user-content-specify-app-repository" href="#specify-app-repository" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Specify app repository</h2>
+<ol>
+<li>Click <strong>Add a new app</strong> on Nevercode dashboard.</li>
+<li>Choose whether to add your application via supported providers using OAuth or add it manually using the other available <a href="https://developer.nevercode.io/docs/authenticating-repository-access">authentication methods</a>.</li>
+</ol>
+<h2 id="define-the-lane-to-be-built"><a name="user-content-define-the-lane-to-be-built" href="#define-the-lane-to-be-built" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Define the lane to be built</h2>
+<p>After specifying app repository, Nevercode takes a first look at it by listing the <code>branches</code> in this repository. The next step for you is to select the branch you want Nevercode to scan for projects.</p>
+<ol>
+<li>Select a <code>branch</code> from the dropdown that Nevercode should scan. <strong>Note</strong> that you can change the branch later if needed.</li>
+<li>Click <strong>Scan branch</strong>. 
+Nevercode scans the repository from the specified branch. This includes cloning the repository, looking up the available <code>Fastfiles</code> and listing the pre-configured <code>lanes</code>. All this can be monitored real-time from your browser via the live log window.</li>
+<li>Once scanning the branch has finished, choose the <code>lane</code> which will be executed as the main build step by Nevercode.</li>
+<li>Finalize the setup by checking the appropriate <a href="https://developer.nevercode.io/docs/build-configuration#section-general-build-settings">build options</a> and click <strong>Save and start build</strong>.</li>
+</ol>
+<h2 id="external-dependencies"><a name="user-content-external-dependencies" href="#external-dependencies" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>External dependencies</h2>
+<p>Nevercode does not automatically install CocoaPods, Carthage or any other external dependencies for <em>fastlane</em> projects. Please use the <em>fastlane</em>'s built-in <a href="https://docs.fastlane.tools/actions/">actions</a>, such as <a href="https://docs.fastlane.tools/actions/cocoapods/"><code>cocoapods</code></a> and <a href="https://docs.fastlane.tools/actions/carthage/"><code>carthage</code></a>, to gain control of that.</p>
+<h2 id="code-signing"><a name="user-content-code-signing" href="#code-signing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code signing</h2>
+<p>To perform code signing on your iOS app, you can either follow the best practices laid out in <a href="https://docs.fastlane.tools/codesigning/getting-started/#using-match"><code>fastlane</code> docs</a>, or you could also make use of <a href="https://developer.nevercode.io/docs/code-signing">Nevercode's standard code signing methods</a>.</p>
+<p>When invoking <a href="https://docs.fastlane.tools/actions/match/"><code>match</code></a> from the <code>Fastfile</code>, keep in mind that you need to <strong>grant access to the credentials repository</strong> and expose the <strong><em>match</em> passphrase</strong> during the build. Both can be securely achieved thanks to the well designed environment variable support of <em>fastlane</em> and Nevercode's support for several SSH keys for authentication.</p>
+<p>In your app settings on Nevercode, navigate to the <strong>Environment</strong> tab to manage environment variables and files:</p>
+<ul>
+<li><em>match</em> passphrase can be defined as a <code>MATCH_PASSWORD</code> environment file — this will be automatically detected by <em>fastlane</em> and used to decrypt the credentials repository.</li>
+<li>You can upload the SSH key for cloning the credentials repository as an environment file, i.e. <code>MATCH_SSH_KEY</code>. All environment files whose variable name has the suffix <code>_SSH_KEY</code> will be automatically added to the SSH agent and will be ready for use during the whole build process.</li>
+</ul>
+<h2 id="run-tests"><a name="user-content-run-tests" href="#run-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run tests</h2>
+<p>Testing in Nevercode with <em>fastlane</em> is 100% automatic. By default, <a href="https://docs.fastlane.tools/actions/scan/"><code>scan</code></a> is used to invoke the test run, but you can easily swap it out for any other <code>lane</code> that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.</p>
+<h3 id="warning"><a name="user-content-warning" href="#warning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Warning</h3>
+<p>In case you wish to run tests as part of the main build step, we suggest that you use <a href="https://github.com/KrauseFx/trainer#use-with-fastlane">Trainer</a> to generate reliable JUnit results from the test run and put the results in a directory where we can discover them:</p>
+<pre><code class="no-highlight">trainer(output_directory: ENV[&quot;NEVERCODE_XUNIT_RESULTS_DIR&quot;])
+</code></pre>
+
+<h2 id="publish-your-build-artifacts"><a name="user-content-publish-your-build-artifacts" href="#publish-your-build-artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Publish your build artifacts</h2>
+<p>You can use either <code>fastlane</code> to take care of artifact distribution or choose from a number of <a href="https://developer.nevercode.io/docs/what-kind-of-build-distribution-services-does-nevercode-support">Nevercode's own integrations</a>.</p>
+<h2 id="manage-build-versions"><a name="user-content-manage-build-versions" href="#manage-build-versions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manage build versions</h2>
+<p>To make your build version management easy, Nevercode exports the <code>NEVERCODE_BUILD_NUMBER</code> environment variable that you can use in your build script. For instance, you could make use of it within <a href="https://docs.fastlane.tools/actions/increment_version_number/"><code>increment_version_number</code></a> action to define a new version for each build. </p>
+<h2 id="more-information_1"><a name="user-content-more-information_1" href="#more-information_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More Information</h2>
+<p>Check out <a href="https://developer.nevercode.io/docs">Nevercode documentation</a> for more. </p>
               
             </div>
           </div>
