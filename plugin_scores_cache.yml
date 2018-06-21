@@ -588,7 +588,7 @@ fastlane-plugin-synx:
   :github_contributors: 2
 fastlane-plugin-setup_fragile_tests_for_rescan:
   :initial_commit: 2017-04-24
-  :age_in_days: 307
+  :age_in_days: 420
   :readme_score: 100
   :tests: 12
   :actions:
@@ -598,12 +598,12 @@ fastlane-plugin-setup_fragile_tests_for_rescan:
     description: Suppress stabile tests so that 'scan' can run the fragile tests again
     details: Reviews the scan report file to find the passing tests in an Xcode project
       and then suppresses the tests in the test-suite's source file.
-  :sha: 2026e129aedf01d57467de4fb4534734d8b26b64b4128d17dbc80f7e364bf70b
-  :github_stars: 5
+  :sha: 46b6ebfde3e68d83f01d987e654ea0019a92e8e66c12836c498a30720e946a4e
+  :github_stars: 6
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 1
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-yarn:
   :initial_commit: 2016-12-21
   :age_in_days: 431
@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 224
+  :age_in_days: 238
   :readme_score: 100
-  :tests: 88
+  :tests: 92
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -995,11 +995,11 @@ fastlane-plugin-test_center:
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: ec298c0cdb19de457fd49e128191cba8f6a3807366e34f13215c7576fbc722f1
-  :github_stars: 21
-  :github_subscribers: 3
-  :github_issues: 15
-  :github_forks: 1
+  :sha: d435790d52cfb61939492114682d6b4be504ce049f1a874d9df0de5f75bd171c
+  :github_stars: 22
+  :github_subscribers: 4
+  :github_issues: 13
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -1156,7 +1156,7 @@ fastlane-plugin-apprepo:
   :github_contributors: 0
 fastlane-plugin-gs_versioning:
   :initial_commit: 2016-11-05
-  :age_in_days: 477
+  :age_in_days: 590
   :readme_score: 50
   :tests: 1
   :actions:
@@ -1205,12 +1205,12 @@ fastlane-plugin-gs_versioning:
     category: 
     description: Plugin for GradoService versioning system
     details: Plugin for GradoService versioning system
-  :sha: 2d71a8c1734e4565e8a683e391589d2492328e89b339a9ce0270688cafd8459b
+  :sha: 13536d0e5fa7eaae86e8dcd7c083e9eaa0893331e9bbfe79265db7fa0d2f9de7
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-latest_hockey_build_number:
   :initial_commit: 2016-09-16
   :age_in_days: 527
@@ -4754,6 +4754,79 @@ fastlane-plugin-upload_to_server:
   :sha: 1c6c98fc586be525ee5cdb09b5841bb1a7674ab64ddc5c9624aa5988998da89a
   :github_stars: 2
   :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-auth0_shipper:
+  :initial_commit: 2016-12-16
+  :age_in_days: 549
+  :readme_score: 50
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: perform_release
+    category: 
+    description: Performs the release for an Auth0 OSS library
+    details: Performs the release of an Auth0 OSS library by creating a tag and pushing
+      it to the remote, and creating the Github Release
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: publish_release
+    category: 
+    description: Performs a pending release represented by the latest tag
+    details: Performs the release of an Auth0 OSS library that include pod linter,
+      push to git remote and push to CocoaPods trunk
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: prepare_release
+    category: 
+    description: Prepares the release for an Auth0 OSS library
+    details: Preprares the release of an Auth0 OSS library (Changelog update, version
+      bump and tag)
+  :sha: '06379bf3a1474994754482d7b44449fd3d5152a3d45d80530fb2532d166e0ecb'
+  :github_stars: 0
+  :github_subscribers: 4
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-line_notify:
+  :initial_commit: 2018-06-06
+  :age_in_days: 12
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: line_notify
+    category: 
+    description: You can use this action to send message via Line Notify
+    details: Just send message to Line Notify
+  :sha: 6e29e755dccadbe36facb4f4724d30d3ebc3062128a191c76da3d1691b418b54
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-browserstack:
+  :initial_commit: 2018-05-31
+  :age_in_days: 18
+  :readme_score: 100
+  :tests: 16
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_browserstack_app_automate
+    category: 
+    description: Uploads IPA and APK files to BrowserStack AppAutomate for running
+      automated tests.
+    details: Uploads IPA and APK files to BrowserStack AppAutomate for running automated
+      tests.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_browserstack_app_live
+    category: 
+    description: Uploads IPA and APK files to BrowserStack AppLive for running manual
+      tests.
+    details: Uploads IPA and APK files to BrowserStack AppLive for running manual
+      tests.
+  :sha: 764c27ecffab4867ba93db6c152d5e699d8140862bc184d77d35d2c3d7fec02a
+  :github_stars: 0
+  :github_subscribers: 4
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0

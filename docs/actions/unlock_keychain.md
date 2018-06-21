@@ -61,7 +61,7 @@ unlock_keychain( # If the keychain file is located in the standard location `~/L
 
 Key | Description | Default
 ----|-------------|--------
-  `path` | Path to the keychain file | 
+  `path` | Path to the keychain file | `login`
   `password` | Keychain password | 
   `add_to_search_list` | Add to keychain search list | `true`
   `set_default` | Set as default keychain | `false`
