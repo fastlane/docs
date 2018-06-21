@@ -425,12 +425,29 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@xfreebird</td>
+<td>@xfreebird, @mdio</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">nexus_upload(
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby"># for Nexus 2
+nexus_upload(
+  file: &quot;/path/to/file.ipa&quot;,
+  repo_id: &quot;artefacts&quot;,
+  repo_group_id: &quot;com.fastlane&quot;,
+  repo_project_name: &quot;ipa&quot;,
+  repo_project_version: &quot;1.13&quot;,
+  repo_classifier: &quot;dSYM&quot;, # Optional
+  endpoint: &quot;http://localhost:8081&quot;,
+  username: &quot;admin&quot;,
+  password: &quot;admin123&quot;
+)
+</code></pre>
+
+<pre><code class="ruby"># for Nexus 3
+nexus_upload(
+  nexus_version: 3,
+  mount_path: &quot;&quot;,
   file: &quot;/path/to/file.ipa&quot;,
   repo_id: &quot;artefacts&quot;,
   repo_group_id: &quot;com.fastlane&quot;,
@@ -490,7 +507,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>mount_path</code></td>
-<td>Nexus mount path</td>
+<td>Nexus mount path (Nexus 3 instances have this configured as empty by default)</td>
 <td><code>/nexus</code></td>
 </tr>
 <tr>
@@ -507,6 +524,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>ssl_verify</code></td>
 <td>Verify SSL</td>
 <td><code>true</code></td>
+</tr>
+<tr>
+<td><code>nexus_version</code></td>
+<td>Nexus major version</td>
+<td><code>2</code></td>
 </tr>
 <tr>
 <td><code>verbose</code></td>

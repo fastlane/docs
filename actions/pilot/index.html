@@ -553,8 +553,9 @@ fastlane pilot import -c ~/Desktop/testers.csv
 <h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
 <h2 id="debug-information"><a name="user-content-debug-information" href="#debug-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Debug information</h2>
 <p>If you run into any issues you can use the <code>verbose</code> mode to get a more detailed output:</p>
-<pre><code>fastlane pilot upload --verbose
+<pre><code class="no-highlight">fastlane pilot upload --verbose
 </code></pre>
+
 <h2 id="firewall-issues"><a name="user-content-firewall-issues" href="#firewall-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Firewall Issues</h2>
 <p><em>pilot</em> uses the iTunes Transporter to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol from the command line using</p>
 <pre><code class="no-highlight">DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; pilot ...
@@ -742,6 +743,11 @@ pilot...
 <tr>
 <td><code>wait_for_uploaded_build</code></td>
 <td>Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reject_build_waiting_for_review</code></td>
+<td>Expire previous if it's 'waiting for review'</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

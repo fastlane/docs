@@ -448,6 +448,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   app_link: &quot;http://www.myapplink.com&quot;,
   ci_build_link: &quot;http://www.mycibuildlink.com&quot;,
   template_path: &quot;HTML_TEMPLATE_PATH&quot;,
+  custom_placeholders: {
+    :var1 =&gt; 123,
+    :var2 =&gt; &quot;string&quot;
+  },
   attachment: &quot;dirname/filename.ext&quot;
 )
 </code></pre>
@@ -536,6 +540,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>attachment</code></td>
 <td>Mail Attachment filenames, either an array or just one string</td>
 <td></td>
+</tr>
+<tr>
+<td><code>custom_placeholders</code></td>
+<td>Placeholders for template given as a hash</td>
+<td><code>{}</code></td>
 </tr>
 </tbody>
 </table>

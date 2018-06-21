@@ -1184,19 +1184,19 @@ phased_release(false)
 <p>Detailed instructions about how to set up <em>deliver</em> and <em>fastlane</em> in <code>Jenkins</code> can be found in the <a href="https://docs.fastlane.tools/best-practices/continuous-integration/#jenkins-integration">fastlane README</a>.</p>
 <h2 id="firewall-issues"><a name="user-content-firewall-issues" href="#firewall-issues" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Firewall Issues</h2>
 <p><em>deliver</em> uses the iTunes Transporter to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol using</p>
-<pre><code class="bash">DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; fastlane deliver
+<pre><code class="no-highlight">DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV&quot; fastlane deliver
 </code></pre>
 
 <h2 id="http-proxy"><a name="user-content-http-proxy" href="#http-proxy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HTTP Proxy</h2>
 <p>iTunes Transporter is a Java application bundled with Xcode. In addition to utilizing the <code>DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS="-t DAV"</code>, you need to configure the transporter application to use the proxy independently from the system proxy or any environment proxy settings. You can find the configuration file within Xcode:</p>
-<pre><code class="bash">TOOLS_PATH=$( xcode-select -p )
+<pre><code class="no-highlight">TOOLS_PATH=$( xcode-select -p )
 REL_PATH='../Applications/Application Loader.app/Contents/itms/java/lib/net.properties'
 echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </code></pre>
 
 <p>Add necessary proxy configuration values to the net.properties according to <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/net/proxies.html">Java Proxy Configuration</a>.</p>
 <p>As an alternative to editing the properties files, proxy configuration can be specified on the command line directly:</p>
-<pre><code class="bash">DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV -Dhttp.proxyHost=myproxy.com -Dhttp.proxyPort=8080&quot;
+<pre><code class="no-highlight">DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS=&quot;-t DAV -Dhttp.proxyHost=myproxy.com -Dhttp.proxyPort=8080&quot;
 </code></pre>
 
 <h2 id="limit"><a name="user-content-limit" href="#limit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Limit</h2>

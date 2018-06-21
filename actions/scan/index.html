@@ -531,14 +531,17 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <img alt="img/actions/scanHTML.png" src="../../img/actions/scanHTML.png" />
 <img alt="img/actions/scanHTMLFailing.png" src="../../img/actions/scanHTMLFailing.png" /></p>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<pre><code>fastlane scan
+<pre><code class="no-highlight">fastlane scan
 </code></pre>
+
 <p>That's all you need to run your tests. If you want more control, here are some available parameters:</p>
-<pre><code>fastlane scan --workspace "Example.xcworkspace" --scheme "AppName" --device "iPhone 6" --clean
+<pre><code class="no-highlight">fastlane scan --workspace &quot;Example.xcworkspace&quot; --scheme &quot;AppName&quot; --device &quot;iPhone 6&quot; --clean
 </code></pre>
+
 <p>If you need to use a different xcode install, use <code>xcode-select</code> or define <code>DEVELOPER_DIR</code>:</p>
-<pre><code>DEVELOPER_DIR="/Applications/Xcode6.2.app" scan
+<pre><code class="no-highlight">DEVELOPER_DIR=&quot;/Applications/Xcode6.2.app&quot; scan
 </code></pre>
+
 <p>To run <em>scan</em> on multiple devices via <a href="https://fastlane.tools"><em>fastlane</em></a>, add this to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">scan(
   workspace: &quot;Example.xcworkspace&quot;,

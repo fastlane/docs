@@ -437,8 +437,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>Check out this gif:</p>
 <p><img alt="img/actions/PEMRecording.gif" src="../../img/actions/PEMRecording.gif" /></p>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<pre><code>fastlane pem
+<pre><code class="no-highlight">fastlane pem
 </code></pre>
+
 <p>Yes, that's the whole command!</p>
 <p>This does the following:</p>
 <ul>
@@ -449,31 +450,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <p>Note that <code>_pem_</code> will never revoke your existing certificates. <em>pem</em> can't download any of your existing push certificates, as the private key is only available on the machine it was created on. </p>
 <p>If you already have a push certificate enabled, which is active for at least 30 more days, <em>pem</em> will not create a new certificate. If you still want to create one, use the <code>force</code>:</p>
-<pre><code>fastlane pem --force
+<pre><code class="no-highlight">fastlane pem --force
 </code></pre>
+
 <p>You can pass parameters like this:</p>
-<pre><code>fastlane pem -a com.krausefx.app -u username
+<pre><code class="no-highlight">fastlane pem -a com.krausefx.app -u username
 </code></pre>
+
 <p>If you want to generate a development certificate instead:</p>
-<pre><code>fastlane pem --development
+<pre><code class="no-highlight">fastlane pem --development
 </code></pre>
+
 <p>Set a password for your <code>p12</code> file:</p>
-<pre><code>fastlane pem -p "MyPass"
+<pre><code class="no-highlight">fastlane pem -p &quot;MyPass&quot;
 </code></pre>
+
 <p>You can specify a name for the output file:</p>
-<pre><code>fastlane pem -o my.pem
+<pre><code class="no-highlight">fastlane pem -o my.pem
 </code></pre>
+
 <p>To get a list of available options run:</p>
-<pre><code>fastlane action pem
+<pre><code class="no-highlight">fastlane action pem
 </code></pre>
+
 <h3 id="note-about-empty-p12-passwords-and-keychain-accessapp"><a name="user-content-note-about-empty-p12-passwords-and-keychain-accessapp" href="#note-about-empty-p12-passwords-and-keychain-accessapp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note about empty <code>p12</code> passwords and Keychain Access.app</h3>
 <p><em>pem</em> will produce a valid <code>p12</code> without specifying a password, or using the empty-string as the password.
 While the file is valid, the Mac's Keychain Access will not allow you to open the file without specifying a passphrase.</p>
 <p>Instead, you may verify the file is valid using OpenSSL:</p>
-<pre><code>openssl pkcs12 -info -in my.p12
+<pre><code class="no-highlight">openssl pkcs12 -info -in my.p12
 </code></pre>
+
 <p>If you need the <code>p12</code> in your keychain, perhaps to test push with an app like <a href="https://github.com/KnuffApp/Knuff">Knuff</a> or <a href="https://github.com/noodlewerk/NWPusher">Pusher</a>, you can use <code>openssl</code> to export the <code>p12</code> to <em>pem</em> and back to <code>p12</code>:</p>
-<pre><code>% openssl pkcs12 -in my.p12 -out my.pem
+<pre><code class="no-highlight">% openssl pkcs12 -in my.p12 -out my.pem
 Enter Import Password:
   &lt;hit enter: the p12 has no password&gt;
 MAC verified OK
@@ -487,6 +495,7 @@ Enter pass phrase for temp.pem:
 Enter Export Password:
   &lt;enter a password for encrypting the new p12 file&gt;
 </code></pre>
+
 <h2 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h2>
 <p>Run <code>fastlane action pem</code> to get a list of available environment variables.</p>
 <h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>

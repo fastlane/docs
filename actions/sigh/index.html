@@ -455,43 +455,55 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>Yes, that's the whole command!</p>
 <p><em>sigh</em> will create, repair and download profiles for the App Store by default.</p>
 <p>You can pass your bundle identifier and username like this:</p>
-<pre><code>fastlane sigh -a com.krausefx.app -u username
+<pre><code class="no-highlight">fastlane sigh -a com.krausefx.app -u username
 </code></pre>
+
 <p>If you want to generate an <strong>Ad Hoc</strong> profile instead of an App Store profile:</p>
-<pre><code>fastlane sigh --adhoc
+<pre><code class="no-highlight">fastlane sigh --adhoc
 </code></pre>
+
 <p>If you want to generate a <strong>Development</strong> profile:</p>
-<pre><code>fastlane sigh --development
+<pre><code class="no-highlight">fastlane sigh --development
 </code></pre>
+
 <p>To generate the profile in a specific directory:</p>
-<pre><code>fastlane sigh -o "~/Certificates/"
+<pre><code class="no-highlight">fastlane sigh -o &quot;~/Certificates/&quot;
 </code></pre>
+
 <p>To download all your provisioning profiles use</p>
-<pre><code>fastlane sigh download_all
+<pre><code class="no-highlight">fastlane sigh download_all
 </code></pre>
+
 <p>Optionally, use <code>fastlane sigh download_all --download_xcode_profiles</code> to also include the Xcode managed provisioning profiles</p>
 <p>For a list of available parameters and commands run</p>
-<pre><code>fastlane action sigh
+<pre><code class="no-highlight">fastlane action sigh
 </code></pre>
+
 <h3 id="advanced"><a name="user-content-advanced" href="#advanced" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced</h3>
 <p>By default, <em>sigh</em> will install the downloaded profile on your machine. If you just want to generate the profile and skip the installation, use the following flag:</p>
-<pre><code>fastlane sigh --skip_install
+<pre><code class="no-highlight">fastlane sigh --skip_install
 </code></pre>
+
 <p>To save the provisioning profile under a specific name, use the -q option:</p>
-<pre><code>fastlane sigh -a com.krausefx.app -u username -q "myProfile.mobileprovision"
+<pre><code class="no-highlight">fastlane sigh -a com.krausefx.app -u username -q &quot;myProfile.mobileprovision&quot;
 </code></pre>
+
 <p>If for some reason you don't want <em>sigh</em> to verify that the code signing identity is installed on your local machine:</p>
-<pre><code>fastlane sigh --skip_certificate_verification
+<pre><code class="no-highlight">fastlane sigh --skip_certificate_verification
 </code></pre>
+
 <p>If you need the provisioning profile to be renewed regardless of its state use the <code>--force</code> option. This gives you a profile with the maximum lifetime. <code>--force</code> will also add all available devices to this profile.</p>
-<pre><code>fastlane sigh --force
+<pre><code class="no-highlight">fastlane sigh --force
 </code></pre>
+
 <p>By default, <em>sigh</em> will include all certificates on development profiles, and first certificate on other types. If you need to specify which certificate to use you can either use the environment variable <code>SIGH_CERTIFICATE</code>, or pass the name or expiry date of the certificate as argument:</p>
-<pre><code>fastlane sigh -c "SunApps GmbH"
+<pre><code class="no-highlight">fastlane sigh -c &quot;SunApps GmbH&quot;
 </code></pre>
+
 <p>For a list of available parameters and commands run</p>
-<pre><code>fastlane action sigh
+<pre><code class="no-highlight">fastlane action sigh
 </code></pre>
+
 <h3 id="use-with-fastlane"><a name="user-content-use-with-fastlane" href="#use-with-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use with <a href="https://fastlane.tools"><em>fastlane</em></a></h3>
 <p><em>sigh</em> becomes really interesting when used in <a href="https://fastlane.tools"><em>fastlane</em></a> in combination with <a href="https://docs.fastlane.tools/actions/cert/"><em>cert</em></a>.</p>
 <p>Update your <code>Fastfile</code> to contain the following code:</p>
@@ -505,26 +517,32 @@ end
 This will result in <em>sigh</em> always using the correct signing certificate, which is installed on the local machine.</p>
 <h1 id="repair"><a name="user-content-repair" href="#repair" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repair</h1>
 <p><em>sigh</em> can automatically repair all your existing provisioning profiles which are expired or just invalid.</p>
-<pre><code>fastlane sigh repair
+<pre><code class="no-highlight">fastlane sigh repair
 </code></pre>
+
 <h1 id="resign"><a name="user-content-resign" href="#resign" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resign</h1>
 <p>If you generated your <code>ipa</code> file but want to apply a different code signing onto the ipa file, you can use <code>sigh resign</code>:</p>
-<pre><code>fastlane sigh resign
+<pre><code class="no-highlight">fastlane sigh resign
 </code></pre>
+
 <p><em>sigh</em> will find the ipa file and the provisioning profile for you if they are located in the current folder.</p>
 <p>You can pass more information using the command line:</p>
-<pre><code>fastlane sigh resign ./path/app.ipa --signing_identity "iPhone Distribution: Felix Krause" -p "my.mobileprovision"
+<pre><code class="no-highlight">fastlane sigh resign ./path/app.ipa --signing_identity &quot;iPhone Distribution: Felix Krause&quot; -p &quot;my.mobileprovision&quot;
 </code></pre>
+
 <h1 id="manage"><a name="user-content-manage" href="#manage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manage</h1>
 <p>With <code>sigh manage</code> you can list all provisioning profiles installed locally.</p>
-<pre><code>fastlane sigh manage
+<pre><code class="no-highlight">fastlane sigh manage
 </code></pre>
+
 <p>Delete all expired provisioning profiles</p>
-<pre><code>fastlane sigh manage -e
+<pre><code class="no-highlight">fastlane sigh manage -e
 </code></pre>
+
 <p>Or delete all <code>iOS Team Provisioning Profile</code> by using a regular expression</p>
-<pre><code>fastlane sigh manage -p "iOS\ ?Team Provisioning Profile:"
+<pre><code class="no-highlight">fastlane sigh manage -p &quot;iOS\ ?Team Provisioning Profile:&quot;
 </code></pre>
+
 <h2 id="environment-variables"><a name="user-content-environment-variables" href="#environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment Variables</h2>
 <p>Run <code>fastlane action sigh</code> to get a list of all available environment variables.</p>
 <p>If you're using <a href="https://docs.fastlane.tools/actions/cert/"><em>cert</em></a> in combination with <a href="https://fastlane.tools"><em>fastlane</em></a> the signing certificate will automatically be selected for you. (make sure to run <em>cert</em> before <em>sigh</em>)</p>

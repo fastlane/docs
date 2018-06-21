@@ -437,7 +437,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   frameworks: [&quot;MyFramework1&quot;, &quot;MyFramework2&quot;],   # Specify which frameworks to archive (only for the archive command)
   output: &quot;MyFrameworkBundle.framework.zip&quot;,      # Specify the output archive name (only for the archive command)
   command: &quot;bootstrap&quot;,       # One of: build, bootstrap, update, archive. (default: bootstrap)
-  dependencies: [&quot;Alamofire&quot;, &quot;Notice&quot;],# Specify which dependencies to update or build (only for update and build commands)
+  dependencies: [&quot;Alamofire&quot;, &quot;Notice&quot;],# Specify which dependencies to update or build (only for update, build and bootstrap commands)
   use_ssh: false,   # Use SSH for downloading GitHub repositories.
   use_submodules: false,      # Add dependencies as Git submodules.
   use_binaries: true,         # Check out dependency repositories even when prebuilt frameworks exist
@@ -470,7 +470,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>dependencies</code></td>
-<td>Carthage dependencies to update or build</td>
+<td>Carthage dependencies to update, build or bootstrap</td>
 <td><code>[]</code></td>
 </tr>
 <tr>
