@@ -178,6 +178,15 @@ But we are working on 🐧 Linux and 🖥️ Windows support for parts of _fastl
 
 Special thanks to all [contributors](https://github.com/fastlane/fastlane/graphs/contributors) for extending and improving _fastlane_.
 
+## Metrics
+ 
+_fastlane_ tracks a few key metrics to understand how developers are using the tool and to help us know what areas need improvement. No personal/sensitive information is ever collected. Metrics that are collected include: 
+ 
+* The number of _fastlane_ runs
+* A salted hash of the app identifier or package name, which helps us anonymously identify unique usage of _fastlane_
+ 
+You can easily opt-out of metrics collection by adding `opt_out_usage` at the top of your `Fastfile` or by setting the environment variable `FASTLANE_OPT_OUT_USAGE`.
+
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](https://github.com/fastlane/fastlane/blob/master/LICENSE) file.
