@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # download_dsyms
 
 
-Download dSYM files from Apple iTunes Connect for Bitcode apps
+Download dSYM files from Apple App Store Connect for Bitcode apps
 
 
 
 
-> This action downloads dSYM files from Apple iTunes Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.
+> This action downloads dSYM files from Apple App Store Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.
 
 ```ruby
 lane :refresh_dsyms do
@@ -48,10 +48,10 @@ download_dsyms(version: "1.0.0", build_number: "345")
 
 Key | Description | Default
 ----|-------------|--------
-  `username` | Your Apple ID Username for iTunes Connect | [*](#parameters-legend-dynamic)
+  `username` | Your Apple ID Username for App Store Connect | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `platform` | The app platform for dSYMs you wish to download (ios, appletvos) | `:ios`
   `version` | The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs | 
   `build_number` | The app build_number for dSYMs you wish to download | 

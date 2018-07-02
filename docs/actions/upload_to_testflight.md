@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # upload_to_testflight
 
 
-Upload a new binary to iTunes Connect for TestFlight beta testing (via _pilot_)
+Upload new binary to App Store Connect for TestFlight beta testing (via _pilot_)
 
 
 
@@ -24,7 +24,7 @@ Pilot makes it easier to manage your app on Apple’s TestFlight. You can:
 - Retrieve information about testers & devices
 - Import/export all available testers
 
-_pilot_ uses [spaceship.airforce](https://spaceship.airforce) to interact with iTunes Connect 🚀
+_pilot_ uses [spaceship.airforce](https://spaceship.airforce) to interact with App Store Connect 🚀
 
 -------
 
@@ -132,7 +132,7 @@ The output will look like this:
 
 ### Add a new tester
 
-To add a new tester to both your iTunes Connect account and to your app (if given), use the `pilot add` command. This will create a new tester (if necessary) or add an existing tester to the app to test.
+To add a new tester to both your App Store Connect account and to your app (if given), use the `pilot add` command. This will create a new tester (if necessary) or add an existing tester to the app to test.
 
 ```no-highlight
 fastlane pilot add email@invite.com
@@ -286,7 +286,7 @@ Key | Description | Default
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
   `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers | `false`
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. iTunesConnect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
-  `apple_id` | The unique App ID provided by iTunes Connect | [*](#parameters-legend-dynamic)
+  `apple_id` | The unique App ID provided by App Store Connect | [*](#parameters-legend-dynamic)
   `distribute_external` | Should the build be distributed to external testers? | `false`
   `notify_external_testers` | Should notify external testers? | `true`
   `demo_account_required` | Do you need a demo account when Apple does review? | `false`
@@ -294,9 +294,9 @@ Key | Description | Default
   `last_name` | The tester's last name | 
   `email` | The tester's email | 
   `testers_file_path` | Path to a CSV file of testers | `./testers.csv`
-  `wait_processing_interval` | Interval in seconds to wait for iTunes Connect processing | `30`
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `wait_processing_interval` | Interval in seconds to wait for App Store Connect processing | `30`
+  `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
   `groups` | Associate tester to one group or more by group name / group id. E.g. `-g "Team 1","Team 2"` | 

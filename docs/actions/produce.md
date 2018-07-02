@@ -15,9 +15,9 @@ Alias for the `create_app_online` action
   <img src="/img/actions/produce.png" width="250">
 </p>
 
-###### Create new iOS apps on iTunes Connect and Dev Portal using your command line
+###### Create new iOS apps on App Store Connect and Dev Portal using your command line
 
-_produce_ creates new iOS apps on both the Apple Developer Portal and iTunes Connect with the minimum required information.
+_produce_ creates new iOS apps on both the Apple Developer Portal and App Store Connect with the minimum required information.
 
 -------
 
@@ -31,7 +31,7 @@ _produce_ creates new iOS apps on both the Apple Developer Portal and iTunes Con
 
 # Features
 
-- **Create** new apps on both iTunes Connect and the Apple Developer Portal
+- **Create** new apps on both App Store Connect and the Apple Developer Portal
 - **Modify** Application Services on the Apple Developer Portal
 - **Create** App Groups on the Apple Developer Portal
 - **Associate** apps with App Groups on the Apple Developer Portal
@@ -57,7 +57,7 @@ fastlane produce --help
 Commands: (* default)
   associate_group      Associate with a group, which is created if needed or simply located otherwise
   associate_merchant   Associate with a merchant for use with Apple Pay. Apple Pay will be enabled for this app
-  create             * Creates a new app on iTunes Connect and the Apple Developer Portal
+  create             * Creates a new app on App Store Connect and the Apple Developer Portal
   disable_services     Disable specific Application Services for a specific app on the Apple Developer Portal
   enable_services      Enable specific Application Services for a specific app on the Apple Developer Portal
   group                Ensure that a specific App Group exists
@@ -79,13 +79,13 @@ Options for create:
   -j, --platform STRING The platform to use (optional) (PRODUCE_PLATFORM)
   -m, --language STRING Primary Language (e.g. 'English', 'German') (PRODUCE_LANGUAGE)
   -c, --company_name STRING The name of your company. Only required if it's the first app you create (PRODUCE_COMPANY_NAME)
-  -i, --skip_itc [VALUE] Skip the creation of the app on iTunes Connect (PRODUCE_SKIP_ITC)
+  -i, --skip_itc [VALUE] Skip the creation of the app on App Store Connect (PRODUCE_SKIP_ITC)
   -d, --skip_devcenter [VALUE] Skip the creation of the app on the Apple Developer Portal (PRODUCE_SKIP_DEVCENTER)
-  -s, --itc_users ARRAY Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
+  -s, --itc_users ARRAY Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
   -b, --team_id STRING The ID of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_ID)
   -l, --team_name STRING The name of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_NAME)
-  -k, --itc_team_id [VALUE] The ID of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_ID)
-  -p, --itc_team_name STRING The name of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_NAME)
+  -k, --itc_team_id [VALUE] The ID of your App Store Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_ID)
+  -p, --itc_team_name STRING The name of your App Store Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_NAME)
 ```
 
 ## Enabling / Disabling Application Services
@@ -316,15 +316,15 @@ Key | Description | Default
   `platform` | The platform to use (optional) | `ios`
   `language` | Primary Language (e.g. 'English', 'German') | `English`
   `company_name` | The name of your company. Only required if it's the first app you create | 
-  `skip_itc` | Skip the creation of the app on iTunes Connect | `false`
-  `itc_users` | Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles | 
+  `skip_itc` | Skip the creation of the app on App Store Connect | `false`
+  `itc_users` | Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles | 
   `enabled_features` | **DEPRECATED!** Please use `enable_services` instead - Array with Spaceship App Services | `{}`
   `enable_services` | Array with Spaceship App Services (e.g. app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), game_center: (on\|off), health_kit: (on\|off), home_kit: (on\|off), hotspot: (on\|off), icloud: (legacy\|cloudkit), in_app_purchase: (on\|off), inter_app_audio: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), siri_kit: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off)) | `{}`
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal | `false`
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `itc_team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `itc_team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `itc_team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `itc_team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
