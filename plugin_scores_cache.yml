@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 238
+  :age_in_days: 252
   :readme_score: 100
-  :tests: 92
+  :tests: 102
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -995,11 +995,16 @@ fastlane-plugin-test_center:
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: d435790d52cfb61939492114682d6b4be504ce049f1a874d9df0de5f75bd171c
-  :github_stars: 22
-  :github_subscribers: 4
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: collate_json_reports
+    category: 
+    description: Combines and combines tests from multiple json report files
+    details: tests and the subsequent JSON reports will have fewer failing tests.
+  :sha: ce66f77f8091105d97d25b3444dd25b7b408ed427a713a50dd70242feb2f99f3
+  :github_stars: 24
+  :github_subscribers: 5
   :github_issues: 13
-  :github_forks: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -4375,7 +4380,7 @@ fastlane-plugin-retry_tests:
   :github_contributors: 2
 fastlane-plugin-icon_versioning:
   :initial_commit: 2017-12-14
-  :age_in_days: 110
+  :age_in_days: 200
   :readme_score: 100
   :tests: 42
   :actions:
@@ -4385,11 +4390,11 @@ fastlane-plugin-icon_versioning:
     description: Overlay build information on top of your app icon. Based on original
       work by Krzysztof Zabłocki (https://github.com/krzysztofzablocki/Bootstrap).
     details: 
-  :sha: 716d807f70d487a9500942e57947b27c641defad3b6c2d526566c45529bc06f9
-  :github_stars: 31
+  :sha: '028a56f1592d72ecf520f7d5b201c98b09f23a532269fe2fd93fff4c72698182'
+  :github_stars: 36
   :github_subscribers: 1
-  :github_issues: 1
-  :github_forks: 0
+  :github_issues: 2
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-resize_screenshots:
   :initial_commit: 2018-03-04
@@ -4680,7 +4685,7 @@ fastlane-plugin-schedule:
   :github_contributors: 0
 fastlane-plugin-teak:
   :initial_commit: 2018-04-23
-  :age_in_days: 25
+  :age_in_days: 70
   :readme_score: 50
   :tests: 1
   :actions:
@@ -4700,7 +4705,7 @@ fastlane-plugin-teak:
     description: Fastlane plugins for the Teak SDK
     details: A collection of plugins to make your life easier when working with the
       Teak SDK.
-  :sha: e49730406c9773789bced29cc2b2fdd352680e206e607f361998d0182ea0844a
+  :sha: 144c387a1f3ab667438ba2def8b927f57654a90affdc2b6ce6819cd17f92add3
   :github_stars: 0
   :github_subscribers: 3
   :github_issues: 0
@@ -4827,6 +4832,24 @@ fastlane-plugin-browserstack:
   :sha: 764c27ecffab4867ba93db6c152d5e699d8140862bc184d77d35d2c3d7fec02a
   :github_stars: 0
   :github_subscribers: 4
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-lastpass:
+  :initial_commit: 2018-06-19
+  :age_in_days: 13
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: lastpass
+    category: 
+    description: Easily sync your Apple ID credentials stored in LastPass with your
+      keychain using CredentialManager
+    details: 
+  :sha: 1186bae077fa3b269aeb704120de2cf77ddb76fa0b0d44c9dd757d71aa9e1f1a
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
