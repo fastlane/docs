@@ -51,7 +51,7 @@ Key | Description | Default
   `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | `true`
   `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file | 
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status | 
-  `try_repo_update_on_error` | Retry with --repo-update if action was finished with error | 
+  `try_repo_update_on_error` | Retry with --repo-update if action was finished with error | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # set_changelog
 
 
-Set the changelog for all languages on iTunes Connect
+Set the changelog for all languages on App Store Connect
 
 
 
@@ -42,9 +42,9 @@ Key | Description | Default
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `version` | The version number to create/update | 
-  `changelog` | Changelog text that should be uploaded to iTunes Connect | 
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `changelog` | Changelog text that should be uploaded to App Store Connect | 
+  `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `platform` | The platform of the app (ios, appletvos, mac) | `ios`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

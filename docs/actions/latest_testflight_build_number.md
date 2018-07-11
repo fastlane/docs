@@ -48,8 +48,8 @@ Key | Description | Default
   `version` | The version number whose latest build number we want | 
   `platform` | The platform to use (optional) | `ios`
   `initial_build_number` | sets the build number to given value if no build is in current train | `1`
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
