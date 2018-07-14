@@ -410,9 +410,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="download_dsyms"><a name="user-content-download_dsyms" href="#download_dsyms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>download_dsyms</h1>
-<p>Download dSYM files from Apple iTunes Connect for Bitcode apps</p>
+<p>Download dSYM files from Apple App Store Connect for Bitcode apps</p>
 <blockquote>
-<p>This action downloads dSYM files from Apple iTunes Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.</p>
+<p>This action downloads dSYM files from Apple App Store Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.</p>
 </blockquote>
 <pre><code class="ruby">lane :refresh_dsyms do
   download_dsyms                  # Download dSYM files from iTC
@@ -459,7 +459,7 @@ end
 <tbody>
 <tr>
 <td><code>username</code></td>
-<td>Your Apple ID Username for iTunes Connect</td>
+<td>Your Apple ID Username for App Store Connect</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
@@ -469,12 +469,12 @@ end
 </tr>
 <tr>
 <td><code>team_id</code></td>
-<td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td>The ID of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
-<td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td>The name of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>

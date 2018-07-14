@@ -415,8 +415,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   <img src="/img/actions/produce.png" width="250">
 </p>
 
-<h6 id="create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line"><a name="user-content-create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line" href="#create-new-ios-apps-on-itunes-connect-and-dev-portal-using-your-command-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create new iOS apps on iTunes Connect and Dev Portal using your command line</h6>
-<p><em>produce</em> creates new iOS apps on both the Apple Developer Portal and iTunes Connect with the minimum required information.</p>
+<h6 id="create-new-ios-apps-on-app-store-connect-and-dev-portal-using-your-command-line"><a name="user-content-create-new-ios-apps-on-app-store-connect-and-dev-portal-using-your-command-line" href="#create-new-ios-apps-on-app-store-connect-and-dev-portal-using-your-command-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create new iOS apps on App Store Connect and Dev Portal using your command line</h6>
+<p><em>produce</em> creates new iOS apps on both the Apple Developer Portal and App Store Connect with the minimum required information.</p>
 <hr />
 <p align="center">
     <a href="#features">Features</a> &bull;
@@ -427,7 +427,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 <h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
 <ul>
-<li><strong>Create</strong> new apps on both iTunes Connect and the Apple Developer Portal</li>
+<li><strong>Create</strong> new apps on both App Store Connect and the Apple Developer Portal</li>
 <li><strong>Modify</strong> Application Services on the Apple Developer Portal</li>
 <li><strong>Create</strong> App Groups on the Apple Developer Portal</li>
 <li><strong>Associate</strong> apps with App Groups on the Apple Developer Portal</li>
@@ -447,7 +447,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="no-highlight">Commands: (* default)
   associate_group      Associate with a group, which is created if needed or simply located otherwise
   associate_merchant   Associate with a merchant for use with Apple Pay. Apple Pay will be enabled for this app
-  create             * Creates a new app on iTunes Connect and the Apple Developer Portal
+  create             * Creates a new app on App Store Connect and the Apple Developer Portal
   disable_services     Disable specific Application Services for a specific app on the Apple Developer Portal
   enable_services      Enable specific Application Services for a specific app on the Apple Developer Portal
   group                Ensure that a specific App Group exists
@@ -469,13 +469,13 @@ Options for create:
   -j, --platform STRING The platform to use (optional) (PRODUCE_PLATFORM)
   -m, --language STRING Primary Language (e.g. 'English', 'German') (PRODUCE_LANGUAGE)
   -c, --company_name STRING The name of your company. Only required if it's the first app you create (PRODUCE_COMPANY_NAME)
-  -i, --skip_itc [VALUE] Skip the creation of the app on iTunes Connect (PRODUCE_SKIP_ITC)
+  -i, --skip_itc [VALUE] Skip the creation of the app on App Store Connect (PRODUCE_SKIP_ITC)
   -d, --skip_devcenter [VALUE] Skip the creation of the app on the Apple Developer Portal (PRODUCE_SKIP_DEVCENTER)
-  -s, --itc_users ARRAY Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
+  -s, --itc_users ARRAY Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
   -b, --team_id STRING The ID of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_ID)
   -l, --team_name STRING The name of your Developer Portal team if you're in multiple teams (PRODUCE_TEAM_NAME)
-  -k, --itc_team_id [VALUE] The ID of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_ID)
-  -p, --itc_team_name STRING The name of your iTunes Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_NAME)
+  -k, --itc_team_id [VALUE] The ID of your App Store Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_ID)
+  -p, --itc_team_name STRING The name of your App Store Connect team if you're in multiple teams (PRODUCE_ITC_TEAM_NAME)
 </code></pre>
 
 <h2 id="enabling-disabling-application-services"><a name="user-content-enabling-disabling-application-services" href="#enabling-disabling-application-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enabling / Disabling Application Services</h2>
@@ -716,12 +716,12 @@ end
 </tr>
 <tr>
 <td><code>skip_itc</code></td>
-<td>Skip the creation of the app on iTunes Connect</td>
+<td>Skip the creation of the app on App Store Connect</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>itc_users</code></td>
-<td>Array of iTunes Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles</td>
+<td>Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles</td>
 <td></td>
 </tr>
 <tr>
@@ -751,12 +751,12 @@ end
 </tr>
 <tr>
 <td><code>itc_team_id</code></td>
-<td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td>The ID of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>itc_team_name</code></td>
-<td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td>The name of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 </tbody>

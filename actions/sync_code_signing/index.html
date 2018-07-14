@@ -704,7 +704,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <p>If attackers would have your certificate and provisioning profile, they could codesign an application with the same bundle identifier.</p>
 <p>What's the worst that could happen for each of the profile types?</p>
 <h5 id="app-store-profiles"><a name="user-content-app-store-profiles" href="#app-store-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Store Profiles</h5>
-<p>An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days (checkout <a href="http://appreviewtimes.com">appreviewtimes.com</a> for up-to-date expectations). Attackers could only submit an app for review, if they also got access to your iTunes Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.</p>
+<p>An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days (checkout <a href="http://appreviewtimes.com">appreviewtimes.com</a> for up-to-date expectations). Attackers could only submit an app for review, if they also got access to your App Store Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.</p>
 <h5 id="development-and-ad-hoc-profiles"><a name="user-content-development-and-ad-hoc-profiles" href="#development-and-ad-hoc-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Development and Ad Hoc Profiles</h5>
 <p>In general those profiles are harmless as they can only be used to install a signed application on a small subset of devices. To add new devices, the attacker would also need your Apple Developer Portal credentials (which are not stored in git, but in your local keychain).</p>
 <h5 id="enterprise-profiles"><a name="user-content-enterprise-profiles" href="#enterprise-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enterprise Profiles</h5>
@@ -713,7 +713,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <h5 id="to-sum-up"><a name="user-content-to-sum-up" href="#to-sum-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To sum up</h5>
 <ul>
 <li>You have full control over the access list of your Git repo, no third party service involved</li>
-<li>Even if your certificates are leaked, they can't be used to cause any harm without your iTunes Connect login credentials</li>
+<li>Even if your certificates are leaked, they can't be used to cause any harm without your App Store Connect login credentials</li>
 <li>Use In-House enterprise profile with <em>match</em> with caution</li>
 <li>If you use GitHub or Bitbucket we encourage enabling 2 factor authentication for all accounts that have access to the certificates repo</li>
 <li>The complete source code of <em>match</em> is fully open source on <a href="https://docs.fastlane.tools/actions/match/">GitHub</a></li>

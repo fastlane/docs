@@ -410,12 +410,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="upload_to_app_store"><a name="user-content-upload_to_app_store" href="#upload_to_app_store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>upload_to_app_store</h1>
-<p>Upload metadata and binary to iTunes Connect (via <em>deliver</em>)</p>
+<p>Upload metadata and binary to App Store Connect (via <em>deliver</em>)</p>
 <p align="center">
   <img src="/img/actions/deliver.png" width="250">
 </p>
 
-<p><em>deliver</em> uploads screenshots, metadata and binaries to iTunes Connect. Use <em>deliver</em> to submit your app for App Store review.</p>
+<p><em>deliver</em> uploads screenshots, metadata and binaries to App Store Connect. Use <em>deliver</em> to submit your app for App Store review.</p>
 <hr />
 <p align="center">
     <a href="#features">Features</a> &bull;
@@ -430,8 +430,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
 <ul>
 <li>Upload hundreds of localized screenshots completely automatically</li>
-<li>Upload a new ipa/pkg file to iTunes Connect without Xcode from any Mac</li>
-<li>Maintain your app metadata locally and push changes back to iTunes Connect</li>
+<li>Upload a new ipa/pkg file to App Store Connect without Xcode from any Mac</li>
+<li>Maintain your app metadata locally and push changes back to App Store Connect</li>
 <li>Easily implement a real Continuous Deployment process using <a href="https://fastlane.tools"><em>fastlane</em></a></li>
 <li>Store the configuration in git to easily deploy from <strong>any</strong> Mac, including your Continuous Integration server</li>
 <li>Get a HTML preview of the fetched metadata before uploading the app metadata and screenshots to iTC</li>
@@ -439,11 +439,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <p>To upload builds to TestFlight check out <a href="../../actions/pilot"><em>pilot</em></a>.</p>
 <h1 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick Start</h1>
-<p>The guide will create all the necessary files for you, using the existing app metadata from iTunes Connect.</p>
+<p>The guide will create all the necessary files for you, using the existing app metadata from App Store Connect.</p>
 <ul>
 <li><code>cd [your_project_folder]</code></li>
 <li><code>fastlane deliver init</code></li>
-<li>Enter your iTunes Connect credentials</li>
+<li>Enter your App Store Connect credentials</li>
 <li>Enter your app identifier</li>
 <li>Enjoy a good drink, while the computer does all the work for you</li>
 </ul>
@@ -451,7 +451,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
 <p>Check out your local <code>./fastlane/metadata</code> and <code>./fastlane/screenshots</code> folders (if you don't use <a href="https://fastlane.tools"><em>fastlane</em></a> it's <code>./metadata</code> instead)</p>
 <p><img alt="/img/actions/deliver_metadata.png" src="../../img/actions/deliver_metadata.png" /></p>
-<p>You'll see your metadata from iTunes Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to iTunes Connect.</p>
+<p>You'll see your metadata from App Store Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to App Store Connect.</p>
 <p>Run <code>fastlane deliver</code> to upload the app metadata from your local machine</p>
 <pre><code class="no-highlight">fastlane deliver
 </code></pre>
@@ -466,11 +466,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <p>If you use <a href="https://fastlane.tools"><em>fastlane</em></a> you don't have to manually specify the path to your <code>ipa</code>/<code>pkg</code> file.</p>
 <p>This is just a small sub-set of what you can do with <em>deliver</em>, check out the full documentation in <a href="#more-options">#more-options</a></p>
-<p>Download existing screenshots from iTunes Connect</p>
+<p>Download existing screenshots from App Store Connect</p>
 <pre><code class="no-highlight">fastlane deliver download_screenshots
 </code></pre>
 
-<p>Download existing metadata from iTunes Connect</p>
+<p>Download existing metadata from App Store Connect</p>
 <pre><code class="no-highlight">fastlane deliver download_metadata
 </code></pre>
 
@@ -520,12 +520,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <h5 id="app_version"><a name="user-content-app_version" href="#app_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_version</h5>
-<p>Optional, as it is usually automatically detected. Specify the version that should be created / edited on iTunes Connect:</p>
+<p>Optional, as it is usually automatically detected. Specify the version that should be created / edited on App Store Connect:</p>
 <pre><code class="ruby-skip-tests">app_version(&quot;2.0&quot;)
 </code></pre>
 
 <h5 id="skip_app_version_update"><a name="user-content-skip_app_version_update" href="#skip_app_version_update" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>skip_app_version_update</h5>
-<p>In the case if <em>deliver</em> uploads your application to iTunes Connect it will automatically update "Prepare for submission" app version (which could be found on iTunes Connect-&gt;My Apps-&gt;App Store page)</p>
+<p>In the case if <em>deliver</em> uploads your application to App Store Connect it will automatically update "Prepare for submission" app version (which could be found on App Store Connect-&gt;My Apps-&gt;App Store page)</p>
 <p>The option allows uploading your app without updating "Prepare for submission" version.</p>
 <p>This could be useful in the case if you are generating a lot of uploads while not submitting the latest build for Apple review.</p>
 <p>The default value is false.</p>
@@ -572,7 +572,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <p>You can also provide these values by creating files in a <code>metadata/trade_representative_contact_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>first_name.txt</code>, <code>address_line1.txt</code> etc.). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will be take priority over values from these files.</p>
-<p><code>is_displayed_on_app_store</code> is the option on iTunes Connect described as: <code>Display Trade Representative Contact Information on the Korean App Store</code></p>
+<p><code>is_displayed_on_app_store</code> is the option on App Store Connect described as: <code>Display Trade Representative Contact Information on the Korean App Store</code></p>
 <h5 id="app_review_information"><a name="user-content-app_review_information" href="#app_review_information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_review_information</h5>
 <p>Contact information for the app review team. Available options: <code>first_name</code>, <code>last_name</code>, <code>phone_number</code>, <code>email_address</code>, <code>demo_user</code>, <code>demo_password</code>, <code>notes</code>.</p>
 <pre><code class="ruby-skip-tests">app_review_information(
@@ -603,7 +603,7 @@ automatic_release(false)
 </code></pre>
 
 <h5 id="phased_release"><a name="user-content-phased_release" href="#phased_release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>phased_release</h5>
-<p>Enable or disable the phased releases feature of iTunes Connect. If set to <code>true</code>, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on iTunes Connect.</p>
+<p>Enable or disable the phased releases feature of App Store Connect. If set to <code>true</code>, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on App Store Connect.</p>
 <pre><code class="ruby-skip-tests">phased_release(true)
 # or
 phased_release(false)
@@ -700,7 +700,7 @@ phased_release(false)
 <p>Before actually uploading anything to iTunes, <em>deliver</em> will generate a HTML summary of the collected data.</p>
 <p><em>deliver</em> uses the following techniques under the hood:</p>
 <ul>
-<li>The iTMSTransporter tool is used to upload the binary to iTunes Connect. iTMSTransporter is a command line tool provided by Apple.</li>
+<li>The iTMSTransporter tool is used to upload the binary to App Store Connect. iTMSTransporter is a command line tool provided by Apple.</li>
 <li>For all metadata related actions <em>deliver</em> uses <a href="https://github.com/fastlane/fastlane/tree/master/spaceship"><em>spaceship</em></a></li>
 </ul>
 <h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
@@ -1200,7 +1200,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </code></pre>
 
 <h2 id="limit"><a name="user-content-limit" href="#limit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Limit</h2>
-<p>iTunes Connect has a limit of 150 binary uploads per day.</p>
+<p>App Store Connect has a limit of 150 binary uploads per day.</p>
 <h2 id="editing-the-deliverfile"><a name="user-content-editing-the-deliverfile" href="#editing-the-deliverfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Editing the <code>Deliverfile</code></h2>
 <p>Change syntax highlighting to <em>Ruby</em>.</p>
 <hr />
@@ -1293,7 +1293,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tr>
 <tr>
 <td><code>skip_binary_upload</code></td>
-<td>Skip uploading an ipa or pkg to iTunes Connect</td>
+<td>Skip uploading an ipa or pkg to App Store Connect</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1373,12 +1373,12 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tr>
 <tr>
 <td><code>team_id</code></td>
-<td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td>The ID of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
-<td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td>The name of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>

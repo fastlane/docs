@@ -417,7 +417,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="precheck_1"><a name="user-content-precheck_1" href="#precheck_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Precheck</h1>
 <h6 id="check-your-app-using-a-community-driven-set-of-app-store-review-rules-to-avoid-being-rejected"><a name="user-content-check-your-app-using-a-community-driven-set-of-app-store-review-rules-to-avoid-being-rejected" href="#check-your-app-using-a-community-driven-set-of-app-store-review-rules-to-avoid-being-rejected" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Check your app using a community driven set of App Store review rules to avoid being rejected</h6>
-<p>Apple rejects builds for many avoidable metadata issues like including swear words 😮, other companies’ trademarks, or even mentioning an iOS bug 🐛. <em>fastlane precheck</em> takes a lot of the guess work out by scanning your app’s details in iTunes Connect for avoidable problems. fastlane precheck helps you get your app through app review without rejections so you can ship faster 🚀</p>
+<p>Apple rejects builds for many avoidable metadata issues like including swear words 😮, other companies’ trademarks, or even mentioning an iOS bug 🐛. <em>fastlane precheck</em> takes a lot of the guess work out by scanning your app’s details in App Store Connect for avoidable problems. fastlane precheck helps you get your app through app review without rejections so you can ship faster 🚀</p>
 <hr />
 <p align="center">
     <a href="#features">Features</a> &bull;
@@ -471,7 +471,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tbody>
 </table>
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<p>Run <em>fastlane precheck</em> to check the app metadata from iTunes Connect</p>
+<p>Run <em>fastlane precheck</em> to check the app metadata from App Store Connect</p>
 <pre><code class="no-highlight">fastlane precheck
 </code></pre>
 
@@ -519,7 +519,7 @@ end
 </code></pre>
 
 <h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>
-<p><em>precheck</em> will access <code>iTunes Connect</code> to download your app's metadata. It uses <a href="https://spaceship.airforce"><em>spaceship</em></a> to communicate with Apple's web services.</p>
+<p><em>precheck</em> will access <code>App Store Connect</code> to download your app's metadata. It uses <a href="https://spaceship.airforce"><em>spaceship</em></a> to communicate with Apple's web services.</p>
 <h1 id="want-to-improve-prechecks-rules"><a name="user-content-want-to-improve-prechecks-rules" href="#want-to-improve-prechecks-rules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Want to improve precheck's rules?</h1>
 <p>Please submit an issue on GitHub and provide information about your App Store rejection! Make sure you scrub out any personally identifiable information since this will be public.</p>
 <hr />
@@ -578,12 +578,12 @@ end
 </tr>
 <tr>
 <td><code>team_id</code></td>
-<td>The ID of your iTunes Connect team if you're in multiple teams</td>
+<td>The ID of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>team_name</code></td>
-<td>The name of your iTunes Connect team if you're in multiple teams</td>
+<td>The name of your App Store Connect team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
