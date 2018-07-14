@@ -62,7 +62,7 @@ fastlane action slack
 <details>
 <summary>TestFlight</summary>
 
-You can easily upload new builds to TestFlight (which is part of iTunes Connect) using _fastlane_. To do so, just use the built-in `testflight` action after building your app
+You can easily upload new builds to TestFlight (which is part of App Store Connect) using _fastlane_. To do so, just use the built-in `testflight` action after building your app
 
 ```ruby
 lane :beta do
