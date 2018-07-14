@@ -15,7 +15,7 @@ Alias for the `upload_to_app_store` action
   <img src="/img/actions/deliver.png" width="250">
 </p>
 
-_deliver_ uploads screenshots, metadata and binaries to iTunes Connect. Use _deliver_ to submit your app for App Store review.
+_deliver_ uploads screenshots, metadata and binaries to App Store Connect. Use _deliver_ to submit your app for App Store review.
 
 -------
 
@@ -32,8 +32,8 @@ _deliver_ uploads screenshots, metadata and binaries to iTunes Connect. Use _del
 
 # Features
 - Upload hundreds of localized screenshots completely automatically
-- Upload a new ipa/pkg file to iTunes Connect without Xcode from any Mac
-- Maintain your app metadata locally and push changes back to iTunes Connect
+- Upload a new ipa/pkg file to App Store Connect without Xcode from any Mac
+- Maintain your app metadata locally and push changes back to App Store Connect
 - Easily implement a real Continuous Deployment process using [_fastlane_](https://fastlane.tools)
 - Store the configuration in git to easily deploy from **any** Mac, including your Continuous Integration server
 - Get a HTML preview of the fetched metadata before uploading the app metadata and screenshots to iTC
@@ -43,11 +43,11 @@ To upload builds to TestFlight check out [_pilot_](/actions/pilot).
 
 # Quick Start
 
-The guide will create all the necessary files for you, using the existing app metadata from iTunes Connect.
+The guide will create all the necessary files for you, using the existing app metadata from App Store Connect.
 
 - `cd [your_project_folder]`
 - `fastlane deliver init`
-- Enter your iTunes Connect credentials
+- Enter your App Store Connect credentials
 - Enter your app identifier
 - Enjoy a good drink, while the computer does all the work for you
 
@@ -59,7 +59,7 @@ Check out your local `./fastlane/metadata` and `./fastlane/screenshots` folders 
 
 ![/img/actions/deliver_metadata.png](/img/actions/deliver_metadata.png)
 
-You'll see your metadata from iTunes Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to iTunes Connect.
+You'll see your metadata from App Store Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to App Store Connect.
 
 Run `fastlane deliver` to upload the app metadata from your local machine
 
@@ -83,13 +83,13 @@ If you use [_fastlane_](https://fastlane.tools) you don't have to manually speci
 
 This is just a small sub-set of what you can do with _deliver_, check out the full documentation in [#more-options](#more-options)
 
-Download existing screenshots from iTunes Connect
+Download existing screenshots from App Store Connect
 
 ```no-highlight
 fastlane deliver download_screenshots
 ```
 
-Download existing metadata from iTunes Connect
+Download existing metadata from App Store Connect
 
 ```no-highlight
 fastlane deliver download_metadata
@@ -161,7 +161,7 @@ pkg("MacApp.pkg")
 
 ##### app_version
 
-Optional, as it is usually automatically detected. Specify the version that should be created / edited on iTunes Connect:
+Optional, as it is usually automatically detected. Specify the version that should be created / edited on App Store Connect:
 
 ```ruby-skip-tests
 app_version("2.0")
@@ -169,7 +169,7 @@ app_version("2.0")
 
 ##### skip_app_version_update
 
-In the case if _deliver_ uploads your application to iTunes Connect it will automatically update "Prepare for submission" app version (which could be found on iTunes Connect->My Apps->App Store page)
+In the case if _deliver_ uploads your application to App Store Connect it will automatically update "Prepare for submission" app version (which could be found on App Store Connect->My Apps->App Store page)
 
 The option allows uploading your app without updating "Prepare for submission" version.
 
@@ -236,7 +236,7 @@ trade_representative_contact_information(
 
 You can also provide these values by creating files in a `metadata/trade_representative_contact_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `first_name.txt`, `address_line1.txt` etc.). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will be take priority over values from these files.
 
-`is_displayed_on_app_store` is the option on iTunes Connect described as: `Display Trade Representative Contact Information on the Korean App Store`
+`is_displayed_on_app_store` is the option on App Store Connect described as: `Display Trade Representative Contact Information on the Korean App Store`
 
 ##### app_review_information
 Contact information for the app review team. Available options: `first_name`, `last_name`, `phone_number`, `email_address`, `demo_user`, `demo_password`, `notes`.
@@ -277,7 +277,7 @@ automatic_release(false)
 
 ##### phased_release
 
-Enable or disable the phased releases feature of iTunes Connect. If set to `true`, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on iTunes Connect.
+Enable or disable the phased releases feature of App Store Connect. If set to `true`, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on App Store Connect.
 
 ```ruby-skip-tests
 phased_release(true)
@@ -418,7 +418,7 @@ Before actually uploading anything to iTunes, _deliver_ will generate a HTML sum
 
 _deliver_ uses the following techniques under the hood:
 
-- The iTMSTransporter tool is used to upload the binary to iTunes Connect. iTMSTransporter is a command line tool provided by Apple.
+- The iTMSTransporter tool is used to upload the binary to App Store Connect. iTMSTransporter is a command line tool provided by Apple.
 - For all metadata related actions _deliver_ uses [_spaceship_](https://github.com/fastlane/fastlane/tree/master/spaceship)
 
 # Tips
@@ -746,7 +746,7 @@ DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS="-t DAV -Dhttp.proxyHost=my
 ```
 
 ## Limit
-iTunes Connect has a limit of 150 binary uploads per day.
+App Store Connect has a limit of 150 binary uploads per day.
 
 ## Editing the `Deliverfile`
 Change syntax highlighting to *Ruby*.
@@ -795,7 +795,7 @@ Key | Description | Default
   `platform` | The platform to use (optional) | `ios`
   `metadata_path` | Path to the folder containing the metadata files | 
   `screenshots_path` | Path to the folder containing the screenshots | 
-  `skip_binary_upload` | Skip uploading an ipa or pkg to iTunes Connect | `false`
+  `skip_binary_upload` | Skip uploading an ipa or pkg to App Store Connect | `false`
   `use_live_version` | Force usage of live version rather than edit version | `false`
   `skip_screenshots` | Don't upload the screenshots | `false`
   `app_version` | The version that should be edited or created | 
@@ -811,8 +811,8 @@ Key | Description | Default
   `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one | 
   `app_rating_config_path` | Path to the app rating's config | 
   `submission_information` | Extra information for the submission (e.g. third party content) | 
-  `team_id` | The ID of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `team_name` | The name of your iTunes Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 

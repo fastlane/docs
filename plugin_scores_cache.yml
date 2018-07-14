@@ -70,7 +70,7 @@ fastlane-plugin-aws_s3:
   :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
-  :age_in_days: 577
+  :age_in_days: 687
   :readme_score: 100
   :tests: 0
   :actions:
@@ -86,11 +86,11 @@ fastlane-plugin-bugsnag:
     description: Notifies Bugsnag of a build
     details: Notifies Bugsnag of a new build being released including app version
       and source control details
-  :sha: 9faeaf7f5f2f5461fc7888b98049aa878770b8dc36e9088b089e587431c32bae
-  :github_stars: 9
-  :github_subscribers: 15
-  :github_issues: 0
-  :github_forks: 4
+  :sha: 0002f2b2c6aae40465689f3fcc5edc8cecdb8aade754115ca90ba15ac19f28f3
+  :github_stars: 13
+  :github_subscribers: 16
+  :github_issues: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-trainer:
   :initial_commit: 2016-07-20
@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 238
+  :age_in_days: 261
   :readme_score: 100
-  :tests: 92
+  :tests: 102
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -995,11 +995,16 @@ fastlane-plugin-test_center:
     category: 
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
-  :sha: d435790d52cfb61939492114682d6b4be504ce049f1a874d9df0de5f75bd171c
-  :github_stars: 22
-  :github_subscribers: 4
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: collate_json_reports
+    category: 
+    description: Combines and combines tests from multiple json report files
+    details: tests and the subsequent JSON reports will have fewer failing tests.
+  :sha: ce66f77f8091105d97d25b3444dd25b7b408ed427a713a50dd70242feb2f99f3
+  :github_stars: 26
+  :github_subscribers: 5
   :github_issues: 13
-  :github_forks: 2
+  :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -1156,7 +1161,7 @@ fastlane-plugin-apprepo:
   :github_contributors: 0
 fastlane-plugin-gs_versioning:
   :initial_commit: 2016-11-05
-  :age_in_days: 590
+  :age_in_days: 613
   :readme_score: 50
   :tests: 1
   :actions:
@@ -1205,7 +1210,7 @@ fastlane-plugin-gs_versioning:
     category: 
     description: Plugin for GradoService versioning system
     details: Plugin for GradoService versioning system
-  :sha: 13536d0e5fa7eaae86e8dcd7c083e9eaa0893331e9bbfe79265db7fa0d2f9de7
+  :sha: 1f29a9e047be5e8b1260fad1e5c6f0130b731e425d37c1607104031d13f1c462
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -4375,7 +4380,7 @@ fastlane-plugin-retry_tests:
   :github_contributors: 2
 fastlane-plugin-icon_versioning:
   :initial_commit: 2017-12-14
-  :age_in_days: 110
+  :age_in_days: 209
   :readme_score: 100
   :tests: 42
   :actions:
@@ -4385,11 +4390,11 @@ fastlane-plugin-icon_versioning:
     description: Overlay build information on top of your app icon. Based on original
       work by Krzysztof Zabłocki (https://github.com/krzysztofzablocki/Bootstrap).
     details: 
-  :sha: 716d807f70d487a9500942e57947b27c641defad3b6c2d526566c45529bc06f9
-  :github_stars: 31
+  :sha: '028a56f1592d72ecf520f7d5b201c98b09f23a532269fe2fd93fff4c72698182'
+  :github_stars: 36
   :github_subscribers: 1
-  :github_issues: 1
-  :github_forks: 0
+  :github_issues: 2
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-resize_screenshots:
   :initial_commit: 2018-03-04
@@ -4680,7 +4685,7 @@ fastlane-plugin-schedule:
   :github_contributors: 0
 fastlane-plugin-teak:
   :initial_commit: 2018-04-23
-  :age_in_days: 25
+  :age_in_days: 79
   :readme_score: 50
   :tests: 1
   :actions:
@@ -4700,7 +4705,7 @@ fastlane-plugin-teak:
     description: Fastlane plugins for the Teak SDK
     details: A collection of plugins to make your life easier when working with the
       Teak SDK.
-  :sha: e49730406c9773789bced29cc2b2fdd352680e206e607f361998d0182ea0844a
+  :sha: 597b48061131438324304873fa10af8194384d38cf7f3243739d9d75b3758158
   :github_stars: 0
   :github_subscribers: 3
   :github_issues: 0
@@ -4827,6 +4832,58 @@ fastlane-plugin-browserstack:
   :sha: 764c27ecffab4867ba93db6c152d5e699d8140862bc184d77d35d2c3d7fec02a
   :github_stars: 0
   :github_subscribers: 4
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-release:
+  :initial_commit: 2018-07-04
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: make_release
+    category: 
+    description: Automates the steps to create a new release for a framework.
+    details: Automates the steps to create a new release for a framework.
+  :sha: 7cf9defda18f8b6a8665f3405586003a9ae06ee91883949b36d5496cced11316
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-lastpass:
+  :initial_commit: 2018-06-19
+  :age_in_days: 22
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: lastpass
+    category: 
+    description: Easily sync your Apple ID credentials stored in LastPass with your
+      keychain using CredentialManager
+    details: 
+  :sha: 1186bae077fa3b269aeb704120de2cf77ddb76fa0b0d44c9dd757d71aa9e1f1a
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-podspec_dependency_versioning:
+  :initial_commit: 2018-07-04
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: change_podspec_dependency_version
+    category: 
+    description: This action will modify the version of a dependency in your podspec.
+    details: This action will modify the version of a dependency in your podspec.
+  :sha: 67b659c8a77fe1a08cdb798fa8f53bb89cbcb9eccf966fa4d9b8e88a39f57dec
+  :github_stars: 0
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
