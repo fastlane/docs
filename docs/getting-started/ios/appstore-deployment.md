@@ -49,7 +49,7 @@ lane :release do
   capture_screenshots                  # generate new screenshots for the App Store
   sync_code_signing(type: "appstore")  # see code signing guide for more information
   build_app(scheme: "MyApp")
-  upload_to_app_store                  # upload your app to iTunes Connect
+  upload_to_app_store                  # upload your app to App Store Connect
   slack(message: "Successfully uploaded a new App Store build")
 end
 ```
@@ -85,7 +85,7 @@ If you don't have any push certificates already, _get_push_certificate_ will cre
 <details>
 <summary>Incrementing the build number</summary>
 
-The code sample below will use the latest build number from iTunes Connect and temporarily set it. 
+The code sample below will use the latest build number from App Store Connect and temporarily set it. 
 
 ```ruby
 lane :beta do
