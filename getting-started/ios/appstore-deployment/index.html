@@ -504,7 +504,7 @@ end
   capture_screenshots                  # generate new screenshots for the App Store
   sync_code_signing(type: &quot;appstore&quot;)  # see code signing guide for more information
   build_app(scheme: &quot;MyApp&quot;)
-  upload_to_app_store                  # upload your app to iTunes Connect
+  upload_to_app_store                  # upload your app to App Store Connect
   slack(message: &quot;Successfully uploaded a new App Store build&quot;)
 end
 </code></pre>
@@ -528,7 +528,7 @@ end
 <p></details></p>
 <p><details>
 <summary>Incrementing the build number</summary></p>
-<p>The code sample below will use the latest build number from iTunes Connect and temporarily set it. </p>
+<p>The code sample below will use the latest build number from App Store Connect and temporarily set it. </p>
 <pre><code class="ruby">lane :beta do
   increment_build_number(
     build_number: app_store_build_number + 1,
