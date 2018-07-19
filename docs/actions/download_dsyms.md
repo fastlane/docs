@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # download_dsyms
 
 
-Download dSYM files from Apple App Store Connect for Bitcode apps
+Download dSYM files from App Store Connect for Bitcode apps
 
 
 
 
-> This action downloads dSYM files from Apple App Store Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.
+> This action downloads dSYM files from App Store Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.
 
 ```ruby
 lane :refresh_dsyms do

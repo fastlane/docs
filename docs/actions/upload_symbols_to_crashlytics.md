@@ -36,6 +36,7 @@ upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
 Key | Description | Default
 ----|-------------|--------
   `dsym_path` | Path to the DSYM file or zip to upload | [*](#parameters-legend-dynamic)
+  `dsym_paths` | Paths to the DSYM files or zips to upload | 
   `api_token` | Crashlytics API Key | 
   `gsp_path` | Path to GoogleService-Info.plist | 
   `binary_path` | The path to the upload-symbols file of the Fabric app | 
