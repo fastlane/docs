@@ -21,11 +21,22 @@ Author | @iAmChrisTruman
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 jira(
   url: "https://bugs.yourdomain.com",
+  username: "Your username",
+  password: "Your password",
+  ticket_id: "Ticket ID, i.e. IOS-123",
+  comment_text: "Text to post as a comment"
+)
+```
+
+```ruby
+jira(
+  url: "https://yourserverdomain.com",
+  context_path: "/jira",
   username: "Your username",
   password: "Your password",
   ticket_id: "Ticket ID, i.e. IOS-123",
@@ -42,6 +53,7 @@ jira(
 Key | Description | Default
 ----|-------------|--------
   `url` | URL for Jira instance | 
+  `context_path` | Appends to the url (ex: "/jira") | `''`
   `username` | Username for JIRA instance | 
   `password` | Password for Jira | 
   `ticket_id` | Ticket ID for Jira, i.e. IOS-123 | 
