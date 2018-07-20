@@ -70,7 +70,7 @@ fastlane-plugin-aws_s3:
   :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
-  :age_in_days: 687
+  :age_in_days: 696
   :readme_score: 100
   :tests: 0
   :actions:
@@ -86,7 +86,7 @@ fastlane-plugin-bugsnag:
     description: Notifies Bugsnag of a build
     details: Notifies Bugsnag of a new build being released including app version
       and source control details
-  :sha: 0002f2b2c6aae40465689f3fcc5edc8cecdb8aade754115ca90ba15ac19f28f3
+  :sha: c0868683eea8510cad0c47c367281599e71fb854556beb836486023ff94c2809
   :github_stars: 13
   :github_subscribers: 16
   :github_issues: 2
@@ -946,64 +946,70 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 261
+  :age_in_days: 270
   :readme_score: 100
-  :tests: 102
+  :tests: 113
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
-    category: 
+    category: testing
     description: Retrieves a list of tests that are suppressed in a specific or all
       Xcode Schemes in a project
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppress_tests
-    category: 
+    category: testing
     description: Suppresses specific tests in a specific or all Xcode Schemes in a
       given project
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppress_tests_from_junit
-    category: 
+    category: testing
     description: Uses a junit xml report file to suppress either passing or failing
       tests in an Xcode Scheme
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: tests_from_xctestrun
-    category: 
+    category: testing
     description: Retrieves all of the tests from xctest bundles referenced by the
       xctestrun file
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: collate_test_result_bundles
+    category: testing
+    description: Combines and combines tests from multiple test_result bundles
+    details: tests and the subsequent test_result bundles will have fewer failing
+      tests.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: tests_from_junit
-    category: 
+    category: testing
     description: Retrieves the failing and passing tests as reported in a junit xml
       file
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: multi_scan
-    category: 
+    category: testing
     description: of batching them, only re-testing failing tests.
     details: batched, or have multiple test targets and need meaningful junit reports.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_html_reports
-    category: 
+    category: testing
     description: Combines and combines tests from multiple html report files
     details: tests and the subsequent HTML reports will have more passed tests.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_junit_reports
-    category: 
+    category: testing
     description: Combines and combines tests from multiple junit report files
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_json_reports
-    category: 
+    category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: ce66f77f8091105d97d25b3444dd25b7b408ed427a713a50dd70242feb2f99f3
-  :github_stars: 26
-  :github_subscribers: 5
-  :github_issues: 13
+  :sha: 03bd17e6029a36195a19bc7fa149e9fc1da15440fb9ac152025d873a7c3a6746
+  :github_stars: 33
+  :github_subscribers: 4
+  :github_issues: 7
   :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
@@ -4275,7 +4281,7 @@ fastlane-plugin-xcconfig:
   :github_contributors: 0
 fastlane-plugin-run_tests_firebase_testlab:
   :initial_commit: 2018-01-30
-  :age_in_days: 26
+  :age_in_days: 171
   :readme_score: 100
   :tests: 22
   :actions:
@@ -4284,12 +4290,12 @@ fastlane-plugin-run_tests_firebase_testlab:
     category: 
     description: 
     details: 
-  :sha: 1a1872f86dc572547da8696d016d315c983e7f1f372fd0645eea72c54febad77
-  :github_stars: 8
+  :sha: 04f17245f00da5fc8dfe9621d38adf0dffa6419dfeb6a75f2696e252ebdce8c6
+  :github_stars: 11
   :github_subscribers: 2
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_issues: 4
+  :github_forks: 4
+  :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2016-06-05
   :age_in_days: 630
@@ -4884,6 +4890,40 @@ fastlane-plugin-podspec_dependency_versioning:
   :sha: 67b659c8a77fe1a08cdb798fa8f53bb89cbcb9eccf966fa4d9b8e88a39f57dec
   :github_stars: 0
   :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ipa_info:
+  :initial_commit: 2018-06-27
+  :age_in_days: 23
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ipa_info
+    category: 
+    description: Show information of an ipa file.
+    details: Show information of an ipa file.
+  :sha: b66bd5a2d2cbb3bf03fb7e1230b598c4f960a2ef4cf4c55fa1abf5f8dcc54c85
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-slack_upload:
+  :initial_commit: 2018-06-12
+  :age_in_days: 38
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: slack_upload
+    category: 
+    description: Uploads given file to Slack
+    details: 
+  :sha: c339001d2ceb8802d929c211964e781d0eabf223749c8cc040e23a32474fe4a2
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
