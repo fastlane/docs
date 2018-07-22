@@ -414,6 +414,7 @@ Key | Description | Default
   `number_of_retries` | The number of times a test can fail before snapshot should stop retrying | `1`
   `stop_after_first_error` | Should snapshot stop immediately after the tests completely failed on one device? | `false`
   `derived_data_path` | The directory where build products and other derived data will go | 
+  `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `test_target_name` | The name of the target you want to test (if you desire to override the Target Application from Xcode) | 
   `namespace_log_files` | Separate the log files per device and per language | 
   `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9 | `true`

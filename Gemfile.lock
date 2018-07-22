@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: b5b0962a79cb5531ec5ffece7b2d55d9d917fe09
+  revision: 480d2d2b66e9713708ed898cac058158d1dfa94f
   specs:
-    fastlane (2.99.1)
+    fastlane (2.100.1)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -156,8 +156,8 @@ GEM
     terminal-notifier (1.8.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    tty-cursor (0.5.0)
-    tty-screen (0.6.4)
+    tty-cursor (0.6.0)
+    tty-screen (0.6.5)
     tty-spinner (0.8.0)
       tty-cursor (>= 0.5.0)
     uber (0.1.0)

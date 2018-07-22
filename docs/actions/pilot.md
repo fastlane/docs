@@ -285,7 +285,7 @@ Key | Description | Default
   `beta_app_feedback_email` | Provide the beta app email when uploading a new build | 
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
   `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers | `false`
-  `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. iTunesConnect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
+  `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
   `apple_id` | The unique App ID provided by App Store Connect | [*](#parameters-legend-dynamic)
   `distribute_external` | Should the build be distributed to external testers? | `false`
   `notify_external_testers` | Should notify external testers? | `true`
