@@ -429,9 +429,19 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">jira(
   url: &quot;https://bugs.yourdomain.com&quot;,
+  username: &quot;Your username&quot;,
+  password: &quot;Your password&quot;,
+  ticket_id: &quot;Ticket ID, i.e. IOS-123&quot;,
+  comment_text: &quot;Text to post as a comment&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">jira(
+  url: &quot;https://yourserverdomain.com&quot;,
+  context_path: &quot;/jira&quot;,
   username: &quot;Your username&quot;,
   password: &quot;Your password&quot;,
   ticket_id: &quot;Ticket ID, i.e. IOS-123&quot;,
@@ -453,6 +463,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>url</code></td>
 <td>URL for Jira instance</td>
 <td></td>
+</tr>
+<tr>
+<td><code>context_path</code></td>
+<td>Appends to the url (ex: "/jira")</td>
+<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>username</code></td>
