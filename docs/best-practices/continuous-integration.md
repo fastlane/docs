@@ -351,7 +351,7 @@ What this build plan does is it checks out the source code, then it downloads th
 
 # GitLab CI Integration
 
-Use [GitLab CI Runner](https://gitlab.com/gitlab-org/gitlab-runner) running on a macOS machine
+Use [GitLab Runner](https://gitlab.com/gitlab-org/gitlab-runner) running on a macOS machine
 to build using fastlane.
 
 ## Repository setup
