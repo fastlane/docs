@@ -14,12 +14,6 @@ Install _fastlane_ using
 ```
 or alternatively using `brew cask install fastlane`
 
-Navigate to your project directory and run
-
-```no-highlight
-fastlane init
-```
-
 ## Setting up _fastlane_
 
 Navigate your terminal to your project's directory and run
