@@ -223,6 +223,7 @@ Key | Description | Default
   `mapping_paths` | An array of paths to mapping files to upload | 
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
   `check_superseded_tracks` | Check the other tracks for superseded versions and disable them | `false`
+  `timeout` | Timeout for read, open, and send (in seconds) | `300`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
