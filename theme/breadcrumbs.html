@@ -6,6 +6,9 @@
         {% if doc.title == "_Actions" %}
           <!-- Special case for the hidden action pages -->
           <li><a href="/actions">Actions</a> &raquo;</li>
+        {% elif doc.title == "_Tools" %}
+          <!-- Special case for the hidden tool pages -->
+          <li><a href="/tools">Tools</a> &raquo;</li>
         {% elif doc.link %}
           <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
         {% else %}

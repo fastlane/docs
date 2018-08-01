@@ -33,6 +33,24 @@ pages:
     - Screenshots: getting-started/android/screenshots.md
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
+- Tools: tools.md
+- _Tools:
+  - boarding: tools/boarding.md
+  - cert: tools/cert.md
+  - deliver: tools/deliver.md
+  - frameit: tools/frameit.md
+  - gym: tools/gym.md
+  - match: tools/match.md
+  - pem: tools/pem.md
+  - pilot: tools/pilot.md
+  - precheck: tools/precheck.md
+  - produce: tools/produce.md
+  - scan: tools/scan.md
+  - screengrab: tools/screengrab.md
+  - sigh: tools/sigh.md
+  - snapshot: tools/snapshot.md
+  - spaceship: tools/spaceship.md
+  - supply: tools/supply.md
 - Actions: actions.md
 - _Actions:
   - adb: actions/adb.md
