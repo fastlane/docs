@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 281
+  :age_in_days: 282
   :readme_score: 100
-  :tests: 113
+  :tests: 114
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1006,12 +1006,12 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: 1e36f9e0e56e8b7eb90727b1d9ead1efb6e671e62ed4fe471ef289a8b27417ad
+  :sha: a92e880028560a776cb3eefb08d4afb0c93fa5358d68aab538f97bd454ed63f1
   :github_stars: 36
   :github_subscribers: 4
-  :github_issues: 7
+  :github_issues: 6
   :github_forks: 8
-  :github_contributors: 0
+  :github_contributors: 3
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
