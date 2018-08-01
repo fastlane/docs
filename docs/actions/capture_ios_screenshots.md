@@ -19,7 +19,7 @@ Generate new localized screenshots on multiple devices (via _snapshot_)
 
 <hr />
 <h4 align="center">
-  Check out the new <a href="https://docs.fastlane.tools/getting-started/ios/screenshots">fastlane documentation</a> on how to generate screenshots
+  Check out the new <a href="https://docs.fastlane.tools/getting-started/ios/screenshots/">fastlane documentation</a> on how to generate screenshots
 </h4>
 <hr />
 
