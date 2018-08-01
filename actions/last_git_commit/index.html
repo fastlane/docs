@@ -429,7 +429,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Returns</td>
-<td _Author_="&quot;Author&quot;," _abbreviated="&quot;abbreviated" _commit="&quot;commit" abbreviated_commit_hash:="abbreviated_commit_hash:" author:="author:" commit="commit" commit_hash:="commit_hash:" hash_="hash&quot;" message:="message:" message_="message&quot;">Returns the following dict: </td>
+<td _Author_="&quot;Author&quot;," _abbreviated="&quot;abbreviated" _author="&quot;author" _commit="&quot;commit" abbreviated_commit_hash:="abbreviated_commit_hash:" author:="author:" author_email:="author_email:" commit="commit" commit_hash:="commit_hash:" email_="email&quot;," hash_="hash&quot;" message:="message:" message_="message&quot;">Returns the following dict: </td>
 </tr>
 </tbody>
 </table>
@@ -437,6 +437,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="ruby">commit = last_git_commit
 crashlytics(notes: commit[:message]) # message of commit
 author = commit[:author] # author of the commit
+author_email = commit[:author_email] # email of the author of the commit
 hash = commit[:commit_hash] # long sha of commit
 short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 </code></pre>
