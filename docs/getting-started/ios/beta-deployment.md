@@ -139,7 +139,7 @@ end
 
 To get your API token, open [API Tokens in Account Settings](https://rink.hockeyapp.net/manage/auth_tokens). From there, you can find your existing API token, or create a new one. 
 
-To get a list of all available options see the [`hockey` action docs](https://docs.fastlane.tools/actions/Actions/#hockey), or run 
+To get a list of all available options see the [`hockey` action docs](https://docs.fastlane.tools/actions/hockey/), or run 
 
 ```no-highlight
 fastlane action hockey
