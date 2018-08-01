@@ -1,10 +1,19 @@
 {!docs/setup-fastlane-header.md!}
 
-# fastlane actions
+# fastlane tools
+
+## What are tools?
 
 TODO document what tools are and how they work
 
+- tools are CLI command of fastlane: `fastlane <toolname>`
+- they can offer subcommands: `fastlane <toolname> <subcommand>`
+- they are usually configurable by a config file: `<toolname>file`
+- tools usually also have a corresponding action that makes their functionality available for use in lanes and other actions
+
 This page contains a list of all fastlane tools:
+
+## Available Tools
 
 ### iOS
 
