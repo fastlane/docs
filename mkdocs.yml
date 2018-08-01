@@ -33,6 +33,9 @@ pages:
     - Screenshots: getting-started/android/screenshots.md
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
+- Tools: tools.md
+- _Tools:
+  - gym: tools/gym.md
 - Actions: actions.md
 - _Actions:
   - adb: actions/adb.md
