@@ -53,7 +53,7 @@ fastlane-plugin-versioning:
   :github_contributors: 5
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 691
+  :age_in_days: 788
   :readme_score: 100
   :tests: 5
   :actions:
@@ -62,11 +62,11 @@ fastlane-plugin-aws_s3:
     category: 
     description: Generates a plist file and uploads all to AWS S3
     details: 
-  :sha: 3e0cf57006ed403ce3cd580a43930352e69f5b9504c43e5a865d2501cfc9e862
-  :github_stars: 39
-  :github_subscribers: 3
+  :sha: a2545ca60c9be86f55529f6e8ef09a55c42c229f7ce01feb9c02b2d440895029
+  :github_stars: 54
+  :github_subscribers: 6
   :github_issues: 10
-  :github_forks: 27
+  :github_forks: 30
   :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
@@ -946,9 +946,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 270
+  :age_in_days: 282
   :readme_score: 100
-  :tests: 113
+  :tests: 114
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1006,12 +1006,12 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: 03bd17e6029a36195a19bc7fa149e9fc1da15440fb9ac152025d873a7c3a6746
-  :github_stars: 33
+  :sha: a92e880028560a776cb3eefb08d4afb0c93fa5358d68aab538f97bd454ed63f1
+  :github_stars: 36
   :github_subscribers: 4
-  :github_issues: 7
-  :github_forks: 4
-  :github_contributors: 0
+  :github_issues: 6
+  :github_forks: 8
+  :github_contributors: 3
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -4337,7 +4337,7 @@ fastlane-plugin-google_drive:
   :github_contributors: 0
 fastlane-plugin-localize:
   :initial_commit: 2018-02-19
-  :age_in_days: 6
+  :age_in_days: 162
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4347,12 +4347,12 @@ fastlane-plugin-localize:
     description: Searches the code for extractable strings and allows interactive
       extraction to .strings file.
     details: "- Support for NSLocalizedString and Swiftgen"
-  :sha: 26aca54a0908b1a9ed7aa4cd720c8444c87794df10234758c3f13a9248cecb07
-  :github_stars: 2
+  :sha: 8622ebe73a8bcf5aead1585bb4e8c29854e765193ed2fd7979e2b0ca2bc9cb1f
+  :github_stars: 4
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 1
-  :github_contributors: 2
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-device_image_selector:
   :initial_commit: 2018-02-23
   :age_in_days: 28
@@ -4770,7 +4770,7 @@ fastlane-plugin-upload_to_server:
   :github_contributors: 0
 fastlane-plugin-auth0_shipper:
   :initial_commit: 2016-12-16
-  :age_in_days: 549
+  :age_in_days: 592
   :readme_score: 50
   :tests: 0
   :actions:
@@ -4792,7 +4792,7 @@ fastlane-plugin-auth0_shipper:
     description: Prepares the release for an Auth0 OSS library
     details: Preprares the release of an Auth0 OSS library (Changelog update, version
       bump and tag)
-  :sha: '06379bf3a1474994754482d7b44449fd3d5152a3d45d80530fb2532d166e0ecb'
+  :sha: b1146863ce82ef669f05ec5c34359bbf831e793e161106c9302989b5c6aea25f
   :github_stars: 0
   :github_subscribers: 4
   :github_issues: 0
@@ -4895,7 +4895,7 @@ fastlane-plugin-podspec_dependency_versioning:
   :github_contributors: 0
 fastlane-plugin-ipa_info:
   :initial_commit: 2018-06-27
-  :age_in_days: 23
+  :age_in_days: 34
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4904,8 +4904,8 @@ fastlane-plugin-ipa_info:
     category: 
     description: Show information of an ipa file.
     details: Show information of an ipa file.
-  :sha: b66bd5a2d2cbb3bf03fb7e1230b598c4f960a2ef4cf4c55fa1abf5f8dcc54c85
-  :github_stars: 0
+  :sha: 3584f6882731774e18f27ea480341f20af32ec5ac180d92eefd3ecdb7ee02222
+  :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
@@ -4923,6 +4923,23 @@ fastlane-plugin-slack_upload:
     details: 
   :sha: c339001d2ceb8802d929c211964e781d0eabf223749c8cc040e23a32474fe4a2
   :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-build_log_info:
+  :initial_commit: 2018-07-21
+  :age_in_days: 10
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: build_log_info
+    category: 
+    description: build log information
+    details: build log information
+  :sha: f679b82364b2bb4c48aa9870c93e47110e3c39c0d8737c272bf7f8fad194e6e4
+  :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0

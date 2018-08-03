@@ -43,6 +43,7 @@ Key | Description | Default
   `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
   `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
+  `timeout` | Timeout for read, open, and send (in seconds) | `300`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

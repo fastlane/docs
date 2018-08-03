@@ -74,6 +74,7 @@ Key | Description | Default
   `project_directory` | Define the directory containing the Carthage project | 
   `new_resolver` | Use new resolver when resolving dependency graph | 
   `log_path` | Path to the xcode build output | 
+  `executable` | Path to the `carthage` executable on your machine | `carthage`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
