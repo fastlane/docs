@@ -95,7 +95,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
 
-You can find your shell profile at `~/.bashrc`, `~/.bash_profile` or `~/.zshrc` depending on your system. 
+You can find your shell profile at `~/.bashrc`, `~/.bash_profile`, `~/.profile` or `~/.zshrc` depending on your system.
 
 ### Use a Gemfile
 
