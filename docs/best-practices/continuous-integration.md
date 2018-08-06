@@ -449,8 +449,7 @@ For more documentation, see the [Apple App Store](https://marketplace.visualstud
 
 # Nevercode Integration
 
-With [Nevercode](https://nevercode.io)you can set up automated builds for your Android and iOS application using _fastlane_.
-Nevercode expects nothing more than a [`Fastfile`](https://docs.fastlane.tools/#fastlane) in your repository. 
+With [Nevercode](https://nevercode.io) you can set up automated builds for your Android and iOS application using _fastlane_. You only need a [`Fastfile`](https://docs.fastlane.tools/#fastlane) in your repository to get started.
 
 ## Specify app repository
 
@@ -485,9 +484,11 @@ In your app settings on Nevercode, navigate to the **Environment** tab to manage
 ## Run tests
 
 ### iOS 
+
 Testing in Nevercode with _fastlane_ for iOS is 100% automatic. By default, [`scan`](https://docs.fastlane.tools/actions/scan/) is used to invoke the test run, but you can easily swap it out for any other `lane` that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.
 
 #### Warning
+
 In case you wish to run tests as part of the main build step, we suggest that you use [Trainer](https://github.com/KrauseFx/trainer#use-with-fastlane) to generate reliable JUnit results from the test run and put the results in a directory where we can discover them:
 
 ```no-highlight
@@ -495,6 +496,7 @@ trainer(output_directory: ENV["NEVERCODE_XUNIT_RESULTS_DIR"])
 ```
 
 ### Android
+
 Nevercode detects your **_fastlane_ tests for Android** automatically. However, tests are disabled by default and have to be enabled manually.
 
 1. In your app settings on Nevercode, navigate to the **Test** tab.
@@ -502,7 +504,6 @@ Nevercode detects your **_fastlane_ tests for Android** automatically. However, 
 1. Select **Enabled** and type the **lane name** for tests as specified in your `Fastfile`.
 1. If you would like to run the tests on Android emulator, make sure to select **Require Android emulator**.
 1. Click **Save** to finish the setup. Your _fastlane_ tests will be enabled and run each time you build your app.
-
 
 ## Publish your build artifacts
 
@@ -513,5 +514,5 @@ You can use either `fastlane` to take care of artifact distribution or choose fr
 To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, you could make use of it within [`increment_version_number`](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build. 
 
 ## More Information
-Check out [Nevercode documentation](https://developer.nevercode.io/docs) for more. 
 
+Check out [Nevercode documentation](https://developer.nevercode.io/docs) for more. 
