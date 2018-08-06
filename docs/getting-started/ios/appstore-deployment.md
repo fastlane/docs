@@ -32,7 +32,7 @@ If everything works, you should have a `[ProductName].ipa` file in the current d
 
 ## Codesigning
 
-Chances are that something went wrong because of code signing at the previous step. We prepared our own [Code Signing Guide](/codesigning/GettingStarted) that helps you setting up the right code signing approach for your project.
+Chances are that something went wrong because of code signing at the previous step. We prepared our own [Code Signing Guide](/codesigning/getting-started/) that helps you setting up the right code signing approach for your project.
 
 # Submitting your app
 
