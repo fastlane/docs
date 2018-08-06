@@ -355,7 +355,7 @@
           
         
           
-          <li class="toctree-l3"><a href="#nevercode-integration-for-ios">Nevercode Integration for iOS</a></li>
+          <li class="toctree-l3"><a href="#nevercode-integration">Nevercode Integration</a></li>
           
         
       </ul>
@@ -829,8 +829,8 @@ end
 </ol>
 <h2 id="more-information"><a name="user-content-more-information" href="#more-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More Information</h2>
 <p>For more documentation, see the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vsclient.app-store">Apple App Store</a> in the Visual Studio Team Server marketplace.</p>
-<h1 id="nevercode-integration-for-ios"><a name="user-content-nevercode-integration-for-ios" href="#nevercode-integration-for-ios" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Nevercode Integration for iOS</h1>
-<p><a href="https://nevercode.io">Nevercode</a> expects nothing more than a <a href="https://docs.fastlane.tools/#fastlane"><code>Fastfile</code></a> in your repository. </p>
+<h1 id="nevercode-integration"><a name="user-content-nevercode-integration" href="#nevercode-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Nevercode Integration</h1>
+<p>With <a href="https://nevercode.io">Nevercode</a> you can set up automated builds for your Android and iOS application using <em>fastlane</em>. You only need a <a href="https://docs.fastlane.tools/#fastlane"><code>Fastfile</code></a> in your repository to get started.</p>
 <h2 id="specify-app-repository"><a name="user-content-specify-app-repository" href="#specify-app-repository" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Specify app repository</h2>
 <ol>
 <li>Click <strong>Add a new app</strong> on Nevercode dashboard.</li>
@@ -856,12 +856,22 @@ Nevercode scans the repository from the specified branch. This includes cloning 
 <li>You can upload the SSH key for cloning the credentials repository as an environment file, i.e. <code>MATCH_SSH_KEY</code>. All environment files whose variable name has the suffix <code>_SSH_KEY</code> will be automatically added to the SSH agent and will be ready for use during the whole build process.</li>
 </ul>
 <h2 id="run-tests"><a name="user-content-run-tests" href="#run-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run tests</h2>
-<p>Testing in Nevercode with <em>fastlane</em> is 100% automatic. By default, <a href="https://docs.fastlane.tools/actions/scan/"><code>scan</code></a> is used to invoke the test run, but you can easily swap it out for any other <code>lane</code> that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.</p>
-<h3 id="warning"><a name="user-content-warning" href="#warning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Warning</h3>
+<h3 id="ios"><a name="user-content-ios" href="#ios" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS</h3>
+<p>Testing in Nevercode with <em>fastlane</em> for iOS is 100% automatic. By default, <a href="https://docs.fastlane.tools/actions/scan/"><code>scan</code></a> is used to invoke the test run, but you can easily swap it out for any other <code>lane</code> that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.</p>
+<h4 id="warning"><a name="user-content-warning" href="#warning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Warning</h4>
 <p>In case you wish to run tests as part of the main build step, we suggest that you use <a href="https://github.com/KrauseFx/trainer#use-with-fastlane">Trainer</a> to generate reliable JUnit results from the test run and put the results in a directory where we can discover them:</p>
 <pre><code class="no-highlight">trainer(output_directory: ENV[&quot;NEVERCODE_XUNIT_RESULTS_DIR&quot;])
 </code></pre>
 
+<h3 id="android"><a name="user-content-android" href="#android" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Android</h3>
+<p>Nevercode detects your <strong><em>fastlane</em> tests for Android</strong> automatically. However, tests are disabled by default and have to be enabled manually.</p>
+<ol>
+<li>In your app settings on Nevercode, navigate to the <strong>Test</strong> tab.</li>
+<li>Click on <strong><em>fastlane</em> Gradle</strong> to expand it.</li>
+<li>Select <strong>Enabled</strong> and type the <strong>lane name</strong> for tests as specified in your <code>Fastfile</code>.</li>
+<li>If you would like to run the tests on Android emulator, make sure to select <strong>Require Android emulator</strong>.</li>
+<li>Click <strong>Save</strong> to finish the setup. Your <em>fastlane</em> tests will be enabled and run each time you build your app.</li>
+</ol>
 <h2 id="publish-your-build-artifacts"><a name="user-content-publish-your-build-artifacts" href="#publish-your-build-artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Publish your build artifacts</h2>
 <p>You can use either <code>fastlane</code> to take care of artifact distribution or choose from a number of <a href="https://developer.nevercode.io/docs/what-kind-of-build-distribution-services-does-nevercode-support">Nevercode's own integrations</a>.</p>
 <h2 id="manage-build-versions"><a name="user-content-manage-build-versions" href="#manage-build-versions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manage build versions</h2>
