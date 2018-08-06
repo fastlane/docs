@@ -447,9 +447,10 @@ The extension can be configured to install the latest version of _fastlane_ or a
 ## More Information
 For more documentation, see the [Apple App Store](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.app-store) in the Visual Studio Team Server marketplace.
 
-# Nevercode Integration for iOS & Android
+# Nevercode Integration
 
-[Nevercode](https://nevercode.io) expects nothing more than a [`Fastfile`](https://docs.fastlane.tools/#fastlane) in your repository. 
+With [Nevercode](https://nevercode.io)you can set up automated builds for your Android and iOS application using _fastlane_.
+Nevercode expects nothing more than a [`Fastfile`](https://docs.fastlane.tools/#fastlane) in your repository. 
 
 ## Specify app repository
 
@@ -483,24 +484,25 @@ In your app settings on Nevercode, navigate to the **Environment** tab to manage
 
 ## Run tests
 
-Testing in Nevercode with **_fastlane_ for iOS** is 100% automatic. By default, [`scan`](https://docs.fastlane.tools/actions/scan/) is used to invoke the test run, but you can easily swap it out for any other `lane` that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.
+### iOS 
+Testing in Nevercode with _fastlane_ for iOS is 100% automatic. By default, [`scan`](https://docs.fastlane.tools/actions/scan/) is used to invoke the test run, but you can easily swap it out for any other `lane` that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.
 
-### Warning
+#### Warning
 In case you wish to run tests as part of the main build step, we suggest that you use [Trainer](https://github.com/KrauseFx/trainer#use-with-fastlane) to generate reliable JUnit results from the test run and put the results in a directory where we can discover them:
 
 ```no-highlight
 trainer(output_directory: ENV["NEVERCODE_XUNIT_RESULTS_DIR"])
 ```
 
+### Android
 Nevercode detects your **_fastlane_ tests for Android** automatically. However, tests are disabled by default and have to be enabled manually.
 
-1. In your app settings, navigate to the **Test** tab.
+1. In your app settings on Nevercode, navigate to the **Test** tab.
 1. Click on **_fastlane_ Gradle** to expand it.
 1. Select **Enabled** and type the **lane name** for tests as specified in your `Fastfile`.
 1. If you would like to run the tests on Android emulator, make sure to select **Require Android emulator**.
 1. Click **Save** to finish the setup. Your _fastlane_ tests will be enabled and run each time you build your app.
 
-You can also use **AWS Device Farm** for testing.
 
 ## Publish your build artifacts
 
