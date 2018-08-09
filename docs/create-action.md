@@ -22,7 +22,3 @@ In general, we might not accept actions that
 - Access the API of a third party service, the third party service should own and maintain the action
 - Complex actions, that will require a lot of work to maintain in the future
 - Everything that isn't mobile developer related
-
-## Extract your action as a fastlane plugin
-
-TODO 
