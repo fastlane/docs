@@ -16,7 +16,6 @@ fastlane actions # list all available fastlane actions
 fastlane action [action_name] # more information for a specific action
 ```
 
-<!-- TODO move somewhere more useful -->
 You can import another `Fastfile` by using the `import` action. This is useful if you have shared lanes across multiple apps and you want to store a `Fastfile` in a separate folder. The path must be relative to the `Fastfile` this is called from.
 
 ```ruby
