@@ -28,6 +28,7 @@ This file is not used any more and its content was moved to subpages. Please fol
         "environment-variables": "/advanced/other/",
         "lane-properties": "/advanced/lanes/",
         "lane-context": "/advanced/lanes/",
+        "private-lanes": "/advanced/lanes/",
         "load-own-actions-from-external-folder": "/advanced/Fastfile/",
         "skip-update-check-when-launching-fastlane": "/advanced/fastlane/",
         "hide-changelog-information-at-the-end-of-running-fastlane": "/advanced/fastlane/",
@@ -87,6 +88,8 @@ This file is not used any more and its content was moved to subpages. Please fol
 # Lane Properties
 
 # Lane Context
+
+# Private Lanes
 
 # Load own actions from external folder
 
