@@ -271,4 +271,6 @@ pages:
   - Lanes: advanced/lanes.md
   - Actions: advanced/actions.md
   - Other: advanced/other.md
+- _Deprecated:
+  - Advanced: advanced.md
 
