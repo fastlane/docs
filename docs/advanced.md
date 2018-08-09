@@ -60,70 +60,88 @@ This file is not used any more and its content was moved to subpages. Please fol
 
 # Passing Parameters
 
+This content was moved and now lives [here](/advanced/lanes/#passing-parameters).
+
 # Switching lanes
-## Returning values
-## Stop executing a lane early
-## `before_each` and `after_each` blocks
+
+This content was moved and now lives [here](/advanced/lanes/#switching-lanes).
 
 # Output environment variables
 
+This content was moved and now lives [here](/advanced/fastlane/#output-environment-variables).
+
 # Interacting with the user
+
+This content was moved and now lives [here](/advanced/actions/#interacting-with-the-user).
 
 # Run actions directly
 
+This content was moved and now lives [here](/advanced/actions/#run-actions-directly).
+
 # Shell values
+
+This content was moved and now lives [here](/advanced/actions/#shell-values).
 
 # Priorities of parameters and options
 
+This content was moved and now lives [here](/advanced/fastlane/#priorities-of-parameters-and-options).
+
 # Importing another Fastfile
-## `import`
-## `import_from_git`
-## Note
+
+This content was moved and now lives [here](/advanced/Fastfile/#importing-another-fastfile).
 
 # Using fastlane_require
-## Example
+
+This content was moved and now lives [here](/advanced/Fastfile/#using-fastlane_require).
 
 # Environment Variables
 
+This content was moved and now lives [here](/advanced/other/#environment-variables).
+
 # Lane Properties
+
+This content was moved and now lives [here](/advanced/lanes/#lane-properties).
 
 # Lane Context
 
+This content was moved and now lives [here](/advanced/lanes/#lane-context).
+
 # Private Lanes
+
+This content was moved and now lives [here](/advanced/lanes/#private-lanes).
 
 # Load own actions from external folder
 
+This content was moved and now lives [here](/advanced/Fastfile/#load-own-actions-from-external-folder).
+
 # Skip update check when launching _fastlane_
+
+This content was moved and now lives [here](/advanced/fastlane/#skip-update-check-when-launching-fastlane).
 
 # Hide changelog information at the end of running _fastlane_
 
+This content was moved and now lives [here](/advanced/fastlane/#hide-changelog-information-at-the-end-of-running-fastlane).
+
 # Adding Credentials
+
+This content was moved and now lives [here](/advanced/other/#adding-credentials).
 
 # Control configuration by lane and by platform
 
+This content was moved and now lives [here](/advanced/lanes/#control-configuration-by-lane-and-by-platform).
+
 # Manually Manage the fastlane match Repo
+
+This content was moved and now lives [here](/advanced/other/#manually-manage-the-fastlane-match-repo).
 
 # Directory behavior
 
+This content was moved and now lives [here](/advanced/fastlane/#directory-behavior).
+
 # Appfile
-## Accessing from fastlane
+
+This content was moved and now lives [here](/advanced/Appfile/#appfile).
 
 # Building Actions
-## Using FastlaneCore::Configuration
-### Boolean parameters
-### Array parameters
-### Polymorphic parameters
-### Callback parameters
-### Note on Procs
-### Verify blocks
-### Conflicting options
-### Optional parameters
-### Configuration files
-### Resolution order
-## User input and output
-## Invoking shell commands
-### Using Kernel#system
-### Using backticks
-### Using the sh method
-### Escaping in shell commands
-## Calling other actions
+
+This content was moved and now lives [here](/advanced/actions/#building-actions).
