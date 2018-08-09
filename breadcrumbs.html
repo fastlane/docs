@@ -5,7 +5,7 @@
       {% for doc in current_page.ancestors %}
         {% if doc.title == "_Actions" %}
           <!-- Special case for the hidden action pages -->
-          <li><a href="/actions">Actions</a> &raquo;</li>
+          <li><a href="/actions/">Actions</a> &raquo;</li>
         {% elif doc.link %}
           <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
         {% else %}
