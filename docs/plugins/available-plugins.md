@@ -1,7 +1,7 @@
 <!--
 Auto generated, please only modify https://github.com/fastlane/fastlane/blob/master/fastlane/actions/plugin_scores.rb
 -->
-{!includes/setup-fastlane-header.md!}
+{!docs/includes/setup-fastlane-header.md!}
 # Available Plugins
 
 

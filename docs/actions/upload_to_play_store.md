@@ -46,7 +46,7 @@ _supply_ uploads app metadata, screenshots, binaries, and app bundles to Google 
 
 Setup consists of setting up your Google Developers Service Account
 
-{!includes/google-credentials.md!}
+{!docs/includes/google-credentials.md!}
 
 ### Migrating Google credential format (from .p12 key file to .json)
 

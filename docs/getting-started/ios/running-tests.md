@@ -1,4 +1,4 @@
-{!includes/setup-fastlane-header.md!}
+{!docs/includes/setup-fastlane-header.md!}
 
 # Running iOS tests using _fastlane_
 

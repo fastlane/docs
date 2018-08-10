@@ -1,4 +1,4 @@
-{!includes/setup-fastlane-header.md!}
+{!docs/includes/setup-fastlane-header.md!}
 
 # iOS Beta deployment using _fastlane_
 

@@ -1,4 +1,4 @@
-{!includes/setup-fastlane-header.md!}
+{!docs/includes/setup-fastlane-header.md!}
 
 # Deploy to Google Play using _fastlane_
 

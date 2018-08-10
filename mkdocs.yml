@@ -15,7 +15,6 @@ markdown_extensions:
 - pymdownx.headeranchor
 - markdown.extensions.attr_list
 - markdown_include.include
-  base_path: docs
 - mdx_truly_sane_lists
 theme_dir: theme
 pages:

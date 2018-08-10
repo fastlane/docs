@@ -41,7 +41,7 @@ Setting it up requires downloading a credentials file from your Google Developer
 
 ### Collect your Google credentials
 
-{!includes/google-credentials.md!}
+{!docs/includes/google-credentials.md!}
 
 ### Configure _supply_
 
