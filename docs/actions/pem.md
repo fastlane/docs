@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # pem
 
 
-Alias for the `get_push_certificate` action
+Alias for the [`get_push_certificate`](get_push_certificate) action
 
 
 
