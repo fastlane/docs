@@ -127,9 +127,10 @@ end
 private_lane :ensure_code_samples do
   UI.message "🕗  Verifying all code samples work with the latest fastlane release"
   all_content = ""
-  Dir["docs/actions/*.md"].each do |tool_sub_page_path|
+  files = Dir["docs/actions/*.md"]
+  files.each do |tool_sub_page_path|
     all_content += File.read(tool_sub_page_path)
   end
   test_sample_code(content: all_content) # to not have to call the action 200 times
-  UI.success "✅  All fastlane code samples work as expected"
+  UI.success "✅  All fastlane code samples (from #{files.length} files) work as expected"
 end
