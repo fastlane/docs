@@ -25,23 +25,23 @@ lane :update_available_plugins do
 end
 
 private_lane :build_site do
-  UI.message "🕗  Building page..."
-  sh "mkdocs build --clean --strict" # to make sure building is successful
-  UI.success "✅  Build successful"
+  UI.message("🕗  Building page...")
+  sh("mkdocs build --clean --strict") # to make sure building is successful
+  UI.success("✅  Build successful")
 end
 
 private_lane :ensure_filenames do
-  UI.message "🕗  Making sure file names are all lowercase..."
+  UI.message("🕗  Making sure file names are all lowercase...")
   Dir["docs/**/*.md"].each do |current_file|
     if current_file =~ /[A-Z]/
       UI.user_error!(".md files must not be upper case, use dash instead (file '#{current_file}')")
     end
   end
-  UI.success "✅  All doc files are properly named to not be camel case"
+  UI.success("✅  All doc files are properly named to not be camel case")
 end
 
 private_lane :ensure_redirects do
-  UI.message "🕗  Making sure the forwards are set up properly..."
+  UI.message("🕗  Making sure the forwards are set up properly...")
   require_relative "scripts/ci/available_redirects"
 
   docs_redirects.each do |from, to|
@@ -51,12 +51,11 @@ private_lane :ensure_redirects do
       UI.user_error!("Couldn't find file that is being redirected to '#{full_to_path}' from '#{from}'")
     end
   end
-  UI.success "✅  All forwards are cool"
+  UI.success("✅  All forwards are cool")
 end
 
-
 private_lane :ensure_image_assets do
-  UI.message "🕗  Checking docs for dead image references..."
+  UI.message("🕗  Checking docs for dead image references...")
   errors = []
   Dir["docs/**/*.md"].each do |current_file|
     content = File.read(current_file)
@@ -83,13 +82,13 @@ private_lane :ensure_image_assets do
   end
   errors.each { |e| UI.error(e) }
   UI.user_error!("At least one image file was not found, check out error above") unless errors.empty?
-  UI.success "✅  All image files were found"
+  UI.success("✅  All image files were found")
 end
 
 # This will verify that no non-md files are inside each of the sub-directories
 # All images must be stored in the correct sub-dir
 private_lane :ensure_assets_location do
-  UI.message "🕗  Ensuring asset locations..."
+  UI.message("🕗  Ensuring asset locations...")
   error = false
   Dir["docs/**/*"].each do |path|
     next if File.directory?(path)
@@ -100,7 +99,7 @@ private_lane :ensure_assets_location do
     UI.error("File '#{path}' shouldn't be in this directory, only `.md` files are allowed")
   end
   UI.user_error!("Found some files in a wrong directory") if error
-  UI.success "✅  All assets are in the correct subfolder"
+  UI.success("✅  All assets are in the correct subfolder")
 end
 
 # This ensures the correct formatting for the fastlane tools
@@ -125,11 +124,11 @@ end
 
 # Run the code samples, yo
 private_lane :ensure_code_samples do
-  UI.message "🕗  Verifying all code samples work with the latest fastlane release"
+  UI.message("🕗  Verifying all code samples work with the latest fastlane release")
   all_content = ""
   Dir["docs/actions/*.md"].each do |tool_sub_page_path|
     all_content += File.read(tool_sub_page_path)
   end
   test_sample_code(content: all_content) # to not have to call the action 200 times
-  UI.success "✅  All fastlane code samples work as expected"
+  UI.success("✅  All fastlane code samples work as expected")
 end
