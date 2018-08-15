@@ -1230,3 +1230,14 @@ In particular:
   action, such as: `other_action.git_add`, `other_action.git_commit`.
 - Think twice before calling an action from another action. There is often a better
   solution.
+
+## Passing parameters to _fastlane_ command line tools
+
+_fastlane_ contains several command line tools, e.g. [`fastlane deliver`](/actions/deliver/) or [`fastlane snapshot`](/actions/snapshot/). To pass parameters to these tools, append the option names and values as you would for a normal shell command:
+
+```shell
+fastlane [tool] --[option]=[value]
+
+fastlane deliver --skip_screenshots=true
+fastlane snapshot --screenshots_path=xxxxx --schema=xxxx
+```
