@@ -51,4 +51,4 @@ fastlane action ensure_git_status_clean
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

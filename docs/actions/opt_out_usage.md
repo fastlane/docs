@@ -41,4 +41,4 @@ fastlane action opt_out_usage
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

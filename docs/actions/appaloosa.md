@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # appaloosa
 
 
-Upload your app to Appaloosa Store
+Upload your app to [Appaloosa Store](https://www.appaloosa-store.com/)
 
 
 
@@ -74,4 +74,4 @@ fastlane action appaloosa
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

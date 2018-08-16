@@ -70,4 +70,4 @@ fastlane action changelog_from_git_commits
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

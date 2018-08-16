@@ -53,4 +53,4 @@ fastlane action appetize_viewing_url_generator
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

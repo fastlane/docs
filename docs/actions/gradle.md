@@ -93,7 +93,7 @@ gradle(
 Key | Description | Default
 ----|-------------|--------
   `task` | The gradle task you want to execute, e.g. `assemble` or `test`. For tasks such as `assembleMyFlavorRelease` you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release') | 
-  `flavor` | The flavor that you want the task for, e.g. `MyFlavor`. If you are running the `assemble` task in a multi-flavor project, and you rely on Actions.lane_context[Actions.SharedValues::GRADLE_APK_OUTPUT_PATH] then you must specify a flavor here or else this value will be undefined | 
+  `flavor` | The flavor that you want the task for, e.g. `MyFlavor`. If you are running the `assemble` task in a multi-flavor project, and you rely on Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH] then you must specify a flavor here or else this value will be undefined | 
   `build_type` | The build type that you want the task for, e.g. `Release`. Useful for some tasks such as `assemble` | 
   `flags` | All parameter flags you want to pass to the gradle command, e.g. `--exitcode --xml file.xml` | 
   `project_dir` | The root directory of the gradle project | `.`
@@ -117,4 +117,4 @@ fastlane action gradle
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

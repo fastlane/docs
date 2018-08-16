@@ -52,4 +52,4 @@ fastlane action get_ipa_info_plist_value
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

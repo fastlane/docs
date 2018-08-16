@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # ifttt
 
 
-Connect to the IFTTT Maker Channel. https://ifttt.com/maker
+Connect to the [IFTTT Maker Channel](https://ifttt.com/maker)
 
 
 
@@ -60,4 +60,4 @@ fastlane action ifttt
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

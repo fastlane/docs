@@ -41,4 +41,4 @@ fastlane action default_platform
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

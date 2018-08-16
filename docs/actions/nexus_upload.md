@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # nexus_upload
 
 
-Upload a file to Sonatype Nexus platform
+Upload a file to [Sonatype Nexus platform](https://www.sonatype.com)
 
 
 
@@ -94,4 +94,4 @@ fastlane action nexus_upload
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

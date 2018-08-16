@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # onesignal
 
 
-Create a new OneSignal application
+Create a new [OneSignal](https://onesignal.com/) application
 
 
 
@@ -64,4 +64,4 @@ fastlane action onesignal
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

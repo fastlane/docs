@@ -56,4 +56,4 @@ fastlane action read_podspec
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

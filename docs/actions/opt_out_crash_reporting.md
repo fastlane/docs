@@ -33,4 +33,4 @@ fastlane action opt_out_crash_reporting
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

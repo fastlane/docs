@@ -84,4 +84,4 @@ fastlane action update_info_plist
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

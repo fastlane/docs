@@ -51,4 +51,4 @@ fastlane action get_build_number
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

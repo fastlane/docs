@@ -339,4 +339,4 @@ fastlane action create_app_online
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

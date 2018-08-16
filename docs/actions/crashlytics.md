@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # crashlytics
 
 
-Upload a new build to Crashlytics Beta
+Upload a new build to [Crashlytics Beta](http://try.crashlytics.com/beta/)
 
 
 
@@ -69,4 +69,4 @@ fastlane action crashlytics
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

@@ -63,4 +63,4 @@ fastlane action prompt
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # testfairy
 
 
-Upload a new build to TestFairy
+Upload a new build to [TestFairy](https://www.testfairy.com/)
 
 
 
@@ -64,4 +64,4 @@ fastlane action testfairy
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

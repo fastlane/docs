@@ -223,21 +223,26 @@ fastlane-plugin-changelog:
   :github_contributors: 5
 fastlane-plugin-tpa:
   :initial_commit: 2016-06-17
-  :age_in_days: 618
-  :readme_score: 50
-  :tests: 13
+  :age_in_days: 790
+  :readme_score: 100
+  :tests: 33
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: tpa
-    category: 
-    description: Upload builds to The Perfect App (TPA.io)
-    details: 
-  :sha: 27b50645bae4bd3767a4c97de393fbf0fc2abe0b65c99516e8d6c791495f84fe
-  :github_stars: 0
-  :github_subscribers: 1
+    name: upload_to_tpa
+    category: beta
+    description: Upload app builds to The Perfect App (tpa.io)
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_symbols_to_tpa
+    category: misc
+    description: Upload dsym files downloaded from App Store Connect directly to TPA
+    details: " "
+  :sha: 9527839b5bc7c50b4fb3490d81e6a128f20f40bf86c482c8b5a1244c9e05f18d
+  :github_stars: 8
+  :github_subscribers: 5
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 4
+  :github_forks: 4
+  :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
   :age_in_days: 716
@@ -946,7 +951,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 282
+  :age_in_days: 297
   :readme_score: 100
   :tests: 114
   :actions:
@@ -1006,12 +1011,12 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: a92e880028560a776cb3eefb08d4afb0c93fa5358d68aab538f97bd454ed63f1
-  :github_stars: 36
+  :sha: 1d896c88301c7beb4380bbded400ac39a746c52302180f220a6dc5b9fa2ec66f
+  :github_stars: 39
   :github_subscribers: 4
-  :github_issues: 6
+  :github_issues: 7
   :github_forks: 8
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -3456,7 +3461,7 @@ fastlane-plugin-deploy_module_bintray:
   :github_contributors: 1
 fastlane-plugin-analyze_apk:
   :initial_commit: 2017-07-02
-  :age_in_days: 238
+  :age_in_days: 410
   :readme_score: 100
   :tests: 0
   :actions:
@@ -3468,12 +3473,12 @@ fastlane-plugin-analyze_apk:
     details: 'Using this plugin will enable you to extract the following info about
       your generated apk: versionName, versionCode, package name, app name, minSdkVersion,
       apk size'
-  :sha: 418e3f392d8b1e63a18505b0556b70b29c5e302fdb05b282d9d8157edca7aaaa
-  :github_stars: 3
+  :sha: 9d079733ab9c6d5c3d3f04bb047557b8dafce9e54b83d7fda4d3ff05248e0002
+  :github_stars: 5
   :github_subscribers: 0
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-provisioning:
   :initial_commit: 2016-12-11
   :age_in_days: 441
@@ -4514,7 +4519,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 18
+  :age_in_days: 125
   :readme_score: 50
   :tests: 4
   :actions:
@@ -4523,11 +4528,11 @@ fastlane-plugin-flutter:
     category: 
     description: Flutter actions plugin for Fastlane
     details: 
-  :sha: bd727f5029cd4a002585a5af511f3d22fef5b916d76812d6a825b73df0c21328
-  :github_stars: 1
+  :sha: 7fa3f093ca58fd3e8028a558c50ed1aa7ad523a38c7ef4a5642dfa41754a80e4
+  :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
@@ -4654,7 +4659,7 @@ fastlane-plugin-danger_result:
   :github_contributors: 0
 fastlane-plugin-itargetchecker:
   :initial_commit: 2018-05-06
-  :age_in_days: 16
+  :age_in_days: 102
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4666,11 +4671,11 @@ fastlane-plugin-itargetchecker:
     details: Can be used to point out which file from your project is missing from
       a target. It should be usefull for projects that have multiple targets to make
       sure all the files from the main target are also present in the other targets.
-  :sha: f8b52b1d4e43db3606c6cb08aa30ce0721f3fbdcb0148eefce76399db16a2f74
+  :sha: b671387106ba79c6dea3cc0646bd735b8cc4121c836b2b8f922f550eabbffd68
   :github_stars: 2
   :github_subscribers: 3
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-schedule:
   :initial_commit: 2018-05-16
@@ -4691,7 +4696,7 @@ fastlane-plugin-schedule:
   :github_contributors: 0
 fastlane-plugin-teak:
   :initial_commit: 2018-04-23
-  :age_in_days: 79
+  :age_in_days: 115
   :readme_score: 50
   :tests: 1
   :actions:
@@ -4711,7 +4716,7 @@ fastlane-plugin-teak:
     description: Fastlane plugins for the Teak SDK
     details: A collection of plugins to make your life easier when working with the
       Teak SDK.
-  :sha: 597b48061131438324304873fa10af8194384d38cf7f3243739d9d75b3758158
+  :sha: cf28c08be0c2cb92a944ed17c233a139f80a7f5c5113c061253a31541cf9fbce
   :github_stars: 0
   :github_subscribers: 3
   :github_issues: 0
@@ -4943,4 +4948,155 @@ fastlane-plugin-build_log_info:
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-mango:
+  :initial_commit: 2018-08-15
+  :age_in_days: 1
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: run_dockerized_task
+    category: 
+    description: Action that runs Android tasks on a specified Docker image
+    details: 
+  :sha: f2ad81a9872392fedd19b8a17cc1866a0cbed339bd5a0f7be5583717bd483e88
+  :github_stars: 10
+  :github_subscribers: 30
+  :github_issues: 2
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ciutils:
+  :initial_commit: 2016-11-19
+  :age_in_days: 635
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_build_number
+    category: 
+    description: Get the value for build number from environment
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_install_provisioning_profiles
+    category: 
+    description: Copies recursively all provisioning profiles from current folder
+      to system Provisioning Profiles
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_profile_name
+    category: 
+    description: A short description with <= 80 characters of what this action does
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_remove_keychain
+    category: 
+    description: Removes the keychain setup by en_setup_keychain
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_ci_utils_init
+    category: 
+    description: Sets env variables for gym, scan, swiftlint and lizard actions
+    details: Call this action to pre-set gym, scan, swiftlint and lizard to use the
+      build folder for intermediate files and reports
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_setup_project
+    category: 
+    description: Updates Xcode project, plist and entitlements file if config file
+      is provided
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_setup_keychain
+    category: 
+    description: Creates the keychain, and imports the provided certificate
+    details: fastlane
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_git_changelog
+    category: 
+    description: Creates a change log from git commits by filtering commits by a pattern
+      (e.g. JIRA task prefix)
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_close_simulator
+    category: 
+    description: Closes all simulator instances
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: en_create_sonar_reports
+    category: 
+    description: Creates swiftlint, lizard and oclint reports and adjusts junit reports
+      for sonarqube (with the open source swift/objc plugin)
+    details: 
+  :sha: b1d8d4385d81b9d44fcf63ca802d00f49dc513c6cb30b2d8b1d13de1c9742b2e
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-git_pull_branch:
+  :initial_commit: 2018-08-12
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: git_pull_branch
+    category: 
+    description: pull code from different branch
+    details: git_pull pulls code from same brach only. This plugin will pull code
+      from specified branch.
+  :sha: 701fde65cbfce8f5760f3b700543b4e2882dc16284bd43b0f7fe8c6dd6b23b55
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-send_e_mail:
+  :initial_commit: 2018-08-08
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: send_e_mail
+    category: 
+    description: a tool to sendmail
+    details: send email by stmp
+  :sha: 72bbe6443e5a59f3238dacdd4d281aa855beaf6732629977ec4ff1b4828b32e5
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-cordova_screenshots:
+  :initial_commit: 2017-04-13
+  :age_in_days: 490
+  :readme_score: 100
+  :tests: 5
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: init_cordova_screenshots_ios
+    category: 
+    description: Creates an iOS UI Unit Tests in '#{CordovaScreenshots::CORDOVA_SCREENSHOTS_IOS_CONFIG_PATH}'
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: retrofit_cordova_screenshots_android
+    category: 
+    description: Retrofit test into Android project
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: retrofit_cordova_screenshots_ios
+    category: 
+    description: Retrofit test into iOS Xcode project
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: init_cordova_screenshots_android
+    category: 
+    description: Creates an Android UI test in '#{CordovaScreenshots::CORDOVA_SCREENSHOTS_ANDROID_CONFIG_PATH}'
+    details: 
+  :sha: b9150e448c6f8e6af7d9b0583d599c1001a7b319e194c83f455fb1725c45cb5f
+  :github_stars: 1
+  :github_subscribers: 2
+  :github_issues: 10
+  :github_forks: 1
   :github_contributors: 0

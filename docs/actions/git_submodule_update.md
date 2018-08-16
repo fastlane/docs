@@ -43,4 +43,4 @@ fastlane action git_submodule_update
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

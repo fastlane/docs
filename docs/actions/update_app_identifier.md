@@ -56,4 +56,4 @@ fastlane action update_app_identifier
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>
