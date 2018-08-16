@@ -435,7 +435,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">create_pull_request(
-  api_token: ENV[&quot;GITHUB_TOKEN&quot;],
+  api_token: &quot;secret&quot;,      # optional, defaults to ENV[&quot;GITHUB_API_TOKEN&quot;]
   repo: &quot;fastlane/fastlane&quot;,
   title: &quot;Amazing new feature&quot;,
   head: &quot;my-feature&quot;,       # optional, defaults to current branch name
@@ -501,7 +501,7 @@ To show the documentation in your terminal, run</p>
 <p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_pull_request.rb" target="_blank">View source code</a></p>
 <hr />
 
-<p><a href="/actions"><b>Back to actions</b></a></p>
+<p><a href="/actions/"><b>Back to actions</b></a></p>
               
             </div>
           </div>

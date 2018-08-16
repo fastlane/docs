@@ -427,7 +427,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </p>
 
 <hr />
-<h5 align="center"><code>match</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
+<h5 align="center"><em>match</em> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
 <h2 id="why-match"><a name="user-content-why-match" href="#why-match" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why match?</h2>
 <p>Before starting to use <em>match</em>, make sure to read the <a href="https://codesigning.guide">codesigning.guide</a></p>
@@ -560,6 +560,14 @@ end
 </code></pre>
 
 <p>Then all your team has to do is <code>fastlane certificates</code> and keys, certs and profiles for all targets will be synced.</p>
+<h4 id="handle-multiple-apps-per-developerdistribution-certificate"><a name="user-content-handle-multiple-apps-per-developerdistribution-certificate" href="#handle-multiple-apps-per-developerdistribution-certificate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Handle multiple apps per developer/distribution certificate</h4>
+<p>If you want to use a single developer and/or distribution certificate for multiple apps belonging to the same development team, you may use the same signing identities repository and branch to store the signing identities for your apps:</p>
+<p>Matchfile for both App #1 and #2:</p>
+<pre><code class="ruby-skip-tests">git_url(&quot;https://github.com/example/example-repo.git&quot;)
+git_branch(&quot;master&quot;)
+</code></pre>
+
+<p><em>match</em> will reuse certificates and will create separate provisioning profiles for each app.</p>
 <h4 id="passphrase"><a name="user-content-passphrase" href="#passphrase" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passphrase</h4>
 <p>When running <em>match</em> for the first time on a new machine, it will ask you for the passphrase for the Git repository. This is an additional layer of security: each of the files will be encrypted using <code>openssl</code>. Make sure to remember the password, as you'll need it when you run match on a different machine.</p>
 <p>To set the passphrase to decrypt your profiles using an environment variable, use <code>MATCH_PASSWORD</code>.</p>
@@ -685,7 +693,7 @@ fastlane match nuke enterprise
 <h4 id="export-distribution-certificate-and-private-key-as-single-p12-file"><a name="user-content-export-distribution-certificate-and-private-key-as-single-p12-file" href="#export-distribution-certificate-and-private-key-as-single-p12-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Export Distribution Certificate and Private Key as Single .p12 File</h4>
 <p><em>match</em> stores the certificate (<code>.cer</code>) and the private key (<code>.p12</code>) files separately. The following steps will repackage the separate certificate and private key into a single <code>.p12</code> file.</p>
 <p>Decrypt your cert found in <code>certs/&lt;type&gt;/&lt;unique-id&gt;.cer</code> as a pem file:</p>
-<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/&lt;type&gt;/&lt;unique-id&gt;.cer&quot; -out &quot;cert.dem&quot; -a -d
+<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/&lt;type&gt;/&lt;unique-id&gt;.cer&quot; -out &quot;cert.der&quot; -a -d
 openssl x509 -inform der -in cert.der -out cert.pem
 </code></pre>
 
@@ -694,7 +702,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </code></pre>
 
 <p>Generate an encrypted p12 file with the same or new password:</p>
-<pre><code class="no-highlight">openssl pkcs12 -export -out &quot;cert.p12&quot; -inkey &quot;key.pem' -in &quot;cert.pem&quot; -password pass:&lt;password&gt;
+<pre><code class="no-highlight">openssl pkcs12 -export -out &quot;cert.p12&quot; -inkey &quot;key.pem&quot; -in &quot;cert.pem&quot; -password pass:&lt;password&gt;
 </code></pre>
 
 <h2 id="is-this-secure"><a name="user-content-is-this-secure" href="#is-this-secure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Is this secure?</h2>
@@ -877,7 +885,7 @@ To show the documentation in your terminal, run</p>
 <p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/match.rb" target="_blank">View source code</a></p>
 <hr />
 
-<p><a href="/actions"><b>Back to actions</b></a></p>
+<p><a href="/actions/"><b>Back to actions</b></a></p>
               
             </div>
           </div>

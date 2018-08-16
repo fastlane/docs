@@ -453,16 +453,6 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
-<td><code>clean</code></td>
-<td>Remove SCM directories</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>integrate</code></td>
-<td>Integrate the Pods libraries into the Xcode project(s)</td>
-<td><code>true</code></td>
-</tr>
-<tr>
 <td><code>repo_update</code></td>
 <td>Add <code>--repo-update</code> flag to <code>pod install</code> command</td>
 <td><code>false</code></td>
@@ -502,6 +492,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td>Retry with --repo-update if action was finished with error</td>
 <td><code>false</code></td>
 </tr>
+<tr>
+<td><code>clean</code></td>
+<td><strong>DEPRECATED!</strong> (Option removed from cocoapods) Remove SCM directories</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>integrate</code></td>
+<td><strong>DEPRECATED!</strong> (Option removed from cocoapods) Integrate the Pods libraries into the Xcode project(s)</td>
+<td><code>true</code></td>
+</tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
@@ -513,7 +513,7 @@ To show the documentation in your terminal, run</p>
 <p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/cocoapods.rb" target="_blank">View source code</a></p>
 <hr />
 
-<p><a href="/actions"><b>Back to actions</b></a></p>
+<p><a href="/actions/"><b>Back to actions</b></a></p>
               
             </div>
           </div>
