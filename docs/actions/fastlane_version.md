@@ -41,4 +41,4 @@ fastlane action fastlane_version
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

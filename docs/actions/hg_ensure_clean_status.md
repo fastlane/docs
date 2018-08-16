@@ -41,4 +41,4 @@ fastlane action hg_ensure_clean_status
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

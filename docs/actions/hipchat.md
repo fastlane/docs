@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # hipchat
 
 
-Send a error/success message to HipChat
+Send a error/success message to [HipChat](https://www.hipchat.com/)
 
 
 
@@ -65,4 +65,4 @@ fastlane action hipchat
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

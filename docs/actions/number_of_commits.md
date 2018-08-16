@@ -56,4 +56,4 @@ fastlane action number_of_commits
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

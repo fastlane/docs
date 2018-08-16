@@ -54,4 +54,4 @@ fastlane action clear_derived_data
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # chatwork
 
 
-Send a success/error message to ChatWork
+Send a success/error message to [ChatWork](https://go.chatwork.com/)
 
 
 
@@ -58,4 +58,4 @@ fastlane action chatwork
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

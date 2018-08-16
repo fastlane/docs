@@ -56,4 +56,4 @@ fastlane action upload_symbols_to_crashlytics
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

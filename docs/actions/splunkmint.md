@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # splunkmint
 
 
-Upload dSYM file to Splunk MINT
+Upload dSYM file to [Splunk MINT](https://mint.splunk.com/)
 
 
 
@@ -62,4 +62,4 @@ fastlane action splunkmint
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

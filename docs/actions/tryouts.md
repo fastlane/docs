@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # tryouts
 
 
-Upload a new build to Tryouts
+Upload a new build to [Tryouts](https://tryouts.io/)
 
 
 
@@ -60,4 +60,4 @@ fastlane action tryouts
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

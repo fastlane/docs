@@ -64,4 +64,4 @@ fastlane action push_to_git_remote
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # apteligent
 
 
-Upload dSYM file to Apteligent (Crittercism)
+Upload dSYM file to [Apteligent (Crittercism)](http://www.apteligent.com/)
 
 
 
@@ -55,4 +55,4 @@ fastlane action apteligent
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

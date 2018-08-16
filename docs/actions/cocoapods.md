@@ -42,8 +42,6 @@ cocoapods(
 
 Key | Description | Default
 ----|-------------|--------
-  `clean` | Remove SCM directories | `true`
-  `integrate` | Integrate the Pods libraries into the Xcode project(s) | `true`
   `repo_update` | Add `--repo-update` flag to `pod install` command | `false`
   `silent` | Execute command without logging output | `false`
   `verbose` | Show more debugging information | `false`
@@ -52,6 +50,8 @@ Key | Description | Default
   `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file | 
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status | 
   `try_repo_update_on_error` | Retry with --repo-update if action was finished with error | `false`
+  `clean` | **DEPRECATED!** (Option removed from cocoapods) Remove SCM directories | `true`
+  `integrate` | **DEPRECATED!** (Option removed from cocoapods) Integrate the Pods libraries into the Xcode project(s) | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
@@ -66,4 +66,4 @@ fastlane action cocoapods
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

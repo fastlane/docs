@@ -41,4 +41,4 @@ fastlane action git_branch
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

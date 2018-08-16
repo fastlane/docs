@@ -58,4 +58,4 @@ fastlane action google_play_track_version_codes
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

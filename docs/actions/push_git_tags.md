@@ -52,4 +52,4 @@ fastlane action push_git_tags
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

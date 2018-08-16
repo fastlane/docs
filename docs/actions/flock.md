@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # flock
 
 
-Send a message to a Flock group
+Send a message to a [Flock](https://flock.com/) group
 
 
 
@@ -55,4 +55,4 @@ fastlane action flock
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # typetalk
 
 
-Post a message to Typetalk
+Post a message to [Typetalk](https://www.typetalk.com/)
 
 
 
@@ -47,4 +47,4 @@ fastlane action typetalk
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

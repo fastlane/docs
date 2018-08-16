@@ -55,4 +55,4 @@ fastlane action git_tag_exists
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

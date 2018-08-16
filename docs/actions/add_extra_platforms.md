@@ -52,4 +52,4 @@ fastlane action add_extra_platforms
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

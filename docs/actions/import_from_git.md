@@ -67,4 +67,4 @@ fastlane action import_from_git
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>
