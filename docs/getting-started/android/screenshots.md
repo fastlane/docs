@@ -47,7 +47,7 @@ Add the test dependency to your Gradle build:
 androidTestCompile 'tools.fastlane:screengrab:x.x.x'
 ```
 
-The latest version can be determined by visiting the [_screengrab_ RubyGems page](https://rubygems.org/gems/screengrab)
+The latest version is [ ![Download](https://api.bintray.com/packages/fastlane/fastlane/screengrab/images/download.svg) ](https://bintray.com/fastlane/fastlane/screengrab/_latestVersion)
 
 ### Configuring your Manifest Permissions
 Ensure that the following permissions exist in your `src/debug/AndroidManifest.xml`
