@@ -130,5 +130,5 @@ private_lane :ensure_code_samples do
     all_content += File.read(tool_sub_page_path)
   end
   test_sample_code(content: all_content) # to not have to call the action 200 times
-  UI.success "✅  All fastlane code samples (from #{files.length} files) work as expected"
+  UI.success("✅  All fastlane code samples (from #{files.length} files) work as expected")
 end
