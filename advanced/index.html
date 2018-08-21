@@ -198,10 +198,28 @@
           
             <li>
   
+    <ul class="subnav">
+      <li><span>Actions</span></li>
+      
+      
+  
     <li class="toctree-l1 ">
-      <a class="" href="../actions/">Actions</a>
+      <a class="" href="../actions/">Available Actions</a>
       
     </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../create-action/">Create Your Own Action</a>
+      
+    </li>
+  
+
+      
+    </ul>
   
 <li>
           
@@ -1603,6 +1621,13 @@ In particular:</p>
 <li>Think twice before calling an action from another action. There is often a better
   solution.</li>
 </ul>
+<h2 id="passing-parameters-to-fastlane-command-line-tools"><a name="user-content-passing-parameters-to-fastlane-command-line-tools" href="#passing-parameters-to-fastlane-command-line-tools" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passing parameters to <em>fastlane</em> command line tools</h2>
+<p><em>fastlane</em> contains several command line tools, e.g. <a href="../actions/deliver/"><code>fastlane deliver</code></a> or <a href="../actions/snapshot/"><code>fastlane snapshot</code></a>. To pass parameters to these tools, append the option names and values as you would for a normal shell command:</p>
+<pre><code class="shell">fastlane [tool] --[option]=[value]
+
+fastlane deliver --skip_screenshots=true
+fastlane snapshot --screenshots_path=xxxxx --schema=xxxx
+</code></pre>
               
             </div>
           </div>

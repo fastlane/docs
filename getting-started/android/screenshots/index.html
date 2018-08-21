@@ -220,10 +220,28 @@
           
             <li>
   
+    <ul class="subnav">
+      <li><span>Actions</span></li>
+      
+      
+  
     <li class="toctree-l1 ">
-      <a class="" href="../../../actions/">Actions</a>
+      <a class="" href="../../../actions/">Available Actions</a>
       
     </li>
+  
+
+      
+      
+  
+    <li class="toctree-l1 ">
+      <a class="" href="../../../create-action/">Create Your Own Action</a>
+      
+    </li>
+  
+
+      
+    </ul>
   
 <li>
           
@@ -574,7 +592,25 @@ public class ExampleInstrumentedTest {
 <p>You can use <a href="https://github.com/PSPDFKit-labs/QuickDemo">QuickDemo</a> to clean up the status bar for your screenshots.</p>
 <h2 id="generating-screenshots-with-screengrab"><a name="user-content-generating-screenshots-with-screengrab" href="#generating-screenshots-with-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating Screenshots with Screengrab</h2>
 <ul>
-<li>Run <code>./gradlew assembleDebug assembleAndroidTest</code> to generate debug and test APKs</li>
+<li>Run <code>./gradlew assembleDebug assembleAndroidTest</code> manually to generate debug and test APKs<ul>
+<li>You can also create a lane and use <code>build_android_app</code>:
+  ```ruby
+  desc "Build debug and test APK for screenshots"
+  lane :build_for_screengrab do
+    gradle(
+      task: 'clean'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'Debug'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'AndroidTest'
+    )
+  end</li>
+</ul>
+</li>
 <li>Run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
 <li>You will be prompted to provide any required parameters which are not in your <code>Screengrabfile</code>, or provided as command line arguments</li>
 </ul>

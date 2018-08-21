@@ -26,11 +26,19 @@
     
 
     
+        
     <url>
      <loc>None/actions/</loc>
      <lastmod>2018-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>None/create-action/</loc>
+     <lastmod>2018-08-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
