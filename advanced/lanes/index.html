@@ -1118,7 +1118,7 @@ end
 
 <h1 id="lane-properties"><a name="user-content-lane-properties" href="#lane-properties" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Properties</h1>
 <p>It can be useful to dynamically access properties of the current lane. These are available in <code>lane_context</code>:</p>
-<pre><code class="ruby">lane_context[SharedValues::PLATFORM_NAME]        # Platform name, e.g. `ios`, `android` or empty (for root level lanes)
+<pre><code class="ruby">lane_context[SharedValues::PLATFORM_NAME]        # Platform name, e.g. `:ios`, `:android` or empty (for root level lanes)
 lane_context[SharedValues::LANE_NAME]            # The name of the current lane preceded by the platform name (stays the same when switching lanes)
 lane_context[SharedValues::DEFAULT_PLATFORM]     # Default platform
 </code></pre>
