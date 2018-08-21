@@ -32,7 +32,7 @@ end
 private_lane :ensure_filenames do
   UI.message("🕗  Making sure file names are all lowercase...")
   Dir["docs/**/*.md"].each do |current_file|
-    if current_file =~ /[A-Z]/
+    if current_file =~ /[A-Z]/ && (current_file != 'docs/advanced/Appfile.md' && current_file != 'docs/advanced/Fastfile.md')
       UI.user_error!(".md files must not be upper case, use dash instead (file '#{current_file}')")
     end
   end

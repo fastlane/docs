@@ -264,4 +264,13 @@ pages:
   - Source Control: best-practices/source-control.md
   - Continuous Integration: best-practices/continuous-integration.md
   - Keys: best-practices/keys.md
-- Advanced: advanced.md
+- Advanced:
+  - fastlane: advanced/fastlane.md
+  - Fastfile: advanced/Fastfile.md
+  - Appfile: advanced/Appfile.md
+  - Lanes: advanced/lanes.md
+  - Actions: advanced/actions.md
+  - Other: advanced/other.md
+- _Deprecated:
+  - Advanced: advanced.md
+
