@@ -115,3 +115,5 @@ jobs:
         path: /tmp/circleci-artifacts
     - store_artifacts:
         path: /tmp/circleci-test-results
+    - store_artifacts:
+        path: /home/ubuntu/fastlane/docs/site
