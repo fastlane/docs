@@ -1,5 +1,4 @@
 # since we don't want to influence our own stats
-opt_out_crash_reporting
 opt_out_usage
 
 lane :test do |options|
