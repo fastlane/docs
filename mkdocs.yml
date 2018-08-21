@@ -5,7 +5,6 @@ copyright: Copyright &copy; 2018 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
-site_favicon: img/favicon.ico
 repo_url: https://github.com/fastlane/docs
 google_analytics:
 - UA-18658848-13
@@ -16,8 +15,7 @@ markdown_extensions:
 - markdown.extensions.attr_list
 - markdown_include.include
 - mdx_truly_sane_lists
-theme_dir: theme
-pages:
+nav:
 - Home: index.md
 - Getting Started:
   - iOS:
@@ -36,7 +34,7 @@ pages:
   - Cross Platform:
     - React Native: getting-started/cross-platform/react-native.md
     - Flutter: getting-started/cross-platform/flutter.md
-- Actions: 
+- Actions:
   - Available Actions: actions.md
   - Create Your Own Action: create-action.md
 - _Actions:
