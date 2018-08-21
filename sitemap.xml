@@ -1404,11 +1404,53 @@
     
 
     
+        
+    <url>
+     <loc>None/advanced/fastlane/</loc>
+     <lastmod>2018-08-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/advanced/Fastfile/</loc>
+     <lastmod>2018-08-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/advanced/Appfile/</loc>
+     <lastmod>2018-08-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/advanced/lanes/</loc>
+     <lastmod>2018-08-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/advanced/actions/</loc>
+     <lastmod>2018-08-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/advanced/other/</loc>
+     <lastmod>2018-08-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
     <url>
      <loc>None/advanced/</loc>
      <lastmod>2018-08-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
 </urlset>

@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>Fastfile - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/breadcrumbs.css" rel="stylesheet">
+  <link href="../../css/code.css" rel="stylesheet">
+  <link href="../../css/fabric.css" rel="stylesheet">
+  <link href="../../css/fastlane.css" rel="stylesheet">
+  <link href="../../css/sidenav.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Fastfile";
+    var mkdocs_page_input_path = "advanced/Fastfile.md";
+    var mkdocs_page_url = "/advanced/Fastfile/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../..">
+        Home
+      </a>
+      
+      
+    </li>
+  
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Getting Started</span></li>
+      
+        
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>iOS</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/ios/setup/">
+        Setup
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/ios/running-tests/">
+        Running Tests
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/ios/screenshots/">
+        Screenshots
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/ios/beta-deployment/">
+        Beta Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/ios/appstore-deployment/">
+        App Store Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+
+      
+        
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Android</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/android/setup/">
+        Setup
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/android/running-tests/">
+        Running Tests
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/android/screenshots/">
+        Screenshots
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/android/beta-deployment/">
+        Beta Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../getting-started/android/release-deployment/">
+        Release Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Actions</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../actions/">
+        Available Actions
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../create-action/">
+        Create Your Own Action
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../faqs/">
+        FAQs
+      </a>
+      
+      
+    </li>
+  
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Codesigning</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../codesigning/getting-started/">
+        Getting Started
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../codesigning/xcode-project/">
+        Xcode Project
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../codesigning/troubleshooting/">
+        Troubleshooting
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../codesigning/common-issues/">
+        Common Issues
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Plugins</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../plugins/available-plugins/">
+        Available Plugins
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../plugins/create-plugin/">
+        Create Your Own Plugin
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../plugins/plugins-troubleshooting/">
+        Plugins Troubleshooting
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Best Practices</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../best-practices/source-control/">
+        Source Control
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../best-practices/continuous-integration/">
+        Continuous Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../best-practices/keys/">
+        Keys
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Advanced</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../fastlane/">
+        fastlane
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    current
+    
+    
+    ">
+      <a class="
+      current
+      
+      " href="./">
+        Fastfile
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+            
+              <li class="toctree-l3"><a href="#importing-another-fastfile">Importing another Fastfile</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#load-own-actions-from-external-folder">Load own actions from external folder</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#using-fastlane_require">Using fastlane_require</a></li>
+            
+          
+        </ul>
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../Appfile/">
+        Appfile
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../lanes/">
+        Lanes
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../actions/">
+        Actions
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../other/">
+        Other
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Advanced &raquo;</li>
+        
+      
+    
+    <li>Fastfile</li>
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/advanced/Fastfile.md" class="icon icon-github" target="_blank">
+            Edit on GitHub
+          </a>
+        
+      </li>
+    
+    <li class="wy-breadcrumbs-aside">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="fastfile"><a name="user-content-fastfile" href="#fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fastfile</h1>
+<p>The <code>Fastfile</code> stores the automation configuration that can be run with <em>fastlane</em>.</p>
+<p>The <code>Fastfile</code> has to be inside your <code>./fastlane</code> directory.</p>
+<h1 id="importing-another-fastfile"><a name="user-content-importing-another-fastfile" href="#importing-another-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Importing another Fastfile</h1>
+<p>Within your <code>Fastfile</code> you can import another <code>Fastfile</code> using 2 methods:</p>
+<h2 id="import"><code>import</code></h2>
+<p>Import a <code>Fastfile</code> from a local path</p>
+<pre><code class="ruby">import &quot;../GeneralFastfile&quot;
+
+override_lane :from_general do
+  # ...
+end
+</code></pre>
+
+<h2 id="import_from_git"><code>import_from_git</code></h2>
+<p>Import from another git repository, which you can use to have one git repo with a default <code>Fastfile</code> for all your project</p>
+<pre><code class="ruby">import_from_git(url: 'https://github.com/fastlane/fastlane')
+# or
+import_from_git(url: 'git@github.com:MyAwesomeRepo/MyAwesomeFastlaneStandardSetup.git',
+               path: 'fastlane/Fastfile')
+
+lane :new_main_lane do
+  # ...
+end
+</code></pre>
+
+<p>This will also automatically import all the local actions from this repo.</p>
+<h2 id="note"><a name="user-content-note" href="#note" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note</h2>
+<p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <em>fastlane</em> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword.</p>
+<h1 id="load-own-actions-from-external-folder"><a name="user-content-load-own-actions-from-external-folder" href="#load-own-actions-from-external-folder" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Load own actions from external folder</h1>
+<p>Add this to the top of your <code>Fastfile</code>.</p>
+<pre><code class="ruby">actions_path '../custom_actions_folder/'
+</code></pre>
+
+<h1 id="using-fastlane_require"><a name="user-content-using-fastlane_require" href="#using-fastlane_require" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using fastlane_require</h1>
+<p>If you're using a third party gem in your <code>Fastfile</code>, it is recommended to use <code>fastlane_require</code> instead of <code>require</code>. <code>fastlane_require</code> will:</p>
+<ul>
+<li>Verify the gem is installed</li>
+<li>Show installation instructions if not installed</li>
+<li>Require the gem (like <code>require</code> does)</li>
+</ul>
+<h2 id="example"><a name="user-content-example" href="#example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example</h2>
+<pre><code class="rb">fastlane_require 'hike'
+
+lane :release do
+  # Do stuff with hike
+end
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Appfile/" class="btn btn-neutral float-right" title="Appfile">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../fastlane/" class="btn btn-neutral" title="fastlane"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2018 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../fastlane/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Appfile/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
