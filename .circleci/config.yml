@@ -29,7 +29,7 @@ jobs:
     # To see the list of pre-built images that CircleCI provides for most common languages see
     # https://circleci.com/docs/2.0/circleci-images/
     docker:
-    - image: circleci/ruby:2.3.0-stretch
+    - image: circleci/ruby:2.3-stretch
     
     steps:
     # Machine Setup
