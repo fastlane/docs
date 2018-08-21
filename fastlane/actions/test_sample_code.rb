@@ -93,7 +93,7 @@ module Fastlane
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :path),
-          FastlaneCore::ConfigItem.new(key: :content),
+          FastlaneCore::ConfigItem.new(key: :content)
         ]
       end
 
