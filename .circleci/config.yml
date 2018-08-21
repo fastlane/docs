@@ -49,7 +49,7 @@ jobs:
     # This is based on your 1.0 configuration file or project settings
     - run:
         working_directory: ~/fastlane/docs
-        command: if ["3.6.0" == "system"] || pyenv versions --bare | grep -x -q '3.6.0'; then pyenv global 3.6.0;else pyenv install --skip-existing  3.6.0 && pyenv global 3.6.0 && pyenv rehash && pip install virtualenv && pip install nose && pip install pep8 && pyenv rehash;fi
+        command: pyenv install --skip-existing 3.6.0 && pyenv global 3.6.0 && pyenv rehash && pip install virtualenv && pip install nose && pip install pep8 && pyenv rehash
     - run:
         working_directory: ~/fastlane/docs
         command: rm -f fastlane/docs/.rvmrc; echo 2.3.0 > fastlane/docs/.ruby-version; rvm use 2.3.0 --default
