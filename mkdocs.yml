@@ -33,6 +33,10 @@ pages:
     - Screenshots: getting-started/android/screenshots.md
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
+  - Cross Platform:
+    - React Native: getting-started/cross-platform/react-native.md
+    - Flutter: getting-started/cross-platform/flutter.md
+    - Unity: getting-started/cross-platform/unity.md
 - Actions: 
   - Available Actions: actions.md
   - Create Your Own Action: create-action.md
