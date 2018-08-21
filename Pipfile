@@ -8,6 +8,7 @@ markdown-include = "==0.5.1"
 mdx-truly-sane-lists = "==1.0"
 mkdocs = "==0.15.3"
 pymdown-extensions = "==1.1"
+mdx_truly_sane_lists = "==1.1.1"
 
 [dev-packages]
 
