@@ -129,7 +129,10 @@ You can use [QuickDemo](https://github.com/PSPDFKit-labs/QuickDemo) to clean up 
   - You can also create a lane and use `build_android_app`:
     ```ruby
     desc "Build debug and test APK for screenshots"
-    lane :buildForScreengrab do
+    lane :build_for_screengrab do
+      gradle(
+        task: 'clean'
+      )
       build_android_app(
         task: 'assemble',
         build_type: 'Debug'
