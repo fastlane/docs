@@ -174,7 +174,7 @@ end
 It can be useful to dynamically access properties of the current lane. These are available in `lane_context`:
 
 ```ruby
-lane_context[SharedValues::PLATFORM_NAME]        # Platform name, e.g. `ios`, `android` or empty (for root level lanes)
+lane_context[SharedValues::PLATFORM_NAME]        # Platform name, e.g. `:ios`, `:android` or empty (for root level lanes)
 lane_context[SharedValues::LANE_NAME]            # The name of the current lane preceded by the platform name (stays the same when switching lanes)
 lane_context[SharedValues::DEFAULT_PLATFORM]     # Default platform
 ```
