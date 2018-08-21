@@ -33,7 +33,9 @@ pages:
     - Screenshots: getting-started/android/screenshots.md
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
-- Actions: actions.md
+- Actions: 
+  - Available Actions: actions.md
+  - Create Your Own Action: create-action.md
 - _Actions:
   - adb: actions/adb.md
   - adb_devices: actions/adb_devices.md
