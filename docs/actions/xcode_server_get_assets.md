@@ -60,4 +60,4 @@ fastlane action xcode_server_get_assets
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

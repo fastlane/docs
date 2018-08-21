@@ -50,4 +50,4 @@ fastlane action hg_add_tag
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

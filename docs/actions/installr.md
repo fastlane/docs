@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # installr
 
 
-Upload a new build to Installr
+Upload a new build to [Installr](http://installrapp.com/)
 
 
 
@@ -60,4 +60,4 @@ fastlane action installr
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

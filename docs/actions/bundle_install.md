@@ -59,4 +59,4 @@ fastlane action bundle_install
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

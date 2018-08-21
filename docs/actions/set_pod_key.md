@@ -57,4 +57,4 @@ fastlane action set_pod_key
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

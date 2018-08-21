@@ -177,4 +177,4 @@ fastlane action check_app_store_metadata
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

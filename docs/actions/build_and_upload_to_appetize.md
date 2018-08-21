@@ -44,4 +44,4 @@ fastlane action build_and_upload_to_appetize
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

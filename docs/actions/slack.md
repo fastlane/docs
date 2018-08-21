@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # slack
 
 
-Send a success/error message to your Slack group
+Send a success/error message to your [Slack](https://slack.com) group
 
 
 
@@ -85,4 +85,4 @@ fastlane action slack
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

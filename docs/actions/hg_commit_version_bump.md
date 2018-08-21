@@ -66,4 +66,4 @@ fastlane action hg_commit_version_bump
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

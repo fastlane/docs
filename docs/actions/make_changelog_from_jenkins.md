@@ -54,4 +54,4 @@ fastlane action make_changelog_from_jenkins
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

@@ -26,7 +26,7 @@ Returns | The parsed JSON when successful
 
 ```ruby
 create_pull_request(
-  api_token: ENV["GITHUB_TOKEN"],
+  api_token: "secret",      # optional, defaults to ENV["GITHUB_API_TOKEN"]
   repo: "fastlane/fastlane",
   title: "Amazing new feature",
   head: "my-feature",       # optional, defaults to current branch name
@@ -65,4 +65,4 @@ fastlane action create_pull_request
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

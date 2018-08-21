@@ -109,4 +109,4 @@ fastlane action automatic_code_signing
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>

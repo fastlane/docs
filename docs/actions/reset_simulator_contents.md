@@ -50,4 +50,4 @@ fastlane action reset_simulator_contents
 
 <hr />
 
-<a href="/actions"><b>Back to actions</b></a>
+<a href="/actions/"><b>Back to actions</b></a>
