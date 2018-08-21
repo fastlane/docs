@@ -2,11 +2,7 @@
 
 ## Installing _fastlane_
 
-Install _fastlane_ using 
-```no-highlight
-[sudo] gem install fastlane -NV
-```
-or alternatively using `brew cask install fastlane`
+{!docs/includes/installing-fastlane.md!}
 
 ## Setting up _fastlane_
 
