@@ -62,7 +62,7 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
 ## Setting Up _snapshot_
 
 1. Create a new UI Test target in your Xcode project (See the top part of [this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
-1. Run `fastlane snapshot init` in your project folder
+1. Run (if you haven't already done so also run `fastlane init`) `fastlane snapshot init` in your project folder
 1. Add the `./SnapshotHelper.swift` file to your UI Test target (You can move the file anywhere you want)
 1. Add a new Xcode scheme for the newly created UI Test target
 1. Edit the scheme
@@ -130,7 +130,7 @@ languages([
 # fastlane action snapshot
 ```
 
-You can adapt this file to fit your project. Every time you run `fastlane snapshot` the file will be loaded automatically.
+You can adapt this file to fit your project (alternatively you could add your snapshot process to a lane in your fastfile). Every time you run `fastlane snapshot` the file will be loaded automatically.
 
 For a list of all available parameters that can be used in the `Snapfile` run `fastlane action snapshot`.
 
