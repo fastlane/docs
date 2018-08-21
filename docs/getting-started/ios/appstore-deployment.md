@@ -1,4 +1,4 @@
-{!docs/setup-fastlane-header.md!}
+{!docs/includes/setup-fastlane-header.md!}
 
 # iOS App Store deployment using _fastlane_
 
