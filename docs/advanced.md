@@ -51,7 +51,6 @@ This file is not used any more and its content was moved to subpages. Please fol
         */
         if (anchorMap[hash]) {
             link = anchorMap[hash] + '#' + hash;
-            console.log('hash=' + hash + ' => link=' + link);
             window.location.replace(link);
         }
     }
