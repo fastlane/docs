@@ -12,7 +12,7 @@ copyright: Copyright &copy; 2018 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
-repo_url: https://github.com/fastlane/docs
+repo_url: https://github.com/fastlane/fastlane
 google_analytics:
 - UA-18658848-13
 - docs.fastlane.tools
