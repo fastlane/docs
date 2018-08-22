@@ -971,7 +971,56 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lanes"><a name="user-content-lanes" href="#lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lanes</h1>
+                <style type="text/css">
+  .fastlane-setup {
+    border-left: .4rem solid #00b0ff;
+    border-bottom: .1rem solid rgba(0,176,255,.1);
+    background-color: rgba(0,176,255,.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: 200;
+  }
+  .fastlane-setup-wrapper {
+    background-color: rgba(0,176,255,.05);
+  }
+  .fastlane-setup-wrapper[open] {
+    padding-bottom: 1px;
+  }
+  .fastlane-setup-header {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .fastlane-setup-more-details {
+    font-size: 18px;
+    font-weight: 350;
+  }
+</style>
+
+<p><details class="fastlane-setup-wrapper">
+  <summary class="fastlane-setup">New to fastlane? Click here to open the installation &amp; setup instructions first</summary></p>
+<p class="fastlane-setup-header">1) Install the latest Xcode command line tools</p>
+
+<pre><code class="no-highlight">xcode-select --install
+</code></pre>
+
+<p class="fastlane-setup-header">2) Install <i>fastlane</i></p>
+
+<pre><code class="sh"># Using RubyGems
+sudo gem install fastlane -NV
+
+# Alternatively using Homebrew
+brew cask install fastlane
+</code></pre>
+
+<p class="fastlane-setup-header">3) Navigate to your project and run</p>
+
+<pre><code class="no-highlight">fastlane init
+</code></pre>
+
+<p class="fastlane-setup-more-details"><a href="/getting-started/ios/setup/">More Details</a></p>
+
+<p></details></p>
+<h1 id="lanes"><a name="user-content-lanes" href="#lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lanes</h1>
 <h1 id="passing-parameters"><a name="user-content-passing-parameters" href="#passing-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passing Parameters</h1>
 <p>To pass parameters from the command line to your lane, use the following syntax:</p>
 <pre><code class="no-highlight">fastlane [lane] key:value key2:value2
