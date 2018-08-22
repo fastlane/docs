@@ -4,6 +4,10 @@ theme:
   name: material
   favicon: img/favicon.ico
   logo: img/fastlane.png
+extra:
+  social:
+    - type: twitter
+      link: https://twitter.com/FastlaneTools
 copyright: Copyright &copy; 2018 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
