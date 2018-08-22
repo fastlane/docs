@@ -953,11 +953,18 @@
               
                 <h1 id="getting-started-with-fastlane-for-android"><a name="user-content-getting-started-with-fastlane-for-android" href="#getting-started-with-fastlane-for-android" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting started with <em>fastlane</em> for Android</h1>
 <h2 id="installing-fastlane"><a name="user-content-installing-fastlane" href="#installing-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing <em>fastlane</em></h2>
-<p>Install <em>fastlane</em> using </p>
-<pre><code class="no-highlight">[sudo] gem install fastlane -NV
+<p>Install the latest Xcode command line tools:</p>
+<pre><code class="no-highlight">xcode-select --install
 </code></pre>
 
-<p>or alternatively using <code>brew cask install fastlane</code></p>
+<p>Install <em>fastlane</em> using</p>
+<pre><code class="sh"># Using RubyGems
+sudo gem install fastlane -NV
+
+# Alternatively using Homebrew
+brew cask install fastlane
+</code></pre>
+
 <h2 id="setting-up-fastlane"><a name="user-content-setting-up-fastlane" href="#setting-up-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em></h2>
 <p>Navigate your terminal to your project's directory and run</p>
 <pre><code class="no-highlight">fastlane init
