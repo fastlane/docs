@@ -11,7 +11,8 @@ google_analytics:
 - docs.fastlane.tools
 strict: true
 markdown_extensions:
-- pymdownx.headeranchor
+- toc:
+    permalink: True
 - markdown.extensions.attr_list
 - markdown_include.include
 - mdx_truly_sane_lists
