@@ -1,16 +1,16 @@
 ---
+# Project information
 site_name: fastlane docs
-theme:
-  name: readthedocs
-  custom_dir: theme
-copyright: Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
+copyright: Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
 repo_url: https://github.com/fastlane/docs
-google_analytics:
-- UA-18658848-13
-- docs.fastlane.tools
+
+# Configuration
+theme:
+  name: readthedocs
+  custom_dir: theme
 strict: false
 markdown_extensions:
 - markdown.extensions.attr_list
@@ -25,6 +25,11 @@ plugins:
     hooks:
       on_pre_build: hooks:copy_generated_files
 docs_dir: docs
+
+# Customization
+google_analytics:
+- UA-18658848-13
+- docs.fastlane.tools
 extra_css:
 - "./css/sidenavv.css"
 - "./css/fastlane.css"
