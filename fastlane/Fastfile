@@ -25,7 +25,7 @@ end
 
 private_lane :build_site do
   UI.message("🕗  Building page...")
-  sh("mkdocs build --clean --strict") # to make sure building is successful
+  sh("mkdocs build --strict") # to make sure building is successful
   UI.success("✅  Build successful")
 end
 

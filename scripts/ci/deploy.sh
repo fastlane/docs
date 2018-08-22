@@ -14,7 +14,7 @@ echo "Starting deploy to https://docs.fastlane.tools"
 find ./docs/actions/ -type f | xargs sed -i 's/\`\`\`ruby\-skip\-tests/\`\`\`ruby/g'
 
 # Build the docs page locally
-mkdocs build --clean
+mkdocs build
 
 # Bots need names too
 git config --global user.email "fastlanebothelper@krausefx.com"
