@@ -983,7 +983,7 @@ end
 </tr>
 <tr>
 <td>✨</td>
-<td>Integrates with all your existing tools and services (170 actions currently)</td>
+<td>Integrates with all your existing tools and services (more than 400 integrations)</td>
 </tr>
 <tr>
 <td>📖</td>
@@ -1020,16 +1020,18 @@ end
 </tbody>
 </table>
 <h2 id="getting-started"><a name="user-content-getting-started" href="#getting-started" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started</h2>
-<p>Make sure you have the latest version of the Xcode command line tools installed:</p>
+<p>Install the latest Xcode command line tools:</p>
 <pre><code class="no-highlight">xcode-select --install
 </code></pre>
 
-<h3 id="install-fastlane"><a name="user-content-install-fastlane" href="#install-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Install fastlane</h3>
-<p>Install fastlane using </p>
-<pre><code class="no-highlight">[sudo] gem install fastlane -NV
+<p>Install <em>fastlane</em> using</p>
+<pre><code class="sh"># Using RubyGems
+sudo gem install fastlane -NV
+
+# Alternatively using Homebrew
+brew cask install fastlane
 </code></pre>
 
-<p>or alternatively using <code>brew cask install fastlane</code></p>
 <p>Navigate to your iOS or Android app and run</p>
 <pre><code class="no-highlight">fastlane init
 </code></pre>
@@ -1041,13 +1043,8 @@ end
 <li><a href="getting-started/android/setup/">fastlane Getting Started guide for Android</a></li>
 </ul>
 <h2 id="questions-and-support"><a name="user-content-questions-and-support" href="#questions-and-support" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Questions and support</h2>
-<p>Before submitting a new GitHub issue, please make sure to</p>
-<ul>
-<li>Check out <a href="https://docs.fastlane.tools">docs.fastlane.tools</a></li>
-<li>Check out the README pages on <a href="https://github.com/fastlane/fastlane">this repo</a></li>
-<li>Search for <a href="https://github.com/fastlane/fastlane/issues">existing GitHub issues</a></li>
-</ul>
-<p>If the above doesn't help, please <a href="https://github.com/fastlane/fastlane/issues">submit an issue</a> on GitHub and provide information about your setup, in particular the output of the <code>fastlane env</code> command.</p>
+<p>Before submitting a new GitHub issue, please make sure to search for <a href="https://github.com/fastlane/fastlane/issues">existing GitHub issues</a>.</p>
+<p>If that doesn't help, please <a href="https://github.com/fastlane/fastlane/issues">submit an issue</a> on GitHub and provide information about your setup, in particular the output of the <code>fastlane env</code> command.</p>
 <h2 id="system-requirements"><a name="user-content-system-requirements" href="#system-requirements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>System requirements</h2>
 <p>Currently, <em>fastlane</em> is officially supported to run on macOS. </p>
 <p>But we are working on 🐧 Linux and 🖥️ Windows support for parts of <em>fastlane</em>. Some underlying software like Xcode or iTunes Transporter is only available for macOS, but many other tools and actions can theoretically also work on other platforms. Please see <a href="https://github.com/fastlane/fastlane/issues/11687">this Github issue for further information</a>.</p>
@@ -1205,5 +1202,5 @@ end
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2018-08-22 17:09:53.564343
+Build Date UTC : 2018-08-22 17:39:51.786609
 -->
