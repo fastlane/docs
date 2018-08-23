@@ -8,13 +8,11 @@
 
 Navigate your terminal to your project's directory and run
 
-_for Ruby setup_:
-
 ```no-highlight
 fastlane init
 ```
 
-_for Swift setup:_
+To have your `Fastfile` configuration written in Swift (Beta)
 
 ```no-highlight
 fastlane init swift
