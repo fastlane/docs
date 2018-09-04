@@ -23,6 +23,7 @@ import './path/to/other/Fastfile'
 ```
 
 For _fastlane_ plugins, check out the [available plugins](https://docs.fastlane.tools/plugins/available-plugins/) page.
+If you want to create your own action, check out the [local actions](/create-action/#local-actions) page.
 
 - [Testing](#testing)
 - [Building](#building)
