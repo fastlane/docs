@@ -22,7 +22,7 @@ Returns | The output of running the gradle task
 
 
 
-## 3 Examples
+## 4 Examples
 
 ```ruby
 gradle(
@@ -81,6 +81,13 @@ gradle(
   # ...
 
   flags: "--exitcode --xml file.xml"
+)
+```
+
+```ruby
+# Delete the build directory and generated APKs
+gradle(
+  task: "clean"
 )
 ```
 
