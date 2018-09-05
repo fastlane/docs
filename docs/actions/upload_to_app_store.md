@@ -788,27 +788,27 @@ Key | Description | Default
 ----|-------------|--------
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
-  `app` | The app ID of the app you want to use/modify | 
-  `edit_live` | Modify live metadata, this option disables ipa upload and screenshot upload | `false`
+  `app_version` | The version that should be edited or created | 
   `ipa` | Path to your ipa file | [*](#parameters-legend-dynamic)
   `pkg` | Path to your pkg file | [*](#parameters-legend-dynamic)
+  `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one | 
   `platform` | The platform to use (optional) | `ios`
+  `edit_live` | Modify live metadata, this option disables ipa upload and screenshot upload | `false`
+  `use_live_version` | Force usage of live version rather than edit version | `false`
   `metadata_path` | Path to the folder containing the metadata files | 
   `screenshots_path` | Path to the folder containing the screenshots | 
   `skip_binary_upload` | Skip uploading an ipa or pkg to App Store Connect | `false`
-  `use_live_version` | Force usage of live version rather than edit version | `false`
   `skip_screenshots` | Don't upload the screenshots | `false`
-  `app_version` | The version that should be edited or created | 
   `skip_metadata` | Don't upload the metadata (e.g. title, description). This will still upload screenshots | `false`
   `skip_app_version_update` | Don't update app version for submission | `false`
   `force` | Skip the HTML report file verification | `false`
+  `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
   `automatic_release` | Should the app be automatically released once it's approved? | `false`
   `auto_release_date` | Date in milliseconds for automatically releasing on pending approval | 
   `phased_release` | Enable the phased release feature of iTC | `false`
   `price_tier` | The price tier of this application | 
-  `build_number` | If set the given build number (already uploaded to iTC) will be used instead of the current built one | 
   `app_rating_config_path` | Path to the app rating's config | 
   `submission_information` | Extra information for the submission (e.g. third party content) | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
@@ -816,9 +816,8 @@ Key | Description | Default
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
-  `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
-  `precheck_default_rule_level` | The default rule level unless otherwise configured | `:warn`
+  `precheck_default_rule_level` | The default precheck rule level unless otherwise configured | `:warn`
   `app_icon` | Metadata: The path to the app icon | 
   `apple_watch_app_icon` | Metadata: The path to the Apple Watch app icon | 
   `copyright` | Metadata: The copyright notice | 
@@ -842,6 +841,7 @@ Key | Description | Default
   `languages` | Metadata: List of languages to activate | 
   `ignore_language_directory_validation` | Ignore errors when invalid languages are found in metadata and screeenshot directories | `false`
   `precheck_include_in_app_purchases` | Should precheck check in-app purchases? | `true`
+  `app` | The (spaceship) app ID of the app you want to use/modify | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

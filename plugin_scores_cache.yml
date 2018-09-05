@@ -724,7 +724,7 @@ fastlane-plugin-unzip:
   :github_contributors: 1
 fastlane-plugin-cordova:
   :initial_commit: 2016-12-10
-  :age_in_days: 442
+  :age_in_days: 634
   :readme_score: 100
   :tests: 0
   :actions:
@@ -733,12 +733,12 @@ fastlane-plugin-cordova:
     category: building
     description: Build your Cordova app
     details: Easily integrate your cordova build into a Fastlane setup
-  :sha: 10f32f84632b997da0cb208bea54a493a7ce86161d7a9d982f8b91ca57c6ecfa
-  :github_stars: 60
-  :github_subscribers: 5
-  :github_issues: 6
-  :github_forks: 14
-  :github_contributors: 6
+  :sha: 6bde4d047232609b442d0b1f7d602dece51d10f2cf0fabf588b365e3fba1775d
+  :github_stars: 75
+  :github_subscribers: 6
+  :github_issues: 12
+  :github_forks: 23
+  :github_contributors: 0
 fastlane-plugin-clubmate:
   :initial_commit: 2016-05-30
   :age_in_days: 636
@@ -1135,9 +1135,9 @@ fastlane-plugin-update_xcodeproj:
   :github_contributors: 2
 fastlane-plugin-apprepo:
   :initial_commit: 2016-05-24
-  :age_in_days: 701
+  :age_in_days: 834
   :readme_score: 50
-  :tests: 2
+  :tests: 0
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: download_manifest
@@ -1164,10 +1164,10 @@ fastlane-plugin-apprepo:
     category: 
     description: Submits IPA to Apprepo
     details: 
-  :sha: c3894dd57facd2f1801d24a2242f666f8666224fadb7a3d280efe4e7b4022d99
-  :github_stars: 3
+  :sha: ffc6b9eb2aa4bcf376a315c3d676cd032ba105193b611d199c0724c136f8ebab
+  :github_stars: 4
   :github_subscribers: 1
-  :github_issues: 2
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-gs_versioning:
@@ -1788,7 +1788,7 @@ fastlane-plugin-upload_to_onesky:
   :github_contributors: 1
 fastlane-plugin-rome:
   :initial_commit: 2017-03-27
-  :age_in_days: 434
+  :age_in_days: 527
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1798,8 +1798,8 @@ fastlane-plugin-rome:
     description: An S3 cache tool for Carthage
     details: Rome is a tool that allows developers on Apple platforms to use Amazon's
       S3o and others as a shared cache for frameworks built with Carthage.
-  :sha: bc6317f545dd89cb5ceeff8803991838c4e88d2a25bcdc5109e8cd3238462eab
-  :github_stars: 5
+  :sha: 2306f7192e7a8b797f25193d0aa94692bc010b391dc8db240a255eec3faf42d0
+  :github_stars: 8
   :github_subscribers: 2
   :github_issues: 1
   :github_forks: 2
@@ -3219,7 +3219,7 @@ fastlane-plugin-tunes:
   :github_contributors: 2
 fastlane-plugin-teams:
   :initial_commit: 2017-05-21
-  :age_in_days: 280
+  :age_in_days: 472
   :readme_score: 100
   :tests: 1
   :actions:
@@ -3228,12 +3228,12 @@ fastlane-plugin-teams:
     category: notifications
     description: Send a message to your Microsoft Teams channel via the webhook connector
     details: Send a message to your Microsoft Teams channel
-  :sha: cefde2a9de8eb3be69ac19f22282698b4c90788ddce6570881814cd41e49cf1f
-  :github_stars: 4
+  :sha: d92650cb0a29c75c771d5fc0fcd45ef09981aaa259f0328afcda02be2f205368
+  :github_stars: 6
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-validate_app:
   :initial_commit: 2018-01-21
   :age_in_days: 35
@@ -3392,7 +3392,7 @@ fastlane-plugin-influxdb:
   :github_contributors: 0
 fastlane-plugin-telegram:
   :initial_commit: 2017-08-19
-  :age_in_days: 190
+  :age_in_days: 382
   :readme_score: 50
   :tests: 1
   :actions:
@@ -3401,12 +3401,12 @@ fastlane-plugin-telegram:
     category: 
     description: Allows post messages to telegram channel
     details: Allows post messages to telegram channel
-  :sha: b91e79396acdffa018f92b43cde05034c8e056e74393ab2f60327a9db60d65c3
-  :github_stars: 7
+  :sha: 77241f0ba7606abc40203d24bd04698fcfea399c21445d63967c299c6deede0e
+  :github_stars: 10
   :github_subscribers: 2
   :github_issues: 1
-  :github_forks: 1
-  :github_contributors: 1
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-acknowledgements:
   :initial_commit: 2017-04-09
   :age_in_days: 322
@@ -4451,7 +4451,7 @@ fastlane-plugin-rescan_flaky_tests:
   :github_contributors: 2
 fastlane-plugin-automated_test_emulator_run_mik:
   :initial_commit: 2016-07-26
-  :age_in_days: 616
+  :age_in_days: 771
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4461,7 +4461,7 @@ fastlane-plugin-automated_test_emulator_run_mik:
     description: Starts AVD, based on AVD_setup.json file, before test launch and
       kills it after testing is done.
     details: 
-  :sha: a305def7922dd0753220fffa55b77092e09bdf2e0ca9ef0bbde987dcf58addcd
+  :sha: 19edcd8c3397dec185d91ae4f301fd85cb393adf7605c555e103b22fd7bffd16
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -4951,20 +4951,20 @@ fastlane-plugin-build_log_info:
   :github_contributors: 0
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 1
+  :age_in_days: 21
   :readme_score: 100
-  :tests: 1
+  :tests: 22
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: run_dockerized_task
     category: 
     description: Action that runs Android tasks on a specified Docker image
     details: 
-  :sha: f2ad81a9872392fedd19b8a17cc1866a0cbed339bd5a0f7be5583717bd483e88
-  :github_stars: 10
-  :github_subscribers: 30
-  :github_issues: 2
-  :github_forks: 0
+  :sha: e77063fbacbabcb01a9c743d6b93d715369cdf13efd35d89597133ac02d4fa4d
+  :github_stars: 13
+  :github_subscribers: 23
+  :github_issues: 3
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-ciutils:
   :initial_commit: 2016-11-19
@@ -5053,7 +5053,7 @@ fastlane-plugin-git_pull_branch:
   :github_contributors: 0
 fastlane-plugin-send_e_mail:
   :initial_commit: 2018-08-08
-  :age_in_days: 8
+  :age_in_days: 28
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5062,7 +5062,7 @@ fastlane-plugin-send_e_mail:
     category: 
     description: a tool to sendmail
     details: send email by stmp
-  :sha: 72bbe6443e5a59f3238dacdd4d281aa855beaf6732629977ec4ff1b4828b32e5
+  :sha: 617e83bfec752d0a3048982c6cd388926d73e7f7c9d93c7e82a0caae6a533fde
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -5099,4 +5099,108 @@ fastlane-plugin-cordova_screenshots:
   :github_subscribers: 2
   :github_issues: 10
   :github_forks: 1
+  :github_contributors: 0
+fastlane-plugin-fiv_increment_build_no:
+  :initial_commit: 2018-08-26
+  :age_in_days: 10
+  :readme_score: 0
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fivethree_ionic
+    category: 
+    description: Fastlane plugin for Ionic v4 Projects
+    details: Fastlane
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fiv_update_version_and_build_no
+    category: 
+    description: Fastlane plugin for Ionic v4 Projects
+    details: Fastlane
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fiv_update_version
+    category: 
+    description: A short description with <= 80 characters of what this action does
+    details: You can use this action to do cool things...
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fiv_increment_build_no
+    category: 
+    description: fastlane plugin for ionic 4
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fiv_build_ionic_android
+    category: 
+    description: A short description with <= 80 characters of what this action does
+    details: You can use this action to do cool things...
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fiv_add_transparent_statusbar
+    category: 
+    description: 
+    details: You can use this action to do cool things...
+  :sha: ae76c7e369ec1e37807570cd5c1f553a8fa5de0cefe7b39cfb9ed7460feda375
+  :github_stars: 2
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-managed_google_play:
+  :initial_commit: 2018-08-24
+  :age_in_days: 12
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_managed_play_store_publishing_rights
+    category: 
+    description: Obtain publishing rights for custom apps on Managed Google Play Store
+    details: none yet
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: managed_google_play
+    category: 
+    description: Create Managed Google Play Apps
+    details: none yet
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_app_on_managed_play_store
+    category: 
+    description: Create Managed Google Play Apps
+    details: none yet
+  :sha: 92a74ca5d0ef790b7036087d1f868b5c006d0c1856c37f16aa9d08387cf4d4fe
+  :github_stars: 3
+  :github_subscribers: 1
+  :github_issues: 5
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-app_store_build_info:
+  :initial_commit: 2018-08-28
+  :age_in_days: 8
+  :readme_score: 50
+  :tests: 6
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: app_store_build_info
+    category: 
+    description: Get build info from App Store Connect
+    details: Get build info for an app, like version number and build number from
+      App Store Connect
+  :sha: a6ab0de3478651fbf5c32bdda1f4316ec261743d79362abece43e1eb8718e0db
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-last_fabric_version_code:
+  :initial_commit: 2018-09-03
+  :age_in_days: 2
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: last_fabric_version_code
+    category: 
+    description: Get the last Fabric version code for your Android app
+    details: Get the last Fabric version code for your Android app
+  :sha: 9dafa78b1bd1fca11b8ee36a12de16a34b77e49706123a93eaf9390ef49612cf
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
   :github_contributors: 0

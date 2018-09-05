@@ -36,7 +36,7 @@ pages:
   - Cross Platform:
     - React Native: getting-started/cross-platform/react-native.md
     - Flutter: getting-started/cross-platform/flutter.md
-- Actions: 
+- Actions:
   - Available Actions: actions.md
   - Create Your Own Action: create-action.md
 - _Actions:
@@ -276,4 +276,3 @@ pages:
   - Other: advanced/other.md
 - _Deprecated:
   - Advanced: advanced.md
-
