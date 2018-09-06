@@ -1029,6 +1029,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li><strong>Modify</strong> Application Services on the Apple Developer Portal</li>
 <li><strong>Create</strong> App Groups on the Apple Developer Portal</li>
 <li><strong>Associate</strong> apps with App Groups on the Apple Developer Portal</li>
+<li><strong>Create</strong> iCloud Containers on the Apple Developer Portal</li>
+<li><strong>Associate</strong> apps with iCloud Containers on the Apple Developer Portal</li>
 <li><strong>Create</strong> Merchant Identifiers on the Apple Developer Portal</li>
 <li><strong>Associate</strong> apps with Merchant Identifiers on the Apple Developer Portal</li>
 <li>Support for <strong>multiple Apple accounts</strong>, storing your credentials securely in the Keychain</li>
@@ -1049,6 +1051,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   disable_services     Disable specific Application Services for a specific app on the Apple Developer Portal
   enable_services      Enable specific Application Services for a specific app on the Apple Developer Portal
   group                Ensure that a specific App Group exists
+  cloud_container      Ensure that a specific iCloud Container exists
   help                 Display global or [command] help documentation
   merchant             Ensure that a specific Merchant exists
 
@@ -1091,6 +1094,18 @@ Options for create:
 
 <p>If you want to associate an app with an App Group:</p>
 <pre><code class="no-highlight">fastlane produce associate_group -a com.krausefx.app group.krausefx
+</code></pre>
+
+<p>If you want to create a new iCloud Container:</p>
+<pre><code class="no-highlight">fastlane produce cloud_container -ci iCloud.com.krausefx.app -n &quot;Example iCloud Container&quot;
+</code></pre>
+
+<p>If you want to associate an app with an iCloud Container:</p>
+<pre><code class="no-highlight">fastlane produce associate_cloud_container -a com.krausefx.app iCloud.com.krausefx.app
+</code></pre>
+
+<p>If you want to associate an app with multiple iCloud Containers:</p>
+<pre><code class="no-highlight">fastlane produce associate_cloud_container -a com.krausefx.app iCloud.com.krausefx.app1 iCloud.com.krausefx.app2
 </code></pre>
 
 <h1 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h1>

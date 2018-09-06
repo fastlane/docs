@@ -1056,7 +1056,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="generating-screenshots-with-screengrab"><a name="user-content-generating-screenshots-with-screengrab" href="#generating-screenshots-with-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating Screenshots with Screengrab</h1>
 <ul>
 <li>Then, before running <code>fastlane screengrab</code> you'll need a debug and test apk<ul>
-<li>You can create your APKs with <code>./gradlew assembleDebug assembleAndroidTest</code></li>
+<li>You can create your APKs manually with <code>./gradlew assembleDebug assembleAndroidTest</code></li>
+<li>You can also create a lane and use <code>build_android_app</code>:
+  <code>ruby
+  desc "Build debug and test APK for screenshots"
+  lane :build_for_screengrab do
+    build_android_app(
+      task: 'assemble',
+      build_type: 'Debug'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'AndroidTest'
+    )
+  end</code></li>
 </ul>
 </li>
 <li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>

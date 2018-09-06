@@ -1034,7 +1034,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">gradle(
   task: &quot;assemble&quot;,
   flavor: &quot;WorldDomination&quot;,
@@ -1086,6 +1086,12 @@ gradle(
   # ...
 
   flags: &quot;--exitcode --xml file.xml&quot;
+)
+</code></pre>
+
+<pre><code class="ruby"># Delete the build directory and generated APKs
+gradle(
+  task: &quot;clean&quot;
 )
 </code></pre>
 

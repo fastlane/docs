@@ -501,6 +501,10 @@
             
           
             
+              <li class="toctree-l3"><a href="#app-store-connect">App Store Connect</a></li>
+            
+          
+            
               <li class="toctree-l3"><a href="#misc">Misc</a></li>
             
           
@@ -1129,6 +1133,7 @@ If you want to create your own action, check out the <a href="../create-action/#
 <li><a href="#releasing-your-app">Releasing your app</a></li>
 <li><a href="#source-control">Source Control</a></li>
 <li><a href="#notifications">Notifications</a></li>
+<li><a href="#app-store-connect">App Store Connect</a></li>
 <li><a href="#misc">Misc</a></li>
 <li><a href="#deprecated">Deprecated</a></li>
 <li><a href="https://docs.fastlane.tools/plugins/available-plugins/">Plugins</a></li>
@@ -1194,13 +1199,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/run_tests/">run_tests</a></td>
-<td>Easily run tests of your iOS app (via <em>scan</em>)</td>
+<td><a href="/actions/xcode_server_get_assets/">xcode_server_get_assets</a></td>
+<td>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcode_server_get_assets/">xcode_server_get_assets</a></td>
-<td>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</td>
+<td><a href="/actions/run_tests/">run_tests</a></td>
+<td>Easily run tests of your iOS app (via <em>scan</em>)</td>
 <td>ios, mac</td>
 </tr>
 </tbody>
@@ -1286,18 +1291,18 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/build_ios_app/">build_ios_app</a></td>
-<td>Easily build and sign your app (via <em>gym</em>)</td>
+<td><a href="/actions/xcexport/">xcexport</a></td>
+<td>Exports the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/build_android_app/">build_android_app</a></td>
-<td>Alias for the <code>gradle</code> action</td>
-<td>ios, android</td>
 </tr>
 <tr>
 <td><a href="/actions/build_app/">build_app</a></td>
 <td>Alias for the <code>build_ios_app</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcclean/">xcclean</a></td>
+<td>Cleans the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1306,23 +1311,23 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/spm/">spm</a></td>
-<td>Runs Swift Package Manager on your project</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/xcexport/">xcexport</a></td>
-<td>Exports the project using <code>xcodebuild</code></td>
-<td>ios, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/xcbuild/">xcbuild</a></td>
 <td>Builds the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcclean/">xcclean</a></td>
-<td>Cleans the project using <code>xcodebuild</code></td>
+<td><a href="/actions/spm/">spm</a></td>
+<td>Runs Swift Package Manager on your project</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_android_app/">build_android_app</a></td>
+<td>Alias for the <code>gradle</code> action</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/build_ios_app/">build_ios_app</a></td>
+<td>Easily build and sign your app (via <em>gym</em>)</td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1358,13 +1363,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a></td>
-<td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
+<td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
+<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
-<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
+<td><a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a></td>
+<td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1532,13 +1537,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/get_provisioning_profile/">get_provisioning_profile</a></td>
-<td>Generates a provisioning profile, saving it in the current folder (via <em>sigh</em>)</td>
+<td><a href="/actions/get_certificates/">get_certificates</a></td>
+<td>Create new iOS code signing certificates (via <em>cert</em>)</td>
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/get_certificates/">get_certificates</a></td>
-<td>Create new iOS code signing certificates (via <em>cert</em>)</td>
+<td><a href="/actions/get_provisioning_profile/">get_provisioning_profile</a></td>
+<td>Generates a provisioning profile, saving it in the current folder (via <em>sigh</em>)</td>
 <td>ios</td>
 </tr>
 </tbody>
@@ -1631,11 +1636,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/set_changelog/">set_changelog</a></td>
-<td>Set the changelog for all languages on App Store Connect</td>
-<td>ios, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/splunkmint/">splunkmint</a></td>
 <td>Upload dSYM file to <a href="https://mint.splunk.com/">Splunk MINT</a></td>
 <td>ios</td>
@@ -1646,14 +1646,14 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android</td>
 </tr>
 <tr>
-<td><a href="/actions/podio_item/">podio_item</a></td>
-<td>Creates or updates an item within your Podio app</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/upload_to_testflight/">upload_to_testflight</a></td>
 <td>Upload new binary to App Store Connect for TestFlight beta testing (via <em>pilot</em>)</td>
 <td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/podio_item/">podio_item</a></td>
+<td>Creates or updates an item within your Podio app</td>
+<td>ios, android, mac</td>
 </tr>
 </tbody>
 </table>
@@ -1862,13 +1862,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/commit_github_file/">commit_github_file</a></td>
-<td>This will commit a file directly on GitHub via the API</td>
+<td><a href="/actions/git_submodule_update/">git_submodule_update</a></td>
+<td>Executes a git submodule command</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/git_submodule_update/">git_submodule_update</a></td>
-<td>Executes a git submodule command</td>
+<td><a href="/actions/commit_github_file/">commit_github_file</a></td>
+<td>This will commit a file directly on GitHub via the API</td>
 <td>ios, android, mac</td>
 </tr>
 </tbody>
@@ -1930,6 +1930,58 @@ If you want to create your own action, check out the <a href="../create-action/#
 </tr>
 </tbody>
 </table>
+<h1 id="app-store-connect"><a name="user-content-app-store-connect" href="#app-store-connect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Store Connect</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/produce/">produce</a></td>
+<td>Alias for the <code>create_app_online</code> action</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/precheck/">precheck</a></td>
+<td>Alias for the <code>check_app_store_metadata</code> action</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/latest_testflight_build_number/">latest_testflight_build_number</a></td>
+<td>Fetches most recent build number from TestFlight</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/download_dsyms/">download_dsyms</a></td>
+<td>Download dSYM files from App Store Connect for Bitcode apps</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/app_store_build_number/">app_store_build_number</a></td>
+<td>Returns the current build_number of either live or edit version</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/set_changelog/">set_changelog</a></td>
+<td>Set the changelog for all languages on App Store Connect</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/create_app_online/">create_app_online</a></td>
+<td>Creates the given application on iTC and the Dev Portal (via <em>produce</em>)</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/check_app_store_metadata/">check_app_store_metadata</a></td>
+<td>Check your app's metadata before you submit your app to review (via <em>precheck</em>)</td>
+<td>ios</td>
+</tr>
+</tbody>
+</table>
 <h1 id="misc"><a name="user-content-misc" href="#misc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Misc</h1>
 <table>
 <thead>
@@ -1981,11 +2033,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/produce/">produce</a></td>
-<td>Alias for the <code>create_app_online</code> action</td>
-<td>ios</td>
-</tr>
-<tr>
 <td><a href="/actions/is_ci/">is_ci</a></td>
 <td>Is the current run being executed on a CI system, like Jenkins or Travis</td>
 <td>ios, android, mac</td>
@@ -2006,11 +2053,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/precheck/">precheck</a></td>
-<td>Alias for the <code>check_app_store_metadata</code> action</td>
-<td>ios</td>
-</tr>
-<tr>
 <td><a href="/actions/bundle_install/">bundle_install</a></td>
 <td>This action runs <code>bundle install</code> (if available)</td>
 <td>ios, android, mac</td>
@@ -2029,11 +2071,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td><a href="/actions/delete_keychain/">delete_keychain</a></td>
 <td>Delete keychains and remove them from the search list</td>
 <td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/latest_testflight_build_number/">latest_testflight_build_number</a></td>
-<td>Fetches most recent build number from TestFlight</td>
-<td>ios</td>
 </tr>
 <tr>
 <td><a href="/actions/backup_file/">backup_file</a></td>
@@ -2079,11 +2116,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td><a href="/actions/artifactory/">artifactory</a></td>
 <td>This action uploads an artifact to artifactory</td>
 <td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/download_dsyms/">download_dsyms</a></td>
-<td>Download dSYM files from App Store Connect for Bitcode apps</td>
-<td>ios</td>
 </tr>
 <tr>
 <td><a href="/actions/version_bump_podspec/">version_bump_podspec</a></td>
@@ -2206,11 +2238,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/app_store_build_number/">app_store_build_number</a></td>
-<td>Returns the current build_number of either live or edit version</td>
-<td>ios, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/appetize_viewing_url_generator/">appetize_viewing_url_generator</a></td>
 <td>Generate an URL for appetize simulator</td>
 <td>ios</td>
@@ -2246,18 +2273,8 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
-<td>Setup the keychain and match to work with CircleCI</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/check_app_store_metadata/">check_app_store_metadata</a></td>
-<td>Check your app's metadata before you submit your app to review (via <em>precheck</em>)</td>
-<td>ios</td>
-</tr>
-<tr>
-<td><a href="/actions/echo/">echo</a></td>
-<td>Alias for the <code>puts</code> action</td>
+<td><a href="/actions/min_fastlane_version/">min_fastlane_version</a></td>
+<td>Verifies the minimum fastlane version required</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -2271,9 +2288,14 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/ruby_version/">ruby_version</a></td>
-<td>Verifies the minimum ruby version required</td>
+<td><a href="/actions/println/">println</a></td>
+<td>Alias for the <code>puts</code> action</td>
 <td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/modify_services/">modify_services</a></td>
+<td>Modifies the services of the app created on Developer Portal</td>
+<td>ios</td>
 </tr>
 <tr>
 <td><a href="/actions/opt_out_usage/">opt_out_usage</a></td>
@@ -2281,8 +2303,18 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/println/">println</a></td>
-<td>Alias for the <code>puts</code> action</td>
+<td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
+<td>Setup the keychain and match to work with CircleCI</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/plugin_scores/">plugin_scores</a></td>
+<td>[31mNo description provided[0m</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ruby_version/">ruby_version</a></td>
+<td>Verifies the minimum ruby version required</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -2291,23 +2323,8 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>android</td>
 </tr>
 <tr>
-<td><a href="/actions/create_app_online/">create_app_online</a></td>
-<td>Creates the given application on iTC and the Dev Portal (via <em>produce</em>)</td>
-<td>ios</td>
-</tr>
-<tr>
-<td><a href="/actions/modify_services/">modify_services</a></td>
-<td>Modifies the services of the app created on Developer Portal</td>
-<td>ios</td>
-</tr>
-<tr>
-<td><a href="/actions/plugin_scores/">plugin_scores</a></td>
-<td>[31mNo description provided[0m</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/min_fastlane_version/">min_fastlane_version</a></td>
-<td>Verifies the minimum fastlane version required</td>
+<td><a href="/actions/echo/">echo</a></td>
+<td>Alias for the <code>puts</code> action</td>
 <td>ios, android, mac</td>
 </tr>
 </tbody>

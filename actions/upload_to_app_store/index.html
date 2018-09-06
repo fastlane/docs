@@ -1855,14 +1855,9 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
-<td><code>app</code></td>
-<td>The app ID of the app you want to use/modify</td>
+<td><code>app_version</code></td>
+<td>The version that should be edited or created</td>
 <td></td>
-</tr>
-<tr>
-<td><code>edit_live</code></td>
-<td>Modify live metadata, this option disables ipa upload and screenshot upload</td>
-<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>ipa</code></td>
@@ -1875,9 +1870,24 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
+<td><code>build_number</code></td>
+<td>If set the given build number (already uploaded to iTC) will be used instead of the current built one</td>
+<td></td>
+</tr>
+<tr>
 <td><code>platform</code></td>
 <td>The platform to use (optional)</td>
 <td><code>ios</code></td>
+</tr>
+<tr>
+<td><code>edit_live</code></td>
+<td>Modify live metadata, this option disables ipa upload and screenshot upload</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_live_version</code></td>
+<td>Force usage of live version rather than edit version</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>metadata_path</code></td>
@@ -1895,19 +1905,9 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><code>false</code></td>
 </tr>
 <tr>
-<td><code>use_live_version</code></td>
-<td>Force usage of live version rather than edit version</td>
-<td><code>false</code></td>
-</tr>
-<tr>
 <td><code>skip_screenshots</code></td>
 <td>Don't upload the screenshots</td>
 <td><code>false</code></td>
-</tr>
-<tr>
-<td><code>app_version</code></td>
-<td>The version that should be edited or created</td>
-<td></td>
 </tr>
 <tr>
 <td><code>skip_metadata</code></td>
@@ -1922,6 +1922,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>force</code></td>
 <td>Skip the HTML report file verification</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>overwrite_screenshots</code></td>
+<td>Clear all previously uploaded screenshots before uploading the new ones</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1952,11 +1957,6 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>price_tier</code></td>
 <td>The price tier of this application</td>
-<td></td>
-</tr>
-<tr>
-<td><code>build_number</code></td>
-<td>If set the given build number (already uploaded to iTC) will be used instead of the current built one</td>
 <td></td>
 </tr>
 <tr>
@@ -1995,18 +1995,13 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td></td>
 </tr>
 <tr>
-<td><code>overwrite_screenshots</code></td>
-<td>Clear all previously uploaded screenshots before uploading the new ones</td>
-<td><code>false</code></td>
-</tr>
-<tr>
 <td><code>run_precheck_before_submit</code></td>
 <td>Run precheck before submitting to app review</td>
 <td><code>true</code></td>
 </tr>
 <tr>
 <td><code>precheck_default_rule_level</code></td>
-<td>The default rule level unless otherwise configured</td>
+<td>The default precheck rule level unless otherwise configured</td>
 <td><code>:warn</code></td>
 </tr>
 <tr>
@@ -2123,6 +2118,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><code>precheck_include_in_app_purchases</code></td>
 <td>Should precheck check in-app purchases?</td>
 <td><code>true</code></td>
+</tr>
+<tr>
+<td><code>app</code></td>
+<td>The (spaceship) app ID of the app you want to use/modify</td>
+<td></td>
 </tr>
 </tbody>
 </table>
