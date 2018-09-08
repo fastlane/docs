@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 7e769fd3af517482620d358b5f9cae0f55f6b04d
+  revision: e8338d467f90071fc3fea30e259688e76055b7dd
   specs:
-    fastlane (2.103.1)
+    fastlane (2.104.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -26,7 +26,7 @@ GIT
       multipart-post (~> 2.0.0)
       plist (>= 3.1.0, < 4.0.0)
       public_suffix (~> 2.0.0)
-      rubyzip (>= 1.2.1, < 2.0.0)
+      rubyzip (>= 1.2.2, < 2.0.0)
       security (= 0.1.3)
       simctl (~> 1.6.3)
       slack-notifier (>= 2.0.0, < 3.0.0)

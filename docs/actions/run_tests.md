@@ -227,6 +227,7 @@ Key | Description | Default
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6') | 
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a) | 
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air']) | 
+  `skip_detect_devices` | Should skip auto detecting of devices if none were specified | `false`
   `scheme` | The project's scheme. Make sure it's marked as `Shared` | 
   `clean` | Should the project be cleaned before building it? | `false`
   `code_coverage` | Should code coverage be generated? (Xcode 7 and up) | 
