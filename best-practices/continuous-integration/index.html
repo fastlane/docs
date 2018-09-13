@@ -761,10 +761,6 @@
             
           
             
-              <li class="toctree-l3"><a href="#fastlaneci">fastlane.ci</a></li>
-            
-          
-            
               <li class="toctree-l3"><a href="#jenkins-integration">Jenkins Integration</a></li>
             
           
@@ -1128,9 +1124,6 @@ brew cask install fastlane
 <h2 id="deploy-strategy"><a name="user-content-deploy-strategy" href="#deploy-strategy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy Strategy</h2>
 <p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.</p>
 <p>You can set up your own <code>Release</code> job, which is only triggered manually.</p>
-<h1 id="fastlaneci"><a href="https://github.com/fastlane/ci">fastlane.ci</a></h1>
-<p>Since January 2018, the <em>fastlane</em> team started working on <a href="https://github.com/fastlane/ci">fastlane.ci</a>, an open source, self hosted, mobile optimized CI powered by <em>fastlane</em>.</p>
-<p>It's still an early work in progress, and will take some time to be ready for production.</p>
 <h1 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins Integration</h1>
 <p>Deploying from your own computer isn't cool. You know what's cool? Letting a remote server publish app updates for you.</p>
 <p><em>fastlane</em> automatically generates a JUnit report for you. This allows Continuous Integration systems, like <code>Jenkins</code>, access the results of your deployment.</p>
