@@ -46,7 +46,7 @@ This file is not used any more and its content was moved to subpages. Please fol
     var hash = window.location.hash.substring(1);
     if (hash) {
         /*
-        * Best practice for javascript redirects: 
+        * Best practice for javascript redirects:
         * https://stackoverflow.com/a/506004/151365
         */
         if (anchorMap[hash]) {
@@ -59,88 +59,88 @@ This file is not used any more and its content was moved to subpages. Please fol
 
 # Passing Parameters
 
-This content was moved and now lives [here](/advanced/lanes/#passing-parameters).
+This content was moved and now lives [here](/docs/advanced/lanes.md/#passing-parameters).
 
 # Switching lanes
 
-This content was moved and now lives [here](/advanced/lanes/#switching-lanes).
+This content was moved and now lives [here](/docs/advanced/lanes.md/#switching-lanes).
 
 # Output environment variables
 
-This content was moved and now lives [here](/advanced/fastlane/#output-environment-variables).
+This content was moved and now lives [here](/docs/advanced/fastlane.md/#output-environment-variables).
 
 # Interacting with the user
 
-This content was moved and now lives [here](/advanced/actions/#interacting-with-the-user).
+This content was moved and now lives [here](/docs/advanced/actions.md/#interacting-with-the-user).
 
 # Run actions directly
 
-This content was moved and now lives [here](/advanced/actions/#run-actions-directly).
+This content was moved and now lives [here](/docs/advanced/actions.md/#run-actions-directly).
 
 # Shell values
 
-This content was moved and now lives [here](/advanced/actions/#shell-values).
+This content was moved and now lives [here](/docs/advanced/actions.md/#shell-values).
 
 # Priorities of parameters and options
 
-This content was moved and now lives [here](/advanced/fastlane/#priorities-of-parameters-and-options).
+This content was moved and now lives [here](/docs/advanced/fastlane.md/#priorities-of-parameters-and-options).
 
 # Importing another Fastfile
 
-This content was moved and now lives [here](/advanced/Fastfile/#importing-another-fastfile).
+This content was moved and now lives [here](/docs/advanced/Fastfile.md/#importing-another-fastfile).
 
 # Using fastlane_require
 
-This content was moved and now lives [here](/advanced/Fastfile/#using-fastlane_require).
+This content was moved and now lives [here](/docs/advanced/Fastfile.md/#using-fastlane_require).
 
 # Environment Variables
 
-This content was moved and now lives [here](/advanced/other/#environment-variables).
+This content was moved and now lives [here](/docs/advanced/other.md/#environment-variables).
 
 # Lane Properties
 
-This content was moved and now lives [here](/advanced/lanes/#lane-properties).
+This content was moved and now lives [here](/docs/advanced/lanes.md/#lane-properties).
 
 # Lane Context
 
-This content was moved and now lives [here](/advanced/lanes/#lane-context).
+This content was moved and now lives [here](/docs/advanced/lanes.md/#lane-context).
 
 # Private Lanes
 
-This content was moved and now lives [here](/advanced/lanes/#private-lanes).
+This content was moved and now lives [here](/docs/advanced/lanes.md/#private-lanes).
 
 # Load own actions from external folder
 
-This content was moved and now lives [here](/advanced/Fastfile/#load-own-actions-from-external-folder).
+This content was moved and now lives [here](/docs/advanced/Fastfile.md/#load-own-actions-from-external-folder).
 
 # Skip update check when launching _fastlane_
 
-This content was moved and now lives [here](/advanced/fastlane/#skip-update-check-when-launching-fastlane).
+This content was moved and now lives [here](/docs/advanced/fastlane.md/#skip-update-check-when-launching-fastlane).
 
 # Hide changelog information at the end of running _fastlane_
 
-This content was moved and now lives [here](/advanced/fastlane/#hide-changelog-information-at-the-end-of-running-fastlane).
+This content was moved and now lives [here](/docs/advanced/fastlane.md/#hide-changelog-information-at-the-end-of-running-fastlane).
 
 # Adding Credentials
 
-This content was moved and now lives [here](/advanced/other/#adding-credentials).
+This content was moved and now lives [here](/docs/advanced/other.md/#adding-credentials).
 
 # Control configuration by lane and by platform
 
-This content was moved and now lives [here](/advanced/lanes/#control-configuration-by-lane-and-by-platform).
+This content was moved and now lives [here](/docs/advanced/lanes.md/#control-configuration-by-lane-and-by-platform).
 
 # Manually Manage the fastlane match Repo
 
-This content was moved and now lives [here](/advanced/other/#manually-manage-the-fastlane-match-repo).
+This content was moved and now lives [here](/docs/advanced/other.md/#manually-manage-the-fastlane-match-repo).
 
 # Directory behavior
 
-This content was moved and now lives [here](/advanced/fastlane/#directory-behavior).
+This content was moved and now lives [here](/docs/advanced/fastlane.md/#directory-behavior).
 
 # Appfile
 
-This content was moved and now lives [here](/advanced/Appfile/#appfile).
+This content was moved and now lives [here](/docs/advanced/Appfile.md/#appfile).
 
 # Building Actions
 
-This content was moved and now lives [here](/advanced/actions/#building-actions).
+This content was moved and now lives [here](/docs/advanced/actions.md/#building-actions).
