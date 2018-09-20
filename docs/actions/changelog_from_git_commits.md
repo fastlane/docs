@@ -54,7 +54,7 @@ Key | Description | Default
   `ancestry_path` | Whether or not to use ancestry-path param | `false`
   `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag | 
   `match_lightweight_tag` | Whether or not to match a lightweight tag when searching for the last one | `true`
-  `quiet` | Whether or not to disbale changelog output | `false`
+  `quiet` | Whether or not to disable changelog output | `false`
   `include_merges` | **DEPRECATED!** Use `:merge_commit_filtering` instead - Whether or not to include any commits that are merges | 
   `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog. Valid values: `:include_merges`, `:exclude_merges`, `:only_include_merges` | `include_merges`
 
