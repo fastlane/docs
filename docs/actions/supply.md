@@ -211,6 +211,7 @@ Key | Description | Default
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
   `check_superseded_tracks` | Check the other tracks for superseded versions and disable them | `false`
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
+  `deactivate_on_promote` | When promoting to a new track, deactivate the binary in the origin track | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

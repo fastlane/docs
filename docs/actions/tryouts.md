@@ -40,7 +40,7 @@ tryouts(
 Key | Description | Default
 ----|-------------|--------
   `app_id` | Tryouts application hash | 
-  `api_token` | API Token for Tryouts Access | 
+  `api_token` | API Token (api_key:api_secret) for Tryouts Access | 
   `build_file` | Path to your IPA or APK file. Optional if you use the _gym_ or _xcodebuild_ action | [*](#parameters-legend-dynamic)
   `notes` | Release notes | 
   `notes_path` | Release notes text file path. Overrides the :notes parameter | 
