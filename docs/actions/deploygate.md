@@ -29,7 +29,8 @@ deploygate(
   user: "target username or organization name",
   ipa: "./ipa_file.ipa",
   message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
-  distribution_key: "(Optional) Target Distribution Key"
+  distribution_key: "(Optional) Target Distribution Key",
+  distribution_name: "(Optional) Target Distribution Name"
 )
 ```
 
@@ -39,7 +40,8 @@ deploygate(
   user: "target username or organization name",
   apk: "./apk_file.apk",
   message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
-  distribution_key: "(Optional) Target Distribution Key"
+  distribution_key: "(Optional) Target Distribution Key",
+  distribution_name: "(Optional) Target Distribution Name"
 )
 ```
 
@@ -59,6 +61,7 @@ Key | Description | Default
   `distribution_key` | Target Distribution Key | 
   `release_note` | Release note for distribution page | 
   `disable_notify` | Disables Push notification emails | `false`
+  `distribution_name` | Target Distribution Name | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

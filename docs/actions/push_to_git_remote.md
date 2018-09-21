@@ -33,6 +33,7 @@ push_to_git_remote(
   local_branch: "develop",  # optional, aliased by "branch", default: "master"
   remote_branch: "develop", # optional, default is set to local_branch
   force: true,    # optional, default: false
+  force_with_lease: true,   # optional, default: false
   tags: false     # optional, default: true
 )
 ```
@@ -48,6 +49,7 @@ Key | Description | Default
   `local_branch` | The local branch to push from. Defaults to the current branch | [*](#parameters-legend-dynamic)
   `remote_branch` | The remote branch to push to. Defaults to the local branch | [*](#parameters-legend-dynamic)
   `force` | Force push to remote | `false`
+  `force_with_lease` | Force push with lease to remote | `false`
   `tags` | Whether tags are pushed to remote | `true`
   `remote` | The remote to push to | `origin`
 

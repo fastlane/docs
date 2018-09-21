@@ -951,9 +951,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 297
+  :age_in_days: 332
   :readme_score: 100
-  :tests: 114
+  :tests: 116
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1011,11 +1011,11 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: 1d896c88301c7beb4380bbded400ac39a746c52302180f220a6dc5b9fa2ec66f
-  :github_stars: 39
-  :github_subscribers: 4
-  :github_issues: 7
-  :github_forks: 8
+  :sha: 23d0a42a07a69cf274cbad19faf93ed0481c8c1c8df0e2b4141b54b12ca755fe
+  :github_stars: 45
+  :github_subscribers: 5
+  :github_issues: 10
+  :github_forks: 9
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -1454,7 +1454,7 @@ fastlane-plugin-xamarin_build:
   :github_contributors: 4
 fastlane-plugin-pgyer:
   :initial_commit: 2017-01-21
-  :age_in_days: 400
+  :age_in_days: 607
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1463,12 +1463,12 @@ fastlane-plugin-pgyer:
     category: 
     description: distribute app to pgyer beta testing service
     details: distribute app to pgyer beta testing service
-  :sha: 856a4c801b8f3f2fb8f0df16f92af36aa6020648f1ea153cb34fd87a9b6eafc5
-  :github_stars: 9
-  :github_subscribers: 1
-  :github_issues: 2
-  :github_forks: 2
-  :github_contributors: 1
+  :sha: 6bcad490fbed32740ea913fbfa452f4b3b90e057b91165d411e8b904b953615a
+  :github_stars: 22
+  :github_subscribers: 2
+  :github_issues: 3
+  :github_forks: 7
+  :github_contributors: 0
 fastlane-plugin-act:
   :initial_commit: 2016-08-11
   :age_in_days: 563
@@ -4519,7 +4519,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 125
+  :age_in_days: 160
   :readme_score: 50
   :tests: 4
   :actions:
@@ -4528,8 +4528,8 @@ fastlane-plugin-flutter:
     category: 
     description: Flutter actions plugin for Fastlane
     details: 
-  :sha: 7fa3f093ca58fd3e8028a558c50ed1aa7ad523a38c7ef4a5642dfa41754a80e4
-  :github_stars: 2
+  :sha: 0c458413b687aedf6a35821f744c5af9215f2dadfdd6dc67b512ec3a3600d56c
+  :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 1
@@ -4934,7 +4934,7 @@ fastlane-plugin-slack_upload:
   :github_contributors: 0
 fastlane-plugin-build_log_info:
   :initial_commit: 2018-07-21
-  :age_in_days: 10
+  :age_in_days: 61
   :readme_score: 100
   :tests: 0
   :actions:
@@ -4943,7 +4943,7 @@ fastlane-plugin-build_log_info:
     category: 
     description: build log information
     details: build log information
-  :sha: f679b82364b2bb4c48aa9870c93e47110e3c39c0d8737c272bf7f8fad194e6e4
+  :sha: 4a852945bdcb9892b3632e2674dfca0dd715453034ba0a308f3d8862d6783baf
   :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
@@ -4951,7 +4951,7 @@ fastlane-plugin-build_log_info:
   :github_contributors: 0
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 20
+  :age_in_days: 36
   :readme_score: 100
   :tests: 22
   :actions:
@@ -4960,11 +4960,11 @@ fastlane-plugin-mango:
     category: 
     description: Action that runs Android tasks on a specified Docker image
     details: 
-  :sha: e77063fbacbabcb01a9c743d6b93d715369cdf13efd35d89597133ac02d4fa4d
-  :github_stars: 13
+  :sha: 4b5c82989a8fcee479c31e7cec1a73ee4f815f200d61e72f10461c924ce25ec7
+  :github_stars: 20
   :github_subscribers: 23
-  :github_issues: 3
-  :github_forks: 2
+  :github_issues: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-ciutils:
   :initial_commit: 2016-11-19
@@ -5199,6 +5199,71 @@ fastlane-plugin-last_fabric_version_code:
     description: Get the last Fabric version code for your Android app
     details: Get the last Fabric version code for your Android app
   :sha: 9dafa78b1bd1fca11b8ee36a12de16a34b77e49706123a93eaf9390ef49612cf
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-publish_dropbox:
+  :initial_commit: 2018-09-10
+  :age_in_days: 10
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: publish_dropbox
+    category: 
+    description: This plugin  publishes artifacts over to Dropbox via a generated
+      api token from Dropbox Developer API.
+    details: You have to authorize the action before using it. The access token is
+      stored in your default keychain
+  :sha: 7b34be3d3a5190d2e423541fd794033772d9998890b95e29472bd7907c6ab281
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-redmine_upload:
+  :initial_commit: 2018-09-14
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: redmine_file_post
+    category: 
+    description: Uploads a file in a Redmine Files section of a given Redmine project
+    details: Uploads a file in a Redmine host under files section of specified Redmine
+      project.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: redmine_upload
+    category: 
+    description: A fastlane plugin to upload file contents to Redmine
+    details: 
+  :sha: c68d341e179cb902124e4779b0dfe0397281a7de2321e9e5634667e1f681f34a
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-release_version:
+  :initial_commit: 2018-09-12
+  :age_in_days: 8
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: reject_version
+    category: 
+    description: This action makes it possible to reject a binary in AppStore Connect
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: release_version
+    category: 
+    description: This plugin makes it possible to release an already approved version
+      in AppStore Connect
+    details: " "
+  :sha: 74f3b92b74ded86c07c4a7156297fae213da930f64b9564e6466b07e59ae8bb8
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
