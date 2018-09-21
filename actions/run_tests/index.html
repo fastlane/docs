@@ -1302,7 +1302,7 @@ run_tests(
 </tr>
 <tr>
 <td><code>output_style</code></td>
-<td>Define how the output should look like (standard, basic, rspec or raw)</td>
+<td>Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty)</td>
 <td></td>
 </tr>
 <tr>
@@ -1328,6 +1328,11 @@ run_tests(
 <tr>
 <td><code>formatter</code></td>
 <td>A custom xcpretty formatter to use</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcpretty_args</code></td>
+<td>Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf')</td>
 <td></td>
 </tr>
 <tr>

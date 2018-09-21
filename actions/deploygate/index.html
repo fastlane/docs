@@ -1036,7 +1036,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   user: &quot;target username or organization name&quot;,
   ipa: &quot;./ipa_file.ipa&quot;,
   message: &quot;Build #{lane_context[SharedValues::BUILD_NUMBER]}&quot;,
-  distribution_key: &quot;(Optional) Target Distribution Key&quot;
+  distribution_key: &quot;(Optional) Target Distribution Key&quot;,
+  distribution_name: &quot;(Optional) Target Distribution Name&quot;
 )
 </code></pre>
 
@@ -1045,7 +1046,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   user: &quot;target username or organization name&quot;,
   apk: &quot;./apk_file.apk&quot;,
   message: &quot;Build #{lane_context[SharedValues::BUILD_NUMBER]}&quot;,
-  distribution_key: &quot;(Optional) Target Distribution Key&quot;
+  distribution_key: &quot;(Optional) Target Distribution Key&quot;,
+  distribution_name: &quot;(Optional) Target Distribution Name&quot;
 )
 </code></pre>
 
@@ -1098,6 +1100,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>disable_notify</code></td>
 <td>Disables Push notification emails</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>distribution_name</code></td>
+<td>Target Distribution Name</td>
+<td></td>
 </tr>
 </tbody>
 </table>
