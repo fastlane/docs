@@ -1823,7 +1823,7 @@ fastlane-plugin-git_status:
   :github_contributors: 1
 fastlane-plugin-farol:
   :initial_commit: 2017-05-02
-  :age_in_days: 299
+  :age_in_days: 509
   :readme_score: 50
   :tests: 1
   :actions:
@@ -1847,7 +1847,7 @@ fastlane-plugin-farol:
     category: 
     description: 
     details: Integrate your app with the Farol Platform using services like push notifications
-  :sha: ca15ee5ff84431411a941e30778f467d908e68d694000a7f4c020625009cd6ac
+  :sha: 69da0f8ef406ff6650d1d1a481855098bd7c4c78aaaca222828fa4df2106efc4
   :github_stars: 0
   :github_subscribers: 4
   :github_issues: 0
@@ -4900,7 +4900,7 @@ fastlane-plugin-podspec_dependency_versioning:
   :github_contributors: 0
 fastlane-plugin-ipa_info:
   :initial_commit: 2018-06-27
-  :age_in_days: 34
+  :age_in_days: 88
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4909,7 +4909,7 @@ fastlane-plugin-ipa_info:
     category: 
     description: Show information of an ipa file.
     details: Show information of an ipa file.
-  :sha: 3584f6882731774e18f27ea480341f20af32ec5ac180d92eefd3ecdb7ee02222
+  :sha: cd8063f20ac3577d22a186c96e94ba613893a2151a66c1e33e7fb71c142c1189
   :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
