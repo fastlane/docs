@@ -19,6 +19,10 @@ There is nothing _fastlane_ can do better in that regard, as these are technical
 
 Creating a separate Apple ID allows you to limit the permission scope, have a randomly generated password, and will make it much easier for you to set up CI using _fastlane_.
 
+### Security code and session
+
+When your Apple account has 2-factor or 2-step auth enabled, you'll be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. Again, the session should be valid for about one month, however there is no way to test this without actually waiting for over a month.
+
 ### Use of application specific passwords and `spaceauth`
 
 Before going through this guide, make sure to read the section above.
@@ -36,6 +40,15 @@ fastlane spaceauth -u user@email.com
 ```
 
 This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system.
+
+### Bypass device and use SMS for verification
+
+If you have a trusted device configured for your Apple account, then Apple will not send a SMS code to your phone when you try to generate a web session with fastlane — instead a code will be displayed on one of your account's trusted devices. This can be problematic if you are trying to authenticate, but don't have access to a device. To circumvent the device and use SMS instead, take the following steps:
+
+- Attempt to generate a web session with `fastlane spaceauth -u apple@krausefx.com` and wait for security code prompt to appear
+- Open a browser to appleid.apple.com or an address that requires you to login with your Apple ID, and logout of any previous session
+- Login with your Apple ID, and when prompted for a security code, request a code be sent to the desired phone
+- Use the code sent to phone with fastlane instead of with the browser
 
 ## Environment variables to set
 
@@ -455,7 +468,7 @@ With [Nevercode](https://nevercode.io) you can set up automated builds for your 
 After specifying app repository, Nevercode takes a first look at it by listing the `branches` in this repository. The next step for you is to select the branch you want Nevercode to scan for projects.
 
 1. Select a `branch` from the dropdown that Nevercode should scan. **Note** that you can change the branch later if needed.
-1. Click **Scan branch**. 
+1. Click **Scan branch**.
 Nevercode scans the repository from the specified branch. This includes cloning the repository, looking up the available `Fastfiles` and listing the pre-configured `lanes`. All this can be monitored real-time from your browser via the live log window.
 1. Once scanning the branch has finished, choose the `lane` which will be executed as the main build step by Nevercode.
 1. Finalize the setup by checking the appropriate [build options](https://developer.nevercode.io/docs/build-configuration#section-general-build-settings) and click **Save and start build**.
@@ -477,7 +490,7 @@ In your app settings on Nevercode, navigate to the **Environment** tab to manage
 
 ## Run tests
 
-### iOS 
+### iOS
 
 Testing in Nevercode with _fastlane_ for iOS is 100% automatic. By default, [`scan`](https://docs.fastlane.tools/actions/scan/) is used to invoke the test run, but you can easily swap it out for any other `lane` that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.
 
@@ -505,8 +518,8 @@ You can use either `fastlane` to take care of artifact distribution or choose fr
 
 ## Manage build versions
 
-To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, you could make use of it within [`increment_version_number`](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build. 
+To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, you could make use of it within [`increment_version_number`](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build.
 
 ## More Information
 
-Check out [Nevercode documentation](https://developer.nevercode.io/docs) for more. 
+Check out [Nevercode documentation](https://developer.nevercode.io/docs) for more.
