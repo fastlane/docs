@@ -1099,6 +1099,8 @@ brew cask install fastlane
 </ul>
 <p>There is nothing <em>fastlane</em> can do better in that regard, as these are technical limitations on how App Store Connect sessions are handled.</p>
 <p>Creating a separate Apple ID allows you to limit the permission scope, have a randomly generated password, and will make it much easier for you to set up CI using <em>fastlane</em>.</p>
+<h3 id="security-code-and-session"><a name="user-content-security-code-and-session" href="#security-code-and-session" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Security code and session</h3>
+<p>When your Apple account has 2-factor or 2-step auth enabled, you'll be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. The resulting session will be stored in <code>~/.fastlane/spaceship/[email]/cookie</code>. Again, the session should be valid for about one month, however there is no way to test this without actually waiting for over a month.</p>
 <h3 id="use-of-application-specific-passwords-and-spaceauth"><a name="user-content-use-of-application-specific-passwords-and-spaceauth" href="#use-of-application-specific-passwords-and-spaceauth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use of application specific passwords and <code>spaceauth</code></h3>
 <p>Before going through this guide, make sure to read the section above.</p>
 <p>If you want to upload builds to TestFlight / App Store Connect from your CI machine, you need to generate an application specific password:</p>
@@ -1112,6 +1114,14 @@ brew cask install fastlane
 </code></pre>
 
 <p>This will generate a token you can set using the <code>FASTLANE_SESSION</code> environment variable on your CI system.</p>
+<h3 id="bypass-trusted-device-and-use-sms-for-verification"><a name="user-content-bypass-trusted-device-and-use-sms-for-verification" href="#bypass-trusted-device-and-use-sms-for-verification" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bypass trusted device and use SMS for verification</h3>
+<p>If you have a trusted device configured, Apple will not send a SMS code to your phone for your Apple account when you try to generate a web session with <em>fastlane</em>. Instead, a code will be displayed on one of your account's trusted devices. This can be problematic if you are trying to authenticate but don't have access to a trusted device. Take the following steps to circumvent the device and use SMS instead:</p>
+<ul>
+<li>Attempt to generate a web session with <code>fastlane spaceauth -u [email]</code> and wait for security code prompt to appear</li>
+<li>Open a browser to <a href="https://appleid.apple.com">appleid.apple.com</a> or an address that requires you to login with your Apple ID, and logout of any previous session</li>
+<li>Login with your Apple ID and request a code be sent to the desired phone when prompted for a security code</li>
+<li>Use the code sent to phone with <em>fastlane</em> instead of with the browser</li>
+</ul>
 <h2 id="environment-variables-to-set"><a name="user-content-environment-variables-to-set" href="#environment-variables-to-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment variables to set</h2>
 <p>Most setups will need the following environment variables</p>
 <ul>
@@ -1432,7 +1442,7 @@ end
 <p>After specifying app repository, Nevercode takes a first look at it by listing the <code>branches</code> in this repository. The next step for you is to select the branch you want Nevercode to scan for projects.</p>
 <ol>
 <li>Select a <code>branch</code> from the dropdown that Nevercode should scan. <strong>Note</strong> that you can change the branch later if needed.</li>
-<li>Click <strong>Scan branch</strong>. 
+<li>Click <strong>Scan branch</strong>.
 Nevercode scans the repository from the specified branch. This includes cloning the repository, looking up the available <code>Fastfiles</code> and listing the pre-configured <code>lanes</code>. All this can be monitored real-time from your browser via the live log window.</li>
 <li>Once scanning the branch has finished, choose the <code>lane</code> which will be executed as the main build step by Nevercode.</li>
 <li>Finalize the setup by checking the appropriate <a href="https://developer.nevercode.io/docs/build-configuration#section-general-build-settings">build options</a> and click <strong>Save and start build</strong>.</li>
@@ -1467,9 +1477,9 @@ Nevercode scans the repository from the specified branch. This includes cloning 
 <h2 id="publish-your-build-artifacts"><a name="user-content-publish-your-build-artifacts" href="#publish-your-build-artifacts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Publish your build artifacts</h2>
 <p>You can use either <code>fastlane</code> to take care of artifact distribution or choose from a number of <a href="https://developer.nevercode.io/docs/what-kind-of-build-distribution-services-does-nevercode-support">Nevercode's own integrations</a>.</p>
 <h2 id="manage-build-versions"><a name="user-content-manage-build-versions" href="#manage-build-versions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manage build versions</h2>
-<p>To make your build version management easy, Nevercode exports the <code>NEVERCODE_BUILD_NUMBER</code> environment variable that you can use in your build script. For instance, you could make use of it within <a href="https://docs.fastlane.tools/actions/increment_version_number/"><code>increment_version_number</code></a> action to define a new version for each build. </p>
+<p>To make your build version management easy, Nevercode exports the <code>NEVERCODE_BUILD_NUMBER</code> environment variable that you can use in your build script. For instance, you could make use of it within <a href="https://docs.fastlane.tools/actions/increment_version_number/"><code>increment_version_number</code></a> action to define a new version for each build.</p>
 <h2 id="more-information_1"><a name="user-content-more-information_1" href="#more-information_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More Information</h2>
-<p>Check out <a href="https://developer.nevercode.io/docs">Nevercode documentation</a> for more. </p>
+<p>Check out <a href="https://developer.nevercode.io/docs">Nevercode documentation</a> for more.</p>
               
             </div>
           </div>
