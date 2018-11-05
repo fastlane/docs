@@ -1326,6 +1326,11 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>suppress_xcode_output</code></td>
+<td>Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path</td>
+<td></td>
+</tr>
+<tr>
 <td><code>formatter</code></td>
 <td>A custom xcpretty formatter to use</td>
 <td></td>
@@ -1449,6 +1454,16 @@ run_tests(
 <td><code>custom_report_file_name</code></td>
 <td><strong>DEPRECATED!</strong> Use <code>--output_files</code> instead - Sets custom full report file name when generating a single report</td>
 <td></td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier of the app to uninstall (only needed when enabling reinstall_app)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>reinstall_app</code></td>
+<td>Enabling this option will automatically uninstall the application before running it</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>fail_build</code></td>

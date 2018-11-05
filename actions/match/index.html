@@ -1013,7 +1013,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   <img src="/img/actions/match.png" width="250">
 </p>
 
-<h6 id="easily-sync-your-certificates-and-profiles-across-your-team-using-git"><a name="user-content-easily-sync-your-certificates-and-profiles-across-your-team-using-git" href="#easily-sync-your-certificates-and-profiles-across-your-team-using-git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily sync your certificates and profiles across your team using git</h6>
+<h6 id="easily-sync-your-certificates-and-profiles-across-your-team"><a name="user-content-easily-sync-your-certificates-and-profiles-across-your-team" href="#easily-sync-your-certificates-and-profiles-across-your-team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily sync your certificates and profiles across your team</h6>
 <p>A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.</p>
 <p><em>match</em> is the implementation of the https://codesigning.guide concept. <em>match</em> creates all required certificates &amp; provisioning profiles and stores them in a separate git repository. Every team member with access to the repo can use those credentials for code signing. <em>match</em> also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams</p>
 <p><a href="https://docs.fastlane.tools/codesigning/getting-started/">More information on how to get started with codesigning</a></p>
@@ -1381,6 +1381,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><code>type</code></td>
 <td>Define the profile type, can be appstore, adhoc, development, enterprise</td>
 <td><code>development</code></td>
+</tr>
+<tr>
+<td><code>storage_mode</code></td>
+<td>Define where you want to store your certificates</td>
+<td><code>git</code></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>

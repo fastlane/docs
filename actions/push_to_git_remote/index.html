@@ -1036,7 +1036,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <pre><code class="ruby">push_to_git_remote(
   remote: &quot;origin&quot;,         # optional, default: &quot;origin&quot;
-  local_branch: &quot;develop&quot;,  # optional, aliased by &quot;branch&quot;, default: &quot;master&quot;
+  local_branch: &quot;develop&quot;,  # optional, aliased by &quot;branch&quot;, default is set to current branch
   remote_branch: &quot;develop&quot;, # optional, default is set to local_branch
   force: true,    # optional, default: false
   force_with_lease: true,   # optional, default: false

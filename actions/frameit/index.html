@@ -1162,7 +1162,7 @@ These are defined in the <code>data</code> key. This is an array with the follow
 <tbody>
 <tr>
 <td><code>filter</code></td>
-<td>This is mandatory to link the individual configuration to the screenshot, based on part of the file name. <p>Example:<br>If a screenshot is named <code>iPhone 8-Brainstorming.png</code> you can use value <code>Brainstorming</code> for <code>filter</code>. All other keys from that array element will only be applied on this specific screenshot.</td>
+<td>This is mandatory to link the individual configuration to the screenshot, based on part of the file name. <p>Example:<br>If a screenshot is named <code>iPhone 8-Brainstorming.png</code> you can use value <code>Brainstorming</code> for <code>filter</code>.  If there are more than one <code>filter</code> matching an entry, they will all be applied in order (which means that the last one has the highest precedence). All other keys from that array element will only be applied on this specific screenshot.</td>
 </tr>
 <tr>
 <td><code>keyword</code></td>
