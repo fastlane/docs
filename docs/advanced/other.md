@@ -79,7 +79,7 @@ it's necessary to manually decrypt, then modify, then encrypt, the repo to make 
 
 ### 🔓 Decryption Instructions
 
-The easiest way to decrypt the repo is to use the _fastlane_ _match_ `GitHelper` class. You can do this from an interactive Ruby console:
+The easiest way to decrypt the repo is to use the _fastlane_ _match_ `Storage` and `Encryption` classes. You can do this from an interactive Ruby console:
 
 ```bash
 $ bundle console
@@ -94,24 +94,25 @@ irb(main):002:0> git_url = 'https://github.com/fastlane/example-certificate-repo
 => "https://github.com/fastlane/example-certificate-repo"
 irb(main):003:0> shallow_clone = false
 => false
-irb(main):004:0> manual_password = 'example-password'
+irb(main):004:0> ENV["MATCH_PASSWORD"] = 'example-password'
 => "example-password"
+irb(main):005:0> branch = 'master'
+=> "master"
 ```
 
-Now call `GitHelper.clone`, which will clone and decrypt the repo for you. Assign the return value to `workspace`, which we'll need later when we re-encrypt:
+Now create an instance of `Storage` and `Encryption`. The `download` method on `Storage` will clone the repo and the `decrypt_files` method on `Encryption` will decrypt the repo for you. Assign the return values to `storage` and `encrypt`, which we'll need later when we re-encrypt:
 
 ```ruby
-irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manual_password: manual_password)
-[14:49:30]: Cloning remote git repo...
-[14:49:31]: 🔓  Successfully decrypted certificates repo
-=> "/var/folders/0j/29ytx6wx0fg86sznfb4mqdph0000gn/T/d20170314-14350-11hmdro"
+irb(main):006:0> storage = Match::Storage.for_mode("git", { git_url: git_url, shallow_clone: shallow_clone, git_branch: branch, clone_branch_directly: false})
+irb(main):007:0> storage.download
+irb(main):008:0> encryption = Match::Encryption.for_storage_mode("git", { git_url: git_url, working_directory: storage.working_directory})
+irb(main):009:0> encryption.decrypt_files
+[14:24:42]: 🔓  Successfully decrypted certificates repo
+irb(main):010:0> storage.working_directory
+=> "/var/folders/ql/4rgq9x7j51n_971xb332w9lc0000gn/T/d20181105-65220-1oalh6v"
 ```
 
-The above example checks out the `master` branch by default. A common _match_ pattern is to create a separate branch per each developer team (the name of the branch being the team identifier). You can optionally pass in the branch name as a parameter to the `clone` method:
-
-```ruby
-irb(main):005:0> workspace = Match::GitHelper.clone(git_url, shallow_clone, manual_password: manual_password, branch: 'ABCDE12345')
-```
+The above example checks out the `master` (which is the default branch that _match_ uses). A common _match_ pattern is to create a separate branch per each developer team (the name of the branch being the team identifier).
 
 The directory beginning with `/var/folders` contains the decrypted git repo. Modify it as needed.
 
@@ -123,15 +124,12 @@ Once your changes are made, we'll need to encrypt the repo and push it.
 
 ### 🔒 Encryption Instructions
 
-In the Ruby console, call `GitHelper.commit_changes`, passing in the commit message you want. For example:
+In the Ruby console, call `encryption.encrypt` and `storage.save_changes!`. For example:
 
 ```ruby
-irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url)
-```
-Again, pass in the branch name if your changes are not on `master`:
-
-```ruby
-irb(main):006:0> Match::GitHelper.commit_changes(workspace, "remove password from p12 file", git_url, 'ABCDE12345')
+irb(main):010:0> encryption.encrypt_files
+irb(main):011:0> files_to_commit = Dir[File.join(storage.working_directory, "**", "*.{cer,p12,mobileprovision}")]
+irb(main):012:0> storage.save_changes!(files_to_commit: files_to_commit)
 ```
 
 Your changes will be encrypted, committed, and pushed.
