@@ -15,7 +15,7 @@ Alias for the `sync_code_signing` action
   <img src="/img/actions/match.png" width="250">
 </p>
 
-###### Easily sync your certificates and profiles across your team using git
+###### Easily sync your certificates and profiles across your team
 
 A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.
 
@@ -446,6 +446,7 @@ Key | Description | Default
   `git_url` | URL to the git repo containing all the certificates | 
   `git_branch` | Specific git branch to use | `master`
   `type` | Define the profile type, can be appstore, adhoc, development, enterprise | `development`
+  `storage_mode` | Define where you want to store your certificates | `git`
   `app_identifier` | The bundle identifier(s) of your app (comma-separated) | [*](#parameters-legend-dynamic)
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
