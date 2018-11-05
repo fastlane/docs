@@ -80,6 +80,7 @@ pages:
   - commit_version_bump: actions/commit_version_bump.md
   - copy_artifacts: actions/copy_artifacts.md
   - crashlytics: actions/crashlytics.md
+  - create_app_on_managed_play_store: actions/create_app_on_managed_play_store.md
   - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
   - create_pull_request: actions/create_pull_request.md
@@ -92,6 +93,7 @@ pages:
   - dotgpg_environment: actions/dotgpg_environment.md
   - download: actions/download.md
   - download_dsyms: actions/download_dsyms.md
+  - download_from_play_store: actions/download_from_play_store.md
   - dsym_zip: actions/dsym_zip.md
   - echo: actions/echo.md
   - ensure_git_branch: actions/ensure_git_branch.md
@@ -111,6 +113,7 @@ pages:
   - get_github_release: actions/get_github_release.md
   - get_info_plist_value: actions/get_info_plist_value.md
   - get_ipa_info_plist_value: actions/get_ipa_info_plist_value.md
+  - get_managed_play_store_publishing_rights: actions/get_managed_play_store_publishing_rights.md
   - get_provisioning_profile: actions/get_provisioning_profile.md
   - get_push_certificate: actions/get_push_certificate.md
   - get_version_number: actions/get_version_number.md

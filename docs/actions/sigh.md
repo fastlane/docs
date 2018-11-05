@@ -240,7 +240,7 @@ _sigh_ will never touch or use the profiles which are created and managed by Xco
 
 sigh ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @KrauseFx
 Returns | The UUID of the profile sigh just fetched/generated
 
@@ -273,6 +273,7 @@ get_provisioning_profile(
 Key | Description | Default
 ----|-------------|--------
   `adhoc` | Setting this flag will generate AdHoc profiles instead of App Store Profiles | `false`
+  `developer_id` | Setting his flag will generate Developer ID profiles instead of App Store Profiles | `false`
   `development` | Renew the development certificate instead of the production one | `false`
   `skip_install` | By default, the certificate will be added to your local machine. Setting this flag will skip this action | `false`
   `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles | `false`

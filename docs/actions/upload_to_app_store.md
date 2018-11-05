@@ -839,7 +839,7 @@ Key | Description | Default
   `support_url` | Metadata: Localised support url | 
   `marketing_url` | Metadata: Localised marketing url | 
   `languages` | Metadata: List of languages to activate | 
-  `ignore_language_directory_validation` | Ignore errors when invalid languages are found in metadata and screeenshot directories | `false`
+  `ignore_language_directory_validation` | Ignore errors when invalid languages are found in metadata and screenshot directories | `false`
   `precheck_include_in_app_purchases` | Should precheck check in-app purchases? | `true`
   `app` | The (spaceship) app ID of the app you want to use/modify | 
 
