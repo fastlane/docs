@@ -56,7 +56,7 @@ To get a list of all available parameters for a given action, run
 fastlane action slack
 ```
 
-### Supported beta testing services
+### Beta testing services
 
 
 <details>
