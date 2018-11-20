@@ -373,7 +373,7 @@ fastlane action [action_name]
 
 ### Use the number of commits
 
-This isn't recommended, however some teams prefer this appraoch. You can use the number of commits of the current branch (via [`number_of_commits`](https://docs.fastlane.tools/actions/number_of_commits/)) as the build number. This will only work if you run the build always on the same branch.
+This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via [`number_of_commits`](https://docs.fastlane.tools/actions/number_of_commits/)) as the build number. This will only work if you run the build always on the same branch.
 
 ```ruby
 lane :beta do
