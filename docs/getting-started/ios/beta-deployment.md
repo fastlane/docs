@@ -371,6 +371,16 @@ For all the steps above, there are more parameters available, run the following 
 fastlane action [action_name]
 ```
 
+### Use the number of commits
+
+This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via [`number_of_commits`](https://docs.fastlane.tools/actions/number_of_commits/)) as the build number. This will only work if you always run the build on the same branch.
+
+```ruby
+lane :beta do
+  increment_build_number(build_number: number_of_commits)
+end
+```
+
 ---
 
 </details>
