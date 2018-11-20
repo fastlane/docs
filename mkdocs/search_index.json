@@ -587,12 +587,12 @@
         },
         {
             "location": "/getting-started/cross-platform/flutter/",
-            "text": "Getting started with \nfastlane\n for \nFlutter\n\n\nMost of the \nfastlane\n docs on this page apply to Flutter projects as well. \n\n\nTo get started, the Flutter team wrote an excellent official guide on \nHow to get started with fastlane for Flutter\n.",
+            "text": "Getting started with \nfastlane\n for \nFlutter\n\n\nMost of the \nfastlane\n docs on this page apply to Flutter projects as well. \n\n\nTo get started, the Flutter team wrote an excellent official guide on \nContinuous Delivery using fastlane with Flutter\n.",
             "title": "Flutter"
         },
         {
             "location": "/getting-started/cross-platform/flutter/#getting-started-with-fastlane-for-flutter",
-            "text": "Most of the  fastlane  docs on this page apply to Flutter projects as well.   To get started, the Flutter team wrote an excellent official guide on  How to get started with fastlane for Flutter .",
+            "text": "Most of the  fastlane  docs on this page apply to Flutter projects as well.   To get started, the Flutter team wrote an excellent official guide on  Continuous Delivery using fastlane with Flutter .",
             "title": "Getting started with fastlane for Flutter"
         },
         {
