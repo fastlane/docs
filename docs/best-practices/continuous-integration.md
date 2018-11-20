@@ -2,7 +2,19 @@
 
 # Continuous Integration
 
-# Best Practices
+_fastlane_ works very well in Continuous Integration setups. It for example automatically generates a JUnit report for you that allows Continuous Integration systems, like `Jenkins`, access the results of your deployment.
+
+## Integrations
+
+Multiple CI products and services offer integrations with fastlane:
+
+- [Jenkins](/best-practices/continuous-integration/jenkins/)
+- [CircleCI](/best-practices/continuous-integration/circle-ci/)
+- [Travis](/best-practices/continuous-integration/travis/)
+- [Bamboo](/best-practices/continuous-integration/bamboo/)
+- [GitLab CI](/best-practices/continuous-integration/gitlab/)
+- [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
+- [NeverCode](/best-practices/continuous-integration/nevercode/)
 
 ## Two-step or Two-factor auth
 
@@ -54,8 +66,8 @@ If you have a trusted device configured, Apple will not send a SMS code to your 
 
 Most setups will need the following environment variables
 
-- `FASTLANE_USER`: Your App Store Connect / Dev Portal user, if your _fastlane_ setup accesses iTC or the DevPortal (e.g. submit a TestFlight build, create a profile, ...)
-- `FASTLANE_PASSWORD`: Your App Store Connect / Dev Portal password, usually only needed if you also set the `FASTLANE_USER` variable
+- `FASTLANE_USER`: Your App Store Connect / Apple Developer Portal user, if your _fastlane_ setup accesses App Store Connect or the Apple Developer Portal (e.g. submit a TestFlight build, create a profile, ...)
+- `FASTLANE_PASSWORD`: Your App Store Connect / Apple Developer Portal password, usually only needed if you also set the `FASTLANE_USER` variable
 - `MATCH_PASSWORD`: You need to provide the password of your _match_ encryption if you use _match_
 - `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`: You need to provide an [application specific password](#two-step-or-two-factor-auth) if you have 2-factor enabled and use _pilot_ or _deliver_ to upload a binary to App Store Connect
 - `LANG` and `LC_ALL`: These set up the locale your shell and all the commands you execute run at. _fastlane_ needs these to be set to an UTF-8 locale to work correctly, for example `en_US.UTF-8`. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.
@@ -65,18 +77,6 @@ Most setups will need the following environment variables
 You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.
 
 You can set up your own ```Release``` job, which is only triggered manually.
-
-## Integrations
-
-Multiple CI products and services offer integrations with fastlane:
-
-- [Jenkins](/best-practices/continuous-integration/jenkins/)
-- [CircleCI](/best-practices/continuous-integration/circle-ci/)
-- [Travis](/best-practices/continuous-integration/travis/)
-- [Bamboo](/best-practices/continuous-integration/bamboo/)
-- [GitLab CI](/best-practices/continuous-integration/gitlab/)
-- [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
-- [NeverCode](/best-practices/continuous-integration/nevercode/)
 
 ### Moved
 
@@ -89,7 +89,7 @@ Multiple CI products and services offer integrations with fastlane:
         "travis-integration": "/best-practices/continuous-integration/travis/",
         "bamboo-integration": "/best-practices/continuous-integration/bamboo/",
         "gitlab-ci-integration": "/best-practices/continuous-integration/gitlab/",
-        "visual-studio-team-services-integration": "/best-practices/continuous-integration/azure-devops/",
+        "visual-studio-team-services": "/best-practices/continuous-integration/azure-devops/",
         "nevercode-integration": "/best-practices/continuous-integration/nevercode/",
     }
     /*
