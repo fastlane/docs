@@ -1354,6 +1354,13 @@ end
 <pre><code class="no-highlight">fastlane action [action_name]
 </code></pre>
 
+<h3 id="use-the-number-of-commits"><a name="user-content-use-the-number-of-commits" href="#use-the-number-of-commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the number of commits</h3>
+<p>This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via <a href="https://docs.fastlane.tools/actions/number_of_commits/"><code>number_of_commits</code></a>) as the build number. This will only work if you always run the build on the same branch.</p>
+<pre><code class="ruby">lane :beta do
+  increment_build_number(build_number: number_of_commits)
+end
+</code></pre>
+
 <hr />
 <p></details></p>
               
