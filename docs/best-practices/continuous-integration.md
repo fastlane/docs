@@ -66,30 +66,76 @@ You should **not** deploy a new App Store update after every commit, since you s
 
 You can set up your own ```Release``` job, which is only triggered manually.
 
-# Jenkins Integration
+## Integrations
+
+Multiple CI products and services offer integrations with fastlane:
+
+- [Jenkins](/best-practices/continuous-integration/jenkins/)
+- [CircleCI](/best-practices/continuous-integration/circle-ci/)
+- [Travis](/best-practices/continuous-integration/travis/)
+- [Bamboo](/best-practices/continuous-integration/bamboo/)
+- [GitLab CI](/best-practices/continuous-integration/gitlab/)
+- [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
+- [NeverCode](/best-practices/continuous-integration/nevercode/)
+
+### Moved
+
+<script type="text/javascript">
+// Closure-wrapped for security.
+(function () {
+    var anchorMap = {
+        "jenkins-integration": "/best-practices/continuous-integration/jenkins/",
+        "circleci-integration": "/best-practices/continuous-integration/circle-ci/",
+        "travis-integration": "/best-practices/continuous-integration/travis/",
+        "bamboo-integration": "/best-practices/continuous-integration/bamboo/",
+        "gitlab-ci-integration": "/best-practices/continuous-integration/gitlab/",
+        "visual-studio-team-services-integration": "/best-practices/continuous-integration/azure-devops/",
+        "nevercode-integration": "/best-practices/continuous-integration/nevercode/",
+    }
+    /*
+    * Best practice for extracting hashes:
+    * https://stackoverflow.com/a/10076097/151365
+    */
+    var hash = window.location.hash.substring(1);
+    if (hash) {
+        /*
+        * Best practice for javascript redirects: 
+        * https://stackoverflow.com/a/506004/151365
+        */
+        if (anchorMap[hash]) {
+            link = anchorMap[hash] + '#' + hash;
+            window.location.replace(link);
+        }
+    }
+})();
+</script>
+
+The following content was moved:
+
+#### Jenkins Integration
 
 This content was moved and now lives [here](/best-practices/continuous-integration/jenkins/).
 
-# CircleCI Integration
+#### CircleCI Integration
 
 This content was moved and now lives [here](/best-practices/continuous-integration/circle-ci/).
 
-# Travis Integration
+#### Travis Integration
 
 This content was moved and now lives [here](/best-practices/continuous-integration/travis/).
 
-# Bamboo Integration
+#### Bamboo Integration
 
 This content was moved and now lives [here](/best-practices/continuous-integration/bamboo/).
 
-# GitLab CI Integration
+#### GitLab CI Integration
 
 This content was moved and now lives [here](/best-practices/continuous-integration/gitlab/).
 
-# Visual Studio Team Services
+#### Visual Studio Team Services
 
 This content was moved and now lives [here](/best-practices/continuous-integration/azure-devops/).
 
-# Nevercode Integration
+#### Nevercode Integration
 
 This content was moved and now lives [here](/best-practices/continuous-integration/nevercode/).
