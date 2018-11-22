@@ -124,7 +124,7 @@ Once your changes are made, we'll need to encrypt the repo and push it.
 
 ### 🔒 Encryption Instructions
 
-In the Ruby console, call `encryption.encrypt` and `storage.save_changes!`. For example:
+In the Ruby console, call `encryption.encrypt_files` and `storage.save_changes!`. For example:
 
 ```ruby
 irb(main):010:0> encryption.encrypt_files
