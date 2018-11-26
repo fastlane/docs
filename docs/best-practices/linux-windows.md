@@ -1,6 +1,6 @@
 # Using _fastlane_ on Linux and Windows
 
-Fastlane was created to automate building iOS apps on macOS. Over time, support for building macOS 
+fastlane was created to automate building iOS apps on macOS. Over time, support for building macOS 
 and Android applications was added. 
 
 Over the last few months members of the [fastlane team](https://github.com/fastlane/fastlane#fastlane-team) 
