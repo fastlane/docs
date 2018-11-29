@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <title>Jenkins Integration - fastlane docs</title>
+  
+
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet">
+  <link href="../../../css/code.css" rel="stylesheet">
+  <link href="../../../css/fabric.css" rel="stylesheet">
+  <link href="../../../css/fastlane.css" rel="stylesheet">
+  <link href="../../../css/sidenav.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Jenkins Integration";
+    var mkdocs_page_input_path = "best-practices/continuous-integration/jenkins.md";
+    var mkdocs_page_url = "/best-practices/continuous-integration/jenkins/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script>
+  <script src="../../../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../..">
+        Home
+      </a>
+      
+      
+    </li>
+  
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Getting Started</span></li>
+      
+        
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>iOS</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/ios/setup/">
+        Setup
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/ios/running-tests/">
+        Running Tests
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/ios/screenshots/">
+        Screenshots
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/ios/beta-deployment/">
+        Beta Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/ios/appstore-deployment/">
+        App Store Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+
+      
+        
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Android</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/android/setup/">
+        Setup
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/android/running-tests/">
+        Running Tests
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/android/screenshots/">
+        Screenshots
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/android/beta-deployment/">
+        Beta Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/android/release-deployment/">
+        Release Deployment
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+
+      
+        
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Cross Platform</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/cross-platform/react-native/">
+        React Native
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../getting-started/cross-platform/flutter/">
+        Flutter
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Actions</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../actions/">
+        Available Actions
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../create-action/">
+        Create Your Own Action
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../faqs/">
+        FAQs
+      </a>
+      
+      
+    </li>
+  
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Codesigning</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../codesigning/getting-started/">
+        Getting Started
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../codesigning/xcode-project/">
+        Xcode Project
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../codesigning/troubleshooting/">
+        Troubleshooting
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../codesigning/common-issues/">
+        Common Issues
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Plugins</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../plugins/available-plugins/">
+        Available Plugins
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../plugins/create-plugin/">
+        Create Your Own Plugin
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../plugins/plugins-troubleshooting/">
+        Plugins Troubleshooting
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Best Practices</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../source-control/">
+        Source Control
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../">
+        Continuous Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>CI Integrations</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    current
+    
+    
+    ">
+      <a class="
+      current
+      
+      " href="./">
+        Jenkins Integration
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+        </ul>
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../circle-ci/">
+        CircleCI Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../travis/">
+        Travis Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../bamboo/">
+        Bamboo Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../gitlab/">
+        GitLab CI Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../azure-devops/">
+        Azure DevOps Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../nevercode/">
+        Nevercode Integration
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../keys/">
+        Keys
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+    <ul class="subnav">
+      <li><span>Advanced</span></li>
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../advanced/fastlane/">
+        fastlane
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../advanced/Fastfile/">
+        Fastfile
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../advanced/Appfile/">
+        Appfile
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../advanced/lanes/">
+        Lanes
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../advanced/actions/">
+        Actions
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../../../advanced/other/">
+        Other
+      </a>
+      
+      
+    </li>
+  
+
+      
+    </ul>
+  
+
+<li>
+          
+            <li>
+
+
+  
+  
+
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Best Practices &raquo;</li>
+        
+      
+        
+          <li>CI Integrations &raquo;</li>
+        
+      
+    
+    <li>Jenkins Integration</li>
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/best-practices/continuous-integration/jenkins.md" class="icon icon-github" target="_blank">
+            Edit on GitHub
+          </a>
+        
+      </li>
+    
+    <li class="wy-breadcrumbs-aside">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins Integration</h1>
+<h2 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h2>
+<p>The recommended way to install <a href="http://jenkins-ci.org/">Jenkins</a> is through <a href="http://brew.sh/">homebrew</a>:</p>
+<pre><code class="no-highlight">brew update &amp;&amp; brew install jenkins
+</code></pre>
+
+<p>From now on start <code>Jenkins</code> by running:</p>
+<pre><code class="no-highlight">jenkins
+</code></pre>
+
+<p>To store the password in the Keychain of your remote machine, it is recommended that you run <em>match</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
+<h2 id="ruby-environment"><a name="user-content-ruby-environment" href="#ruby-environment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ruby Environment</h2>
+<p>We recommend using <a href="https://github.com/rbenv/rbenv">rbenv</a> for installing Ruby, though <a href="https://rvm.io/">rvm</a> and the version of Ruby that comes bundled on macOS are fine too.</p>
+<p>If using a Gemfile in your project, add an "Execute shell" step as your first build step and call <code>bundle update</code>.</p>
+<h2 id="plugins"><a name="user-content-plugins" href="#plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugins</h2>
+<p>You'll find the following Jenkins plugins to be useful:</p>
+<p>(note: We do not recommend installing the Xcode plugin)</p>
+<ul>
+<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin">HTML Publisher Plugin</a>:</strong> Can be used to show the generated screenshots right inside Jenkins.</li>
+<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin">AnsiColor Plugin</a>:</strong> Used to show the coloured output of the fastlane tools. Don’t forget to enable <code>Color ANSI Console Output</code> in the <code>Build Environment</code> or your project.</li>
+<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/Rebuild+Plugin">Rebuild Plugin</a>:</strong> This plugin will save you a lot of time.</li>
+<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>:</strong> Manages keychains across Jenkins installations.</li>
+</ul>
+<h2 id="build-step"><a name="user-content-build-step" href="#build-step" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build Step</h2>
+<p>Add an "Execute shell" build step using your appropriate <em>fastlane</em> command per the example below:</p>
+<pre><code class="no-highlight">fastlane appstore
+</code></pre>
+
+<p>Replace <code>appstore</code> with the lane you want to use.</p>
+<p>(note: if using a Gemfile, prefix that command with <code>bundle exec</code>)</p>
+<h3 id="setup_jenkins"><a name="user-content-setup_jenkins" href="#setup_jenkins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_jenkins</h3>
+<p>You can use <code>setup_jenkins</code> action which integrates well with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>. Selected keychain will automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the <code>./output</code> folder in the job workspace. In additions <code>setup_jenkins</code> will create separate derived data folder for each job (in the <code>./derivedData</code>).</p>
+<p>Under the hood <code>setup_jenkins</code> configures other actions like: <em>gym</em>, <em>scan</em>, <code>xcodebuild</code>, <code>backup_xcarchive</code> and <code>clear_derived_data</code>.</p>
+<h3 id="commit_version_bump-git_commit"><a name="user-content-commit_version_bump-git_commit" href="#commit_version_bump-git_commit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>commit_version_bump || git_commit</h3>
+<p>You can use <code>commit_version_bump</code> or <code>git_commit</code> action to commit changes to your repository in your fastlane setup. When you are using webhooks to trigger your build on a push this will cause an infinite loop of triggering builds.</p>
+<h4 id="gitlab"><a name="user-content-gitlab" href="#gitlab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gitlab</h4>
+<p>When you are using Gitlab you will need the <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin">GitLab Plugin</a>. Inside the job you want to configure you go to <code>Build Triggers &gt; Build when a change is pushed to GitLab &gt; Enable [ci-skip]</code>.
+When you include <code>[ci-skip]</code> in your build this commit won't trigger the build in jenkins at all.</p>
+<p><strong>Example</strong>  </p>
+<pre><code class="ruby">build_number = increment_build_number
+commit_version_bump(message:&quot;[ci-skip] Version Bump to #{build_number}&quot;)
+git_commit(path:&quot;./CHANGELOG.md&quot;, message:&quot;[ci-skip] Updated CHANGELOG for Build #{build_number}&quot;)
+push_to_git_remote
+</code></pre>
+
+<h2 id="test-results-and-screenshots"><a name="user-content-test-results-and-screenshots" href="#test-results-and-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Test Results and Screenshots</h2>
+<p>To show the <strong>deployment result</strong> right in <code>Jenkins</code></p>
+<ul>
+<li><em>Add post-build action</em></li>
+<li><em>Publish JUnit test result report</em></li>
+<li><em>Test report XMLs</em>: <code>fastlane/report.xml</code></li>
+</ul>
+<p>To show the <strong>generated screenshots</strong> right in <code>Jenkins</code></p>
+<ul>
+<li><em>Add post-build action</em></li>
+<li><em>Publish HTML reports</em></li>
+<li><em>HTML directory to archive</em>: <code>fastlane/screenshots</code></li>
+<li><em>Index page</em>: <code>screenshots.html</code></li>
+</ul>
+<p>Save and run. The result should look like this:</p>
+<p><img alt="/img/best-practices/JenkinsIntegration.png" src="../../../img/best-practices/JenkinsIntegration.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../circle-ci/" class="btn btn-neutral float-right" title="CircleCI Integration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="Continuous Integration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2018 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../circle-ci/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
