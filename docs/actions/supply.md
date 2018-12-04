@@ -199,6 +199,7 @@ Key | Description | Default
   `apk` | Path to the APK file to upload | [*](#parameters-legend-dynamic)
   `apk_paths` | An array of paths to APK files to upload | 
   `aab` | Path to the AAB file to upload | [*](#parameters-legend-dynamic)
+  `aab_paths` | An array of paths to AAB files to upload | 
   `skip_upload_apk` | Whether to skip uploading APK | `false`
   `skip_upload_aab` | Whether to skip uploading AAB | `false`
   `skip_upload_metadata` | Whether to skip uploading metadata | `false`

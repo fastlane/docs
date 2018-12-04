@@ -17,15 +17,24 @@ Upload your app to [Appetize.io](https://appetize.io/) to stream it in browser
 appetize ||
 ---|---
 Supported platforms | ios, android
-Author | @klundberg, @giginet
+Author | @klundberg, @giginet, @steprescott
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 appetize(
   path: "./MyApp.zip",
+  api_token: "yourapitoken", # get it from https://appetize.io/docs#request-api-token
+  public_key: "your_public_key" # get it from https://appetize.io/dashboard
+)
+```
+
+```ruby
+appetize(
+  path: "./MyApp.zip",
+  api_host: "company.appetize.io", # only needed for enterprise hosted solution
   api_token: "yourapitoken", # get it from https://appetize.io/docs#request-api-token
   public_key: "your_public_key" # get it from https://appetize.io/dashboard
 )
@@ -39,6 +48,7 @@ appetize(
 
 Key | Description | Default
 ----|-------------|--------
+  `api_host` | Appetize API host | `api.appetize.io`
   `api_token` | Appetize.io API Token | 
   `url` | URL from which the ipa file can be fetched. Alternative to :path | 
   `platform` | Platform. Either `ios` or `android` | `ios`

@@ -35,7 +35,7 @@ puts "Hi there"
 
 Key | Description | Default
 ----|-------------|--------
-  `message` | Message to be printed out. Fastlane.swift only | 
+  `message` | Message to be printed out | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
