@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 9b74d258fbecd16ffa59be5021cf5c3ffeb4a8dd
+  revision: cd88359fa9b6772f91a31a290f8f3c790a716dc0
   specs:
-    fastlane (2.108.0)
+    fastlane (2.109.1)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -59,7 +59,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.3.0)
       colored2 (~> 3.1)
-    danger (5.7.1)
+    danger (5.9.0)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
@@ -78,7 +78,7 @@ GEM
     dotenv (2.5.0)
     emoji_regex (0.1.1)
     excon (0.62.0)
-    faraday (0.15.3)
+    faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     faraday-cookie_jar (0.0.6)
       faraday (>= 0.7.4)
@@ -87,7 +87,7 @@ GEM
       faraday (~> 0.8)
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
-    fastimage (2.1.4)
+    fastimage (2.1.5)
     gh_inspector (1.1.3)
     git (1.5.0)
     google-api-client (0.23.9)
@@ -170,8 +170,8 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     tty-cursor (0.6.0)
     tty-screen (0.6.5)
-    tty-spinner (0.8.0)
-      tty-cursor (>= 0.5.0)
+    tty-spinner (0.9.0)
+      tty-cursor (~> 0.6.0)
     uber (0.1.0)
     unf (0.1.4)
       unf_ext
