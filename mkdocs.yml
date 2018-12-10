@@ -264,7 +264,7 @@ pages:
   - Common Issues: codesigning/common-issues.md
 - Plugins:
   - Available Plugins: plugins/available-plugins.md
-  - Using Plugins: plugins/using-plugins.md
+  - Use Plugins: plugins/using-plugins.md
   - Create Your Own Plugin: plugins/create-plugin.md
   - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
