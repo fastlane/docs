@@ -657,6 +657,29 @@
   
     <li class="toctree-l1 
     
+    
+    
+    
+    ">
+      <a class="
+      
+      
+      " href="../using-plugins/">
+        Use Plugins
+      </a>
+      
+      
+    </li>
+  
+
+      
+        
+
+
+  
+  
+    <li class="toctree-l1 
+    
     current
     
     
@@ -1180,77 +1203,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="fastlane-plugins"><a name="user-content-fastlane-plugins" href="#fastlane-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane Plugins</h1>
-<p>The instructions below require <em>fastlane</em> 1.93.0 or higher</p>
-<p><em>fastlane</em> is an open platform and we enable every developer to extend it to fit their needs. That's why we built a plugin system that allows you and your company to provide <em>fastlane</em> plugins to other <em>fastlane</em> users. You have the full power and responsibility of maintaining your plugin and keeping it up to date. This is useful if you maintain your own library or web service, and want to make sure the <em>fastlane</em> plugin is always up to date.</p>
-<h2 id="local-actions"><a name="user-content-local-actions" href="#local-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Local actions</h2>
-<script type="text/javascript">
-(function () {
-    var anchorMap = {
-        "local-actions": "/create-action/"
-    }
-    var hash = window.location.hash.substring(1);
-    if (hash) {
-        if (anchorMap[hash]) {
-            link = anchorMap[hash] + '#' + hash;
-            window.location.replace(link);
-        }
-    }
-})();
-</script>
-
-<p>This content was moved and now lives <a href="../../create-action/#local-actions">here</a>.</p>
-<h2 id="find-a-plugin"><a name="user-content-find-a-plugin" href="#find-a-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Find a plugin</h2>
-<p>Head over to <a href="https://docs.fastlane.tools/plugins/available-plugins/">Available Plugins</a> for a list of plugins you can use.</p>
-<p>List all available plugins using</p>
-<pre><code class="no-highlight">fastlane search_plugins
-</code></pre>
-
-<p>To search for something specific</p>
-<pre><code class="no-highlight">fastlane search_plugins [query]
-</code></pre>
-
-<h2 id="add-a-plugin-to-your-project"><a name="user-content-add-a-plugin-to-your-project" href="#add-a-plugin-to-your-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Add a plugin to your project</h2>
-<pre><code class="no-highlight">fastlane add_plugin [name]
-</code></pre>
-
-<p><em>fastlane</em> will assist you on setting up your project to start using plugins.</p>
-<p>This will:</p>
-<ul>
-<li>Add the plugin to <code>fastlane/Pluginfile</code></li>
-<li>Make sure your <code>fastlane/Pluginfile</code> is properly referenced from your <code>./Gemfile</code></li>
-<li>Run <code>fastlane install_plugins</code> to make sure all required dependencies are installed on your local machine (this step might ask for your admin password to install Ruby gems)</li>
-<li>You'll have 3 new files, that should all be checked into version control: <code>Gemfile</code>, <code>Gemfile.lock</code> and <code>fastlane/Pluginfile</code></li>
-</ul>
-<h3 id="plugin-source"><a name="user-content-plugin-source" href="#plugin-source" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plugin Source</h3>
-<p>Your <code>fastlane/Pluginfile</code> contains the list of all <em>fastlane</em> plugins your project uses. The <code>Pluginfile</code> is a <a href="http://bundler.io/gemfile.html">Gemfile</a> that gets imported from your main <code>Gemfile</code>.
-You specify all dependencies, including the required version numbers:</p>
-<pre><code class="ruby"># Fetched from RubyGems.org
-gem &quot;fastlane-plugin-xcversion&quot;
-
-# Fetched from GitHub
-gem &quot;fastlane-plugin-xcversion&quot;, git: &quot;https://github.com/fastlane/fastlane-plugin-xcversion&quot;
-
-# Fetched from a local directory
-gem &quot;fastlane-plugin-xcversion&quot;, path: &quot;../fastlane-plugin-xcversion&quot;
-
-# Specify a version requirements
-gem &quot;fastlane-plugin-xcversion&quot;, &quot;1.1.0&quot;
-gem &quot;fastlane-plugin-xcversion&quot;, &quot;&gt;= 1.0&quot;
-</code></pre>
-
-<p><a href="http://bundler.io/gemfile.html">More information about a Gemfile</a></p>
-<h2 id="install-plugins-on-another-machine"><a name="user-content-install-plugins-on-another-machine" href="#install-plugins-on-another-machine" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Install plugins on another machine</h2>
-<p>To make sure all plugins are installed on the local machine, run</p>
-<pre><code class="no-highlight">fastlane install_plugins
-</code></pre>
-
-<h2 id="remove-a-plugin"><a name="user-content-remove-a-plugin" href="#remove-a-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Remove a plugin</h2>
-<p>Open your <code>fastlane/Pluginfile</code> and remove the line that looks like this</p>
-<pre><code class="ruby">gem &quot;fastlane-plugin-[plugin_name]&quot;
-</code></pre>
-
-<h2 id="create-your-own-plugin"><a name="user-content-create-your-own-plugin" href="#create-your-own-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create your own plugin</h2>
+                <h1 id="create-your-own-fastlane-plugin"><a name="user-content-create-your-own-fastlane-plugin" href="#create-your-own-fastlane-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create your own fastlane plugin</h1>
 <pre><code class="no-highlight">cd ~/new/folder/
 
 fastlane new_plugin [plugin_name]
@@ -1261,7 +1214,7 @@ fastlane new_plugin [plugin_name]
 <li>Edit the <code>lib/fastlane/plugin/[plugin_name]/actions/[plugin_name].rb</code> and implement your action</li>
 <li>Easily test the plugin locally by running <code>fastlane add_plugin</code> in your project's directory and specifying the local path when asked for it</li>
 </ul>
-<h4 id="new-plugin-for-existing-gem"><a name="user-content-new-plugin-for-existing-gem" href="#new-plugin-for-existing-gem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New plugin for existing gem</h4>
+<h2 id="new-plugin-for-existing-gem"><a name="user-content-new-plugin-for-existing-gem" href="#new-plugin-for-existing-gem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New plugin for existing gem</h2>
 <p>If you already have an existing gem you want to provide a <em>fastlane</em> plugin for, you'll still have to create a new Ruby gem. The reason for that is the way plugins are imported.</p>
 <p>The example project <a href="https://github.com/jcampbell05/xcake">xcake</a> contains a folder named <code>fastlane-plugin-xcake</code>.</p>
 <p>All you have to do if you have an existing gem:</p>
@@ -1270,8 +1223,8 @@ fastlane new_plugin [plugin_name]
 <li><code>fastlane new_plugin [plugin_name]</code></li>
 <li>Inside the newly created folder, edit the <code>fastlane-plugin-[plugin_name].gemspec</code> and add your gem as a dependency. It is recommended to also specify a version number requirement</li>
 </ul>
-<h3 id="publishing-your-plugin"><a name="user-content-publishing-your-plugin" href="#publishing-your-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Publishing your plugin</h3>
-<h4 id="rubygems"><a name="user-content-rubygems" href="#rubygems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RubyGems</h4>
+<h2 id="publishing-your-plugin"><a name="user-content-publishing-your-plugin" href="#publishing-your-plugin" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Publishing your plugin</h2>
+<h3 id="rubygems"><a name="user-content-rubygems" href="#rubygems" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RubyGems</h3>
 <p>The recommended way to publish your plugin is to publish it on <a href="https://rubygems.org">RubyGems.org</a>. Follow the steps below to publish your plugin.</p>
 <ol>
 <li>Create an account at <a href="https://rubygems.org">RubyGems.org</a></li>
@@ -1285,7 +1238,7 @@ rake release
 </code></pre>
 
 <p>Now all your users can run <code>fastlane add_plugin [plugin_name]</code> to install and use your plugin.</p>
-<h4 id="github"><a name="user-content-github" href="#github" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>GitHub</h4>
+<h3 id="github"><a name="user-content-github" href="#github" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>GitHub</h3>
 <p>If for some reason you don't want to use RubyGems, you can also make your plugin available on GitHub. Your users then need to add the following to the <code>Pluginfile</code></p>
 <pre><code class="ruby">gem &quot;fastlane-plugin-[plugin_name]&quot;, git: &quot;https://github.com/[user]/[plugin_name]&quot;
 </code></pre>
@@ -1303,7 +1256,7 @@ rake release
         <a href="../plugins-troubleshooting/" class="btn btn-neutral float-right" title="Plugins Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../available-plugins/" class="btn btn-neutral" title="Available Plugins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../using-plugins/" class="btn btn-neutral" title="Use Plugins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1345,7 +1298,7 @@ rake release
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../available-plugins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../using-plugins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../plugins-troubleshooting/" style="color: #fcfcfc">Next &raquo;</a></span>
