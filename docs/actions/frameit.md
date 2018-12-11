@@ -346,7 +346,7 @@ Key | Description | Default
   `force_device_type` | Forces a given device type, useful for Mac screenshots, as their sizes vary | 
   `use_legacy_iphone5s` | Use iPhone 5s instead of iPhone SE frames | `false`
   `use_legacy_iphone6s` | Use iPhone 6s frames instead of iPhone 7 frames | `false`
-  `force_orientation_block` | [Advanced] A block to customize your screnshots' device orientation | [*](#parameters-legend-dynamic)
+  `force_orientation_block` | [Advanced] A block to customize your screenshots' device orientation | [*](#parameters-legend-dynamic)
   `path` | The path to the directory containing the screenshots | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

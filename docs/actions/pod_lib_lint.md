@@ -54,6 +54,7 @@ Key | Description | Default
   `verbose` | Allow output detail in console | 
   `allow_warnings` | Allow warnings during pod lint | 
   `sources` | The sources of repos you want the pod spec to lint with, separated by commas | 
+  `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | 
   `use_libraries` | Lint uses static libraries to install the spec | `false`
   `fail_fast` | Lint stops on the first failing platform or subspec | `false`
   `private` | Lint skips checks that apply only to public specs | `false`

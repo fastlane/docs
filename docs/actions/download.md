@@ -11,7 +11,7 @@ Download a file from a remote server (e.g. JSON file)
 
 
 
-> Specify the URL to download and get the content as a return value.<br>For more advanced networking code, use the Ruby functions instead: [http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html](http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html).
+> Specify the URL to download and get the content as a return value.<br>Automatically parses JSON into a Ruby data structure.<br>For more advanced networking code, use the Ruby functions instead: [http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html](http://docs.ruby-lang.org/en/2.0.0/Net/HTTP.html).
 
 
 download ||

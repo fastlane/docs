@@ -94,7 +94,7 @@ fastlane-plugin-bugsnag:
   :github_contributors: 0
 fastlane-plugin-trainer:
   :initial_commit: 2016-07-20
-  :age_in_days: 585
+  :age_in_days: 874
   :readme_score: 100
   :tests: 8
   :actions:
@@ -104,12 +104,12 @@ fastlane-plugin-trainer:
     description: Convert the Xcode plist log to a JUnit report. This will raise an
       exception if the tests failed
     details: 
-  :sha: 59aec4494feb531e59b5c1ea9d3500fc50fc16e5273c0ea5abe4435b83567d28
-  :github_stars: 102
-  :github_subscribers: 4
-  :github_issues: 5
-  :github_forks: 12
-  :github_contributors: 5
+  :sha: 3b608d1425157615556cd146527165ebc763117713256d8d4be2c7dd3b96b819
+  :github_stars: 132
+  :github_subscribers: 6
+  :github_issues: 8
+  :github_forks: 22
+  :github_contributors: 7
 fastlane-plugin-update_provisioning_profile_specifier:
   :initial_commit: 2016-09-26
   :age_in_days: 770
@@ -130,7 +130,7 @@ fastlane-plugin-update_provisioning_profile_specifier:
   :github_contributors: 0
 fastlane-plugin-appicon:
   :initial_commit: 2016-07-01
-  :age_in_days: 669
+  :age_in_days: 893
   :readme_score: 100
   :tests: 0
   :actions:
@@ -145,15 +145,15 @@ fastlane-plugin-appicon:
     description: Generate required icon sizes and iconset from a master application
       icon
     details: 
-  :sha: cec243fa2de67308651fa76786a0da3f57e8954c57e7a202374343da219f126c
-  :github_stars: 205
-  :github_subscribers: 7
-  :github_issues: 10
-  :github_forks: 19
-  :github_contributors: 0
+  :sha: bcc64612c48a6d5d1f9884a7a105a4ea06ff61b0aeb652ed0e87c91e5203d109
+  :github_stars: 226
+  :github_subscribers: 10
+  :github_issues: 14
+  :github_forks: 25
+  :github_contributors: 18
 fastlane-plugin-badge:
   :initial_commit: 2016-12-16
-  :age_in_days: 480
+  :age_in_days: 725
   :readme_score: 100
   :tests: 1
   :actions:
@@ -162,11 +162,11 @@ fastlane-plugin-badge:
     category: 
     description: Automatically add a badge to your app icon
     details: "\\n"
-  :sha: b9eb2d8172cd09803d715ff739a6057bc727f21f8f9f0d873bb701d3331b8576
-  :github_stars: 33
-  :github_subscribers: 1
+  :sha: 326a531813854bdbf1312f75b2bf4ca1a00fc523932ac067c612ba51549af196
+  :github_stars: 81
+  :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 3
   :github_contributors: 2
 fastlane-plugin-increment_version_code:
   :initial_commit: 2016-07-29
@@ -187,9 +187,9 @@ fastlane-plugin-increment_version_code:
   :github_contributors: 2
 fastlane-plugin-changelog:
   :initial_commit: 2016-06-25
-  :age_in_days: 610
+  :age_in_days: 899
   :readme_score: 100
-  :tests: 21
+  :tests: 23
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: read_changelog
@@ -215,11 +215,11 @@ fastlane-plugin-changelog:
     description: Stamps the [Unreleased] section with provided identifier in your
       project CHANGELOG.md file
     details: 
-  :sha: 0f32e3674a1cf636d25cabe7797027f50f7c1d7deda7024353546e048b813a2c
-  :github_stars: 73
+  :sha: 5ba928126ff8add31d7441c0ca2281eb4d8960fb8f0b35c786cd3ee73fd84b92
+  :github_stars: 105
   :github_subscribers: 2
-  :github_issues: 2
-  :github_forks: 14
+  :github_issues: 1
+  :github_forks: 17
   :github_contributors: 5
 fastlane-plugin-tpa:
   :initial_commit: 2016-06-17
@@ -802,9 +802,9 @@ fastlane-plugin-settings_bundle:
   :github_contributors: 2
 fastlane-plugin-android_versioning:
   :initial_commit: 2017-02-18
-  :age_in_days: 625
+  :age_in_days: 661
   :readme_score: 50
-  :tests: 13
+  :tests: 14
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: get_value_from_build
@@ -836,12 +836,12 @@ fastlane-plugin-android_versioning:
     category: 
     description: Get the version code of your project
     details: " "
-  :sha: b69a093407b65f7c3d58df25b4775d931239924c3f038ce6828baf9d11de0ca6
-  :github_stars: 16
-  :github_subscribers: 2
+  :sha: 34752b180d34192f363d173eba3db1b0f8bc085e2a80d79f58c5c53371e28949
+  :github_stars: 19
+  :github_subscribers: 3
   :github_issues: 1
-  :github_forks: 3
-  :github_contributors: 0
+  :github_forks: 4
+  :github_contributors: 4
 fastlane-plugin-upload_folder_to_s3:
   :initial_commit: 2016-05-28
   :age_in_days: 638
@@ -951,9 +951,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 378
+  :age_in_days: 414
   :readme_score: 100
-  :tests: 116
+  :tests: 117
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1011,12 +1011,12 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: 6b3358d053e88754541d5de4ad0a75cb7fcfea0dd4d70d3b5aae23945919020f
-  :github_stars: 51
-  :github_subscribers: 8
-  :github_issues: 15
-  :github_forks: 11
-  :github_contributors: 0
+  :sha: cd2942eeaefd8f5e8ac45f91e5a652107f67990905a78be1e938bd8265628c9c
+  :github_stars: 56
+  :github_subscribers: 7
+  :github_issues: 16
+  :github_forks: 12
+  :github_contributors: 3
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -1788,22 +1788,22 @@ fastlane-plugin-upload_to_onesky:
   :github_contributors: 1
 fastlane-plugin-rome:
   :initial_commit: 2017-03-27
-  :age_in_days: 526
+  :age_in_days: 624
   :readme_score: 100
-  :tests: 1
+  :tests: 2
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: rome
     category: 
     description: An S3 cache tool for Carthage
     details: Rome is a tool that allows developers on Apple platforms to use Amazon's
-      S3o and others as a shared cache for frameworks built with Carthage.
-  :sha: 2306f7192e7a8b797f25193d0aa94692bc010b391dc8db240a255eec3faf42d0
-  :github_stars: 8
+      S3  and/or others as a shared cache for frameworks built with Carthage.
+  :sha: 2d72ee241e6df271445a702e735e982b9c29753f00860358c8d37c8c8929533c
+  :github_stars: 10
   :github_subscribers: 2
   :github_issues: 1
   :github_forks: 2
-  :github_contributors: 0
+  :github_contributors: 3
 fastlane-plugin-git_status:
   :initial_commit: 2016-12-07
   :age_in_days: 445
@@ -2529,7 +2529,7 @@ fastlane-plugin-update_build_settings_key:
   :github_contributors: 0
 fastlane-plugin-ionic:
   :initial_commit: 2016-12-10
-  :age_in_days: 442
+  :age_in_days: 731
   :readme_score: 100
   :tests: 0
   :actions:
@@ -2538,12 +2538,12 @@ fastlane-plugin-ionic:
     category: building
     description: Build your Ionic app
     details: Easily integrate your Ionic build into a Fastlane setup
-  :sha: 4dc51fdb81f79d052dbc5a87c4b32250e3aaafffb473435963ccf7b24148604d
-  :github_stars: 18
-  :github_subscribers: 2
-  :github_issues: 22
-  :github_forks: 2
-  :github_contributors: 6
+  :sha: eabd10991db1213ae2806ee88ee61c702cc370b5498e62059d86539256d03f6d
+  :github_stars: 41
+  :github_subscribers: 5
+  :github_issues: 23
+  :github_forks: 11
+  :github_contributors: 12
 fastlane-plugin-redpill:
   :initial_commit: 2017-12-04
   :age_in_days: 83
@@ -2622,9 +2622,9 @@ fastlane-plugin-firebase:
   :github_contributors: 0
 fastlane-plugin-framer:
   :initial_commit: 2016-08-30
-  :age_in_days: 544
+  :age_in_days: 833
   :readme_score: 100
-  :tests: 12
+  :tests: 16
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: framer
@@ -2632,12 +2632,12 @@ fastlane-plugin-framer:
     description: Create images combining app screenshots to templates to make a nice
       \'screenshot\' to upload in App Store
     details: 
-  :sha: c4131fb0fcd21f2dee8a1011bd656099936d048a2f7da468c4ae54b0478f719a
-  :github_stars: 18
+  :sha: a745bf4c86957fe35d02c5909a929635886cef55b9e9b425bc70ad7aa6e91353
+  :github_stars: 23
   :github_subscribers: 4
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-hours:
   :initial_commit: 2017-11-01
   :age_in_days: 116
@@ -3168,7 +3168,7 @@ fastlane-plugin-install_provisioning_profiles:
   :github_contributors: 0
 fastlane-plugin-android_sdk_update:
   :initial_commit: 2017-04-21
-  :age_in_days: 310
+  :age_in_days: 599
   :readme_score: 100
   :tests: 3
   :actions:
@@ -3177,12 +3177,12 @@ fastlane-plugin-android_sdk_update:
     category: 
     description: Install and update required Android-SDK packages
     details: "\\n"
-  :sha: 55716ae4e3a1a891e029f1829e3c35ff8aac02a04581c8e906e2c4e53d066846
-  :github_stars: 3
-  :github_subscribers: 12
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 2
+  :sha: 979103f2b8c6fce53935aa671ac247c2ee6b2664a0fcdad7b4b9a00c5ede1120
+  :github_stars: 5
+  :github_subscribers: 10
+  :github_issues: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-fir:
   :initial_commit: 2017-11-04
   :age_in_days: 113
@@ -3236,7 +3236,7 @@ fastlane-plugin-teams:
   :github_contributors: 0
 fastlane-plugin-validate_app:
   :initial_commit: 2018-01-21
-  :age_in_days: 35
+  :age_in_days: 324
   :readme_score: 100
   :tests: 0
   :actions:
@@ -3245,12 +3245,12 @@ fastlane-plugin-validate_app:
     category: 
     description: Validate your ipa file
     details: " "
-  :sha: 685398edd62e743699c5c683c29aff7a1407c7d928bbcca97507378ff239c67d
-  :github_stars: 10
-  :github_subscribers: 2
+  :sha: f7e61c02884a7457282f3c303f7cb1ddd4ef0e13bc7fd7ec8a5bf9b66236a176
+  :github_stars: 11
+  :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-gradle_manager:
   :initial_commit: 2017-11-19
   :age_in_days: 98
@@ -4067,7 +4067,7 @@ fastlane-plugin-remove_setting:
   :github_contributors: 0
 fastlane-plugin-android_emulator:
   :initial_commit: 2018-01-24
-  :age_in_days: 32
+  :age_in_days: 321
   :readme_score: 100
   :tests: 2
   :actions:
@@ -4076,12 +4076,12 @@ fastlane-plugin-android_emulator:
     category: 
     description: Creates and starts an Android Emulator (AVD)
     details: Great for Screengrab
-  :sha: 4f88817a7d1f52eee92d92e7cadd5cdc8c513d9c8b8e883f8eb6187cd88bbcd0
-  :github_stars: 0
-  :github_subscribers: 9
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :sha: 102e097bd2b8186fada80c3f8a062a099faeee87a147cd8b973ea4bd43963d0f
+  :github_stars: 4
+  :github_subscribers: 7
+  :github_issues: 4
+  :github_forks: 4
+  :github_contributors: 0
 fastlane-plugin-ipa_scale:
   :github_stars: 0
   :github_subscribers: 0
@@ -4286,19 +4286,19 @@ fastlane-plugin-xcconfig:
   :github_contributors: 0
 fastlane-plugin-run_tests_firebase_testlab:
   :initial_commit: 2018-01-30
-  :age_in_days: 279
+  :age_in_days: 315
   :readme_score: 100
-  :tests: 23
+  :tests: 24
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: run_tests_firebase_testlab
     category: 
     description: 
     details: 
-  :sha: 27ec7f0d7a8070024a82df97bdf3fc04c136969b0807221a68b402c8fdc87e8a
-  :github_stars: 16
+  :sha: 70366cbf2f5a0375547abd63abe5e3e8d11305aed9e88a66740555a07ccf93df
+  :github_stars: 18
   :github_subscribers: 2
-  :github_issues: 4
+  :github_issues: 3
   :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-instabug_official:
@@ -4519,7 +4519,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 206
+  :age_in_days: 242
   :readme_score: 50
   :tests: 7
   :actions:
@@ -4528,7 +4528,7 @@ fastlane-plugin-flutter:
     category: 
     description: Flutter actions plugin for Fastlane
     details: 
-  :sha: 927b492918d07b5e6ce076fc9f33fbd38081d43d0c27b0c7b0bf355869ea74c1
+  :sha: e60b2f734a854408df552ab3bafd75d04b07221382f8f4a974761cc84e68d665
   :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
@@ -5313,7 +5313,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 174
+  :age_in_days: 210
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5322,10 +5322,10 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details: 
-  :sha: '084bf3eaae75520b00b7c6461188f37426cd00a14c76e14de46c62fdab488d8d'
+  :sha: e76cc898f756aed0ce30eef58343f784da9e89a0fd4c3775b85e9b1f0edf7725
   :github_stars: 5
   :github_subscribers: 4
-  :github_issues: 6
+  :github_issues: 0
   :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-android_change_package_name:
@@ -5348,7 +5348,7 @@ fastlane-plugin-android_change_package_name:
   :github_contributors: 0
 fastlane-plugin-firebase_test_lab:
   :initial_commit: 2018-08-01
-  :age_in_days: 96
+  :age_in_days: 132
   :readme_score: 100
   :tests: 0
   :actions:
@@ -5357,11 +5357,11 @@ fastlane-plugin-firebase_test_lab:
     category: 
     description: Submit an iOS XCTest job to Firebase Test Lab
     details: 
-  :sha: 2b1e32a280a2ba3854796298c2880ff241d92ed75f99ff40a96cf913eea7c56e
-  :github_stars: 27
+  :sha: 55b52bd1cf8b7019a7b59e4de03d8e0b45a9e23566f48bcbd9f1fcadbf36d877
+  :github_stars: 28
   :github_subscribers: 16
-  :github_issues: 2
-  :github_forks: 0
+  :github_issues: 3
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-jira_build_number:
   :initial_commit: 2018-10-25
@@ -5542,31 +5542,213 @@ fastlane-plugin-buildnumber:
   :github_contributors: 0
 fastlane-plugin-firebase_management:
   :initial_commit: 2017-04-15
-  :age_in_days: 569
+  :age_in_days: 605
   :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: firebase_add_app
+    name: firebase_management_add_app
     category: 
     description: Add new app to Firebase project
     details: Firebase plugin helps you list your projects, create applications and
       download configuration files.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: firebase_list
+    name: firebase_management_list
     category: 
     description: List all Firebase projects and their apps
     details: Firebase plugin helps you list your projects, create applications and
       download configuration files.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: firebase_download_config
+    name: firebase_management_download_config
     category: 
     description: Download configuration file for Firebase app
     details: Firebase plugin helps you list your projects, create applications and
       download configuration files.
-  :sha: 3c29ad29476cb54dd499c23468c6b368ecc5fd3f15221f79435d0f1f752450fd
-  :github_stars: 1
+  :sha: adad566fb8e0b5dba35a5f125bd15fff5a34cde725a6ae08a35f3588af0a5380
+  :github_stars: 2
   :github_subscribers: 4
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-dingtalk_robot:
+  :initial_commit: 2018-11-09
+  :age_in_days: 32
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: dingtalk_robot
+    category: 
+    description: webhook for dingtalk robot
+    details: webhook for dingtalk robot
+  :sha: '0050913a02d927231e90372ee32f96509acd5eb04cd672c2c9cf12d621dd80f6'
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-androidmanifest_editor:
+  :initial_commit: 2018-11-28
+  :age_in_days: 13
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: modify_meta_data
+    category: 
+    description: edit meta-data in AndroidManifest.xml
+    details: edit meta-data of application section in AndroidManifest.xml
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: androidmanifest_editor
+    category: 
+    description: edit meta-data in AndroidManifest.xml
+    details: edit meta-data of application section in AndroidManifest.xml
+  :sha: 64f2ca79aacc3f0455d0b6875cf2f226674f4ba87b8206711c82ee3b28c21e18
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-upload_dsym_to_bugly:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-jira_util:
+  :initial_commit: 2016-09-01
+  :age_in_days: 831
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: release_jira_version
+    category: 
+    description: Releases a version in your JIRA project
+    details: Use this action to release a version in JIRA
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_jira_issue
+    category: 
+    description: Creates a new issue in your JIRA project
+    details: Use this action to create a new issue in JIRA
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_jira_version
+    category: 
+    description: Creates a new version in your JIRA project
+    details: Use this action to create a new version in JIRA
+  :sha: f55fed53fc1942460992a1093dd75452e11e825ecbf09854a82875a6432ffd11
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-jira_issue_details:
+  :initial_commit: 2018-11-24
+  :age_in_days: 17
+  :readme_score: 100
+  :tests: 7
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_jira_issue
+    category: 
+    description: Get the details for the given jira issue key(s).
+    details: It utilises the `jira-ruby` gem to communicate with Jira and get the
+      details of the Jira issue for the given key.\n\n(Currently only supports basic
+      auth_type login).
+  :sha: c799db201eb204326b420315aff7a12fe1dd55958e547a64f85367a5a5ff349a
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-jira_release_notes:
+  :initial_commit: 2018-12-04
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 11
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_release_notes
+    category: 
+    description: Jira release notes
+    details: Fetch release notes for Jira project for version
+  :sha: c063accb674799093d8c7dfcbbf8a7da17ec7f9cb1ffcc4eb1981ed1da8cc24b
+  :github_stars: 0
+  :github_subscribers: 6
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-bugtags:
+  :initial_commit: 2018-11-06
+  :age_in_days: 35
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bugtags
+    category: 
+    description: Upload symbols to Bugtags
+    details: fastlane plugin for Bugtags https://work.bugtags.com
+  :sha: 9218136cb7bc5fa0c95fc50a3c3d4ab5d0a6a0d98550c311a736fdfc726cf08b
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-parse_configurations:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-test_report:
+  :initial_commit: 2018-09-26
+  :age_in_days: 76
+  :readme_score: 100
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: test_report
+    category: 
+    description: Create customized HTML template for test reports
+    details: Create HTML for test reports
+  :sha: f427bf81382f4e1ca2199fe84f369ff0392d9433afcf5fa5c16a2b71ed139dc9
+  :github_stars: 2
+  :github_subscribers: 4
+  :github_issues: 4
+  :github_forks: 1
+  :github_contributors: 0
+fastlane-plugin-create_github_issue:
+  :initial_commit: 2018-12-10
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_github_issue
+    category: 
+    description: Create GitHub issue
+    details: Create GitHub issue
+  :sha: 69af257aba33669fb6b34f84e59b9fa7026d8b5c7ac3acc58cadb4390c068118
+  :github_stars: 1
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-flint:
+  :initial_commit: 2018-12-10
+  :age_in_days: 1
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flint
+    category: 
+    description: DESCRIPTION
+    details: Easily sync your keystores across your team using git
+  :sha: 06f731640e6655f89dc8e24abcb59c0c2540eec97ad713eae6d866751aa7134f
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
