@@ -465,6 +465,8 @@ Key | Description | Default
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos) | `ios`
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
+  `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
+  `google_cloud_keys_file` | Path to the gc_keys.json file | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

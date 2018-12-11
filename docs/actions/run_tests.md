@@ -224,16 +224,21 @@ Key | Description | Default
 ----|-------------|--------
   `workspace` | Path to the workspace file | 
   `project` | Path to the project file | 
+  `scheme` | The project's scheme. Make sure it's marked as `Shared` | 
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6') | 
-  `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a) | 
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air']) | 
   `skip_detect_devices` | Should skip auto detecting of devices if none were specified | `false`
-  `scheme` | The project's scheme. Make sure it's marked as `Shared` | 
+  `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
+  `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
+  `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
+  `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `xctestrun` | Run tests using the provided `.xctestrun` file | 
+  `toolchain` | The toolchain that should be used for building the application (e.g. `com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a`) | 
   `clean` | Should the project be cleaned before building it? | `false`
   `code_coverage` | Should code coverage be generated? (Xcode 7 and up) | 
   `address_sanitizer` | Should the address sanitizer be turned on? | 
   `thread_sanitizer` | Should the thread sanitizer be turned on? | 
-  `skip_build` | Should debug build be skipped before test build? | `false`
+  `open_report` | Should the HTML report be opened when tests are completed? | `false`
   `output_directory` | The directory in which all reports will be stored | [*](#parameters-legend-dynamic)
   `output_style` | Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty) | 
   `output_types` | Comma separated list of the output types (e.g. html, junit, json-compilation-database) | `html,junit`
@@ -243,31 +248,26 @@ Key | Description | Default
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
   `formatter` | A custom xcpretty formatter to use | 
   `xcpretty_args` | Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf') | 
-  `max_concurrent_simulators` | Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations | 
-  `disable_concurrent_testing` | Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing | `false`
-  `test_without_building` | Test without building, requires a derived data path | 
-  `build_for_testing` | Build for testing only, does not run tests | 
-  `xctestrun` | Run tests using the provided .xctestrun file | 
   `derived_data_path` | The directory where build products and other derived data will go | 
   `should_zip_build_products` | Should zip the derived data build products and place in output path? | `false`
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
+  `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
+  `max_concurrent_simulators` | Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations | 
+  `disable_concurrent_testing` | Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing | `false`
+  `skip_build` | Should debug build be skipped before test build? | `false`
+  `test_without_building` | Test without building, requires a derived data path | 
+  `build_for_testing` | Build for testing only, does not run tests | 
   `sdk` | The SDK that should be used for building the application | 
-  `open_report` | Should the HTML report be opened when tests are completed? | `false`
   `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#parameters-legend-dynamic)
-  `destination` | Use only if you're a pro, use the other options instead | 
   `xcargs` | Pass additional arguments to xcodebuild. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
-  `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
-  `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
   `slack_url` | Create an Incoming WebHook for your Slack group to post results there | 
   `slack_channel` | #channel or @username | 
   `slack_message` | The message included with each message posted to slack | 
   `skip_slack` | Don't publish to slack, even when an URL is given | `false`
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
-  `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
+  `destination` | Use only if you're a pro, use the other options instead | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
-  `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
-  `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
