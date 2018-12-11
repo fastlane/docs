@@ -101,12 +101,6 @@ To get a list of available options run
 fastlane action deliver
 ```
 
-Select a previously uploaded build and submit it for review.
-
-```no-highlight
-fastlane deliver submit_build --build_number 830
-```
-
 ### Use in a `Fastfile`
 
 ```ruby
@@ -405,6 +399,33 @@ The english name of the secondary first sub category you want to set
 ##### secondary_second_sub_category
 The english name of the secondary second sub category you want to set
 </details>
+
+# Submit Build
+
+Select a previously uploaded build and submit it for review.
+
+```no-highlight
+fastlane deliver submit_build --build_number 830
+```
+
+### Submit build in a `Fastfile`
+
+```ruby
+lane :submit_review do
+ deliver(
+    build_number: '830',
+    submit_for_review: true,
+    automatic_release: true,
+
+    force: true, # Skip HTMl report verification
+    skip_metadata: true,
+    skip_screenshots: true,
+    skip_binary_upload: true
+  )
+end
+```
+
+Omit `build_number` to let _fastlane_ automatically select the current edit version from App Store Connect.
 
 # Credentials
 
