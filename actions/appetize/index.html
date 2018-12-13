@@ -1223,13 +1223,21 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@klundberg, @giginet</td>
+<td>@klundberg, @giginet, @steprescott</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">appetize(
   path: &quot;./MyApp.zip&quot;,
+  api_token: &quot;yourapitoken&quot;, # get it from https://appetize.io/docs#request-api-token
+  public_key: &quot;your_public_key&quot; # get it from https://appetize.io/dashboard
+)
+</code></pre>
+
+<pre><code class="ruby">appetize(
+  path: &quot;./MyApp.zip&quot;,
+  api_host: &quot;company.appetize.io&quot;, # only needed for enterprise hosted solution
   api_token: &quot;yourapitoken&quot;, # get it from https://appetize.io/docs#request-api-token
   public_key: &quot;your_public_key&quot; # get it from https://appetize.io/dashboard
 )
@@ -1245,6 +1253,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>api_host</code></td>
+<td>Appetize API host</td>
+<td><code>api.appetize.io</code></td>
+</tr>
 <tr>
 <td><code>api_token</code></td>
 <td>Appetize.io API Token</td>

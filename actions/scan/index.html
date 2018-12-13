@@ -1443,13 +1443,13 @@ run_tests(
 <td></td>
 </tr>
 <tr>
-<td><code>device</code></td>
-<td>The name of the simulator type you want to run tests on (e.g. 'iPhone 6')</td>
+<td><code>scheme</code></td>
+<td>The project's scheme. Make sure it's marked as <code>Shared</code></td>
 <td></td>
 </tr>
 <tr>
-<td><code>toolchain</code></td>
-<td>The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a)</td>
+<td><code>device</code></td>
+<td>The name of the simulator type you want to run tests on (e.g. 'iPhone 6')</td>
 <td></td>
 </tr>
 <tr>
@@ -1463,8 +1463,33 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
-<td><code>scheme</code></td>
-<td>The project's scheme. Make sure it's marked as <code>Shared</code></td>
+<td><code>reinstall_app</code></td>
+<td>Enabling this option will automatically uninstall the application before running it</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier of the app to uninstall (only needed when enabling reinstall_app)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>only_testing</code></td>
+<td>Array of strings matching Test Bundle/Test Suite/Test Cases to run</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_testing</code></td>
+<td>Array of strings matching Test Bundle/Test Suite/Test Cases to skip</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xctestrun</code></td>
+<td>Run tests using the provided <code>.xctestrun</code> file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>toolchain</code></td>
+<td>The toolchain that should be used for building the application (e.g. <code>com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a</code>)</td>
 <td></td>
 </tr>
 <tr>
@@ -1488,8 +1513,8 @@ run_tests(
 <td></td>
 </tr>
 <tr>
-<td><code>skip_build</code></td>
-<td>Should debug build be skipped before test build?</td>
+<td><code>open_report</code></td>
+<td>Should the HTML report be opened when tests are completed?</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1538,31 +1563,6 @@ run_tests(
 <td></td>
 </tr>
 <tr>
-<td><code>max_concurrent_simulators</code></td>
-<td>Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations</td>
-<td></td>
-</tr>
-<tr>
-<td><code>disable_concurrent_testing</code></td>
-<td>Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>test_without_building</code></td>
-<td>Test without building, requires a derived data path</td>
-<td></td>
-</tr>
-<tr>
-<td><code>build_for_testing</code></td>
-<td>Build for testing only, does not run tests</td>
-<td></td>
-</tr>
-<tr>
-<td><code>xctestrun</code></td>
-<td>Run tests using the provided .xctestrun file</td>
-<td></td>
-</tr>
-<tr>
 <td><code>derived_data_path</code></td>
 <td>The directory where build products and other derived data will go</td>
 <td></td>
@@ -1578,24 +1578,44 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>use_clang_report_name</code></td>
+<td>Generate the json compilation database with clang naming convention (compile_commands.json)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>max_concurrent_simulators</code></td>
+<td>Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations</td>
+<td></td>
+</tr>
+<tr>
+<td><code>disable_concurrent_testing</code></td>
+<td>Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_build</code></td>
+<td>Should debug build be skipped before test build?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>test_without_building</code></td>
+<td>Test without building, requires a derived data path</td>
+<td></td>
+</tr>
+<tr>
+<td><code>build_for_testing</code></td>
+<td>Build for testing only, does not run tests</td>
+<td></td>
+</tr>
+<tr>
 <td><code>sdk</code></td>
 <td>The SDK that should be used for building the application</td>
 <td></td>
 </tr>
 <tr>
-<td><code>open_report</code></td>
-<td>Should the HTML report be opened when tests are completed?</td>
-<td><code>false</code></td>
-</tr>
-<tr>
 <td><code>configuration</code></td>
 <td>The configuration to use when building the app. Defaults to 'Release'</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>destination</code></td>
-<td>Use only if you're a pro, use the other options instead</td>
-<td></td>
 </tr>
 <tr>
 <td><code>xcargs</code></td>
@@ -1605,16 +1625,6 @@ run_tests(
 <tr>
 <td><code>xcconfig</code></td>
 <td>Use an extra XCCONFIG file to build your app</td>
-<td></td>
-</tr>
-<tr>
-<td><code>only_testing</code></td>
-<td>Array of strings matching Test Bundle/Test Suite/Test Cases to run</td>
-<td></td>
-</tr>
-<tr>
-<td><code>skip_testing</code></td>
-<td>Array of strings matching Test Bundle/Test Suite/Test Cases to skip</td>
 <td></td>
 </tr>
 <tr>
@@ -1643,24 +1653,14 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
-<td><code>use_clang_report_name</code></td>
-<td>Generate the json compilation database with clang naming convention (compile_commands.json)</td>
-<td><code>false</code></td>
+<td><code>destination</code></td>
+<td>Use only if you're a pro, use the other options instead</td>
+<td></td>
 </tr>
 <tr>
 <td><code>custom_report_file_name</code></td>
 <td><strong>DEPRECATED!</strong> Use <code>--output_files</code> instead - Sets custom full report file name when generating a single report</td>
 <td></td>
-</tr>
-<tr>
-<td><code>app_identifier</code></td>
-<td>The bundle identifier of the app to uninstall (only needed when enabling reinstall_app)</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>reinstall_app</code></td>
-<td>Enabling this option will automatically uninstall the application before running it</td>
-<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>fail_build</code></td>

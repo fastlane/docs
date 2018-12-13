@@ -1206,16 +1206,16 @@
                 <h2 id="source-control"><a name="user-content-source-control" href="#source-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source Control</h2>
 <p>It is recommended that you keep <em>fastlane</em> configuration files in the repository. You may want to add the following lines to the repository's <code>.gitignore</code> (Git) or <code>.hgignore</code> (Mercurial) file to exclude generated and temporary files:</p>
 <pre><code class="no-highlight"># fastlane specific
-fastlane/report.xml
+**/fastlane/report.xml
 
 # deliver temporary files
-fastlane/Preview.html
+**/fastlane/Preview.html
 
 # snapshot generated screenshots
-fastlane/screenshots
+**/fastlane/screenshots
 
 # scan temporary files
-fastlane/test_output
+**/fastlane/test_output
 </code></pre>
 
 <p>It is also recommended that you avoid storing screenshots or other delivery artifacts in the repository. Instead, use <em>fastlane</em> to re-generate whenever needed.</p>
