@@ -1372,7 +1372,7 @@ public class ExampleInstrumentedTest {
 <ul>
 <li>Run <code>./gradlew assembleDebug assembleAndroidTest</code> manually to generate debug and test APKs<ul>
 <li>You can also create a lane and use <code>build_android_app</code>:
-  ```ruby
+  <code>ruby
   desc "Build debug and test APK for screenshots"
   lane :build_for_screengrab do
     gradle(
@@ -1386,7 +1386,7 @@ public class ExampleInstrumentedTest {
       task: 'assemble',
       build_type: 'AndroidTest'
     )
-  end</li>
+  end</code></li>
 </ul>
 </li>
 <li>Run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
