@@ -142,6 +142,7 @@ You can use [QuickDemo](https://github.com/PSPDFKit-labs/QuickDemo) to clean up 
         build_type: 'AndroidTest'
       )
     end
+    ```
 - Run `fastlane screengrab` in your app project directory to generate screenshots
   - You will be prompted to provide any required parameters which are not in your `Screengrabfile`, or provided as command line arguments
 - Your screenshots will be saved to `fastlane/metadata/android` in the directory where you ran `fastlane screengrab`
