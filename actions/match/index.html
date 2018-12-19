@@ -1306,7 +1306,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <p><img src="/img/actions/match_init.gif" width="550" /></p>
-<p>You'll be asked to enter the URL to your Git repo. This can be either a <code>https://</code> or a <code>git</code> URL. (If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise you may see an authentication error when you attempt to use match.) <code>fastlane match init</code> won't read or modify your certificates or profiles.</p>
+<p>You'll be asked if you want to store your code signing identities inside a Git repo, or on Google Cloud.</p>
+<h4 id="git-storage"><a name="user-content-git-storage" href="#git-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage</h4>
+<p>Use Git Storage to store all code signing identities in a private git repo, owned and operated by you. The files will be encrypted using OpenSSL.</p>
+<p>First, enter the URL to your Git repo. This can be either a <code>https://</code> or a <code>git</code> URL. (If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise you may see an authentication error when you attempt to use match.) <code>fastlane match init</code> won't read or modify your certificates or profiles yet, and also won't validate your git URL.</p>
 <p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
 <p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
 <pre><code class="ruby-skip-tests">git_url(&quot;https://github.com/fastlane/certificates&quot;)
@@ -1315,12 +1318,22 @@ app_identifier(&quot;tools.fastlane.app&quot;)
 username(&quot;user@fastlane.tools&quot;)
 </code></pre>
 
-<h4 id="important-use-one-git-branch-per-team"><a name="user-content-important-use-one-git-branch-per-team" href="#important-use-one-git-branch-per-team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Important: Use one git branch per team</h4>
-<p><em>match</em> also supports storing certificates of multiple teams in one repo, by using separate git branches. If you work in multiple teams, make sure to set the <code>git_branch</code> parameter to a unique value per team. From there, <em>match</em> will automatically create and use the specified branch for you.</p>
+<h4 id="google-cloud-storage"><a name="user-content-google-cloud-storage" href="#google-cloud-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h4>
+<p>Use <a href="https://cloud.google.com/storage/">Google Cloud Storage</a> for a fully hosted solution for your code signing identities. Certificates are stored on Google Cloud, encrypted using Google managed keys. Everything will be stored on your Google account, inside a storage bucket you provide. You can also directly access the files using the web console.</p>
+<p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
+<p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
+<pre><code class="ruby-skip-tests">google_cloud_bucket_name(&quot;major-key-certificates&quot;)
+</code></pre>
+
+<h3 id="multiple-teams"><a name="user-content-multiple-teams" href="#multiple-teams" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Multiple teams</h3>
+<h4 id="git-storage_1"><a name="user-content-git-storage_1" href="#git-storage_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage</h4>
+<p>Use one git branch per team. <em>match</em> also supports storing certificates of multiple teams in one repo, by using separate git branches. If you work in multiple teams, make sure to set the <code>git_branch</code> parameter to a unique value per team. From there, <em>match</em> will automatically create and use the specified branch for you.</p>
 <pre><code class="ruby">match(git_branch: &quot;team1&quot;, username: &quot;user@team1.com&quot;)
 match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 </code></pre>
 
+<h4 id="google-cloud-storage_1"><a name="user-content-google-cloud-storage_1" href="#google-cloud-storage_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h4>
+<p>If you use Google Cloud Storage, you don't need to do anything manually. Just use Google Cloud Storage, and the top level folder will be the team ID.</p>
 <h3 id="run"><a name="user-content-run" href="#run" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run</h3>
 <blockquote>
 <p>Before running <em>match</em> for the first time, you should consider clearing your existing profiles and certificates using the <a href="#nuke">match nuke command</a>.</p>
@@ -1333,7 +1346,7 @@ match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 </code></pre>
 
 <p><img src="/img/actions/match_appstore_small.gif" width="550" /></p>
-<p>This will create a new certificate and provisioning profile (if required) and store them in your Git repo. If you previously ran <em>match</em> it will automatically install the existing profiles from the Git repo.</p>
+<p>This will create a new certificate and provisioning profile (if required) and store them in your selected storage. If you previously ran <em>match</em> it will automatically install the existing profiles from storage.</p>
 <p>The provisioning profiles are installed in <code>~/Library/MobileDevice/Provisioning Profiles</code> while the certificates and private keys are installed in your Keychain.</p>
 <p>To get a more detailed output of what <em>match</em> is doing use</p>
 <pre><code class="no-highlight">fastlane match --verbose
@@ -1344,28 +1357,39 @@ match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 </code></pre>
 
 <h4 id="handle-multiple-targets"><a name="user-content-handle-multiple-targets" href="#handle-multiple-targets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Handle multiple targets</h4>
-<p>If you have several targets with different bundle identifiers, supply them as a comma-separated list to   :</p>
+<p>If you have several targets with different bundle identifiers, supply them as a comma-separated list to:</p>
 <pre><code class="no-highlight">fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp
 </code></pre>
 
 <p>You can make this even easier using <a href="https://fastlane.tools"><em>fastlane</em></a> by creating a <code>certificates</code> lane like this:</p>
 <pre><code class="ruby">lane :certificates do
-  match(app_identifier: [&quot;com.krausefx.app1&quot;, &quot;com.krausefx.app2&quot;, &quot;com.krausefx.app3&quot;], readonly: true)
+  match(app_identifier: [&quot;com.krausefx.app1&quot;, &quot;com.krausefx.app2&quot;, &quot;com.krausefx.app3&quot;])
 end
 </code></pre>
 
 <p>Then all your team has to do is <code>fastlane certificates</code> and keys, certs and profiles for all targets will be synced.</p>
 <h4 id="handle-multiple-apps-per-developerdistribution-certificate"><a name="user-content-handle-multiple-apps-per-developerdistribution-certificate" href="#handle-multiple-apps-per-developerdistribution-certificate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Handle multiple apps per developer/distribution certificate</h4>
 <p>If you want to use a single developer and/or distribution certificate for multiple apps belonging to the same development team, you may use the same signing identities repository and branch to store the signing identities for your apps:</p>
-<p>Matchfile for both App #1 and #2:</p>
+<p><code>Matchfile</code> example for both App #1 and #2:</p>
 <pre><code class="ruby-skip-tests">git_url(&quot;https://github.com/example/example-repo.git&quot;)
 git_branch(&quot;master&quot;)
 </code></pre>
 
 <p><em>match</em> will reuse certificates and will create separate provisioning profiles for each app.</p>
 <h4 id="passphrase"><a name="user-content-passphrase" href="#passphrase" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passphrase</h4>
+<p><em>Git Repo storage only</em></p>
 <p>When running <em>match</em> for the first time on a new machine, it will ask you for the passphrase for the Git repository. This is an additional layer of security: each of the files will be encrypted using <code>openssl</code>. Make sure to remember the password, as you'll need it when you run match on a different machine.</p>
 <p>To set the passphrase to decrypt your profiles using an environment variable, use <code>MATCH_PASSWORD</code>.</p>
+<h4 id="migrate-from-git-repo-to-google-cloud"><a name="user-content-migrate-from-git-repo-to-google-cloud" href="#migrate-from-git-repo-to-google-cloud" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migrate from Git Repo to Google Cloud</h4>
+<p>If you're already using a Git Repo, but would like to switch to using Google Cloud Storage, just run the following command to automatically migrate all your existing code signing identities and provisioning profiles</p>
+<pre><code class="no-highlight">fastlane match migrate
+</code></pre>
+
+<p>After a successful migration you can safely delete your git repo.</p>
+<h4 id="google-cloud-gc_keysjson"><a name="user-content-google-cloud-gc_keysjson" href="#google-cloud-gc_keysjson" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud <code>gc_keys.json</code></h4>
+<p><em>Google Cloud Storage only</em></p>
+<p>When running <code>fastlane match init</code> the first time, the setup process will help you create your <code>gc_keys.json</code> file. This file contains the auth credentials needed to access your Google Cloud storage bucket. Make sure to keep that file secret and never add it to version control.</p>
+<p>We recommend adding <code>gc_keys.json</code> to your <code>.gitignore</code> and manually add the file to all your work machines. Every developer should create their own <code>gc_keys.json</code> file, which will give the admin full control over who has read/write access to the given Storage bucket. At the same time it allows your team to revoke a single key if a file gets compromised.</p>
 <h4 id="new-machine"><a name="user-content-new-machine" href="#new-machine" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New machine</h4>
 <p>To set up the certificates and provisioning profiles on a new machine, you just run the same command using:</p>
 <pre><code class="no-highlight">fastlane match development
@@ -1375,18 +1399,26 @@ git_branch(&quot;master&quot;)
 <pre><code class="no-highlightno-highlight">fastlane match development --readonly
 </code></pre>
 
+<p>We recommend to always use <code>readonly</code> mode when running <em>fastlane</em> on CI systems. This can be done using</p>
+<pre><code class="ruby">lane :beta do
+  match(type: &quot;appstore&quot;, readonly: is_ci)
+
+  gym(scheme: &quot;Release&quot;)
+end
+</code></pre>
+
 <h4 id="access-control"><a name="user-content-access-control" href="#access-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Access Control</h4>
 <p>A benefit of using <em>match</em> is that it enables you to give the developers of your team access to the code signing certificates without having to give everyone access to the Developer Portal:</p>
 <ol>
-<li>Run <em>match</em> to store the certificates in a Git repo</li>
-<li>Grant access to the Git repo to your developers and give them the passphrase</li>
-<li>The developers can now run <em>match</em> which will install the latest code signing profiles so they can build and sign the application without having to have access to the developer portal</li>
+<li>Run <em>match</em> to store the certificates in a Git repo or Google Cloud Storage</li>
+<li>Grant access to the Git repo / Google Cloud Storage Bucket to your developers and give them the passphrase (for git storage)</li>
+<li>The developers can now run <em>match</em> which will install the latest code signing profiles so they can build and sign the application without having to have access to the Apple Developer Portal</li>
 <li>Every time you run <em>match</em> to update the profiles (e.g. add a new device), all your developers will automatically get the latest profiles when running <em>match</em></li>
 </ol>
-<p>If you decide to run <em>match</em> without access to the developer portal, make sure to use the <code>--readonly</code> option so that the commands don't ask you for the password to the developer portal.</p>
-<p>The advantage of this approach is that no one in your team will revoke a certificate by mistake. Additionally it is recommended to install the <a href="https://github.com/neonichu/FixCode">FixCode Xcode Plugin</a> to disable the <code>Fix Issue</code> button.</p>
-<h4 id="git-repo"><a name="user-content-git-repo" href="#git-repo" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Repo</h4>
-<p>After running <em>match</em> for the first time, your Git repo will contain 2 directories:</p>
+<p>If you decide to run <em>match</em> without access to the Developer Portal, make sure to use the <code>--readonly</code> option so that the commands don't ask you for the password to the Developer Portal.</p>
+<p>The advantage of this approach is that no one in your team will revoke a certificate by mistake, while having all code signing secrets in one location.</p>
+<h4 id="folder-structure"><a name="user-content-folder-structure" href="#folder-structure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Folder structure</h4>
+<p>After running <em>match</em> for the first time, your Git repo or Google Cloud bucket will contain 2 directories:</p>
 <ul>
 <li>The <code>certs</code> folder contains all certificates with their private keys</li>
 <li>The <code>profiles</code> folder contains all provisioning profiles</li>
@@ -1396,19 +1428,17 @@ git_branch(&quot;master&quot;)
   <img src="/img/actions/github_repo.png" width="700" />
 </p>
 
+<p>In the case of Google Cloud, the top level folder will be the team ID.</p>
 <h4 id="fastlane"><a name="user-content-fastlane" href="#fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane</h4>
 <p>Add <em>match</em> to your <code>Fastfile</code> to automatically fetch the latest code signing certificates with <a href="https://fastlane.tools"><em>fastlane</em></a>.</p>
 <pre><code>match(type: &quot;appstore&quot;)
 
-match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
-      type: &quot;development&quot;)
+match(type: &quot;development&quot;)
 
-match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
-      type: &quot;adhoc&quot;,
+match(type: &quot;adhoc&quot;,
       app_identifier: &quot;tools.fastlane.app&quot;)
 
-match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
-      type: &quot;enterprise&quot;,
+match(type: &quot;enterprise&quot;,
       app_identifier: &quot;tools.fastlane.app&quot;)
 
 # _match_ should be called before building the app with _gym_
@@ -1431,15 +1461,14 @@ end
 </code></pre>
 
 <h5 id="multiple-targets"><a name="user-content-multiple-targets" href="#multiple-targets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Multiple Targets</h5>
-<p>If your app has multiple targets (e.g. Today Widget or WatchOS Extension)</p>
+<p>If your app has multiple targets (e.g. Today Widget or watchOS Extension)</p>
 <pre><code class="ruby">match(app_identifier: [&quot;tools.fastlane.app&quot;, &quot;tools.fastlane.app.today_widget&quot;], type: &quot;appstore&quot;)
 </code></pre>
 
-<p><em>match</em> can even use the same one Git repository for all bundle identifiers.</p>
+<p><em>match</em> can use the same one Git repository or Google Cloud Storage for all bundle identifiers.</p>
 <h5 id="templates-aka-custom-entitlements"><a name="user-content-templates-aka-custom-entitlements" href="#templates-aka-custom-entitlements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Templates (aka: custom entitlements)</h5>
 <p>Match can generate profiles that contain custom entitlements by passing in the entitlement's name with the <code>template_name</code> parameter.</p>
-<pre><code>match(git_url: &quot;https://github.com/fastlane/certificates&quot;,
-      type: &quot;development&quot;,
+<pre><code>match(type: &quot;development&quot;,
       template_name: &quot;Apple Pay Pass Suppression Development&quot;)
 </code></pre>
 
@@ -1453,7 +1482,7 @@ end
 <p>You can statically select the right provisioning profile in your Xcode project (the name will be <code>match Development tools.fastlane.app</code>).</p>
 <p><a href="../../codesigning/xcode-project/">Docs on how to set up your Xcode project</a></p>
 <h3 id="continuous-integration"><a name="user-content-continuous-integration" href="#continuous-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Continuous Integration</h3>
-<h4 id="repo-access"><a name="user-content-repo-access" href="#repo-access" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Repo access</h4>
+<h4 id="git-repo-access"><a name="user-content-git-repo-access" href="#git-repo-access" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git repo access</h4>
 <p>There is one tricky part of setting up a CI system to work with <em>match</em>, which is enabling the CI to access the repo. Usually you'd just add your CI's public ssh key as a deploy key to your <em>match</em> repo, but since your CI will already likely be using its public ssh key to access the codebase repo, <a href="https://help.github.com/articles/error-key-already-in-use/">you won't be able to do that</a>.</p>
 <p>Some repo hosts might allow you to use the same deploy key for different repos, but GitHub will not. If your host does, you don't need to worry about this, just add your CI's public ssh key as a deploy key for your <em>match</em> repo and scroll down to "<em>Encryption password</em>".</p>
 <p>There are a few ways around this:</p>
@@ -1462,8 +1491,10 @@ end
 <li>Some CIs allow you to upload your signing credentials manually, but obviously this means that you'll have to re-upload the profiles/keys/certs each time they change.</li>
 </ol>
 <p>Neither solution is pretty. It's one of those <em>trade-off</em> things. Do you care more about <strong>not</strong> having an extra account sitting around, or do you care more about having the :sparkles: of auto-syncing of credentials.</p>
-<h4 id="encryption-password"><a name="user-content-encryption-password" href="#encryption-password" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Encryption password</h4>
+<h4 id="git-repo-encryption-password"><a name="user-content-git-repo-encryption-password" href="#git-repo-encryption-password" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git repo encryption password</h4>
 <p>Once you've decided which approach to take, all that's left to do is to set your encryption password as secret environment variable named <code>MATCH_PASSWORD</code>. <em>match</em> will pick this up when it's run.</p>
+<h4 id="google-cloud-storage-access"><a name="user-content-google-cloud-storage-access" href="#google-cloud-storage-access" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage access</h4>
+<p>Accessing Google Cloud Storage from your CI system requires you to provide the <code>gc_keys.json</code> file as part of your build. How you implement this is your decision. You can inject that file during build time.</p>
 <h3 id="nuke"><a name="user-content-nuke" href="#nuke" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Nuke</h3>
 <p>If you never really cared about code signing and have a messy Apple Developer account with a lot of invalid, expired or Xcode managed profiles/certificates, you can use the <code>match nuke</code> command to revoke your certificates and provisioning profiles. Don't worry, apps that are already available in the App Store / TestFlight will still work. Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build. After clearing your account you'll start from a clean state, and you can run <em>match</em> to generate your certificates and profiles again.</p>
 <p>To revoke all certificates and provisioning profiles for a specific environment:</p>
@@ -1474,6 +1505,7 @@ fastlane match nuke enterprise
 
 <p><img src="/img/actions/match_nuke.gif" width="550" /></p>
 <p>You'll have to confirm a list of profiles / certificates that will be deleted.</p>
+<h2 id="advanced-git-storage-features"><a name="user-content-advanced-git-storage-features" href="#advanced-git-storage-features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced Git Storage features</h2>
 <h3 id="change-password"><a name="user-content-change-password" href="#change-password" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Change Password</h3>
 <p>To change the password of your repo and therefore decrypting and encrypting all files run:</p>
 <pre><code class="no-highlight">fastlane match change_password
@@ -1501,25 +1533,28 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </code></pre>
 
 <h2 id="is-this-secure"><a name="user-content-is-this-secure" href="#is-this-secure" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Is this secure?</h2>
+<h3 id="git"><a name="user-content-git" href="#git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git</h3>
 <p>Both your keys and provisioning profiles are encrypted using OpenSSL using a passphrase.</p>
-<p>Storing your private keys in a Git repo may sound off-putting at first. We did an in-depth analysis of potential security issues and came to the following conclusions:</p>
-<h4 id="what-could-happen-if-someone-stole-a-private-key"><a name="user-content-what-could-happen-if-someone-stole-a-private-key" href="#what-could-happen-if-someone-stole-a-private-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What could happen if someone stole a private key?</h4>
+<p>Storing your private keys in a Git repo may sound off-putting at first. We did an analysis of potential security issues, see section below.</p>
+<h3 id="google-cloud-storage_2"><a name="user-content-google-cloud-storage_2" href="#google-cloud-storage_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h3>
+<p>All your keys and provisioning profiles are encrypted using Google managed keys. </p>
+<h3 id="what-could-happen-if-someone-stole-a-private-key"><a name="user-content-what-could-happen-if-someone-stole-a-private-key" href="#what-could-happen-if-someone-stole-a-private-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What could happen if someone stole a private key?</h3>
 <p>If attackers would have your certificate and provisioning profile, they could codesign an application with the same bundle identifier.</p>
 <p>What's the worst that could happen for each of the profile types?</p>
-<h5 id="app-store-profiles"><a name="user-content-app-store-profiles" href="#app-store-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Store Profiles</h5>
+<h4 id="app-store-profiles"><a name="user-content-app-store-profiles" href="#app-store-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Store Profiles</h4>
 <p>An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days (checkout <a href="http://appreviewtimes.com">appreviewtimes.com</a> for up-to-date expectations). Attackers could only submit an app for review, if they also got access to your App Store Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.</p>
-<h5 id="development-and-ad-hoc-profiles"><a name="user-content-development-and-ad-hoc-profiles" href="#development-and-ad-hoc-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Development and Ad Hoc Profiles</h5>
+<h4 id="development-and-ad-hoc-profiles"><a name="user-content-development-and-ad-hoc-profiles" href="#development-and-ad-hoc-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Development and Ad Hoc Profiles</h4>
 <p>In general those profiles are harmless as they can only be used to install a signed application on a small subset of devices. To add new devices, the attacker would also need your Apple Developer Portal credentials (which are not stored in git, but in your local keychain).</p>
-<h5 id="enterprise-profiles"><a name="user-content-enterprise-profiles" href="#enterprise-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enterprise Profiles</h5>
+<h4 id="enterprise-profiles"><a name="user-content-enterprise-profiles" href="#enterprise-profiles" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enterprise Profiles</h4>
 <p>Attackers could use an In-House profile to distribute signed application to a potentially unlimited number of devices. All this would run under your company name and it could eventually lead to Apple revoking your In-House account. However it is very easy to revoke a certificate to remotely break the app on all devices.</p>
 <p>Because of the potentially dangerous nature of In-House profiles please use <em>match</em> with enterprise profiles with caution, ensure your git repository is private and use a secure password.</p>
-<h5 id="to-sum-up"><a name="user-content-to-sum-up" href="#to-sum-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To sum up</h5>
+<h4 id="to-sum-up"><a name="user-content-to-sum-up" href="#to-sum-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>To sum up</h4>
 <ul>
 <li>You have full control over the access list of your Git repo, no third party service involved</li>
 <li>Even if your certificates are leaked, they can't be used to cause any harm without your App Store Connect login credentials</li>
 <li>Use In-House enterprise profile with <em>match</em> with caution</li>
 <li>If you use GitHub or Bitbucket we encourage enabling 2 factor authentication for all accounts that have access to the certificates repo</li>
-<li>The complete source code of <em>match</em> is fully open source on <a href="https://docs.fastlane.tools/actions/match/">GitHub</a></li>
+<li>The complete source code of <em>match</em> is fully open source on <a href="https://github.com/fastlane/fastlane/">GitHub</a></li>
 </ul>
 <hr />
 

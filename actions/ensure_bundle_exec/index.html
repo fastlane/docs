@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>crashlytics - fastlane docs</title>
+  <title>ensure_bundle_exec - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "crashlytics";
-    var mkdocs_page_input_path = "actions/crashlytics.md";
-    var mkdocs_page_url = "/actions/crashlytics/";
+    var mkdocs_page_name = "ensure_bundle_exec";
+    var mkdocs_page_input_path = "actions/ensure_bundle_exec.md";
+    var mkdocs_page_url = "/actions/ensure_bundle_exec/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1166,14 +1166,14 @@
         
       
     
-    <li>crashlytics</li>
+    <li>ensure_bundle_exec</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/crashlytics.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/ensure_bundle_exec.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1201,18 +1201,18 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/crashlytics.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/ensure_bundle_exec.rb
 -->
 
-<h1 id="crashlytics"><a name="user-content-crashlytics" href="#crashlytics" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>crashlytics</h1>
-<p>Upload a new build to <a href="http://try.crashlytics.com/beta/">Crashlytics Beta</a></p>
+<h1 id="ensure_bundle_exec"><a name="user-content-ensure_bundle_exec" href="#ensure_bundle_exec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ensure_bundle_exec</h1>
+<p>Raises an exception if not using <code>bundle exec</code> to run fastlane</p>
 <blockquote>
-<p>Additionally, you can specify <code>notes</code>, <code>emails</code>, <code>groups</code> and <code>notifications</code>.<br>Distributing to Groups: When using the <code>groups</code> parameter, it's important to use the group <strong>alias</strong> names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog by clicking the 'Manage Groups' button.<br>This action uses the <code>submit</code> binary provided by the Crashlytics framework. If the binary is not found in its usual path, you'll need to specify the path manually by using the <code>crashlytics_path</code> option.</p>
+<p>This action will check if you are using bundle exec to run fastlane.<br>You can put it into <code>before_all</code> and make sure that fastlane is run using <code>bundle exec fastlane</code> command.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>crashlytics</th>
+<th>ensure_bundle_exec</th>
 <th></th>
 </tr>
 </thead>
@@ -1223,106 +1223,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx, @pedrogimenez</td>
+<td>@rishabhtayal</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
-<pre><code class="ruby">crashlytics
+<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<pre><code class="ruby">ensure_bundle_exec
 </code></pre>
 
-<pre><code class="ruby"># If you installed Crashlytics via CocoaPods
-crashlytics(
-  crashlytics_path: &quot;./Pods/Crashlytics/submit&quot;, # path to your Crashlytics submit binary.
-  api_token: &quot;...&quot;,
-  build_secret: &quot;...&quot;,
-  ipa_path: &quot;./app.ipa&quot;
-)
-</code></pre>
-
-<pre><code class="ruby"># If you installed Crashlytics via Carthage for iOS platform
-crashlytics(
-  crashlytics_path: &quot;./Carthage/Build/iOS/Crashlytics.framework/submit&quot;, # path to your Crashlytics submit binary.
-  api_token: &quot;...&quot;,
-  build_secret: &quot;...&quot;,
-  ipa_path: &quot;./app.ipa&quot;
-)
-</code></pre>
-
-<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ipa_path</code></td>
-<td>Path to your IPA file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>apk_path</code></td>
-<td>Path to your APK file</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>crashlytics_path</code></td>
-<td>Path to the submit binary in the Crashlytics bundle (iOS) or <code>crashlytics-devtools.jar</code> file (Android)</td>
-<td></td>
-</tr>
-<tr>
-<td><code>api_token</code></td>
-<td>Crashlytics API Key</td>
-<td></td>
-</tr>
-<tr>
-<td><code>build_secret</code></td>
-<td>Crashlytics Build Secret</td>
-<td></td>
-</tr>
-<tr>
-<td><code>notes_path</code></td>
-<td>Path to the release notes</td>
-<td></td>
-</tr>
-<tr>
-<td><code>notes</code></td>
-<td>The release notes as string - uses :notes_path under the hood</td>
-<td></td>
-</tr>
-<tr>
-<td><code>groups</code></td>
-<td>The groups used for distribution, separated by commas</td>
-<td></td>
-</tr>
-<tr>
-<td><code>emails</code></td>
-<td>Pass email addresses of testers, separated by commas</td>
-<td></td>
-</tr>
-<tr>
-<td><code>notifications</code></td>
-<td>Crashlytics notification option (true/false)</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>debug</code></td>
-<td>Crashlytics debug option (true/false)</td>
-<td><code>false</code></td>
-</tr>
-</tbody>
-</table>
-<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <p><hr />
 To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action crashlytics
+<pre><code class="no-highlight">fastlane action ensure_bundle_exec
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/crashlytics.rb" target="_blank">View source code</a></p>
+<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/ensure_bundle_exec.rb" target="_blank">View source code</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1333,10 +1247,10 @@ To show the documentation in your terminal, run</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../create_app_on_managed_play_store/" class="btn btn-neutral float-right" title="create_app_on_managed_play_store">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ensure_git_branch/" class="btn btn-neutral float-right" title="ensure_git_branch">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../copy_artifacts/" class="btn btn-neutral" title="copy_artifacts"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../echo/" class="btn btn-neutral" title="echo"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1378,10 +1292,10 @@ To show the documentation in your terminal, run</p>
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../copy_artifacts/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../echo/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../create_app_on_managed_play_store/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ensure_git_branch/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

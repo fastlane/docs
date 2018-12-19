@@ -1321,7 +1321,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <p>Note that these will replace the current images and screenshots on the play store listing, not add to them.</p>
 <h2 id="changelogs-whats-new"><a name="user-content-changelogs-whats-new" href="#changelogs-whats-new" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changelogs (What's new)</h2>
-<p>You can add changelog files under the <code>changelogs/</code> directory for each locale. The filename should exactly match the version code of the APK that it represents. <code>fastlane supply init</code> will populate changelog files from existing data on Google Play if no <code>metadata/</code> directory exists when it is run.</p>
+<p>You can add changelog files under the <code>changelogs/</code> directory for each locale. The filename should exactly match the <a href="https://developer.android.com/studio/publish/versioning#appversioning">version code</a> of the APK that it represents. <code>fastlane supply init</code> will populate changelog files from existing data on Google Play if no <code>metadata/</code> directory exists when it is run.</p>
 <pre><code class="no-highlight">└── fastlane
     └── metadata
         └── android

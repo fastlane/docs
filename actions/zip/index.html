@@ -1228,7 +1228,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">zip
 </code></pre>
 
@@ -1242,6 +1242,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   path: &quot;MyApp.app&quot;,
   output_path: &quot;Latest.app.zip&quot;,
   verbose: false
+)
+</code></pre>
+
+<pre><code class="ruby">zip(
+  path: &quot;MyApp.app&quot;,
+  output_path: &quot;Latest.app.zip&quot;,
+  verbose: false,
+  symlinks: true
 )
 </code></pre>
 
@@ -1274,6 +1282,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>password</code></td>
 <td>Encrypt the contents of the zip archive using a password</td>
 <td></td>
+</tr>
+<tr>
+<td><code>symlinks</code></td>
+<td>Store symbolic links as such in the zip archive</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>

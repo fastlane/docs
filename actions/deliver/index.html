@@ -1273,10 +1273,6 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="no-highlight">fastlane action deliver
 </code></pre>
 
-<p>Select a previously uploaded build and submit it for review.</p>
-<pre><code class="no-highlight">fastlane deliver submit_build --build_number 830
-</code></pre>
-
 <h3 id="use-in-a-fastfile"><a name="user-content-use-in-a-fastfile" href="#use-in-a-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use in a <code>Fastfile</code></h3>
 <pre><code class="ruby">deliver
 </code></pre>
@@ -1488,6 +1484,26 @@ phased_release(false)
 <h5 id="secondary_second_sub_category"><a name="user-content-secondary_second_sub_category" href="#secondary_second_sub_category" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>secondary_second_sub_category</h5>
 <p>The english name of the secondary second sub category you want to set
 </details></p>
+<h1 id="submit-build"><a name="user-content-submit-build" href="#submit-build" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submit Build</h1>
+<p><em>deliver</em> allows you to promote an existing build to production. Below are examples to select a previously uploaded build and submit it for review.</p>
+<pre><code class="no-highlight">fastlane deliver submit_build --build_number 830
+</code></pre>
+
+<h3 id="submit-build-in-a-fastfile"><a name="user-content-submit-build-in-a-fastfile" href="#submit-build-in-a-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submit build in a <code>Fastfile</code></h3>
+<pre><code class="ruby">lane :submit_review do
+  deliver(
+    build_number: '830',
+    submit_for_review: true,
+    automatic_release: true,
+    force: true, # Skip HTMl report verification
+    skip_metadata: true,
+    skip_screenshots: true,
+    skip_binary_upload: true
+  )
+end
+</code></pre>
+
+<p>Omit <code>build_number</code> to let <em>fastlane</em> automatically select the latest build number for the current version being edited for release from App Store Connect.</p>
 <h1 id="credentials"><a name="user-content-credentials" href="#credentials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Credentials</h1>
 <p>A detailed description about how your credentials are handled is available in a <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">credentials_manager</a>.</p>
 <h3 id="how-does-this-thing-even-work-is-magic-involved"><a name="user-content-how-does-this-thing-even-work-is-magic-involved" href="#how-does-this-thing-even-work-is-magic-involved" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does this thing even work? Is magic involved? 🎩</h3>
