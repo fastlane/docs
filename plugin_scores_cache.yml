@@ -70,7 +70,7 @@ fastlane-plugin-aws_s3:
   :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
-  :age_in_days: 804
+  :age_in_days: 848
   :readme_score: 100
   :tests: 0
   :actions:
@@ -86,10 +86,15 @@ fastlane-plugin-bugsnag:
     description: Notifies Bugsnag of a build
     details: Notifies Bugsnag of a new build being released including app version
       and source control details
-  :sha: c68f5ca7cba78bb57cb5c5b5939ea36a2aee82de4efdc596adf6cd3eba22aaa6
-  :github_stars: 17
-  :github_subscribers: 15
-  :github_issues: 5
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: dsym_magic
+    category: 
+    description: Sets the dsym path
+    details: Some magic
+  :sha: d8daf00ece931099081d6882d339f35e4b85da8d7fd1ec8c4d41806cf4ad3462
+  :github_stars: 18
+  :github_subscribers: 13
+  :github_issues: 3
   :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-trainer:
@@ -951,9 +956,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 414
+  :age_in_days: 422
   :readme_score: 100
-  :tests: 117
+  :tests: 119
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1011,12 +1016,12 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: cd2942eeaefd8f5e8ac45f91e5a652107f67990905a78be1e938bd8265628c9c
+  :sha: 87636329050e7fc84b4a9606c3194c370fb1848157ce690e04fa441428f1e1c7
   :github_stars: 56
-  :github_subscribers: 7
-  :github_issues: 16
+  :github_subscribers: 8
+  :github_issues: 13
   :github_forks: 12
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -3545,9 +3550,9 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 74
+  :age_in_days: 327
   :readme_score: 100
-  :tests: 20
+  :tests: 22
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: lizard
@@ -3555,12 +3560,12 @@ fastlane-plugin-lizard:
     description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: cf05a00be011112d87d5de9f2b41ef8f51e205ba637f817af4910df50e6a9acf
-  :github_stars: 3
-  :github_subscribers: 5
-  :github_issues: 1
-  :github_forks: 2
-  :github_contributors: 3
+  :sha: 3fd730b07975ac8c585c47b4ca87535c2ba56acfdfdc725a33c02355fe3c4426
+  :github_stars: 5
+  :github_subscribers: 6
+  :github_issues: 0
+  :github_forks: 3
+  :github_contributors: 0
 fastlane-plugin-updateplistfromstrings:
   :initial_commit: 2017-11-24
   :age_in_days: 93
@@ -5348,7 +5353,7 @@ fastlane-plugin-android_change_package_name:
   :github_contributors: 0
 fastlane-plugin-firebase_test_lab:
   :initial_commit: 2018-08-01
-  :age_in_days: 132
+  :age_in_days: 140
   :readme_score: 100
   :tests: 0
   :actions:
@@ -5357,11 +5362,11 @@ fastlane-plugin-firebase_test_lab:
     category: 
     description: Submit an iOS XCTest job to Firebase Test Lab
     details: 
-  :sha: 55b52bd1cf8b7019a7b59e4de03d8e0b45a9e23566f48bcbd9f1fcadbf36d877
+  :sha: 2c97ea3c09ae64344a8ab37ef080f49bbb1438e1abbf4f3ade8590df5c9dd6a1
   :github_stars: 28
   :github_subscribers: 16
   :github_issues: 3
-  :github_forks: 1
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-jira_build_number:
   :initial_commit: 2018-10-25

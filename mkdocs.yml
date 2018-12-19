@@ -96,6 +96,7 @@ pages:
   - download_from_play_store: actions/download_from_play_store.md
   - dsym_zip: actions/dsym_zip.md
   - echo: actions/echo.md
+  - ensure_bundle_exec: actions/ensure_bundle_exec.md
   - ensure_git_branch: actions/ensure_git_branch.md
   - ensure_git_status_clean: actions/ensure_git_status_clean.md
   - ensure_no_debug_code: actions/ensure_no_debug_code.md

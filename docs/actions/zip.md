@@ -22,7 +22,7 @@ Returns | The path to the output zip file
 
 
 
-## 3 Examples
+## 4 Examples
 
 ```ruby
 zip
@@ -43,6 +43,15 @@ zip(
 )
 ```
 
+```ruby
+zip(
+  path: "MyApp.app",
+  output_path: "Latest.app.zip",
+  verbose: false,
+  symlinks: true
+)
+```
+
 
 
 
@@ -55,6 +64,7 @@ Key | Description | Default
   `output_path` | The name of the resulting zip file | 
   `verbose` | Enable verbose output of zipped file | `true`
   `password` | Encrypt the contents of the zip archive using a password | 
+  `symlinks` | Store symbolic links as such in the zip archive | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
