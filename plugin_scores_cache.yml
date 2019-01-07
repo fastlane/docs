@@ -1476,20 +1476,20 @@ fastlane-plugin-pgyer:
   :github_contributors: 0
 fastlane-plugin-act:
   :initial_commit: 2016-08-11
-  :age_in_days: 816
+  :age_in_days: 879
   :readme_score: 100
-  :tests: 32
+  :tests: 34
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: act
     category: 
     description: Reconfigures .plists and icons inside a compiled IPA
     details: 
-  :sha: 9a9047552b99c051b3691829abd4281d33b13ace2574d95c430abebdaa5c5ad4
-  :github_stars: 19
+  :sha: 611e603584ecb6ef7cd6f0cb6afe610cb252da31e4313a2130f68e2bc87b26d0
+  :github_stars: 20
   :github_subscribers: 1
   :github_issues: 3
-  :github_forks: 4
+  :github_forks: 6
   :github_contributors: 0
 fastlane-plugin-check_good_version:
   :github_stars: 0
@@ -4524,16 +4524,16 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 242
+  :age_in_days: 269
   :readme_score: 50
-  :tests: 7
+  :tests: 9
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter
     category: 
     description: Flutter actions plugin for Fastlane
     details: 
-  :sha: e60b2f734a854408df552ab3bafd75d04b07221382f8f4a974761cc84e68d665
+  :sha: 41618c17779cc37df46f9ca5364b40f17d0b24862d91edb4b9982cd47da652d9
   :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
@@ -5318,7 +5318,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 210
+  :age_in_days: 237
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5327,7 +5327,7 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details: 
-  :sha: e76cc898f756aed0ce30eef58343f784da9e89a0fd4c3775b85e9b1f0edf7725
+  :sha: abc6549b4a29489ff802e9730e67cf45787b26f5886bf0133050b98a0364e959
   :github_stars: 5
   :github_subscribers: 4
   :github_issues: 0
@@ -5594,7 +5594,7 @@ fastlane-plugin-dingtalk_robot:
   :github_contributors: 2
 fastlane-plugin-androidmanifest_editor:
   :initial_commit: 2018-11-28
-  :age_in_days: 13
+  :age_in_days: 40
   :readme_score: 50
   :tests: 1
   :actions:
@@ -5604,11 +5604,16 @@ fastlane-plugin-androidmanifest_editor:
     description: edit meta-data in AndroidManifest.xml
     details: edit meta-data of application section in AndroidManifest.xml
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: modify_intent_scheme
+    category: 
+    description: edit scheme data of intent-filter in AndroidManifest.xml
+    details: edit scheme data of intent-filter of application section in AndroidManifest.xml
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: androidmanifest_editor
     category: 
     description: edit meta-data in AndroidManifest.xml
     details: edit meta-data of application section in AndroidManifest.xml
-  :sha: 64f2ca79aacc3f0455d0b6875cf2f226674f4ba87b8206711c82ee3b28c21e18
+  :sha: e54b146e63de82aada6d768ba28a753bc34cf51094ba80d279b81c13e732c45c
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -5754,6 +5759,111 @@ fastlane-plugin-flint:
   :sha: 06f731640e6655f89dc8e24abcb59c0c2540eec97ad713eae6d866751aa7134f
   :github_stars: 0
   :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-flutter_build:
+  :initial_commit: 2018-12-24
+  :age_in_days: 14
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_build
+    category: 
+    description: Build our project directly from your lane.
+    details: A wrapper flutter build command.
+  :sha: 50b1a57bb322525950182d10747db527c990fcf1178e88f69ac20370c01b9338
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-appbox:
+  :initial_commit: 2018-12-20
+  :age_in_days: 18
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: appbox
+    category: 
+    description: Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications
+      directly to the devices from your Dropbox account.
+    details: Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications
+      directly to the devices from your Dropbox account.
+  :sha: 456042ee2e5551ec65eb3c2df36b7f16815e0733ae8f6f3723f2aae2732e13b9
+  :github_stars: 4
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 1
+  :github_contributors: 0
+fastlane-plugin-bitrise:
+  :initial_commit: 2018-12-30
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bitrise
+    category: 
+    description: Trigger a bitrise build
+    details: This plugin allow you to trigger a specific Bitrise workflow with some
+      arguments with a HTTPS POST on the Bitrise API.
+  :sha: 445a00739420fdb012717b7a9be6b873939bee4939942b883990a8bb307e4259
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-get_derived_data_path:
+  :initial_commit: 2018-12-22
+  :age_in_days: 16
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_derived_data_path
+    category: 
+    description: Retrieves the path of a workspace in DerivedData
+    details: Retrieves the path of a workspace in DerivedData
+  :sha: 546486b1576950f3e5687ff1369483510fb873915317e7b72cd819d39e22d64d
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-imessage:
+  :initial_commit: 2018-12-30
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: imessage
+    category: notifications
+    description: send imessage
+    details: 
+  :sha: 52602099c6db230bde22278d23722f95e815d7051bbd43dfd9cfa1b97b7eb7e4
+  :github_stars: 1
+  :github_subscribers: 6
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-notarize:
+  :initial_commit: 2019-01-05
+  :age_in_days: 2
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: notarize
+    category: 
+    description: Notarizes a macOS app
+    details: 
+  :sha: 5dc0ef1902b1708e92c6b59a52ad09388bd94a67fa9dc0111883435fc73e5a04
+  :github_stars: 7
+  :github_subscribers: 13
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
