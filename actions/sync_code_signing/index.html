@@ -1600,24 +1600,14 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </thead>
 <tbody>
 <tr>
-<td><code>git_url</code></td>
-<td>URL to the git repo containing all the certificates</td>
-<td></td>
-</tr>
-<tr>
-<td><code>git_branch</code></td>
-<td>Specific git branch to use</td>
-<td><code>master</code></td>
-</tr>
-<tr>
 <td><code>type</code></td>
 <td>Define the profile type, can be appstore, adhoc, development, enterprise</td>
 <td><code>development</code></td>
 </tr>
 <tr>
-<td><code>storage_mode</code></td>
-<td>Define where you want to store your certificates</td>
-<td><code>git</code></td>
+<td><code>readonly</code></td>
+<td>Only fetch existing certificates and profiles, don't generate new ones</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>app_identifier</code></td>
@@ -1630,24 +1620,29 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
-<td><code>keychain_name</code></td>
-<td>Keychain the items should be imported to</td>
-<td><code>login.keychain</code></td>
-</tr>
-<tr>
-<td><code>keychain_password</code></td>
-<td>This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password</td>
-<td></td>
-</tr>
-<tr>
-<td><code>readonly</code></td>
-<td>Only fetch existing certificates and profiles, don't generate new ones</td>
-<td><code>false</code></td>
-</tr>
-<tr>
 <td><code>team_id</code></td>
 <td>The ID of your Developer Portal team if you're in multiple teams</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>team_name</code></td>
+<td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>storage_mode</code></td>
+<td>Define where you want to store your certificates</td>
+<td><code>git</code></td>
+</tr>
+<tr>
+<td><code>git_url</code></td>
+<td>URL to the git repo containing all the certificates</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_branch</code></td>
+<td>Specific git branch to use</td>
+<td><code>master</code></td>
 </tr>
 <tr>
 <td><code>git_full_name</code></td>
@@ -1660,26 +1655,6 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td></td>
 </tr>
 <tr>
-<td><code>team_name</code></td>
-<td>The name of your Developer Portal team if you're in multiple teams</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>verbose</code></td>
-<td>Print out extra information and all commands</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>force</code></td>
-<td>Renew the provisioning profiles every time you run match</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>skip_confirmation</code></td>
-<td>Disables confirmation prompts during nuke, answering them with yes</td>
-<td><code>false</code></td>
-</tr>
-<tr>
 <td><code>shallow_clone</code></td>
 <td>Make a shallow clone of the repository (truncate the history to 1 revision)</td>
 <td><code>false</code></td>
@@ -1690,8 +1665,38 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>google_cloud_bucket_name</code></td>
+<td>Name of the Google Cloud Storage bucket to use</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_cloud_keys_file</code></td>
+<td>Path to the gc_keys.json file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>keychain_name</code></td>
+<td>Keychain the items should be imported to</td>
+<td><code>login.keychain</code></td>
+</tr>
+<tr>
+<td><code>keychain_password</code></td>
+<td>This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password</td>
+<td></td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>Renew the provisioning profiles every time you run match</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>force_for_new_devices</code></td>
 <td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore'</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_confirmation</code></td>
+<td>Disables confirmation prompts during nuke, answering them with yes</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1710,14 +1715,9 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td></td>
 </tr>
 <tr>
-<td><code>google_cloud_bucket_name</code></td>
-<td>Name of the Google Cloud Storage bucket to use</td>
-<td></td>
-</tr>
-<tr>
-<td><code>google_cloud_keys_file</code></td>
-<td>Path to the gc_keys.json file</td>
-<td></td>
+<td><code>verbose</code></td>
+<td>Print out extra information and all commands</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
