@@ -69,7 +69,7 @@ end
 
 lane :build do |options|
   scheme = (options[:release] ? "Release" : "Staging")
-  ipa(scheme: scheme)
+  build_ios_app(scheme: scheme)
 end
 ```
 
