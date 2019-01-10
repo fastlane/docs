@@ -1336,7 +1336,7 @@ end
 
 lane :build do |options|
   scheme = (options[:release] ? &quot;Release&quot; : &quot;Staging&quot;)
-  ipa(scheme: scheme)
+  build_ios_app(scheme: scheme)
 end
 </code></pre>
 
