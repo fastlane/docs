@@ -1220,11 +1220,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@Flávio Caetano (@fjcaetano)</td>
+<td>@fjcaetano, @nxtstep</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">spm
 </code></pre>
 
@@ -1232,6 +1232,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   command: &quot;build&quot;,
   build_path: &quot;./build&quot;,
   configuration: &quot;release&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">spm(
+  command: &quot;generate-xcodeproj&quot;,
+  xcconfig: &quot;Package.xcconfig&quot;
 )
 </code></pre>
 
@@ -1247,7 +1253,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>command</code></td>
-<td>The swift command (one of: build, test, clean, reset, update)</td>
+<td>The swift command (one of: build, test, clean, reset, update, resolve, generate-xcodeproj, init)</td>
 <td><code>build</code></td>
 </tr>
 <tr>
@@ -1258,6 +1264,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>package_path</code></td>
 <td>Change working directory before any other operation</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcconfig</code></td>
+<td>Use xcconfig file to override swift package generate-xcodeproj defaults</td>
 <td></td>
 </tr>
 <tr>
@@ -1278,12 +1289,30 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
-<p><hr />
-To show the documentation in your terminal, run</p>
+<hr />
+
+<h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action spm
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/spm.rb" target="_blank">View source code</a></p>
+<hr />
+
+<h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="no-highlight">fastlane run spm
+</code></pre>
+
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="no-highlight">fastlane run spm parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+
+<p>It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/spm.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>

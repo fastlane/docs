@@ -1504,6 +1504,8 @@ end
 </code></pre>
 
 <p>Omit <code>build_number</code> to let <em>fastlane</em> automatically select the latest build number for the current version being edited for release from App Store Connect.</p>
+<h3 id="compliance-and-idfa-settings"><a name="user-content-compliance-and-idfa-settings" href="#compliance-and-idfa-settings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Compliance and IDFA settings</h3>
+<p>Use the <code>submission_information</code> parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb"><code>app_submission.rb</code></a> file for options. See <a href="https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149">this example</a>.</p>
 <h1 id="credentials"><a name="user-content-credentials" href="#credentials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Credentials</h1>
 <p>A detailed description about how your credentials are handled is available in a <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">credentials_manager</a>.</p>
 <h3 id="how-does-this-thing-even-work-is-magic-involved"><a name="user-content-how-does-this-thing-even-work-is-magic-involved" href="#how-does-this-thing-even-work-is-magic-involved" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does this thing even work? Is magic involved? 🎩</h3>
@@ -2179,7 +2181,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tr>
 <tr>
 <td><code>submission_information</code></td>
-<td>Extra information for the submission (e.g. third party content)</td>
+<td>Extra information for the submission (e.g. compliance specifications, IDFA settings)</td>
 <td></td>
 </tr>
 <tr>
@@ -2340,12 +2342,30 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
-<p><hr />
-To show the documentation in your terminal, run</p>
+<hr />
+
+<h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action deliver
 </code></pre>
 
-<p><a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/deliver.rb" target="_blank">View source code</a></p>
+<hr />
+
+<h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="no-highlight">fastlane run deliver
+</code></pre>
+
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="no-highlight">fastlane run deliver parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+
+<p>It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/deliver.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
