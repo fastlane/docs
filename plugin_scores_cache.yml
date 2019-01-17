@@ -1718,9 +1718,9 @@ fastlane-plugin-translation:
   :github_contributors: 0
 fastlane-plugin-ci_changelog:
   :initial_commit: 2016-09-20
-  :age_in_days: 523
+  :age_in_days: 849
   :readme_score: 100
-  :tests: 233
+  :tests: 239
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: ci_changelog
@@ -1728,12 +1728,12 @@ fastlane-plugin-ci_changelog:
     description: Automate generate changelog between previous build failed and the
       latest commit of scm in CI.
     details: availabled with jenkins, gitlab ci, more support is comming soon.
-  :sha: 5e744a90495fa61d5bec5ddc495a0d9bc2f5e4b7af88dcb9af039e859a806415
-  :github_stars: 4
+  :sha: 3f776fb90f89b607c38656ae2d3d5fcac772f23a9700a0259af0578728c339ee
+  :github_stars: 6
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 1
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-changelog_generator:
   :initial_commit: 2016-12-06
   :age_in_days: 446
@@ -4291,20 +4291,20 @@ fastlane-plugin-xcconfig:
   :github_contributors: 0
 fastlane-plugin-run_tests_firebase_testlab:
   :initial_commit: 2018-01-30
-  :age_in_days: 315
+  :age_in_days: 352
   :readme_score: 100
-  :tests: 24
+  :tests: 34
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: run_tests_firebase_testlab
     category: 
     description: 
     details: 
-  :sha: 70366cbf2f5a0375547abd63abe5e3e8d11305aed9e88a66740555a07ccf93df
-  :github_stars: 18
+  :sha: b9e683752478a3c980767e8013f139636d5d5f77e5ed5552945459ee3805757a
+  :github_stars: 20
   :github_subscribers: 2
-  :github_issues: 3
-  :github_forks: 4
+  :github_issues: 2
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2016-06-05
@@ -4325,7 +4325,7 @@ fastlane-plugin-instabug_official:
   :github_contributors: 2
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
-  :age_in_days: 98
+  :age_in_days: 342
   :readme_score: 100
   :tests: 14
   :actions:
@@ -4339,11 +4339,11 @@ fastlane-plugin-google_drive:
     category: 
     description: Create new folder on Google Drive
     details: "\\n"
-  :sha: ce71fe826a467c8742e81ae2f20e343456e1dd7b6408c3f662c24ed30bc735c6
-  :github_stars: 3
-  :github_subscribers: 2
+  :sha: 44045558a8155146b06b0de87e4f25450d7d422804326d78ab78993149c0051c
+  :github_stars: 8
+  :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-localize:
   :initial_commit: 2018-02-19
@@ -4956,7 +4956,7 @@ fastlane-plugin-build_log_info:
   :github_contributors: 0
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 36
+  :age_in_days: 155
   :readme_score: 100
   :tests: 22
   :actions:
@@ -4965,11 +4965,11 @@ fastlane-plugin-mango:
     category: 
     description: Action that runs Android tasks on a specified Docker image
     details: 
-  :sha: 4b5c82989a8fcee479c31e7cec1a73ee4f815f200d61e72f10461c924ce25ec7
-  :github_stars: 20
-  :github_subscribers: 23
-  :github_issues: 1
-  :github_forks: 3
+  :sha: 4ea4e13bf0c22bd809be2c7c53d2dedae554f4534b560997363a1c71c016bbe4
+  :github_stars: 27
+  :github_subscribers: 24
+  :github_issues: 2
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-ciutils:
   :initial_commit: 2016-11-19
@@ -5781,7 +5781,7 @@ fastlane-plugin-flutter_build:
   :github_contributors: 0
 fastlane-plugin-appbox:
   :initial_commit: 2018-12-20
-  :age_in_days: 18
+  :age_in_days: 28
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5792,11 +5792,11 @@ fastlane-plugin-appbox:
       directly to the devices from your Dropbox account.
     details: Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications
       directly to the devices from your Dropbox account.
-  :sha: 456042ee2e5551ec65eb3c2df36b7f16815e0733ae8f6f3723f2aae2732e13b9
-  :github_stars: 4
+  :sha: 7a3a6c0cc1abf09078f7df3a033e9386201c409e51337f353cc1a5457a18ecb5
+  :github_stars: 5
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 1
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-bitrise:
   :initial_commit: 2018-12-30
@@ -5865,5 +5865,56 @@ fastlane-plugin-notarize:
   :github_stars: 7
   :github_subscribers: 13
   :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-gmail:
+  :initial_commit: 2018-12-11
+  :age_in_days: 37
+  :readme_score: 100
+  :tests: 5
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gmail
+    category: 
+    description: A short description with <= 80 characters of what this action does
+    details: You can use this action to do cool things...
+  :sha: 93d1fcbc6b700a2212c8bf569b5542e4a4433fbae654abf8d45cec11036ac2c8
+  :github_stars: 6
+  :github_subscribers: 6
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-discord:
+  :initial_commit: 2019-01-13
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: discord
+    category: 
+    description: Discord integration with Fastlane
+    details: 
+  :sha: d66056a907183e2ddf2f9688d7ca640aa556114f82eecca7f3a612480f858a5b
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-setup_app_feedback_sdk:
+  :initial_commit: 2018-12-26
+  :age_in_days: 22
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: setup_app_feedback_sdk
+    category: 
+    description: Setup the Info.plist for App Feedback SDK
+    details: This fastlane plugin helps with App Feedback SDK integration for CI services
+  :sha: ff2ca3a54573f814f2b09e5676e195e1053c14aa3637d4d190626ca3f468dcba
+  :github_stars: 1
+  :github_subscribers: 7
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0

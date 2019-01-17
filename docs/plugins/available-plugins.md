@@ -7,7 +7,7 @@ Auto generated, please only modify https://github.com/fastlane/fastlane/blob/mas
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">2471</div>
+<div class="quality-index" style="color: #72CC1D">2500</div>
 
 <h3 id="versioning"><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-versioning" target="_blank"><code>versioning</code></a></h3>
 
@@ -47,7 +47,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2094</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>2123</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -60,7 +60,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">1409</div>
+<div class="quality-index" style="color: #72CC1D">1429</div>
 
 <h3 id="aws_s3"><a href="https://github.com/joshdholtz/fastlane-plugin-s3" target="_blank"><code>aws_s3</code></a></h3>
 
@@ -93,7 +93,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-10</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1067</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>1087</b> | More downloads = more users have been using the plugin for a while
 tests | <b>15</b> | The more tests a plugin has, the better
  
 </details>
@@ -106,7 +106,7 @@ tests | <b>15</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">1241</div>
+<div class="quality-index" style="color: #72CC1D">1273</div>
 
 <h3 id="badge"><a href="https://github.com/HazAT/fastlane-plugin-badge" target="_blank"><code>badge</code></a></h3>
 
@@ -139,7 +139,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1012</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>1044</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -198,7 +198,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">967</div>
+<div class="quality-index" style="color: #72CC1D">974</div>
 
 <h3 id="appicon"><a href="https://github.com/KrauseFx/fastlane-plugin-appicon" target="_blank"><code>appicon</code></a></h3>
 
@@ -232,7 +232,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-14</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>407</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>414</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -245,7 +245,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">881</div>
+<div class="quality-index" style="color: #72CC1D">896</div>
 
 <h3 id="bugsnag"><a href="https://github.com/bugsnag/bugsnag-upload" target="_blank"><code>bugsnag</code></a></h3>
 
@@ -280,7 +280,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>698</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>713</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -293,53 +293,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">855</div>
-
-<h3 id="trainer"><a href="https://github.com/KrauseFx/trainer" target="_blank"><code>trainer</code></a></h3>
-
-<p class="via-text">via KrauseFx</p>
-
-> Convert xcodebuild plist files to JUnit reports
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **trainer** | - | Convert the Xcode plist log to a JUnit report. This will raise an exception if the tests failed
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>42</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>18</b> | More subscribers = more popular project
-stars | <b>132</b> | More stars = more popular project
-forks | <b>110</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-8</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>452</b> | More downloads = more users have been using the plugin for a while
-tests | <b>24</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/KrauseFx/trainer" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #72CC1D">854</div>
+<div class="quality-index" style="color: #72CC1D">862</div>
 
 <h3 id="changelog"><a href="https://github.com/pajapro/fastlane-plugin-changelog" target="_blank"><code>changelog</code></a></h3>
 
@@ -375,7 +329,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>475</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>483</b> | More downloads = more users have been using the plugin for a while
 tests | <b>69</b> | The more tests a plugin has, the better
  
 </details>
@@ -388,7 +342,53 @@ tests | <b>69</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">753</div>
+<div class="quality-index" style="color: #72CC1D">861</div>
+
+<h3 id="trainer"><a href="https://github.com/KrauseFx/trainer" target="_blank"><code>trainer</code></a></h3>
+
+<p class="via-text">via KrauseFx</p>
+
+> Convert xcodebuild plist files to JUnit reports
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **trainer** | - | Convert the Xcode plist log to a JUnit report. This will raise an exception if the tests failed
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>42</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>18</b> | More subscribers = more popular project
+stars | <b>132</b> | More stars = more popular project
+forks | <b>110</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-8</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>458</b> | More downloads = more users have been using the plugin for a while
+tests | <b>24</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/KrauseFx/trainer" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #72CC1D">768</div>
 
 <h3 id="increment_version_code"><a href="https://github.com/Jems22/fastlane-plugin-increment_version_code" target="_blank"><code>increment_version_code</code></a></h3>
 
@@ -418,10 +418,10 @@ stars | <b>40</b> | More stars = more popular project
 forks | <b>35</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>600</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>614</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -434,7 +434,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">696</div>
+<div class="quality-index" style="color: #72CC1D">706</div>
 
 <h3 id="sentry"><a href="https://github.com/getsentry/sentry-fastlane-plugin" target="_blank"><code>sentry</code></a></h3>
 
@@ -468,10 +468,10 @@ stars | <b>22</b> | More stars = more popular project
 forks | <b>60</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
+age | <b>16</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>433</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>442</b> | More downloads = more users have been using the plugin for a while
 tests | <b>57</b> | The more tests a plugin has, the better
  
 </details>
@@ -484,7 +484,7 @@ tests | <b>57</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">606</div>
+<div class="quality-index" style="color: #72CC1D">610</div>
 
 <h3 id="download_github_release_asset"><a href="https://github.com/Antondomashnev/fastlane-plugin-download_github_release_asset" target="_blank"><code>download_github_release_asset</code></a></h3>
 
@@ -517,7 +517,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>13</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>476</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>480</b> | More downloads = more users have been using the plugin for a while
 tests | <b>6</b> | The more tests a plugin has, the better
  
 </details>
@@ -530,7 +530,7 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">585</div>
+<div class="quality-index" style="color: #72CC1D">599</div>
 
 <h3 id="test_center"><a href="https://github.com/lyndsey-ferguson/fastlane-plugin-test_center" target="_blank"><code>test_center</code></a></h3>
 
@@ -573,7 +573,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>7</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-13</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>271</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>285</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -586,7 +586,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">574</div>
+<div class="quality-index" style="color: #72CC1D">589</div>
 
 <h3 id="appcenter"><a href="https://github.com/Microsoft/fastlane-plugin-appcenter" target="_blank"><code>appcenter</code></a></h3>
 
@@ -619,7 +619,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-11</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>258</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>273</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -632,7 +632,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">504</div>
+<div class="quality-index" style="color: #72CC1D">508</div>
 
 <h3 id="automated_test_emulator_run"><a href="https://github.com/AzimoLabs/fastlane-plugin-automated-test-emulator-run" target="_blank"><code>automated_test_emulator_run</code></a></h3>
 
@@ -662,10 +662,10 @@ stars | <b>75</b> | More stars = more popular project
 forks | <b>85</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-5</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>193</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>196</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -678,7 +678,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">457</div>
+<div class="quality-index" style="color: #72CC1D">460</div>
 
 <h3 id="cordova"><a href="https://github.com/almouro/fastlane-plugin-cordova" target="_blank"><code>cordova</code></a></h3>
 
@@ -711,7 +711,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-13</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>121</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>124</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -724,7 +724,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">452</div>
+<div class="quality-index" style="color: #72CC1D">454</div>
 
 <h3 id="tpa"><a href="https://github.com/ThePerfectApp/fastlane-plugin-tpa" target="_blank"><code>tpa</code></a></h3>
 
@@ -758,7 +758,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>214</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>216</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -771,7 +771,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">448</div>
+<div class="quality-index" style="color: #72CC1D">452</div>
 
 <h3 id="aws_device_farm"><a href="https://github.com/hjanuschka/fastlane-plugin-aws_device_farm" target="_blank"><code>aws_device_farm</code></a></h3>
 
@@ -805,7 +805,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>13</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>236</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>240</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -818,7 +818,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">437</div>
+<div class="quality-index" style="color: #72CC1D">444</div>
 
 <h3 id="get_version_name"><a href="https://github.com/Jems22/fastlane-plugin-get-version-name" target="_blank"><code>get_version_name</code></a></h3>
 
@@ -848,10 +848,10 @@ stars | <b>4</b> | More stars = more popular project
 forks | <b>15</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>347</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>353</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -864,7 +864,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">420</div>
+<div class="quality-index" style="color: #72CC1D">439</div>
 
 <h3 id="mango"><a href="https://github.com/xing/mango" target="_blank"><code>mango</code></a></h3>
 
@@ -889,14 +889,14 @@ tests | <b>3</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>69</b> | More subscribers = more popular project
-stars | <b>20</b> | More stars = more popular project
-forks | <b>15</b> | More forks = more people seem to use/modify this project
+subscribers | <b>72</b> | More subscribers = more popular project
+stars | <b>27</b> | More stars = more popular project
+forks | <b>25</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
 age | <b>2</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>149</b> | More downloads = more users have been using the plugin for a while
 tests | <b>66</b> | The more tests a plugin has, the better
  
@@ -910,7 +910,7 @@ tests | <b>66</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">413</div>
+<div class="quality-index" style="color: #72CC1D">415</div>
 
 <h3 id="mobile_center"><a href="https://github.com/Microsoft/fastlane-plugin-appcenter" target="_blank"><code>mobile_center</code></a></h3>
 
@@ -943,7 +943,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-11</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>97</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>99</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -956,7 +956,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">398</div>
+<div class="quality-index" style="color: #72CC1D">399</div>
 
 <h3 id="setup_fragile_tests_for_rescan"><a href="https://github.com/lyndsey-ferguson/setup_fragile_tests_for_rescan/" target="_blank"><code>setup_fragile_tests_for_rescan</code></a></h3>
 
@@ -989,7 +989,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>238</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>239</b> | More downloads = more users have been using the plugin for a while
 tests | <b>36</b> | The more tests a plugin has, the better
  
 </details>
@@ -1002,7 +1002,7 @@ tests | <b>36</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">382</div>
+<div class="quality-index" style="color: #72CC1D">385</div>
 
 <h3 id="update_provisioning_profile_specifier"><a href="https://github.com/faithfracture/update_provisioning_profile_specifier" target="_blank"><code>update_provisioning_profile_specifier</code></a></h3>
 
@@ -1032,10 +1032,10 @@ stars | <b>20</b> | More stars = more popular project
 forks | <b>30</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
+age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>235</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>237</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -1048,7 +1048,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">346</div>
+<div class="quality-index" style="color: #72CC1D">352</div>
 
 <h3 id="android_versioning"><a href="https://github.com/otkmnb2783/fastlane-plugin-android_versioning" target="_blank"><code>android_versioning</code></a></h3>
 
@@ -1086,7 +1086,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>11</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>177</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>183</b> | More downloads = more users have been using the plugin for a while
 tests | <b>42</b> | The more tests a plugin has, the better
  
 </details>
@@ -1099,7 +1099,7 @@ tests | <b>42</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">345</div>
+<div class="quality-index" style="color: #72CC1D">348</div>
 
 <h3 id="review_time"><a href="https://github.com/timwredwards/fastlane-plugin-review_time" target="_blank"><code>review_time</code></a></h3>
 
@@ -1129,10 +1129,10 @@ stars | <b>21</b> | More stars = more popular project
 forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>9</b> | Project that have been around for longer tend to be more stable
+age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>211</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>213</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -1145,7 +1145,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">320</div>
+<div class="quality-index" style="color: #72CC1D">323</div>
 
 <h3 id="yarn"><a href="https://github.com/joshrlesch/fastlane-plugin-yarn" target="_blank"><code>yarn</code></a></h3>
 
@@ -1178,7 +1178,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>166</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>169</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -1191,7 +1191,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">317</div>
+<div class="quality-index" style="color: #72CC1D">319</div>
 
 <h3 id="settings_bundle"><a href="https://github.com/jdee/settings-bundle" target="_blank"><code>settings_bundle</code></a></h3>
 
@@ -1224,7 +1224,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>13</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>85</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>87</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -1283,7 +1283,53 @@ tests | <b>24</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">304</div>
+<div class="quality-index" style="color: #72CC1D">307</div>
+
+<h3 id="get_version_code"><a href="https://github.com/Jems22/fastlane-plugin-get_version_code" target="_blank"><code>get_version_code</code></a></h3>
+
+<p class="via-text">via Jems</p>
+
+> Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **get_version_code** | - | Get the version code of an Android project. This action will return the version code of your project according to the one set in your build.gradle file
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>4</b> | More stars = more popular project
+forks | <b>15</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>216</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/Jems22/fastlane-plugin-get_version_code" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #72CC1D">305</div>
 
 <h3 id="merge_junit_report"><a href="https://github.com/dyang/merge_junit_report" target="_blank"><code>merge_junit_report</code></a></h3>
 
@@ -1316,7 +1362,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>11</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>175</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>176</b> | More downloads = more users have been using the plugin for a while
 tests | <b>30</b> | The more tests a plugin has, the better
  
 </details>
@@ -1330,52 +1376,6 @@ tests | <b>30</b> | The more tests a plugin has, the better
 -----
 
 <div class="quality-index" style="color: #72CC1D">301</div>
-
-<h3 id="get_version_code"><a href="https://github.com/Jems22/fastlane-plugin-get_version_code" target="_blank"><code>get_version_code</code></a></h3>
-
-<p class="via-text">via Jems</p>
-
-> Get the version code of anAndroid project. This action will return the version code of your project according to the one set in your build.gradle file
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **get_version_code** | - | Get the version code of an Android project. This action will return the version code of your project according to the one set in your build.gradle file
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>4</b> | More stars = more popular project
-forks | <b>15</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>211</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/Jems22/fastlane-plugin-get_version_code" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #72CC1D">300</div>
 
 <h3 id="carthage_cache"><a href="https://github.com/thii/fastlane-plugin-carthage_cache" target="_blank"><code>carthage_cache</code></a></h3>
 
@@ -1410,7 +1410,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>190</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>191</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -1423,53 +1423,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">296</div>
-
-<h3 id="ionic"><a href="https://github.com/ionic-zone/fastlane-plugin-ionic" target="_blank"><code>ionic</code></a></h3>
-
-<p class="via-text">via Jan Piotrowski</p>
-
-> Build your Ionic app
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **ionic** | building | Build your Ionic app
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>72</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>15</b> | More subscribers = more popular project
-stars | <b>41</b> | More stars = more popular project
-forks | <b>55</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-23</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>54</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/ionic-zone/fastlane-plugin-ionic" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #72CC1D">295</div>
+<div class="quality-index" style="color: #72CC1D">299</div>
 
 <h3 id="commit_android_version_bump"><a href="https://github.com/Jems22/fastlane-plugin-commit_android_version_bump" target="_blank"><code>commit_android_version_bump</code></a></h3>
 
@@ -1502,7 +1456,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>197</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>201</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -1515,7 +1469,99 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">269</div>
+<div class="quality-index" style="color: #72CC1D">297</div>
+
+<h3 id="ionic"><a href="https://github.com/ionic-zone/fastlane-plugin-ionic" target="_blank"><code>ionic</code></a></h3>
+
+<p class="via-text">via Jan Piotrowski</p>
+
+> Build your Ionic app
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **ionic** | building | Build your Ionic app
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>72</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>15</b> | More subscribers = more popular project
+stars | <b>41</b> | More stars = more popular project
+forks | <b>55</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>12</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-23</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>55</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/ionic-zone/fastlane-plugin-ionic" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #72CC1D">282</div>
+
+<h3 id="run_tests_firebase_testlab"><a href="https://github.com/pink-room/fastlane-plugin-run_tests_firebase_testlab" target="_blank"><code>run_tests_firebase_testlab</code></a></h3>
+
+<p class="via-text">via Bruno Correia</p>
+
+> Runs Android tests in Firebase Test Lab.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **run_tests_firebase_testlab** | - | -
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>6</b> | More subscribers = more popular project
+stars | <b>20</b> | More stars = more popular project
+forks | <b>25</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>5</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>78</b> | More downloads = more users have been using the plugin for a while
+tests | <b>80</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/pink-room/fastlane-plugin-run_tests_firebase_testlab" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #72CC1D">270</div>
 
 <h3 id="act"><a href="https://github.com/richardszalay/fastlane-plugin-act" target="_blank"><code>act</code></a></h3>
 
@@ -1548,7 +1594,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>25</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>26</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -1561,13 +1607,13 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #72CC1D">261</div>
+<div class="quality-index" style="color: #63b319">247</div>
 
-<h3 id="run_tests_firebase_testlab"><a href="https://github.com/pink-room/fastlane-plugin-run_tests_firebase_testlab" target="_blank"><code>run_tests_firebase_testlab</code></a></h3>
+<h3 id="prepare_build_resources"><a href="https://github.com/trifork/fastlane-plugin-prepare_build_resources" target="_blank"><code>prepare_build_resources</code></a></h3>
 
-<p class="via-text">via Bruno Correia</p>
+<p class="via-text">via Jakob Jensen</p>
 
-> Runs Android tests in Firebase Test Lab.
+> Prepares certificates and provisioning profiles for building and removes them afterwards.
 
 
 <details>
@@ -1575,7 +1621,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **run_tests_firebase_testlab** | - | -
+  **prepare_build_resources** | - | Prepares certificates and provisioning profiles for building and removes them afterwards.
 
 </details>
 
@@ -1585,29 +1631,29 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>18</b> | More stars = more popular project
-forks | <b>20</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+contributors | <b>18</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>9</b> | More subscribers = more popular project
+stars | <b>6</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>-50</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>73</b> | More downloads = more users have been using the plugin for a while
-tests | <b>72</b> | The more tests a plugin has, the better
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>156</b> | More downloads = more users have been using the plugin for a while
+tests | <b>9</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/pink-room/fastlane-plugin-run_tests_firebase_testlab" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/trifork/fastlane-plugin-prepare_build_resources" target="_blank">Open on GitHub</a>
 
 </p>
 
 -----
 
-<div class="quality-index" style="color: #63b319">245</div>
+<div class="quality-index" style="color: #63b319">246</div>
 
 <h3 id="onesky"><a href="https://github.com/danielkiedrowski/fastlane-plugin-onesky" target="_blank"><code>onesky</code></a></h3>
 
@@ -1641,7 +1687,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>13</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>68</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>69</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -1654,53 +1700,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">244</div>
-
-<h3 id="prepare_build_resources"><a href="https://github.com/trifork/fastlane-plugin-prepare_build_resources" target="_blank"><code>prepare_build_resources</code></a></h3>
-
-<p class="via-text">via Jakob Jensen</p>
-
-> Prepares certificates and provisioning profiles for building and removes them afterwards.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **prepare_build_resources** | - | Prepares certificates and provisioning profiles for building and removes them afterwards.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>18</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>9</b> | More subscribers = more popular project
-stars | <b>6</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>-50</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>153</b> | More downloads = more users have been using the plugin for a while
-tests | <b>9</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/trifork/fastlane-plugin-prepare_build_resources" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">238</div>
+<div class="quality-index" style="color: #63b319">239</div>
 
 <h3 id="icon_versioning"><a href="https://github.com/revolter/fastlane-plugin-icon_versioning" target="_blank"><code>icon_versioning</code></a></h3>
 
@@ -1733,7 +1733,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>6</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>10</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>11</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -1746,7 +1746,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">236</div>
+<div class="quality-index" style="color: #63b319">237</div>
 
 <h3 id="update_xcodeproj"><a href="https://github.com/nafu/fastlane-plugin-update_xcodeproj" target="_blank"><code>update_xcodeproj</code></a></h3>
 
@@ -1779,7 +1779,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>79</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>80</b> | More downloads = more users have been using the plugin for a while
 tests | <b>12</b> | The more tests a plugin has, the better
  
 </details>
@@ -1792,7 +1792,7 @@ tests | <b>12</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">234</div>
+<div class="quality-index" style="color: #63b319">235</div>
 
 <h3 id="code_push"><a href="https://github.com/manuelkch/fastlane-plugin-code_push" target="_blank"><code>code_push</code></a></h3>
 
@@ -1828,7 +1828,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>11</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>82</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>83</b> | More downloads = more users have been using the plugin for a while
 tests | <b>6</b> | The more tests a plugin has, the better
  
 </details>
@@ -1841,7 +1841,7 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">230</div>
+<div class="quality-index" style="color: #63b319">231</div>
 
 <h3 id="branch"><a href="https://github.com/BranchMetrics/fastlane-plugin-branch" target="_blank"><code>branch</code></a></h3>
 
@@ -1878,7 +1878,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>27</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>28</b> | More downloads = more users have been using the plugin for a while
 tests | <b>80</b> | The more tests a plugin has, the better
  
 </details>
@@ -1891,7 +1891,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">227</div>
+<div class="quality-index" style="color: #63b319">228</div>
 
 <h3 id="lizard"><a href="https://github.com/liaogz82/fastlane-plugin-lizard" target="_blank"><code>lizard</code></a></h3>
 
@@ -1924,7 +1924,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>5</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>18</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>19</b> | More downloads = more users have been using the plugin for a while
 tests | <b>66</b> | The more tests a plugin has, the better
  
 </details>
@@ -2029,7 +2029,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">223</div>
+<div class="quality-index" style="color: #63b319">224</div>
 
 <h3 id="applivery"><a href="https://github.com/applivery/fastlane-applivery-plugin" target="_blank"><code>applivery</code></a></h3>
 
@@ -2059,7 +2059,7 @@ stars | <b>8</b> | More stars = more popular project
 forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>64</b> | More downloads = more users have been using the plugin for a while
@@ -2167,53 +2167,7 @@ tests | <b>48</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">207</div>
-
-<h3 id="ci_changelog"><a href="https://github.com/icyleaf/fastlane-plugin-ci_changelog" target="_blank"><code>ci_changelog</code></a></h3>
-
-<p class="via-text">via icyleaf</p>
-
-> Automate generate changelog between previous build failed and the latest commit of scm in CI
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **ci_changelog** | - | Automate generate changelog between previous build failed and the latest commit of scm in CI.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>4</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>17</b> | More downloads = more users have been using the plugin for a while
-tests | <b>80</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/icyleaf/fastlane-plugin-ci_changelog" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">204</div>
+<div class="quality-index" style="color: #63b319">205</div>
 
 <h3 id="cryptex"><a href="https://github.com/hjanuschka/fastlane-plugin-cryptex" target="_blank"><code>cryptex</code></a></h3>
 
@@ -2247,7 +2201,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>13</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>59</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>60</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -2308,7 +2262,7 @@ tests | <b>80</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">201</div>
+<div class="quality-index" style="color: #63b319">204</div>
 
 <h3 id="pgyer"><a href="https://github.com/shishirui/fastlane-plugin-pgyer" target="_blank"><code>pgyer</code></a></h3>
 
@@ -2338,10 +2292,10 @@ stars | <b>22</b> | More stars = more popular project
 forks | <b>35</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>11</b> | Project that have been around for longer tend to be more stable
+age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>57</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>59</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -2354,7 +2308,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">198</div>
+<div class="quality-index" style="color: #63b319">203</div>
 
 <h3 id="rome"><a href="https://github.com/OpenShelter/fastlane-plugin-rome" target="_blank"><code>rome</code></a></h3>
 
@@ -2384,10 +2338,10 @@ stars | <b>10</b> | More stars = more popular project
 forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
+age | <b>11</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>69</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>73</b> | More downloads = more users have been using the plugin for a while
 tests | <b>6</b> | The more tests a plugin has, the better
  
 </details>
@@ -2400,7 +2354,102 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">197</div>
+<div class="quality-index" style="color: #63b319">199</div>
+
+<h3 id="ci_changelog"><a href="https://github.com/icyleaf/fastlane-plugin-ci_changelog" target="_blank"><code>ci_changelog</code></a></h3>
+
+<p class="via-text">via icyleaf</p>
+
+> Automate generate changelog between previous build failed and the latest commit of scm in CI
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **ci_changelog** | - | Automate generate changelog between previous build failed and the latest commit of scm in CI.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>6</b> | More subscribers = more popular project
+stars | <b>6</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>14</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>18</b> | More downloads = more users have been using the plugin for a while
+tests | <b>80</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/icyleaf/fastlane-plugin-ci_changelog" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">198</div>
+
+<h3 id="versioning_android"><a href="https://github.com/beplus/fastlane-plugin-versioning_android" target="_blank"><code>versioning_android</code></a></h3>
+
+<p class="via-text">via Igor Lamos</p>
+
+> Android Versioning Plugin for Fastlane
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **android_get_version_name** | - | Get the Version Name of your Android project
+  **android_set_version_code** | - | Set the Version Code of your Android project
+  **android_set_version_name** | - | Set the Version Name of your Android project
+  **android_get_version_code** | - | Get the Version Code of your Android project
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>7</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>100</b> | More downloads = more users have been using the plugin for a while
+tests | <b>36</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/beplus/fastlane-plugin-versioning_android" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">198</div>
 
 <h3 id="gs_deliver"><a href="https://github.com/SAVeselovskiy/gs_deliver" target="_blank"><code>gs_deliver</code></a></h3>
 
@@ -2440,7 +2489,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>133</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>134</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -2453,7 +2502,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">197</div>
+<div class="quality-index" style="color: #63b319">198</div>
 
 <h3 id="upload_folder_to_s3"><a href="https://github.com/teriiehina/fastlane-plugin-upload_folder_to_s3" target="_blank"><code>upload_folder_to_s3</code></a></h3>
 
@@ -2483,7 +2532,7 @@ stars | <b>7</b> | More stars = more popular project
 forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
+age | <b>16</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>44</b> | More downloads = more users have been using the plugin for a while
@@ -2499,7 +2548,7 @@ tests | <b>18</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">195</div>
+<div class="quality-index" style="color: #63b319">197</div>
 
 <h3 id="get_unprovisioned_devices_from_hockey"><a href="https://github.com/leandog/fastlane-plugin-get_unprovisioned_devices_from_hockey" target="_blank"><code>get_unprovisioned_devices_from_hockey</code></a></h3>
 
@@ -2529,10 +2578,10 @@ stars | <b>6</b> | More stars = more popular project
 forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
+age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>57</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>58</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -2591,7 +2640,7 @@ tests | <b>72</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">194</div>
+<div class="quality-index" style="color: #63b319">195</div>
 
 <h3 id="automated_test_emulator_run_xing"><a href="https://github.com/dhartwich1991/fastlane-plugin-automated-test-emulator-run" target="_blank"><code>automated_test_emulator_run_xing</code></a></h3>
 
@@ -2621,7 +2670,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>5</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>33</b> | More downloads = more users have been using the plugin for a while
@@ -2632,6 +2681,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/dhartwich1991/fastlane-plugin-automated-test-emulator-run" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">194</div>
+
+<h3 id="sharethemeal"><a href="https://github.com/hjanuschka/fastlane-plugin-sharethemeal" target="_blank"><code>sharethemeal</code></a></h3>
+
+<p class="via-text">via Helmut Januschka</p>
+
+> ShareTheMeal
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **sharethemeal** | - | Donate food via ShareTheMeal
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>18</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>7</b> | More stars = more popular project
+forks | <b>10</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>14</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>69</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/hjanuschka/fastlane-plugin-sharethemeal" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -2683,102 +2778,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">193</div>
-
-<h3 id="sharethemeal"><a href="https://github.com/hjanuschka/fastlane-plugin-sharethemeal" target="_blank"><code>sharethemeal</code></a></h3>
-
-<p class="via-text">via Helmut Januschka</p>
-
-> ShareTheMeal
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **sharethemeal** | - | Donate food via ShareTheMeal
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>18</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>7</b> | More stars = more popular project
-forks | <b>10</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>69</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/hjanuschka/fastlane-plugin-sharethemeal" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">193</div>
-
-<h3 id="versioning_android"><a href="https://github.com/beplus/fastlane-plugin-versioning_android" target="_blank"><code>versioning_android</code></a></h3>
-
-<p class="via-text">via Igor Lamos</p>
-
-> Android Versioning Plugin for Fastlane
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **android_get_version_name** | - | Get the Version Name of your Android project
-  **android_set_version_code** | - | Set the Version Code of your Android project
-  **android_set_version_name** | - | Set the Version Name of your Android project
-  **android_get_version_code** | - | Get the Version Code of your Android project
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>96</b> | More downloads = more users have been using the plugin for a while
-tests | <b>36</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/beplus/fastlane-plugin-versioning_android" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">189</div>
+<div class="quality-index" style="color: #63b319">191</div>
 
 <h3 id="ruby"><a href="https://github.com/KrauseFx/fastlane-plugin-ruby" target="_blank"><code>ruby</code></a></h3>
 
@@ -2809,10 +2809,10 @@ stars | <b>4</b> | More stars = more popular project
 forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
+age | <b>16</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>78</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>79</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -2820,6 +2820,53 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/KrauseFx/fastlane-plugin-ruby" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">189</div>
+
+<h3 id="localization"><a href="https://github.com/vmalyi/fastlane-plugin-localization" target="_blank"><code>localization</code></a></h3>
+
+<p class="via-text">via Viktor Malyi</p>
+
+> Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **import_localizations** | - | Import app localizations with help of xcodebuild -importLocalizations tool
+  **export_localizations** | - | Export app localizations with help of xcodebuild -exportLocalizations tool
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>9</b> | More stars = more popular project
+forks | <b>15</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>72</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/vmalyi/fastlane-plugin-localization" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -2866,53 +2913,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/fastlane/fastlane-plugin-firebase_test_lab" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">188</div>
-
-<h3 id="localization"><a href="https://github.com/vmalyi/fastlane-plugin-localization" target="_blank"><code>localization</code></a></h3>
-
-<p class="via-text">via Viktor Malyi</p>
-
-> Export/import app localizations with help of xcodebuild -exportLocalizations/-importLocalizations tool
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **import_localizations** | - | Import app localizations with help of xcodebuild -importLocalizations tool
-  **export_localizations** | - | Export app localizations with help of xcodebuild -exportLocalizations tool
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>9</b> | More stars = more popular project
-forks | <b>15</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>72</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/vmalyi/fastlane-plugin-localization" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -3015,7 +3015,7 @@ tests | <b>30</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">180</div>
+<div class="quality-index" style="color: #63b319">181</div>
 
 <h3 id="latest_hockeyapp_version_number"><a href="https://github.com/tpalmer/fastlane-plugin-latest_hockeyapp_version_number" target="_blank"><code>latest_hockeyapp_version_number</code></a></h3>
 
@@ -3048,7 +3048,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>68</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>69</b> | More downloads = more users have been using the plugin for a while
 tests | <b>6</b> | The more tests a plugin has, the better
  
 </details>
@@ -3061,7 +3061,7 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">175</div>
+<div class="quality-index" style="color: #63b319">176</div>
 
 <h3 id="clubmate"><a href="https://github.com/KrauseFx/fastlane-plugin-clubmate" target="_blank"><code>clubmate</code></a></h3>
 
@@ -3091,7 +3091,7 @@ stars | <b>8</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
+age | <b>16</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>55</b> | More downloads = more users have been using the plugin for a while
@@ -3107,7 +3107,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">175</div>
+<div class="quality-index" style="color: #63b319">176</div>
 
 <h3 id="s3_actions"><a href="https://github.com/fsaragoca/fastlane-plugin-s3_actions" target="_blank"><code>s3_actions</code></a></h3>
 
@@ -3142,7 +3142,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>77</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>78</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -3155,7 +3155,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">174</div>
+<div class="quality-index" style="color: #63b319">175</div>
 
 <h3 id="diawi"><a href="https://github.com/pacification/fastlane-plugin-diawi" target="_blank"><code>diawi</code></a></h3>
 
@@ -3188,7 +3188,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>31</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>32</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -3201,7 +3201,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">171</div>
+<div class="quality-index" style="color: #63b319">172</div>
 
 <h3 id="upgrade_super_old_xcode_project"><a href="https://github.com/ionic-zone/fastlane-plugin-upgrade_super_old_xcode_project" target="_blank"><code>upgrade_super_old_xcode_project</code></a></h3>
 
@@ -3234,7 +3234,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>7</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>70</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>71</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -3247,7 +3247,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">169</div>
+<div class="quality-index" style="color: #63b319">170</div>
 
 <h3 id="download_file"><a href="https://github.com/maxoly/fastlane-plugin-download_file" target="_blank"><code>download_file</code></a></h3>
 
@@ -3280,7 +3280,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>34</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>35</b> | More downloads = more users have been using the plugin for a while
 tests | <b>6</b> | The more tests a plugin has, the better
  
 </details>
@@ -3293,7 +3293,7 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">168</div>
+<div class="quality-index" style="color: #63b319">169</div>
 
 <h3 id="patch"><a href="https://github.com/jdee/fastlane-plugin-patch" target="_blank"><code>patch</code></a></h3>
 
@@ -3325,7 +3325,7 @@ stars | <b>3</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>8</b> | Project that have been around for longer tend to be more stable
+age | <b>9</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>15</b> | More downloads = more users have been using the plugin for a while
@@ -3341,7 +3341,7 @@ tests | <b>60</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">167</div>
+<div class="quality-index" style="color: #63b319">168</div>
 
 <h3 id="brew"><a href="https://github.com/NovaTecConsulting/fastlane-plugin-brew" target="_blank"><code>brew</code></a></h3>
 
@@ -3374,7 +3374,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>40</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>41</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -3382,6 +3382,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/NovaTecConsulting/fastlane-plugin-brew" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">167</div>
+
+<h3 id="instrumented_tests"><a href="https://github.com/joshrlesch/fastlane-plugin-instrumented_tests" target="_blank"><code>instrumented_tests</code></a></h3>
+
+<p class="via-text">via Silviu Paragina</p>
+
+> New action to run instrumented tests for android. This plugin creates and boots an emulator before running a gradle command so that you can run instrumented tests against that emulator. After the gradle command is executed, the avd gets shut down and deleted. This is really helpful on CI services, keeping them clean and always having a fresh avd for testing.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **instrumented_tests** | - | Run android instrumented tests via a gradle command againts a newly created avd
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>9</b> | More subscribers = more popular project
+stars | <b>14</b> | More stars = more popular project
+forks | <b>15</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>45</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/joshrlesch/fastlane-plugin-instrumented_tests" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -3435,52 +3481,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">167</div>
 
-<h3 id="instrumented_tests"><a href="https://github.com/joshrlesch/fastlane-plugin-instrumented_tests" target="_blank"><code>instrumented_tests</code></a></h3>
-
-<p class="via-text">via Silviu Paragina</p>
-
-> New action to run instrumented tests for android. This plugin creates and boots an emulator before running a gradle command so that you can run instrumented tests against that emulator. After the gradle command is executed, the avd gets shut down and deleted. This is really helpful on CI services, keeping them clean and always having a fresh avd for testing.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **instrumented_tests** | - | Run android instrumented tests via a gradle command againts a newly created avd
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>9</b> | More subscribers = more popular project
-stars | <b>14</b> | More stars = more popular project
-forks | <b>15</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>45</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/joshrlesch/fastlane-plugin-instrumented_tests" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">166</div>
-
 <h3 id="pretty_junit"><a href="https://github.com/leandog/fastlane-plugin-pretty_junit" target="_blank"><code>pretty_junit</code></a></h3>
 
 <p class="via-text">via GaryJohnson</p>
@@ -3509,7 +3509,7 @@ stars | <b>1</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
+age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>77</b> | More downloads = more users have been using the plugin for a while
@@ -3571,6 +3571,53 @@ tests | <b>9</b> | The more tests a plugin has, the better
 
 -----
 
+<div class="quality-index" style="color: #63b319">163</div>
+
+<h3 id="browserstack"><a href="https://github.com/browserstack/browserstack-fastlane-plugin" target="_blank"><code>browserstack</code></a></h3>
+
+<p class="via-text">via BrowserStack</p>
+
+> Uploads IPA and APK files to BrowserStack for automation and manual testing.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **upload_to_browserstack_app_automate** | - | Uploads IPA and APK files to BrowserStack AppAutomate for running automated tests.
+  **upload_to_browserstack_app_live** | - | Uploads IPA and APK files to BrowserStack AppLive for running manual tests.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>12</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>3</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>30</b> | More downloads = more users have been using the plugin for a while
+tests | <b>48</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/browserstack/browserstack-fastlane-plugin" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
 <div class="quality-index" style="color: #63b319">161</div>
 
 <h3 id="android_emulator"><a href="https://github.com/NovaTecConsulting/fastlane-plugin-android_emulator" target="_blank"><code>android_emulator</code></a></h3>
@@ -3619,53 +3666,6 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">160</div>
 
-<h3 id="browserstack"><a href="https://github.com/browserstack/browserstack-fastlane-plugin" target="_blank"><code>browserstack</code></a></h3>
-
-<p class="via-text">via BrowserStack</p>
-
-> Uploads IPA and APK files to BrowserStack for automation and manual testing.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **upload_to_browserstack_app_automate** | - | Uploads IPA and APK files to BrowserStack AppAutomate for running automated tests.
-  **upload_to_browserstack_app_live** | - | Uploads IPA and APK files to BrowserStack AppLive for running manual tests.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>12</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>27</b> | More downloads = more users have been using the plugin for a while
-tests | <b>48</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/browserstack/browserstack-fastlane-plugin" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">159</div>
-
 <h3 id="property_file_read"><a href="https://github.com/unitedclassifiedsapps/fastlane-plugin-property_file_read" target="_blank"><code>property_file_read</code></a></h3>
 
 <p class="via-text">via United Classifieds</p>
@@ -3697,7 +3697,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>8</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>66</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>67</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -3760,11 +3760,11 @@ tests | <b>36</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">157</div>
 
-<h3 id="giffy"><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy" target="_blank"><code>giffy</code></a></h3>
+<h3 id="altool"><a href="https://github.com/Shashikant86/fastlane-plugin-altool" target="_blank"><code>altool</code></a></h3>
 
-<p class="via-text">via SiarheiFiedartsou</p>
+<p class="via-text">via Shashikant Jagtap</p>
 
-> Fastlane plugin for Giffy.com API
+> Upload IPA to iTunes Connect using altool
 
 
 <details>
@@ -3772,8 +3772,7 @@ tests | <b>36</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **giffy_random_sticker_url** | - | Allows to obtain URL to some random GIF sticker from Giffy.com
-  **giffy_random_gif_url** | - | Allows to obtain URL to some random funny GIF from Giffy.com
+  **altool** | - | Upload IPA to iTunes Connect using altool
 
 </details>
 
@@ -3783,23 +3782,23 @@ tests | <b>36</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>24</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>5</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
+age | <b>6</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>36</b> | More downloads = more users have been using the plugin for a while
-tests | <b>12</b> | The more tests a plugin has, the better
+downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/Shashikant86/fastlane-plugin-altool" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -3851,13 +3850,13 @@ tests | <b>15</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">156</div>
+<div class="quality-index" style="color: #63b319">157</div>
 
-<h3 id="altool"><a href="https://github.com/Shashikant86/fastlane-plugin-altool" target="_blank"><code>altool</code></a></h3>
+<h3 id="giffy"><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy" target="_blank"><code>giffy</code></a></h3>
 
-<p class="via-text">via Shashikant Jagtap</p>
+<p class="via-text">via SiarheiFiedartsou</p>
 
-> Upload IPA to iTunes Connect using altool
+> Fastlane plugin for Giffy.com API
 
 
 <details>
@@ -3865,7 +3864,8 @@ tests | <b>15</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **altool** | - | Upload IPA to iTunes Connect using altool
+  **giffy_random_sticker_url** | - | Allows to obtain URL to some random GIF sticker from Giffy.com
+  **giffy_random_gif_url** | - | Allows to obtain URL to some random funny GIF from Giffy.com
 
 </details>
 
@@ -3875,29 +3875,29 @@ tests | <b>15</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>24</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>10</b> | More forks = more people seem to use/modify this project
+stars | <b>5</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
+age | <b>14</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
+downloads | <b>36</b> | More downloads = more users have been using the plugin for a while
+tests | <b>12</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/Shashikant86/fastlane-plugin-altool" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/SiarheiFedartsou/fastlane-plugin-giffy" target="_blank">Open on GitHub</a>
 
 </p>
 
 -----
 
-<div class="quality-index" style="color: #63b319">155</div>
+<div class="quality-index" style="color: #63b319">156</div>
 
 <h3 id="clean_testflight_testers"><a href="https://github.com/KrauseFx/fastlane-plugin-clean_testflight_testers" target="_blank"><code>clean_testflight_testers</code></a></h3>
 
@@ -3930,7 +3930,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>8</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>26</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>27</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -3943,7 +3943,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">154</div>
+<div class="quality-index" style="color: #63b319">155</div>
 
 <h3 id="jira_versions"><a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions" target="_blank"><code>jira_versions</code></a></h3>
 
@@ -3977,7 +3977,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>47</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>48</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -3985,6 +3985,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/SandyChapman/fastlane-plugin-jira_versions" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">154</div>
+
+<h3 id="latest_hockey_build_number"><a href="https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number" target="_blank"><code>latest_hockey_build_number</code></a></h3>
+
+<p class="via-text">via Sergii Stotskyi, Kirill Pahnev</p>
+
+> Gets latest version number of the app with the bundle id from HockeyApp
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **latest_hockey_build_number** | - | Gets latest version number of the app with the bundle id from HockeyApp
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>3</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>14</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>49</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4038,52 +4084,6 @@ tests | <b>48</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">153</div>
 
-<h3 id="latest_hockey_build_number"><a href="https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number" target="_blank"><code>latest_hockey_build_number</code></a></h3>
-
-<p class="via-text">via Sergii Stotskyi, Kirill Pahnev</p>
-
-> Gets latest version number of the app with the bundle id from HockeyApp
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **latest_hockey_build_number** | - | Gets latest version number of the app with the bundle id from HockeyApp
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>3</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>48</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/stalniy/fastlane-plugin-latest_hockey_build_number" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">153</div>
-
 <h3 id="ftp"><a href="https://github.com/PoissonBallon/fastlane-ftp-plugin" target="_blank"><code>ftp</code></a></h3>
 
 <p class="via-text">via Allan Vialatte</p>
@@ -4128,13 +4128,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">150</div>
+<div class="quality-index" style="color: #63b319">151</div>
 
-<h3 id="ionic_integration"><a href="https://github.com/knocknarea/fastlane-plugin-ionic_integration" target="_blank"><code>ionic_integration</code></a></h3>
+<h3 id="instabug"><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-instabug" target="_blank"><code>instabug</code></a></h3>
 
-<p class="via-text">via Adrian Regan</p>
+<p class="via-text">via Siarhei Fiedartsou</p>
 
-> Integrating Fastlane with Ionic Generated Projects
+> Uploads dSYM to Instabug
 
 
 <details>
@@ -4142,8 +4142,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **ionic_ios_config_snapshot** | - | Create a Sample iOS UI Unit Test to get started with in a generated Ionic/Cordova project
-  **ionic_ios_snapshot** | - | Bridge between Ionic/Cordova Projects and Fastlane for Automated Snapshot Generation for iOS Projects
+  **instabug** | - | -
 
 </details>
 
@@ -4153,23 +4152,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>22</b> | More stars = more popular project
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
 forks | <b>10</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
-tests | <b>15</b> | The more tests a plugin has, the better
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>25</b> | More downloads = more users have been using the plugin for a while
+tests | <b>21</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/knocknarea/fastlane-plugin-ionic_integration" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/SiarheiFedartsou/fastlane-plugin-instabug" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4223,11 +4222,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">150</div>
 
-<h3 id="instabug"><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-instabug" target="_blank"><code>instabug</code></a></h3>
+<h3 id="google_drive"><a href="https://github.com/bskim45/fastlane-plugin-google_drive" target="_blank"><code>google_drive</code></a></h3>
 
-<p class="via-text">via Siarhei Fiedartsou</p>
+<p class="via-text">via Bumsoo Kim</p>
 
-> Uploads dSYM to Instabug
+> Upload files to Google Drive
 
 
 <details>
@@ -4235,7 +4234,8 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **instabug** | - | -
+  **upload_to_google_drive** | - | Upload files to Google Drive
+  **create_google_drive_folder** | - | Create new folder on Google Drive
 
 </details>
 
@@ -4245,23 +4245,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>10</b> | More forks = more people seem to use/modify this project
+stars | <b>8</b> | More stars = more popular project
+forks | <b>15</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
+age | <b>5</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>24</b> | More downloads = more users have been using the plugin for a while
-tests | <b>21</b> | The more tests a plugin has, the better
+downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+tests | <b>42</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/SiarheiFedartsou/fastlane-plugin-instabug" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/bskim45/fastlane-plugin-google_drive" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4309,6 +4309,53 @@ tests | <b>51</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/dyang/verify_ipa" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">150</div>
+
+<h3 id="ionic_integration"><a href="https://github.com/knocknarea/fastlane-plugin-ionic_integration" target="_blank"><code>ionic_integration</code></a></h3>
+
+<p class="via-text">via Adrian Regan</p>
+
+> Integrating Fastlane with Ionic Generated Projects
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **ionic_ios_config_snapshot** | - | Create a Sample iOS UI Unit Test to get started with in a generated Ionic/Cordova project
+  **ionic_ios_snapshot** | - | Bridge between Ionic/Cordova Projects and Fastlane for Automated Snapshot Generation for iOS Projects
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>6</b> | More subscribers = more popular project
+stars | <b>22</b> | More stars = more popular project
+forks | <b>10</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-4</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
+tests | <b>15</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/knocknarea/fastlane-plugin-ionic_integration" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4407,7 +4454,7 @@ tests | <b>39</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">146</div>
+<div class="quality-index" style="color: #63b319">147</div>
 
 <h3 id="changelog_generator"><a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator" target="_blank"><code>changelog_generator</code></a></h3>
 
@@ -4441,7 +4488,7 @@ readme_score | <b>50</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>41</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>42</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -4449,6 +4496,52 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/fsaragoca/fastlane-plugin-changelog_generator" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">147</div>
+
+<h3 id="teams"><a href="https://github.com/mbogh/fastlane-plugin-teams" target="_blank"><code>teams</code></a></h3>
+
+<p class="via-text">via Morten Bøgh</p>
+
+> Send a success/error message to your Microsoft Teams channel
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **teams** | notifications | Send a message to your Microsoft Teams channel via the webhook connector
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>6</b> | More subscribers = more popular project
+stars | <b>6</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>47</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/mbogh/fastlane-plugin-teams" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4495,52 +4588,6 @@ tests | <b>60</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/col/fastlane-plugin-remove_setting" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">144</div>
-
-<h3 id="teams"><a href="https://github.com/mbogh/fastlane-plugin-teams" target="_blank"><code>teams</code></a></h3>
-
-<p class="via-text">via Morten Bøgh</p>
-
-> Send a success/error message to your Microsoft Teams channel
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **teams** | notifications | Send a message to your Microsoft Teams channel via the webhook connector
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>6</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>9</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>45</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/mbogh/fastlane-plugin-teams" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4631,6 +4678,99 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
+<div class="quality-index" style="color: #63b319">143</div>
+
+<h3 id="xcconfig"><a href="https://github.com/sovcharenko/fastlane-plugin-xcconfig" target="_blank"><code>xcconfig</code></a></h3>
+
+<p class="via-text">via Sergii Ovcharenko</p>
+
+> Adds 2 actions to fastlane to read and update xcconfig files.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **set_xcconfig_value** | - | Updates value of a setting in xcconfig file.
+  **get_xcconfig_value** | - | Reads a value of a setting from xcconfig file.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>5</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>14</b> | More downloads = more users have been using the plugin for a while
+tests | <b>21</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/sovcharenko/fastlane-plugin-xcconfig" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">142</div>
+
+<h3 id="git_tags"><a href="https://github.com/fsaragoca/fastlane-plugin-git_tags" target="_blank"><code>git_tags</code></a></h3>
+
+<p class="via-text">via Fernando Saragoca</p>
+
+> List git tags sorted by taggerdate
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **git_tags** | source_control | List git tags
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>12</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>45</b> | More downloads = more users have been using the plugin for a while
+tests | <b>9</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/fsaragoca/fastlane-plugin-git_tags" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
 <div class="quality-index" style="color: #63b319">142</div>
 
 <h3 id="trigger_bitrise_build"><a href="https://github.com/waracle/fastlane-plugin-trigger_bitrise_build" target="_blank"><code>trigger_bitrise_build</code></a></h3>
@@ -4672,53 +4812,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/waracle/fastlane-plugin-trigger_bitrise_build" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">142</div>
-
-<h3 id="xcconfig"><a href="https://github.com/sovcharenko/fastlane-plugin-xcconfig" target="_blank"><code>xcconfig</code></a></h3>
-
-<p class="via-text">via Sergii Ovcharenko</p>
-
-> Adds 2 actions to fastlane to read and update xcconfig files.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **set_xcconfig_value** | - | Updates value of a setting in xcconfig file.
-  **get_xcconfig_value** | - | Reads a value of a setting from xcconfig file.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>13</b> | More downloads = more users have been using the plugin for a while
-tests | <b>21</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/sovcharenko/fastlane-plugin-xcconfig" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4770,13 +4863,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">141</div>
+<div class="quality-index" style="color: #63b319">140</div>
 
-<h3 id="git_tags"><a href="https://github.com/fsaragoca/fastlane-plugin-git_tags" target="_blank"><code>git_tags</code></a></h3>
+<h3 id="waldo"><a href="https://github.com/waldoapp/fastlane-plugin-waldo" target="_blank"><code>waldo</code></a></h3>
 
-<p class="via-text">via Fernando Saragoca</p>
+<p class="via-text">via J. G. Pusey</p>
 
-> List git tags sorted by taggerdate
+> Upload build to Waldo
 
 
 <details>
@@ -4784,7 +4877,53 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **git_tags** | source_control | List git tags
+  **waldo** | testing | Upload a new build to [Waldo](https://www.waldo.io)
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>12</b> | More subscribers = more popular project
+stars | <b>5</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>4</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>11</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/waldoapp/fastlane-plugin-waldo" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">139</div>
+
+<h3 id="jira_set_fix_version"><a href="https://github.com/sadiq81/fastlane-plugin-jira_set_fix_version" target="_blank"><code>jira_set_fix_version</code></a></h3>
+
+<p class="via-text">via Tommy Sadiq Hinrichsen</p>
+
+> Tags all Jira issues mentioned in git changelog with with a fix version from parameter :name
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **jira_set_fix_version** | - | Tags all Jira issues mentioned in git changelog with with a fix version from parameter :name
 
 </details>
 
@@ -4795,22 +4934,22 @@ tests | <b>3</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
+age | <b>6</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>44</b> | More downloads = more users have been using the plugin for a while
-tests | <b>9</b> | The more tests a plugin has, the better
+downloads | <b>20</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/fsaragoca/fastlane-plugin-git_tags" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/sadiq81/fastlane-plugin-jira_set_fix_version" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -4862,7 +5001,7 @@ tests | <b>12</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">138</div>
+<div class="quality-index" style="color: #63b319">139</div>
 
 <h3 id="msbuild"><a href="https://github.com/willowtreeapps/fastlane-plugin-msbuild" target="_blank"><code>msbuild</code></a></h3>
 
@@ -4898,7 +5037,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>11</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>42</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>43</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -4913,11 +5052,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">138</div>
 
-<h3 id="google_drive"><a href="https://github.com/bskim45/fastlane-plugin-google_drive" target="_blank"><code>google_drive</code></a></h3>
+<h3 id="appbox"><a href="https://github.com/getappbox/fastlane-plugin-appbox" target="_blank"><code>appbox</code></a></h3>
 
-<p class="via-text">via Bumsoo Kim</p>
+<p class="via-text">via Vineet Choudhary</p>
 
-> Upload files to Google Drive
+> Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications directly to the devices from your Dropbox account.
 
 
 <details>
@@ -4925,8 +5064,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **upload_to_google_drive** | - | Upload files to Google Drive
-  **create_google_drive_folder** | - | Create new folder on Google Drive
+  **appbox** | - | Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications directly to the devices from your Dropbox account.
 
 </details>
 
@@ -4937,114 +5075,22 @@ tests | <b>0</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>3</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
-tests | <b>42</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/bskim45/fastlane-plugin-google_drive" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">138</div>
-
-<h3 id="waldo"><a href="https://github.com/waldoapp/fastlane-plugin-waldo" target="_blank"><code>waldo</code></a></h3>
-
-<p class="via-text">via J. G. Pusey</p>
-
-> Upload build to Waldo
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **waldo** | testing | Upload a new build to [Waldo](https://www.waldo.io)
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>12</b> | More subscribers = more popular project
-stars | <b>5</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>10</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/waldoapp/fastlane-plugin-waldo" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">137</div>
-
-<h3 id="jira_set_fix_version"><a href="https://github.com/sadiq81/fastlane-plugin-jira_set_fix_version" target="_blank"><code>jira_set_fix_version</code></a></h3>
-
-<p class="via-text">via Tommy Sadiq Hinrichsen</p>
-
-> Tags all Jira issues mentioned in git changelog with with a fix version from parameter :name
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **jira_set_fix_version** | - | Tags all Jira issues mentioned in git changelog with with a fix version from parameter :name
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
+stars | <b>5</b> | More stars = more popular project
+forks | <b>25</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
+age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>19</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/sadiq81/fastlane-plugin-jira_set_fix_version" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/getappbox/fastlane-plugin-appbox" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -5096,7 +5142,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">134</div>
+<div class="quality-index" style="color: #63b319">135</div>
 
 <h3 id="automated_test_emulator_run_mik"><a href="https://github.com/mik9/fastlane-plugin-automated-test-emulator-run" target="_blank"><code>automated_test_emulator_run_mik</code></a></h3>
 
@@ -5126,7 +5172,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>14</b> | More downloads = more users have been using the plugin for a while
@@ -5137,52 +5183,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/mik9/fastlane-plugin-automated-test-emulator-run" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">134</div>
-
-<h3 id="git_status"><a href="https://github.com/4brunu/fastlane-plugin-git_status" target="_blank"><code>git_status</code></a></h3>
-
-<p class="via-text">via Bruno Coelho</p>
-
-> Show the status of one or multiple files/directories
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **git_status** | - | Show the status of one or multiple files/directories
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>34</b> | More downloads = more users have been using the plugin for a while
-tests | <b>9</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/4brunu/fastlane-plugin-git_status" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -5234,6 +5234,144 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
+<div class="quality-index" style="color: #63b319">134</div>
+
+<h3 id="load_json"><a href="https://github.com/KrauseFx/fastlane-plugin-load_json" target="_blank"><code>load_json</code></a></h3>
+
+<p class="via-text">via Felix Krause</p>
+
+> Loads a local JSON file and parses it
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **load_json** | - | Loads a local JSON file and parses it
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>3</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>67</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/KrauseFx/fastlane-plugin-load_json" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">134</div>
+
+<h3 id="git_status"><a href="https://github.com/4brunu/fastlane-plugin-git_status" target="_blank"><code>git_status</code></a></h3>
+
+<p class="via-text">via Bruno Coelho</p>
+
+> Show the status of one or multiple files/directories
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **git_status** | - | Show the status of one or multiple files/directories
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>12</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>34</b> | More downloads = more users have been using the plugin for a while
+tests | <b>9</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/4brunu/fastlane-plugin-git_status" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">133</div>
+
+<h3 id="xcpretty_report"><a href="https://github.com/fsaragoca/fastlane-plugin-xcpretty_report" target="_blank"><code>xcpretty_report</code></a></h3>
+
+<p class="via-text">via Fernando Saragoca</p>
+
+> Generate xcodebuild reports using xcpretty
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **xcpretty_report** | - | xcpretty
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>12</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>39</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/fsaragoca/fastlane-plugin-xcpretty_report" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
 <div class="quality-index" style="color: #63b319">132</div>
 
 <h3 id="branding"><a href="https://github.com/snatchev/fastlane-branding-plugin" target="_blank"><code>branding</code></a></h3>
@@ -5275,6 +5413,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/snatchev/fastlane-branding-plugin" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">132</div>
+
+<h3 id="clang_analyzer"><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer" target="_blank"><code>clang_analyzer</code></a></h3>
+
+<p class="via-text">via Siarhei Fiedartsou</p>
+
+> Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **clang_analyzer** | - | Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>5</b> | More stars = more popular project
+forks | <b>15</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>14</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>13</b> | More downloads = more users have been using the plugin for a while
+tests | <b>6</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -5372,192 +5556,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">132</div>
-
-<h3 id="xcpretty_report"><a href="https://github.com/fsaragoca/fastlane-plugin-xcpretty_report" target="_blank"><code>xcpretty_report</code></a></h3>
-
-<p class="via-text">via Fernando Saragoca</p>
-
-> Generate xcodebuild reports using xcpretty
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **xcpretty_report** | - | xcpretty
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>38</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/fsaragoca/fastlane-plugin-xcpretty_report" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">131</div>
-
-<h3 id="clang_analyzer"><a href="https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer" target="_blank"><code>clang_analyzer</code></a></h3>
-
-<p class="via-text">via Siarhei Fiedartsou</p>
-
-> Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **clang_analyzer** | - | Runs Clang Static Analyzer(http://clang-analyzer.llvm.org/) and generates report
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>5</b> | More stars = more popular project
-forks | <b>15</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>13</b> | More downloads = more users have been using the plugin for a while
-tests | <b>6</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/SiarheiFedartsou/fastlane-plugin-clang_analyzer" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">130</div>
-
-<h3 id="load_json"><a href="https://github.com/KrauseFx/fastlane-plugin-load_json" target="_blank"><code>load_json</code></a></h3>
-
-<p class="via-text">via Felix Krause</p>
-
-> Loads a local JSON file and parses it
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **load_json** | - | Loads a local JSON file and parses it
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>3</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>63</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/KrauseFx/fastlane-plugin-load_json" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">128</div>
-
-<h3 id="firebase_management"><a href="https://github.com/AckeeCZ/fastlane-plugin-firebase_management" target="_blank"><code>firebase_management</code></a></h3>
-
-<p class="via-text">via Ackee</p>
-
-> Unofficial tool to access Firebase project settings
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **firebase_management_add_app** | - | Add new app to Firebase project
-  **firebase_management_list** | - | List all Firebase projects and their apps
-  **firebase_management_download_config** | - | Download configuration file for Firebase app
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>12</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/AckeeCZ/fastlane-plugin-firebase_management" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
 <div class="quality-index" style="color: #63b319">128</div>
 
 <h3 id="docker"><a href="https://github.com/milch/fastlane-plugin-docker" target="_blank"><code>docker</code></a></h3>
@@ -5608,7 +5606,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">127</div>
+<div class="quality-index" style="color: #63b319">128</div>
 
 <h3 id="ascii_art"><a href="https://github.com/neonichu/fastlane-ascii-art" target="_blank"><code>ascii_art</code></a></h3>
 
@@ -5638,7 +5636,7 @@ stars | <b>20</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
+age | <b>16</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
@@ -5649,6 +5647,54 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/neonichu/fastlane-ascii-art" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">128</div>
+
+<h3 id="firebase_management"><a href="https://github.com/AckeeCZ/fastlane-plugin-firebase_management" target="_blank"><code>firebase_management</code></a></h3>
+
+<p class="via-text">via Ackee</p>
+
+> Unofficial tool to access Firebase project settings
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **firebase_management_add_app** | - | Add new app to Firebase project
+  **firebase_management_list** | - | List all Firebase projects and their apps
+  **firebase_management_download_config** | - | Download configuration file for Firebase app
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>12</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/AckeeCZ/fastlane-plugin-firebase_management" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -5753,6 +5799,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">125</div>
 
+<h3 id="napp_distribution"><a href="https://github.com/Napp/fastlane-plugin-napp-distribution" target="_blank"><code>napp_distribution</code></a></h3>
+
+<p class="via-text">via Mads Møller</p>
+
+> Upload IPA AND APK builds to Napp Distribution
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **napp_distribution** | - | Upload builds to Napp Distribution Center
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/Napp/fastlane-plugin-napp-distribution" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">125</div>
+
 <h3 id="code_static_analyzer"><a href="https://github.com/knolga/fastlane-plugin-code_static_analyzer" target="_blank"><code>code_static_analyzer</code></a></h3>
 
 <p class="via-text">via Olga Kniazska</p>
@@ -5801,13 +5893,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">125</div>
+<div class="quality-index" style="color: #63b319">124</div>
 
-<h3 id="napp_distribution"><a href="https://github.com/Napp/fastlane-plugin-napp-distribution" target="_blank"><code>napp_distribution</code></a></h3>
+<h3 id="provisioning"><a href="https://github.com/paweljankowski/fastlane-plugin-provisioning" target="_blank"><code>provisioning</code></a></h3>
 
-<p class="via-text">via Mads Møller</p>
+<p class="via-text">via Pawel Jankowski</p>
 
-> Upload IPA AND APK builds to Napp Distribution
+> Helps provision your app in the CI environment
 
 
 <details>
@@ -5815,7 +5907,8 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **napp_distribution** | - | Upload builds to Napp Distribution Center
+  **set_key_partition_list** | - | Sets key partition list (required by macOS Sierra)
+  **install_profiles** | - | Install profiles from specified directory
 
 </details>
 
@@ -5827,21 +5920,21 @@ tests | <b>3</b> | The more tests a plugin has, the better
 --------|--------|-------------
 contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
+stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
+age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/Napp/fastlane-plugin-napp-distribution" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/paweljankowski/fastlane-plugin-provisioning" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -5888,53 +5981,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/neonichu/fastlane-tunes" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">124</div>
-
-<h3 id="provisioning"><a href="https://github.com/paweljankowski/fastlane-plugin-provisioning" target="_blank"><code>provisioning</code></a></h3>
-
-<p class="via-text">via Pawel Jankowski</p>
-
-> Helps provision your app in the CI environment
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **set_key_partition_list** | - | Sets key partition list (required by macOS Sierra)
-  **install_profiles** | - | Install profiles from specified directory
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/paweljankowski/fastlane-plugin-provisioning" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -5988,52 +6034,6 @@ tests | <b>33</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">121</div>
 
-<h3 id="aws_sns"><a href="https://github.com/joshdholtz/fastlane-plugin-aws_sns" target="_blank"><code>aws_sns</code></a></h3>
-
-<p class="via-text">via Josh Holtz</p>
-
-> Creates AWS SNS platform applications
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **aws_sns** | - | Creates AWS SNS platform applications
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>8</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>36</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/joshdholtz/fastlane-plugin-aws_sns" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">121</div>
-
 <h3 id="no_u"><a href="https://github.com/neonichu/fastlane-plugin-no_u" target="_blank"><code>no_u</code></a></h3>
 
 <p class="via-text">via Boris Bügling</p>
@@ -6078,7 +6078,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">120</div>
+<div class="quality-index" style="color: #63b319">121</div>
 
 <h3 id="get_android_version"><a href="https://github.com/MaximusMcCann/fastlane-plugin-get_android_version" target="_blank"><code>get_android_version</code></a></h3>
 
@@ -6111,7 +6111,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>13</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>47</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>48</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -6124,7 +6124,53 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">119</div>
+<div class="quality-index" style="color: #63b319">121</div>
+
+<h3 id="aws_sns"><a href="https://github.com/joshdholtz/fastlane-plugin-aws_sns" target="_blank"><code>aws_sns</code></a></h3>
+
+<p class="via-text">via Josh Holtz</p>
+
+> Creates AWS SNS platform applications
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **aws_sns** | - | Creates AWS SNS platform applications
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>6</b> | More subscribers = more popular project
+stars | <b>8</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>13</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>36</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/joshdholtz/fastlane-plugin-aws_sns" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">120</div>
 
 <h3 id="jira_transition"><a href="https://github.com/valeriomazzeo/fastlane-plugin-jira_transition" target="_blank"><code>jira_transition</code></a></h3>
 
@@ -6157,7 +6203,7 @@ readme_score | <b>25</b> | How well is the README of the document written
 age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>32</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>33</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
@@ -6165,52 +6211,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/valeriomazzeo/fastlane-plugin-jira_transition" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">118</div>
-
-<h3 id="dropbox"><a href="https://github.com/ayoy/fastlane-plugin-dropbox" target="_blank"><code>dropbox</code></a></h3>
-
-<p class="via-text">via Dominik Kapusta</p>
-
-> Uploads files to Dropbox
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **dropbox** | - | Uploads files to Dropbox
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
-tests | <b>15</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/ayoy/fastlane-plugin-dropbox" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -6263,13 +6263,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">117</div>
+<div class="quality-index" style="color: #63b319">118</div>
 
-<h3 id="appbox"><a href="https://github.com/getappbox/fastlane-plugin-appbox" target="_blank"><code>appbox</code></a></h3>
+<h3 id="versioning_ios"><a href="https://github.com/beplus/fastlane-plugin-versioning_ios" target="_blank"><code>versioning_ios</code></a></h3>
 
-<p class="via-text">via Vineet Choudhary</p>
+<p class="via-text">via Igor Lamoš</p>
 
-> Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications directly to the devices from your Dropbox account.
+> iOS Versioning Plugin for Fastlane
 
 
 <details>
@@ -6277,7 +6277,10 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **appbox** | - | Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications directly to the devices from your Dropbox account.
+  **ios_set_build_number** | - | Set the Build Number of your iOS project
+  **ios_get_build_number** | - | Get the Build Number of your iOS project
+  **ios_set_version** | - | Set the Version of your iOS project
+  **ios_get_version** | - | Get the Version of your iOS project
 
 </details>
 
@@ -6287,23 +6290,153 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>4</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
+stars | <b>3</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>7</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
+tests | <b>51</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/getappbox/fastlane-plugin-appbox" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/beplus/fastlane-plugin-versioning_ios" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">118</div>
+
+<h3 id="dmg"><a href="https://github.com/advoryanskiy/fastlane-plugin-dmg" target="_blank"><code>dmg</code></a></h3>
+
+<p class="via-text">via Alexey Dvoryanskiy</p>
+
+> Easily create dmg for your Mac app
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **dmg** | misc | Create DMG for your Mac app
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>7</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
+tests | <b>27</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/advoryanskiy/fastlane-plugin-dmg" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">118</div>
+
+<h3 id="polidea"><a href="http://www.rubydoc.info/gems/fastlane-plugin-polidea/0.6.4" target="_blank"><code>polidea</code></a></h3>
+
+<p class="via-text">via Piotrek Dubiel</p>
+
+> Polidea's fastlane action
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>98</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-polidea/0.6.4" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">118</div>
+
+<h3 id="dropbox"><a href="https://github.com/ayoy/fastlane-plugin-dropbox" target="_blank"><code>dropbox</code></a></h3>
+
+<p class="via-text">via Dominik Kapusta</p>
+
+> Uploads files to Dropbox
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **dropbox** | - | Uploads files to Dropbox
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>6</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
+tests | <b>15</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/ayoy/fastlane-plugin-dropbox" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -6357,12 +6490,21 @@ tests | <b>9</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">117</div>
 
-<h3 id="polidea"><a href="http://www.rubydoc.info/gems/fastlane-plugin-polidea/0.6.4" target="_blank"><code>polidea</code></a></h3>
+<h3 id="ya_tu_sabes"><a href="https://github.com/neonichu/fastlane-plugin-ya_tu_sabes" target="_blank"><code>ya_tu_sabes</code></a></h3>
 
-<p class="via-text">via Piotrek Dubiel</p>
+<p class="via-text">via Boris Bügling</p>
 
-> Polidea's fastlane action
+> Ya tu sabes.
 
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **ya_tu_sabes** | - | Ya tu sabes.
+
+</details>
 
 
 <details>
@@ -6370,119 +6512,23 @@ tests | <b>9</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>8</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>16</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>97</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-polidea/0.6.4" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">117</div>
-
-<h3 id="xcode_test_reporter"><a href="https://github.com/taisukeh/fastlane-plugin-xcode_test_reporter" target="_blank"><code>xcode_test_reporter</code></a></h3>
-
-<p class="via-text">via Taisuke Hori</p>
-
-> Generates JUnit or HTML report from Xcode `plist` test report files.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **xcode_test_reporter** | - | Generates JUnit or HTML report from Xcode `plist` test report files
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>4</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/taisukeh/fastlane-plugin-xcode_test_reporter" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">117</div>
-
-<h3 id="versioning_ios"><a href="https://github.com/beplus/fastlane-plugin-versioning_ios" target="_blank"><code>versioning_ios</code></a></h3>
-
-<p class="via-text">via Igor Lamoš</p>
-
-> iOS Versioning Plugin for Fastlane
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **ios_set_build_number** | - | Set the Build Number of your iOS project
-  **ios_get_build_number** | - | Get the Build Number of your iOS project
-  **ios_set_version** | - | Set the Version of your iOS project
-  **ios_get_version** | - | Get the Version of your iOS project
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>3</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>51</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/beplus/fastlane-plugin-versioning_ios" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/neonichu/fastlane-plugin-ya_tu_sabes" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -6536,11 +6582,11 @@ tests | <b>21</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">117</div>
 
-<h3 id="dmg"><a href="https://github.com/advoryanskiy/fastlane-plugin-dmg" target="_blank"><code>dmg</code></a></h3>
+<h3 id="xcode_test_reporter"><a href="https://github.com/taisukeh/fastlane-plugin-xcode_test_reporter" target="_blank"><code>xcode_test_reporter</code></a></h3>
 
-<p class="via-text">via Alexey Dvoryanskiy</p>
+<p class="via-text">via Taisuke Hori</p>
 
-> Easily create dmg for your Mac app
+> Generates JUnit or HTML report from Xcode `plist` test report files.
 
 
 <details>
@@ -6548,7 +6594,7 @@ tests | <b>21</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **dmg** | misc | Create DMG for your Mac app
+  **xcode_test_reporter** | - | Generates JUnit or HTML report from Xcode `plist` test report files
 
 </details>
 
@@ -6558,23 +6604,69 @@ tests | <b>21</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
+stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
+age | <b>4</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>27</b> | The more tests a plugin has, the better
+downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/advoryanskiy/fastlane-plugin-dmg" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/taisukeh/fastlane-plugin-xcode_test_reporter" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">116</div>
+
+<h3 id="notarize"><a href="https://github.com/zeplin/fastlane-plugin-notarize" target="_blank"><code>notarize</code></a></h3>
+
+<p class="via-text">via Zeplin, Inc.</p>
+
+> fastlane plugin to notarize a macOS app
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **notarize** | - | Notarizes a macOS app
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>39</b> | More subscribers = more popular project
+stars | <b>7</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/zeplin/fastlane-plugin-notarize" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -6628,52 +6720,6 @@ tests | <b>21</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">116</div>
 
-<h3 id="ya_tu_sabes"><a href="https://github.com/neonichu/fastlane-plugin-ya_tu_sabes" target="_blank"><code>ya_tu_sabes</code></a></h3>
-
-<p class="via-text">via Boris Bügling</p>
-
-> Ya tu sabes.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **ya_tu_sabes** | - | Ya tu sabes.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>8</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/neonichu/fastlane-plugin-ya_tu_sabes" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">116</div>
-
 <h3 id="humanable_build_number"><a href="https://github.com/icyleaf/fastlane-plugin-humanable_build_number" target="_blank"><code>humanable_build_number</code></a></h3>
 
 <p class="via-text">via icyleaf</p>
@@ -6713,98 +6759,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/icyleaf/fastlane-plugin-humanable_build_number" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">116</div>
-
-<h3 id="notarize"><a href="https://github.com/zeplin/fastlane-plugin-notarize" target="_blank"><code>notarize</code></a></h3>
-
-<p class="via-text">via Zeplin, Inc.</p>
-
-> fastlane plugin to notarize a macOS app
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **notarize** | - | Notarizes a macOS app
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>39</b> | More subscribers = more popular project
-stars | <b>7</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/zeplin/fastlane-plugin-notarize" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">114</div>
-
-<h3 id="upload_symbols_to_hockey"><a href="https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey" target="_blank"><code>upload_symbols_to_hockey</code></a></h3>
-
-<p class="via-text">via Justin Williams</p>
-
-> Upload dSYM symbolication files to Hockey
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **upload_symbols_to_hockey** | - | Upload dSYM symbolication files to Hockey
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -6851,6 +6805,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/Napp/fastlane-plugin-napp_notifications" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">114</div>
+
+<h3 id="upload_symbols_to_hockey"><a href="https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey" target="_blank"><code>upload_symbols_to_hockey</code></a></h3>
+
+<p class="via-text">via Justin Williams</p>
+
+> Upload dSYM symbolication files to Hockey
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **upload_symbols_to_hockey** | - | Upload dSYM symbolication files to Hockey
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/justin/fastlane-plugin-upload_symbols_to_hockey" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -6903,7 +6903,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">111</div>
+<div class="quality-index" style="color: #63b319">112</div>
 
 <h3 id="set_jira_fix_version"><a href="https://github.com/yuriy-tolstoguzov/fastlane-plugin-set_jira_fix_version" target="_blank"><code>set_jira_fix_version</code></a></h3>
 
@@ -6934,7 +6934,7 @@ stars | <b>2</b> | More stars = more popular project
 forks | <b>5</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
+age | <b>11</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>8</b> | More downloads = more users have been using the plugin for a while
@@ -6945,6 +6945,136 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/yuriy-tolstoguzov/fastlane-plugin-set_jira_fix_version" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">111</div>
+
+<h3 id="gmail"><a href="https://github.com/RedMadRobot/fastlane-plugin-gmail" target="_blank"><code>gmail</code></a></h3>
+
+<p class="via-text">via Alexander Ignition</p>
+
+> send mail from gmail
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **gmail** | - | A short description with <= 80 characters of what this action does
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>18</b> | More subscribers = more popular project
+stars | <b>6</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>15</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/RedMadRobot/fastlane-plugin-gmail" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">110</div>
+
+<h3 id="retry"><a href="http://www.rubydoc.info/gems/fastlane-plugin-retry/1.2.1" target="_blank"><code>retry</code></a></h3>
+
+<p class="via-text">via gmgchow</p>
+
+> Retries failed XCUITest test cases
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>60</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-retry/1.2.1" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">110</div>
+
+<h3 id="verify_two_step_session"><a href="https://github.com/thasegaw/fastlane-plugin-verify_two_step_session" target="_blank"><code>verify_two_step_session</code></a></h3>
+
+<p class="via-text">via Takashi Hasegawa</p>
+
+> Verifies the session cookie for 'Two-Step verification for Apple ID'
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **verify_two_step_session** | misc | Verifies the session cookie for 'Two-Factor authentication/Two-Step verification for Apple ID'
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>7</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>21</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/thasegaw/fastlane-plugin-verify_two_step_session" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -7042,51 +7172,13 @@ tests | <b>12</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">109</div>
+<div class="quality-index" style="color: #63b319">107</div>
 
-<h3 id="retry"><a href="http://www.rubydoc.info/gems/fastlane-plugin-retry/1.2.1" target="_blank"><code>retry</code></a></h3>
+<h3 id="google_cloud_storage"><a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage" target="_blank"><code>google_cloud_storage</code></a></h3>
 
-<p class="via-text">via gmgchow</p>
+<p class="via-text">via Fernando Saragoca</p>
 
-> Retries failed XCUITest test cases
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>59</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-retry/1.2.1" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">109</div>
-
-<h3 id="verify_two_step_session"><a href="https://github.com/thasegaw/fastlane-plugin-verify_two_step_session" target="_blank"><code>verify_two_step_session</code></a></h3>
-
-<p class="via-text">via Takashi Hasegawa</p>
-
-> Verifies the session cookie for 'Two-Step verification for Apple ID'
+> Google Cloud Storage
 
 
 <details>
@@ -7094,7 +7186,9 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **verify_two_step_session** | misc | Verifies the session cookie for 'Two-Factor authentication/Two-Step verification for Apple ID'
+  **google_cloud_storage_check_file** | - | Check if file exists in Google Cloud Storage
+  **google_cloud_storage_download** | - | Download a file from Google Cloud Storage
+  **google_cloud_storage_upload** | - | Upload a file to Google Cloud Storage
 
 </details>
 
@@ -7105,22 +7199,68 @@ tests | <b>0</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>7</b> | Project that have been around for longer tend to be more stable
+age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
-tests | <b>21</b> | The more tests a plugin has, the better
+github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>20</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/thasegaw/fastlane-plugin-verify_two_step_session" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">107</div>
+
+<h3 id="delete_files"><a href="https://github.com/leandog/fastlane-plugin-delete_files" target="_blank"><code>delete_files</code></a></h3>
+
+<p class="via-text">via GaryJohnson</p>
+
+> Deletes a file, folder or multiple files using shell glob pattern.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **delete_files** | - | Deletes a file, folder or multiple files using shell glob pattern.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>21</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>14</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>18</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/leandog/fastlane-plugin-delete_files" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -7172,54 +7312,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">107</div>
-
-<h3 id="google_cloud_storage"><a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage" target="_blank"><code>google_cloud_storage</code></a></h3>
-
-<p class="via-text">via Fernando Saragoca</p>
-
-> Google Cloud Storage
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **google_cloud_storage_check_file** | - | Check if file exists in Google Cloud Storage
-  **google_cloud_storage_download** | - | Download a file from Google Cloud Storage
-  **google_cloud_storage_upload** | - | Upload a file to Google Cloud Storage
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-3</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>20</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/fsaragoca/fastlane-plugin-google_cloud_storage" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
 <div class="quality-index" style="color: #63b319">106</div>
 
 <h3 id="influxdb"><a href="https://github.com/giginet/fastlane-plugin-influxdb" target="_blank"><code>influxdb</code></a></h3>
@@ -7266,53 +7358,7 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">106</div>
-
-<h3 id="delete_files"><a href="https://github.com/leandog/fastlane-plugin-delete_files" target="_blank"><code>delete_files</code></a></h3>
-
-<p class="via-text">via GaryJohnson</p>
-
-> Deletes a file, folder or multiple files using shell glob pattern.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **delete_files** | - | Deletes a file, folder or multiple files using shell glob pattern.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>21</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>18</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/leandog/fastlane-plugin-delete_files" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">104</div>
+<div class="quality-index" style="color: #63b319">105</div>
 
 <h3 id="static_assets"><a href="https://github.com/trifork/fastlane-plugin-static_assets" target="_blank"><code>static_assets</code></a></h3>
 
@@ -7343,7 +7389,7 @@ stars | <b>1</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>11</b> | Project that have been around for longer tend to be more stable
+age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
@@ -7354,52 +7400,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/trifork/fastlane-plugin-static_assets" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">104</div>
-
-<h3 id="bearychat"><a href="https://github.com/dvlprliu/fastlane-plugin-bearychat" target="_blank"><code>bearychat</code></a></h3>
-
-<p class="via-text">via dvlprliu</p>
-
-> send messages to a bearychat channal
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **bearychat** | - | send messages to a bearychat channal
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>7</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/dvlprliu/fastlane-plugin-bearychat" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -7451,13 +7451,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">103</div>
+<div class="quality-index" style="color: #63b319">104</div>
 
-<h3 id="instabug_official"><a href="https://github.com/K-Mousa/fastlane-plugin-instabug" target="_blank"><code>instabug_official</code></a></h3>
+<h3 id="bearychat"><a href="https://github.com/dvlprliu/fastlane-plugin-bearychat" target="_blank"><code>bearychat</code></a></h3>
 
-<p class="via-text">via Karim_Mousa_89</p>
+<p class="via-text">via dvlprliu</p>
 
-> upload dsyms to instabug
+> send messages to a bearychat channal
 
 
 <details>
@@ -7465,7 +7465,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **instabug_official** | - | -
+  **bearychat** | - | send messages to a bearychat channal
 
 </details>
 
@@ -7476,12 +7476,12 @@ tests | <b>3</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
+age | <b>7</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
@@ -7491,53 +7491,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="https://github.com/K-Mousa/fastlane-plugin-instabug" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #63b319">103</div>
-
-<h3 id="flutter"><a href="https://github.com/dotdoom/fastlane-plugin-flutter" target="_blank"><code>flutter</code></a></h3>
-
-<p class="via-text">via Artem Sheremet</p>
-
-> Flutter actions plugin for Fastlane
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **flutter** | - | Flutter actions plugin for Fastlane
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>3</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>4</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>16</b> | More downloads = more users have been using the plugin for a while
-tests | <b>27</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/dotdoom/fastlane-plugin-flutter" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/dvlprliu/fastlane-plugin-bearychat" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -7594,11 +7548,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">103</div>
 
-<h3 id="ti_build_app"><a href="https://github.com/adamtarmstrong/fastlane-plugin-ti_build_app" target="_blank"><code>ti_build_app</code></a></h3>
+<h3 id="shuttle"><a href="https://github.com/ShuttleProject/fastlane-plugin-shuttle" target="_blank"><code>shuttle</code></a></h3>
 
-<p class="via-text">via Adam Armstrong</p>
+<p class="via-text">via Shuttle Project</p>
 
-> Build Axway Appcelerator Mobile Applications from within fastlane
+> Publish your builds on Shuttle.tools
 
 
 <details>
@@ -7606,7 +7560,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **ti_build_app** | - | Build Axway Appcelerator Mobile Applications from within fastlane
+  **shuttle** | - | Publish your builds on [Shuttle.tools](https://www.shuttle.tools)
 
 </details>
 
@@ -7617,22 +7571,22 @@ tests | <b>0</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>9</b> | More subscribers = more popular project
-stars | <b>6</b> | More stars = more popular project
-forks | <b>10</b> | More forks = more people seem to use/modify this project
+subscribers | <b>24</b> | More subscribers = more popular project
+stars | <b>3</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>4</b> | Project that have been around for longer tend to be more stable
+age | <b>3</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/adamtarmstrong/fastlane-plugin-ti_build_app" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/ShuttleProject/fastlane-plugin-shuttle" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -7688,11 +7642,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #63b319">103</div>
 
-<h3 id="shuttle"><a href="https://github.com/ShuttleProject/fastlane-plugin-shuttle" target="_blank"><code>shuttle</code></a></h3>
+<h3 id="flutter"><a href="https://github.com/dotdoom/fastlane-plugin-flutter" target="_blank"><code>flutter</code></a></h3>
 
-<p class="via-text">via Shuttle Project</p>
+<p class="via-text">via Artem Sheremet</p>
 
-> Publish your builds on Shuttle.tools
+> Flutter actions plugin for Fastlane
 
 
 <details>
@@ -7700,7 +7654,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **shuttle** | - | Publish your builds on [Shuttle.tools](https://www.shuttle.tools)
+  **flutter** | - | Flutter actions plugin for Fastlane
 
 </details>
 
@@ -7711,22 +7665,114 @@ tests | <b>3</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>24</b> | More subscribers = more popular project
+subscribers | <b>3</b> | More subscribers = more popular project
 stars | <b>3</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>4</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>16</b> | More downloads = more users have been using the plugin for a while
+tests | <b>27</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/dotdoom/fastlane-plugin-flutter" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">103</div>
+
+<h3 id="ti_build_app"><a href="https://github.com/adamtarmstrong/fastlane-plugin-ti_build_app" target="_blank"><code>ti_build_app</code></a></h3>
+
+<p class="via-text">via Adam Armstrong</p>
+
+> Build Axway Appcelerator Mobile Applications from within fastlane
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **ti_build_app** | - | Build Axway Appcelerator Mobile Applications from within fastlane
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>9</b> | More subscribers = more popular project
+stars | <b>6</b> | More stars = more popular project
+forks | <b>10</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>4</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/ShuttleProject/fastlane-plugin-shuttle" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/adamtarmstrong/fastlane-plugin-ti_build_app" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">103</div>
+
+<h3 id="instabug_official"><a href="https://github.com/K-Mousa/fastlane-plugin-instabug" target="_blank"><code>instabug_official</code></a></h3>
+
+<p class="via-text">via Karim_Mousa_89</p>
+
+> upload dsyms to instabug
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **instabug_official** | - | -
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/K-Mousa/fastlane-plugin-instabug" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -7786,6 +7832,90 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
+<div class="quality-index" style="color: #63b319">102</div>
+
+<h3 id="validate_app"><a href="https://github.com/thii/fastlane-plugin-validate_app" target="_blank"><code>validate_app</code></a></h3>
+
+<p class="via-text">via Thi</p>
+
+> Validate your build before uploading to iTunes Connect
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **validate_app** | - | Validate your ipa file
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>11</b> | More stars = more popular project
+forks | <b>5</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>6</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/thii/fastlane-plugin-validate_app" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #63b319">101</div>
+
+<h3 id="simctl"><a href="http://www.rubydoc.info/gems/fastlane-plugin-simctl/0.2.1" target="_blank"><code>simctl</code></a></h3>
+
+<p class="via-text">via Renzo Crisostomo</p>
+
+> Fastlane plugin to interact with xcrun simctl
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>81</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-simctl/0.2.1" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
 <div class="quality-index" style="color: #63b319">101</div>
 
 <h3 id="localize"><a href="https://github.com/num42/fastlane-plugin-localize" target="_blank"><code>localize</code></a></h3>
@@ -7832,13 +7962,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #63b319">101</div>
+<div class="quality-index" style="color: #558000">99</div>
 
-<h3 id="validate_app"><a href="https://github.com/thii/fastlane-plugin-validate_app" target="_blank"><code>validate_app</code></a></h3>
+<h3 id="apprepo"><a href="https://github.com/suculent/fastlane-plugin-apprepo" target="_blank"><code>apprepo</code></a></h3>
 
-<p class="via-text">via Thi</p>
+<p class="via-text">via Matej Sychra</p>
 
-> Validate your build before uploading to iTunes Connect
+> Fastlane plugin SFTP/AppRepo uploader
 
 
 <details>
@@ -7846,7 +7976,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **validate_app** | - | Validate your ipa file
+  **download_manifest** | - | Runs the Apprepo plugin
+  **apprepo** | - | -
+  **init** | - | Initializes Repofile
+  **run** | - | Runs the default Apprepo action
+  **submit** | - | Submits IPA to Apprepo
 
 </details>
 
@@ -7858,34 +7992,43 @@ tests | <b>3</b> | The more tests a plugin has, the better
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>11</b> | More stars = more popular project
-forks | <b>5</b> | More forks = more people seem to use/modify this project
+stars | <b>4</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>16</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>32</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/thii/fastlane-plugin-validate_app" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/suculent/fastlane-plugin-apprepo" target="_blank">Open on GitHub</a>
 
 </p>
 
 -----
 
-<div class="quality-index" style="color: #558000">99</div>
+<div class="quality-index" style="color: #558000">98</div>
 
-<h3 id="simctl"><a href="http://www.rubydoc.info/gems/fastlane-plugin-simctl/0.2.1" target="_blank"><code>simctl</code></a></h3>
+<h3 id="ios_readme_generate"><a href="https://github.com/erikfloresq/fastlane-plugin-ios_readme_generate" target="_blank"><code>ios_readme_generate</code></a></h3>
 
-<p class="via-text">via Renzo Crisostomo</p>
+<p class="via-text">via Erik Flores</p>
 
-> Fastlane plugin to interact with xcrun simctl
+> Create readme for ios projects
 
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **ios_readme_generate** | - | Create readme for ios projects :D
+
+</details>
 
 
 <details>
@@ -7893,24 +8036,69 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>79</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/erikfloresq/fastlane-plugin-ios_readme_generate" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">98</div>
+
+<h3 id="updateplistfromstrings"><a href="https://github.com/jschmid/fastlane-plugin-updateplistfromstrings" target="_blank"><code>updateplistfromstrings</code></a></h3>
+
+<p class="via-text">via Jonas Schmid</p>
+
+> Allow to take values from the localization.strings and put them into Info.plist
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **updateplistfromstrings** | - | Update InfoPlist.strings from translation file
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>6</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>4</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-simctl/0.2.1" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+  <a href="https://github.com/jschmid/fastlane-plugin-updateplistfromstrings" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -8013,102 +8201,6 @@ tests | <b>15</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">98</div>
 
-<h3 id="apprepo"><a href="https://github.com/suculent/fastlane-plugin-apprepo" target="_blank"><code>apprepo</code></a></h3>
-
-<p class="via-text">via Matej Sychra</p>
-
-> Fastlane plugin SFTP/AppRepo uploader
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **download_manifest** | - | Runs the Apprepo plugin
-  **apprepo** | - | -
-  **init** | - | Initializes Repofile
-  **run** | - | Runs the default Apprepo action
-  **submit** | - | Submits IPA to Apprepo
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>4</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>15</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>32</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/suculent/fastlane-plugin-apprepo" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">98</div>
-
-<h3 id="ios_readme_generate"><a href="https://github.com/erikfloresq/fastlane-plugin-ios_readme_generate" target="_blank"><code>ios_readme_generate</code></a></h3>
-
-<p class="via-text">via Erik Flores</p>
-
-> Create readme for ios projects
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **ios_readme_generate** | - | Create readme for ios projects :D
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/erikfloresq/fastlane-plugin-ios_readme_generate" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">98</div>
-
 <h3 id="update_jenkins_build"><a href="https://github.com/icyleaf/fastlane-plugin-update_jenkins_build" target="_blank"><code>update_jenkins_build</code></a></h3>
 
 <p class="via-text">via icyleaf</p>
@@ -8148,52 +8240,6 @@ tests | <b>18</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/icyleaf/fastlane-plugin-update_jenkins_build" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">97</div>
-
-<h3 id="updateplistfromstrings"><a href="https://github.com/jschmid/fastlane-plugin-updateplistfromstrings" target="_blank"><code>updateplistfromstrings</code></a></h3>
-
-<p class="via-text">via Jonas Schmid</p>
-
-> Allow to take values from the localization.strings and put them into Info.plist
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **updateplistfromstrings** | - | Update InfoPlist.strings from translation file
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/jschmid/fastlane-plugin-updateplistfromstrings" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -8245,7 +8291,53 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">96</div>
+<div class="quality-index" style="color: #558000">97</div>
+
+<h3 id="setup_app_feedback_sdk"><a href="https://github.com/yahoojapan/fastlane-plugin-setup_app_feedback_sdk" target="_blank"><code>setup_app_feedback_sdk</code></a></h3>
+
+<p class="via-text">via Yahoo Japan Corporation</p>
+
+> Setup the Info.plist for App Feedback SDK
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **setup_app_feedback_sdk** | - | Setup the Info.plist for App Feedback SDK
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>21</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
+tests | <b>6</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/yahoojapan/fastlane-plugin-setup_app_feedback_sdk" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">97</div>
 
 <h3 id="install_provisioning_profiles"><a href="https://github.com/dgyesbreghs/install_provisioning_profiles" target="_blank"><code>install_provisioning_profiles</code></a></h3>
 
@@ -8275,7 +8367,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>5</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
+age | <b>7</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
@@ -8291,7 +8383,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">95</div>
+<div class="quality-index" style="color: #558000">96</div>
 
 <h3 id="wait_xcrun"><a href="https://github.com/mgrebenets/fastlane-plugin-wait_xcrun" target="_blank"><code>wait_xcrun</code></a></h3>
 
@@ -8321,7 +8413,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>13</b> | Project that have been around for longer tend to be more stable
+age | <b>14</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>6</b> | More downloads = more users have been using the plugin for a while
@@ -8332,52 +8424,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/mgrebenets/fastlane-plugin-wait_xcrun" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">95</div>
-
-<h3 id="jira_issue_details"><a href="https://github.com/zaimramlan/fastlane-plugin-jira-issue" target="_blank"><code>jira_issue_details</code></a></h3>
-
-<p class="via-text">via Zaim Ramlan</p>
-
-> Get the details for the given jira issue key(s)
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **get_jira_issue** | - | Get the details for the given jira issue key(s).
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
-tests | <b>21</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/zaimramlan/fastlane-plugin-jira-issue" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -8431,6 +8477,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">95</div>
 
+<h3 id="jira_issue_details"><a href="https://github.com/zaimramlan/fastlane-plugin-jira-issue" target="_blank"><code>jira_issue_details</code></a></h3>
+
+<p class="via-text">via Zaim Ramlan</p>
+
+> Get the details for the given jira issue key(s)
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **get_jira_issue** | - | Get the details for the given jira issue key(s).
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+tests | <b>21</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/zaimramlan/fastlane-plugin-jira-issue" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">95</div>
+
 <h3 id="test_report"><a href="https://github.com/TECLIB/fastlane-plugin-test_report" target="_blank"><code>test_report</code></a></h3>
 
 <p class="via-text">via Naylin Medina</p>
@@ -8470,6 +8562,44 @@ tests | <b>9</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/TECLIB/fastlane-plugin-test_report" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">94</div>
+
+<h3 id="slack_train"><a href="http://www.rubydoc.info/gems/fastlane-plugin-slack_train/0.2.0" target="_blank"><code>slack_train</code></a></h3>
+
+<p class="via-text">via Felix Krause</p>
+
+> Show a train of the fastlane progress
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>74</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-slack_train/0.2.0" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
 
@@ -8523,6 +8653,101 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">93</div>
 
+<h3 id="gradle_manager"><a href="https://github.com/hpinhal/fastlane-plugin-gradle-manager" target="_blank"><code>gradle_manager</code></a></h3>
+
+<p class="via-text">via Helder Pinhal</p>
+
+> Exposes some Android configurations from the gradle file.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **get_version_name** | - | Get the parsed Gradle file of an Android project.
+  **get_version_code** | - | Get the parsed Gradle file of an Android project.
+  **get_gradle_data** | - | Get the parsed Gradle file of an Android project.
+  **get_application_id** | - | Get the parsed Gradle file of an Android project.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>7</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/hpinhal/fastlane-plugin-gradle-manager" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">93</div>
+
+<h3 id="telegram"><a href="https://github.com/sergpetrov/fastlane-plugin-telegram" target="_blank"><code>telegram</code></a></h3>
+
+<p class="via-text">via sergpetrov</p>
+
+> Allows post messages to telegram channel
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **telegram** | - | Allows post messages to telegram channel
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>6</b> | More subscribers = more popular project
+stars | <b>10</b> | More stars = more popular project
+forks | <b>10</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>8</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/sergpetrov/fastlane-plugin-telegram" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">93</div>
+
 <h3 id="testfairy"><a href="https://github.com/joshdholtz/fastlane-plugin-testfairy" target="_blank"><code>testfairy</code></a></h3>
 
 <p class="via-text">via Josh Holtz</p>
@@ -8562,52 +8787,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/joshdholtz/fastlane-plugin-testfairy" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">93</div>
-
-<h3 id="download_hockey_ipa"><a href="https://github.com/horimislime/fastlane-plugin-download_hockey_ipa" target="_blank"><code>download_hockey_ipa</code></a></h3>
-
-<p class="via-text">via horimislime</p>
-
-> A fastlane plugin that helps downloading .ipa from HockeyApp
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **download_hockey_ipa** | - | A fastlane plugin that helps downloading .ipa from HockeyApp
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>9</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/horimislime/fastlane-plugin-download_hockey_ipa" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -8663,49 +8842,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">93</div>
 
-<h3 id="slack_train"><a href="http://www.rubydoc.info/gems/fastlane-plugin-slack_train/0.2.0" target="_blank"><code>slack_train</code></a></h3>
+<h3 id="download_hockey_ipa"><a href="https://github.com/horimislime/fastlane-plugin-download_hockey_ipa" target="_blank"><code>download_hockey_ipa</code></a></h3>
 
-<p class="via-text">via Felix Krause</p>
+<p class="via-text">via horimislime</p>
 
-> Show a train of the fastlane progress
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>73</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-slack_train/0.2.0" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">92</div>
-
-<h3 id="telegram"><a href="https://github.com/sergpetrov/fastlane-plugin-telegram" target="_blank"><code>telegram</code></a></h3>
-
-<p class="via-text">via sergpetrov</p>
-
-> Allows post messages to telegram channel
+> A fastlane plugin that helps downloading .ipa from HockeyApp
 
 
 <details>
@@ -8713,7 +8854,62 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **telegram** | - | Allows post messages to telegram channel
+  **download_hockey_ipa** | - | A fastlane plugin that helps downloading .ipa from HockeyApp
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>9</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/horimislime/fastlane-plugin-download_hockey_ipa" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">92</div>
+
+<h3 id="ciutils"><a href="https://github.com/xfreebird/fastlane-plugin-ciutils" target="_blank"><code>ciutils</code></a></h3>
+
+<p class="via-text">via Nicolae Ghimbovschi</p>
+
+> Various utilities for iOS CI
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **en_build_number** | - | Get the value for build number from environment
+  **en_install_provisioning_profiles** | - | Copies recursively all provisioning profiles from current folder to system Provisioning Profiles
+  **en_profile_name** | - | A short description with <= 80 characters of what this action does
+  **en_remove_keychain** | - | Removes the keychain setup by en_setup_keychain
+  **en_ci_utils_init** | - | Sets env variables for gym, scan, swiftlint and lizard actions
+  **en_setup_project** | - | Updates Xcode project, plist and entitlements file if config file is provided
+  **en_setup_keychain** | - | Creates the keychain, and imports the provided certificate
+  **en_git_changelog** | - | Creates a change log from git commits by filtering commits by a pattern (e.g. JIRA task prefix)
+  **en_close_simulator** | - | Closes all simulator instances
+  **en_create_sonar_reports** | - | Creates swiftlint, lizard and oclint reports and adjusts junit reports for sonarqube (with the open source swift/objc plugin)
 
 </details>
 
@@ -8724,22 +8920,22 @@ tests | <b>0</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>10</b> | More stars = more popular project
-forks | <b>10</b> | More forks = more people seem to use/modify this project
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>8</b> | Project that have been around for longer tend to be more stable
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>13</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>11</b> | More downloads = more users have been using the plugin for a while
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/sergpetrov/fastlane-plugin-telegram" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/xfreebird/fastlane-plugin-ciutils" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -8793,55 +8989,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">91</div>
 
-<h3 id="gradle_manager"><a href="https://github.com/hpinhal/fastlane-plugin-gradle-manager" target="_blank"><code>gradle_manager</code></a></h3>
-
-<p class="via-text">via Helder Pinhal</p>
-
-> Exposes some Android configurations from the gradle file.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **get_version_name** | - | Get the parsed Gradle file of an Android project.
-  **get_version_code** | - | Get the parsed Gradle file of an Android project.
-  **get_gradle_data** | - | Get the parsed Gradle file of an Android project.
-  **get_application_id** | - | Get the parsed Gradle file of an Android project.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>4</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/hpinhal/fastlane-plugin-gradle-manager" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">91</div>
-
 <h3 id="jira_util"><a href="https://github.com/alexeyn-martynov/fastlane-plugin-jira_versions" target="_blank"><code>jira_util</code></a></h3>
 
 <p class="via-text">via %q{Alexey Martynov}</p>
@@ -8888,32 +9035,22 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">91</div>
+<div class="quality-index" style="color: #558000">90</div>
 
-<h3 id="ciutils"><a href="https://github.com/xfreebird/fastlane-plugin-ciutils" target="_blank"><code>ciutils</code></a></h3>
+<h3 id="retry_tests"><a href="https://github.com/kouzoh/fastlane-plugin-retry_tests" target="_blank"><code>retry_tests</code></a></h3>
 
-<p class="via-text">via Nicolae Ghimbovschi</p>
+<p class="via-text">via Gloria Chow</p>
 
-> Various utilities for iOS CI
+>     This fastlane plugin includes the following actions:
+    1) multi_scan: uses scan to run Xcode tests, optionally in batches, a given number of times: only re-testing failing tests.
+    2) suppress_tests_from_junit: uses a junit xml report file to suppress either passing or failing tests in an Xcode Scheme.
+    3) suppress_tests: suppresses specific tests in a specific or all Xcode Schemes in a given project.
+    4) suppressed_tests: retrieves a list of tests that are suppressed in a specific or all Xcode Schemes in a project.
+    5) tests_from_junit: retrieves the failing and passing tests as reported in a junit xml file.
+    6) tests_from_xctestrun: retrieves all of the tests from xctest bundles referenced by the xctestrun file
+    7) collate_junit_reports: collects and correctly organizes junit reports from multiple test passes.
 
 
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **en_build_number** | - | Get the value for build number from environment
-  **en_install_provisioning_profiles** | - | Copies recursively all provisioning profiles from current folder to system Provisioning Profiles
-  **en_profile_name** | - | A short description with <= 80 characters of what this action does
-  **en_remove_keychain** | - | Removes the keychain setup by en_setup_keychain
-  **en_ci_utils_init** | - | Sets env variables for gym, scan, swiftlint and lizard actions
-  **en_setup_project** | - | Updates Xcode project, plist and entitlements file if config file is provided
-  **en_setup_keychain** | - | Creates the keychain, and imports the provided certificate
-  **en_git_changelog** | - | Creates a change log from git commits by filtering commits by a pattern (e.g. JIRA task prefix)
-  **en_close_simulator** | - | Closes all simulator instances
-  **en_create_sonar_reports** | - | Creates swiftlint, lizard and oclint reports and adjusts junit reports for sonarqube (with the open source swift/objc plugin)
-
-</details>
 
 
 <details>
@@ -8921,69 +9058,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
+downloads | <b>28</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/xfreebird/fastlane-plugin-ciutils" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">90</div>
-
-<h3 id="get_product_bundle_id"><a href="https://github.com/lyndsey-ferguson/get_product_bundle_id" target="_blank"><code>get_product_bundle_id</code></a></h3>
-
-<p class="via-text">via Lyndsey Ferguson</p>
-
-> Gets PRODUCT_BUNDLE_IDENTIFIER from the first buildable target in a given scheme
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **get_product_bundle_id** | - | Gets PRODUCT_BUNDLE_IDENTIFIER from a buildable target in an Xcode project using a provided scheme
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
-tests | <b>18</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/lyndsey-ferguson/get_product_bundle_id" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/kouzoh/fastlane-plugin-retry_tests" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -9037,20 +9128,21 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">90</div>
 
-<h3 id="retry_tests"><a href="https://github.com/kouzoh/fastlane-plugin-retry_tests" target="_blank"><code>retry_tests</code></a></h3>
+<h3 id="git_info_extract"><a href="https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract" target="_blank"><code>git_info_extract</code></a></h3>
 
-<p class="via-text">via Gloria Chow</p>
+<p class="via-text">via alexander sun</p>
 
->     This fastlane plugin includes the following actions:
-    1) multi_scan: uses scan to run Xcode tests, optionally in batches, a given number of times: only re-testing failing tests.
-    2) suppress_tests_from_junit: uses a junit xml report file to suppress either passing or failing tests in an Xcode Scheme.
-    3) suppress_tests: suppresses specific tests in a specific or all Xcode Schemes in a given project.
-    4) suppressed_tests: retrieves a list of tests that are suppressed in a specific or all Xcode Schemes in a project.
-    5) tests_from_junit: retrieves the failing and passing tests as reported in a junit xml file.
-    6) tests_from_xctestrun: retrieves all of the tests from xctest bundles referenced by the xctestrun file
-    7) collate_junit_reports: collects and correctly organizes junit reports from multiple test passes.
+> Extract JIRA information from git merge
 
 
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **git_info_extract** | - | Extract JIRA information from git merge
+
+</details>
 
 
 <details>
@@ -9058,23 +9150,115 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
+stars | <b>1</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>11</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>28</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
+downloads | <b>30</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/kouzoh/fastlane-plugin-retry_tests" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">90</div>
+
+<h3 id="get_product_bundle_id"><a href="https://github.com/lyndsey-ferguson/get_product_bundle_id" target="_blank"><code>get_product_bundle_id</code></a></h3>
+
+<p class="via-text">via Lyndsey Ferguson</p>
+
+> Gets PRODUCT_BUNDLE_IDENTIFIER from the first buildable target in a given scheme
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **get_product_bundle_id** | - | Gets PRODUCT_BUNDLE_IDENTIFIER from a buildable target in an Xcode project using a provided scheme
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
+tests | <b>18</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/lyndsey-ferguson/get_product_bundle_id" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">90</div>
+
+<h3 id="slack_upload"><a href="https://github.com/cieslakdawid/fastlane-plugin-slack_upload" target="_blank"><code>slack_upload</code></a></h3>
+
+<p class="via-text">via Dawid Cieslak</p>
+
+> Uploads specified file to Slack
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **slack_upload** | - | Uploads given file to Slack
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>3</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>14</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/cieslakdawid/fastlane-plugin-slack_upload" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -9128,6 +9312,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">89</div>
 
+<h3 id="upload_to_onesky"><a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky" target="_blank"><code>upload_to_onesky</code></a></h3>
+
+<p class="via-text">via joshrlesch</p>
+
+> Upload a strings file to OneSky
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **upload_to_onesky** | - | Upload a strings file to OneSky
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>4</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>13</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">89</div>
+
 <h3 id="number_of_swift_lines"><a href="https://github.com/BinaryDennis/fastlane-plugin-number_of_swift_lines" target="_blank"><code>number_of_swift_lines</code></a></h3>
 
 <p class="via-text">via Dennis Charmington</p>
@@ -9167,52 +9397,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/BinaryDennis/fastlane-plugin-number_of_swift_lines" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">89</div>
-
-<h3 id="git_info_extract"><a href="https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract" target="_blank"><code>git_info_extract</code></a></h3>
-
-<p class="via-text">via alexander sun</p>
-
-> Extract JIRA information from git merge
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **git_info_extract** | - | Extract JIRA information from git merge
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>11</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>29</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/xiangyu-sun/fastlane-plugin-git_info_extract" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -9259,52 +9443,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/faithfracture/update_team_identifier" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">88</div>
-
-<h3 id="upload_to_onesky"><a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky" target="_blank"><code>upload_to_onesky</code></a></h3>
-
-<p class="via-text">via joshrlesch</p>
-
-> Upload a strings file to OneSky
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **upload_to_onesky** | - | Upload a strings file to OneSky
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>4</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>13</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/joshrlesch/fastlane-plugin-upload_to_onesky" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -9402,52 +9540,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">86</div>
-
-<h3 id="slack_upload"><a href="https://github.com/cieslakdawid/fastlane-plugin-slack_upload" target="_blank"><code>slack_upload</code></a></h3>
-
-<p class="via-text">via Dawid Cieslak</p>
-
-> Uploads specified file to Slack
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **slack_upload** | - | Uploads given file to Slack
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>10</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/cieslakdawid/fastlane-plugin-slack_upload" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
 <div class="quality-index" style="color: #558000">85</div>
 
 <h3 id="elux_actions"><a href="http://www.rubydoc.info/gems/fastlane-plugin-elux_actions/1.2.5" target="_blank"><code>elux_actions</code></a></h3>
@@ -9534,53 +9626,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">84</div>
-
-<h3 id="upload_to_qmobile"><a href="https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile" target="_blank"><code>upload_to_qmobile</code></a></h3>
-
-<p class="via-text">via icyleaf</p>
-
-> Upload a mobile app to qmobile
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **upload_to_qmobile** | - | Upload mobile app to qmobile.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>12</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>11</b> | More downloads = more users have been using the plugin for a while
-tests | <b>6</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">84</div>
+<div class="quality-index" style="color: #558000">85</div>
 
 <h3 id="dingtalk_robot"><a href="https://github.com/InfiniteReverse/fastlane_plugins.git" target="_blank"><code>dingtalk_robot</code></a></h3>
 
@@ -9610,7 +9656,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
+age | <b>1</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
@@ -9670,6 +9716,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/menvia/fastlane-plugin-farol" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">84</div>
+
+<h3 id="upload_to_qmobile"><a href="https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile" target="_blank"><code>upload_to_qmobile</code></a></h3>
+
+<p class="via-text">via icyleaf</p>
+
+> Upload a mobile app to qmobile
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **upload_to_qmobile** | - | Upload mobile app to qmobile.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>12</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>11</b> | More downloads = more users have been using the plugin for a while
+tests | <b>6</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/icyleaf/fastlane-plugin-upload_to_qmobile" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -9772,52 +9864,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">82</div>
 
-<h3 id="appdynamics"><a href="https://github.com/wedkarz/fastlane-plugin-appdynamics" target="_blank"><code>appdynamics</code></a></h3>
-
-<p class="via-text">via Artur Rybak</p>
-
-> Upload dSYM files to AppDynamics
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **appdynamics** | - | Upload dSYM symbolication files to AppDynamics
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>6</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>10</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/wedkarz/fastlane-plugin-appdynamics" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">82</div>
-
 <h3 id="jira_transitions"><a href="https://github.com/OMWorks/fastlane_jira_transitions" target="_blank"><code>jira_transitions</code></a></h3>
 
 <p class="via-text">via Ostap Taran</p>
@@ -9908,6 +9954,98 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
+<div class="quality-index" style="color: #558000">82</div>
+
+<h3 id="appdynamics"><a href="https://github.com/wedkarz/fastlane-plugin-appdynamics" target="_blank"><code>appdynamics</code></a></h3>
+
+<p class="via-text">via Artur Rybak</p>
+
+> Upload dSYM files to AppDynamics
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **appdynamics** | - | Upload dSYM symbolication files to AppDynamics
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>6</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>10</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>10</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/wedkarz/fastlane-plugin-appdynamics" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">81</div>
+
+<h3 id="release"><a href="https://github.com/Coledunsby/fastlane-plugin-release" target="_blank"><code>release</code></a></h3>
+
+<p class="via-text">via Cole Dunsby</p>
+
+> Automates the steps to create a new release for a project.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **make_release** | - | Automates the steps to create a new release for a framework.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>3</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/Coledunsby/fastlane-plugin-release" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
 <div class="quality-index" style="color: #558000">81</div>
 
 <h3 id="transifex"><a href="https://github.com/JackyQu/fastlane-plugin-transifex" target="_blank"><code>transifex</code></a></h3>
@@ -9956,11 +10094,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">80</div>
 
-<h3 id="release"><a href="https://github.com/Coledunsby/fastlane-plugin-release" target="_blank"><code>release</code></a></h3>
+<h3 id="podspec_dependency_versioning"><a href="https://github.com/Coledunsby/fastlane-plugin-podspec-dependency-versioning" target="_blank"><code>podspec_dependency_versioning</code></a></h3>
 
 <p class="via-text">via Cole Dunsby</p>
 
-> Automates the steps to create a new release for a project.
+> Edit the versions of your podspec dependencies
 
 
 <details>
@@ -9968,7 +10106,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **make_release** | - | Automates the steps to create a new release for a framework.
+  **change_podspec_dependency_version** | - | This action will modify the version of a dependency in your podspec.
 
 </details>
 
@@ -9994,7 +10132,53 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="https://github.com/Coledunsby/fastlane-plugin-release" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/Coledunsby/fastlane-plugin-podspec-dependency-versioning" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">80</div>
+
+<h3 id="bitrise"><a href="https://github.com/authiatr/fastlane-plugin-bitrise" target="_blank"><code>bitrise</code></a></h3>
+
+<p class="via-text">via Robin AUTHIAT</p>
+
+> Fastlane plugin to trigger a bitrise build with some options
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **bitrise** | - | Trigger a bitrise build
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+tests | <b>6</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/authiatr/fastlane-plugin-bitrise" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10048,21 +10232,12 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">80</div>
 
-<h3 id="podspec_dependency_versioning"><a href="https://github.com/Coledunsby/fastlane-plugin-podspec-dependency-versioning" target="_blank"><code>podspec_dependency_versioning</code></a></h3>
+<h3 id="check_good_version"><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-check_good_version" target="_blank"><code>check_good_version</code></a></h3>
 
-<p class="via-text">via Cole Dunsby</p>
+<p class="via-text">via Lyndsey Ferguson</p>
 
-> Edit the versions of your podspec dependencies
+> Checks the version of the installed Good framework
 
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **change_podspec_dependency_version** | - | This action will modify the version of a dependency in your podspec.
-
-</details>
 
 
 <details>
@@ -10070,23 +10245,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
+downloads | <b>18</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/Coledunsby/fastlane-plugin-podspec-dependency-versioning" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-check_good_version" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10094,11 +10269,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">79</div>
 
-<h3 id="bitrise"><a href="https://github.com/authiatr/fastlane-plugin-bitrise" target="_blank"><code>bitrise</code></a></h3>
+<h3 id="jira_build_number"><a href="https://github.com/telrod/fastlane-plugin-jira_build_number" target="_blank"><code>jira_build_number</code></a></h3>
 
-<p class="via-text">via Robin AUTHIAT</p>
+<p class="via-text">via Tom Elrod</p>
 
-> Fastlane plugin to trigger a bitrise build with some options
+> Insert build number into related jira issues
 
 
 <details>
@@ -10106,7 +10281,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **bitrise** | - | Trigger a bitrise build
+  **jira_build_number** | - | Adds build number from CI as comment to associated jira issue.
 
 </details>
 
@@ -10122,17 +10297,63 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
+age | <b>1</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
-tests | <b>6</b> | The more tests a plugin has, the better
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/authiatr/fastlane-plugin-bitrise" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/telrod/fastlane-plugin-jira_build_number" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">79</div>
+
+<h3 id="git_switch_branch"><a href="https://github.com/chdzq/fastlane-plugin-git_switch_branch" target="_blank"><code>git_switch_branch</code></a></h3>
+
+<p class="via-text">via zhangqi</p>
+
+> switch to branch
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **git_switch_branch** | - | switch to branch
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>9</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/chdzq/fastlane-plugin-git_switch_branch" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10179,43 +10400,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/metova/fastlane-plugin-buildnumber" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">79</div>
-
-<h3 id="check_good_version"><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-check_good_version" target="_blank"><code>check_good_version</code></a></h3>
-
-<p class="via-text">via Lyndsey Ferguson</p>
-
-> Checks the version of the installed Good framework
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>17</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-check_good_version" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10269,11 +10453,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">78</div>
 
-<h3 id="jira_build_number"><a href="https://github.com/telrod/fastlane-plugin-jira_build_number" target="_blank"><code>jira_build_number</code></a></h3>
+<h3 id="increment_version_name"><a href="https://github.com/fierysolid/fastlane-plugin-increment_version_name" target="_blank"><code>increment_version_name</code></a></h3>
 
-<p class="via-text">via Tom Elrod</p>
+<p class="via-text">via fierysolid</p>
 
-> Insert build number into related jira issues
+> Increment the version name of your android project.
 
 
 <details>
@@ -10281,7 +10465,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **jira_build_number** | - | Adds build number from CI as comment to associated jira issue.
+  **increment_version_name** | project | Increment the version name of your android project.
 
 </details>
 
@@ -10296,18 +10480,18 @@ subscribers | <b>3</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>1</b> | Project that have been around for longer tend to be more stable
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>15</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/telrod/fastlane-plugin-jira_build_number" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/fierysolid/fastlane-plugin-increment_version_name" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10359,13 +10543,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">78</div>
+<div class="quality-index" style="color: #558000">77</div>
 
-<h3 id="git_switch_branch"><a href="https://github.com/chdzq/fastlane-plugin-git_switch_branch" target="_blank"><code>git_switch_branch</code></a></h3>
+<h3 id="redmine_upload"><a href="https://github.com/salmattia/fastlane-plugin-redmine_upload" target="_blank"><code>redmine_upload</code></a></h3>
 
-<p class="via-text">via zhangqi</p>
+<p class="via-text">via Mattia Salvetti</p>
 
-> switch to branch
+> A fastlane plugin to upload file contents to Redmine
 
 
 <details>
@@ -10373,7 +10557,8 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **git_switch_branch** | - | switch to branch
+  **redmine_file_post** | - | Uploads a file in a Redmine Files section of a given Redmine project
+  **redmine_upload** | - | A fastlane plugin to upload file contents to Redmine
 
 </details>
 
@@ -10383,23 +10568,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>8</b> | Project that have been around for longer tend to be more stable
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>2</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/chdzq/fastlane-plugin-git_switch_branch" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/salmattia/fastlane-plugin-redmine_upload" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10499,99 +10684,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">76</div>
 
-<h3 id="redmine_upload"><a href="https://github.com/salmattia/fastlane-plugin-redmine_upload" target="_blank"><code>redmine_upload</code></a></h3>
-
-<p class="via-text">via Mattia Salvetti</p>
-
-> A fastlane plugin to upload file contents to Redmine
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **redmine_file_post** | - | Uploads a file in a Redmine Files section of a given Redmine project
-  **redmine_upload** | - | A fastlane plugin to upload file contents to Redmine
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>1</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/salmattia/fastlane-plugin-redmine_upload" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">75</div>
-
-<h3 id="increment_version_name"><a href="https://github.com/fierysolid/fastlane-plugin-increment_version_name" target="_blank"><code>increment_version_name</code></a></h3>
-
-<p class="via-text">via fierysolid</p>
-
-> Increment the version name of your android project.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **increment_version_name** | project | Increment the version name of your android project.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>10</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/fierysolid/fastlane-plugin-increment_version_name" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">75</div>
-
 <h3 id="build_log_info"><a href="https://github.com/tarappo/fastlane-plugin-build_log_info" target="_blank"><code>build_log_info</code></a></h3>
 
 <p class="via-text">via tarappo</p>
@@ -10620,7 +10712,7 @@ stars | <b>1</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>50</b> | How well is the README of the document written
-age | <b>2</b> | Project that have been around for longer tend to be more stable
+age | <b>3</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
@@ -10638,11 +10730,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">75</div>
 
-<h3 id="update_build_settings_key"><a href="https://github.com/ungacy/update_build_settings_key" target="_blank"><code>update_build_settings_key</code></a></h3>
+<h3 id="xliff_en_gen"><a href="https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen" target="_blank"><code>xliff_en_gen</code></a></h3>
 
-<p class="via-text">via ungacy</p>
+<p class="via-text">via alexander sun</p>
 
-> Updated code signing settings from 'Automatic' to a specific profile
+> gen Localizable.strings file from xliff
 
 
 <details>
@@ -10650,7 +10742,8 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **update_build_settings_key** | - | Updates build settings key to a new value
+  **export_xliff** | - | export xliff for an xcode project
+  **xliff_en_gen** | - | Overwrite project Localizable.strings file from English version xliff
 
 </details>
 
@@ -10661,22 +10754,68 @@ tests | <b>0</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>4</b> | More stars = more popular project
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>8</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>15</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/ungacy/update_build_settings_key" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">75</div>
+
+<h3 id="droidicon"><a href="https://github.com/chrhsmt/fastlane-plugin-droidicon" target="_blank"><code>droidicon</code></a></h3>
+
+<p class="via-text">via @chrhsmt</p>
+
+> Generate required icon sizes and iconset from a master application icon
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **droidicon** | - | Generate required icon sizes and iconset from a master application icon
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>14</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/chrhsmt/fastlane-plugin-droidicon" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10730,11 +10869,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">75</div>
 
-<h3 id="xliff_en_gen"><a href="https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen" target="_blank"><code>xliff_en_gen</code></a></h3>
+<h3 id="update_build_settings_key"><a href="https://github.com/ungacy/update_build_settings_key" target="_blank"><code>update_build_settings_key</code></a></h3>
 
-<p class="via-text">via alexander sun</p>
+<p class="via-text">via ungacy</p>
 
-> gen Localizable.strings file from xliff
+> Updated code signing settings from 'Automatic' to a specific profile
 
 
 <details>
@@ -10742,8 +10881,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **export_xliff** | - | export xliff for an xcode project
-  **xliff_en_gen** | - | Overwrite project Localizable.strings file from English version xliff
+  **update_build_settings_key** | - | Updates build settings key to a new value
 
 </details>
 
@@ -10754,22 +10892,22 @@ tests | <b>3</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>4</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
 age | <b>12</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>15</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>8</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/xiangyu-sun/fastlane-plugin-xliff_en_gen" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/ungacy/update_build_settings_key" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -10821,52 +10959,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">74</div>
-
-<h3 id="droidicon"><a href="https://github.com/chrhsmt/fastlane-plugin-droidicon" target="_blank"><code>droidicon</code></a></h3>
-
-<p class="via-text">via @chrhsmt</p>
-
-> Generate required icon sizes and iconset from a master application icon
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **droidicon** | - | Generate required icon sizes and iconset from a master application icon
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>14</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>6</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/chrhsmt/fastlane-plugin-droidicon" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
 <div class="quality-index" style="color: #558000">73</div>
 
 <h3 id="apperian"><a href="https://github.com/tomiblank/fastlane-plugin-apperian" target="_blank"><code>apperian</code></a></h3>
@@ -10913,53 +11005,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">71</div>
-
-<h3 id="xbluepill"><a href="https://github.com/kisialiu/fastlane-plugin-xbluepill" target="_blank"><code>xbluepill</code></a></h3>
-
-<p class="via-text">via UladzimirKisialiou</p>
-
-> It is a fastlane plugin that allows to use bluepill (linkedin library) as a fastlane command
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **xbluepill** | - | Fastlane plugin that allows to use bluepill (linkedin library) as a fastlane command
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>5</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>4</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/kisialiu/fastlane-plugin-xbluepill" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">71</div>
+<div class="quality-index" style="color: #558000">72</div>
 
 <h3 id="au_auto_close_upload"><a href="https://github.com/emilwojtaszek/fastlane-plugin-au_auto_close_upload" target="_blank"><code>au_auto_close_upload</code></a></h3>
 
@@ -10989,7 +11035,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
+age | <b>6</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
@@ -11046,6 +11092,52 @@ tests | <b>18</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/RishabhTayal/fastlane-plugin-app_store_build_info" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">71</div>
+
+<h3 id="xbluepill"><a href="https://github.com/kisialiu/fastlane-plugin-xbluepill" target="_blank"><code>xbluepill</code></a></h3>
+
+<p class="via-text">via UladzimirKisialiou</p>
+
+> It is a fastlane plugin that allows to use bluepill (linkedin library) as a fastlane command
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **xbluepill** | - | Fastlane plugin that allows to use bluepill (linkedin library) as a fastlane command
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>5</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>5</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>4</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/kisialiu/fastlane-plugin-xbluepill" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -11143,13 +11235,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">68</div>
+<div class="quality-index" style="color: #558000">69</div>
 
-<h3 id="git_status_clean"><a href="https://github.com/chdzq/fastlane-plugin-git_status_clean" target="_blank"><code>git_status_clean</code></a></h3>
+<h3 id="remove_git_tag"><a href="https://github.com/Marker-Digital/RemoveGitTag.git" target="_blank"><code>remove_git_tag</code></a></h3>
 
-<p class="via-text">via zhangqi</p>
+<p class="via-text">via Marker Digital</p>
 
-> clean git status
+> This will remove a specific tag from your remote branch
 
 
 <details>
@@ -11157,7 +11249,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **git_status_clean** | - | clean git status
+  **remove_git_tag** | source_control | This will remove a tag from the remote repository
 
 </details>
 
@@ -11167,115 +11259,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>9</b> | Project that have been around for longer tend to be more stable
+age | <b>5</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>4</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/chdzq/fastlane-plugin-git_status_clean" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">68</div>
-
-<h3 id="user_default_get"><a href="https://github.com/chdzq/fastlane-plugin-user_default_get" target="_blank"><code>user_default_get</code></a></h3>
-
-<p class="via-text">via zhangqi</p>
-
-> get value like ios userDefault
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **user_default_get** | - | get value like ios userDefault
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>9</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/chdzq/fastlane-plugin-user_default_get" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">68</div>
-
-<h3 id="user_default_set"><a href="https://github.com/chdzq/fastlane-plugin-user_default_set" target="_blank"><code>user_default_set</code></a></h3>
-
-<p class="via-text">via zhangqi</p>
-
-> fastlane save user default like ios userDefault
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **user_default_set** | - | fastlane save user default like ios userDefault
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>9</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/chdzq/fastlane-plugin-user_default_set" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/Marker-Digital/RemoveGitTag.git" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -11329,57 +11329,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">68</div>
 
-<h3 id="remove_git_tag"><a href="https://github.com/Marker-Digital/RemoveGitTag.git" target="_blank"><code>remove_git_tag</code></a></h3>
+<h3 id="git_status_clean"><a href="https://github.com/chdzq/fastlane-plugin-git_status_clean" target="_blank"><code>git_status_clean</code></a></h3>
 
-<p class="via-text">via Marker Digital</p>
+<p class="via-text">via zhangqi</p>
 
-> This will remove a specific tag from your remote branch
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **remove_git_tag** | source_control | This will remove a tag from the remote repository
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>4</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>4</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/Marker-Digital/RemoveGitTag.git" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">67</div>
-
-<h3 id="maintenance"><a href="https://github.com/jdee/fastlane-plugin-maintenance" target="_blank"><code>maintenance</code></a></h3>
-
-<p class="via-text">via Jimmy Dee</p>
-
-> Maintenance actions for plugin repos.
+> clean git status
 
 
 <details>
@@ -11387,8 +11341,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **rake** | - | General-purpose rake action to invoke tasks from a Rakefile or elsewhere.
-  **update_rubocop** | - | Automatically updates RuboCop to the latest version.
+  **git_status_clean** | - | clean git status
 
 </details>
 
@@ -11400,11 +11353,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 --------|--------|-------------
 contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
+stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
+age | <b>9</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
@@ -11414,7 +11367,99 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="https://github.com/jdee/fastlane-plugin-maintenance" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/chdzq/fastlane-plugin-git_status_clean" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">68</div>
+
+<h3 id="user_default_set"><a href="https://github.com/chdzq/fastlane-plugin-user_default_set" target="_blank"><code>user_default_set</code></a></h3>
+
+<p class="via-text">via zhangqi</p>
+
+> fastlane save user default like ios userDefault
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **user_default_set** | - | fastlane save user default like ios userDefault
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>9</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/chdzq/fastlane-plugin-user_default_set" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">68</div>
+
+<h3 id="user_default_get"><a href="https://github.com/chdzq/fastlane-plugin-user_default_get" target="_blank"><code>user_default_get</code></a></h3>
+
+<p class="via-text">via zhangqi</p>
+
+> get value like ios userDefault
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **user_default_get** | - | get value like ios userDefault
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>9</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/chdzq/fastlane-plugin-user_default_get" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -11507,6 +11552,53 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/Gianfranco97/hello_test" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">67</div>
+
+<h3 id="maintenance"><a href="https://github.com/jdee/fastlane-plugin-maintenance" target="_blank"><code>maintenance</code></a></h3>
+
+<p class="via-text">via Jimmy Dee</p>
+
+> Maintenance actions for plugin repos.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **rake** | - | General-purpose rake action to invoke tasks from a Rakefile or elsewhere.
+  **update_rubocop** | - | Automatically updates RuboCop to the latest version.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>6</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/jdee/fastlane-plugin-maintenance" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -11608,59 +11700,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">65</div>
+<div class="quality-index" style="color: #558000">66</div>
 
-<h3 id="increment_version_code_android"><a href="https://github.com/SimoneCorsini/fastlane-plugin-increment_version_code_android" target="_blank"><code>increment_version_code_android</code></a></h3>
+<h3 id="goodify_info_plist"><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist" target="_blank"><code>goodify_info_plist</code></a></h3>
 
-<p class="via-text">via SimoneCorsini</p>
+<p class="via-text">via Lyndsey Ferguson</p>
 
-> Increment the version code of your android project, supporting different product flavors.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **increment_version_code_android** | - | Increment the version code of your android project, supporting different flavors.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>10</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/SimoneCorsini/fastlane-plugin-increment_version_code_android" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">65</div>
-
-<h3 id="deploy_file_provider"><a href="http://www.rubydoc.info/gems/fastlane-plugin-deploy_file_provider/0.5.5" target="_blank"><code>deploy_file_provider</code></a></h3>
-
-<p class="via-text">via Kamil Krzyk, Przemysław Wośko</p>
-
-> Prepares metadata files with structure ready for AppStore, PlayStore deploy
+> This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management.
 
 
 
@@ -11669,7 +11715,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
@@ -11678,15 +11724,14 @@ readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>45</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>34</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-deploy_file_provider/0.5.5" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+  <a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -11741,11 +11786,11 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">65</div>
 
-<h3 id="goodify_info_plist"><a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist" target="_blank"><code>goodify_info_plist</code></a></h3>
+<h3 id="deploy_file_provider"><a href="http://www.rubydoc.info/gems/fastlane-plugin-deploy_file_provider/0.5.5" target="_blank"><code>deploy_file_provider</code></a></h3>
 
-<p class="via-text">via Lyndsey Ferguson</p>
+<p class="via-text">via Kamil Krzyk, Przemysław Wośko</p>
 
-> This plugin will update the plist so that the built application can be deployed and managed within BlackBerry's Good Dynamics Control Center for Enterprise Mobility Management.
+> Prepares metadata files with structure ready for AppStore, PlayStore deploy
 
 
 
@@ -11754,7 +11799,7 @@ tests | <b>6</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
@@ -11763,26 +11808,27 @@ readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>33</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>45</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/lyndsey-ferguson/fastlane_plugins/tree/master/fastlane-plugin-goodify_info_plist" target="_blank">Open on GitHub</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-deploy_file_provider/0.5.5" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
 
 -----
 
-<div class="quality-index" style="color: #558000">64</div>
+<div class="quality-index" style="color: #558000">65</div>
 
-<h3 id="danger_result"><a href="https://github.com/marumemomo/fastlane-plugin-danger_result" target="_blank"><code>danger_result</code></a></h3>
+<h3 id="increment_version_code_android"><a href="https://github.com/SimoneCorsini/fastlane-plugin-increment_version_code_android" target="_blank"><code>increment_version_code_android</code></a></h3>
 
-<p class="via-text">via marumemomo</p>
+<p class="via-text">via SimoneCorsini</p>
 
-> Get danger data plugin.
+> Increment the version code of your android project, supporting different product flavors.
 
 
 <details>
@@ -11790,7 +11836,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **danger_result** | - | Get danger data plugin.
+  **increment_version_code_android** | - | Increment the version code of your android project, supporting different flavors.
 
 </details>
 
@@ -11801,68 +11847,22 @@ tests | <b>0</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
+subscribers | <b>3</b> | More subscribers = more popular project
 stars | <b>1</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>4</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/marumemomo/fastlane-plugin-danger_result" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">64</div>
-
-<h3 id="lock_keychain"><a href="https://github.com/dev4dev/fastlane-plugin-lock_keychain" target="_blank"><code>lock_keychain</code></a></h3>
-
-<p class="via-text">via Alex Antonyuk</p>
-
-> Plugin for locking unlocked keychain
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **lock_keychain** | - | Plugin for locking unlocked keychain
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>8</b> | Project that have been around for longer tend to be more stable
+age | <b>10</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
 tests | <b>3</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/dev4dev/fastlane-plugin-lock_keychain" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/SimoneCorsini/fastlane-plugin-increment_version_code_android" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -11916,52 +11916,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">64</div>
 
-<h3 id="poeditor"><a href="https://github.com/kmyts/fastlane-plugin-poeditor" target="_blank"><code>poeditor</code></a></h3>
-
-<p class="via-text">via Kostia Myts</p>
-
-> Upload strings to POEditor
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **upload_strings_to_poeditor** | - | Upload strings to POEditor
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>7</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/kmyts/fastlane-plugin-poeditor" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">64</div>
-
 <h3 id="git_commit_changelog_to_markdown"><a href="https://github.com/fernando-berrios/fastlane-plugin-git_commit_changelog_to_markdown" target="_blank"><code>git_commit_changelog_to_markdown</code></a></h3>
 
 <p class="via-text">via Fernando Berrios</p>
@@ -12001,6 +11955,144 @@ tests | <b>9</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/fernando-berrios/fastlane-plugin-git_commit_changelog_to_markdown" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">64</div>
+
+<h3 id="schedule"><a href="https://github.com/marumemomo/fastlane-plugin-schedule" target="_blank"><code>schedule</code></a></h3>
+
+<p class="via-text">via marumemomo</p>
+
+> Run lane from current time
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **get_lane** | - | Run lane from current time
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>4</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>11</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/marumemomo/fastlane-plugin-schedule" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">64</div>
+
+<h3 id="lock_keychain"><a href="https://github.com/dev4dev/fastlane-plugin-lock_keychain" target="_blank"><code>lock_keychain</code></a></h3>
+
+<p class="via-text">via Alex Antonyuk</p>
+
+> Plugin for locking unlocked keychain
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **lock_keychain** | - | Plugin for locking unlocked keychain
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>8</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/dev4dev/fastlane-plugin-lock_keychain" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">64</div>
+
+<h3 id="poeditor"><a href="https://github.com/kmyts/fastlane-plugin-poeditor" target="_blank"><code>poeditor</code></a></h3>
+
+<p class="via-text">via Kostia Myts</p>
+
+> Upload strings to POEditor
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **upload_strings_to_poeditor** | - | Upload strings to POEditor
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>7</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/kmyts/fastlane-plugin-poeditor" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -12052,6 +12144,98 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
+<div class="quality-index" style="color: #558000">64</div>
+
+<h3 id="danger_result"><a href="https://github.com/marumemomo/fastlane-plugin-danger_result" target="_blank"><code>danger_result</code></a></h3>
+
+<p class="via-text">via marumemomo</p>
+
+> Get danger data plugin.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **danger_result** | - | Get danger data plugin.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>4</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/marumemomo/fastlane-plugin-danger_result" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">64</div>
+
+<h3 id="gradle_properties"><a href="https://github.com/wakwak3125/fastlane-plugin-gradle_properties" target="_blank"><code>gradle_properties</code></a></h3>
+
+<p class="via-text">via Ryo Sakaguchi</p>
+
+> Read properties in your Fastfile easily
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **gradle_properties** | - | Read properties in your Fastfile easily
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>4</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>12</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/wakwak3125/fastlane-plugin-gradle_properties" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
 <div class="quality-index" style="color: #558000">63</div>
 
 <h3 id="upload_dsym_to_bugly"><a href="https://github.com/srv7/fastlane-plugin-upload_dsym_to_bugly" target="_blank"><code>upload_dsym_to_bugly</code></a></h3>
@@ -12091,98 +12275,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">62</div>
 
-<h3 id="schedule"><a href="https://github.com/marumemomo/fastlane-plugin-schedule" target="_blank"><code>schedule</code></a></h3>
-
-<p class="via-text">via marumemomo</p>
-
-> Run lane from current time
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **get_lane** | - | Run lane from current time
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>10</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/marumemomo/fastlane-plugin-schedule" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">62</div>
-
-<h3 id="gradle_properties"><a href="https://github.com/wakwak3125/fastlane-plugin-gradle_properties" target="_blank"><code>gradle_properties</code></a></h3>
-
-<p class="via-text">via Ryo Sakaguchi</p>
-
-> Read properties in your Fastfile easily
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **gradle_properties** | - | Read properties in your Fastfile easily
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>11</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/wakwak3125/fastlane-plugin-gradle_properties" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">61</div>
-
 <h3 id="upload_to_server"><a href="https://github.com/MaxToyberman/fastlane-plugin-upload-to-server" target="_blank"><code>upload_to_server</code></a></h3>
 
 <p class="via-text">via Maxim Toyberman</p>
@@ -12211,7 +12303,7 @@ stars | <b>2</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
+age | <b>4</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
@@ -12227,7 +12319,7 @@ tests | <b>9</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">59</div>
+<div class="quality-index" style="color: #558000">60</div>
 
 <h3 id="upload_symbols_to_new_relic"><a href="http://www.rubydoc.info/gems/fastlane-plugin-upload_symbols_to_new_relic/0.1.1" target="_blank"><code>upload_symbols_to_new_relic</code></a></h3>
 
@@ -12251,7 +12343,7 @@ readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>39</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>40</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
@@ -12357,6 +12449,52 @@ tests | <b>3</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/charri/fastlane-plugin-xamarin" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">56</div>
+
+<h3 id="publish_dropbox"><a href="https://github.com/tommy071/fastlane-plugin-publish_dropbox" target="_blank"><code>publish_dropbox</code></a></h3>
+
+<p class="via-text">via Tommyvanvliet</p>
+
+> This plugin  publishes artifacts over to Dropbox via a generated api token from Dropbox Developer API.
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **publish_dropbox** | - | This plugin  publishes artifacts over to Dropbox via a generated api token from Dropbox Developer API.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>2</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/tommy071/fastlane-plugin-publish_dropbox" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -12500,23 +12638,14 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">55</div>
+<div class="quality-index" style="color: #558000">54</div>
 
-<h3 id="publish_dropbox"><a href="https://github.com/tommy071/fastlane-plugin-publish_dropbox" target="_blank"><code>publish_dropbox</code></a></h3>
+<h3 id="android_change_package_identifier"><a href="http://www.rubydoc.info/gems/fastlane-plugin-android_change_package_identifier/0.1.0" target="_blank"><code>android_change_package_identifier</code></a></h3>
 
-<p class="via-text">via Tommyvanvliet</p>
+<p class="via-text">via MaximusMcCann</p>
 
-> This plugin  publishes artifacts over to Dropbox via a generated api token from Dropbox Developer API.
+> Change the package identifier in the AndroidManifest.xml file. Can revert as well.
 
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **publish_dropbox** | - | This plugin  publishes artifacts over to Dropbox via a generated api token from Dropbox Developer API.
-
-</details>
 
 
 <details>
@@ -12525,89 +12654,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>1</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/tommy071/fastlane-plugin-publish_dropbox" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">54</div>
-
-<h3 id="resize_screenshots"><a href="https://github.com/levibostian/fastlane-plugin-resize_screenshots" target="_blank"><code>resize_screenshots</code></a></h3>
-
-<p class="via-text">via Levi Bostian</p>
-
-> Resize screenshots taken from your simulator to use for Frameit.
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **resize_screenshots** | - | Resize screenshots taken from your simulator to use for Frameit.
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>2</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/levibostian/fastlane-plugin-resize_screenshots" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">54</div>
-
-<h3 id="github_job_status"><a href="https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status" target="_blank"><code>github_job_status</code></a></h3>
-
-<p class="via-text">via Justin Singer</p>
-
-> Post the status of your test jobs to your pull requests
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
@@ -12616,14 +12662,15 @@ readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>22</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>34</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status" target="_blank">Open on GitHub</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-android_change_package_identifier/0.1.0" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
 
@@ -12675,14 +12722,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">53</div>
+<div class="quality-index" style="color: #558000">54</div>
 
-<h3 id="android_change_package_identifier"><a href="http://www.rubydoc.info/gems/fastlane-plugin-android_change_package_identifier/0.1.0" target="_blank"><code>android_change_package_identifier</code></a></h3>
+<h3 id="discord"><a href="https://github.com/mgambati/fastlane-plugin-discord" target="_blank"><code>discord</code></a></h3>
 
-<p class="via-text">via MaximusMcCann</p>
+<p class="via-text">via Matheus Gambati</p>
 
-> Change the package identifier in the AndroidManifest.xml file. Can revert as well.
+> Discord integration with Fastlane
 
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **discord** | - | Discord integration with Fastlane
+
+</details>
 
 
 <details>
@@ -12691,6 +12747,43 @@ tests | <b>3</b> | The more tests a plugin has, the better
  Metric | Points | Description
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
+tests | <b>6</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/mgambati/fastlane-plugin-discord" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">54</div>
+
+<h3 id="github_job_status"><a href="https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status" target="_blank"><code>github_job_status</code></a></h3>
+
+<p class="via-text">via Justin Singer</p>
+
+> Post the status of your test jobs to your pull requests
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
@@ -12699,21 +12792,20 @@ readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>33</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>22</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-android_change_package_identifier/0.1.0" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+  <a href="https://github.com/justinsinger/fastlane_plugins/tree/github_job_status/fastlane-plugin-github_job_status" target="_blank">Open on GitHub</a>
 
 </p>
 
 -----
 
-<div class="quality-index" style="color: #558000">53</div>
+<div class="quality-index" style="color: #558000">54</div>
 
 <h3 id="ding_talk_msg_push"><a href="https://github.com/asynclog/fastlane-plugin-ding_talk_msg_push" target="_blank"><code>ding_talk_msg_push</code></a></h3>
 
@@ -12743,7 +12835,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>3</b> | Project that have been around for longer tend to be more stable
+age | <b>4</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
@@ -12759,13 +12851,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">53</div>
+<div class="quality-index" style="color: #558000">54</div>
 
-<h3 id="bugtags"><a href="https://github.com/wliu6/fastlane-plugin-bugtags" target="_blank"><code>bugtags</code></a></h3>
+<h3 id="resize_screenshots"><a href="https://github.com/levibostian/fastlane-plugin-resize_screenshots" target="_blank"><code>resize_screenshots</code></a></h3>
 
-<p class="via-text">via wliu6</p>
+<p class="via-text">via Levi Bostian</p>
 
-> Upload symbols to Bugtags
+> Resize screenshots taken from your simulator to use for Frameit.
 
 
 <details>
@@ -12773,7 +12865,54 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **bugtags** | - | Upload symbols to Bugtags
+  **resize_screenshots** | - | Resize screenshots taken from your simulator to use for Frameit.
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>2</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>5</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-2</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/levibostian/fastlane-plugin-resize_screenshots" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">53</div>
+
+<h3 id="release_version"><a href="https://github.com/lenkaiser/fastlane-plugin-release-version" target="_blank"><code>release_version</code></a></h3>
+
+<p class="via-text">via Leon Keijzer</p>
+
+> This plugin makes it possible to release an already approved version in AppStore Connect
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **reject_version** | - | This action makes it possible to reject a binary in AppStore Connect
+  **release_version** | - | This plugin makes it possible to release an already approved version in AppStore Connect
 
 </details>
 
@@ -12785,11 +12924,11 @@ tests | <b>3</b> | The more tests a plugin has, the better
 --------|--------|-------------
 contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
+stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>25</b> | How well is the README of the document written
-age | <b>1</b> | Project that have been around for longer tend to be more stable
+age | <b>2</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
@@ -12799,7 +12938,7 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="https://github.com/wliu6/fastlane-plugin-bugtags" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/lenkaiser/fastlane-plugin-release-version" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -12853,52 +12992,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #558000">53</div>
 
-<h3 id="android_channels"><a href="https://github.com/icyleaf/fastlane-plugin-android_channels" target="_blank"><code>android_channels</code></a></h3>
-
-<p class="via-text">via icyleaf</p>
-
-> Package unsign apk with channels
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **android_channels** | building | Package apk file with channels
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>1</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/icyleaf/fastlane-plugin-android_channels" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">53</div>
-
 <h3 id="androidmanifest_editor"><a href="https://github.com/dearsatan/fastlane-plugin-androidmanifest_editor" target="_blank"><code>androidmanifest_editor</code></a></h3>
 
 <p class="via-text">via 任福新</p>
@@ -12945,6 +13038,98 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
+<div class="quality-index" style="color: #558000">53</div>
+
+<h3 id="bugtags"><a href="https://github.com/wliu6/fastlane-plugin-bugtags" target="_blank"><code>bugtags</code></a></h3>
+
+<p class="via-text">via wliu6</p>
+
+> Upload symbols to Bugtags
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **bugtags** | - | Upload symbols to Bugtags
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>1</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/wliu6/fastlane-plugin-bugtags" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">53</div>
+
+<h3 id="android_channels"><a href="https://github.com/icyleaf/fastlane-plugin-android_channels" target="_blank"><code>android_channels</code></a></h3>
+
+<p class="via-text">via icyleaf</p>
+
+> Package unsign apk with channels
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **android_channels** | building | Package apk file with channels
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>1</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/icyleaf/fastlane-plugin-android_channels" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
 <div class="quality-index" style="color: #558000">52</div>
 
 <h3 id="report"><a href="https://github.com/BrunoMiguens/fastlane-plugin-report" target="_blank"><code>report</code></a></h3>
@@ -12977,6 +13162,52 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/BrunoMiguens/fastlane-plugin-report" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">52</div>
+
+<h3 id="create_github_issue"><a href="https://github.com/wakwak3125/fastlane-plugin-create_github_issue" target="_blank"><code>create_github_issue</code></a></h3>
+
+<p class="via-text">via Ryo Sakaguchi</p>
+
+> Create GitHub issue
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **create_github_issue** | - | Create GitHub issue
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>1</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>25</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
+tests | <b>3</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/wakwak3125/fastlane-plugin-create_github_issue" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -13028,60 +13259,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">52</div>
-
-<h3 id="release_version"><a href="https://github.com/lenkaiser/fastlane-plugin-release-version" target="_blank"><code>release_version</code></a></h3>
-
-<p class="via-text">via Leon Keijzer</p>
-
-> This plugin makes it possible to release an already approved version in AppStore Connect
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **reject_version** | - | This action makes it possible to reject a binary in AppStore Connect
-  **release_version** | - | This plugin makes it possible to release an already approved version in AppStore Connect
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>1</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/lenkaiser/fastlane-plugin-release-version" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
 <div class="quality-index" style="color: #558000">51</div>
 
-<h3 id="coveralls"><a href="http://www.rubydoc.info/gems/fastlane-plugin-coveralls/1.0.1" target="_blank"><code>coveralls</code></a></h3>
+<h3 id="firim"><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim" target="_blank"><code>firim</code></a></h3>
 
-<p class="via-text">via Atsushi Nagase</p>
+<p class="via-text">via whlsxl</p>
 
-> Send coverage information to Coveralls
+> firim
 
 
 
@@ -13090,70 +13274,23 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>30</b> | Post 1.0 releases are great
+major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>19</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-coveralls/1.0.1" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #558000">51</div>
-
-<h3 id="create_github_issue"><a href="https://github.com/wakwak3125/fastlane-plugin-create_github_issue" target="_blank"><code>create_github_issue</code></a></h3>
-
-<p class="via-text">via Ryo Sakaguchi</p>
-
-> Create GitHub issue
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **create_github_issue** | - | Create GitHub issue
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>1</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>25</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>3</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/wakwak3125/fastlane-plugin-create_github_issue" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -13207,13 +13344,13 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #558000">50</div>
+<div class="quality-index" style="color: #558000">51</div>
 
-<h3 id="firim"><a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim" target="_blank"><code>firim</code></a></h3>
+<h3 id="coveralls"><a href="http://www.rubydoc.info/gems/fastlane-plugin-coveralls/1.0.1" target="_blank"><code>coveralls</code></a></h3>
 
-<p class="via-text">via whlsxl</p>
+<p class="via-text">via Atsushi Nagase</p>
 
-> firim
+> Send coverage information to Coveralls
 
 
 
@@ -13222,23 +13359,24 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
  Metric | Points | Description
 --------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
 subscribers | <b>0</b> | More subscribers = more popular project
 stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
+major_release | <b>30</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>18</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/whlsxl/firim/tree/master/fastlane-plugin-firim" target="_blank">Open on GitHub</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-coveralls/1.0.1" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
 
@@ -13365,7 +13503,45 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #ff6666">39</div>
+<div class="quality-index" style="color: #558000">40</div>
+
+<h3 id="update_android_strings"><a href="http://www.rubydoc.info/gems/fastlane-plugin-update_android_strings/0.1.0" target="_blank"><code>update_android_strings</code></a></h3>
+
+<p class="via-text">via bang</p>
+
+> Update Android res strings.xml
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>20</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-update_android_strings/0.1.0" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #558000">40</div>
 
 <h3 id="deploy_module_bintray"><a href="https://github.com/bmoliveira/fastlane-plugin-deploy_module_bintray" target="_blank"><code>deploy_module_bintray</code></a></h3>
 
@@ -13395,7 +13571,7 @@ stars | <b>0</b> | More stars = more popular project
 forks | <b>0</b> | More forks = more people seem to use/modify this project
 has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
 readme_score | <b>0</b> | How well is the README of the document written
-age | <b>5</b> | Project that have been around for longer tend to be more stable
+age | <b>6</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
 downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
@@ -13443,44 +13619,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/DragonBox/u3d/tree/master/fastlane-plugin-u3d" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">38</div>
-
-<h3 id="update_android_strings"><a href="http://www.rubydoc.info/gems/fastlane-plugin-update_android_strings/0.1.0" target="_blank"><code>update_android_strings</code></a></h3>
-
-<p class="via-text">via bang</p>
-
-> Update Android res strings.xml
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>18</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-update_android_strings/0.1.0" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
 
@@ -13563,11 +13701,57 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">36</div>
 
-<h3 id="fetch_itc_versions"><a href="https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions" target="_blank"><code>fetch_itc_versions</code></a></h3>
+<h3 id="redpill"><a href="https://github.com/omniprojects/fastlane-plugin-redpill" target="_blank"><code>redpill</code></a></h3>
 
-<p class="via-text">via Bennett Rogers</p>
+<p class="via-text">via omniprojects</p>
 
-> Returns a listing of all app versions and their latest builds from iTunes Connect.
+> Fastlane plugin to use bluepill in fastlane
+
+
+<details>
+<summary class="plugin-actions">Provided actions</summary>
+
+ Name | Category | Description
+------|----------|------------
+  **redpill** | - | Plugin to use bluepill in fastlane
+
+</details>
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>3</b> | More subscribers = more popular project
+stars | <b>3</b> | More stars = more popular project
+forks | <b>10</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>-50</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>50</b> | How well is the README of the document written
+age | <b>6</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/omniprojects/fastlane-plugin-redpill" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #ff6666">36</div>
+
+<h3 id="transifex_api"><a href="https://github.com/xiangyu-sun/fastlane-plugin-transifex_api" target="_blank"><code>transifex_api</code></a></h3>
+
+<p class="via-text">via alexander sun</p>
+
+> basic transifex api wrapper
 
 
 
@@ -13592,7 +13776,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/xiangyu-sun/fastlane-plugin-transifex_api" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -13638,11 +13822,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">36</div>
 
-<h3 id="transifex_api"><a href="https://github.com/xiangyu-sun/fastlane-plugin-transifex_api" target="_blank"><code>transifex_api</code></a></h3>
+<h3 id="fetch_itc_versions"><a href="https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions" target="_blank"><code>fetch_itc_versions</code></a></h3>
 
-<p class="via-text">via alexander sun</p>
+<p class="via-text">via Bennett Rogers</p>
 
-> basic transifex api wrapper
+> Returns a listing of all app versions and their latest builds from iTunes Connect.
 
 
 
@@ -13667,53 +13851,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="https://github.com/xiangyu-sun/fastlane-plugin-transifex_api" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">36</div>
-
-<h3 id="redpill"><a href="https://github.com/omniprojects/fastlane-plugin-redpill" target="_blank"><code>redpill</code></a></h3>
-
-<p class="via-text">via omniprojects</p>
-
-> Fastlane plugin to use bluepill in fastlane
-
-
-<details>
-<summary class="plugin-actions">Provided actions</summary>
-
- Name | Category | Description
-------|----------|------------
-  **redpill** | - | Plugin to use bluepill in fastlane
-
-</details>
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>6</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>3</b> | More subscribers = more popular project
-stars | <b>3</b> | More stars = more popular project
-forks | <b>10</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>-50</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>50</b> | How well is the README of the document written
-age | <b>6</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>-1</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>9</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/omniprojects/fastlane-plugin-redpill" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/bennettrogers/fastlane-plugins/fastlane-plugin-fetch_itc_versions" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -13758,43 +13896,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">35</div>
 
-<h3 id="profile_expiration_info"><a href="https://github.com/schung7/fastlane-plugin-profile_expiration_info" target="_blank"><code>profile_expiration_info</code></a></h3>
-
-<p class="via-text">via Steven Chung</p>
-
-> Returns if the provisioning profile has expired and the DateTime it expires
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/schung7/fastlane-plugin-profile_expiration_info" target="_blank">Open on GitHub</a>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">35</div>
-
 <h3 id="xcode8_srgb_workaround"><a href="https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround" target="_blank"><code>xcode8_srgb_workaround</code></a></h3>
 
 <p class="via-text">via Siarhei Fiedartsou</p>
@@ -13825,6 +13926,43 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/SiarheiFiedartsou/fastlane-plugin-xcode8_srgb_workaround" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #ff6666">35</div>
+
+<h3 id="profile_expiration_info"><a href="https://github.com/schung7/fastlane-plugin-profile_expiration_info" target="_blank"><code>profile_expiration_info</code></a></h3>
+
+<p class="via-text">via Steven Chung</p>
+
+> Returns if the provisioning profile has expired and the DateTime it expires
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/schung7/fastlane-plugin-profile_expiration_info" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -13899,6 +14037,43 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="https://github.com/AndrewSB/fastlane-plugin-gen_dev_workspace" target="_blank">Open on GitHub</a>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #ff6666">33</div>
+
+<h3 id="parse_json"><a href="https://github.com/KrauseFx/fastlane-plugin-parse_json" target="_blank"><code>parse_json</code></a></h3>
+
+<p class="via-text">via Felix Krause</p>
+
+> Parse a JSON file
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="https://github.com/KrauseFx/fastlane-plugin-parse_json" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -14015,13 +14190,13 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #ff6666">33</div>
+<div class="quality-index" style="color: #ff6666">32</div>
 
-<h3 id="parse_json"><a href="https://github.com/KrauseFx/fastlane-plugin-parse_json" target="_blank"><code>parse_json</code></a></h3>
+<h3 id="parse_configurations"><a href="https://github.com/ctmelki/fastlane-plugin-parse_configurations" target="_blank"><code>parse_configurations</code></a></h3>
 
-<p class="via-text">via Felix Krause</p>
+<p class="via-text">via Melki</p>
 
-> Parse a JSON file
+> It is used to parse json configration
 
 
 
@@ -14039,14 +14214,14 @@ readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="https://github.com/KrauseFx/fastlane-plugin-parse_json" target="_blank">Open on GitHub</a>
+  <a href="https://github.com/ctmelki/fastlane-plugin-parse_configurations" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -14085,43 +14260,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
   <a href="http://www.rubydoc.info/gems/fastlane-plugin-version_from_last_tag/0.2.1" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">32</div>
-
-<h3 id="parse_configurations"><a href="https://github.com/ctmelki/fastlane-plugin-parse_configurations" target="_blank"><code>parse_configurations</code></a></h3>
-
-<p class="via-text">via Melki</p>
-
-> It is used to parse json configration
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>12</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>0</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="https://github.com/ctmelki/fastlane-plugin-parse_configurations" target="_blank">Open on GitHub</a>
 
 </p>
 
@@ -14256,11 +14394,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">27</div>
 
-<h3 id="bluepillar"><a href="http://www.rubydoc.info/gems/fastlane-plugin-bluepillar/0.3.0" target="_blank"><code>bluepillar</code></a></h3>
+<h3 id="fivethree_ionic"><a href="http://www.rubydoc.info/gems/fastlane-plugin-fivethree_ionic/0.1.10" target="_blank"><code>fivethree_ionic</code></a></h3>
 
-<p class="via-text">via Shashikant86</p>
+<p class="via-text">via Marc Stammerjohann</p>
 
-> Fastlane Plugin to Run XCUITests in Parallel using Bluepill.
+> Fastlane plugin for Ionic v4 Projects
 
 
 
@@ -14285,7 +14423,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-bluepillar/0.3.0" target="_blank">Open website</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-fivethree_ionic/0.1.10" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
@@ -14340,44 +14478,6 @@ tests | <b>3</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">27</div>
 
-<h3 id="fivethree_ionic"><a href="http://www.rubydoc.info/gems/fastlane-plugin-fivethree_ionic/0.1.10" target="_blank"><code>fivethree_ionic</code></a></h3>
-
-<p class="via-text">via Marc Stammerjohann</p>
-
-> Fastlane plugin for Ionic v4 Projects
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-fivethree_ionic/0.1.10" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">27</div>
-
 <h3 id="pixie"><a href="http://www.rubydoc.info/gems/fastlane-plugin-pixie/0.2.0" target="_blank"><code>pixie</code></a></h3>
 
 <p class="via-text">via Piotrek Dubiel</p>
@@ -14408,6 +14508,44 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="http://www.rubydoc.info/gems/fastlane-plugin-pixie/0.2.0" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #ff6666">27</div>
+
+<h3 id="bluepillar"><a href="http://www.rubydoc.info/gems/fastlane-plugin-bluepillar/0.3.0" target="_blank"><code>bluepillar</code></a></h3>
+
+<p class="via-text">via Shashikant86</p>
+
+> Fastlane Plugin to Run XCUITests in Parallel using Bluepill.
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>7</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-bluepillar/0.3.0" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
@@ -14492,44 +14630,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">25</div>
 
-<h3 id="figlet"><a href="http://www.rubydoc.info/gems/fastlane-plugin-figlet/0.1.0" target="_blank"><code>figlet</code></a></h3>
-
-<p class="via-text">via Jeff Stein</p>
-
-> Wrapper around figlet which makes large ascii text words
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-figlet/0.1.0" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">25</div>
-
 <h3 id="box"><a href="http://www.rubydoc.info/gems/fastlane-plugin-box/0.1.3" target="_blank"><code>box</code></a></h3>
 
 <p class="via-text">via Wesley Sui</p>
@@ -14560,6 +14660,44 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="http://www.rubydoc.info/gems/fastlane-plugin-box/0.1.3" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #ff6666">25</div>
+
+<h3 id="figlet"><a href="http://www.rubydoc.info/gems/fastlane-plugin-figlet/0.1.0" target="_blank"><code>figlet</code></a></h3>
+
+<p class="via-text">via Jeff Stein</p>
+
+> Wrapper around figlet which makes large ascii text words
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>5</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-figlet/0.1.0" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
@@ -14644,6 +14782,44 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">23</div>
 
+<h3 id="ensure_swift_version"><a href="http://www.rubydoc.info/gems/fastlane-plugin-ensure_swift_version/0.1.0" target="_blank"><code>ensure_swift_version</code></a></h3>
+
+<p class="via-text">via Shashikant86</p>
+
+> This plugin ensure version of Swift language used for project
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>3</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-ensure_swift_version/0.1.0" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #ff6666">23</div>
+
 <h3 id="git_commit_lzx"><a href="http://www.rubydoc.info/gems/fastlane-plugin-git_commit_lzx/0.1.4" target="_blank"><code>git_commit_lzx</code></a></h3>
 
 <p class="via-text">via zhenxingliu</p>
@@ -14682,11 +14858,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">23</div>
 
-<h3 id="ensure_swift_version"><a href="http://www.rubydoc.info/gems/fastlane-plugin-ensure_swift_version/0.1.0" target="_blank"><code>ensure_swift_version</code></a></h3>
+<h3 id="imagesgoldenrun"><a href="http://www.rubydoc.info/gems/fastlane-plugin-imagesgoldenrun/0.1.4" target="_blank"><code>imagesgoldenrun</code></a></h3>
 
-<p class="via-text">via Shashikant86</p>
+<p class="via-text">via Luís Esteves</p>
 
-> This plugin ensure version of Swift language used for project
+> this allows comparing images from a golden run with the actual results
 
 
 
@@ -14711,83 +14887,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-ensure_swift_version/0.1.0" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">22</div>
-
-<h3 id="appcenter_get_version"><a href="http://www.rubydoc.info/gems/fastlane-plugin-appcenter_get_version/0.1.0" target="_blank"><code>appcenter_get_version</code></a></h3>
-
-<p class="via-text">via Markus Kramm</p>
-
-> get the latest build version from the app center
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-appcenter_get_version/0.1.0" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">22</div>
-
-<h3 id="imagesgoldenrun"><a href="http://www.rubydoc.info/gems/fastlane-plugin-imagesgoldenrun/0.1.1" target="_blank"><code>imagesgoldenrun</code></a></h3>
-
-<p class="via-text">via Luís Esteves</p>
-
-> this allows comparing images from a golden run with the actual results
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-imagesgoldenrun/0.1.1" target="_blank">Open website</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-imagesgoldenrun/0.1.4" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
@@ -14832,13 +14932,13 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 -----
 
-<div class="quality-index" style="color: #ff6666">21</div>
+<div class="quality-index" style="color: #ff6666">22</div>
 
-<h3 id="gmail"><a href="http://www.rubydoc.info/gems/fastlane-plugin-gmail/0.1.1" target="_blank"><code>gmail</code></a></h3>
+<h3 id="jenkins_job_config"><a href="http://www.rubydoc.info/gems/fastlane-plugin-jenkins_job_config/0.1.5" target="_blank"><code>jenkins_job_config</code></a></h3>
 
-<p class="via-text">via Alexander Ignition</p>
+<p class="via-text">via Jerome Lacoste</p>
 
-> send mail from gmail
+> Generate the config for a Jenkins job
 
 
 
@@ -14856,14 +14956,52 @@ readme_score | <b>0</b> | How well is the README of the document written
 age | <b>0</b> | Project that have been around for longer tend to be more stable
 major_release | <b>0</b> | Post 1.0 releases are great
 github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
 tests | <b>0</b> | The more tests a plugin has, the better
  
 </details>
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-gmail/0.1.1" target="_blank">Open website</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-jenkins_job_config/0.1.5" target="_blank">Open website</a>
+  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
+
+</p>
+
+-----
+
+<div class="quality-index" style="color: #ff6666">22</div>
+
+<h3 id="appcenter_get_version"><a href="http://www.rubydoc.info/gems/fastlane-plugin-appcenter_get_version/0.1.0" target="_blank"><code>appcenter_get_version</code></a></h3>
+
+<p class="via-text">via Markus Kramm</p>
+
+> get the latest build version from the app center
+
+
+
+<details>
+<summary class="score-details">Score details</summary>
+
+ Metric | Points | Description
+--------|--------|-------------
+contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
+subscribers | <b>0</b> | More subscribers = more popular project
+stars | <b>0</b> | More stars = more popular project
+forks | <b>0</b> | More forks = more people seem to use/modify this project
+has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
+readme_score | <b>0</b> | How well is the README of the document written
+age | <b>0</b> | Project that have been around for longer tend to be more stable
+major_release | <b>0</b> | Post 1.0 releases are great
+github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
+downloads | <b>2</b> | More downloads = more users have been using the plugin for a while
+tests | <b>0</b> | The more tests a plugin has, the better
+ 
+</details>
+
+<p>
+
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-appcenter_get_version/0.1.0" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
@@ -14910,11 +15048,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">21</div>
 
-<h3 id="jenkins_job_config"><a href="http://www.rubydoc.info/gems/fastlane-plugin-jenkins_job_config/0.1.5" target="_blank"><code>jenkins_job_config</code></a></h3>
+<h3 id="killsimulator"><a href="http://www.rubydoc.info/gems/fastlane-plugin-killsimulator/0.1.0" target="_blank"><code>killsimulator</code></a></h3>
 
-<p class="via-text">via Jerome Lacoste</p>
+<p class="via-text">via Luís Esteves</p>
 
-> Generate the config for a Jenkins job
+> Kill all the open simulatores
 
 
 
@@ -14939,7 +15077,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-jenkins_job_config/0.1.5" target="_blank">Open website</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-killsimulator/0.1.0" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
@@ -14986,11 +15124,11 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <div class="quality-index" style="color: #ff6666">21</div>
 
-<h3 id="killsimulator"><a href="http://www.rubydoc.info/gems/fastlane-plugin-killsimulator/0.1.0" target="_blank"><code>killsimulator</code></a></h3>
+<h3 id="asciii"><a href="http://www.rubydoc.info/gems/fastlane-plugin-asciii/0.1.0" target="_blank"><code>asciii</code></a></h3>
 
-<p class="via-text">via Luís Esteves</p>
+<p class="via-text">via Danielle Tomlinson</p>
 
-> Kill all the open simulatores
+> Add ascii text to your fastlane output
 
 
 
@@ -15015,7 +15153,7 @@ tests | <b>0</b> | The more tests a plugin has, the better
 
 <p>
 
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-killsimulator/0.1.0" target="_blank">Open website</a>
+  <a href="http://www.rubydoc.info/gems/fastlane-plugin-asciii/0.1.0" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>
@@ -15054,44 +15192,6 @@ tests | <b>0</b> | The more tests a plugin has, the better
 <p>
 
   <a href="http://www.rubydoc.info/gems/fastlane-plugin-bump_android_version/0.1.0" target="_blank">Open website</a>
-  <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
-
-</p>
-
------
-
-<div class="quality-index" style="color: #ff6666">21</div>
-
-<h3 id="asciii"><a href="http://www.rubydoc.info/gems/fastlane-plugin-asciii/0.1.0" target="_blank"><code>asciii</code></a></h3>
-
-<p class="via-text">via Danielle Tomlinson</p>
-
-> Add ascii text to your fastlane output
-
-
-
-<details>
-<summary class="score-details">Score details</summary>
-
- Metric | Points | Description
---------|--------|-------------
-contributors | <b>0</b> | The more contributors a project has, the more likely it is it stays alive
-subscribers | <b>0</b> | More subscribers = more popular project
-stars | <b>0</b> | More stars = more popular project
-forks | <b>0</b> | More forks = more people seem to use/modify this project
-has_mit_license | <b>20</b> | fastlane is MIT licensed, it's good to have plugins use MIT too
-readme_score | <b>0</b> | How well is the README of the document written
-age | <b>0</b> | Project that have been around for longer tend to be more stable
-major_release | <b>0</b> | Post 1.0 releases are great
-github_issues | <b>0</b> | Lots of open issues are not a good sign usually, unless the project is really popular
-downloads | <b>1</b> | More downloads = more users have been using the plugin for a while
-tests | <b>0</b> | The more tests a plugin has, the better
- 
-</details>
-
-<p>
-
-  <a href="http://www.rubydoc.info/gems/fastlane-plugin-asciii/0.1.0" target="_blank">Open website</a>
   <span style="color: #a03030">(no GitHub link provided in gemspec)</span>
 
 </p>

@@ -120,7 +120,7 @@ fastlane produce associate_group -a com.krausefx.app group.krausefx
 If you want to create a new iCloud Container:
 
 ```no-highlight
-fastlane produce cloud_container -ci iCloud.com.krausefx.app -n "Example iCloud Container"
+fastlane produce cloud_container -g iCloud.com.krausefx.app -n "Example iCloud Container"
 ```
 
 If you want to associate an app with an iCloud Container:
@@ -351,12 +351,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action create_app_online
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_app_online.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run create_app_online
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run create_app_online parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_app_online.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

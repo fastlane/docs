@@ -228,6 +228,7 @@ Key | Description | Default
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6') | 
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air']) | 
   `skip_detect_devices` | Should skip auto detecting of devices if none were specified | `false`
+  `reset_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
@@ -274,12 +275,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action run_tests
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/run_tests.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run run_tests
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run run_tests parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/run_tests.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

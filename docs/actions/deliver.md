@@ -425,6 +425,9 @@ end
 
 Omit `build_number` to let _fastlane_ automatically select the latest build number for the current version being edited for release from App Store Connect.
 
+### Compliance and IDFA settings
+
+Use the `submission_information` parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
 
 # Credentials
 
@@ -830,7 +833,7 @@ Key | Description | Default
   `phased_release` | Enable the phased release feature of iTC | `false`
   `price_tier` | The price tier of this application | 
   `app_rating_config_path` | Path to the app rating's config | 
-  `submission_information` | Extra information for the submission (e.g. third party content) | 
+  `submission_information` | Extra information for the submission (e.g. compliance specifications, IDFA settings) | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
@@ -867,12 +870,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action deliver
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/deliver.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run deliver
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run deliver parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/deliver.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 
