@@ -213,17 +213,45 @@ Key | Description | Default
   `check_superseded_tracks` | Check the other tracks for superseded versions and disable them | `false`
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
   `deactivate_on_promote` | When promoting to a new track, deactivate the binary in the origin track | `true`
+  `version_codes_to_retain` | An array of version codes to retain when publishing a new APK | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action supply
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/supply.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run supply
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run supply parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/supply.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 
