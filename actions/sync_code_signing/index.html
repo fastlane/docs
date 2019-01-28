@@ -1386,10 +1386,29 @@ git_branch(&quot;master&quot;)
 </code></pre>
 
 <p>After a successful migration you can safely delete your git repo.</p>
-<h4 id="google-cloud-gc_keysjson"><a name="user-content-google-cloud-gc_keysjson" href="#google-cloud-gc_keysjson" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud <code>gc_keys.json</code></h4>
+<h4 id="google-cloud-access-control"><a name="user-content-google-cloud-access-control" href="#google-cloud-access-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud access control</h4>
 <p><em>Google Cloud Storage only</em></p>
-<p>When running <code>fastlane match init</code> the first time, the setup process will help you create your <code>gc_keys.json</code> file. This file contains the auth credentials needed to access your Google Cloud storage bucket. Make sure to keep that file secret and never add it to version control.</p>
-<p>We recommend adding <code>gc_keys.json</code> to your <code>.gitignore</code> and manually add the file to all your work machines. Every developer should create their own <code>gc_keys.json</code> file, which will give the admin full control over who has read/write access to the given Storage bucket. At the same time it allows your team to revoke a single key if a file gets compromised.</p>
+<p>There are two cases for reading and writing certificates stored in a Google Cloud storage bucket:</p>
+<ol>
+<li>Continuous integration jobs. These will authenticate to your Google Cloud project via a service account, and use a <code>gc_keys.json</code> file as credentials.</li>
+<li>Developers on a local workstation. In this case, you should choose whether everyone on your team will create their own <code>gc_keys.json</code> file, or whether you want to manage access to the bucket directly using your developers' Google accounts.</li>
+</ol>
+<p>When running <code>fastlane match init</code> the first time, the setup process will give you the option to create your <code>gc_keys.json</code> file. This file contains the auth credentials needed to access your Google Cloud storage bucket. Make sure to keep that file secret and never add it to version control. We recommend adding <code>gc_keys.json</code> to your <code>.gitignore</code></p>
+<h5 id="managing-developer-access-via-keys"><a name="user-content-managing-developer-access-via-keys" href="#managing-developer-access-via-keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing developer access via keys</h5>
+<p>If you want to manage developer access to your certificates via authentication keys, every developer should create their own <code>gc_keys.json</code> and add the file to all their work machines. This will give the admin full control over who has read/write access to the given Storage bucket. At the same time it allows your team to revoke a single key if a file gets compromised.</p>
+<h5 id="managing-developer-acess-via-google-accounts"><a name="user-content-managing-developer-acess-via-google-accounts" href="#managing-developer-acess-via-google-accounts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing developer acess via Google accounts</h5>
+<p>If your developers already have Google accounts and access to your Google Cloud project, you can also manage access to the storage bucket via <a href="https://cloud.google.com/storage/docs/access-control/iam">Cloud Identity and Access Management (IAM)</a>. Just <a href="https://cloud.google.com/storage/docs/access-control/lists">set up</a> individual developer accounts or an entire Google Group containing your team as readers and writers on your storage bucket.</p>
+<p>You can then specify the Google Cloud project id containing your storage bucket in your <code>Matchfile</code>:</p>
+<pre><code class="ruby-skip-tests">storage_mode(&quot;google_cloud&quot;)
+google_cloud_bucket_name(&quot;my-app-certificates&quot;)
+google_cloud_project_id(&quot;my-app-project&quot;)
+</code></pre>
+
+<p>This lets developers on your team use <a href="https://cloud.google.com/docs/authentication/production">Application Default Credentials</a> when accessing your storage bucket. After installing the <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a>, they only need to run the following command once:</p>
+<pre><code class="no-highlight">gcloud auth application-default login
+</code></pre>
+
+<p>... and log in with their Google account. Then, when they run <code>fastlane match</code>, <em>match</em> will use these credentials to read from and write to the storage bucket.</p>
 <h4 id="new-machine"><a name="user-content-new-machine" href="#new-machine" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New machine</h4>
 <p>To set up the certificates and provisioning profiles on a new machine, you just run the same command using:</p>
 <pre><code class="no-highlight">fastlane match development
@@ -1675,6 +1694,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td></td>
 </tr>
 <tr>
+<td><code>google_cloud_project_id</code></td>
+<td>ID of the Google Cloud project to use for authentication</td>
+<td></td>
+</tr>
+<tr>
 <td><code>keychain_name</code></td>
 <td>Keychain the items should be imported to</td>
 <td><code>login.keychain</code></td>
@@ -1712,6 +1736,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>template_name</code></td>
 <td>The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
+<td></td>
+</tr>
+<tr>
+<td><code>output_path</code></td>
+<td>Path in which to export certificates, key and profile</td>
 <td></td>
 </tr>
 <tr>

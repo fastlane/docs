@@ -1224,7 +1224,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">git_commit(path: &quot;./version.txt&quot;, message: &quot;Version Bump&quot;)
 </code></pre>
 
@@ -1232,6 +1232,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <pre><code class="ruby">git_commit(path: [&quot;./*.txt&quot;, &quot;./*.md&quot;], message: &quot;Update documentation&quot;)
+</code></pre>
+
+<pre><code class="ruby">git_commit(path: [&quot;./*.txt&quot;, &quot;./*.md&quot;], message: &quot;Update documentation&quot;, skip_git_hooks: true)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1252,6 +1255,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>message</code></td>
 <td>The commit message that should be used</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_git_hooks</code></td>
+<td>Set to true to pass --no-verify to git</td>
 <td></td>
 </tr>
 </tbody>

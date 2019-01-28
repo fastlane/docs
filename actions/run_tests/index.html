@@ -1648,6 +1648,21 @@ run_tests(
 <td></td>
 </tr>
 <tr>
+<td><code>slack_use_webhook_configured_username_and_icon</code></td>
+<td>Use webhook's default username and icon settings? (true/false)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>slack_username</code></td>
+<td>Overrides the webhook's username property if slack_use_webhook_configured_username_and_icon is false</td>
+<td><code>fastlane</code></td>
+</tr>
+<tr>
+<td><code>slack_icon_url</code></td>
+<td>Overrides the webhook's image property if slack_use_webhook_configured_username_and_icon is false</td>
+<td><code>https://s3-eu-west-1.amazonaws.com/fastlane.tools/fastlane.png</code></td>
+</tr>
+<tr>
 <td><code>skip_slack</code></td>
 <td>Don't publish to slack, even when an URL is given</td>
 <td><code>false</code></td>
