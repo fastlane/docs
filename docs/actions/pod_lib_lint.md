@@ -51,6 +51,7 @@ pod_lib_lint(sources: ["https://github.com/username/Specs", "https://github.com/
 Key | Description | Default
 ----|-------------|--------
   `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | `true`
+  `podspec` | Path of spec to lint | 
   `verbose` | Allow output detail in console | 
   `allow_warnings` | Allow warnings during pod lint | 
   `sources` | The sources of repos you want the pod spec to lint with, separated by commas | 

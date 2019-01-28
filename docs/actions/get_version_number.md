@@ -21,10 +21,17 @@ Author | @Liquidsoul, @joshdholtz
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 version = get_version_number(xcodeproj: "Project.xcodeproj")
+```
+
+```ruby
+version = get_version_number(
+  xcodeproj: "Project.xcodeproj",
+  target: "App"
+)
 ```
 
 
@@ -35,9 +42,9 @@ version = get_version_number(xcodeproj: "Project.xcodeproj")
 
 Key | Description | Default
 ----|-------------|--------
-  `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory | 
-  `target` | Specify a specific target if you have multiple per project, optional | 
-  `configuration` | Specify a specific configuration if you have multiple per target, optional | 
+  `xcodeproj` | Path to the main Xcode project to read version number from, optional. By default will use the first Xcode project found within the project root directory | 
+  `target` | Target name, optional. Will be needed if you have more than one non-test target to avoid being prompted to select one | 
+  `configuration` | Configuration name, optional. Will be needed if you have altered the configurations from the default or your version number depends on the configuration selected | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

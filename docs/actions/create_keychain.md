@@ -50,6 +50,7 @@ Key | Description | Default
   `lock_when_sleeps` | Lock keychain when the system sleeps | `false`
   `lock_after_timeout` | Lock keychain after timeout interval | `false`
   `add_to_search_list` | Add keychain to search list | `true`
+  `require_create` | Fail the action if the Keychain already exists | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

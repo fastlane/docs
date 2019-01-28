@@ -265,6 +265,9 @@ Key | Description | Default
   `slack_url` | Create an Incoming WebHook for your Slack group to post results there | 
   `slack_channel` | #channel or @username | 
   `slack_message` | The message included with each message posted to slack | 
+  `slack_use_webhook_configured_username_and_icon` | Use webhook's default username and icon settings? (true/false) | `false`
+  `slack_username` | Overrides the webhook's username property if slack_use_webhook_configured_username_and_icon is false | `fastlane`
+  `slack_icon_url` | Overrides the webhook's image property if slack_use_webhook_configured_username_and_icon is false | `https://s3-eu-west-1.amazonaws.com/fastlane.tools/fastlane.png`
   `skip_slack` | Don't publish to slack, even when an URL is given | `false`
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
   `destination` | Use only if you're a pro, use the other options instead | 
