@@ -348,6 +348,7 @@ Key | Description | Default
   `use_legacy_iphone6s` | Use iPhone 6s frames instead of iPhone 7 frames | `false`
   `use_legacy_iphonex` | Use iPhone X instead of iPhone XS frames | `false`
   `force_orientation_block` | [Advanced] A block to customize your screenshots' device orientation | [*](#parameters-legend-dynamic)
+  `debug_mode` | Output debug information in framed screenshots | `false`
   `path` | The path to the directory containing the screenshots | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

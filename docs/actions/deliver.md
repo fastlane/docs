@@ -841,6 +841,7 @@ Key | Description | Default
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
   `precheck_default_rule_level` | The default precheck rule level unless otherwise configured | `:warn`
+  `individual_metadata_items` | An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow | `[]`
   `app_icon` | Metadata: The path to the app icon | 
   `apple_watch_app_icon` | Metadata: The path to the Apple Watch app icon | 
   `copyright` | Metadata: The copyright notice | 

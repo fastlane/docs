@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-## 3 Examples
+## 4 Examples
 
 ```ruby
 git_commit(path: "./version.txt", message: "Version Bump")
@@ -35,6 +35,10 @@ git_commit(path: ["./version.txt", "./changelog.txt"], message: "Version Bump")
 git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
 ```
 
+```ruby
+git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation", skip_git_hooks: true)
+```
+
 
 
 
@@ -45,6 +49,7 @@ Key | Description | Default
 ----|-------------|--------
   `path` | The file you want to commit | 
   `message` | The commit message that should be used | 
+  `skip_git_hooks` | Set to true to pass --no-verify to git | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

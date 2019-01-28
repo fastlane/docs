@@ -4827,9 +4827,9 @@ fastlane-plugin-line_notify:
   :github_contributors: 0
 fastlane-plugin-browserstack:
   :initial_commit: 2018-05-31
-  :age_in_days: 18
+  :age_in_days: 242
   :readme_score: 100
-  :tests: 16
+  :tests: 17
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: upload_to_browserstack_app_automate
@@ -4845,12 +4845,12 @@ fastlane-plugin-browserstack:
       tests.
     details: Uploads IPA and APK files to BrowserStack AppLive for running manual
       tests.
-  :sha: 764c27ecffab4867ba93db6c152d5e699d8140862bc184d77d35d2c3d7fec02a
-  :github_stars: 0
-  :github_subscribers: 4
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 0
+  :sha: c0a2256672c5e1681a30c95d0b35fe91cf6a62cd8e0f31acdd2777530097d9f9
+  :github_stars: 5
+  :github_subscribers: 6
+  :github_issues: 1
+  :github_forks: 3
+  :github_contributors: 2
 fastlane-plugin-release:
   :initial_commit: 2018-07-04
   :age_in_days: 7
@@ -5353,7 +5353,7 @@ fastlane-plugin-android_change_package_name:
   :github_contributors: 0
 fastlane-plugin-firebase_test_lab:
   :initial_commit: 2018-08-01
-  :age_in_days: 140
+  :age_in_days: 180
   :readme_score: 100
   :tests: 0
   :actions:
@@ -5362,11 +5362,11 @@ fastlane-plugin-firebase_test_lab:
     category: 
     description: Submit an iOS XCTest job to Firebase Test Lab
     details: 
-  :sha: 2c97ea3c09ae64344a8ab37ef080f49bbb1438e1abbf4f3ade8590df5c9dd6a1
-  :github_stars: 28
+  :sha: 7ee7384f7d1403c0f0313495645c7809f0b7142375f7771470e27f38853c7730
+  :github_stars: 30
   :github_subscribers: 16
-  :github_issues: 3
-  :github_forks: 2
+  :github_issues: 4
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-jira_build_number:
   :initial_commit: 2018-10-25
@@ -5852,7 +5852,7 @@ fastlane-plugin-imessage:
   :github_contributors: 0
 fastlane-plugin-notarize:
   :initial_commit: 2019-01-05
-  :age_in_days: 2
+  :age_in_days: 23
   :readme_score: 100
   :tests: 0
   :actions:
@@ -5861,11 +5861,11 @@ fastlane-plugin-notarize:
     category: 
     description: Notarizes a macOS app
     details: 
-  :sha: 5dc0ef1902b1708e92c6b59a52ad09388bd94a67fa9dc0111883435fc73e5a04
-  :github_stars: 7
+  :sha: e2b7c2f8fe81b9d221611111cfaad826a08548f2ee12dba1c9ecbd30b2797a22
+  :github_stars: 28
   :github_subscribers: 13
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-gmail:
   :initial_commit: 2018-12-11
@@ -5916,5 +5916,102 @@ fastlane-plugin-setup_app_feedback_sdk:
   :github_stars: 1
   :github_subscribers: 7
   :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-compilation_time_report:
+  :initial_commit: 2019-01-24
+  :age_in_days: 4
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: compilation_time_report
+    category: 
+    description: Generate custom HTML report compilation time of each Swift func
+    details: 'Note: You should provide xcode_build with enabled ''-Xfrontend -debug-time-function-bodies''
+      in OTHER_SWIFT_FLAGS'
+  :sha: ddd95e605ca93edbaaaa07da0dd8be97f1fa9b3203040eeea9d763d20b806dd7
+  :github_stars: 5
+  :github_subscribers: 8
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-secret_keeper:
+  :initial_commit: 2019-01-21
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: remove_item_from_keychain
+    category: 
+    description: Removes the credentials from the keychain on behalf of the user
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: add_item_to_keychain
+    category: 
+    description: Adds the credentials to the keychain on behalf of the user
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: read_item_from_keychain
+    category: 
+    description: Reads the password from the keychain for a given item
+    details: 
+  :sha: 79415c4875100591bcbeae04b2522ab436b141c9cacff417f619140785a55205
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-s3_cert:
+  :initial_commit: 2019-01-21
+  :age_in_days: 7
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: s3_upload_certs
+    category: 
+    description: Upload encrypted certs to s3
+    details: Store your certificates securely in s3 and pull down automatically when
+      needed.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: s3_cert
+    category: 
+    description: Pull Certs from s3 and install them into keychain.
+    details: Store your certificates securely in s3 and pull down automatically when
+      needed.
+  :sha: 9ba947a099759d97815d9532530919fbfb9fa2f217c835a5843bc15b49056e9d
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-transifex_tool:
+  :initial_commit: 2019-01-13
+  :age_in_days: 15
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rest_pull
+    category: 
+    description: Transifex plugin for pull and push translations
+    details: This plugin is used for pulling and pushing translations using the transifex
+      api.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: cli_pull
+    category: 
+    description: Transifex tool that pulls translations using transifex cli client
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: cli_push
+    category: 
+    description: Transifex tool that push translations using transifex cli client
+    details: 
+  :sha: 0cade8d7c93f380773e8919a0fb1f019ee77ac57636e5a422912f38dd8f6158f
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
