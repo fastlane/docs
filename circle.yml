@@ -11,6 +11,7 @@ test:
   override:
     - bundle update
     - bundle exec fastlane test
+    - bundle exec rubocop
     - bundle exec danger || echo "danger failed, moving on"
 deployment:
   master:

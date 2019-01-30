@@ -40,7 +40,7 @@ tryouts(
 Key | Description | Default
 ----|-------------|--------
   `app_id` | Tryouts application hash | 
-  `api_token` | API Token for Tryouts Access | 
+  `api_token` | API Token (api_key:api_secret) for Tryouts Access | 
   `build_file` | Path to your IPA or APK file. Optional if you use the _gym_ or _xcodebuild_ action | [*](#parameters-legend-dynamic)
   `notes` | Release notes | 
   `notes_path` | Release notes text file path. Overrides the :notes parameter | 
@@ -51,12 +51,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action tryouts
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/tryouts.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run tryouts
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run tryouts parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/tryouts.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

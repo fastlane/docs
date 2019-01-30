@@ -1,4 +1,4 @@
-{!docs/setup-fastlane-header.md!}
+{!docs/includes/setup-fastlane-header.md!}
 
 # Codesigning concepts
 
@@ -49,7 +49,7 @@ Occasionally the `Automatic` setting as the provisioning profile doesn't work re
 
 That's why it is recommended to specify a specific provisioning profile somehow:
 
-#### Xcode 8 and Xcode 9
+#### Xcode 8 and up
 
 The instructions below are more advanced, and take more time to setup than other approaches.
 

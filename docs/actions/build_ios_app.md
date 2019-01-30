@@ -147,25 +147,28 @@ export_options("./ExportOptions.plist")
 or you can provide hash of values directly in the `Gymfile`:
 
 ```ruby-skip-tests
-export_options = {
+export_options({
   method: "ad-hoc",
   manifest: {
     appURL: "https://example.com/My App.ipa",
   },
   thinning: "<thin-for-all-variants>"
-}
+})
 ```
 
 Optional: If _gym_ can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:
 
-```ruby-skip-tests
-export_options: {
-  method: "app-store",
-  provisioningProfiles: { 
-    "com.example.bundleid" => "Provisioning Profile Name",
-    "com.example.bundleid2" => "Provisioning Profile Name 2"
+```ruby
+build_ios_app(
+  scheme: "Release",
+  export_options: {
+    method: "app-store",
+    provisioningProfiles: { 
+      "com.example.bundleid" => "Provisioning Profile Name",
+      "com.example.bundleid2" => "Provisioning Profile Name 2"
+    }
   }
-}
+)
 ```
 
 **Note**: If you use [_fastlane_](https://fastlane.tools) with [_match_](https://fastlane.tools/match) you don't need to provide those values manually.
@@ -343,12 +346,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action build_ios_app
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/build_ios_app.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run build_ios_app
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run build_ios_app parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/build_ios_app.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

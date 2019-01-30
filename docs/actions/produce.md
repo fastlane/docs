@@ -35,6 +35,8 @@ _produce_ creates new iOS apps on both the Apple Developer Portal and App Store 
 - **Modify** Application Services on the Apple Developer Portal
 - **Create** App Groups on the Apple Developer Portal
 - **Associate** apps with App Groups on the Apple Developer Portal
+- **Create** iCloud Containers on the Apple Developer Portal
+- **Associate** apps with iCloud Containers on the Apple Developer Portal
 - **Create** Merchant Identifiers on the Apple Developer Portal
 - **Associate** apps with Merchant Identifiers on the Apple Developer Portal
 - Support for **multiple Apple accounts**, storing your credentials securely in the Keychain
@@ -61,6 +63,7 @@ Commands: (* default)
   disable_services     Disable specific Application Services for a specific app on the Apple Developer Portal
   enable_services      Enable specific Application Services for a specific app on the Apple Developer Portal
   group                Ensure that a specific App Group exists
+  cloud_container      Ensure that a specific iCloud Container exists
   help                 Display global or [command] help documentation
   merchant             Ensure that a specific Merchant exists
 
@@ -112,6 +115,24 @@ If you want to associate an app with an App Group:
 
 ```no-highlight
 fastlane produce associate_group -a com.krausefx.app group.krausefx
+```
+
+If you want to create a new iCloud Container:
+
+```no-highlight
+fastlane produce cloud_container -g iCloud.com.krausefx.app -n "Example iCloud Container"
+```
+
+If you want to associate an app with an iCloud Container:
+
+```no-highlight
+fastlane produce associate_cloud_container -a com.krausefx.app iCloud.com.krausefx.app
+```
+
+If you want to associate an app with multiple iCloud Containers:
+
+```no-highlight
+fastlane produce associate_cloud_container -a com.krausefx.app iCloud.com.krausefx.app1 iCloud.com.krausefx.app2
 ```
 
 # Parameters
@@ -319,7 +340,7 @@ Key | Description | Default
   `skip_itc` | Skip the creation of the app on App Store Connect | `false`
   `itc_users` | Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles | 
   `enabled_features` | **DEPRECATED!** Please use `enable_services` instead - Array with Spaceship App Services | `{}`
-  `enable_services` | Array with Spaceship App Services (e.g. app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), game_center: (on\|off), health_kit: (on\|off), home_kit: (on\|off), hotspot: (on\|off), icloud: (legacy\|cloudkit), in_app_purchase: (on\|off), inter_app_audio: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), siri_kit: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off)) | `{}`
+  `enable_services` | Array with Spaceship App Services (e.g. access_wifi: (on\|off), app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), auto_fill_credential: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), game_center: (on\|off), health_kit: (on\|off), home_kit: (on\|off), hotspot: (on\|off), icloud: (legacy\|cloudkit), in_app_purchase: (on\|off), inter_app_audio: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), siri_kit: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off)) | `{}`
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal | `false`
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
@@ -330,12 +351,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action produce
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/produce.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run produce
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run produce parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/produce.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

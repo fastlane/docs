@@ -68,7 +68,21 @@ Ensure that the following permissions exist in your **src/debug/AndroidManifest.
 
 # Generating Screenshots with Screengrab
 - Then, before running `fastlane screengrab` you'll need a debug and test apk
-  - You can create your APKs with `./gradlew assembleDebug assembleAndroidTest`
+  - You can create your APKs manually with `./gradlew assembleDebug assembleAndroidTest`
+  - You can also create a lane and use `build_android_app`:
+    ```ruby
+    desc "Build debug and test APK for screenshots"
+    lane :build_for_screengrab do
+      build_android_app(
+        task: 'assemble',
+        build_type: 'Debug'
+      )
+      build_android_app(
+        task: 'assemble',
+        build_type: 'AndroidTest'
+      )
+    end
+    ```
 - Once complete run `fastlane screengrab` in your app project directory to generate screenshots
   - You will be prompted to provide any required parameters which are not in your **Screengrabfile** or provided as command line arguments
 - Your screenshots will be saved to `fastlane/metadata/android` in the directory where you ran _screengrab_
@@ -231,12 +245,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action capture_android_screenshots
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/capture_android_screenshots.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run capture_android_screenshots
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run capture_android_screenshots parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/capture_android_screenshots.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

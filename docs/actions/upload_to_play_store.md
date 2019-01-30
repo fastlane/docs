@@ -46,20 +46,7 @@ _supply_ uploads app metadata, screenshots, binaries, and app bundles to Google 
 
 Setup consists of setting up your Google Developers Service Account
 
-1. Open the [Google Play Console](https://play.google.com/apps/publish/)
-1. Select **Settings** tab, followed by the **API access** tab
-1. Click the **Create Service Account** button and follow the **Google API Console** link in the dialog
-1. Click the **Create Service account** button at the top of the developers console screen
-1. Provide a name for the service account
-1. Click **Select a role** and choose **Service Accounts > Service Account User**
-1. Check the **Furnish a new private key** checkbox
-1. Select **JSON** as the Key type
-1. Click **Create** to close the dialog
-1. Make a note of the file name of the JSON file downloaded to your computer
-1. Back on the Google Play developer console, click **Done** to close the dialog
-1. Click on **Grant Access** for the newly added service account
-1. Choose **Release Manager** from the **Role** dropdown
-1. Click **Add user** to close the dialog
+{!docs/includes/google-credentials.md!}
 
 ### Migrating Google credential format (from .p12 key file to .json)
 
@@ -148,7 +135,7 @@ Note that these will replace the current images and screenshots on the play stor
 
 ## Changelogs (What's new)
 
-You can add changelog files under the `changelogs/` directory for each locale. The filename should exactly match the version code of the APK that it represents. `fastlane supply init` will populate changelog files from existing data on Google Play if no `metadata/` directory exists when it is run.
+You can add changelog files under the `changelogs/` directory for each locale. The filename should exactly match the [version code](https://developer.android.com/studio/publish/versioning#appversioning) of the APK that it represents. `fastlane supply init` will populate changelog files from existing data on Google Play if no `metadata/` directory exists when it is run.
 
 ```no-highlight
 └── fastlane
@@ -212,6 +199,7 @@ Key | Description | Default
   `apk` | Path to the APK file to upload | [*](#parameters-legend-dynamic)
   `apk_paths` | An array of paths to APK files to upload | 
   `aab` | Path to the AAB file to upload | [*](#parameters-legend-dynamic)
+  `aab_paths` | An array of paths to AAB files to upload | 
   `skip_upload_apk` | Whether to skip uploading APK | `false`
   `skip_upload_aab` | Whether to skip uploading AAB | `false`
   `skip_upload_metadata` | Whether to skip uploading metadata | `false`
@@ -224,17 +212,46 @@ Key | Description | Default
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
   `check_superseded_tracks` | Check the other tracks for superseded versions and disable them | `false`
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
+  `deactivate_on_promote` | When promoting to a new track, deactivate the binary in the origin track | `true`
+  `version_codes_to_retain` | An array of version codes to retain when publishing a new APK | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action upload_to_play_store
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/upload_to_play_store.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run upload_to_play_store
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run upload_to_play_store parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/upload_to_play_store.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

@@ -33,7 +33,12 @@ pages:
     - Screenshots: getting-started/android/screenshots.md
     - Beta Deployment: getting-started/android/beta-deployment.md
     - Release Deployment: getting-started/android/release-deployment.md
-- Actions: actions.md
+  - Cross Platform:
+    - React Native: getting-started/cross-platform/react-native.md
+    - Flutter: getting-started/cross-platform/flutter.md
+- Actions:
+  - Available Actions: actions.md
+  - Create Your Own Action: create-action.md
 - _Actions:
   - adb: actions/adb.md
   - adb_devices: actions/adb_devices.md
@@ -75,6 +80,7 @@ pages:
   - commit_version_bump: actions/commit_version_bump.md
   - copy_artifacts: actions/copy_artifacts.md
   - crashlytics: actions/crashlytics.md
+  - create_app_on_managed_play_store: actions/create_app_on_managed_play_store.md
   - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
   - create_pull_request: actions/create_pull_request.md
@@ -87,8 +93,10 @@ pages:
   - dotgpg_environment: actions/dotgpg_environment.md
   - download: actions/download.md
   - download_dsyms: actions/download_dsyms.md
+  - download_from_play_store: actions/download_from_play_store.md
   - dsym_zip: actions/dsym_zip.md
   - echo: actions/echo.md
+  - ensure_bundle_exec: actions/ensure_bundle_exec.md
   - ensure_git_branch: actions/ensure_git_branch.md
   - ensure_git_status_clean: actions/ensure_git_status_clean.md
   - ensure_no_debug_code: actions/ensure_no_debug_code.md
@@ -106,6 +114,7 @@ pages:
   - get_github_release: actions/get_github_release.md
   - get_info_plist_value: actions/get_info_plist_value.md
   - get_ipa_info_plist_value: actions/get_ipa_info_plist_value.md
+  - get_managed_play_store_publishing_rights: actions/get_managed_play_store_publishing_rights.md
   - get_provisioning_profile: actions/get_provisioning_profile.md
   - get_push_certificate: actions/get_push_certificate.md
   - get_version_number: actions/get_version_number.md
@@ -256,10 +265,27 @@ pages:
   - Common Issues: codesigning/common-issues.md
 - Plugins:
   - Available Plugins: plugins/available-plugins.md
+  - Use Plugins: plugins/using-plugins.md
   - Create Your Own Plugin: plugins/create-plugin.md
   - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
   - Source Control: best-practices/source-control.md
   - Continuous Integration: best-practices/continuous-integration.md
+  - CI Integrations:
+    - Jenkins Integration: best-practices/continuous-integration/jenkins.md
+    - CircleCI Integration: best-practices/continuous-integration/circle-ci.md
+    - Travis Integration: best-practices/continuous-integration/travis.md
+    - Bamboo Integration: best-practices/continuous-integration/bamboo.md
+    - GitLab CI Integration: best-practices/continuous-integration/gitlab.md
+    - Azure DevOps Integration: best-practices/continuous-integration/azure-devops.md
+    - Nevercode Integration: best-practices/continuous-integration/nevercode.md
   - Keys: best-practices/keys.md
-- Advanced: advanced.md
+- Advanced:
+  - fastlane: advanced/fastlane.md
+  - Fastfile: advanced/Fastfile.md
+  - Appfile: advanced/Appfile.md
+  - Lanes: advanced/lanes.md
+  - Actions: advanced/actions.md
+  - Other: advanced/other.md
+- _Deprecated:
+  - Advanced: advanced.md

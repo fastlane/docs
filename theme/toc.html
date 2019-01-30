@@ -1,24 +1,41 @@
+{# loop through all navigation items #}
+{# if the current item has children #}
 {% if nav_item.children %}
+  {# if the current item title does not start with _ #}
   {% if not nav_item.title.startswith("_") %}
     <ul class="subnav">
       <li><span>{{ nav_item.title }}</span></li>
       {% for nav_item in nav_item.children %}
-      {% include 'toc.html' %}
+        {% include 'toc.html' %}
       {% endfor %}
     </ul>
   {% endif %}
+{# if the current item does not have children #}
 {% else %}
+  {# if the current item title does not start with _ #}
   {% if not nav_item.title.startswith("_") %}
-    <li class="toctree-l1 {% if nav_item.active%}current{%endif%}">
-      <a class="{% if nav_item.active%}current{%endif%}" href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+    <li class="toctree-l1 
+    {# if current item is active #}
+    {% if nav_item.active %}current{% endif %}
+    {# if current page has ancestors and current item title prefixed with _ is identical to ancestor title (_ + Action <=> _Action) #}
+    {% if current_page and current_page.ancestors %}{% for doc in current_page.ancestors %}{% if "_"+nav_item.title == doc.title %}current{% endif %}{% endfor %}{% endif %}
+    ">
+      <a class="
+      {% if nav_item.active %}current{% endif %}
+      {% if current_page and current_page.ancestors %}{% for doc in current_page.ancestors %}{% if "_"+nav_item.title == doc.title %}current{% endif %}{% endfor %}{% endif %}
+      " href="{{ nav_item.url }}">
+        {{ nav_item.title }}
+      </a>
+      {# if current item is current page #}
       {% if nav_item == current_page %}
-      <ul>
-        {% for toc_item in toc %}
-          {% if loop.index != 1 %}
-          <li class="toctree-l3"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+        <ul>
+          {# output headlines #}
+          {% for toc_item in toc %}
+            {% if loop.index != 1 %}
+              <li class="toctree-l3"><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       {% endif %}
     </li>
   {% endif %}

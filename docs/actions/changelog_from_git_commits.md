@@ -54,6 +54,7 @@ Key | Description | Default
   `ancestry_path` | Whether or not to use ancestry-path param | `false`
   `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag | 
   `match_lightweight_tag` | Whether or not to match a lightweight tag when searching for the last one | `true`
+  `quiet` | Whether or not to disable changelog output | `false`
   `include_merges` | **DEPRECATED!** Use `:merge_commit_filtering` instead - Whether or not to include any commits that are merges | 
   `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog. Valid values: `:include_merges`, `:exclude_merges`, `:only_include_merges` | `include_merges`
 
@@ -61,12 +62,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action changelog_from_git_commits
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/changelog_from_git_commits.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run changelog_from_git_commits
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run changelog_from_git_commits parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/changelog_from_git_commits.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

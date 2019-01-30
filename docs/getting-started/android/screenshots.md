@@ -1,4 +1,4 @@
-{!docs/setup-fastlane-header.md!}
+{!docs/includes/setup-fastlane-header.md!}
 
 # _fastlane_ screenshots for Android
 
@@ -125,7 +125,24 @@ You can use [QuickDemo](https://github.com/PSPDFKit-labs/QuickDemo) to clean up 
 
 ## Generating Screenshots with Screengrab
 
-- Run `./gradlew assembleDebug assembleAndroidTest` to generate debug and test APKs
+- Run `./gradlew assembleDebug assembleAndroidTest` manually to generate debug and test APKs
+  - You can also create a lane and use `build_android_app`:
+    ```ruby
+    desc "Build debug and test APK for screenshots"
+    lane :build_for_screengrab do
+      gradle(
+        task: 'clean'
+      )
+      build_android_app(
+        task: 'assemble',
+        build_type: 'Debug'
+      )
+      build_android_app(
+        task: 'assemble',
+        build_type: 'AndroidTest'
+      )
+    end
+    ```
 - Run `fastlane screengrab` in your app project directory to generate screenshots
   - You will be prompted to provide any required parameters which are not in your `Screengrabfile`, or provided as command line arguments
 - Your screenshots will be saved to `fastlane/metadata/android` in the directory where you ran `fastlane screengrab`

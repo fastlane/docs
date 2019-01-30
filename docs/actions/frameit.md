@@ -150,7 +150,7 @@ These are defined in the `data` key. This is an array with the following keys fo
 
 | Key | Description |
 |-----|-------------|
-| `filter` | This is mandatory to link the individual configuration to the screenshot, based on part of the file name. <p>Example:<br>If a screenshot is named `iPhone 8-Brainstorming.png` you can use value `Brainstorming` for `filter`. All other keys from that array element will only be applied on this specific screenshot. |
+| `filter` | This is mandatory to link the individual configuration to the screenshot, based on part of the file name. <p>Example:<br>If a screenshot is named `iPhone 8-Brainstorming.png` you can use value `Brainstorming` for `filter`.  If there are more than one `filter` matching an entry, they will all be applied in order (which means that the last one has the highest precedence). All other keys from that array element will only be applied on this specific screenshot. |
 | `keyword` | Similar use as in `default`, except that parameter `text` can be used here because it is screenshot specific. |
 | `title` | Similar use as in `default`, except that parameter `text` can be used here because it is screenshot specific. |
 
@@ -346,19 +346,48 @@ Key | Description | Default
   `force_device_type` | Forces a given device type, useful for Mac screenshots, as their sizes vary | 
   `use_legacy_iphone5s` | Use iPhone 5s instead of iPhone SE frames | `false`
   `use_legacy_iphone6s` | Use iPhone 6s frames instead of iPhone 7 frames | `false`
-  `force_orientation_block` | [Advanced] A block to customize your screnshots' device orientation | [*](#parameters-legend-dynamic)
+  `use_legacy_iphonex` | Use iPhone X instead of iPhone XS frames | `false`
+  `force_orientation_block` | [Advanced] A block to customize your screenshots' device orientation | [*](#parameters-legend-dynamic)
+  `debug_mode` | Output debug information in framed screenshots | `false`
   `path` | The path to the directory containing the screenshots | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action frameit
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/frameit.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run frameit
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run frameit parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/frameit.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

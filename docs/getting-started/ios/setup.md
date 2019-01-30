@@ -2,29 +2,17 @@
 
 ## Installing _fastlane_
 
-Make sure you have the latest version of the Xcode command line tools installed:
-
-```no-highlight
-xcode-select --install
-```
-
-Install _fastlane_ using 
-```no-highlight
-[sudo] gem install fastlane -NV
-```
-or alternatively using `brew cask install fastlane`
+{!docs/includes/installing-fastlane.md!}
 
 ## Setting up _fastlane_
 
 Navigate your terminal to your project's directory and run
 
-_for Ruby setup_:
-
 ```no-highlight
 fastlane init
 ```
 
-_for Swift setup:_
+To have your `Fastfile` configuration written in Swift (Beta)
 
 ```no-highlight
 fastlane init swift

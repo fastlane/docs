@@ -18,7 +18,7 @@ create_pull_request ||
 ---|---
 Supported platforms | ios, android, mac
 Author | @seei, @tommeier
-Returns | The parsed JSON when successful
+Returns | The pull request URL when successful
 
 
 
@@ -48,6 +48,7 @@ Key | Description | Default
   `repo` | The name of the repository you want to submit the pull request to | 
   `title` | The title of the pull request | 
   `body` | The contents of the pull request | 
+  `labels` | The labels for the pull request | 
   `head` | The name of the branch where your changes are implemented (defaults to the current branch name) | [*](#parameters-legend-dynamic)
   `base` | The name of the branch you want your changes pulled into (defaults to `master`) | `master`
   `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`) | `https://api.github.com`
@@ -56,12 +57,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action create_pull_request
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_pull_request.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run create_pull_request
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run create_pull_request parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_pull_request.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

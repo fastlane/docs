@@ -2,11 +2,7 @@
 
 ## Installing _fastlane_
 
-Install _fastlane_ using 
-```no-highlight
-[sudo] gem install fastlane -NV
-```
-or alternatively using `brew cask install fastlane`
+{!docs/includes/installing-fastlane.md!}
 
 ## Setting up _fastlane_
 
@@ -41,21 +37,7 @@ Setting it up requires downloading a credentials file from your Google Developer
 
 ### Collect your Google credentials
 
-1. Open the [Google Play Console](https://play.google.com/apps/publish/)
-1. Select **Settings** tab, followed by the **API access** tab
-1. Click the **Create New Project** button
-1. Click the **Create Service Account** button and follow the **Google Developers Console** link in the dialog
-1. Click the **Create Service account** button at the top of the developers console screen
-1. Provide a name for the service account
-1. Click **Select a role** and choose **Service Accounts > Service Account User**
-1. Check the **Furnish a new private key** checkbox
-1. Select **JSON** as the Key type
-1. Click **Create** to close the dialog
-1. Make a note of the file name of the JSON file downloaded to your computer
-1. Back on the Google Play developer console, click **Done** to close the dialog
-1. Click on **Grant Access** for the newly added service account
-1. Choose **Release Manager** from the **Role** dropdown
-1. Click **Add user** to close the dialog
+{!docs/includes/google-credentials.md!}
 
 ### Configure _supply_
 

@@ -37,7 +37,7 @@ fastlane release
 |              | fastlane
 -------------- | ----------
 🚀 | Save **hours** every time you push a new release to the store or beta testing service
-✨ | Integrates with all your existing tools and services (170 actions currently)
+✨ | Integrates with all your existing tools and services (more than 400 integrations)
 📖 | 100% open source under the MIT license
 🎩 | Easy setup assistant to get started in a few minutes
 ⚒ | Runs on **your** machine, it's your app and your data
@@ -49,19 +49,7 @@ fastlane release
 
 ## Getting Started
 
-Make sure you have the latest version of the Xcode command line tools installed:
-
-```no-highlight
-xcode-select --install
-```
-
-### Install fastlane
-
-Install fastlane using 
-```no-highlight
-[sudo] gem install fastlane -NV
-```
-or alternatively using `brew cask install fastlane`
+{!docs/includes/installing-fastlane.md!}
 
 Navigate to your iOS or Android app and run
 
@@ -78,13 +66,9 @@ For more details about how to get up and running, check out the getting started 
 
 ## Questions and support
 
-Before submitting a new GitHub issue, please make sure to
+Before submitting a new GitHub issue, please make sure to search for [existing GitHub issues](https://github.com/fastlane/fastlane/issues).
 
-- Check out [docs.fastlane.tools](https://docs.fastlane.tools)
-- Check out the README pages on [this repo](https://github.com/fastlane/fastlane)
-- Search for [existing GitHub issues](https://github.com/fastlane/fastlane/issues)
-
-If the above doesn't help, please [submit an issue](https://github.com/fastlane/fastlane/issues) on GitHub and provide information about your setup, in particular the output of the `fastlane env` command.
+If that doesn't help, please [submit an issue](https://github.com/fastlane/fastlane/issues) on GitHub and provide information about your setup, in particular the output of the `fastlane env` command.
 
 ## System requirements
 

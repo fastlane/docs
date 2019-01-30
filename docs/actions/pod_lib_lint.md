@@ -51,9 +51,11 @@ pod_lib_lint(sources: ["https://github.com/username/Specs", "https://github.com/
 Key | Description | Default
 ----|-------------|--------
   `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | `true`
+  `podspec` | Path of spec to lint | 
   `verbose` | Allow output detail in console | 
   `allow_warnings` | Allow warnings during pod lint | 
   `sources` | The sources of repos you want the pod spec to lint with, separated by commas | 
+  `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | 
   `use_libraries` | Lint uses static libraries to install the spec | `false`
   `fail_fast` | Lint stops on the first failing platform or subspec | `false`
   `private` | Lint skips checks that apply only to public specs | `false`
@@ -63,12 +65,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action pod_lib_lint
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/pod_lib_lint.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run pod_lib_lint
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run pod_lib_lint parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/pod_lib_lint.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

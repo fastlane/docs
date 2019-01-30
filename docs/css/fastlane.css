@@ -54,15 +54,17 @@ h3, h4, h5, h6 {
 /* For plugins quality index */
 .quality-index {
   height: 50px;
-  width: 50px;
+  width: 75px;
   font-size: 20px;
   font-weight: bold;
   display: block;
   float: left;
   margin-right: 25px;
-  background-color: #DDD;
+  background-color: #EEE;
   text-align: center;
   padding-top: 13px;
+  border-radius: 12px;
+  border: 1px solid #DDD;
 }
 
 .via-text {
@@ -199,4 +201,9 @@ footer .fastlane iframe {
   .badge img {
     width: auto;
   }
+}
+
+/* List in List */
+.rst-content .section ol li ol {
+  margin-bottom: 0px;
 }

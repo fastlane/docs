@@ -240,7 +240,7 @@ _sigh_ will never touch or use the profiles which are created and managed by Xco
 
 get_provisioning_profile ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @KrauseFx
 Returns | The UUID of the profile sigh just fetched/generated
 
@@ -273,6 +273,7 @@ get_provisioning_profile(
 Key | Description | Default
 ----|-------------|--------
   `adhoc` | Setting this flag will generate AdHoc profiles instead of App Store Profiles | `false`
+  `developer_id` | Setting this flag will generate Developer ID profiles instead of App Store Profiles | `false`
   `development` | Renew the development certificate instead of the production one | `false`
   `skip_install` | By default, the certificate will be added to your local machine. Setting this flag will skip this action | `false`
   `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles | `false`
@@ -296,12 +297,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action get_provisioning_profile
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_provisioning_profile.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run get_provisioning_profile
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run get_provisioning_profile parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_provisioning_profile.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

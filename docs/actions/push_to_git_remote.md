@@ -30,9 +30,10 @@ push_to_git_remote # simple version. pushes "master" branch to "origin" remote
 ```ruby
 push_to_git_remote(
   remote: "origin",         # optional, default: "origin"
-  local_branch: "develop",  # optional, aliased by "branch", default: "master"
+  local_branch: "develop",  # optional, aliased by "branch", default is set to current branch
   remote_branch: "develop", # optional, default is set to local_branch
   force: true,    # optional, default: false
+  force_with_lease: true,   # optional, default: false
   tags: false     # optional, default: true
 )
 ```
@@ -48,6 +49,7 @@ Key | Description | Default
   `local_branch` | The local branch to push from. Defaults to the current branch | [*](#parameters-legend-dynamic)
   `remote_branch` | The remote branch to push to. Defaults to the local branch | [*](#parameters-legend-dynamic)
   `force` | Force push to remote | `false`
+  `force_with_lease` | Force push with lease to remote | `false`
   `tags` | Whether tags are pushed to remote | `true`
   `remote` | The remote to push to | `origin`
 
@@ -55,12 +57,39 @@ Key | Description | Default
 
 
 <hr />
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action push_to_git_remote
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/push_to_git_remote.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run push_to_git_remote
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run push_to_git_remote parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/push_to_git_remote.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 
