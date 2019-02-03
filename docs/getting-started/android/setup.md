@@ -9,7 +9,7 @@
 Android Studio maintains its own instances of Gradle and Java, which you do not have access to in the command line. So even though you can build and run apps in Android Studio, you need to install those tools for fastlane separately. Additionally, you need to install Java _8_ and not a later version of Java, which do not play well with Gradle.
 
 ### Install Java 8
-For MacOS, the easiest way to install Java 8 is with [Homebrew](https://brew.sh/).
+For macOS, the easiest way to install Java 8 is with [Homebrew](https://brew.sh/).
 
 Run the following commands in the terminal:
 `brew tap caskroom/versions`
@@ -17,7 +17,7 @@ Run the following commands in the terminal:
 
 The terminal command: `javac -version` should now return something similar to: `javac 1.8.0_202-ea`
 
-If this is not the case, your JAVA_HOME environment variable likely refers to a more recent version of Java. The easiest way to fix this is to uninstall all java instances via Homebrew with `brew cask uninstall java` and then install java 8 with `brew cask install java8`
+If this is not the case, your JAVA_HOME environment variable likely refers to a more recent version of Java. The easiest way to fix this is to uninstall all Java instances which were installed via Homebrew with `brew cask uninstall java` and then install Java 8 with `brew cask install java8`
 
 ### Install Gradle
 
