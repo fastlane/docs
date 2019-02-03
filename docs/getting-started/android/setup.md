@@ -21,7 +21,7 @@ If this is not the case, your JAVA_HOME environment variable likely refers to a 
 
 ### Install Gradle
 
-on MacOs you can install Gradle via homebrew with the command `brew install gradle`
+On macOS you can install Gradle via homebrew with the command `brew install gradle`.
 
 ### Configure fastlane
 
