@@ -12,8 +12,10 @@ Android Studio maintains its own instances of Gradle and Java, which you do not 
 For macOS, the easiest way to install Java 8 is with [Homebrew](https://brew.sh/).
 
 Run the following commands in the terminal:
-`brew tap caskroom/versions`
-`brew cask install java8`
+```
+brew tap caskroom/versions
+brew cask install java8
+```
 
 The terminal command: `javac -version` should now return something similar to: `javac 1.8.0_202-ea`
 
