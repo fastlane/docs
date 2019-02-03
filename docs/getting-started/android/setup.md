@@ -15,7 +15,7 @@ Run the following commands in the terminal:
 `brew tap caskroom/versions`
 `brew cask install java8`
 
-The terminal command: `javac -version` should now return `javac 1.8.0_202-ea`
+The terminal command: `javac -version` should now return something similar to: `javac 1.8.0_202-ea`
 
 If this is not the case, your JAVA_HOME environment variable likely refers to a more recent version of Java. The easiest way to fix this is to uninstall all java instances via Homebrew with `brew cask uninstall java` and then install java 8 with `brew cask install java8`
 
