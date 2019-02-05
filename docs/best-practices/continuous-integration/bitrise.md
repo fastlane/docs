@@ -4,7 +4,7 @@ With [Bitrise](https://www.bitrise.io) you can automate building, testing and de
 
 ## How to get started?
 
-Using _fastlane_ for your Bitrise workflow is simple. Just [add the ](https://devcenter.bitrise.io/getting-started/manage-your-bitrise-workflow) [fastlane](https://www.bitrise.io/integrations/steps/fastlane) [ step to your
+Using _fastlane_ for your Bitrise workflow is simple. Just [add the ](https://devcenter.bitrise.io/getting-started/manage-your-bitrise-workflow) [fastlane](https://www.bitrise.io/integrations/steps/fastlane) [step to your
 workflow](https://devcenter.bitrise.io/getting-started/manage-your-bitrise-workflow),
 after the `Git Clone` step (and any other dependency step).
 
