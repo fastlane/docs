@@ -9,6 +9,7 @@ _fastlane_ works very well in Continuous Integration setups. It for example auto
 Multiple CI products and services offer integrations with fastlane:
 
 - [Jenkins](/best-practices/continuous-integration/jenkins/)
+- [Bitrise](/best-practices/continuous-integration/bitrise/)
 - [CircleCI](/best-practices/continuous-integration/circle-ci/)
 - [Travis](/best-practices/continuous-integration/travis/)
 - [Bamboo](/best-practices/continuous-integration/bamboo/)
