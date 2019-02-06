@@ -1,6 +1,6 @@
 # Bitrise Integration
 
-With [Bitrise](https://www.bitrise.io) you can automate building, testing and deploying your iOS and Android apps.
+[Bitrise](https://www.bitrise.io) allows you to automatically build, test and deploy your iOS and Android apps.
 
 ## How to get started?
 
