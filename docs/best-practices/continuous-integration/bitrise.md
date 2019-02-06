@@ -15,7 +15,7 @@ For more configuration options see the `fastlane` step's description in the [Wor
 ## How to configure _fastlane match_ for Bitrise
 
 If you want to use [_fastlane match_](https://github.com/fastlane/fastlane/tree/master/match)
-in your [bitrise.io](https://www.bitrise.io/) build you only have to do three things:
+in your Bitrise build you only have to do three things:
 
 1. Make sure that a single SSH key can be used to `git clone` both your main repository (the one
    you register on [bitrise.io](https://www.bitrise.io/)) and the `match` repository.
@@ -23,7 +23,7 @@ in your [bitrise.io](https://www.bitrise.io/) build you only have to do three th
 2. Add an environment variable `MATCH_PASSWORD`, as
    [described in _match_'s docs](https://docs.fastlane.tools/actions/match/#passphrase),
    to specify the `passphrase` you used for `match`.
-   On [bitrise.io](https://www.bitrise.io/) you should add this as a `Secret Environment Variable`,
+   On Bitrise you should add this as a `Secret Environment Variable`,
    in the Workflow Editor.
    _Make sure to disable_ the `Replace variables in input?` option of the environment
    variable, to not to cause issues when the value includes the `$` (dollar) sign, which is used
