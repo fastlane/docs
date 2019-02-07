@@ -1269,14 +1269,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="no-highlight">fastlane frameit download_frames
 </code></pre>
 
-<p>When using <em>frameit</em> without titles on top, the screenshots will have the full resolution, which means they can't be uploaded to the App Store directly. They are supposed to be used for websites, print media and emails. Check out the section below to use the screenshots for the App Store.</p>
+<p>Note: When using <em>frameit</em> without titles on top, the screenshots will have the full resolution, which means they can't be uploaded to the App Store directly. They are supposed to be used for websites, print media and emails. Check out the section below to use the screenshots for the App Store.</p>
 <h2 id="advanced-usage-optional"><a name="user-content-advanced-usage-optional" href="#advanced-usage-optional" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced Usage (optional)</h2>
 <h3 id="text-and-background"><a name="user-content-text-and-background" href="#text-and-background" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Text and Background</h3>
 <p>With <em>frameit</em> it's possible to add a custom background and text below or above the framed screenshots in fonts and colors you define.</p>
 <p>A working example can be found in the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">fastlane examples</a> project.</p>
 <h3 id="framefilejson"><code>Framefile.json</code></h3>
 <p>The Framefile allows to define general and screenshot specific information.
-It has the following JSON structure:</p>
+It has the following general JSON structure:</p>
 <pre><code class="json">{
   &quot;device_frame_version&quot;: &quot;latest&quot;,
   &quot;default&quot;: {
@@ -1301,7 +1301,7 @@ It has the following JSON structure:</p>
 <tbody>
 <tr>
 <td><code>background</code></td>
-<td>The background that should be used for the framed screenshot. Specify the (relative) path to the image file (e.g. *.jpg). This parameter is mandatory.</td>
+<td>The background that should be used for the framed screenshot. Specify the (relative) path to the image file (e.g. <code>*.jpg</code>). This parameter is mandatory.</td>
 <td>NA</td>
 </tr>
 <tr>
@@ -1344,6 +1344,11 @@ It has the following JSON structure:</p>
 <td>Specifies whether <em>frameit</em> should increase or decrease the font size of the text.</td>
 <td><code>0.1</code></td>
 </tr>
+<tr>
+<td><code>frame</code></td>
+<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK,</code>WHITE<code>,</code>GOLD<code>and</code>ROSE_GOLD`)</td>
+<td>NA</td>
+</tr>
 </tbody>
 </table>
 <h3 id="specific-parameters"><a name="user-content-specific-parameters" href="#specific-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Specific parameters</h3>
@@ -1368,6 +1373,10 @@ These are defined in the <code>data</code> key. This is an array with the follow
 <tr>
 <td><code>title</code></td>
 <td>Similar use as in <code>default</code>, except that parameter <code>text</code> can be used here because it is screenshot specific.</td>
+</tr>
+<tr>
+<td><code>frame</code></td>
+<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK,</code>WHITE<code>,</code>GOLD<code>and</code>ROSE_GOLD`)</td>
 </tr>
 </tbody>
 </table>
@@ -1414,7 +1423,8 @@ These are defined in the <code>data</code> key. This is an array with the follow
     &quot;padding&quot;: 50,
     &quot;show_complete_frame&quot;: false,
     &quot;stack_title&quot; : false,
-    &quot;title_below_image&quot;: true
+    &quot;title_below_image&quot;: true,
+    &quot;frame&quot;: &quot;WHITE&quot;
   },
 
   &quot;data&quot;: [
@@ -1428,7 +1438,8 @@ These are defined in the <code>data</code> key. This is an array with the follow
       &quot;filter&quot;: &quot;Organizing&quot;,
       &quot;keyword&quot;: {
         &quot;color&quot;: &quot;#feb909&quot;
-      }
+      },
+      &quot;frame&quot;: &quot;ROSE_GOLD&quot;
     },
     {
       &quot;filter&quot;: &quot;Sharing&quot;,
@@ -1456,6 +1467,40 @@ These are defined in the <code>data</code> key. This is an array with the follow
 <li>These <code>.strings</code> files <strong>MUST</strong> be utf-8 (UTF-8) or utf-16 encoded (UTF-16 BE with BOM). They also must begin with an empty line. If you are having trouble see <a href="https://github.com/fastlane/fastlane/issues/1740">issue #1740</a></li>
 <li>You <strong>MUST</strong> provide a background if you want titles. <em>frameit</em> will not add the tiles if a background is not specified.</li>
 </ul>
+<h3 id="screenshot-orientation"><a name="user-content-screenshot-orientation" href="#screenshot-orientation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Screenshot orientation</h3>
+<p>By default <em>frameit</em> adds a frame to your screenshot based on an orientation you took it. For a portrait (vertical orientation) it is going to add portrait frame and for a landscape (horizontal orientation) - landscape left (= <a href="https://developer.apple.com/documentation/uikit/uiinterfaceorientation/landscapeleft">Home button on the left side</a>).</p>
+<p>One way to override the default behavior is editing the file name by adding <code>force_landscaperight</code> to the end.</p>
+<h3 id="force_orientation_block"><code>force_orientation_block</code></h3>
+<p>If the default behavior doesn't fit your needs and you don't want or can't rename your screenshots, you can customize <em>frameit</em>'s orientation behavior by setting a <code>force_orientation_block</code> parameter. The valid values are: <code>:landscape_left</code> (home button on the left side), <code>:landscape_right</code> (home button on the right side), <code>:portrait</code> (home button on the bottom), <code>nil</code> (home button on the right side).</p>
+<h3 id="examples"><a name="user-content-examples" href="#examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Examples</h3>
+<pre><code class="ruby"># It matches the filename to the framed device orientation
+frameit(
+  path: &quot;./fastlane/screenshots&quot;,
+  force_orientation_block: proc do |filename|
+    case filename
+      when &quot;iPad Pro (12.9-inch)-01LoginScreen&quot; 
+        :landscape_right
+      when &quot;iPhone 6 Plus-01LoginScreen&quot;
+        :portrait
+      # and so on
+    end
+  end
+)
+</code></pre>
+
+<pre><code class="ruby"># It frames the screenshots in landscape right whenever the filename contains `landscape` word
+frameit(
+  silver: true,
+  path: &quot;./fastlane/screenshots&quot;,
+  force_orientation_block: proc do |filename|
+    f = filename.downcase
+    if f.include?(&quot;landscape&quot;)
+      :landscape_right
+    end
+  end
+)
+</code></pre>
+
 <h1 id="mac"><a name="user-content-mac" href="#mac" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mac</h1>
 <p>With <em>frameit</em> it's possible to also frame macOS Application screenshots. You have to provide the following:</p>
 <ul>
@@ -1495,10 +1540,6 @@ These are defined in the <code>data</code> key. This is an array with the follow
 <p>Check out <a href="https://docs.fastlane.tools/actions/snapshot/"><em>snapshot</em></a> to automatically generate screenshots using <code>UI Automation</code>.</p>
 <h2 id="upload-screenshots"><a name="user-content-upload-screenshots" href="#upload-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload screenshots</h2>
 <p>Use <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> to upload iOS screenshots to App Store Connect, or <a href="https://docs.fastlane.tools/actions/supply/"><em>supply</em></a> to upload Android screenshots to Play Store completely automatically 🚀</p>
-<h2 id="alternative-location-to-store-device_frames"><a name="user-content-alternative-location-to-store-device_frames" href="#alternative-location-to-store-device_frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Alternative location to store device_frames</h2>
-<p>Device frames can also be stored in a <code>./fastlane/screenshots/devices_frames</code> directory if you prefer rather than in the <code>~/.frameit/device_frames</code> directory. If doing so please be aware that Apple's images are copyrighted and should not be redistributed as part of a repository so you may want to include them in your .gitignore file.</p>
-<h2 id="white-background-of-frames"><a name="user-content-white-background-of-frames" href="#white-background-of-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>White background of frames</h2>
-<p>Some stock images provided by Apple still have a white background instead of a transparent one. You'll have to edit the Photoshop file to remove the white background, delete the generated <code>.png</code> file and run <code>fastlane frameit</code> again.</p>
 <h2 id="use-a-clean-status-bar"><a name="user-content-use-a-clean-status-bar" href="#use-a-clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a clean status bar</h2>
 <p>You can use <a href="https://github.com/shinydevelopment/SimulatorStatusMagic">SimulatorStatusMagic</a> to clean up the status bar.</p>
 <h2 id="gray-artifacts-around-text"><a name="user-content-gray-artifacts-around-text" href="#gray-artifacts-around-text" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gray artifacts around text</h2>
