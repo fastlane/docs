@@ -1638,7 +1638,7 @@ fastlane-plugin-giffy:
   :github_contributors: 2
 fastlane-plugin-bugsee:
   :initial_commit: 2017-01-12
-  :age_in_days: 409
+  :age_in_days: 755
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1647,12 +1647,12 @@ fastlane-plugin-bugsee:
     category: 
     description: 
     details: 
-  :sha: 73b5919dc0c70a53125281c30067fb91150a98b8dd7028514dc9a4adef084c1e
+  :sha: 5e7a801c379736853e5065c6701ae88edd5028718aa42b10084d6fc06e278209
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-souyuz:
   :initial_commit: 2016-05-11
   :age_in_days: 681
@@ -4701,7 +4701,7 @@ fastlane-plugin-schedule:
   :github_contributors: 0
 fastlane-plugin-teak:
   :initial_commit: 2018-04-23
-  :age_in_days: 115
+  :age_in_days: 289
   :readme_score: 50
   :tests: 1
   :actions:
@@ -4721,7 +4721,7 @@ fastlane-plugin-teak:
     description: Fastlane plugins for the Teak SDK
     details: A collection of plugins to make your life easier when working with the
       Teak SDK.
-  :sha: cf28c08be0c2cb92a944ed17c233a139f80a7f5c5113c061253a31541cf9fbce
+  :sha: 4198c2406194985c08e831dffbbe73c378ea5588d32d3d5c041de9452fe6bfc1
   :github_stars: 0
   :github_subscribers: 3
   :github_issues: 0
@@ -5920,7 +5920,7 @@ fastlane-plugin-setup_app_feedback_sdk:
   :github_contributors: 0
 fastlane-plugin-compilation_time_report:
   :initial_commit: 2019-01-24
-  :age_in_days: 4
+  :age_in_days: 13
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5930,12 +5930,12 @@ fastlane-plugin-compilation_time_report:
     description: Generate custom HTML report compilation time of each Swift func
     details: 'Note: You should provide xcode_build with enabled ''-Xfrontend -debug-time-function-bodies''
       in OTHER_SWIFT_FLAGS'
-  :sha: ddd95e605ca93edbaaaa07da0dd8be97f1fa9b3203040eeea9d763d20b806dd7
+  :sha: eba18fa7d66375eda2b785a0b39f6106994f5b8b4fbd037a0ca227c9d19ae106
   :github_stars: 5
   :github_subscribers: 8
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-secret_keeper:
   :initial_commit: 2019-01-21
   :age_in_days: 7
@@ -6010,6 +6010,66 @@ fastlane-plugin-transifex_tool:
     description: Transifex tool that push translations using transifex cli client
     details: 
   :sha: 0cade8d7c93f380773e8919a0fb1f019ee77ac57636e5a422912f38dd8f6158f
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-google_sheet_localize:
+  :initial_commit: 2019-01-31
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: google_sheet_localize
+    category: 
+    description: Creates .strings files for iOS and strings.xml files for Android
+    details: Creates .strings files for iOS and strings.xml files for Android. The
+      localization is mananged on a google sheet.
+  :sha: f7b5e8a97e6f6573ca2fc70947e811bbb88414d56997047034339eda6913cfc7
+  :github_stars: 3
+  :github_subscribers: 4
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-git_build_versioning:
+  :initial_commit: 2018-10-29
+  :age_in_days: 100
+  :readme_score: 50
+  :tests: 6
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: reserve_git_build_number
+    category: 
+    description: Use git for tagging your builds for unique distributed sequential
+      build numbers
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_git_build_number
+    category: 
+    description: Use git for tagging your builds for unique distributed sequential
+      build numbers
+    details: 
+  :sha: f5d144ba9ae2cada0215cd719812f51c12231e0f35a69a7bef1790d2d94d0881
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-checkbuild:
+  :initial_commit: 2019-01-31
+  :age_in_days: 6
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: checkbuild
+    category: 
+    description: This plugin will check any binary library for unwanted symbols and
+      architectures.
+    details: " Bitcode inactive!\\n"
+  :sha: c4dc7ceae8a9b8a89bb2c99b0ef2952299d5f5d3c102e571933e66161cae01f2
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
