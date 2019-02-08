@@ -39,11 +39,11 @@ lane :playstore do
     task: 'assemble',
     build_type: 'Release'
   )
-  upload_to_play_store # Uploads the APK built in the gradle step above and rolls the release out to all production users
+  upload_to_play_store # Uploads the APK built in the gradle step above and releases it to all production users
 end
 ```
 
-This will also do the following:
+This will also:
 - Upload app metadata from `fastlane/metadata/android` if you previously ran `fastlane supply init`
 - Upload expansion files (obbs) found under the same directory as your APK as long as:
   - They are identified by type as **main** or **patch** by containing `main` or `patch` in their file names
