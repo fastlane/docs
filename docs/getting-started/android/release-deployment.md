@@ -39,17 +39,18 @@ lane :playstore do
     task: 'assemble',
     build_type: 'Release'
   )
-  upload_to_play_store # Uploads the APK built in the gradle step above
+  upload_to_play_store # Uploads the APK built in the gradle step above and rolls the release out to all production users
 end
 ```
 
-This will also upload:
-
-- App metadata from `fastlane/metadata/android` if you previously ran `fastlane supply init`
-- Expansion files (obbs) found under the same directory as your APK as long as:
+This will also do the following:
+- Upload app metadata from `fastlane/metadata/android` if you previously ran `fastlane supply init`
+- Upload expansion files (obbs) found under the same directory as your APK as long as:
   - They are identified by type as **main** or **patch** by containing `main` or `patch` in their file names
   - There is at most one of each type
-- Screenshots from `fastlane/metadata/android` if you previously ran _screengrab_
+- Upload screenshots from `fastlane/metadata/android` if you previously ran _screengrab_
+- Create a new production build
+- Release the production build to all users
 
 If you would like to capture and upload screenshots automatically as part of your deployment process, check out the [fastlane screenshots for Android](screenshots.md) guide to get started!
 
