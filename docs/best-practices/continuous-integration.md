@@ -20,16 +20,7 @@ Multiple CI products and services offer integrations with fastlane:
 
 ### Separate Apple ID for CI
 
-The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that doesn't have 2-factor auth enabled, with a long, randomly generated password. Additionally make sure the newly created Apple account has limited access to only the apps and resources it needs.
-
-There are multiple reasons on why this approach is much easier:
-
-- An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you'll run into issues
-- An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing
-
-There is nothing _fastlane_ can do better in that regard, as these are technical limitations on how App Store Connect sessions are handled.
-
-Creating a separate Apple ID allows you to limit the permission scope, have a randomly generated password, and will make it much easier for you to set up CI using _fastlane_.
+As of February 27th 2019, Apple is enforcing 2FA on developer Apple ID's thus disabling the option to create a separate Apple ID specifically for CI without 2FA. 
 
 ### Security code and session
 
