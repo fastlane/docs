@@ -60,7 +60,7 @@ There is nothing _fastlane_ can do better in that regard, as these are technical
 
 ### Separate Apple ID for CI
 
-Apple announced that as of February 27th 2019, it is enforcing 2FA on developer Apple ID's thus disabling the option to create a separate Apple ID specifically for CI without 2FA. If you somehow still have an Apple ID that does not have 2 Factor Authentication enabled, you can of course use that one to login via _fastlane_.
+Apple announced that as of February 27th 2019, it is enforcing 2FA on developer Apple IDs thus disabling the option to create a separate Apple ID specifically for CI without 2FA. If you somehow still have an Apple ID that does not have 2 Factor Authentication enabled, you can of course use that one to login via _fastlane_.
 
 ## Environment variables to set
 
