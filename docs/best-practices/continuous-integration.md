@@ -35,25 +35,29 @@ When you can not enter this token, as on a Continuous Integration system, you ha
 
 #### Application specific passwords
 
-If you want to upload builds to TestFlight / App Store Connect from your CI machine, you need to generate an application specific password:
+If you want to upload builds to App Store Connect (actions `deliver` or `upload_to_app_store`) or TestFlight (actions `pilot`, `testflight` or `upload_to testflight`) from your CI machine, you need to generate an application specific password:
 
 1. Visit [appleid.apple.com/account/manage](https://appleid.apple.com/account/manage)
 1. Generate a new application specific password
 1. Provide the application specific password using the environment variable `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`
 
+This will supply the application specific password to iTMSTransporter, the tool used by those actions to perform the upload.
+
 #### `spaceauth`
 
-Because your CI machine will not be able to prompt you for your two-step or two-factor auth information, you also need to generate a login session for your CI machine in advance. You can get on your local machine this by running:
+All the other actions interacting with Apple's APIs unfortunately do not accept application specific passwords.
+
+As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID  in advance. You can get on your local machine this by running:
 
 ```
 fastlane spaceauth -u user@email.com
 ```
 
-This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system.
+This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system. This session will be reused instead of triggering a new login each time _fastlane_ communicates with Apple's APIs.
 
 Please note:
 
-- An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you'll run into issues
+- An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you might run into issues
 - An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing
 
 There is nothing _fastlane_ can do better in that regard, as these are technical limitations on how App Store Connect sessions are handled.
