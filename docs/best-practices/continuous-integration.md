@@ -18,26 +18,22 @@ Multiple CI products and services offer integrations with fastlane:
 
 ## Two-step or Two-factor auth
 
-### Separate Apple ID for CI
+Fastlane fully support 2 step verification and 2 Factor Authentication for logging in to your Apple ID and Apple Developer account.
+
 
 The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that doesn't have 2-factor auth enabled, with a long, randomly generated password. Additionally make sure the newly created Apple account has limited access to only the apps and resources it needs.
-
-There are multiple reasons on why this approach is much easier:
-
-- An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you'll run into issues
-- An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing
-
-There is nothing _fastlane_ can do better in that regard, as these are technical limitations on how App Store Connect sessions are handled.
 
 Creating a separate Apple ID allows you to limit the permission scope, have a randomly generated password, and will make it much easier for you to set up CI using _fastlane_.
 
 ### Security code and session
 
-When your Apple account has 2-factor or 2-step auth enabled, you'll be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. Again, the session should be valid for about one month, however there is no way to test this without actually waiting for over a month.
+When your Apple account has 2 Factor Authentication (or 2 step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. The session should be valid for about one month, however there is no way to test this without actually waiting for over a month.
 
 ### Use of application specific passwords and `spaceauth`
 
-Before going through this guide, make sure to read the section above.
+When you can not enter this token, as on a Continuous Integration system, you have to use other ways to log in:
+
+#### Application specific passwords
 
 If you want to upload builds to TestFlight / App Store Connect from your CI machine, you need to generate an application specific password:
 
@@ -45,7 +41,9 @@ If you want to upload builds to TestFlight / App Store Connect from your CI mach
 1. Generate a new application specific password
 1. Provide the application specific password using the environment variable `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`
 
-Because your CI machine will not be able to prompt you for your two-step or two-factor auth information, you also need to generate a login session for your CI machine in advance. You can get this by running:
+#### `spaceauth`
+
+Because your CI machine will not be able to prompt you for your two-step or two-factor auth information, you also need to generate a login session for your CI machine in advance. You can get on your local machine this by running:
 
 ```
 fastlane spaceauth -u user@email.com
@@ -53,14 +51,16 @@ fastlane spaceauth -u user@email.com
 
 This will generate a token you can set using the `FASTLANE_SESSION` environment variable on your CI system.
 
-### Bypass trusted device and use SMS for verification
+Please note:
 
-If you have a trusted device configured, Apple will not send a SMS code to your phone for your Apple account when you try to generate a web session with _fastlane_. Instead, a code will be displayed on one of your account's trusted devices. This can be problematic if you are trying to authenticate but don't have access to a trusted device. Take the following steps to circumvent the device and use SMS instead:
+- An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you'll run into issues
+- An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing
 
-- Attempt to generate a web session with `fastlane spaceauth -u [email]` and wait for security code prompt to appear
-- Open a browser to [appleid.apple.com](https://appleid.apple.com) or an address that requires you to login with your Apple ID, and logout of any previous session
-- Login with your Apple ID and request a code be sent to the desired phone when prompted for a security code
-- Use the code sent to phone with _fastlane_ instead of with the browser
+There is nothing _fastlane_ can do better in that regard, as these are technical limitations on how App Store Connect sessions are handled.
+
+### Separate Apple ID for CI
+
+Apple announced that as of February 27th 2019, it is enforcing 2FA on developer Apple ID's thus disabling the option to create a separate Apple ID specifically for CI without 2FA. If you somehow still have an Apple ID that does not have 2 Factor Authentication enabled, you can of course use that one to login via _fastlane_.
 
 ## Environment variables to set
 
