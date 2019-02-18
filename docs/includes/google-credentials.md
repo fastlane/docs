@@ -13,5 +13,5 @@ Tip: If you see Google Play Console or Google Developer Console in your local la
    1. Make a note of the file name of the JSON file downloaded to your computer
 1. Back on the **Google Play Console**, click **DONE** to close the dialog
 1. Click on **Grant Access** for the newly added service account
-1. Choose **Release Manager** from the `Role` dropdown
+1. Choose **Project Lead** or **Release Manager** from the `Role` dropdown. Note that choosing **Project Lead** grants access to update all tracks except the production track. Choosing **Release Manager** grants access to the production track and all other tracks
 1. Click **ADD USER** to close the dialog
