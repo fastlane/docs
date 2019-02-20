@@ -448,7 +448,7 @@ _deliver_ uses the following techniques under the hood:
 
 ## Available language codes
 ```no-highlight
-da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, id, it, ja, ko, ms, nl-NL, no, pt-BR, pt-PT, ru, sv, th, tr, vi, zh-Hans, zh-Hant
+ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
 ```
 
 ## Available Metadata Folder Options
@@ -895,7 +895,7 @@ To pass parameters, make use of the `:` symbol, for example
 fastlane run appstore parameter1:"value1" parameter2:"value2"
 ```
 
-It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
 
 It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
 
