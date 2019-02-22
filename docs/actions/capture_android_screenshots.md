@@ -58,7 +58,7 @@ Ensure that the following permissions exist in your **src/debug/AndroidManifest.
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 <!-- Allows changing locales -->
-<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" tools:ignore="ProtectedPermissions" />
+<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
 ```
 
 ##### Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots
