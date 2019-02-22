@@ -27,7 +27,7 @@ Creating a separate Apple ID allows you to limit the permission scope, have a ra
 
 ### Security code and session
 
-When your Apple account has 2 Factor Authentication (or 2 step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. The session should be valid for about one month, however there is no way to test this without actually waiting for over a month.
+When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. The session should be valid for about one month, however there is no way to test this without actually waiting for over a month.
 
 ### Use of application specific passwords and `spaceauth`
 
