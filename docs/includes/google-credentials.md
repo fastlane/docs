@@ -7,7 +7,7 @@ Tip: If you see Google Play Console or Google Developer Console in your local la
    1. Click the **CREATE SERVICE ACCOUNT** button at the top of the **Google Developers Console**
    1. Provide a `Service account name`
    1. Click **Select a role** and choose **Service Accounts > Service Account User**
-   1. Check the **Furnish a new private key** checkbox
+   1. Click the **Create key** button
    1. Make sure **JSON** is selected as the `Key type`
    1. Click **SAVE** to close the dialog
    1. Make a note of the file name of the JSON file downloaded to your computer
