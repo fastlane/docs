@@ -18,7 +18,7 @@ Multiple CI products and services offer integrations with fastlane:
 
 ## Two-step or Two-factor auth
 
-Fastlane fully support 2 step verification and 2 Factor Authentication for logging in to your Apple ID and Apple Developer account.
+_fastlane_ fully supports 2-step verification and 2-factor authentication for logging in to your Apple ID and Apple Developer account. 🌟
 
 
 The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that doesn't have 2-factor auth enabled, with a long, randomly generated password. Additionally make sure the newly created Apple account has limited access to only the apps and resources it needs.
