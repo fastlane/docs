@@ -58,7 +58,7 @@ Ensure that the following permissions exist in your **src/debug/AndroidManifest.
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 <!-- Allows changing locales -->
-<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" tools:ignore="ProtectedPermissions" />
 ```
 
 ##### Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots
@@ -149,6 +149,8 @@ Check out [Testing UI for a Single App](http://developer.android.com/training/te
 
 ##### Example UI Test Class (Using JUnit4)
 ```java
+import tools.fastlane.screengrab.Screengrab
+
 @RunWith(JUnit4.class)
 public class JUnit4StyleTests {
     @ClassRule
