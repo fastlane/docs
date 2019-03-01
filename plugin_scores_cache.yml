@@ -6195,3 +6195,20 @@ fastlane-plugin-fabric_beta_unregistered_devices:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-firebase_test_lab_android:
+  :initial_commit: 2019-03-01
+  :age_in_days: 0
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_test_lab_android
+    category: 
+    description: Runs Android tests in Firebase Test Lab.
+    details: Test your app with Firebase Test Lab with ease using fastlane
+  :sha: 660c7555ad042bc8d6b5cd200e4b147e8fa473e65c0a2ed2360724fbaa42a7d6
+  :github_stars: 4
+  :github_subscribers: 17
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
