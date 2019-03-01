@@ -1388,7 +1388,7 @@ pilot...
 </tr>
 </tbody>
 </table>
-<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<h2 id="7-examples"><a name="user-content-7-examples" href="#7-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7 Examples</h2>
 <pre><code class="ruby">upload_to_testflight
 </code></pre>
 
@@ -1405,6 +1405,50 @@ pilot...
   username: &quot;felix@krausefx.com&quot;,
   app_identifier: &quot;com.krausefx.app&quot;,
   itc_provider: &quot;abcde12345&quot; # pass a specific value to the iTMSTransporter -itc_provider option
+)
+</code></pre>
+
+<pre><code class="ruby">upload_to_testflight(
+  beta_app_feedback_email: &quot;email@email.com&quot;,
+  beta_app_description: &quot;This is a description of my app&quot;,
+  demo_account_required: true,
+  notify_external_testers: false,
+  changelog: &quot;This is my changelog of things that have changed in a log&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">upload_to_testflight(
+  beta_app_review_info: {
+    contact_email: &quot;email@email.com&quot;,
+    contact_first_name: &quot;Connect&quot;,
+    contact_last_name: &quot;API&quot;,
+    contact_phone: &quot;5558675309}&quot;,
+    demo_account_name: &quot;demo@email.com&quot;,
+    demo_account_password: &quot;connectapi&quot;,
+    notes: &quot;this is review note for the reviewer &lt;3 thank you for reviewing&quot;
+  },
+  localized_app_info: {
+    &quot;default&quot;: {
+      feedback_email: &quot;default@email.com&quot;,
+      marketing_url: &quot;https://example.com/marketing-defafult&quot;,
+      privacy_policy_url: &quot;https://example.com/privacy-defafult&quot;,
+      description: &quot;Default description&quot;,
+    },
+    &quot;en-GB&quot;: {
+      feedback_email: &quot;en-gb@email.com&quot;,
+      marketing_url: &quot;https://example.com/marketing-en-gb&quot;,
+      privacy_policy_url: &quot;https://example.com/privacy-en-gb&quot;,
+      description: &quot;en-gb description&quot;,
+    }
+  },
+  localized_build_info: {
+    &quot;default&quot;: {
+      whats_new: &quot;Default changelog&quot;,
+    },
+    &quot;en-GB&quot;: {
+      whats_new: &quot;en-gb changelog&quot;,
+    }
+  }
 )
 </code></pre>
 
@@ -1434,23 +1478,48 @@ pilot...
 <td><code>ios</code></td>
 </tr>
 <tr>
+<td><code>apple_id</code></td>
+<td>The unique App ID provided by App Store Connect</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
 <td><code>ipa</code></td>
 <td>Path to the ipa file to upload</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
-<td><code>changelog</code></td>
-<td>Provide the 'what's new' text when uploading a new build</td>
+<td><code>demo_account_required</code></td>
+<td>Do you need a demo account when Apple does review?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>beta_app_review_info</code></td>
+<td>Beta app review information for contact info and demo account</td>
+<td></td>
+</tr>
+<tr>
+<td><code>localized_app_info</code></td>
+<td>Localized beta app test info for description, feedback email, marketing url, and privacy policy</td>
 <td></td>
 </tr>
 <tr>
 <td><code>beta_app_description</code></td>
-<td>Provide the beta app description when uploading a new build</td>
+<td>Provide the 'Beta App Description' when uploading a new build</td>
 <td></td>
 </tr>
 <tr>
 <td><code>beta_app_feedback_email</code></td>
 <td>Provide the beta app email when uploading a new build</td>
+<td></td>
+</tr>
+<tr>
+<td><code>localized_build_info</code></td>
+<td>Localized beta app test info for what's new</td>
+<td></td>
+</tr>
+<tr>
+<td><code>changelog</code></td>
+<td>Provide the 'What to Test' text when uploading a new build. <code>skip_waiting_for_build_processing: false</code> is required to set the changelog</td>
 <td></td>
 </tr>
 <tr>
@@ -1469,11 +1538,6 @@ pilot...
 <td><code>false</code></td>
 </tr>
 <tr>
-<td><code>apple_id</code></td>
-<td>The unique App ID provided by App Store Connect</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
 <td><code>distribute_external</code></td>
 <td>Should the build be distributed to external testers?</td>
 <td><code>false</code></td>
@@ -1482,11 +1546,6 @@ pilot...
 <td><code>notify_external_testers</code></td>
 <td>Should notify external testers?</td>
 <td><code>true</code></td>
-</tr>
-<tr>
-<td><code>demo_account_required</code></td>
-<td>Do you need a demo account when Apple does review?</td>
-<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>first_name</code></td>
@@ -1509,9 +1568,9 @@ pilot...
 <td><code>./testers.csv</code></td>
 </tr>
 <tr>
-<td><code>wait_processing_interval</code></td>
-<td>Interval in seconds to wait for App Store Connect processing</td>
-<td><code>30</code></td>
+<td><code>groups</code></td>
+<td>Associate tester to one group or more by group name / group id. E.g. <code>-g "Team 1","Team 2"</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>
@@ -1534,9 +1593,9 @@ pilot...
 <td></td>
 </tr>
 <tr>
-<td><code>groups</code></td>
-<td>Associate tester to one group or more by group name / group id. E.g. <code>-g "Team 1","Team 2"</code></td>
-<td></td>
+<td><code>wait_processing_interval</code></td>
+<td>Interval in seconds to wait for App Store Connect processing</td>
+<td><code>30</code></td>
 </tr>
 <tr>
 <td><code>wait_for_uploaded_build</code></td>
@@ -1569,7 +1628,7 @@ pilot...
 <pre><code class="no-highlight">fastlane run testflight parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
-<p>It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
 <p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
 <hr />
 

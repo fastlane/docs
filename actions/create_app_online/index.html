@@ -1397,9 +1397,11 @@ Options for create:
     # Optional
     # App services can be enabled during app creation
     enable_services: {
+      access_wifi: &quot;on&quot;,             # Valid values: &quot;on&quot;, &quot;off&quot;
       app_group: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
       apple_pay: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
       associated_domains: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
+      auto_fill_credential: &quot;on&quot;,    # Valid values: &quot;on&quot;, &quot;off&quot;
       data_protection: &quot;complete&quot;,   # Valid values: &quot;complete&quot;, &quot;unlessopen&quot;, &quot;untilfirstauth&quot;,
       game_center: &quot;on&quot;,             # Valid values: &quot;on&quot;, &quot;off&quot;
       health_kit: &quot;on&quot;,              # Valid values: &quot;on&quot;, &quot;off&quot;
@@ -1410,7 +1412,7 @@ Options for create:
       inter_app_audio: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
       passbook: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
       multipath: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
-      network_extensions: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
+      network_extension: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
       nfc_tag_reading: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
       personal_vpn: &quot;on&quot;,            # Valid values: &quot;on&quot;, &quot;off&quot;
       passbook: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot; (deprecated)
@@ -1590,7 +1592,7 @@ end
 <pre><code class="no-highlight">fastlane run create_app_online parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
-<p>It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
 <p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
 <hr />
 

@@ -1240,7 +1240,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     &quot;Built by&quot; =&gt; &quot;Jenkins&quot;,
   },
   default_payloads: [:git_branch, :git_author], # Optional, lets you specify a whitelist of default payloads to include. Pass an empty array to suppress all the default payloads.
-        # Don't add this key, or pass nil, if you want all the default payloads. The available default payloads are: `lane`, `test_result`, `git_branch`, `git_author`, `last_git_commit_message`, `last_git_commit_hash`.
+        # Don't add this key, or pass nil, if you want all the default payloads. The available default payloads are: `lane`, `test_result`, `git_branch`, `git_author`, `last_git_commit`, `last_git_commit_hash`.
   attachment_properties: { # Optional, lets you specify any other properties available for attachments in the slack API (see https://api.slack.com/docs/attachments).
        # This hash is deep merged with the existing properties set using the other properties above. This allows your own fields properties to be appended to the existing fields that were created using the `payload` property for instance.
     thumb_url: &quot;http://example.com/path/to/thumb.png&quot;,
@@ -1349,7 +1349,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="no-highlight">fastlane run slack parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
-<p>It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
 <p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
 <hr />
 
