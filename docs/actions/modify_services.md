@@ -29,9 +29,12 @@ modify_services(
   app_identifier: "com.someorg.app",
   services: {
     push_notification: "on",
-    associated_domains: "off"
-  }
-)
+    associated_domains: "off",
+    wallet: :on,
+    apple_pay: :off,
+    data_protection: true,
+    multipath: false
+  })
 ```
 
 
@@ -44,7 +47,7 @@ Key | Description | Default
 ----|-------------|--------
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app) | [*](#parameters-legend-dynamic)
-  `services` | Array with Spaceship App Services (e.g. access_wifi: (on\|off), app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), auto_fill_credential: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), game_center: (on\|off), health_kit: (on\|off), home_kit: (on\|off), hotspot: (on\|off), icloud: (legacy\|cloudkit), in_app_purchase: (on\|off), inter_app_audio: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), siri_kit: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off)) | `{}`
+  `services` | Array with Spaceship App Services (e.g. access_wifi: (on\|off)(:on\|:off)(true\|false), app_group: (on\|off)(:on\|:off)(true\|false), apple_pay: (on\|off)(:on\|:off)(true\|false), associated_domains: (on\|off)(:on\|:off)(true\|false), auto_fill_credential: (on\|off)(:on\|:off)(true\|false), data_protection: (complete\|unlessopen\|untilfirstauth)(:on\|:off)(true\|false), game_center: (on\|off)(:on\|:off)(true\|false), health_kit: (on\|off)(:on\|:off)(true\|false), home_kit: (on\|off)(:on\|:off)(true\|false), hotspot: (on\|off)(:on\|:off)(true\|false), icloud: (legacy\|cloudkit)(:on\|:off)(true\|false), in_app_purchase: (on\|off)(:on\|:off)(true\|false), inter_app_audio: (on\|off)(:on\|:off)(true\|false), multipath: (on\|off)(:on\|:off)(true\|false), network_extension: (on\|off)(:on\|:off)(true\|false), nfc_tag_reading: (on\|off)(:on\|:off)(true\|false), personal_vpn: (on\|off)(:on\|:off)(true\|false), passbook: (on\|off)(:on\|:off)(true\|false), push_notification: (on\|off)(:on\|:off)(true\|false), siri_kit: (on\|off)(:on\|:off)(true\|false), vpn_configuration: (on\|off)(:on\|:off)(true\|false), wallet: (on\|off)(:on\|:off)(true\|false), wireless_accessory: (on\|off)(:on\|:off)(true\|false)) | `{}`
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
 
@@ -76,7 +79,7 @@ To pass parameters, make use of the `:` symbol, for example
 fastlane run modify_services parameter1:"value1" parameter2:"value2"
 ```
 
-It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
 
 It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
 

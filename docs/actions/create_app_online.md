@@ -249,9 +249,11 @@ lane :release do
     # Optional
     # App services can be enabled during app creation
     enable_services: {
+      access_wifi: "on",             # Valid values: "on", "off"
       app_group: "on",               # Valid values: "on", "off"
       apple_pay: "on",               # Valid values: "on", "off"
       associated_domains: "on",      # Valid values: "on", "off"
+      auto_fill_credential: "on",    # Valid values: "on", "off"
       data_protection: "complete",   # Valid values: "complete", "unlessopen", "untilfirstauth",
       game_center: "on",             # Valid values: "on", "off"
       health_kit: "on",              # Valid values: "on", "off"
@@ -262,7 +264,7 @@ lane :release do
       inter_app_audio: "on",         # Valid values: "on", "off"
       passbook: "on",                # Valid values: "on", "off"
       multipath: "on",               # Valid values: "on", "off"
-      network_extensions: "on",      # Valid values: "on", "off"
+      network_extension: "on",       # Valid values: "on", "off"
       nfc_tag_reading: "on",         # Valid values: "on", "off"
       personal_vpn: "on",            # Valid values: "on", "off"
       passbook: "on",                # Valid values: "on", "off" (deprecated)
@@ -375,7 +377,7 @@ To pass parameters, make use of the `:` symbol, for example
 fastlane run create_app_online parameter1:"value1" parameter2:"value2"
 ```
 
-It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
 
 It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
 
