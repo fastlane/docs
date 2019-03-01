@@ -279,6 +279,16 @@ phased_release(true)
 phased_release(false)
 ```
 
+##### reset_ratings
+
+Reset your app's summary rating for all territories. If set to `true`, it will reset rating when this version is released. Default behavior is to keep existing rating.
+
+```ruby-skip-tests
+reset_ratings(true)
+# or
+reset_ratings(false)
+```
+
 ##### app_rating_config_path
 You can set the app age ratings using _deliver_. You'll have to create and store a `JSON` configuration file. Copy the [template](https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json) to your project folder and pass the path to the `JSON` file using the `app_rating_config_path` option.
 
@@ -448,7 +458,7 @@ _deliver_ uses the following techniques under the hood:
 
 ## Available language codes
 ```no-highlight
-da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, id, it, ja, ko, ms, nl-NL, no, pt-BR, pt-PT, ru, sv, th, tr, vi, zh-Hans, zh-Hant
+ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
 ```
 
 ## Available Metadata Folder Options
@@ -831,6 +841,7 @@ Key | Description | Default
   `automatic_release` | Should the app be automatically released once it's approved? | `false`
   `auto_release_date` | Date in milliseconds for automatically releasing on pending approval | 
   `phased_release` | Enable the phased release feature of iTC | `false`
+  `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
   `price_tier` | The price tier of this application | 
   `app_rating_config_path` | Path to the app rating's config | 
   `submission_information` | Extra information for the submission (e.g. compliance specifications, IDFA settings) | 
@@ -895,7 +906,7 @@ To pass parameters, make use of the `:` symbol, for example
 fastlane run deliver parameter1:"value1" parameter2:"value2"
 ```
 
-It's important to note that the CLI supports primative types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
 
 It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
 
