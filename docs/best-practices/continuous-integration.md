@@ -35,7 +35,7 @@ Creating a separate Apple ID allows you to limit the permission scope (limited a
 
 _fastlane_ fully supports [2-factor authentication (2FA)](https://support.apple.com/en-us/HT204915) (and legacy [2-step verification (2SV)](https://support.apple.com/en-us/HT204152)) for logging in to your Apple ID and Apple Developer account. 🌟
 
-Note: Apple announced that as of February 27th 2019, it is enforcing 2-factor authentication on developer Apple IDs with the "Account Owner" role.
+Note: [Apple announced that as of February 27th 2019](https://developer.apple.com/news/?id=02202019a), it is enforcing 2-factor authentication on developer Apple IDs with the "Account Holder" role.
 
 #### Security code and session
 
