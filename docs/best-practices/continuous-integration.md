@@ -4,7 +4,7 @@
 
 _fastlane_ works very well in Continuous Integration setups. It for example automatically generates a JUnit report for you that allows Continuous Integration systems, like `Jenkins`, access the results of your deployment.
 
-- [Intergrations](#integrations)
+- [Integrations](#integrations)
 - [Authentication with Apple services](#authentication-with-apple-services)
 - [Environment variables to set](#environment-variables-to-set)
 - [Deploy Strategy](#deploy-strategy)
