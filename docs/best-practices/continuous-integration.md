@@ -23,7 +23,7 @@ Multiple CI products and services offer integrations with fastlane:
 
 ## Authentication with Apple services
 
-Several Fastlane actions communicate with Apple services that need authentication. This can post several challenges on CI:
+Several Fastlane actions communicate with Apple services that need authentication. This can pose several challenges on CI:
 
 ### Separate Apple ID for CI
 
