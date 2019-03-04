@@ -125,7 +125,7 @@ You can set up your own ```Release``` job, which is only triggered manually.
 })();
 </script>
 
-The following tool and service specific content was moved:
+The following tool- and service-specific content was moved:
 
 #### Jenkins Integration
 
