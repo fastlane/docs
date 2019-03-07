@@ -26,10 +26,10 @@ You can also use Xcode’s *Automatically Manage Signing* feature. By default, a
 
 ```ruby
 lane :beta do
-  build_app(xcargs: "-allowProvisioningUpdates")
+  build_app(export_xcargs: "-allowProvisioningUpdates")
 end
 ```
-
+Beware: For Xcode 10 you have to use `xcargs` instead of `export_xcargs`.
 
 # Xcode 8
 
