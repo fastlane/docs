@@ -1287,13 +1287,14 @@ brew cask install fastlane
 <h4 id="use-of-application-specific-passwords-and-spaceauth"><a name="user-content-use-of-application-specific-passwords-and-spaceauth" href="#use-of-application-specific-passwords-and-spaceauth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use of application specific passwords and <code>spaceauth</code></h4>
 <p>When you can not enter the security code manually, as on a Continuous Integration system, you have to use other ways to log in:</p>
 <h5 id="application-specific-passwords"><a name="user-content-application-specific-passwords" href="#application-specific-passwords" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Application specific passwords</h5>
-<p>If you want to upload builds to App Store Connect (actions <code>upload_to_app_store</code> and <code>deliver</code>) or TestFlight (actions <code>upload_to testflight</code>, <code>pilot</code> or <code>testflight</code>) from your CI machine, you need to generate an <em>application specific password</em>:</p>
+<p>If you want to upload builds to App Store Connect (actions <code>upload_to_app_store</code> and <code>deliver</code>) or TestFlight (actions <code>upload_to_testflight</code>, <code>pilot</code> or <code>testflight</code>) from your CI machine, you need to generate an <em>application specific password</em>:</p>
 <ol>
 <li>Visit <a href="https://appleid.apple.com/account/manage">appleid.apple.com/account/manage</a></li>
 <li>Generate a new application specific password</li>
 <li>Provide the application specific password using the environment variable <code>FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD</code></li>
 </ol>
 <p>This will supply the application specific password to iTMSTransporter, the tool used by those actions to perform the upload.</p>
+<p>Note: The application specific password will <em>not</em> work if your action usage does anything else than uploading the binary, e.g. updating any metadata like setting release notes or distributing to testers, etc.</p>
 <h5 id="spaceauth"><code>spaceauth</code></h5>
 <p>All other actions interacting with Apple's APIs do not accept application specific passwords.</p>
 <p>As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can get on your local machine this by running:</p>
