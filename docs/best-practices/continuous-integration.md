@@ -52,13 +52,15 @@ When you can not enter the security code manually, as on a Continuous Integratio
 
 ##### Application specific passwords
 
-If you want to upload builds to App Store Connect (actions `upload_to_app_store` and `deliver`) or TestFlight (actions `upload_to testflight`, `pilot` or `testflight`) from your CI machine, you need to generate an _application specific password_:
+If you want to upload builds to App Store Connect (actions `upload_to_app_store` and `deliver`) or TestFlight (actions `upload_to_testflight`, `pilot` or `testflight`) from your CI machine, you need to generate an _application specific password_:
 
 1. Visit [appleid.apple.com/account/manage](https://appleid.apple.com/account/manage)
 1. Generate a new application specific password
 1. Provide the application specific password using the environment variable `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`
 
 This will supply the application specific password to iTMSTransporter, the tool used by those actions to perform the upload.
+
+Note: The application specific password will _not_ work if your action usage does anything else than uploading the binary, e.g. updating any metadata like setting release notes or distributing to testers, etc.
 
 ##### `spaceauth`
 
