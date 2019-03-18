@@ -192,9 +192,9 @@ fastlane-plugin-increment_version_code:
   :github_contributors: 2
 fastlane-plugin-changelog:
   :initial_commit: 2016-06-25
-  :age_in_days: 979
+  :age_in_days: 996
   :readme_score: 100
-  :tests: 25
+  :tests: 27
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: read_changelog
@@ -220,11 +220,11 @@ fastlane-plugin-changelog:
     description: Stamps the [Unreleased] section with provided identifier in your
       project CHANGELOG.md file
     details: 
-  :sha: ced3ba46c4fb7819e3d4fcefc524e21c20cb54f3d95263daefd4c50cd0a824a1
-  :github_stars: 111
+  :sha: 00dbf1b448e9728823e0b670dde10fcde2615aadec630fd04bb42c307bde617a
+  :github_stars: 112
   :github_subscribers: 2
-  :github_issues: 2
-  :github_forks: 19
+  :github_issues: 1
+  :github_forks: 18
   :github_contributors: 0
 fastlane-plugin-tpa:
   :initial_commit: 2016-06-17
@@ -807,7 +807,7 @@ fastlane-plugin-settings_bundle:
   :github_contributors: 2
 fastlane-plugin-android_versioning:
   :initial_commit: 2017-02-18
-  :age_in_days: 661
+  :age_in_days: 758
   :readme_score: 50
   :tests: 14
   :actions:
@@ -841,12 +841,12 @@ fastlane-plugin-android_versioning:
     category: 
     description: Get the version code of your project
     details: " "
-  :sha: 34752b180d34192f363d173eba3db1b0f8bc085e2a80d79f58c5c53371e28949
-  :github_stars: 19
+  :sha: b71d27a71898413fc82798ca988e2c60fdd1b0211c0a09a14a561ed65b295573
+  :github_stars: 22
   :github_subscribers: 3
-  :github_issues: 1
-  :github_forks: 4
-  :github_contributors: 4
+  :github_issues: 2
+  :github_forks: 6
+  :github_contributors: 0
 fastlane-plugin-upload_folder_to_s3:
   :initial_commit: 2016-05-28
   :age_in_days: 638
@@ -1793,7 +1793,7 @@ fastlane-plugin-upload_to_onesky:
   :github_contributors: 1
 fastlane-plugin-rome:
   :initial_commit: 2017-03-27
-  :age_in_days: 624
+  :age_in_days: 721
   :readme_score: 100
   :tests: 2
   :actions:
@@ -1803,12 +1803,12 @@ fastlane-plugin-rome:
     description: An S3 cache tool for Carthage
     details: Rome is a tool that allows developers on Apple platforms to use Amazon's
       S3  and/or others as a shared cache for frameworks built with Carthage.
-  :sha: 2d72ee241e6df271445a702e735e982b9c29753f00860358c8d37c8c8929533c
-  :github_stars: 10
+  :sha: 4a3a8455b655ec10739ec972317cc15765b06c7387bd8a7f389dc116d9d82615
+  :github_stars: 12
   :github_subscribers: 2
   :github_issues: 1
   :github_forks: 2
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-git_status:
   :initial_commit: 2016-12-07
   :age_in_days: 445
@@ -4291,7 +4291,7 @@ fastlane-plugin-xcconfig:
   :github_contributors: 0
 fastlane-plugin-run_tests_firebase_testlab:
   :initial_commit: 2018-01-30
-  :age_in_days: 352
+  :age_in_days: 412
   :readme_score: 100
   :tests: 34
   :actions:
@@ -4300,11 +4300,11 @@ fastlane-plugin-run_tests_firebase_testlab:
     category: 
     description: 
     details: 
-  :sha: b9e683752478a3c980767e8013f139636d5d5f77e5ed5552945459ee3805757a
-  :github_stars: 20
-  :github_subscribers: 2
-  :github_issues: 2
-  :github_forks: 5
+  :sha: be7c094c0cdccde228019bab6dec21d688383d3d835c1e19a6bd010553ae8876
+  :github_stars: 25
+  :github_subscribers: 3
+  :github_issues: 3
+  :github_forks: 8
   :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2016-06-05
@@ -4524,19 +4524,19 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 322
+  :age_in_days: 339
   :readme_score: 50
-  :tests: 9
+  :tests: 11
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter
     category: 
     description: Flutter actions plugin for Fastlane
     details: 
-  :sha: f98ca2a3a43fdd41c7415cf06d8119bb3ff92bd47365bbcccd933d1625977a74
+  :sha: b396f9af101cc005a7448beca2286cfcc0071107046277c46d867c4202c6bde4
   :github_stars: 3
   :github_subscribers: 1
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-ding_talk:
@@ -6101,7 +6101,7 @@ sparkplugg:
   :github_contributors: 0
 fastlane-plugin-lokalise:
   :initial_commit: 2019-02-03
-  :age_in_days: 26
+  :age_in_days: 43
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6120,7 +6120,7 @@ fastlane-plugin-lokalise:
     category: 
     description: Upload metadata to lokalise.
     details: This action scans fastlane/metadata folder and uploads metadata to lokalise.co
-  :sha: 63032d56f6511f8ac66e60690d4b219dc1054b01da9d077d65e0efecefc51817
+  :sha: f035c57ac703b8871c3874e73e376b02babae468862f68a0588cd534ac26b1c5
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -6212,3 +6212,120 @@ fastlane-plugin-firebase_test_lab_android:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-forsis:
+  :initial_commit: 2018-12-17
+  :age_in_days: 91
+  :readme_score: 100
+  :tests: 8
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: forsis
+    category: 
+    description: This plugin produces generic test execution reports supported by
+      SonarQube from JUnit test reports generated by fastlane
+    details: 
+  :sha: 304e51ed72ebf3b7e7624b6c1408396968bebf7c5b61f066ee26937865ea21f8
+  :github_stars: 4
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-android_emulator_kami:
+  :initial_commit: 2018-01-24
+  :age_in_days: 418
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_emulator_kami
+    category: 
+    description: Creates and starts an Android Emulator (AVD)
+    details: Great for Screengrab
+  :sha: 7dd7f52ffcfac96974c727b2e0ff034fb5cc0ce0e5713d294d48ae9b9326407a
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-semantic_release:
+  :initial_commit: 2019-03-17
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: conventional_changelog
+    category: 
+    description: Get commits since last version and generates release notes
+    details: Uses conventional commits. It groups commits by their types and generates
+      release notes in markdown or slack format.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: analyze_commits
+    category: 
+    description: Finds a tag of last release and determinates version of next release
+    details: This action will find a last release tag and analyze all commits since
+      the tag. It uses conventional commits. Every time when commit is marked as fix
+      or feat it will increase patch or minor number (you can setup this default behaviour).
+      After all it will suggest if the version should be released or not.
+  :sha: 8b526d88d965cf3c059bf59e73a807f8837763d20ae71a472bad5996d6ca268d
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-sftp:
+  :initial_commit: 2019-03-04
+  :age_in_days: 14
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sftp_download
+    category: 
+    description: download files from a remote Server via SFTP
+    details: TODO
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sftp_upload
+    category: 
+    description: upload files to a remote Server via SFTP
+    details: TODO
+  :sha: b266b115f1f638dc1c23a54ef1bf8175fd1c2faac73083b5236cf8caecd1adc3
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-fast_city:
+  :initial_commit: 2019-03-12
+  :age_in_days: 6
+  :readme_score: 50
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: resign_android
+    category: 
+    description: Resign Android executable
+    details: Resign Android executable
+  :sha: 3182bc20476c2c9dc8882f30cc047c19f111e249cb14051f5d158a10ebace016
+  :github_stars: 1
+  :github_subscribers: 4
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-android_emulator-kami:
+  :initial_commit: 2018-01-24
+  :age_in_days: 418
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_emulator_kami
+    category: 
+    description: Creates and starts an Android Emulator (AVD)
+    details: Great for Screengrab
+  :sha: ad55cba0371b02f9ecbf33296b8cef9768030736afb5cbc1dad645c102ad9050
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2

@@ -339,8 +339,9 @@ Key | Description | Default
   `localized_build_info` | Localized beta app test info for what's new | 
   `changelog` | Provide the 'What to Test' text when uploading a new build. `skip_waiting_for_build_processing: false` is required to set the changelog | 
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
-  `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers | `false`
+  `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan) | `false`
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
+  `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? | `false`
   `notify_external_testers` | Should notify external testers? | `true`
   `first_name` | The tester's first name | 
