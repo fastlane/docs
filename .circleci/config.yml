@@ -33,7 +33,7 @@ workflows:
   build:
     jobs:
       - "Test"
-      - "Deploy"
+      - "Deploy":
           filters:
             branches:
               only: master
