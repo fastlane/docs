@@ -3,10 +3,9 @@ version: 2.0
 jobs:
   "Test":
     docker:
-      - image: circleci/ruby:2.3-jessie
+      - image: circleci/python:3.6.4
     steps:
-      - run: sudo apt-get install python3-pip
-      - run: pip3 install pipenv
+      - run: pip install pipenv
       - run: pipenv install
       - run: bundle update
       - run: bundle exec fastlane test
