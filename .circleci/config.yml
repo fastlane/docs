@@ -3,9 +3,9 @@ version: 2.0
 jobs:
   "Test":
     docker:
-      - image: circleci/ruby:2.3-jessie
+      - image: fastlanetools/fastlane:2.3.4
     steps:
-      - run: pip3 install pipenv
+      - run: pip install pipenv
       - run: pipenv install
       - run: bundle update
       - run: bundle exec fastlane test
@@ -13,9 +13,9 @@ jobs:
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
     docker:
-      - image: circleci/ruby:2.3-jessie
+      - image: fastlanetools/fastlane:2.3.4
     steps:
-      - run: pip3 install pipenv
+      - run: pip install pipenv
       - run: pipenv install
       - run: ./scripts/ci/deploy.sh
     branches:
