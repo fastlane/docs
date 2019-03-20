@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
     steps:
-      - run: pip install pipenv
+      - run: pip3 install pipenv
       - run: pipenv install
       - run: bundle update
       - run: bundle exec fastlane test
@@ -15,7 +15,6 @@ jobs:
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
     steps:
-      - run: sudo apt-get install python3-pip
       - run: pip3 install pipenv
       - run: pipenv install
       - run: ./scripts/ci/deploy.sh
