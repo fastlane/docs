@@ -32,3 +32,4 @@ workflows:
   build:
     jobs:
       - "Test"
+      - "Deploy"
