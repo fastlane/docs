@@ -31,4 +31,4 @@ workflows:
       - "Deploy":
           filters:
             branches:
-              only: master-test
+              only: master
