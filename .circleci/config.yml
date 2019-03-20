@@ -4,6 +4,9 @@ jobs:
   "Test":
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
+    environment:
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
     steps:
       - run: export LC_ALL=C.utf-8
       - run: export LANG=C.utf-8
