@@ -18,6 +18,7 @@ jobs:
       - image: joshdholtz/fastlane-docs:0.0.1
     working_directory: ~/code
     steps:
+      - checkout
       - run: pip3 install pipenv
       - run: pipenv install
       - run: pipenv run ./scripts/ci/deploy.sh
