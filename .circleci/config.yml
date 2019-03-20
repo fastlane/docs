@@ -4,9 +4,6 @@ jobs:
   "Test":
     docker: # Replace this with a fastlane owned docker image at some point
       - image: joshdholtz/fastlane-docs:0.0.1
-    environment:
-      LC_ALL: C.UTF-8
-      LANG: C.UTF-8
     working_directory: ~/code
     steps:
       - checkout
@@ -19,9 +16,6 @@ jobs:
   "Deploy":
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
-    environment:
-      LC_ALL: C.UTF-8
-      LANG: C.UTF-8
     working_directory: ~/code
     steps:
       - run: pip3 install pipenv

@@ -42,11 +42,6 @@ echo "docs.fastlane.tools" > "CNAME"
 echo "Generating redirects..."
 ruby /tmp/generate_redirects.rb
 
-# We also need a circle.yml file on the gh-pages branch, otherwise the build fails
-echo "test:
-  override:
-  - echo 'Running on gh-pages branch'" > "circle.yml"
-
 # Commit all the changes and push it to the remote
 git add -A
 git commit -m "Deployed with $(mkdocs --version)"
