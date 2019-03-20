@@ -1,7 +1,7 @@
 version: 2.0
 
 jobs:
-  "Test":
+  "Test Docs":
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
     environment:
@@ -16,7 +16,7 @@ jobs:
       - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop
       - run: bundle exec danger || echo "danger failed, moving on"
-  "Deploy":
+  "Deploy Docs":
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
     steps:
@@ -31,5 +31,5 @@ workflows:
   version: 2
   build:
     jobs:
-      - "Test"
-      - "Deploy"
+      - "Test Docs"
+      - "Deploy Docs"
