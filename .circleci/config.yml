@@ -5,19 +5,19 @@ jobs:
     docker:
       - image: circleci/ruby:2.3-jessie
     steps:
-      - pip install pipenv
-      - pipenv install
-      - bundle update
-      - bundle exec fastlane test
-      - bundle exec rubocop
-      - bundle exec danger || echo "danger failed, moving on"
+      - run: pip install pipenv
+      - run: pipenv install
+      - run: bundle update
+      - run: bundle exec fastlane test
+      - run: bundle exec rubocop
+      - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
     docker:
       - image: circleci/ruby:2.3-jessie
     steps:
-      - pip install pipenv
-      - pipenv install
-      - ./scripts/ci/deploy.sh
+      - run: pip install pipenv
+      - run: pipenv install
+      - run: ./scripts/ci/deploy.sh
     branches:
       only:
         - master  
