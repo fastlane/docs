@@ -5,6 +5,8 @@ jobs:
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
     steps:
+      - run: export LC_ALL=de_DE.utf-8
+      - run: export LANG=de_DE.utf-8
       - run: pip3 install pipenv
       - run: pipenv install
       - run: bundle update
