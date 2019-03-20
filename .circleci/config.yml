@@ -14,9 +14,8 @@ jobs:
       - run: export LANG=C.utf-8
       - run: pip3 install pipenv
       - run: pipenv install
-      - run: pipenv shell
       - run: bundle update
-      - run: bundle exec fastlane test
+      - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
