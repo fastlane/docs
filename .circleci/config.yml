@@ -7,7 +7,9 @@ jobs:
     environment:
       LC_ALL: C.UTF-8
       LANG: C.UTF-8
+    working_directory: ~/code
     steps:
+      - checkout
       - run: export LC_ALL=C.utf-8
       - run: export LANG=C.utf-8
       - run: pip3 install pipenv
