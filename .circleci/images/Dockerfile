@@ -5,7 +5,7 @@ ARG PYTHON_VER="3.6.8"
 WORKDIR ${BUILDDIR}
 
 RUN apt-get update -qq && \
-apt-get upgrade -y  > /dev/null 2>&1 && \
+apt-get upgrade -y > /dev/null 2>&1 && \
 apt-get install wget gcc make zlib1g-dev -y -qq > /dev/null 2>&1 && \
 wget --quiet https://www.python.org/ftp/python/${PYTHON_VER}/Python-${PYTHON_VER}.tgz > /dev/null 2>&1 && \
 tar zxf Python-${PYTHON_VER}.tgz && \
