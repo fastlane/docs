@@ -10,8 +10,6 @@ jobs:
     working_directory: ~/code
     steps:
       - checkout
-      - run: export LC_ALL=C.utf-8
-      - run: export LANG=C.utf-8
       - run: pip3 install pipenv
       - run: pipenv install
       - run: bundle update
@@ -24,7 +22,7 @@ jobs:
     steps:
       - run: pip3 install pipenv
       - run: pipenv install
-      - run: ./scripts/ci/deploy.sh
+      - run: pipenv run ./scripts/ci/deploy.sh
     branches:
       only:
         - master  
@@ -34,3 +32,4 @@ workflows:
   build:
     jobs:
       - "Test"
+      - "Deploy"
