@@ -1,20 +1,23 @@
-machine:
-  python:
-    version: 3.6.0
-  ruby:
-    version: 2.3.0
-dependencies:
-  pre:
-    - pip install pipenv
-    - pipenv install
-test:
-  override:
-    - bundle update
-    - bundle exec fastlane test
-    - bundle exec rubocop
-    - bundle exec danger || echo "danger failed, moving on"
-deployment:
-  master:
-    branch: master
-    commands:
+version: 2.0
+
+jobs:
+  "Test":
+    docker:
+      - image: circleci/ruby:2.3-jessie
+    steps:
+      - pip install pipenv
+      - pipenv install
+      - bundle update
+      - bundle exec fastlane test
+      - bundle exec rubocop
+      - bundle exec danger || echo "danger failed, moving on"
+  "Deploy":
+    docker:
+      - image: circleci/ruby:2.3-jessie
+    steps:
+      - pip install pipenv
+      - pipenv install
       - ./scripts/ci/deploy.sh
+    branches:
+      only:
+        - master  
