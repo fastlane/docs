@@ -5,8 +5,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.3-jessie
     steps:
-      - run: sudo apt-get install python-pip
-      - run: pip install pipenv
+      - run: sudo apt-get install python3-pip
+      - run: pip3 install pipenv
       - run: pipenv install
       - run: bundle update
       - run: bundle exec fastlane test
@@ -16,8 +16,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.3-jessie
     steps:
-      - run: sudo apt-get install python-pip
-      - run: pip install pipenv
+      - run: sudo apt-get install python3-pip
+      - run: pip3 install pipenv
       - run: pipenv install
       - run: ./scripts/ci/deploy.sh
     branches:
