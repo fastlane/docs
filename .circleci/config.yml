@@ -34,3 +34,6 @@ workflows:
     jobs:
       - "Test"
       - "Deploy"
+          filters:
+            branches:
+              only: master
