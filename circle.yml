@@ -1,3 +1,0 @@
-test:
-  override:
-  - echo 'Running on gh-pages branch'
