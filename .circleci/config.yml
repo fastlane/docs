@@ -2,7 +2,7 @@ version: 2.0
 
 jobs:
   "Test":
-    docker:
+    docker: # Replace this with a fastlane owned docker image at some point
       - image: joshdholtz/fastlane-docs:0.0.1
     environment:
       LC_ALL: C.UTF-8
