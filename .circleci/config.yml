@@ -1,7 +1,7 @@
 version: 2.0
 
 jobs:
-  "Test Docs":
+  "Test":
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
     environment:
@@ -16,20 +16,21 @@ jobs:
       - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop
       - run: bundle exec danger || echo "danger failed, moving on"
-  "Deploy Docs":
+  "Deploy":
     docker:
       - image: joshdholtz/fastlane-docs:0.0.1
+    environment:
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
+    working_directory: ~/code
     steps:
       - run: pip3 install pipenv
       - run: pipenv install
       - run: pipenv run ./scripts/ci/deploy.sh
-    branches:
-      only:
-        - master  
 
 workflows:
   version: 2
   build:
     jobs:
-      - "Test Docs"
-      - "Deploy Docs"
+      - "Test"
+      - "Deploy"
