@@ -250,6 +250,15 @@ app_review_information(
 
 You can also provide these values by creating files in a `metadata/review_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `first_name.txt`, `notes.txt` etc.). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will be take priority over values from these files.
 
+##### app_review_attachment_file
+You can provide addition information for app review as a file attachment. For this apple supports following file formats pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.
+
+if you pass empty string (not null) it will remove the existing attachment file (if any) from the edit version.
+
+```ruby-skip-tests
+app_review_attachment_file: "./readme.txt"
+```
+
 ##### submission_information
 Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. [A list of available options](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb).
 
