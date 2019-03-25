@@ -6,6 +6,6 @@ As there is no official getting started guide yet, here are some publications by
 
 - [Shipping React Native apps with fastlane](https://carloscuesta.me/blog/shipping-react-native-apps-with-fastlane/)
 - [Conference talk "Automate your React Native world with fastlane"](https://www.youtube.com/watch?v=1K5OLv3moFg)
-- Team Focussed Fastlane Tutorials
+- Team Focused Fastlane Tutorials
   - [Simple Android Releases in React Native](https://shift.infinite.red/simple-react-native-android-releases-319dc5e29605)
   - [Simple iOS Releases in React Native](https://shift.infinite.red/simple-react-native-ios-releases-4c28bb53a97b)
