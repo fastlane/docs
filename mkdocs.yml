@@ -209,6 +209,7 @@ pages:
   - slather: actions/slather.md
   - snapshot: actions/snapshot.md
   - sonar: actions/sonar.md
+  - spaceship_logs: actions/spaceship_logs.md
   - splunkmint: actions/splunkmint.md
   - spm: actions/spm.md
   - ssh: actions/ssh.md

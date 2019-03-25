@@ -81,6 +81,12 @@ If you want to generate a development certificate instead:
 fastlane pem --development
 ```
 
+If you want to generate a Website Push certificate:
+
+```no-highlight
+fastlane pem --website_push
+```
+
 Set a password for your `p12` file:
 
 ```no-highlight
@@ -181,6 +187,7 @@ get_push_certificate(
 Key | Description | Default
 ----|-------------|--------
   `development` | Renew the development push certificate instead of the production one | `false`
+  `website_push` | Create a Website Push certificate | `false`
   `generate_p12` | Generate a p12 file additionally to a PEM file | `true`
   `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one | `30`
   `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days | `false`

@@ -34,7 +34,8 @@ push_to_git_remote(
   remote_branch: "develop", # optional, default is set to local_branch
   force: true,    # optional, default: false
   force_with_lease: true,   # optional, default: false
-  tags: false     # optional, default: true
+  tags: false,    # optional, default: true
+  no_verify: true # optional, default: false
 )
 ```
 
@@ -52,6 +53,7 @@ Key | Description | Default
   `force_with_lease` | Force push with lease to remote | `false`
   `tags` | Whether tags are pushed to remote | `true`
   `remote` | The remote to push to | `origin`
+  `no_verify` | Whether or not to use --no-verify | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
