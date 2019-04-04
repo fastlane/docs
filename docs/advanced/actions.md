@@ -2,6 +2,21 @@
 
 # Actions
 
+# Naming actions
+
+Starting from `fastlane@v2.120` you have now the ability to specify Step Name for all actions.
+This was introduced to disambiguate the use of some action several times, in different context.
+
+To do so, add the `:step_name` property to your arguments.
+
+For instance with the [fastlane-plugin-yarn](https://github.com/joshrlesch/fastlane-plugin-yarn):
+```ruby
+yarn(commmand: 'build', step_name: 'building_project')
+yarn(commmand: 'test', step_name: 'testing_project')
+yarn(commmand: 'publish-coverage', step_name: 'publishing_project')
+```
+These name will appear as the step description instead of generic `yarn`.
+
 # Interacting with the user
 
 Instead of using `puts`, `raise` and `gets`, please use the helper class `UI` across all fastlane tools:
