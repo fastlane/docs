@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # hockey
 
 
-Upload a new build to [HockeyApp](https://hockeyapp.net/)
+Refer to [App Center](https://github.com/Microsoft/fastlane-plugin-appcenter/)
+
+> HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to [App Center](https://github.com/Microsoft/fastlane-plugin-appcenter/)
 
 
-
-
-> Symbols will also be uploaded automatically if a `app.dSYM.zip` file is found next to `app.ipa`. In case it is located in a different place you can specify the path explicitly in the `:dsym` parameter.<br>More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
+> HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to [App Center](https://github.com/Microsoft/fastlane-plugin-appcenter/)<br><br>Symbols will also be uploaded automatically if a `app.dSYM.zip` file is found next to `app.ipa`. In case it is located in a different place you can specify the path explicitly in the `:dsym` parameter.<br>More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
 
 
 hockey ||
@@ -21,7 +21,7 @@ Author | @KrauseFx, @modzelewski, @lacostej
 
 
 
-## 2 Examples
+## 3 Examples
 
 ```ruby
 hockey(
@@ -40,6 +40,16 @@ hockey(
   bundle_version: "1.0.2.145",
   ipa: "./my.msi",
   notes: "Changelog"
+)
+```
+
+```ruby
+# You can bypass the CDN if you are uploading to Hockey and receive an SSL error (which can happen on corporate firewalls)
+hockey(
+  api_token: "...",
+  ipa: "./app.ipa",
+  notes: "Changelog",
+  bypass_cdn: true
 )
 ```
 
