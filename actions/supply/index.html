@@ -1287,11 +1287,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="no-highlight">fastlane supply --apk path/app.apk --track rollout --rollout 0.5
 </code></pre>
 
+<h3 id="expansion-files-obb"><a name="user-content-expansion-files-obb" href="#expansion-files-obb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Expansion files (<code>.obb</code>)</h3>
 <p>Expansion files (obbs) found under the same directory as your APK will also be uploaded together with your APK as long as:</p>
 <ul>
 <li>they are identified as type 'main' or 'patch' (by containing 'main' or 'patch' in their file name)</li>
 <li>you have at most one of each type</li>
 </ul>
+<p>If you only want to update the APK, but keep the expansion files from the previous version on Google Play use</p>
+<pre><code class="no-highlight">fastlane supply --apk path/app.apk --obb_main_references_version 21 --obb_main_file_size 666154207
+</code></pre>
+
+<p>or</p>
+<pre><code class="no-highlight">fastlane supply --apk path/app.apk --obb_patch_references_version 21 --obb_patch_file_size 666154207
+</code></pre>
+
 <h2 id="uploading-an-aab"><a name="user-content-uploading-an-aab" href="#uploading-an-aab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading an AAB</h2>
 <p>To upload a new <a href="https://developer.android.com/guide/app-bundle/">Android application bundle</a> to Google Play, simply run</p>
 <pre><code class="no-highlight">fastlane supply --aab path/to/app.aab
@@ -1504,6 +1513,26 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>version_codes_to_retain</code></td>
 <td>An array of version codes to retain when publishing a new APK</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_main_references_version</code></td>
+<td>References version of 'main' expansion file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_main_file_size</code></td>
+<td>Size of 'main' expansion file in bytes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_patch_references_version</code></td>
+<td>References version of 'patch' expansion file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_patch_file_size</code></td>
+<td>Size of 'patch' expansion file in bytes</td>
 <td></td>
 </tr>
 </tbody>

@@ -1368,6 +1368,8 @@ pilot...
 <p>If your password contains special characters, <em>pilot</em> may throw a confusing error saying your "Your Apple ID or password was entered incorrectly". The easiest way to fix this error is to change your password to something that <strong>does not</strong> contains special characters.</p>
 <h2 id="how-is-my-password-stored"><a name="user-content-how-is-my-password-stored" href="#how-is-my-password-stored" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How is my password stored?</h2>
 <p><em>pilot</em> uses the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> from <em>fastlane</em>.</p>
+<h2 id="provider-short-name"><a name="user-content-provider-short-name" href="#provider-short-name" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Provider Short Name</h2>
+<p>If you are on multiple App Store Connect teams, iTunes Transporter may need a provider short name to know where to upload your binary. <em>pilot</em> will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the <code>itc_provider</code> option.</p>
 <hr />
 
 <table>
@@ -1422,7 +1424,7 @@ pilot...
     contact_email: &quot;email@email.com&quot;,
     contact_first_name: &quot;Connect&quot;,
     contact_last_name: &quot;API&quot;,
-    contact_phone: &quot;5558675309}&quot;,
+    contact_phone: &quot;5558675309&quot;,
     demo_account_name: &quot;demo@email.com&quot;,
     demo_account_password: &quot;connectapi&quot;,
     notes: &quot;this is review note for the reviewer &lt;3 thank you for reviewing&quot;
@@ -1529,12 +1531,17 @@ pilot...
 </tr>
 <tr>
 <td><code>skip_waiting_for_build_processing</code></td>
-<td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work and no build will be distributed to testers</td>
+<td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan)</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>update_build_info_on_upload</code></td>
 <td><strong>DEPRECATED!</strong> Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>uses_non_exempt_encryption</code></td>
+<td>Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1589,7 +1596,7 @@ pilot...
 </tr>
 <tr>
 <td><code>itc_provider</code></td>
-<td>The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
+<td>The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
 <td></td>
 </tr>
 <tr>
@@ -1599,7 +1606,7 @@ pilot...
 </tr>
 <tr>
 <td><code>wait_for_uploaded_build</code></td>
-<td>Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used</td>
+<td><strong>DEPRECATED!</strong> No longer needed with the transition over to the App Store Connect API - Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used</td>
 <td><code>false</code></td>
 </tr>
 <tr>

@@ -1232,7 +1232,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="7-examples"><a name="user-content-7-examples" href="#7-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7 Examples</h2>
+<h2 id="8-examples"><a name="user-content-8-examples" href="#8-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8 Examples</h2>
 <pre><code class="ruby">commit_version_bump
 </code></pre>
 
@@ -1264,6 +1264,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <pre><code class="ruby">commit_version_bump(
   ignore: /OtherProject/ # ignore files matching a regular expression
+)
+</code></pre>
+
+<pre><code class="ruby">commit_version_bump(
+  no_verify: true # optional, default: false
 )
 </code></pre>
 
@@ -1306,6 +1311,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>include</code></td>
 <td>A list of extra files to be included in the version bump (string array or comma-separated string)</td>
 <td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>no_verify</code></td>
+<td>Whether or not to use --no-verify</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>

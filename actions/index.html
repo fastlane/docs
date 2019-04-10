@@ -1396,13 +1396,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcode_server_get_assets/">xcode_server_get_assets</a></td>
-<td>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</td>
+<td><a href="/actions/run_tests/">run_tests</a></td>
+<td>Easily run tests of your iOS app (via <em>scan</em>)</td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/run_tests/">run_tests</a></td>
-<td>Easily run tests of your iOS app (via <em>scan</em>)</td>
+<td><a href="/actions/xcode_server_get_assets/">xcode_server_get_assets</a></td>
+<td>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</td>
 <td>ios, mac</td>
 </tr>
 </tbody>
@@ -1488,13 +1488,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcarchive/">xcarchive</a></td>
-<td>Archives the project using <code>xcodebuild</code></td>
+<td><a href="/actions/xcbuild/">xcbuild</a></td>
+<td>Builds the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcbuild/">xcbuild</a></td>
-<td>Builds the project using <code>xcodebuild</code></td>
+<td><a href="/actions/xctest/">xctest</a></td>
+<td>Runs tests on the given simulator</td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1508,13 +1508,8 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android</td>
 </tr>
 <tr>
-<td><a href="/actions/build_ios_app/">build_ios_app</a></td>
-<td>Easily build and sign your app (via <em>gym</em>)</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/build_app/">build_app</a></td>
-<td>Alias for the <code>build_ios_app</code> action</td>
+<td><a href="/actions/xcarchive/">xcarchive</a></td>
+<td>Archives the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1523,8 +1518,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xctest/">xctest</a></td>
-<td>Runs tests on the given simulator</td>
+<td><a href="/actions/build_ios_app/">build_ios_app</a></td>
+<td>Easily build and sign your app (via <em>gym</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_app/">build_app</a></td>
+<td>Alias for the <code>build_ios_app</code> action</td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1560,24 +1560,24 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/capture_screenshots/">capture_screenshots</a></td>
-<td>Alias for the <code>capture_ios_screenshots</code> action</td>
-<td>ios, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a></td>
 <td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
-<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
 <td>ios, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/capture_android_screenshots/">capture_android_screenshots</a></td>
 <td>Automated localized screenshots of your Android app (via <em>screengrab</em>)</td>
 <td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/capture_screenshots/">capture_screenshots</a></td>
+<td>Alias for the <code>capture_ios_screenshots</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
+<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
+<td>ios, mac</td>
 </tr>
 </tbody>
 </table>
@@ -1729,13 +1729,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/get_certificates/">get_certificates</a></td>
-<td>Create new iOS code signing certificates (via <em>cert</em>)</td>
+<td><a href="/actions/sync_code_signing/">sync_code_signing</a></td>
+<td>Easily sync your certificates and profiles across your team (via <em>match</em>)</td>
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/sync_code_signing/">sync_code_signing</a></td>
-<td>Easily sync your certificates and profiles across your team (via <em>match</em>)</td>
+<td><a href="/actions/get_certificates/">get_certificates</a></td>
+<td>Create new iOS code signing certificates (via <em>cert</em>)</td>
 <td>ios</td>
 </tr>
 <tr>
@@ -1785,11 +1785,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <tr>
 <td><a href="/actions/crashlytics/">crashlytics</a></td>
 <td>Upload a new build to <a href="http://try.crashlytics.com/beta/">Crashlytics Beta</a></td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/hockey/">hockey</a></td>
-<td>Upload a new build to <a href="https://hockeyapp.net/">HockeyApp</a></td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -1912,9 +1907,9 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/upload_to_play_store/">upload_to_play_store</a></td>
-<td>Upload metadata, screenshots and binaries to Google Play (via <em>supply</em>)</td>
-<td>android</td>
+<td><a href="/actions/upload_to_app_store/">upload_to_app_store</a></td>
+<td>Upload metadata and binary to App Store Connect (via <em>deliver</em>)</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/download_from_play_store/">download_from_play_store</a></td>
@@ -1922,9 +1917,9 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>android</td>
 </tr>
 <tr>
-<td><a href="/actions/upload_to_app_store/">upload_to_app_store</a></td>
-<td>Upload metadata and binary to App Store Connect (via <em>deliver</em>)</td>
-<td>ios, mac</td>
+<td><a href="/actions/upload_to_play_store/">upload_to_play_store</a></td>
+<td>Upload metadata, screenshots and binaries to Google Play (via <em>supply</em>)</td>
+<td>android</td>
 </tr>
 </tbody>
 </table>
@@ -2064,13 +2059,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/commit_github_file/">commit_github_file</a></td>
-<td>This will commit a file directly on GitHub via the API</td>
+<td><a href="/actions/git_submodule_update/">git_submodule_update</a></td>
+<td>Executes a git submodule command</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/git_submodule_update/">git_submodule_update</a></td>
-<td>Executes a git submodule command</td>
+<td><a href="/actions/commit_github_file/">commit_github_file</a></td>
+<td>This will commit a file directly on GitHub via the API</td>
 <td>ios, android, mac</td>
 </tr>
 </tbody>
@@ -2480,13 +2475,43 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
+<td><a href="/actions/println/">println</a></td>
+<td>Alias for the <code>puts</code> action</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a></td>
+<td>Create Managed Google Play Apps</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a></td>
+<td>Retrieves version codes for a Google Play track</td>
+<td>android</td>
+</tr>
+<tr>
 <td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
 <td>Setup the keychain and match to work with CircleCI</td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/min_fastlane_version/">min_fastlane_version</a></td>
-<td>Verifies the minimum fastlane version required</td>
+<td><a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a></td>
+<td>Obtain publishing rights for custom apps on Managed Google Play Store</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a></td>
+<td>Raises an exception if not using <code>bundle exec</code> to run fastlane</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/plugin_scores/">plugin_scores</a></td>
+<td>[31mNo description provided[0m</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/environment_variable/">environment_variable</a></td>
+<td>Sets/gets env vars for Fastlane.swift. Don't use in ruby, use <code>ENV[key] = val</code></td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -2500,34 +2525,14 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a></td>
-<td>Retrieves version codes for a Google Play track</td>
-<td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/setup_travis/">setup_travis</a></td>
-<td>Setup the keychain and match to work with Travis CI</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/plugin_scores/">plugin_scores</a></td>
-<td>[31mNo description provided[0m</td>
+<td><a href="/actions/min_fastlane_version/">min_fastlane_version</a></td>
+<td>Verifies the minimum fastlane version required</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a></td>
-<td>Raises an exception if not using <code>bundle exec</code> to run fastlane</td>
+<td><a href="/actions/spaceship_logs/">spaceship_logs</a></td>
+<td>Find, print, and copy Spaceship logs</td>
 <td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a></td>
-<td>Obtain publishing rights for custom apps on Managed Google Play Store</td>
-<td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a></td>
-<td>Create Managed Google Play Apps</td>
-<td>android</td>
 </tr>
 <tr>
 <td><a href="/actions/echo/">echo</a></td>
@@ -2535,14 +2540,9 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/environment_variable/">environment_variable</a></td>
-<td>Sets/gets env vars for Fastlane.swift. Don't use in ruby, use <code>ENV[key] = val</code></td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/println/">println</a></td>
-<td>Alias for the <code>puts</code> action</td>
-<td>ios, android, mac</td>
+<td><a href="/actions/setup_travis/">setup_travis</a></td>
+<td>Setup the keychain and match to work with Travis CI</td>
+<td>ios, mac</td>
 </tr>
 </tbody>
 </table>
@@ -2556,6 +2556,11 @@ If you want to create your own action, check out the <a href="../create-action/#
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="/actions/hockey/">hockey</a></td>
+<td>Refer to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a></td>
+<td>ios, android, mac</td>
+</tr>
 <tr>
 <td><a href="/actions/badge/">badge</a></td>
 <td>Automatically add a badge to your app icon</td>

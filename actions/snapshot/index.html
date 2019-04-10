@@ -1462,6 +1462,23 @@ launch_arguments([
 </ul>
 <h2 id="determine-language"><a name="user-content-determine-language" href="#determine-language" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Determine language</h2>
 <p>To detect the currently used localization in your tests, access the <code>deviceLanguage</code> variable from <code>SnapshotHelper.swift</code>.</p>
+<h2 id="speed-up-snapshots"><a name="user-content-speed-up-snapshots" href="#speed-up-snapshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Speed up snapshots</h2>
+<p>A lot of time in UI tests is spent waiting for animations.</p>
+<p>You can disable <code>UIView</code> animations in your app to make the tests faster:</p>
+<pre><code class="swift">if ProcessInfo().arguments.contains(&quot;SKIP_ANIMATIONS&quot;) {
+    UIView.setAnimationsEnabled(false)
+}
+</code></pre>
+
+<p>This requires you to pass the launch argument like so:</p>
+<pre><code class="ruby">snapshot(launch_arguments: [&quot;SKIP_ANIMATIONS&quot;])
+</code></pre>
+
+<p>By default, <em>snapshot</em> will wait for a short time for the animations to finish.
+If you're skipping the animations, this is wait time is unnecessary and can be skipped:</p>
+<pre><code class="swift">setupSnapshot(app, waitForAnimations: false)
+</code></pre>
+
 <hr />
 
 <table>

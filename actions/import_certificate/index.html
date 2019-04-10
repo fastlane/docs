@@ -1207,7 +1207,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="import_certificate"><a name="user-content-import_certificate" href="#import_certificate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>import_certificate</h1>
 <p>Import certificate from inputfile into a keychain</p>
 <blockquote>
-<p>Import certificates into the current default keychain. Use <code>create_keychain</code> to create a new keychain.</p>
+<p>Import certificates (and private keys) into the current default keychain. Use the <code>create_keychain</code> action to create a new keychain.</p>
 </blockquote>
 <table>
 <thead>
@@ -1227,13 +1227,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">import_certificate(certificate_path: &quot;certs/AppleWWDRCA.cer&quot;)
 </code></pre>
 
 <pre><code class="ruby">import_certificate(
   certificate_path: &quot;certs/dist.p12&quot;,
   certificate_password: ENV[&quot;CERTIFICATE_PASSWORD&quot;] || &quot;default&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">import_certificate(
+  certificate_path: &quot;certs/development.cer&quot;
 )
 </code></pre>
 
@@ -1248,6 +1253,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
+<td><code>certificate_path</code></td>
+<td>Path to certificate</td>
+<td></td>
+</tr>
+<tr>
+<td><code>certificate_password</code></td>
+<td>Certificate password</td>
+<td><code>''</code></td>
+</tr>
+<tr>
 <td><code>keychain_name</code></td>
 <td>Keychain the items should be imported to</td>
 <td></td>
@@ -1261,16 +1276,6 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>keychain_password</code></td>
 <td>The password for the keychain. Note that for the login keychain this is your user's password</td>
 <td></td>
-</tr>
-<tr>
-<td><code>certificate_path</code></td>
-<td>Path to certificate</td>
-<td></td>
-</tr>
-<tr>
-<td><code>certificate_password</code></td>
-<td>Certificate password</td>
-<td><code>''</code></td>
 </tr>
 <tr>
 <td><code>log_output</code></td>

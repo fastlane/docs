@@ -1256,6 +1256,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="no-highlight">fastlane pem --development
 </code></pre>
 
+<p>If you want to generate a Website Push certificate:</p>
+<pre><code class="no-highlight">fastlane pem --website_push
+</code></pre>
+
 <p>Set a password for your <code>p12</code> file:</p>
 <pre><code class="no-highlight">fastlane pem -p &quot;MyPass&quot;
 </code></pre>
@@ -1348,6 +1352,11 @@ Enter Export Password:
 <tr>
 <td><code>development</code></td>
 <td>Renew the development push certificate instead of the production one</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>website_push</code></td>
+<td>Create a Website Push certificate</td>
 <td><code>false</code></td>
 </tr>
 <tr>

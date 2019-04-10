@@ -1205,9 +1205,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="hockey"><a name="user-content-hockey" href="#hockey" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>hockey</h1>
-<p>Upload a new build to <a href="https://hockeyapp.net/">HockeyApp</a></p>
+<p>Refer to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a></p>
 <blockquote>
-<p>Symbols will also be uploaded automatically if a <code>app.dSYM.zip</code> file is found next to <code>app.ipa</code>. In case it is located in a different place you can specify the path explicitly in the <code>:dsym</code> parameter.<br>More information about the available options can be found in the <a href="http://support.hockeyapp.net/kb/api/api-versions#upload-version">HockeyApp Docs</a>.</p>
+<p>HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a></p>
+<p>HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a><br><br>Symbols will also be uploaded automatically if a <code>app.dSYM.zip</code> file is found next to <code>app.ipa</code>. In case it is located in a different place you can specify the path explicitly in the <code>:dsym</code> parameter.<br>More information about the available options can be found in the <a href="http://support.hockeyapp.net/kb/api/api-versions#upload-version">HockeyApp Docs</a>.</p>
 </blockquote>
 <table>
 <thead>
@@ -1227,7 +1228,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">hockey(
   api_token: &quot;...&quot;,
   ipa: &quot;./app.ipa&quot;,
@@ -1243,6 +1244,15 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   bundle_version: &quot;1.0.2.145&quot;,
   ipa: &quot;./my.msi&quot;,
   notes: &quot;Changelog&quot;
+)
+</code></pre>
+
+<pre><code class="ruby"># You can bypass the CDN if you are uploading to Hockey and receive an SSL error (which can happen on corporate firewalls)
+hockey(
+  api_token: &quot;...&quot;,
+  ipa: &quot;./app.ipa&quot;,
+  notes: &quot;Changelog&quot;,
+  bypass_cdn: true
 )
 </code></pre>
 

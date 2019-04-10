@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>push_to_git_remote - fastlane docs</title>
+  <title>spaceship_logs - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "push_to_git_remote";
-    var mkdocs_page_input_path = "actions/push_to_git_remote.md";
-    var mkdocs_page_url = "/actions/push_to_git_remote/";
+    var mkdocs_page_name = "spaceship_logs";
+    var mkdocs_page_input_path = "actions/spaceship_logs.md";
+    var mkdocs_page_url = "/actions/spaceship_logs/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1166,14 +1166,14 @@
         
       
     
-    <li>push_to_git_remote</li>
+    <li>spaceship_logs</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/push_to_git_remote.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/spaceship_logs.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1201,18 +1201,15 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/push_to_git_remote.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/spaceship_logs.rb
 -->
 
-<h1 id="push_to_git_remote"><a name="user-content-push_to_git_remote" href="#push_to_git_remote" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>push_to_git_remote</h1>
-<p>Push local changes to the remote branch</p>
-<blockquote>
-<p>Lets you push your local commits to a remote git repo. Useful if you make local changes such as adding a version bump commit (using <code>commit_version_bump</code>) or a git tag (using 'add_git_tag') on a CI server, and you want to push those changes back to your canonical/main repo.<br>If this is a new branch, use the <code>set_upstream</code> option to set the remote branch as upstream.</p>
-</blockquote>
+<h1 id="spaceship_logs"><a name="user-content-spaceship_logs" href="#spaceship_logs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>spaceship_logs</h1>
+<p>Find, print, and copy Spaceship logs</p>
 <table>
 <thead>
 <tr>
-<th>push_to_git_remote</th>
+<th>spaceship_logs</th>
 <th></th>
 </tr>
 </thead>
@@ -1223,23 +1220,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@lmirosevic</td>
+<td>@joshdholtz</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The array of Spaceship logs</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
-<pre><code class="ruby">push_to_git_remote # simple version. pushes &quot;master&quot; branch to &quot;origin&quot; remote
+<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<pre><code class="ruby">spaceship_logs
 </code></pre>
 
-<pre><code class="ruby">push_to_git_remote(
-  remote: &quot;origin&quot;,         # optional, default: &quot;origin&quot;
-  local_branch: &quot;develop&quot;,  # optional, aliased by &quot;branch&quot;, default is set to current branch
-  remote_branch: &quot;develop&quot;, # optional, default is set to local_branch
-  force: true,    # optional, default: false
-  force_with_lease: true,   # optional, default: false
-  tags: false,    # optional, default: true
-  no_verify: true,# optional, default: false
-  set_upstream: true        # optional, default: false
+<pre><code class="ruby">spaceship_logs(
+  copy_to_path: &quot;/tmp/artifacts&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">spaceship_logs(
+  copy_to_clipboard: true
+)
+</code></pre>
+
+<pre><code class="ruby">spaceship_logs(
+  print_contents: true,
+  print_paths: true
+)
+</code></pre>
+
+<pre><code class="ruby">spaceship_logs(
+  latest: false,
+  print_contents: true,
+  print_paths: true
 )
 </code></pre>
 
@@ -1254,43 +1266,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
-<td><code>local_branch</code></td>
-<td>The local branch to push from. Defaults to the current branch</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>remote_branch</code></td>
-<td>The remote branch to push to. Defaults to the local branch</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>force</code></td>
-<td>Force push to remote</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>force_with_lease</code></td>
-<td>Force push with lease to remote</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>tags</code></td>
-<td>Whether tags are pushed to remote</td>
+<td><code>latest</code></td>
+<td>Finds only the latest Spaceshop log file if set to true, otherwise returns all</td>
 <td><code>true</code></td>
 </tr>
 <tr>
-<td><code>remote</code></td>
-<td>The remote to push to</td>
-<td><code>origin</code></td>
-</tr>
-<tr>
-<td><code>no_verify</code></td>
-<td>Whether or not to use --no-verify</td>
+<td><code>print_contents</code></td>
+<td>Prints the contents of the found Spaceship log file(s)</td>
 <td><code>false</code></td>
 </tr>
 <tr>
-<td><code>set_upstream</code></td>
-<td>Whether or not to use --set-upstream</td>
+<td><code>print_paths</code></td>
+<td>Prints the paths of the found Spaceship log file(s)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>copy_to_path</code></td>
+<td>Copies the found Spaceship log file(s) to a directory</td>
+<td></td>
+</tr>
+<tr>
+<td><code>copy_to_clipboard</code></td>
+<td>Copies the contents of the found Spaceship log file(s) to the clipboard</td>
 <td><code>false</code></td>
 </tr>
 </tbody>
@@ -1300,18 +1297,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action push_to_git_remote
+<pre><code class="no-highlight">fastlane action spaceship_logs
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run push_to_git_remote
+<pre><code class="no-highlight">fastlane run spaceship_logs
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run push_to_git_remote parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run spaceship_logs parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1319,7 +1316,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/push_to_git_remote.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/spaceship_logs.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1330,10 +1327,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../puts/" class="btn btn-neutral float-right" title="puts">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../splunkmint/" class="btn btn-neutral float-right" title="splunkmint">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../push_git_tags/" class="btn btn-neutral" title="push_git_tags"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../sonar/" class="btn btn-neutral" title="sonar"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1375,10 +1372,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../push_git_tags/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../sonar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../puts/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../splunkmint/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
