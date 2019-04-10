@@ -236,6 +236,9 @@ If your password contains special characters, _pilot_ may throw a confusing erro
 
 _pilot_ uses the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) from _fastlane_.
 
+## Provider Short Name
+If you are on multiple App Store Connect teams, iTunes Transporter may need a provider short name to know where to upload your binary. _pilot_ will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the `itc_provider` option.
+
 <hr />
 
 
@@ -288,7 +291,7 @@ upload_to_testflight(
     contact_email: "email@email.com",
     contact_first_name: "Connect",
     contact_last_name: "API",
-    contact_phone: "5558675309}",
+    contact_phone: "5558675309",
     demo_account_name: "demo@email.com",
     demo_account_password: "connectapi",
     notes: "this is review note for the reviewer <3 thank you for reviewing"
@@ -339,8 +342,9 @@ Key | Description | Default
   `localized_build_info` | Localized beta app test info for what's new | 
   `changelog` | Provide the 'What to Test' text when uploading a new build. `skip_waiting_for_build_processing: false` is required to set the changelog | 
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
-  `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers | `false`
+  `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan) | `false`
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
+  `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? | `false`
   `notify_external_testers` | Should notify external testers? | `true`
   `first_name` | The tester's first name | 
@@ -351,9 +355,9 @@ Key | Description | Default
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
   `wait_processing_interval` | Interval in seconds to wait for App Store Connect processing | `30`
-  `wait_for_uploaded_build` | Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`
+  `wait_for_uploaded_build` | **DEPRECATED!** No longer needed with the transition over to the App Store Connect API - Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`
   `reject_build_waiting_for_review` | Expire previous if it's 'waiting for review' | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

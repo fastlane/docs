@@ -58,6 +58,8 @@ Key | Description | Default
   `use_libraries` | Allow lint to use static libraries to install the spec | 
   `sources` | The sources of repos you want the pod spec to lint with, separated by commas | 
   `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | 
+  `skip_import_validation` | Lint skips validating that the pod can be imported | 
+  `skip_tests` | Lint skips building and running tests during validation | 
   `verbose` | Show more debugging information | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

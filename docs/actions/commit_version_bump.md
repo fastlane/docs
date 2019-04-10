@@ -26,7 +26,7 @@ Author | @lmirosevic
 
 
 
-## 7 Examples
+## 8 Examples
 
 ```ruby
 commit_version_bump
@@ -69,6 +69,12 @@ commit_version_bump(
 )
 ```
 
+```ruby
+commit_version_bump(
+  no_verify: true # optional, default: false
+)
+```
+
 
 
 
@@ -83,6 +89,7 @@ Key | Description | Default
   `settings` | Include Settings.bundle/Root.plist with version bump | `false`
   `ignore` | A regular expression used to filter matched plist files to be modified | 
   `include` | A list of extra files to be included in the version bump (string array or comma-separated string) | `[]`
+  `no_verify` | Whether or not to use --no-verify | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

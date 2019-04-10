@@ -91,10 +91,24 @@ To gradually roll out a new build use
 fastlane supply --apk path/app.apk --track rollout --rollout 0.5
 ```
 
+### Expansion files (`.obb`)
+
 Expansion files (obbs) found under the same directory as your APK will also be uploaded together with your APK as long as:
 
 - they are identified as type 'main' or 'patch' (by containing 'main' or 'patch' in their file name)
 - you have at most one of each type
+
+If you only want to update the APK, but keep the expansion files from the previous version on Google Play use
+
+```no-highlight
+fastlane supply --apk path/app.apk --obb_main_references_version 21 --obb_main_file_size 666154207
+```
+
+or
+
+```no-highlight
+fastlane supply --apk path/app.apk --obb_patch_references_version 21 --obb_patch_file_size 666154207
+```
 
 ## Uploading an AAB
 
@@ -214,6 +228,10 @@ Key | Description | Default
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
   `deactivate_on_promote` | When promoting to a new track, deactivate the binary in the origin track | `true`
   `version_codes_to_retain` | An array of version codes to retain when publishing a new APK | 
+  `obb_main_references_version` | References version of 'main' expansion file | 
+  `obb_main_file_size` | Size of 'main' expansion file in bytes | 
+  `obb_patch_references_version` | References version of 'patch' expansion file | 
+  `obb_patch_file_size` | Size of 'patch' expansion file in bytes | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
