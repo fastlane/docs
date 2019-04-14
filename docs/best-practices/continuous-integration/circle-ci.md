@@ -76,6 +76,7 @@ jobs:
 ```
 
 This will do the following:
+
 * Create and use a Ruby gems cache.
 * Run the test lane on all pushes.
 * Collect Junit test results and store log output in the Artifacts tab.
