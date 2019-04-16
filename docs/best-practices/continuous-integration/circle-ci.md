@@ -76,10 +76,9 @@ jobs:
 ```
 
 This will do the following:
+
 * Create and use a Ruby gems cache.
 * Run the test lane on all pushes.
 * Collect Junit test results and store log output in the Artifacts tab.
 
-Check out [the CircleCI iOS
-doc](https://circleci.com/docs/2.0/testing-ios/#example-configuration-for-using-fastlane-on-circleci)
-for more detailed examples of using fastlane on CircleCI.
+Check out [the CircleCI iOS doc](https://circleci.com/docs/2.0/testing-ios/#example-configuration-for-using-fastlane-on-circleci) for more detailed examples of using fastlane on CircleCI.
