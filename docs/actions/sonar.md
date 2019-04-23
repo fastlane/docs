@@ -51,6 +51,7 @@ Key | Description | Default
   `sonar_runner_args` | Pass additional arguments to sonar-scanner. Be sure to provide the arguments with a leading `-D` e.g. FL_SONAR_RUNNER_ARGS="-Dsonar.verbose=true" | 
   `sonar_login` | Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e) | 
   `sonar_url` | Pass the url of the Sonar server | 
+  `branch_name` | Pass the branch name which is getting scanned | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
