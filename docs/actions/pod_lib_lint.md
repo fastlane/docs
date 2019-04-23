@@ -55,8 +55,12 @@ Key | Description | Default
   `verbose` | Allow output detail in console | 
   `allow_warnings` | Allow warnings during pod lint | 
   `sources` | The sources of repos you want the pod spec to lint with, separated by commas | 
+  `subspec` | A specific subspec to lint instead of the entire spec | 
+  `include_podspecs` | A Glob of additional ancillary podspecs which are used for linting via :path (available since cocoapods >= 1.7) | 
+  `external_podspecs` | A Glob of additional ancillary podspecs which are used for linting via :podspec. If there are --include-podspecs, then these are removed from them (available since cocoapods >= 1.7) | 
   `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | 
   `use_libraries` | Lint uses static libraries to install the spec | `false`
+  `use_modular_headers` | Lint using modular libraries | `false`
   `fail_fast` | Lint stops on the first failing platform or subspec | `false`
   `private` | Lint skips checks that apply only to public specs | `false`
   `quick` | Lint skips checks that would require to download and build the spec | `false`
