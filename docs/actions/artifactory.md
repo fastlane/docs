@@ -55,6 +55,7 @@ Key | Description | Default
   `proxy_password` | Proxy password | 
   `proxy_address` | Proxy address | 
   `proxy_port` | Proxy port | 
+  `read_timeout` | Read timeout | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

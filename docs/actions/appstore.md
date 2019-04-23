@@ -486,6 +486,7 @@ Key | Editable While Live | Directory | Filename
   `name` | No | `<metadata_path>/<lang>/` | `name.txt`
   `subtitle` | No | `<metadata_path>/<lang>/` | `subtitle.txt`
   `privacy_url` | Yes | `<metadata_path>/<lang>/` | `privacy_url.txt`
+  `apple_tv_privacy_policy` | No | `<metadata_path>/<lang>/` | `apple_tv_privacy_policy.txt`
   `description` | Yes | `<metadata_path>/<lang>/` | `description.txt`
   `keywords` | No | `<metadata_path>/<lang>/` | `keywords.txt`
   `release_notes` | Yes | `<metadata_path>/<lang>/` | `release_notes.txt`
@@ -744,7 +745,11 @@ You can do the same with folders
 
 In this case, default values for keywords, urls, name and release notes are used in all localizations, but each language has a fully localized description
 
+## Uploading screenshots for "iPad Pro (12.9-inch) (3rd generation)"
 
+[Starting March 20, 2019 Apple's App Store](https://developer.apple.com/news/?id=03202019a) requires 12.9-inch iPad Pro (3rd generation) screenshots additionally to the iPad Pro 2nd generation [screenshots](https://help.apple.com/app-store-connect/#/devd274dd925). As fastlane historically uses the screenshot dimensions to determine the "display family" of a screenshot, this poses a problem as both use the same dimensions and are recognized as the same device family.
+
+To solve this a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string `iPad Pro (12.9-inch) (3rd generation)` or `ipadPro129` (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.
 
 ## Automatically create screenshots
 
@@ -874,6 +879,7 @@ Key | Description | Default
   `promotional_text` | Metadata: An array of localised promotional texts | 
   `release_notes` | Metadata: Localised release notes for this version | 
   `privacy_url` | Metadata: Localised privacy url | 
+  `apple_tv_privacy_policy` | Metadata: Localised Apple TV privacy policy text | 
   `support_url` | Metadata: Localised support url | 
   `marketing_url` | Metadata: Localised marketing url | 
   `languages` | Metadata: List of languages to activate | 
