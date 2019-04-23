@@ -315,6 +315,10 @@ Check out the [MindNode example project](https://github.com/fastlane/examples/tr
 
 Check out [_snapshot_](https://docs.fastlane.tools/actions/snapshot/) to automatically generate screenshots using ```UI Automation```.
 
+## Resume framing
+
+Framing screenshots is a slow operation. In case you need to resume framing, or just frame a couple updated screenshots again, you can rely on the `--resume` flag. Only screenshots which have not been framed yet – or for which there isn't an up-to-date framed image – will be framed. This feature uses the file modification dates and will reframe screenshots if the screenshot is newer than the framed file.
+
 ## Upload screenshots
 
 Use [_deliver_](https://docs.fastlane.tools/actions/deliver/) to upload iOS screenshots to App Store Connect, or [_supply_](https://docs.fastlane.tools/actions/supply/) to upload Android screenshots to Play Store completely automatically 🚀
@@ -377,11 +381,12 @@ frame_screenshots(rose_gold: true)
 
 Key | Description | Default
 ----|-------------|--------
-  `white` | Use white device frames | 
-  `silver` | Use white device frames. Alias for :white | 
-  `rose_gold` | Use rose gold device frames. Alias for :rose_gold | 
-  `gold` | Use gold device frames. Alias for :gold | 
-  `force_device_type` | Forces a given device type, useful for Mac screenshots, as their sizes vary | 
+  `white` | Use white device frames |
+  `silver` | Use white device frames. Alias for :white |
+  `rose_gold` | Use rose gold device frames. Alias for :rose_gold |
+  `gold` | Use gold device frames. Alias for :gold |
+  `force_device_type` | Forces a given device type, useful for Mac screenshots, as their sizes vary |
+  `resume` | Frame the screenshot if there isn't already an up-to-date framed screenshot |
   `use_legacy_iphone5s` | Use iPhone 5s instead of iPhone SE frames | `false`
   `use_legacy_iphone6s` | Use iPhone 6s frames instead of iPhone 7 frames | `false`
   `use_legacy_iphonex` | Use iPhone X instead of iPhone XS frames | `false`
