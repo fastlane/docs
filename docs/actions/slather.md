@@ -65,7 +65,7 @@ Key | Description | Default
   `verbose` | Tell slather to enable verbose mode | 
   `use_bundle_exec` | Use bundle exec to execute slather. Make sure it is in the Gemfile | `false`
   `binary_basename` | Basename of the binary file, this should match the name of your bundle excluding its extension (i.e. YourApp [for YourApp.app bundle]) | `false`
-  `binary_file` | Binary file name to be used for code coverage | `false`
+  `binary_file` | Binary file name to be used for code coverage | 
   `arch` | Specify which architecture the binary file is in. Needed for universal binaries | 
   `source_files` | A Dir.glob compatible pattern used to limit the lookup to specific source files. Ignored in gcov mode | `false`
   `decimals` | The amount of decimals to use for % coverage reporting | `false`

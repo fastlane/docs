@@ -30,6 +30,8 @@ Key | Description | Default
   `xcodebuild` | Parameters that are passed to the xcodebuild action | `{}`
   `scheme` | The scheme to build. Can also be passed using the `xcodebuild` parameter | 
   `api_token` | Appetize.io API Token | 
+  `public_key` | If not provided, a new app will be created. If provided, the existing build will be overwritten | 
+  `note` | Notes you wish to add to the uploaded app | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

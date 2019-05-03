@@ -199,6 +199,7 @@ pages:
   - set_github_release: actions/set_github_release.md
   - set_info_plist_value: actions/set_info_plist_value.md
   - set_pod_key: actions/set_pod_key.md
+  - setup_ci: actions/setup_ci.md
   - setup_circle_ci: actions/setup_circle_ci.md
   - setup_jenkins: actions/setup_jenkins.md
   - setup_travis: actions/setup_travis.md
@@ -240,6 +241,7 @@ pages:
   - upload_to_app_store: actions/upload_to_app_store.md
   - upload_to_play_store: actions/upload_to_play_store.md
   - upload_to_testflight: actions/upload_to_testflight.md
+  - validate_play_store_json_key: actions/validate_play_store_json_key.md
   - verify_build: actions/verify_build.md
   - verify_pod_keys: actions/verify_pod_keys.md
   - verify_xcode: actions/verify_xcode.md

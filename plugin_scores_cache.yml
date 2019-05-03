@@ -616,21 +616,21 @@ fastlane-plugin-setup_fragile_tests_for_rescan:
   :github_contributors: 0
 fastlane-plugin-yarn:
   :initial_commit: 2016-12-21
-  :age_in_days: 431
+  :age_in_days: 863
   :readme_score: 100
-  :tests: 1
+  :tests: 5
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: yarn
     category: 
     description: Execute Yarn commands from your Fastfile
     details: Execute Yarn commands from your Fastfile
-  :sha: '034395cd1476fd3acfea703cb7e167393ca9191e010c726f662f851c7600c5ea'
-  :github_stars: 8
-  :github_subscribers: 1
+  :sha: c4e897286cbb1fa4465a96c3da64090eb401c015d46c5e419c6ce1256768d29d
+  :github_stars: 16
+  :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 2
-  :github_contributors: 3
+  :github_forks: 4
+  :github_contributors: 0
 fastlane-plugin-applivery:
   :initial_commit: 2016-07-26
   :age_in_days: 579
@@ -1534,9 +1534,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 702
+  :age_in_days: 725
   :readme_score: 100
-  :tests: 33
+  :tests: 34
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload
@@ -1545,11 +1545,11 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 923c68c8311159a0a58f555ea2b6d440baa959314bd4054d5412bbcf2f0311b1
-  :github_stars: 132
-  :github_subscribers: 11
-  :github_issues: 13
-  :github_forks: 30
+  :sha: 951e5b22254718f897146f5f1630c94fe2411d5f0bfc1c05c3140e32024c4c54
+  :github_stars: 155
+  :github_subscribers: 26
+  :github_issues: 19
+  :github_forks: 38
   :github_contributors: 0
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
@@ -1593,7 +1593,7 @@ fastlane-plugin-xliff_en_gen:
   :github_contributors: 0
 fastlane-plugin-ftp:
   :initial_commit: 2016-07-07
-  :age_in_days: 598
+  :age_in_days: 1030
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1602,12 +1602,12 @@ fastlane-plugin-ftp:
     category: 
     description: Upload and Download files via FTP
     details: Transfer files via FTP, and create recursively folder for upload action
-  :sha: 74b52bed21ab918e0bf00990ae5217267008fce29549960549744140520a8eb2
-  :github_stars: 20
-  :github_subscribers: 1
-  :github_issues: 5
-  :github_forks: 3
-  :github_contributors: 2
+  :sha: c0c69558f365ebb514c0c0b533d3b32f31cf6031ba72e4a27c6b03a8cb520fc7
+  :github_stars: 27
+  :github_subscribers: 2
+  :github_issues: 3
+  :github_forks: 10
+  :github_contributors: 0
 fastlane-plugin-github_job_status:
   :github_stars: 0
   :github_subscribers: 0
@@ -3156,7 +3156,7 @@ fastlane-plugin-dingtalk:
   :github_contributors: 1
 fastlane-plugin-install_provisioning_profiles:
   :initial_commit: 2017-11-18
-  :age_in_days: 181
+  :age_in_days: 531
   :readme_score: 100
   :tests: 1
   :actions:
@@ -3165,7 +3165,7 @@ fastlane-plugin-install_provisioning_profiles:
     category: 
     description: Install all the provisioning profiles located in you're project.
     details: 
-  :sha: 2d6f21a03cdd0128a8910dba5f3ac5b6fa1eb1224cd4e5de0a049f1fc2ca3bc3
+  :sha: 8da5d9bfbe5dd7c9eafbb00676aded6d89c61b8d3a4966f98506115569c693e1
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -3550,9 +3550,9 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 327
+  :age_in_days: 462
   :readme_score: 100
-  :tests: 22
+  :tests: 24
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: lizard
@@ -3560,11 +3560,11 @@ fastlane-plugin-lizard:
     description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: 3fd730b07975ac8c585c47b4ca87535c2ba56acfdfdc725a33c02355fe3c4426
-  :github_stars: 5
+  :sha: 59a3da11ef6525172965934d5a803633f11e36a4456aa5b70040556486bb552b
+  :github_stars: 10
   :github_subscribers: 6
   :github_issues: 0
-  :github_forks: 3
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-updateplistfromstrings:
   :initial_commit: 2017-11-24
@@ -4249,7 +4249,7 @@ fastlane-plugin-twine:
   :github_contributors: 1
 fastlane-plugin-jira_set_fix_version:
   :initial_commit: 2018-01-22
-  :age_in_days: 34
+  :age_in_days: 466
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4259,12 +4259,12 @@ fastlane-plugin-jira_set_fix_version:
     description: Tags all Jira issues mentioned in git changelog with with a fix version
       from parameter :name
     details: update_jira
-  :sha: a200d21644675ab9245b74b37c3baadd01bbefa0c9d4e6ae74d7201db5afd034
-  :github_stars: 1
-  :github_subscribers: 1
+  :sha: f092a50d1c18499f6bdb5e5f147afae68883c4870c0ab7620f3954979b0b4ecb
+  :github_stars: 3
+  :github_subscribers: 3
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-xcconfig:
   :initial_commit: 2018-02-22
   :age_in_days: 4
@@ -5318,7 +5318,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 290
+  :age_in_days: 353
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5327,7 +5327,7 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details: 
-  :sha: 2ddca27d4b66ececcbc64c4b1f126963d35b19ae5b1c4ee5b68f9683e5e20cd0
+  :sha: 5c8cfd8147eff299ddca9b78f72b63a455e08b39ae76a57cefbb87ff64a4d331
   :github_stars: 5
   :github_subscribers: 4
   :github_issues: 0
@@ -6017,7 +6017,7 @@ fastlane-plugin-transifex_tool:
   :github_contributors: 0
 fastlane-plugin-google_sheet_localize:
   :initial_commit: 2019-01-31
-  :age_in_days: 69
+  :age_in_days: 92
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6027,7 +6027,7 @@ fastlane-plugin-google_sheet_localize:
     description: Creates .strings files for iOS and strings.xml files for Android
     details: Creates .strings files for iOS and strings.xml files for Android. The
       localization is mananged on a google sheet.
-  :sha: 656efe02dd6cb98146ab9023e2c8881d7ff8e7d9b20ade2d5e823a3ebda61f9e
+  :sha: d30e87f5317f443153fa5b1fbd4d0c299829388e01590869369c558ade8114d2
   :github_stars: 5
   :github_subscribers: 5
   :github_issues: 0
@@ -6214,7 +6214,7 @@ fastlane-plugin-firebase_test_lab_android:
   :github_contributors: 0
 fastlane-plugin-fast_city:
   :initial_commit: 2019-03-12
-  :age_in_days: 29
+  :age_in_days: 52
   :readme_score: 50
   :tests: 0
   :actions:
@@ -6234,6 +6234,11 @@ fastlane-plugin-fast_city:
     description: Resign iOS executable
     details: Also executes extract_version_info_ios
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: extract_version_info_windows
+    category: 
+    description: Extract Version and Name from AppxManifest.xml
+    details: Extract Version and Name from AppxManifest.xml
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload_multi
     category: 
     description: Upload multiple apks or ipas to App Center
@@ -6245,7 +6250,17 @@ fastlane-plugin-fast_city:
       from Info.plist
     details: Extract CFBundleShortVersionString, CFBundleVersion and CFBundleIdentifier
       from Info.plist
-  :sha: f9b360e7bf3d7f1ec30df5b3b5458035bdca07bd24436107c5a2a93c3a3aa0d5
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: update_dsym_bundle_id
+    category: 
+    description: Update Bundle Identifier in Info.plist of dSYM file
+    details: Update Bundle Identifier in Info.plist of dSYM file
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: extract_appx
+    category: 
+    description: Extract appx bundle and add it to output path
+    details: Extract appx bundle and add it to output path
+  :sha: 7c70a825fec12e99e34d39fede93692fc13ffc747376dd7e5798466dda3ded42
   :github_stars: 1
   :github_subscribers: 4
   :github_issues: 0
@@ -6353,9 +6368,9 @@ fastlane-plugin-forsis:
   :github_contributors: 0
 fastlane-plugin-sftp:
   :initial_commit: 2019-03-04
-  :age_in_days: 37
+  :age_in_days: 60
   :readme_score: 100
-  :tests: 15
+  :tests: 20
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sftp_download
@@ -6367,11 +6382,11 @@ fastlane-plugin-sftp:
     category: misc
     description: upload files to a remote Server via SFTP
     details: 'More information: https://github.com/oklimberg/fastlane-plugin-sftp/'
-  :sha: b266b115f1f638dc1c23a54ef1bf8175fd1c2faac73083b5236cf8caecd1adc3
+  :sha: 6fc9abf06558753c5c94643738e7c8e64ddfffe458d4b2239ea87f3021a31ba5
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-dependency_manager_outdated:
   :initial_commit: 2019-03-31
@@ -6448,7 +6463,7 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 6
+  :age_in_days: 29
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6459,8 +6474,8 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       You can also use it to first download your latest dSym files from AppStore Connect
       if you use Bitcode
-  :sha: 26b0a41589c95bf29299a00efe0b3931d3efeba8fe586ebe033ee944506ff3e1
-  :github_stars: 0
+  :sha: b77832613e78df944eafec5884ff5ddfcbcf27c4b7b5e4c2ae6370db1c529452
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
@@ -6523,3 +6538,191 @@ fastlane-plugin-update_app_associated_domains:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-line_message:
+  :initial_commit: 2019-04-11
+  :age_in_days: 22
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: line_message
+    category: notifications
+    description: Use to send message to Line chat
+    details: Use api from https://developers.line.biz/en/docs/messaging-api/ call
+      api at https://api.line.me/v2/bot/message/push
+  :sha: 14e335414f1e4d63f8a4b34115b8a8c03249d2c9b7ce912c897cb919354d69dc
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 1
+  :github_forks: 1
+  :github_contributors: 0
+fastlane-plugin-icon_banner:
+  :initial_commit: 2019-04-20
+  :age_in_days: 13
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: icon_banner_restore
+    category: 
+    description: Restores the original app icons (can be used after build to clean
+      up the repository)
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: icon_banner
+    category: 
+    description: Adds custom nice-looking banners over your mobile app icons
+    details: 
+  :sha: e6d203b7de483d6095e1f46fdba5a10e07cda0722b35d9b409670b45ac89e8f5
+  :github_stars: 4
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-react_native_release:
+  :initial_commit: 2019-01-03
+  :age_in_days: 120
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: react_native_release
+    category: 
+    description: Simplify releases for React Native apps
+    details: Creates a release for a React Native app. Handles incrementing versions
+      and tags
+  :sha: 3821290e7083c28a65147941557fd2b347a19a1c82a4ebc129c22ad7dad87d2d
+  :github_stars: 0
+  :github_subscribers: 4
+  :github_issues: 3
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-buggly:
+  :initial_commit: 2017-02-21
+  :age_in_days: 801
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: buggly
+    category: 
+    description: Upload the dSYM file to Buggly crash analyze system.
+    details: More information can be found on https://github.com/zylcold/fastlane-plugin-buggly.git
+  :sha: cfe00e9e3e5ab8847630e91917f3fae4e00ccb524bf0facdd411eac3328f48ad
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-trello:
+  :initial_commit: 2019-04-24
+  :age_in_days: 9
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: trello
+    category: 
+    description: Trello plugin for Fastlane
+    details: Plugin for moving a trello card to a given list
+  :sha: 0b46d36a217652dbd5862b0eeaa35cdd6fd295b3de4aecb17adfad77386acca0
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-summonbin:
+  :initial_commit: 2019-04-27
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: summonbin
+    category: 
+    description: Execute command with summonbin
+    details: 
+  :sha: 8e4f710133cb4209783d75833e645635863ac1a07f1f7ff01f9c680b78be73c1
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-semaphore:
+  :initial_commit: 2019-04-19
+  :age_in_days: 14
+  :readme_score: 100
+  :tests: 7
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: setup_semaphore
+    category: 
+    description: Semaphore CI integration
+    details: This plugin provides actions for setiing up Semaphore CI environment
+  :sha: 143b3e7352fea866b2de86b950985d1ad44ac9c50e91c1b5992e5df974b1b55b
+  :github_stars: 0
+  :github_subscribers: 3
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-transporter:
+  :initial_commit: 2019-04-25
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 20
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: configure_transporter
+    category: 
+    description: Configure Apple iTMSTransporter installation
+    details: "\\n"
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: update_transporter_path
+    category: 
+    description: Configure Fastlane to use custom Transporter installation
+    details: Sets the FASTLANE_ITUNES_TRANSPORTER_PATH environment variable
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: install_transporter
+    category: 
+    description: Install Apple iTMSTransporter
+    details: 
+  :sha: b5ef6e8d5fd1694b8e8162c66e901620ed56fb6fb95d21feb1630399be992c77
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-copy:
+  :initial_commit: 2019-05-02
+  :age_in_days: 1
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: copy
+    category: 
+    description: Copy file
+    details: 
+  :sha: 99fdde5ff86e49eba45e098c2ceb694defd0a877e0872e43f262a9e5c9b26fcf
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-deploy_aws_s3_cloudfront:
+  :initial_commit: 2019-04-24
+  :age_in_days: 9
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: deploy_aws_s3_cloudfront
+    category: 
+    description: Deploy local directory to AWS S3 bucket and invalidate CloudFront
+    details: 
+  :sha: 7aa5bdff306aee8e1bf3f9603e05365a01b4ab9576a5ae852346cd4afc70ee42
+  :github_stars: 1
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

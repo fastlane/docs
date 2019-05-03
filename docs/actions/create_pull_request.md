@@ -17,7 +17,7 @@ This will create a new pull request on GitHub
 create_pull_request ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @seei, @tommeier
+Author | @seei, @tommeier, @marumemomo
 Returns | The pull request URL when successful
 
 
@@ -52,6 +52,7 @@ Key | Description | Default
   `head` | The name of the branch where your changes are implemented (defaults to the current branch name) | [*](#parameters-legend-dynamic)
   `base` | The name of the branch you want your changes pulled into (defaults to `master`) | `master`
   `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`) | `https://api.github.com`
+  `assignees` | The assignees for the pull request | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
