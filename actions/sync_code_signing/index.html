@@ -1468,7 +1468,7 @@ gym
 </code></pre>
 
 <h5 id="registering-new-devices"><a name="user-content-registering-new-devices" href="#registering-new-devices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Registering new devices</h5>
-<p>By using <em>match</em>, you'll save a lot of time every time you add new device to your Ad Hoc or Development profiles. Use <em>match</em> in combination with the <a href="https://docs.fastlane.tools/actions#register_devices"><code>register_devices</code></a> action.</p>
+<p>By using <em>match</em>, you'll save a lot of time every time you add new device to your Ad Hoc or Development profiles. Use <em>match</em> in combination with the <a href="https://docs.fastlane.tools/actions/register_devices/"><code>register_devices</code></a> action.</p>
 <pre><code class="ruby">lane :beta do
   register_devices(devices_file: &quot;./devices.txt&quot;)
   match(type: &quot;adhoc&quot;, force_for_new_devices: true)

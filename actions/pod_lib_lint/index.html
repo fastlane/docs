@@ -1279,6 +1279,21 @@ pod_lib_lint(sources: [&quot;https://github.com/username/Specs&quot;, &quot;http
 <td></td>
 </tr>
 <tr>
+<td><code>subspec</code></td>
+<td>A specific subspec to lint instead of the entire spec</td>
+<td></td>
+</tr>
+<tr>
+<td><code>include_podspecs</code></td>
+<td>A Glob of additional ancillary podspecs which are used for linting via :path (available since cocoapods &gt;= 1.7)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>external_podspecs</code></td>
+<td>A Glob of additional ancillary podspecs which are used for linting via :podspec. If there are --include-podspecs, then these are removed from them (available since cocoapods &gt;= 1.7)</td>
+<td></td>
+</tr>
+<tr>
 <td><code>swift_version</code></td>
 <td>The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file</td>
 <td></td>
@@ -1286,6 +1301,11 @@ pod_lib_lint(sources: [&quot;https://github.com/username/Specs&quot;, &quot;http
 <tr>
 <td><code>use_libraries</code></td>
 <td>Lint uses static libraries to install the spec</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_modular_headers</code></td>
+<td>Lint using modular libraries</td>
 <td><code>false</code></td>
 </tr>
 <tr>

@@ -1615,6 +1615,12 @@ end
 <td><code>privacy_url.txt</code></td>
 </tr>
 <tr>
+<td><code>apple_tv_privacy_policy</code></td>
+<td>No</td>
+<td><code>&lt;metadata_path&gt;/&lt;lang&gt;/</code></td>
+<td><code>apple_tv_privacy_policy.txt</code></td>
+</tr>
+<tr>
 <td><code>description</code></td>
 <td>Yes</td>
 <td><code>&lt;metadata_path&gt;/&lt;lang&gt;/</code></td>
@@ -1998,6 +2004,9 @@ end
 </code></pre>
 
 <p>In this case, default values for keywords, urls, name and release notes are used in all localizations, but each language has a fully localized description</p>
+<h2 id="uploading-screenshots-for-ipad-pro-129-inch-3rd-generation"><a name="user-content-uploading-screenshots-for-ipad-pro-129-inch-3rd-generation" href="#uploading-screenshots-for-ipad-pro-129-inch-3rd-generation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading screenshots for "iPad Pro (12.9-inch) (3rd generation)"</h2>
+<p><a href="https://developer.apple.com/news/?id=03202019a">Starting March 20, 2019 Apple's App Store</a> requires 12.9-inch iPad Pro (3rd generation) screenshots additionally to the iPad Pro 2nd generation <a href="https://help.apple.com/app-store-connect/#/devd274dd925">screenshots</a>. As fastlane historically uses the screenshot dimensions to determine the "display family" of a screenshot, this poses a problem as both use the same dimensions and are recognized as the same device family.</p>
+<p>To solve this a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string <code>iPad Pro (12.9-inch) (3rd generation)</code> or <code>ipadPro129</code> (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.</p>
 <h2 id="automatically-create-screenshots"><a name="user-content-automatically-create-screenshots" href="#automatically-create-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Automatically create screenshots</h2>
 <p>If you want to integrate <em>deliver</em> with <a href="https://docs.fastlane.tools/actions/snapshot/"><em>snapshot</em></a>, check out <a href="https://fastlane.tools"><em>fastlane</em></a>!</p>
 <h2 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins integration</h2>
@@ -2326,6 +2335,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>privacy_url</code></td>
 <td>Metadata: Localised privacy url</td>
+<td></td>
+</tr>
+<tr>
+<td><code>apple_tv_privacy_policy</code></td>
+<td>Metadata: Localised Apple TV privacy policy text</td>
 <td></td>
 </tr>
 <tr>

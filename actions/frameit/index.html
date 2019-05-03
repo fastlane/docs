@@ -1349,6 +1349,11 @@ It has the following general JSON structure:</p>
 <td>Overrides the color of the frame to be used. (Valid values are <code>BLACK,</code>WHITE<code>,</code>GOLD<code>and</code>ROSE_GOLD`)</td>
 <td>NA</td>
 </tr>
+<tr>
+<td><code>title_min_height</code></td>
+<td>Specifies a height always reserved for the title. Value can be a percentage of the height or an absolute value. The device will be placed below (or above) this area. Convenient to ensure the device top (or bottom) will be consistently placed at the same height on the different screenshots.</td>
+<td>NA</td>
+</tr>
 </tbody>
 </table>
 <h3 id="specific-parameters"><a name="user-content-specific-parameters" href="#specific-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Specific parameters</h3>
@@ -1478,7 +1483,7 @@ frameit(
   path: &quot;./fastlane/screenshots&quot;,
   force_orientation_block: proc do |filename|
     case filename
-      when &quot;iPad Pro (12.9-inch)-01LoginScreen&quot; 
+      when &quot;iPad Pro (12.9-inch)-01LoginScreen&quot;
         :landscape_right
       when &quot;iPhone 6 Plus-01LoginScreen&quot;
         :portrait

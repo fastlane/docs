@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>create_pull_request - fastlane docs</title>
+  <title>setup_ci - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "create_pull_request";
-    var mkdocs_page_input_path = "actions/create_pull_request.md";
-    var mkdocs_page_url = "/actions/create_pull_request/";
+    var mkdocs_page_name = "setup_ci";
+    var mkdocs_page_input_path = "actions/setup_ci.md";
+    var mkdocs_page_url = "/actions/setup_ci/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1166,14 +1166,14 @@
         
       
     
-    <li>create_pull_request</li>
+    <li>setup_ci</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/create_pull_request.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/setup_ci.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1201,42 +1201,40 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_pull_request.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/setup_ci.rb
 -->
 
-<h1 id="create_pull_request"><a name="user-content-create_pull_request" href="#create_pull_request" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>create_pull_request</h1>
-<p>This will create a new pull request on GitHub</p>
+<h1 id="setup_ci"><a name="user-content-setup_ci" href="#setup_ci" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>setup_ci</h1>
+<p>Setup the keychain and match to work with CI</p>
+<blockquote>
+<ul>
+<li>Creates a new temporary keychain for use with match</li>
+<li>Switches match to <code>readonly</code> mode to not create new profiles/cert on CI</li>
+<li>Sets up log and test result paths to be easily collectible</li>
+</ul>
+<p>This action helps with CI integration. Add this to the top of your Fastfile if you use CI.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>create_pull_request</th>
+<th>setup_ci</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, android, mac</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@seei, @tommeier, @marumemomo</td>
-</tr>
-<tr>
-<td>Returns</td>
-<td>The pull request URL when successful</td>
+<td>@mollyIV</td>
 </tr>
 </tbody>
 </table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">create_pull_request(
-  api_token: &quot;secret&quot;,      # optional, defaults to ENV[&quot;GITHUB_API_TOKEN&quot;]
-  repo: &quot;fastlane/fastlane&quot;,
-  title: &quot;Amazing new feature&quot;,
-  head: &quot;my-feature&quot;,       # optional, defaults to current branch name
-  base: &quot;master&quot;, # optional, defaults to &quot;master&quot;
-  body: &quot;Please pull this in!&quot;,       # optional
-  api_url: &quot;http://yourdomain/api/v3&quot; # optional, for GitHub Enterprise, defaults to &quot;https://api.github.com&quot;
+<pre><code class="ruby">setup_ci(
+  provider: &quot;travis&quot;
 )
 </code></pre>
 
@@ -1251,49 +1249,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
-<td><code>api_token</code></td>
-<td>Personal API Token for GitHub - generate one at https://github.com/settings/tokens</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
+<td><code>force</code></td>
+<td>Force setup, even if not executed by CI</td>
+<td><code>false</code></td>
 </tr>
 <tr>
-<td><code>repo</code></td>
-<td>The name of the repository you want to submit the pull request to</td>
-<td></td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>The title of the pull request</td>
-<td></td>
-</tr>
-<tr>
-<td><code>body</code></td>
-<td>The contents of the pull request</td>
-<td></td>
-</tr>
-<tr>
-<td><code>labels</code></td>
-<td>The labels for the pull request</td>
-<td></td>
-</tr>
-<tr>
-<td><code>head</code></td>
-<td>The name of the branch where your changes are implemented (defaults to the current branch name)</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>base</code></td>
-<td>The name of the branch you want your changes pulled into (defaults to <code>master</code>)</td>
-<td><code>master</code></td>
-</tr>
-<tr>
-<td><code>api_url</code></td>
-<td>The URL of GitHub API - used when the Enterprise (default to <code>https://api.github.com</code>)</td>
-<td><code>https://api.github.com</code></td>
-</tr>
-<tr>
-<td><code>assignees</code></td>
-<td>The assignees for the pull request</td>
-<td></td>
+<td><code>provider</code></td>
+<td>CI provider</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
@@ -1302,18 +1265,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action create_pull_request
+<pre><code class="no-highlight">fastlane action setup_ci
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run create_pull_request
+<pre><code class="no-highlight">fastlane run setup_ci
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run create_pull_request parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run setup_ci parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1321,7 +1284,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_pull_request.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/setup_ci.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1332,10 +1295,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../danger/" class="btn btn-neutral float-right" title="danger">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../setup_circle_ci/" class="btn btn-neutral float-right" title="setup_circle_ci">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../create_keychain/" class="btn btn-neutral" title="create_keychain"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../set_pod_key/" class="btn btn-neutral" title="set_pod_key"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1377,10 +1340,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../create_keychain/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../set_pod_key/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../danger/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../setup_circle_ci/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
