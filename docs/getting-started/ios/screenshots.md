@@ -34,7 +34,7 @@ While this is convenient, this approach has the same problems as the device fram
 _snapshot_ works with _fastlane_ to automate the process of capturing screenshots of your app. It allows you to:
 
 - Capture hundreds of screenshots in multiple languages on all simulators
-- Take screenshots in multiple device simulators concurrently to cut down execution time (Xcode 9 only)
+- Take screenshots in multiple device simulators concurrently to cut down execution time
 - Do something else while the computer takes the screenshots for you
 - Configure it once, and store the configuration so anyone on the team can run it
 - Generate a beautiful web page showing all screenshots on all devices. This is perfect to send to Q&A, marketing, or translators for verification
