@@ -141,6 +141,7 @@ pages:
   - increment_build_number: actions/increment_build_number.md
   - increment_version_number: actions/increment_version_number.md
   - install_on_device: actions/install_on_device.md
+  - install_provisioning_profile: actions/install_provisioning_profile.md
   - install_xcode_plugin: actions/install_xcode_plugin.md
   - installr: actions/installr.md
   - ipa: actions/ipa.md

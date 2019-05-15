@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 457c5d647c77f0e078dafa5129da616914e002c5
+  revision: 46dea0dabd915525c2e43ac5e8c5b6b9ba2e23b4
   specs:
-    fastlane (2.122.0)
+    fastlane (2.123.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -190,7 +190,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.6)
-    unicode-display_width (1.5.0)
+    unicode-display_width (1.6.0)
     word_wrap (1.0.0)
     xcodeproj (1.9.0)
       CFPropertyList (>= 2.3.3, < 4.0)

@@ -384,7 +384,7 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 568
+  :age_in_days: 947
   :readme_score: 100
   :tests: 1
   :actions:
@@ -398,11 +398,11 @@ fastlane-plugin-aws_device_farm:
     category: 
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: d983392161dfd40f0e8defb121ffcacc72cd23848fd27896cca36a29530864c7
-  :github_stars: 47
+  :sha: 8e7d5d4f141716cd1a10ccb1b6df3c49f221c177a37d1b5015880c989e5ebf25
+  :github_stars: 61
   :github_subscribers: 5
-  :github_issues: 1
-  :github_forks: 13
+  :github_issues: 3
+  :github_forks: 22
   :github_contributors: 0
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
@@ -790,7 +790,7 @@ fastlane-plugin-s3_actions:
   :github_contributors: 1
 fastlane-plugin-settings_bundle:
   :initial_commit: 2016-11-02
-  :age_in_days: 480
+  :age_in_days: 924
   :readme_score: 100
   :tests: 49
   :actions:
@@ -799,12 +799,12 @@ fastlane-plugin-settings_bundle:
     category: project
     description: 
     details: actions.
-  :sha: fafc206cf608ebb95916588a51a28e527f56df56ee56019d1ff7351d341ceb41
-  :github_stars: 12
+  :sha: f769ee6bc62383842361c034e223e5d2dad6a596169fbc9af56543e1a56e76f2
+  :github_stars: 20
   :github_subscribers: 2
   :github_issues: 1
-  :github_forks: 2
-  :github_contributors: 2
+  :github_forks: 8
+  :github_contributors: 0
 fastlane-plugin-android_versioning:
   :initial_commit: 2017-02-18
   :age_in_days: 781
@@ -5176,7 +5176,7 @@ fastlane-plugin-managed_google_play:
   :github_contributors: 0
 fastlane-plugin-app_store_build_info:
   :initial_commit: 2018-08-28
-  :age_in_days: 7
+  :age_in_days: 260
   :readme_score: 50
   :tests: 6
   :actions:
@@ -5186,7 +5186,7 @@ fastlane-plugin-app_store_build_info:
     description: Get build info from App Store Connect
     details: Get build info for an app, like version number and build number from
       App Store Connect
-  :sha: a6ab0de3478651fbf5c32bdda1f4316ec261743d79362abece43e1eb8718e0db
+  :sha: 8fd74e899f4aadeee107a28f9846fd1b243c9e7fd19238a88ba96c877f7bd2f6
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
@@ -5511,7 +5511,7 @@ fastlane-plugin-cerberus:
   :github_contributors: 0
 fastlane-plugin-shuttle:
   :initial_commit: 2018-06-18
-  :age_in_days: 140
+  :age_in_days: 331
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5520,8 +5520,8 @@ fastlane-plugin-shuttle:
     category: 
     description: Publish your builds on [Shuttle.tools](https://www.shuttle.tools)
     details: "\\n"
-  :sha: d2a3cb5b290494fc49151dcf9f80dae7d7e32663780b32278713584c696aaed3
-  :github_stars: 3
+  :sha: f3a13cbb4473c2b0457eb4af972f4d0857f26d350e12fd0604e02e2d67b6accf
+  :github_stars: 6
   :github_subscribers: 8
   :github_issues: 0
   :github_forks: 0
@@ -6101,7 +6101,7 @@ sparkplugg:
   :github_contributors: 0
 fastlane-plugin-lokalise:
   :initial_commit: 2019-02-03
-  :age_in_days: 66
+  :age_in_days: 101
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6120,11 +6120,11 @@ fastlane-plugin-lokalise:
     category: 
     description: Upload metadata to lokalise.
     details: This action scans fastlane/metadata folder and uploads metadata to lokalise.co
-  :sha: 046cb9649dfaafa9dc06040d6eae33be1eb595f60a8999f53d2338e0ad147c44
+  :sha: 17523b67998729ec683668f8088662bd65957ec76398f98dfa3da8e4e9b6906d
   :github_stars: 0
   :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
+  :github_issues: 1
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-ci_apps:
   :initial_commit: 2019-02-17
@@ -6214,7 +6214,7 @@ fastlane-plugin-firebase_test_lab_android:
   :github_contributors: 0
 fastlane-plugin-fast_city:
   :initial_commit: 2019-03-12
-  :age_in_days: 52
+  :age_in_days: 64
   :readme_score: 50
   :tests: 0
   :actions:
@@ -6260,7 +6260,7 @@ fastlane-plugin-fast_city:
     category: 
     description: Extract appx bundle and add it to output path
     details: Extract appx bundle and add it to output path
-  :sha: 7c70a825fec12e99e34d39fede93692fc13ffc747376dd7e5798466dda3ded42
+  :sha: 02c69fd2feba188f88ef90c0149b0b11e41fc849c7b2078f6eceb7da1e690456
   :github_stars: 1
   :github_subscribers: 4
   :github_issues: 0
@@ -6328,22 +6328,27 @@ fastlane-plugin-bomb_emoji:
   :github_contributors: 0
 fastlane-plugin-xcconfig_actions:
   :initial_commit: 2019-02-21
-  :age_in_days: 48
-  :readme_score: 100
-  :tests: 22
+  :age_in_days: 83
+  :readme_score: 50
+  :tests: 51
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: build_settings_to_flags
+    category: building
+    description: Map xcconfig build settings to compiler and linker build flags
+    details: "\\n"
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: read_xcconfig
-    category: 
+    category: building
     description: Read and resolve contents of xcconfig file and return as JSON
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: validate_xcconfig
-    category: 
+    category: linting
     description: Validate xcconfig file
     details: "\\n"
-  :sha: b11dc4a7d328f26fa0c832262370243ce58979e814aea65b2b4eb85c0cc7164a
-  :github_stars: 1
+  :sha: '037609b68ee67eb839e61f1b93acfeb13116988c39e788ddad1ca7da4b322de3'
+  :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
@@ -6633,7 +6638,7 @@ fastlane-plugin-trello:
   :github_contributors: 0
 fastlane-plugin-summonbin:
   :initial_commit: 2019-04-27
-  :age_in_days: 6
+  :age_in_days: 18
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6642,7 +6647,7 @@ fastlane-plugin-summonbin:
     category: 
     description: Execute command with summonbin
     details: 
-  :sha: 8e4f710133cb4209783d75833e645635863ac1a07f1f7ff01f9c680b78be73c1
+  :sha: a212d41a5dcffd69dde5fcb7da1a0a43b3f84ab565de6bbc84c38cc4ca9d4b39
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -6723,6 +6728,68 @@ fastlane-plugin-deploy_aws_s3_cloudfront:
   :sha: 7aa5bdff306aee8e1bf3f9603e05365a01b4ab9576a5ae852346cd4afc70ee42
   :github_stars: 1
   :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-version:
+  :initial_commit: 2019-05-03
+  :age_in_days: 12
+  :readme_score: 100
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_version
+    category: 
+    description: Set version
+    details: 
+  :sha: 2611fcff288a541a792415eb7fe47e4bca4d95266c5acbbce6c1b8e491454f74
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-file_manager:
+  :initial_commit: 2019-05-02
+  :age_in_days: 13
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: remove_files
+    category: 
+    description: Remove files
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: copy_files
+    category: 
+    description: Copy files
+    details: 
+  :sha: f354fdb61eaa3835a9af49dabe7111326a9f9b75c13f6318b979e86eed20cbde
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-testin:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-react_native_util:
+  :initial_commit: 2019-05-14
+  :age_in_days: 1
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: react_pod
+    category: 
+    description: Community utilities for React Native projects
+    details: more to come
+  :sha: 65a6387d1b9fb0f6fff8b198ece49f3b6a8946faef41b61ca58e8ec35d22e507
+  :github_stars: 0
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0

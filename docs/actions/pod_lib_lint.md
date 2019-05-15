@@ -60,10 +60,15 @@ Key | Description | Default
   `external_podspecs` | A Glob of additional ancillary podspecs which are used for linting via :podspec. If there are --include-podspecs, then these are removed from them (available since cocoapods >= 1.7) | 
   `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | 
   `use_libraries` | Lint uses static libraries to install the spec | `false`
-  `use_modular_headers` | Lint using modular libraries | `false`
+  `use_modular_headers` | Lint using modular libraries (available since cocoapods >= 1.6) | `false`
   `fail_fast` | Lint stops on the first failing platform or subspec | `false`
   `private` | Lint skips checks that apply only to public specs | `false`
   `quick` | Lint skips checks that would require to download and build the spec | `false`
+  `no_clean` | Lint leaves the build directory intact for inspection | `false`
+  `no_subspecs` | Lint skips validation of subspecs | `false`
+  `platforms` | Lint against specific platforms (defaults to all platforms supported by the podspec). Multiple platforms must be comma-delimited (available since cocoapods >= 1.6) | 
+  `skip_import_validation` | Lint skips validating that the pod can be imported (available since cocoapods >= 1.3) | `false`
+  `skip_tests` | Lint skips building and running tests during validation (available since cocoapods >= 1.3) | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
