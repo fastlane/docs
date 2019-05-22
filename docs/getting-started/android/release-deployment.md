@@ -44,6 +44,7 @@ end
 ```
 
 This will also:
+
 - Upload app metadata from `fastlane/metadata/android` if you previously ran `fastlane supply init`
 - Upload expansion files (obbs) found under the same directory as your APK as long as:
   - They are identified by type as **main** or **patch** by containing `main` or `patch` in their file names
