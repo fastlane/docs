@@ -1295,14 +1295,18 @@ end
 end
 </code></pre>
 
-<p>This will also:
-- Upload app metadata from <code>fastlane/metadata/android</code> if you previously ran <code>fastlane supply init</code>
-- Upload expansion files (obbs) found under the same directory as your APK as long as:
-  - They are identified by type as <strong>main</strong> or <strong>patch</strong> by containing <code>main</code> or <code>patch</code> in their file names
-  - There is at most one of each type
-- Upload screenshots from <code>fastlane/metadata/android</code> if you previously ran <em>screengrab</em>
-- Create a new production build
-- Release the production build to all users</p>
+<p>This will also:</p>
+<ul>
+<li>Upload app metadata from <code>fastlane/metadata/android</code> if you previously ran <code>fastlane supply init</code></li>
+<li>Upload expansion files (obbs) found under the same directory as your APK as long as:<ul>
+<li>They are identified by type as <strong>main</strong> or <strong>patch</strong> by containing <code>main</code> or <code>patch</code> in their file names</li>
+<li>There is at most one of each type</li>
+</ul>
+</li>
+<li>Upload screenshots from <code>fastlane/metadata/android</code> if you previously ran <em>screengrab</em></li>
+<li>Create a new production build</li>
+<li>Release the production build to all users</li>
+</ul>
 <p>If you would like to capture and upload screenshots automatically as part of your deployment process, check out the <a href="../screenshots/">fastlane screenshots for Android</a> guide to get started!</p>
 <p>To gradually roll out a new build you can use:</p>
 <pre><code class="ruby">lane :playstore do
