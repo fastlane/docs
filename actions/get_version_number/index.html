@@ -1267,6 +1267,24 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
+<h2 id="lane-variables"><a name="user-content-lane-variables" href="#lane-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Variables</h2>
+<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>get_version_number</code> action generates the following Lane Variables:</p>
+<table>
+<thead>
+<tr>
+<th>SharedValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SharedValues::VERSION_NUMBER</code></td>
+<td>The version number</td>
+</tr>
+</tbody>
+</table>
+<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.
+<hr /></p>
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action get_version_number

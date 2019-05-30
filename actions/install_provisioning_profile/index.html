@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>backup_xcarchive - fastlane docs</title>
+  <title>install_provisioning_profile - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "backup_xcarchive";
-    var mkdocs_page_input_path = "actions/backup_xcarchive.md";
-    var mkdocs_page_url = "/actions/backup_xcarchive/";
+    var mkdocs_page_name = "install_provisioning_profile";
+    var mkdocs_page_input_path = "actions/install_provisioning_profile.md";
+    var mkdocs_page_url = "/actions/install_provisioning_profile/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1166,14 +1166,14 @@
         
       
     
-    <li>backup_xcarchive</li>
+    <li>install_provisioning_profile</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/backup_xcarchive.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/install_provisioning_profile.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1201,15 +1201,18 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/backup_xcarchive.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/install_provisioning_profile.rb
 -->
 
-<h1 id="backup_xcarchive"><a name="user-content-backup_xcarchive" href="#backup_xcarchive" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>backup_xcarchive</h1>
-<p>Save your [zipped] xcarchive elsewhere from default path</p>
+<h1 id="install_provisioning_profile"><a name="user-content-install_provisioning_profile" href="#install_provisioning_profile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>install_provisioning_profile</h1>
+<p>Install provisioning profile from path</p>
+<blockquote>
+<p>Install provisioning profile from path for current user</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>backup_xcarchive</th>
+<th>install_provisioning_profile</th>
 <th></th>
 </tr>
 </thead>
@@ -1220,18 +1223,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@dral3x</td>
+<td>@SofteqDG</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The absolute path to the installed provisioning profile</td>
 </tr>
 </tbody>
 </table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">backup_xcarchive(
-  xcarchive: &quot;/path/to/file.xcarchive&quot;, # Optional if you use the `xcodebuild` action
-  destination: &quot;/somewhere/else/&quot;, # Where the backup should be created
-  zip_filename: &quot;file.xcarchive&quot;, # The name of the backup file
-  zip: false, # Enable compression of the archive. Defaults to `true`.
-  versioned: true # Create a versioned (date and app version) subfolder where to put the archive
-)
+<pre><code class="ruby">install_provisioning_profile(path: &quot;profiles/profile.mobileprovision&quot;)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1245,67 +1246,29 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
-<td><code>xcarchive</code></td>
-<td>Path to your xcarchive file. Optional if you use the <code>xcodebuild</code> action</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>destination</code></td>
-<td>Where your archive will be placed</td>
+<td><code>path</code></td>
+<td>Path to provisioning profile</td>
 <td></td>
-</tr>
-<tr>
-<td><code>zip</code></td>
-<td>Enable compression of the archive</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>zip_filename</code></td>
-<td>Filename of the compressed archive. Will be appended by <code>.xcarchive.zip</code>. Default value is the output xcarchive filename</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>versioned</code></td>
-<td>Create a versioned (date and app version) subfolder where to put the archive</td>
-<td><code>true</code></td>
 </tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
-<h2 id="lane-variables"><a name="user-content-lane-variables" href="#lane-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Variables</h2>
-<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>backup_xcarchive</code> action generates the following Lane Variables:</p>
-<table>
-<thead>
-<tr>
-<th>SharedValue</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SharedValues::BACKUP_XCARCHIVE_FILE</code></td>
-<td>Path to your saved xcarchive (compressed) file</td>
-</tr>
-</tbody>
-</table>
-<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.
-<hr /></p>
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action backup_xcarchive
+<pre><code class="no-highlight">fastlane action install_provisioning_profile
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run backup_xcarchive
+<pre><code class="no-highlight">fastlane run install_provisioning_profile
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run backup_xcarchive parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run install_provisioning_profile parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1313,7 +1276,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/backup_xcarchive.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/install_provisioning_profile.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1324,10 +1287,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../badge/" class="btn btn-neutral float-right" title="badge">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../install_xcode_plugin/" class="btn btn-neutral float-right" title="install_xcode_plugin">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../backup_file/" class="btn btn-neutral" title="backup_file"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../install_on_device/" class="btn btn-neutral" title="install_on_device"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1369,10 +1332,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../backup_file/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../install_on_device/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../badge/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../install_xcode_plugin/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

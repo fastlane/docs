@@ -1543,6 +1543,8 @@ frameit(
 <h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
 <h2 id="generate-localized-screenshots"><a name="user-content-generate-localized-screenshots" href="#generate-localized-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generate localized screenshots</h2>
 <p>Check out <a href="https://docs.fastlane.tools/actions/snapshot/"><em>snapshot</em></a> to automatically generate screenshots using <code>UI Automation</code>.</p>
+<h2 id="resume-framing"><a name="user-content-resume-framing" href="#resume-framing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resume framing</h2>
+<p>Framing screenshots is a slow operation. In case you need to resume framing, or just frame a couple updated screenshots again, you can rely on the <code>--resume</code> flag. Only screenshots which have not been framed yet – or for which there isn't an up-to-date framed image – will be framed. This feature uses the file modification dates and will reframe screenshots if the screenshot is newer than the framed file.</p>
 <h2 id="upload-screenshots"><a name="user-content-upload-screenshots" href="#upload-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload screenshots</h2>
 <p>Use <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> to upload iOS screenshots to App Store Connect, or <a href="https://docs.fastlane.tools/actions/supply/"><em>supply</em></a> to upload Android screenshots to Play Store completely automatically 🚀</p>
 <h2 id="use-a-clean-status-bar"><a name="user-content-use-a-clean-status-bar" href="#use-a-clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a clean status bar</h2>
@@ -1652,6 +1654,11 @@ brew install imagemagick
 <tr>
 <td><code>debug_mode</code></td>
 <td>Output debug information in framed screenshots</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>resume</code></td>
+<td>Resume frameit instead of reprocessing all screenshots</td>
 <td><code>false</code></td>
 </tr>
 <tr>
