@@ -324,6 +324,7 @@ Key | Description | Default
   `archive_path` | The path to the created archive | 
   `derived_data_path` | The directory where built products and other derived data will go | 
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
+  `result_bundle_path` | Path to the result bundle directory to create. Ignored if `result_bundle` if false | 
   `buildlog_path` | The directory where to store the build log | [*](#parameters-legend-dynamic)
   `sdk` | The SDK that should be used for building the application | 
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a) | 
@@ -346,6 +347,21 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `gym` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::IPA_OUTPUT_PATH` | The path to the newly generated ipa file
+  `SharedValues::DSYM_OUTPUT_PATH` | The path to the dSYM files
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

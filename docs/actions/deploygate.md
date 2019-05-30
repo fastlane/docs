@@ -68,6 +68,22 @@ Key | Description | Default
 
 <hr />
 
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `deploygate` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::DEPLOYGATE_URL` | URL of the newly uploaded build
+  `SharedValues::DEPLOYGATE_REVISION` | auto incremented revision number
+  `SharedValues::DEPLOYGATE_APP_INFO` | Contains app revision, bundle identifier, etc.
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

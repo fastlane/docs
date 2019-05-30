@@ -298,6 +298,24 @@ Key | Description | Default
 
 <hr />
 
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `get_provisioning_profile` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::SIGH_PROFILE_PATH` | A path in which certificates, key and profile are exported
+  `SharedValues::SIGH_PROFILE_PATHS` | Paths in which certificates, key and profile are exported
+  `SharedValues::SIGH_UUID` | UUID (Universally Unique IDentifier) of a provisioning profile
+  `SharedValues::SIGH_NAME` | The name of the profile
+  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be appstore, adhoc, development, enterprise
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

@@ -66,6 +66,8 @@ Key | Description | Default
 
 <hr />
 
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

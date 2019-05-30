@@ -228,7 +228,9 @@ Key | Description | Default
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6') | 
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air']) | 
   `skip_detect_devices` | Should skip auto detecting of devices if none were specified | `false`
+  `force_quit_simulator` | Enabling this option will automatically killall Simulator processes before the run | `false`
   `reset_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
+  `prelaunch_simulator` | Enabling this option will launch the first simulator prior to calling any xcodebuild command | 
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
@@ -278,6 +280,23 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `scan` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::SCAN_DERIVED_DATA_PATH` | The path to the derived data
+  `SharedValues::SCAN_GENERATED_PLIST_FILE` | The generated plist file
+  `SharedValues::SCAN_GENERATED_PLIST_FILES` | The generated plist files
+  `SharedValues::SCAN_ZIP_BUILD_PRODUCTS_PATH` | The path to the zipped build products
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

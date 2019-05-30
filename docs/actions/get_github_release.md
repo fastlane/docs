@@ -87,6 +87,20 @@ Key | Description | Default
 
 <hr />
 
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `get_github_release` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::GET_GITHUB_RELEASE_INFO` | Contains all the information about this release
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
 ## Documentation
 
 To show the documentation in your terminal, run
