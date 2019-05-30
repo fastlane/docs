@@ -316,6 +316,10 @@ Check out the [MindNode example project](https://github.com/fastlane/examples/tr
 
 Check out [_snapshot_](https://docs.fastlane.tools/actions/snapshot/) to automatically generate screenshots using ```UI Automation```.
 
+## Resume framing
+
+Framing screenshots is a slow operation. In case you need to resume framing, or just frame a couple updated screenshots again, you can rely on the `--resume` flag. Only screenshots which have not been framed yet – or for which there isn't an up-to-date framed image – will be framed. This feature uses the file modification dates and will reframe screenshots if the screenshot is newer than the framed file.
+
 ## Upload screenshots
 
 Use [_deliver_](https://docs.fastlane.tools/actions/deliver/) to upload iOS screenshots to App Store Connect, or [_supply_](https://docs.fastlane.tools/actions/supply/) to upload Android screenshots to Play Store completely automatically 🚀
@@ -388,12 +392,15 @@ Key | Description | Default
   `use_legacy_iphonex` | Use iPhone X instead of iPhone XS frames | `false`
   `force_orientation_block` | [Advanced] A block to customize your screenshots' device orientation | [*](#parameters-legend-dynamic)
   `debug_mode` | Output debug information in framed screenshots | `false`
+  `resume` | Resume frameit instead of reprocessing all screenshots | `false`
   `path` | The path to the directory containing the screenshots | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
 
 ## Documentation
 

@@ -33,6 +33,8 @@ ensure_bundle_exec
 
 <hr />
 
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

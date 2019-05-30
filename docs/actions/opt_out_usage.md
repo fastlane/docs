@@ -33,6 +33,8 @@ opt_out_usage # add this to the top of your Fastfile
 
 <hr />
 
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

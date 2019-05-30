@@ -33,6 +33,8 @@ last_git_tag
 
 <hr />
 
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

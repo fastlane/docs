@@ -354,6 +354,20 @@ Key | Description | Default
 
 <hr />
 
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `produce` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::PRODUCE_APPLE_ID` | The Apple ID of the newly created app. You probably need it for `deliver`
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

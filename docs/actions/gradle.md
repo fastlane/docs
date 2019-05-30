@@ -116,6 +116,25 @@ Key | Description | Default
 
 <hr />
 
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `gradle` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::GRADLE_APK_OUTPUT_PATH` | The path to the newly generated apk file. Undefined in a multi-variant assemble scenario
+  `SharedValues::GRADLE_ALL_APK_OUTPUT_PATHS` | When running a multi-variant `assemble`, the array of signed apk's that were generated
+  `SharedValues::GRADLE_FLAVOR` | The flavor, e.g. `MyFlavor`
+  `SharedValues::GRADLE_BUILD_TYPE` | The build type, e.g. `Release`
+  `SharedValues::GRADLE_AAB_OUTPUT_PATH` | The path to the most recent Android app bundle
+  `SharedValues::GRADLE_ALL_AAB_OUTPUT_PATHS` | The paths to the most recent Android app bundles
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
 ## Documentation
 
 To show the documentation in your terminal, run
