@@ -956,9 +956,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 494
+  :age_in_days: 588
   :readme_score: 100
-  :tests: 119
+  :tests: 123
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1016,11 +1016,11 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines and combines tests from multiple json report files
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: 0d37c453fbf0ca25f925cbfc09c0689e6c38be1b99596da1d40be485a042fe7a
-  :github_stars: 61
-  :github_subscribers: 8
-  :github_issues: 13
-  :github_forks: 15
+  :sha: af5d9cf725ecbebca67c8f0fef91971827fb5ee0a6e13d8316261e3a0d796b8d
+  :github_stars: 76
+  :github_subscribers: 10
+  :github_issues: 12
+  :github_forks: 18
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -6273,9 +6273,9 @@ fastlane-plugin-fast_city:
   :github_contributors: 0
 fastlane-plugin-semantic_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 74
+  :age_in_days: 78
   :readme_score: 100
-  :tests: 14
+  :tests: 15
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: conventional_changelog
@@ -6291,10 +6291,10 @@ fastlane-plugin-semantic_release:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: d769408a1f441b7ac9155fcb12720dbe03948674cb19c5d1952023fbe0f2c827
+  :sha: 92c7ec510f640ae8b7a26df115e0d5a69af2d6bcfbc49f2a6e5ba6dfdd3ca254
   :github_stars: 14
   :github_subscribers: 1
-  :github_issues: 1
+  :github_issues: 0
   :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-android_emulator_kami:
@@ -6492,7 +6492,7 @@ fastlane-plugin-dynatrace:
   :github_contributors: 0
 fastlane-plugin-download_hocky_build:
   :initial_commit: 2019-04-08
-  :age_in_days: 2
+  :age_in_days: 56
   :readme_score: 50
   :tests: 1
   :actions:
@@ -6501,8 +6501,8 @@ fastlane-plugin-download_hocky_build:
     category: 
     description: Download newest build from HockeyApp (iOS & Android)
     details: 
-  :sha: 1daff85885645d6da591a38e5e26dced5d3e76dfacd6719ddae91df42fa5c5ac
-  :github_stars: 0
+  :sha: 9e1578fda9d94636c91bc0824c053538fb86e78c26dc4eb80545b33cb036ac5e
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
@@ -6880,5 +6880,22 @@ fastlane-plugin-get_application_id_flavor:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-kuhverij:
+  :initial_commit: 2019-06-01
+  :age_in_days: 2
+  :readme_score: 50
+  :tests: 9
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: kuhverij
+    category: testing
+    description: Simplified Code Coverage
+    details: Simplified Code Coverage, which e.g. can be used together with GitLab
+  :sha: 0de2095fbbaa394a7be5e52984888781f6e18edfb2ac3034bbb16c94d28f39fd
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 3
   :github_forks: 0
   :github_contributors: 0
