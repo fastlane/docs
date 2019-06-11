@@ -582,12 +582,12 @@
         },
         {
             "location": "/getting-started/cross-platform/react-native/",
-            "text": "Getting started with \nfastlane\n for \nReact Native\n\n\nMost of the \nfastlane\n docs on this page apply to React Native projects as well. \n\n\nAs there is no official getting started guide yet, here are some publications by the \nfastlane\n community:\n\n\n\n\nShipping React Native apps with fastlane\n\n\nReact Native, fastlane and Visual Studio App Center\n\n\nConference talk \"Automate your React Native world with fastlane\"\n\n\nTeam Focused Fastlane Tutorials\n\n\nSimple Android Releases in React Native\n\n\nSimple iOS Releases in React Native",
+            "text": "Getting started with \nfastlane\n for \nReact Native\n\n\nMost of the \nfastlane\n docs on this page apply to React Native projects as well. \n\n\nAs there is no official getting started guide yet, here are some publications by the \nfastlane\n community:\n\n\n\n\nDistributing beta builds with Fastlane on Android and iOS\n\n\nShipping React Native apps with fastlane\n\n\nReact Native, fastlane and Visual Studio App Center\n\n\nConference talk \"Automate your React Native world with fastlane\"\n\n\nTeam Focused Fastlane Tutorials\n\n\nSimple Android Releases in React Native\n\n\nSimple iOS Releases in React Native",
             "title": "React Native"
         },
         {
             "location": "/getting-started/cross-platform/react-native/#getting-started-with-fastlane-for-react-native",
-            "text": "Most of the  fastlane  docs on this page apply to React Native projects as well.   As there is no official getting started guide yet, here are some publications by the  fastlane  community:   Shipping React Native apps with fastlane  React Native, fastlane and Visual Studio App Center  Conference talk \"Automate your React Native world with fastlane\"  Team Focused Fastlane Tutorials  Simple Android Releases in React Native  Simple iOS Releases in React Native",
+            "text": "Most of the  fastlane  docs on this page apply to React Native projects as well.   As there is no official getting started guide yet, here are some publications by the  fastlane  community:   Distributing beta builds with Fastlane on Android and iOS  Shipping React Native apps with fastlane  React Native, fastlane and Visual Studio App Center  Conference talk \"Automate your React Native world with fastlane\"  Team Focused Fastlane Tutorials  Simple Android Releases in React Native  Simple iOS Releases in React Native",
             "title": "Getting started with fastlane for React Native"
         },
         {
