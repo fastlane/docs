@@ -29,8 +29,8 @@ Several Fastlane actions communicate with Apple services that need authenticatio
 
 The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that 
 
-  - doesn't have 2-factor authentication enabled
-  - doesn't have the Account Holder role
+- doesn't have 2-factor authentication enabled
+- doesn't have the Account Holder role
 
 Creating a separate Apple ID allows you to limit the permission scope (limited access to only the apps and resources it needs), have a long, randomly generated password, and will make it much more convenient for you to set up CI using _fastlane_.
 
