@@ -22,11 +22,11 @@ lane :beta do
 end
 ```
 
-You can also use Xcode’s *Automatically Manage Signing* feature. By default, automatic signing via `xcodebuild` is disabled. To enable it, pass `-allowProvisioningUpdates` via the `export_xcargs` option:
+You can also use Xcode’s *Automatically Manage Signing* feature. By default, automatic signing via `xcodebuild` is disabled. To enable it, pass `-allowProvisioningUpdates` via the `xcargs` option:
 
 ```ruby
 lane :beta do
-  build_app(export_xcargs: "-allowProvisioningUpdates")
+  build_app(xcargs: "-allowProvisioningUpdates")
 end
 ```
 
