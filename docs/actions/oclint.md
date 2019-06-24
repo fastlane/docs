@@ -44,7 +44,8 @@ oclint(
   list_enabled_rules: true,   # List enabled rules
   enable_clang_static_analyzer: true,   # Enable Clang Static Analyzer, and integrate results into OCLint report
   enable_global_analysis: true,         # Compile every source, and analyze across global contexts (depends on number of source files, could results in high memory load)
-  allow_duplicated_violations: true     # Allow duplicated violations in the OCLint report
+  allow_duplicated_violations: true,    # Allow duplicated violations in the OCLint report
+  extra_arg: "-Wno-everything"# Additional argument to append to the compiler command line
 )
 ```
 
@@ -74,6 +75,7 @@ Key | Description | Default
   `enable_clang_static_analyzer` | Enable Clang Static Analyzer, and integrate results into OCLint report | `false`
   `enable_global_analysis` | Compile every source, and analyze across global contexts (depends on number of source files, could results in high memory load) | `false`
   `allow_duplicated_violations` | Allow duplicated violations in the OCLint report | `false`
+  `extra_arg` | Additional argument to append to the compiler command line | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

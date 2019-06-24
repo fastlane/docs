@@ -21,10 +21,14 @@ Author | @danramteke
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 reset_simulator_contents
+```
+
+```ruby
+reset_simulator_contents(os_versions: ["10.3.1","12.2"])
 ```
 
 
@@ -35,7 +39,8 @@ reset_simulator_contents
 
 Key | Description | Default
 ----|-------------|--------
-  `ios` | Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators | 
+  `ios` | **DEPRECATED!** Use `:os_versions` instead - Which OS versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators | 
+  `os_versions` | Which OS versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

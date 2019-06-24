@@ -250,6 +250,15 @@ app_review_information(
 
 You can also provide these values by creating files in a `metadata/review_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `first_name.txt`, `notes.txt` etc.). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will be take priority over values from these files.
 
+##### app_review_attachment_file
+You can provide additional information to the app review team as a file attachment. As of this writing, Apple supports following file attachment formats: .pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.
+
+Provide an empty string (i.e. "", not null) to remove the existing attachment file (if any) from the review information being edited.
+
+```ruby-skip-tests
+app_review_attachment_file: "./readme.txt"
+```
+
 ##### submission_information
 Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. [A list of available options](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb).
 
@@ -458,7 +467,7 @@ _deliver_ uses the following techniques under the hood:
 
 ## Available language codes
 ```no-highlight
-ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
+ar-SA, ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, he, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
 ```
 
 ## Available Metadata Folder Options
@@ -841,6 +850,7 @@ Key | Description | Default
   `secondary_second_sub_category` | Metadata: The english name of the secondary second sub category (e.g. `Educational`, `Puzzle`) | 
   `trade_representative_contact_information` | Metadata: A hash containing the trade representative contact information | 
   `app_review_information` | Metadata: A hash containing the review information | 
+  `app_review_attachment_file` | Metadata: Path to the app review attachment file | 
   `description` | Metadata: The localised app description | 
   `name` | Metadata: The localised app name | 
   `subtitle` | Metadata: The localised app subtitle | 
