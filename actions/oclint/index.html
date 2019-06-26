@@ -1248,7 +1248,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   list_enabled_rules: true,   # List enabled rules
   enable_clang_static_analyzer: true,   # Enable Clang Static Analyzer, and integrate results into OCLint report
   enable_global_analysis: true,         # Compile every source, and analyze across global contexts (depends on number of source files, could results in high memory load)
-  allow_duplicated_violations: true     # Allow duplicated violations in the OCLint report
+  allow_duplicated_violations: true,    # Allow duplicated violations in the OCLint report
+  extra_arg: &quot;-Wno-everything&quot;# Additional argument to append to the compiler command line
 )
 </code></pre>
 
@@ -1351,6 +1352,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>allow_duplicated_violations</code></td>
 <td>Allow duplicated violations in the OCLint report</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>extra_arg</code></td>
+<td>Additional argument to append to the compiler command line</td>
+<td></td>
 </tr>
 </tbody>
 </table>

@@ -1378,6 +1378,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <p>You can also provide these values by creating files in a <code>metadata/review_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>first_name.txt</code>, <code>notes.txt</code> etc.). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will be take priority over values from these files.</p>
+<h5 id="app_review_attachment_file"><a name="user-content-app_review_attachment_file" href="#app_review_attachment_file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_review_attachment_file</h5>
+<p>You can provide additional information to the app review team as a file attachment. As of this writing, Apple supports following file attachment formats: .pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.</p>
+<p>Provide an empty string (i.e. "", not null) to remove the existing attachment file (if any) from the review information being edited.</p>
+<pre><code class="ruby-skip-tests">app_review_attachment_file: &quot;./readme.txt&quot;
+</code></pre>
+
 <h5 id="submission_information"><a name="user-content-submission_information" href="#submission_information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>submission_information</h5>
 <p>Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb">A list of available options</a>.</p>
 <pre><code class="ruby-skip-tests">submission_information({
@@ -1525,7 +1531,7 @@ end
 </ul>
 <h1 id="tips"><a name="user-content-tips" href="#tips" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Tips</h1>
 <h2 id="available-language-codes"><a name="user-content-available-language-codes" href="#available-language-codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available language codes</h2>
-<pre><code class="no-highlight">ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
+<pre><code class="no-highlight">ar-SA, ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, he, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
 </code></pre>
 
 <h2 id="available-metadata-folder-options"><a name="user-content-available-metadata-folder-options" href="#available-metadata-folder-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available Metadata Folder Options</h2>
@@ -2269,6 +2275,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>app_review_information</code></td>
 <td>Metadata: A hash containing the review information</td>
+<td></td>
+</tr>
+<tr>
+<td><code>app_review_attachment_file</code></td>
+<td>Metadata: Path to the app review attachment file</td>
 <td></td>
 </tr>
 <tr>

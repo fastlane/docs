@@ -1224,8 +1224,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">reset_simulator_contents
+</code></pre>
+
+<pre><code class="ruby">reset_simulator_contents(os_versions: [&quot;10.3.1&quot;,&quot;12.2&quot;])
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1240,7 +1243,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>ios</code></td>
-<td>Which versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators</td>
+<td><strong>DEPRECATED!</strong> Use <code>:os_versions</code> instead - Which OS versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators</td>
+<td></td>
+</tr>
+<tr>
+<td><code>os_versions</code></td>
+<td>Which OS versions of Simulators you want to reset content and settings, this does not remove/recreate the simulators</td>
 <td></td>
 </tr>
 </tbody>
