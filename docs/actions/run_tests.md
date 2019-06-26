@@ -274,6 +274,7 @@ Key | Description | Default
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
   `destination` | Use only if you're a pro, use the other options instead | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
+  `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

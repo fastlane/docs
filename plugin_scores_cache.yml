@@ -53,7 +53,7 @@ fastlane-plugin-versioning:
   :github_contributors: 5
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 788
+  :age_in_days: 1116
   :readme_score: 100
   :tests: 5
   :actions:
@@ -62,12 +62,12 @@ fastlane-plugin-aws_s3:
     category: 
     description: Generates a plist file and uploads all to AWS S3
     details: 
-  :sha: a2545ca60c9be86f55529f6e8ef09a55c42c229f7ce01feb9c02b2d440895029
-  :github_stars: 54
-  :github_subscribers: 6
-  :github_issues: 10
-  :github_forks: 30
-  :github_contributors: 0
+  :sha: caa89a44de83c6347821960aa3978d88a44c861c3789edb33fb812b8704e8637
+  :github_stars: 86
+  :github_subscribers: 5
+  :github_issues: 16
+  :github_forks: 39
+  :github_contributors: 16
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
   :age_in_days: 848
@@ -192,7 +192,7 @@ fastlane-plugin-increment_version_code:
   :github_contributors: 2
 fastlane-plugin-changelog:
   :initial_commit: 2016-06-25
-  :age_in_days: 1019
+  :age_in_days: 1094
   :readme_score: 100
   :tests: 27
   :actions:
@@ -220,15 +220,15 @@ fastlane-plugin-changelog:
     description: Stamps the [Unreleased] section with provided identifier in your
       project CHANGELOG.md file
     details: 
-  :sha: 00dbf1b448e9728823e0b670dde10fcde2615aadec630fd04bb42c307bde617a
-  :github_stars: 114
+  :sha: 28445a09b4f9a98094827b5478b2edba807f8072cb5d4b80d7632961fb97365d
+  :github_stars: 122
   :github_subscribers: 2
   :github_issues: 1
-  :github_forks: 19
-  :github_contributors: 0
+  :github_forks: 20
+  :github_contributors: 7
 fastlane-plugin-tpa:
   :initial_commit: 2016-06-17
-  :age_in_days: 871
+  :age_in_days: 1102
   :readme_score: 100
   :tests: 33
   :actions:
@@ -242,12 +242,12 @@ fastlane-plugin-tpa:
     category: misc
     description: Upload dsym files downloaded from App Store Connect directly to TPA
     details: " "
-  :sha: d09ea908eff7b45bc797a1ca3b0c7120bc9b3dfd716142a6b128103f33aa3ace
-  :github_stars: 8
+  :sha: 72d921492f5ce54736e185b2136901d94e19ee857b839bcfa379d0dde5b7ef4a
+  :github_stars: 9
   :github_subscribers: 5
-  :github_issues: 0
-  :github_forks: 4
-  :github_contributors: 0
+  :github_issues: 2
+  :github_forks: 7
+  :github_contributors: 8
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
   :age_in_days: 716
@@ -633,20 +633,20 @@ fastlane-plugin-yarn:
   :github_contributors: 0
 fastlane-plugin-applivery:
   :initial_commit: 2016-07-26
-  :age_in_days: 579
+  :age_in_days: 1063
   :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: applivery
     category: beta
-    description: Upload new build to Applivery
+    description: Upload new iOS or Android build to Applivery
     details: 
-  :sha: 62962802c39c2b80da039151b4daa49e255deb6d1bc9026ece817f53bd7824c1
-  :github_stars: 8
+  :sha: 535788191e6396f2bc59377e89bf0107d523be3306122688e135abb4485801e4
+  :github_stars: 12
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 2
+  :github_forks: 4
   :github_contributors: 3
 fastlane-plugin-xcake:
   :initial_commit: 2015-10-10
@@ -1101,7 +1101,7 @@ fastlane-plugin-cosigner:
   :github_contributors: 2
 fastlane-plugin-cryptex:
   :initial_commit: 2016-10-18
-  :age_in_days: 554
+  :age_in_days: 979
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1115,12 +1115,12 @@ fastlane-plugin-cryptex:
     category: 
     description: Generate a new Android Keystore
     details: 
-  :sha: 9e5a6c0c404f020386e5e35586baea247a72be674b2886778c5aabf580252d9e
-  :github_stars: 17
-  :github_subscribers: 3
-  :github_issues: 2
-  :github_forks: 7
-  :github_contributors: 0
+  :sha: cf009b2ec92550708671813f768c1ddb83921f140530df9fee6ff02873967c17
+  :github_stars: 26
+  :github_subscribers: 4
+  :github_issues: 4
+  :github_forks: 11
+  :github_contributors: 6
 fastlane-plugin-update_xcodeproj:
   :initial_commit: 2016-09-15
   :age_in_days: 528
@@ -1534,9 +1534,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 752
+  :age_in_days: 777
   :readme_score: 100
-  :tests: 36
+  :tests: 41
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload
@@ -1545,12 +1545,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 204215d27530b22fe000a54caaa4c7faaf4cd40ec014deb05cd288ae898470c3
-  :github_stars: 193
-  :github_subscribers: 27
+  :sha: 6e71b885b977ae60e001d1e1356ae3802471475c3b4b585585ea6d9a8cebc5b1
+  :github_stars: 200
+  :github_subscribers: 25
   :github_issues: 16
-  :github_forks: 40
-  :github_contributors: 0
+  :github_forks: 45
+  :github_contributors: 16
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -1718,7 +1718,7 @@ fastlane-plugin-translation:
   :github_contributors: 0
 fastlane-plugin-ci_changelog:
   :initial_commit: 2016-09-20
-  :age_in_days: 849
+  :age_in_days: 1007
   :readme_score: 100
   :tests: 239
   :actions:
@@ -1728,12 +1728,12 @@ fastlane-plugin-ci_changelog:
     description: Automate generate changelog between previous build failed and the
       latest commit of scm in CI.
     details: availabled with jenkins, gitlab ci, more support is comming soon.
-  :sha: 3f776fb90f89b607c38656ae2d3d5fcac772f23a9700a0259af0578728c339ee
+  :sha: c588fdd214502ade0fe4b9bfb027be08c2d8cc892b63ce99a70e0a1efe2c8e4f
   :github_stars: 6
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 1
-  :github_contributors: 0
+  :github_contributors: 2
 fastlane-plugin-changelog_generator:
   :initial_commit: 2016-12-06
   :age_in_days: 446
@@ -3290,9 +3290,9 @@ fastlane-plugin-gradle_manager:
   :github_contributors: 0
 fastlane-plugin-app_info:
   :initial_commit: 2016-12-08
-  :age_in_days: 444
+  :age_in_days: 928
   :readme_score: 100
-  :tests: 7
+  :tests: 13
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: app_info
@@ -3300,11 +3300,11 @@ fastlane-plugin-app_info:
     description: Parse and dump mobile app(ipa/apk) metedata.
     details: Teardown tool for mobile app(ipa/apk), analysis metedata like version,
       name, icon etc.
-  :sha: 4be57883bdd1eb3d80673e6db13bb21b0ccf8c72b1132026f93b31c4351061da
-  :github_stars: 0
+  :sha: 767b1aaed30ace60fee99e2db15ab545fb11039a352d6283be9676e5c508874f
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 1
 fastlane-plugin-xbluepill:
   :initial_commit: 2018-01-25
@@ -4072,7 +4072,7 @@ fastlane-plugin-remove_setting:
   :github_contributors: 0
 fastlane-plugin-android_emulator:
   :initial_commit: 2018-01-24
-  :age_in_days: 321
+  :age_in_days: 516
   :readme_score: 100
   :tests: 2
   :actions:
@@ -4081,12 +4081,12 @@ fastlane-plugin-android_emulator:
     category: 
     description: Creates and starts an Android Emulator (AVD)
     details: Great for Screengrab
-  :sha: 102e097bd2b8186fada80c3f8a062a099faeee87a147cd8b973ea4bd43963d0f
-  :github_stars: 4
-  :github_subscribers: 7
-  :github_issues: 4
-  :github_forks: 4
-  :github_contributors: 0
+  :sha: fdfee0b408bcc3f0639d08b2c65c0ed0794a05e70ec0370b214a68e0ffb76a77
+  :github_stars: 5
+  :github_subscribers: 6
+  :github_issues: 2
+  :github_forks: 6
+  :github_contributors: 1
 fastlane-plugin-ipa_scale:
   :github_stars: 0
   :github_subscribers: 0
@@ -6022,7 +6022,7 @@ fastlane-plugin-transifex_tool:
   :github_contributors: 0
 fastlane-plugin-google_sheet_localize:
   :initial_commit: 2019-01-31
-  :age_in_days: 92
+  :age_in_days: 144
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6032,12 +6032,12 @@ fastlane-plugin-google_sheet_localize:
     description: Creates .strings files for iOS and strings.xml files for Android
     details: Creates .strings files for iOS and strings.xml files for Android. The
       localization is mananged on a google sheet.
-  :sha: d30e87f5317f443153fa5b1fbd4d0c299829388e01590869369c558ade8114d2
-  :github_stars: 5
+  :sha: 49c3d20024943bb48ca8c0a95996775a65c3970c2d5769e1ce1b3334f8599a80
+  :github_stars: 6
   :github_subscribers: 5
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-git_build_versioning:
   :initial_commit: 2018-10-29
   :age_in_days: 100
@@ -6273,7 +6273,7 @@ fastlane-plugin-fast_city:
   :github_contributors: 0
 fastlane-plugin-semantic_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 79
+  :age_in_days: 99
   :readme_score: 100
   :tests: 15
   :actions:
@@ -6291,12 +6291,12 @@ fastlane-plugin-semantic_release:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: 92c7ec510f640ae8b7a26df115e0d5a69af2d6bcfbc49f2a6e5ba6dfdd3ca254
+  :sha: e11e5b119bede982b091f6a27faec5c05950f9696cd145ba566005e336f46835
   :github_stars: 14
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 3
-  :github_contributors: 1
+  :github_forks: 5
+  :github_contributors: 2
 fastlane-plugin-android_emulator_kami:
   :initial_commit: 2018-01-24
   :age_in_days: 441
@@ -6591,7 +6591,7 @@ fastlane-plugin-icon_banner:
   :github_contributors: 0
 fastlane-plugin-react_native_release:
   :initial_commit: 2019-01-03
-  :age_in_days: 120
+  :age_in_days: 172
   :readme_score: 50
   :tests: 1
   :actions:
@@ -6601,10 +6601,10 @@ fastlane-plugin-react_native_release:
     description: Simplify releases for React Native apps
     details: Creates a release for a React Native app. Handles incrementing versions
       and tags
-  :sha: 3821290e7083c28a65147941557fd2b347a19a1c82a4ebc129c22ad7dad87d2d
-  :github_stars: 0
+  :sha: caeff4acb5d36f6c5daa43e231bf6273561cf7d8b4b7cfca9439c47ba1739a60
+  :github_stars: 2
   :github_subscribers: 4
-  :github_issues: 3
+  :github_issues: 4
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-buggly:
@@ -6822,30 +6822,81 @@ fastlane-plugin-testin:
   :github_contributors: 2
 fastlane-plugin-airwatch_workspaceone:
   :initial_commit: 2019-05-30
-  :age_in_days: 0
+  :age_in_days: 25
   :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: add_or_update_assignments
+    category: 
+    description: The main purpose of this action is to add a new smart group assignment
+      to an application or to update an existing smart group assignment of an application
+      with a given dictionary of deployment/assignment parameters. If a smart group
+      name is provided which does not exist yet on Console, assignment for that smart
+      group is ignored.
+    details: add_or_update_assignments - To add or update smart group assignments
+      with given deployment parameters.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: unretire_specific_version
+    category: 
+    description: The main purpose of this action is to unretire a specific version
+      of an application. This action takes a string parameter where you can specify
+      the version number to unretire.
+    details: unretire_specific_version - To unretire specific version of an application
+      on the AirWatch/Workspace ONE console.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: retire_previous_versions
     category: 
-    description: The main purpose of this action is to retire previous versions of
-      the application
-    details: retire_previous_versions - To retire all active versions of the application
-      on the AirWatch console except the latest version.
+    description: The main purpose of this action is to retire previous active versions
+      of an application. This action takes a string parameter where you can specify
+      the number of latest versions to keep if you do not want to retire all the previous
+      active versions.
+    details: retire_previous_versions - To retire previous active versions of an application
+      on the AirWatch/Workspace ONE console except the latest version.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: delete_specific_version
+    category: 
+    description: The main purpose of this action is to delete a specific version of
+      an application. This action takes a string parameter where you can specify the
+      version number to delete.
+    details: delete_specific_version - To delete specific version of an application
+      on the AirWatch/Workspace ONE console.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: deploy_build
     category: 
     description: The main purpose of this action is to upload an IPA or an APK file
-      to an AirWatch or Workspace ONE enterprise instance/console.
-    details: deploy_app - To upload an iOS ipa OR Android APK to AirWatch/WorkspaceOne
-      console.
-  :sha: 80de309d5cff363e5abc1e6f2eb9ee787a44c84789f24029c78ee8545aecfee1
-  :github_stars: 0
+      to an AirWatch or Workspace ONE enterprise console.
+    details: deploy_build - To upload an iOS ipa OR Android APK to AirWatch/Workspace
+      One console.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: delete_previous_versions
+    category: 
+    description: The main purpose of this action is to delete versions of an application.
+      This action takes a string parameter where you can specify the number of latest
+      versions to keep if you do not want to delete all the versions.
+    details: delete_previous_versions - To delete versions of an application on the
+      AirWatch/Workspace ONE console.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: retire_specific_version
+    category: 
+    description: The main purpose of this action is to retire a specific version of
+      an application. This action takes a string parameter where you can specify the
+      version number to retire.
+    details: retire_specific_version - To retire specific version of an application
+      on the AirWatch/Workspace ONE console.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: unretire_all_versions
+    category: 
+    description: The main purpose of this action is to unretire all retired versions
+      of an application.
+    details: unretire_all_versions - To unretire all retired versions of an application
+      on the AirWatch/Workspace ONE console.
+  :sha: a846d5a2ecb54d1dcc452c16eefb532ad507b909aa682063b252bd763c489e1f
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 0
+  :github_forks: 1
+  :github_contributors: 1
 fastlane-plugin-react_native_util:
   :initial_commit: 2019-05-14
   :age_in_days: 16
@@ -6897,5 +6948,39 @@ fastlane-plugin-kuhverij:
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 3
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-mailjet:
+  :initial_commit: 2019-06-05
+  :age_in_days: 19
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: mailjet
+    category: 
+    description: Send a custom message to an email group with mailjet
+    details: 
+  :sha: 9408adbd4a21b81a7fb11e5bc7f92694bf7c06fc8a471edfac43cc96c72400ce
+  :github_stars: 1
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-bugly:
+  :initial_commit: 2019-06-17
+  :age_in_days: 7
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bugly
+    category: 
+    description: Upload dSYM to bugly.
+    details: Upload dSYM to bugly.
+  :sha: da08226c1d1ab6f5bad8c54402ad6e42d169a53e5f27a56ed2ad4a9a91704a00
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
