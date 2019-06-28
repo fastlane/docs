@@ -22,3 +22,5 @@ setup_travis
 ```
 
 which will setup the keychain to work well with _match_ and _gym_. This action will also enable the `readonly` mode for _match_, so your CI doesn't create new certificates or provisioning profiles.
+
+Note: This is only required for iOS and not for Android.
