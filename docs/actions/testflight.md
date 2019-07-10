@@ -336,7 +336,7 @@ Key | Description | Default
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of the app to upload or manage testers (optional) | [*](#parameters-legend-dynamic)
   `app_platform` | The platform to use (optional) | `ios`
-  `apple_id` | The unique App ID provided by App Store Connect | [*](#parameters-legend-dynamic)
+  `apple_id` | Apple ID property in the App Information section in App Store Connect | [*](#parameters-legend-dynamic)
   `ipa` | Path to the ipa file to upload | [*](#parameters-legend-dynamic)
   `demo_account_required` | Do you need a demo account when Apple does review? | `false`
   `beta_app_review_info` | Beta app review information for contact info and demo account | 

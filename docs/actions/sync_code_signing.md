@@ -568,6 +568,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING` | The match provisioning profile mapping
+  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be appstore, adhoc, development, enterprise
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />

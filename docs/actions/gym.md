@@ -358,6 +358,7 @@ SharedValue | Description
 ------------|-------------
   `SharedValues::IPA_OUTPUT_PATH` | The path to the newly generated ipa file
   `SharedValues::DSYM_OUTPUT_PATH` | The path to the dSYM files
+  `SharedValues::XCODEBUILD_ARCHIVE` | The path to the xcodebuild archive
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />
