@@ -228,7 +228,7 @@ fastlane-plugin-changelog:
   :github_contributors: 7
 fastlane-plugin-tpa:
   :initial_commit: 2016-06-17
-  :age_in_days: 1102
+  :age_in_days: 1118
   :readme_score: 100
   :tests: 33
   :actions:
@@ -242,12 +242,12 @@ fastlane-plugin-tpa:
     category: misc
     description: Upload dsym files downloaded from App Store Connect directly to TPA
     details: " "
-  :sha: 72d921492f5ce54736e185b2136901d94e19ee857b839bcfa379d0dde5b7ef4a
+  :sha: 016c856592cb3e640f883fd8990dcedea280231b77c039b0dfd6da13dd91993b
   :github_stars: 9
   :github_subscribers: 5
-  :github_issues: 2
+  :github_issues: 1
   :github_forks: 7
-  :github_contributors: 8
+  :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
   :age_in_days: 716
@@ -1534,9 +1534,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 777
+  :age_in_days: 793
   :readme_score: 100
-  :tests: 41
+  :tests: 44
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload
@@ -1545,12 +1545,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 6e71b885b977ae60e001d1e1356ae3802471475c3b4b585585ea6d9a8cebc5b1
-  :github_stars: 200
-  :github_subscribers: 25
-  :github_issues: 16
-  :github_forks: 45
-  :github_contributors: 16
+  :sha: 965fc749ca0d6dee51ef829bf6d99770e726d91b88c940a0c8b157b656e246e2
+  :github_stars: 208
+  :github_subscribers: 24
+  :github_issues: 13
+  :github_forks: 47
+  :github_contributors: 0
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -1718,7 +1718,7 @@ fastlane-plugin-translation:
   :github_contributors: 0
 fastlane-plugin-ci_changelog:
   :initial_commit: 2016-09-20
-  :age_in_days: 1007
+  :age_in_days: 1023
   :readme_score: 100
   :tests: 239
   :actions:
@@ -1728,12 +1728,12 @@ fastlane-plugin-ci_changelog:
     description: Automate generate changelog between previous build failed and the
       latest commit of scm in CI.
     details: availabled with jenkins, gitlab ci, more support is comming soon.
-  :sha: c588fdd214502ade0fe4b9bfb027be08c2d8cc892b63ce99a70e0a1efe2c8e4f
+  :sha: 66248c61b1c0313800a4d542cac60da882f71cacda2c82a504d3b669bc0cdabd
   :github_stars: 6
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 1
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-changelog_generator:
   :initial_commit: 2016-12-06
   :age_in_days: 446
@@ -4706,7 +4706,7 @@ fastlane-plugin-schedule:
   :github_contributors: 0
 fastlane-plugin-teak:
   :initial_commit: 2018-04-23
-  :age_in_days: 289
+  :age_in_days: 443
   :readme_score: 50
   :tests: 1
   :actions:
@@ -4726,7 +4726,7 @@ fastlane-plugin-teak:
     description: Fastlane plugins for the Teak SDK
     details: A collection of plugins to make your life easier when working with the
       Teak SDK.
-  :sha: 4198c2406194985c08e831dffbbe73c378ea5588d32d3d5c041de9452fe6bfc1
+  :sha: f0a661fb4167b0488286dcb6cc8bfda94fe4f0d89de49d82503ffdbcd3a59e80
   :github_stars: 0
   :github_subscribers: 3
   :github_issues: 0
@@ -5857,7 +5857,7 @@ fastlane-plugin-imessage:
   :github_contributors: 0
 fastlane-plugin-notarize:
   :initial_commit: 2019-01-05
-  :age_in_days: 95
+  :age_in_days: 186
   :readme_score: 100
   :tests: 0
   :actions:
@@ -5866,12 +5866,12 @@ fastlane-plugin-notarize:
     category: 
     description: Notarizes a macOS app
     details: 
-  :sha: e4157e6a6762bde4f45191b66bcd710d52eefbc7de9768a89a185b9376af4718
-  :github_stars: 30
-  :github_subscribers: 15
-  :github_issues: 0
-  :github_forks: 2
-  :github_contributors: 0
+  :sha: 40976704571229a16204c0f37c9162078074b1eb278d7ec95880014b9fa28872
+  :github_stars: 43
+  :github_subscribers: 16
+  :github_issues: 1
+  :github_forks: 5
+  :github_contributors: 4
 fastlane-plugin-gmail:
   :initial_commit: 2018-12-11
   :age_in_days: 37
@@ -6219,7 +6219,7 @@ fastlane-plugin-firebase_test_lab_android:
   :github_contributors: 0
 fastlane-plugin-fast_city:
   :initial_commit: 2019-03-12
-  :age_in_days: 79
+  :age_in_days: 120
   :readme_score: 50
   :tests: 0
   :actions:
@@ -6265,8 +6265,8 @@ fastlane-plugin-fast_city:
     category: 
     description: Extract appx bundle and add it to output path
     details: Extract appx bundle and add it to output path
-  :sha: d0f726166288578c1ef7c5d4042497004b588343999801f7e899c4abcd6d8b05
-  :github_stars: 1
+  :sha: 0cead3192f49329401078f1e3f1d38410db241b426f2e24c11bd4fcc20796d1c
+  :github_stars: 2
   :github_subscribers: 4
   :github_issues: 0
   :github_forks: 0
@@ -6473,7 +6473,7 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 29
+  :age_in_days: 97
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6484,9 +6484,9 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       You can also use it to first download your latest dSym files from AppStore Connect
       if you use Bitcode
-  :sha: b77832613e78df944eafec5884ff5ddfcbcf27c4b7b5e4c2ae6370db1c529452
+  :sha: 5eec185d43ae63374811f24a489b6e177495ee04934ad5abef156baec267f9cd
   :github_stars: 1
-  :github_subscribers: 1
+  :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
@@ -6822,7 +6822,7 @@ fastlane-plugin-testin:
   :github_contributors: 2
 fastlane-plugin-airwatch_workspaceone:
   :initial_commit: 2019-05-30
-  :age_in_days: 25
+  :age_in_days: 41
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6891,7 +6891,7 @@ fastlane-plugin-airwatch_workspaceone:
       of an application.
     details: unretire_all_versions - To unretire all retired versions of an application
       on the AirWatch/Workspace ONE console.
-  :sha: a846d5a2ecb54d1dcc452c16eefb532ad507b909aa682063b252bd763c489e1f
+  :sha: 3e42fe2eedc2a0e88ef2708ccbceb55b0650b7b4def36e121e426a1b6e0a4ffa
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
@@ -6980,6 +6980,62 @@ fastlane-plugin-bugly:
     details: Upload dSYM to bugly.
   :sha: da08226c1d1ab6f5bad8c54402ad6e42d169a53e5f27a56ed2ad4a9a91704a00
   :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-avd_emulator:
+  :initial_commit: 2019-06-17
+  :age_in_days: 23
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: start_avd_emulator
+    category: 
+    description: This plugin is listing available android avd emulators, allowing
+      you to start the selected one.
+    details: It is also possible to start one directly by specifying his name with
+      the :name option.
+  :sha: a474d64c20d1e3a8fff3c85ed46eec2cc28bf34bed983201680f6a4ae8204709
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-speculid:
+  :initial_commit: 2019-01-03
+  :age_in_days: 188
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: speculid
+    category: 
+    description: Use speculid to Easily Manage Graphics in Xcode Projects
+    details: Speculid links a single graphic file to an Image Set or App Icon and
+      automatically renders different resolutions, file types, and sizes for all the
+      image specifications required.
+  :sha: 0cb48e02adff5681d2bc725b8e65f195fad4f581ab72ea2800e0c6672d1b5960
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-git_clone:
+  :initial_commit: 2019-07-10
+  :age_in_days: 0
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: git_clone
+    category: source_control
+    description: this is a wrapper for git clone command
+    details: 'exec like this: git clone xxx.git -b master /path/to/xxx --single-branch
+      --depth=1'
+  :sha: b5e0c2e17cbd1cf9d3d4c0f1794d640d1c1fbbefde15f399e74ceb44ab9f69f1
+  :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
