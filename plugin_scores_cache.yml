@@ -7040,3 +7040,9 @@ fastlane-plugin-git_clone:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-update_device_name:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
