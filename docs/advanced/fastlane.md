@@ -14,7 +14,7 @@ You can set the environment variable `FASTLANE_HIDE_CHANGELOG` to hide the detai
 
 ### Output environment variables
 
-- To hide timestamps in each row, set the `FASTLANE_HIDE_TIMESTAMP` environment variable to true.
+- To hide timestamps in each row, set the `FASTLANE_HIDE_TIMESTAMP` environment variable to true (overruled by `--verbose`). 
 - To disable output formatting, set the `FASTLANE_DISABLE_OUTPUT_FORMAT` environment variable to true.
 
 ## How fastlane works
