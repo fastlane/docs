@@ -4706,7 +4706,7 @@ fastlane-plugin-schedule:
   :github_contributors: 0
 fastlane-plugin-teak:
   :initial_commit: 2018-04-23
-  :age_in_days: 443
+  :age_in_days: 452
   :readme_score: 50
   :tests: 1
   :actions:
@@ -4726,7 +4726,7 @@ fastlane-plugin-teak:
     description: Fastlane plugins for the Teak SDK
     details: A collection of plugins to make your life easier when working with the
       Teak SDK.
-  :sha: f0a661fb4167b0488286dcb6cc8bfda94fe4f0d89de49d82503ffdbcd3a59e80
+  :sha: c3b69b7273771578a7f2e99b17c21fb49b8b7fd8389dde004cdfd60a61e2b23a
   :github_stars: 0
   :github_subscribers: 3
   :github_issues: 0
@@ -7023,8 +7023,8 @@ fastlane-plugin-speculid:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-git_clone:
-  :initial_commit: 2019-07-10
-  :age_in_days: 0
+  :initial_commit: 2019-07-15
+  :age_in_days: 4
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7034,8 +7034,8 @@ fastlane-plugin-git_clone:
     description: this is a wrapper for git clone command
     details: 'exec like this: git clone xxx.git -b master /path/to/xxx --single-branch
       --depth=1'
-  :sha: b5e0c2e17cbd1cf9d3d4c0f1794d640d1c1fbbefde15f399e74ceb44ab9f69f1
-  :github_stars: 1
+  :sha: 613a9a4bb48f76b411e62b5952820cd6b9c760dcbf1c2ddc93a0f4666a734b0c
+  :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
@@ -7046,3 +7046,20 @@ fastlane-plugin-update_device_name:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-upload_dsym:
+  :initial_commit: 2019-07-10
+  :age_in_days: 9
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_dsym
+    category: 
+    description: upload dsym to your specify server
+    details: https://bugly.qq.com/v2/sdk?id=<your_bugly_id>
+  :sha: 001c72a08c227473b9f2e0b66e320c673356286dd3604b1e8b835f52bae49f1a
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
