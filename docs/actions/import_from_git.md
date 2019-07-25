@@ -52,7 +52,7 @@ Key | Description | Default
   `url` | The URL of the repository to import the Fastfile from | 
   `branch` | The branch or tag to check-out on the repository | `HEAD`
   `path` | The path of the Fastfile in the repository | `fastlane/Fastfile`
-  `version` | The version to checkout on the respository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints | 
+  `version` | The version to checkout on the repository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -2724,7 +2724,7 @@ tests | <b>30</b> | The more tests a plugin has, the better
 
 <p class="via-text">via Jiří Otáhal</p>
 
-> Automated version managment and generator of release notes.
+> Automated version management and generator of release notes.
 
 
 <details>
@@ -4404,7 +4404,7 @@ tests | <b>12</b> | The more tests a plugin has, the better
 
  Name | Category | Description
 ------|----------|------------
-  **instrumented_tests** | - | Run android instrumented tests via a gradle command againts a newly created avd
+  **instrumented_tests** | - | Run android instrumented tests via a gradle command against a newly created avd
 
 </details>
 
@@ -8853,7 +8853,7 @@ tests | <b>18</b> | The more tests a plugin has, the better
 ------|----------|------------
   **clean_build_cache_workspace** | - | Cleans workspace by removing old builds, using last access time for comparison
   **archive_derived_data** | - | Archives derived data folder in a zip file for later use
-  **check_build_cache_workspace** | - | Check if cache for current build is avaiable
+  **check_build_cache_workspace** | - | Check if cache for current build is available
   **unarchive_derived_data** | - | Unarchives derived data folder from a zip file
 
 </details>
