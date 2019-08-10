@@ -1265,11 +1265,11 @@ for more information on how this file works.</p>
 <h2 id="auto-incremented-build-number"><a name="user-content-auto-incremented-build-number" href="#auto-incremented-build-number" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Auto-incremented build number.</h2>
 <p>To get an auto-incremented build number you can use something like the following lane:</p>
 <pre><code class="ruby">lane :increment_build_number do
-  increment_build_number(build_number: ENV['CI_BUILD_ID'])
+  increment_build_number(build_number: ENV['CI_JOB_ID'])
 end
 </code></pre>
 
-<p>Then the GitLab CI build ID (which iterates on each build) will be used.</p>
+<p>Then the GitLab CI job ID (which iterates on each build) will be used.</p>
               
             </div>
           </div>
