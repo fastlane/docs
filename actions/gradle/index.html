@@ -1231,7 +1231,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
+<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">gradle(
   task: &quot;assemble&quot;,
   flavor: &quot;WorldDomination&quot;,
@@ -1239,6 +1239,15 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 )
 </code></pre>
 
+<p>To build an AAB use:</p>
+<pre><code class="ruby">gradle(
+  task: &quot;bundle&quot;,
+  flavor: &quot;WorldDomination&quot;,
+  build_type: &quot;Release&quot;
+)
+</code></pre>
+
+<p>You can pass properties to gradle:</p>
 <pre><code class="ruby">gradle(
   # ...
 
@@ -1264,8 +1273,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 )
 </code></pre>
 
-<pre><code class="ruby"># If you need to pass sensitive information through the `gradle` action, and don't want the generated command to be printed before it is run, you can suppress that:
-gradle(
+<p>If you need to pass sensitive information through the <code>gradle</code> action, and don't want the generated command to be printed before it is run, you can suppress that:</p>
+<pre><code class="ruby">gradle(
   # ...
   print_command: false
 )
@@ -1286,8 +1295,8 @@ gradle(
 )
 </code></pre>
 
-<pre><code class="ruby"># Delete the build directory and generated APKs
-gradle(
+<p>Delete the build directory, generated APKs and AABs</p>
+<pre><code class="ruby">gradle(
   task: &quot;clean&quot;
 )
 </code></pre>
@@ -1304,7 +1313,7 @@ gradle(
 <tbody>
 <tr>
 <td><code>task</code></td>
-<td>The gradle task you want to execute, e.g. <code>assemble</code> or <code>test</code>. For tasks such as <code>assembleMyFlavorRelease</code> you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release')</td>
+<td>The gradle task you want to execute, e.g. <code>assemble</code>, <code>bundle</code> or <code>test</code>. For tasks such as <code>assembleMyFlavorRelease</code> you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release')</td>
 <td></td>
 </tr>
 <tr>
