@@ -135,7 +135,7 @@ fastlane-plugin-update_provisioning_profile_specifier:
   :github_contributors: 0
 fastlane-plugin-appicon:
   :initial_commit: 2016-07-01
-  :age_in_days: 893
+  :age_in_days: 1138
   :readme_score: 100
   :tests: 0
   :actions:
@@ -150,15 +150,15 @@ fastlane-plugin-appicon:
     description: Generate required icon sizes and iconset from a master application
       icon
     details: 
-  :sha: bcc64612c48a6d5d1f9884a7a105a4ea06ff61b0aeb652ed0e87c91e5203d109
-  :github_stars: 226
+  :sha: 845373532d9e0c59eeec84956863a33fb13b81f74695bc46746199343eae8be7
+  :github_stars: 253
   :github_subscribers: 10
-  :github_issues: 14
-  :github_forks: 25
+  :github_issues: 15
+  :github_forks: 35
   :github_contributors: 18
 fastlane-plugin-badge:
   :initial_commit: 2016-12-16
-  :age_in_days: 725
+  :age_in_days: 970
   :readme_score: 100
   :tests: 1
   :actions:
@@ -167,11 +167,11 @@ fastlane-plugin-badge:
     category: 
     description: Automatically add a badge to your app icon
     details: "\\n"
-  :sha: 326a531813854bdbf1312f75b2bf4ca1a00fc523932ac067c612ba51549af196
-  :github_stars: 81
+  :sha: e3d5f9c56d99954669a7f6caaf39c63bdb0e7bea2648b80332f70f039461874b
+  :github_stars: 117
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 3
+  :github_forks: 9
   :github_contributors: 2
 fastlane-plugin-increment_version_code:
   :initial_commit: 2016-07-29
@@ -956,9 +956,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 589
+  :age_in_days: 659
   :readme_score: 100
-  :tests: 123
+  :tests: 216
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -985,9 +985,14 @@ fastlane-plugin-test_center:
       xctestrun file
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: quit_core_simulator_service
+    category: 
+    description: Force-quits the com.apple.CoreSimulator.CoreSimulatorService.
+    details: Use this action to force-quit it.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_test_result_bundles
     category: testing
-    description: Combines and combines tests from multiple test_result bundles
+    description: Combines multiple test_result bundles into one test_result bundle
     details: tests and the subsequent test_result bundles will have fewer failing
       tests.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
@@ -999,28 +1004,29 @@ fastlane-plugin-test_center:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: multi_scan
     category: testing
-    description: of batching them, only re-testing failing tests.
+    description: Uses scan to run Xcode tests a given number of times, with the option
+      of batching and/or parallelizing them, only re-testing failing tests.
     details: batched, or have multiple test targets and need meaningful junit reports.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_html_reports
     category: testing
-    description: Combines and combines tests from multiple html report files
+    description: Combines multiple html report files into one html report file
     details: tests and the subsequent HTML reports will have more passed tests.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_junit_reports
     category: testing
-    description: Combines and combines tests from multiple junit report files
+    description: Combines multiple junit report files into one junit report file
     details: Inspired by Derek Yang's fastlane-plugin-merge_junit_report
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: collate_json_reports
     category: testing
-    description: Combines and combines tests from multiple json report files
+    description: Combines multiple json report files into one json report file
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: af5d9cf725ecbebca67c8f0fef91971827fb5ee0a6e13d8316261e3a0d796b8d
-  :github_stars: 76
+  :sha: ab4e5e0a32fb59199c01aad7ef14232b980f816df66b253bcb1f1386ea7af5e4
+  :github_stars: 89
   :github_subscribers: 10
-  :github_issues: 12
-  :github_forks: 18
+  :github_issues: 6
+  :github_forks: 21
   :github_contributors: 5
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -1534,9 +1540,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 793
+  :age_in_days: 827
   :readme_score: 100
-  :tests: 44
+  :tests: 50
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload
@@ -1545,12 +1551,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 965fc749ca0d6dee51ef829bf6d99770e726d91b88c940a0c8b157b656e246e2
-  :github_stars: 208
-  :github_subscribers: 24
-  :github_issues: 13
-  :github_forks: 47
-  :github_contributors: 0
+  :sha: 0e4542be682f86b3b8b3680a5b9567a9ad0c4ff0630e31761c250a8b49473a5a
+  :github_stars: 221
+  :github_subscribers: 25
+  :github_issues: 15
+  :github_forks: 50
+  :github_contributors: 22
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -2680,7 +2686,7 @@ fastlane-plugin-droidicon:
   :github_contributors: 1
 fastlane-plugin-get_product_bundle_id:
   :initial_commit: 2017-04-27
-  :age_in_days: 304
+  :age_in_days: 838
   :readme_score: 50
   :tests: 6
   :actions:
@@ -2691,12 +2697,12 @@ fastlane-plugin-get_product_bundle_id:
       project using a provided scheme
     details: Gets the PRODUCT_BUNDLE_IDENTIFIER from either a named target or the
       first buildable target from an Xcode project using a provided scheme.
-  :sha: 3ab987b8c3671dd7bc9f45d27b1144a741540df412427cab9016a0200a106448
-  :github_stars: 2
-  :github_subscribers: 0
+  :sha: fdadbca4fed126d248d33a80c0130a736f9e60e341c393c083c14150b157221e
+  :github_stars: 5
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-google_analytics:
   :initial_commit: 2017-02-09
   :age_in_days: 381
@@ -2716,7 +2722,7 @@ fastlane-plugin-google_analytics:
   :github_contributors: 0
 fastlane-plugin-clean_testflight_testers:
   :initial_commit: 2017-08-29
-  :age_in_days: 180
+  :age_in_days: 714
   :readme_score: 100
   :tests: 0
   :actions:
@@ -2727,12 +2733,12 @@ fastlane-plugin-clean_testflight_testers:
       your app
     details: Automatically remove TestFlight testers that are not actually testing
       your app
-  :sha: 82e08d5a57d3ec5244caadaa156c0f0e3c5cc40468b8d61a323edf1cae803865
-  :github_stars: 20
-  :github_subscribers: 1
-  :github_issues: 4
-  :github_forks: 4
-  :github_contributors: 2
+  :sha: 89191173a99c837d6369a1774e19c23b2127f6a8ecb14ad22671dadc8f936c62
+  :github_stars: 26
+  :github_subscribers: 2
+  :github_issues: 2
+  :github_forks: 3
+  :github_contributors: 3
 fastlane-plugin-demo_mode:
   :initial_commit: 2017-04-11
   :age_in_days: 320
@@ -4529,19 +4535,34 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 362
-  :readme_score: 50
-  :tests: 11
+  :age_in_days: 487
+  :readme_score: 100
+  :tests: 0
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_bootstrap
+    category: 
+    description: Flutter SDK installation, upgrade and application bootstrap
+    details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter
     category: 
-    description: Flutter actions plugin for Fastlane
+    description: Run "flutter" binary with the specified arguments
     details: 
-  :sha: ebceba297c672afe03c5d427f04e06248ac6402931ecab80c1ec843d0313e2c7
-  :github_stars: 3
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_build
+    category: 
+    description: Run "flutter build" to build a Flutter application
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_generate
+    category: 
+    description: ".dart files from them"
+    details: 
+  :sha: 6e375c9da99544ae050d6589d8cdb734a628b2b5446a2991343ac846a4c8a9a9
+  :github_stars: 5
   :github_subscribers: 1
-  :github_issues: 1
+  :github_issues: 2
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-ding_talk:
@@ -5323,7 +5344,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 380
+  :age_in_days: 455
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5332,7 +5353,7 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details: 
-  :sha: a71b7eddd8b7f38eedd2c05b10d5544ec77f11123fccdc6cb120e50e7ee60039
+  :sha: 2bed0d244e07af94864bb2718550cd548f9211c1bbcb1b3084e2a8ae7c9184c2
   :github_stars: 5
   :github_subscribers: 4
   :github_issues: 0
@@ -6333,8 +6354,8 @@ fastlane-plugin-bomb_emoji:
   :github_contributors: 0
 fastlane-plugin-xcconfig_actions:
   :initial_commit: 2019-02-21
-  :age_in_days: 98
-  :readme_score: 50
+  :age_in_days: 173
+  :readme_score: 100
   :tests: 52
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
@@ -6352,10 +6373,10 @@ fastlane-plugin-xcconfig_actions:
     category: linting
     description: Validate xcconfig file
     details: "\\n"
-  :sha: 3d6672eb1da08ee4c5cbdb08e2c6cdee46b218dca07f553d9b75f5c4ba2c278d
-  :github_stars: 3
+  :sha: 946013baf5fdb2677be2e0d657f95c9b4c539bea63e81e21b79bc05d0c12c125
+  :github_stars: 6
   :github_subscribers: 1
-  :github_issues: 0
+  :github_issues: 2
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-forsis:
@@ -7060,6 +7081,222 @@ fastlane-plugin-upload_dsym:
   :sha: 001c72a08c227473b9f2e0b66e320c673356286dd3604b1e8b835f52bae49f1a
   :github_stars: 0
   :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-wechat:
+  :initial_commit: 2019-08-01
+  :age_in_days: 12
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: wechat
+    category: 
+    description: this is a wechat api wrapper
+    details: send message via enterprice wechat server api
+  :sha: 3bb3736ee5835faf8550738914694382064ca4a14787c46e608fe73f971bfabc
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-make:
+  :initial_commit: 2019-08-05
+  :age_in_days: 8
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: make
+    category: building
+    description: Linux GNU Makefile make wrapper
+    details: Linux GNU Makefile make wrapper
+  :sha: fb045707ffe2507e4bd1797deb4418e81e21e4f0e4b8de8332aa8ccb3c952af4
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-snapshot_test:
+  :initial_commit: 2019-07-29
+  :age_in_days: 15
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: snapshot_test
+    category: 
+    description: Compare snapshots
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: screenshot
+    category: 
+    description: Take screenshots
+    details: Take screenshots
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: save_snapshot
+    category: 
+    description: Save Snapshot
+    details: Save Snapshot
+  :sha: 31faa5f88da33cfd37489e022f5981fa61203fa292a3d86a06cd91b3e4e7f352
+  :github_stars: 4
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xchtmlreport:
+  :initial_commit: 2019-08-09
+  :age_in_days: 4
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xchtmlreport
+    category: 
+    description: Xcode-like HTML report for Unit and UI Tests
+    details: https://github.com/TitouanVanBelle/XCTestHTMLReport
+  :sha: f1f7bb3f3e1726d223564018a499f477e3a1fb0502a20efa277ec4af45f608c0
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 1
+  :github_forks: 2
+  :github_contributors: 0
+fastlane-plugin-create_merge_request:
+  :initial_commit: 2019-08-01
+  :age_in_days: 12
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_merge_request
+    category: source_control
+    description: This will create a new marge request on GitLab
+    details: 
+  :sha: b1600049b8212d11a92c3499076e7ca90195d1d251fa12e219dbfd4476e20074
+  :github_stars: 1
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 2
+  :github_contributors: 0
+fastlane-plugin-rm_derived_data:
+  :initial_commit: 2019-08-03
+  :age_in_days: 10
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rm_derived_data
+    category: building
+    description: after build finish remove xx.xcworkspace/xx.xcodeproj specify DerivedDatagst/*
+    details: after build finish remove xx.xcworkspace/xx.xcodeproj specify DerivedDatagst/xx
+  :sha: 3a3d89169ca22af09aecabd4e96acf4dac8d6e6e99fe27107509a999325408f6
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-git_remove_tag:
+  :initial_commit: 2019-08-06
+  :age_in_days: 7
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: git_remove_tag
+    category: source_control
+    description: remove git origin and remote repo tag
+    details: remove git origin and remote repo tag
+  :sha: dcfab6c648571e8e150716408c713a68623f51acbf4054ede6254429474a03cc
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-gitlab_merge_request_add_note:
+  :initial_commit: 2019-07-31
+  :age_in_days: 13
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_merge_request_add_note
+    category: 
+    description: add merge request note for gitlab server api
+    details: COMMENT
+  :sha: 4158501a6ae0c0ce014b5ef35e50a43e64a4aa4182bf959b64a6286d18de3952
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ipa_install_plist_generate:
+  :initial_commit: 2019-07-29
+  :age_in_days: 15
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ipa_install_plist_generate
+    category: 
+    description: iOS ipa enterprise install plist generate plugn
+    details: iOS ipa enterprise install plist generate plugn
+  :sha: 0c8d2aab4c28e8a670b41fac60758ff44bf7e4bd2f62bfaf642b98d4c0907a7b
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-gitlab_increate_line_notes:
+  :initial_commit: 2019-07-24
+  :age_in_days: 20
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_increate_line_notes
+    category: 
+    description: filter gitlab merge request changes files & swiftlint json, last
+      add line code with gitlab discussion
+    details: filter gitlab merge request changes files & swiftlint json, last add
+      line code with gitlab discussion
+  :sha: 44d379611cb0c3d5601c208ce22bbcaef63d43971d189bf45132d55efbead50e
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-source_env_from_file:
+  :initial_commit: 2019-08-03
+  :age_in_days: 10
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: source_env_from_file
+    category: 
+    description: set ENV['key']=value from file like key=value
+    details: set ENV['key']=value from file like key=value
+  :sha: 948137ee83a5db0fdf09838970c6a0aa7b7e4d416edbf43451abb41437904717
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-gitlab_merge_request_participants:
+  :initial_commit: 2019-08-06
+  :age_in_days: 7
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_merge_request_participants
+    category: 
+    description: Get a list of merge request participants
+    details: Get a list of merge request participants
+  :sha: 1e3c2a53054d3d8dd8f8f58bd10488d3f45a8beeb5de181a6100001a8fec088e
+  :github_stars: 0
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0

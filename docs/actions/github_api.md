@@ -67,7 +67,7 @@ Key | Description | Default
   `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | [*](#parameters-legend-dynamic)
   `http_method` | The HTTP method. e.g. GET / POST | `GET`
   `body` | The request body in JSON or hash format | `{}`
-  `raw_body` | The request body taken vertabim instead of as JSON, useful for file uploads | 
+  `raw_body` | The request body taken verbatim instead of as JSON, useful for file uploads | 
   `path` | The endpoint path. e.g. '/repos/:owner/:repo/readme' | 
   `url` | The complete full url - used instead of path. e.g. 'https://uploads.github.com/repos/fastlane...' | 
   `error_handlers` | Optional error handling hash based on status code, or pass '*' to handle all errors | `{}`

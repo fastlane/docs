@@ -52,6 +52,9 @@ Key | Description | Default
   `sonar_login` | Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e) | 
   `sonar_url` | Pass the url of the Sonar server | 
   `branch_name` | Pass the branch name which is getting scanned | 
+  `pull_request_branch` | The name of the branch that contains the changes to be merged | 
+  `pull_request_base` | The long-lived branch into which the PR will be merged | 
+  `pull_request_key` | Unique identifier of your PR. Must correspond to the key of the PR in GitHub or TFS | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
