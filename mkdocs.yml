@@ -282,6 +282,7 @@ pages:
     - Bamboo Integration: best-practices/continuous-integration/bamboo.md
     - GitLab CI Integration: best-practices/continuous-integration/gitlab.md
     - Azure DevOps Integration: best-practices/continuous-integration/azure-devops.md
+    - Codemagic Integration: best-practices/continuous-integration/codemagic.md
     - Nevercode Integration: best-practices/continuous-integration/nevercode.md
   - Keys: best-practices/keys.md
 - Advanced:
