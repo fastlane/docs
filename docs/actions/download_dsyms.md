@@ -61,6 +61,7 @@ Key | Description | Default
   `build_number` | The app build_number for dSYMs you wish to download | 
   `min_version` | The minimum app version for dSYMs you wish to download | 
   `output_directory` | Where to save the download dSYMs, defaults to the current path | 
+  `wait_for_dsym_processing` | Wait for dSYMs to process | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

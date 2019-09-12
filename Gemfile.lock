@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: de70231fe13f464595562c8929dac5d090fa7997
+  revision: a9abea14b2aec266d906d3a6b7d82b82ab9e9725
   specs:
-    fastlane (2.129.0)
+    fastlane (2.131.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -43,9 +43,9 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    CFPropertyList (3.0.0)
-    addressable (2.6.0)
-      public_suffix (>= 2.0.2, < 4.0)
+    CFPropertyList (3.0.1)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
     atomos (0.1.3)
     babosa (1.0.2)
@@ -90,7 +90,7 @@ GEM
       faraday (~> 0.8)
     faraday_middleware (0.13.1)
       faraday (>= 0.7.4, < 1.0)
-    fastimage (2.1.5)
+    fastimage (2.1.7)
     gh_inspector (1.1.3)
     git (1.5.0)
     google-api-client (0.23.9)
@@ -101,9 +101,9 @@ GEM
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
       signet (~> 0.9)
-    google-cloud-core (1.3.0)
+    google-cloud-core (1.3.1)
       google-cloud-env (~> 1.0)
-    google-cloud-env (1.2.0)
+    google-cloud-env (1.2.1)
       faraday (~> 0.11)
     google-cloud-storage (1.16.0)
       digest-crc (~> 0.4)
@@ -127,9 +127,9 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     memoist (0.16.0)
-    mime-types (3.2.2)
+    mime-types (3.3)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2019.0331)
+    mime-types-data (3.2019.0904)
     mini_magick (4.9.5)
     multi_json (1.13.1)
     multi_xml (0.6.0)
@@ -143,7 +143,7 @@ GEM
     open4 (1.3.4)
     os (1.0.1)
     parallel (1.17.0)
-    parser (2.6.3.0)
+    parser (2.6.4.1)
       ast (~> 2.4.0)
     plist (3.5.0)
     powerpack (0.1.2)
@@ -165,7 +165,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.10.1)
-    rubyzip (1.2.3)
+    rubyzip (1.2.4)
     sawyer (0.8.2)
       addressable (>= 2.3.5)
       faraday (> 0.8, < 2.0)

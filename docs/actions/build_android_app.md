@@ -140,6 +140,8 @@ SharedValue | Description
   `SharedValues::GRADLE_BUILD_TYPE` | The build type, e.g. `Release`
   `SharedValues::GRADLE_AAB_OUTPUT_PATH` | The path to the most recent Android app bundle
   `SharedValues::GRADLE_ALL_AAB_OUTPUT_PATHS` | The paths to the most recent Android app bundles
+  `SharedValues::GRADLE_OUTPUT_JSON_OUTPUT_PATH` | The path to the most recent output.json file
+  `SharedValues::GRADLE_ALL_OUTPUT_JSON_OUTPUT_PATHS` | The path to the newly generated output.json files
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />
