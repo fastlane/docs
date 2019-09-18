@@ -539,6 +539,7 @@ Key | Description | Default
 ----|-------------|--------
   `type` | Define the profile type, can be appstore, adhoc, development, enterprise | `development`
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
+  `skip_provisioning_profiles` | Skip syncing provisioning profiles | `false`
   `app_identifier` | The bundle identifier(s) of your app (comma-separated) | [*](#parameters-legend-dynamic)
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)

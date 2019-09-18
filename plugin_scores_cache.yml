@@ -384,7 +384,7 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 962
+  :age_in_days: 1067
   :readme_score: 100
   :tests: 1
   :actions:
@@ -398,11 +398,11 @@ fastlane-plugin-aws_device_farm:
     category: 
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: 944377698eeeadd0ae90dd14abcee7eaa40a97ad4607cdea8ad4d74e9949f16d
-  :github_stars: 61
-  :github_subscribers: 5
+  :sha: 1ea3a66ecb887581ae5a7a390bb3462e6a5034645efc9a8406ff38a576b6771e
+  :github_stars: 65
+  :github_subscribers: 6
   :github_issues: 2
-  :github_forks: 21
+  :github_forks: 23
   :github_contributors: 0
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
@@ -956,9 +956,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 659
+  :age_in_days: 689
   :readme_score: 100
-  :tests: 216
+  :tests: 217
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1022,12 +1022,12 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines multiple json report files into one json report file
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: ab4e5e0a32fb59199c01aad7ef14232b980f816df66b253bcb1f1386ea7af5e4
-  :github_stars: 89
+  :sha: e372a660b210db46a3dfd5ae7a0be3cb0c166048ae361f0417946a05ec0b13ad
+  :github_stars: 96
   :github_subscribers: 10
-  :github_issues: 6
-  :github_forks: 21
-  :github_contributors: 5
+  :github_issues: 9
+  :github_forks: 23
+  :github_contributors: 6
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -1540,9 +1540,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 827
+  :age_in_days: 857
   :readme_score: 100
-  :tests: 50
+  :tests: 68
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload
@@ -1551,12 +1551,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 0e4542be682f86b3b8b3680a5b9567a9ad0c4ff0630e31761c250a8b49473a5a
-  :github_stars: 221
-  :github_subscribers: 25
-  :github_issues: 15
-  :github_forks: 50
-  :github_contributors: 22
+  :sha: 0c56171157e345f7a170d4b54c283f04f9dec4082865d9b9bd4063727b4e8214
+  :github_stars: 239
+  :github_subscribers: 26
+  :github_issues: 17
+  :github_forks: 54
+  :github_contributors: 24
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -1799,7 +1799,7 @@ fastlane-plugin-upload_to_onesky:
   :github_contributors: 1
 fastlane-plugin-rome:
   :initial_commit: 2017-03-27
-  :age_in_days: 744
+  :age_in_days: 899
   :readme_score: 100
   :tests: 2
   :actions:
@@ -1809,12 +1809,12 @@ fastlane-plugin-rome:
     description: An S3 cache tool for Carthage
     details: Rome is a tool that allows developers on Apple platforms to use Amazon's
       S3  and/or others as a shared cache for frameworks built with Carthage.
-  :sha: 4a3a8455b655ec10739ec972317cc15765b06c7387bd8a7f389dc116d9d82615
-  :github_stars: 12
+  :sha: 36575db10a6578a117585bcc22ce480f8341788249acb051d71f7058f4f874ae
+  :github_stars: 14
   :github_subscribers: 2
-  :github_issues: 2
+  :github_issues: 1
   :github_forks: 3
-  :github_contributors: 0
+  :github_contributors: 5
 fastlane-plugin-git_status:
   :initial_commit: 2016-12-07
   :age_in_days: 445
@@ -4318,9 +4318,9 @@ fastlane-plugin-run_tests_firebase_testlab:
   :github_forks: 8
   :github_contributors: 0
 fastlane-plugin-instabug_official:
-  :initial_commit: 2016-06-05
-  :age_in_days: 630
-  :readme_score: 100
+  :initial_commit: 2018-02-12
+  :age_in_days: 577
+  :readme_score: 50
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
@@ -4328,12 +4328,12 @@ fastlane-plugin-instabug_official:
     category: 
     description: 
     details: 
-  :sha: 44ec92598c9461827b760f091699668062dfc7ce9d1db997aeec346bf84a2cd0
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 2
+  :sha: 32601174997c925d45328ec4af1501d5472e0f6b37439b179e5a2ca1783304e4
+  :github_stars: 1
+  :github_subscribers: 3
+  :github_issues: 1
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
   :age_in_days: 342
@@ -4407,7 +4407,7 @@ fastlane-plugin-retry_tests:
   :github_contributors: 2
 fastlane-plugin-icon_versioning:
   :initial_commit: 2017-12-14
-  :age_in_days: 209
+  :age_in_days: 637
   :readme_score: 100
   :tests: 42
   :actions:
@@ -4417,11 +4417,11 @@ fastlane-plugin-icon_versioning:
     description: Overlay build information on top of your app icon. Based on original
       work by Krzysztof Zabłocki (https://github.com/krzysztofzablocki/Bootstrap).
     details: 
-  :sha: '028a56f1592d72ecf520f7d5b201c98b09f23a532269fe2fd93fff4c72698182'
-  :github_stars: 36
+  :sha: c5c7dab39f9412a8bb71430b2af3832da8d0336e9c10585695df4849d039c48e
+  :github_stars: 43
   :github_subscribers: 1
   :github_issues: 2
-  :github_forks: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-resize_screenshots:
   :initial_commit: 2018-03-04
@@ -4535,7 +4535,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 487
+  :age_in_days: 517
   :readme_score: 100
   :tests: 0
   :actions:
@@ -4551,20 +4551,22 @@ fastlane-plugin-flutter:
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_build
-    category: 
+    category: building
     description: Run "flutter build" to build a Flutter application
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_generate
     category: 
-    description: ".dart files from them"
+    description: According to package:intl, take $strings_file and generate ${strings_file.dirname}/arb/intl_messages.arb,
+      then take all files matching ${strings_file.dirname}/intl_*.arb, fix them and
+      generate .dart files from them
     details: 
-  :sha: 6e375c9da99544ae050d6589d8cdb734a628b2b5446a2991343ac846a4c8a9a9
+  :sha: 12b7af5e9bd3792896b81f1b2dccf0b8b2d640fb21a42f03a7e892106f943745
   :github_stars: 5
   :github_subscribers: 1
-  :github_issues: 2
+  :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
   :age_in_days: 15
@@ -5699,7 +5701,7 @@ fastlane-plugin-jira_issue_details:
   :github_contributors: 0
 fastlane-plugin-jira_release_notes:
   :initial_commit: 2018-12-04
-  :age_in_days: 7
+  :age_in_days: 282
   :readme_score: 100
   :tests: 11
   :actions:
@@ -5708,12 +5710,12 @@ fastlane-plugin-jira_release_notes:
     category: 
     description: Jira release notes
     details: Fetch release notes for Jira project for version
-  :sha: c063accb674799093d8c7dfcbbf8a7da17ec7f9cb1ffcc4eb1981ed1da8cc24b
-  :github_stars: 0
+  :sha: d224d8359a82267c1d1c2d5d430f597196b03fcaa5d8bb91a317f216d913a0a1
+  :github_stars: 3
   :github_subscribers: 6
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-bugtags:
   :initial_commit: 2018-11-06
   :age_in_days: 35
@@ -6294,7 +6296,7 @@ fastlane-plugin-fast_city:
   :github_contributors: 0
 fastlane-plugin-semantic_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 99
+  :age_in_days: 179
   :readme_score: 100
   :tests: 15
   :actions:
@@ -6312,12 +6314,12 @@ fastlane-plugin-semantic_release:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: e11e5b119bede982b091f6a27faec5c05950f9696cd145ba566005e336f46835
-  :github_stars: 14
+  :sha: 0750412e040d0836a22cc191b69a922e933f2de56b5c5298f7956ba63d7e558d
+  :github_stars: 21
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 5
-  :github_contributors: 2
+  :github_issues: 1
+  :github_forks: 6
+  :github_contributors: 0
 fastlane-plugin-android_emulator_kami:
   :initial_commit: 2018-01-24
   :age_in_days: 441
@@ -6354,7 +6356,7 @@ fastlane-plugin-bomb_emoji:
   :github_contributors: 0
 fastlane-plugin-xcconfig_actions:
   :initial_commit: 2019-02-21
-  :age_in_days: 173
+  :age_in_days: 203
   :readme_score: 100
   :tests: 52
   :actions:
@@ -6373,12 +6375,12 @@ fastlane-plugin-xcconfig_actions:
     category: linting
     description: Validate xcconfig file
     details: "\\n"
-  :sha: 946013baf5fdb2677be2e0d657f95c9b4c539bea63e81e21b79bc05d0c12c125
+  :sha: 9b9babb61947755233ab67468c4a9ad5c8f187afc321c0fee4214ff4def7ea45
   :github_stars: 6
   :github_subscribers: 1
   :github_issues: 2
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-forsis:
   :initial_commit: 2018-12-17
   :age_in_days: 114
@@ -7120,28 +7122,18 @@ fastlane-plugin-make:
   :github_contributors: 0
 fastlane-plugin-snapshot_test:
   :initial_commit: 2019-07-29
-  :age_in_days: 15
+  :age_in_days: 45
   :readme_score: 100
-  :tests: 1
+  :tests: 4
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: snapshot_test
-    category: 
-    description: Compare snapshots
-    details: 
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: screenshot
+    name: take_screenshot
     category: 
     description: Take screenshots
     details: Take screenshots
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: save_snapshot
-    category: 
-    description: Save Snapshot
-    details: Save Snapshot
-  :sha: 31faa5f88da33cfd37489e022f5981fa61203fa292a3d86a06cd91b3e4e7f352
+  :sha: 07b47151c2ce1b0107dab5c8d79f83fbb11055dd821041c6cc5de17b65e3524b
   :github_stars: 4
-  :github_subscribers: 2
+  :github_subscribers: 22
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
@@ -7164,7 +7156,7 @@ fastlane-plugin-xchtmlreport:
   :github_contributors: 0
 fastlane-plugin-create_merge_request:
   :initial_commit: 2019-08-01
-  :age_in_days: 12
+  :age_in_days: 42
   :readme_score: 100
   :tests: 0
   :actions:
@@ -7173,12 +7165,12 @@ fastlane-plugin-create_merge_request:
     category: source_control
     description: This will create a new marge request on GitLab
     details: 
-  :sha: b1600049b8212d11a92c3499076e7ca90195d1d251fa12e219dbfd4476e20074
+  :sha: 1eb84f5d7389c403b2d2f1abad4affa8168133caf61decc3ba7f8a6494e2e052
   :github_stars: 1
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 2
-  :github_contributors: 0
+  :github_contributors: 3
 fastlane-plugin-rm_derived_data:
   :initial_commit: 2019-08-03
   :age_in_days: 10
@@ -7295,6 +7287,214 @@ fastlane-plugin-gitlab_merge_request_participants:
     description: Get a list of merge request participants
     details: Get a list of merge request participants
   :sha: 1e3c2a53054d3d8dd8f8f58bd10488d3f45a8beeb5de181a6100001a8fec088e
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-accessibility_test:
+  :initial_commit: 2019-09-02
+  :age_in_days: 10
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: accessibility_test
+    category: 
+    description: Accessibility test with Firebase Test Lab for Android.
+    details: Accessibility test with Firebase Test Lab for Android.
+  :sha: 6adfb60ed4dd77393f1adf88990e9679d732fba7a8f149826ab46b63d0217928
+  :github_stars: 3
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-properties:
+  :initial_commit: 2019-08-12
+  :age_in_days: 31
+  :readme_score: 100
+  :tests: 5
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: increment_version_name_in_properties_file
+    category: 
+    description: Sets a value of a setting in .properties file.
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_properties_value
+    category: 
+    description: Sets a value of a setting in .properties file.
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_properties_value
+    category: 
+    description: Reads a value of a setting from .properties file.
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: increment_version_code_in_properties_file
+    category: 
+    description: Increase version code inside .properties file.
+    details: 
+  :sha: 0fdd6d2e91e5d100d7c0938edfeded90aa261ba0bfd819d507327cb5378bb178
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-analyze_ios_framework:
+  :initial_commit: 2019-08-03
+  :age_in_days: 40
+  :readme_score: 50
+  :tests: 5
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: analyze_ios_framework
+    category: 
+    description: analysis ios framework in buildout or pods dir
+    details: analysis ios framework in buildout or pods dir
+  :sha: 84530c2a728a4c68201a738cab01caa0036efbe0ec3081c2a2b482b651b7988b
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-cuttly_api:
+  :initial_commit: 2019-08-15
+  :age_in_days: 28
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: cuttly_api
+    category: 
+    description: fastlane plugin for cuttly.
+    details: 
+  :sha: a90e006b2103f88cc39386e4649fd4f05fdf4c574c25f722b1380eb9b941ea1d
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-huawei_appgallery:
+  :initial_commit: 2019-08-15
+  :age_in_days: 28
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: huawei_appgallery
+    category: 
+    description: Plugin to deploy an app to the Huawei AppGallery
+    details: Updates the release notes, uploads an APK and submits the new version
+      for review.
+  :sha: f8b589e547d1b4946668f5d4200909a479f56eb1abe5cf620431a1bc4119ade5
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-souyuz-ventaapps:
+  :initial_commit: 2016-05-11
+  :age_in_days: 1219
+  :readme_score: 50
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: app_version
+    category: 
+    description: Easily set or print app version with `app_version`
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: souyuz
+    category: 
+    description: Easily build and sign your app using `souyuz`
+    details: 
+  :sha: 6b9a5eda3aa11d511365874a8955ab67635687a695b8a7d0eef556638b29cb54
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 5
+fastlane-plugin-analyze_ios_linkmap:
+  :initial_commit: 2019-08-03
+  :age_in_days: 40
+  :readme_score: 50
+  :tests: 5
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: analyze_ios_linkmap
+    category: 
+    description: iOS parse linkmap.txt to ruby Hash or JSON
+    details: iOS parse linkmap.txt to ruby Hash
+  :sha: 5a6844e689ceb56e63a9b7d4ed44009e318bdeb16d79a513a0dbce551e01eb97
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-gitlab_branch_diff:
+  :initial_commit: 2019-09-03
+  :age_in_days: 9
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_branch_diff
+    category: 
+    description: gitlab compare two branch to get diffs
+    details: gitlab compare two branch to get diffs
+  :sha: 6896768cb74598d073752386cea8e178f5935e18ccdba8fddc40863301cd70f5
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-gitlab_get_max_version_branch:
+  :initial_commit: 2019-09-03
+  :age_in_days: 9
+  :readme_score: 50
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_get_max_version_branch
+    category: 
+    description: 'get a max version branch from a gitlab project, like: master_5.11.9'
+    details: 'get a max version branch from a gitlab project, like: master_5.11.9'
+  :sha: 4a6646b798a9d106e20760788b67c647fb2fe924c5994b071a89e68beae32ca7
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-latest_appcenter_build_number:
+  :initial_commit: 2019-09-04
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 9
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: latest_appcenter_build_number
+    category: 
+    description: Gets latest version number of the app from AppCenter
+    details: 
+  :sha: 5608b554761c4afe4f21fb05987dc70320285c70d8007f8d004794ef9e87ac82
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-appcenter_get_recent_release_version:
+  :initial_commit: 2019-09-06
+  :age_in_days: 6
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: appcenter_get_recent_release_version
+    category: 
+    description: Get recent release version from appcenter
+    details: get the latest build version from the app center
+  :sha: 65462f3517875f53ee354474aeddd3de63910e9e10f9b28e20c9d785e73ca776
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
