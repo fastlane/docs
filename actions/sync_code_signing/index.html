@@ -1212,7 +1212,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h6 id="easily-sync-your-certificates-and-profiles-across-your-team"><a name="user-content-easily-sync-your-certificates-and-profiles-across-your-team" href="#easily-sync-your-certificates-and-profiles-across-your-team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily sync your certificates and profiles across your team</h6>
 <p>A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.</p>
-<p><em>match</em> is the implementation of the <a href="https://codesigning.guide">https://codesigning.guide concept</a>. <em>match</em> creates all required certificates &amp; provisioning profiles and stores them in a separate git repository. Every team member with access to the repo can use those credentials for code signing. <em>match</em> also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams</p>
+<p><em>match</em> is the implementation of the <a href="https://codesigning.guide">codesigning.guide concept</a>. <em>match</em> creates all required certificates &amp; provisioning profiles and stores them in a separate git repository. Every team member with access to the repo can use those credentials for code signing. <em>match</em> also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams</p>
 <p><a href="https://docs.fastlane.tools/codesigning/getting-started/">More information on how to get started with codesigning</a></p>
 <hr />
 <p align="center">
@@ -1308,7 +1308,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>You'll be asked if you want to store your code signing identities inside a <strong>Git repo</strong>, or on <strong>Google Cloud</strong>.</p>
 <h4 id="git-storage"><a name="user-content-git-storage" href="#git-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage</h4>
 <p>Use Git Storage to store all code signing identities in a private git repo, owned and operated by you. The files will be encrypted using OpenSSL.</p>
-<p>First, enter the URL to your private (!) Git repo (You can create one for free on e.g. <a href="https://github.com/new">GitHub</a> or <a href="https://bitbucket.org/repo/create">BitBucket</a>). The URL you enter can be either a <code>https://</code> or a <code>git</code> URL. (If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise you may see an authentication error when you attempt to use match.) <code>fastlane match init</code> won't read or modify your certificates or profiles yet, and also won't validate your git URL.</p>
+<p>First, enter the URL to your private (!) Git repo (You can create one for free on e.g. <a href="https://github.com/new">GitHub</a> or <a href="https://bitbucket.org/repo/create">BitBucket</a>). The URL you enter can be either a <code>https://</code> or a <code>git</code> URL. <code>fastlane match init</code> won't read or modify your certificates or profiles yet, and also won't validate your git URL.</p>
 <p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
 <p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
 <pre><code class="ruby-skip-tests">git_url(&quot;https://github.com/fastlane/certificates&quot;)
@@ -1317,6 +1317,18 @@ app_identifier(&quot;tools.fastlane.app&quot;)
 username(&quot;user@fastlane.tools&quot;)
 </code></pre>
 
+<h5 id="git-storage-on-github"><a name="user-content-git-storage-on-github" href="#git-storage-on-github" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on GitHub</h5>
+<p>If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise, you may see an authentication error when you attempt to use match. Alternatively, you can set a basic authorization for <em>match</em>:</p>
+<p>Using parameter:</p>
+<pre><code>math(git_basic_authorization: '&lt;YOUR KEY&gt;')
+</code></pre>
+
+<p>Using environment variable:</p>
+<pre><code>ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = '&lt;YOUR KEY&gt;'
+match
+</code></pre>
+
+<p>You can find more information about GitHub basic authentication and personal token generation here: <a href="https://developer.github.com/v3/auth/#basic-authentication">https://developer.github.com/v3/auth/#basic-authentication</a></p>
 <h4 id="google-cloud-storage"><a name="user-content-google-cloud-storage" href="#google-cloud-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h4>
 <p>Use <a href="https://cloud.google.com/storage/">Google Cloud Storage</a> for a fully hosted solution for your code signing identities. Certificates are stored on Google Cloud, encrypted using Google managed keys. Everything will be stored on your Google account, inside a storage bucket you provide. You can also directly access the files using the web console.</p>
 <p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
@@ -1333,7 +1345,7 @@ match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 </code></pre>
 
 <h4 id="google-cloud-storage_1"><a name="user-content-google-cloud-storage_1" href="#google-cloud-storage_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h4>
-<p>If you use Google Cloud Storage, you don't need to do anything manually. Just use Google Cloud Storage, and the top level folder will be the team ID.</p>
+<p>If you use Google Cloud Storage, you don't need to do anything manually for multiple teams. Just use Google Cloud Storage, and the top level folder will be the team ID.</p>
 <h3 id="run"><a name="user-content-run" href="#run" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run</h3>
 <blockquote>
 <p>Before running <em>match</em> for the first time, you should consider clearing your existing profiles and certificates using the <a href="#nuke">match nuke command</a>.</p>
@@ -1395,7 +1407,7 @@ git_branch(&quot;master&quot;)
 <li>Continuous integration jobs. These will authenticate to your Google Cloud project via a service account, and use a <code>gc_keys.json</code> file as credentials.</li>
 <li>Developers on a local workstation. In this case, you should choose whether everyone on your team will create their own <code>gc_keys.json</code> file, or whether you want to manage access to the bucket directly using your developers' Google accounts.</li>
 </ol>
-<p>When running <code>fastlane match init</code> the first time, the setup process will give you the option to create your <code>gc_keys.json</code> file. This file contains the auth credentials needed to access your Google Cloud storage bucket. Make sure to keep that file secret and never add it to version control. We recommend adding <code>gc_keys.json</code> to your <code>.gitignore</code></p>
+<p>When running <code>fastlane match init</code> the first time, the setup process will give you the option to create your <code>gc_keys.json</code> file. This file contains the authentication credentials needed to access your Google Cloud storage bucket. Make sure to keep that file secret and never add it to version control. We recommend adding <code>gc_keys.json</code> to your <code>.gitignore</code></p>
 <h5 id="managing-developer-access-via-keys"><a name="user-content-managing-developer-access-via-keys" href="#managing-developer-access-via-keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing developer access via keys</h5>
 <p>If you want to manage developer access to your certificates via authentication keys, every developer should create their own <code>gc_keys.json</code> and add the file to all their work machines. This will give the admin full control over who has read/write access to the given Storage bucket. At the same time it allows your team to revoke a single key if a file gets compromised.</p>
 <h5 id="managing-developer-acess-via-google-accounts"><a name="user-content-managing-developer-acess-via-google-accounts" href="#managing-developer-acess-via-google-accounts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing developer acess via Google accounts</h5>
@@ -1631,6 +1643,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>generate_apple_certs</code></td>
+<td>Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
 <td><code>skip_provisioning_profiles</code></td>
 <td>Skip syncing provisioning profiles</td>
 <td><code>false</code></td>
@@ -1689,6 +1706,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><code>clone_branch_directly</code></td>
 <td>Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>git_basic_authorization</code></td>
+<td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64</td>
+<td></td>
 </tr>
 <tr>
 <td><code>google_cloud_bucket_name</code></td>

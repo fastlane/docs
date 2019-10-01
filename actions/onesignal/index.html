@@ -1205,9 +1205,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="onesignal"><a name="user-content-onesignal" href="#onesignal" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>onesignal</h1>
-<p>Create a new <a href="https://onesignal.com/">OneSignal</a> application</p>
+<p>Create or update a new <a href="https://onesignal.com/">OneSignal</a> application</p>
 <blockquote>
-<p>You can use this action to automatically create a OneSignal application. You can also upload a <code>.p12</code> with password, a GCM key, or both.</p>
+<p>You can use this action to automatically create or update a OneSignal application. You can also upload a <code>.p12</code> with password, a GCM key, or both.</p>
 </blockquote>
 <table>
 <thead>
@@ -1227,10 +1227,22 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">onesignal(
   auth_token: &quot;Your OneSignal Auth Token&quot;,
   app_name: &quot;Name for OneSignal App&quot;,
+  android_token: &quot;Your Android GCM key (optional)&quot;,
+  android_gcm_sender_id: &quot;Your Android GCM Sender ID (optional)&quot;,
+  apns_p12: &quot;Path to Apple .p12 file (optional)&quot;,
+  apns_p12_password: &quot;Password for .p12 file (optional)&quot;,
+  apns_env: &quot;production/sandbox (defaults to production)&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">onesignal(
+  app_id: &quot;Your OneSignal App ID&quot;,
+  auth_token: &quot;Your OneSignal Auth Token&quot;,
+  app_name: &quot;New Name for OneSignal App&quot;,
   android_token: &quot;Your Android GCM key (optional)&quot;,
   android_gcm_sender_id: &quot;Your Android GCM Sender ID (optional)&quot;,
   apns_p12: &quot;Path to Apple .p12 file (optional)&quot;,
@@ -1250,13 +1262,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
+<td><code>app_id</code></td>
+<td>OneSignal App ID. Setting this updates an existing app</td>
+<td></td>
+</tr>
+<tr>
 <td><code>auth_token</code></td>
 <td>OneSignal Authorization Key</td>
 <td></td>
 </tr>
 <tr>
 <td><code>app_name</code></td>
-<td>OneSignal App Name</td>
+<td>OneSignal App Name. This is required when creating an app (in other words, when <code>:app_id</code> is not set, and optional when updating an app</td>
 <td></td>
 </tr>
 <tr>
@@ -1301,11 +1318,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>SharedValues::ONE_SIGNAL_APP_ID</code></td>
-<td>The OneSignal app ID of the newly created app</td>
+<td>The app ID of the newly created or updated app</td>
 </tr>
 <tr>
 <td><code>SharedValues::ONE_SIGNAL_APP_AUTH_KEY</code></td>
-<td>The auth token for the newly created OneSignal app</td>
+<td>The auth token for the newly created or updated app</td>
 </tr>
 </tbody>
 </table>
