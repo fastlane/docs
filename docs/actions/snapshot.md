@@ -426,6 +426,7 @@ Key | Description | Default
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `erase_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `localize_simulator` | Enabling this option will configure the Simulator's system language | `false`
+  `dark_mode` | Enabling this option will configure the Simulator to be in dark mode (false for light, true for dark) | 
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `add_photos` | A list of photos that should be added to the simulator before running the application | 
   `add_videos` | A list of videos that should be added to the simulator before running the application | 

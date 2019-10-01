@@ -228,9 +228,9 @@ fastlane-plugin-changelog:
   :github_contributors: 7
 fastlane-plugin-tpa:
   :initial_commit: 2016-06-17
-  :age_in_days: 1118
+  :age_in_days: 1201
   :readme_score: 100
-  :tests: 33
+  :tests: 34
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: upload_to_tpa
@@ -242,7 +242,7 @@ fastlane-plugin-tpa:
     category: misc
     description: Upload dsym files downloaded from App Store Connect directly to TPA
     details: " "
-  :sha: 016c856592cb3e640f883fd8990dcedea280231b77c039b0dfd6da13dd91993b
+  :sha: cec3dd667a16294f23ae5582e45f30e4e16ac33fd3d3bf842edbabf69c98a8a1
   :github_stars: 9
   :github_subscribers: 5
   :github_issues: 1
@@ -384,7 +384,7 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 1067
+  :age_in_days: 1086
   :readme_score: 100
   :tests: 1
   :actions:
@@ -398,11 +398,11 @@ fastlane-plugin-aws_device_farm:
     category: 
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: 1ea3a66ecb887581ae5a7a390bb3462e6a5034645efc9a8406ff38a576b6771e
+  :sha: 6cbf3aefa14d2674c0303cf3909457e45b860315dcb4b473ec3e39df7aa123f8
   :github_stars: 65
-  :github_subscribers: 6
+  :github_subscribers: 5
   :github_issues: 2
-  :github_forks: 23
+  :github_forks: 22
   :github_contributors: 0
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
@@ -633,7 +633,7 @@ fastlane-plugin-yarn:
   :github_contributors: 0
 fastlane-plugin-applivery:
   :initial_commit: 2016-07-26
-  :age_in_days: 1063
+  :age_in_days: 1162
   :readme_score: 100
   :tests: 1
   :actions:
@@ -642,12 +642,12 @@ fastlane-plugin-applivery:
     category: beta
     description: Upload new iOS or Android build to Applivery
     details: 
-  :sha: 535788191e6396f2bc59377e89bf0107d523be3306122688e135abb4485801e4
+  :sha: 4862f32417ae4a8687e931ee5ad3668c873c172a7438ae70acd09d74688295aa
   :github_stars: 12
-  :github_subscribers: 2
+  :github_subscribers: 3
   :github_issues: 0
   :github_forks: 4
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-xcake:
   :initial_commit: 2015-10-10
   :age_in_days: 869
@@ -956,9 +956,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 689
+  :age_in_days: 708
   :readme_score: 100
-  :tests: 217
+  :tests: 258
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1022,10 +1022,10 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines multiple json report files into one json report file
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: e372a660b210db46a3dfd5ae7a0be3cb0c166048ae361f0417946a05ec0b13ad
-  :github_stars: 96
+  :sha: f5141e9f6f3078f1bb516f153d93680b73c3079ebe5c4d79ced8120efc7d824f
+  :github_stars: 103
   :github_subscribers: 10
-  :github_issues: 9
+  :github_issues: 7
   :github_forks: 23
   :github_contributors: 6
 fastlane-plugin-goodify_info_plist:
@@ -7071,7 +7071,7 @@ fastlane-plugin-update_device_name:
   :github_contributors: 2
 fastlane-plugin-upload_dsym:
   :initial_commit: 2019-07-10
-  :age_in_days: 9
+  :age_in_days: 83
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7079,16 +7079,16 @@ fastlane-plugin-upload_dsym:
     name: upload_dsym
     category: 
     description: upload dsym to your specify server
-    details: https://bugly.qq.com/v2/sdk?id=<your_bugly_id>
-  :sha: 001c72a08c227473b9f2e0b66e320c673356286dd3604b1e8b835f52bae49f1a
+    details: 
+  :sha: d9daa9634ed9cb34fe1ab93eb5a98f5b29d639514fbaf0723c37a7671f4b5b75
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-wechat:
   :initial_commit: 2019-08-01
-  :age_in_days: 12
+  :age_in_days: 61
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7097,7 +7097,7 @@ fastlane-plugin-wechat:
     category: 
     description: this is a wechat api wrapper
     details: send message via enterprice wechat server api
-  :sha: 3bb3736ee5835faf8550738914694382064ca4a14787c46e608fe73f971bfabc
+  :sha: 4e4d90c6b21ab0befcbf49186e534ab99eb4ee62e5eb44aa2d4efa3697cb7668
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -7122,7 +7122,7 @@ fastlane-plugin-make:
   :github_contributors: 0
 fastlane-plugin-snapshot_test:
   :initial_commit: 2019-07-29
-  :age_in_days: 45
+  :age_in_days: 64
   :readme_score: 100
   :tests: 4
   :actions:
@@ -7131,12 +7131,12 @@ fastlane-plugin-snapshot_test:
     category: 
     description: Take screenshots
     details: Take screenshots
-  :sha: 07b47151c2ce1b0107dab5c8d79f83fbb11055dd821041c6cc5de17b65e3524b
+  :sha: 59801d5f75a5c44b5cb21a29da471ea37513e076e658091c6623be456869cc67
   :github_stars: 4
-  :github_subscribers: 22
+  :github_subscribers: 21
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 3
 fastlane-plugin-xchtmlreport:
   :initial_commit: 2019-08-09
   :age_in_days: 4
@@ -7294,7 +7294,7 @@ fastlane-plugin-gitlab_merge_request_participants:
   :github_contributors: 0
 fastlane-plugin-accessibility_test:
   :initial_commit: 2019-09-02
-  :age_in_days: 10
+  :age_in_days: 29
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7303,7 +7303,7 @@ fastlane-plugin-accessibility_test:
     category: 
     description: Accessibility test with Firebase Test Lab for Android.
     details: Accessibility test with Firebase Test Lab for Android.
-  :sha: 6adfb60ed4dd77393f1adf88990e9679d732fba7a8f149826ab46b63d0217928
+  :sha: 68f606be85c2c1bb93a28f94cca859b821e2a1263c1f3bf808233212baee689e
   :github_stars: 3
   :github_subscribers: 2
   :github_issues: 0
@@ -7417,16 +7417,16 @@ fastlane-plugin-souyuz-ventaapps:
   :github_contributors: 5
 fastlane-plugin-analyze_ios_linkmap:
   :initial_commit: 2019-08-03
-  :age_in_days: 40
+  :age_in_days: 59
   :readme_score: 50
-  :tests: 5
+  :tests: 6
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: analyze_ios_linkmap
     category: 
     description: iOS parse linkmap.txt to ruby Hash or JSON
     details: iOS parse linkmap.txt to ruby Hash
-  :sha: 5a6844e689ceb56e63a9b7d4ed44009e318bdeb16d79a513a0dbce551e01eb97
+  :sha: a77d2f6fe13b6c588c11e1c14494dc7f33e60fe28c4bf35f96de1444071a7211
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -7468,18 +7468,18 @@ fastlane-plugin-gitlab_get_max_version_branch:
   :github_contributors: 0
 fastlane-plugin-latest_appcenter_build_number:
   :initial_commit: 2019-09-04
-  :age_in_days: 8
+  :age_in_days: 27
   :readme_score: 100
-  :tests: 9
+  :tests: 11
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: latest_appcenter_build_number
     category: 
     description: Gets latest version number of the app from AppCenter
     details: 
-  :sha: 5608b554761c4afe4f21fb05987dc70320285c70d8007f8d004794ef9e87ac82
-  :github_stars: 1
-  :github_subscribers: 1
+  :sha: f17cc42d0977459649b4d0d3ddd0bafc45837f58731c3b753c8bd7d69f0231c6
+  :github_stars: 2
+  :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
@@ -7495,6 +7495,120 @@ fastlane-plugin-appcenter_get_recent_release_version:
     description: Get recent release version from appcenter
     details: get the latest build version from the app center
   :sha: 65462f3517875f53ee354474aeddd3de63910e9e10f9b28e20c9d785e73ca776
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-swiftlint_codequality:
+  :initial_commit: 2019-09-23
+  :age_in_days: 8
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: swiftlint_codequality
+    category: 
+    description: Converts SwiftLint reports into GitLab support CodeQuality reports
+    details: Converts SwiftLint reports into GitLab support CodeQuality reports
+  :sha: f06ac35ad07ac2227421adc65407a58e2a2c045b0b741a0b52e573d43585c5c9
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-appmetrica:
+  :initial_commit: 2019-09-25
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_symbols_to_appmetrica
+    category: 
+    description: Upload dSYM symbolication files to AppMetrica
+    details: This plugin allows uploading dSYM symbolication files to AppMetrica.
+      It should be applied if you use Bitcode
+  :sha: cd9aabc07f250759813089759fa671b3d14c046f1a8d148e2c5e6fc42d563204
+  :github_stars: 3
+  :github_subscribers: 9
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-git_add_tag:
+  :initial_commit: 2019-09-15
+  :age_in_days: 16
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: git_add_tag
+    category: source_control
+    description: git add tag wrapper
+    details: git add tag wrapper
+  :sha: 07c2c39de7896398c3b137d1af7c3ba44f3d9286e299870afad1dd6e1cc02670
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-android_versioning_kts:
+  :initial_commit: 2019-09-17
+  :age_in_days: 14
+  :readme_score: 50
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_value_from_build
+    category: 
+    description: 
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_version_name
+    category: 
+    description: Get the version name of your project
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_version_code
+    category: 
+    description: Get the version code of your project
+    details: " "
+  :sha: 0eb7f6ef4a4e331a87fae3f264a70a763632fd08104ffd40953927aa354e12b8
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-ios_dependency_parser:
+  :initial_commit: 2019-09-24
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: parse_pod_dependencies
+    category: 
+    description: Analyzes 'pod outdated' results and structures it for further usage.
+    details: This plugin will run 'pod outdated' and will parse its results into an
+      array of Pod(s) which could later be used in your script
+  :sha: 5587478877412c4bee41d9f2eabaa8295a6b6fe62f007445807393daf66bd436
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-set_sonar_properties:
+  :initial_commit: 2019-08-01
+  :age_in_days: 61
+  :readme_score: 100
+  :tests: 4
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_sonar_properties
+    category: 
+    description: Load and edit sonar properties file
+    details: Load and edit key and value pairs of sonar-project.properties files
+  :sha: c2fb5f7d7198a45024ea34aa32bd5fffc4d23200481bd66c503c28e0a7e1fb9a
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
