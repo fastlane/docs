@@ -53,7 +53,7 @@ fastlane-plugin-versioning:
   :github_contributors: 5
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 1116
+  :age_in_days: 1216
   :readme_score: 100
   :tests: 5
   :actions:
@@ -62,12 +62,12 @@ fastlane-plugin-aws_s3:
     category: 
     description: Generates a plist file and uploads all to AWS S3
     details: 
-  :sha: caa89a44de83c6347821960aa3978d88a44c861c3789edb33fb812b8704e8637
-  :github_stars: 86
+  :sha: 93d4e5eec6ee639c0d733dd32fb8bdd862ef3a52e3a579d6ceb1167b5989fa31
+  :github_stars: 91
   :github_subscribers: 5
-  :github_issues: 16
+  :github_issues: 17
   :github_forks: 39
-  :github_contributors: 16
+  :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
   :age_in_days: 848
@@ -6591,7 +6591,7 @@ fastlane-plugin-line_message:
   :github_contributors: 0
 fastlane-plugin-icon_banner:
   :initial_commit: 2019-04-20
-  :age_in_days: 13
+  :age_in_days: 165
   :readme_score: 100
   :tests: 2
   :actions:
@@ -6606,7 +6606,7 @@ fastlane-plugin-icon_banner:
     category: 
     description: Adds custom nice-looking banners over your mobile app icons
     details: 
-  :sha: e6d203b7de483d6095e1f46fdba5a10e07cda0722b35d9b409670b45ac89e8f5
+  :sha: 8e0515514b5866255837aa139cc844e7bce66b974de6ae178cf8f520248a704e
   :github_stars: 4
   :github_subscribers: 0
   :github_issues: 0
