@@ -43,14 +43,15 @@ cocoapods(
 Key | Description | Default
 ----|-------------|--------
   `repo_update` | Add `--repo-update` flag to `pod install` command | `false`
+  `clean_install` | Execute a full pod installation ignoring the content of the project cache | `false`
   `silent` | Execute command without logging output | `false`
   `verbose` | Show more debugging information | `false`
   `ansi` | Show output with ANSI codes | `true`
   `use_bundle_exec` | Use bundle exec when there is a Gemfile presented | `true`
-  `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file | 
-  `error_callback` | A callback invoked with the command output if there is a non-zero exit status | 
+  `podfile` | Explicitly specify the path to the Cocoapods' Podfile. You can either set it to the Podfile's path or to the folder containing the Podfile file |
+  `error_callback` | A callback invoked with the command output if there is a non-zero exit status |
   `try_repo_update_on_error` | Retry with --repo-update if action was finished with error | `false`
-  `clean` | **DEPRECATED!** (Option removed from cocoapods) Remove SCM directories | `true`
+  `clean` | **DEPRECATED!** (Option renamed as clean_install) Remove SCM directories | `true`
   `integrate` | **DEPRECATED!** (Option removed from cocoapods) Integrate the Pods libraries into the Xcode project(s) | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
