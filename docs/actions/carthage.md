@@ -36,6 +36,7 @@ carthage(
   use_ssh: false,   # Use SSH for downloading GitHub repositories.
   use_submodules: false,      # Add dependencies as Git submodules.
   use_binaries: true,         # Check out dependency repositories even when prebuilt frameworks exist
+  no_checkout: false,         # When bootstrapping Carthage do not checkout
   no_build: false,  # When bootstrapping Carthage do not build
   no_skip_current: false,     # Don't skip building the current project (only for frameworks)
   verbose: false,   # Print xcodebuild output inline
@@ -61,6 +62,7 @@ Key | Description | Default
   `use_ssh` | Use SSH for downloading GitHub repositories | 
   `use_submodules` | Add dependencies as Git submodules | 
   `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist | 
+  `no_checkout` | When bootstrapping Carthage do not checkout | 
   `no_build` | When bootstrapping Carthage do not build | 
   `no_skip_current` | Don't skip building the Carthage project (in addition to its dependencies) | 
   `derived_data` | Use derived data folder at path | 
