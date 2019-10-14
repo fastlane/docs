@@ -250,14 +250,19 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 716
+  :age_in_days: 1230
   :readme_score: 100
-  :tests: 19
+  :tests: 34
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_dsym
     category: 
     description: Upload dSYM symbolication files to Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_set_commits
+    category: 
+    description: Set commits of a release
     details: " "
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_sourcemap
@@ -275,16 +280,21 @@ fastlane-plugin-sentry:
     description: Upload files to a release of a project on Sentry
     details: " "
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_proguard
+    category: 
+    description: Upload mapping to a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_create_release
     category: 
     description: Create new releases for a project on Sentry
     details: " "
-  :sha: 41ea5691f6bbde7bfc18d62e2cad11578afbefca97c088ead6443a432b7e3cba
-  :github_stars: 22
-  :github_subscribers: 4
-  :github_issues: 3
-  :github_forks: 12
-  :github_contributors: 0
+  :sha: 5b4864feebaec3423f0456b1a40b1ace94679bbd1a1ab45ac46cf3ad8dc3bf16
+  :github_stars: 39
+  :github_subscribers: 8
+  :github_issues: 8
+  :github_forks: 24
+  :github_contributors: 10
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -956,9 +966,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 708
+  :age_in_days: 721
   :readme_score: 100
-  :tests: 258
+  :tests: 260
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1022,11 +1032,11 @@ fastlane-plugin-test_center:
     category: testing
     description: Combines multiple json report files into one json report file
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: f5141e9f6f3078f1bb516f153d93680b73c3079ebe5c4d79ced8120efc7d824f
-  :github_stars: 103
-  :github_subscribers: 10
-  :github_issues: 7
-  :github_forks: 23
+  :sha: de18c501ddc3d1b95591798583e03379285de910b0a8ed3814deaa9f5c29507b
+  :github_stars: 108
+  :github_subscribers: 9
+  :github_issues: 8
+  :github_forks: 26
   :github_contributors: 6
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -1540,10 +1550,17 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 857
+  :age_in_days: 889
   :readme_score: 100
-  :tests: 68
+  :tests: 81
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: appcenter_fetch_devices
+    category: 
+    description: Fetches a list of devices from App Center to distribute an iOS app
+      to
+    details: 'By default, only the Collaborators group will be included, use `destination:
+      ''*''` to match all groups.'
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload
     category: 
@@ -1551,12 +1568,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 0c56171157e345f7a170d4b54c283f04f9dec4082865d9b9bd4063727b4e8214
-  :github_stars: 239
-  :github_subscribers: 26
-  :github_issues: 17
-  :github_forks: 54
-  :github_contributors: 24
+  :sha: 2bc0241cc8ac0b4657ab26880237b12f5c4a703a104ae7fc961694b3d2ccbf57
+  :github_stars: 253
+  :github_subscribers: 22
+  :github_issues: 11
+  :github_forks: 60
+  :github_contributors: 26
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -4535,7 +4552,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 517
+  :age_in_days: 549
   :readme_score: 100
   :tests: 0
   :actions:
@@ -4561,12 +4578,12 @@ fastlane-plugin-flutter:
       then take all files matching ${strings_file.dirname}/intl_*.arb, fix them and
       generate .dart files from them
     details: 
-  :sha: 12b7af5e9bd3792896b81f1b2dccf0b8b2d640fb21a42f03a7e892106f943745
+  :sha: e11b8a7b26f127d6a888091c0ffc9d9212a406bd0276bc366dbb6733c74aec9c
   :github_stars: 5
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_issues: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
   :age_in_days: 15
@@ -6045,7 +6062,7 @@ fastlane-plugin-transifex_tool:
   :github_contributors: 0
 fastlane-plugin-google_sheet_localize:
   :initial_commit: 2019-01-31
-  :age_in_days: 144
+  :age_in_days: 256
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6055,8 +6072,8 @@ fastlane-plugin-google_sheet_localize:
     description: Creates .strings files for iOS and strings.xml files for Android
     details: Creates .strings files for iOS and strings.xml files for Android. The
       localization is mananged on a google sheet.
-  :sha: 49c3d20024943bb48ca8c0a95996775a65c3970c2d5769e1ce1b3334f8599a80
-  :github_stars: 6
+  :sha: 724ecc15a975316c6947dab2a4ff5407c4906937aa8b7912eeae8804e992b9a6
+  :github_stars: 8
   :github_subscribers: 5
   :github_issues: 1
   :github_forks: 0
@@ -6496,7 +6513,7 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 97
+  :age_in_days: 193
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6507,8 +6524,8 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       You can also use it to first download your latest dSym files from AppStore Connect
       if you use Bitcode
-  :sha: 5eec185d43ae63374811f24a489b6e177495ee04934ad5abef156baec267f9cd
-  :github_stars: 1
+  :sha: c6d4aafb6a83b6d57baf5caa4332877df38b5ccb7f0d4c9e952ca4f3cadbd0f5
+  :github_stars: 2
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
@@ -7377,7 +7394,7 @@ fastlane-plugin-cuttly_api:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery:
   :initial_commit: 2019-08-15
-  :age_in_days: 28
+  :age_in_days: 60
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7387,12 +7404,12 @@ fastlane-plugin-huawei_appgallery:
     description: Plugin to deploy an app to the Huawei AppGallery
     details: Updates the release notes, uploads an APK and submits the new version
       for review.
-  :sha: f8b589e547d1b4946668f5d4200909a479f56eb1abe5cf620431a1bc4119ade5
-  :github_stars: 0
-  :github_subscribers: 1
+  :sha: 4043e9291acbd89bf2fc3154eb5944db551d180c629b22ebaebccd6571e1ae60
+  :github_stars: 2
+  :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-souyuz-ventaapps:
   :initial_commit: 2016-05-11
   :age_in_days: 1219
@@ -7609,6 +7626,62 @@ fastlane-plugin-set_sonar_properties:
     description: Load and edit sonar properties file
     details: Load and edit key and value pairs of sonar-project.properties files
   :sha: c2fb5f7d7198a45024ea34aa32bd5fffc4d23200481bd66c503c28e0a7e1fb9a
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-firebase_app_distribution:
+  :initial_commit: 2019-08-01
+  :age_in_days: 74
+  :readme_score: 100
+  :tests: 15
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_app_distribution
+    category: 
+    description: Release your beta builds with Firebase App Distribution
+    details: Release your beta builds with Firebase App Distribution
+  :sha: bb4ab3d4a4d49ec7cf80eebd1b406eb4df90d587ad2bfef5bd6aa2602abe8087
+  :github_stars: 10
+  :github_subscribers: 6
+  :github_issues: 2
+  :github_forks: 0
+  :github_contributors: 4
+fastlane-plugin-secrets:
+  :initial_commit: 2019-09-23
+  :age_in_days: 21
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: decrypt_secrets
+    category: 
+    description: Securely store secrets in source code
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: encrypt_secrets
+    category: 
+    description: Securely store secrets in source code
+    details: 
+  :sha: a5d7d1d0809cda78f86495fd8ede11a84a3b44ce03b547035263070852ffb507
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-goyuyun:
+  :initial_commit: 2019-10-14
+  :age_in_days: 0
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: goyuyun
+    category: 
+    description: 一键发布至买好云
+    details: 将您的App发布至买好云
+  :sha: ae1bec61acc19093d9b2f3fca35d9ef7e50d210ab52de42a7aa45d62c3ddd7a3
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
