@@ -75,6 +75,12 @@ gem "fastlane-plugin-xcversion", ">= 1.0"
 
 [More information about a Gemfile](http://bundler.io/gemfile.html)
 
+### Run with plugins
+
+Run _fastlane_ using `bundle exec fastlane [lane]` to make sure your plugins are properly loaded.
+
+This is required when you use plugins from a local path or a git remote.
+
 ## Install plugins on another machine
 
 To make sure all plugins are installed on the local machine, run
