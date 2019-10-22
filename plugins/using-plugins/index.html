@@ -1286,6 +1286,9 @@ gem &quot;fastlane-plugin-xcversion&quot;, &quot;&gt;= 1.0&quot;
 </code></pre>
 
 <p><a href="http://bundler.io/gemfile.html">More information about a Gemfile</a></p>
+<h3 id="run-with-plugins"><a name="user-content-run-with-plugins" href="#run-with-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run with plugins</h3>
+<p>Run <em>fastlane</em> using <code>bundle exec fastlane [lane]</code> to make sure your plugins are properly loaded.</p>
+<p>This is required when you use plugins from a local path or a git remote. If you have multiple versions of the same plugin loaded, you may not be using the one you specified in your <code>Pluginfile</code> or <code>Gemfile</code>.</p>
 <h2 id="install-plugins-on-another-machine"><a name="user-content-install-plugins-on-another-machine" href="#install-plugins-on-another-machine" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Install plugins on another machine</h2>
 <p>To make sure all plugins are installed on the local machine, run</p>
 <pre><code class="no-highlight">fastlane install_plugins
