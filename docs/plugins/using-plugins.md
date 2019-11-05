@@ -89,6 +89,14 @@ To make sure all plugins are installed on the local machine, run
 fastlane install_plugins
 ```
 
+## Update all plugins
+
+To make sure all plugins are updated to the latest version, run
+
+```no-highlight
+fastlane update_plugins
+```
+
 ## Remove a plugin
 
 Open your `fastlane/Pluginfile` and remove the line that looks like this
