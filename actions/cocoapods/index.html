@@ -1276,6 +1276,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>clean_install</code></td>
+<td>Execute a full pod installation ignoring the content of the project cache</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>silent</code></td>
 <td>Execute command without logging output</td>
 <td><code>false</code></td>
@@ -1311,8 +1316,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>deployment</code></td>
+<td>Disallow any changes to the Podfile or the Podfile.lock during installation</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>clean</code></td>
-<td><strong>DEPRECATED!</strong> (Option removed from cocoapods) Remove SCM directories</td>
+<td><strong>DEPRECATED!</strong> (Option renamed as clean_install) Remove SCM directories</td>
 <td><code>true</code></td>
 </tr>
 <tr>

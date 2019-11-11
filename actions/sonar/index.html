@@ -1254,12 +1254,23 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">sonar(
   project_key: &quot;name.gretzki.awesomeApp&quot;,
   project_version: &quot;1.0&quot;,
   project_name: &quot;iOS - AwesomeApp&quot;,
   sources_path: File.expand_path(&quot;../AwesomeApp&quot;)
+)
+</code></pre>
+
+<pre><code class="ruby">sonar(
+  project_key: &quot;name.gretzki.awesomeApp&quot;,
+  project_version: &quot;1.0&quot;,
+  project_name: &quot;iOS - AwesomeApp&quot;,
+  sources_path: File.expand_path(&quot;../AwesomeApp&quot;),
+  sonar_organization: &quot;myOrg&quot;,
+  sonar_login: &quot;123456abcdef&quot;,
+  sonar_url: &quot;https://sonarcloud.io&quot;
 )
 </code></pre>
 
@@ -1321,6 +1332,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>sonar_url</code></td>
 <td>Pass the url of the Sonar server</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sonar_organization</code></td>
+<td>Key of the organization on SonarCloud</td>
 <td></td>
 </tr>
 <tr>

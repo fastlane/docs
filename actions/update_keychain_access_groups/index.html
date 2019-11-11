@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>update_fastlane - fastlane docs</title>
+  <title>update_keychain_access_groups - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "update_fastlane";
-    var mkdocs_page_input_path = "actions/update_fastlane.md";
-    var mkdocs_page_url = "/actions/update_fastlane/";
+    var mkdocs_page_name = "update_keychain_access_groups";
+    var mkdocs_page_input_path = "actions/update_keychain_access_groups.md";
+    var mkdocs_page_url = "/actions/update_keychain_access_groups/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1189,14 +1189,14 @@
         
       
     
-    <li>update_fastlane</li>
+    <li>update_keychain_access_groups</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/update_fastlane.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/update_keychain_access_groups.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1224,44 +1224,37 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_fastlane.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_keychain_access_groups.rb
 -->
 
-<h1 id="update_fastlane"><a name="user-content-update_fastlane" href="#update_fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_fastlane</h1>
-<p>Makes sure fastlane-tools are up-to-date when running fastlane</p>
+<h1 id="update_keychain_access_groups"><a name="user-content-update_keychain_access_groups" href="#update_keychain_access_groups" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_keychain_access_groups</h1>
+<p>This action changes the keychain access groups in the entitlements file</p>
 <blockquote>
-<p>This action will update fastlane to the most recent version - major version updates will not be performed automatically, as they might include breaking changes. If an update was performed, fastlane will be restarted before the run continues.<br><br>If you are using rbenv or rvm, everything should be good to go. However, if you are using the system's default ruby, some additional setup is needed for this action to work correctly. In short, fastlane needs to be able to access your gem library without running in <code>sudo</code> mode.<br><br>The simplest possible fix for this is putting the following lines into your <code>~/.bashrc</code> or <code>~/.zshrc</code> file:</p>
-</blockquote>
-<pre><code class="bash">export GEM_HOME=~/.gems
-export PATH=$PATH:~/.gems/bin
-</code></pre>
-
-<blockquote>
-<p>After the above changes, restart your terminal, then run <code>mkdir $GEM_HOME</code> to create the new gem directory. After this, you're good to go!<br><br>Recommended usage of the <code>update_fastlane</code> action is at the top inside of the <code>before_all</code> block, before running any other action.</p>
+<p>Updates the Keychain Group Access Groups in the given Entitlements file, so you can have keychain access groups for the app store build and keychain access groups for an enterprise build.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>update_fastlane</th>
+<th>update_keychain_access_groups</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, android, mac</td>
+<td>ios</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@milch, @KrauseFx</td>
+<td>@yutae</td>
 </tr>
 </tbody>
 </table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">before_all do
-  update_fastlane
-  # ...
-end
+<pre><code class="ruby">update_keychain_access_groups(
+  entitlements_file: &quot;/path/to/entitlements_file.entitlements&quot;,
+  identifiers: [&quot;your.keychain.access.groups.identifiers&quot;]
+)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1275,34 +1268,52 @@ end
 </thead>
 <tbody>
 <tr>
-<td><code>no_update</code></td>
-<td>Don't update during this run. This is used internally</td>
-<td><code>false</code></td>
+<td><code>entitlements_file</code></td>
+<td>The path to the entitlement file which contains the keychain access groups</td>
+<td></td>
 </tr>
 <tr>
-<td><code>nightly</code></td>
-<td><strong>DEPRECATED!</strong> Nightly builds are no longer being made available - Opt-in to install and use nightly fastlane builds</td>
-<td><code>false</code></td>
+<td><code>identifiers</code></td>
+<td>An Array of unique identifiers for the keychain access groups. Eg. ['your.keychain.access.groups.identifiers']</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
+<h2 id="lane-variables"><a name="user-content-lane-variables" href="#lane-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Variables</h2>
+<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>update_keychain_access_groups</code> action generates the following Lane Variables:</p>
+<table>
+<thead>
+<tr>
+<th>SharedValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SharedValues::KEYCHAIN_ACCESS_GROUPS</code></td>
+<td>The new Keychain Access Groups</td>
+</tr>
+</tbody>
+</table>
+<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.
+<hr /></p>
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action update_fastlane
+<pre><code class="no-highlight">fastlane action update_keychain_access_groups
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run update_fastlane
+<pre><code class="no-highlight">fastlane run update_keychain_access_groups
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run update_fastlane parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run update_keychain_access_groups parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1310,7 +1321,7 @@ end
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_fastlane.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_keychain_access_groups.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1321,10 +1332,10 @@ end
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../update_icloud_container_identifiers/" class="btn btn-neutral float-right" title="update_icloud_container_identifiers">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../update_plist/" class="btn btn-neutral float-right" title="update_plist">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../update_app_identifier/" class="btn btn-neutral" title="update_app_identifier"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../update_info_plist/" class="btn btn-neutral" title="update_info_plist"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1366,10 +1377,10 @@ end
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../update_app_identifier/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../update_info_plist/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../update_icloud_container_identifiers/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../update_plist/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

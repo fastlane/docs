@@ -1340,7 +1340,7 @@ app.launch()
 
 <p>Your screenshots will be stored in the <code>./screenshots/</code> folder by default (or <code>./fastlane/screenshots</code> if you're using <a href="https://fastlane.tools"><em>fastlane</em></a>)</p>
 <p>New with Xcode 9, <em>snapshot</em> can run multiple simulators concurrently. This is the default behavior in order to take your screenshots as quickly as possible. This can be disabled to run each device, one at a time, by setting the <code>:concurrent_simulators</code> option to <code>false</code>.</p>
-<p><strong>Note:</strong> While running <em>snapshot</em> with Xcode 9, the simulators will not be visibly spawned. So, while you wont see the simulators running your tests, they will, in fact, be taking your screenshots.</p>
+<p><strong>Note:</strong> While running <em>snapshot</em> with Xcode 9, the simulators will not be visibly spawned. So, while you won't see the simulators running your tests, they will, in fact, be taking your screenshots.</p>
 <p>If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and <em>snapshot</em> will continue with the next device or language. To stop the flow after the first error, run</p>
 <pre><code class="no-highlight">fastlane snapshot --stop_after_first_error
 </code></pre>

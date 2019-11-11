@@ -1343,7 +1343,7 @@ username(&quot;user@fastlane.tools&quot;)
 <h5 id="git-storage-on-github"><a name="user-content-git-storage-on-github" href="#git-storage-on-github" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on GitHub</h5>
 <p>If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise, you may see an authentication error when you attempt to use match. Alternatively, you can set a basic authorization for <em>match</em>:</p>
 <p>Using parameter:</p>
-<pre><code>math(git_basic_authorization: '&lt;YOUR KEY&gt;')
+<pre><code>match(git_basic_authorization: '&lt;YOUR KEY&gt;')
 </code></pre>
 
 <p>Using environment variable:</p>
@@ -1433,7 +1433,7 @@ git_branch(&quot;master&quot;)
 <p>When running <code>fastlane match init</code> the first time, the setup process will give you the option to create your <code>gc_keys.json</code> file. This file contains the authentication credentials needed to access your Google Cloud storage bucket. Make sure to keep that file secret and never add it to version control. We recommend adding <code>gc_keys.json</code> to your <code>.gitignore</code></p>
 <h5 id="managing-developer-access-via-keys"><a name="user-content-managing-developer-access-via-keys" href="#managing-developer-access-via-keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing developer access via keys</h5>
 <p>If you want to manage developer access to your certificates via authentication keys, every developer should create their own <code>gc_keys.json</code> and add the file to all their work machines. This will give the admin full control over who has read/write access to the given Storage bucket. At the same time it allows your team to revoke a single key if a file gets compromised.</p>
-<h5 id="managing-developer-acess-via-google-accounts"><a name="user-content-managing-developer-acess-via-google-accounts" href="#managing-developer-acess-via-google-accounts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing developer acess via Google accounts</h5>
+<h5 id="managing-developer-access-via-google-accounts"><a name="user-content-managing-developer-access-via-google-accounts" href="#managing-developer-access-via-google-accounts" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managing developer access via Google accounts</h5>
 <p>If your developers already have Google accounts and access to your Google Cloud project, you can also manage access to the storage bucket via <a href="https://cloud.google.com/storage/docs/access-control/iam">Cloud Identity and Access Management (IAM)</a>. Just <a href="https://cloud.google.com/storage/docs/access-control/lists">set up</a> individual developer accounts or an entire Google Group containing your team as readers and writers on your storage bucket.</p>
 <p>You can then specify the Google Cloud project id containing your storage bucket in your <code>Matchfile</code>:</p>
 <pre><code class="ruby-skip-tests">storage_mode(&quot;google_cloud&quot;)

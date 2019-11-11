@@ -1258,11 +1258,14 @@ end
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">download_dsyms
 </code></pre>
 
 <pre><code class="ruby">download_dsyms(version: &quot;1.0.0&quot;, build_number: &quot;345&quot;)
+</code></pre>
+
+<pre><code class="ruby">download_dsyms(version: &quot;live&quot;)
 </code></pre>
 
 <pre><code class="ruby">download_dsyms(min_version: &quot;1.2.3&quot;)
@@ -1305,7 +1308,7 @@ end
 </tr>
 <tr>
 <td><code>version</code></td>
-<td>The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs</td>
+<td>The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs or 'live' to download only the live version dSYMs</td>
 <td></td>
 </tr>
 <tr>
@@ -1327,6 +1330,11 @@ end
 <td><code>wait_for_dsym_processing</code></td>
 <td>Wait for dSYMs to process</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>wait_timeout</code></td>
+<td>Number of seconds to wait for dSYMs to process</td>
+<td><code>300</code></td>
 </tr>
 </tbody>
 </table>

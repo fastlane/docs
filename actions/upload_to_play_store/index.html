@@ -1307,7 +1307,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
 <p>To gradually roll out a new build use</p>
-<pre><code class="no-highlight">fastlane supply --apk path/app.apk --track rollout --rollout 0.5
+<pre><code class="no-highlight">fastlane supply --apk path/app.apk --track beta --rollout 0.5
 </code></pre>
 
 <h3 id="expansion-files-obb"><a name="user-content-expansion-files-obb" href="#expansion-files-obb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Expansion files (<code>.obb</code>)</h3>
@@ -1331,7 +1331,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
 <p>To gradually roll out a new build use</p>
-<pre><code class="no-highlight">fastlane supply --aab path/app.aab --track rollout --rollout 0.5
+<pre><code class="no-highlight">fastlane supply --aab path/app.aab --track beta --rollout 0.5
 </code></pre>
 
 <h2 id="images-and-screenshots"><a name="user-content-images-and-screenshots" href="#images-and-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Images and Screenshots</h2>
@@ -1371,6 +1371,42 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>This can be done using the <code>--track_promote_to</code> parameter. The <code>--track_promote_to</code> parameter works with the <code>--track</code> parameter to command the Play API to promote existing Play track APK version(s) (those active on the track identified by the <code>--track</code> param value) to a new track (<code>--track_promote_to</code> value).</p>
 <h2 id="retrieve-track-version-codes"><a name="user-content-retrieve-track-version-codes" href="#retrieve-track-version-codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Retrieve Track Version Codes</h2>
 <p>Before performing a new APK upload you may want to check existing track version codes, or you may simply want to provide an informational lane that displays the currently promoted version codes for the production track. You can use the <code>google_play_track_version_codes</code> action to retrieve existing version codes for a package and track. For more information, see <code>fastlane action google_play_track_version_codes</code> help output.</p>
+<h2 id="migration-from-androidpublisherv2-to-androidpublisherv3-in-fastlane-21350"><a name="user-content-migration-from-androidpublisherv2-to-androidpublisherv3-in-fastlane-21350" href="#migration-from-androidpublisherv2-to-androidpublisherv3-in-fastlane-21350" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migration from AndroidPublisherV2 to AndroidPublisherV3 in <em>fastlane</em> 2.135.0</h2>
+<h3 id="new-options"><a name="user-content-new-options" href="#new-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>New Options</h3>
+<ul>
+<li><code>:version_name</code><ul>
+<li>Used when uploading with <code>:apk_path</code>, <code>:apk_paths</code>, <code>:aab_path</code>, and <code>:aab_paths</code></li>
+<li>Can be any string such (example: "October Release" or "Awesome New Feature")</li>
+<li>Defaults to the version name in app/build.gradle or AndroidManifest.xml</li>
+</ul>
+</li>
+<li><code>:release_status</code> <ul>
+<li>Used when uploading with <code>:apk_path</code>, <code>:apk_paths</code>, <code>:aab_path</code>, and <code>:aab_paths</code></li>
+<li>Can set as  "draft" to complete the release at some other time</li>
+<li>Defaults to "completed"</li>
+</ul>
+</li>
+<li><code>:version_code</code><ul>
+<li>Used for <code>:update_rollout</code>, <code>:track_promote_to</code>, and uploading of meta data and screenshots</li>
+</ul>
+</li>
+<li><code>:skip_upload_changelogs</code><ul>
+<li>Changelogs were previously included with the <code>:skip_upload_metadata</code> but is now its own option</li>
+</ul>
+</li>
+</ul>
+<h3 id="deprecated-options"><a name="user-content-deprecated-options" href="#deprecated-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deprecated Options</h3>
+<ul>
+<li><code>:check_superseded_tracks</code><ul>
+<li>Google Play will automatically remove releases that are superseded now</li>
+</ul>
+</li>
+<li><code>:deactivate_on_promote</code><ul>
+<li>Google Play will automatically deactive a release from its previous track on promote</li>
+</ul>
+</li>
+</ul>
+<p>:</p>
 <hr />
 
 <table>
@@ -1414,8 +1450,23 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
+<td><code>version_name</code></td>
+<td>Version name (used when uploading new apks/aabs) - defaults to 'versionName' in build.gradle or AndroidManifest.xml</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>version_code</code></td>
+<td>Version code (used when updating rollout or promoting specific versions)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>release_status</code></td>
+<td>Release status (used when uploading new apks/aabs) - valid values are completed, draft, halted, inProgress</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
 <td><code>track</code></td>
-<td>The track of the application to use. The default available tracks are: production, beta, alpha, internal, rollout</td>
+<td>The track of the application to use. The default available tracks are: production, beta, alpha, internal</td>
 <td><code>production</code></td>
 </tr>
 <tr>
@@ -1480,7 +1531,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>skip_upload_metadata</code></td>
-<td>Whether to skip uploading metadata</td>
+<td>Whether to skip uploading metadata, changelogs not included</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_upload_changelogs</code></td>
+<td>Whether to skip uploading changelogs</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1495,7 +1551,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>track_promote_to</code></td>
-<td>The track to promote to. The default available tracks are: production, beta, alpha, internal, rollout</td>
+<td>The track to promote to. The default available tracks are: production, beta, alpha, internal</td>
 <td></td>
 </tr>
 <tr>
@@ -1520,7 +1576,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>check_superseded_tracks</code></td>
-<td>Check the other tracks for superseded versions and disable them</td>
+<td><strong>DEPRECATED!</strong> Google Play does this automatically now - Check the other tracks for superseded versions and disable them</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1530,7 +1586,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>deactivate_on_promote</code></td>
-<td>When promoting to a new track, deactivate the binary in the origin track</td>
+<td><strong>DEPRECATED!</strong> Google Play does this automatically now - When promoting to a new track, deactivate the binary in the origin track</td>
 <td><code>true</code></td>
 </tr>
 <tr>
