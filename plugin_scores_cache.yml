@@ -1578,9 +1578,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 917
+  :age_in_days: 921
   :readme_score: 100
-  :tests: 81
+  :tests: 89
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_fetch_devices
@@ -1596,12 +1596,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: f27149dec48d32415aedc09bae11729204b145e248ca906f706a045ea828ab87
-  :github_stars: 262
-  :github_subscribers: 22
-  :github_issues: 21
+  :sha: 26dbadff2b8b98b330ed55a8cd92a1215da1a227ee62d6d6bc792a9518c211c6
+  :github_stars: 265
+  :github_subscribers: 23
+  :github_issues: 18
   :github_forks: 65
-  :github_contributors: 28
+  :github_contributors: 0
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -6271,7 +6271,7 @@ fastlane-plugin-fabric_beta_unregistered_devices:
   :github_contributors: 0
 fastlane-plugin-firebase_test_lab_android:
   :initial_commit: 2019-03-01
-  :age_in_days: 255
+  :age_in_days: 259
   :readme_score: 100
   :tests: 0
   :actions:
@@ -6280,12 +6280,12 @@ fastlane-plugin-firebase_test_lab_android:
     category: 
     description: Runs Android tests in Firebase Test Lab.
     details: Test your app with Firebase Test Lab with ease using fastlane
-  :sha: a6b427707378f8a46cba8eb9b1698460878f3e7597eb76afb4afa25e067b1d62
+  :sha: e4eee7869624647332213dc249c4faa883fac409009a36c0ea9a1904e9c67da5
   :github_stars: 17
   :github_subscribers: 17
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-fast_city:
   :initial_commit: 2019-03-12
   :age_in_days: 120
@@ -6469,7 +6469,7 @@ fastlane-plugin-sftp:
   :github_contributors: 0
 fastlane-plugin-dependency_manager_outdated:
   :initial_commit: 2019-03-31
-  :age_in_days: 10
+  :age_in_days: 229
   :readme_score: 50
   :tests: 1
   :actions:
@@ -6489,7 +6489,7 @@ fastlane-plugin-dependency_manager_outdated:
     category: 
     description: Check outdated Carthage dependencies
     details: Check outdated Carthage dependencies
-  :sha: 23c17c8328c962eb0a1905548b90b908cdfb9a9307559fbdc39f2454c0708f72
+  :sha: 0a33cde73b41c5504ae3692318649078a3d13158d23d8509eb8d2721536903f5
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -6660,7 +6660,7 @@ fastlane-plugin-icon_banner:
   :github_contributors: 0
 fastlane-plugin-react_native_release:
   :initial_commit: 2019-01-03
-  :age_in_days: 172
+  :age_in_days: 316
   :readme_score: 50
   :tests: 1
   :actions:
@@ -6670,10 +6670,10 @@ fastlane-plugin-react_native_release:
     description: Simplify releases for React Native apps
     details: Creates a release for a React Native app. Handles incrementing versions
       and tags
-  :sha: caeff4acb5d36f6c5daa43e231bf6273561cf7d8b4b7cfca9439c47ba1739a60
-  :github_stars: 2
+  :sha: fe46f94df8a531a65e6fbddfcc276aff23f8746c6283d36b1c9307a73926db77
+  :github_stars: 4
   :github_subscribers: 4
-  :github_issues: 4
+  :github_issues: 9
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-buggly:
@@ -7775,6 +7775,24 @@ fastlane-plugin-bugsnag_sourcemaps_upload:
     details: Helps to upload sourcemaps to Bugsnag
   :sha: d8935ce19c48183480c652af51109be7c40d825f7bea5a9f686e04a6122c2147
   :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xcresult_to_junit:
+  :initial_commit: 2019-11-12
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xcresult_to_junit
+    category: 
+    description: Produces junit xml files from Xcode 11+ xcresult files
+    details: By using the xcresulttool this plugin parses xcresult files and generates
+      junit reports to be used with other tools to display iOS test results
+  :sha: 6ef1d5f9f822dbb0ddf768afb910565c491cbce05dc05465502b172c6a769d72
+  :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
