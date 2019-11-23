@@ -1250,10 +1250,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <h5 id="gradle-dependency"><a name="user-content-gradle-dependency" href="#gradle-dependency" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gradle dependency</h5>
-<pre><code class="java">androidTestCompile('tools.fastlane:screengrab:x.x.x')
+<pre><code class="java">androidTestImplementation 'tools.fastlane:screengrab:x.x.x'
 </code></pre>
 
 <p>The latest version is <a href="https://bintray.com/fastlane/fastlane/screengrab/_latestVersion"> <img alt="Download" src="https://api.bintray.com/packages/fastlane/fastlane/screengrab/images/download.svg" /> </a></p>
+<p>As of Screengrab version 2.0.0, all Android test dependencies are AndroidX dependencies. This means a device with API 18+, Android 4.3 or greater is required. If you wish to capture screenshots with an older Android OS, then you must use a 1.x.x version.</p>
 <h5 id="configuring-your-manifest-permissions"><a name="user-content-configuring-your-manifest-permissions" href="#configuring-your-manifest-permissions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your Manifest Permissions</h5>
 <p>Ensure that the following permissions exist in your <strong>src/debug/AndroidManifest.xml</strong></p>
 <pre><code class="xml">&lt;!-- Allows unlocking your device and activating its screen so UI tests can succeed --&gt;
@@ -1305,8 +1306,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Multi-window situations are correctly captured (dialogs, etc.)</li>
 <li>Works on Android N</li>
 </ul>
-<p>However, UI Automator requires a device with <strong>API level &gt;= 18</strong>, so it is not yet the default strategy. To enable it for all screenshots by default, make the following call before your tests run:</p>
-<pre><code class="java">Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());
+<p>UI Automator is the default strategy. However, UI Automator requires a device with <strong>API level &gt;= 18</strong>. If you need to grab screenshots on an older Android version, use the latest 1.x.x version of this library and set the DecorView ScreenshotStrategy.</p>
+<pre><code class="java">Screengrab.setDefaultScreenshotStrategy(new DecorViewScreenshotStrategy());
 </code></pre>
 
 <h2 id="improved-screenshot-capture-with-falcon"><a name="user-content-improved-screenshot-capture-with-falcon" href="#improved-screenshot-capture-with-falcon" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Improved screenshot capture with Falcon</h2>
@@ -1374,7 +1375,36 @@ public class JUnit4StyleTests {
 </ul>
 <p>If you're having trouble getting your device unlocked and the screen activated to run tests, try using <code>ScreenUtil.activateScreenForTesting(activity);</code> in your test setup.</p>
 <h2 id="clean-status-bar"><a name="user-content-clean-status-bar" href="#clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Clean Status Bar</h2>
-<p>You can use <a href="https://github.com/PSPDFKit-labs/QuickDemo">QuickDemo</a> to clean up the status bar for your screenshots.</p>
+<p>Screengrab can clean your status bar to make your screenshots even more beautiful.<br />
+Note: the clean status bar feature is only supported on devices with <em>API level &gt;= 23</em>.</p>
+<p>To use the clean status bar feature add the following lines to your src/debug/AndroidManifest.xml</p>
+<pre><code class="xml">&lt;!-- Indicates the use of the clean status bar feature --&gt;
+&lt;uses-feature android:name=&quot;tools.fastlane.screengrab.cleanstatusbar&quot;/&gt;
+&lt;!-- Allows for changing the status bar --&gt;
+&lt;uses-permission android:name=&quot;android.permission.DUMP&quot;/&gt;
+</code></pre>
+
+<p>After that you can enable and disable the clean status bar at any moment during your tests.<br />
+In most cases you probably want to do this in the @BeforeClass and @AfterClass methods.</p>
+<pre><code class="java">@BeforeClass
+public static void beforeAll() {
+    CleanStatusBar.enableWithDefaults();
+}
+
+@AfterClass
+public static void afterAll() {
+    CleanStatusBar.disable();
+}
+</code></pre>
+
+<p>Have a look at the methods of the <code>CleanStatusBar</code> class to customize the status bar even more.<br />
+You could for example show the Bluetooth icon and the LTE text.</p>
+<pre><code class="java">new CleanStatusBar()
+    .setBluetoothState(BluetoothState.DISCONNECTED)
+    .setMobileNetworkDataType(MobileDataType.LTE)
+    .enable();
+</code></pre>
+
 <h1 id="advanced-screengrab"><a name="user-content-advanced-screengrab" href="#advanced-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced <em>screengrab</em></h1>
 <p><details>
 <summary>Launch Arguments</summary></p>
@@ -1546,12 +1576,17 @@ if (extras != null) {
 <tr>
 <td><code>test_instrumentation_runner</code></td>
 <td>The fully qualified class name of your test instrumentation runner</td>
-<td><code>android.support.test.runner.AndroidJUnitRunner</code></td>
+<td><code>androidx.test.runner.AndroidJUnitRunner</code></td>
 </tr>
 <tr>
 <td><code>ending_locale</code></td>
 <td>Return the device to this locale after running tests</td>
 <td><code>en-US</code></td>
+</tr>
+<tr>
+<td><code>use_adb_root</code></td>
+<td>Restarts the adb daemon using <code>adb root</code> to allow access to screenshots directories on device. Use if getting 'Permission denied' errors</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>app_apk_path</code></td>
@@ -1582,6 +1617,16 @@ if (extras != null) {
 <td><code>reinstall_app</code></td>
 <td>Enabling this option will automatically uninstall the application before running it</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_timestamp_suffix</code></td>
+<td>Add timestamp suffix to screenshot filename</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>adb_host</code></td>
+<td>Configure the host used by adb to connect, allows running on remote devices farm</td>
+<td></td>
 </tr>
 </tbody>
 </table>
