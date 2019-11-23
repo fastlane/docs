@@ -17,7 +17,7 @@ Upload a new build to [TestFairy](https://www.testfairy.com/)
 testfairy ||
 ---|---
 Supported platforms | ios, android
-Author | @taka0125, @tcurdt
+Author | @taka0125, @tcurdt, @vijaysharm
 
 
 
@@ -50,6 +50,7 @@ Key | Description | Default
   `auto_update` | Allows an easy upgrade of all users to the current version. To enable set to 'on' | `off`
   `notify` | Send email to testers | `off`
   `options` | Array of options (shake,video_only_wifi,anonymous) | `[]`
+  `custom` | Array of custom options. Contact support@testfairy.com for more information | `''`
   `timeout` | Request timeout in seconds | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

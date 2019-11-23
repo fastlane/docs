@@ -1,9 +1,9 @@
 ---
 fastlane-plugin-versioning:
   :initial_commit: 2016-06-03
-  :age_in_days: 1256
+  :age_in_days: 1267
   :readme_score: 100
-  :tests: 69
+  :tests: 71
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: get_version_number_from_git_branch
@@ -68,10 +68,10 @@ fastlane-plugin-versioning:
     category: 
     description: Increment the build number of your project
     details: "\\n"
-  :sha: 1e9540e8e11bf80c10f6f18099701c49e584152f91ab0a4d6ef60f606571f20d
-  :github_stars: 246
-  :github_subscribers: 7
-  :github_issues: 11
+  :sha: b1e0204d558c8f12ed41354c14da47b476b49b8f4227874f5a3c2f36908b555d
+  :github_stars: 249
+  :github_subscribers: 6
+  :github_issues: 12
   :github_forks: 27
   :github_contributors: 11
 fastlane-plugin-aws_s3:
@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 749
+  :age_in_days: 760
   :readme_score: 100
   :tests: 261
   :actions:
@@ -1060,12 +1060,12 @@ fastlane-plugin-test_center:
     description: "\U0001F539 Combines multiple json report files into one json report
       file"
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: 865fa4820084bbb12de7e23138ab64e75d7215ae50ad8f55a0aec606d64646b1
-  :github_stars: 108
+  :sha: 9534407fd286d6e30831dd4083ce335e6d97ecd09ad0aa97a2d3e65ec83bca6b
+  :github_stars: 110
   :github_subscribers: 8
-  :github_issues: 6
+  :github_issues: 10
   :github_forks: 27
-  :github_contributors: 8
+  :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -1578,9 +1578,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 917
+  :age_in_days: 928
   :readme_score: 100
-  :tests: 81
+  :tests: 89
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_fetch_devices
@@ -1596,12 +1596,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: f27149dec48d32415aedc09bae11729204b145e248ca906f706a045ea828ab87
-  :github_stars: 262
-  :github_subscribers: 22
-  :github_issues: 21
+  :sha: 26dbadff2b8b98b330ed55a8cd92a1215da1a227ee62d6d6bc792a9518c211c6
+  :github_stars: 268
+  :github_subscribers: 24
+  :github_issues: 20
   :github_forks: 65
-  :github_contributors: 28
+  :github_contributors: 29
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -5701,7 +5701,7 @@ fastlane-plugin-upload_dsym_to_bugly:
   :github_contributors: 2
 fastlane-plugin-jira_util:
   :initial_commit: 2016-09-01
-  :age_in_days: 831
+  :age_in_days: 1177
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5720,7 +5720,7 @@ fastlane-plugin-jira_util:
     category: 
     description: Creates a new version in your JIRA project
     details: Use this action to create a new version in JIRA
-  :sha: f55fed53fc1942460992a1093dd75452e11e825ecbf09854a82875a6432ffd11
+  :sha: bff206480169beb521649a457e529e3c31b006477f968b25d301f8bd7336f14d
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -6271,7 +6271,7 @@ fastlane-plugin-fabric_beta_unregistered_devices:
   :github_contributors: 0
 fastlane-plugin-firebase_test_lab_android:
   :initial_commit: 2019-03-01
-  :age_in_days: 255
+  :age_in_days: 266
   :readme_score: 100
   :tests: 0
   :actions:
@@ -6280,12 +6280,12 @@ fastlane-plugin-firebase_test_lab_android:
     category: 
     description: Runs Android tests in Firebase Test Lab.
     details: Test your app with Firebase Test Lab with ease using fastlane
-  :sha: a6b427707378f8a46cba8eb9b1698460878f3e7597eb76afb4afa25e067b1d62
-  :github_stars: 17
+  :sha: e4ff186c879d52d434c91769cdc3f4f8da58856fc838cb2999d7b1c761e2f9c8
+  :github_stars: 18
   :github_subscribers: 17
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-fast_city:
   :initial_commit: 2019-03-12
   :age_in_days: 120
@@ -6342,9 +6342,9 @@ fastlane-plugin-fast_city:
   :github_contributors: 0
 fastlane-plugin-semantic_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 239
+  :age_in_days: 250
   :readme_score: 100
-  :tests: 22
+  :tests: 25
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: conventional_changelog
@@ -6360,8 +6360,8 @@ fastlane-plugin-semantic_release:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: 5580c98dbba507004c5103d3d4c2afdbe04a7d26300e96c6a50261a9dad7655d
-  :github_stars: 31
+  :sha: 604d3c73cd7573264bd1bbb7cfea229b6d42e3fc62e447f549397b9b6e0d5188
+  :github_stars: 32
   :github_subscribers: 1
   :github_issues: 2
   :github_forks: 7
@@ -6469,7 +6469,7 @@ fastlane-plugin-sftp:
   :github_contributors: 0
 fastlane-plugin-dependency_manager_outdated:
   :initial_commit: 2019-03-31
-  :age_in_days: 10
+  :age_in_days: 236
   :readme_score: 50
   :tests: 1
   :actions:
@@ -6489,12 +6489,12 @@ fastlane-plugin-dependency_manager_outdated:
     category: 
     description: Check outdated Carthage dependencies
     details: Check outdated Carthage dependencies
-  :sha: 23c17c8328c962eb0a1905548b90b908cdfb9a9307559fbdc39f2454c0708f72
+  :sha: 0a33cde73b41c5504ae3692318649078a3d13158d23d8509eb8d2721536903f5
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-moss:
   :initial_commit: 2019-03-20
   :age_in_days: 21
@@ -6637,7 +6637,7 @@ fastlane-plugin-line_message:
   :github_contributors: 0
 fastlane-plugin-icon_banner:
   :initial_commit: 2019-04-20
-  :age_in_days: 165
+  :age_in_days: 216
   :readme_score: 100
   :tests: 2
   :actions:
@@ -6652,7 +6652,7 @@ fastlane-plugin-icon_banner:
     category: 
     description: Adds custom nice-looking banners over your mobile app icons
     details: 
-  :sha: 8e0515514b5866255837aa139cc844e7bce66b974de6ae178cf8f520248a704e
+  :sha: f679e3ba93135e4ca5832c040d3c4216646c8e0aa2d9005a297ff71fa6ea9e5b
   :github_stars: 4
   :github_subscribers: 0
   :github_issues: 0
@@ -6660,7 +6660,7 @@ fastlane-plugin-icon_banner:
   :github_contributors: 0
 fastlane-plugin-react_native_release:
   :initial_commit: 2019-01-03
-  :age_in_days: 172
+  :age_in_days: 323
   :readme_score: 50
   :tests: 1
   :actions:
@@ -6670,12 +6670,24 @@ fastlane-plugin-react_native_release:
     description: Simplify releases for React Native apps
     details: Creates a release for a React Native app. Handles incrementing versions
       and tags
-  :sha: caeff4acb5d36f6c5daa43e231bf6273561cf7d8b4b7cfca9439c47ba1739a60
-  :github_stars: 2
-  :github_subscribers: 4
-  :github_issues: 4
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: read_fastlane_session
+    category: 
+    description: Simplify 2FA authentication for App Store Connect
+    details: Fetches an encrypted cookie for authenticating with App Store connecting.
+      Handles fetching and decrypting the cookie before setting to the local env.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_fastlane_session
+    category: 
+    description: Simplify 2FA authentication for App Store Connect
+    details: Creates a cookie for authenticating with App Store connecting. Handles
+      generating, encrypting, and storing the cookie.
+  :sha: ed5eb668a5e64e192e40980eb4233ef2faa0b747b2efdcc5c7378b1746fbc375
+  :github_stars: 5
+  :github_subscribers: 5
+  :github_issues: 5
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 2
 fastlane-plugin-buggly:
   :initial_commit: 2017-02-21
   :age_in_days: 801
@@ -7004,16 +7016,16 @@ fastlane-plugin-get_application_id_flavor:
   :github_contributors: 0
 fastlane-plugin-kuhverij:
   :initial_commit: 2019-06-01
-  :age_in_days: 3
+  :age_in_days: 174
   :readme_score: 50
-  :tests: 9
+  :tests: 11
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: kuhverij
     category: testing
     description: Simplified Code Coverage
     details: Simplified Code Coverage, which e.g. can be used together with GitLab
-  :sha: 0de2095fbbaa394a7be5e52984888781f6e18edfb2ac3034bbb16c94d28f39fd
+  :sha: 31811b61f8606669fc57aa611b7adfad7738af90e551e98176e7c80a75db371c
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 3
@@ -7168,7 +7180,7 @@ fastlane-plugin-make:
   :github_contributors: 0
 fastlane-plugin-snapshot_test:
   :initial_commit: 2019-07-29
-  :age_in_days: 64
+  :age_in_days: 116
   :readme_score: 100
   :tests: 4
   :actions:
@@ -7177,12 +7189,12 @@ fastlane-plugin-snapshot_test:
     category: 
     description: Take screenshots
     details: Take screenshots
-  :sha: 59801d5f75a5c44b5cb21a29da471ea37513e076e658091c6623be456869cc67
+  :sha: fb15ac724b65e37c34ecc90654d639a53211bc23638ee449804fd470e5eb600d
   :github_stars: 4
-  :github_subscribers: 21
+  :github_subscribers: 20
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-xchtmlreport:
   :initial_commit: 2019-08-09
   :age_in_days: 4
@@ -7340,7 +7352,7 @@ fastlane-plugin-gitlab_merge_request_participants:
   :github_contributors: 0
 fastlane-plugin-accessibility_test:
   :initial_commit: 2019-09-02
-  :age_in_days: 29
+  :age_in_days: 81
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7349,7 +7361,7 @@ fastlane-plugin-accessibility_test:
     category: 
     description: Accessibility test with Firebase Test Lab for Android.
     details: Accessibility test with Firebase Test Lab for Android.
-  :sha: 68f606be85c2c1bb93a28f94cca859b821e2a1263c1f3bf808233212baee689e
+  :sha: 2c2c980b026c25a83d1fa978d571f00bbed033d3b03c86c9d2f12ea96bee5f18
   :github_stars: 3
   :github_subscribers: 2
   :github_issues: 0
@@ -7548,20 +7560,20 @@ fastlane-plugin-appcenter_get_recent_release_version:
   :github_contributors: 0
 fastlane-plugin-swiftlint_codequality:
   :initial_commit: 2019-09-23
-  :age_in_days: 8
+  :age_in_days: 60
   :readme_score: 50
-  :tests: 1
+  :tests: 8
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: swiftlint_codequality
     category: 
     description: Converts SwiftLint reports into GitLab support CodeQuality reports
     details: Converts SwiftLint reports into GitLab support CodeQuality reports
-  :sha: f06ac35ad07ac2227421adc65407a58e2a2c045b0b741a0b52e573d43585c5c9
+  :sha: d3f44495a35353e9dff0238ccdc6fd2de76cc4c0d92a498414e0296719ccfa51
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-appmetrica:
   :initial_commit: 2019-09-25
@@ -7775,6 +7787,41 @@ fastlane-plugin-bugsnag_sourcemaps_upload:
     details: Helps to upload sourcemaps to Bugsnag
   :sha: d8935ce19c48183480c652af51109be7c40d825f7bea5a9f686e04a6122c2147
   :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-fir_cli:
+  :initial_commit: 2019-11-19
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fir_cli
+    category: 
+    description: 
+    details: 'invoke fir-cli from fastlane plugin directly. \nfir-cli: https://github.com/FIRHQ/fir-cli'
+  :sha: 0b9d62efa221538f2e3decd08d28a4a37ce0e52d1420a4973d1e35d2048e06c6
+  :github_stars: 3
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 1
+  :github_contributors: 0
+fastlane-plugin-xcresult_to_junit:
+  :initial_commit: 2019-11-12
+  :age_in_days: 10
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xcresult_to_junit
+    category: 
+    description: Produces junit xml files from Xcode 11+ xcresult files
+    details: By using the xcresulttool this plugin parses xcresult files and generates
+      junit reports to be used with other tools to display iOS test results
+  :sha: 4ae7301638f64163d4703b9c267221deb5530ad303fdaa051b1f7f094dd0d789
+  :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
