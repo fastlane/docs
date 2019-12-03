@@ -20,6 +20,7 @@ Multiple CI products and services offer integrations with fastlane:
 - [GitLab CI](/best-practices/continuous-integration/gitlab/)
 - [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
 - [NeverCode](/best-practices/continuous-integration/nevercode/)
+- [Semaphore](/best-practices/continuous-integration/semaphore/)
 
 ## Authentication with Apple services
 
@@ -27,7 +28,7 @@ Several Fastlane actions communicate with Apple services that need authenticatio
 
 ### Separate Apple ID for CI
 
-The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that 
+The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that
 
   - doesn't have 2-factor authentication enabled
   - doesn't have the Account Holder role
@@ -42,7 +43,7 @@ Note: [Apple announced that as of February 27th 2019](https://developer.apple.co
 
 #### Security code and session
 
-When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. 
+When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.
 
 The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`, which should be valid for about one month.
 
@@ -119,7 +120,7 @@ You can set up your own ```Release``` job, which is only triggered manually.
     var hash = window.location.hash.substring(1);
     if (hash) {
         /*
-        * Best practice for javascript redirects: 
+        * Best practice for javascript redirects:
         * https://stackoverflow.com/a/506004/151365
         */
         if (anchorMap[hash]) {
