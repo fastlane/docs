@@ -1293,11 +1293,12 @@ brew cask install fastlane
 <li><a href="../../best-practices/continuous-integration/gitlab/">GitLab CI</a></li>
 <li><a href="../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a> (formerly known as: Visual Studio Team Services)</li>
 <li><a href="../../best-practices/continuous-integration/nevercode/">NeverCode</a></li>
+<li><a href="../../best-practices/continuous-integration/semaphore/">Semaphore</a></li>
 </ul>
 <h2 id="authentication-with-apple-services"><a name="user-content-authentication-with-apple-services" href="#authentication-with-apple-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Authentication with Apple services</h2>
 <p>Several Fastlane actions communicate with Apple services that need authentication. This can pose several challenges on CI:</p>
 <h3 id="separate-apple-id-for-ci"><a name="user-content-separate-apple-id-for-ci" href="#separate-apple-id-for-ci" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Separate Apple ID for CI</h3>
-<p>The easiest way to get <em>fastlane</em> running on a CI system is to create a separate Apple ID that </p>
+<p>The easiest way to get <em>fastlane</em> running on a CI system is to create a separate Apple ID that</p>
 <p>- doesn't have 2-factor authentication enabled
   - doesn't have the Account Holder role</p>
 <p>Creating a separate Apple ID allows you to limit the permission scope (limited access to only the apps and resources it needs), have a long, randomly generated password, and will make it much more convenient for you to set up CI using <em>fastlane</em>.</p>
@@ -1305,7 +1306,7 @@ brew cask install fastlane
 <p><em>fastlane</em> fully supports <a href="https://support.apple.com/en-us/HT204915">2-factor authentication (2FA)</a> (and legacy <a href="https://support.apple.com/en-us/HT204152">2-step verification (2SV)</a>) for logging in to your Apple ID and Apple Developer account. 🌟</p>
 <p>Note: <a href="https://developer.apple.com/news/?id=02202019a">Apple announced that as of February 27th 2019</a>, it is enforcing 2-factor authentication on developer Apple IDs with the "Account Holder" role.</p>
 <h4 id="security-code-and-session"><a name="user-content-security-code-and-session" href="#security-code-and-session" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Security code and session</h4>
-<p>When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone. </p>
+<p>When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.</p>
 <p>The resulting session will be stored in <code>~/.fastlane/spaceship/[email]/cookie</code>, which should be valid for about one month.</p>
 <h4 id="use-of-application-specific-passwords-and-spaceauth"><a name="user-content-use-of-application-specific-passwords-and-spaceauth" href="#use-of-application-specific-passwords-and-spaceauth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use of application specific passwords and <code>spaceauth</code></h4>
 <p>When you can not enter the security code manually, as on a Continuous Integration system, you have to use other ways to log in:</p>
@@ -1364,7 +1365,7 @@ brew cask install fastlane
     var hash = window.location.hash.substring(1);
     if (hash) {
         /*
-        * Best practice for javascript redirects: 
+        * Best practice for javascript redirects:
         * https://stackoverflow.com/a/506004/151365
         */
         if (anchorMap[hash]) {
