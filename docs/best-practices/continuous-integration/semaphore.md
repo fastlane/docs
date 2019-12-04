@@ -1,6 +1,6 @@
 # Semaphore CI Integration
 
-[Semaphore](https://semaphoreci.com) provides simple, fast continuous integration and delivery for your iOS apps. All [macOS machine images](https://docs.semaphoreci.com/article/162-macos-mojave-xcode-11-image) have fastlane tools pre-installed and getting up and running is quick and simple.
+[Semaphore](https://semaphoreci.com) provides simple, fast continuous integration and delivery for your iOS apps. All [macOS machine images](https://docs.semaphoreci.com/article/162-macos-mojave-xcode-11-image) have _fastlane_ pre-installed and getting up and running is quick and simple.
 
 ## Add the Semaphore fastlane plugin
 
