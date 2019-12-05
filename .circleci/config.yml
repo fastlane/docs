@@ -9,6 +9,7 @@ jobs:
       - checkout
       - run: sudo pip3 install pipenv
       - run: pipenv install
+      - run: gem install bundler
       - run: bundle update
       - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop

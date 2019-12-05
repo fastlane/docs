@@ -286,6 +286,7 @@ pages:
     - GitLab CI Integration: best-practices/continuous-integration/gitlab.md
     - Azure DevOps Integration: best-practices/continuous-integration/azure-devops.md
     - Nevercode Integration: best-practices/continuous-integration/nevercode.md
+    - Semaphore: best-practices/continuous-integration/semaphore.md
   - Keys: best-practices/keys.md
 - Advanced:
   - fastlane: advanced/fastlane.md
