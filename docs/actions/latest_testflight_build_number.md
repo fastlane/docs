@@ -16,7 +16,7 @@ Fetches most recent build number from TestFlight
 
 latest_testflight_build_number ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @daveanderson
 Returns | Integer representation of the latest build number uploaded to TestFlight
 

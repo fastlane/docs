@@ -124,6 +124,25 @@ match
 
 You can find more information about GitHub basic authentication and personal token generation here: [https://developer.github.com/v3/auth/#basic-authentication](https://developer.github.com/v3/auth/#basic-authentication)
 
+##### Git Storage on Azure Devops
+
+If you're running a pipeline on Azure Devops and using git storage in a another repository on the same project, you might want to use `bearer` token authentication.
+
+Using parameter:
+
+```
+match(git_bearer_authorization: '<YOUR TOKEN>')
+```
+
+Using environment variable:
+
+```
+ENV['MATCH_GIT_BEARER_AUTHORIZATION'] = '<YOUR TOKEN>'
+match
+```
+
+You can find more information about this use case here: [https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git?view=azure-devops&tabs=yaml#authorize-access-to-your-repositories](https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git?view=azure-devops&tabs=yaml#authorize-access-to-your-repositories)
+
 #### Google Cloud Storage
 
 Use [Google Cloud Storage](https://cloud.google.com/storage/) for a fully hosted solution for your code signing identities. Certificates are stored on Google Cloud, encrypted using Google managed keys. Everything will be stored on your Google account, inside a storage bucket you provide. You can also directly access the files using the web console.
@@ -574,6 +593,7 @@ Key | Description | Default
   `shallow_clone` | Make a shallow clone of the repository (truncate the history to 1 revision) | `false`
   `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail | `false`
   `git_basic_authorization` | Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64 | 
+  `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure Devops repository), usually a string in Base64 | 
   `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
   `google_cloud_keys_file` | Path to the gc_keys.json file | 
   `google_cloud_project_id` | ID of the Google Cloud project to use for authentication | 
