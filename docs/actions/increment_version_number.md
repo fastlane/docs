@@ -25,7 +25,7 @@ Returns | The new version number
 ## 7 Examples
 
 ```ruby
-increment_version_number # Automatically increment patch version number
+increment_version_number # Automatically increment version number
 ```
 
 ```ruby
@@ -71,7 +71,7 @@ version = increment_version_number
 
 Key | Description | Default
 ----|-------------|--------
-  `bump_type` | The type of this version bump. Available: patch, minor, major | `patch`
+  `bump_type` | The type of this version bump. Available: patch, minor, major | `bump`
   `version_number` | Change to a specific version. This will replace the bump type value | 
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory | 
 
