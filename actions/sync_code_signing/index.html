@@ -1375,6 +1375,18 @@ match
 </code></pre>
 
 <p>You can find more information about GitHub basic authentication and personal token generation here: <a href="https://developer.github.com/v3/auth/#basic-authentication">https://developer.github.com/v3/auth/#basic-authentication</a></p>
+<h5 id="git-storage-on-azure-devops"><a name="user-content-git-storage-on-azure-devops" href="#git-storage-on-azure-devops" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on Azure Devops</h5>
+<p>If you're running a pipeline on Azure Devops and using git storage in a another repository on the same project, you might want to use <code>bearer</code> token authentication.</p>
+<p>Using parameter:</p>
+<pre><code>match(git_bearer_authorization: '&lt;YOUR TOKEN&gt;')
+</code></pre>
+
+<p>Using environment variable:</p>
+<pre><code>ENV['MATCH_GIT_BEARER_AUTHORIZATION'] = '&lt;YOUR TOKEN&gt;'
+match
+</code></pre>
+
+<p>You can find more information about this use case here: <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git?view=azure-devops&amp;tabs=yaml#authorize-access-to-your-repositories">https://docs.microsoft.com/en-us/azure/devops/pipelines/repos/azure-repos-git?view=azure-devops&amp;tabs=yaml#authorize-access-to-your-repositories</a></p>
 <h4 id="google-cloud-storage"><a name="user-content-google-cloud-storage" href="#google-cloud-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h4>
 <p>Use <a href="https://cloud.google.com/storage/">Google Cloud Storage</a> for a fully hosted solution for your code signing identities. Certificates are stored on Google Cloud, encrypted using Google managed keys. Everything will be stored on your Google account, inside a storage bucket you provide. You can also directly access the files using the web console.</p>
 <p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
@@ -1756,6 +1768,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>git_basic_authorization</code></td>
 <td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_bearer_authorization</code></td>
+<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure Devops repository), usually a string in Base64</td>
 <td></td>
 </tr>
 <tr>

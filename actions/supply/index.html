@@ -1376,16 +1376,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <p>Note that these will replace the current images and screenshots on the play store listing, not add to them.</p>
 <h2 id="changelogs-whats-new"><a name="user-content-changelogs-whats-new" href="#changelogs-whats-new" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Changelogs (What's new)</h2>
-<p>You can add changelog files under the <code>changelogs/</code> directory for each locale. The filename should exactly match the <a href="https://developer.android.com/studio/publish/versioning#appversioning">version code</a> of the APK that it represents. <code>fastlane supply init</code> will populate changelog files from existing data on Google Play if no <code>metadata/</code> directory exists when it is run.</p>
+<p>You can add changelog files under the <code>changelogs/</code> directory for each locale. The filename should exactly match the <a href="https://developer.android.com/studio/publish/versioning#appversioning">version code</a> of the APK that it represents. You can also provide default notes that will be used if no files match the version code by adding a <code>default.txt</code> file. <code>fastlane supply init</code> will populate changelog files from existing data on Google Play if no <code>metadata/</code> directory exists when it is run.</p>
 <pre><code class="no-highlight">└── fastlane
     └── metadata
         └── android
             ├── en-US
             │   └── changelogs
+            │       ├── default.txt
             │       ├── 100000.txt
             │       └── 100100.txt
             └── fr-FR
                 └── changelogs
+                    ├── default.txt
                     └── 100100.txt
 </code></pre>
 
@@ -1403,7 +1405,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Defaults to the version name in app/build.gradle or AndroidManifest.xml</li>
 </ul>
 </li>
-<li><code>:release_status</code> <ul>
+<li><code>:release_status</code><ul>
 <li>Used when uploading with <code>:apk_path</code>, <code>:apk_paths</code>, <code>:aab_path</code>, and <code>:aab_paths</code></li>
 <li>Can set as  "draft" to complete the release at some other time</li>
 <li>Defaults to "completed"</li>
