@@ -1274,13 +1274,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@mollyIV</td>
+<td>@mollyIV, @svenmuennich</td>
 </tr>
 </tbody>
 </table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
 <pre><code class="ruby">setup_ci(
-  provider: &quot;travis&quot;
+  provider: &quot;circleci&quot;
 )
 </code></pre>
 
@@ -1301,7 +1301,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>provider</code></td>
-<td>CI provider</td>
+<td>CI provider. If none is set, the provider is detected automatically</td>
 <td><code>false</code></td>
 </tr>
 </tbody>

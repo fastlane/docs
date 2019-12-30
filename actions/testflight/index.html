@@ -1579,7 +1579,7 @@ pilot...
 </tr>
 <tr>
 <td><code>skip_waiting_for_build_processing</code></td>
-<td>Don't wait for the build to process. If set to true, the changelog won't be set, <code>distribute_external</code> option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan)</td>
+<td>If set to true, the <code>distribute_external</code> option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan). If set to <code>true</code> and a changelog is provided, it will partially wait for the build to appear on AppStore Connect so the changelog can be set, and skip the remaining processing steps</td>
 <td><code>false</code></td>
 </tr>
 <tr>
