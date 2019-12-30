@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 787
+  :age_in_days: 798
   :readme_score: 100
   :tests: 261
   :actions:
@@ -1060,7 +1060,7 @@ fastlane-plugin-test_center:
     description: "\U0001F539 Combines multiple json report files into one json report
       file"
     details: tests and the subsequent JSON reports will have fewer failing tests.
-  :sha: c9f55a396158674b08f9792f9d006febab5d51d9a49750cd7c905237d5efec4c
+  :sha: 745d19d35d5be760171a0969e7bc28295ceae84b09dcee573badb96423d2979c
   :github_stars: 111
   :github_subscribers: 7
   :github_issues: 13
@@ -5701,7 +5701,7 @@ fastlane-plugin-upload_dsym_to_bugly:
   :github_contributors: 2
 fastlane-plugin-jira_util:
   :initial_commit: 2016-09-01
-  :age_in_days: 1204
+  :age_in_days: 1215
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5711,21 +5711,36 @@ fastlane-plugin-jira_util:
     description: Releases a version in your JIRA project
     details: Use this action to release a version in JIRA
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_jira_release_report_link
+    category: 
+    description: Return link to JIRA release report.
+    details: Return link to JIRA release report. Link looks like https://JIRA_SITE/projects/PROJ/versions/VERSION/tab/release-report-all-issues
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: create_jira_issue
     category: 
     description: Creates a new issue in your JIRA project
     details: Use this action to create a new issue in JIRA
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: update_jira_version
+    category: 
+    description: Creates a new version in your JIRA project
+    details: Use this action to create a new version in JIRA
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: create_jira_version
     category: 
     description: Creates a new version in your JIRA project
     details: Use this action to create a new version in JIRA
-  :sha: 0b54e5f6205cc6305619feb84500db839a5c787ece2c630cffc7cfc18947f386
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_jira_version
+    category: 
+    description: Finds project version in your JIRA project by id or by name
+    details: Use this action to find a version in JIRA
+  :sha: 0dba988dcca80bf506eb8757fa923cbb9f10635fd1891150dfd5fa0d9841379d
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-jira_issue_details:
   :initial_commit: 2018-11-24
   :age_in_days: 390
@@ -6637,7 +6652,7 @@ fastlane-plugin-line_message:
   :github_contributors: 0
 fastlane-plugin-icon_banner:
   :initial_commit: 2019-04-20
-  :age_in_days: 216
+  :age_in_days: 254
   :readme_score: 100
   :tests: 2
   :actions:
@@ -6652,7 +6667,7 @@ fastlane-plugin-icon_banner:
     category: 
     description: Adds custom nice-looking banners over your mobile app icons
     details: 
-  :sha: f679e3ba93135e4ca5832c040d3c4216646c8e0aa2d9005a297ff71fa6ea9e5b
+  :sha: c3ef128e25a65c3121e7fa5f8c72e5d97af0ab34a13389faabafec076d642536
   :github_stars: 4
   :github_subscribers: 0
   :github_issues: 0
@@ -7105,7 +7120,7 @@ fastlane-plugin-speculid:
   :github_contributors: 0
 fastlane-plugin-git_clone:
   :initial_commit: 2019-07-15
-  :age_in_days: 157
+  :age_in_days: 168
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7115,7 +7130,7 @@ fastlane-plugin-git_clone:
     description: this is a wrapper for git clone command
     details: 'exec like this: git clone xxx.git -b master /path/to/xxx --single-branch
       --depth=1'
-  :sha: c8ffeb462782e5ec7adb31562af99e67c28e5e0c3dceffab5f098ee362378215
+  :sha: 0ddcd5087585f80914c4510c3a2e5dc92b63cbcd04c81ba48cba8069943130b4
   :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
@@ -7588,7 +7603,7 @@ fastlane-plugin-swiftlint_codequality:
   :github_contributors: 0
 fastlane-plugin-appmetrica:
   :initial_commit: 2019-09-25
-  :age_in_days: 85
+  :age_in_days: 96
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7598,12 +7613,12 @@ fastlane-plugin-appmetrica:
     description: Upload dSYM symbolication files to AppMetrica
     details: This plugin allows uploading dSYM symbolication files to AppMetrica.
       It should be applied if you use Bitcode
-  :sha: 5221baf542cd12e968a586ed455590af720794ee4d2ffec359e83d7f4b46c05b
+  :sha: ee098776bd556bcab1114fc4c1d92211c870b476d7db66538ddfab4d35592ee7
   :github_stars: 3
   :github_subscribers: 9
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-git_add_tag:
   :initial_commit: 2019-09-15
   :age_in_days: 16
@@ -7839,7 +7854,7 @@ fastlane-plugin-xcresult_to_junit:
   :github_contributors: 0
 fastlane-plugin-alioss:
   :initial_commit: 2019-11-27
-  :age_in_days: 22
+  :age_in_days: 33
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7848,7 +7863,7 @@ fastlane-plugin-alioss:
     category: 
     description: 
     details: 
-  :sha: 00b1acfffacf53e0b2bc5ba80f902a9fd06b8255b71653819ef170ac393174ee
+  :sha: 3bd2680027d02334be787657893e548a4ff4e1f5b21bfd307458d3da8359b24c
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
@@ -7922,7 +7937,7 @@ fastlane-plugin-android_version_manage:
   :github_contributors: 0
 fastlane-plugin-dropbox_upload:
   :initial_commit: 2019-12-13
-  :age_in_days: 6
+  :age_in_days: 17
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7931,7 +7946,7 @@ fastlane-plugin-dropbox_upload:
     category: 
     description: upload files to dropbox
     details: use dropbox devlop access_token
-  :sha: b5c77f3f27ddb6ba143e415411082084f2d2765b2229e460f136ff8e1127de84
+  :sha: 84cd7c23d0efd5a01d158935600170d56b7f469d78d0498cca137dd0ee4a2aa2
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -8107,3 +8122,37 @@ fastlane-plugin-find_firebase_app_id:
   :github_issues: 0
   :github_forks: 1
   :github_contributors: 2
+fastlane-plugin-apphoster:
+  :initial_commit: 2019-12-20
+  :age_in_days: 10
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: apphoster
+    category: 
+    description: A simple plugin to upload your ipa file to AppHost Server in fastlane.
+    details: 
+  :sha: 22f6e9128c63a680fb705f92a844d317d91514c5491d848db5751e5f0441e700
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-gitter:
+  :initial_commit: 2019-12-19
+  :age_in_days: 11
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitter
+    category: 
+    description: Send a message to a Gitter room.
+    details: Send a message to a Gitter room.
+  :sha: 933b5fd6b9cefcb08ac4ee8a6be72866c0fafa1af6dd9b1883298014c25e2a77
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
