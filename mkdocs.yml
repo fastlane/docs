@@ -244,6 +244,7 @@ pages:
   - upload_symbols_to_sentry: actions/upload_symbols_to_sentry.md
   - upload_to_app_store: actions/upload_to_app_store.md
   - upload_to_play_store: actions/upload_to_play_store.md
+  - upload_to_play_store_internal_app_sharing: actions/upload_to_play_store_internal_app_sharing.md
   - upload_to_testflight: actions/upload_to_testflight.md
   - validate_play_store_json_key: actions/validate_play_store_json_key.md
   - verify_build: actions/verify_build.md

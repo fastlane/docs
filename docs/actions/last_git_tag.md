@@ -11,24 +11,37 @@ Get the most recent git tag
 
 
 
-> If you are using this action on a **shallow clone**, *the default with some CI systems like Bamboo*, you need to ensure that you have also pulled all the git tags appropriately. Assuming your git repo has the correct remote set you can issue `sh('git fetch --tags')`.
+> If you are using this action on a **shallow clone**, *the default with some CI systems like Bamboo*, you need to ensure that you have also pulled all the git tags appropriately. Assuming your git repo has the correct remote set you can issue `sh('git fetch --tags')`.<br>Pattern parameter allows you to filter to a subset of tags.
 
 
 last_git_tag ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @KrauseFx
+Author | @KrauseFx, @wedkarz
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 last_git_tag
 ```
 
+```ruby
+last_git_tag(pattern: "release/v1.0/")
+```
 
 
+
+
+
+## Parameters
+
+Key | Description | Default
+----|-------------|--------
+  `pattern` | Pattern to filter tags when looking for last one. Limit tags to ones matching given shell glob. If pattern lacks ?, *, or [, * at the end is implied | 
+
+<em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />

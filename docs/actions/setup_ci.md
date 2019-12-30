@@ -21,7 +21,7 @@ This action helps with CI integration. Add this to the top of your Fastfile if y
 setup_ci ||
 ---|---
 Supported platforms | ios, mac
-Author | @mollyIV
+Author | @mollyIV, @svenmuennich
 
 
 
@@ -29,7 +29,7 @@ Author | @mollyIV
 
 ```ruby
 setup_ci(
-  provider: "travis"
+  provider: "circleci"
 )
 ```
 
@@ -42,7 +42,7 @@ setup_ci(
 Key | Description | Default
 ----|-------------|--------
   `force` | Force setup, even if not executed by CI | `false`
-  `provider` | CI provider | `false`
+  `provider` | CI provider. If none is set, the provider is detected automatically | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
