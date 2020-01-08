@@ -11,5 +11,5 @@ Install _fastlane_ using
 sudo gem install fastlane -NV
 
 # Alternatively using Homebrew
-brew cask install fastlane
+brew install fastlane
 ```
