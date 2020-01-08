@@ -41,6 +41,13 @@ gradle(
 )
 ```
 
+You can pass multiple gradle tasks:
+```ruby
+gradle(
+  tasks: ["assembleDebug", "bundleDebug"]
+)
+```
+
 You can pass properties to gradle:
 ```ruby
 gradle(
@@ -112,6 +119,7 @@ Key | Description | Default
   `task` | The gradle task you want to execute, e.g. `assemble`, `bundle` or `test`. For tasks such as `assembleMyFlavorRelease` you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release') | 
   `flavor` | The flavor that you want the task for, e.g. `MyFlavor`. If you are running the `assemble` task in a multi-flavor project, and you rely on Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH] then you must specify a flavor here or else this value will be undefined | 
   `build_type` | The build type that you want the task for, e.g. `Release`. Useful for some tasks such as `assemble` | 
+  `tasks` | The multiple gradle tasks that you want to execute, e.g. `[assembleDebug, bundleDebug]` | 
   `flags` | All parameter flags you want to pass to the gradle command, e.g. `--exitcode --xml file.xml` | 
   `project_dir` | The root directory of the gradle project | `.`
   `gradle_path` | The path to your `gradlew`. If you specify a relative path, it is assumed to be relative to the `project_dir` | 

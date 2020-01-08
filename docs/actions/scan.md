@@ -265,6 +265,8 @@ Key | Description | Default
   `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#parameters-legend-dynamic)
   `xcargs` | Pass additional arguments to xcodebuild. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
+  `app_name` | App name to use in slack message and logfile name | 
+  `deployment_target_version` | Target version of the app being build or tested. Used to filter out simulator version | 
   `slack_url` | Create an Incoming WebHook for your Slack group to post results there | 
   `slack_channel` | #channel or @username | 
   `slack_message` | The message included with each message posted to slack | 

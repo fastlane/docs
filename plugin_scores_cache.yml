@@ -2713,7 +2713,7 @@ fastlane-plugin-hours:
   :github_contributors: 1
 fastlane-plugin-droidicon:
   :initial_commit: 2016-09-18
-  :age_in_days: 1187
+  :age_in_days: 1207
   :readme_score: 50
   :tests: 0
   :actions:
@@ -2723,7 +2723,7 @@ fastlane-plugin-droidicon:
     description: Generate required icon sizes and iconset from a master application
       icon
     details: 
-  :sha: 89386793c1a34d533a46a5069fd9b58d5516cfe3503b9a4d4976b0aa05d00e34
+  :sha: 6aad5cdc95a83590f0d4b68871cc34bb798c98b0d25450de2318ae048e7576fa
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
@@ -7552,19 +7552,19 @@ fastlane-plugin-gitlab_get_max_version_branch:
   :github_contributors: 0
 fastlane-plugin-latest_appcenter_build_number:
   :initial_commit: 2019-09-04
-  :age_in_days: 27
+  :age_in_days: 126
   :readme_score: 100
-  :tests: 11
+  :tests: 10
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: latest_appcenter_build_number
     category: 
     description: Gets latest version number of the app from AppCenter
     details: 
-  :sha: f17cc42d0977459649b4d0d3ddd0bafc45837f58731c3b753c8bd7d69f0231c6
+  :sha: 0540f878c9b879ab747f0ea56b1790a04a7e05ea063ad6c7a5bac2c99f66ecb7
   :github_stars: 2
   :github_subscribers: 2
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-appcenter_get_recent_release_version:
@@ -8151,6 +8151,45 @@ fastlane-plugin-gitter:
     description: Send a message to a Gitter room.
     details: Send a message to a Gitter room.
   :sha: 933b5fd6b9cefcb08ac4ee8a6be72866c0fafa1af6dd9b1883298014c25e2a77
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-gitlab_changelog:
+  :initial_commit: 2020-01-02
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_changelog
+    category: 
+    description: 
+    details: 
+  :sha: 041f9b829bb5010d58c5065a4b510edc7ff83ec30674ea2652195d79ed09b10b
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-debug_file:
+  :initial_commit: 2019-12-31
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: proguard
+    category: misc
+    description: Find and generate Android proguard file(s) to zip file
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: dsym
+    category: misc
+    description: Find and generate iOS/MacOS dSYM file(s) to zip file
+    details: 
+  :sha: a6d6d737bfb3266f6f3f72f1462574452933a010eb17ee824be8c8c1dea060e8
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
