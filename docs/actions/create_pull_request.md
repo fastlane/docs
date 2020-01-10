@@ -54,6 +54,7 @@ Key | Description | Default
   `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`) | `https://api.github.com`
   `assignees` | The assignees for the pull request | 
   `reviewers` | The reviewers (slug) for the pull request | 
+  `milestone` | The milestone ID (Integer) for the pull request | 
   `team_reviewers` | The team reviewers (slug) for the pull request | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
