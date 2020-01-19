@@ -37,13 +37,15 @@ Key | Description | Default
   `color` | Color of the device | `black`
   `launch_url` | Specify a deep link to open when your app is launched | 
   `os_version` | The operating system version on which to run your app, e.g. 10.3, 8.0 | 
-  `params` | Specifiy params value to be passed to Appetize | 
+  `params` | Specify params value to be passed to Appetize | 
   `proxy` | Specify a HTTP proxy to be passed to Appetize | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
 
 ## Documentation
 

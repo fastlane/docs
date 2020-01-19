@@ -36,6 +36,7 @@ pages:
   - Cross Platform:
     - React Native: getting-started/cross-platform/react-native.md
     - Flutter: getting-started/cross-platform/flutter.md
+    - NativeScript: getting-started/cross-platform/nativescript.md
 - Actions:
   - Available Actions: actions.md
   - Create Your Own Action: create-action.md
@@ -97,6 +98,7 @@ pages:
   - dsym_zip: actions/dsym_zip.md
   - echo: actions/echo.md
   - ensure_bundle_exec: actions/ensure_bundle_exec.md
+  - ensure_env_vars: actions/ensure_env_vars.md
   - ensure_git_branch: actions/ensure_git_branch.md
   - ensure_git_status_clean: actions/ensure_git_status_clean.md
   - ensure_no_debug_code: actions/ensure_no_debug_code.md
@@ -141,6 +143,7 @@ pages:
   - increment_build_number: actions/increment_build_number.md
   - increment_version_number: actions/increment_version_number.md
   - install_on_device: actions/install_on_device.md
+  - install_provisioning_profile: actions/install_provisioning_profile.md
   - install_xcode_plugin: actions/install_xcode_plugin.md
   - installr: actions/installr.md
   - ipa: actions/ipa.md
@@ -230,6 +233,7 @@ pages:
   - update_fastlane: actions/update_fastlane.md
   - update_icloud_container_identifiers: actions/update_icloud_container_identifiers.md
   - update_info_plist: actions/update_info_plist.md
+  - update_keychain_access_groups: actions/update_keychain_access_groups.md
   - update_plist: actions/update_plist.md
   - update_project_code_signing: actions/update_project_code_signing.md
   - update_project_provisioning: actions/update_project_provisioning.md
@@ -240,6 +244,7 @@ pages:
   - upload_symbols_to_sentry: actions/upload_symbols_to_sentry.md
   - upload_to_app_store: actions/upload_to_app_store.md
   - upload_to_play_store: actions/upload_to_play_store.md
+  - upload_to_play_store_internal_app_sharing: actions/upload_to_play_store_internal_app_sharing.md
   - upload_to_testflight: actions/upload_to_testflight.md
   - validate_play_store_json_key: actions/validate_play_store_json_key.md
   - verify_build: actions/verify_build.md
@@ -282,6 +287,7 @@ pages:
     - GitLab CI Integration: best-practices/continuous-integration/gitlab.md
     - Azure DevOps Integration: best-practices/continuous-integration/azure-devops.md
     - Nevercode Integration: best-practices/continuous-integration/nevercode.md
+    - Semaphore: best-practices/continuous-integration/semaphore.md
   - Keys: best-practices/keys.md
 - Advanced:
   - fastlane: advanced/fastlane.md

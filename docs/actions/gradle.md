@@ -22,7 +22,7 @@ Returns | The output of running the gradle task
 
 
 
-## 4 Examples
+## 1 Example
 
 ```ruby
 gradle(
@@ -32,6 +32,16 @@ gradle(
 )
 ```
 
+To build an AAB use:
+```ruby
+gradle(
+  task: "bundle",
+  flavor: "WorldDomination",
+  build_type: "Release"
+)
+```
+
+You can pass properties to gradle:
 ```ruby
 gradle(
   # ...
@@ -59,8 +69,8 @@ gradle(
 )
 ```
 
+If you need to pass sensitive information through the `gradle` action, and don't want the generated command to be printed before it is run, you can suppress that:
 ```ruby
-# If you need to pass sensitive information through the `gradle` action, and don't want the generated command to be printed before it is run, you can suppress that:
 gradle(
   # ...
   print_command: false
@@ -84,8 +94,8 @@ gradle(
 )
 ```
 
+Delete the build directory, generated APKs and AABs
 ```ruby
-# Delete the build directory and generated APKs
 gradle(
   task: "clean"
 )
@@ -99,7 +109,7 @@ gradle(
 
 Key | Description | Default
 ----|-------------|--------
-  `task` | The gradle task you want to execute, e.g. `assemble` or `test`. For tasks such as `assembleMyFlavorRelease` you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release') | 
+  `task` | The gradle task you want to execute, e.g. `assemble`, `bundle` or `test`. For tasks such as `assembleMyFlavorRelease` you should use gradle(task: 'assemble', flavor: 'Myflavor', build_type: 'Release') | 
   `flavor` | The flavor that you want the task for, e.g. `MyFlavor`. If you are running the `assemble` task in a multi-flavor project, and you rely on Actions.lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH] then you must specify a flavor here or else this value will be undefined | 
   `build_type` | The build type that you want the task for, e.g. `Release`. Useful for some tasks such as `assemble` | 
   `flags` | All parameter flags you want to pass to the gradle command, e.g. `--exitcode --xml file.xml` | 
@@ -115,6 +125,29 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `gradle` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::GRADLE_APK_OUTPUT_PATH` | The path to the newly generated apk file. Undefined in a multi-variant assemble scenario
+  `SharedValues::GRADLE_ALL_APK_OUTPUT_PATHS` | When running a multi-variant `assemble`, the array of signed apk's that were generated
+  `SharedValues::GRADLE_FLAVOR` | The flavor, e.g. `MyFlavor`
+  `SharedValues::GRADLE_BUILD_TYPE` | The build type, e.g. `Release`
+  `SharedValues::GRADLE_AAB_OUTPUT_PATH` | The path to the most recent Android app bundle
+  `SharedValues::GRADLE_ALL_AAB_OUTPUT_PATHS` | The paths to the most recent Android app bundles
+  `SharedValues::GRADLE_OUTPUT_JSON_OUTPUT_PATH` | The path to the most recent output.json file
+  `SharedValues::GRADLE_ALL_OUTPUT_JSON_OUTPUT_PATHS` | The path to the newly generated output.json files
+  `SharedValues::GRADLE_MAPPING_TXT_OUTPUT_PATH` | The path to the most recent mapping.txt file
+  `SharedValues::GRADLE_ALL_MAPPING_TXT_OUTPUT_PATHS` | The path to the newly generated mapping.txt files
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

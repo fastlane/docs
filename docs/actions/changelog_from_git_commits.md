@@ -63,6 +63,20 @@ Key | Description | Default
 
 <hr />
 
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `changelog_from_git_commits` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::FL_CHANGELOG` | The changelog string generated from the collected git commit messages
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

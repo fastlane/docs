@@ -39,10 +39,12 @@ sudo gem install fastlane
 
 ##### Gradle dependency
 ```java
-androidTestCompile('tools.fastlane:screengrab:x.x.x')
+androidTestImplementation 'tools.fastlane:screengrab:x.x.x'
 ```
 
 The latest version is [ ![Download](https://api.bintray.com/packages/fastlane/fastlane/screengrab/images/download.svg) ](https://bintray.com/fastlane/fastlane/screengrab/_latestVersion)
+
+As of Screengrab version 2.0.0, all Android test dependencies are AndroidX dependencies. This means a device with API 18+, Android 4.3 or greater is required. If you wish to capture screenshots with an older Android OS, then you must use a 1.x.x version.
 
 ##### Configuring your Manifest Permissions
 
@@ -95,10 +97,10 @@ As of _screengrab_ 0.5.0, you can specify different strategies to control the wa
 * Multi-window situations are correctly captured (dialogs, etc.)
 * Works on Android N
 
-However, UI Automator requires a device with **API level >= 18**, so it is not yet the default strategy. To enable it for all screenshots by default, make the following call before your tests run:
+UI Automator is the default strategy. However, UI Automator requires a device with **API level >= 18**. If you need to grab screenshots on an older Android version, use the latest 1.x.x version of this library and set the DecorView ScreenshotStrategy.
 
 ```java
-Screengrab.setDefaultScreenshotStrategy(new UiAutomatorScreenshotStrategy());
+Screengrab.setDefaultScreenshotStrategy(new DecorViewScreenshotStrategy());
 ```
 
 ## Improved screenshot capture with Falcon
@@ -182,7 +184,39 @@ If you're having trouble getting your device unlocked and the screen activated t
 
 ## Clean Status Bar
 
-You can use [QuickDemo](https://github.com/PSPDFKit-labs/QuickDemo) to clean up the status bar for your screenshots.
+Screengrab can clean your status bar to make your screenshots even more beautiful.  
+Note: the clean status bar feature is only supported on devices with *API level >= 23*.
+
+To use the clean status bar feature add the following lines to your src/debug/AndroidManifest.xml
+```xml
+<!-- Indicates the use of the clean status bar feature -->
+<uses-feature android:name="tools.fastlane.screengrab.cleanstatusbar"/>
+<!-- Allows for changing the status bar -->
+<uses-permission android:name="android.permission.DUMP"/>
+```
+
+After that you can enable and disable the clean status bar at any moment during your tests.  
+In most cases you probably want to do this in the @BeforeClass and @AfterClass methods.
+```java
+@BeforeClass
+public static void beforeAll() {
+    CleanStatusBar.enableWithDefaults();
+}
+
+@AfterClass
+public static void afterAll() {
+    CleanStatusBar.disable();
+}
+```
+
+Have a look at the methods of the `CleanStatusBar` class to customize the status bar even more.  
+You could for example show the Bluetooth icon and the LTE text.
+```java
+new CleanStatusBar()
+    .setBluetoothState(BluetoothState.DISCONNECTED)
+    .setMobileNetworkDataType(MobileDataType.LTE)
+    .enable();
+```
 
 # Advanced _screengrab_
 
@@ -319,19 +353,36 @@ Key | Description | Default
   `use_tests_in_packages` | Only run tests in these Java packages | 
   `use_tests_in_classes` | Only run tests in these Java classes | 
   `launch_arguments` | Additional launch arguments | 
-  `test_instrumentation_runner` | The fully qualified class name of your test instrumentation runner | `android.support.test.runner.AndroidJUnitRunner`
+  `test_instrumentation_runner` | The fully qualified class name of your test instrumentation runner | `androidx.test.runner.AndroidJUnitRunner`
   `ending_locale` | Return the device to this locale after running tests | `en-US`
+  `use_adb_root` | Restarts the adb daemon using `adb root` to allow access to screenshots directories on device. Use if getting 'Permission denied' errors | `false`
   `app_apk_path` | The path to the APK for the app under test | [*](#parameters-legend-dynamic)
   `tests_apk_path` | The path to the APK for the the tests bundle | [*](#parameters-legend-dynamic)
   `specific_device` | Use the device or emulator with the given serial number or qualifier | 
   `device_type` | Type of device used for screenshots. Matches Google Play Types (phone, sevenInch, tenInch, tv, wear) | `phone`
   `exit_on_test_failure` | Whether or not to exit Screengrab on test failure. Exiting on failure will not copy sceenshots to local machine nor open sceenshots summary | `true`
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
+  `use_timestamp_suffix` | Add timestamp suffix to screenshot filename | `true`
+  `adb_host` | Configure the host used by adb to connect, allows running on remote devices farm | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `screengrab` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::SCREENGRAB_OUTPUT_DIRECTORY` | The path to the output directory
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

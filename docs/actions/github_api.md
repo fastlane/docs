@@ -67,7 +67,7 @@ Key | Description | Default
   `api_token` | Personal API Token for GitHub - generate one at https://github.com/settings/tokens | [*](#parameters-legend-dynamic)
   `http_method` | The HTTP method. e.g. GET / POST | `GET`
   `body` | The request body in JSON or hash format | `{}`
-  `raw_body` | The request body taken vertabim instead of as JSON, useful for file uploads | 
+  `raw_body` | The request body taken verbatim instead of as JSON, useful for file uploads | 
   `path` | The endpoint path. e.g. '/repos/:owner/:repo/readme' | 
   `url` | The complete full url - used instead of path. e.g. 'https://uploads.github.com/repos/fastlane...' | 
   `error_handlers` | Optional error handling hash based on status code, or pass '*' to handle all errors | `{}`
@@ -78,6 +78,22 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `github_api` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::GITHUB_API_STATUS_CODE` | The status code returned from the request
+  `SharedValues::GITHUB_API_RESPONSE` | The full response body
+  `SharedValues::GITHUB_API_JSON` | The parsed json returned from GitHub
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

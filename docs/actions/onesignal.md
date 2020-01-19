@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # onesignal
 
 
-Create a new [OneSignal](https://onesignal.com/) application
+Create or update a new [OneSignal](https://onesignal.com/) application
 
 
 
 
-> You can use this action to automatically create a OneSignal application. You can also upload a `.p12` with password, a GCM key, or both.
+> You can use this action to automatically create or update a OneSignal application. You can also upload a `.p12` with password, a GCM key, or both.
 
 
 onesignal ||
@@ -21,12 +21,25 @@ Author | @timothybarraclough, @smartshowltd
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 onesignal(
   auth_token: "Your OneSignal Auth Token",
   app_name: "Name for OneSignal App",
+  android_token: "Your Android GCM key (optional)",
+  android_gcm_sender_id: "Your Android GCM Sender ID (optional)",
+  apns_p12: "Path to Apple .p12 file (optional)",
+  apns_p12_password: "Password for .p12 file (optional)",
+  apns_env: "production/sandbox (defaults to production)"
+)
+```
+
+```ruby
+onesignal(
+  app_id: "Your OneSignal App ID",
+  auth_token: "Your OneSignal Auth Token",
+  app_name: "New Name for OneSignal App",
   android_token: "Your Android GCM key (optional)",
   android_gcm_sender_id: "Your Android GCM Sender ID (optional)",
   apns_p12: "Path to Apple .p12 file (optional)",
@@ -43,8 +56,9 @@ onesignal(
 
 Key | Description | Default
 ----|-------------|--------
+  `app_id` | OneSignal App ID. Setting this updates an existing app | 
   `auth_token` | OneSignal Authorization Key | 
-  `app_name` | OneSignal App Name | 
+  `app_name` | OneSignal App Name. This is required when creating an app (in other words, when `:app_id` is not set, and optional when updating an app | 
   `android_token` | ANDROID GCM KEY | 
   `android_gcm_sender_id` | GCM SENDER ID | 
   `apns_p12` | APNS P12 File (in .p12 format) | 
@@ -55,6 +69,21 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `onesignal` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::ONE_SIGNAL_APP_ID` | The app ID of the newly created or updated app
+  `SharedValues::ONE_SIGNAL_APP_AUTH_KEY` | The auth token for the newly created or updated app
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

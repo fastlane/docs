@@ -61,11 +61,14 @@ Key | Description | Default
   `skip_import_validation` | Lint skips validating that the pod can be imported | 
   `skip_tests` | Lint skips building and running tests during validation | 
   `verbose` | Show more debugging information | `false`
+  `use_modular_headers` | Use modular headers option during validation | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
 
 ## Documentation
 

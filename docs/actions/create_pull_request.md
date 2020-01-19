@@ -17,7 +17,7 @@ This will create a new pull request on GitHub
 create_pull_request ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @seei, @tommeier, @marumemomo
+Author | @seei, @tommeier, @marumemomo, @elneruda
 Returns | The pull request URL when successful
 
 
@@ -53,11 +53,28 @@ Key | Description | Default
   `base` | The name of the branch you want your changes pulled into (defaults to `master`) | `master`
   `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`) | `https://api.github.com`
   `assignees` | The assignees for the pull request | 
+  `reviewers` | The reviewers (slug) for the pull request | 
+  `team_reviewers` | The team reviewers (slug) for the pull request | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `create_pull_request` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::CREATE_PULL_REQUEST_HTML_URL` | The HTML URL to the created pull request
+  `SharedValues::CREATE_PULL_REQUEST_NUMBER` | The identifier number of the created pull request
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

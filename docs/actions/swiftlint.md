@@ -45,7 +45,7 @@ swiftlint(
 
 Key | Description | Default
 ----|-------------|--------
-  `mode` | SwiftLint mode: :lint or :autocorrect | `:lint`
+  `mode` | SwiftLint mode: :lint, :autocorrect or :analyze | `:lint`
   `path` | Specify path to lint | 
   `output_file` | Path to output SwiftLint result | 
   `config_file` | Custom configuration file of SwiftLint | 
@@ -56,11 +56,14 @@ Key | Description | Default
   `quiet` | Don't print status logs like 'Linting <file>' & 'Done linting' | `false`
   `executable` | Path to the `swiftlint` executable on your machine | 
   `format` | Format code when mode is :autocorrect | `false`
+  `compiler_log_path` | Compiler log path when mode is :analyze | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
 
 ## Documentation
 

@@ -39,6 +39,8 @@ short_hash = commit[:abbreviated_commit_hash] # short sha of commit
 
 <hr />
 
+
+
 ## Documentation
 
 To show the documentation in your terminal, run

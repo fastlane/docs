@@ -11,7 +11,7 @@ Raises an exception if not using `bundle exec` to run fastlane
 
 
 
-> This action will check if you are using bundle exec to run fastlane.<br>You can put it into `before_all` and make sure that fastlane is run using `bundle exec fastlane` command.
+> This action will check if you are using `bundle exec` to run fastlane.<br>You can put it into `before_all` to make sure that fastlane is ran using the `bundle exec fastlane` command.
 
 
 ensure_bundle_exec ||
@@ -32,6 +32,8 @@ ensure_bundle_exec
 
 
 <hr />
+
+
 
 ## Documentation
 

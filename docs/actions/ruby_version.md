@@ -11,7 +11,7 @@ Verifies the minimum ruby version required
 
 
 
-> Add this to your `Fastfile` to require a certain version of _ruby_.<br>Put it at the top of your `Fastfile to ensure that _fastlane_ is executed appropriately.
+> Add this to your `Fastfile` to require a certain version of _ruby_.<br>Put it at the top of your `Fastfile` to ensure that _fastlane_ is executed appropriately.
 
 
 ruby_version ||
@@ -32,6 +32,8 @@ ruby_version("2.4.0")
 
 
 <hr />
+
+
 
 ## Documentation
 

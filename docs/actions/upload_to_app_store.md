@@ -250,6 +250,15 @@ app_review_information(
 
 You can also provide these values by creating files in a `metadata/review_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `first_name.txt`, `notes.txt` etc.). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will be take priority over values from these files.
 
+##### app_review_attachment_file
+You can provide additional information to the app review team as a file attachment. As of this writing, Apple supports following file attachment formats: .pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.
+
+Provide an empty string (i.e. "", not null) to remove the existing attachment file (if any) from the review information being edited.
+
+```ruby-skip-tests
+app_review_attachment_file: "./readme.txt"
+```
+
 ##### submission_information
 Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. [A list of available options](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb).
 
@@ -458,7 +467,7 @@ _deliver_ uses the following techniques under the hood:
 
 ## Available language codes
 ```no-highlight
-ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
+ar-SA, ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, he, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
 ```
 
 ## Available Metadata Folder Options
@@ -530,7 +539,7 @@ Key | Editable While Live | Directory | Filename
 ## Reference
 
 <details>
-<summary>View all available categories, languages, etc.</summary>
+<summary>View all available categories, etc.</summary>
 
 ### Available Categories
 
@@ -631,37 +640,6 @@ You can always prefix the category using `MZGenre.` (e.g. `MZGenre.Book`). _deli
 - `MZGenre.Apps.Stickers.People`
 - `MZGenre.Apps.Stickers.Places`
 - `MZGenre.Apps.Stickers.Sports`
-
-### Available Languages
-
-- `da`
-- `de-DE`
-- `el`
-- `en-AU`
-- `en-CA`
-- `en-GB`
-- `en-US`
-- `es-ES`
-- `es-MX`
-- `fi`
-- `fr-CA`
-- `fr-FR`
-- `id`
-- `it`
-- `ja`
-- `ko`
-- `ms`
-- `nl-NL`
-- `no`
-- `pt-BR`
-- `pt-PT`
-- `ru`
-- `sv`
-- `th`
-- `tr`
-- `vi`
-- `zh-Hans`
-- `zh-Hant`
 
 ### Available age rating groups
 
@@ -769,6 +747,16 @@ DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS="-t DAV" fastlane deliver
 ## HTTP Proxy
 iTunes Transporter is a Java application bundled with Xcode. In addition to utilizing the `DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS="-t DAV"`, you need to configure the transporter application to use the proxy independently from the system proxy or any environment proxy settings. You can find the configuration file within Xcode:
 
+**for Xcode11 and later**
+
+```no-highlight
+TOOLS_PATH=$( xcode-select -p )
+REL_PATH='../SharedFrameworks/ContentDeliveryServices.framework/Versions/A/itms/java/lib/net.properties'
+echo "$TOOLS_PATH/$REL_PATH"
+```
+
+**for Xcode10 or earlier**
+
 ```no-highlight
 TOOLS_PATH=$( xcode-select -p )
 REL_PATH='../Applications/Application Loader.app/Contents/itms/java/lib/net.properties'
@@ -872,6 +860,7 @@ Key | Description | Default
   `secondary_second_sub_category` | Metadata: The english name of the secondary second sub category (e.g. `Educational`, `Puzzle`) | 
   `trade_representative_contact_information` | Metadata: A hash containing the trade representative contact information | 
   `app_review_information` | Metadata: A hash containing the review information | 
+  `app_review_attachment_file` | Metadata: Path to the app review attachment file | 
   `description` | Metadata: The localised app description | 
   `name` | Metadata: The localised app name | 
   `subtitle` | Metadata: The localised app subtitle | 
@@ -891,6 +880,8 @@ Key | Description | Default
 
 
 <hr />
+
+
 
 ## Documentation
 

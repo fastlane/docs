@@ -45,14 +45,15 @@ end
 
 Key | Description | Default
 ----|-------------|--------
-  `nightly` | Opt-in to install and use nightly fastlane builds | `false`
   `no_update` | Don't update during this run. This is used internally | `false`
-  `tools` | **DEPRECATED!** Comma separated list of fastlane tools to update (e.g. `fastlane,deliver,sigh`) | 
+  `nightly` | **DEPRECATED!** Nightly builds are no longer being made available - Opt-in to install and use nightly fastlane builds | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
 
 ## Documentation
 

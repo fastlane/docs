@@ -239,6 +239,10 @@ _pilot_ uses the [CredentialsManager](https://github.com/fastlane/fastlane/tree/
 ## Provider Short Name
 If you are on multiple App Store Connect teams, iTunes Transporter may need a provider short name to know where to upload your binary. _pilot_ will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the `itc_provider` option.
 
+## Use an Application Specific Password to upload
+
+_pilot_/`upload_to_testflight` can use an [Application Specific Password via the `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD` envirionment variable](https://docs.fastlane.tools/best-practices/continuous-integration/#application-specific-passwords) to upload a binary if both the `skip_waiting_for_build_processing` and `apple_id` options are set. (If any of those are not set, it will use the normal Apple login process that might require 2FA authentication.)
+
 <hr />
 
 
@@ -332,7 +336,7 @@ Key | Description | Default
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of the app to upload or manage testers (optional) | [*](#parameters-legend-dynamic)
   `app_platform` | The platform to use (optional) | `ios`
-  `apple_id` | The unique App ID provided by App Store Connect | [*](#parameters-legend-dynamic)
+  `apple_id` | Apple ID property in the App Information section in App Store Connect | [*](#parameters-legend-dynamic)
   `ipa` | Path to the ipa file to upload | [*](#parameters-legend-dynamic)
   `demo_account_required` | Do you need a demo account when Apple does review? | `false`
   `beta_app_review_info` | Beta app review information for contact info and demo account | 
@@ -342,7 +346,7 @@ Key | Description | Default
   `localized_build_info` | Localized beta app test info for what's new | 
   `changelog` | Provide the 'What to Test' text when uploading a new build. `skip_waiting_for_build_processing: false` is required to set the changelog | 
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
-  `skip_waiting_for_build_processing` | Don't wait for the build to process. If set to true, the changelog won't be set, `distribute_external` option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan) | `false`
+  `skip_waiting_for_build_processing` | If set to true, the `distribute_external` option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan). If set to `true` and a changelog is provided, it will partially wait for the build to appear on AppStore Connect so the changelog can be set, and skip the remaining processing steps | `false`
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
   `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? | `false`
@@ -364,6 +368,8 @@ Key | Description | Default
 
 
 <hr />
+
+
 
 ## Documentation
 

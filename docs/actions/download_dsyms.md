@@ -30,7 +30,7 @@ Author | @KrauseFx
 
 
 
-## 3 Examples
+## 4 Examples
 
 ```ruby
 download_dsyms
@@ -38,6 +38,10 @@ download_dsyms
 
 ```ruby
 download_dsyms(version: "1.0.0", build_number: "345")
+```
+
+```ruby
+download_dsyms(version: "live")
 ```
 
 ```ruby
@@ -57,15 +61,31 @@ Key | Description | Default
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `platform` | The app platform for dSYMs you wish to download (ios, appletvos) | `:ios`
-  `version` | The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs | 
+  `version` | The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs or 'live' to download only the live version dSYMs | 
   `build_number` | The app build_number for dSYMs you wish to download | 
   `min_version` | The minimum app version for dSYMs you wish to download | 
   `output_directory` | Where to save the download dSYMs, defaults to the current path | 
+  `wait_for_dsym_processing` | Wait for dSYMs to process | `false`
+  `wait_timeout` | Number of seconds to wait for dSYMs to process | `300`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `download_dsyms` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::DSYM_PATHS` | An array to all the zipped dSYM files
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

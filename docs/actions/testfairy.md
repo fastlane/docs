@@ -17,7 +17,7 @@ Upload a new build to [TestFairy](https://www.testfairy.com/)
 testfairy ||
 ---|---
 Supported platforms | ios, android
-Author | @taka0125, @tcurdt
+Author | @taka0125, @tcurdt, @vijaysharm
 
 
 
@@ -50,12 +50,27 @@ Key | Description | Default
   `auto_update` | Allows an easy upgrade of all users to the current version. To enable set to 'on' | `off`
   `notify` | Send email to testers | `off`
   `options` | Array of options (shake,video_only_wifi,anonymous) | `[]`
+  `custom` | Array of custom options. Contact support@testfairy.com for more information | `''`
   `timeout` | Request timeout in seconds | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `testfairy` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::TESTFAIRY_BUILD_URL` | URL of the newly uploaded build
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

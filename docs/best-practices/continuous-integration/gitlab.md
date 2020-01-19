@@ -67,8 +67,8 @@ To get an auto-incremented build number you can use something like the following
 
 ```ruby
 lane :increment_build_number do
-  increment_build_number(build_number: ENV['CI_BUILD_ID'])
+  increment_build_number(build_number: ENV['CI_JOB_ID'])
 end
 ```
 
-Then the GitLab CI build ID (which iterates on each build) will be used.
+Then the GitLab CI job ID (which iterates on each build) will be used.

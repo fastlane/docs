@@ -36,6 +36,8 @@ download_from_play_store
 Key | Description | Default
 ----|-------------|--------
   `package_name` | The package name of the application to use | [*](#parameters-legend-dynamic)
+  `version_name` | Version name (used when uploading new apks/aabs) - defaults to 'versionName' in build.gradle or AndroidManifest.xml | [*](#parameters-legend-dynamic)
+  `track` | The track of the application to use. The default available tracks are: production, beta, alpha, internal | `production`
   `metadata_path` | Path to the directory containing the metadata files | [*](#parameters-legend-dynamic)
   `key` | **DEPRECATED!** Use `--json_key` instead - The p12 File used to authenticate with Google | [*](#parameters-legend-dynamic)
   `issuer` | **DEPRECATED!** Use `--json_key` instead - The issuer of the p12 file (email address of the service account) | [*](#parameters-legend-dynamic)
@@ -48,6 +50,8 @@ Key | Description | Default
 
 
 <hr />
+
+
 
 ## Documentation
 

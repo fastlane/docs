@@ -16,7 +16,7 @@ Fetches most recent build number from TestFlight
 
 latest_testflight_build_number ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @daveanderson
 Returns | Integer representation of the latest build number uploaded to TestFlight
 
@@ -55,6 +55,20 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `latest_testflight_build_number` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::LATEST_TESTFLIGHT_BUILD_NUMBER` | The latest build number of the latest version of the app uploaded to TestFlight
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 

@@ -141,7 +141,7 @@ Your screenshots will be stored in the `./screenshots/` folder by default (or `.
 
 New with Xcode 9, *snapshot* can run multiple simulators concurrently. This is the default behavior in order to take your screenshots as quickly as possible. This can be disabled to run each device, one at a time, by setting the `:concurrent_simulators` option to `false`.
 
-**Note:** While running *snapshot* with Xcode 9, the simulators will not be visibly spawned. So, while you wont see the simulators running your tests, they will, in fact, be taking your screenshots.
+**Note:** While running *snapshot* with Xcode 9, the simulators will not be visibly spawned. So, while you won't see the simulators running your tests, they will, in fact, be taking your screenshots.
 
 If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and _snapshot_ will continue with the next device or language. To stop the flow after the first error, run
 
@@ -426,6 +426,7 @@ Key | Description | Default
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `erase_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `localize_simulator` | Enabling this option will configure the Simulator's system language | `false`
+  `dark_mode` | Enabling this option will configure the Simulator to be in dark mode (false for light, true for dark) | 
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `add_photos` | A list of photos that should be added to the simulator before running the application | 
   `add_videos` | A list of videos that should be added to the simulator before running the application | 
@@ -448,6 +449,20 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `snapshot` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::SNAPSHOT_SCREENSHOTS_PATH` | The path to the screenshots
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
 
 ## Documentation
 
