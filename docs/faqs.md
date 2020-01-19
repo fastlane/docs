@@ -22,7 +22,7 @@ rvm osx-ssl-certs update all
 
 ### fastlane is slow (to start)
 
-If you experience slow launch times of _fastlane_, there are 2 solutions to solve this problem:
+If you experience slow launch times of _fastlane_, try this to solve this problem:
 
 ##### Uninstall unused gems
 
