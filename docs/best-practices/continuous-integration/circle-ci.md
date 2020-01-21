@@ -47,11 +47,11 @@ Next, create a `.circleci` directory in your project and add a
 ```yml
 # .circleci/config.yml
 
-version: 2
+version: 2.1
 jobs:
   build:
     macos:
-      xcode: "9.0"
+      xcode: "11.3.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
