@@ -1301,6 +1301,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Choose <strong>Release Manager</strong> (or alternatively <strong>Project Lead</strong>) from the <code>Role</code> dropdown. (Note that choosing <strong>Release Manager</strong> grants access to the production track and all other tracks. Choosing <strong>Project Lead</strong> grants access to update all tracks <em>except</em> the production track.)</li>
 <li>Click <strong>ADD USER</strong> to close the dialog</li>
 </ol>
+<p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key.</p>
 <h3 id="migrating-google-credential-format-from-p12-key-file-to-json"><a name="user-content-migrating-google-credential-format-from-p12-key-file-to-json" href="#migrating-google-credential-format-from-p12-key-file-to-json" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migrating Google credential format (from .p12 key file to .json)</h3>
 <p>In previous versions of supply, credentials to your Play Console were stored as <code>.p12</code> files. Since version 0.4.0, supply now supports the recommended <code>.json</code> key Service Account credential files. If you wish to upgrade:</p>
 <ul>

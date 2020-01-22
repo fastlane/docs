@@ -1310,6 +1310,7 @@ brew install fastlane
 <li>Choose <strong>Release Manager</strong> (or alternatively <strong>Project Lead</strong>) from the <code>Role</code> dropdown. (Note that choosing <strong>Release Manager</strong> grants access to the production track and all other tracks. Choosing <strong>Project Lead</strong> grants access to update all tracks <em>except</em> the production track.)</li>
 <li>Click <strong>ADD USER</strong> to close the dialog</li>
 </ol>
+<p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key.</p>
 <h3 id="configure-supply"><a name="user-content-configure-supply" href="#configure-supply" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure <em>supply</em></h3>
 <p>Edit your <code>fastlane/Appfile</code> and change the <code>json_key_file</code> line to have the path to your credentials file:</p>
 <pre><code class="ruby">json_key_file &quot;/path/to/your/downloaded/key.json&quot;
