@@ -1400,7 +1400,7 @@ irb(main):010:0&gt; storage.working_directory
 </blockquote>
 <p>Once your changes are made, we'll need to encrypt the repo and push it.</p>
 <h3 id="encryption-instructions"><a name="user-content-encryption-instructions" href="#encryption-instructions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>🔒 Encryption Instructions</h3>
-<p>In the Ruby console, call <code>encryption.encrypt</code> and <code>storage.save_changes!</code>. For example:</p>
+<p>In the Ruby console, call <code>encryption.encrypt_files</code> and <code>storage.save_changes!</code>. For example:</p>
 <pre><code class="ruby">irb(main):010:0&gt; encryption.encrypt_files
 irb(main):011:0&gt; files_to_commit = Dir[File.join(storage.working_directory, &quot;**&quot;, &quot;*.{cer,p12,mobileprovision}&quot;)]
 irb(main):012:0&gt; storage.save_changes!(files_to_commit: files_to_commit)
