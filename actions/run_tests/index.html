@@ -1694,6 +1694,16 @@ run_tests(
 <td></td>
 </tr>
 <tr>
+<td><code>app_name</code></td>
+<td>App name to use in slack message and logfile name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployment_target_version</code></td>
+<td>Target version of the app being build or tested. Used to filter out simulator version</td>
+<td></td>
+</tr>
+<tr>
 <td><code>slack_url</code></td>
 <td>Create an Incoming WebHook for your Slack group to post results there</td>
 <td></td>
@@ -1747,6 +1757,11 @@ run_tests(
 <td><code>xcodebuild_command</code></td>
 <td>Allows for override of the default <code>xcodebuild</code> command</td>
 <td><code>env NSUnbufferedIO=YES xcodebuild</code></td>
+</tr>
+<tr>
+<td><code>cloned_source_packages_path</code></td>
+<td>Sets a custom path for Swift Package Manager dependencies</td>
+<td></td>
 </tr>
 <tr>
 <td><code>fail_build</code></td>

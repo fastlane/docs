@@ -1251,7 +1251,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="build_app"><a name="user-content-build_app" href="#build_app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>build_app</h1>
-<p>Alias for the <code>build_ios_app</code> action</p>
+<p>Easily build and sign your app (via <em>gym</em>)</p>
 <p align="center">
   <img src="/img/actions/gym.png" width="250">
 </p>
@@ -1400,7 +1400,7 @@ output_name(&quot;MyApp&quot;)           # the name of the ipa file
 </code></pre>
 
 <p>Optional: If <em>gym</em> can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:</p>
-<pre><code class="ruby">build_ios_app(
+<pre><code class="ruby">build_app(
   scheme: &quot;Release&quot;,
   export_options: {
     method: &quot;app-store&quot;,
@@ -1500,11 +1500,11 @@ archive | xcpretty
 </tr>
 </tbody>
 </table>
-<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
-<pre><code class="ruby">build_ios_app(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
+<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<pre><code class="ruby">build_app(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
 </code></pre>
 
-<pre><code class="ruby">build_ios_app(
+<pre><code class="ruby">build_app(
   workspace: &quot;MyApp.xcworkspace&quot;,
   configuration: &quot;Debug&quot;,
   scheme: &quot;MyApp&quot;,
@@ -1516,10 +1516,13 @@ archive | xcpretty
 )
 </code></pre>
 
-<pre><code class="ruby">gym         # alias for &quot;build_ios_app&quot;
+<pre><code class="ruby">gym    # alias for &quot;build_app&quot;
 </code></pre>
 
-<pre><code class="ruby">build_app   # alias for &quot;build_ios_app&quot;
+<pre><code class="ruby">build_ios_app    # alias for &quot;build_app (only iOS options)&quot;
+</code></pre>
+
+<pre><code class="ruby">build_mac_app    # alias for &quot;build_app (only macOS options)&quot;
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1583,6 +1586,11 @@ archive | xcpretty
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>skip_package_pkg</code></td>
+<td>Should we skip packaging the pkg?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>include_symbols</code></td>
 <td>Should the ipa file include symbols?</td>
 <td></td>
@@ -1620,6 +1628,16 @@ archive | xcpretty
 <tr>
 <td><code>skip_codesigning</code></td>
 <td>Build without codesigning</td>
+<td></td>
+</tr>
+<tr>
+<td><code>catalyst_platform</code></td>
+<td>Platform to build when using a Catalyst enabled app. Valid values are: ios, macos</td>
+<td></td>
+</tr>
+<tr>
+<td><code>installer_cert_name</code></td>
+<td>Full name of 3rd Party Mac Developer Installer or Deveoper ID Installer certificate. Example: <code>3rd Party Mac Developer Installer: Your Company (ABC1234XWYZ)</code></td>
 <td></td>
 </tr>
 <tr>
@@ -1732,6 +1750,11 @@ archive | xcpretty
 <td>Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used</td>
 <td><code>false</code></td>
 </tr>
+<tr>
+<td><code>cloned_source_packages_path</code></td>
+<td>Sets a custom path for Swift Package Manager dependencies</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
@@ -1750,6 +1773,10 @@ archive | xcpretty
 <tr>
 <td><code>SharedValues::IPA_OUTPUT_PATH</code></td>
 <td>The path to the newly generated ipa file</td>
+</tr>
+<tr>
+<td><code>SharedValues::PKG_OUTPUT_PATH</code></td>
+<td>The path to the newly generated pkg file</td>
 </tr>
 <tr>
 <td><code>SharedValues::DSYM_OUTPUT_PATH</code></td>

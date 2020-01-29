@@ -1293,6 +1293,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 )
 </code></pre>
 
+<p>You can pass multiple gradle tasks:</p>
+<pre><code class="ruby">gradle(
+  tasks: [&quot;assembleDebug&quot;, &quot;bundleDebug&quot;]
+)
+</code></pre>
+
 <p>You can pass properties to gradle:</p>
 <pre><code class="ruby">gradle(
   # ...
@@ -1370,6 +1376,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>build_type</code></td>
 <td>The build type that you want the task for, e.g. <code>Release</code>. Useful for some tasks such as <code>assemble</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>tasks</code></td>
+<td>The multiple gradle tasks that you want to execute, e.g. <code>[assembleDebug, bundleDebug]</code></td>
 <td></td>
 </tr>
 <tr>

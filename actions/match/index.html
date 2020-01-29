@@ -1692,8 +1692,13 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tbody>
 <tr>
 <td><code>type</code></td>
-<td>Define the profile type, can be appstore, adhoc, development, enterprise</td>
+<td>Define the profile type, can be appstore, adhoc, development, enterprise, developer_id</td>
 <td><code>development</code></td>
+</tr>
+<tr>
+<td><code>additional_cert_types</code></td>
+<td>Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>readonly</code></td>
@@ -1822,7 +1827,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>platform</code></td>
-<td>Set the provisioning profile's platform to work with (i.e. ios, tvos)</td>
+<td>Set the provisioning profile's platform to work with (i.e. ios, tvos, macos)</td>
 <td><code>ios</code></td>
 </tr>
 <tr>

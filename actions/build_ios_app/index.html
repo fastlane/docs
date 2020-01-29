@@ -1251,7 +1251,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="build_ios_app"><a name="user-content-build_ios_app" href="#build_ios_app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>build_ios_app</h1>
-<p>Easily build and sign your app (via <em>gym</em>)</p>
+<p>Alias for the <code>build_app</code> action but only for iOS</p>
 <p align="center">
   <img src="/img/actions/gym.png" width="250">
 </p>
@@ -1400,7 +1400,7 @@ output_name(&quot;MyApp&quot;)           # the name of the ipa file
 </code></pre>
 
 <p>Optional: If <em>gym</em> can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:</p>
-<pre><code class="ruby">build_ios_app(
+<pre><code class="ruby">build_app(
   scheme: &quot;Release&quot;,
   export_options: {
     method: &quot;app-store&quot;,
@@ -1488,7 +1488,7 @@ archive | xcpretty
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, mac</td>
+<td>ios</td>
 </tr>
 <tr>
 <td>Author</td>
@@ -1500,11 +1500,11 @@ archive | xcpretty
 </tr>
 </tbody>
 </table>
-<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
-<pre><code class="ruby">build_ios_app(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
+<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<pre><code class="ruby">build_app(scheme: &quot;MyApp&quot;, workspace: &quot;MyApp.xcworkspace&quot;)
 </code></pre>
 
-<pre><code class="ruby">build_ios_app(
+<pre><code class="ruby">build_app(
   workspace: &quot;MyApp.xcworkspace&quot;,
   configuration: &quot;Debug&quot;,
   scheme: &quot;MyApp&quot;,
@@ -1516,10 +1516,13 @@ archive | xcpretty
 )
 </code></pre>
 
-<pre><code class="ruby">gym         # alias for &quot;build_ios_app&quot;
+<pre><code class="ruby">gym    # alias for &quot;build_app&quot;
 </code></pre>
 
-<pre><code class="ruby">build_app   # alias for &quot;build_ios_app&quot;
+<pre><code class="ruby">build_ios_app    # alias for &quot;build_app (only iOS options)&quot;
+</code></pre>
+
+<pre><code class="ruby">build_mac_app    # alias for &quot;build_app (only macOS options)&quot;
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1732,6 +1735,11 @@ archive | xcpretty
 <td>Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used</td>
 <td><code>false</code></td>
 </tr>
+<tr>
+<td><code>cloned_source_packages_path</code></td>
+<td>Sets a custom path for Swift Package Manager dependencies</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
@@ -1750,6 +1758,10 @@ archive | xcpretty
 <tr>
 <td><code>SharedValues::IPA_OUTPUT_PATH</code></td>
 <td>The path to the newly generated ipa file</td>
+</tr>
+<tr>
+<td><code>SharedValues::PKG_OUTPUT_PATH</code></td>
+<td>The path to the newly generated pkg file</td>
 </tr>
 <tr>
 <td><code>SharedValues::DSYM_OUTPUT_PATH</code></td>
@@ -1795,7 +1807,7 @@ archive | xcpretty
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../bundle_install/" class="btn btn-neutral float-right" title="bundle_install">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../build_mac_app/" class="btn btn-neutral float-right" title="build_mac_app">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../build_app/" class="btn btn-neutral" title="build_app"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -1843,7 +1855,7 @@ archive | xcpretty
         <span><a href="../build_app/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../bundle_install/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../build_mac_app/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
