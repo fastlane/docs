@@ -577,7 +577,8 @@ match   # alias for "sync_code_signing"
 
 Key | Description | Default
 ----|-------------|--------
-  `type` | Define the profile type, can be appstore, adhoc, development, enterprise | `development`
+  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id | `development`
+  `additional_cert_types` | Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer) | 
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
   `skip_provisioning_profiles` | Skip syncing provisioning profiles | `false`
@@ -603,7 +604,7 @@ Key | Description | Default
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
-  `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos) | `ios`
+  `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos) | `ios`
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
   `output_path` | Path in which to export certificates, key and profile | 
   `verbose` | Print out extra information and all commands | `false`

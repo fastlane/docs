@@ -51,6 +51,7 @@ Key | Description | Default
 ----|-------------|--------
   `url` | The URL of the repository to import the Fastfile from | 
   `branch` | The branch or tag to check-out on the repository | `HEAD`
+  `dependencies` | The array of additional Fastfiles in the repository | `[]`
   `path` | The path of the Fastfile in the repository | `fastlane/Fastfile`
   `version` | The version to checkout on the repository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints | 
 

@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # build_ios_app
 
 
-Easily build and sign your app (via _gym_)
+Alias for the `build_app` action but only for iOS
 
 
 
@@ -159,7 +159,7 @@ export_options({
 Optional: If _gym_ can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:
 
 ```ruby
-build_ios_app(
+build_app(
   scheme: "Release",
   export_options: {
     method: "app-store",
@@ -262,20 +262,20 @@ It will show you `ipa` files like this:
 
 build_ios_app ||
 ---|---
-Supported platforms | ios, mac
+Supported platforms | ios
 Author | @KrauseFx
 Returns | The absolute path to the generated ipa file
 
 
 
-## 4 Examples
+## 5 Examples
 
 ```ruby
-build_ios_app(scheme: "MyApp", workspace: "MyApp.xcworkspace")
+build_app(scheme: "MyApp", workspace: "MyApp.xcworkspace")
 ```
 
 ```ruby
-build_ios_app(
+build_app(
   workspace: "MyApp.xcworkspace",
   configuration: "Debug",
   scheme: "MyApp",
@@ -288,11 +288,15 @@ build_ios_app(
 ```
 
 ```ruby
-gym         # alias for "build_ios_app"
+gym    # alias for "build_app"
 ```
 
 ```ruby
-build_app   # alias for "build_ios_app"
+build_ios_app    # alias for "build_app (only iOS options)"
+```
+
+```ruby
+build_mac_app    # alias for "build_app (only macOS options)"
 ```
 
 
@@ -343,6 +347,7 @@ Key | Description | Default
   `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file | 
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
+  `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
@@ -358,6 +363,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::IPA_OUTPUT_PATH` | The path to the newly generated ipa file
+  `SharedValues::PKG_OUTPUT_PATH` | The path to the newly generated pkg file
   `SharedValues::DSYM_OUTPUT_PATH` | The path to the dSYM files
   `SharedValues::XCODEBUILD_ARCHIVE` | The path to the xcodebuild archive
 

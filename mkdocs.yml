@@ -62,6 +62,7 @@ pages:
   - build_android_app: actions/build_android_app.md
   - build_app: actions/build_app.md
   - build_ios_app: actions/build_ios_app.md
+  - build_mac_app: actions/build_mac_app.md
   - bundle_install: actions/bundle_install.md
   - capture_android_screenshots: actions/capture_android_screenshots.md
   - capture_ios_screenshots: actions/capture_ios_screenshots.md

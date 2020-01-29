@@ -444,6 +444,8 @@ Key | Description | Default
   `test_target_name` | The name of the target you want to test (if you desire to override the Target Application from Xcode) | 
   `namespace_log_files` | Separate the log files per device and per language | 
   `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9 | `true`
+  `disable_slide_to_type` | Disable the simulator from showing the 'Slide to type' prompt | `false`
+  `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

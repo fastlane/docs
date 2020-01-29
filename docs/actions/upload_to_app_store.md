@@ -834,8 +834,8 @@ Key | Description | Default
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
-  `automatic_release` | Should the app be automatically released once it's approved? | `false`
-  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval | 
+  `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | `false`
+  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Can not be used together with `automatic_release`) | 
   `phased_release` | Enable the phased release feature of iTC | `false`
   `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
   `price_tier` | The price tier of this application | 
