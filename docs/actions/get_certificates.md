@@ -134,6 +134,7 @@ get_certificates(
 Key | Description | Default
 ----|-------------|--------
   `development` | Create a development certificate instead of a distribution one | `false`
+  `type` | Create specific certificate type (takes precedence over :development) | 
   `force` | Create a certificate even if an existing certificate exists | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)

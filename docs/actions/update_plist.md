@@ -11,17 +11,67 @@ Update a plist file
 
 
 
-> This action allows you to modify any `plist` file.
+> This action allows you to modify any value inside any `plist` file.
 
 
 update_plist ||
 ---|---
 Supported platforms | ios
-Author | @rishabhtayal
+Author | @rishabhtayal, @matthiaszarzecki
 
 
 
-## 1 Example
+## 6 Examples
+
+```ruby
+update_plist( # Updates the CLIENT_ID and GOOGLE_APP_ID string entries in the plist-file
+  plist_path: "path/to/your_plist_file.plist",
+  block: proc do |plist|
+    plist[:CLIENT_ID] = "new_client_id"
+    plist[:GOOGLE_APP_ID] = "new_google_app_id"
+  end
+)
+```
+
+```ruby
+update_plist( # Sets a boolean entry
+  plist_path: "path/to/your_plist_file.plist",
+  block: proc do |plist|
+    plist[:boolean_entry] = true
+  end
+)
+```
+
+```ruby
+update_plist( # Sets a number entry
+  plist_path: "path/to/your_plist_file.plist",
+  block: proc do |plist|
+    plist[:number_entry] = 13
+  end
+)
+```
+
+```ruby
+update_plist( # Sets an array-entry with multiple sub-types
+  plist_path: "path/to/your_plist_file.plist",
+  block: proc do |plist|
+    plist[:array_entry] = ["entry_01", true, 1243]
+  end
+)
+```
+
+```ruby
+update_plist( # The block can contain logic too
+  plist_path: "path/to/your_plist_file.plist",
+  block: proc do |plist|
+    if options[:environment] == "production"
+      plist[:CLIENT_ID] = "new_client_id_production"
+    else
+      plist[:CLIENT_ID] = "new_client_id_development"
+    end
+  end
+)
+```
 
 ```ruby
 update_plist( # Advanced processing: find URL scheme for particular key and replace value

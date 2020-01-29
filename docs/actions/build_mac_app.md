@@ -1,12 +1,12 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/gym.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/build_mac_app.rb
 -->
 
-# gym
+# build_mac_app
 
 
-Alias for the `build_app` action
+Alias for the `build_app` action but only for macOS
 
 
 
@@ -260,9 +260,9 @@ It will show you `ipa` files like this:
 <hr />
 
 
-gym ||
+build_mac_app ||
 ---|---
-Supported platforms | ios, mac
+Supported platforms | mac
 Author | @KrauseFx
 Returns | The absolute path to the generated ipa file
 
@@ -316,7 +316,6 @@ Key | Description | Default
   `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#parameters-legend-dynamic)
   `silent` | Hide all information that's not necessary while building | `false`
   `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH' | 
-  `skip_package_ipa` | Should we skip packaging the ipa? | `false`
   `skip_package_pkg` | Should we skip packaging the pkg? | `false`
   `include_symbols` | Should the ipa file include symbols? | 
   `include_bitcode` | Should the ipa file include bitcode? | 
@@ -326,7 +325,6 @@ Key | Description | Default
   `skip_build_archive` | Export ipa from previously built xcarchive. Uses archive_path as source | 
   `skip_archive` | After building, don't archive, effectively not including -archivePath param | 
   `skip_codesigning` | Build without codesigning | 
-  `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
   `installer_cert_name` | Full name of 3rd Party Mac Developer Installer or Deveoper ID Installer certificate. Example: `3rd Party Mac Developer Installer: Your Company (ABC1234XWYZ)` | 
   `build_path` | The directory in which the archive should be stored in | 
   `archive_path` | The path to the created archive | 
@@ -361,7 +359,7 @@ Key | Description | Default
 
 ## Lane Variables
 
-Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `gym` action generates the following Lane Variables:
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `build_mac_app` action generates the following Lane Variables:
 
 SharedValue | Description 
 ------------|-------------
@@ -378,7 +376,7 @@ To get more information check the [Lanes documentation](https://docs.fastlane.to
 
 To show the documentation in your terminal, run
 ```no-highlight
-fastlane action gym
+fastlane action build_mac_app
 ```
 
 <hr />
@@ -388,13 +386,13 @@ fastlane action gym
 It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
 
 ```no-highlight
-fastlane run gym
+fastlane run build_mac_app
 ```
 
 To pass parameters, make use of the `:` symbol, for example
 
 ```no-highlight
-fastlane run gym parameter1:"value1" parameter2:"value2"
+fastlane run build_mac_app parameter1:"value1" parameter2:"value2"
 ```
 
 It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
@@ -405,7 +403,7 @@ It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
 
 ## Source code
 
-This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/gym.rb" target="_blank">view the source code on GitHub</a>
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/build_mac_app.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

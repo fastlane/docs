@@ -49,6 +49,7 @@ Key | Description | Default
   `title` | The title of the pull request | 
   `body` | The contents of the pull request | 
   `labels` | The labels for the pull request | 
+  `milestone` | The milestone ID (Integer) for the pull request | 
   `head` | The name of the branch where your changes are implemented (defaults to the current branch name) | [*](#parameters-legend-dynamic)
   `base` | The name of the branch you want your changes pulled into (defaults to `master`) | `master`
   `api_url` | The URL of GitHub API - used when the Enterprise (default to `https://api.github.com`) | `https://api.github.com`

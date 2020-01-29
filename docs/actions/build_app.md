@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # build_app
 
 
-Alias for the `build_ios_app` action
+Easily build and sign your app (via _gym_)
 
 
 
@@ -159,7 +159,7 @@ export_options({
 Optional: If _gym_ can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:
 
 ```ruby
-build_ios_app(
+build_app(
   scheme: "Release",
   export_options: {
     method: "app-store",
@@ -268,14 +268,14 @@ Returns | The absolute path to the generated ipa file
 
 
 
-## 4 Examples
+## 5 Examples
 
 ```ruby
-build_ios_app(scheme: "MyApp", workspace: "MyApp.xcworkspace")
+build_app(scheme: "MyApp", workspace: "MyApp.xcworkspace")
 ```
 
 ```ruby
-build_ios_app(
+build_app(
   workspace: "MyApp.xcworkspace",
   configuration: "Debug",
   scheme: "MyApp",
@@ -288,11 +288,15 @@ build_ios_app(
 ```
 
 ```ruby
-gym         # alias for "build_ios_app"
+gym    # alias for "build_app"
 ```
 
 ```ruby
-build_app   # alias for "build_ios_app"
+build_ios_app    # alias for "build_app (only iOS options)"
+```
+
+```ruby
+build_mac_app    # alias for "build_app (only macOS options)"
 ```
 
 
@@ -313,6 +317,7 @@ Key | Description | Default
   `silent` | Hide all information that's not necessary while building | `false`
   `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH' | 
   `skip_package_ipa` | Should we skip packaging the ipa? | `false`
+  `skip_package_pkg` | Should we skip packaging the pkg? | `false`
   `include_symbols` | Should the ipa file include symbols? | 
   `include_bitcode` | Should the ipa file include bitcode? | 
   `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id | 
@@ -321,6 +326,8 @@ Key | Description | Default
   `skip_build_archive` | Export ipa from previously built xcarchive. Uses archive_path as source | 
   `skip_archive` | After building, don't archive, effectively not including -archivePath param | 
   `skip_codesigning` | Build without codesigning | 
+  `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
+  `installer_cert_name` | Full name of 3rd Party Mac Developer Installer or Deveoper ID Installer certificate. Example: `3rd Party Mac Developer Installer: Your Company (ABC1234XWYZ)` | 
   `build_path` | The directory in which the archive should be stored in | 
   `archive_path` | The path to the created archive | 
   `derived_data_path` | The directory where built products and other derived data will go | 
@@ -343,6 +350,7 @@ Key | Description | Default
   `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file | 
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
+  `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
@@ -358,6 +366,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::IPA_OUTPUT_PATH` | The path to the newly generated ipa file
+  `SharedValues::PKG_OUTPUT_PATH` | The path to the newly generated pkg file
   `SharedValues::DSYM_OUTPUT_PATH` | The path to the dSYM files
   `SharedValues::XCODEBUILD_ARCHIVE` | The path to the xcodebuild archive
 
