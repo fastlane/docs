@@ -39,6 +39,7 @@ Key | Description | Default
   `dsym_paths` | Paths to the DSYM files or zips to upload | 
   `api_token` | Crashlytics API Key | 
   `gsp_path` | Path to GoogleService-Info.plist | 
+  `app_id` | Firebase Crashlytics APP ID | 
   `binary_path` | The path to the upload-symbols file of the Fabric app | 
   `platform` | The platform of the app (ios, appletvos, mac) | `ios`
   `dsym_worker_threads` | The number of threads to use for simultaneous dSYM upload | `1`

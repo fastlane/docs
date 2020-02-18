@@ -417,26 +417,26 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 1165
+  :age_in_days: 1226
   :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: aws_device_farm
     category: 
-    description: Upload the application to the AWS device farm.
-    details: Upload the application to the AWS device farm.
+    description: Upload the application to the AWS device farm
+    details: Upload the application to the AWS device farm
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: aws_device_farm_package
     category: 
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: 3c1cf58585a7f0006dbeaad520a4bb0d02432c9e4da780ec3d948b8f7fc463be
-  :github_stars: 66
-  :github_subscribers: 5
+  :sha: 44df5e4e2e0e9b399529e8a19f2e26c78445b1920709a1f9f69ca62e44b24148
+  :github_stars: 69
+  :github_subscribers: 4
   :github_issues: 2
-  :github_forks: 25
-  :github_contributors: 15
+  :github_forks: 28
+  :github_contributors: 16
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
   :age_in_days: 497
@@ -1578,10 +1578,15 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 955
+  :age_in_days: 1016
   :readme_score: 100
-  :tests: 94
+  :tests: 100
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: appcenter_fetch_version_number
+    category: 
+    description: Fetches the latest version number of an app from App Center
+    details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_fetch_devices
     category: 
@@ -1596,12 +1601,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 6b69765d5f878ed40df235220fa28778a0c345fe1270e38a260bfa8e6b4a8dda
-  :github_stars: 278
-  :github_subscribers: 22
+  :sha: 52a87855d8ca98ff73e7a0342c51f533a3bda4ead9a15cd1d6d86346aece483c
+  :github_stars: 298
+  :github_subscribers: 21
   :github_issues: 18
-  :github_forks: 67
-  :github_contributors: 0
+  :github_forks: 68
+  :github_contributors: 32
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -3601,7 +3606,7 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 462
+  :age_in_days: 753
   :readme_score: 100
   :tests: 24
   :actions:
@@ -3611,12 +3616,12 @@ fastlane-plugin-lizard:
     description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: 59a3da11ef6525172965934d5a803633f11e36a4456aa5b70040556486bb552b
-  :github_stars: 10
-  :github_subscribers: 6
+  :sha: 246ede523348f51a4246dd0de2447fc773ff01905fa889252ffdf258860d13f3
+  :github_stars: 14
+  :github_subscribers: 7
   :github_issues: 0
-  :github_forks: 5
-  :github_contributors: 0
+  :github_forks: 8
+  :github_contributors: 4
 fastlane-plugin-updateplistfromstrings:
   :initial_commit: 2017-11-24
   :age_in_days: 93
@@ -3700,22 +3705,22 @@ fastlane-plugin-get_application_id:
   :github_contributors: 2
 fastlane-plugin-dropbox:
   :initial_commit: 2017-12-18
-  :age_in_days: 772
+  :age_in_days: 792
   :readme_score: 100
-  :tests: 5
+  :tests: 10
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: dropbox
     category: 
     description: Uploads files to Dropbox
     details: You have to authorize the action before using it. The access token is
-      stored in your default keychain
-  :sha: e29eeb9c2098176bd72e1ed4beaf66d0979032bb7fcfc2b741f2f36a77a8b3cb
+      stored in your default keychain or passed in
+  :sha: dc13cbc70420dfbdd6d19d8c2166bf432cb1788c168431c236e4f7c0d4be9d07
   :github_stars: 3
   :github_subscribers: 2
   :github_issues: 1
-  :github_forks: 2
-  :github_contributors: 2
+  :github_forks: 3
+  :github_contributors: 3
 fastlane-plugin-gen_dev_workspace:
   :github_stars: 0
   :github_subscribers: 0
@@ -4580,7 +4585,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 615
+  :age_in_days: 676
   :readme_score: 100
   :tests: 0
   :actions:
@@ -4602,17 +4607,18 @@ fastlane-plugin-flutter:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_generate
     category: 
-    description: 1. Run `build_runner build` if build_runner is in dev_dependencies\n2.
-      According to `package:intl`, take `$strings_file` and generate `${strings_file.dirname}/arb/intl_messages.arb`,
+    description: "(1) Run `flutter packages get`;  (2) Run `build_runner build` if
+      build_runner is in dev_dependencies;   (3) According to `package:intl`, take
+      `$strings_file` and generate `${strings_file.dirname}/arb/intl_messages.arb`,
       then take all files matching `${strings_file.dirname}/intl_*.arb`, fix them
-      and generate .dart files from them
+      and generate .dart files from them."
     details: 
-  :sha: 87f89aa79b0cba3e12ed0f9086ea3d02e6e26ce2f5456682d912a30e08dd3414
-  :github_stars: 7
+  :sha: a73b949264648a6ac384ce5bec0f07fc4849f2074e0cb0cf3a52bdcf330d7a01
+  :github_stars: 10
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 2
-  :github_contributors: 0
+  :github_issues: 1
+  :github_forks: 3
+  :github_contributors: 1
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
   :age_in_days: 15
@@ -5941,7 +5947,7 @@ fastlane-plugin-imessage:
   :github_contributors: 0
 fastlane-plugin-notarize:
   :initial_commit: 2019-01-05
-  :age_in_days: 389
+  :age_in_days: 409
   :readme_score: 100
   :tests: 0
   :actions:
@@ -5950,10 +5956,10 @@ fastlane-plugin-notarize:
     category: 
     description: Notarizes a macOS app
     details: 
-  :sha: 25afce803153a0c0af8858aa683e0203eddfdd54a996ae26636fc8c24e628361
-  :github_stars: 61
+  :sha: cac3b7dd472c16316655ba993800cbdf3e9a24024ce195b2a29940192d4dea2a
+  :github_stars: 63
   :github_subscribers: 19
-  :github_issues: 3
+  :github_issues: 4
   :github_forks: 7
   :github_contributors: 6
 fastlane-plugin-gmail:
@@ -6675,10 +6681,16 @@ fastlane-plugin-icon_banner:
   :github_contributors: 0
 fastlane-plugin-react_native_release:
   :initial_commit: 2019-01-03
-  :age_in_days: 323
+  :age_in_days: 411
   :readme_score: 50
   :tests: 1
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_fastlane_session
+    category: 
+    description: Simplify 2FA authentication for App Store Connect
+    details: Creates a cookie for authenticating with App Store connecting. Handles
+      generating, encrypting, and storing the cookie.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: react_native_release
     category: 
@@ -6686,23 +6698,68 @@ fastlane-plugin-react_native_release:
     details: Creates a release for a React Native app. Handles incrementing versions
       and tags
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: encrypt_fastlane_vars
+    category: 
+    description: Encrypt fastlane vars for CI
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: decrypt_google_play_credentials
+    category: 
+    description: Decrypts app env vars and sets the values in the root .env file
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: read_fastlane_session
     category: 
     description: Simplify 2FA authentication for App Store Connect
     details: Fetches an encrypted cookie for authenticating with App Store connecting.
       Handles fetching and decrypting the cookie before setting to the local env.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: create_fastlane_session
+    name: generate_android_keystore
     category: 
-    description: Simplify 2FA authentication for App Store Connect
-    details: Creates a cookie for authenticating with App Store connecting. Handles
-      generating, encrypting, and storing the cookie.
-  :sha: ed5eb668a5e64e192e40980eb4233ef2faa0b747b2efdcc5c7378b1746fbc375
-  :github_stars: 5
+    description: Decrypts app env vars and sets the values in the root .env file
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: accept_android_sdk_licenses
+    category: 
+    description: Accepts Android sdk licenses
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: encrypt_google_play_credentials
+    category: 
+    description: Encrypts credentials from Google Play and stores in the context repo.
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: encrypt_app_vars
+    category: 
+    description: Encrypts app env vars and stores them in the context repo.
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: decrypt_android_keystore
+    category: 
+    description: Decrypts app env vars and sets the values in the root .env file
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: decrypt_fastlane_vars
+    category: 
+    description: Decrypts fastlane ENV vars from the encrypted repo. Optionally sets
+      them in ENV.
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: add_app_var
+    category: 
+    description: Adds a single ENV var to the encrypted repository
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: decrypt_app_vars
+    category: 
+    description: Decrypts app env vars and sets the values in the root .env file
+    details: Saves the current vars in android/fastlane/.env and ios/fastlane/.env
+  :sha: 022aca42c9ea048d901c96c5673de41c9cddf7bfaf473454f614cff41ee40683
+  :github_stars: 4
   :github_subscribers: 5
-  :github_issues: 5
+  :github_issues: 10
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-buggly:
   :initial_commit: 2017-02-21
   :age_in_days: 801
@@ -6918,7 +6975,7 @@ fastlane-plugin-testin:
   :github_contributors: 2
 fastlane-plugin-airwatch_workspaceone:
   :initial_commit: 2019-05-30
-  :age_in_days: 41
+  :age_in_days: 264
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6987,12 +7044,12 @@ fastlane-plugin-airwatch_workspaceone:
       of an application.
     details: unretire_all_versions - To unretire all retired versions of an application
       on the AirWatch/Workspace ONE console.
-  :sha: 3e42fe2eedc2a0e88ef2708ccbceb55b0650b7b4def36e121e426a1b6e0a4ffa
-  :github_stars: 1
+  :sha: 6d6de97364cb2129442b8241f744036c6c922f22ad0bee84c5ef5c67b78c8a78
+  :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 1
-  :github_contributors: 1
+  :github_forks: 3
+  :github_contributors: 2
 fastlane-plugin-react_native_util:
   :initial_commit: 2019-05-14
   :age_in_days: 16
@@ -8271,3 +8328,50 @@ fastlane-plugin-app_previews:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-connected:
+  :initial_commit: 2019-10-21
+  :age_in_days: 120
+  :readme_score: 100
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: connected_certs
+    category: 
+    description: App Store Connect API Certificates Module
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: connected_upload
+    category: 
+    description: App Store Connect API Uploader Module
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: connected_auth
+    category: 
+    description: App Store Connect API Authentication Module
+    details: 
+  :sha: ff0e5d511a9dfb55780b3f450ab600299be129f7d9db9abcbe969adec5308c65
+  :github_stars: 2
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-swiftformat:
+  :initial_commit: 2020-02-01
+  :age_in_days: 17
+  :readme_score: 100
+  :tests: 10
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: swiftformat
+    category: testing
+    description: Run swift code formatting using SwiftFormat
+    details: Run swift code formatting using [SwiftFormat](https://github.com/nicklockwood/SwiftFormat).
+      Please specify your options using a `.swiftformat` file.  An up-to-date list
+      with all available rules can be found in [Rules.md](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md)
+      along with documentation for how they are used.
+  :sha: d3c874de58b6bb7b4a0e2434965f23d5b7913fdf24dbd4ea5e4b71e01a0ca53e
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
