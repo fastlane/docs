@@ -73,6 +73,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::LATEST_BUILD_NUMBER` | The latest build number of either live or testflight version
+  `SharedValues::LATEST_VERSION` | The version of the latest build number
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />
