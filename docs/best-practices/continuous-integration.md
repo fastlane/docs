@@ -13,14 +13,15 @@ _fastlane_ works very well in Continuous Integration setups. It for example auto
 
 Multiple CI products and services offer integrations with fastlane:
 
-- [Jenkins](/best-practices/continuous-integration/jenkins/)
-- [CircleCI](/best-practices/continuous-integration/circle-ci/)
-- [Travis](/best-practices/continuous-integration/travis/)
-- [Bamboo](/best-practices/continuous-integration/bamboo/)
-- [GitLab CI](/best-practices/continuous-integration/gitlab/)
 - [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
+- [Bamboo](/best-practices/continuous-integration/bamboo/)
+- [Bitrise](/best-practices/continuous-integration/bitrise/)
+- [CircleCI](/best-practices/continuous-integration/circle-ci/)
+- [GitLab CI](/best-practices/continuous-integration/gitlab/)
+- [Jenkins](/best-practices/continuous-integration/jenkins/)
 - [NeverCode](/best-practices/continuous-integration/nevercode/)
-- [Semaphore](/best-practices/continuous-integration/semaphore/)
+- [Semaphore](/best-practices/continuous-integration/semaphore/) 
+- [Travis](/best-practices/continuous-integration/travis/)
 
 ## Authentication with Apple services
 
