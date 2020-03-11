@@ -1351,7 +1351,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <p><img src="/img/actions/match_init.gif" width="550" /></p>
-<p>You'll be asked if you want to store your code signing identities inside a <strong>Git repo</strong>, or on <strong>Google Cloud</strong>.</p>
+<p>You'll be asked if you want to store your code signing identities inside a <strong>Git repo</strong>, <strong>Google Cloud</strong> or <strong>Amazon S3</strong>.</p>
 <h4 id="git-storage"><a name="user-content-git-storage" href="#git-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage</h4>
 <p>Use Git Storage to store all code signing identities in a private git repo, owned and operated by you. The files will be encrypted using OpenSSL.</p>
 <p>First, enter the URL to your private (!) Git repo (You can create one for free on e.g. <a href="https://github.com/new">GitHub</a> or <a href="https://bitbucket.org/repo/create">BitBucket</a>). The URL you enter can be either a <code>https://</code> or a <code>git</code> URL. <code>fastlane match init</code> won't read or modify your certificates or profiles yet, and also won't validate your git URL.</p>
@@ -1394,6 +1394,13 @@ match
 <pre><code class="ruby-skip-tests">google_cloud_bucket_name(&quot;major-key-certificates&quot;)
 </code></pre>
 
+<h4 id="amazon-s3"><a name="user-content-amazon-s3" href="#amazon-s3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Amazon S3</h4>
+<p>Use <a href="https://aws.amazon.com/s3/">Amazon S3</a> for a fully hosted solution for your code signing identities. Certificates are stored on S3, inside a storage bucket you provide. You can also directly access the files using the web console.</p>
+<p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
+<p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
+<pre><code class="ruby-skip-tests">s3_bucket(&quot;ios-certificates&quot;)
+</code></pre>
+
 <h3 id="multiple-teams"><a name="user-content-multiple-teams" href="#multiple-teams" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Multiple teams</h3>
 <p><em>match</em> can store the codesigning files for multiple development teams:</p>
 <h4 id="git-storage_1"><a name="user-content-git-storage_1" href="#git-storage_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage</h4>
@@ -1402,8 +1409,8 @@ match
 match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 </code></pre>
 
-<h4 id="google-cloud-storage_1"><a name="user-content-google-cloud-storage_1" href="#google-cloud-storage_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h4>
-<p>If you use Google Cloud Storage, you don't need to do anything manually for multiple teams. Just use Google Cloud Storage, and the top level folder will be the team ID.</p>
+<h4 id="google-cloud-or-amazon-s3-storage"><a name="user-content-google-cloud-or-amazon-s3-storage" href="#google-cloud-or-amazon-s3-storage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud or Amazon S3 Storage</h4>
+<p>If you use Google Cloud or Amazon S3 Storage, you don't need to do anything manually. Just use Google Cloud or Amazon S3 Storage, and the top level folder will be the team ID.</p>
 <h3 id="run"><a name="user-content-run" href="#run" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run</h3>
 <blockquote>
 <p>Before running <em>match</em> for the first time, you should consider clearing your existing profiles and certificates using the <a href="#nuke">match nuke command</a>.</p>
@@ -1428,7 +1435,7 @@ If you previously ran <em>match</em> with the configured storage it will automat
 </code></pre>
 
 <h4 id="handle-multiple-targets"><a name="user-content-handle-multiple-targets" href="#handle-multiple-targets" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Handle multiple targets</h4>
-<p><em>match</em> can use the same one Git repository or Google Cloud Storage for all bundle identifiers.</p>
+<p><em>match</em> can use the same one Git repository, Google Cloud, or Amazon S3 Storage for all bundle identifiers.</p>
 <p>If you have several targets with different bundle identifiers, supply them as a comma-separated list:</p>
 <pre><code class="no-highlight">fastlane match appstore -a tools.fastlane.app,tools.fastlane.app.watchkitapp
 </code></pre>
@@ -1580,6 +1587,8 @@ end
 <p>Once you've decided which approach to take, all that's left to do is to set your encryption password as secret environment variable named <code>MATCH_PASSWORD</code>. <em>match</em> will pick this up when it's run.</p>
 <h4 id="google-cloud-storage-access"><a name="user-content-google-cloud-storage-access" href="#google-cloud-storage-access" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage access</h4>
 <p>Accessing Google Cloud Storage from your CI system requires you to provide the <code>gc_keys.json</code> file as part of your build. How you implement this is your decision. You can inject that file during build time.</p>
+<h4 id="amazon-s3-storage-access"><a name="user-content-amazon-s3-storage-access" href="#amazon-s3-storage-access" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Amazon S3 Storage access</h4>
+<p>Accessing Amazon S3 Storage from your CI system requires you to provide the <code>s3_region</code>, <code>s3_access_key</code>, <code>s3_secret_access_key</code> and <code>s3_bucket</code> options (or environment variables), with keys that has read access to the bucket.</p>
 <h3 id="nuke"><a name="user-content-nuke" href="#nuke" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Nuke</h3>
 <p>If you never really cared about code signing and have a messy Apple Developer account with a lot of invalid, expired or Xcode managed profiles/certificates, you can use the <code>match nuke</code> command to revoke your certificates and provisioning profiles. Don't worry, apps that are already available in the App Store / TestFlight will still work. Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build. After clearing your account you'll start from a clean state, and you can run <em>match</em> to generate your certificates and profiles again.</p>
 <p>To revoke all certificates and provisioning profiles for a specific environment:</p>
@@ -1627,7 +1636,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <h3 id="git"><a name="user-content-git" href="#git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git</h3>
 <p>Both your keys and provisioning profiles are encrypted using OpenSSL using a passphrase.</p>
 <p>Storing your private keys in a Git repo may sound off-putting at first. We did an analysis of potential security issues, see section below.</p>
-<h3 id="google-cloud-storage_2"><a name="user-content-google-cloud-storage_2" href="#google-cloud-storage_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h3>
+<h3 id="google-cloud-storage_1"><a name="user-content-google-cloud-storage_1" href="#google-cloud-storage_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h3>
 <p>All your keys and provisioning profiles are encrypted using Google managed keys. </p>
 <h3 id="what-could-happen-if-someone-stole-a-private-key"><a name="user-content-what-could-happen-if-someone-stole-a-private-key" href="#what-could-happen-if-someone-stole-a-private-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What could happen if someone stole a private key?</h3>
 <p>If attackers would have your certificate and provisioning profile, they could codesign an application with the same bundle identifier.</p>
@@ -1793,6 +1802,26 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>google_cloud_project_id</code></td>
 <td>ID of the Google Cloud project to use for authentication</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_region</code></td>
+<td>Name of the S3 region</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_access_key</code></td>
+<td>S3 access key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_secret_access_key</code></td>
+<td>S3 secret secret access key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_bucket</code></td>
+<td>Name of the S3 bucket</td>
 <td></td>
 </tr>
 <tr>

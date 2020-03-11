@@ -1280,7 +1280,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     &quot;AppDelegate.swift&quot;,
     &quot;path/to/project/Model.swift&quot;
   ],
+  raise_if_swiftlint_error: true,      # Allow fastlane to raise an error if swiftlint fails
   ignore_exit_status: true    # Allow fastlane to continue even if SwiftLint returns a non-zero exit status
+
 )
 </code></pre>
 
@@ -1330,8 +1332,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>raise_if_swiftlint_error</code></td>
+<td>Raises an error if swiftlint fails, so you can fail CI/CD jobs if necessary                                                     (true/false)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>reporter</code></td>
-<td>Choose output reporter</td>
+<td>Choose output reporter. Available: xcode, json, csv, checkstyle, junit, html,                                                      emoji, sonarqube, markdown, github-actions-logging</td>
 <td></td>
 </tr>
 <tr>

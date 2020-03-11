@@ -1257,7 +1257,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </p>
 
 <h6 id="easily-put-your-screenshots-into-the-right-device-frames"><a name="user-content-easily-put-your-screenshots-into-the-right-device-frames" href="#easily-put-your-screenshots-into-the-right-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily put your screenshots into the right device frames</h6>
-<p><em>frameit</em> allows you to put a gorgeous device frame around your iOS and macOS screenshots just by running one simple command. Use <em>frameit</em> to prepare perfect screenshots for the App Store, your website, QA or emails.</p>
+<p><em>frameit</em> allows you to put a gorgeous device frame around your iOS, macOS and Android screenshots just by running one simple command. Use <em>frameit</em> to prepare perfect screenshots for the App Store, your website, QA or emails.</p>
 <hr />
 <p align="center">
     <a href="#features">Features</a> &bull;
@@ -1270,9 +1270,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="features"><a name="user-content-features" href="#features" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Features</h1>
 <h2 id="frame-screenshot"><a name="user-content-frame-screenshot" href="#frame-screenshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Frame screenshot</h2>
-<p>Put a gorgeous device frame around your iOS and macOS screenshots just by running one simple command. Support for:</p>
+<p>Put a gorgeous device frame around your iOS, macOS and Android screenshots just by running one simple command. Support for:</p>
 <ul>
 <li>iPhone, iPad and Mac</li>
+<li>Set of Android devices</li>
 <li>Portrait and Landscape modes</li>
 <li>Several device frame colors</li>
 </ul>
@@ -1303,8 +1304,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
 <h2 id="basic-usage"><a name="user-content-basic-usage" href="#basic-usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Basic Usage</h2>
 <p>Why should you have to use Photoshop, just to add a frame around your screenshots?</p>
-<p>Just navigate to your folder of screenshots and use the following command:</p>
+<p>Just navigate to your folder of screenshots and use the following command (iOS and Mac OS are default platforms for backward compatibility):</p>
 <pre><code class="no-highlight">fastlane frameit
+</code></pre>
+
+<p>To frame Android screenshots:</p>
+<pre><code class="no-highlight">fastlane frameit android
 </code></pre>
 
 <p>To use the silver version of the frames:</p>
@@ -1392,12 +1397,22 @@ It has the following general JSON structure:</p>
 </tr>
 <tr>
 <td><code>frame</code></td>
-<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK,</code>WHITE<code>,</code>GOLD<code>and</code>ROSE_GOLD`)</td>
+<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK</code>, <code>WHITE</code>, <code>GOLD</code> and <code>ROSE_GOLD</code>)</td>
 <td>NA</td>
 </tr>
 <tr>
 <td><code>title_min_height</code></td>
 <td>Specifies a height always reserved for the title. Value can be a percentage of the height or an absolute value. The device will be placed below (or above) this area. Convenient to ensure the device top (or bottom) will be consistently placed at the same height on the different screenshots.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>use_platform</code></td>
+<td>Overrides the platform used for the screenshot. Valid values are <code>IOS</code>, <code>ANDROID</code> and <code>ANY</code>.</td>
+<td><code>IOS</code></td>
+</tr>
+<tr>
+<td><code>force_device_type</code></td>
+<td>Forces a specific device. Valid values are: Huawei P8, Motorola Moto E, Motorola Moto G, Nexus 4, Nexus 5X, Nexus 6P, Nexus 9, Samsung Galaxy Grand Prime, Samsung Galaxy Note 5, Samsung Galaxy S Duos, Samsung Galaxy S3, Samsung Galaxy S5, Samsung Galaxy S7, Samsung Galaxy S8, Samsung Galaxy S9, iPhone 5s, iPhone 5c, iPhone SE, iPhone 6s, iPhone 6s Plus, iPhone 7, iPhone 7 Plus, iPhone 8, iPhone 8 Plus, iPhone X, iPhone XS, iPhone XR, iPhone XS Max, iPad Air 2, iPad Mini 4, iPad Pro, MacBook, Google Pixel 3, Google Pixel 3 XL, HTC One A9, HTC One M8</td>
 <td>NA</td>
 </tr>
 </tbody>
@@ -1427,7 +1442,15 @@ These are defined in the <code>data</code> key. This is an array with the follow
 </tr>
 <tr>
 <td><code>frame</code></td>
-<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK,</code>WHITE<code>,</code>GOLD<code>and</code>ROSE_GOLD`)</td>
+<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK</code>, <code>WHITE</code>, <code>GOLD</code> and <code>ROSE_GOLD</code>)</td>
+</tr>
+<tr>
+<td><code>use_platform</code></td>
+<td>Overrides the platform used for the screenshot. Valid values are <code>IOS</code>, <code>ANDROID</code> and <code>ANY</code>.</td>
+</tr>
+<tr>
+<td><code>force_device_type</code></td>
+<td>Forces a specific device. Valid values are the same as for the general parameter.</td>
 </tr>
 </tbody>
 </table>
@@ -1475,7 +1498,8 @@ These are defined in the <code>data</code> key. This is an array with the follow
     &quot;show_complete_frame&quot;: false,
     &quot;stack_title&quot; : false,
     &quot;title_below_image&quot;: true,
-    &quot;frame&quot;: &quot;WHITE&quot;
+    &quot;frame&quot;: &quot;WHITE&quot;,
+    &quot;use_platform&quot;: &quot;IOS&quot;
   },
 
   &quot;data&quot;: [
@@ -1503,6 +1527,10 @@ These are defined in the <code>data</code> key. This is an array with the follow
       &quot;keyword&quot;: {
         &quot;color&quot;: &quot;#31bb48&quot;
       }
+    },
+    {
+      &quot;filter&quot;: &quot;Android&quot;,
+      &quot;use_platform&quot;: &quot;ANDROID&quot;
     }
   ]
 }
@@ -1618,7 +1646,7 @@ brew install imagemagick
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, mac</td>
+<td>ios, android, mac</td>
 </tr>
 <tr>
 <td>Author</td>
@@ -1626,11 +1654,14 @@ brew install imagemagick
 </tr>
 </tbody>
 </table>
-<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<h2 id="6-examples"><a name="user-content-6-examples" href="#6-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6 Examples</h2>
 <pre><code class="ruby">frame_screenshots
 </code></pre>
 
 <pre><code class="ruby">frameit # alias for &quot;frame_screenshots&quot;
+</code></pre>
+
+<pre><code class="ruby">frame_screenshots(use_platform: &quot;ANDROID&quot;)
 </code></pre>
 
 <pre><code class="ruby">frame_screenshots(silver: true)
@@ -1688,8 +1719,28 @@ brew install imagemagick
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>use_legacy_iphone7</code></td>
+<td>Use iPhone 7 frames instead of iPhone 8 frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>use_legacy_iphonex</code></td>
 <td>Use iPhone X instead of iPhone XS frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphonexr</code></td>
+<td>Use iPhone XR instead of iPhone 11 frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphonexs</code></td>
+<td>Use iPhone XS instead of iPhone 11 Pro frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphonexsmax</code></td>
+<td>Use iPhone XS Max instead of iPhone 11 Pro Max frames</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1706,6 +1757,11 @@ brew install imagemagick
 <td><code>resume</code></td>
 <td>Resume frameit instead of reprocessing all screenshots</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_platform</code></td>
+<td>Choose a platform, the valid options are IOS, ANDROID and ANY (IOS is default to ensure backward compatibility)</td>
+<td><code>IOS</code></td>
 </tr>
 <tr>
 <td><code>path</code></td>
