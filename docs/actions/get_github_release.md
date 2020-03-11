@@ -80,7 +80,7 @@ Key | Description | Default
   `url` | The path to your repo, e.g. 'KrauseFx/fastlane' | 
   `server_url` | The server url. e.g. 'https://your.github.server/api/v3' (Default: 'https://api.github.com') | `https://api.github.com`
   `version` | The version tag of the release to check | 
-  `api_token` | GitHub Personal Token (required for private repositories) | 
+  `api_token` | GitHub Personal Token (required for private repositories) | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
