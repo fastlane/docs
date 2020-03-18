@@ -162,6 +162,7 @@ pages:
   - min_fastlane_version: actions/min_fastlane_version.md
   - modify_services: actions/modify_services.md
   - nexus_upload: actions/nexus_upload.md
+  - notarize: actions/notarize.md
   - notification: actions/notification.md
   - notify: actions/notify.md
   - number_of_commits: actions/number_of_commits.md
