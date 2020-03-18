@@ -256,6 +256,7 @@ Key | Description | Default
   `should_zip_build_products` | Should zip the derived data build products and place in output path? | `false`
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
+  `concurrent_workers` | Specify the exact number of test runners that will be spawned during parallel testing. Equivalent to -parallel-testing-worker-count | 
   `max_concurrent_simulators` | Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations | 
   `disable_concurrent_testing` | Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing | `false`
   `skip_build` | Should debug build be skipped before test build? | `false`

@@ -41,7 +41,7 @@ ensure_git_branch(
 
 Key | Description | Default
 ----|-------------|--------
-  `branch` | The branch that should be checked for. String that can be either the full name of the branch or a regex to match | `master`
+  `branch` | The branch that should be checked for. String that can be either the full name of the branch or a regex e.g. `^feature/.*$` to match | `master`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
