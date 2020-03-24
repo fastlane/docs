@@ -1,81 +1,42 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/automatic_code_signing.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_code_signing_settings.rb
 -->
 
-# automatic_code_signing
+# update_code_signing_settings
 
 
 Configures Xcode's Codesigning options
 
-> Please use `update_code_signing_settings` action instead.
+
 
 
 > Configures Xcode's Codesigning options of all targets in the project
 
 
-automatic_code_signing ||
+update_code_signing_settings ||
 ---|---
 Supported platforms | ios, mac
-Author | @mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons
+Author | @mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons, @att55
 Returns | The current status (boolean) of codesigning after modification
 
 
 
-## 8 Examples
+## 2 Examples
 
 ```ruby
-# enable automatic code signing
-enable_automatic_code_signing
-```
-
-```ruby
-enable_automatic_code_signing(
-  path: "demo-project/demo/demo.xcodeproj"
-)
-```
-
-```ruby
-# disable automatic code signing
-disable_automatic_code_signing
-```
-
-```ruby
-disable_automatic_code_signing(
-  path: "demo-project/demo/demo.xcodeproj"
-)
-```
-
-```ruby
-# also set team id
-disable_automatic_code_signing(
-  path: "demo-project/demo/demo.xcodeproj",
-  team_id: "XXXX"
-)
-```
-
-```ruby
-# Only specific targets
-disable_automatic_code_signing(
-  path: "demo-project/demo/demo.xcodeproj",
+ # manual code signing
+update_code_signing_settings(
   use_automatic_signing: false,
-  targets: ["demo"]
-)
-
-```
-
-```ruby
- # via generic action
-automatic_code_signing(
-  path: "demo-project/demo/demo.xcodeproj",
-  use_automatic_signing: false
+  path: "demo-project/demo/demo.xcodeproj"
 )
 ```
 
 ```ruby
-automatic_code_signing(
-  path: "demo-project/demo/demo.xcodeproj",
-  use_automatic_signing: true
+ # automatic code signing
+update_code_signing_settings(
+  use_automatic_signing: true,
+  path: "demo-project/demo/demo.xcodeproj"
 )
 ```
 
@@ -107,7 +68,7 @@ Key | Description | Default
 
 To show the documentation in your terminal, run
 ```no-highlight
-fastlane action automatic_code_signing
+fastlane action update_code_signing_settings
 ```
 
 <hr />
@@ -117,13 +78,13 @@ fastlane action automatic_code_signing
 It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
 
 ```no-highlight
-fastlane run automatic_code_signing
+fastlane run update_code_signing_settings
 ```
 
 To pass parameters, make use of the `:` symbol, for example
 
 ```no-highlight
-fastlane run automatic_code_signing parameter1:"value1" parameter2:"value2"
+fastlane run update_code_signing_settings parameter1:"value1" parameter2:"value2"
 ```
 
 It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
@@ -134,7 +95,7 @@ It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
 
 ## Source code
 
-This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/automatic_code_signing.rb" target="_blank">view the source code on GitHub</a>
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_code_signing_settings.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 
