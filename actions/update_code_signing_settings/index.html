@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>update_app_identifier - fastlane docs</title>
+  <title>update_code_signing_settings - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "update_app_identifier";
-    var mkdocs_page_input_path = "actions/update_app_identifier.md";
-    var mkdocs_page_url = "/actions/update_app_identifier/";
+    var mkdocs_page_name = "update_code_signing_settings";
+    var mkdocs_page_input_path = "actions/update_code_signing_settings.md";
+    var mkdocs_page_url = "/actions/update_code_signing_settings/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1212,14 +1212,14 @@
         
       
     
-    <li>update_app_identifier</li>
+    <li>update_code_signing_settings</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/update_app_identifier.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/update_code_signing_settings.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1247,37 +1247,48 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_app_identifier.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_code_signing_settings.rb
 -->
 
-<h1 id="update_app_identifier"><a name="user-content-update_app_identifier" href="#update_app_identifier" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_app_identifier</h1>
-<p>Update the project's bundle identifier</p>
+<h1 id="update_code_signing_settings"><a name="user-content-update_code_signing_settings" href="#update_code_signing_settings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>update_code_signing_settings</h1>
+<p>Configures Xcode's Codesigning options</p>
 <blockquote>
-<p>Update an app identifier by either setting <code>CFBundleIdentifier</code> or <code>PRODUCT_BUNDLE_IDENTIFIER</code>, depending on which is already in use.</p>
+<p>Configures Xcode's Codesigning options of all targets in the project</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>update_app_identifier</th>
+<th>update_code_signing_settings</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@squarefrog, @tobiasstrebitzer</td>
+<td>@mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons, @att55</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The current status (boolean) of codesigning after modification</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">update_app_identifier(
-  xcodeproj: &quot;Example.xcodeproj&quot;, # Optional path to xcodeproj, will use the first .xcodeproj if not set
-  plist_path: &quot;Example/Info.plist&quot;, # Path to info plist file, relative to xcodeproj
-  app_identifier: &quot;com.test.example&quot; # The App Identifier
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby"> # manual code signing
+update_code_signing_settings(
+  use_automatic_signing: false,
+  path: &quot;demo-project/demo/demo.xcodeproj&quot;
+)
+</code></pre>
+
+<pre><code class="ruby"> # automatic code signing
+update_code_signing_settings(
+  use_automatic_signing: true,
+  path: &quot;demo-project/demo/demo.xcodeproj&quot;
 )
 </code></pre>
 
@@ -1292,19 +1303,44 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
-<td><code>xcodeproj</code></td>
+<td><code>path</code></td>
 <td>Path to your Xcode project</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
-<td><code>plist_path</code></td>
-<td>Path to info plist, relative to your Xcode project</td>
+<td><code>use_automatic_signing</code></td>
+<td>Defines if project should use automatic signing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>team_id</code></td>
+<td>Team ID, is used when upgrading project</td>
 <td></td>
 </tr>
 <tr>
-<td><code>app_identifier</code></td>
-<td>The app Identifier you want to set</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
+<td><code>targets</code></td>
+<td>Specify targets you want to toggle the signing mech. (default to all targets)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>code_sign_identity</code></td>
+<td>Code signing identity type (iPhone Developer, iPhone Distribution)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile_name</code></td>
+<td>Provisioning profile name to use for code signing</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile_uuid</code></td>
+<td>Provisioning profile UUID to use for code signing</td>
+<td></td>
+</tr>
+<tr>
+<td><code>bundle_identifier</code></td>
+<td>Application Product Bundle Identifier</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -1313,18 +1349,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action update_app_identifier
+<pre><code class="no-highlight">fastlane action update_code_signing_settings
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run update_app_identifier
+<pre><code class="no-highlight">fastlane run update_code_signing_settings
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run update_app_identifier parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run update_code_signing_settings parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1332,7 +1368,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_app_identifier.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/update_code_signing_settings.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1343,10 +1379,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../update_code_signing_settings/" class="btn btn-neutral float-right" title="update_code_signing_settings">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../update_fastlane/" class="btn btn-neutral float-right" title="update_fastlane">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../update_app_group_identifiers/" class="btn btn-neutral" title="update_app_group_identifiers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../update_app_identifier/" class="btn btn-neutral" title="update_app_identifier"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1388,10 +1424,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../update_app_group_identifiers/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../update_app_identifier/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../update_code_signing_settings/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../update_fastlane/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -1607,11 +1607,11 @@ fastlane match nuke enterprise
 
 <p>You'll be asked for the new password on all your machines on the next run.</p>
 <h3 id="import"><a name="user-content-import" href="#import" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Import</h3>
-<p>To import and encrypt a certificate (<code>.cer</code>) and the private key (<code>.p12</code>) into the <em>match</em> repo run:</p>
+<p>To import and encrypt a certificate (<code>.cer</code>), the private key (<code>.p12</code>) and the provisioning profiles (<code>.mobileprovision</code> or <code>.provisionprofile</code>) into the <em>match</em> repo run:</p>
 <pre><code class="no-highlight">fastlane match import
 </code></pre>
 
-<p>You'll be prompted for the certificate (<code>.cer</code>) and the private key (<code>.p12</code>) paths. <em>match</em> will first validate the certificate (<code>.cer</code>) against the Developer Portal before importing the certificate (<code>.cer</code>) and the private key (<code>.p12</code>).</p>
+<p>You'll be prompted for the certificate (<code>.cer</code>), the private key (<code>.p12</code>) and the provisioning profiles (<code>.mobileprovision</code> or <code>.provisionprofile</code>) paths. <em>match</em> will first validate the certificate (<code>.cer</code>) against the Developer Portal before importing the certificate, the private key and the provisioning profiles into the specified <em>match</em> repository.</p>
 <h3 id="manual-decrypt"><a name="user-content-manual-decrypt" href="#manual-decrypt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manual Decrypt</h3>
 <p>If you want to manually decrypt a file you can.</p>
 <pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;&lt;fileYouWantToDecryptPath&gt;&quot; -out &quot;&lt;decryptedFilePath&gt;&quot; -a -d
