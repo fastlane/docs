@@ -69,6 +69,7 @@ Key | Description | Default
   `platforms` | Lint against specific platforms (defaults to all platforms supported by the podspec). Multiple platforms must be comma-delimited (available since cocoapods >= 1.6) | 
   `skip_import_validation` | Lint skips validating that the pod can be imported (available since cocoapods >= 1.3) | `false`
   `skip_tests` | Lint skips building and running tests during validation (available since cocoapods >= 1.3) | `false`
+  `analyze` | Validate with the Xcode Static Analysis tool (available since cocoapods >= 1.6.1) | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

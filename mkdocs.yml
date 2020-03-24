@@ -232,6 +232,7 @@ pages:
   - unlock_keychain: actions/unlock_keychain.md
   - update_app_group_identifiers: actions/update_app_group_identifiers.md
   - update_app_identifier: actions/update_app_identifier.md
+  - update_code_signing_settings: actions/update_code_signing_settings.md
   - update_fastlane: actions/update_fastlane.md
   - update_icloud_container_identifiers: actions/update_icloud_container_identifiers.md
   - update_info_plist: actions/update_info_plist.md

@@ -2689,7 +2689,7 @@ fastlane-plugin-firebase:
   :github_contributors: 0
 fastlane-plugin-framer:
   :initial_commit: 2016-08-30
-  :age_in_days: 833
+  :age_in_days: 1302
   :readme_score: 100
   :tests: 16
   :actions:
@@ -2699,11 +2699,11 @@ fastlane-plugin-framer:
     description: Create images combining app screenshots to templates to make a nice
       \'screenshot\' to upload in App Store
     details: 
-  :sha: a745bf4c86957fe35d02c5909a929635886cef55b9e9b425bc70ad7aa6e91353
-  :github_stars: 23
+  :sha: 169413dfa6916f4cf342139b06fc6733b1950f9d24f854fd2827ac62cbd18213
+  :github_stars: 31
   :github_subscribers: 4
   :github_issues: 0
-  :github_forks: 1
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-hours:
   :initial_commit: 2017-11-01
@@ -4248,7 +4248,7 @@ fastlane-plugin-git_authors:
   :github_contributors: 2
 fastlane-plugin-update_jenkins_build:
   :initial_commit: 2018-01-26
-  :age_in_days: 89
+  :age_in_days: 788
   :readme_score: 100
   :tests: 6
   :actions:
@@ -4257,7 +4257,7 @@ fastlane-plugin-update_jenkins_build:
     category: 
     description: Update build's description of jenkins
     details: MUST disable CSRF in Security configure
-  :sha: 254857875155eb5d2a4239f84dd26327362da54bc9001a8c3f9d0bf92e87431c
+  :sha: 62ec0d7e458d1ac2d3a1952f73982ec4a2c9e3d273a844b0a38d176736860f09
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -6066,7 +6066,7 @@ fastlane-plugin-secret_keeper:
   :github_contributors: 0
 fastlane-plugin-s3_cert:
   :initial_commit: 2019-01-21
-  :age_in_days: 7
+  :age_in_days: 428
   :readme_score: 50
   :tests: 1
   :actions:
@@ -6082,8 +6082,8 @@ fastlane-plugin-s3_cert:
     description: Pull Certs from s3 and install them into keychain.
     details: Store your certificates securely in s3 and pull down automatically when
       needed.
-  :sha: 9ba947a099759d97815d9532530919fbfb9fa2f217c835a5843bc15b49056e9d
-  :github_stars: 0
+  :sha: 92bd59ab9217394680c155d3d8cbe90a51eacfb493d65e5b38a6e695fb8c9e1b
+  :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
@@ -7207,7 +7207,7 @@ fastlane-plugin-update_device_name:
   :github_contributors: 2
 fastlane-plugin-upload_dsym:
   :initial_commit: 2019-07-10
-  :age_in_days: 238
+  :age_in_days: 258
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7216,7 +7216,7 @@ fastlane-plugin-upload_dsym:
     category: 
     description: upload dsym to your specify server
     details: 
-  :sha: 1c4b39da783d41add96d87b4e05eb376a4888d4d51d54863aa41b780a39d9528
+  :sha: a76f19ef5b27767ec6c80df897cbe99f4644b8ff12ca91ff18254609b3dae2e0
   :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
@@ -7882,7 +7882,7 @@ fastlane-plugin-bugsnag_sourcemaps_upload:
   :github_contributors: 0
 fastlane-plugin-fir_cli:
   :initial_commit: 2019-11-19
-  :age_in_days: 106
+  :age_in_days: 126
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7891,10 +7891,10 @@ fastlane-plugin-fir_cli:
     category: 
     description: 
     details: 'invoke fir-cli from fastlane plugin directly. \nfir-cli: https://github.com/FIRHQ/fir-cli'
-  :sha: ca25a2232f45d24ee0555c8823806297baad9a711c01a9e889f6dc46ec2455b3
-  :github_stars: 10
+  :sha: 66fea50b31e88e54d1c83b0f37402695abdff12595f21648b92ac31224c38316
+  :github_stars: 13
   :github_subscribers: 2
-  :github_issues: 0
+  :github_issues: 2
   :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-xcresult_to_junit:
@@ -8000,7 +8000,7 @@ fastlane-plugin-android_version_manage:
   :github_contributors: 0
 fastlane-plugin-dropbox_upload:
   :initial_commit: 2019-12-13
-  :age_in_days: 17
+  :age_in_days: 102
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8009,7 +8009,7 @@ fastlane-plugin-dropbox_upload:
     category: 
     description: upload files to dropbox
     details: use dropbox devlop access_token
-  :sha: 84cd7c23d0efd5a01d158935600170d56b7f469d78d0498cca137dd0ee4a2aa2
+  :sha: 0023bd05f9039df860f4a971ccc4236acfe158cfacec0db903b9b12745ce1f32
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -8336,7 +8336,7 @@ fastlane-plugin-app_previews:
   :github_contributors: 1
 fastlane-plugin-connected:
   :initial_commit: 2019-10-21
-  :age_in_days: 135
+  :age_in_days: 155
   :readme_score: 100
   :tests: 3
   :actions:
@@ -8355,8 +8355,8 @@ fastlane-plugin-connected:
     category: 
     description: App Store Connect API Authentication Module
     details: 
-  :sha: ff0e5d511a9dfb55780b3f450ab600299be129f7d9db9abcbe969adec5308c65
-  :github_stars: 3
+  :sha: f71ebc1b2debd89fca1a45707d6e6ce1f17f9406fa98eb78cb914d11a00ed15e
+  :github_stars: 4
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
@@ -8478,6 +8478,66 @@ fastlane-plugin-create_bitbucket_pull_request:
   :sha: 0b2fef813e486c6f17b242cd6d6109d31dfa7b90c18e3dd4b513af37a3aedf33
   :github_stars: 1
   :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-menigit:
+  :initial_commit: 2020-02-21
+  :age_in_days: 32
+  :readme_score: 100
+  :tests: 9
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: add_git_remote
+    category: source_control
+    description: This will add a remote repository
+    details: "\\n"
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: remove_git_remote
+    category: source_control
+    description: This will remove a remote repository
+    details: "\\n"
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ensure_no_changes
+    category: source_control
+    description: Raises an exception if there are uncommitted git changes at path
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ensure_tag_not_exists
+    category: source_control
+    description: Checks if the git tag with the given name not exists in the current
+      repo
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_git_config_user
+    category: source_control
+    description: This will set git config user
+    details: "\\n"
+  :sha: dac12ae66e2494158bbcc6fb0b338bd2f14c476142c7c1781969967ce99b8af2
+  :github_stars: 1
+  :github_subscribers: 3
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-clang_format:
+  :initial_commit: 2020-03-06
+  :age_in_days: 18
+  :readme_score: 100
+  :tests: 14
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: clang_format
+    category: 
+    description: A tool to format C/C++/Java/JavaScript/Objective-C/Protobuf/C
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: run_clang_format
+    category: 
+    description: 'Run clang format python script: https://github.com/Sarcasm/run-clang-format'
+    details: " "
+  :sha: 74f566bcc50d9ba2698993f388848545da570de5969a297e247d11799bc19ae6
+  :github_stars: 1
+  :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
