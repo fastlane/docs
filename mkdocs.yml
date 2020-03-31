@@ -283,14 +283,15 @@ pages:
   - Source Control: best-practices/source-control.md
   - Continuous Integration: best-practices/continuous-integration.md
   - CI Integrations:
-    - Jenkins Integration: best-practices/continuous-integration/jenkins.md
-    - CircleCI Integration: best-practices/continuous-integration/circle-ci.md
-    - Travis Integration: best-practices/continuous-integration/travis.md
-    - Bamboo Integration: best-practices/continuous-integration/bamboo.md
-    - GitLab CI Integration: best-practices/continuous-integration/gitlab.md
-    - Azure DevOps Integration: best-practices/continuous-integration/azure-devops.md
-    - Nevercode Integration: best-practices/continuous-integration/nevercode.md
+    - Azure DevOps: best-practices/continuous-integration/azure-devops.md
+    - Bamboo: best-practices/continuous-integration/bamboo.md
+    - Bitrise: best-practices/continuous-integration/bitrise.md
+    - CircleCI: best-practices/continuous-integration/circle-ci.md
+    - GitLab CI: best-practices/continuous-integration/gitlab.md
+    - Jenkins: best-practices/continuous-integration/jenkins.md
+    - NeverCode: best-practices/continuous-integration/nevercode.md
     - Semaphore: best-practices/continuous-integration/semaphore.md
+    - Travis: best-practices/continuous-integration/travis.md
   - Keys: best-practices/keys.md
 - Advanced:
   - fastlane: advanced/fastlane.md
