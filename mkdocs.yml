@@ -289,7 +289,7 @@ pages:
     - CircleCI: best-practices/continuous-integration/circle-ci.md	
     - GitLab CI: best-practices/continuous-integration/gitlab.md
     - Jenkins: best-practices/continuous-integration/jenkins.md
-    - NeverCode: best-practices/continuous-integration/nevercode.md	
+    - NeverCode: best-practices/continuous-integration/nevercode.md
     - Semaphore: best-practices/continuous-integration/semaphore.md
     - Travis: best-practices/continuous-integration/travis.md
   - Keys: best-practices/keys.md
