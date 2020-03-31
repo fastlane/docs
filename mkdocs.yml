@@ -286,7 +286,7 @@ pages:
     - Azure DevOps: best-practices/continuous-integration/azure-devops.md
     - Bamboo: best-practices/continuous-integration/bamboo.md
     - Bitrise: best-practices/continuous-integration/bitrise.md
-    - CircleCI: best-practices/continuous-integration/circle-ci.md	
+    - CircleCI: best-practices/continuous-integration/circle-ci.md
     - GitLab CI: best-practices/continuous-integration/gitlab.md
     - Jenkins: best-practices/continuous-integration/jenkins.md
     - NeverCode: best-practices/continuous-integration/nevercode.md
