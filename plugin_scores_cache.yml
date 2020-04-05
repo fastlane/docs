@@ -1,9 +1,9 @@
 ---
 fastlane-plugin-versioning:
   :initial_commit: 2016-06-03
-  :age_in_days: 1267
+  :age_in_days: 1402
   :readme_score: 100
-  :tests: 71
+  :tests: 73
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: get_version_number_from_git_branch
@@ -68,15 +68,15 @@ fastlane-plugin-versioning:
     category: 
     description: Increment the build number of your project
     details: "\\n"
-  :sha: b1e0204d558c8f12ed41354c14da47b476b49b8f4227874f5a3c2f36908b555d
-  :github_stars: 249
+  :sha: 6e7c6cac566511da837b023fd4edfea3275c8074d5132c106d516c15f879e54c
+  :github_stars: 280
   :github_subscribers: 6
-  :github_issues: 12
-  :github_forks: 27
-  :github_contributors: 11
+  :github_issues: 7
+  :github_forks: 32
+  :github_contributors: 12
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 1216
+  :age_in_days: 1402
   :readme_score: 100
   :tests: 5
   :actions:
@@ -85,15 +85,15 @@ fastlane-plugin-aws_s3:
     category: 
     description: Generates a plist file and uploads all to AWS S3
     details: 
-  :sha: 93d4e5eec6ee639c0d733dd32fb8bdd862ef3a52e3a579d6ceb1167b5989fa31
-  :github_stars: 91
+  :sha: bb7108a4916475771745285a7f6a06ea21a6c6a4c7ce8c0e14cf88cf9202f407
+  :github_stars: 96
   :github_subscribers: 5
-  :github_issues: 17
-  :github_forks: 39
+  :github_issues: 18
+  :github_forks: 44
   :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
-  :age_in_days: 848
+  :age_in_days: 1321
   :readme_score: 100
   :tests: 0
   :actions:
@@ -114,11 +114,11 @@ fastlane-plugin-bugsnag:
     category: 
     description: Sets the dsym path
     details: Some magic
-  :sha: d8daf00ece931099081d6882d339f35e4b85da8d7fd1ec8c4d41806cf4ad3462
-  :github_stars: 18
-  :github_subscribers: 13
-  :github_issues: 3
-  :github_forks: 3
+  :sha: b3c786eb0a813768305f44ec7c9b148e3d85994fd63deeb16b2f37a4c0a557c8
+  :github_stars: 26
+  :github_subscribers: 18
+  :github_issues: 7
+  :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-trainer:
   :initial_commit: 2016-07-20
@@ -666,7 +666,7 @@ fastlane-plugin-yarn:
   :github_contributors: 4
 fastlane-plugin-applivery:
   :initial_commit: 2016-07-26
-  :age_in_days: 1162
+  :age_in_days: 1349
   :readme_score: 100
   :tests: 1
   :actions:
@@ -675,8 +675,8 @@ fastlane-plugin-applivery:
     category: beta
     description: Upload new iOS or Android build to Applivery
     details: 
-  :sha: 4862f32417ae4a8687e931ee5ad3668c873c172a7438ae70acd09d74688295aa
-  :github_stars: 12
+  :sha: 4778c874fe8bbf0e1cf851580f5973e2e57dc48bff55414bde440b29a98a671b
+  :github_stars: 13
   :github_subscribers: 3
   :github_issues: 0
   :github_forks: 4
@@ -989,9 +989,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 863
+  :age_in_days: 895
   :readme_score: 100
-  :tests: 282
+  :tests: 290
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1066,12 +1066,12 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: d5a691e9dc072d71513551a40e7f58dc6efca4ed1d84f636561ed2e904f71787
-  :github_stars: 131
+  :sha: 3264c4cc495a2c5ae4bbdfee46d26c9e47d00863d8aa89a49657c3bf77333d61
+  :github_stars: 136
   :github_subscribers: 7
-  :github_issues: 21
-  :github_forks: 29
-  :github_contributors: 0
+  :github_issues: 9
+  :github_forks: 31
+  :github_contributors: 9
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -1780,17 +1780,16 @@ fastlane-plugin-translation:
   :github_contributors: 0
 fastlane-plugin-ci_changelog:
   :initial_commit: 2016-09-20
-  :age_in_days: 1023
+  :age_in_days: 1293
   :readme_score: 100
-  :tests: 239
+  :tests: 224
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: ci_changelog
     category: 
-    description: Automate generate changelog between previous build failed and the
-      latest commit of scm in CI.
-    details: availabled with jenkins, gitlab ci, more support is comming soon.
-  :sha: 66248c61b1c0313800a4d542cac60da882f71cacda2c82a504d3b669bc0cdabd
+    description: 
+    details: 
+  :sha: a90d7f928c586b733087521267a420475f887f031704fa051b93121272026d72
   :github_stars: 6
   :github_subscribers: 2
   :github_issues: 0
@@ -4991,7 +4990,7 @@ fastlane-plugin-podspec_dependency_versioning:
   :github_contributors: 0
 fastlane-plugin-ipa_info:
   :initial_commit: 2018-06-27
-  :age_in_days: 581
+  :age_in_days: 648
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5000,12 +4999,12 @@ fastlane-plugin-ipa_info:
     category: 
     description: Show information of an ipa file.
     details: Show information of an ipa file.
-  :sha: 7eed0d193f0df9290711744f025acb3ee621eff111f2947e1bfcb3e8e5b38fdf
+  :sha: fb64df3b7cfd515892e87fb976bbe023b71a2fc4460e8e7ad434d24f60882a6d
   :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-slack_upload:
   :initial_commit: 2018-06-12
   :age_in_days: 38
@@ -5706,11 +5705,27 @@ fastlane-plugin-androidmanifest_editor:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-upload_dsym_to_bugly:
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
+  :github_stars: 7
+  :github_subscribers: 1
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
+  :initial_commit: 2018-11-12
+  :age_in_days: 510
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_app_to_bugly
+    category: 
+    description: A short description with <= 80 characters of what this action does
+    details: You can use this action to do cool things...
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_dsym_to_bugly
+    category: 
+    description: upload_dsym_to_bugly
+    details: 
+  :sha: 2786e91720ad55fdad1458e99592b7c4b31ae5519ade65681064787c14d81831
 fastlane-plugin-jira_util:
   :initial_commit: 2016-09-01
   :age_in_days: 1215
@@ -7207,7 +7222,7 @@ fastlane-plugin-update_device_name:
   :github_contributors: 2
 fastlane-plugin-upload_dsym:
   :initial_commit: 2019-07-10
-  :age_in_days: 258
+  :age_in_days: 270
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7216,7 +7231,7 @@ fastlane-plugin-upload_dsym:
     category: 
     description: upload dsym to your specify server
     details: 
-  :sha: a76f19ef5b27767ec6c80df897cbe99f4644b8ff12ca91ff18254609b3dae2e0
+  :sha: 513204f9f6e507ea42411016af263f08641bb105faa928dade22de5c6b13bf3e
   :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
@@ -7882,7 +7897,7 @@ fastlane-plugin-bugsnag_sourcemaps_upload:
   :github_contributors: 0
 fastlane-plugin-fir_cli:
   :initial_commit: 2019-11-19
-  :age_in_days: 126
+  :age_in_days: 138
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7891,10 +7906,10 @@ fastlane-plugin-fir_cli:
     category: 
     description: 
     details: 'invoke fir-cli from fastlane plugin directly. \nfir-cli: https://github.com/FIRHQ/fir-cli'
-  :sha: 66fea50b31e88e54d1c83b0f37402695abdff12595f21648b92ac31224c38316
-  :github_stars: 13
+  :sha: ac0baf78919661ab0f2c950b03f08028494d37f0152a3efa547f834963cb0a3b
+  :github_stars: 15
   :github_subscribers: 2
-  :github_issues: 2
+  :github_issues: 0
   :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-xcresult_to_junit:
@@ -8017,7 +8032,7 @@ fastlane-plugin-dropbox_upload:
   :github_contributors: 0
 fastlane-plugin-repack_ios:
   :initial_commit: 2019-11-24
-  :age_in_days: 25
+  :age_in_days: 133
   :readme_score: 100
   :tests: 0
   :actions:
@@ -8030,11 +8045,11 @@ fastlane-plugin-repack_ios:
       assets or non-executable resources without rebuilding the native code. It supports
       fastlane's sigh and match actions to automatically detect provisioning profiles
       and certificates for resigning the modified ipa package.
-  :sha: ef4be98f61206aeee57a2c6d91872b7ab37e465700c076d342e1c2c95345d29a
-  :github_stars: 3
-  :github_subscribers: 1
+  :sha: d93e97c163121bc42b81432d5759a82f626065b56dac1fad5f16ce45a40e603d
+  :github_stars: 6
+  :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-bundletool:
   :initial_commit: 2019-12-08
@@ -8541,3 +8556,157 @@ fastlane-plugin-clang_format:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-match_keystore:
+  :initial_commit: 2020-03-31
+  :age_in_days: 5
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: match_keystore
+    category: 
+    description: Easily sync your Android keystores across your team
+    details: This way, your entire team can use the same account and have one code
+      signing identity without any manual work or confusion.
+  :sha: 71434ab02b8870238c575e839f31aa6f7bf71b9384d0a0b2b5c737bfc3820b60
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-uninow_sentry:
+  :initial_commit: 2016-06-01
+  :age_in_days: 1404
+  :readme_score: 100
+  :tests: 34
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_sourcemap
+    category: 
+    description: Upload a sourcemap to a release of a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_finalize_release
+    category: 
+    description: Finalize a release for a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_create_release
+    category: 
+    description: Create new releases for a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_file
+    category: 
+    description: Upload files to a release of a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_dsym
+    category: 
+    description: Upload dSYM symbolication files to Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_set_commits
+    category: 
+    description: Set commits of a release
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_proguard
+    category: 
+    description: Upload mapping to a project on Sentry
+    details: " "
+  :sha: fd733576511916feb59401ca25a6964e83cc47eaf9e1ed956cbc4fe5df59510b
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-postmark:
+  :initial_commit: 2020-03-24
+  :age_in_days: 12
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: postmark
+    category: 
+    description: Send emails via Postmark in fastlane!
+    details: Already using Postmark to send emails in your project? Send emails to
+      1 or more people with ease. Created with the original intent of notifying a
+      group of people of an app release.
+  :sha: cf71dbd25eaaa3ecba19503453ef9d7225926c48e2cad3c2b3987570ff289edf
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-uninow-sentry:
+  :initial_commit: 2016-06-01
+  :age_in_days: 1404
+  :readme_score: 100
+  :tests: 34
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_sourcemap
+    category: 
+    description: Upload a sourcemap to a release of a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_finalize_release
+    category: 
+    description: Finalize a release for a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_create_release
+    category: 
+    description: Create new releases for a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_file
+    category: 
+    description: Upload files to a release of a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_dsym
+    category: 
+    description: Upload dSYM symbolication files to Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_set_commits
+    category: 
+    description: Set commits of a release
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_proguard
+    category: 
+    description: Upload mapping to a project on Sentry
+    details: " "
+  :sha: a32f7b56e770f809e57dcdddfd898eb3e9d51198c7c635923c96843e57ae4efd
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 11
+fastlane-plugin-google_chat_message:
+  :initial_commit: 2020-03-25
+  :age_in_days: 11
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: google_chat_message
+    category: 
+    description: Send simple text messages to Google Chat
+    details: Send simple text messages to Google Chat rooms
+  :sha: 81f844c807a4c1e50d9e994fdd6dbd004546440d307c8d7702290b0ef57abcdf
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-carthage_cache_res:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
