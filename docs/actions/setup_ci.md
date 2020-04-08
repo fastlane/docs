@@ -42,7 +42,7 @@ setup_ci(
 Key | Description | Default
 ----|-------------|--------
   `force` | Force setup, even if not executed by CI | `false`
-  `provider` | CI provider. If none is set, the provider is detected automatically | `false`
+  `provider` | CI provider. If none is set, the provider is detected automatically | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

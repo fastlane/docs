@@ -19,7 +19,7 @@ Easily sync your certificates and profiles across your team (via _match_)
 
 A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.
 
-_match_ is the implementation of the [codesigning.guide concept](https://codesigning.guide). _match_ creates all required certificates & provisioning profiles and stores them in a separate git repository. Every team member with access to the repo can use those credentials for code signing. _match_ also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams
+_match_ is the implementation of the [codesigning.guide concept](https://codesigning.guide). _match_ creates all required certificates & provisioning profiles and stores them in a separate git repository, Google Cloud, or Amazon S3. Every team member with access to the selected storage can use those credentials for code signing. _match_ also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams
 
 [More information on how to get started with codesigning](https://docs.fastlane.tools/codesigning/getting-started/)
 
@@ -616,7 +616,7 @@ Key | Description | Default
   `google_cloud_project_id` | ID of the Google Cloud project to use for authentication | 
   `s3_region` | Name of the S3 region | 
   `s3_access_key` | S3 access key | 
-  `s3_secret_access_key` | S3 secret secret access key | 
+  `s3_secret_access_key` | S3 secret access key | 
   `s3_bucket` | Name of the S3 bucket | 
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
