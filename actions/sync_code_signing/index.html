@@ -1281,7 +1281,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h6 id="easily-sync-your-certificates-and-profiles-across-your-team"><a name="user-content-easily-sync-your-certificates-and-profiles-across-your-team" href="#easily-sync-your-certificates-and-profiles-across-your-team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily sync your certificates and profiles across your team</h6>
 <p>A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.</p>
-<p><em>match</em> is the implementation of the <a href="https://codesigning.guide">codesigning.guide concept</a>. <em>match</em> creates all required certificates &amp; provisioning profiles and stores them in a separate git repository. Every team member with access to the repo can use those credentials for code signing. <em>match</em> also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams</p>
+<p><em>match</em> is the implementation of the <a href="https://codesigning.guide">codesigning.guide concept</a>. <em>match</em> creates all required certificates &amp; provisioning profiles and stores them in a separate git repository, Google Cloud, or Amazon S3. Every team member with access to the selected storage can use those credentials for code signing. <em>match</em> also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams</p>
 <p><a href="https://docs.fastlane.tools/codesigning/getting-started/">More information on how to get started with codesigning</a></p>
 <hr />
 <p align="center">
@@ -1839,7 +1839,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>s3_secret_access_key</code></td>
-<td>S3 secret secret access key</td>
+<td>S3 secret access key</td>
 <td></td>
 </tr>
 <tr>
