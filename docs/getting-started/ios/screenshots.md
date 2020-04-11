@@ -101,12 +101,16 @@ The setup process will also generate a `Snapfile`, looking similar to
 ```ruby
 # A list of devices you want to take the screenshots from
 # devices([
-#   "iPhone 6",
-#   "iPhone 6 Plus",
-#   "iPhone 5",
-#   "iPhone 4s",
-#   "iPad Retina",
-#   "iPad Pro"
+#  "iPad (7th generation)",
+#  "iPad Air (3rd generation)",
+#  "iPad Pro (11-inch)",
+#  "iPad Pro (12.9-inch) (3rd generation)",
+#  "iPad Pro (9.7-inch)",
+#  "iPhone 11",
+#  "iPhone 11 Pro",
+#  "iPhone 11 Pro Max",
+#  "iPhone 8",
+#  "iPhone 8 Plus"
 # ])
 
 languages([
