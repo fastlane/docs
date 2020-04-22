@@ -1278,12 +1278,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <blockquote>
 <ul>
 <li>Adds and unlocks keychains from Jenkins 'Keychains and Provisioning Profiles Plugin'</li>
+<li>Sets unlocked keychain to be used by Match</li>
 <li>Sets code signing identity from Jenkins 'Keychains and Provisioning Profiles Plugin'</li>
 <li>Sets output directory to './output' (gym, scan and backup_xcarchive)</li>
 <li>Sets derived data path to './derivedData' (xcodebuild, gym, scan and clear_derived_data, carthage)</li>
 <li>Produce result bundle (gym and scan)</li>
 </ul>
-<p>This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the <code>./output</code> directory.<br>The action also works with <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>, the selected keychain will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when <em>fastlane</em> is executed on a CI system.</p>
+<p>This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the <code>./output</code> directory.<br>The action also works with <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>, the selected keychain will be automatically unlocked and the selected code signing identity will be used.<br><a href="https://docs.fastlane.tools/actions/match/">Match</a> will be also set up to use the unlocked keychain and set in read-only mode, if its environment variables were not yet defined.<br>By default this action will only work when <em>fastlane</em> is executed on a CI system.</p>
 </blockquote>
 <table>
 <thead>
