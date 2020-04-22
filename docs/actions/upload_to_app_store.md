@@ -845,7 +845,7 @@ Key | Description | Default
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | [*](#parameters-legend-dynamic)
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
   `precheck_default_rule_level` | The default precheck rule level unless otherwise configured | `:warn`
   `individual_metadata_items` | An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow | `[]`

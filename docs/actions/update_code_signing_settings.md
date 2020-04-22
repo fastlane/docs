@@ -52,6 +52,7 @@ Key | Description | Default
   `use_automatic_signing` | Defines if project should use automatic signing | `false`
   `team_id` | Team ID, is used when upgrading project | 
   `targets` | Specify targets you want to toggle the signing mech. (default to all targets) | 
+  `build_configurations` | Specify build_configurations you want to toggle the signing mech. (default to all targets) | 
   `code_sign_identity` | Code signing identity type (iPhone Developer, iPhone Distribution) | 
   `profile_name` | Provisioning profile name to use for code signing | 
   `profile_uuid` | Provisioning profile UUID to use for code signing | 

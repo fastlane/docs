@@ -989,9 +989,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 895
+  :age_in_days: 912
   :readme_score: 100
-  :tests: 290
+  :tests: 291
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1066,11 +1066,11 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: 3264c4cc495a2c5ae4bbdfee46d26c9e47d00863d8aa89a49657c3bf77333d61
-  :github_stars: 136
+  :sha: 75839884fba399fefd4fa4e5a897cc320259257358ab6b55aae728cee6a2f57e
+  :github_stars: 139
   :github_subscribers: 7
-  :github_issues: 9
-  :github_forks: 31
+  :github_issues: 6
+  :github_forks: 32
   :github_contributors: 9
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -1780,7 +1780,7 @@ fastlane-plugin-translation:
   :github_contributors: 0
 fastlane-plugin-ci_changelog:
   :initial_commit: 2016-09-20
-  :age_in_days: 1293
+  :age_in_days: 1310
   :readme_score: 100
   :tests: 224
   :actions:
@@ -1789,7 +1789,7 @@ fastlane-plugin-ci_changelog:
     category: 
     description: 
     details: 
-  :sha: a90d7f928c586b733087521267a420475f887f031704fa051b93121272026d72
+  :sha: 3bc922c3f150fabaadbf7b27a937529d5e73cd60b4965a290133f59e2296ac8f
   :github_stars: 6
   :github_subscribers: 2
   :github_issues: 0
@@ -5403,7 +5403,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 455
+  :age_in_days: 708
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5412,11 +5412,11 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details: 
-  :sha: 2bed0d244e07af94864bb2718550cd548f9211c1bbcb1b3084e2a8ae7c9184c2
+  :sha: 71090e9478409d8b96059256b6d58754f0d717663bca019f6021a42ad377ea69
   :github_stars: 5
   :github_subscribers: 4
-  :github_issues: 0
-  :github_forks: 1
+  :github_issues: 1
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-android_change_package_name:
   :initial_commit: 2018-09-28
@@ -7914,7 +7914,7 @@ fastlane-plugin-fir_cli:
   :github_contributors: 0
 fastlane-plugin-xcresult_to_junit:
   :initial_commit: 2019-11-12
-  :age_in_days: 78
+  :age_in_days: 162
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7924,15 +7924,15 @@ fastlane-plugin-xcresult_to_junit:
     description: Produces junit xml files from Xcode 11+ xcresult files
     details: By using the xcresulttool this plugin parses xcresult files and generates
       junit reports to be used with other tools to display iOS test results
-  :sha: 5b1b20cc19eb7ed33d85dc08008bd105561e442ce47a2212b669158eaa2caf21
-  :github_stars: 4
+  :sha: cb6ae9ff8c1229f6a235a96aeb1102a09f0776bfce2975c37fb45c5b5b3010b9
+  :github_stars: 5
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-alioss:
   :initial_commit: 2019-11-27
-  :age_in_days: 98
+  :age_in_days: 147
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7941,11 +7941,11 @@ fastlane-plugin-alioss:
     category: 
     description: 
     details: 
-  :sha: 24047fb2bf9ca76b79e75eaeda3f18c5d9548abf5e975eaa4d9b46c3e50baf9f
-  :github_stars: 2
+  :sha: 1451646bcf720a2879249223ddaa293e9cc7683c18fc4675d5a68fd8bb275652
+  :github_stars: 3
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 2
+  :github_issues: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-gitlab_release:
   :initial_commit: 2019-11-27
@@ -8103,7 +8103,7 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 81
+  :age_in_days: 130
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8112,12 +8112,17 @@ fastlane-plugin-huawei_appgallery_connect:
     category: 
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to upload Android app to Huawei AppGallery Connect
-  :sha: 27f63e73dde37f95881682438d1aebe29d44b630f25aa076ba4309b3a6156501
-  :github_stars: 8
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: huawei_appgallery_connect_get_app_info
+    category: 
+    description: Huawei AppGallery Connect Plugin
+    details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
+  :sha: 8992771c61b190b5968fb12129e5532fd12f28027fcf1e3e18f7b7458624f964
+  :github_stars: 9
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 1
-  :github_contributors: 0
+  :github_forks: 7
+  :github_contributors: 4
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
   :age_in_days: 16
@@ -8378,7 +8383,7 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 2
+  :age_in_days: 51
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8389,11 +8394,11 @@ fastlane-plugin-flutter_version:
     details: The plugin reads and parses pubspec.yml of a Flutter project and composes
       the versioning information into structured data to be consumed by various releasing
       automations.
-  :sha: 7837bb10940bb89fbc9d81f79f4074438b20bd27951dc934de2e4d7a2911082a
-  :github_stars: 1
+  :sha: eaea0f0691c30eb030c92e71891bf29c91b5b5eae980d8ff0f95daca3e393ea9
+  :github_stars: 6
   :github_subscribers: 1
   :github_issues: 1
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
@@ -8558,7 +8563,7 @@ fastlane-plugin-clang_format:
   :github_contributors: 0
 fastlane-plugin-match_keystore:
   :initial_commit: 2020-03-31
-  :age_in_days: 5
+  :age_in_days: 22
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8568,7 +8573,7 @@ fastlane-plugin-match_keystore:
     description: Easily sync your Android keystores across your team
     details: This way, your entire team can use the same account and have one code
       signing identity without any manual work or confusion.
-  :sha: 71434ab02b8870238c575e839f31aa6f7bf71b9384d0a0b2b5c737bfc3820b60
+  :sha: ebc41bf6f349d4d3d61c8f6470440ebea24fc8253cea6e3f1f94eee5b1ed62af
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -8710,3 +8715,82 @@ fastlane-plugin-carthage_cache_res:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-phraseapp:
+  :initial_commit: 2020-03-02
+  :age_in_days: 51
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: phraseapp
+    category: 
+    description: a phraseapp-cli tool wrapper
+    details: a phraseapp-cli tool wrapper
+  :sha: eea436b5181db1d591b78db866ae7638e0a2763a0eba8b39e92b909ea9d06951
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-discord_notifier:
+  :initial_commit: 2020-04-18
+  :age_in_days: 4
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: discord_notifier
+    category: 
+    description: Discord Webhook Notifier
+    details: 
+  :sha: be3481e1920b547c7a6bedc169304751fa11bbe98557a3b96e10d90269251e43
+  :github_stars: 6
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-match_import:
+  :initial_commit: 2020-04-06
+  :age_in_days: 16
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: match_export_apns
+    category: 
+    description: Match repository apns certs export
+    details: Import apns certs from match encrypted repository into keychain(and folder
+      if specified)
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: match_export
+    category: 
+    description: Match repository custom export
+    details: Import custom files into match encrypted repository. Including APNS certs/p12
+      and other.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: match_import
+    category: 
+    description: Match repository custom import
+    details: Import custom files into match encrypted repository.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: match_import_apns
+    category: 
+    description: Match repository apns certs import
+    details: Import apns certs into match encrypted repository.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: match_remove_invalid_apns
+    category: 
+    description: Match repository apns certs remove invalid
+    details: Remove expired or revoked apns certs from match encrypted repository
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: match_remove
+    category: 
+    description: Match repository custom export
+    details: Import custom files into match encrypted repository. Including APNS certs/p12
+      and other.
+  :sha: de75443b708b77fcb799ecb2e3b5b4aa7a9976112474ac8a32ebc0a585736222
+  :github_stars: 1
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
