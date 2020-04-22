@@ -351,6 +351,8 @@ Key | Description | Default
   `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? | `false`
   `notify_external_testers` | Should notify external testers? | `true`
+  `app_version` | The version number of the application build to distribute. If the version number is not specified, then the most recent build uploaded to TestFlight will be distributed. If specified, the most recent build for the version number will be distributed | 
+  `build_number` | The build number of the application build to distribute. If the build number is not specified, the most recent build is distributed | 
   `first_name` | The tester's first name | 
   `last_name` | The tester's last name | 
   `email` | The tester's email | 
