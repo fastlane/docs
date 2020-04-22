@@ -337,6 +337,7 @@ Key | Description | Default
   `app_version` | Initial version number (e.g. '1.0') | 
   `sku` | SKU Number (e.g. '1234') | [*](#parameters-legend-dynamic)
   `platform` | The platform to use (optional) | `ios`
+  `platforms` | The platforms to use (optional) | 
   `language` | Primary Language (e.g. 'English', 'German') | `English`
   `company_name` | The name of your company. Only required if it's the first app you create | 
   `skip_itc` | Skip the creation of the app on App Store Connect | `false`

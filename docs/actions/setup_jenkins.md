@@ -12,12 +12,13 @@ Setup xcodebuild, gym and scan for easier Jenkins integration
 
 
 > - Adds and unlocks keychains from Jenkins 'Keychains and Provisioning Profiles Plugin'
+- Sets unlocked keychain to be used by Match
 - Sets code signing identity from Jenkins 'Keychains and Provisioning Profiles Plugin'
 - Sets output directory to './output' (gym, scan and backup_xcarchive)
 - Sets derived data path to './derivedData' (xcodebuild, gym, scan and clear_derived_data, carthage)
 - Produce result bundle (gym and scan)
 >
-This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the `./output` directory.<br>The action also works with [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin), the selected keychain will be automatically unlocked and the selected code signing identity will be used. By default this action will only work when _fastlane_ is executed on a CI system.
+This action helps with Jenkins integration. Creates own derived data for each job. All build results like IPA files and archives will be stored in the `./output` directory.<br>The action also works with [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin), the selected keychain will be automatically unlocked and the selected code signing identity will be used.<br>[Match](https://docs.fastlane.tools/actions/match/) will be also set up to use the unlocked keychain and set in read-only mode, if its environment variables were not yet defined.<br>By default this action will only work when _fastlane_ is executed on a CI system.
 
 
 setup_jenkins ||

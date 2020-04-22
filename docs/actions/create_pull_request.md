@@ -17,7 +17,7 @@ This will create a new pull request on GitHub
 create_pull_request ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @seei, @tommeier, @marumemomo, @elneruda
+Author | @seei, @tommeier, @marumemomo, @elneruda, @kagemiku
 Returns | The pull request URL when successful
 
 
@@ -48,6 +48,7 @@ Key | Description | Default
   `repo` | The name of the repository you want to submit the pull request to | 
   `title` | The title of the pull request | 
   `body` | The contents of the pull request | 
+  `draft` | Indicates whether the pull request is a draft | 
   `labels` | The labels for the pull request | 
   `milestone` | The milestone ID (Integer) for the pull request | 
   `head` | The name of the branch where your changes are implemented (defaults to the current branch name) | [*](#parameters-legend-dynamic)
