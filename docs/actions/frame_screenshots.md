@@ -342,7 +342,7 @@ Use [_deliver_](https://docs.fastlane.tools/actions/deliver/) to upload iOS scre
 
 ## Use a clean status bar
 
-You can use [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic) to clean up the status bar.
+You can set `override_status_bar` to `true` in snapshot to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception.
 
 ## Gray artifacts around text
 
@@ -417,7 +417,7 @@ Key | Description | Default
   `force_orientation_block` | [Advanced] A block to customize your screenshots' device orientation | [*](#parameters-legend-dynamic)
   `debug_mode` | Output debug information in framed screenshots | `false`
   `resume` | Resume frameit instead of reprocessing all screenshots | `false`
-  `use_platform` | Choose a platform, the valid options are IOS, ANDROID and ANY (IOS is default to ensure backward compatibility) | `IOS`
+  `use_platform` | Choose a platform, the valid options are IOS, ANDROID and ANY (default is either general platform defined in the fastfile or IOS to ensure backward compatibility) | [*](#parameters-legend-dynamic)
   `path` | The path to the directory containing the screenshots | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

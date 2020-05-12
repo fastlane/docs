@@ -244,8 +244,9 @@ Key | Description | Default
   `address_sanitizer` | Should the address sanitizer be turned on? | 
   `thread_sanitizer` | Should the thread sanitizer be turned on? | 
   `open_report` | Should the HTML report be opened when tests are completed? | `false`
+  `disable_xcpretty` | Disable xcpretty formatting of build, similar to `output_style='raw'` but this will also skip the test results table | 
   `output_directory` | The directory in which all reports will be stored | [*](#parameters-legend-dynamic)
-  `output_style` | Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty) | 
+  `output_style` | Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty during xcodebuild) | 
   `output_types` | Comma separated list of the output types (e.g. html, junit, json-compilation-database) | `html,junit`
   `output_files` | Comma separated list of the output files, corresponding to the types provided by :output_types (order should match). If specifying an output type of json-compilation-database with :use_clang_report_name enabled, that option will take precedence | 
   `buildlog_path` | The directory where to store the raw log | [*](#parameters-legend-dynamic)

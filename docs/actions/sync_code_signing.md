@@ -626,6 +626,7 @@ Key | Description | Default
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos) | `ios`
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
+  `profile_name` | A custom name for the provisioning profile. This will replace the default provisioning profile name if specified | 
   `output_path` | Path in which to export certificates, key and profile | 
   `verbose` | Print out extra information and all commands | `false`
 

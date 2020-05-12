@@ -29,7 +29,7 @@ cocoapods
 
 ```ruby
 cocoapods(
-  clean: true,
+  clean_install: true,
   podfile: "./CustomPodfile"
 )
 ```
