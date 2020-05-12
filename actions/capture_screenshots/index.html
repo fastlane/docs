@@ -1450,6 +1450,8 @@ output_directory('./screenshots')
 
 clear_previous_screenshots(true)
 
+override_status_bar(true)
+
 add_photos([&quot;MyTestApp/Assets/demo.jpg&quot;])
 </code></pre>
 
@@ -1526,7 +1528,7 @@ launch_arguments([
 
 <p>To get more information about language and locale codes please read <a href="https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">Internationalization and Localization Guide</a>.</p>
 <h2 id="use-a-clean-status-bar"><a name="user-content-use-a-clean-status-bar" href="#use-a-clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a clean status bar</h2>
-<p>You can use <a href="https://github.com/shinydevelopment/SimulatorStatusMagic">SimulatorStatusMagic</a> to clean up the status bar.</p>
+<p>You can set <code>override_status_bar</code> to <code>true</code> to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception.</p>
 <h2 id="editing-the-snapfile"><a name="user-content-editing-the-snapfile" href="#editing-the-snapfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Editing the <code>Snapfile</code></h2>
 <p>Change syntax highlighting to <em>Ruby</em>.</p>
 <h3 id="simulator-doesnt-launch-the-application"><a name="user-content-simulator-doesnt-launch-the-application" href="#simulator-doesnt-launch-the-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Simulator doesn't launch the application</h3>
@@ -1673,6 +1675,11 @@ If you're skipping the animations, this is wait time is unnecessary and can be s
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>override_status_bar</code></td>
+<td>Enabling this option wil automatically override the status bar to show 9:41 AM, full battery, and full reception</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>localize_simulator</code></td>
 <td>Enabling this option will configure the Simulator's system language</td>
 <td><code>false</code></td>
@@ -1775,6 +1782,11 @@ If you're skipping the animations, this is wait time is unnecessary and can be s
 <tr>
 <td><code>cloned_source_packages_path</code></td>
 <td>Sets a custom path for Swift Package Manager dependencies</td>
+<td></td>
+</tr>
+<tr>
+<td><code>testplan</code></td>
+<td>The testplan associated with the scheme that should be used for testing</td>
 <td></td>
 </tr>
 </tbody>

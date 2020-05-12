@@ -1292,16 +1292,23 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@taka0125, @tcurdt, @vijaysharm</td>
+<td>@taka0125, @tcurdt, @vijaysharm, @cdm2012</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">testfairy(
   api_key: &quot;...&quot;,
   ipa: &quot;./ipa_file.ipa&quot;,
   comment: &quot;Build #{lane_context[SharedValues::BUILD_NUMBER]}&quot;,
 )
+</code></pre>
+
+<pre><code class="ruby">testfairy(
+  api_key: &quot;...&quot;,
+  apk: &quot;../build/app/outputs/apk/qa/release/app-qa-release.apk&quot;,
+  comment: &quot;Build #{lane_context[SharedValues::BUILD_NUMBER]}&quot;,
+ )
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1396,7 +1403,15 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>SharedValues::TESTFAIRY_BUILD_URL</code></td>
-<td>URL of the newly uploaded build</td>
+<td>URL for the sessions of the newly uploaded build</td>
+</tr>
+<tr>
+<td><code>SharedValues::TESTFAIRY_DOWNLOAD_URL</code></td>
+<td>URL directly to the newly uploaded build</td>
+</tr>
+<tr>
+<td><code>SharedValues::TESTFAIRY_LANDING_PAGE</code></td>
+<td>URL of the build's landing page</td>
 </tr>
 </tbody>
 </table>

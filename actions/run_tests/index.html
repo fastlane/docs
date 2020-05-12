@@ -1612,13 +1612,18 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>disable_xcpretty</code></td>
+<td>Disable xcpretty formatting of build, similar to <code>output_style='raw'</code> but this will also skip the test results table</td>
+<td></td>
+</tr>
+<tr>
 <td><code>output_directory</code></td>
 <td>The directory in which all reports will be stored</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>output_style</code></td>
-<td>Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty)</td>
+<td>Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty during xcodebuild)</td>
 <td></td>
 </tr>
 <tr>
