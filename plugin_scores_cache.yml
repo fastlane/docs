@@ -76,21 +76,21 @@ fastlane-plugin-versioning:
   :github_contributors: 12
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 1402
+  :age_in_days: 1439
   :readme_score: 100
-  :tests: 5
+  :tests: 3
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: aws_s3
     category: 
     description: Generates a plist file and uploads all to AWS S3
     details: 
-  :sha: bb7108a4916475771745285a7f6a06ea21a6c6a4c7ce8c0e14cf88cf9202f407
-  :github_stars: 96
+  :sha: 200d230e78fe34fb727f36f36afe19d7085a4e65bd0c45ed58025c6825d6358b
+  :github_stars: 98
   :github_subscribers: 5
-  :github_issues: 18
-  :github_forks: 44
-  :github_contributors: 0
+  :github_issues: 15
+  :github_forks: 46
+  :github_contributors: 20
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
   :age_in_days: 1321
@@ -158,7 +158,7 @@ fastlane-plugin-update_provisioning_profile_specifier:
   :github_contributors: 0
 fastlane-plugin-appicon:
   :initial_commit: 2016-07-01
-  :age_in_days: 1138
+  :age_in_days: 1411
   :readme_score: 100
   :tests: 0
   :actions:
@@ -173,12 +173,12 @@ fastlane-plugin-appicon:
     description: Generate required icon sizes and iconset from a master application
       icon
     details: 
-  :sha: 845373532d9e0c59eeec84956863a33fb13b81f74695bc46746199343eae8be7
-  :github_stars: 253
+  :sha: 5bf4bc112d38e6afef629711d38fb67803db2c6d46aac318697770570edf9788
+  :github_stars: 271
   :github_subscribers: 10
   :github_issues: 15
-  :github_forks: 35
-  :github_contributors: 18
+  :github_forks: 41
+  :github_contributors: 19
 fastlane-plugin-badge:
   :initial_commit: 2016-12-16
   :age_in_days: 1139
@@ -417,7 +417,7 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 1241
+  :age_in_days: 1310
   :readme_score: 100
   :tests: 1
   :actions:
@@ -431,12 +431,12 @@ fastlane-plugin-aws_device_farm:
     category: 
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: 44df5e4e2e0e9b399529e8a19f2e26c78445b1920709a1f9f69ca62e44b24148
-  :github_stars: 70
+  :sha: b7c866c5066aa13ea01aa916672b04edba12aaa2850a3b2c40b374668e7dd999
+  :github_stars: 75
   :github_subscribers: 4
-  :github_issues: 2
-  :github_forks: 28
-  :github_contributors: 15
+  :github_issues: 1
+  :github_forks: 29
+  :github_contributors: 16
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
   :age_in_days: 497
@@ -613,7 +613,7 @@ fastlane-plugin-onesky:
   :github_contributors: 1
 fastlane-plugin-synx:
   :initial_commit: 2016-06-09
-  :age_in_days: 626
+  :age_in_days: 1433
   :readme_score: 50
   :tests: 1
   :actions:
@@ -623,12 +623,12 @@ fastlane-plugin-synx:
     description: Organise your Xcode project folder to match your Xcode groups.
     details: A command-line tool that reorganizes your Xcode project folder to match
       your Xcode groups.
-  :sha: c69c59066056eb371a3f323e46ac4890940b34daeca7bc445c2e49ccb642ff6d
-  :github_stars: 24
-  :github_subscribers: 1
+  :sha: 43e74356ea93a38859300b15227b0724250a9e75f1fa97839e2a8e7bc63d758d
+  :github_stars: 26
+  :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 2
-  :github_contributors: 2
+  :github_forks: 4
+  :github_contributors: 0
 fastlane-plugin-setup_fragile_tests_for_rescan:
   :initial_commit: 2017-04-24
   :age_in_days: 420
@@ -3441,7 +3441,7 @@ fastlane-plugin-blackberry_mam:
   :github_contributors: 0
 fastlane-plugin-influxdb:
   :initial_commit: 2017-03-06
-  :age_in_days: 382
+  :age_in_days: 1163
   :readme_score: 100
   :tests: 2
   :actions:
@@ -3450,11 +3450,11 @@ fastlane-plugin-influxdb:
     category: 
     description: Post values to IndluxDB
     details: Post values to InfluxDB
-  :sha: 4cea507ddd3c1a92f932d3c9d1d9f686e61a9096731f828caa6c93261c40b8e6
+  :sha: e004af493ef83416d0bc8af048e1dffbaf509b3eef96d1d2dfd5058244fcd725
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-telegram:
   :initial_commit: 2017-08-19
@@ -4590,9 +4590,9 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 691
+  :age_in_days: 760
   :readme_score: 100
-  :tests: 0
+  :tests: 11
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_bootstrap
@@ -4616,14 +4616,15 @@ fastlane-plugin-flutter:
       build_runner is in dev_dependencies;   (3) According to `package:intl`, take
       `$strings_file` and generate `${strings_file.dirname}/arb/intl_messages.arb`,
       then take all files matching `${strings_file.dirname}/intl_*.arb`, fix them
-      and generate .dart files from them."
+      and generate .dart files from them.  (4) Generate an empty test importing all
+      files, which would be used to calculate correct full coverage numbers."
     details: 
-  :sha: a73b949264648a6ac384ce5bec0f07fc4849f2074e0cb0cf3a52bdcf330d7a01
-  :github_stars: 10
-  :github_subscribers: 1
-  :github_issues: 1
+  :sha: 0613ae4b458f4ead42380d2e120935abba481e77c26f7af7abeefd667df01612
+  :github_stars: 14
+  :github_subscribers: 2
+  :github_issues: 0
   :github_forks: 3
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
   :age_in_days: 15
@@ -8103,7 +8104,7 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 130
+  :age_in_days: 150
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8117,8 +8118,8 @@ fastlane-plugin-huawei_appgallery_connect:
     category: 
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
-  :sha: 8992771c61b190b5968fb12129e5532fd12f28027fcf1e3e18f7b7458624f964
-  :github_stars: 9
+  :sha: 28c96d64da89ce10f799d2de5f52c0ffc0ebf308a90cf343e870c3a0919dec19
+  :github_stars: 8
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 7
@@ -8316,7 +8317,7 @@ fastlane-plugin-gitlab_changelog:
   :github_contributors: 2
 fastlane-plugin-zealot:
   :initial_commit: 2019-12-12
-  :age_in_days: 48
+  :age_in_days: 152
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8326,16 +8327,21 @@ fastlane-plugin-zealot:
     description: Check app version exists from Zealot
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: zealot_debug_file
+    category: 
+    description: 
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: zealot
     category: 
     description: 
     details: 
-  :sha: 00a3b11a03fc6fee1b80168b233e71b6728b41b14daa407591f1b8cd08ba42db
+  :sha: d4946d16de8d8f42e72cf19999313aae475b75299bddb7785c517e1c8fa680c0
   :github_stars: 2
   :github_subscribers: 1
-  :github_issues: 2
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-app_previews:
   :initial_commit: 2020-01-19
   :age_in_days: 10
@@ -8503,9 +8509,9 @@ fastlane-plugin-create_bitbucket_pull_request:
   :github_contributors: 0
 fastlane-plugin-menigit:
   :initial_commit: 2020-02-21
-  :age_in_days: 32
+  :age_in_days: 81
   :readme_score: 100
-  :tests: 9
+  :tests: 11
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: add_git_remote
@@ -8533,7 +8539,7 @@ fastlane-plugin-menigit:
     category: source_control
     description: This will set git config user
     details: "\\n"
-  :sha: dac12ae66e2494158bbcc6fb0b338bd2f14c476142c7c1781969967ce99b8af2
+  :sha: d9a8c4522118c7fce659441f15f2851fda99672359720d63e0c50247cf8f2d11
   :github_stars: 1
   :github_subscribers: 3
   :github_issues: 0
@@ -8794,3 +8800,222 @@ fastlane-plugin-match_import:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-jandi_webhook:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-appsigner:
+  :initial_commit: 2020-05-02
+  :age_in_days: 10
+  :readme_score: 50
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: appsigner
+    category: 
+    description: AppSigner
+    details: AppSigner
+  :sha: d3ea2af164131375043c5b04e824dc0ae55d9bcdabc2b1323b65dbec3b8a5969
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-mackerel_api:
+  :initial_commit: 2020-04-29
+  :age_in_days: 13
+  :readme_score: 100
+  :tests: 12
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: mackerel_api
+    category: source_control
+    description: Call a Mackerel API endpoint and get the resulting JSON response
+    details: "\\n"
+  :sha: 9acab4eed5234ba24f5835f4d2e6df43bcdbf6d2de9101ed402de15c4e6e1e52
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xcodebuild_analyze:
+  :initial_commit: 2020-04-08
+  :age_in_days: 34
+  :readme_score: 100
+  :tests: 15
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xcodebuild_analyze
+    category: building
+    description: Run code analyzer using xcodebuild
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xcodebuild_analyze_and_ensure_no_results
+    category: building
+    description: Run code analyzer using xcodebuild and fail if any vulnerability
+      is found
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ensure_no_results_from_xcodebuild_analyze
+    category: building
+    description: Check if the are any vulnerabilities under provided analyzer output
+      path
+    details: 
+  :sha: 5a229bb12cc9e744f81495cee159eddd77b33d2b22a40248d6edd324b0ea1f8e
+  :github_stars: 1
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-bitbucket_auth:
+  :initial_commit: 2020-04-23
+  :age_in_days: 19
+  :readme_score: 100
+  :tests: 5
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bitbucket_auth
+    category: 
+    description: Generate a OAuth Token for Bitbucket API Access.
+    details: Callback URL
+  :sha: e18611f80b1caa7def82f9c24546ac6081adec9a98ee403e02b427a844ebbb7f
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-unreleased_changelog:
+  :initial_commit: 2020-05-09
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_unreleased_changelog
+    category: 
+    description: Get the unreleased changelog
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: add_unreleased_changelog
+    category: 
+    description: Add a new entry in unreleased changelog
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: delete_unreleased_changelog
+    category: 
+    description: Delete changelog entry from unreleased changelog
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: stamp_unreleased_changelog
+    category: 
+    description: Stamp unreleased changelog
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ensure_unreleased_changelog
+    category: 
+    description: 
+    details: 
+  :sha: bdfa1a930ec1a52520b0a920efe1c98d7a955840dd733f98d8ad4cea7d3ccefc
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-csv_translation:
+  :initial_commit: 2020-05-09
+  :age_in_days: 3
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: delete_csv_translation_request
+    category: 
+    description: Delete a translation request based on identifier value.
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_csv_translation_request
+    category: 
+    description: Create a csv translation request.
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_csv_translation_requests
+    category: 
+    description: Get CSV translation requests info
+    details: 
+  :sha: 87f843327d23ebdf02fb7077b957948170499af66c98abd4ef55c093789720c7
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-rollbar_sourcemaps_upload:
+  :initial_commit: 2020-05-08
+  :age_in_days: 4
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rollbar_proguard_upload
+    category: 
+    description: Helps to upload Proguard mappings to Rollbar
+    details: Helps to upload Proguard mappings to Rollbar
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rollbar_dsym_upload
+    category: 
+    description: Helps to upload Dsym to Rollbar
+    details: Helps to upload Dsym to Rollbar
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rollbar_sourcemaps_upload
+    category: 
+    description: Helps to upload sourcemaps to Rollbar
+    details: Helps to upload sourcemaps to Rollbar
+  :sha: b8308a605147910bd2020b49d208598b858571637f07625bc746a2602cccd5b0
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-load_erb_config:
+  :initial_commit: 2020-05-06
+  :age_in_days: 6
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: load_erb_config
+    category: 
+    description: Fastlane plugin to load configuration object from yml file
+    details: 
+  :sha: 22b5834b2570cb869fddf55b0acffb258b898ffdc5bb19e4f86a777d450e7850
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-get_last_circleci_build_number:
+  :initial_commit: 2020-05-01
+  :age_in_days: 11
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_last_circleci_build_number
+    category: 
+    description: fetches the last build number from circleci.
+    details: Fetches that last build number from circleci using the circleci gem,
+      useful for local builds when the project uses the circleci build number as the
+      version build number.
+  :sha: 24e244a8318cd484ef6e419b41d41e0cc9785d78f2d7b37b6a3aa80e8e980a4c
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-appcenter_releases:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
