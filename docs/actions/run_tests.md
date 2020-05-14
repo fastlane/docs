@@ -237,6 +237,8 @@ Key | Description | Default
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
+  `only_test_configurations` | Array of strings matching test plan configurations to run | 
+  `skip_test_configurations` | Array of strings matching test plan configurations to skip | 
   `xctestrun` | Run tests using the provided `.xctestrun` file | 
   `toolchain` | The toolchain that should be used for building the application (e.g. `com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a`) | 
   `clean` | Should the project be cleaned before building it? | `false`

@@ -456,6 +456,8 @@ Key | Description | Default
   `disable_slide_to_type` | Disable the simulator from showing the 'Slide to type' prompt | `false`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
+  `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
+  `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

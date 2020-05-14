@@ -292,6 +292,7 @@ Key | Description | Default
   `platform` | Set the provisioning profile's platform (i.e. ios, tvos) | `ios`
   `readonly` | Only fetch existing profile, don't generate new ones | `false`
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
+  `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

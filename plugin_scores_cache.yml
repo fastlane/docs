@@ -6585,7 +6585,7 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 335
+  :age_in_days: 406
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6596,11 +6596,11 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       You can also use it to first download your latest dSym files from AppStore Connect
       if you use Bitcode
-  :sha: ad45e191e12b342ef98c82ea493ad7d9eebe8be7456a848ce84dbcfec342be32
-  :github_stars: 2
-  :github_subscribers: 2
+  :sha: db9b68315b65213612862a05668006a672802ba66f9c87af69eaebe01f709404
+  :github_stars: 7
+  :github_subscribers: 3
   :github_issues: 1
-  :github_forks: 0
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-download_hocky_build:
   :initial_commit: 2019-04-08
@@ -9019,3 +9019,35 @@ fastlane-plugin-appcenter_releases:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-rollbar:
+  :initial_commit: 2020-05-08
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rollbar_proguard_upload
+    category: 
+    description: Helps to upload Proguard mappings to Rollbar
+    details: Helps to upload Proguard mappings to Rollbar
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rollbar_dsym_upload
+    category: 
+    description: Helps to upload Dsym to Rollbar
+    details: Helps to upload Dsym to Rollbar
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rollbar_report_deploy
+    category: 
+    description: Helps to report deploy to Rollbar
+    details: Helps to report deploy to Rollbar
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rollbar_sourcemaps_upload
+    category: 
+    description: Helps to upload sourcemaps to Rollbar
+    details: Helps to upload sourcemaps to Rollbar
+  :sha: 0ff14c4b0d2140baab7e644de2eda81b6f0227dd4ea53214317d7bc56234bd50
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
