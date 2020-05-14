@@ -1357,6 +1357,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="no-highlight">fastlane supply --apk path/app.apk --track beta --rollout 0.5
 </code></pre>
 
+<p>To set the in-app update priority level for a release, set a valid update priority (an integer value from 0 to 5) using option <code>in_app_update_priority</code></p>
+<pre><code class="no-highlight">fastlane supply --apk path/app.apk --track beta --in_app_update_priority 3
+</code></pre>
+
 <h3 id="expansion-files-obb"><a name="user-content-expansion-files-obb" href="#expansion-files-obb" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Expansion files (<code>.obb</code>)</h3>
 <p>Expansion files (obbs) found under the same directory as your APK will also be uploaded together with your APK as long as:</p>
 <ul>
@@ -1379,6 +1383,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
 <p>To gradually roll out a new build use</p>
 <pre><code class="no-highlight">fastlane supply --aab path/app.aab --track beta --rollout 0.5
+</code></pre>
+
+<p>To set the in-app update priority level for a release, set a valid update priority (an integer value from 0 to 5) using option <code>in_app_update_priority</code></p>
+<pre><code class="no-highlight">fastlane supply --aab path/app.aab --track beta --in_app_update_priority 3
 </code></pre>
 
 <h2 id="images-and-screenshots"><a name="user-content-images-and-screenshots" href="#images-and-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Images and Screenshots</h2>
@@ -1641,6 +1649,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>version_codes_to_retain</code></td>
 <td>An array of version codes to retain when publishing a new APK</td>
+<td></td>
+</tr>
+<tr>
+<td><code>in_app_update_priority</code></td>
+<td>In-app update priority for all the newly added apks in the release. Can take values between [0,5]</td>
 <td></td>
 </tr>
 <tr>

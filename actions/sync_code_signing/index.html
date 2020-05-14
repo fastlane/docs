@@ -1280,7 +1280,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </p>
 
 <h6 id="easily-sync-your-certificates-and-profiles-across-your-team"><a name="user-content-easily-sync-your-certificates-and-profiles-across-your-team" href="#easily-sync-your-certificates-and-profiles-across-your-team" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Easily sync your certificates and profiles across your team</h6>
-<p>A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.</p>
+<p>A new approach to iOS and macOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.</p>
 <p><em>match</em> is the implementation of the <a href="https://codesigning.guide">codesigning.guide concept</a>. <em>match</em> creates all required certificates &amp; provisioning profiles and stores them in a separate git repository, Google Cloud, or Amazon S3. Every team member with access to the selected storage can use those credentials for code signing. <em>match</em> also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams</p>
 <p><a href="https://docs.fastlane.tools/codesigning/getting-started/">More information on how to get started with codesigning</a></p>
 <hr />
@@ -1324,7 +1324,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td>🔄</td>
-<td>Automatically sync your iOS keys and profiles across all your team members using git</td>
+<td>Automatically sync your iOS and macOS keys and profiles across all your team members using git</td>
 </tr>
 <tr>
 <td>📦</td>
@@ -1691,7 +1691,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td>Author</td>
@@ -1880,7 +1880,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>platform</code></td>
 <td>Set the provisioning profile's platform to work with (i.e. ios, tvos, macos)</td>
-<td><code>ios</code></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
 <td><code>template_name</code></td>
@@ -1891,6 +1891,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><code>profile_name</code></td>
 <td>A custom name for the provisioning profile. This will replace the default provisioning profile name if specified</td>
 <td></td>
+</tr>
+<tr>
+<td><code>fail_on_name_taken</code></td>
+<td>Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>output_path</code></td>
