@@ -17,7 +17,7 @@ Easily sync your certificates and profiles across your team (via _match_)
 
 ###### Easily sync your certificates and profiles across your team
 
-A new approach to iOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.
+A new approach to iOS and macOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.
 
 _match_ is the implementation of the [codesigning.guide concept](https://codesigning.guide). _match_ creates all required certificates & provisioning profiles and stores them in a separate git repository, Google Cloud, or Amazon S3. Every team member with access to the selected storage can use those credentials for code signing. _match_ also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams
 
@@ -62,7 +62,7 @@ For more information about the concept, visit [codesigning.guide](https://codesi
 
 |          |  match  |
 |----------|---------|
-🔄  | Automatically sync your iOS keys and profiles across all your team members using git
+🔄  | Automatically sync your iOS and macOS keys and profiles across all your team members using git
 📦  | Handle all the heavy lifting of creating and storing your certificates and profiles
 💻  | Setup codesigning on a new machine in under a minute
 🎯 | Designed to work with apps with multiple targets and bundle identifiers
@@ -562,7 +562,7 @@ Because of the potentially dangerous nature of In-House profiles please use _mat
 
 sync_code_signing ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @KrauseFx
 
 
@@ -624,9 +624,10 @@ Key | Description | Default
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
-  `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos) | `ios`
+  `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos) | [*](#parameters-legend-dynamic)
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
   `profile_name` | A custom name for the provisioning profile. This will replace the default provisioning profile name if specified | 
+  `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
   `output_path` | Path in which to export certificates, key and profile | 
   `verbose` | Print out extra information and all commands | `false`
 

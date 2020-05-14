@@ -91,6 +91,12 @@ To gradually roll out a new build use
 fastlane supply --apk path/app.apk --track beta --rollout 0.5
 ```
 
+To set the in-app update priority level for a release, set a valid update priority (an integer value from 0 to 5) using option `in_app_update_priority`
+
+```no-highlight
+fastlane supply --apk path/app.apk --track beta --in_app_update_priority 3
+```
+
 ### Expansion files (`.obb`)
 
 Expansion files (obbs) found under the same directory as your APK will also be uploaded together with your APK as long as:
@@ -124,6 +130,12 @@ To gradually roll out a new build use
 
 ```no-highlight
 fastlane supply --aab path/app.aab --track beta --rollout 0.5
+```
+
+To set the in-app update priority level for a release, set a valid update priority (an integer value from 0 to 5) using option `in_app_update_priority`
+
+```no-highlight
+fastlane supply --aab path/app.aab --track beta --in_app_update_priority 3
 ```
 
 ## Images and Screenshots
@@ -258,6 +270,7 @@ Key | Description | Default
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
   `deactivate_on_promote` | **DEPRECATED!** Google Play does this automatically now - When promoting to a new track, deactivate the binary in the origin track | `true`
   `version_codes_to_retain` | An array of version codes to retain when publishing a new APK | 
+  `in_app_update_priority` | In-app update priority for all the newly added apks in the release. Can take values between [0,5] | 
   `obb_main_references_version` | References version of 'main' expansion file | 
   `obb_main_file_size` | Size of 'main' expansion file in bytes | 
   `obb_patch_references_version` | References version of 'patch' expansion file | 

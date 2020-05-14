@@ -353,6 +353,7 @@ Key | Description | Default
   `notify_external_testers` | Should notify external testers? | `true`
   `app_version` | The version number of the application build to distribute. If the version number is not specified, then the most recent build uploaded to TestFlight will be distributed. If specified, the most recent build for the version number will be distributed | 
   `build_number` | The build number of the application build to distribute. If the build number is not specified, the most recent build is distributed | 
+  `expire_previous_builds` | Should expire previous builds? | `false`
   `first_name` | The tester's first name | 
   `last_name` | The tester's last name | 
   `email` | The tester's email | 
