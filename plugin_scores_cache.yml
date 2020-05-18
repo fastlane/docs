@@ -2141,7 +2141,7 @@ fastlane-plugin-docker:
   :github_contributors: 2
 fastlane-plugin-diawi:
   :initial_commit: 2017-04-09
-  :age_in_days: 1060
+  :age_in_days: 1135
   :readme_score: 100
   :tests: 1
   :actions:
@@ -2151,12 +2151,12 @@ fastlane-plugin-diawi:
     description: Upload .ipa/.apk file to diawi.com
     details: This action upload .ipa/.apk file to https://www.diawi.com and return
       link to uploaded file.
-  :sha: 82cdee3c8f00e4199b39a8f3fc10bca4ebcd22196ed3256266996e9c671fb7ab
-  :github_stars: 30
+  :sha: 94d732b79484535f4a0e684c8f0cac9b01ba1b3868abb39b3dca510e53b75fea
+  :github_stars: 32
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 5
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-git_tags:
   :initial_commit: 2016-12-09
   :age_in_days: 443
@@ -4590,9 +4590,9 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 760
+  :age_in_days: 766
   :readme_score: 100
-  :tests: 11
+  :tests: 14
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_bootstrap
@@ -4619,8 +4619,8 @@ fastlane-plugin-flutter:
       and generate .dart files from them.  (4) Generate an empty test importing all
       files, which would be used to calculate correct full coverage numbers."
     details: 
-  :sha: 0613ae4b458f4ead42380d2e120935abba481e77c26f7af7abeefd667df01612
-  :github_stars: 14
+  :sha: fb2e2e42bff3b09f259b12bf35e9245da9a56f7fa4f288d6d1c2f902a9f26d1f
+  :github_stars: 13
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 3
@@ -8740,7 +8740,7 @@ fastlane-plugin-phraseapp:
   :github_contributors: 0
 fastlane-plugin-discord_notifier:
   :initial_commit: 2020-04-18
-  :age_in_days: 4
+  :age_in_days: 30
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8749,10 +8749,10 @@ fastlane-plugin-discord_notifier:
     category: 
     description: Discord Webhook Notifier
     details: 
-  :sha: be3481e1920b547c7a6bedc169304751fa11bbe98557a3b96e10d90269251e43
-  :github_stars: 6
+  :sha: 3fc117b36130a474fab7820b6bf4c100af5a2ce771fc89ed31b93c59b1bc9649
+  :github_stars: 8
   :github_subscribers: 1
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-match_import:
@@ -8925,7 +8925,7 @@ fastlane-plugin-unreleased_changelog:
   :github_contributors: 0
 fastlane-plugin-csv_translation:
   :initial_commit: 2020-05-09
-  :age_in_days: 3
+  :age_in_days: 9
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8944,7 +8944,7 @@ fastlane-plugin-csv_translation:
     category: 
     description: Get CSV translation requests info
     details: 
-  :sha: 87f843327d23ebdf02fb7077b957948170499af66c98abd4ef55c093789720c7
+  :sha: c0b7267fc3bd5fcc6a56b3f4ea8c8d1b75811f3b652c8de90eb5204a2eb5f110
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -9021,7 +9021,7 @@ fastlane-plugin-appcenter_releases:
   :github_contributors: 2
 fastlane-plugin-rollbar:
   :initial_commit: 2020-05-08
-  :age_in_days: 6
+  :age_in_days: 10
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9045,8 +9045,8 @@ fastlane-plugin-rollbar:
     category: 
     description: Helps to upload sourcemaps to Rollbar
     details: Helps to upload sourcemaps to Rollbar
-  :sha: 0ff14c4b0d2140baab7e644de2eda81b6f0227dd4ea53214317d7bc56234bd50
-  :github_stars: 1
+  :sha: 199463eb58055ed50a4540f4fc1285a25e7808f2c97bc0b7b0572ad51d7353cf
+  :github_stars: 6
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
