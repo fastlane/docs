@@ -325,7 +325,7 @@ Key | Description | Default
   `skip_build_archive` | Export ipa from previously built xcarchive. Uses archive_path as source | 
   `skip_archive` | After building, don't archive, effectively not including -archivePath param | 
   `skip_codesigning` | Build without codesigning | 
-  `installer_cert_name` | Full name of 3rd Party Mac Developer Installer or Deveoper ID Installer certificate. Example: `3rd Party Mac Developer Installer: Your Company (ABC1234XWYZ)` | 
+  `installer_cert_name` | Full name of 3rd Party Mac Developer Installer or Developer ID Installer certificate. Example: `3rd Party Mac Developer Installer: Your Company (ABC1234XWYZ)` | 
   `build_path` | The directory in which the archive should be stored in | 
   `archive_path` | The path to the created archive | 
   `derived_data_path` | The directory where built products and other derived data will go | 

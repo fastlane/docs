@@ -439,6 +439,7 @@ Key | Description | Default
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `add_photos` | A list of photos that should be added to the simulator before running the application | 
   `add_videos` | A list of videos that should be added to the simulator before running the application | 
+  `html_template` | A path to screenshots.html template | `/Users/josh/Projects/fastlane/fastlane/snapshot/lib/snapshot/page.html.erb`
   `buildlog_path` | The directory where to store the build log | [*](#parameters-legend-dynamic)
   `clean` | Should the project be cleaned before building it? | `false`
   `test_without_building` | Test without building, requires a derived data path | 
@@ -458,6 +459,7 @@ Key | Description | Default
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `disable_xcpretty` | Disable xcpretty formatting of build | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
