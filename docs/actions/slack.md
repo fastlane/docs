@@ -64,7 +64,7 @@ Key | Description | Default
   `use_webhook_configured_username_and_icon` | Use webhook's default username and icon settings? (true/false) | `false`
   `slack_url` | Create an Incoming WebHook for your Slack group | 
   `username` | Overrides the webhook's username property if use_webhook_configured_username_and_icon is false | `fastlane`
-  `icon_url` | Overrides the webhook's image property if use_webhook_configured_username_and_icon is false | `https://s3-eu-west-1.amazonaws.com/fastlane.tools/fastlane.png`
+  `icon_url` | Overrides the webhook's image property if use_webhook_configured_username_and_icon is false | `https://fastlane.tools/assets/img/fastlane_icon.png`
   `payload` | Add additional information to this post. payload must be a hash containing any key with any value | `{}`
   `default_payloads` | Remove some of the default payloads. More information about the available payloads on GitHub | 
   `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments | `{}`

@@ -3611,7 +3611,7 @@ fastlane-plugin-xcode_log_parser:
   :github_contributors: 5
 fastlane-plugin-lizard:
   :initial_commit: 2018-01-26
-  :age_in_days: 768
+  :age_in_days: 859
   :readme_score: 100
   :tests: 24
   :actions:
@@ -3621,11 +3621,11 @@ fastlane-plugin-lizard:
     description: Run lizard code cyclomatic complexity analysis.
     details: It counts 1)the nloc (lines of code without comments), 2)CCN (cyclomatic
       complexity number), 3)token count of functions. 4)parameter count of functions.
-  :sha: 246ede523348f51a4246dd0de2447fc773ff01905fa889252ffdf258860d13f3
-  :github_stars: 16
+  :sha: 62cb8f00ad2424aef12a005be04581e0814d65c92e20f01ec19cda0fd55f9fc8
+  :github_stars: 17
   :github_subscribers: 7
-  :github_issues: 1
-  :github_forks: 8
+  :github_issues: 0
+  :github_forks: 10
   :github_contributors: 4
 fastlane-plugin-updateplistfromstrings:
   :initial_commit: 2017-11-24
@@ -4133,7 +4133,7 @@ fastlane-plugin-remove_setting:
   :github_contributors: 0
 fastlane-plugin-android_emulator:
   :initial_commit: 2018-01-24
-  :age_in_days: 516
+  :age_in_days: 861
   :readme_score: 100
   :tests: 2
   :actions:
@@ -4142,12 +4142,12 @@ fastlane-plugin-android_emulator:
     category: 
     description: Creates and starts an Android Emulator (AVD)
     details: Great for Screengrab
-  :sha: fdfee0b408bcc3f0639d08b2c65c0ed0794a05e70ec0370b214a68e0ffb76a77
-  :github_stars: 5
-  :github_subscribers: 6
+  :sha: f5b13ad97a486d0284d6f9b069c68805992cb579338e14b95b0175438775f34f
+  :github_stars: 6
+  :github_subscribers: 5
   :github_issues: 2
-  :github_forks: 6
-  :github_contributors: 1
+  :github_forks: 7
+  :github_contributors: 0
 fastlane-plugin-ipa_scale:
   :github_stars: 0
   :github_subscribers: 0
@@ -8054,9 +8054,9 @@ fastlane-plugin-repack_ios:
   :github_contributors: 0
 fastlane-plugin-bundletool:
   :initial_commit: 2019-12-08
-  :age_in_days: 87
-  :readme_score: 50
-  :tests: 1
+  :age_in_days: 178
+  :readme_score: 100
+  :tests: 4
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: bundletool
@@ -8064,11 +8064,11 @@ fastlane-plugin-bundletool:
     description: Extracts an universal apk from an .aab file
     details: Using the google oficial bundletool to extract an universal apk from
       .aab file to distribute it
-  :sha: 5731cd48ab7399c93d6c9cf6e4de6749be331777a7c9e012454f340ca5d356f6
-  :github_stars: 2
+  :sha: 7164ca060326a65488a6e6844472c7c1957c01b2763e6b9731a9ef587523ca8f
+  :github_stars: 6
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-bitwarden:
   :initial_commit: 2019-12-12
@@ -8317,12 +8317,17 @@ fastlane-plugin-gitlab_changelog:
   :github_contributors: 2
 fastlane-plugin-zealot:
   :initial_commit: 2019-12-12
-  :age_in_days: 152
+  :age_in_days: 174
   :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: zealot_version_check
+    category: 
+    description: Check app version exists from Zealot
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: zealot_sync_devices
     category: 
     description: Check app version exists from Zealot
     details: 
@@ -8336,7 +8341,7 @@ fastlane-plugin-zealot:
     category: 
     description: 
     details: 
-  :sha: d4946d16de8d8f42e72cf19999313aae475b75299bddb7785c517e1c8fa680c0
+  :sha: 67ec0c00ed17fd855a190fa5b28e71b93823fdf0de9c7e4f0426ca69bb814de1
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 1
@@ -8428,10 +8433,15 @@ fastlane-plugin-swiftformat:
   :github_contributors: 1
 fastlane-plugin-codepush:
   :initial_commit: 2020-03-01
-  :age_in_days: 3
+  :age_in_days: 94
   :readme_score: 100
-  :tests: 1
+  :tests: 6
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_exists_deployment
+    category: 
+    description: CodePush check if deployment exists
+    details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: codepush_release_react
     category: 
@@ -8453,11 +8463,6 @@ fastlane-plugin-codepush:
     name: codepush_list_deployment
     category: 
     description: CodePush list deployment action
-    details: 
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: codepush_exists_deployment
-    category: 
-    description: CodePush check if deployment exists
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: codepush_remove_deployment
@@ -8484,11 +8489,11 @@ fastlane-plugin-codepush:
     category: 
     description: CodePush promote action
     details: 
-  :sha: d22ca8bf7d07ee81544ae0e64d78dbd1266098cf5c0917cb589ad127cbd7b56d
-  :github_stars: 3
+  :sha: 68bc29c3b4e1477d8b3116572993019332154ada4bffecf10dd4f999e14b14b8
+  :github_stars: 5
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-create_bitbucket_pull_request:
   :initial_commit: 2020-02-28
@@ -8925,7 +8930,7 @@ fastlane-plugin-unreleased_changelog:
   :github_contributors: 0
 fastlane-plugin-csv_translation:
   :initial_commit: 2020-05-09
-  :age_in_days: 9
+  :age_in_days: 25
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8940,11 +8945,16 @@ fastlane-plugin-csv_translation:
     description: Create a csv translation request.
     details: 
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rebase_csv_translation_request
+    category: 
+    description: Rebase a translation request based on identifier value.
+    details: 
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: get_csv_translation_requests
     category: 
     description: Get CSV translation requests info
     details: 
-  :sha: c0b7267fc3bd5fcc6a56b3f4ea8c8d1b75811f3b652c8de90eb5204a2eb5f110
+  :sha: fa5c7c349c9fe45a4dc210bfbc4777140dbfa423382757107ccf1f17b5e957a2
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -9021,7 +9031,7 @@ fastlane-plugin-appcenter_releases:
   :github_contributors: 2
 fastlane-plugin-rollbar:
   :initial_commit: 2020-05-08
-  :age_in_days: 10
+  :age_in_days: 26
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9045,8 +9055,69 @@ fastlane-plugin-rollbar:
     category: 
     description: Helps to upload sourcemaps to Rollbar
     details: Helps to upload sourcemaps to Rollbar
-  :sha: 199463eb58055ed50a4540f4fc1285a25e7808f2c97bc0b7b0572ad51d7353cf
+  :sha: '09d9c47e61528fcb4b5785c049056c78a4a344a223ed0614c4df5f42a0f33071'
   :github_stars: 6
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-semantic_release2:
+  :initial_commit: 2019-03-17
+  :age_in_days: 444
+  :readme_score: 100
+  :tests: 31
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: conventional_changelog
+    category: 
+    description: Get commits since last version and generates release notes
+    details: Uses conventional commits. It groups commits by their types and generates
+      release notes in markdown or slack format.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: analyze_commits
+    category: 
+    description: Finds a tag of last release and determinates version of next release
+    details: This action will find a last release tag and analyze all commits since
+      the tag. It uses conventional commits. Every time when commit is marked as fix
+      or feat it will increase patch or minor number (you can setup this default behaviour).
+      After all it will suggest if the version should be released or not.
+  :sha: 17b516093a72e4e06d8e44981c2d28712adcec511b2a384949a7e335fbf39e45
+  :github_stars: 63
+  :github_subscribers: 2
+  :github_issues: 3
+  :github_forks: 15
+  :github_contributors: 0
+fastlane-plugin-github_action:
+  :initial_commit: 2020-05-15
+  :age_in_days: 19
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: github_action
+    category: 
+    description: Helper to setup GitHub actions for fastlane and match
+    details: Helper to setup GitHub actions for fastlane and match
+  :sha: a5aad18c912422c30583183ca61eb6677a7ef03817b6a3644caf26c42e9d0d91
+  :github_stars: 4
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-slack_bot:
+  :initial_commit: 2020-05-27
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: post_to_slack
+    category: 
+    description: Post a slack message
+    details: 'Post a slack message to any #channel/@user using Slack bot chat postMessage
+      api.'
+  :sha: 646d28b06c9ac7555277111d0490c172e79e5869cf71da69c31989bcba621470
+  :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
