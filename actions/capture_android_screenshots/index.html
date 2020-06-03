@@ -1317,7 +1317,23 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h5 id="configuring-your-ui-tests-for-screenshots"><a name="user-content-configuring-your-ui-tests-for-screenshots" href="#configuring-your-ui-tests-for-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots</h5>
 <ol>
-<li>Add <code>@ClassRule public static final LocaleTestRule localeTestRule = new LocaleTestRule();</code> to your tests class to handle automatic switching of locales</li>
+<li>Add <code>LocaleTestRule</code> to your tests class to handle automatic switching of locales.<br />
+   If you're using Java use:
+   <code>java
+   @ClassRule
+   public static final LocaleTestRule localeTestRule = new LocaleTestRule();</code>
+   If you're using Kotlin use:
+   <code>kotlin
+   @Rule @JvmField
+   val localeTestRule = LocaleTestRule()</code>
+   Important is the <code>@JvmField</code> annotation. It won't work like that:
+   <code>kotlin
+   companion object {
+       @get:ClassRule
+       val localeTestRule = LocaleTestRule()
+   }</code></li>
+</ol>
+<ol>
 <li>To capture screenshots, add the following to your tests <code>Screengrab.screenshot("name_of_screenshot_here");</code> on the appropriate screens</li>
 </ol>
 <h1 id="generating-screenshots-with-screengrab"><a name="user-content-generating-screenshots-with-screengrab" href="#generating-screenshots-with-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating Screenshots with Screengrab</h1>
@@ -1391,6 +1407,7 @@ clear_previous_screenshots(true)
 <h2 id="ui-tests"><a name="user-content-ui-tests" href="#ui-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UI Tests</h2>
 <p>Check out <a href="http://developer.android.com/training/testing/ui-testing/espresso-testing.html">Testing UI for a Single App</a> for an introduction to using Espresso for UI testing.</p>
 <h5 id="example-ui-test-class-using-junit4"><a name="user-content-example-ui-test-class-using-junit4" href="#example-ui-test-class-using-junit4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example UI Test Class (Using JUnit4)</h5>
+<p>Java:</p>
 <pre><code class="java">@RunWith(JUnit4.class)
 public class JUnit4StyleTests {
     @ClassRule
@@ -1406,6 +1423,27 @@ public class JUnit4StyleTests {
         onView(withId(R.id.fab)).perform(click());
 
         Screengrab.screenshot(&quot;after_button_click&quot;);
+    }
+}
+
+</code></pre>
+
+<p>Kotlin:</p>
+<pre><code class="kotlin">@RunWith(JUnit4.class)
+class JUnit4StyleTests {
+    @get:Rule
+    var activityRule = ActivityTestRule(MainActivity::class.java)
+
+    @Rule @JvmField
+    val localeTestRule = LocaleTestRule()
+
+    @Test
+    fun testTakeScreenshot() {
+        Screengrab.screenshot(&quot;before_button_click&quot;)
+
+        onView(withId(R.id.fab)).perform(click())
+
+        Screengrab.screenshot(&quot;after_button_click&quot;)
     }
 }
 
