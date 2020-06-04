@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 0be119b05a22f4097a593696eb894fab823adb44
+  revision: 0fa77dfb96d3ab2fb1feafa579491dce9f737a7b
   specs:
-    fastlane (2.149.0)
+    fastlane (2.149.1)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       aws-sdk-s3 (~> 1.0)
@@ -50,7 +50,7 @@ GEM
     ast (2.4.0)
     atomos (0.1.3)
     aws-eventstream (1.1.0)
-    aws-partitions (1.323.0)
+    aws-partitions (1.324.0)
     aws-sdk-core (3.97.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -77,7 +77,7 @@ GEM
       highline (~> 1.7.2)
     cork (0.3.0)
       colored2 (~> 3.1)
-    danger (8.0.0)
+    danger (8.0.1)
       claide (~> 1.0)
       claide-plugins (>= 0.9.2)
       colored2 (~> 3.1)
