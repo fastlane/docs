@@ -5404,7 +5404,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 708
+  :age_in_days: 751
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5413,11 +5413,11 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details: 
-  :sha: 71090e9478409d8b96059256b6d58754f0d717663bca019f6021a42ad377ea69
+  :sha: af4ed54b84edbf01d15500e21fc5a52b0c31e3909f3d2227610719bdabf41419
   :github_stars: 5
   :github_subscribers: 4
   :github_issues: 1
-  :github_forks: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-android_change_package_name:
   :initial_commit: 2018-09-28
