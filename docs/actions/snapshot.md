@@ -377,7 +377,7 @@ snapshot(launch_arguments: ["SKIP_ANIMATIONS"])
 ```
 
 By default, _snapshot_ will wait for a short time for the animations to finish.
-If you're skipping the animations, this is wait time is unnecessary and can be skipped:
+If you're skipping the animations, this wait time is unnecessary and can be skipped:
 
 ```swift
 setupSnapshot(app, waitForAnimations: false)
@@ -439,7 +439,7 @@ Key | Description | Default
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `add_photos` | A list of photos that should be added to the simulator before running the application | 
   `add_videos` | A list of videos that should be added to the simulator before running the application | 
-  `html_template` | A path to screenshots.html template | `/Users/josh/Projects/fastlane/fastlane/snapshot/lib/snapshot/page.html.erb`
+  `html_template` | A path to screenshots.html template | 
   `buildlog_path` | The directory where to store the build log | [*](#parameters-legend-dynamic)
   `clean` | Should the project be cleaned before building it? | `false`
   `test_without_building` | Test without building, requires a derived data path | 

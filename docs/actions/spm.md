@@ -55,6 +55,7 @@ Key | Description | Default
   `package_path` | Change working directory before any other operation | 
   `xcconfig` | Use xcconfig file to override swift package generate-xcodeproj defaults | 
   `configuration` | Build with configuration (debug\|release) [default: debug] | 
+  `disable_sandbox` | Disable using the sandbox when executing subprocesses | `false`
   `xcpretty_output` | Specifies the output type for xcpretty. eg. 'test', or 'simple' | 
   `xcpretty_args` | Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf'), requires xcpretty_output to be specified also | 
   `verbose` | Increase verbosity of informational output | `false`
