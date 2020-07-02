@@ -9279,3 +9279,37 @@ fastlane-plugin-download_object_from_s3:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-xcresult_actions:
+  :initial_commit: 2020-06-15
+  :age_in_days: 17
+  :readme_score: 100
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: summarize_xcresult_report
+    category: 
+    description: Summarize about test coverage rate from `.xcresult` file
+    details: Summarize about test coverage rate from `.xcresult` file
+  :sha: 4f59c1c04bf4f63258450e5049940ace380af4e4d5221a99b44985971390a3c8
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-work_wechat:
+  :initial_commit: 2020-07-02
+  :age_in_days: 0
+  :readme_score: 50
+  :tests: 3
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: work_wechat
+    category: 
+    description: work wecaht webhook
+    details: send message via work wechat server api
+  :sha: 29fafbad322e2c1b28a73f660e4446c921db484235b31302ba3a3378bbc56fad
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

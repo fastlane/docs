@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: fb4a23c5b19607a8eefa81ad5a83099b573ed425
+  revision: e8fa2a74f65006200bf2cfd33b926e5f42646b88
   specs:
-    fastlane (2.150.0)
+    fastlane (2.150.1)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       aws-sdk-s3 (~> 1.0)
@@ -91,7 +91,7 @@ GEM
       terminal-table (~> 1)
     declarative (0.0.20)
     declarative-option (0.1.0)
-    digest-crc (0.5.1)
+    digest-crc (0.6.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.5)
