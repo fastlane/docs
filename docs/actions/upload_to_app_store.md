@@ -448,6 +448,10 @@ Omit `build_number` to let _fastlane_ automatically select the latest build numb
 
 Use the `submission_information` parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
 
+```no-highlight
+fastlane deliver submit_build --build_number 830 --submission_information "{\"export_compliance_uses_encryption\": false, \"add_id_info_uses_idfa\": false }"
+```
+
 # Credentials
 
 A detailed description about how your credentials are handled is available in a [credentials_manager](https://github.com/fastlane/fastlane/tree/master/credentials_manager).
@@ -504,25 +508,6 @@ Key | Editable While Live | Directory | Filename
   `promotional_text` | Yes | `<metadata_path>/<lang>/` | `promotional_text.txt`
 
 
-### Trade Representative Contact Information Metadata
-
-Key | Editable While Live | Directory | Filename
-----|--------|--------|--------
-  `trade_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `trade_name.txt`
-  `first_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `first_name.txt`
-  `last_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `last_name.txt`
-  `address_line1` | Yes | `<metadata_path>/trade_representative_contact_information` | `address_line1.txt`
-  `address_line2` | Yes | `<metadata_path>/trade_representative_contact_information` | `address_line2.txt`
-  `address_line3` | Yes | `<metadata_path>/trade_representative_contact_information` | `address_line3.txt`
-  `city_name` | Yes | `<metadata_path>/trade_representative_contact_information` | `city_name.txt`
-  `state` | Yes | `<metadata_path>/trade_representative_contact_information` | `state.txt`
-  `country` | Yes | `<metadata_path>/trade_representative_contact_information` | `country.txt`
-  `postal_code` | Yes | `<metadata_path>/trade_representative_contact_information` | `postal_code.txt`
-  `phone_number` | Yes | `<metadata_path>/trade_representative_contact_information` | `phone_number.txt`
-  `email_address` | Yes | `<metadata_path>/trade_representative_contact_information` | `email_address.txt`
-  `is_displayed_on_app_store` | Yes | `<metadata_path>/trade_representative_contact_information` | `is_displayed_on_app_store.txt`
-
-
 ### Review Information Metadata
 
 Key | Editable While Live | Directory | Filename
@@ -543,33 +528,32 @@ Key | Editable While Live | Directory | Filename
 
 ### Available Categories
 
-You can always prefix the category using `MZGenre.` (e.g. `MZGenre.Book`). _deliver_ supports both notations.
-
-- `Book`
-- `Business`
-- `Apps.Catalogs`
-- `Education`
-- `Entertainment`
-- `Finance`
-- `Apps.Food_Drink`
-- `Games`
-- `Healthcare_Fitness`
-- `Lifestyle`
-- `Medical`
-- `Music`
-- `Navigation`
-- `News`
-- `Apps.Newsstand`
-- `Photography`
-- `Productivity`
-- `Reference`
-- `Apps.Shopping`
-- `SocialNetworking`
-- `Sports`
-- `Stickers`
-- `Travel`
-- `Utilities`
-- `Weather`
+- `FOOD_AND_DRINK`
+- `BUSINESS`
+- `EDUCATION`
+- `SOCIAL_NETWORKING`
+- `BOOKS`
+- `SPORTS`
+- `FINANCE`
+- `REFERENCE`
+- `GRAPHICS_AND_DESIGN`
+- `DEVELOPER_TOOLS`
+- `HEALTH_AND_FITNESS`
+- `MUSIC`
+- `WEATHER`
+- `TRAVEL`
+- `ENTERTAINMENT`
+- `STICKERS`
+- `GAMES`
+- `LIFESTYLE`
+- `MEDICAL`
+- `MAGAZINES_AND_NEWSPAPERS`
+- `UTILITIES`
+- `SHOPPING`
+- `PRODUCTIVITY`
+- `NEWS`
+- `PHOTO_AND_VIDEO`
+- `NAVIGATION`
 
 ### Available Game Subcategories
 
@@ -592,54 +576,40 @@ You can always prefix the category using `MZGenre.` (e.g. `MZGenre.Book`). _deli
 - `MZGenre.Trivia`
 - `MZGenre.Word`
 
-### Available Magazines & Newspapers Subcategories
-
-- `MZGenre.Apps.Arts_Photography`
-- `MZGenre.Apps.Automotive`
-- `MZGenre.Apps.Brides_Weddings`
-- `MZGenre.Apps.Business_Investing`
-- `MZGenre.Apps.Childrens_Magazines`
-- `MZGenre.Apps.Computers_Internet`
-- `MZGenre.Apps.Cooking_Food_Drink`
-- `MZGenre.Apps.Crafts_Hobbies`
-- `MZGenre.Apps.Electronics_Audio`
-- `MZGenre.Apps.Entertainment`
-- `MZGenre.Apps.Fashion_Style`
-- `MZGenre.Apps.Health_Mind_Body`
-- `MZGenre.Apps.History`
-- `MZGenre.Apps.Home_Garden`
-- `MZGenre.Apps.Literary_Magazines_Journals`
-- `MZGenre.Apps.Mens_Interest`
-- `MZGenre.Apps.Movies_Music`
-- `MZGenre.Apps.News_Politics`
-- `MZGenre.Apps.Outdoors_Nature`
-- `MZGenre.Apps.Parenting_Family`
-- `MZGenre.Apps.Pets`
-- `MZGenre.Apps.Professional_Trade`
-- `MZGenre.Apps.Regional_News`
-- `MZGenre.Apps.Science`
-- `MZGenre.Apps.Sports_Leisure`
-- `MZGenre.Apps.Teens`
-- `MZGenre.Apps.Travel_Regional`
-- `MZGenre.Apps.Womens_Interest`
+- `GAMES_SPORTS`
+- `GAMES_WORD`
+- `GAMES_MUSIC`
+- `GAMES_ADVENTURE`
+- `GAMES_ACTION`
+- `GAMES_ROLE_PLAYING`
+- `GAMES_CASUAL`
+- `GAMES_BOARD`
+- `GAMES_TRIVIA`
+- `GAMES_CARD`
+- `GAMES_PUZZLE`
+- `GAMES_CASINO`
+- `GAMES_STRATEGY`
+- `GAMES_SIMULATION`
+- `GAMES_RACING`
+- `GAMES_FAMILY`
 
 ### Available Stickers Subcategories
 
-- `MZGenre.Apps.Stickers.Animals`
-- `MZGenre.Apps.Stickers.Art`
-- `MZGenre.Apps.Stickers.BirthdaysAndCelebrations`
-- `MZGenre.Apps.Stickers.Celebrities`
-- `MZGenre.Apps.Stickers.Characters`
-- `MZGenre.Apps.Stickers.FoodAndDrink`
-- `MZGenre.Apps.Stickers.Emotions`
-- `MZGenre.Apps.Stickers.Fashion`
-- `MZGenre.Apps.Stickers.Games`
-- `MZGenre.Apps.Stickers.KidsAndFamily`
-- `MZGenre.Apps.Stickers.MoviesAndTV`
-- `MZGenre.Apps.Stickers.Music`
-- `MZGenre.Apps.Stickers.People`
-- `MZGenre.Apps.Stickers.Places`
-- `MZGenre.Apps.Stickers.Sports`
+- `STICKERS_PLACES_AND_OBJECTS`
+- `STICKERS_EMOJI_AND_EXPRESSIONS`
+- `STICKERS_CELEBRATIONS`
+- `STICKERS_CELEBRITIES`
+- `STICKERS_MOVIES_AND_TV`
+- `STICKERS_SPORTS_AND_ACTIVITIES`
+- `STICKERS_EATING_AND_DRINKING`
+- `STICKERS_CHARACTERS`
+- `STICKERS_ANIMALS`
+- `STICKERS_FASHION`
+- `STICKERS_ART`
+- `STICKERS_GAMING`
+- `STICKERS_KIDS_AND_FAMILY`
+- `STICKERS_PEOPLE`
+- `STICKERS_MUSIC`
 
 ### Available age rating groups
 
@@ -651,26 +621,30 @@ You can always prefix the category using `MZGenre.` (e.g. `MZGenre.Book`). _deli
 - 1: Infrequent/Mild
 - 2: Frequent/Intense
 
+- `NONE`
+- `INFREQUENT_OR_MILD`
+- `FREQUENT_OR_INTENSE`
+
 **Keys**
 
-- `CARTOON_FANTASY_VIOLENCE`
-- `REALISTIC_VIOLENCE`
-- `PROLONGED_GRAPHIC_SADISTIC_REALISTIC_VIOLENCE`
-- `PROFANITY_CRUDE_HUMOR`
-- `MATURE_SUGGESTIVE`
-- `HORROR`
-- `MEDICAL_TREATMENT_INFO`
-- `ALCOHOL_TOBACCO_DRUGS`
-- `GAMBLING`
-- `SEXUAL_CONTENT_NUDITY`
-- `GRAPHIC_SEXUAL_CONTENT_NUDITY`
+- `violenceCartoonOrFantasy`
+- `violenceRealistic`
+- `violenceRealisticProlongedGraphicOrSadistic`
+- `profanityOrCrudeHumor`
+- `matureOrSuggestiveThemes`
+- `horrorOrFearThemes`
+- `medicalOrTreatmentInformation`
+- `alcoholTobaccoOrDrugUseOrReferences`
+- `gamblingSimulated`
+- `sexualContentOrNudity`
+- `sexualContentGraphicAndNudity`
 
 #### Boolean
 
 **Keys**
 
-- `UNRESTRICTED_WEB_ACCESS`
-- `GAMBLING_CONTESTS`
+- `unrestrictedWebAccess`
+- `gamblingAndContests`
 </details>
 
 <br />
@@ -848,9 +822,9 @@ Key | Description | Default
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | [*](#parameters-legend-dynamic)
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
   `precheck_default_rule_level` | The default precheck rule level unless otherwise configured | `:warn`
-  `individual_metadata_items` | An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow | `[]`
-  `app_icon` | Metadata: The path to the app icon | 
-  `apple_watch_app_icon` | Metadata: The path to the Apple Watch app icon | 
+  `individual_metadata_items` | **DEPRECATED!** Removed after the migration to the new App Store Connect API in June 2020 - An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow | `[]`
+  `app_icon` | **DEPRECATED!** Removed after the migration to the new App Store Connect API in June 2020 - Metadata: The path to the app icon | 
+  `apple_watch_app_icon` | **DEPRECATED!** Removed after the migration to the new App Store Connect API in June 2020 - Metadata: The path to the Apple Watch app icon | 
   `copyright` | Metadata: The copyright notice | 
   `primary_category` | Metadata: The english name of the primary category (e.g. `Business`, `Books`) | 
   `secondary_category` | Metadata: The english name of the secondary category (e.g. `Business`, `Books`) | 

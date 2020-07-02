@@ -338,7 +338,7 @@ Key | Description | Default
   `sku` | SKU Number (e.g. '1234') | [*](#parameters-legend-dynamic)
   `platform` | The platform to use (optional) | `ios`
   `platforms` | The platforms to use (optional) | 
-  `language` | Primary Language (e.g. 'English', 'German') | `English`
+  `language` | Primary Language (e.g. 'en-US', 'fr-FR') | `English`
   `company_name` | The name of your company. Only required if it's the first app you create | 
   `skip_itc` | Skip the creation of the app on App Store Connect | `false`
   `itc_users` | Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles | 
