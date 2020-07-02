@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>google_play_track_version_codes - fastlane docs</title>
+  <title>google_play_track_release_names - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "google_play_track_version_codes";
-    var mkdocs_page_input_path = "actions/google_play_track_version_codes.md";
-    var mkdocs_page_url = "/actions/google_play_track_version_codes/";
+    var mkdocs_page_name = "google_play_track_release_names";
+    var mkdocs_page_input_path = "actions/google_play_track_release_names.md";
+    var mkdocs_page_url = "/actions/google_play_track_release_names/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1235,14 +1235,14 @@
         
       
     
-    <li>google_play_track_version_codes</li>
+    <li>google_play_track_release_names</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/google_play_track_version_codes.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/google_play_track_release_names.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1270,18 +1270,18 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/google_play_track_version_codes.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/google_play_track_release_names.rb
 -->
 
-<h1 id="google_play_track_version_codes"><a name="user-content-google_play_track_version_codes" href="#google_play_track_version_codes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>google_play_track_version_codes</h1>
-<p>Retrieves version codes for a Google Play track</p>
+<h1 id="google_play_track_release_names"><a name="user-content-google_play_track_release_names" href="#google_play_track_release_names" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>google_play_track_release_names</h1>
+<p>Retrieves release names for a Google Play track</p>
 <blockquote>
 <p>More information: <a href="https://docs.fastlane.tools/actions/supply/">https://docs.fastlane.tools/actions/supply/</a></p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>google_play_track_version_codes</th>
+<th>google_play_track_release_names</th>
 <th></th>
 </tr>
 </thead>
@@ -1292,16 +1292,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@panthomakos</td>
+<td>@raldred</td>
 </tr>
 <tr>
 <td>Returns</td>
-<td>Array of integers representing the version codes for the given Google Play track</td>
+<td>Array of strings representing the release names for the given Google Play track</td>
 </tr>
 </tbody>
 </table>
 <h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">google_play_track_version_codes
+<pre><code class="ruby">google_play_track_release_names
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1361,18 +1361,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action google_play_track_version_codes
+<pre><code class="no-highlight">fastlane action google_play_track_release_names
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run google_play_track_version_codes
+<pre><code class="no-highlight">fastlane run google_play_track_release_names
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run google_play_track_version_codes parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run google_play_track_release_names parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1380,7 +1380,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/google_play_track_version_codes.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/google_play_track_release_names.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1391,10 +1391,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gradle/" class="btn btn-neutral float-right" title="gradle">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../google_play_track_version_codes/" class="btn btn-neutral float-right" title="google_play_track_version_codes">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../google_play_track_release_names/" class="btn btn-neutral" title="google_play_track_release_names"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../github_api/" class="btn btn-neutral" title="github_api"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1436,10 +1436,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../google_play_track_release_names/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../github_api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../gradle/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../google_play_track_version_codes/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

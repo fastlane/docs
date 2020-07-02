@@ -1588,6 +1588,9 @@ end
 <p>Omit <code>build_number</code> to let <em>fastlane</em> automatically select the latest build number for the current version being edited for release from App Store Connect.</p>
 <h3 id="compliance-and-idfa-settings"><a name="user-content-compliance-and-idfa-settings" href="#compliance-and-idfa-settings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Compliance and IDFA settings</h3>
 <p>Use the <code>submission_information</code> parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb"><code>app_submission.rb</code></a> file for options. See <a href="https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149">this example</a>.</p>
+<pre><code class="no-highlight">fastlane deliver submit_build --build_number 830 --submission_information &quot;{\&quot;export_compliance_uses_encryption\&quot;: false, \&quot;add_id_info_uses_idfa\&quot;: false }&quot;
+</code></pre>
+
 <h1 id="credentials"><a name="user-content-credentials" href="#credentials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Credentials</h1>
 <p>A detailed description about how your credentials are handled is available in a <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">credentials_manager</a>.</p>
 <h3 id="how-does-this-thing-even-work-is-magic-involved"><a name="user-content-how-does-this-thing-even-work-is-magic-involved" href="#how-does-this-thing-even-work-is-magic-involved" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does this thing even work? Is magic involved? 🎩</h3>
@@ -1733,97 +1736,6 @@ end
 </tr>
 </tbody>
 </table>
-<h3 id="trade-representative-contact-information-metadata"><a name="user-content-trade-representative-contact-information-metadata" href="#trade-representative-contact-information-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Trade Representative Contact Information Metadata</h3>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Editable While Live</th>
-<th>Directory</th>
-<th>Filename</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>trade_name</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>trade_name.txt</code></td>
-</tr>
-<tr>
-<td><code>first_name</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>first_name.txt</code></td>
-</tr>
-<tr>
-<td><code>last_name</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>last_name.txt</code></td>
-</tr>
-<tr>
-<td><code>address_line1</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>address_line1.txt</code></td>
-</tr>
-<tr>
-<td><code>address_line2</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>address_line2.txt</code></td>
-</tr>
-<tr>
-<td><code>address_line3</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>address_line3.txt</code></td>
-</tr>
-<tr>
-<td><code>city_name</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>city_name.txt</code></td>
-</tr>
-<tr>
-<td><code>state</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>state.txt</code></td>
-</tr>
-<tr>
-<td><code>country</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>country.txt</code></td>
-</tr>
-<tr>
-<td><code>postal_code</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>postal_code.txt</code></td>
-</tr>
-<tr>
-<td><code>phone_number</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>phone_number.txt</code></td>
-</tr>
-<tr>
-<td><code>email_address</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>email_address.txt</code></td>
-</tr>
-<tr>
-<td><code>is_displayed_on_app_store</code></td>
-<td>Yes</td>
-<td><code>&lt;metadata_path&gt;/trade_representative_contact_information</code></td>
-<td><code>is_displayed_on_app_store.txt</code></td>
-</tr>
-</tbody>
-</table>
 <h3 id="review-information-metadata"><a name="user-content-review-information-metadata" href="#review-information-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Review Information Metadata</h3>
 <table>
 <thead>
@@ -1883,33 +1795,33 @@ end
 <p><details>
 <summary>View all available categories, etc.</summary></p>
 <h3 id="available-categories"><a name="user-content-available-categories" href="#available-categories" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available Categories</h3>
-<p>You can always prefix the category using <code>MZGenre.</code> (e.g. <code>MZGenre.Book</code>). <em>deliver</em> supports both notations.</p>
 <ul>
-<li><code>Book</code></li>
-<li><code>Business</code></li>
-<li><code>Apps.Catalogs</code></li>
-<li><code>Education</code></li>
-<li><code>Entertainment</code></li>
-<li><code>Finance</code></li>
-<li><code>Apps.Food_Drink</code></li>
-<li><code>Games</code></li>
-<li><code>Healthcare_Fitness</code></li>
-<li><code>Lifestyle</code></li>
-<li><code>Medical</code></li>
-<li><code>Music</code></li>
-<li><code>Navigation</code></li>
-<li><code>News</code></li>
-<li><code>Apps.Newsstand</code></li>
-<li><code>Photography</code></li>
-<li><code>Productivity</code></li>
-<li><code>Reference</code></li>
-<li><code>Apps.Shopping</code></li>
-<li><code>SocialNetworking</code></li>
-<li><code>Sports</code></li>
-<li><code>Stickers</code></li>
-<li><code>Travel</code></li>
-<li><code>Utilities</code></li>
-<li><code>Weather</code></li>
+<li><code>FOOD_AND_DRINK</code></li>
+<li><code>BUSINESS</code></li>
+<li><code>EDUCATION</code></li>
+<li><code>SOCIAL_NETWORKING</code></li>
+<li><code>BOOKS</code></li>
+<li><code>SPORTS</code></li>
+<li><code>FINANCE</code></li>
+<li><code>REFERENCE</code></li>
+<li><code>GRAPHICS_AND_DESIGN</code></li>
+<li><code>DEVELOPER_TOOLS</code></li>
+<li><code>HEALTH_AND_FITNESS</code></li>
+<li><code>MUSIC</code></li>
+<li><code>WEATHER</code></li>
+<li><code>TRAVEL</code></li>
+<li><code>ENTERTAINMENT</code></li>
+<li><code>STICKERS</code></li>
+<li><code>GAMES</code></li>
+<li><code>LIFESTYLE</code></li>
+<li><code>MEDICAL</code></li>
+<li><code>MAGAZINES_AND_NEWSPAPERS</code></li>
+<li><code>UTILITIES</code></li>
+<li><code>SHOPPING</code></li>
+<li><code>PRODUCTIVITY</code></li>
+<li><code>NEWS</code></li>
+<li><code>PHOTO_AND_VIDEO</code></li>
+<li><code>NAVIGATION</code></li>
 </ul>
 <h3 id="available-game-subcategories"><a name="user-content-available-game-subcategories" href="#available-game-subcategories" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available Game Subcategories</h3>
 <ul>
@@ -1932,54 +1844,41 @@ end
 <li><code>MZGenre.Trivia</code></li>
 <li><code>MZGenre.Word</code></li>
 </ul>
-<h3 id="available-magazines-newspapers-subcategories"><a name="user-content-available-magazines-newspapers-subcategories" href="#available-magazines-newspapers-subcategories" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available Magazines &amp; Newspapers Subcategories</h3>
 <ul>
-<li><code>MZGenre.Apps.Arts_Photography</code></li>
-<li><code>MZGenre.Apps.Automotive</code></li>
-<li><code>MZGenre.Apps.Brides_Weddings</code></li>
-<li><code>MZGenre.Apps.Business_Investing</code></li>
-<li><code>MZGenre.Apps.Childrens_Magazines</code></li>
-<li><code>MZGenre.Apps.Computers_Internet</code></li>
-<li><code>MZGenre.Apps.Cooking_Food_Drink</code></li>
-<li><code>MZGenre.Apps.Crafts_Hobbies</code></li>
-<li><code>MZGenre.Apps.Electronics_Audio</code></li>
-<li><code>MZGenre.Apps.Entertainment</code></li>
-<li><code>MZGenre.Apps.Fashion_Style</code></li>
-<li><code>MZGenre.Apps.Health_Mind_Body</code></li>
-<li><code>MZGenre.Apps.History</code></li>
-<li><code>MZGenre.Apps.Home_Garden</code></li>
-<li><code>MZGenre.Apps.Literary_Magazines_Journals</code></li>
-<li><code>MZGenre.Apps.Mens_Interest</code></li>
-<li><code>MZGenre.Apps.Movies_Music</code></li>
-<li><code>MZGenre.Apps.News_Politics</code></li>
-<li><code>MZGenre.Apps.Outdoors_Nature</code></li>
-<li><code>MZGenre.Apps.Parenting_Family</code></li>
-<li><code>MZGenre.Apps.Pets</code></li>
-<li><code>MZGenre.Apps.Professional_Trade</code></li>
-<li><code>MZGenre.Apps.Regional_News</code></li>
-<li><code>MZGenre.Apps.Science</code></li>
-<li><code>MZGenre.Apps.Sports_Leisure</code></li>
-<li><code>MZGenre.Apps.Teens</code></li>
-<li><code>MZGenre.Apps.Travel_Regional</code></li>
-<li><code>MZGenre.Apps.Womens_Interest</code></li>
+<li><code>GAMES_SPORTS</code></li>
+<li><code>GAMES_WORD</code></li>
+<li><code>GAMES_MUSIC</code></li>
+<li><code>GAMES_ADVENTURE</code></li>
+<li><code>GAMES_ACTION</code></li>
+<li><code>GAMES_ROLE_PLAYING</code></li>
+<li><code>GAMES_CASUAL</code></li>
+<li><code>GAMES_BOARD</code></li>
+<li><code>GAMES_TRIVIA</code></li>
+<li><code>GAMES_CARD</code></li>
+<li><code>GAMES_PUZZLE</code></li>
+<li><code>GAMES_CASINO</code></li>
+<li><code>GAMES_STRATEGY</code></li>
+<li><code>GAMES_SIMULATION</code></li>
+<li><code>GAMES_RACING</code></li>
+<li><code>GAMES_FAMILY</code></li>
 </ul>
 <h3 id="available-stickers-subcategories"><a name="user-content-available-stickers-subcategories" href="#available-stickers-subcategories" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available Stickers Subcategories</h3>
 <ul>
-<li><code>MZGenre.Apps.Stickers.Animals</code></li>
-<li><code>MZGenre.Apps.Stickers.Art</code></li>
-<li><code>MZGenre.Apps.Stickers.BirthdaysAndCelebrations</code></li>
-<li><code>MZGenre.Apps.Stickers.Celebrities</code></li>
-<li><code>MZGenre.Apps.Stickers.Characters</code></li>
-<li><code>MZGenre.Apps.Stickers.FoodAndDrink</code></li>
-<li><code>MZGenre.Apps.Stickers.Emotions</code></li>
-<li><code>MZGenre.Apps.Stickers.Fashion</code></li>
-<li><code>MZGenre.Apps.Stickers.Games</code></li>
-<li><code>MZGenre.Apps.Stickers.KidsAndFamily</code></li>
-<li><code>MZGenre.Apps.Stickers.MoviesAndTV</code></li>
-<li><code>MZGenre.Apps.Stickers.Music</code></li>
-<li><code>MZGenre.Apps.Stickers.People</code></li>
-<li><code>MZGenre.Apps.Stickers.Places</code></li>
-<li><code>MZGenre.Apps.Stickers.Sports</code></li>
+<li><code>STICKERS_PLACES_AND_OBJECTS</code></li>
+<li><code>STICKERS_EMOJI_AND_EXPRESSIONS</code></li>
+<li><code>STICKERS_CELEBRATIONS</code></li>
+<li><code>STICKERS_CELEBRITIES</code></li>
+<li><code>STICKERS_MOVIES_AND_TV</code></li>
+<li><code>STICKERS_SPORTS_AND_ACTIVITIES</code></li>
+<li><code>STICKERS_EATING_AND_DRINKING</code></li>
+<li><code>STICKERS_CHARACTERS</code></li>
+<li><code>STICKERS_ANIMALS</code></li>
+<li><code>STICKERS_FASHION</code></li>
+<li><code>STICKERS_ART</code></li>
+<li><code>STICKERS_GAMING</code></li>
+<li><code>STICKERS_KIDS_AND_FAMILY</code></li>
+<li><code>STICKERS_PEOPLE</code></li>
+<li><code>STICKERS_MUSIC</code></li>
 </ul>
 <h3 id="available-age-rating-groups"><a name="user-content-available-age-rating-groups" href="#available-age-rating-groups" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available age rating groups</h3>
 <h4 id="non-boolean"><a name="user-content-non-boolean" href="#non-boolean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Non Boolean</h4>
@@ -1989,25 +1888,30 @@ end
 <li>1: Infrequent/Mild</li>
 <li>2: Frequent/Intense</li>
 </ul>
+<ul>
+<li><code>NONE</code></li>
+<li><code>INFREQUENT_OR_MILD</code></li>
+<li><code>FREQUENT_OR_INTENSE</code></li>
+</ul>
 <p><strong>Keys</strong></p>
 <ul>
-<li><code>CARTOON_FANTASY_VIOLENCE</code></li>
-<li><code>REALISTIC_VIOLENCE</code></li>
-<li><code>PROLONGED_GRAPHIC_SADISTIC_REALISTIC_VIOLENCE</code></li>
-<li><code>PROFANITY_CRUDE_HUMOR</code></li>
-<li><code>MATURE_SUGGESTIVE</code></li>
-<li><code>HORROR</code></li>
-<li><code>MEDICAL_TREATMENT_INFO</code></li>
-<li><code>ALCOHOL_TOBACCO_DRUGS</code></li>
-<li><code>GAMBLING</code></li>
-<li><code>SEXUAL_CONTENT_NUDITY</code></li>
-<li><code>GRAPHIC_SEXUAL_CONTENT_NUDITY</code></li>
+<li><code>violenceCartoonOrFantasy</code></li>
+<li><code>violenceRealistic</code></li>
+<li><code>violenceRealisticProlongedGraphicOrSadistic</code></li>
+<li><code>profanityOrCrudeHumor</code></li>
+<li><code>matureOrSuggestiveThemes</code></li>
+<li><code>horrorOrFearThemes</code></li>
+<li><code>medicalOrTreatmentInformation</code></li>
+<li><code>alcoholTobaccoOrDrugUseOrReferences</code></li>
+<li><code>gamblingSimulated</code></li>
+<li><code>sexualContentOrNudity</code></li>
+<li><code>sexualContentGraphicAndNudity</code></li>
 </ul>
 <h4 id="boolean"><a name="user-content-boolean" href="#boolean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Boolean</h4>
 <p><strong>Keys</strong></p>
 <ul>
-<li><code>UNRESTRICTED_WEB_ACCESS</code></li>
-<li><code>GAMBLING_CONTESTS</code>
+<li><code>unrestrictedWebAccess</code></li>
+<li><code>gamblingAndContests</code>
 </details></li>
 </ul>
 <p><br /></p>
@@ -2295,17 +2199,17 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tr>
 <tr>
 <td><code>individual_metadata_items</code></td>
-<td>An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow</td>
+<td><strong>DEPRECATED!</strong> Removed after the migration to the new App Store Connect API in June 2020 - An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow</td>
 <td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>app_icon</code></td>
-<td>Metadata: The path to the app icon</td>
+<td><strong>DEPRECATED!</strong> Removed after the migration to the new App Store Connect API in June 2020 - Metadata: The path to the app icon</td>
 <td></td>
 </tr>
 <tr>
 <td><code>apple_watch_app_icon</code></td>
-<td>Metadata: The path to the Apple Watch app icon</td>
+<td><strong>DEPRECATED!</strong> Removed after the migration to the new App Store Connect API in June 2020 - Metadata: The path to the Apple Watch app icon</td>
 <td></td>
 </tr>
 <tr>
