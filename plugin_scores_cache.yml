@@ -8135,10 +8135,15 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 200
+  :age_in_days: 203
   :readme_score: 50
   :tests: 1
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: huawei_appgallery_connect
+    category:
+    description: Huawei AppGallery Connect Plugin
+    details: Fastlane plugin to upload Android app to Huawei AppGallery Connect
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: huawei_appgallery_connect
     category:
@@ -8149,12 +8154,12 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
-  :sha: cb8d60c9742e627feb1801f59b55bc02ace9b44dd752882210175d49a3346642
+  :sha: aacd68fe71d629fb6f087e399d3bf5fb295f844539fd8cbf54993849d377268a
   :github_stars: 12
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 8
-  :github_contributors: 4
+  :github_contributors: 0
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
   :age_in_days: 16
