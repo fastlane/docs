@@ -58,6 +58,7 @@ Key | Description | Default
   `cobertura_xml` | Tell slather that it should output results as Cobertura XML format | 
   `sonarqube_xml` | Tell slather that it should output results as SonarQube Generic XML format | 
   `llvm_cov` | Tell slather that it should output results as llvm-cov show format | 
+  `json` | Tell slather that it should output results as static JSON report | 
   `html` | Tell slather that it should output results as static HTML pages | 
   `show` | Tell slather that it should open static html pages automatically | `false`
   `source_directory` | Tell slather the location of your source files | 
