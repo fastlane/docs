@@ -62,6 +62,7 @@ Key | Description | Default
   `skip_tests` | Lint skips building and running tests during validation | 
   `verbose` | Show more debugging information | `false`
   `use_modular_headers` | Use modular headers option during validation | 
+  `synchronous` | If validation depends on other recently pushed pods, synchronize | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

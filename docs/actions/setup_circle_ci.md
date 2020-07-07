@@ -20,7 +20,7 @@ This action helps with CircleCI integration. Add this to the top of your Fastfil
 
 setup_circle_ci ||
 ---|---
-Supported platforms | ios, mac
+Supported platforms | ios, android, mac
 Author | @dantoml
 
 
