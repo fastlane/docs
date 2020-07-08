@@ -63,7 +63,7 @@ Key | Description | Default
   `short_version` | Short version string to force resigned ipa to use (`CFBundleShortVersionString`) | 
   `bundle_version` | Bundle version to force resigned ipa to use (`CFBundleVersion`) | 
   `bundle_id` | Set new bundle ID during resign (`CFBundleIdentifier`) | 
-  `use_app_entitlements` | Extract app bundle codesigning entitlements and combine with entitlements from new provisionin profile | 
+  `use_app_entitlements` | Extract app bundle codesigning entitlements and combine with entitlements from new provisioning profile | 
   `keychain_path` | Provide a path to a keychain file that should be used by `/usr/bin/codesign` | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

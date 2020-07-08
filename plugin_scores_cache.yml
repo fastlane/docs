@@ -5053,21 +5053,21 @@ fastlane-plugin-build_log_info:
   :github_contributors: 1
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 155
+  :age_in_days: 693
   :readme_score: 100
-  :tests: 22
+  :tests: 29
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: run_dockerized_task
     category:
     description: Action that runs Android tasks on a specified Docker image
     details:
-  :sha: 4ea4e13bf0c22bd809be2c7c53d2dedae554f4534b560997363a1c71c016bbe4
-  :github_stars: 27
-  :github_subscribers: 24
+  :sha: c99168a6b384b9361b94ec7559a417626676a7faf229e267e7d025e19d30f8e9
+  :github_stars: 42
+  :github_subscribers: 25
   :github_issues: 2
-  :github_forks: 5
-  :github_contributors: 0
+  :github_forks: 6
+  :github_contributors: 5
 fastlane-plugin-ciutils:
   :initial_commit: 2016-11-19
   :age_in_days: 872
@@ -9318,3 +9318,52 @@ fastlane-plugin-work_wechat:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-mattermost:
+  :initial_commit: 2020-07-01
+  :age_in_days: 7
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: mattermost
+    category:
+    description: Fastlane plugin for push messages to Mattermost
+    details: Fastlane plugin for push messages to Mattermost
+  :sha: 01ee869aaa199b559371329ac48f091e3aea3d44cff8b70c1d82b51fa625b893
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-circle_ci:
+  :initial_commit: 2020-07-05
+  :age_in_days: 3
+  :readme_score: 50
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: download_circle_ci_artifact
+    category:
+    description: Download the CircleCI artifact file.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: trigger_circle_ci_job
+    category:
+    description: Triggers a new CircleCI Job
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_circle_ci_build_status
+    category:
+    description: CircleCI build status
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_circle_ci_artifacts
+    category:
+    description: List the CircleCI artifacts.
+    details:
+  :sha: 8ceb0be9eade6871e64aac123387f135606bd4ed11f5e0822a3aa3484e3a43eb
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1

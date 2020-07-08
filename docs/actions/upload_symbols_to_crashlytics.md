@@ -43,6 +43,7 @@ Key | Description | Default
   `binary_path` | The path to the upload-symbols file of the Fabric app | 
   `platform` | The platform of the app (ios, appletvos, mac) | `ios`
   `dsym_worker_threads` | The number of threads to use for simultaneous dSYM upload | `1`
+  `debug` | Enable debug mode for upload-symbols | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
