@@ -19,7 +19,7 @@ This action helps with Travis integration. Add this to the top of your Fastfile 
 
 setup_travis ||
 ---|---
-Supported platforms | ios, mac
+Supported platforms | ios, android, mac
 Author | @KrauseFx
 
 
