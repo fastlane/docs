@@ -1595,9 +1595,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 1150
+  :age_in_days: 1163
   :readme_score: 100
-  :tests: 101
+  :tests: 112
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_fetch_version_number
@@ -1618,12 +1618,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: c56e6a80a01543afe15d34c0b7db7604a66e988fae947b4437974837e5e11212
-  :github_stars: 333
+  :sha: d7eaac0a13b6c4e9765f857cbd80a733a7487d3a7ad36cae689409a72bede025
+  :github_stars: 337
   :github_subscribers: 21
-  :github_issues: 30
-  :github_forks: 87
-  :github_contributors: 38
+  :github_issues: 28
+  :github_forks: 86
+  :github_contributors: 39
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -9367,3 +9367,28 @@ fastlane-plugin-circle_ci:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-azuredevops_envvars:
+  :initial_commit: 2020-07-10
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: azuredevops_envvars
+    category:
+    description: A Fastlane plugin that provides passthrough access to AzureDevOps
+      environment variables
+    details: A Fastlane plugin that provides passthrough access to AzureDevOps environment
+      variables
+  :sha: afb0483585c9bc1e7244a02a02f52ee34a1c693bf70714f80152b02445055589
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-bitrise_automation:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
