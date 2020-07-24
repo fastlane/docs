@@ -1272,7 +1272,8 @@
 <h1 id="fastlane"><a name="user-content-fastlane" href="#fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>fastlane</h1>
 <p><a class="badge" href="https://twitter.com/FastlaneTools"><img alt="Twitter: @FastlaneTools" src="https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat" /></a>
 <a class="badge" href="https://github.com/fastlane/fastlane/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-green.svg?style=flat" /></a>
-<a class="badge" href="https://rubygems.org/gems/fastlane"><img alt="Gem" src="https://img.shields.io/gem/v/fastlane.svg?style=flat" /></a></p>
+<a class="badge" href="https://rubygems.org/gems/fastlane"><img alt="Gem" src="https://img.shields.io/gem/v/fastlane.svg?style=flat" /></a>
+<img alt="Platforms" src="https://img.shields.io/badge/os-macos%20--%20linux%20--%20windows-blue" /></p>
 <p><em>fastlane</em> is the easiest way to automate beta deployments and releases for your iOS and Android apps. 🚀 It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.</p>
 <p>You can start by creating a <code>Fastfile</code> file in your repository, here’s one that defines your beta or App Store release process:</p>
 <pre><code class="ruby">lane :beta do
@@ -1345,18 +1346,33 @@ end
 </tbody>
 </table>
 <h2 id="getting-started"><a name="user-content-getting-started" href="#getting-started" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started</h2>
-<p>Install the latest Xcode command line tools:</p>
-<pre><code class="no-highlight">xcode-select --install
+<h3 id="installing-fastlane"><a name="user-content-installing-fastlane" href="#installing-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing <em>fastlane</em></h3>
+<p><em>fastlane</em> can be installed in a multiple ways. The preferred method is with a <code>Gemfile</code>. <em>fastlane</em> can also get installed directly through RubyGems or with Homebrew (if on macOS).</p>
+<h4 id="a-gemfile-macoslinuxwindows"><a name="user-content-a-gemfile-macoslinuxwindows" href="#a-gemfile-macoslinuxwindows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>A Gemfile (macOS/Linux/Windows)</h4>
+<p>It is recommended that you use a <code>Gemfile</code> to define your dependency on <em>fastlane</em>. This will clearly define the used <em>fastlane</em> version, and its dependencies, and will also speed up using <em>fastlane</em>.</p>
+<ul>
+<li>Create a <code>./Gemfile</code> in the root directory of your project with the content</li>
+</ul>
+<pre><code class="ruby">source &quot;https://rubygems.org&quot;
+
+gem &quot;fastlane&quot;
 </code></pre>
 
-<p>Install <em>fastlane</em> using</p>
-<pre><code class="sh"># Using RubyGems
-sudo gem install fastlane -NV
-
-# Alternatively using Homebrew
-brew install fastlane
+<ul>
+<li>Run <code>[sudo] bundle update</code> and add both the <code>./Gemfile</code> and the <code>./Gemfile.lock</code> to version control</li>
+<li>Every time you run <em>fastlane</em>, use <code>bundle exec fastlane [lane]</code></li>
+<li>On your CI, add <code>[sudo] bundle install</code> as your first build step</li>
+<li>To update <em>fastlane</em>, just run <code>[sudo] bundle update fastlane</code></li>
+</ul>
+<h4 id="rubygems-macoslinuxwindows"><a name="user-content-rubygems-macoslinuxwindows" href="#rubygems-macoslinuxwindows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RubyGems (macOS/Linux/Windows)</h4>
+<pre><code class="sh">sudo gem install fastlane -NV
 </code></pre>
 
+<h4 id="homebrew-macos"><a name="user-content-homebrew-macos" href="#homebrew-macos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Homebrew (macOS)</h4>
+<pre><code class="sh">brew install fastlane
+</code></pre>
+
+<h3 id="setting-up-fastlane"><a name="user-content-setting-up-fastlane" href="#setting-up-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em></h3>
 <p>Navigate to your iOS or Android app and run</p>
 <pre><code class="no-highlight">fastlane init
 </code></pre>
@@ -1536,5 +1552,5 @@ brew install fastlane
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2020-07-17 19:24:01.917223
+Build Date UTC : 2020-07-24 17:59:25.105854
 -->
