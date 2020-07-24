@@ -8,6 +8,9 @@ Fastlane.swift is currently in beta. Please provide feedback by opening an issue
 
 Fastlane.swift currently supports all built-in [fastlane actions](https://docs.fastlane.tools/actions/). Make sure to update to the most recent _fastlane_ release to try this feature.
 
+## PLugins 
+When you add any plugin fastlane the corresponding API will be automatically available in `fastlane/swift/Plugins.swift`
+
 ## Get Started
 
 ### Step 1
@@ -93,10 +96,6 @@ To specify `socket port` from the command line to your lane, use the fllowing sy
 ```no-highlight
 fastlane [lane] --swift_server_port [socket port]
 ```
-
-## Known Limitations
-
-Currently, Fastlane.swift does not have support for plugins. This is a work in progress and we will continue to update this doc with the current working condition of each feature as we move from beta to general availability.
 
 ## We Would Love Your Feedback
 
