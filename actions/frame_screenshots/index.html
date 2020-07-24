@@ -1415,7 +1415,7 @@ It has the following general JSON structure:</p>
 </tr>
 <tr>
 <td><code>font_scale_factor</code></td>
-<td>Specifies whether <em>frameit</em> should increase or decrease the font size of the text.</td>
+<td>Specifies whether <em>frameit</em> should increase or decrease the font size of the text. Is ignored for <code>keyword</code> or <code>title</code>, if <code>font_size</code> is specified.</td>
 <td><code>0.1</code></td>
 </tr>
 <tr>
@@ -1499,6 +1499,11 @@ These are defined in the <code>data</code> key. This is an array with the follow
 <td>The default <code>imagemagick</code> font, which is system dependent.</td>
 </tr>
 <tr>
+<td><code>font_size</code></td>
+<td>The font size for the text specified in points. If not specified or <code>0</code>, font will be scaled automatically to fit the available space. <em>frameit</em> still shrinks the text, if it would not fit.</td>
+<td>NA</td>
+</tr>
+<tr>
 <td><code>text</code></td>
 <td>The text that should be used for the <code>keyword</code> or <code>title</code>. <p> Note: If you want to use localised text, use <a href="#strings-files"><code>.strings</code> files</a>.</td>
 <td>NA</td>
@@ -1514,6 +1519,7 @@ These are defined in the <code>data</code> key. This is an array with the follow
     },
     &quot;title&quot;: {
       &quot;font&quot;: &quot;./fonts/MyFont-Th.otf&quot;,
+      &quot;font_size&quot;: 128,
       &quot;color&quot;: &quot;#545454&quot;
     },
     &quot;background&quot;: &quot;./background.jpg&quot;,
