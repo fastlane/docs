@@ -54,6 +54,7 @@ Key | Description | Default
   `template` | ERB Template File | 
   `destination` | Destination file | 
   `placeholders` | Placeholders given as a hash | `{}`
+  `trim_mode` | Trim mode applied to the ERB | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

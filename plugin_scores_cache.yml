@@ -9165,7 +9165,7 @@ fastlane-plugin-slack_bot:
   :github_contributors: 0
 fastlane-plugin-try_scan:
   :initial_commit: 2020-06-07
-  :age_in_days: 24
+  :age_in_days: 47
   :readme_score: 100
   :tests: 0
   :actions:
@@ -9174,7 +9174,7 @@ fastlane-plugin-try_scan:
     category: testing
     description: Simple way to retry your scan action
     details:
-  :sha: 6feccf2c3a11908f3ccf92f508595f41f5eebfa96d705fa2e7ae545e2ed1f244
+  :sha: 3744a2f4683a176bcb7f77de2d9a317dcf656eaeea3af0eda1160ee7ea4be005
   :github_stars: 0
   :github_subscribers: 2
   :github_issues: 1
@@ -9388,7 +9388,70 @@ fastlane-plugin-azuredevops_envvars:
   :github_contributors: 0
 fastlane-plugin-bitrise_automation:
   :github_stars: 0
-  :github_subscribers: 0
+  :github_subscribers: 13
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
+  :initial_commit: 2020-07-06
+  :age_in_days: 18
+  :readme_score: 100
+  :tests: 19
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bitrise_build_artifacts
+    category:
+    description: Get the list or full contents of the artifacts produced by a build
+      on Bitrise
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: trigger_bitrise_workflow
+    category:
+    description: Trigger a Bitrise workflow with the specified parameters, synchronously
+      or asynchronously
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bitrise_build_status
+    category:
+    description: Get the status of the Bitrise build
+    details:
+  :sha: 44796b797e930dc8ed35a7e9140ae0b78989c84c3a011d28c5235f13f0bdc138
+fastlane-plugin-oclint_json_compilation_database:
+  :initial_commit: 2020-06-29
+  :age_in_days: 25
+  :readme_score: 50
+  :tests: 13
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: oclint_json_compilation_database
+    category: testing
+    description:
+    details:
+  :sha: 10e09e2d83eda66982ed2fe697d4cf687fb7f984a448cccf05474019b18d3a13
+  :github_stars: 0
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-bitrise_bcsymbolmaps:
+  :initial_commit: 2020-05-29
+  :age_in_days: 56
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bitrise_download_bcsymbolmaps
+    category:
+    description: Downloads BCSymbolMaps from Bitrise before uploading them to a crash
+      reporting tool.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bitrise_clean_bcsymbolmaps
+    category:
+    description: Cleans up downloaded artifacts.
+    details:
+  :sha: c64b47f176c878ee54062f7bda22887df40da4fc381671c00eedf8ed7d4a6f9b
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

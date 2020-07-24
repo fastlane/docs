@@ -30,7 +30,7 @@ Author | @KrauseFx
 
 
 
-## 4 Examples
+## 5 Examples
 
 ```ruby
 download_dsyms
@@ -38,6 +38,10 @@ download_dsyms
 
 ```ruby
 download_dsyms(version: "1.0.0", build_number: "345")
+```
+
+```ruby
+download_dsyms(version: "1.0.1", build_number: 42)
 ```
 
 ```ruby
