@@ -1,5 +1,9 @@
 # Getting started with _fastlane_ for iOS
 
+## Setup Xcode for _fastlane_
+
+{!docs/includes/installing-fastlane-ios.md!}
+
 ## Installing _fastlane_
 
 {!docs/includes/installing-fastlane.md!}
