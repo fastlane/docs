@@ -1398,6 +1398,18 @@ match
 </code></pre>
 
 <p>You can find more information about GitHub basic authentication and personal token generation here: <a href="https://developer.github.com/v3/auth/#basic-authentication">https://developer.github.com/v3/auth/#basic-authentication</a></p>
+<h5 id="git-storage-on-github-deploy-keys"><a name="user-content-git-storage-on-github-deploy-keys" href="#git-storage-on-github-deploy-keys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on GitHub - Deploy keys</h5>
+<p>If your machine does not have a private key set up for your certificates repository, you can give <em>match</em> a path for one:</p>
+<p>Using parameter:</p>
+<pre><code>match(git_private_key: '&lt;PATH TO YOUR KEY&gt;')
+</code></pre>
+
+<p>Using environment variable:</p>
+<pre><code>ENV['MATCH_GIT_PRIVATE_KEY'] = '&lt;PATH TO YOUR KEY&gt;'
+match
+</code></pre>
+
+<p>You can find more information about GitHub basic authentication and personal token generation here: <a href="https://developer.github.com/v3/auth/#basic-authentication">https://developer.github.com/v3/auth/#basic-authentication</a></p>
 <h5 id="git-storage-on-azure-devops"><a name="user-content-git-storage-on-azure-devops" href="#git-storage-on-azure-devops" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on Azure Devops</h5>
 <p>If you're running a pipeline on Azure Devops and using git storage in a another repository on the same project, you might want to use <code>bearer</code> token authentication.</p>
 <p>Using parameter:</p>
@@ -1643,12 +1655,12 @@ fastlane match nuke enterprise
 <h4 id="export-distribution-certificate-and-private-key-as-single-p12-file"><a name="user-content-export-distribution-certificate-and-private-key-as-single-p12-file" href="#export-distribution-certificate-and-private-key-as-single-p12-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Export Distribution Certificate and Private Key as Single .p12 File</h4>
 <p><em>match</em> stores the certificate (<code>.cer</code>) and the private key (<code>.p12</code>) files separately. The following steps will repackage the separate certificate and private key into a single <code>.p12</code> file.</p>
 <p>Decrypt your cert found in <code>certs/&lt;type&gt;/&lt;unique-id&gt;.cer</code> as a pem file:</p>
-<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/&lt;type&gt;/&lt;unique-id&gt;.cer&quot; -out &quot;cert.der&quot; -a -d
+<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/&lt;type&gt;/&lt;unique-id&gt;.cer&quot; -out &quot;cert.der&quot; -a -d -md [md5|sha256]
 openssl x509 -inform der -in cert.der -out cert.pem
 </code></pre>
 
 <p>Decrypt your private key found in <code>certs/&lt;type&gt;/&lt;unique-id&gt;.p12</code> as a pem file:</p>
-<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/distribution/&lt;unique-id&gt;.p12&quot; -out &quot;key.pem&quot; -a -d
+<pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;certs/distribution/&lt;unique-id&gt;.p12&quot; -out &quot;key.pem&quot; -a -d -md [md5|sha256]
 </code></pre>
 
 <p>Generate an encrypted p12 file with the same or new password:</p>
@@ -1810,6 +1822,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>git_bearer_authorization</code></td>
 <td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure Devops repository), usually a string in Base64</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_private_key</code></td>
+<td>Use a private key to access the git repo (e.g.: access to GitHub repository via Deploy keys), usually a id_rsa named file or the contents hereof</td>
 <td></td>
 </tr>
 <tr>

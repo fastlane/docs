@@ -1293,11 +1293,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">git_pull
 </code></pre>
 
 <pre><code class="ruby">git_pull(only_tags: true) # only the tags, no commits
+</code></pre>
+
+<pre><code class="ruby">git_pull(rebase: true) # use --rebase with pull
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1313,6 +1316,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>only_tags</code></td>
 <td>Simply pull the tags, and not bring new commits to the current branch from the remote</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>rebase</code></td>
+<td>Rebase on top of the remote branch instead of merge</td>
 <td><code>false</code></td>
 </tr>
 </tbody>
