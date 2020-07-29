@@ -124,6 +124,25 @@ match
 
 You can find more information about GitHub basic authentication and personal token generation here: [https://developer.github.com/v3/auth/#basic-authentication](https://developer.github.com/v3/auth/#basic-authentication)
 
+##### Git Storage on GitHub - Deploy keys
+
+If your machine does not have a private key set up for your certificates repository, you can give _match_ a path for one:
+
+Using parameter:
+
+```
+match(git_private_key: '<PATH TO YOUR KEY>')
+```
+
+Using environment variable:
+
+```
+ENV['MATCH_GIT_PRIVATE_KEY'] = '<PATH TO YOUR KEY>'
+match
+```
+
+You can find more information about GitHub basic authentication and personal token generation here: [https://developer.github.com/v3/auth/#basic-authentication](https://developer.github.com/v3/auth/#basic-authentication)
+
 ##### Git Storage on Azure Devops
 
 If you're running a pipeline on Azure Devops and using git storage in a another repository on the same project, you might want to use `bearer` token authentication.
@@ -501,14 +520,14 @@ _match_ stores the certificate (`.cer`) and the private key (`.p12`) files separ
 Decrypt your cert found in `certs/<type>/<unique-id>.cer` as a pem file:
 
 ```no-highlight
-openssl aes-256-cbc -k "<password>" -in "certs/<type>/<unique-id>.cer" -out "cert.der" -a -d
+openssl aes-256-cbc -k "<password>" -in "certs/<type>/<unique-id>.cer" -out "cert.der" -a -d -md [md5|sha256]
 openssl x509 -inform der -in cert.der -out cert.pem
 ```
 
 Decrypt your private key found in `certs/<type>/<unique-id>.p12` as a pem file:
 
 ```no-highlight
-openssl aes-256-cbc -k "<password>" -in "certs/distribution/<unique-id>.p12" -out "key.pem" -a -d
+openssl aes-256-cbc -k "<password>" -in "certs/distribution/<unique-id>.p12" -out "key.pem" -a -d -md [md5|sha256]
 ```
 
 Generate an encrypted p12 file with the same or new password:
@@ -611,6 +630,7 @@ Key | Description | Default
   `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail | `false`
   `git_basic_authorization` | Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64 | 
   `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure Devops repository), usually a string in Base64 | 
+  `git_private_key` | Use a private key to access the git repo (e.g.: access to GitHub repository via Deploy keys), usually a id_rsa named file or the contents hereof | 
   `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
   `google_cloud_keys_file` | Path to the gc_keys.json file | 
   `google_cloud_project_id` | ID of the Google Cloud project to use for authentication | 

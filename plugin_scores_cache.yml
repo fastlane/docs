@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 982
+  :age_in_days: 1010
   :readme_score: 100
   :tests: 304
   :actions:
@@ -1077,12 +1077,12 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: 295d277a1decd390baf43ae17dcb98cae6b50dc5b74aa86a25d46481e0f429ee
-  :github_stars: 159
-  :github_subscribers: 7
+  :sha: ce0852a32cb5da53c0e242cfaa5d0f7850dfc7a61cae0db4664d74d0438a6bf1
+  :github_stars: 161
+  :github_subscribers: 8
   :github_issues: 7
   :github_forks: 35
-  :github_contributors: 0
+  :github_contributors: 10
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -7571,7 +7571,7 @@ fastlane-plugin-cuttly_api:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery:
   :initial_commit: 2019-08-15
-  :age_in_days: 88
+  :age_in_days: 349
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7581,11 +7581,11 @@ fastlane-plugin-huawei_appgallery:
     description: Plugin to deploy an app to the Huawei AppGallery
     details: Updates the release notes, uploads an APK and submits the new version
       for review.
-  :sha: 4043e9291acbd89bf2fc3154eb5944db551d180c629b22ebaebccd6571e1ae60
-  :github_stars: 6
-  :github_subscribers: 2
+  :sha: d9e4ec61abe986e97bbb4a3bac332f92aece4ca0f2bb3e0424f0b22b39b0313b
+  :github_stars: 10
+  :github_subscribers: 5
   :github_issues: 0
-  :github_forks: 3
+  :github_forks: 8
   :github_contributors: 1
 fastlane-plugin-souyuz-ventaapps:
   :initial_commit: 2016-05-11
@@ -8135,12 +8135,12 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 203
-  :readme_score: 50
+  :age_in_days: 228
+  :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: huawei_appgallery_connect
+    name: huawei_appgallery_connect_submit_for_review
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to upload Android app to Huawei AppGallery Connect
@@ -8154,12 +8154,12 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
-  :sha: aacd68fe71d629fb6f087e399d3bf5fb295f844539fd8cbf54993849d377268a
-  :github_stars: 12
+  :sha: 8392bdefaf79f38ff0375f9ea92d4e36d0c2b22db4b44862cf21effc27b6e11c
+  :github_stars: 13
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 8
-  :github_contributors: 0
+  :github_contributors: 4
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
   :age_in_days: 16
@@ -9451,6 +9451,43 @@ fastlane-plugin-bitrise_bcsymbolmaps:
     details:
   :sha: c64b47f176c878ee54062f7bda22887df40da4fc381671c00eedf8ed7d4a6f9b
   :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-json:
+  :initial_commit: 2020-07-19
+  :age_in_days: 10
+  :readme_score: 100
+  :tests: 15
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: write_json
+    category:
+    description: Write a json file from a hash at the provided path
+    details: Use this action to serialize a hash into a json file in a provided path.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: download_json
+    category:
+    description: Downloads a json file and expose a hash with symbolized names as
+      result
+    details: Use this action to download a json file and access to it as Hash with
+      symbolized names
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: merge_jsons
+    category:
+    description: Merge a group of jsons files and expose a hash with symbolized names
+      as result. Last json predominate over the rest
+    details: Use this action to merge jsons files and access to it as Hash with symbolized
+      names. Also you can set the output_path to save the result
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: read_json
+    category:
+    description: Read a json file and expose a hash with symbolized names as result
+    details: Use this action to read a json file and access to it as Hash with symbolized
+      names
+  :sha: 91b30174b593c08ced5abc0c5a804f84d4b49c98c286bbd15d2f8de18c102df4
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
