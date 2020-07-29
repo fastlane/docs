@@ -510,15 +510,15 @@ Key | Editable While Live | Directory | Filename
 
 ### Review Information Metadata
 
-Key | Editable While Live | Directory | Filename
-----|--------|--------|--------
-  `first_name` | Yes | `<metadata_path>/review_information` | `first_name.txt`
-  `last_name` | Yes | `<metadata_path>/review_information` | `last_name.txt`
-  `phone_number` | Yes | `<metadata_path>/review_information` | `phone_number.txt`
-  `email_address` | Yes | `<metadata_path>/review_information` | `email_address.txt`
-  `demo_user` | Yes | `<metadata_path>/review_information` | `demo_user.txt`
-  `demo_password` | Yes | `<metadata_path>/review_information` | `demo_password.txt`
-  `notes` | Yes | `<metadata_path>/review_information` | `notes.txt`
+Key | Editable While Live | Directory | Filename | Deprecated Filename
+----|--------|--------|--------|--------
+  `first_name` | Yes | `<metadata_path>/review_information` | `first_name.txt` | `review_first_name.txt`
+  `last_name` | Yes | `<metadata_path>/review_information` | `last_name.txt` | `review_last_name.txt`
+  `phone_number` | Yes | `<metadata_path>/review_information` | `phone_number.txt` | `review_phone_number.txt`
+  `email_address` | Yes | `<metadata_path>/review_information` | `email_address.txt` | `review_email.txt`
+  `demo_user` | Yes | `<metadata_path>/review_information` | `demo_user.txt` | `review_demo_user.txt`
+  `demo_password` | Yes | `<metadata_path>/review_information` | `demo_password.txt` | `review_demo_password.txt`
+  `notes` | Yes | `<metadata_path>/review_information` | `notes.txt` | `review_notes.txt`
 
 
 ## Reference

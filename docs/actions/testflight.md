@@ -347,7 +347,7 @@ Key | Description | Default
   `beta_app_description` | Provide the 'Beta App Description' when uploading a new build | 
   `beta_app_feedback_email` | Provide the beta app email when uploading a new build | 
   `localized_build_info` | Localized beta app test info for what's new | 
-  `changelog` | Provide the 'What to Test' text when uploading a new build. `skip_waiting_for_build_processing: false` is required to set the changelog | 
+  `changelog` | Provide the 'What to Test' text when uploading a new build | 
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
   `skip_waiting_for_build_processing` | If set to true, the `distribute_external` option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan). If set to `true` and a changelog is provided, it will partially wait for the build to appear on AppStore Connect so the changelog can be set, and skip the remaining processing steps | `false`
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`

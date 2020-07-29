@@ -60,6 +60,7 @@ Key | Description | Default
   `dependencies` | Carthage dependencies to update, build or bootstrap | `[]`
   `use_ssh` | Use SSH for downloading GitHub repositories | 
   `use_submodules` | Add dependencies as Git submodules | 
+  `use_netrc` | Use .netrc for downloading frameworks | 
   `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist | 
   `no_checkout` | When bootstrapping Carthage do not checkout | 
   `no_build` | When bootstrapping Carthage do not build | 
