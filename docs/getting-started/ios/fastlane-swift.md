@@ -88,7 +88,7 @@ class Fastfile: LaneFile {
 
 `Fastlane Swift` uses socket internally. Therefore, for several `Lane`s to run in parallel at the same time, each `Lane` must be specified different `socket port` (lane's default `socket port` is `2000`)
 
-To specify `socket port` from the command line to your lane, use the fllowing syntax:
+To specify `socket port` from the command line to your lane, use the following syntax:
 
 ```no-highlight
 fastlane [lane] --swift_server_port [socket port]
