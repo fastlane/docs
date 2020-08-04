@@ -42,6 +42,8 @@ _fastlane_ fully supports [2-factor authentication (2FA)](https://support.apple.
 
 Note: [Apple announced that as of February 27th 2019](https://developer.apple.com/news/?id=02202019a), it is enforcing 2-factor authentication on developer Apple IDs with the "Account Holder" role.
 
+An apple ID without Two-Factor Auth can only be created in devices like iphone/ipad/ipod with ios version previous than 10, or in devices as 5 , 4s, before the iphone 6 i'm pretty sure. This was the only way of creating an account without two factor, since apple was inforcing 2-factor in anyaccount, even without the "Account Holder" role.
+
 #### Security code and session
 
 When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.
