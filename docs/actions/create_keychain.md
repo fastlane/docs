@@ -66,6 +66,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::ORIGINAL_DEFAULT_KEYCHAIN` | The path to the default keychain
+  `SharedValues::KEYCHAIN_PATH` | The path of the keychain
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />
