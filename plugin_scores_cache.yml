@@ -989,9 +989,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1010
+  :age_in_days: 1018
   :readme_score: 100
-  :tests: 304
+  :tests: 305
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1077,12 +1077,12 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: ce0852a32cb5da53c0e242cfaa5d0f7850dfc7a61cae0db4664d74d0438a6bf1
+  :sha: be0358ad66d5f0d1921780e1779bf4a2e95540c1021125bfa372eb4ebcd0a244
   :github_stars: 161
   :github_subscribers: 8
-  :github_issues: 7
-  :github_forks: 35
-  :github_contributors: 10
+  :github_issues: 10
+  :github_forks: 34
+  :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -7571,7 +7571,7 @@ fastlane-plugin-cuttly_api:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery:
   :initial_commit: 2019-08-15
-  :age_in_days: 349
+  :age_in_days: 357
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7581,11 +7581,11 @@ fastlane-plugin-huawei_appgallery:
     description: Plugin to deploy an app to the Huawei AppGallery
     details: Updates the release notes, uploads an APK and submits the new version
       for review.
-  :sha: d9e4ec61abe986e97bbb4a3bac332f92aece4ca0f2bb3e0424f0b22b39b0313b
+  :sha: 71ac06da157859f5497b388b42734e327c80ef3a2184a87e73ab0040948479de
   :github_stars: 10
   :github_subscribers: 5
   :github_issues: 0
-  :github_forks: 8
+  :github_forks: 7
   :github_contributors: 1
 fastlane-plugin-souyuz-ventaapps:
   :initial_commit: 2016-05-11
@@ -8003,7 +8003,7 @@ fastlane-plugin-gitlab_release:
   :github_contributors: 0
 fastlane-plugin-poesie:
   :initial_commit: 2019-12-08
-  :age_in_days: 11
+  :age_in_days: 242
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8012,10 +8012,10 @@ fastlane-plugin-poesie:
     category:
     description: Exports translations from POEditor using poesie tool.
     details:
-  :sha: 974f59548187cd1ba698f44b1782f367e8626b778c67c5f49d70c670ee2f042a
-  :github_stars: 2
+  :sha: 7d21041297ec72d2b842bfc4a402f4cffba5292a4eb61ea07e6d1a605230aec7
+  :github_stars: 4
   :github_subscribers: 1
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-android_version_manage:
@@ -8966,14 +8966,24 @@ fastlane-plugin-unreleased_changelog:
   :github_contributors: 0
 fastlane-plugin-csv_translation:
   :initial_commit: 2020-05-09
-  :age_in_days: 25
+  :age_in_days: 89
   :readme_score: 50
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_csv_feature_branch
+    category:
+    description: Create a csv feature branch.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: delete_csv_translation_request
     category:
     description: Delete a translation request based on identifier value.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fetch_csv_branch
+    category:
+    description: Fetch a csv file branch.
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: create_csv_translation_request
@@ -8990,7 +9000,7 @@ fastlane-plugin-csv_translation:
     category:
     description: Get CSV translation requests info
     details:
-  :sha: fa5c7c349c9fe45a4dc210bfbc4777140dbfa423382757107ccf1f17b5e957a2
+  :sha: 88277bd125adfb5b54e0cb2118176e4f18b3d2a57f144bf2e5dba10b3f5a99f1
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -9393,9 +9403,9 @@ fastlane-plugin-bitrise_automation:
   :github_forks: 0
   :github_contributors: 0
   :initial_commit: 2020-07-06
-  :age_in_days: 18
+  :age_in_days: 31
   :readme_score: 100
-  :tests: 19
+  :tests: 22
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: bitrise_build_artifacts
@@ -9414,7 +9424,7 @@ fastlane-plugin-bitrise_automation:
     category:
     description: Get the status of the Bitrise build
     details:
-  :sha: 44796b797e930dc8ed35a7e9140ae0b78989c84c3a011d28c5235f13f0bdc138
+  :sha: d6602972304b4879688b6796e22ccfee4acabea285989151e599e6ae71c18661
 fastlane-plugin-oclint_json_compilation_database:
   :initial_commit: 2020-06-29
   :age_in_days: 25
@@ -9489,6 +9499,23 @@ fastlane-plugin-json:
   :sha: 91b30174b593c08ced5abc0c5a804f84d4b49c98c286bbd15d2f8de18c102df4
   :github_stars: 1
   :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ad_licenselint:
+  :initial_commit: 2020-08-04
+  :age_in_days: 2
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ad_licenselint
+    category:
+    description:
+    details: Lint the licenses for iOS projects
+  :sha: f34e60c58b54d8f62ce56e45732bdbbc9001a57c552f72ee0ae640e270f63c75
+  :github_stars: 0
+  :github_subscribers: 3
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0

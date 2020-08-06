@@ -461,6 +461,7 @@ Key | Description | Default
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
   `disable_xcpretty` | Disable xcpretty formatting of build | 
+  `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -276,6 +276,7 @@ Key | Description | Default
   `obb_main_file_size` | Size of 'main' expansion file in bytes | 
   `obb_patch_references_version` | References version of 'patch' expansion file | 
   `obb_patch_file_size` | Size of 'patch' expansion file in bytes | 
+  `ack_bundle_installation_warning` | Must be set to true if the bundle installation may trigger a warning on user devices (e.g can only be downloaded over wifi). Typically this is required for bundles over 150MB | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
