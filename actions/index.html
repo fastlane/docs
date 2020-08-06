@@ -1465,13 +1465,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/run_tests/">run_tests</a></td>
-<td>Easily run tests of your iOS app (via <em>scan</em>)</td>
+<td><a href="/actions/xcode_server_get_assets/">xcode_server_get_assets</a></td>
+<td>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcode_server_get_assets/">xcode_server_get_assets</a></td>
-<td>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</td>
+<td><a href="/actions/run_tests/">run_tests</a></td>
+<td>Easily run tests of your iOS app (via <em>scan</em>)</td>
 <td>ios, mac</td>
 </tr>
 </tbody>
@@ -1562,8 +1562,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcbuild/">xcbuild</a></td>
-<td>Builds the project using <code>xcodebuild</code></td>
+<td><a href="/actions/xcexport/">xcexport</a></td>
+<td>Exports the project using <code>xcodebuild</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcarchive/">xcarchive</a></td>
+<td>Archives the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1577,8 +1582,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android</td>
 </tr>
 <tr>
-<td><a href="/actions/xcarchive/">xcarchive</a></td>
-<td>Archives the project using <code>xcodebuild</code></td>
+<td><a href="/actions/xcclean/">xcclean</a></td>
+<td>Cleans the project using <code>xcodebuild</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcbuild/">xcbuild</a></td>
+<td>Builds the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
 </tr>
 <tr>
@@ -1587,24 +1597,14 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/build_app/">build_app</a></td>
-<td>Easily build and sign your app (via <em>gym</em>)</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/xcexport/">xcexport</a></td>
-<td>Exports the project using <code>xcodebuild</code></td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/xcclean/">xcclean</a></td>
-<td>Cleans the project using <code>xcodebuild</code></td>
-<td>ios, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/build_ios_app/">build_ios_app</a></td>
 <td>Alias for the <code>build_app</code> action but only for iOS</td>
 <td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/build_app/">build_app</a></td>
+<td>Easily build and sign your app (via <em>gym</em>)</td>
+<td>ios, mac</td>
 </tr>
 </tbody>
 </table>
@@ -1634,14 +1634,14 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a></td>
-<td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
+<td><a href="/actions/capture_screenshots/">capture_screenshots</a></td>
+<td>Alias for the <code>capture_ios_screenshots</code> action</td>
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
-<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
-<td>ios, android, mac</td>
+<td><a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a></td>
+<td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/capture_android_screenshots/">capture_android_screenshots</a></td>
@@ -1649,9 +1649,9 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>android</td>
 </tr>
 <tr>
-<td><a href="/actions/capture_screenshots/">capture_screenshots</a></td>
-<td>Alias for the <code>capture_ios_screenshots</code> action</td>
-<td>ios, mac</td>
+<td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
+<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
+<td>ios, android, mac</td>
 </tr>
 </tbody>
 </table>
@@ -1741,13 +1741,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/update_plist/">update_plist</a></td>
-<td>Update a plist file</td>
+<td><a href="/actions/update_keychain_access_groups/">update_keychain_access_groups</a></td>
+<td>This action changes the keychain access groups in the entitlements file</td>
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/update_keychain_access_groups/">update_keychain_access_groups</a></td>
-<td>This action changes the keychain access groups in the entitlements file</td>
+<td><a href="/actions/update_plist/">update_plist</a></td>
+<td>Update a plist file</td>
 <td>ios</td>
 </tr>
 </tbody>
@@ -1803,11 +1803,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/get_certificates/">get_certificates</a></td>
-<td>Create new iOS code signing certificates (via <em>cert</em>)</td>
-<td>ios</td>
-</tr>
-<tr>
 <td><a href="/actions/install_provisioning_profile/">install_provisioning_profile</a></td>
 <td>Install provisioning profile from path</td>
 <td>ios, mac</td>
@@ -1818,11 +1813,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>mac</td>
 </tr>
 <tr>
-<td><a href="/actions/get_provisioning_profile/">get_provisioning_profile</a></td>
-<td>Generates a provisioning profile, saving it in the current folder (via <em>sigh</em>)</td>
-<td>ios, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/sync_code_signing/">sync_code_signing</a></td>
 <td>Easily sync your certificates and profiles across your team (via <em>match</em>)</td>
 <td>ios, mac</td>
@@ -1830,6 +1820,16 @@ If you want to create your own action, check out the <a href="../create-action/#
 <tr>
 <td><a href="/actions/update_code_signing_settings/">update_code_signing_settings</a></td>
 <td>Configures Xcode's Codesigning options</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_certificates/">get_certificates</a></td>
+<td>Create new iOS code signing certificates (via <em>cert</em>)</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/get_provisioning_profile/">get_provisioning_profile</a></td>
+<td>Generates a provisioning profile, saving it in the current folder (via <em>sigh</em>)</td>
 <td>ios, mac</td>
 </tr>
 </tbody>
@@ -1996,11 +1996,6 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>android</td>
 </tr>
 <tr>
-<td><a href="/actions/upload_to_play_store_internal_app_sharing/">upload_to_play_store_internal_app_sharing</a></td>
-<td>Upload binaries to Google Play Internal App Sharing (via <em>supply</em>)</td>
-<td>android</td>
-</tr>
-<tr>
 <td><a href="/actions/upload_to_play_store/">upload_to_play_store</a></td>
 <td>Upload metadata, screenshots and binaries to Google Play (via <em>supply</em>)</td>
 <td>android</td>
@@ -2009,6 +2004,11 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td><a href="/actions/upload_to_app_store/">upload_to_app_store</a></td>
 <td>Upload metadata and binary to App Store Connect (via <em>deliver</em>)</td>
 <td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_to_play_store_internal_app_sharing/">upload_to_play_store_internal_app_sharing</a></td>
+<td>Upload binaries to Google Play Internal App Sharing (via <em>supply</em>)</td>
+<td>android</td>
 </tr>
 </tbody>
 </table>
@@ -2257,13 +2257,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/check_app_store_metadata/">check_app_store_metadata</a></td>
-<td>Check your app's metadata before you submit your app to review (via <em>precheck</em>)</td>
+<td><a href="/actions/create_app_online/">create_app_online</a></td>
+<td>Creates the given application on iTC and the Dev Portal (via <em>produce</em>)</td>
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/create_app_online/">create_app_online</a></td>
-<td>Creates the given application on iTC and the Dev Portal (via <em>produce</em>)</td>
+<td><a href="/actions/check_app_store_metadata/">check_app_store_metadata</a></td>
+<td>Check your app's metadata before you submit your app to review (via <em>precheck</em>)</td>
 <td>ios</td>
 </tr>
 </tbody>
@@ -2559,28 +2559,8 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/spaceship_logs/">spaceship_logs</a></td>
-<td>Find, print, and copy Spaceship logs</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/modify_services/">modify_services</a></td>
-<td>Modifies the services of the app created on Developer Portal</td>
-<td>ios</td>
-</tr>
-<tr>
-<td><a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a></td>
-<td>Retrieves version codes for a Google Play track</td>
-<td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a></td>
-<td>Create Managed Google Play Apps</td>
-<td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/setup_travis/">setup_travis</a></td>
-<td>Setup the keychain and match to work with Travis CI</td>
+<td><a href="/actions/ruby_version/">ruby_version</a></td>
+<td>Verifies the minimum ruby version required</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -2589,13 +2569,18 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/setup_ci/">setup_ci</a></td>
-<td>Setup the keychain and match to work with CI</td>
-<td>ios, mac</td>
+<td><a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a></td>
+<td>Create Managed Google Play Apps</td>
+<td>android</td>
 </tr>
 <tr>
-<td><a href="/actions/google_play_track_release_names/">google_play_track_release_names</a></td>
-<td>Retrieves release names for a Google Play track</td>
+<td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
+<td>Setup the keychain and match to work with CircleCI</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a></td>
+<td>Retrieves version codes for a Google Play track</td>
 <td>android</td>
 </tr>
 <tr>
@@ -2604,9 +2589,9 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/validate_play_store_json_key/">validate_play_store_json_key</a></td>
-<td>Validate that the Google Play Store <code>json_key</code> works</td>
-<td>android</td>
+<td><a href="/actions/modify_services/">modify_services</a></td>
+<td>Modifies the services of the app created on Developer Portal</td>
+<td>ios</td>
 </tr>
 <tr>
 <td><a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a></td>
@@ -2614,23 +2599,13 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/ruby_version/">ruby_version</a></td>
-<td>Verifies the minimum ruby version required</td>
+<td><a href="/actions/spaceship_logs/">spaceship_logs</a></td>
+<td>Find, print, and copy Spaceship logs</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/ensure_env_vars/">ensure_env_vars</a></td>
-<td>Raises an exception if the specified env vars are not set</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
-<td>Setup the keychain and match to work with CircleCI</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a></td>
-<td>Obtain publishing rights for custom apps on Managed Google Play Store</td>
+<td><a href="/actions/google_play_track_release_names/">google_play_track_release_names</a></td>
+<td>Retrieves release names for a Google Play track</td>
 <td>android</td>
 </tr>
 <tr>
@@ -2639,9 +2614,14 @@ If you want to create your own action, check out the <a href="../create-action/#
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/plugin_scores/">plugin_scores</a></td>
-<td>[31mNo description provided[0m</td>
+<td><a href="/actions/ensure_env_vars/">ensure_env_vars</a></td>
+<td>Raises an exception if the specified env vars are not set</td>
 <td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a></td>
+<td>Obtain publishing rights for custom apps on Managed Google Play Store</td>
+<td>android</td>
 </tr>
 <tr>
 <td><a href="/actions/println/">println</a></td>
@@ -2651,6 +2631,26 @@ If you want to create your own action, check out the <a href="../create-action/#
 <tr>
 <td><a href="/actions/opt_out_usage/">opt_out_usage</a></td>
 <td>This will stop uploading the information which actions were run</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/plugin_scores/">plugin_scores</a></td>
+<td>[31mNo description provided[0m</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_ci/">setup_ci</a></td>
+<td>Setup the keychain and match to work with CI</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/validate_play_store_json_key/">validate_play_store_json_key</a></td>
+<td>Validate that the Google Play Store <code>json_key</code> works</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_travis/">setup_travis</a></td>
+<td>Setup the keychain and match to work with Travis CI</td>
 <td>ios, android, mac</td>
 </tr>
 </tbody>

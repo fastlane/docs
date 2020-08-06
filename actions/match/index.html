@@ -1901,8 +1901,13 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>platform</code></td>
-<td>Set the provisioning profile's platform to work with (i.e. ios, tvos, macos)</td>
+<td>Set the provisioning profile's platform to work with (i.e. ios, tvos, macos, catalyst)</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>derive_catalyst_app_identifier</code></td>
+<td>Enable this if you have the Mac Catalyst capability enabled and your project was created with Xcode 11.3 or earlier. Prepends 'maccatalyst.' to the app identifier for the provisioning profile mapping</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>template_name</code></td>
