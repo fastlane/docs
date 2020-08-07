@@ -8353,7 +8353,7 @@ fastlane-plugin-gitlab_changelog:
   :github_contributors: 2
 fastlane-plugin-zealot:
   :initial_commit: 2019-12-12
-  :age_in_days: 174
+  :age_in_days: 239
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8377,12 +8377,12 @@ fastlane-plugin-zealot:
     category:
     description:
     details:
-  :sha: 67ec0c00ed17fd855a190fa5b28e71b93823fdf0de9c7e4f0426ca69bb814de1
+  :sha: 862036034bdf4fc389fba99255c3ee60c8c900d3834bb8c1824e51f42e0eb97d
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 1
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-app_previews:
   :initial_commit: 2020-01-19
   :age_in_days: 10
