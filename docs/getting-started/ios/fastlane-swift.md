@@ -84,6 +84,15 @@ class Fastfile: LaneFile {
 }
 ```
 
+## Using Plugins
+
+Search for a plugin you'd like to use: https://docs.fastlane.tools/plugins/available-plugins/
+
+If the plugin is ascii_art, for example, type the following into your terminal: `bundle exec fastlane add_plugin ascii_art`. The `fastlane/swift/Plugins.swift` file should now contain the function `asciiArt()`
+
+You're now free to use any plugin functions in your `fastlane/Fastlane.swift` lanes.
+
+
 ## Run Parallel
 
 `Fastlane Swift` uses socket internally. Therefore, for several `Lane`s to run in parallel at the same time, each `Lane` must be specified different `socket port` (lane's default `socket port` is `2000`)
