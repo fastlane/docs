@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 0a3ce585a7515b9fcccfac7309f15cd3f23bd211
+  revision: a09ef5446fde352df5e0b443253ceadf9465423a
   specs:
-    fastlane (2.155.1)
+    fastlane (2.155.2)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       aws-sdk-s3 (~> 1.0)
