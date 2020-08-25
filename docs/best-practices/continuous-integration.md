@@ -13,6 +13,7 @@ _fastlane_ works very well in Continuous Integration setups. It for example auto
 
 Multiple CI products and services offer integrations with fastlane:
 
+- [Appcircle](/best-practices/continuous-integration/appcircle/)
 - [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
 - [Bamboo](/best-practices/continuous-integration/bamboo/)
 - [Bitrise](/best-practices/continuous-integration/bitrise/)
