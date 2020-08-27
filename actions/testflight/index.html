@@ -1298,7 +1298,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h5 align="center"><em>pilot</em> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
 <h1 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h1>
-<p>For all commands you can specify the Apple ID to use using <code>-u felix@krausefx.com</code>. If you execute <em>pilot</em> in a project already using <a href="https://fastlane.tools"><em>fastlane</em></a> the username and app identifier will automatically be determined.</p>
+<p>For all commands, you can either use an <a href="#app-store-connect-api-key">API Key</a> or your <a href="#apple-id">Apple ID</a>.</p>
+<h3 id="app-store-connect-api-key"><a name="user-content-app-store-connect-api-key" href="#app-store-connect-api-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Store Connect API Key</h3>
+<p>The App Store Connect API Key is the preferred authentication method (if you are able to use it).</p>
+<ul>
+<li>Uses offial App Store Connect API</li>
+<li>No need for 2FA</li>
+<li>Better performance over Apple ID</li>
+</ul>
+<p>Specify the API key using <code>--api_key_path ./path/to/api_key_info.json</code> or <code>--api_key "{\"key_id\": \"D83848D23\", \"issuer_id\": \"227b0bbf-ada8-458c-9d62-3d8022b7d07f\", \"key_filepath\": \"D83848D23.p8\"}"</code></p>
+<p>Go to <a href="../../app-store-connect-api">Using App Store Connect API</a> for information on obtaining an API key, the <em>fastlane</em> <code>api_key_info.json</code> format, and other API key usage.</p>
+<h3 id="apple-id"><a name="user-content-apple-id" href="#apple-id" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Apple ID</h3>
+<p>Specify the Apple ID to use using <code>-u felix@krausefx.com</code>. If you execute <em>pilot</em> in a project already using <a href="https://fastlane.tools"><em>fastlane</em></a> the username and app identifier will automatically be determined.</p>
 <h2 id="uploading-builds"><a name="user-content-uploading-builds" href="#uploading-builds" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading builds</h2>
 <p>To upload a new build, just run</p>
 <pre><code class="no-highlight">fastlane pilot upload
@@ -1537,6 +1548,16 @@ pilot...
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>api_key_path</code></td>
+<td>Path to your App Store Connect API key JSON file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Path to your App Store Connect API key JSON file</td>
+<td></td>
+</tr>
 <tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
