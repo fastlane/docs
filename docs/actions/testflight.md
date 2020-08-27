@@ -39,7 +39,23 @@ _pilot_ uses [spaceship.airforce](https://spaceship.airforce) to interact with A
 
 # Usage
 
-For all commands you can specify the Apple ID to use using `-u felix@krausefx.com`. If you execute _pilot_ in a project already using [_fastlane_](https://fastlane.tools) the username and app identifier will automatically be determined.
+For all commands, you can either use an [API Key](#app-store-connect-api-key) or your [Apple ID](#apple-id).
+
+### App Store Connect API Key
+
+The App Store Connect API Key is the preferred authentication method (if you are able to use it).
+
+- Uses offial App Store Connect API
+- No need for 2FA
+- Better performance over Apple ID
+
+Specify the API key using `--api_key_path ./path/to/api_key_info.json` or `--api_key "{\"key_id\": \"D83848D23\", \"issuer_id\": \"227b0bbf-ada8-458c-9d62-3d8022b7d07f\", \"key_filepath\": \"D83848D23.p8\"}"`
+
+Go to [Using App Store Connect API](/app-store-connect-api) for information on obtaining an API key, the _fastlane_ `api_key_info.json` format, and other API key usage.
+
+### Apple ID
+
+Specify the Apple ID to use using `-u felix@krausefx.com`. If you execute _pilot_ in a project already using [_fastlane_](https://fastlane.tools) the username and app identifier will automatically be determined.
 
 ## Uploading builds
 
@@ -336,6 +352,8 @@ upload_to_testflight(
 
 Key | Description | Default
 ----|-------------|--------
+  `api_key_path` | Path to your App Store Connect API key JSON file | 
+  `api_key` | Path to your App Store Connect API key JSON file | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of the app to upload or manage testers (optional) | [*](#parameters-legend-dynamic)
   `app_platform` | The platform to use (optional) | `ios`

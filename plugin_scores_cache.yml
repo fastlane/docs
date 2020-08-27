@@ -989,9 +989,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1025
+  :age_in_days: 1039
   :readme_score: 100
-  :tests: 306
+  :tests: 309
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1077,10 +1077,10 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: 6c3b16fb31a13c77870289a8c2b7ba4f769cc302fb77c24132baf70ed6894899
-  :github_stars: 161
+  :sha: e681388b336679394188ff0db9b4e9fa11a826aec6daa268b3cd3dcca1cbcfac
+  :github_stars: 162
   :github_subscribers: 8
-  :github_issues: 8
+  :github_issues: 11
   :github_forks: 34
   :github_contributors: 11
 fastlane-plugin-goodify_info_plist:
@@ -2941,7 +2941,7 @@ fastlane-plugin-wait_xcrun:
   :github_contributors: 0
 fastlane-plugin-humanable_build_number:
   :initial_commit: 2016-12-09
-  :age_in_days: 443
+  :age_in_days: 1357
   :readme_score: 100
   :tests: 1
   :actions:
@@ -2952,8 +2952,8 @@ fastlane-plugin-humanable_build_number:
       like yymmHHMM. both support iOS and Android.
     details: 'The default will using the datetime of git last commit, but else the
       datetime of build and formatted to yymmHHMM. '
-  :sha: 852e805b3f2dedc857796732182ef2eedeca87976f63f774ea89da95a9b4db8d
-  :github_stars: 2
+  :sha: a0b91373cb180ae6821c9496adb5019d36a8e4f07e799ebb0cdadbdce8283394
+  :github_stars: 4
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
@@ -8966,7 +8966,7 @@ fastlane-plugin-unreleased_changelog:
   :github_contributors: 0
 fastlane-plugin-csv_translation:
   :initial_commit: 2020-05-09
-  :age_in_days: 89
+  :age_in_days: 110
   :readme_score: 50
   :tests: 1
   :actions:
@@ -9000,12 +9000,12 @@ fastlane-plugin-csv_translation:
     category:
     description: Get CSV translation requests info
     details:
-  :sha: 88277bd125adfb5b54e0cb2118176e4f18b3d2a57f144bf2e5dba10b3f5a99f1
+  :sha: fe0aa732b2c9cb739dcea4345dc79be2cfcc1a18301aa0f7eca5d16c8fbfe9bd
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-rollbar_sourcemaps_upload:
   :initial_commit: 2020-05-08
   :age_in_days: 4
@@ -9525,3 +9525,64 @@ fastlane-plugin-jira_set_feature_build:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-codemagic:
+  :initial_commit: 2020-08-17
+  :age_in_days: 10
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codemagic
+    category:
+    description: Fastlane plugin to trigger a Codemagic build with some options
+    details:
+  :sha: 21d73ea42333eeb479b604d1c8cefb01f4864a20c690b61e8bf6c8d77bf9c1a4
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-moronepo:
+  :initial_commit: 2020-08-18
+  :age_in_days: 9
+  :readme_score: 100
+  :tests: 7
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: moronepo_update_flutter_sdk
+    category: building
+    description: Runs command for all subprojects or a specified project
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: moronepo_run
+    category: building
+    description: Runs command for all subprojects or a specified project
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: moronepo_activate
+    category: building
+    description: Run flutter pub global activate moronepo
+    details:
+  :sha: c6463f17d95c4a5250e344863cf6b5a8d5dbe4ae92e0f9fb2c251cf28ec37969
+  :github_stars: 0
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-fabulove:
+  :initial_commit: 2020-08-13
+  :age_in_days: 14
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fabulove
+    category:
+    description: "'fabulove' distribution system fastlane plugin"
+    details: "'fabulove' distribution system fastlane plugin"
+  :sha: e6993315ef72cbf9d77cb43e66aee912f9526560040b62aa0cab7b4ef7e6dbaf
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
