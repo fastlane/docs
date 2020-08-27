@@ -46,6 +46,7 @@ pages:
   - add_extra_platforms: actions/add_extra_platforms.md
   - add_git_tag: actions/add_git_tag.md
   - app_store_build_number: actions/app_store_build_number.md
+  - app_store_connect_api_key: actions/app_store_connect_api_key.md
   - appaloosa: actions/appaloosa.md
   - appetize: actions/appetize.md
   - appetize_viewing_url_generator: actions/appetize_viewing_url_generator.md
@@ -217,6 +218,7 @@ pages:
   - snapshot: actions/snapshot.md
   - sonar: actions/sonar.md
   - spaceship_logs: actions/spaceship_logs.md
+  - spaceship_stats: actions/spaceship_stats.md
   - splunkmint: actions/splunkmint.md
   - spm: actions/spm.md
   - ssh: actions/ssh.md

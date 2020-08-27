@@ -58,6 +58,7 @@ Key | Description | Default
   `project_name` | The name of the project that gets displayed on the sonar report page. Must either be specified here or inside the sonar project configuration file | 
   `project_version` | The project's version that gets displayed on the sonar report page. Must either be specified here or inside the sonar project configuration file | 
   `sources_path` | Comma-separated paths to directories containing source files. Must either be specified here or inside the sonar project configuration file | 
+  `exclusions` | Comma-separated paths to directories to be excluded from the analysis | 
   `project_language` | Language key, e.g. objc | 
   `source_encoding` | Used encoding of source files, e.g., UTF-8 | 
   `sonar_runner_args` | Pass additional arguments to sonar-scanner. Be sure to provide the arguments with a leading `-D` e.g. FL_SONAR_RUNNER_ARGS="-Dsonar.verbose=true" | 
