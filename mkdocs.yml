@@ -1,7 +1,7 @@
 ---
 site_name: fastlane docs
 theme: readthedocs
-copyright: Copyright &copy; 2019 <a href="https://fastlane.tools">fastlane</a>
+copyright: Copyright &copy; 2020 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
@@ -269,6 +269,7 @@ pages:
   - xctool: actions/xctool.md
   - xcversion: actions/xcversion.md
   - zip: actions/zip.md
+- Using App Store Connect API: app-store-connect-api.md
 - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
