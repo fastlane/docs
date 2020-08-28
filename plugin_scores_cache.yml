@@ -9397,15 +9397,15 @@ fastlane-plugin-azuredevops_envvars:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-bitrise_automation:
-  :github_stars: 0
+  :github_stars: 1
   :github_subscribers: 13
-  :github_issues: 0
-  :github_forks: 0
+  :github_issues: 1
+  :github_forks: 1
   :github_contributors: 0
   :initial_commit: 2020-07-06
-  :age_in_days: 31
+  :age_in_days: 53
   :readme_score: 100
-  :tests: 22
+  :tests: 27
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: bitrise_build_artifacts
@@ -9424,7 +9424,7 @@ fastlane-plugin-bitrise_automation:
     category:
     description: Get the status of the Bitrise build
     details:
-  :sha: d6602972304b4879688b6796e22ccfee4acabea285989151e599e6ae71c18661
+  :sha: 0a23f855c866e67ce3c4147f46c91a6864235e18fe1e3f256cc9516202e40336
 fastlane-plugin-oclint_json_compilation_database:
   :initial_commit: 2020-06-29
   :age_in_days: 25
@@ -9581,6 +9581,26 @@ fastlane-plugin-fabulove:
     description: "'fabulove' distribution system fastlane plugin"
     details: "'fabulove' distribution system fastlane plugin"
   :sha: e6993315ef72cbf9d77cb43e66aee912f9526560040b62aa0cab7b4ef7e6dbaf
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-simple_loco:
+  :initial_commit: 2020-08-28
+  :age_in_days: 0
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: simple_loco
+    category:
+    description: A simple implementation for exporting translations from Loco.
+    details: A wrapper implementation around the Localize export single-file API.
+      See https://localise.biz/api/docs/export/exportlocale for all options. Common
+      mobile platforms (Android, iOS, Xamarin, Flutter) have some extra logic to create
+      the correct paths, and a custom implementation is provided for other platforms.
+  :sha: '08dd3d3634acd8fe481a8a0fdce1d0424b9059faa6abc5f2964ad1f697f3edb8'
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
