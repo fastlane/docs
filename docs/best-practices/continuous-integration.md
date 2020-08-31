@@ -62,7 +62,7 @@ If you want to upload builds to App Store Connect (actions `upload_to_app_store`
 
 This will supply the application specific password to iTMSTransporter, the tool used by those actions to perform the upload.
 
-Note: The application specific password will _not_ work if your action usage does anything else than uploading the binary, e.g. updating any metadata like setting release notes or distributing to testers, etc.
+Note: The application specific password will _not_ work if your action usage does anything else than uploading the binary, e.g. updating any metadata like setting release notes or distributing to testers, etc. Additionally, when using `pilot`/`upload_to_testflight`, you _must explicitly provide a value for `apple_id`_, otherwise the action requires an auth session and will not use the application specific password.
 
 ##### `spaceauth`
 
