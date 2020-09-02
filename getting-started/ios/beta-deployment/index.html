@@ -1438,20 +1438,29 @@ end
 <hr />
 <p></details></p>
 <p><details>
-<summary>Crashlytics (Fabric Beta)</summary></p>
+<summary>Firebase App Distribution</summary></p>
+<p>Install the Firebase App Distribution plugin:</p>
+<pre><code class="no-highlight">fastlane add_plugin firebase_app_distribution
+</code></pre>
+
+<p>Authenticate with Firebase by running the <code>firebase_app_distribution_login</code> action (or using one of the other <a href="https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane#step_2_authenticate_with_firebase">authentication methods</a>):</p>
+<pre><code class="no-highlight">fastlane run firebase_app_distribution_login
+</code></pre>
+
+<p>Then add the <code>firebase_app_distribution</code> action to your lane:</p>
 <pre><code class="ruby">lane :beta do
   # ...
   build_app
-  crashlytics(api_token: &quot;[insert_key_here]&quot;,
-              build_secret: &quot;[insert_key_here]&quot;)
+
+  firebase_app_distribution(
+    app: &quot;1:123456789:ios:abcd1234&quot;,
+    groups: &quot;qa-team, trusted-testers&quot;
+  )
+  # ...
 end
 </code></pre>
 
-<p>To get your API token, open the <a href="https://www.fabric.io/settings/organizations">organizations settings page</a> and click on the API key and build secret links. </p>
-<p>To get a list of all available options, run</p>
-<pre><code class="no-highlight">fastlane action crashlytics
-</code></pre>
-
+<p>For more information and options (such as adding release notes) see the full <a href="https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane">Getting Started</a> guide.</p>
 <hr />
 <p></details></p>
 <p><details>
