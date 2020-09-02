@@ -75,7 +75,21 @@ fastlane action upload_to_play_store
 </details>
 
 <details>
-<summary>Crashlytics</summary>
+<summary>Firebase App Distribution</summary>
+
+Install the Firebase App Distribution plugin:
+
+```no-highlight
+fastlane add_plugin firebase_app_distribution
+```
+
+Authenticate with Firebase by running the `firebase_app_distribution_login` action (or using one of the other [authentication methods](https://firebase.google.com/docs/app-distribution/android/distribute-fastlane#step_2_authenticate_with_firebase)):
+
+```no-highlight
+fastlane run firebase_app_distribution_login
+```
+
+Then add the `firebase_app_distribution` action to your lane:
 
 ```ruby
 lane :beta do
@@ -85,21 +99,15 @@ lane :beta do
     build_type: 'Release'
   )
 
-  crashlytics(
-    api_token: '[insert_key_here]',
-    build_secret: '[insert_secret_here]'
+  firebase_app_distribution(
+    app: "1:123456789:android:abcd1234",
+    groups: "qa-team, trusted-testers"
   )
   # ...
 end
 ```
 
-To get your API token, open the [organizations settings page](https://www.fabric.io/settings/organizations) and click on the API key and build secret links.
-
-Additionally you can specify `notes`, `emails`, `groups` and `notifications`. To get a list of all available options, run:
-
-```no-highlight
-fastlane action crashlytics
-```
+For more information and options (such as adding release notes) see the full [Getting Started](https://firebase.google.com/docs/app-distribution/android/distribute-fastlane) guide.
 
 ---
 </details>
