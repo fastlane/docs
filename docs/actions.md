@@ -80,15 +80,15 @@ Action | Description | Supported Platforms
 <a href="/actions/xcode_install/">xcode_install</a> | Make sure a certain version of Xcode is installed | ios, mac
 <a href="/actions/verify_pod_keys/">verify_pod_keys</a> | Verifies all keys referenced from the Podfile are non-empty | ios, mac
 <a href="/actions/xcclean/">xcclean</a> | Cleans the project using `xcodebuild` | ios, mac
+<a href="/actions/spm/">spm</a> | Runs Swift Package Manager on your project | ios, android, mac
+<a href="/actions/build_ios_app/">build_ios_app</a> | Alias for the `build_app` action but only for iOS | ios
+<a href="/actions/build_android_app/">build_android_app</a> | Alias for the `gradle` action | ios, android
 <a href="/actions/xcbuild/">xcbuild</a> | Builds the project using `xcodebuild` | ios, mac
 <a href="/actions/build_app/">build_app</a> | Easily build and sign your app (via _gym_) | ios, mac
-<a href="/actions/build_mac_app/">build_mac_app</a> | Alias for the `build_app` action but only for macOS | mac
-<a href="/actions/spm/">spm</a> | Runs Swift Package Manager on your project | ios, android, mac
-<a href="/actions/xctest/">xctest</a> | Runs tests on the given simulator | ios, mac
 <a href="/actions/xcarchive/">xcarchive</a> | Archives the project using `xcodebuild` | ios, mac
-<a href="/actions/build_ios_app/">build_ios_app</a> | Alias for the `build_app` action but only for iOS | ios
+<a href="/actions/build_mac_app/">build_mac_app</a> | Alias for the `build_app` action but only for macOS | mac
+<a href="/actions/xctest/">xctest</a> | Runs tests on the given simulator | ios, mac
 <a href="/actions/xcexport/">xcexport</a> | Exports the project using `xcodebuild` | ios, mac
-<a href="/actions/build_android_app/">build_android_app</a> | Alias for the `gradle` action | ios, android
 
 
 
@@ -99,9 +99,9 @@ Action | Description | Supported Platforms
 <a href="/actions/snapshot/">snapshot</a> | Alias for the `capture_ios_screenshots` action | ios, mac
 <a href="/actions/screengrab/">screengrab</a> | Alias for the `capture_android_screenshots` action | android
 <a href="/actions/frameit/">frameit</a> | Alias for the `frame_screenshots` action | ios, android, mac
+<a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a> | Generate new localized screenshots on multiple devices (via _snapshot_) | ios, mac
 <a href="/actions/frame_screenshots/">frame_screenshots</a> | Adds device frames around all screenshots (via _frameit_) | ios, android, mac
 <a href="/actions/capture_android_screenshots/">capture_android_screenshots</a> | Automated localized screenshots of your Android app (via _screengrab_) | android
-<a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a> | Generate new localized screenshots on multiple devices (via _snapshot_) | ios, mac
 <a href="/actions/capture_screenshots/">capture_screenshots</a> | Alias for the `capture_ios_screenshots` action | ios, mac
 
 
@@ -142,12 +142,12 @@ Action | Description | Supported Platforms
 <a href="/actions/resign/">resign</a> | Codesign an existing ipa file | ios
 <a href="/actions/register_devices/">register_devices</a> | Registers new devices to the Apple Dev Portal | ios, mac
 <a href="/actions/register_device/">register_device</a> | Registers a new device to the Apple Dev Portal | ios
-<a href="/actions/notarize/">notarize</a> | Notarizes a macOS app | mac
-<a href="/actions/update_code_signing_settings/">update_code_signing_settings</a> | Configures Xcode's Codesigning options | ios, mac
 <a href="/actions/install_provisioning_profile/">install_provisioning_profile</a> | Install provisioning profile from path | ios, mac
-<a href="/actions/get_certificates/">get_certificates</a> | Create new iOS code signing certificates (via _cert_) | ios
 <a href="/actions/sync_code_signing/">sync_code_signing</a> | Easily sync your certificates and profiles across your team (via _match_) | ios, mac
+<a href="/actions/update_code_signing_settings/">update_code_signing_settings</a> | Configures Xcode's Codesigning options | ios, mac
+<a href="/actions/notarize/">notarize</a> | Notarizes a macOS app | mac
 <a href="/actions/get_provisioning_profile/">get_provisioning_profile</a> | Generates a provisioning profile, saving it in the current folder (via _sigh_) | ios, mac
+<a href="/actions/get_certificates/">get_certificates</a> | Create new iOS code signing certificates (via _cert_) | ios
 
 
 
@@ -198,10 +198,10 @@ Action | Description | Supported Platforms
 <a href="/actions/deliver/">deliver</a> | Alias for the `upload_to_app_store` action | ios, mac
 <a href="/actions/supply/">supply</a> | Alias for the `upload_to_play_store` action | android
 <a href="/actions/appstore/">appstore</a> | Alias for the `upload_to_app_store` action | ios, mac
-<a href="/actions/upload_to_app_store/">upload_to_app_store</a> | Upload metadata and binary to App Store Connect (via _deliver_) | ios, mac
 <a href="/actions/download_from_play_store/">download_from_play_store</a> | Download metadata and binaries from Google Play (via _supply_) | android
-<a href="/actions/upload_to_play_store_internal_app_sharing/">upload_to_play_store_internal_app_sharing</a> | Upload binaries to Google Play Internal App Sharing (via _supply_) | android
+<a href="/actions/upload_to_app_store/">upload_to_app_store</a> | Upload metadata and binary to App Store Connect (via _deliver_) | ios, mac
 <a href="/actions/upload_to_play_store/">upload_to_play_store</a> | Upload metadata, screenshots and binaries to Google Play (via _supply_) | android
+<a href="/actions/upload_to_play_store_internal_app_sharing/">upload_to_play_store_internal_app_sharing</a> | Upload binaries to Google Play Internal App Sharing (via _supply_) | android
 
 
 
@@ -234,8 +234,8 @@ Action | Description | Supported Platforms
 <a href="/actions/hg_push/">hg_push</a> | This will push changes to the remote hg repository | ios, android, mac
 <a href="/actions/hg_add_tag/">hg_add_tag</a> | This will add a hg tag to the current branch | ios, android, mac
 <a href="/actions/github_api/">github_api</a> | Call a GitHub API endpoint and get the resulting JSON response | ios, android, mac
-<a href="/actions/git_submodule_update/">git_submodule_update</a> | Executes a git submodule command | ios, android, mac
 <a href="/actions/commit_github_file/">commit_github_file</a> | This will commit a file directly on GitHub via the API | ios, android, mac
+<a href="/actions/git_submodule_update/">git_submodule_update</a> | Executes a git submodule command | ios, android, mac
 
 
 
@@ -266,8 +266,8 @@ Action | Description | Supported Platforms
 <a href="/actions/app_store_build_number/">app_store_build_number</a> | Returns the current build_number of either live or edit version | ios, mac
 <a href="/actions/set_changelog/">set_changelog</a> | Set the changelog for all languages on App Store Connect | ios, mac
 <a href="/actions/create_app_online/">create_app_online</a> | Creates the given application on iTC and the Dev Portal (via _produce_) | ios
-<a href="/actions/check_app_store_metadata/">check_app_store_metadata</a> | Check your app's metadata before you submit your app to review (via _precheck_) | ios
 <a href="/actions/app_store_connect_api_key/">app_store_connect_api_key</a> | Load the App Store Connect API token to use in other fastlane tools and actions | ios, android, mac
+<a href="/actions/check_app_store_metadata/">check_app_store_metadata</a> | Check your app's metadata before you submit your app to review (via _precheck_) | ios
 
 
 
@@ -332,25 +332,25 @@ Action | Description | Supported Platforms
 <a href="/actions/update_icloud_container_identifiers/">update_icloud_container_identifiers</a> | This action changes the iCloud container identifiers in the entitlements file | ios
 <a href="/actions/sh/">sh</a> | Runs a shell command | ios, android, mac
 <a href="/actions/modify_services/">modify_services</a> | Modifies the services of the app created on Developer Portal | ios
-<a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a> | Retrieves version codes for a Google Play track | android
-<a href="/actions/environment_variable/">environment_variable</a> | Sets/gets env vars for Fastlane.swift. Don't use in ruby, use `ENV[key] = val` | ios, android, mac
-<a href="/actions/min_fastlane_version/">min_fastlane_version</a> | Verifies the minimum fastlane version required | ios, android, mac
-<a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a> | Raises an exception if not using `bundle exec` to run fastlane | ios, android, mac
-<a href="/actions/opt_out_usage/">opt_out_usage</a> | This will stop uploading the information which actions were run | ios, android, mac
-<a href="/actions/google_play_track_release_names/">google_play_track_release_names</a> | Retrieves release names for a Google Play track | android
-<a href="/actions/setup_ci/">setup_ci</a> | Setup the keychain and match to work with CI | ios, mac
-<a href="/actions/setup_circle_ci/">setup_circle_ci</a> | Setup the keychain and match to work with CircleCI | ios, android, mac
-<a href="/actions/spaceship_stats/">spaceship_stats</a> | Print out Spaceship stats from this session (number of request to each domain) | ios, android, mac
-<a href="/actions/ruby_version/">ruby_version</a> | Verifies the minimum ruby version required | ios, android, mac
-<a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a> | Create Managed Google Play Apps | android
-<a href="/actions/setup_travis/">setup_travis</a> | Setup the keychain and match to work with Travis CI | ios, android, mac
-<a href="/actions/ensure_env_vars/">ensure_env_vars</a> | Raises an exception if the specified env vars are not set | ios, android, mac
-<a href="/actions/echo/">echo</a> | Alias for the `puts` action | ios, android, mac
-<a href="/actions/spaceship_logs/">spaceship_logs</a> | Find, print, and copy Spaceship logs | ios, android, mac
-<a href="/actions/validate_play_store_json_key/">validate_play_store_json_key</a> | Validate that the Google Play Store `json_key` works | android
 <a href="/actions/println/">println</a> | Alias for the `puts` action | ios, android, mac
+<a href="/actions/setup_circle_ci/">setup_circle_ci</a> | Setup the keychain and match to work with CircleCI | ios, android, mac
+<a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a> | Raises an exception if not using `bundle exec` to run fastlane | ios, android, mac
+<a href="/actions/ruby_version/">ruby_version</a> | Verifies the minimum ruby version required | ios, android, mac
+<a href="/actions/spaceship_logs/">spaceship_logs</a> | Find, print, and copy Spaceship logs | ios, android, mac
+<a href="/actions/setup_ci/">setup_ci</a> | Setup the keychain and match to work with CI | ios, mac
+<a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a> | Retrieves version codes for a Google Play track | android
+<a href="/actions/validate_play_store_json_key/">validate_play_store_json_key</a> | Validate that the Google Play Store `json_key` works | android
 <a href="/actions/plugin_scores/">plugin_scores</a> | [31mNo description provided[0m | ios, android, mac
+<a href="/actions/setup_travis/">setup_travis</a> | Setup the keychain and match to work with Travis CI | ios, android, mac
+<a href="/actions/environment_variable/">environment_variable</a> | Sets/gets env vars for Fastlane.swift. Don't use in ruby, use `ENV[key] = val` | ios, android, mac
+<a href="/actions/echo/">echo</a> | Alias for the `puts` action | ios, android, mac
+<a href="/actions/ensure_env_vars/">ensure_env_vars</a> | Raises an exception if the specified env vars are not set | ios, android, mac
 <a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a> | Obtain publishing rights for custom apps on Managed Google Play Store | android
+<a href="/actions/opt_out_usage/">opt_out_usage</a> | This will stop uploading the information which actions were run | ios, android, mac
+<a href="/actions/spaceship_stats/">spaceship_stats</a> | Print out Spaceship stats from this session (number of request to each domain) | ios, android, mac
+<a href="/actions/google_play_track_release_names/">google_play_track_release_names</a> | Retrieves release names for a Google Play track | android
+<a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a> | Create Managed Google Play Apps | android
+<a href="/actions/min_fastlane_version/">min_fastlane_version</a> | Verifies the minimum fastlane version required | ios, android, mac
 
 
 

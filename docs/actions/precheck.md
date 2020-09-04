@@ -151,6 +151,7 @@ Key | Description | Default
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `platform` | The platform to use (optional) | `ios`
   `default_rule_level` | The default rule level unless otherwise configured | `:error`
   `include_in_app_purchases` | Should check in-app purchases? | `true`
   `negative_apple_sentiment` | mentioning  in a way that could be considered negative | 
