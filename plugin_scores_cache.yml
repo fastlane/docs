@@ -989,9 +989,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1039
+  :age_in_days: 1047
   :readme_score: 100
-  :tests: 309
+  :tests: 312
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1004,6 +1004,12 @@ fastlane-plugin-test_center:
     category: testing
     description: "\U0001F5DC Suppresses specific tests in a specific or all Xcode
       Schemes in a given project"
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: tests_from_xcresult
+    category: testing
+    description: "☑️ Retrieves the failing and passing tests as reportedn an xcresult
+      bundle"
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppress_tests_from_junit
@@ -1077,11 +1083,11 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: e681388b336679394188ff0db9b4e9fa11a826aec6daa268b3cd3dcca1cbcfac
-  :github_stars: 162
-  :github_subscribers: 8
-  :github_issues: 11
-  :github_forks: 34
+  :sha: b97be0e6728c8d7b73fdd313b39aea0aa286f4212c5b8cc23452c78f4f070cfc
+  :github_stars: 166
+  :github_subscribers: 9
+  :github_issues: 13
+  :github_forks: 35
   :github_contributors: 11
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -6145,7 +6151,7 @@ fastlane-plugin-transifex_tool:
   :github_contributors: 0
 fastlane-plugin-google_sheet_localize:
   :initial_commit: 2019-01-31
-  :age_in_days: 284
+  :age_in_days: 582
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6155,12 +6161,12 @@ fastlane-plugin-google_sheet_localize:
     description: Creates .strings files for iOS and strings.xml files for Android
     details: Creates .strings files for iOS and strings.xml files for Android. The
       localization is mananged on a google sheet.
-  :sha: 724ecc15a975316c6947dab2a4ff5407c4906937aa8b7912eeae8804e992b9a6
-  :github_stars: 8
-  :github_subscribers: 5
-  :github_issues: 1
-  :github_forks: 0
-  :github_contributors: 1
+  :sha: a8502ff2febf3d0a45d2d2c837097f1ad76111133a775ab54dbdee0083578c5e
+  :github_stars: 14
+  :github_subscribers: 4
+  :github_issues: 4
+  :github_forks: 2
+  :github_contributors: 2
 fastlane-plugin-git_build_versioning:
   :initial_commit: 2018-10-29
   :age_in_days: 100
@@ -7810,21 +7816,27 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 102
+  :age_in_days: 400
   :readme_score: 100
-  :tests: 15
+  :tests: 58
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_app_distribution_login
+    category:
+    description: Authenticate with Firebase App Distribution using a Google account.
+    details: See https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane
+      for more information.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: bb4ab3d4a4d49ec7cf80eebd1b406eb4df90d587ad2bfef5bd6aa2602abe8087
-  :github_stars: 14
-  :github_subscribers: 7
-  :github_issues: 0
-  :github_forks: 1
-  :github_contributors: 4
+  :sha: f90ba64069f36056924316c64d339dbb55002239906e063afae602a1ab54e3d6
+  :github_stars: 54
+  :github_subscribers: 8
+  :github_issues: 42
+  :github_forks: 5
+  :github_contributors: 9
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
   :age_in_days: 49
@@ -9397,15 +9409,15 @@ fastlane-plugin-azuredevops_envvars:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-bitrise_automation:
-  :github_stars: 0
+  :github_stars: 1
   :github_subscribers: 13
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
   :initial_commit: 2020-07-06
-  :age_in_days: 31
+  :age_in_days: 60
   :readme_score: 100
-  :tests: 22
+  :tests: 27
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: bitrise_build_artifacts
@@ -9424,7 +9436,7 @@ fastlane-plugin-bitrise_automation:
     category:
     description: Get the status of the Bitrise build
     details:
-  :sha: d6602972304b4879688b6796e22ccfee4acabea285989151e599e6ae71c18661
+  :sha: 0a23f855c866e67ce3c4147f46c91a6864235e18fe1e3f256cc9516202e40336
 fastlane-plugin-oclint_json_compilation_database:
   :initial_commit: 2020-06-29
   :age_in_days: 25
@@ -9586,3 +9598,107 @@ fastlane-plugin-fabulove:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-sous:
+  :initial_commit: 2020-09-01
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: plate
+    category:
+    description: This action signs apks using an existing keystore
+    details: You can use this action to sign APKs
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: pass
+    category:
+    description: This action retrieves existing keystores for the android build system
+    details: You can use this action to pull the upload and signing keystores for
+      android.
+  :sha: 1dd58686509fc41e7c2483048e8854c69b8d4fbd7609f1f87ab784a1f2949cda
+  :github_stars: 0
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-semantic_convention_release:
+  :initial_commit: 2019-03-17
+  :age_in_days: 537
+  :readme_score: 100
+  :tests: 42
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: conventional_changelog
+    category:
+    description:
+    details: Uses conventional commits. It groups commits by their types and generates
+      release notes in markdown or slack format.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: analyze_commits
+    category:
+    description: Finds a tag of last release and determinates version of next release
+    details: This action will find a last release tag and analyze all commits since
+      the tag. It uses conventional commits. Every time when commit is marked as fix
+      or feat it will increase patch or minor number (you can setup this default behaviour).
+      After all it will suggest if the version should be released or not.
+  :sha: 8768db2bc9d507fd853c9eebf811708e975cd63b87655b6286086c30c7ecdb59
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 5
+fastlane-plugin-simple_loco:
+  :initial_commit: 2020-08-28
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: simple_loco
+    category:
+    description: A simple implementation for exporting translations from Loco.
+    details: A wrapper implementation around the Localize export single-file API.
+      See https://localise.biz/api/docs/export/exportlocale for all options. Common
+      mobile platforms (Android, iOS, Xamarin, Flutter) have some extra logic to create
+      the correct paths, and a custom implementation is provided for other platforms.
+  :sha: '08dd3d3634acd8fe481a8a0fdce1d0424b9059faa6abc5f2964ad1f697f3edb8'
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-flutter_version_manager:
+  :initial_commit: 2020-09-01
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_version_manager
+    category:
+    description: Manages app versioning of a Flutter project.
+    details: App versioning tool for Flutter projects that can be plugged into pipeline
+      via CI/CD
+  :sha: 59bbdfc41801bb651587eb5fadc40606d4a4d7b903fb3d75da1b8a3d25b5e6b4
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-fetch_metadata_from_google_sheets:
+  :initial_commit: 2020-08-31
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fetch_metadata_from_google_sheets
+    category:
+    description: Get App Store metadata from Google Sheets.
+    details: Get App Store metadata from Google Sheets.
+  :sha: 10fcbd5203e333b87b9062f9caa8803cad028589754b699e08c3f26094d96f1c
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
