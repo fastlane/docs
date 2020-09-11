@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 110f2330f1a67ade028467204520116f2cc55741
+  revision: 764fa07f83242258bee8a6716f4e2e032dfcbe40
   specs:
-    fastlane (2.158.0)
+    fastlane (2.159.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       aws-sdk-s3 (~> 1.0)
@@ -48,7 +48,7 @@ GEM
     ast (2.4.1)
     atomos (0.1.3)
     aws-eventstream (1.1.0)
-    aws-partitions (1.365.0)
+    aws-partitions (1.367.0)
     aws-sdk-core (3.105.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -57,7 +57,7 @@ GEM
     aws-sdk-kms (1.37.0)
       aws-sdk-core (~> 3, >= 3.99.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.79.1)
+    aws-sdk-s3 (1.80.0)
       aws-sdk-core (~> 3, >= 3.104.3)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)

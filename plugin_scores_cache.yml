@@ -8228,11 +8228,51 @@ fastlane-plugin-aws_sns_topic:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-android_version_manager:
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
+  :github_stars: 2
+  :github_subscribers: 2
+  :github_issues: 2
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
+  :initial_commit: 2019-10-10
+  :age_in_days: 336
+  :readme_score: 100
+  :tests: 34
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_get_value_from_build
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_increment_version_name
+    category: project
+    description: Increments the version name of the android project
+    details: Based on the provided params, increments the version name and returns
+      their new value
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_increment_version_code
+    category: project
+    description: Increments the version code of the android project
+    details: Based on the provided params, increments the version code and returns
+      their new value
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_version_manager
+    category:
+    description: Android's App Version Managment
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_get_version_code
+    category: project
+    description: Returns the version code of the android project
+    details: Based on the provided params, returns the value of the version code of
+      the build.gradle file as a number
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_get_version_name
+    category: project
+    description: Returns the version name of the android project
+    details: Based on the provided params, returns the value of the version name of
+      the build.gradle file as a string
+  :sha: 924ba9ae06f1a116428c21b7d30a22bb8a0a1179382aa1e4fd740bccc6b41753
 fastlane-plugin-find_firebase_app_id:
   :initial_commit: 2019-12-16
   :age_in_days: 3
@@ -8442,22 +8482,20 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 51
+  :age_in_days: 192
   :readme_score: 100
-  :tests: 1
+  :tests: 10
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_version
     category:
     description: A plugin to retrieve versioning information for Flutter projects.
-    details: The plugin reads and parses pubspec.yml of a Flutter project and composes
-      the versioning information into structured data to be consumed by various releasing
-      automations.
-  :sha: eaea0f0691c30eb030c92e71891bf29c91b5b5eae980d8ff0f95daca3e393ea9
-  :github_stars: 6
-  :github_subscribers: 1
-  :github_issues: 1
-  :github_forks: 1
+    details:
+  :sha: 1ae7bf968f74ef5c844c6470fcd0db9085ea05a823550c518f9075bcf5b5e0e0
+  :github_stars: 10
+  :github_subscribers: 0
+  :github_issues: 2
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
@@ -8622,7 +8660,7 @@ fastlane-plugin-clang_format:
   :github_contributors: 0
 fastlane-plugin-match_keystore:
   :initial_commit: 2020-03-31
-  :age_in_days: 22
+  :age_in_days: 163
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8632,11 +8670,11 @@ fastlane-plugin-match_keystore:
     description: Easily sync your Android keystores across your team
     details: This way, your entire team can use the same account and have one code
       signing identity without any manual work or confusion.
-  :sha: ebc41bf6f349d4d3d61c8f6470440ebea24fc8253cea6e3f1f94eee5b1ed62af
-  :github_stars: 0
+  :sha: e9745c294a58bbc796e06e034bb577220cad171807d89cca665173f250a8144a
+  :github_stars: 3
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 0
+  :github_issues: 4
+  :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-uninow_sentry:
   :initial_commit: 2016-06-01
@@ -9228,7 +9266,7 @@ fastlane-plugin-match_android_keystore:
   :github_contributors: 2
 fastlane-plugin-xclogparser:
   :initial_commit: 2020-06-08
-  :age_in_days: 23
+  :age_in_days: 94
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9239,12 +9277,12 @@ fastlane-plugin-xclogparser:
     details: XCLogParser is a CLI tool that parses the SLF serialization format used
       by Xcode and xcodebuild to store its Build and Test logs (xcactivitylog files).
       This plugin provides an easy way to run XCLogParser against your builds.
-  :sha: 268c59cf5989282cf7ceb7ad92ff8bfacb8ba3a10af1e3558f8cbf7ff5d0a63c
+  :sha: 2a945cecf16aa67315619da1aa2b7ca0282f74354e93c3eff57b896f1c9d8124
   :github_stars: 0
   :github_subscribers: 10
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-create_xcframework:
   :initial_commit: 2020-06-27
   :age_in_days: 4
@@ -9623,7 +9661,7 @@ fastlane-plugin-sous:
   :github_contributors: 1
 fastlane-plugin-semantic_convention_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 537
+  :age_in_days: 543
   :readme_score: 100
   :tests: 42
   :actions:
@@ -9641,12 +9679,12 @@ fastlane-plugin-semantic_convention_release:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: 8768db2bc9d507fd853c9eebf811708e975cd63b87655b6286086c30c7ecdb59
+  :sha: 267524cde7fd0c3952875d59e3476063aeba927a95b2a24cd9fe080ff8f81006
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 5
+  :github_contributors: 0
 fastlane-plugin-simple_loco:
   :initial_commit: 2020-08-28
   :age_in_days: 7
