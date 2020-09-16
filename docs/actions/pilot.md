@@ -352,8 +352,8 @@ upload_to_testflight(
 
 Key | Description | Default
 ----|-------------|--------
-  `api_key_path` | Path to your App Store Connect API key JSON file | 
-  `api_key` | Path to your App Store Connect API key JSON file | 
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of the app to upload or manage testers (optional) | [*](#parameters-legend-dynamic)
   `app_platform` | The platform to use (optional) | `ios`

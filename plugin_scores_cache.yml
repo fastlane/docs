@@ -1,9 +1,9 @@
 ---
 fastlane-plugin-versioning:
   :initial_commit: 2016-06-03
-  :age_in_days: 1402
+  :age_in_days: 1566
   :readme_score: 100
-  :tests: 73
+  :tests: 75
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: get_version_number_from_git_branch
@@ -68,11 +68,11 @@ fastlane-plugin-versioning:
     category:
     description: Increment the build number of your project
     details: "\\n"
-  :sha: 6e7c6cac566511da837b023fd4edfea3275c8074d5132c106d516c15f879e54c
-  :github_stars: 280
-  :github_subscribers: 6
-  :github_issues: 7
-  :github_forks: 32
+  :sha: d692d7c1c0da93f4fdfe5580982eb78e0d6391bd432bc73eff02c7f9e50a5f89
+  :github_stars: 320
+  :github_subscribers: 5
+  :github_issues: 6
+  :github_forks: 35
   :github_contributors: 12
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
@@ -989,9 +989,9 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1047
+  :age_in_days: 1059
   :readme_score: 100
-  :tests: 312
+  :tests: 313
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppressed_tests
@@ -1083,12 +1083,12 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: b97be0e6728c8d7b73fdd313b39aea0aa286f4212c5b8cc23452c78f4f070cfc
-  :github_stars: 166
-  :github_subscribers: 9
-  :github_issues: 13
+  :sha: 8e800bccd81a5d0fdd7d9987a4c9606ced6efb3e3e25074f60ae392f9f3c32de
+  :github_stars: 169
+  :github_subscribers: 10
+  :github_issues: 11
   :github_forks: 35
-  :github_contributors: 11
+  :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -7034,7 +7034,7 @@ fastlane-plugin-testin:
   :github_contributors: 2
 fastlane-plugin-airwatch_workspaceone:
   :initial_commit: 2019-05-30
-  :age_in_days: 279
+  :age_in_days: 475
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7103,12 +7103,12 @@ fastlane-plugin-airwatch_workspaceone:
       of an application.
     details: unretire_all_versions - To unretire all retired versions of an application
       on the AirWatch/Workspace ONE console.
-  :sha: 6d6de97364cb2129442b8241f744036c6c922f22ad0bee84c5ef5c67b78c8a78
-  :github_stars: 3
+  :sha: 151c99cc97d0c4df5e35842358c2962290919469f1c2e2e48a560213f9d4b291
+  :github_stars: 6
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 3
-  :github_contributors: 2
+  :github_forks: 5
+  :github_contributors: 0
 fastlane-plugin-react_native_util:
   :initial_commit: 2019-05-14
   :age_in_days: 16
@@ -9661,7 +9661,7 @@ fastlane-plugin-sous:
   :github_contributors: 1
 fastlane-plugin-semantic_convention_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 543
+  :age_in_days: 549
   :readme_score: 100
   :tests: 42
   :actions:
@@ -9679,7 +9679,7 @@ fastlane-plugin-semantic_convention_release:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: 267524cde7fd0c3952875d59e3476063aeba927a95b2a24cd9fe080ff8f81006
+  :sha: aa4a31bbd6d87969cac35c99e6f69f2d1684adbac5916221330bacba5a8d8cd4
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -9740,3 +9740,24 @@ fastlane-plugin-fetch_metadata_from_google_sheets:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-android_update_package_identifier:
+  :initial_commit: 2020-09-15
+  :age_in_days: 1
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_update_package_identifier
+    category:
+    description: Changes the applicationId inside of your build.gradle file. Does
+      not change the AndroidManifest
+    details: This Fastlane plugin will change the applicationId to whatever you want
+      inside your app's build.gradle file. This does not change the AndroidManifest,
+      if you'd like to do that you need to make sure the code you have in your application
+      matches up with what's built through the manifest.
+  :sha: dc21f26a24a2398ec405dfddf0ccd007f959e17e32ebec8b18770c3a25b91de7
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

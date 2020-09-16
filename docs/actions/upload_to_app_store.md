@@ -789,6 +789,8 @@ appstore  # alias for "upload_to_app_store"
 
 Key | Description | Default
 ----|-------------|--------
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `app_version` | The version that should be edited or created | 
@@ -803,7 +805,7 @@ Key | Description | Default
   `skip_binary_upload` | Skip uploading an ipa or pkg to App Store Connect | `false`
   `skip_screenshots` | Don't upload the screenshots | `false`
   `skip_metadata` | Don't upload the metadata (e.g. title, description). This will still upload screenshots | `false`
-  `skip_app_version_update` | Don't update app version for submission | `false`
+  `skip_app_version_update` | Don’t create or update the app version that is being prepared for submission | `false`
   `force` | Skip the HTML report file verification | `false`
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
