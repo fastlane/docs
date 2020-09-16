@@ -1327,7 +1327,7 @@ end
 </tr>
 </tbody>
 </table>
-<h2 id="5-examples"><a name="user-content-5-examples" href="#5-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5 Examples</h2>
+<h2 id="6-examples"><a name="user-content-6-examples" href="#6-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6 Examples</h2>
 <pre><code class="ruby">download_dsyms
 </code></pre>
 
@@ -1341,6 +1341,9 @@ end
 </code></pre>
 
 <pre><code class="ruby">download_dsyms(min_version: &quot;1.2.3&quot;)
+</code></pre>
+
+<pre><code class="ruby">download_dsyms(after_uploaded_date: &quot;2020-09-11T19:00:00+01:00&quot;)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1394,6 +1397,11 @@ end
 <td></td>
 </tr>
 <tr>
+<td><code>after_uploaded_date</code></td>
+<td>The uploaded date after which you wish to download dSYMs</td>
+<td></td>
+</tr>
+<tr>
 <td><code>output_directory</code></td>
 <td>Where to save the download dSYMs, defaults to the current path</td>
 <td></td>
@@ -1426,6 +1434,10 @@ end
 <tr>
 <td><code>SharedValues::DSYM_PATHS</code></td>
 <td>An array to all the zipped dSYM files</td>
+</tr>
+<tr>
+<td><code>SharedValues::DSYM_LATEST_UPLOADED_DATE</code></td>
+<td>Date of the most recent uploaded time of successfully downloaded dSYM files</td>
 </tr>
 </tbody>
 </table>
