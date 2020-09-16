@@ -22,13 +22,13 @@ Below are the statuses of each tool:
 | Name | Apple ID | API Key |
 |---|---|---|
 | pilot | **Yes** | **Yes** |
-| deliver | **Yes** | No (In progress) |
+| deliver | **Yes** | **Yes** |
 | sigh | **Yes** | No (In progress) |
 | cert | No (In progress) | No (In progress) |
 | match | **Yes** | No (In progress) |
 | produce | **Partial** | No |
 | pem | No | No |
-| precheck | No | No |
+| precheck | **Yes (except for IAP)** | **Yes (except for IAP)** |
 
 ## Creating an App Store Connect API Key
 
