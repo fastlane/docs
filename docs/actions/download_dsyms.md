@@ -30,7 +30,7 @@ Author | @KrauseFx
 
 
 
-## 5 Examples
+## 6 Examples
 
 ```ruby
 download_dsyms
@@ -52,6 +52,10 @@ download_dsyms(version: "live")
 download_dsyms(min_version: "1.2.3")
 ```
 
+```ruby
+download_dsyms(after_uploaded_date: "2020-09-11T19:00:00+01:00")
+```
+
 
 
 
@@ -68,6 +72,7 @@ Key | Description | Default
   `version` | The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs or 'live' to download only the live version dSYMs | 
   `build_number` | The app build_number for dSYMs you wish to download | 
   `min_version` | The minimum app version for dSYMs you wish to download | 
+  `after_uploaded_date` | The uploaded date after which you wish to download dSYMs | 
   `output_directory` | Where to save the download dSYMs, defaults to the current path | 
   `wait_for_dsym_processing` | Wait for dSYMs to process | `false`
   `wait_timeout` | Number of seconds to wait for dSYMs to process | `300`
@@ -86,6 +91,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::DSYM_PATHS` | An array to all the zipped dSYM files
+  `SharedValues::DSYM_LATEST_UPLOADED_DATE` | Date of the most recent uploaded time of successfully downloaded dSYM files
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />
