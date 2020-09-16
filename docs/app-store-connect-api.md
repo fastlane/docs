@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The [App Store Connect API](https://developer.apple.com/app-store-connect/api/) (which Apple announced at WWDC18 and is continuely working on) is an official public API used to manage app metadata, pricing and availability, provisioning, and more. This API follows the [JSON API](https://jsonapi.org/) spec and introduces a new authorization option using API Keys to generate a [JSON Web Token (JWT)](https://jwt.io/).
+The [App Store Connect API](https://developer.apple.com/app-store-connect/api/) (which Apple announced at WWDC18 and is continuously working on) is an official public API used to manage app metadata, pricing and availability, provisioning, and more. This API follows the [JSON API](https://jsonapi.org/) spec and introduces a new authorization option using API Keys to generate a [JSON Web Token (JWT)](https://jwt.io/).
 
 _fastlane_ has historically used Apple IDs with username and password to authenticate using a cookie-based web session. _fastlane_ will continue using this same cookie-based web session to authenticate with an unofficial version of the App Store Connect API.
 
@@ -15,7 +15,7 @@ However, it is **recommended** to use the API Key authentication when you are ab
 
 ## Supported Actions/Tools
 
-The App Store Connect API has not been integreated into all tools and actions yet. 
+The App Store Connect API has not been integrated into all tools and actions yet. 
 
 Below are the statuses of each tool:
 
@@ -41,11 +41,11 @@ Below are the statuses of each tool:
 
 The API Key (located in the `.p8`) file, the key id, and the issuer id are needed to create the JWT token for authorization. There are multiple ways that these pieces of information can be input into _fastlane_.
 
-**Note:** The App Store Connect API does not yet have the ability to determine if the team is App Store or Enterprise. The `app_store_connect_api_key` action the the _fastlane_ API Key JSON file format allow for an optional `in_house` key as a temporary workaround.
+**Note:** The App Store Connect API does not yet have the ability to determine if the team is App Store or Enterprise. The `app_store_connect_api_key` action and the _fastlane_ API Key JSON file format allow for an optional `in_house` key as a temporary workaround.
 
 ### Using `app_store_connect_api_key`
 
-There is a new `app_store_connect_api_key` action which takes the key id, the issuer id, and API Key file (`.p8`) to generate a dictionary/hash used for JWT authorization. This action be used in two ways:
+There is a new `app_store_connect_api_key` action which takes the key id, the issuer id, and API Key file (`.p8`) to generate a dictionary/hash used for JWT authorization. This action can be used in two ways:
 
 #### Use return value and pass in as an option
 
@@ -105,7 +105,7 @@ The JSON file allows optional:
 }
 ```
 
-Below is an example use of the JSON file being used by an action:
+Below is an example of a JSON file being used by an action:
 
 ```ruby
 lane :release do
@@ -113,7 +113,7 @@ lane :release do
 end
 ```
 
-Below is an example use of the JSON file being used with CLI
+Below is an example of a JSON file being used with CLI:
 
 ```no-highlight
 $ fastlane pilot distribute --api_key_path fastlane/D383SF739.json
