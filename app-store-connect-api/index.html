@@ -1293,7 +1293,7 @@
               
                 <h1 id="app-store-connect-api"><a name="user-content-app-store-connect-api" href="#app-store-connect-api" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>App Store Connect API</h1>
 <h2 id="introduction"><a name="user-content-introduction" href="#introduction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Introduction</h2>
-<p>The <a href="https://developer.apple.com/app-store-connect/api/">App Store Connect API</a> (which Apple announced at WWDC18 and is continuely working on) is an official public API used to manage app metadata, pricing and availability, provisioning, and more. This API follows the <a href="https://jsonapi.org/">JSON API</a> spec and introduces a new authorization option using API Keys to generate a <a href="https://jwt.io/">JSON Web Token (JWT)</a>.</p>
+<p>The <a href="https://developer.apple.com/app-store-connect/api/">App Store Connect API</a> (which Apple announced at WWDC18 and is continuously working on) is an official public API used to manage app metadata, pricing and availability, provisioning, and more. This API follows the <a href="https://jsonapi.org/">JSON API</a> spec and introduces a new authorization option using API Keys to generate a <a href="https://jwt.io/">JSON Web Token (JWT)</a>.</p>
 <p><em>fastlane</em> has historically used Apple IDs with username and password to authenticate using a cookie-based web session. <em>fastlane</em> will continue using this same cookie-based web session to authenticate with an unofficial version of the App Store Connect API.</p>
 <p>However, it is <strong>recommended</strong> to use the API Key authentication when you are able to. The benefits include:</p>
 <ul>
@@ -1303,7 +1303,7 @@
 <li>Increased reliability</li>
 </ul>
 <h2 id="supported-actionstools"><a name="user-content-supported-actionstools" href="#supported-actionstools" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Supported Actions/Tools</h2>
-<p>The App Store Connect API has not been integreated into all tools and actions yet. </p>
+<p>The App Store Connect API has not been integrated into all tools and actions yet. </p>
 <p>Below are the statuses of each tool:</p>
 <table>
 <thead>
@@ -1369,9 +1369,9 @@
 </ol>
 <h2 id="using-an-app-store-connect-api-key"><a name="user-content-using-an-app-store-connect-api-key" href="#using-an-app-store-connect-api-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using an App Store Connect API Key</h2>
 <p>The API Key (located in the <code>.p8</code>) file, the key id, and the issuer id are needed to create the JWT token for authorization. There are multiple ways that these pieces of information can be input into <em>fastlane</em>.</p>
-<p><strong>Note:</strong> The App Store Connect API does not yet have the ability to determine if the team is App Store or Enterprise. The <code>app_store_connect_api_key</code> action the the <em>fastlane</em> API Key JSON file format allow for an optional <code>in_house</code> key as a temporary workaround.</p>
+<p><strong>Note:</strong> The App Store Connect API does not yet have the ability to determine if the team is App Store or Enterprise. The <code>app_store_connect_api_key</code> action and the <em>fastlane</em> API Key JSON file format allow for an optional <code>in_house</code> key as a temporary workaround.</p>
 <h3 id="using-app_store_connect_api_key"><a name="user-content-using-app_store_connect_api_key" href="#using-app_store_connect_api_key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <code>app_store_connect_api_key</code></h3>
-<p>There is a new <code>app_store_connect_api_key</code> action which takes the key id, the issuer id, and API Key file (<code>.p8</code>) to generate a dictionary/hash used for JWT authorization. This action be used in two ways:</p>
+<p>There is a new <code>app_store_connect_api_key</code> action which takes the key id, the issuer id, and API Key file (<code>.p8</code>) to generate a dictionary/hash used for JWT authorization. This action can be used in two ways:</p>
 <h4 id="use-return-value-and-pass-in-as-an-option"><a name="user-content-use-return-value-and-pass-in-as-an-option" href="#use-return-value-and-pass-in-as-an-option" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use return value and pass in as an option</h4>
 <pre><code class="ruby">lane :release do
   api_key = app_store_connect_api_key(
@@ -1423,13 +1423,13 @@ end
 }
 </code></pre>
 
-<p>Below is an example use of the JSON file being used by an action:</p>
+<p>Below is an example of a JSON file being used by an action:</p>
 <pre><code class="ruby">lane :release do
   pilot( api_key_path: &quot;fastlane/D383SF739.json&quot; )
 end
 </code></pre>
 
-<p>Below is an example use of the JSON file being used with CLI</p>
+<p>Below is an example of a JSON file being used with CLI:</p>
 <pre><code class="no-highlight">$ fastlane pilot distribute --api_key_path fastlane/D383SF739.json
 </code></pre>
               
