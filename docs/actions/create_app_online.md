@@ -15,7 +15,7 @@ Creates the given application on iTC and the Dev Portal (via _produce_)
   <img src="/img/actions/produce.png" width="250">
 </p>
 
-###### Create new iOS apps on App Store Connect and Dev Portal using your command line
+###### Create new iOS apps on App Store Connect and Apple Developer Portal using your command line
 
 _produce_ creates new iOS apps on both the Apple Developer Portal and App Store Connect with the minimum required information.
 

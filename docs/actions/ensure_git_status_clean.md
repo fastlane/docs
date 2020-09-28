@@ -37,6 +37,7 @@ Key | Description | Default
 ----|-------------|--------
   `show_uncommitted_changes` | The flag whether to show uncommitted changes if the repo is dirty | `false`
   `show_diff` | The flag whether to show the git diff if the repo is dirty | `false`
+  `ignored` | The flag whether to ignore file the git status if the repo is dirty | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
