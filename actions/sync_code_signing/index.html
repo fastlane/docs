@@ -1433,8 +1433,8 @@ match
 </code></pre>
 
 <p>You can find more information about GitHub basic authentication and personal token generation here: <a href="https://developer.github.com/v3/auth/#basic-authentication">https://developer.github.com/v3/auth/#basic-authentication</a></p>
-<h5 id="git-storage-on-azure-devops"><a name="user-content-git-storage-on-azure-devops" href="#git-storage-on-azure-devops" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on Azure Devops</h5>
-<p>If you're running a pipeline on Azure Devops and using git storage in a another repository on the same project, you might want to use <code>bearer</code> token authentication.</p>
+<h5 id="git-storage-on-azure-devops"><a name="user-content-git-storage-on-azure-devops" href="#git-storage-on-azure-devops" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on Azure DevOps</h5>
+<p>If you're running a pipeline on Azure DevOps and using git storage in a another repository on the same project, you might want to use <code>bearer</code> token authentication.</p>
 <p>Using parameter:</p>
 <pre><code>match(git_bearer_authorization: '&lt;YOUR TOKEN&gt;')
 </code></pre>
@@ -1695,7 +1695,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <p>Both your keys and provisioning profiles are encrypted using OpenSSL using a passphrase.</p>
 <p>Storing your private keys in a Git repo may sound off-putting at first. We did an analysis of potential security issues, see section below.</p>
 <h3 id="google-cloud-storage_1"><a name="user-content-google-cloud-storage_1" href="#google-cloud-storage_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Google Cloud Storage</h3>
-<p>All your keys and provisioning profiles are encrypted using Google managed keys. </p>
+<p>All your keys and provisioning profiles are encrypted using Google managed keys.</p>
 <h3 id="what-could-happen-if-someone-stole-a-private-key"><a name="user-content-what-could-happen-if-someone-stole-a-private-key" href="#what-could-happen-if-someone-stole-a-private-key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What could happen if someone stole a private key?</h3>
 <p>If attackers would have your certificate and provisioning profile, they could codesign an application with the same bundle identifier.</p>
 <p>What's the worst that could happen for each of the profile types?</p>
@@ -1844,7 +1844,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>git_bearer_authorization</code></td>
-<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure Devops repository), usually a string in Base64</td>
+<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64</td>
 <td></td>
 </tr>
 <tr>

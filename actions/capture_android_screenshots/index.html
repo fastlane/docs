@@ -1472,7 +1472,7 @@ class JUnit4StyleTests {
 
 </code></pre>
 
-<p>There is an <a href="https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester">example project</a> showing how to use use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.</p>
+<p>There is an <a href="https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester">example project</a> showing how to use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.</p>
 <p>Using JUnit 4 is preferable because of its ability to perform actions before and after the entire test class is run. This means you will change the device's locale far fewer times when compared with JUnit 3 running those commands before and after each test method.</p>
 <p>When using JUnit 3 you'll need to add a bit more code:</p>
 <ul>
@@ -1515,7 +1515,7 @@ You could for example show the Bluetooth icon and the LTE text.</p>
 <h1 id="advanced-screengrab"><a name="user-content-advanced-screengrab" href="#advanced-screengrab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced <em>screengrab</em></h1>
 <p><details>
 <summary>Launch Arguments</summary></p>
-<p>You can provide additional arguments to your testcases on launch. These strings will be available in your tests through <code>InstrumentationRegistry.getArguments()</code>.</p>
+<p>You can provide additional arguments to your test cases on launch. These strings will be available in your tests through <code>InstrumentationRegistry.getArguments()</code>.</p>
 <pre><code class="ruby">screengrab(
   launch_arguments: [
     &quot;username hjanuschka&quot;,

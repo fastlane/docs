@@ -1496,7 +1496,7 @@ add_photos([&quot;MyTestApp/Assets/demo.jpg&quot;])
 
 <p>to update your <code>SnapshotHelper.swift</code> files. In case you modified your <code>SnapshotHelper.swift</code> and want to manually update the file, check out <a href="https://github.com/fastlane/fastlane/blob/master/snapshot/lib/assets/SnapshotHelper.swift">SnapshotHelper.swift</a>.</p>
 <h2 id="launch-arguments"><a name="user-content-launch-arguments" href="#launch-arguments" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Launch Arguments</h2>
-<p>You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through <code>ProcessInfo.processInfo.arguments</code>. Alternatively, use user-default syntax (<code>-key value</code>) and they will be available as key-value pairs in <code>UserDefaults.standard</code>.</p>
+<p>You can provide additional arguments to your app on launch. These strings will be available in your app (e.g. not in the testing target) through <code>ProcessInfo.processInfo.arguments</code>. Alternatively, use user-default syntax (<code>-key value</code>) and they will be available as key-value pairs in <code>UserDefaults.standard</code>.</p>
 <pre><code class="ruby-skip-tests">launch_arguments([
   &quot;-firstName Felix -lastName Krause&quot;
 ])
