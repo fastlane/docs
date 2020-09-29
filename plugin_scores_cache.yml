@@ -7816,9 +7816,9 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 400
+  :age_in_days: 424
   :readme_score: 100
-  :tests: 58
+  :tests: 69
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution_login
@@ -7831,12 +7831,12 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: f90ba64069f36056924316c64d339dbb55002239906e063afae602a1ab54e3d6
-  :github_stars: 54
-  :github_subscribers: 8
-  :github_issues: 42
+  :sha: cc955852f2c4ab2ca7899120686921615d0b6093cae53829eb327e5997d68071
+  :github_stars: 62
+  :github_subscribers: 9
+  :github_issues: 17
   :github_forks: 5
-  :github_contributors: 9
+  :github_contributors: 0
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
   :age_in_days: 49
@@ -9285,7 +9285,7 @@ fastlane-plugin-xclogparser:
   :github_contributors: 0
 fastlane-plugin-create_xcframework:
   :initial_commit: 2020-06-27
-  :age_in_days: 4
+  :age_in_days: 93
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9293,15 +9293,14 @@ fastlane-plugin-create_xcframework:
     name: create_xcframework
     category: building
     description: Fastlane plugin that creates xcframework for given list of destinations.
-    details: Create xcframework plugin generates xcframework for specified destinations.
-      The output of this action consists of the xcframework itself, dSYM and BCSymbolMaps,
-      if bitcode is enabled.
-  :sha: 8129808901d7a1dc3ed63034fad8d57841296422c1b6b8d1c5513fb07c8b4888
-  :github_stars: 3
-  :github_subscribers: 2
-  :github_issues: 2
+    details: The output of this action consists of the xcframework itself, which contains
+      dSYM and BCSymbolMaps, if bitcode is enabled.
+  :sha: 392b460bdc0bcf55225b8fc5be77bbf92255062737e773965c5e608e027d5d5b
+  :github_stars: 8
+  :github_subscribers: 4
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-testdroid_runner:
   :initial_commit: 2020-07-01
   :age_in_days: 0
@@ -9448,14 +9447,14 @@ fastlane-plugin-azuredevops_envvars:
   :github_contributors: 0
 fastlane-plugin-bitrise_automation:
   :github_stars: 1
-  :github_subscribers: 13
-  :github_issues: 0
+  :github_subscribers: 12
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
   :initial_commit: 2020-07-06
-  :age_in_days: 60
+  :age_in_days: 84
   :readme_score: 100
-  :tests: 27
+  :tests: 37
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: bitrise_build_artifacts
@@ -9474,7 +9473,7 @@ fastlane-plugin-bitrise_automation:
     category:
     description: Get the status of the Bitrise build
     details:
-  :sha: 0a23f855c866e67ce3c4147f46c91a6864235e18fe1e3f256cc9516202e40336
+  :sha: 03637c148214cc1daa41da8c174b1816c78d45a65f11a21398f624668909734f
 fastlane-plugin-oclint_json_compilation_database:
   :initial_commit: 2020-06-29
   :age_in_days: 25
@@ -9758,6 +9757,53 @@ fastlane-plugin-android_update_package_identifier:
   :sha: dc21f26a24a2398ec405dfddf0ccd007f959e17e32ebec8b18770c3a25b91de7
   :github_stars: 0
   :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-sunny_project:
+  :initial_commit: 2020-09-19
+  :age_in_days: 9
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rename_assets
+    category:
+    description: Renames assets, generates an assets.dart file to reference them.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: increase_version
+    category:
+    description: Increment version number in pubspec.yaml file
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: finalize_version
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: release_notes
+    category:
+    description: Get or retrieve release notes from git
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: generate_icons
+    category:
+    description: Generates a flutter icon set as a font
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: curr_semver
+    category:
+    description: Gets the current version from the project's pubspec.yaml file
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: pub_publish
+    category:
+    description: Executes pub publish command
+    details:
+  :sha: 69c0e56de6887112821818c680a8f150820c30860baa4b0d7206868569859bcf
+  :github_stars: 0
+  :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0

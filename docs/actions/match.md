@@ -143,9 +143,9 @@ match
 
 You can find more information about GitHub basic authentication and personal token generation here: [https://developer.github.com/v3/auth/#basic-authentication](https://developer.github.com/v3/auth/#basic-authentication)
 
-##### Git Storage on Azure Devops
+##### Git Storage on Azure DevOps
 
-If you're running a pipeline on Azure Devops and using git storage in a another repository on the same project, you might want to use `bearer` token authentication.
+If you're running a pipeline on Azure DevOps and using git storage in a another repository on the same project, you might want to use `bearer` token authentication.
 
 Using parameter:
 
@@ -546,7 +546,7 @@ Storing your private keys in a Git repo may sound off-putting at first. We did a
 
 ### Google Cloud Storage
 
-All your keys and provisioning profiles are encrypted using Google managed keys. 
+All your keys and provisioning profiles are encrypted using Google managed keys.
 
 ### What could happen if someone stole a private key?
 
@@ -629,7 +629,7 @@ Key | Description | Default
   `shallow_clone` | Make a shallow clone of the repository (truncate the history to 1 revision) | `false`
   `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail | `false`
   `git_basic_authorization` | Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64 | 
-  `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure Devops repository), usually a string in Base64 | 
+  `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64 | 
   `git_private_key` | Use a private key to access the git repo (e.g.: access to GitHub repository via Deploy keys), usually a id_rsa named file or the contents hereof | 
   `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
   `google_cloud_keys_file` | Path to the gc_keys.json file | 
