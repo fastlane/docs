@@ -23,9 +23,9 @@ Below are the statuses of each tool:
 |---|---|---|
 | pilot | **Yes** | **Yes** |
 | deliver | **Yes** | **Yes** |
-| sigh | **Yes** | No (In progress) |
-| cert | No (In progress) | No (In progress) |
-| match | **Yes** | No (In progress) |
+| sigh | **Yes** | **Yes** |
+| cert | **Yes** | **Yes** |
+| match | **Yes** | **Yes** |
 | produce | **Partial** | No |
 | pem | No | No |
 | precheck | **Yes (except for IAP)** | **Yes (except for IAP)** |
