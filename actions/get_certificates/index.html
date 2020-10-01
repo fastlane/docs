@@ -1421,6 +1421,16 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
+<td><code>api_key_path</code></td>
+<td>Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option)</td>
+<td></td>
+</tr>
+<tr>
 <td><code>username</code></td>
 <td>Your Apple ID Username</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
@@ -1454,6 +1464,11 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 <td><code>keychain_password</code></td>
 <td>This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password</td>
 <td></td>
+</tr>
+<tr>
+<td><code>skip_set_partition_list</code></td>
+<td>Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>platform</code></td>
