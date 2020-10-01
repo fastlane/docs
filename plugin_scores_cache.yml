@@ -7816,7 +7816,7 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 424
+  :age_in_days: 427
   :readme_score: 100
   :tests: 69
   :actions:
@@ -7831,12 +7831,12 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: cc955852f2c4ab2ca7899120686921615d0b6093cae53829eb327e5997d68071
+  :sha: 5f25f3cb143e1cf06facb042cfe73853e8f3ad986506482b31d275386f2b9166
   :github_stars: 62
   :github_subscribers: 9
-  :github_issues: 17
-  :github_forks: 5
-  :github_contributors: 0
+  :github_issues: 16
+  :github_forks: 6
+  :github_contributors: 12
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
   :age_in_days: 49
@@ -9159,14 +9159,14 @@ fastlane-plugin-rollbar:
   :github_contributors: 0
 fastlane-plugin-semantic_release2:
   :initial_commit: 2019-03-17
-  :age_in_days: 444
+  :age_in_days: 564
   :readme_score: 100
-  :tests: 31
+  :tests: 40
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: conventional_changelog
     category:
-    description: Get commits since last version and generates release notes
+    description:
     details: Uses conventional commits. It groups commits by their types and generates
       release notes in markdown or slack format.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
@@ -9177,12 +9177,12 @@ fastlane-plugin-semantic_release2:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: 17b516093a72e4e06d8e44981c2d28712adcec511b2a384949a7e335fbf39e45
-  :github_stars: 63
+  :sha: 352f9b2945ca57bb4b5131744ada3734fc4e1fcae44a66d1a79a5c33d32e209e
+  :github_stars: 83
   :github_subscribers: 2
-  :github_issues: 3
-  :github_forks: 15
-  :github_contributors: 0
+  :github_issues: 2
+  :github_forks: 24
+  :github_contributors: 5
 fastlane-plugin-github_action:
   :initial_commit: 2020-05-15
   :age_in_days: 19
@@ -9804,6 +9804,23 @@ fastlane-plugin-sunny_project:
   :sha: 69c0e56de6887112821818c680a8f150820c30860baa4b0d7206868569859bcf
   :github_stars: 0
   :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-google_chat_v2:
+  :initial_commit: 2020-09-30
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: google_chat_v2
+    category:
+    description: Send message to google chat v2
+    details: google chat v2
+  :sha: b670e051c25cf264e3c83fa7c72570604fa1cd440f5d4648c8b0907401ebc53a
+  :github_stars: 0
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0

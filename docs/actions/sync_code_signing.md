@@ -618,6 +618,8 @@ Key | Description | Default
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
   `skip_provisioning_profiles` | Skip syncing provisioning profiles | `false`
   `app_identifier` | The bundle identifier(s) of your app (comma-separated) | [*](#parameters-legend-dynamic)
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
@@ -651,6 +653,7 @@ Key | Description | Default
   `profile_name` | A custom name for the provisioning profile. This will replace the default provisioning profile name if specified | 
   `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
   `output_path` | Path in which to export certificates, key and profile | 
+  `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `verbose` | Print out extra information and all commands | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

@@ -137,6 +137,8 @@ Key | Description | Default
   `type` | Create specific certificate type (takes precedence over :development) | 
   `force` | Create a certificate even if an existing certificate exists | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
@@ -144,6 +146,7 @@ Key | Description | Default
   `output_path` | The path to a directory in which all certificates and private keys should be stored | `.`
   `keychain_path` | Path to a custom keychain | [*](#parameters-legend-dynamic)
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
+  `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `platform` | Set the provisioning profile's platform (ios, macos) | `ios`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
