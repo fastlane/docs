@@ -10,7 +10,7 @@ lane :tests do
 end
 ```
 
-Replace `"test"` with the gradle task name for running unit tests of your app.
+Replace `"test"` with the gradle task name for running unit tests in your app.
 
 Additionally you can specify more options for building and testing your app, check out the [list of all available parameters](/actions/gradle/)
 
@@ -47,7 +47,7 @@ fastlane tests
 
 ## Posting build results
 
-If you want to post test results on Slack, Hipchat or other team chat client, check out the available [fastlane actions](/actions/#notifications).
+If you want to post test results on Slack, Hipchat, or other team chat client, check out the available [fastlane actions](/actions/#notifications).
 
 ### Build failures
 
