@@ -768,7 +768,7 @@ Author | @KrauseFx
 
 ```ruby
 upload_to_app_store(
-  force: true, # Set to true to skip PDF verification
+  force: true, # Set to true to skip verification of HTML preview
   itc_provider: "abcde12345" # pass a specific value to the iTMSTransporter -itc_provider option
 )
 ```
@@ -806,11 +806,11 @@ Key | Description | Default
   `skip_screenshots` | Don't upload the screenshots | `false`
   `skip_metadata` | Don't upload the metadata (e.g. title, description). This will still upload screenshots | `false`
   `skip_app_version_update` | Don’t create or update the app version that is being prepared for submission | `false`
-  `force` | Skip the HTML report file verification | `false`
+  `force` | Skip verification of HTML preview file | `false`
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
-  `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | `false`
+  `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | 
   `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Can not be used together with `automatic_release`) | 
   `phased_release` | Enable the phased release feature of iTC | `false`
   `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
