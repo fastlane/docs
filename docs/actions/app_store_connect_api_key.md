@@ -61,6 +61,7 @@ Key | Description | Default
   `issuer_id` | The issuer ID | 
   `key_filepath` | The path to the key p8 file | 
   `key_content` | The content of the key p8 file | 
+  `is_key_content_base64` | Whether :key_content is Base64 encoded or not | `false`
   `duration` | The token session duration | 
   `in_house` | Is App Store or Enterprise (in house) team? App Store Connect API cannot not determine this on its own (yet) | 
 

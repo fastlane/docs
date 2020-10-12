@@ -48,7 +48,10 @@ register_device(
 Key | Description | Default
 ----|-------------|--------
   `name` | Provide the name of the device to register as | 
+  `platform` | Provide the platform of the device to register as (ios, mac) | `ios`
   `udid` | Provide the UDID of the device to register as | 
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `username` | Optional: Your Apple ID | [*](#parameters-legend-dynamic)
