@@ -1319,7 +1319,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
 <pre><code class="ruby">app_store_build_number
 </code></pre>
 
@@ -1336,6 +1336,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 )
 </code></pre>
 
+<pre><code class="ruby">api_key = app_store_connect_api_key(
+  key_id: &quot;MyKeyID12345&quot;,
+  issuer_id: &quot;00000000-0000-0000-0000-000000000000&quot;,
+  key_filepath: &quot;./AuthKey.p8&quot;
+)
+build_num = app_store_build_number(
+  api_key: api_key
+)
+</code></pre>
+
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
@@ -1346,6 +1356,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>api_key_path</code></td>
+<td>Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option)</td>
+<td></td>
+</tr>
 <tr>
 <td><code>initial_build_number</code></td>
 <td>sets the build number to given value if no build is in current train</td>
