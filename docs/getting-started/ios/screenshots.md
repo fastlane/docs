@@ -66,7 +66,7 @@ To jump-start your UI tests, you can use the UI Test recorder, which you can sta
 1. Add the `./SnapshotHelper.swift` file to your UI Test target (You can move the file anywhere you want)
 1. Add a new Xcode scheme for the newly created UI Test target
 1. Edit the scheme
-1. In the list on the left click "Build", and enable the checkbox under the "Run" column for your target. 
+1. In the list on the left click "Build", and enable the checkbox under the "Run" column for your target.
 1. Enable the `Shared` box of the newly created scheme
 1. (Objective C only) Add the bridging header to your test class.
   - `#import "MYUITests-Swift.h"`
@@ -152,7 +152,7 @@ fastlane snapshot                               # Generate screenshots for the s
 
 After generating your screenshots using `fastlane snapshot`, you usually want to upload them to App Store Connect.
 
-If you followed the setup guide, you already ran `fastlane init` before, so you should have your existing screenshots and metadata inside the `fastlane/screenshots` and `fastlane/metadata` directory. Running `fastlane snapshot` will store the screenshots in the `fastlane/screenshots` directory by default. 
+If you followed the setup guide, you already ran `fastlane init` before, so you should have your existing screenshots and metadata inside the `fastlane/screenshots` and `fastlane/metadata` directory. Running `fastlane snapshot` will store the screenshots in the `fastlane/screenshots` directory by default.
 
 To upload the screenshots stored in `fastlane/screenshots`, just run
 
@@ -160,7 +160,7 @@ To upload the screenshots stored in `fastlane/screenshots`, just run
 fastlane deliver
 ```
 
-This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on App Store Connect. 
+This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on App Store Connect.
 
 # Use in Fastfile
 
@@ -271,7 +271,7 @@ fastlane action frame_screenshots
 
 # Advanced _snapshot_
 
-<details> 
+<details>
 <summary>Sample uses</summary>
 
 ```ruby
