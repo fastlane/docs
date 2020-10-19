@@ -24,7 +24,7 @@ Author | @KrauseFx
 ## 1 Example
 
 ```ruby
-if is_ci?
+if is_ci
   puts "I'm a computer"
 else
   say "Hi Human!"
