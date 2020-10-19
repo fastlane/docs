@@ -287,6 +287,7 @@ pages:
   - Source Control: best-practices/source-control.md
   - Continuous Integration: best-practices/continuous-integration.md
   - CI Integrations:
+    - Appcircle: best-practices/continuous-integration/appcircle.md
     - Azure DevOps: best-practices/continuous-integration/azure-devops.md
     - Bamboo: best-practices/continuous-integration/bamboo.md
     - Bitrise: best-practices/continuous-integration/bitrise.md
