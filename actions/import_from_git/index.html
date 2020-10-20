@@ -1355,7 +1355,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   url: &quot;git@github.com:fastlane/fastlane.git&quot;, # The URL of the repository to import the Fastfile from.
   branch: &quot;HEAD&quot;, # The branch to checkout on the repository
   path: &quot;fastlane/Fastfile&quot;, # The path of the Fastfile in the repository
-  version: [&quot;&gt;= 1.1.0&quot;, &quot;&lt; 2.0.0&quot;] # The version to checkout on the repository. Multiple conditions can be used to select the latest version within constraints.
+  version: [&quot;&gt;= 1.1.0&quot;, &quot;&lt; 2.0.0&quot;], # The version to checkout on the repository. Multiple conditions can be used to select the latest version within constraints.
+  cache_path: &quot;~/.cache/fastlane/imported&quot; # A directory in which the repository will be added, which means that it will not be cloned again on subsequent calls.
 )
 </code></pre>
 
@@ -1392,6 +1393,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>version</code></td>
 <td>The version to checkout on the repository. Optimistic match operator or multiple conditions can be used to select the latest version within constraints</td>
+<td></td>
+</tr>
+<tr>
+<td><code>cache_path</code></td>
+<td>The path to a directory where the repository should be cloned into. This is ignored if <code>version</code> is not specified. Defaults to <code>nil</code>, which causes the repository to be cloned on every call, to a temporary directory</td>
 <td></td>
 </tr>
 </tbody>

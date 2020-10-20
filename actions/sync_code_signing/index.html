@@ -1693,6 +1693,12 @@ fastlane match nuke enterprise
 </code></pre>
 
 <p>You'll be prompted for the certificate (<code>.cer</code>), the private key (<code>.p12</code>) and the provisioning profiles (<code>.mobileprovision</code> or <code>.provisionprofile</code>) paths. <em>match</em> will first validate the certificate (<code>.cer</code>) against the Developer Portal before importing the certificate, the private key and the provisioning profiles into the specified <em>match</em> repository.</p>
+<p>However if there is no access to the developer portal but there are certificates, private keys and profiles provided, you can use the <code>skip_certificate_matching</code> option to tell <em>match</em> not to verify the certificates. Like this:</p>
+<pre><code class="no-highlight">fastlane match import --skip_certificate_matching true
+</code></pre>
+
+<p>This will skip login to Apple Developer Portal and will import the provided certificate, private key and profile directly to the certificates repo.</p>
+<p>Please be careful when using this option and ensure the certificates and profiles match the type (development, adhoc, appstore, enterprise, developer_id) and are not revoked or expired.</p>
 <h3 id="manual-decrypt"><a name="user-content-manual-decrypt" href="#manual-decrypt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manual Decrypt</h3>
 <p>If you want to manually decrypt a file you can.</p>
 <pre><code class="no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;&lt;fileYouWantToDecryptPath&gt;&quot; -out &quot;&lt;decryptedFilePath&gt;&quot; -a -d
@@ -1978,6 +1984,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>fail_on_name_taken</code></td>
 <td>Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_certificate_matching</code></td>
+<td>Set to true if there is no access to Apple developer portal but there are certificates, keys and profiles provided. Only works with match import action</td>
 <td><code>false</code></td>
 </tr>
 <tr>
