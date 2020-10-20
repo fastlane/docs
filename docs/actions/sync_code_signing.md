@@ -505,6 +505,15 @@ fastlane match import
 
 You'll be prompted for the certificate (`.cer`), the private key (`.p12`) and the provisioning profiles (`.mobileprovision` or `.provisionprofile`) paths. _match_ will first validate the certificate (`.cer`) against the Developer Portal before importing the certificate, the private key and the provisioning profiles into the specified _match_ repository.
 
+However if there is no access to the developer portal but there are certificates, private keys and profiles provided, you can use the `skip_certificate_matching` option to tell _match_ not to verify the certificates. Like this:
+
+```no-highlight
+fastlane match import --skip_certificate_matching true
+```
+This will skip login to Apple Developer Portal and will import the provided certificate, private key and profile directly to the certificates repo.
+
+Please be careful when using this option and ensure the certificates and profiles match the type (development, adhoc, appstore, enterprise, developer_id) and are not revoked or expired.
+
 ### Manual Decrypt
 
 If you want to manually decrypt a file you can.
@@ -652,6 +661,7 @@ Key | Description | Default
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
   `profile_name` | A custom name for the provisioning profile. This will replace the default provisioning profile name if specified | 
   `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
+  `skip_certificate_matching` | Set to true if there is no access to Apple developer portal but there are certificates, keys and profiles provided. Only works with match import action | `false`
   `output_path` | Path in which to export certificates, key and profile | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `verbose` | Print out extra information and all commands | `false`

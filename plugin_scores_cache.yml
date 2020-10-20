@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1085
+  :age_in_days: 1092
   :readme_score: 100
   :tests: 321
   :actions:
@@ -1083,12 +1083,12 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: 244643e22756961c6f0bd350b2683021d074e6d5647e7fca68d2ebd83d738b47
-  :github_stars: 178
+  :sha: 49fe6caf8d790441553e0b58fe087022b8eb41db543ed0de48d39a7ed9a1b5e5
+  :github_stars: 179
   :github_subscribers: 10
-  :github_issues: 17
-  :github_forks: 35
-  :github_contributors: 11
+  :github_issues: 11
+  :github_forks: 36
+  :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
   :github_subscribers: 0
@@ -4409,10 +4409,15 @@ fastlane-plugin-instabug_official:
   :github_contributors: 0
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
-  :age_in_days: 640
+  :age_in_days: 983
   :readme_score: 100
-  :tests: 14
+  :tests: 20
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: update_google_drive_file
+    category:
+    description: Update a Google Drive file
+    details: "\\n"
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: upload_to_google_drive
     category:
@@ -4423,12 +4428,12 @@ fastlane-plugin-google_drive:
     category:
     description: Create new folder on Google Drive
     details: "\\n"
-  :sha: bd9eabb298614b82fb8769548f114fef0914d5fca8563dd8f172f39baa054e53
-  :github_stars: 19
+  :sha: f6c64b6ebbb6222e1bf8b961d7d9aa1a11a83503a003caf3e46d00dd62f78ceb
+  :github_stars: 34
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 6
-  :github_contributors: 2
+  :github_issues: 2
+  :github_forks: 8
+  :github_contributors: 0
 fastlane-plugin-localize:
   :initial_commit: 2018-02-19
   :age_in_days: 162
@@ -7959,7 +7964,7 @@ fastlane-plugin-fir_cli:
   :github_contributors: 0
 fastlane-plugin-xcresult_to_junit:
   :initial_commit: 2019-11-12
-  :age_in_days: 162
+  :age_in_days: 342
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7969,11 +7974,11 @@ fastlane-plugin-xcresult_to_junit:
     description: Produces junit xml files from Xcode 11+ xcresult files
     details: By using the xcresulttool this plugin parses xcresult files and generates
       junit reports to be used with other tools to display iOS test results
-  :sha: cb6ae9ff8c1229f6a235a96aeb1102a09f0776bfce2975c37fb45c5b5b3010b9
-  :github_stars: 5
+  :sha: 3382aa8322b9100d0700fd56d2ed765d32e3802990ec758b64a3f850e07552b3
+  :github_stars: 7
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 0
+  :github_issues: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-alioss:
   :initial_commit: 2019-11-27
@@ -8098,7 +8103,7 @@ fastlane-plugin-repack_ios:
   :github_contributors: 0
 fastlane-plugin-bundletool:
   :initial_commit: 2019-12-08
-  :age_in_days: 178
+  :age_in_days: 316
   :readme_score: 100
   :tests: 4
   :actions:
@@ -8108,11 +8113,11 @@ fastlane-plugin-bundletool:
     description: Extracts an universal apk from an .aab file
     details: Using the google oficial bundletool to extract an universal apk from
       .aab file to distribute it
-  :sha: 7164ca060326a65488a6e6844472c7c1957c01b2763e6b9731a9ef587523ca8f
-  :github_stars: 6
+  :sha: d18081c1325d56781366ad5e28f816f7e58589b6f23739e13efd3616f046717c
+  :github_stars: 9
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-bitwarden:
   :initial_commit: 2019-12-12
@@ -8148,7 +8153,7 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 303
+  :age_in_days: 310
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8167,10 +8172,10 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
-  :sha: c90055a14b7a606f7cc1073ff2b0b49b2659a9bbeca7a6537d5d17c49a682526
-  :github_stars: 13
+  :sha: e32e2fe6e87df50b62303e24655f7f2297a977be19affd67258ccb2e850804aa
+  :github_stars: 15
   :github_subscribers: 2
-  :github_issues: 1
+  :github_issues: 0
   :github_forks: 10
   :github_contributors: 0
 fastlane-plugin-xcode_tools_select:
@@ -8917,16 +8922,16 @@ fastlane-plugin-appsigner:
   :github_contributors: 0
 fastlane-plugin-mackerel_api:
   :initial_commit: 2020-04-29
-  :age_in_days: 13
+  :age_in_days: 173
   :readme_score: 100
-  :tests: 12
+  :tests: 13
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: mackerel_api
     category: source_control
     description: Call a Mackerel API endpoint and get the resulting JSON response
     details: "\\n"
-  :sha: 9acab4eed5234ba24f5835f4d2e6df43bcdbf6d2de9101ed402de15c4e6e1e52
+  :sha: 814a3417f83fe0efd2c47d29a17a84b6b314596b4a60b4555362839c5fdd5e4c
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
