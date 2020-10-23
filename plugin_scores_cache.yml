@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1092
+  :age_in_days: 1096
   :readme_score: 100
   :tests: 321
   :actions:
@@ -1083,10 +1083,10 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: 49fe6caf8d790441553e0b58fe087022b8eb41db543ed0de48d39a7ed9a1b5e5
-  :github_stars: 179
+  :sha: e297cb7e4c65f3fc60c8608cb7ebe247efdab3cee0676487801dc039eb856bb4
+  :github_stars: 181
   :github_subscribers: 10
-  :github_issues: 11
+  :github_issues: 12
   :github_forks: 36
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
@@ -7040,7 +7040,7 @@ fastlane-plugin-testin:
   :github_contributors: 2
 fastlane-plugin-airwatch_workspaceone:
   :initial_commit: 2019-05-30
-  :age_in_days: 475
+  :age_in_days: 512
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7080,6 +7080,15 @@ fastlane-plugin-airwatch_workspaceone:
     details: delete_specific_version - To delete specific version of an application
       on the AirWatch/Workspace ONE console.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: latest_version
+    category:
+    description: The main purpose of this action is to find the version number of
+      the latest version of the app on the console and output the same. It also finds
+      and outputs arrays of active app version numbers and retired app version numbers
+      of the app.
+    details: latest_version - To find the version number of the latest version of
+      the app on the Workspace One console.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: deploy_build
     category:
     description: The main purpose of this action is to upload an IPA or an APK file
@@ -7109,9 +7118,9 @@ fastlane-plugin-airwatch_workspaceone:
       of an application.
     details: unretire_all_versions - To unretire all retired versions of an application
       on the AirWatch/Workspace ONE console.
-  :sha: 151c99cc97d0c4df5e35842358c2962290919469f1c2e2e48a560213f9d4b291
+  :sha: 4455808e21a394de784b0d69875884d49f86c6e58d78e8423a2f78ff2a7d95c9
   :github_stars: 6
-  :github_subscribers: 1
+  :github_subscribers: 2
   :github_issues: 0
   :github_forks: 5
   :github_contributors: 0
@@ -7134,7 +7143,7 @@ fastlane-plugin-react_native_util:
   :github_contributors: 0
 fastlane-plugin-get_application_id_flavor:
   :initial_commit: 2017-11-18
-  :age_in_days: 761
+  :age_in_days: 1070
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7145,11 +7154,11 @@ fastlane-plugin-get_application_id_flavor:
     details: Get the applicationId of an Android project. This action will return
       the applicationId of your project according to the one set in your build.gradle
       file.
-  :sha: ec934f293c2c451b27614d40656d62c6fce5c3649bcf6619c1a10be7dca920e9
+  :sha: 87b7c88e2b03459a8757b1c7bcf4bf6a41e68d73f31e4194a9b6b8ad4bff8408
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
-  :github_forks: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-kuhverij:
   :initial_commit: 2019-06-01
