@@ -281,6 +281,7 @@ Key | Description | Default
   `skip_slack` | Don't publish to slack, even when an URL is given | `false`
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
   `destination` | Use only if you're a pro, use the other options instead | 
+  `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
