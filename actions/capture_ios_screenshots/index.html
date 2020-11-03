@@ -1543,6 +1543,8 @@ launch_arguments([
 ])
 </code></pre>
 
+<h2 id="xcode-environment-variables"><a name="user-content-xcode-environment-variables" href="#xcode-environment-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode Environment Variables</h2>
+<p><em>snapshot</em> includes <code>FASTLANE_SNAPSHOT=YES</code> and <code>FASTLANE_LANGUAGE=&lt;language&gt;</code> as arguments when executing <code>xcodebuild</code>. This means you may use these environment variables in a custom build phase run script to do any additional configuration.</p>
 <h1 id="how-does-it-work"><a name="user-content-how-does-it-work" href="#how-does-it-work" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How does it work?</h1>
 <p>The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So <em>snapshot</em> uses a different approach:</p>
 <p>When you run unit tests in Xcode, the reporter generates a plist file, documenting all events that occurred during the tests (<a href="http://michele.io/test-logs-in-xcode">More Information</a>). Additionally, Xcode generates screenshots before, during and after each of these events. There is no way to manually trigger a screenshot event. The screenshots and the plist files are stored in the DerivedData directory, which <em>snapshot</em> stores in a temporary folder.</p>
