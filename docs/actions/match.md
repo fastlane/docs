@@ -626,7 +626,7 @@ Key | Description | Default
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
   `skip_provisioning_profiles` | Skip syncing provisioning profiles | `false`
-  `app_identifier` | The bundle identifier(s) of your app (comma-separated) | [*](#parameters-legend-dynamic)
+  `app_identifier` | The bundle identifier(s) of your app (comma-separated string or array of strings) | [*](#parameters-legend-dynamic)
   `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
   `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)

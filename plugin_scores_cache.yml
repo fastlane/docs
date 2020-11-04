@@ -273,9 +273,9 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1258
+  :age_in_days: 1615
   :readme_score: 100
-  :tests: 34
+  :tests: 30
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_dsym
@@ -312,12 +312,12 @@ fastlane-plugin-sentry:
     category:
     description: Create new releases for a project on Sentry
     details: " "
-  :sha: 5b4864feebaec3423f0456b1a40b1ace94679bbd1a1ab45ac46cf3ad8dc3bf16
-  :github_stars: 41
-  :github_subscribers: 7
-  :github_issues: 9
-  :github_forks: 24
-  :github_contributors: 10
+  :sha: 033b4a98bdabf8722898bb1bd613545cc8ee6764ea24fd54f17f99df7955e5be
+  :github_stars: 61
+  :github_subscribers: 17
+  :github_issues: 14
+  :github_forks: 31
+  :github_contributors: 13
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -417,25 +417,25 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 1463
+  :age_in_days: 1484
   :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: aws_device_farm
     category:
-    description:
-    details:
+    description: Upload the application to the AWS device farm
+    details: Upload the application to the AWS device farm
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: aws_device_farm_package
     category:
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: eb3f92c684a298e71770313612e12ea512da0867014616e401656dfd42d860d7
-  :github_stars: 79
+  :sha: 96545f6576190e4c1861b4f2225dce8ca8aac34dc31c6df0f2c3d76abacf7d40
+  :github_stars: 80
   :github_subscribers: 5
-  :github_issues: 4
-  :github_forks: 32
+  :github_issues: 5
+  :github_forks: 34
   :github_contributors: 0
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
@@ -762,7 +762,7 @@ fastlane-plugin-unzip:
   :github_contributors: 1
 fastlane-plugin-cordova:
   :initial_commit: 2016-12-10
-  :age_in_days: 1302
+  :age_in_days: 1423
   :readme_score: 100
   :tests: 0
   :actions:
@@ -771,12 +771,12 @@ fastlane-plugin-cordova:
     category: building
     description: Build your Cordova app
     details: Easily integrate your cordova build into a Fastlane setup
-  :sha: a1532510b37d750b9c4f362faa220f3851fed5862f9449a3a198babfca351391
-  :github_stars: 102
-  :github_subscribers: 8
-  :github_issues: 17
+  :sha: 9f5a79c5334ec16122d0b2e16631f16afc5e21059ed78312de2fca1ed8e867e1
+  :github_stars: 108
+  :github_subscribers: 7
+  :github_issues: 19
   :github_forks: 31
-  :github_contributors: 0
+  :github_contributors: 12
 fastlane-plugin-clubmate:
   :initial_commit: 2016-05-30
   :age_in_days: 636
@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1092
+  :age_in_days: 1096
   :readme_score: 100
   :tests: 321
   :actions:
@@ -1083,10 +1083,10 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: 49fe6caf8d790441553e0b58fe087022b8eb41db543ed0de48d39a7ed9a1b5e5
-  :github_stars: 179
+  :sha: e297cb7e4c65f3fc60c8608cb7ebe247efdab3cee0676487801dc039eb856bb4
+  :github_stars: 181
   :github_subscribers: 10
-  :github_issues: 11
+  :github_issues: 12
   :github_forks: 36
   :github_contributors: 0
 fastlane-plugin-goodify_info_plist:
@@ -1601,7 +1601,7 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 1253
+  :age_in_days: 1274
   :readme_score: 100
   :tests: 114
   :actions:
@@ -1625,12 +1625,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 41d707918c5fc0db2848d977df7e39811a95c2857a1cebcf68a9b415d4f91a15
-  :github_stars: 354
-  :github_subscribers: 22
+  :sha: 0be409829b0bc14cde09cca46eb01a9be49bdbe1c25a5ec9dccad94b7e808922
+  :github_stars: 357
+  :github_subscribers: 21
   :github_issues: 34
-  :github_forks: 93
-  :github_contributors: 41
+  :github_forks: 94
+  :github_contributors: 42
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -7040,7 +7040,7 @@ fastlane-plugin-testin:
   :github_contributors: 2
 fastlane-plugin-airwatch_workspaceone:
   :initial_commit: 2019-05-30
-  :age_in_days: 475
+  :age_in_days: 512
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7080,6 +7080,15 @@ fastlane-plugin-airwatch_workspaceone:
     details: delete_specific_version - To delete specific version of an application
       on the AirWatch/Workspace ONE console.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: latest_version
+    category:
+    description: The main purpose of this action is to find the version number of
+      the latest version of the app on the console and output the same. It also finds
+      and outputs arrays of active app version numbers and retired app version numbers
+      of the app.
+    details: latest_version - To find the version number of the latest version of
+      the app on the Workspace One console.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: deploy_build
     category:
     description: The main purpose of this action is to upload an IPA or an APK file
@@ -7109,9 +7118,9 @@ fastlane-plugin-airwatch_workspaceone:
       of an application.
     details: unretire_all_versions - To unretire all retired versions of an application
       on the AirWatch/Workspace ONE console.
-  :sha: 151c99cc97d0c4df5e35842358c2962290919469f1c2e2e48a560213f9d4b291
+  :sha: 4455808e21a394de784b0d69875884d49f86c6e58d78e8423a2f78ff2a7d95c9
   :github_stars: 6
-  :github_subscribers: 1
+  :github_subscribers: 2
   :github_issues: 0
   :github_forks: 5
   :github_contributors: 0
@@ -7134,7 +7143,7 @@ fastlane-plugin-react_native_util:
   :github_contributors: 0
 fastlane-plugin-get_application_id_flavor:
   :initial_commit: 2017-11-18
-  :age_in_days: 761
+  :age_in_days: 1070
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7145,11 +7154,11 @@ fastlane-plugin-get_application_id_flavor:
     details: Get the applicationId of an Android project. This action will return
       the applicationId of your project according to the one set in your build.gradle
       file.
-  :sha: ec934f293c2c451b27614d40656d62c6fce5c3649bcf6619c1a10be7dca920e9
+  :sha: 87b7c88e2b03459a8757b1c7bcf4bf6a41e68d73f31e4194a9b6b8ad4bff8408
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
-  :github_forks: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-kuhverij:
   :initial_commit: 2019-06-01
@@ -7982,7 +7991,7 @@ fastlane-plugin-xcresult_to_junit:
   :github_contributors: 0
 fastlane-plugin-alioss:
   :initial_commit: 2019-11-27
-  :age_in_days: 147
+  :age_in_days: 341
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7991,10 +8000,10 @@ fastlane-plugin-alioss:
     category:
     description:
     details:
-  :sha: 1451646bcf720a2879249223ddaa293e9cc7683c18fc4675d5a68fd8bb275652
-  :github_stars: 3
+  :sha: adbda93c81bd5cc91e46f9b15b5980dc89ca23b88df62db42cde903c589c84a2
+  :github_stars: 4
   :github_subscribers: 1
-  :github_issues: 2
+  :github_issues: 6
   :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-gitlab_release:
@@ -8153,7 +8162,7 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 310
+  :age_in_days: 324
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8172,11 +8181,11 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
-  :sha: e32e2fe6e87df50b62303e24655f7f2297a977be19affd67258ccb2e850804aa
-  :github_stars: 15
+  :sha: a7132b49e3cc1927509a7935139cc3fe8b66de4d4dfb595337ac58f8b7d7b9f1
+  :github_stars: 16
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 10
+  :github_forks: 11
   :github_contributors: 0
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
@@ -9899,4 +9908,39 @@ fastlane-plugin-microsft_teams_message_card:
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-unsetinfoplistvalue:
+  :initial_commit: 2020-10-26
+  :age_in_days: 7
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: unset_info_plist_value
+    category: project
+    description: Unsets value to Info.plist of your project as native Ruby data structures
+    details:
+  :sha: 12bba6db2ce49a6bb512fb3dea6d9be3adc0efde6fbf7a17ceb02e9cb7318d0a
+  :github_stars: 0
+  :github_subscribers: 4
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-import_from_url:
+  :initial_commit: 2020-11-01
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: import_from_url
+    category:
+    description: Import another Fastfile from given url to use its lanes
+    details: This is useful if you have shared lanes across multiple apps and you
+      want to store a Fastfile in a url
+  :sha: 23dda88b83e04de28b279e776b021f7f13a986d3a5618cb4953847e1a2716910
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 1
   :github_contributors: 0
