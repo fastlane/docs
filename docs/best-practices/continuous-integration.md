@@ -47,7 +47,7 @@ Note: [Apple announced that as of February 27th 2019](https://developer.apple.co
 
 When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.
 
-The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`, which should be valid for about one month.
+The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. Validity can greatly vary (anything between 1 day and 1 month) and is not within `fastlane`'s domain and up to Apple.
 
 #### Use of application specific passwords and `spaceauth`
 
