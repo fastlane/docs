@@ -51,6 +51,7 @@ spm(
 Key | Description | Default
 ----|-------------|--------
   `command` | The swift command (one of: build, test, clean, reset, update, resolve, generate-xcodeproj, init) | `build`
+  `enable_code_coverage` | Enables code coverage for the generated Xcode project when using the generate-xcodeproj command | 
   `build_path` | Specify build/cache directory [default: ./.build] | 
   `package_path` | Change working directory before any other operation | 
   `xcconfig` | Use xcconfig file to override swift package generate-xcodeproj defaults | 
