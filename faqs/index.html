@@ -1382,8 +1382,11 @@ end
 Ex: <code>fastlane build --env app1,env1,env2</code> will use <code>.env.app1</code> <code>.env.env1</code> and <code>.env.env2</code></p>
 <p>More on the <code>.env</code> file can be found <a href="https://github.com/bkeepers/dotenv">here</a>.</p>
 <h3 id="disable-colored-output"><a name="user-content-disable-colored-output" href="#disable-colored-output" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Disable colored output</h3>
-<p>Set the <code>FASTLANE_DISABLE_COLORS</code> environment variable to disable ANSI colors (e.g. for CI machines)</p>
+<p>Set the <code>FASTLANE_DISABLE_COLORS</code> or  the <code>NO_COLOR</code> environment variable to disable ANSI colors (e.g. for CI machines)</p>
 <pre><code class="no-highlight">export FASTLANE_DISABLE_COLORS=1
+</code></pre>
+
+<pre><code class="no-highlight">export NO_COLOR=1
 </code></pre>
 
 <h3 id="enable-tab-auto-complete-for-fastlane-lane-names"><a name="user-content-enable-tab-auto-complete-for-fastlane-lane-names" href="#enable-tab-auto-complete-for-fastlane-lane-names" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Enable tab auto complete for fastlane lane names</h3>
