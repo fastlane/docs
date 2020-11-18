@@ -96,10 +96,14 @@ More on the `.env` file can be found [here](https://github.com/bkeepers/dotenv).
 
 ### Disable colored output
 
-Set the `FASTLANE_DISABLE_COLORS` environment variable to disable ANSI colors (e.g. for CI machines)
+Set the `FASTLANE_DISABLE_COLORS` or  the `NO_COLOR` environment variable to disable ANSI colors (e.g. for CI machines)
 
 ```no-highlight
 export FASTLANE_DISABLE_COLORS=1
+```
+
+```no-highlight
+export NO_COLOR=1
 ```
 
 ### Enable tab auto complete for fastlane lane names
