@@ -4392,8 +4392,8 @@ fastlane-plugin-run_tests_firebase_testlab:
   :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2018-02-12
-  :age_in_days: 577
-  :readme_score: 50
+  :age_in_days: 1011
+  :readme_score: 100
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
@@ -4401,8 +4401,8 @@ fastlane-plugin-instabug_official:
     category: 
     description: 
     details: 
-  :sha: 32601174997c925d45328ec4af1501d5472e0f6b37439b179e5a2ca1783304e4
-  :github_stars: 1
+  :sha: 1082f0573b82913b0148fdf2a4e341a419ab06259f030b16cd41716b00b49f51
+  :github_stars: 3
   :github_subscribers: 3
   :github_issues: 1
   :github_forks: 2
@@ -8243,54 +8243,25 @@ fastlane-plugin-aws_sns_topic:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-android_version_manager:
-  :github_stars: 2
+  :github_stars: 3
   :github_subscribers: 2
   :github_issues: 2
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
   :initial_commit: 2019-10-10
-  :age_in_days: 336
+  :age_in_days: 406
   :readme_score: 100
-  :tests: 34
+  :tests: 64
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: android_get_value_from_build
+    name: android_base
     category: 
     description: 
     details: 
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: android_increment_version_name
-    category: project
-    description: Increments the version name of the android project
-    details: Based on the provided params, increments the version name and returns
-      their new value
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: android_increment_version_code
-    category: project
-    description: Increments the version code of the android project
-    details: Based on the provided params, increments the version code and returns
-      their new value
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: android_version_manager
-    category: 
-    description: Android's App Version Managment
-    details: 
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: android_get_version_code
-    category: project
-    description: Returns the version code of the android project
-    details: Based on the provided params, returns the value of the version code of
-      the build.gradle file as a number
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: android_get_version_name
-    category: project
-    description: Returns the version name of the android project
-    details: Based on the provided params, returns the value of the version name of
-      the build.gradle file as a string
-  :sha: 924ba9ae06f1a116428c21b7d30a22bb8a0a1179382aa1e4fd740bccc6b41753
+  :sha: bdbf53d73fa69e05be6293870f8184d78914d6892b4da1f43469a7b5722b9844
 fastlane-plugin-find_firebase_app_id:
   :initial_commit: 2019-12-16
-  :age_in_days: 3
+  :age_in_days: 339
   :readme_score: 100
   :tests: 4
   :actions:
@@ -8303,12 +8274,12 @@ fastlane-plugin-find_firebase_app_id:
       more than one apps. In this case the Firebase App IDs are not static and you
       require to find it from firebase configuration file to pass value to `firebase_app_distribution`
       plugin.
-  :sha: c7d3a366ac89746adaa8f2c7858a3faaf52c6b905f7690e565b62c6b1b050450
-  :github_stars: 3
+  :sha: b526304bda85a710188a4c02e96a6b433ae28a2e88922bd1ff4a033244dfb7e9
+  :github_stars: 4
   :github_subscribers: 1
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 1
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-apphoster:
   :initial_commit: 2019-12-20
   :age_in_days: 10
@@ -9944,3 +9915,21 @@ fastlane-plugin-import_from_url:
   :github_issues: 0
   :github_forks: 1
   :github_contributors: 0
+fastlane-plugin-unity:
+  :initial_commit: 2020-10-25
+  :age_in_days: 25
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: unity
+    category: 
+    description: Fastlane plugin for Unity
+    details: Fastlane plugin for Unity. Easily run Unity to build, test and execute
+      method from fastlane.
+  :sha: f09e1a7acd337bd9b6c7087a94feb7a937f8701d67e0cf1b0289200e0cf16ea7
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1

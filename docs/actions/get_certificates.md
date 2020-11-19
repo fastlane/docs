@@ -145,7 +145,7 @@ Key | Description | Default
   `filename` | The filename of certificate to store | 
   `output_path` | The path to a directory in which all certificates and private keys should be stored | `.`
   `keychain_path` | Path to a custom keychain | [*](#parameters-legend-dynamic)
-  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
+  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `platform` | Set the provisioning profile's platform (ios, macos) | `ios`
 
