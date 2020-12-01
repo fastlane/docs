@@ -621,7 +621,7 @@ match   # alias for "sync_code_signing"
 
 Key | Description | Default
 ----|-------------|--------
-  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id | `development`
+  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution | `development`
   `additional_cert_types` | Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer) | 
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
@@ -651,7 +651,7 @@ Key | Description | Default
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
-  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
+  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`

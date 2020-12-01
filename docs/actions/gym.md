@@ -351,6 +351,7 @@ Key | Description | Default
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

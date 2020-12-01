@@ -39,6 +39,7 @@ Key | Description | Default
   `version` | The version number of the version of Xcode to install | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your team if you're in multiple teams | [*](#parameters-legend-dynamic)
+  `download_retry_attempts` | Number of times the download will be retried in case of failure | `3`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

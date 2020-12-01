@@ -248,7 +248,7 @@ Key | Description | Default
   `version_code` | Version code (used when updating rollout or promoting specific versions) | [*](#parameters-legend-dynamic)
   `release_status` | Release status (used when uploading new apks/aabs) - valid values are completed, draft, halted, inProgress | [*](#parameters-legend-dynamic)
   `track` | The track of the application to use. The default available tracks are: production, beta, alpha, internal | `production`
-  `rollout` | The percentage of the user fraction when uploading to the rollout track | 
+  `rollout` | The percentage of the user fraction when uploading to the rollout track (setting to 1 will complete the rollout) | 
   `metadata_path` | Path to the directory containing the metadata files | [*](#parameters-legend-dynamic)
   `key` | **DEPRECATED!** Use `--json_key` instead - The p12 File used to authenticate with Google | [*](#parameters-legend-dynamic)
   `issuer` | **DEPRECATED!** Use `--json_key` instead - The issuer of the p12 file (email address of the service account) | [*](#parameters-legend-dynamic)
