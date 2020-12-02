@@ -285,6 +285,7 @@ Key | Description | Default
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
