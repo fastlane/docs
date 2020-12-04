@@ -246,6 +246,7 @@ pages:
   - update_project_team: actions/update_project_team.md
   - update_urban_airship_configuration: actions/update_urban_airship_configuration.md
   - update_url_schemes: actions/update_url_schemes.md
+  - upload_app_privacy_details_to_app_store: actions/upload_app_privacy_details_to_app_store.md
   - upload_symbols_to_crashlytics: actions/upload_symbols_to_crashlytics.md
   - upload_symbols_to_sentry: actions/upload_symbols_to_sentry.md
   - upload_to_app_store: actions/upload_to_app_store.md
