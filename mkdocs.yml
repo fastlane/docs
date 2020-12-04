@@ -271,7 +271,9 @@ pages:
   - xctool: actions/xctool.md
   - xcversion: actions/xcversion.md
   - zip: actions/zip.md
-- Using App Store Connect API: app-store-connect-api.md
+- Apple:
+  - Using App Store Connect API: app-store-connect-api.md
+  - Uploading App Privacy Details: uploading-app-privacy-details.md
 - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
