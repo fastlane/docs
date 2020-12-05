@@ -53,6 +53,14 @@ upload_app_privacy_details_to_app_store(
 )
 ```
 
+or in `Fastfile.swift`...
+
+```swift
+uploadAppPrivacyDetailsToAppStore(username: "your@email.com",
+                                  appIdentifier: "com.your.bundle",
+                                  teamName: "Your Team")
+```
+
 ### Option 2: Answer and Upload Separate
 
 If you do not want to upload the app privacy details to App Store Connect right away, `skip_upload:true` can be passed to the action. This will prompt you with the interactive questions and save the JSON configuration file but that is it.
@@ -82,6 +90,15 @@ upload_app_privacy_details_to_app_store(
 )
 ```
 
+or in `Fastfile.swift`...
+
+```swift
+uploadAppPrivacyDetailsToAppStore(username: "your@email.com",
+                                  appIdentifier: "com.your.bundle",
+                                  teamName: "Your Team",
+                                  skipUpload: true)
+```
+
 <img src="/img/app-privacy-details-action-questions.png"/>
 
 #### Step 2: Uploading
@@ -105,6 +122,15 @@ upload_app_privacy_details_to_app_store(
   app_identifier: "com.your.bundle",
   json_path: "fastlane/app_privacy_details.json"
 )
+```
+
+or in `Fastfile.swift`...
+
+```swift
+uploadAppPrivacyDetailsToAppStore(username: "your@email.com",
+                                  appIdentifier: "com.your.bundle",
+                                  teamName: "Your Team",
+                                  jsonPath: "fastlane/app_privacy_details.json")
 ```
 
 <img src="/img/app-privacy-details-action-upload.png"/>
