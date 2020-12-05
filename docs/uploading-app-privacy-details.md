@@ -9,13 +9,13 @@ An example would be:
 - Contact Info - Name
   - Purposes:
     - Product Personalization
-    - App Functionality 
+    - App Functionality
   - Data Protections
     - Data linked to user
-    - Data used to track user 
+    - Data used to track user
 - Financial Info - Credit Card
   - Purposes:
-    - App Functionality 
+    - App Functionality
   - Data Protections
     - Data not linked to user
 
