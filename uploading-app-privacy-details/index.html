@@ -1356,25 +1356,25 @@
               
                 <h1 id="uploading-app-privacy-details"><a name="user-content-uploading-app-privacy-details" href="#uploading-app-privacy-details" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading App Privacy Details</h1>
 <h2 id="introduction"><a name="user-content-introduction" href="#introduction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Introduction</h2>
-<p>Apple <a href="https://developer.apple.com/app-store/app-privacy-details/">announced</a> that has of December 8, 2020, that the App Store would start displaying detailed information about an app's privacy practices. App Store Connect will ask developers a series of questions on how privacy is respected over an array of categories. A category then allows for a selection of multiple purposes. After the purposes are selected, there are then questions on how the data is selected.</p>
+<p>Apple <a href="https://developer.apple.com/app-store/app-privacy-details/">announced</a> that as of December 8, 2020, the App Store would start displaying detailed information about an app's privacy practices. App Store Connect will ask developers a series of questions on how privacy is respected over an array of categories. A category then allows for a selection of multiple purposes. After the purposes are selected, there are then questions on how the data is selected.</p>
 <p>An example would be:</p>
 <ul>
 <li>Contact Info - Name<ul>
 <li>Purposes:<ul>
 <li>Product Personalization</li>
-<li>App Functionality </li>
+<li>App Functionality</li>
 </ul>
 </li>
 <li>Data Protections<ul>
 <li>Data linked to user</li>
-<li>Data used to track user </li>
+<li>Data used to track user</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Financial Info - Credit Card<ul>
 <li>Purposes:<ul>
-<li>App Functionality </li>
+<li>App Functionality</li>
 </ul>
 </li>
 <li>Data Protections<ul>
@@ -1386,7 +1386,7 @@
 </ul>
 <p><img src="/img/app-privacy-details-app-store-connect.png"></p>
 <h2 id="uploading-app-privacy-details-with-fastlane"><a name="user-content-uploading-app-privacy-details-with-fastlane" href="#uploading-app-privacy-details-with-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading App Privacy Details with <em>fastlane</em></h2>
-<p><em>fastlane</em> has the ability to upload your app's app privacy details with the <code>upload_app_privacy_details_to_app_store</code> action. This action has two steps. The first is an answering an interactive questionaire (similar to what App Store Connect dashboard offers) and saving the answers to a JSON config file. The second is the upload of the app privacy answers to App Store Connect.</p>
+<p><em>fastlane</em> has the ability to upload your app's app privacy details with the <code>upload_app_privacy_details_to_app_store</code> action. This action has two steps. The first is answering an interactive questionnaire (similar to what App Store Connect dashboard offers) and saving the answers to a JSON config file. The second is the upload of the app privacy answers to App Store Connect.</p>
 <p>The action outputs a JSON config file to <code>fastlane/app_privacy_details.json</code> (by default) which will save your configuration. This JSON file is output so the answers can be saved in source control, reviewed by you or team members, and used for other apps. The JSON file can then be used again by this action (with the <code>json_path</code> option) to skip the interactive questions.</p>
 <p>These two steps can be done together or separate.</p>
 <h3 id="option-1-answer-and-upload-together"><a name="user-content-option-1-answer-and-upload-together" href="#option-1-answer-and-upload-together" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Option 1: Answer and Upload Together</h3>
@@ -1404,6 +1404,12 @@
   team_name: &quot;Your Team&quot;,
   app_identifier: &quot;com.your.bundle&quot;
 )
+</code></pre>
+
+<p>or in <code>Fastfile.swift</code>...</p>
+<pre><code class="swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
+                                  appIdentifier: &quot;com.your.bundle&quot;,
+                                  teamName: &quot;Your Team&quot;)
 </code></pre>
 
 <h3 id="option-2-answer-and-upload-separate"><a name="user-content-option-2-answer-and-upload-separate" href="#option-2-answer-and-upload-separate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Option 2: Answer and Upload Separate</h3>
@@ -1427,6 +1433,13 @@
 )
 </code></pre>
 
+<p>or in <code>Fastfile.swift</code>...</p>
+<pre><code class="swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
+                                  appIdentifier: &quot;com.your.bundle&quot;,
+                                  teamName: &quot;Your Team&quot;,
+                                  skipUpload: true)
+</code></pre>
+
 <p><img src="/img/app-privacy-details-action-questions.png"/></p>
 <h4 id="step-2-uploading"><a name="user-content-step-2-uploading" href="#step-2-uploading" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2: Uploading</h4>
 <p>In CLI...</p>
@@ -1444,6 +1457,13 @@
   app_identifier: &quot;com.your.bundle&quot;,
   json_path: &quot;fastlane/app_privacy_details.json&quot;
 )
+</code></pre>
+
+<p>or in <code>Fastfile.swift</code>...</p>
+<pre><code class="swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
+                                  appIdentifier: &quot;com.your.bundle&quot;,
+                                  teamName: &quot;Your Team&quot;,
+                                  jsonPath: &quot;fastlane/app_privacy_details.json&quot;)
 </code></pre>
 
 <p><img src="/img/app-privacy-details-action-upload.png"/></p>
@@ -1489,7 +1509,7 @@
 </code></pre>
 
 <h2 id="data-values"><a name="user-content-data-values" href="#data-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Data Values</h2>
-<p>These are the values you will see in your JSON configuration file. You won't need to ever manually enter these values in your JSON configuration file (as this is what the interactive questionaire will output for you).</p>
+<p>These are the values you will see in your JSON configuration file. You won't need to ever manually enter these values in your JSON configuration file (as this is what the interactive questionnaire will output for you).</p>
 <h3 id="categories"><a name="user-content-categories" href="#categories" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Categories</h3>
 <ul>
 <li><code>PAYMENT_INFORMATION</code></li>
