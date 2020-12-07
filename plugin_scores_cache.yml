@@ -6995,7 +6995,7 @@ fastlane-plugin-version:
   :github_contributors: 0
 fastlane-plugin-google_chat:
   :initial_commit: 2019-05-16
-  :age_in_days: 14
+  :age_in_days: 568
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7004,12 +7004,12 @@ fastlane-plugin-google_chat:
     category:
     description: Send messages to Google Chat
     details: Send messages to Google Chat rooms
-  :sha: 7955d76452825c1f0e56ec669c096f95ad0f2a33e7d36f1ceb3e7b71a5fb6970
-  :github_stars: 7
+  :sha: effb9621957b414f2ed925cdd46ad99af1018dda125871ed5a239ffaf70d653c
+  :github_stars: 13
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 0
+  :github_forks: 1
+  :github_contributors: 1
 fastlane-plugin-file_manager:
   :initial_commit: 2019-05-02
   :age_in_days: 28
@@ -8316,10 +8316,15 @@ fastlane-plugin-gitter:
   :github_contributors: 0
 fastlane-plugin-debug_file:
   :initial_commit: 2019-12-31
-  :age_in_days: 29
+  :age_in_days: 339
   :readme_score: 100
   :tests: 1
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: list_dsym
+    category: misc
+    description: Find and generate iOS/MacOS dSYM file(s) to zip file
+    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: proguard
     category: misc
@@ -8330,12 +8335,12 @@ fastlane-plugin-debug_file:
     category: misc
     description: Find and generate iOS/MacOS dSYM file(s) to zip file
     details:
-  :sha: 188d0598b6fc6102e8faad732689e278806df1d48cc399d862b087567a65c233
+  :sha: 8285482f795bfdaed553bb55b9ede54a3e68a3d694847ad65df8ba535b10e2c6
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-plural_converter:
   :initial_commit: 2020-01-21
   :age_in_days: 8
@@ -9748,7 +9753,7 @@ fastlane-plugin-android_update_package_identifier:
   :github_contributors: 0
 fastlane-plugin-sunny_project:
   :initial_commit: 2020-09-19
-  :age_in_days: 73
+  :age_in_days: 76
   :readme_score: 50
   :tests: 1
   :actions:
@@ -9756,6 +9761,16 @@ fastlane-plugin-sunny_project:
     name: rename_assets
     category:
     description: Renames assets, generates an assets.dart file to reference them.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: pubspec_doctor
+    category:
+    description: Modify pubspec for local or git development
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sunny_release
+    category:
+    description:
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: increase_version
@@ -9792,7 +9807,7 @@ fastlane-plugin-sunny_project:
     category:
     description: Executes pub publish command
     details:
-  :sha: 4ff8cbb32aace9cb9098079f63f2436b8ad6f444deb59ff1c54d0f9a813c1375
+  :sha: f5d65ed33566ebd44b1b2e8d315bbbd07fb597dcf054983661e7649bf9abc2bc
   :github_stars: 0
   :github_subscribers: 2
   :github_issues: 0
@@ -9940,21 +9955,16 @@ fastlane-plugin-unity:
   :github_contributors: 1
 fastlane-plugin-xambuild:
   :initial_commit: 2020-11-24
-  :age_in_days: 7
+  :age_in_days: 10
   :readme_score: 100
   :tests: 0
   :actions:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: app_version
-    category:
-    description: Easily set or print app version with `app_version`
-    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: xambuild
     category:
     description: Easily build and sign your Xamarin iOS or Android app using `xambuild`
     details:
-  :sha: e614bb524e723fddafac45f6112a18a0663014c847d1071b2d4059c057581c97
+  :sha: ab78482c290b57fd981c01a35b7c58bfa592b8741389f14fd4b85a9f152bd0a8
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -9977,6 +9987,24 @@ fastlane-plugin-write_changelog_from_commits:
       in the changelogs directory that is named after the current version, and write
       the contents of the changelog
   :sha: 434002851d39f0768a47372b14a6f4591ae1e44784eeb24c81a877e0dce54ddb
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xamversion:
+  :initial_commit: 2020-12-03
+  :age_in_days: 1
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xamversion
+    category:
+    description: Read and manipulate Android and iOS app versions.
+    details: Allows you to read, set, increment and interactively bump Android and
+      iOS app versions (following SemVer) and build numbers.
+  :sha: 321ad0e3078e89750f82249f717d107395d9f5302bacb3374db85af974573ca2
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
