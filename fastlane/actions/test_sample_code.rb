@@ -22,7 +22,6 @@ module Fastlane
             rescue SyntaxError => ex
               UI.user_error!("Syntax error in code sample:\n#{current_match}\n#{ex}")
             rescue => ex
-              puts ex.backtrace
               UI.user_error!("Error found in code sample:\n#{current_match}\n#{ex}")
             end
           rescue => ex
