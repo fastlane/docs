@@ -1669,7 +1669,7 @@ gym
 end
 </code></pre>
 
-<p>By using the <code>force_for_new_devices</code> parameter, <em>match</em> will check if the device count has changed since the last time you ran <em>match</em>, and automatically re-generate the provisioning profile if necessary. You can also use <code>force: true</code> to re-generate the provisioning profile on each run.</p>
+<p>By using the <code>force_for_new_devices</code> parameter, <em>match</em> will check if the (enabled) device count has changed since the last time you ran <em>match</em>, and automatically re-generate the provisioning profile if necessary. You can also use <code>force: true</code> to re-generate the provisioning profile on each run.</p>
 <p><em><strong>Important:</strong> The <code>force_for_new_devices</code> parameter is ignored for App Store provisioning profiles since they don't contain any device information.</em></p>
 <p>If you're not using <em>fastlane</em>, you can also use the <code>force_for_new_devices</code> option from the command line:</p>
 <pre><code class="no-highlight">fastlane match adhoc --force_for_new_devices
