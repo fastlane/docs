@@ -10,15 +10,28 @@ source "https://rubygems.org"
 
 gem "fastlane"
 ```
-- Run `[sudo] bundle update` and add both the `./Gemfile` and the `./Gemfile.lock` to version control
+- If you want the gems installed in a folder inside your project instead of globally in the system, so that you can avoid the need for `sudo`, you can run `bundle config set --local path 'vendor/bundle'`
+- Run
+  - Linux/Windows: `[sudo] bundle update`
+  - macOS: `[sudo] xcrun bundle update`
+- Add both the `./Gemfile` and the `./Gemfile.lock` to version control
 - Every time you run _fastlane_, use `bundle exec fastlane [lane]`
-- On your CI, add `[sudo] bundle install` as your first build step
-- To update _fastlane_, just run `[sudo] bundle update fastlane`
+- On your CI, add as your first build step
+  - Linux/Windows: `[sudo] bundle install`
+  - macOS: `[sudo] xcrun bundle install`
+- To update _fastlane_, just run
+  - Linux/Windows: `[sudo] bundle update fastlane`
+  - macOS: `[sudo] xcrun bundle update fastlane`
 
 #### RubyGems (macOS/Linux/Windows)
 
+##### Linux/Windows
 ```sh
 sudo gem install fastlane -NV
+```
+##### macOS
+```sh
+sudo xcrun gem install fastlane -NV
 ```
 
 #### Homebrew (macOS)
