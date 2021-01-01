@@ -56,6 +56,7 @@ Key | Description | Default
   `remote` | The remote to push to | `origin`
   `no_verify` | Whether or not to use --no-verify | `false`
   `set_upstream` | Whether or not to use --set-upstream | `false`
+  `push_options` | Array of strings to be passed using the '--push-option' option | `[]`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

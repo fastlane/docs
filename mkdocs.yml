@@ -95,6 +95,7 @@ pages:
   - deploygate: actions/deploygate.md
   - dotgpg_environment: actions/dotgpg_environment.md
   - download: actions/download.md
+  - download_app_privacy_details_from_app_store: actions/download_app_privacy_details_from_app_store.md
   - download_dsyms: actions/download_dsyms.md
   - download_from_play_store: actions/download_from_play_store.md
   - dsym_zip: actions/dsym_zip.md

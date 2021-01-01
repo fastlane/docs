@@ -60,6 +60,7 @@ Key | Description | Default
   `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | 
   `skip_import_validation` | Lint skips validating that the pod can be imported | 
   `skip_tests` | Lint skips building and running tests during validation | 
+  `use_json` | Convert the podspec to JSON before pushing it to the repo | 
   `verbose` | Show more debugging information | `false`
   `use_modular_headers` | Use modular headers option during validation | 
   `synchronous` | If validation depends on other recently pushed pods, synchronize | 
