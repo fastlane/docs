@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>download_dsyms - fastlane docs</title>
+  <title>download_app_privacy_details_from_app_store - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "download_dsyms";
-    var mkdocs_page_input_path = "actions/download_dsyms.md";
-    var mkdocs_page_url = "/actions/download_dsyms/";
+    var mkdocs_page_name = "download_app_privacy_details_from_app_store";
+    var mkdocs_page_input_path = "actions/download_app_privacy_details_from_app_store.md";
+    var mkdocs_page_url = "/actions/download_app_privacy_details_from_app_store/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1317,14 +1317,14 @@
         
       
     
-    <li>download_dsyms</li>
+    <li>download_app_privacy_details_from_app_store</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/download_dsyms.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/download_app_privacy_details_from_app_store.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1352,57 +1352,46 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/download_dsyms.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/download_app_privacy_details_from_app_store.rb
 -->
 
-<h1 id="download_dsyms"><a name="user-content-download_dsyms" href="#download_dsyms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>download_dsyms</h1>
-<p>Download dSYM files from App Store Connect for Bitcode apps</p>
+<h1 id="download_app_privacy_details_from_app_store"><a name="user-content-download_app_privacy_details_from_app_store" href="#download_app_privacy_details_from_app_store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>download_app_privacy_details_from_app_store</h1>
+<p>Download App Privacy Details from an app in App Store Connect</p>
 <blockquote>
-<p>This action downloads dSYM files from App Store Connect after the ipa gets re-compiled by Apple. Useful if you have Bitcode enabled.</p>
+<p>Download App Privacy Details from an app in App Store Connect. For more detail information, view https://docs.fastlane.tools/uploading-app-privacy-details</p>
 </blockquote>
-<pre><code class="ruby">lane :refresh_dsyms do
-  download_dsyms                  # Download dSYM files from iTC
-  upload_symbols_to_crashlytics   # Upload them to Crashlytics
-  clean_build_artifacts           # Delete the local dSYM files
-end
-</code></pre>
-
-<blockquote></blockquote>
 <table>
 <thead>
 <tr>
-<th>download_dsyms</th>
+<th>download_app_privacy_details_from_app_store</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx</td>
+<td>@igor-makarov</td>
 </tr>
 </tbody>
 </table>
-<h2 id="6-examples"><a name="user-content-6-examples" href="#6-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6 Examples</h2>
-<pre><code class="ruby">download_dsyms
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">download_app_privacy_details_from_app_store(
+  username: &quot;your@email.com&quot;,
+  team_name: &quot;Your Team&quot;,
+  app_identifier: &quot;com.your.bundle&quot;
+)
 </code></pre>
 
-<pre><code class="ruby">download_dsyms(version: &quot;1.0.0&quot;, build_number: &quot;345&quot;)
-</code></pre>
-
-<pre><code class="ruby">download_dsyms(version: &quot;1.0.1&quot;, build_number: 42)
-</code></pre>
-
-<pre><code class="ruby">download_dsyms(version: &quot;live&quot;)
-</code></pre>
-
-<pre><code class="ruby">download_dsyms(min_version: &quot;1.2.3&quot;)
-</code></pre>
-
-<pre><code class="ruby">download_dsyms(after_uploaded_date: &quot;2020-09-11T19:00:00+01:00&quot;)
+<pre><code class="ruby">download_app_privacy_details_from_app_store(
+  username: &quot;your@email.com&quot;,
+  team_name: &quot;Your Team&quot;,
+  app_identifier: &quot;com.your.bundle&quot;,
+  output_json_path: &quot;fastlane/app_data_usages.json&quot;
+)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1436,86 +1425,29 @@ end
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
-<td><code>platform</code></td>
-<td>The app platform for dSYMs you wish to download (ios, appletvos)</td>
-<td><code>:ios</code></td>
-</tr>
-<tr>
-<td><code>version</code></td>
-<td>The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs or 'live' to download only the live version dSYMs</td>
-<td></td>
-</tr>
-<tr>
-<td><code>build_number</code></td>
-<td>The app build_number for dSYMs you wish to download</td>
-<td></td>
-</tr>
-<tr>
-<td><code>min_version</code></td>
-<td>The minimum app version for dSYMs you wish to download</td>
-<td></td>
-</tr>
-<tr>
-<td><code>after_uploaded_date</code></td>
-<td>The uploaded date after which you wish to download dSYMs</td>
-<td></td>
-</tr>
-<tr>
-<td><code>output_directory</code></td>
-<td>Where to save the download dSYMs, defaults to the current path</td>
-<td></td>
-</tr>
-<tr>
-<td><code>wait_for_dsym_processing</code></td>
-<td>Wait for dSYMs to process</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>wait_timeout</code></td>
-<td>Number of seconds to wait for dSYMs to process</td>
-<td><code>300</code></td>
+<td><code>output_json_path</code></td>
+<td>Path to the app usage data JSON file generated by interactive questions</td>
+<td><code>./fastlane/app_privacy_details.json</code></td>
 </tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
-<h2 id="lane-variables"><a name="user-content-lane-variables" href="#lane-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Variables</h2>
-<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>download_dsyms</code> action generates the following Lane Variables:</p>
-<table>
-<thead>
-<tr>
-<th>SharedValue</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SharedValues::DSYM_PATHS</code></td>
-<td>An array to all the zipped dSYM files</td>
-</tr>
-<tr>
-<td><code>SharedValues::DSYM_LATEST_UPLOADED_DATE</code></td>
-<td>Date of the most recent uploaded time of successfully downloaded dSYM files</td>
-</tr>
-</tbody>
-</table>
-<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.
-<hr /></p>
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action download_dsyms
+<pre><code class="no-highlight">fastlane action download_app_privacy_details_from_app_store
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run download_dsyms
+<pre><code class="no-highlight">fastlane run download_app_privacy_details_from_app_store
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run download_dsyms parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run download_app_privacy_details_from_app_store parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1523,7 +1455,7 @@ end
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/download_dsyms.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/download_app_privacy_details_from_app_store.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1534,10 +1466,10 @@ end
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../download_from_play_store/" class="btn btn-neutral float-right" title="download_from_play_store">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../download_dsyms/" class="btn btn-neutral float-right" title="download_dsyms">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../download_app_privacy_details_from_app_store/" class="btn btn-neutral" title="download_app_privacy_details_from_app_store"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../download/" class="btn btn-neutral" title="download"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1579,10 +1511,10 @@ end
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../download_app_privacy_details_from_app_store/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../download/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../download_from_play_store/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../download_dsyms/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

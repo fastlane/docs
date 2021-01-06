@@ -1358,10 +1358,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="add_git_tag"><a name="user-content-add_git_tag" href="#add_git_tag" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>add_git_tag</h1>
 <p>This will add an annotated git tag to the current branch</p>
 <blockquote>
-<p>This will automatically tag your build with the following format: <code>&lt;grouping&gt;/&lt;lane&gt;/&lt;prefix&gt;&lt;build_number&gt;</code>, where:</p>
+<p>This will automatically tag your build with the following format: <code>&lt;grouping&gt;/&lt;lane&gt;/&lt;prefix&gt;&lt;build_number&gt;&lt;postfix&gt;</code>, where:</p>
 <ul>
 <li><code>grouping</code> is just to keep your tags organised under one 'folder', defaults to 'builds'</li>
-<li><code>lane</code> is the name of the current fastlane lane</li>
+<li><code>lane</code> is the name of the current fastlane lane, if chosen to be included via 'includes_lane' option, which defaults to 'true'</li>
 <li><code>prefix</code> is anything you want to stick in front of the version number, e.g. 'v'</li>
 <li><code>postfix</code> is anything you want to stick at the end of the version number, e.g. '-RC1'</li>
 <li><code>build_number</code> is the build number, which defaults to the value emitted by the <code>increment_build_number</code> action</li>
@@ -1392,6 +1392,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <pre><code class="ruby">add_git_tag(
   grouping: &quot;fastlane-builds&quot;,
+  includes_lane: true,
   prefix: &quot;v&quot;,
   postfix: &quot;-RC1&quot;,
   build_number: 123
@@ -1423,6 +1424,11 @@ add_git_tag(
 <td><code>grouping</code></td>
 <td>Is used to keep your tags organised under one 'folder'</td>
 <td><code>builds</code></td>
+</tr>
+<tr>
+<td><code>includes_lane</code></td>
+<td>Whether the current lane should be included in the tag and message composition, e.g. '<grouping>/<lane>/<prefix><build_number><postfix>'</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>prefix</code></td>
