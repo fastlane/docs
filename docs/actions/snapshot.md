@@ -438,7 +438,7 @@ Key | Description | Default
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `erase_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `headless` | Enabling this option will prevent displaying the simulator window | `true`
-  `override_status_bar` | Enabling this option wil automatically override the status bar to show 9:41 AM, full battery, and full reception | `false`
+  `override_status_bar` | Enabling this option will automatically override the status bar to show 9:41 AM, full battery, and full reception | `false`
   `localize_simulator` | Enabling this option will configure the Simulator's system language | `false`
   `dark_mode` | Enabling this option will configure the Simulator to be in dark mode (false for light, true for dark) | 
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)

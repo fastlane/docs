@@ -156,6 +156,7 @@ Key | Description | Default
   `platform` | The platform to use (optional) | `ios`
   `default_rule_level` | The default rule level unless otherwise configured | `:error`
   `include_in_app_purchases` | Should check in-app purchases? | `true`
+  `use_live` | Should force check live app? | `false`
   `negative_apple_sentiment` | mentioning  in a way that could be considered negative | 
   `placeholder_text` | using placeholder text (e.g.:"lorem ipsum", "text here", etc...) | 
   `other_platforms` | mentioning other platforms, like Android or Blackberry | 
