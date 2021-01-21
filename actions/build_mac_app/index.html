@@ -1702,7 +1702,7 @@ archive | xcpretty
 </tr>
 <tr>
 <td><code>export_method</code></td>
-<td>Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id</td>
+<td>Method used to export the archive. Valid values are: app-store, validation, ad-hoc, package, enterprise, development, developer-id and mac-application</td>
 <td></td>
 </tr>
 <tr>
@@ -1849,6 +1849,16 @@ archive | xcpretty
 <td><code>cloned_source_packages_path</code></td>
 <td>Sets a custom path for Swift Package Manager dependencies</td>
 <td></td>
+</tr>
+<tr>
+<td><code>skip_package_dependencies_resolution</code></td>
+<td>Skips resolution of Swift Package Manager dependencies</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>disable_package_automatic_updates</code></td>
+<td>Prevents packages from automatically being resolved to versions other than those recorded in the <code>Package.resolved</code> file</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>use_system_scm</code></td>

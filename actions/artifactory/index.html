@@ -1357,6 +1357,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="artifactory"><a name="user-content-artifactory" href="#artifactory" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>artifactory</h1>
 <p>This action uploads an artifact to artifactory</p>
+<blockquote>
+<p>Connect to the artifactory server using either a username/password or an api_key</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -1375,10 +1378,19 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">artifactory(
   username: &quot;username&quot;,
   password: &quot;password&quot;,
+  endpoint: &quot;https://artifactory.example.com/artifactory/&quot;,
+  file: &quot;example.ipa&quot;,  # File to upload
+  repo: &quot;mobile_artifacts&quot;,       # Artifactory repo
+  repo_path: &quot;/ios/appname/example-major.minor.ipa&quot;   # Path to place the artifact including its filename
+)
+</code></pre>
+
+<pre><code class="ruby">artifactory(
+  api_key: &quot;api_key&quot;,
   endpoint: &quot;https://artifactory.example.com/artifactory/&quot;,
   file: &quot;example.ipa&quot;,  # File to upload
   repo: &quot;mobile_artifacts&quot;,       # Artifactory repo
@@ -1424,6 +1436,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>password</code></td>
 <td>Artifactory password</td>
+<td></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Artifactory API key</td>
 <td></td>
 </tr>
 <tr>
