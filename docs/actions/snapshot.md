@@ -461,11 +461,14 @@ Key | Description | Default
   `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9 | `true`
   `disable_slide_to_type` | Disable the simulator from showing the 'Slide to type' prompt | `false`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
   `disable_xcpretty` | Disable xcpretty formatting of build | 
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

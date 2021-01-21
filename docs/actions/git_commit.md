@@ -50,7 +50,7 @@ Key | Description | Default
   `path` | The file you want to commit | 
   `message` | The commit message that should be used | 
   `skip_git_hooks` | Set to true to pass --no-verify to git | 
-  `allow_nothing_to_commit` | Set to true to allow commit without any git changes | 
+  `allow_nothing_to_commit` | Set to true to allow commit without any git changes in the files you want to commit | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

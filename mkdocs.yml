@@ -87,6 +87,7 @@ pages:
   - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
   - create_pull_request: actions/create_pull_request.md
+  - create_xcframework: actions/create_xcframework.md
   - danger: actions/danger.md
   - debug: actions/debug.md
   - default_platform: actions/default_platform.md
