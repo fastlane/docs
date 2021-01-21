@@ -273,7 +273,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1615
+  :age_in_days: 1695
   :readme_score: 100
   :tests: 30
   :actions:
@@ -312,12 +312,12 @@ fastlane-plugin-sentry:
     category:
     description: Create new releases for a project on Sentry
     details: " "
-  :sha: 033b4a98bdabf8722898bb1bd613545cc8ee6764ea24fd54f17f99df7955e5be
-  :github_stars: 61
-  :github_subscribers: 17
-  :github_issues: 14
+  :sha: 9491d645c080ac3bc02e7e6278b3328d4098c728135d5899403970df2a4443b3
+  :github_stars: 70
+  :github_subscribers: 14
+  :github_issues: 12
   :github_forks: 31
-  :github_contributors: 13
+  :github_contributors: 16
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1166
+  :age_in_days: 1186
   :readme_score: 100
   :tests: 338
   :actions:
@@ -1083,10 +1083,10 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: fc18d74ffb90a54692a784aa4ab7d3214c13da237dfb9d70db1aef82ac279099
-  :github_stars: 192
+  :sha: 3a6b9e7ce47a2d73d0be83dbde159fc0fd0465fde06027d1ccf10263600a7929
+  :github_stars: 198
   :github_subscribers: 11
-  :github_issues: 13
+  :github_issues: 14
   :github_forks: 38
   :github_contributors: 11
 fastlane-plugin-goodify_info_plist:
@@ -3252,7 +3252,7 @@ fastlane-plugin-install_provisioning_profiles:
   :github_contributors: 0
 fastlane-plugin-android_sdk_update:
   :initial_commit: 2017-04-21
-  :age_in_days: 599
+  :age_in_days: 1371
   :readme_score: 100
   :tests: 3
   :actions:
@@ -3261,11 +3261,11 @@ fastlane-plugin-android_sdk_update:
     category:
     description: Install and update required Android-SDK packages
     details: "\\n"
-  :sha: 979103f2b8c6fce53935aa671ac247c2ee6b2664a0fcdad7b4b9a00c5ede1120
-  :github_stars: 5
-  :github_subscribers: 10
+  :sha: da4a277ec74aa7954b55ecc218414c538a75c90003e5466635f2e90a64043d33
+  :github_stars: 10
+  :github_subscribers: 11
   :github_issues: 1
-  :github_forks: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-fir:
   :initial_commit: 2017-11-04
@@ -4613,7 +4613,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 766
+  :age_in_days: 1014
   :readme_score: 100
   :tests: 14
   :actions:
@@ -4630,7 +4630,7 @@ fastlane-plugin-flutter:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_build
     category: building
-    description:
+    description: Run "flutter build" to build a Flutter application
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_generate
@@ -4642,11 +4642,11 @@ fastlane-plugin-flutter:
       and generate .dart files from them.  (4) Generate an empty test importing all
       files, which would be used to calculate correct full coverage numbers."
     details:
-  :sha: fb2e2e42bff3b09f259b12bf35e9245da9a56f7fa4f288d6d1c2f902a9f26d1f
-  :github_stars: 13
+  :sha: 77b853f75e8c419d750091f9cdb3eee9340785f47b71784544a78d3b8671c9fe
+  :github_stars: 19
   :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 3
+  :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
@@ -5014,7 +5014,7 @@ fastlane-plugin-podspec_dependency_versioning:
   :github_contributors: 0
 fastlane-plugin-ipa_info:
   :initial_commit: 2018-06-27
-  :age_in_days: 648
+  :age_in_days: 939
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5023,12 +5023,12 @@ fastlane-plugin-ipa_info:
     category:
     description: Show information of an ipa file.
     details: Show information of an ipa file.
-  :sha: fb64df3b7cfd515892e87fb976bbe023b71a2fc4460e8e7ad434d24f60882a6d
+  :sha: aaa34d0f9c3c66bcaf9d339e2a9c2401dfefbb94b2dea985b54b0af4a3561dbb
   :github_stars: 1
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-slack_upload:
   :initial_commit: 2018-06-12
   :age_in_days: 38
@@ -7592,7 +7592,7 @@ fastlane-plugin-cuttly_api:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery:
   :initial_commit: 2019-08-15
-  :age_in_days: 357
+  :age_in_days: 525
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7602,12 +7602,12 @@ fastlane-plugin-huawei_appgallery:
     description: Plugin to deploy an app to the Huawei AppGallery
     details: Updates the release notes, uploads an APK and submits the new version
       for review.
-  :sha: 71ac06da157859f5497b388b42734e327c80ef3a2184a87e73ab0040948479de
-  :github_stars: 10
+  :sha: 723b59172f60290da19bf25f553a69cb932ac818efcbd3e9584c84a5844575c1
+  :github_stars: 21
   :github_subscribers: 5
   :github_issues: 0
-  :github_forks: 7
-  :github_contributors: 1
+  :github_forks: 11
+  :github_contributors: 2
 fastlane-plugin-souyuz-ventaapps:
   :initial_commit: 2016-05-11
   :age_in_days: 1219
@@ -7831,9 +7831,9 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 438
+  :age_in_days: 539
   :readme_score: 100
-  :tests: 70
+  :tests: 65
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution_login
@@ -7846,12 +7846,12 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: 8756ff9d528d5886833e5146ec1d3b860a0b359f0a1eee38db6cb6792786187b
-  :github_stars: 63
-  :github_subscribers: 9
-  :github_issues: 15
-  :github_forks: 6
-  :github_contributors: 12
+  :sha: 308a65c6cbfcd9134301bdfc4cf69c5a0fcd98e5b23a06a14b9f6ec44d392a7d
+  :github_stars: 73
+  :github_subscribers: 8
+  :github_issues: 14
+  :github_forks: 9
+  :github_contributors: 13
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
   :age_in_days: 49
@@ -7956,7 +7956,7 @@ fastlane-plugin-bugsnag_sourcemaps_upload:
   :github_contributors: 2
 fastlane-plugin-fir_cli:
   :initial_commit: 2019-11-19
-  :age_in_days: 409
+  :age_in_days: 429
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7965,11 +7965,11 @@ fastlane-plugin-fir_cli:
     category:
     description:
     details: 'invoke fir-cli from fastlane plugin directly. \nfir-cli: https://github.com/FIRHQ/fir-cli'
-  :sha: af808b7bfb0aa76a88a50df6eba4dfacb37719ee7777524a0ce08f30f25af590
+  :sha: 23000bdb62751d328490cbe30f863c05c009cd1745e5ba7122f9bb0157f63005
   :github_stars: 27
   :github_subscribers: 3
   :github_issues: 0
-  :github_forks: 3
+  :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-xcresult_to_junit:
   :initial_commit: 2019-11-12
@@ -9194,7 +9194,7 @@ fastlane-plugin-github_action:
   :github_contributors: 0
 fastlane-plugin-slack_bot:
   :initial_commit: 2020-05-27
-  :age_in_days: 35
+  :age_in_days: 239
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9209,12 +9209,17 @@ fastlane-plugin-slack_bot:
     category:
     description: 'List files of any #channel using Slack bot `files.list` api.'
     details:
-  :sha: 1e1a4df107de7dd42ecca1a8f2b92137ce058c798deaa1b26d276029d94da046
-  :github_stars: 0
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: update_slack_message
+    category:
+    description: Update a slack message using time-stamp(ts) value
+    details:
+  :sha: 81e29e821e2ad04dee94428eef5c5da4d95c65e7e33150be9d5b5c3b655f0e93
+  :github_stars: 4
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-try_scan:
   :initial_commit: 2020-06-07
   :age_in_days: 47
@@ -9754,7 +9759,7 @@ fastlane-plugin-android_update_package_identifier:
   :github_contributors: 0
 fastlane-plugin-sunny_project:
   :initial_commit: 2020-09-19
-  :age_in_days: 104
+  :age_in_days: 124
   :readme_score: 50
   :tests: 1
   :actions:
@@ -9777,6 +9782,16 @@ fastlane-plugin-sunny_project:
     name: increase_version
     category:
     description: Increment version number in pubspec.yaml file
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sunny_build_runner
+    category:
+    description: Cleans and runs flutter build_runner
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sunny_build_web
+    category:
+    description: Builds a web project
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: local_packages
@@ -9813,7 +9828,7 @@ fastlane-plugin-sunny_project:
     category:
     description: Executes pub publish command
     details:
-  :sha: b7c41af6467d1aa94dc5bf1ca971d794476cf01f774ffa9185cec4818019003b
+  :sha: b10b0144c39512f500102b5cd904dbd4e2c89052354243d98430ef80eaa130eb
   :github_stars: 0
   :github_subscribers: 2
   :github_issues: 0
@@ -10046,6 +10061,120 @@ fastlane-plugin-emerge:
     details:
   :sha: b3e20f499fd7a93b7f2dc391806dea7ed9e10682def8fb58fafa9da9fe96a617
   :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-jira_link:
+  :initial_commit: 2021-01-09
+  :age_in_days: 12
+  :readme_score: 50
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_link
+    category: misc
+    description: This plugin allows you to link two tickets together in JIRA
+    details: This plugin allows you to link two tickets together in JIRA
+  :sha: 05fc9329a01a9292ec0a44bc79cb481da3039b04a4f4143afe8f123c20cdc5d2
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-unity3d:
+  :initial_commit: 2021-01-05
+  :age_in_days: 16
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: unity3d
+    category: building
+    description: fastlane plugin for unity3d engine
+    details: fastlane for unity3d engine
+  :sha: 9c96d4fc6f6297491ba4c9eac18359879971b429911ef0efa97d55dd2645f8de
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-testbm:
+  :initial_commit: 2021-01-14
+  :age_in_days: 7
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: testbm
+    category:
+    description: A Test plugin
+    details: Just a test plugin
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: salutation
+    category:
+    description: Returns hello world
+    details: Just a test plugin
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bmslack
+    category:
+    description: Sends a message to a Slack chat specified in the SLACK_URL environment
+      variable
+    details:
+  :sha: bfe8f749ed9872de26cc1a49a16c13fb99965ff42c2e40165ec97f81da4374da
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-dingtalk_msg:
+  :initial_commit: 2021-01-08
+  :age_in_days: 13
+  :readme_score: 50
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: dingtalk_msg
+    category:
+    description: dingtalk robot
+    details: 发送消息到钉钉机器人，支持所有的发送模式，ERB模版，加密模式
+  :sha: b0f78e2ae785c2ec4753a129ae34f711257c0174b8ae3176653db3b6872902df
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-teams_bot:
+  :initial_commit: 2021-01-19
+  :age_in_days: 2
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: teams_bot
+    category:
+    description: Easily send a message to a Microsoft Teams channel through the Webhook
+      connector
+    details: Send a message to a specific channel on your Microsoft Teams organization
+  :sha: 9e87687a947269c6c2c86f4bcff089e4fb2208e7aec4c2f74c340efa62a75519
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-aws_device_farm_upload:
+  :initial_commit: 2021-01-09
+  :age_in_days: 12
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: aws_device_farm_upload
+    category:
+    description: Uploads specified file to AWS Device Farm project
+    details: Uploads specified file to AWS Device Farm project
+  :sha: 9fee65bffeace4a9b3c7f6b24a789585366ed0fdd996d040e14fb766c948e059
+  :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
