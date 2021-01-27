@@ -1,4 +1,4 @@
-_fastlane_ can be installed multiple ways. The preferred method is with a `Gemfile`. _fastlane_ can also get installed directly through RubyGems or with Homebrew (if on macOS).
+_fastlane_ can be installed multiple ways. The preferred method is with a `Gemfile.` _fastlane_ can also get installed directly through RubyGems or with Homebrew (if on macOS).
 
 #### A Gemfile (macOS/Linux/Windows)
 
