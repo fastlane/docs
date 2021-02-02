@@ -1,28 +1,47 @@
-_fastlane_ can be installed multiple ways. The preferred method is with a `Gemfile`. _fastlane_ can also get installed directly through RubyGems or with Homebrew (if on macOS).
+_fastlane_ can be installed multiple ways. The preferred method is with _Bundler_. _fastlane_ can also get installed directly through with Homebrew (if on macOS). Technically, you can use macOS's system Ruby but it's not recommended unless you are experienced Ruby developer.
 
-#### A Gemfile (macOS/Linux/Windows)
+#### Managed Ruby environment + Bundler (macOS/Linux/Windows)
 
-It is recommended that you use a `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
+**Ruby**
 
+If you use macOS, please don't use system Ruby when possible. [There is a variety of ways to install Ruby without having to modify your system environment](https://www.ruby-lang.org/en/documentation/installation/#managers). For macOS and Linux, _rbenv_ would be one of the most popular way to manage your Ruby environment.
+
+You can use Ruby 2.4 - 2.7. Verify that you have a current version of Ruby installed:
+
+```sh
+$ ruby --version
+ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]
+```
+
+**Bundler**
+
+It is recommended that you use `bundler` and `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
+
+- Install _bundler_ itself by `gem install bundler`
 - Create a `./Gemfile` in the root directory of your project with the content
 ```ruby
 source "https://rubygems.org"
 
 gem "fastlane"
 ```
-- Run `[sudo] bundle update` and add both the `./Gemfile` and the `./Gemfile.lock` to version control
+- Run `bundle update` and add both the `./Gemfile` and the `./Gemfile.lock` to version control
 - Every time you run _fastlane_, use `bundle exec fastlane [lane]`
-- On your CI, add `[sudo] bundle install` as your first build step
-- To update _fastlane_, just run `[sudo] bundle update fastlane`
-
-#### RubyGems (macOS/Linux/Windows)
-
-```sh
-sudo gem install fastlane -NV
-```
+- On your CI, add `bundle install` as your first build step
+- To update _fastlane_, just run `bundle update fastlane`
 
 #### Homebrew (macOS)
 
+This way you don't have to install Ruby separately and instead _homebrew_ install sthe best Ruby version alongside _fastlane_.
+See [this page](https://formulae.brew.sh/formula/fastlane) for details.
+
 ```sh
 brew install fastlane
+```
+
+#### System Ruby + RubyGems (macOS/Linux/Windows)
+
+This is not recommended for your local environment but you can still install _fastlane_ to system Ruby's environment. Using `sudo` often occurs unwanted results later due to file permission and makes managing your environment harder.
+
+```sh
+sudo gem install fastlane
 ```
