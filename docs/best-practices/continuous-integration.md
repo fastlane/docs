@@ -69,7 +69,7 @@ Note: The application specific password will _not_ work if your action usage doe
 
 All other actions interacting with Apple's APIs do not accept application specific passwords.
 
-As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can get on your local machine this by running:
+As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can generate one on your local machine by running:
 
 ```
 fastlane spaceauth -u user@email.com
