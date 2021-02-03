@@ -87,7 +87,7 @@ Unfortunately there is nothing _fastlane_ can do better in this regard, as these
 ## Environment variables to set
 
 Most setups will need the following environment variables
-
+- `SPACESHIP_ALLOW_NON_INTERACTIVE_2FA`: Explicitly allow to run 2FA in non-interactive mode.
 - `FASTLANE_USER`: Your App Store Connect / Apple Developer Portal user, if your _fastlane_ setup accesses App Store Connect or the Apple Developer Portal (e.g. submit a TestFlight build, create a profile, ...)
 - `FASTLANE_PASSWORD`: Your App Store Connect / Apple Developer Portal password, usually only needed if you also set the `FASTLANE_USER` variable
 - `MATCH_PASSWORD`: You need to provide the password of your _match_ encryption if you use _match_
