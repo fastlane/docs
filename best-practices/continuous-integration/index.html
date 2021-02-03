@@ -1453,7 +1453,7 @@ brew install fastlane
 <p>Note: The application specific password will <em>not</em> work if your action usage does anything else than uploading the binary, e.g. updating any metadata like setting release notes or distributing to testers, etc.</p>
 <h5 id="spaceauth"><code>spaceauth</code></h5>
 <p>All other actions interacting with Apple's APIs do not accept application specific passwords.</p>
-<p>As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can get on your local machine this by running:</p>
+<p>As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can generate one on your local machine by running:</p>
 <pre><code>fastlane spaceauth -u user@email.com
 </code></pre>
 
