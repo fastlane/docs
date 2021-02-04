@@ -9759,7 +9759,7 @@ fastlane-plugin-android_update_package_identifier:
   :github_contributors: 0
 fastlane-plugin-sunny_project:
   :initial_commit: 2020-09-19
-  :age_in_days: 124
+  :age_in_days: 138
   :readme_score: 50
   :tests: 1
   :actions:
@@ -9801,7 +9801,7 @@ fastlane-plugin-sunny_project:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: finalize_version
     category:
-    description:
+    description: Commit version tags
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: release_notes
@@ -9824,11 +9824,16 @@ fastlane-plugin-sunny_project:
     description: Gets the current version from the project's pubspec.yaml file
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: pub_release
+    category:
+    description: Releases a dart package
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: pub_publish
     category:
     description: Executes pub publish command
     details:
-  :sha: b10b0144c39512f500102b5cd904dbd4e2c89052354243d98430ef80eaa130eb
+  :sha: 6a9446338e05c74fbf384e9a6abff9b44473aaad38b67d5959849e17970954a1
   :github_stars: 0
   :github_subscribers: 2
   :github_issues: 0
@@ -9958,7 +9963,7 @@ fastlane-plugin-import_from_url:
   :github_contributors: 0
 fastlane-plugin-unity:
   :initial_commit: 2020-10-25
-  :age_in_days: 37
+  :age_in_days: 102
   :readme_score: 100
   :tests: 2
   :actions:
@@ -9968,12 +9973,12 @@ fastlane-plugin-unity:
     description: Fastlane plugin for Unity
     details: Fastlane plugin for Unity. Easily run Unity to build, test and execute
       method from fastlane.
-  :sha: f09e1a7acd337bd9b6c7087a94feb7a937f8701d67e0cf1b0289200e0cf16ea7
-  :github_stars: 1
+  :sha: 6882849fc0ec5c3093b6026a5903a9e59bb8e837a47b47719b4715477053c0aa
+  :github_stars: 5
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_issues: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-xambuild:
   :initial_commit: 2020-11-24
   :age_in_days: 10
@@ -10101,7 +10106,7 @@ fastlane-plugin-unity3d:
   :github_contributors: 0
 fastlane-plugin-testbm:
   :initial_commit: 2021-01-14
-  :age_in_days: 7
+  :age_in_days: 21
   :readme_score: 50
   :tests: 1
   :actions:
@@ -10111,17 +10116,38 @@ fastlane-plugin-testbm:
     description: A Test plugin
     details: Just a test plugin
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bmversion
+    category:
+    description: TODO
+    details: TODO
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bmdistribution
+    category:
+    description: Distributes an app version via firebase, testflight, browsertack
+      or the play store.
+    details: TODO
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bmbuild
+    category:
+    description: TODO
+    details: TODO
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: salutation
     category:
     description: Returns hello world
     details: Just a test plugin
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: bminfo
+    category:
+    description: TODO
+    details: TODO
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: bmslack
     category:
     description: Sends a message to a Slack chat specified in the SLACK_URL environment
       variable
     details:
-  :sha: bfe8f749ed9872de26cc1a49a16c13fb99965ff42c2e40165ec97f81da4374da
+  :sha: 37c437848c63ee439fb11acdf4dda3166a8482551af29fff2bba558138f16de9
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -10175,6 +10201,23 @@ fastlane-plugin-aws_device_farm_upload:
     details: Uploads specified file to AWS Device Farm project
   :sha: 9fee65bffeace4a9b3c7f6b24a789585366ed0fdd996d040e14fb766c948e059
   :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-mobileiron:
+  :initial_commit: 2021-02-03
+  :age_in_days: 1
+  :readme_score: 100
+  :tests: 7
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: mobileiron
+    category:
+    description: Release your app with Mobileiron
+    details: Release your app with Mobileiron
+  :sha: 3a3b8c28339cb104828ecc3d036ad2d20f2f2c2521fe163861efd39ab141df22
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
