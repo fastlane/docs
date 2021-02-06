@@ -67,6 +67,11 @@ Note: The application specific password will _not_ work if your action usage doe
 
 ##### `spaceauth`
 
+CI system is built from scratch for each build, so no way to run an action once to create a "session" manually and then just reuse that for future non itneractive runs. That is why fastlane includes a way to create the session on an interactive command line, and then transfer it to the CI environment where it can be "consumed" via an environment variable.
+
+
+
+
 All other actions interacting with Apple's APIs do not accept application specific passwords.
 
 As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can generate one on your local machine by running:
