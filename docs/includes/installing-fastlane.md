@@ -4,7 +4,7 @@ _fastlane_ can be installed multiple ways. The preferred method is with [_Bundle
 
 **Ruby**
 
-If you use macOS, please don't use system Ruby when possible. [There is a variety of ways to install Ruby without having to modify your system environment](https://www.ruby-lang.org/en/documentation/installation/#managers). For macOS and Linux, _rbenv_ would be one of the most popular way to manage your Ruby environment.
+If you use macOS, please don't use system Ruby when possible. [There is a variety of ways to install Ruby without having to modify your system environment](https://www.ruby-lang.org/en/documentation/installation/#managers). For macOS and Linux, _rbenv_ is one of the most popular ways to manage your Ruby environment.
 
 You can use Ruby 2.4 - 2.7. Verify that you have a current version of Ruby installed:
 
