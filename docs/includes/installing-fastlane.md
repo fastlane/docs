@@ -40,7 +40,7 @@ brew install fastlane
 
 #### System Ruby + RubyGems (macOS/Linux/Windows)
 
-This is not recommended for your local environment but you can still install _fastlane_ to system Ruby's environment. Using `sudo` often occurs unwanted results later due to file permission and makes managing your environment harder.
+This is not recommended for your local environment, but you can still install _fastlane_ to system Ruby's environment. Using `sudo` often occurs unwanted results later due to file permission and makes managing your environment harder.
 
 ```sh
 sudo gem install fastlane
