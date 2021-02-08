@@ -1,4 +1,4 @@
-_fastlane_ can be installed multiple ways. The preferred method is with _Bundler_. _fastlane_ can also get installed directly through with Homebrew (if on macOS). Technically, you can use macOS's system Ruby but it's not recommended unless you are experienced Ruby developer.
+_fastlane_ can be installed multiple ways. The preferred method is with [_Bundler_](https://bundler.io). _fastlane_ can also be installed directly through with Homebrew (if on macOS). Technically, you can use macOS's system Ruby but it's not recommended unless you are a experienced Ruby developer.
 
 #### Managed Ruby environment + Bundler (macOS/Linux/Windows)
 
