@@ -31,7 +31,7 @@ gem "fastlane"
 
 #### Homebrew (macOS)
 
-This way you don't have to install Ruby separately and instead _homebrew_ install sthe best Ruby version alongside _fastlane_.
+This way you don't have to install Ruby separately and instead _homebrew_ installs the most adequate Ruby version for _fastlane_.
 See [this page](https://formulae.brew.sh/formula/fastlane) for details.
 
 ```sh
