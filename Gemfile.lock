@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 832e3e4a19d9cff5d5a14a61e9614b5659327427
+  revision: 678966c4175a9e51434dae97a5b147bcb7dfc8d9
   specs:
-    fastlane (2.173.0)
+    fastlane (2.174.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       artifactory (~> 3.0)
@@ -50,7 +50,7 @@ GEM
     ast (2.4.2)
     atomos (0.1.3)
     aws-eventstream (1.1.0)
-    aws-partitions (1.422.0)
+    aws-partitions (1.426.0)
     aws-sdk-core (3.112.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -135,7 +135,7 @@ GEM
       webrick
     google-apis-iamcredentials_v1 (0.1.0)
       google-apis-core (~> 0.1)
-    google-apis-storage_v1 (0.1.0)
+    google-apis-storage_v1 (0.2.0)
       google-apis-core (~> 0.1)
     google-cloud-core (1.5.0)
       google-cloud-env (~> 1.0)
@@ -151,7 +151,7 @@ GEM
       google-cloud-core (~> 1.2)
       googleauth (~> 0.9)
       mini_mime (~> 1.0)
-    googleauth (0.15.0)
+    googleauth (0.15.1)
       faraday (>= 0.17.3, < 2.0)
       jwt (>= 1.4, < 3.0)
       memoist (~> 0.16)

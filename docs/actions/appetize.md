@@ -55,6 +55,7 @@ Key | Description | Default
   `path` | Path to zipped build on the local filesystem. Either this or `url` must be specified | 
   `public_key` | If not provided, a new app will be created. If provided, the existing build will be overwritten | 
   `note` | Notes you wish to add to the uploaded app | 
+  `timeout` | The number of seconds to wait until automatically ending the session due to user inactivity. Must be 30, 60, 90, 120, 180, 300, 600, 1800, 3600 or 7200. Default is 120 | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
