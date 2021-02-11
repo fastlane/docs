@@ -1360,10 +1360,19 @@
               
                 <h1 id="getting-started-with-fastlane-for-android"><a name="user-content-getting-started-with-fastlane-for-android" href="#getting-started-with-fastlane-for-android" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting started with <em>fastlane</em> for Android</h1>
 <h2 id="installing-fastlane"><a name="user-content-installing-fastlane" href="#installing-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installing <em>fastlane</em></h2>
-<p><em>fastlane</em> can be installed multiple ways. The preferred method is with a <code>Gemfile</code>. <em>fastlane</em> can also get installed directly through RubyGems or with Homebrew (if on macOS).</p>
-<h4 id="a-gemfile-macoslinuxwindows"><a name="user-content-a-gemfile-macoslinuxwindows" href="#a-gemfile-macoslinuxwindows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>A Gemfile (macOS/Linux/Windows)</h4>
-<p>It is recommended that you use a <code>Gemfile</code> to define your dependency on <em>fastlane</em>. This will clearly define the used <em>fastlane</em> version, and its dependencies, and will also speed up using <em>fastlane</em>.</p>
+<p><em>fastlane</em> can be installed multiple ways. The preferred method is with <a href="https://bundler.io"><em>Bundler</em></a>. <em>fastlane</em> can also be installed directly through with Homebrew (if on macOS). It is possible to use macOS's system Ruby but it's not recommended as it can be hard to manage dependencies and cause conflicts.</p>
+<h4 id="managed-ruby-environment-bundler-macoslinuxwindows"><a name="user-content-managed-ruby-environment-bundler-macoslinuxwindows" href="#managed-ruby-environment-bundler-macoslinuxwindows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Managed Ruby environment + Bundler (macOS/Linux/Windows)</h4>
+<p><strong>Ruby</strong></p>
+<p>If you use macOS, system Ruby is not recommended. <a href="https://www.ruby-lang.org/en/documentation/installation/#managers">There is a variety of ways to install Ruby without having to modify your system environment</a>. For macOS and Linux, <em>rbenv</em> is one of the most popular ways to manage your Ruby environment.</p>
+<p><em>fastlane</em> supports Ruby versions 2.4 through 2.7. Verify which Ruby version you're using:</p>
+<pre><code class="sh">$ ruby --version
+ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]
+</code></pre>
+
+<p><strong>Bundler</strong></p>
+<p>It is recommended that you use <em>Bundler</em> and <code>Gemfile</code> to define your dependency on <em>fastlane</em>. This will clearly define the <em>fastlane</em> version to be used and its dependencies, and will also speed up <em>fastlane</em> execution.</p>
 <ul>
+<li>Install <em>Bundler</em> by running <code>gem install bundler</code></li>
 <li>Create a <code>./Gemfile</code> in the root directory of your project with the content</li>
 </ul>
 <pre><code class="ruby">source &quot;https://rubygems.org&quot;
@@ -1372,17 +1381,20 @@ gem &quot;fastlane&quot;
 </code></pre>
 
 <ul>
-<li>Run <code>[sudo] bundle update</code> and add both the <code>./Gemfile</code> and the <code>./Gemfile.lock</code> to version control</li>
+<li>Run <code>bundle update</code> and add both the <code>./Gemfile</code> and the <code>./Gemfile.lock</code> to version control</li>
 <li>Every time you run <em>fastlane</em>, use <code>bundle exec fastlane [lane]</code></li>
-<li>On your CI, add <code>[sudo] bundle install</code> as your first build step</li>
-<li>To update <em>fastlane</em>, just run <code>[sudo] bundle update fastlane</code></li>
+<li>On your CI, add <code>bundle install</code> as your first build step</li>
+<li>To update <em>fastlane</em>, just run <code>bundle update fastlane</code></li>
 </ul>
-<h4 id="rubygems-macoslinuxwindows"><a name="user-content-rubygems-macoslinuxwindows" href="#rubygems-macoslinuxwindows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>RubyGems (macOS/Linux/Windows)</h4>
-<pre><code class="sh">sudo gem install fastlane -NV
+<h4 id="homebrew-macos"><a name="user-content-homebrew-macos" href="#homebrew-macos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Homebrew (macOS)</h4>
+<p>This way you don't have to install Ruby separately and instead <em>homebrew</em> installs the most adequate Ruby version for <em>fastlane</em>.
+See <a href="https://formulae.brew.sh/formula/fastlane">this page</a> for details.</p>
+<pre><code class="sh">brew install fastlane
 </code></pre>
 
-<h4 id="homebrew-macos"><a name="user-content-homebrew-macos" href="#homebrew-macos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Homebrew (macOS)</h4>
-<pre><code class="sh">brew install fastlane
+<h4 id="system-ruby-rubygems-macoslinuxwindows"><a name="user-content-system-ruby-rubygems-macoslinuxwindows" href="#system-ruby-rubygems-macoslinuxwindows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>System Ruby + RubyGems (macOS/Linux/Windows)</h4>
+<p>This is not recommended for your local environment, but you can still install <em>fastlane</em> to system Ruby's environment. Using <code>sudo</code> often occurs unwanted results later due to file permission and makes managing your environment harder.</p>
+<pre><code class="sh">sudo gem install fastlane
 </code></pre>
 
 <h2 id="setting-up-fastlane"><a name="user-content-setting-up-fastlane" href="#setting-up-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em></h2>
