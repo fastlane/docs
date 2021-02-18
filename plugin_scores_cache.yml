@@ -666,7 +666,7 @@ fastlane-plugin-yarn:
   :github_contributors: 4
 fastlane-plugin-applivery:
   :initial_commit: 2016-07-26
-  :age_in_days: 1349
+  :age_in_days: 1660
   :readme_score: 100
   :tests: 1
   :actions:
@@ -675,8 +675,8 @@ fastlane-plugin-applivery:
     category: beta
     description: Upload new iOS or Android build to Applivery
     details:
-  :sha: 4778c874fe8bbf0e1cf851580f5973e2e57dc48bff55414bde440b29a98a671b
-  :github_stars: 13
+  :sha: d722ab4849fd969a04016107bc64bc7714a1b1745f477b39b7df29e44805838b
+  :github_stars: 12
   :github_subscribers: 3
   :github_issues: 0
   :github_forks: 4
@@ -840,7 +840,7 @@ fastlane-plugin-settings_bundle:
   :github_contributors: 0
 fastlane-plugin-android_versioning:
   :initial_commit: 2017-02-18
-  :age_in_days: 1075
+  :age_in_days: 1453
   :readme_score: 50
   :tests: 22
   :actions:
@@ -874,12 +874,12 @@ fastlane-plugin-android_versioning:
     category:
     description: Get the version code of your project
     details: " "
-  :sha: d03501c8b6b7e2b51f1fe9a1e4a5cb63b81f8ab115f7da421c1353c38ba4bc92
-  :github_stars: 35
-  :github_subscribers: 4
-  :github_issues: 4
-  :github_forks: 11
-  :github_contributors: 5
+  :sha: 0f05006b0fbf1a957a7cfbe819e5782aa36a4944d948cd5c00a19a815b844837
+  :github_stars: 41
+  :github_subscribers: 3
+  :github_issues: 0
+  :github_forks: 12
+  :github_contributors: 0
 fastlane-plugin-upload_folder_to_s3:
   :initial_commit: 2016-05-28
   :age_in_days: 638
@@ -10219,6 +10219,41 @@ fastlane-plugin-mobileiron:
   :sha: 3a3b8c28339cb104828ecc3d036ad2d20f2f2c2521fe163861efd39ab141df22
   :github_stars: 1
   :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-pgyer_v2:
+  :initial_commit: 2020-06-22
+  :age_in_days: 233
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: pgyer
+    category:
+    description: distribute app to pgyer beta testing service
+    details: distribute app to pgyer beta testing service
+  :sha: 82fb5d7082c6d0e307426dae89937dcfd9ee086dda01ccb620d099cd31053e1f
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-sequenia_gitflow:
+  :initial_commit: 2021-02-05
+  :age_in_days: 5
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fetch_merged_tasks
+    category:
+    description: Fetch merged into current branch feature tasks after last release
+      tag
+    details:
+  :sha: e418b75cf8520b1731053b85e3120d0b5fe90581a9389b9c10b533b340b2163e
+  :github_stars: 0
+  :github_subscribers: 5
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
