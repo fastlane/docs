@@ -1471,12 +1471,16 @@ username(&quot;user@fastlane.tools&quot;)
 <h5 id="git-storage-on-github"><a name="user-content-git-storage-on-github" href="#git-storage-on-github" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git Storage on GitHub</h5>
 <p>If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise, you may see an authentication error when you attempt to use match. Alternatively, you can set a basic authorization for <em>match</em>:</p>
 <p>Using parameter:</p>
-<pre><code>match(git_basic_authorization: '&lt;YOUR KEY&gt;')
+<pre><code>match(git_basic_authorization: '&lt;YOUR BASE64 KEY&gt;')
 </code></pre>
 
 <p>Using environment variable:</p>
-<pre><code>ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = '&lt;YOUR KEY&gt;'
+<pre><code>ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = '&lt;YOUR BASE64 KEY&gt;'
 match
+</code></pre>
+
+<p>To generate your base64 key <a href="https://tools.ietf.org/html/rfc7617">according to RFC 7617</a>, run this:</p>
+<pre><code>echo -n your_github_username:your_personal_access_token | base64
 </code></pre>
 
 <p>You can find more information about GitHub basic authentication and personal token generation here: <a href="https://developer.github.com/v3/auth/#basic-authentication">https://developer.github.com/v3/auth/#basic-authentication</a></p>
