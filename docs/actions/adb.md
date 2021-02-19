@@ -40,7 +40,7 @@ Key | Description | Default
 ----|-------------|--------
   `serial` | Android serial of the device to use for this command | `''`
   `command` | All commands you want to pass to the adb command, e.g. `kill-server` | 
-  `adb_path` | The path to your `adb` binary (can be left blank if the ANDROID_SDK_ROOT environment variable is set) | `adb`
+  `adb_path` | The path to your `adb` binary (can be left blank if the ANDROID_SDK_ROOT, ANDROID_HOME or ANDROID_SDK environment variable is set) | `adb`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
