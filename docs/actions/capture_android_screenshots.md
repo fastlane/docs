@@ -34,7 +34,7 @@ _screengrab_ generates localized screenshots of your Android app for different d
 Install the gem
 
 ```no-highlight
-sudo gem install fastlane
+gem install fastlane
 ```
 
 ##### Gradle dependency

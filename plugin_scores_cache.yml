@@ -989,7 +989,7 @@ fastlane-plugin-automated_test_emulator_run_xing:
   :github_contributors: 6
 fastlane-plugin-test_center:
   :initial_commit: 2017-10-23
-  :age_in_days: 1186
+  :age_in_days: 1215
   :readme_score: 100
   :tests: 338
   :actions:
@@ -1008,8 +1008,8 @@ fastlane-plugin-test_center:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: tests_from_xcresult
     category: testing
-    description: "☑️ Retrieves the failing and passing tests as reportedn an xcresult
-      bundle"
+    description: "☑️ Retrieves the failing, passing, and skipped tests as reported
+      in a xcresult bundle"
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: suppress_tests_from_junit
@@ -1083,11 +1083,11 @@ fastlane-plugin-test_center:
     description: "\U0001F538 Combines multiple xcresult bundles into one xcresult
       bundle"
     details: tests and the subsequent xcresult bundles will have fewer failing tests.
-  :sha: 3a6b9e7ce47a2d73d0be83dbde159fc0fd0465fde06027d1ccf10263600a7929
-  :github_stars: 198
+  :sha: 91b7dc9d2513f1a4dd073ade7832fbb3dabbc64d178c6acd89f174af240f4dd4
+  :github_stars: 208
   :github_subscribers: 11
   :github_issues: 14
-  :github_forks: 38
+  :github_forks: 39
   :github_contributors: 11
 fastlane-plugin-goodify_info_plist:
   :github_stars: 0
@@ -5813,21 +5813,21 @@ fastlane-plugin-jira_issue_details:
   :github_contributors: 0
 fastlane-plugin-jira_release_notes:
   :initial_commit: 2018-12-04
-  :age_in_days: 282
+  :age_in_days: 808
   :readme_score: 100
-  :tests: 11
+  :tests: 12
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: jira_release_notes
     category:
     description: Jira release notes
     details: Fetch release notes for Jira project for version
-  :sha: d224d8359a82267c1d1c2d5d430f597196b03fcaa5d8bb91a317f216d913a0a1
-  :github_stars: 3
+  :sha: a72613a1be41c4072bf6797a5b16c408592c1c59a4bfc55b5b438786b410b65d
+  :github_stars: 10
   :github_subscribers: 6
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_issues: 1
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-bugtags:
   :initial_commit: 2018-11-06
   :age_in_days: 35
@@ -6408,7 +6408,7 @@ fastlane-plugin-fast_city:
   :github_contributors: 0
 fastlane-plugin-semantic_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 472
+  :age_in_days: 705
   :readme_score: 100
   :tests: 40
   :actions:
@@ -6426,12 +6426,12 @@ fastlane-plugin-semantic_release:
       the tag. It uses conventional commits. Every time when commit is marked as fix
       or feat it will increase patch or minor number (you can setup this default behaviour).
       After all it will suggest if the version should be released or not.
-  :sha: ee9fa00ee63524f3aa983711773af00b9b1d8f7abbc9391dbf8d97d64d7af927
-  :github_stars: 68
+  :sha: c914d35ac746aa7305de04b706ea15c3f9a5ceae994877ed51efb84bc5240cea
+  :github_stars: 108
   :github_subscribers: 2
-  :github_issues: 2
-  :github_forks: 16
-  :github_contributors: 0
+  :github_issues: 4
+  :github_forks: 26
+  :github_contributors: 6
 fastlane-plugin-android_emulator_kami:
   :initial_commit: 2018-01-24
   :age_in_days: 441
@@ -9194,7 +9194,7 @@ fastlane-plugin-github_action:
   :github_contributors: 0
 fastlane-plugin-slack_bot:
   :initial_commit: 2020-05-27
-  :age_in_days: 239
+  :age_in_days: 268
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9214,12 +9214,12 @@ fastlane-plugin-slack_bot:
     category:
     description: Update a slack message using time-stamp(ts) value
     details:
-  :sha: 81e29e821e2ad04dee94428eef5c5da4d95c65e7e33150be9d5b5c3b655f0e93
-  :github_stars: 4
+  :sha: b17837dac14d4891bf7a146517d1820a08a85911c9d01117d39bbab7210c3cb9
+  :github_stars: 5
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-try_scan:
   :initial_commit: 2020-06-07
   :age_in_days: 47
@@ -10055,7 +10055,7 @@ fastlane-plugin-jira_issue_link:
   :github_contributors: 0
 fastlane-plugin-emerge:
   :initial_commit: 2020-12-07
-  :age_in_days: 25
+  :age_in_days: 74
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10064,7 +10064,7 @@ fastlane-plugin-emerge:
     category:
     description: Fastlane plugin for Emerge
     details:
-  :sha: b3e20f499fd7a93b7f2dc391806dea7ed9e10682def8fb58fafa9da9fe96a617
+  :sha: 72fac71137f3b410c14094f984608dc074c3d82d01ea12235a741df06a88ac59
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
@@ -10190,7 +10190,7 @@ fastlane-plugin-teams_bot:
   :github_contributors: 1
 fastlane-plugin-aws_device_farm_upload:
   :initial_commit: 2021-01-09
-  :age_in_days: 12
+  :age_in_days: 41
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10199,7 +10199,7 @@ fastlane-plugin-aws_device_farm_upload:
     category:
     description: Uploads specified file to AWS Device Farm project
     details: Uploads specified file to AWS Device Farm project
-  :sha: 9fee65bffeace4a9b3c7f6b24a789585366ed0fdd996d040e14fb766c948e059
+  :sha: 6003509e92924f88a08366bc5b992149af6aeb5ee951f39374b71f6961055250
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -10254,6 +10254,92 @@ fastlane-plugin-sequenia_gitflow:
   :sha: e418b75cf8520b1731053b85e3120d0b5fe90581a9389b9c10b533b340b2163e
   :github_stars: 0
   :github_subscribers: 5
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ios_flavors:
+  :initial_commit: 2021-02-16
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_ipa_flavors
+    category:
+    description: Create multiple build flavors of an iOS .ipa file using a directory
+      of .plist files
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: create_sim_flavors
+    category:
+    description: Create multiple build flavors of an iOS .app (for the simulator)
+      using a directory of .plist files
+    details:
+  :sha: 6e7a61a4dc115b4e679fcc6931d6450c75b76ed9374125cb24d0ec150cfc2cd9
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-clear_archived_data:
+  :initial_commit: 2021-02-17
+  :age_in_days: 2
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: clear_archived_data
+    category:
+    description: Deletes the archive file located at SharedValues::XCODEBUILD_ARCHIVE.
+    details: Deletes the archive file from path set on Xcode.
+  :sha: 677c8e3e7ca5c41b5954adcde202dfcb51e2af65b356c47439d321dca2464c92
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 1
+  :github_contributors: 1
+fastlane-plugin-linear_api:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-fetch_version_code:
+  :initial_commit: 2019-03-16
+  :age_in_days: 706
+  :readme_score: 100
+  :tests: 17
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fetch_version_code
+    category:
+    description: Fetch (and increment) version code for given platform
+    details:
+  :sha: 6337c65af6047f0e6399f8f9f2ac836f297d92b6cc453f3ae7e70a72ab2534fa
+  :github_stars: 1
+  :github_subscribers: 6
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-flutter_dart_version_manager:
+  :initial_commit: 2021-02-14
+  :age_in_days: 5
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_dart_version_manager
+    category:
+    description: A version manager for flutter
+    details: Later
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_set_version
+    category:
+    description: A version manager for flutter
+    details: Later
+  :sha: 1d807724187880aa0041138d7cb608eaf32d11af983121e84248f1c766edeaba
+  :github_stars: 1
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
