@@ -363,7 +363,7 @@ Key | Description | Default
   `app_platform` | The platform to use (optional) | `ios`
   `apple_id` | Apple ID property in the App Information section in App Store Connect | [*](#parameters-legend-dynamic)
   `ipa` | Path to the ipa file to upload | [*](#parameters-legend-dynamic)
-  `demo_account_required` | Do you need a demo account when Apple does review? | `false`
+  `demo_account_required` | Do you need a demo account when Apple does review? | 
   `beta_app_review_info` | Beta app review information for contact info and demo account | 
   `localized_app_info` | Localized beta app test info for description, feedback email, marketing url, and privacy policy | 
   `beta_app_description` | Provide the 'Beta App Description' when uploading a new build | 
