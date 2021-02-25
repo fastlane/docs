@@ -1375,8 +1375,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
 <pre><code class="ruby">jazzy
+</code></pre>
+
+<pre><code class="ruby">jazzy(config: &quot;.jazzy.yaml&quot;, module_version: &quot;2.1.37&quot;)
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1392,6 +1395,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>config</code></td>
 <td>Path to jazzy config file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>module_version</code></td>
+<td>Version string to use as part of the the default docs title and inside the docset</td>
 <td></td>
 </tr>
 </tbody>
