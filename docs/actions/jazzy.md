@@ -21,10 +21,14 @@ Author | @KrauseFx
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 jazzy
+```
+
+```ruby
+jazzy(config: ".jazzy.yaml", module_version: "2.1.37")
 ```
 
 
@@ -36,6 +40,7 @@ jazzy
 Key | Description | Default
 ----|-------------|--------
   `config` | Path to jazzy config file | 
+  `module_version` | Version string to use as part of the the default docs title and inside the docset | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

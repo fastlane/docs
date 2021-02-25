@@ -6157,7 +6157,7 @@ fastlane-plugin-transifex_tool:
   :github_contributors: 0
 fastlane-plugin-google_sheet_localize:
   :initial_commit: 2019-01-31
-  :age_in_days: 582
+  :age_in_days: 755
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6167,12 +6167,12 @@ fastlane-plugin-google_sheet_localize:
     description: Creates .strings files for iOS and strings.xml files for Android
     details: Creates .strings files for iOS and strings.xml files for Android. The
       localization is mananged on a google sheet.
-  :sha: a8502ff2febf3d0a45d2d2c837097f1ad76111133a775ab54dbdee0083578c5e
-  :github_stars: 14
+  :sha: 6ca4c1420480010008c0393651a737b265fbba942454cf0a0fde080a1b06cbe0
+  :github_stars: 16
   :github_subscribers: 4
   :github_issues: 4
   :github_forks: 2
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-git_build_versioning:
   :initial_commit: 2018-10-29
   :age_in_days: 100
@@ -7956,7 +7956,7 @@ fastlane-plugin-bugsnag_sourcemaps_upload:
   :github_contributors: 2
 fastlane-plugin-fir_cli:
   :initial_commit: 2019-11-19
-  :age_in_days: 429
+  :age_in_days: 463
   :readme_score: 100
   :tests: 1
   :actions:
@@ -7965,10 +7965,10 @@ fastlane-plugin-fir_cli:
     category:
     description:
     details: 'invoke fir-cli from fastlane plugin directly. \nfir-cli: https://github.com/FIRHQ/fir-cli'
-  :sha: 23000bdb62751d328490cbe30f863c05c009cd1745e5ba7122f9bb0157f63005
+  :sha: '0039b9cd911ed161d9cc405e8a7e52983048311b3bd666699023e4c438c94676'
   :github_stars: 27
   :github_subscribers: 3
-  :github_issues: 0
+  :github_issues: 3
   :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-xcresult_to_junit:
@@ -9194,10 +9194,15 @@ fastlane-plugin-github_action:
   :github_contributors: 0
 fastlane-plugin-slack_bot:
   :initial_commit: 2020-05-27
-  :age_in_days: 268
+  :age_in_days: 273
   :readme_score: 100
   :tests: 1
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: file_upload_to_slack
+    category:
+    description: Upload a file to slack channel
+    details: Upload a file to slack channel or DM to a slack user
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: post_to_slack
     category:
@@ -9214,12 +9219,12 @@ fastlane-plugin-slack_bot:
     category:
     description: Update a slack message using time-stamp(ts) value
     details:
-  :sha: b17837dac14d4891bf7a146517d1820a08a85911c9d01117d39bbab7210c3cb9
+  :sha: 8ca3c5f559d75ec1c00d86303bfd2e5cbcb12612bd4b2483b38f9ebb3c744678
   :github_stars: 5
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 1
-  :github_contributors: 0
+  :github_contributors: 2
 fastlane-plugin-try_scan:
   :initial_commit: 2020-06-07
   :age_in_days: 47
