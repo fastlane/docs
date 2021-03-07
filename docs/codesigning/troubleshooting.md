@@ -49,7 +49,7 @@ If a certificate gets revoked, all connected provisioning profiles get invalidat
   <img src="/img/codesigning/KeychainPrivateKey.png" width=500 />
 </p>
 1. Make sure to have deleted all expired WWDR certificates, more information [here](https://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for/35401483#35401483). There might be 2 expired WWDR certificates, one in the `login`, and one in the `system` keychain
-1. Run `security default-keychain` to view the default keychain that is used by some fastlane actions if a keychain path is not explicitly provided.  If it's the system keychain, make sure fastlane has access to write to it.  You may want to reconfigure your enviroment so the default keychain is the login keychain, which is less prone to permissions errors.  If you're using launchctl, see [this link to change the default keychain to the login keychain](https://serverfault.com/a/371252).
+1. Run `security default-keychain` to view the default keychain that is used by some _fastlane_ actions if a keychain path is not explicitly provided.  If it's the system keychain, make sure _fastlane_ has access to write to it.  You may want to reconfigure your enviroment so the default keychain is the login keychain, which is less prone to permissions errors.  If you're using `launchctl`, see [this link to change the default keychain to the login keychain](https://serverfault.com/a/371252).
 
 ## Have you tried turning it off and on again?
 
