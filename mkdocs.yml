@@ -87,6 +87,7 @@ pages:
   - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
   - create_pull_request: actions/create_pull_request.md
+  - create_xcframework: actions/create_xcframework.md
   - danger: actions/danger.md
   - debug: actions/debug.md
   - default_platform: actions/default_platform.md
@@ -95,6 +96,7 @@ pages:
   - deploygate: actions/deploygate.md
   - dotgpg_environment: actions/dotgpg_environment.md
   - download: actions/download.md
+  - download_app_privacy_details_from_app_store: actions/download_app_privacy_details_from_app_store.md
   - download_dsyms: actions/download_dsyms.md
   - download_from_play_store: actions/download_from_play_store.md
   - dsym_zip: actions/dsym_zip.md
@@ -246,6 +248,7 @@ pages:
   - update_project_team: actions/update_project_team.md
   - update_urban_airship_configuration: actions/update_urban_airship_configuration.md
   - update_url_schemes: actions/update_url_schemes.md
+  - upload_app_privacy_details_to_app_store: actions/upload_app_privacy_details_to_app_store.md
   - upload_symbols_to_crashlytics: actions/upload_symbols_to_crashlytics.md
   - upload_symbols_to_sentry: actions/upload_symbols_to_sentry.md
   - upload_to_app_store: actions/upload_to_app_store.md
@@ -271,7 +274,9 @@ pages:
   - xctool: actions/xctool.md
   - xcversion: actions/xcversion.md
   - zip: actions/zip.md
-- Using App Store Connect API: app-store-connect-api.md
+- Apple:
+  - Using App Store Connect API: app-store-connect-api.md
+  - Uploading App Privacy Details: uploading-app-privacy-details.md
 - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
@@ -287,6 +292,7 @@ pages:
   - Source Control: best-practices/source-control.md
   - Continuous Integration: best-practices/continuous-integration.md
   - CI Integrations:
+    - Appcircle: best-practices/continuous-integration/appcircle.md
     - Azure DevOps: best-practices/continuous-integration/azure-devops.md
     - Bamboo: best-practices/continuous-integration/bamboo.md
     - Bitrise: best-practices/continuous-integration/bitrise.md

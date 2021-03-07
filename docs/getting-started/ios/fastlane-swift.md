@@ -20,7 +20,7 @@ fastlane init swift
 
 ### Step 2
 
-Open the file located at `[project]/fastlane/swift/FastlaneRunner/FastlaneRunner.xcodeproj` to configure your lanes in `Fastfile.swift`.
+Open the file located at `[project]/fastlane/swift/FastlaneSwiftRunner/FastlaneSwiftRunner.xcodeproj` to configure your lanes in `Fastfile.swift`.
 
 ```swift
 func betaLane() {

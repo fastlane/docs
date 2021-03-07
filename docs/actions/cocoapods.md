@@ -52,6 +52,7 @@ Key | Description | Default
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status | 
   `try_repo_update_on_error` | Retry with --repo-update if action was finished with error | `false`
   `deployment` | Disallow any changes to the Podfile or the Podfile.lock during installation | `false`
+  `allow_root` | Allows CocoaPods to run as root | `false`
   `clean` | **DEPRECATED!** (Option renamed as clean_install) Remove SCM directories | `true`
   `integrate` | **DEPRECATED!** (Option removed from cocoapods) Integrate the Pods libraries into the Xcode project(s) | `true`
 

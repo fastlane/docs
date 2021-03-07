@@ -11,7 +11,7 @@ This action uploads an artifact to artifactory
 
 
 
-
+> Connect to the artifactory server using either a username/password or an api_key
 
 
 artifactory ||
@@ -21,12 +21,22 @@ Author | @koglinjg, @tommeier
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 artifactory(
   username: "username",
   password: "password",
+  endpoint: "https://artifactory.example.com/artifactory/",
+  file: "example.ipa",  # File to upload
+  repo: "mobile_artifacts",       # Artifactory repo
+  repo_path: "/ios/appname/example-major.minor.ipa"   # Path to place the artifact including its filename
+)
+```
+
+```ruby
+artifactory(
+  api_key: "api_key",
   endpoint: "https://artifactory.example.com/artifactory/",
   file: "example.ipa",  # File to upload
   repo: "mobile_artifacts",       # Artifactory repo
@@ -48,6 +58,7 @@ Key | Description | Default
   `endpoint` | Artifactory endpoint | 
   `username` | Artifactory username | 
   `password` | Artifactory password | 
+  `api_key` | Artifactory API key | 
   `properties` | Artifact properties hash | `{}`
   `ssl_pem_file` | Location of pem file to use for ssl verification | 
   `ssl_verify` | Verify SSL | `true`

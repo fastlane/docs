@@ -112,14 +112,20 @@ If your machine is currently using SSH to authenticate with GitHub, you'll want 
 Using parameter:
 
 ```
-match(git_basic_authorization: '<YOUR KEY>')
+match(git_basic_authorization: '<YOUR BASE64 KEY>')
 ```
 
 Using environment variable:
 
 ```
-ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = '<YOUR KEY>'
+ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = '<YOUR BASE64 KEY>'
 match
+```
+
+To generate your base64 key [according to RFC 7617](https://tools.ietf.org/html/rfc7617), run this:
+
+```
+echo -n your_github_username:your_personal_access_token | base64
 ```
 
 You can find more information about GitHub basic authentication and personal token generation here: [https://developer.github.com/v3/auth/#basic-authentication](https://developer.github.com/v3/auth/#basic-authentication)
@@ -403,7 +409,7 @@ lane :beta do
 end
 ```
 
-By using the `force_for_new_devices` parameter, _match_ will check if the device count has changed since the last time you ran _match_, and automatically re-generate the provisioning profile if necessary. You can also use `force: true` to re-generate the provisioning profile on each run.
+By using the `force_for_new_devices` parameter, _match_ will check if the (enabled) device count has changed since the last time you ran _match_, and automatically re-generate the provisioning profile if necessary. You can also use `force: true` to re-generate the provisioning profile on each run.
 
 _**Important:** The `force_for_new_devices` parameter is ignored for App Store provisioning profiles since they don't contain any device information._
 
@@ -504,6 +510,15 @@ fastlane match import
 ```
 
 You'll be prompted for the certificate (`.cer`), the private key (`.p12`) and the provisioning profiles (`.mobileprovision` or `.provisionprofile`) paths. _match_ will first validate the certificate (`.cer`) against the Developer Portal before importing the certificate, the private key and the provisioning profiles into the specified _match_ repository.
+
+However if there is no access to the developer portal but there are certificates, private keys and profiles provided, you can use the `skip_certificate_matching` option to tell _match_ not to verify the certificates. Like this:
+
+```no-highlight
+fastlane match import --skip_certificate_matching true
+```
+This will skip login to Apple Developer Portal and will import the provided certificate, private key and profile directly to the certificates repo.
+
+Please be careful when using this option and ensure the certificates and profiles match the type (development, adhoc, appstore, enterprise, developer_id) and are not revoked or expired.
 
 ### Manual Decrypt
 
@@ -612,12 +627,12 @@ match   # alias for "sync_code_signing"
 
 Key | Description | Default
 ----|-------------|--------
-  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id | `development`
+  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution | `development`
   `additional_cert_types` | Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer) | 
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
   `skip_provisioning_profiles` | Skip syncing provisioning profiles | `false`
-  `app_identifier` | The bundle identifier(s) of your app (comma-separated) | [*](#parameters-legend-dynamic)
+  `app_identifier` | The bundle identifier(s) of your app (comma-separated string or array of strings) | [*](#parameters-legend-dynamic)
   `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
   `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
@@ -642,7 +657,7 @@ Key | Description | Default
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
-  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
+  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
@@ -652,6 +667,7 @@ Key | Description | Default
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
   `profile_name` | A custom name for the provisioning profile. This will replace the default provisioning profile name if specified | 
   `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
+  `skip_certificate_matching` | Set to true if there is no access to Apple developer portal but there are certificates, keys and profiles provided. Only works with match import action | `false`
   `output_path` | Path in which to export certificates, key and profile | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `verbose` | Print out extra information and all commands | `false`

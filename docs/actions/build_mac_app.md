@@ -319,7 +319,7 @@ Key | Description | Default
   `skip_package_pkg` | Should we skip packaging the pkg? | `false`
   `include_symbols` | Should the ipa file include symbols? | 
   `include_bitcode` | Should the ipa file include bitcode? | 
-  `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id | 
+  `export_method` | Method used to export the archive. Valid values are: app-store, validation, ad-hoc, package, enterprise, development, developer-id and mac-application | 
   `export_options` | Path to an export options plist or a hash with export options. Use 'xcodebuild -help' to print the full set of available options | 
   `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `skip_build_archive` | Export ipa from previously built xcarchive. Uses archive_path as source | 
@@ -349,6 +349,9 @@ Key | Description | Default
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

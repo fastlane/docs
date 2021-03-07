@@ -258,6 +258,7 @@ Key | Description | Default
   `xcpretty_args` | Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf') | 
   `derived_data_path` | The directory where build products and other derived data will go | 
   `should_zip_build_products` | Should zip the derived data build products and place in output path? | `false`
+  `output_xctestrun` | Should provide additional copy of .xctestrun file (settings.xctestrun) and place in output path? | `false`
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
   `concurrent_workers` | Specify the exact number of test runners that will be spawned during parallel testing. Equivalent to -parallel-testing-worker-count | 
@@ -280,10 +281,15 @@ Key | Description | Default
   `slack_icon_url` | Overrides the webhook's image property if slack_use_webhook_configured_username_and_icon is false | `https://fastlane.tools/assets/img/fastlane_icon.png`
   `skip_slack` | Don't publish to slack, even when an URL is given | `false`
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
+  `slack_default_payloads` | Specifies default payloads to include in Slack messages. For more info visit https://docs.fastlane.tools/actions/slack | 
   `destination` | Use only if you're a pro, use the other options instead | 
+  `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

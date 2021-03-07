@@ -231,7 +231,7 @@ fastlane pilot upload --verbose
 
 ## Firewall Issues
 
-_pilot_ uses the iTunes Transporter to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol from the command line using
+_pilot_ uses the iTunes [Transporter](https://help.apple.com/itc/transporteruserguide/#/apdATD1E1288-D1E1A1303-D1E1288A1126) to upload metadata and binaries. In case you are behind a firewall, you can specify a different transporter protocol from the command line using
 
 ```no-highlight
 DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS="-t DAV" pilot ...
@@ -243,6 +243,10 @@ If you are using _pilot_ via the [fastlane action](https://docs.fastlane.tools/a
 ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
 pilot...
 ```
+
+Note, however, that Apple recommends you don’t specify the `-t transport` and instead allow Transporter to use automatic transport discovery to determine the best transport mode for your packages. For this reason, if the `t` option is passed, we will raise a warning.
+
+Also note that `-t` is not the only additional parameter that can be used. The string specified in the `DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS` environment variable will be forwarded to Transporter. For all the available options, check [Apple's Transporter User Guide](https://help.apple.com/itc/transporteruserguide/#/apdATD1E1288-D1E1A1303-D1E1288A1126).
 
 ## Credentials Issues
 
@@ -359,7 +363,7 @@ Key | Description | Default
   `app_platform` | The platform to use (optional) | `ios`
   `apple_id` | Apple ID property in the App Information section in App Store Connect | [*](#parameters-legend-dynamic)
   `ipa` | Path to the ipa file to upload | [*](#parameters-legend-dynamic)
-  `demo_account_required` | Do you need a demo account when Apple does review? | `false`
+  `demo_account_required` | Do you need a demo account when Apple does review? | 
   `beta_app_review_info` | Beta app review information for contact info and demo account | 
   `localized_app_info` | Localized beta app test info for description, feedback email, marketing url, and privacy policy | 
   `beta_app_description` | Provide the 'Beta App Description' when uploading a new build | 

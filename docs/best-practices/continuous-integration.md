@@ -13,6 +13,7 @@ _fastlane_ works very well in Continuous Integration setups. It for example auto
 
 Multiple CI products and services offer integrations with fastlane:
 
+- [Appcircle](/best-practices/continuous-integration/appcircle/)
 - [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
 - [Bamboo](/best-practices/continuous-integration/bamboo/)
 - [Bitrise](/best-practices/continuous-integration/bitrise/)
@@ -46,7 +47,7 @@ Note: [Apple announced that as of February 27th 2019](https://developer.apple.co
 
 When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.
 
-The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`, which should be valid for about one month.
+The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. Validity can greatly vary (anything between 1 day and 1 month) and is not within `fastlane`'s domain and up to Apple.
 
 #### Use of application specific passwords and `spaceauth`
 
@@ -68,7 +69,7 @@ Note: The application specific password will _not_ work if your action usage doe
 
 All other actions interacting with Apple's APIs do not accept application specific passwords.
 
-As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can get on your local machine this by running:
+As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can generate one on your local machine by running:
 
 ```
 fastlane spaceauth -u user@email.com

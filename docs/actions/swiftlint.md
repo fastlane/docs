@@ -55,7 +55,7 @@ Key | Description | Default
   `files` | List of files to process | 
   `ignore_exit_status` | Ignore the exit status of the SwiftLint command, so that serious violations                                                     don't fail the build (true/false) | `false`
   `raise_if_swiftlint_error` | Raises an error if swiftlint fails, so you can fail CI/CD jobs if necessary                                                     (true/false) | `false`
-  `reporter` | Choose output reporter. Available: xcode, json, csv, checkstyle, junit, html,                                                      emoji, sonarqube, markdown, github-actions-logging | 
+  `reporter` | Choose output reporter. Available: xcode, json, csv, checkstyle, codeclimate,                                                      junit, html, emoji, sonarqube, markdown, github-actions-logging | 
   `quiet` | Don't print status logs like 'Linting <file>' & 'Done linting' | `false`
   `executable` | Path to the `swiftlint` executable on your machine | 
   `format` | Format code when mode is :autocorrect | `false`

@@ -36,8 +36,7 @@ slack(
     "Build Date" => Time.new.to_s,
     "Built by" => "Jenkins",
   },
-  default_payloads: [:git_branch, :git_author], # Optional, lets you specify an allowlist of default payloads to include. Pass an empty array to suppress all the default payloads.
-        # Don't add this key, or pass nil, if you want all the default payloads. The available default payloads are: `lane`, `test_result`, `git_branch`, `git_author`, `last_git_commit`, `last_git_commit_hash`.
+  default_payloads: [:git_branch, :git_author], # Optional, lets you specify default payloads to include. Pass an empty array to suppress all the default payloads.
   attachment_properties: { # Optional, lets you specify any other properties available for attachments in the slack API (see https://api.slack.com/docs/attachments).
        # This hash is deep merged with the existing properties set using the other properties above. This allows your own fields properties to be appended to the existing fields that were created using the `payload` property for instance.
     thumb_url: "http://example.com/path/to/thumb.png",
@@ -66,7 +65,7 @@ Key | Description | Default
   `username` | Overrides the webhook's username property if use_webhook_configured_username_and_icon is false | `fastlane`
   `icon_url` | Overrides the webhook's image property if use_webhook_configured_username_and_icon is false | `https://fastlane.tools/assets/img/fastlane_icon.png`
   `payload` | Add additional information to this post. payload must be a hash containing any key with any value | `{}`
-  `default_payloads` | Remove some of the default payloads. More information about the available payloads on GitHub | 
+  `default_payloads` | Specifies default payloads to include. Pass an empty array to suppress all the default payloads | `["lane", "test_result", "git_branch", "git_author", "last_git_commit", "last_git_commit_hash"]`
   `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments | `{}`
   `success` | Was this build successful? (true/false) | `true`
   `fail_on_error` | Should an error sending the slack notification cause a failure? (true/false) | `true`
