@@ -55,7 +55,7 @@ lane :release do
     key_id: "D383SF739",
     issuer_id: "6053b7fe-68a8-4acb-89be-165aa6465141",
     key_filepath: "./AuthKey_D383SF739.p8",
-    duration: 1200, # optional
+    duration: 1200, # optional (maximum 1200)
     in_house: false, # optional but may be required if using match/sigh
   )
 
@@ -73,7 +73,7 @@ lane :release do
     key_id: "D383SF739",
     issuer_id: "6053b7fe-68a8-4acb-89be-165aa6465141",
     key_filepath: "./AuthKey_D383SF739.p8",
-    duration: 1200, # optional
+    duration: 1200, # optional (maximum 1200)
     in_house: false, # optional but may be required if using match/sigh
   )
 
@@ -92,7 +92,7 @@ Below is an example of the _fastlane_ API Key JSON file format that tools and ac
 
 The JSON file allows optional:
 
-- `duration` (session length in seconds)
+- `duration` (session length in seconds, maximum 1200)
 - `in_house` (boolean value if team is Enterprise or not)
 
 ```js
@@ -100,7 +100,7 @@ The JSON file allows optional:
   "key_id": "D383SF739",
   "issuer_id": "6053b7fe-68a8-4acb-89be-165aa6465141",
   "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----",
-  "duration": 1200, # optional
+  "duration": 1200, # optional (maximum 1200)
   "in_house": false, # optional but may be required if using match/sigh
 }
 ```
