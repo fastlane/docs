@@ -210,7 +210,7 @@ Get a list of all available options using `fastlane action changelog_from_git_co
 ```ruby
 changelog_from_git_commits(
   between: ['7b092b3', 'HEAD'], # Optional, lets you specify a revision/tag range between which to collect commit info
-  merge_commit_filtering: exclude_merges # Optional, lets you filter out merge commits
+  merge_commit_filtering: 'exclude_merges' # Optional, lets you filter out merge commits
 )
 ```
 ---

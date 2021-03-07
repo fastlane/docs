@@ -187,7 +187,7 @@ fastlane action upload_to_app_store
 
 # Put Your Screenshots Into Device Frames
 
-_frameit_ helps you beautify your screenshots with devices frames and text by running one simple command. It provides support for:
+_frameit_ helps you beautify your screenshots with device frames and text by running one simple command. It provides support for:
 
 - Multiple device types
 - Portrait and landscape orientations
@@ -200,7 +200,7 @@ _frameit_ helps you beautify your screenshots with devices frames and text by ru
 
 ## Usage
 
-Automatically add device frames around all screenshots in the current directory and its subdirectories, just run
+To automatically add device frames around all screenshots in the current directory and its subdirectories, just run:
 
 ```no-highlight
 fastlane frameit
@@ -217,7 +217,7 @@ If you want to upload the screenshots to the App Store, you **have** to provide 
 <details>
 <summary>Installing ImageMagick</summary>
 
-_frameit_ depends on a tool called `imagemagick` to do image manipulation. The easiest way to install it is through [homebrew](http://brew.sh/):
+To perform image manipulation, _frameit_ depends on a tool called `imagemagick`. The easiest way to install it is through [homebrew](http://brew.sh/):
 
 ```no-highlight
 brew install libpng jpeg imagemagick
@@ -338,7 +338,7 @@ fastlane snapshot reset_simulators
 <details>
 <summary>Launch Arguments</summary>
 
-You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through `NSProcessInfo.processInfo().arguments`. Alternatively, use user-default syntax (`-key value`) and they will be available as key-value pairs in `NSUserDefaults.standardUserDefaults()`.
+You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through `ProcessInfo.processInfo.arguments`. Alternatively, use user-default syntax (`-key value`) and they will be available as key-value pairs in `UserDefaults.standard`.
 
 ```ruby
 launch_arguments([
@@ -347,14 +347,14 @@ launch_arguments([
 ```
 
 ```swift
-name.text = NSUserDefaults.standardUserDefaults().stringForKey("firstName")
+name.text = UserDefaults.standard.string(forKey: "firstName")
 // name.text = "Felix"
 ```
 
 _snapshot_ includes `-FASTLANE_SNAPSHOT YES`, which will set a temporary user default for the key `FASTLANE_SNAPSHOT`, you may use this to detect when the app is run by _snapshot_.
 
 ```swift
-if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
     // runtime check that we are in snapshot mode
 }
 ```
