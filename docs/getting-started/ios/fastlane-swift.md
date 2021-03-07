@@ -6,10 +6,7 @@ Fastlane.swift is currently in beta. Please provide feedback by opening an issue
 
 ## Currently Supported
 
-Fastlane.swift currently supports all built-in [fastlane actions](https://docs.fastlane.tools/actions/). Make sure to update to the most recent _fastlane_ release to try this feature.
-
-## PLugins 
-When you add any plugin fastlane the corresponding API will be automatically available in `fastlane/swift/Plugins.swift`
+Fastlane.swift currently supports all built-in [fastlane actions](https://docs.fastlane.tools/actions/) and 3rd party [plugins](https://docs.fastlane.tools/plugins/available-plugins/). Make sure to update to the most recent _fastlane_ release to try this feature.
 
 ## Get Started
 
@@ -86,6 +83,18 @@ class Fastfile: LaneFile {
     }
 }
 ```
+
+## Using Plugins
+
+Once you [add a plugin](https://docs.fastlane.tools/plugins/using-plugins/#add-a-plugin-to-your-project), _fastlane_ will automatically generate the corresponding API and make it available in `fastlane/swift/Plugins.swift`.
+
+Example:
+
+```sh
+bundle exec fastlane add_plugin ascii_art
+```
+
+The `fastlane/swift/Plugins.swift` file should now contain the function `asciiArt()`, and you can access it in your lanes in `fastlane/Fastlane.swift`.
 
 ## Run Parallel
 
