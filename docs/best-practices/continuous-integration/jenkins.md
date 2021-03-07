@@ -2,7 +2,7 @@
 
 ## Installation
 
-The recommended way to install [Jenkins](http://jenkins-ci.org/) is through [homebrew](http://brew.sh/):
+The recommended way to [install Jenkins on macOS](https://www.jenkins.io/download/lts/macos/) is through [homebrew](http://brew.sh/):
 
 ```no-highlight
 brew update && brew install jenkins-lts
