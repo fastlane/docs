@@ -170,6 +170,8 @@ Check out [Testing UI for a Single App](http://developer.android.com/training/te
 ##### Example UI Test Class (Using JUnit4)
 Java:
 ```java
+import tools.fastlane.screengrab.Screengrab
+
 @RunWith(JUnit4.class)
 public class JUnit4StyleTests {
     @ClassRule
