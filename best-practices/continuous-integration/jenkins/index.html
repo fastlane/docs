@@ -1360,12 +1360,12 @@
               
                 <h1 id="jenkins-integration"><a name="user-content-jenkins-integration" href="#jenkins-integration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Jenkins Integration</h1>
 <h2 id="installation"><a name="user-content-installation" href="#installation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Installation</h2>
-<p>The recommended way to install <a href="http://jenkins-ci.org/">Jenkins</a> is through <a href="http://brew.sh/">homebrew</a>:</p>
-<pre><code class="no-highlight">brew update &amp;&amp; brew install jenkins
+<p>The recommended way to <a href="https://www.jenkins.io/download/lts/macos/">install Jenkins on macOS</a> is through <a href="http://brew.sh/">homebrew</a>:</p>
+<pre><code class="no-highlight">brew update &amp;&amp; brew install jenkins-lts
 </code></pre>
 
 <p>From now on start <code>Jenkins</code> by running:</p>
-<pre><code class="no-highlight">jenkins
+<pre><code class="no-highlight">brew services start jenkins-lts
 </code></pre>
 
 <p>To store the password in the Keychain of your remote machine, it is recommended that you run <em>match</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
