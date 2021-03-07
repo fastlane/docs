@@ -1441,7 +1441,7 @@
     key_id: &quot;D383SF739&quot;,
     issuer_id: &quot;6053b7fe-68a8-4acb-89be-165aa6465141&quot;,
     key_filepath: &quot;./AuthKey_D383SF739.p8&quot;,
-    duration: 1200, # optional
+    duration: 1200, # optional (maximum 1200)
     in_house: false, # optional but may be required if using match/sigh
   )
 
@@ -1456,7 +1456,7 @@ end
     key_id: &quot;D383SF739&quot;,
     issuer_id: &quot;6053b7fe-68a8-4acb-89be-165aa6465141&quot;,
     key_filepath: &quot;./AuthKey_D383SF739.p8&quot;,
-    duration: 1200, # optional
+    duration: 1200, # optional (maximum 1200)
     in_house: false, # optional but may be required if using match/sigh
   )
 
@@ -1474,14 +1474,14 @@ end
 </ul>
 <p>The JSON file allows optional:</p>
 <ul>
-<li><code>duration</code> (session length in seconds)</li>
+<li><code>duration</code> (session length in seconds, maximum 1200)</li>
 <li><code>in_house</code> (boolean value if team is Enterprise or not)</li>
 </ul>
 <pre><code class="js">{
   &quot;key_id&quot;: &quot;D383SF739&quot;,
   &quot;issuer_id&quot;: &quot;6053b7fe-68a8-4acb-89be-165aa6465141&quot;,
   &quot;key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----&quot;,
-  &quot;duration&quot;: 1200, # optional
+  &quot;duration&quot;: 1200, # optional (maximum 1200)
   &quot;in_house&quot;: false, # optional but may be required if using match/sigh
 }
 </code></pre>
