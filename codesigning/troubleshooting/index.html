@@ -1401,6 +1401,7 @@
   <img src="/img/codesigning/KeychainPrivateKey.png" width=500 />
 </p></li>
 <li>Make sure to have deleted all expired WWDR certificates, more information <a href="https://stackoverflow.com/questions/32821189/xcode-7-error-missing-ios-distribution-signing-identity-for/35401483#35401483">here</a>. There might be 2 expired WWDR certificates, one in the <code>login</code>, and one in the <code>system</code> keychain</li>
+<li>Run <code>security default-keychain</code> to view the default keychain that is used by some <em>fastlane</em> actions if a keychain path is not explicitly provided.  If it's the system keychain, make sure <em>fastlane</em> has access to write to it.  You may want to reconfigure your enviroment so the default keychain is the login keychain, which is less prone to permissions errors.  If you're using <code>launchctl</code>, see <a href="https://serverfault.com/a/371252">this link to change the default keychain to the login keychain</a>.</li>
 </ol>
 <h2 id="have-you-tried-turning-it-off-and-on-again"><a name="user-content-have-you-tried-turning-it-off-and-on-again" href="#have-you-tried-turning-it-off-and-on-again" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Have you tried turning it off and on again?</h2>
 <p>As funny as it sounds, sometimes restarting your Mac helps.</p>
