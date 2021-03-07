@@ -1418,6 +1418,57 @@ brew install fastlane
 <h1 id="fastfile"><a name="user-content-fastfile" href="#fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fastfile</h1>
 <p>The <code>Fastfile</code> stores the automation configuration that can be run with <em>fastlane</em>.</p>
 <p>The <code>Fastfile</code> has to be inside your <code>./fastlane</code> directory.</p>
+<p>The <code>Fastfile</code> is used to configure <a href="https://fastlane.tools"><em>fastlane</em></a>. Open it in your favourite text editor, using Ruby syntax highlighting.</p>
+<p>Defining lanes is easy. </p>
+<pre><code class="rb">lane :my_lane do
+  # Whatever actions you like go in here.
+end
+</code></pre>
+
+<p>Make as many lanes as you like!</p>
+<h3 id="before_all-block"><code>before_all</code> block</h3>
+<p>This block will get executed <em>before</em> running the requested lane. It supports the same actions as lanes.</p>
+<pre><code class="ruby">before_all do |lane|
+  cocoapods
+end
+</code></pre>
+
+<h3 id="after_all-block"><code>after_all</code> block</h3>
+<p>This block will get executed <em>after</em> running the requested lane. It supports the same actions as lanes.</p>
+<p>It will only be called, if the selected lane was executed <strong>successfully</strong>.</p>
+<pre><code class="ruby">after_all do |lane|
+  say(&quot;Successfully finished deployment (#{lane})!&quot;)
+  slack(
+    message: &quot;Successfully submitted new App Update&quot;
+  )
+  sh(&quot;./send_screenshots_to_team.sh&quot;) # Example
+end
+</code></pre>
+
+<h3 id="error-block"><code>error</code> block</h3>
+<p>This block will get executed when an error occurs, in any of the blocks (<em>before_all</em>, the lane itself or <em>after_all</em>).
+You can get more information about the error using the <code>error_info</code> property.</p>
+<pre><code class="ruby">error do |lane, exception|
+  slack(
+    message: &quot;Something went wrong with the deployment.&quot;,
+    success: false,
+    payload: { &quot;Error Info&quot; =&gt; exception.error_info.to_s } 
+  )
+end
+</code></pre>
+
+<h2 id="extensions"><a name="user-content-extensions" href="#extensions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Extensions</h2>
+<p>Why only use the default actions? Create your own to extend the functionality of <em>fastlane</em>.</p>
+<p>The build step you create will behave exactly like the built in actions.</p>
+<p>Just run <code>fastlane new_action</code>. Then enter the name of the action and edit the generated Ruby file in <code>fastlane/actions/[action_name].rb</code>.</p>
+<p>From then on, you can just start using your action in your <code>Fastfile</code>.</p>
+<p>If you think your extension can be used by other developers as well, let me know, and we can bundle it with <em>fastlane</em>.</p>
+<p>To call another action from within your action, just use the same code you would use in a <code>Fastfile</code>:</p>
+<pre><code class="ruby">other_action.deliver(text: &quot;Please input your password:&quot;, 
+                      key: 123)
+</code></pre>
+
+<p>In general, think twice before you do this, most of the times, these action should be separate. Only call actions from within action if it makes sense.</p>
 <h1 id="importing-another-fastfile"><a name="user-content-importing-another-fastfile" href="#importing-another-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Importing another Fastfile</h1>
 <p>Within your <code>Fastfile</code> you can import another <code>Fastfile</code> using 2 methods:</p>
 <h2 id="import"><code>import</code></h2>
