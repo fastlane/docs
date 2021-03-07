@@ -3,6 +3,7 @@
 Update your `.travis.yml` to look like this:
 
 ```yml
+os: osx
 language: objective-c
 osx_image: xcode8.3
 install:
