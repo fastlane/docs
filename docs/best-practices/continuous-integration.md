@@ -87,13 +87,14 @@ Unfortunately there is nothing _fastlane_ can do better in this regard, as these
 ## Environment variables to set
 
 Most setups will need the following environment variables
-- `SPACESHIP_ONLY_ALLOW_INTERACTIVE_2FA`: Explicitly prevent running of 2FA in non-interactive mode.
+
 - `FASTLANE_USER`: Your App Store Connect / Apple Developer Portal user, if your _fastlane_ setup accesses App Store Connect or the Apple Developer Portal (e.g. submit a TestFlight build, create a profile, ...)
 - `FASTLANE_PASSWORD`: Your App Store Connect / Apple Developer Portal password, usually only needed if you also set the `FASTLANE_USER` variable
 - `MATCH_PASSWORD`: You need to provide the password of your _match_ encryption if you use _match_
 - `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD`: You need to provide an [application specific password](#application-specific-passwords) if you have 2-factor enabled and use _pilot_ or _deliver_ to upload a binary to App Store Connect
 - `FASTLANE_SESSION`: You need to provide a [pregenerated session via `fastlane spaceauth`](#spaceauth) if you have 2-factor authentication enabled and want to use any actions that communicates with App Store Connect.
 - `LANG` and `LC_ALL`: These set up the locale your shell and all the commands you execute run at. _fastlane_ needs these to be set to an UTF-8 locale to work correctly, for example `en_US.UTF-8`. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.
+- `SPACESHIP_ONLY_ALLOW_INTERACTIVE_2FA`: Explicitly prevent running of 2FA in non-interactive mode.
 
 ## Deploy Strategy
 
