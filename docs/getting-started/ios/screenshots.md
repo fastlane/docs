@@ -200,7 +200,7 @@ _frameit_ helps you beautify your screenshots with device frames and text by run
 
 ## Usage
 
-To automatically add device frames around all screenshots in the current directory and its subdirectories, just run
+To automatically add device frames around all screenshots in the current directory and its subdirectories, just run:
 
 ```no-highlight
 fastlane frameit
