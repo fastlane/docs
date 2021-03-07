@@ -1428,9 +1428,9 @@ brew install fastlane
 end
 </code></pre>
 
-<p>You can also use Xcode’s <em>Automatically Manage Signing</em> feature. By default, automatic signing via <code>xcodebuild</code> is disabled. To enable it, pass <code>-allowProvisioningUpdates</code> via the <code>export_xcargs</code> option:</p>
+<p>You can also use Xcode’s <em>Automatically Manage Signing</em> feature. By default, automatic signing via <code>xcodebuild</code> is disabled. To enable it, pass <code>-allowProvisioningUpdates</code> via the <code>xcargs</code> option:</p>
 <pre><code class="ruby">lane :beta do
-  build_app(export_xcargs: &quot;-allowProvisioningUpdates&quot;)
+  build_app(xcargs: &quot;-allowProvisioningUpdates&quot;)
 end
 </code></pre>
 
