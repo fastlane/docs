@@ -1494,8 +1494,8 @@ lane :staging do |options|
 end
 
 lane :build do |options|
-  scheme = (options[:release] ? &quot;Release&quot; : &quot;Staging&quot;)
-  build_ios_app(scheme: scheme)
+  build_config = (options[:release] ? &quot;Release&quot; : &quot;Staging&quot;)
+  build_ios_app(configuration: build_config)
 end
 </code></pre>
 
