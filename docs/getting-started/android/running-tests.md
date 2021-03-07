@@ -47,7 +47,7 @@ fastlane tests
 
 ## Posting build results
 
-If you want to post test results on Slack, Hipchat or other team chat client, check out the available [fastlane actions](/actions/#notifications).
+If you want to post test results on Slack, Hipchat, or other team chat client, check out the available [fastlane actions](/actions/#notifications).
 
 ### Build failures
 
