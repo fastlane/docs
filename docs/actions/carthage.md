@@ -60,7 +60,9 @@ Key | Description | Default
   `dependencies` | Carthage dependencies to update, build or bootstrap | `[]`
   `use_ssh` | Use SSH for downloading GitHub repositories | 
   `use_submodules` | Add dependencies as Git submodules | 
+  `use_netrc` | Use .netrc for downloading frameworks | 
   `use_binaries` | Check out dependency repositories even when prebuilt frameworks exist | 
+  `no_checkout` | When bootstrapping Carthage do not checkout | 
   `no_build` | When bootstrapping Carthage do not build | 
   `no_skip_current` | Don't skip building the Carthage project (in addition to its dependencies) | 
   `derived_data` | Use derived data folder at path | 
@@ -74,18 +76,49 @@ Key | Description | Default
   `project_directory` | Define the directory containing the Carthage project | 
   `new_resolver` | Use new resolver when resolving dependency graph | 
   `log_path` | Path to the xcode build output | 
+  `use_xcframeworks` | Create xcframework bundles instead of one framework per platform (requires Xcode 12+) | `false`
+  `archive` | Archive built frameworks from the current project | `false`
   `executable` | Path to the `carthage` executable on your machine | `carthage`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action carthage
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/carthage.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run carthage
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run carthage parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/carthage.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

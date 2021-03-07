@@ -81,6 +81,12 @@ If you want to generate a development certificate instead:
 fastlane pem --development
 ```
 
+If you want to generate a Website Push certificate:
+
+```no-highlight
+fastlane pem --website_push
+```
+
 Set a password for your `p12` file:
 
 ```no-highlight
@@ -181,6 +187,7 @@ get_push_certificate(
 Key | Description | Default
 ----|-------------|--------
   `development` | Renew the development push certificate instead of the production one | `false`
+  `website_push` | Create a Website Push certificate | `false`
   `generate_p12` | Generate a p12 file additionally to a PEM file | `true`
   `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one | `30`
   `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days | `false`
@@ -198,12 +205,41 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action pem
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/pem.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run pem
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run pem parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/pem.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

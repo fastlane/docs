@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Configures Xcode's Codesigning options
 
-
+> Please use `update_code_signing_settings` action instead.
 
 
 > Configures Xcode's Codesigning options of all targets in the project
@@ -100,12 +100,41 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action automatic_code_signing
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/automatic_code_signing.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run automatic_code_signing
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run automatic_code_signing parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/automatic_code_signing.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

@@ -40,18 +40,47 @@ Key | Description | Default
 ----|-------------|--------
   `serial` | Android serial of the device to use for this command | `''`
   `command` | All commands you want to pass to the adb command, e.g. `kill-server` | 
-  `adb_path` | The path to your `adb` binary (can be left blank if the ANDROID_SDK_ROOT environment variable is set) | `adb`
+  `adb_path` | The path to your `adb` binary (can be left blank if the ANDROID_SDK_ROOT, ANDROID_HOME or ANDROID_SDK environment variable is set) | `adb`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action adb
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/adb.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run adb
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run adb parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/adb.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

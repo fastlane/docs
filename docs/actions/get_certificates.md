@@ -134,26 +134,73 @@ get_certificates(
 Key | Description | Default
 ----|-------------|--------
   `development` | Create a development certificate instead of a distribution one | `false`
+  `type` | Create specific certificate type (takes precedence over :development) | 
   `force` | Create a certificate even if an existing certificate exists | `false`
+  `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `filename` | The filename of certificate to store | 
   `output_path` | The path to a directory in which all certificates and private keys should be stored | `.`
   `keychain_path` | Path to a custom keychain | [*](#parameters-legend-dynamic)
-  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your account password | 
-  `platform` | Set the provisioning profile's platform (ios, macos) | `ios`
+  `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
+  `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
+  `platform` | Set the provisioning profile's platform (ios, macos, tvos) | `ios`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `get_certificates` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::CERT_FILE_PATH` | The path to the certificate
+  `SharedValues::CERT_CERTIFICATE_ID` | The id of the certificate
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action get_certificates
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_certificates.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run get_certificates
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run get_certificates parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_certificates.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

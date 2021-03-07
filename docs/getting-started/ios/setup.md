@@ -1,5 +1,9 @@
 # Getting started with _fastlane_ for iOS
 
+## Setup Xcode for _fastlane_
+
+{!docs/includes/installing-fastlane-ios.md!}
+
 ## Installing _fastlane_
 
 {!docs/includes/installing-fastlane.md!}
@@ -20,7 +24,7 @@ fastlane init swift
 
 **Swift setup is still in beta. See [Fastlane.swift docs](https://docs.fastlane.tools/getting-started/ios/fastlane-swift/) for more information.**
 
-Depending on what kind of setup you choose, different files will be set up for you. If you chose to download the existing app metadata, you'll end up new folders that look like this:
+Depending on what kind of setup you choose, different files will be set up for you. If you chose to download the existing app metadata, you'll end up with new folders that look like this:
 
 <img src="/img/getting-started/ios/fastlane-init.png" width="800" />
 

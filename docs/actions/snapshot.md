@@ -119,7 +119,7 @@ app.launch()
 
 ```objective-c
 XCUIApplication *app = [[XCUIApplication alloc] init];
-[Snapshot setupSnapshot:app];
+[Snapshot setupSnapshot:app waitForAnimations:NO];
 [app launch];
 ```
 
@@ -141,7 +141,7 @@ Your screenshots will be stored in the `./screenshots/` folder by default (or `.
 
 New with Xcode 9, *snapshot* can run multiple simulators concurrently. This is the default behavior in order to take your screenshots as quickly as possible. This can be disabled to run each device, one at a time, by setting the `:concurrent_simulators` option to `false`.
 
-**Note:** While running *snapshot* with Xcode 9, the simulators will not be visibly spawned. So, while you wont see the simulators running your tests, they will, in fact, be taking your screenshots.
+**Note:** While running *snapshot* with Xcode 9, the simulators will not be visibly spawned. So, while you won't see the simulators running your tests, they will, in fact, be taking your screenshots.
 
 If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and _snapshot_ will continue with the next device or language. To stop the flow after the first error, run
 
@@ -203,10 +203,16 @@ The `Snapfile` can contain all the options that are also available on `fastlane 
 scheme("UITests")
 
 devices([
-  "iPhone 6",
-  "iPhone 6 Plus",
-  "iPhone 5",
-  "iPhone 4s"
+  "iPad (7th generation)",
+  "iPad Air (3rd generation)",
+  "iPad Pro (11-inch)",
+  "iPad Pro (12.9-inch) (3rd generation)",
+  "iPad Pro (9.7-inch)",
+  "iPhone 11",
+  "iPhone 11 Pro",
+  "iPhone 11 Pro Max",
+  "iPhone 8",
+  "iPhone 8 Plus"
 ])
 
 languages([
@@ -222,6 +228,8 @@ launch_arguments(["-username Felix"])
 output_directory('./screenshots')
 
 clear_previous_screenshots(true)
+
+override_status_bar(true)
 
 add_photos(["MyTestApp/Assets/demo.jpg"])
 ```
@@ -256,7 +264,7 @@ to update your `SnapshotHelper.swift` files. In case you modified your `Snapshot
 
 ## Launch Arguments
 
-You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through `ProcessInfo.processInfo.arguments`. Alternatively, use user-default syntax (`-key value`) and they will be available as key-value pairs in `UserDefaults.standard`.
+You can provide additional arguments to your app on launch. These strings will be available in your app (e.g. not in the testing target) through `ProcessInfo.processInfo.arguments`. Alternatively, use user-default syntax (`-key value`) and they will be available as key-value pairs in `UserDefaults.standard`.
 
 ```ruby-skip-tests
 launch_arguments([
@@ -286,6 +294,10 @@ launch_arguments([
   "-secretFeatureEnabled NO"
 ])
 ```
+
+## Xcode Environment Variables
+
+_snapshot_ includes `FASTLANE_SNAPSHOT=YES` and `FASTLANE_LANGUAGE=<language>` as arguments when executing `xcodebuild`. This means you may use these environment variables in a custom build phase run script to do any additional configuration.
 
 # How does it work?
 
@@ -333,7 +345,7 @@ To get more information about language and locale codes please read [Internation
 
 ## Use a clean status bar
 
-You can use [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic) to clean up the status bar.
+You can set `override_status_bar` to `true` to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception.
 
 ## Editing the `Snapfile`
 
@@ -349,6 +361,31 @@ When the app dies directly after the application is launched there might be 2 pr
 ## Determine language
 
 To detect the currently used localization in your tests, access the `deviceLanguage` variable from `SnapshotHelper.swift`.
+
+## Speed up snapshots
+
+A lot of time in UI tests is spent waiting for animations.
+
+You can disable `UIView` animations in your app to make the tests faster:
+
+```swift
+if ProcessInfo().arguments.contains("SKIP_ANIMATIONS") {
+    UIView.setAnimationsEnabled(false)
+}
+```
+
+This requires you to pass the launch argument like so:
+
+```ruby
+snapshot(launch_arguments: ["SKIP_ANIMATIONS"])
+```
+
+By default, _snapshot_ will wait for a short time for the animations to finish.
+If you're skipping the animations, this wait time is unnecessary and can be skipped:
+
+```swift
+setupSnapshot(app, waitForAnimations: false)
+```
 
 <hr />
 
@@ -400,10 +437,14 @@ Key | Description | Default
   `clear_previous_screenshots` | Enabling this option will automatically clear previously generated screenshots before running snapshot | `false`
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `erase_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
+  `headless` | Enabling this option will prevent displaying the simulator window | `true`
+  `override_status_bar` | Enabling this option will automatically override the status bar to show 9:41 AM, full battery, and full reception | `false`
   `localize_simulator` | Enabling this option will configure the Simulator's system language | `false`
+  `dark_mode` | Enabling this option will configure the Simulator to be in dark mode (false for light, true for dark) | 
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `add_photos` | A list of photos that should be added to the simulator before running the application | 
   `add_videos` | A list of videos that should be added to the simulator before running the application | 
+  `html_template` | A path to screenshots.html template | 
   `buildlog_path` | The directory where to store the build log | [*](#parameters-legend-dynamic)
   `clean` | Should the project be cleaned before building it? | `false`
   `test_without_building` | Test without building, requires a derived data path | 
@@ -418,17 +459,68 @@ Key | Description | Default
   `test_target_name` | The name of the target you want to test (if you desire to override the Target Application from Xcode) | 
   `namespace_log_files` | Separate the log files per device and per language | 
   `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9 | `true`
+  `disable_slide_to_type` | Disable the simulator from showing the 'Slide to type' prompt | `false`
+  `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `testplan` | The testplan associated with the scheme that should be used for testing | 
+  `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
+  `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `disable_xcpretty` | Disable xcpretty formatting of build | 
+  `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `snapshot` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::SNAPSHOT_SCREENSHOTS_PATH` | The path to the screenshots
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action snapshot
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/snapshot.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run snapshot
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run snapshot parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/snapshot.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

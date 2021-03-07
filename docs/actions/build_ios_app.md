@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # build_ios_app
 
 
-Easily build and sign your app (via _gym_)
+Alias for the `build_app` action but only for iOS
 
 
 
@@ -147,28 +147,31 @@ export_options("./ExportOptions.plist")
 or you can provide hash of values directly in the `Gymfile`:
 
 ```ruby-skip-tests
-export_options = {
+export_options({
   method: "ad-hoc",
   manifest: {
     appURL: "https://example.com/My App.ipa",
   },
   thinning: "<thin-for-all-variants>"
-}
+})
 ```
 
 Optional: If _gym_ can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:
 
-```ruby-skip-tests
-export_options: {
-  method: "app-store",
-  provisioningProfiles: { 
-    "com.example.bundleid" => "Provisioning Profile Name",
-    "com.example.bundleid2" => "Provisioning Profile Name 2"
+```ruby
+build_app(
+  scheme: "Release",
+  export_options: {
+    method: "app-store",
+    provisioningProfiles: { 
+      "com.example.bundleid" => "Provisioning Profile Name",
+      "com.example.bundleid2" => "Provisioning Profile Name 2"
+    }
   }
-}
+)
 ```
 
-**Note**: If you use [_fastlane_](https://fastlane.tools) with [_match_](https://fastlane.tools/match) you don't need to provide those values manually.
+**Note**: If you use [_fastlane_](https://fastlane.tools) with [_match_](https://fastlane.tools/match) you don't need to provide those values manually, unless you pass a plist file into `export_options`
 
 For the list of available options run `xcodebuild -help`.
 
@@ -259,20 +262,20 @@ It will show you `ipa` files like this:
 
 build_ios_app ||
 ---|---
-Supported platforms | ios, mac
+Supported platforms | ios
 Author | @KrauseFx
 Returns | The absolute path to the generated ipa file
 
 
 
-## 4 Examples
+## 5 Examples
 
 ```ruby
-build_ios_app(scheme: "MyApp", workspace: "MyApp.xcworkspace")
+build_app(scheme: "MyApp", workspace: "MyApp.xcworkspace")
 ```
 
 ```ruby
-build_ios_app(
+build_app(
   workspace: "MyApp.xcworkspace",
   configuration: "Debug",
   scheme: "MyApp",
@@ -285,11 +288,15 @@ build_ios_app(
 ```
 
 ```ruby
-gym         # alias for "build_ios_app"
+gym    # alias for "build_app"
 ```
 
 ```ruby
-build_app   # alias for "build_ios_app"
+build_ios_app    # alias for "build_app (only iOS options)"
+```
+
+```ruby
+build_mac_app    # alias for "build_app (only macOS options)"
 ```
 
 
@@ -312,15 +319,17 @@ Key | Description | Default
   `skip_package_ipa` | Should we skip packaging the ipa? | `false`
   `include_symbols` | Should the ipa file include symbols? | 
   `include_bitcode` | Should the ipa file include bitcode? | 
-  `export_method` | Method used to export the archive. Valid values are: app-store, ad-hoc, package, enterprise, development, developer-id | 
+  `export_method` | Method used to export the archive. Valid values are: app-store, validation, ad-hoc, package, enterprise, development, developer-id and mac-application | 
   `export_options` | Path to an export options plist or a hash with export options. Use 'xcodebuild -help' to print the full set of available options | 
   `export_xcargs` | Pass additional arguments to xcodebuild for the package phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
-  `skip_build_archive` | Export ipa from previously built xarchive. Uses archive_path as source | 
+  `skip_build_archive` | Export ipa from previously built xcarchive. Uses archive_path as source | 
   `skip_archive` | After building, don't archive, effectively not including -archivePath param | 
+  `skip_codesigning` | Build without codesigning | 
   `build_path` | The directory in which the archive should be stored in | 
   `archive_path` | The path to the created archive | 
   `derived_data_path` | The directory where built products and other derived data will go | 
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
+  `result_bundle_path` | Path to the result bundle directory to create. Ignored if `result_bundle` if false | 
   `buildlog_path` | The directory where to store the build log | [*](#parameters-legend-dynamic)
   `sdk` | The SDK that should be used for building the application | 
   `toolchain` | The toolchain that should be used for building the application (e.g. com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a) | 
@@ -338,17 +347,65 @@ Key | Description | Default
   `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file | 
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
+  `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `build_ios_app` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::IPA_OUTPUT_PATH` | The path to the newly generated ipa file
+  `SharedValues::PKG_OUTPUT_PATH` | The path to the newly generated pkg file
+  `SharedValues::DSYM_OUTPUT_PATH` | The path to the dSYM files
+  `SharedValues::XCODEBUILD_ARCHIVE` | The path to the xcodebuild archive
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action build_ios_app
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/build_ios_app.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run build_ios_app
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run build_ios_app parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/build_ios_app.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

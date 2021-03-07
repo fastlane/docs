@@ -37,19 +37,48 @@ Key | Description | Default
   `color` | Color of the device | `black`
   `launch_url` | Specify a deep link to open when your app is launched | 
   `os_version` | The operating system version on which to run your app, e.g. 10.3, 8.0 | 
-  `params` | Specifiy params value to be passed to Appetize | 
+  `params` | Specify params value to be passed to Appetize | 
   `proxy` | Specify a HTTP proxy to be passed to Appetize | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action appetize_viewing_url_generator
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/appetize_viewing_url_generator.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run appetize_viewing_url_generator
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run appetize_viewing_url_generator parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/appetize_viewing_url_generator.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

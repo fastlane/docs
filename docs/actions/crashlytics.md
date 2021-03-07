@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # crashlytics
 
 
-Upload a new build to [Crashlytics Beta](http://try.crashlytics.com/beta/)
+Refer to [Firebase App Distribution](https://appdistro.page.link/fastlane-repo)
+
+> Crashlytics Beta has been deprecated and replaced with Firebase App Distribution.<br>Beta will continue working until May 4, 2020.<br>Check out the [Firebase App Distribution docs](https://github.com/fastlane/fastlane-plugin-firebase_app_distribution) to get started.
 
 
-
-
-> Additionally, you can specify `notes`, `emails`, `groups` and `notifications`.<br>Distributing to Groups: When using the `groups` parameter, it's important to use the group **alias** names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog by clicking the 'Manage Groups' button.
+> Additionally, you can specify `notes`, `emails`, `groups` and `notifications`.<br>Distributing to Groups: When using the `groups` parameter, it's important to use the group **alias** names for each group you'd like to distribute to. A group's alias can be found in the web UI. If you're viewing the Beta page, you can open the groups dialog by clicking the 'Manage Groups' button.<br>This action uses the `submit` binary provided by the Crashlytics framework. If the binary is not found in its usual path, you'll need to specify the path manually by using the `crashlytics_path` option.
 
 
 crashlytics ||
@@ -21,15 +21,26 @@ Author | @KrauseFx, @pedrogimenez
 
 
 
-## 2 Examples
+## 3 Examples
 
 ```ruby
 crashlytics
 ```
 
 ```ruby
+# If you installed Crashlytics via CocoaPods
 crashlytics(
-  crashlytics_path: "./Pods/Crashlytics/", # path to your Crashlytics submit binary.
+  crashlytics_path: "./Pods/Crashlytics/submit", # path to your Crashlytics submit binary.
+  api_token: "...",
+  build_secret: "...",
+  ipa_path: "./app.ipa"
+)
+```
+
+```ruby
+# If you installed Crashlytics via Carthage for iOS platform
+crashlytics(
+  crashlytics_path: "./Carthage/Build/iOS/Crashlytics.framework/submit", # path to your Crashlytics submit binary.
   api_token: "...",
   build_secret: "...",
   ipa_path: "./app.ipa"
@@ -60,12 +71,41 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action crashlytics
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/crashlytics.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run crashlytics
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run crashlytics parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/crashlytics.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

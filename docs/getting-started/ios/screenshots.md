@@ -17,7 +17,7 @@ For the full story about the many ways that developers can capture and beautify 
 
 ### Manually Capturing Screenshots
 
-Manually taking screenshots takes too much time, which also decreases the quality of the screenshots. Since it is not automated, the screenshots will show slightly different content on the various devices and languages. Many companies choose to create screenshots in one language and use them for all languages. While this might seem okay to us developers, there are many potential users out there that cannot read the text on your app screenshots if they are not localised. Have you ever looked at a screenshots with content in a language you don't know? It won't convince you to download the app.
+Manually taking screenshots takes too much time, which also decreases the quality of the screenshots. Since it is not automated, the screenshots will show slightly different content on the various devices and languages. Many companies choose to create screenshots in one language and use them for all languages. While this might seem okay to us developers, there are many potential users out there that cannot read the text on your app screenshots if they are not localised. Have you ever looked at a screenshot with content in a language you don't know? It won't convince you to download the app.
 
 However, the biggest disadvantage of this method is what happens when you need to repeat the process. If you notice a spelling mistake in the screenshots, if you release an update with a new design, or if you just want to show more up to date content, you'll have to create new screenshots for all languages and devices... manually.
 
@@ -34,7 +34,7 @@ While this is convenient, this approach has the same problems as the device fram
 _snapshot_ works with _fastlane_ to automate the process of capturing screenshots of your app. It allows you to:
 
 - Capture hundreds of screenshots in multiple languages on all simulators
-- Take screenshots in multiple device simulators concurrently to cut down execution time (Xcode 9 only)
+- Take screenshots in multiple device simulators concurrently to cut down execution time
 - Do something else while the computer takes the screenshots for you
 - Configure it once, and store the configuration so anyone on the team can run it
 - Generate a beautiful web page showing all screenshots on all devices. This is perfect to send to Q&A, marketing, or translators for verification
@@ -101,12 +101,16 @@ The setup process will also generate a `Snapfile`, looking similar to
 ```ruby
 # A list of devices you want to take the screenshots from
 # devices([
-#   "iPhone 6",
-#   "iPhone 6 Plus",
-#   "iPhone 5",
-#   "iPhone 4s",
-#   "iPad Retina",
-#   "iPad Pro"
+#  "iPad (7th generation)",
+#  "iPad Air (3rd generation)",
+#  "iPad Pro (11-inch)",
+#  "iPad Pro (12.9-inch) (3rd generation)",
+#  "iPad Pro (9.7-inch)",
+#  "iPhone 11",
+#  "iPhone 11 Pro",
+#  "iPhone 11 Pro Max",
+#  "iPhone 8",
+#  "iPhone 8 Plus"
 # ])
 
 languages([

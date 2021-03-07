@@ -21,7 +21,7 @@ Author | @KrauseFx
 
 
 
-## 3 Examples
+## 4 Examples
 
 ```ruby
 git_commit(path: "./version.txt", message: "Version Bump")
@@ -35,6 +35,10 @@ git_commit(path: ["./version.txt", "./changelog.txt"], message: "Version Bump")
 git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
 ```
 
+```ruby
+git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation", skip_git_hooks: true)
+```
+
 
 
 
@@ -43,19 +47,50 @@ git_commit(path: ["./*.txt", "./*.md"], message: "Update documentation")
 
 Key | Description | Default
 ----|-------------|--------
-  `path` | The file you want to commit | 
+  `path` | The file(s) or directory(ies) you want to commit. You can pass an array of multiple file-paths or fileglobs "*.txt" to commit all matching files. The files already staged but not specified and untracked files won't be committed | 
   `message` | The commit message that should be used | 
+  `skip_git_hooks` | Set to true to pass --no-verify to git | 
+  `allow_nothing_to_commit` | Set to true to allow commit without any git changes in the files you want to commit | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action git_commit
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_commit.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run git_commit
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run git_commit parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_commit.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

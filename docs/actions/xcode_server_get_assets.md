@@ -51,12 +51,54 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `xcode_server_get_assets` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::XCODE_SERVER_GET_ASSETS_PATH` | Absolute path to the downloaded assets folder
+  `SharedValues::XCODE_SERVER_GET_ASSETS_ARCHIVE_PATH` | Absolute path to the downloaded xcarchive file
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action xcode_server_get_assets
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcode_server_get_assets.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run xcode_server_get_assets
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run xcode_server_get_assets parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcode_server_get_assets.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

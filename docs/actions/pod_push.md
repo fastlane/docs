@@ -58,18 +58,52 @@ Key | Description | Default
   `use_libraries` | Allow lint to use static libraries to install the spec | 
   `sources` | The sources of repos you want the pod spec to lint with, separated by commas | 
   `swift_version` | The SWIFT_VERSION that should be used to lint the spec. This takes precedence over a .swift-version file | 
+  `skip_import_validation` | Lint skips validating that the pod can be imported | 
+  `skip_tests` | Lint skips building and running tests during validation | 
+  `use_json` | Convert the podspec to JSON before pushing it to the repo | 
   `verbose` | Show more debugging information | `false`
+  `use_modular_headers` | Use modular headers option during validation | 
+  `synchronous` | If validation depends on other recently pushed pods, synchronize | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action pod_push
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/pod_push.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run pod_push
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run pod_push parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/pod_push.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

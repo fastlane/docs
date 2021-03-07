@@ -17,11 +17,11 @@ Runs Swift Package Manager on your project
 spm ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @Flávio Caetano (@fjcaetano)
+Author | @fjcaetano, @nxtstep
 
 
 
-## 2 Examples
+## 3 Examples
 
 ```ruby
 spm
@@ -35,6 +35,13 @@ spm(
 )
 ```
 
+```ruby
+spm(
+  command: "generate-xcodeproj",
+  xcconfig: "Package.xcconfig"
+)
+```
+
 
 
 
@@ -43,23 +50,56 @@ spm(
 
 Key | Description | Default
 ----|-------------|--------
-  `command` | The swift command (one of: build, test, clean, reset, update) | `build`
+  `command` | The swift command (one of: build, test, clean, reset, update, resolve, generate-xcodeproj, init) | `build`
+  `enable_code_coverage` | Enables code coverage for the generated Xcode project when using the 'generate-xcodeproj' and the 'test' command | 
   `build_path` | Specify build/cache directory [default: ./.build] | 
   `package_path` | Change working directory before any other operation | 
+  `xcconfig` | Use xcconfig file to override swift package generate-xcodeproj defaults | 
   `configuration` | Build with configuration (debug\|release) [default: debug] | 
+  `disable_sandbox` | Disable using the sandbox when executing subprocesses | `false`
   `xcpretty_output` | Specifies the output type for xcpretty. eg. 'test', or 'simple' | 
+  `xcpretty_args` | Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf'), requires xcpretty_output to be specified also | 
   `verbose` | Increase verbosity of informational output | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action spm
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/spm.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run spm
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run spm parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/spm.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

@@ -13,5 +13,7 @@ Tip: If you see Google Play Console or Google Developer Console in your local la
    1. Make a note of the file name of the JSON file downloaded to your computer
 1. Back on the **Google Play Console**, click **DONE** to close the dialog
 1. Click on **Grant Access** for the newly added service account
-1. Choose **Release Manager** from the `Role` dropdown
+1. Choose **Release Manager** (or alternatively **Project Lead**) from the `Role` dropdown. (Note that choosing **Release Manager** grants access to the production track and all other tracks. Choosing **Project Lead** grants access to update all tracks _except_ the production track.)
 1. Click **ADD USER** to close the dialog
+
+You can use [`fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json`](https://docs.fastlane.tools/actions/validate_play_store_json_key/) to test the connection to Google Play Store with the downloaded private key.

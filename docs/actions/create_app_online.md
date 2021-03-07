@@ -15,7 +15,7 @@ Creates the given application on iTC and the Dev Portal (via _produce_)
   <img src="/img/actions/produce.png" width="250">
 </p>
 
-###### Create new iOS apps on App Store Connect and Dev Portal using your command line
+###### Create new iOS apps on App Store Connect and Apple Developer Portal using your command line
 
 _produce_ creates new iOS apps on both the Apple Developer Portal and App Store Connect with the minimum required information.
 
@@ -120,7 +120,7 @@ fastlane produce associate_group -a com.krausefx.app group.krausefx
 If you want to create a new iCloud Container:
 
 ```no-highlight
-fastlane produce cloud_container -ci iCloud.com.krausefx.app -n "Example iCloud Container"
+fastlane produce cloud_container -g iCloud.com.krausefx.app -n "Example iCloud Container"
 ```
 
 If you want to associate an app with an iCloud Container:
@@ -249,9 +249,11 @@ lane :release do
     # Optional
     # App services can be enabled during app creation
     enable_services: {
+      access_wifi: "on",             # Valid values: "on", "off"
       app_group: "on",               # Valid values: "on", "off"
       apple_pay: "on",               # Valid values: "on", "off"
       associated_domains: "on",      # Valid values: "on", "off"
+      auto_fill_credential: "on",    # Valid values: "on", "off"
       data_protection: "complete",   # Valid values: "complete", "unlessopen", "untilfirstauth",
       game_center: "on",             # Valid values: "on", "off"
       health_kit: "on",              # Valid values: "on", "off"
@@ -262,7 +264,7 @@ lane :release do
       inter_app_audio: "on",         # Valid values: "on", "off"
       passbook: "on",                # Valid values: "on", "off"
       multipath: "on",               # Valid values: "on", "off"
-      network_extensions: "on",      # Valid values: "on", "off"
+      network_extension: "on",       # Valid values: "on", "off"
       nfc_tag_reading: "on",         # Valid values: "on", "off"
       personal_vpn: "on",            # Valid values: "on", "off"
       passbook: "on",                # Valid values: "on", "off" (deprecated)
@@ -335,12 +337,13 @@ Key | Description | Default
   `app_version` | Initial version number (e.g. '1.0') | 
   `sku` | SKU Number (e.g. '1234') | [*](#parameters-legend-dynamic)
   `platform` | The platform to use (optional) | `ios`
-  `language` | Primary Language (e.g. 'English', 'German') | `English`
+  `platforms` | The platforms to use (optional) | 
+  `language` | Primary Language (e.g. 'en-US', 'fr-FR') | `English`
   `company_name` | The name of your company. Only required if it's the first app you create | 
   `skip_itc` | Skip the creation of the app on App Store Connect | `false`
   `itc_users` | Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles | 
   `enabled_features` | **DEPRECATED!** Please use `enable_services` instead - Array with Spaceship App Services | `{}`
-  `enable_services` | Array with Spaceship App Services (e.g. app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), auto_fill_credential: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), game_center: (on\|off), health_kit: (on\|off), home_kit: (on\|off), hotspot: (on\|off), icloud: (legacy\|cloudkit), in_app_purchase: (on\|off), inter_app_audio: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), siri_kit: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off)) | `{}`
+  `enable_services` | Array with Spaceship App Services (e.g. access_wifi: (on\|off), app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), auto_fill_credential: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), game_center: (on\|off), health_kit: (on\|off), home_kit: (on\|off), hotspot: (on\|off), icloud: (legacy\|cloudkit), in_app_purchase: (on\|off), inter_app_audio: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), siri_kit: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off)) | `{}`
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal | `false`
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
@@ -351,12 +354,53 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `create_app_online` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::PRODUCE_APPLE_ID` | The Apple ID of the newly created app. You probably need it for `deliver`
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action create_app_online
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_app_online.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run create_app_online
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run create_app_online parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/create_app_online.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

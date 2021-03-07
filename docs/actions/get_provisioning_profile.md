@@ -273,11 +273,13 @@ get_provisioning_profile(
 Key | Description | Default
 ----|-------------|--------
   `adhoc` | Setting this flag will generate AdHoc profiles instead of App Store Profiles | `false`
-  `developer_id` | Setting his flag will generate Developer ID profiles instead of App Store Profiles | `false`
+  `developer_id` | Setting this flag will generate Developer ID profiles instead of App Store Profiles | `false`
   `development` | Renew the development certificate instead of the production one | `false`
   `skip_install` | By default, the certificate will be added to your local machine. Setting this flag will skip this action | `false`
   `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles | `false`
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
@@ -289,20 +291,66 @@ Key | Description | Default
   `filename` | Filename to use for the generated provisioning profile (must include .mobileprovision) | 
   `skip_fetch_profiles` | Skips the verification of existing profiles which is useful if you have thousands of profiles | `false`
   `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine | `false`
-  `platform` | Set the provisioning profile's platform (i.e. ios, tvos) | `ios`
+  `platform` | Set the provisioning profile's platform (i.e. ios, tvos, macos, catalyst) | `ios`
   `readonly` | Only fetch existing profile, don't generate new ones | `false`
   `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
+  `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `get_provisioning_profile` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::SIGH_PROFILE_PATH` | A path in which certificates, key and profile are exported
+  `SharedValues::SIGH_PROFILE_PATHS` | Paths in which certificates, key and profile are exported
+  `SharedValues::SIGH_UUID` | UUID (Universally Unique IDentifier) of a provisioning profile
+  `SharedValues::SIGH_NAME` | The name of the profile
+  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be appstore, adhoc, development, enterprise
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action get_provisioning_profile
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_provisioning_profile.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run get_provisioning_profile
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run get_provisioning_profile parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/get_provisioning_profile.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

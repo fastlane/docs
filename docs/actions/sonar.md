@@ -22,7 +22,7 @@ Returns | The exit code of the sonar-scanner binary
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 sonar(
@@ -30,6 +30,18 @@ sonar(
   project_version: "1.0",
   project_name: "iOS - AwesomeApp",
   sources_path: File.expand_path("../AwesomeApp")
+)
+```
+
+```ruby
+sonar(
+  project_key: "name.gretzki.awesomeApp",
+  project_version: "1.0",
+  project_name: "iOS - AwesomeApp",
+  sources_path: File.expand_path("../AwesomeApp"),
+  sonar_organization: "myOrg",
+  sonar_login: "123456abcdef",
+  sonar_url: "https://sonarcloud.io"
 )
 ```
 
@@ -46,22 +58,57 @@ Key | Description | Default
   `project_name` | The name of the project that gets displayed on the sonar report page. Must either be specified here or inside the sonar project configuration file | 
   `project_version` | The project's version that gets displayed on the sonar report page. Must either be specified here or inside the sonar project configuration file | 
   `sources_path` | Comma-separated paths to directories containing source files. Must either be specified here or inside the sonar project configuration file | 
+  `exclusions` | Comma-separated paths to directories to be excluded from the analysis | 
   `project_language` | Language key, e.g. objc | 
   `source_encoding` | Used encoding of source files, e.g., UTF-8 | 
   `sonar_runner_args` | Pass additional arguments to sonar-scanner. Be sure to provide the arguments with a leading `-D` e.g. FL_SONAR_RUNNER_ARGS="-Dsonar.verbose=true" | 
   `sonar_login` | Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e) | 
   `sonar_url` | Pass the url of the Sonar server | 
+  `sonar_organization` | Key of the organization on SonarCloud | 
+  `branch_name` | Pass the branch name which is getting scanned | 
+  `pull_request_branch` | The name of the branch that contains the changes to be merged | 
+  `pull_request_base` | The long-lived branch into which the PR will be merged | 
+  `pull_request_key` | Unique identifier of your PR. Must correspond to the key of the PR in GitHub or TFS | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
+
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action sonar
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/sonar.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run sonar
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run sonar parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/sonar.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

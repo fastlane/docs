@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # hockey
 
 
-Upload a new build to [HockeyApp](https://hockeyapp.net/)
+Refer to [App Center](https://github.com/Microsoft/fastlane-plugin-appcenter/)
+
+> HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to [App Center](https://github.com/Microsoft/fastlane-plugin-appcenter/)
 
 
-
-
-> Symbols will also be uploaded automatically if a `app.dSYM.zip` file is found next to `app.ipa`. In case it is located in a different place you can specify the path explicitly in the `:dsym` parameter.<br>More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
+> HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to [App Center](https://github.com/Microsoft/fastlane-plugin-appcenter/)<br><br>Symbols will also be uploaded automatically if a `app.dSYM.zip` file is found next to `app.ipa`. In case it is located in a different place you can specify the path explicitly in the `:dsym` parameter.<br>More information about the available options can be found in the [HockeyApp Docs](http://support.hockeyapp.net/kb/api/api-versions#upload-version).
 
 
 hockey ||
@@ -21,7 +21,7 @@ Author | @KrauseFx, @modzelewski, @lacostej
 
 
 
-## 2 Examples
+## 3 Examples
 
 ```ruby
 hockey(
@@ -40,6 +40,16 @@ hockey(
   bundle_version: "1.0.2.145",
   ipa: "./my.msi",
   notes: "Changelog"
+)
+```
+
+```ruby
+# You can bypass the CDN if you are uploading to Hockey and receive an SSL error (which can happen on corporate firewalls)
+hockey(
+  api_token: "...",
+  ipa: "./app.ipa",
+  notes: "Changelog",
+  bypass_cdn: true
 )
 ```
 
@@ -83,12 +93,54 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `hockey` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::HOCKEY_DOWNLOAD_LINK` | The newly generated download link for this build
+  `SharedValues::HOCKEY_BUILD_INFORMATION` | contains all keys/values from the HockeyApp API, like :title, :bundle_identifier
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action hockey
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/hockey.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run hockey
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run hockey parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/hockey.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

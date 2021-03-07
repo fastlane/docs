@@ -1,7 +1,7 @@
 ---
 site_name: fastlane docs
 theme: readthedocs
-copyright: Copyright &copy; 2018 <a href="https://fastlane.tools">fastlane</a>
+copyright: Copyright &copy; 2020 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
@@ -36,6 +36,7 @@ pages:
   - Cross Platform:
     - React Native: getting-started/cross-platform/react-native.md
     - Flutter: getting-started/cross-platform/flutter.md
+    - NativeScript: getting-started/cross-platform/nativescript.md
 - Actions:
   - Available Actions: actions.md
   - Create Your Own Action: create-action.md
@@ -45,6 +46,7 @@ pages:
   - add_extra_platforms: actions/add_extra_platforms.md
   - add_git_tag: actions/add_git_tag.md
   - app_store_build_number: actions/app_store_build_number.md
+  - app_store_connect_api_key: actions/app_store_connect_api_key.md
   - appaloosa: actions/appaloosa.md
   - appetize: actions/appetize.md
   - appetize_viewing_url_generator: actions/appetize_viewing_url_generator.md
@@ -61,6 +63,7 @@ pages:
   - build_android_app: actions/build_android_app.md
   - build_app: actions/build_app.md
   - build_ios_app: actions/build_ios_app.md
+  - build_mac_app: actions/build_mac_app.md
   - bundle_install: actions/bundle_install.md
   - capture_android_screenshots: actions/capture_android_screenshots.md
   - capture_ios_screenshots: actions/capture_ios_screenshots.md
@@ -84,6 +87,7 @@ pages:
   - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
   - create_pull_request: actions/create_pull_request.md
+  - create_xcframework: actions/create_xcframework.md
   - danger: actions/danger.md
   - debug: actions/debug.md
   - default_platform: actions/default_platform.md
@@ -92,10 +96,13 @@ pages:
   - deploygate: actions/deploygate.md
   - dotgpg_environment: actions/dotgpg_environment.md
   - download: actions/download.md
+  - download_app_privacy_details_from_app_store: actions/download_app_privacy_details_from_app_store.md
   - download_dsyms: actions/download_dsyms.md
   - download_from_play_store: actions/download_from_play_store.md
   - dsym_zip: actions/dsym_zip.md
   - echo: actions/echo.md
+  - ensure_bundle_exec: actions/ensure_bundle_exec.md
+  - ensure_env_vars: actions/ensure_env_vars.md
   - ensure_git_branch: actions/ensure_git_branch.md
   - ensure_git_status_clean: actions/ensure_git_status_clean.md
   - ensure_no_debug_code: actions/ensure_no_debug_code.md
@@ -124,6 +131,7 @@ pages:
   - git_submodule_update: actions/git_submodule_update.md
   - git_tag_exists: actions/git_tag_exists.md
   - github_api: actions/github_api.md
+  - google_play_track_release_names: actions/google_play_track_release_names.md
   - google_play_track_version_codes: actions/google_play_track_version_codes.md
   - gradle: actions/gradle.md
   - gym: actions/gym.md
@@ -140,6 +148,7 @@ pages:
   - increment_build_number: actions/increment_build_number.md
   - increment_version_number: actions/increment_version_number.md
   - install_on_device: actions/install_on_device.md
+  - install_provisioning_profile: actions/install_provisioning_profile.md
   - install_xcode_plugin: actions/install_xcode_plugin.md
   - installr: actions/installr.md
   - ipa: actions/ipa.md
@@ -157,6 +166,7 @@ pages:
   - min_fastlane_version: actions/min_fastlane_version.md
   - modify_services: actions/modify_services.md
   - nexus_upload: actions/nexus_upload.md
+  - notarize: actions/notarize.md
   - notification: actions/notification.md
   - notify: actions/notify.md
   - number_of_commits: actions/number_of_commits.md
@@ -198,6 +208,7 @@ pages:
   - set_github_release: actions/set_github_release.md
   - set_info_plist_value: actions/set_info_plist_value.md
   - set_pod_key: actions/set_pod_key.md
+  - setup_ci: actions/setup_ci.md
   - setup_circle_ci: actions/setup_circle_ci.md
   - setup_jenkins: actions/setup_jenkins.md
   - setup_travis: actions/setup_travis.md
@@ -208,6 +219,8 @@ pages:
   - slather: actions/slather.md
   - snapshot: actions/snapshot.md
   - sonar: actions/sonar.md
+  - spaceship_logs: actions/spaceship_logs.md
+  - spaceship_stats: actions/spaceship_stats.md
   - splunkmint: actions/splunkmint.md
   - spm: actions/spm.md
   - ssh: actions/ssh.md
@@ -224,20 +237,25 @@ pages:
   - unlock_keychain: actions/unlock_keychain.md
   - update_app_group_identifiers: actions/update_app_group_identifiers.md
   - update_app_identifier: actions/update_app_identifier.md
+  - update_code_signing_settings: actions/update_code_signing_settings.md
   - update_fastlane: actions/update_fastlane.md
   - update_icloud_container_identifiers: actions/update_icloud_container_identifiers.md
   - update_info_plist: actions/update_info_plist.md
+  - update_keychain_access_groups: actions/update_keychain_access_groups.md
   - update_plist: actions/update_plist.md
   - update_project_code_signing: actions/update_project_code_signing.md
   - update_project_provisioning: actions/update_project_provisioning.md
   - update_project_team: actions/update_project_team.md
   - update_urban_airship_configuration: actions/update_urban_airship_configuration.md
   - update_url_schemes: actions/update_url_schemes.md
+  - upload_app_privacy_details_to_app_store: actions/upload_app_privacy_details_to_app_store.md
   - upload_symbols_to_crashlytics: actions/upload_symbols_to_crashlytics.md
   - upload_symbols_to_sentry: actions/upload_symbols_to_sentry.md
   - upload_to_app_store: actions/upload_to_app_store.md
   - upload_to_play_store: actions/upload_to_play_store.md
+  - upload_to_play_store_internal_app_sharing: actions/upload_to_play_store_internal_app_sharing.md
   - upload_to_testflight: actions/upload_to_testflight.md
+  - validate_play_store_json_key: actions/validate_play_store_json_key.md
   - verify_build: actions/verify_build.md
   - verify_pod_keys: actions/verify_pod_keys.md
   - verify_xcode: actions/verify_xcode.md
@@ -256,6 +274,9 @@ pages:
   - xctool: actions/xctool.md
   - xcversion: actions/xcversion.md
   - zip: actions/zip.md
+- Apple:
+  - Using App Store Connect API: app-store-connect-api.md
+  - Uploading App Privacy Details: uploading-app-privacy-details.md
 - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
@@ -264,11 +285,23 @@ pages:
   - Common Issues: codesigning/common-issues.md
 - Plugins:
   - Available Plugins: plugins/available-plugins.md
+  - Use Plugins: plugins/using-plugins.md
   - Create Your Own Plugin: plugins/create-plugin.md
   - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
   - Source Control: best-practices/source-control.md
   - Continuous Integration: best-practices/continuous-integration.md
+  - CI Integrations:
+    - Appcircle: best-practices/continuous-integration/appcircle.md
+    - Azure DevOps: best-practices/continuous-integration/azure-devops.md
+    - Bamboo: best-practices/continuous-integration/bamboo.md
+    - Bitrise: best-practices/continuous-integration/bitrise.md
+    - CircleCI: best-practices/continuous-integration/circle-ci.md
+    - GitLab CI: best-practices/continuous-integration/gitlab.md
+    - Jenkins: best-practices/continuous-integration/jenkins.md
+    - NeverCode: best-practices/continuous-integration/nevercode.md
+    - Semaphore: best-practices/continuous-integration/semaphore.md
+    - Travis: best-practices/continuous-integration/travis.md
   - Keys: best-practices/keys.md
 - Advanced:
   - fastlane: advanced/fastlane.md

@@ -16,7 +16,7 @@ Fetches most recent build number from TestFlight
 
 latest_testflight_build_number ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @daveanderson
 Returns | Integer representation of the latest build number uploaded to TestFlight
 
@@ -42,6 +42,8 @@ increment_build_number({
 
 Key | Description | Default
 ----|-------------|--------
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `live` | Query the live version (ready-for-sale) | `false`
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
@@ -55,12 +57,54 @@ Key | Description | Default
 
 
 <hr />
+
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `latest_testflight_build_number` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::LATEST_TESTFLIGHT_BUILD_NUMBER` | The latest build number of the latest version of the app uploaded to TestFlight
+  `SharedValues::LATEST_TESTFLIGHT_VERSION` | The version of the latest build number
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
+
+
+## Documentation
+
 To show the documentation in your terminal, run
 ```no-highlight
 fastlane action latest_testflight_build_number
 ```
 
-<a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/latest_testflight_build_number.rb" target="_blank">View source code</a>
+<hr />
+
+## CLI
+
+It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
+
+```no-highlight
+fastlane run latest_testflight_build_number
+```
+
+To pass parameters, make use of the `:` symbol, for example
+
+```no-highlight
+fastlane run latest_testflight_build_number parameter1:"value1" parameter2:"value2"
+```
+
+It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
+
+It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
+
+<hr />
+
+## Source code
+
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/latest_testflight_build_number.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 
