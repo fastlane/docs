@@ -21,33 +21,26 @@ Multiple CI products and services offer integrations with fastlane:
 - [GitLab CI](/best-practices/continuous-integration/gitlab/)
 - [Jenkins](/best-practices/continuous-integration/jenkins/)
 - [NeverCode](/best-practices/continuous-integration/nevercode/)
-- [Semaphore](/best-practices/continuous-integration/semaphore/) 
+- [Semaphore](/best-practices/continuous-integration/semaphore/)
 - [Travis](/best-practices/continuous-integration/travis/)
 
 ## Authentication with Apple services
 
-Several Fastlane actions communicate with Apple services that need authentication. This can pose several challenges on CI:
-
-### Separate Apple ID for CI
-
-The easiest way to get _fastlane_ running on a CI system is to create a separate Apple ID that
-
-- doesn't have 2-factor authentication enabled
-- doesn't have the Account Holder role
-
-Creating a separate Apple ID allows you to limit the permission scope (limited access to only the apps and resources it needs), have a long, randomly generated password, and will make it much more convenient for you to set up CI using _fastlane_.
+Several _fastlane_ actions communicate with Apple services that need authentication. This can pose several challenges on CI:
 
 ### Two-step or Two-factor auth
 
 _fastlane_ fully supports [2-factor authentication (2FA)](https://support.apple.com/en-us/HT204915) (and legacy [2-step verification (2SV)](https://support.apple.com/en-us/HT204152)) for logging in to your Apple ID and Apple Developer account. 🌟
 
-Note: [Apple announced that as of February 27th 2019](https://developer.apple.com/news/?id=02202019a), it is enforcing 2-factor authentication on developer Apple IDs with the "Account Holder" role.
+#### Apple ID without 2FA
+
+[Apple announced that as of February 27th 2019](https://developer.apple.com/news/?id=02202019a), it would enforce 2-factor authentication on developer Apple IDs with the "Account Holder" role. Since then, they extended this rule to all roles, and then later throughout 2020 they slowly enforced all existing accounts to register 2FA. As of March 3rd 2021, no accounts without 2FA registered are able to login until they register a 2FA method, essentially breaking all "non-2FA compliant Apple IDs" that still existed. For this reason, when using _fastlane_ in your CI, you will have to work your way with 2FA.
 
 #### Security code and session
 
-When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.
+With 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.
 
-The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`. Validity can greatly vary (anything between 1 day and 1 month) and is not within `fastlane`'s domain and up to Apple.
+The resulting session will be stored in `~/.fastlane/spaceship/[email]/cookie`.
 
 #### Use of application specific passwords and `spaceauth`
 
@@ -55,7 +48,7 @@ When you can not enter the security code manually, as on a Continuous Integratio
 
 ##### Application specific passwords
 
-If you want to upload builds to App Store Connect (actions `upload_to_app_store` and `deliver`) or TestFlight (actions `upload_to_testflight`, `pilot` or `testflight`) from your CI machine, you need to generate an _application specific password_:
+If you want to upload builds to App Store Connect (actions `upload_to_app_store` and `deliver`) or TestFlight (actions `upload_to_testflight`, `pilot` or `testflight`) from your CI machine, you may generate an _application specific password_:
 
 1. Visit [appleid.apple.com/account/manage](https://appleid.apple.com/account/manage)
 1. Generate a new application specific password
@@ -77,10 +70,12 @@ fastlane spaceauth -u user@email.com
 
 The generated value then has to be stored inside the `FASTLANE_SESSION` environment variable on your CI system. This session will be reused instead of triggering a new login each time _fastlane_ communicates with Apple's APIs.
 
-Please note:
+#### Session duration
 
-- An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you might run into issues
-- An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing
+The session generated, stored and reused as part of a 2FA/2SV authentication, or as part of _spaceauth_ is subject to technical limitations imposed by Apple. Namely:
+
+- An Apple ID session is only valid within a certain region, meaning if the region you're using your session (e.g. CI system) is different than the region where you created that session (e.g. your local machine), you might run into issues. It's advised that you create the session in the same machine that will be used to consume it, to make the session last longer.
+- The session's validity can greatly vary (anything between 1 day and 1 month, depending on factors such as geolocation of the session usage). This means you'll have to generate a new session at least once a month. Usually you'd only know about it when your build starts failing.
 
 Unfortunately there is nothing _fastlane_ can do better in this regard, as these are technical limitations on how App Store Connect sessions are handled.
 
@@ -99,7 +94,7 @@ Most setups will need the following environment variables
 
 You should **not** deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.
 
-You can set up your own ```Release``` job, which is only triggered manually.
+You can set up your own `Release` job, which is only triggered manually.
 
 ### Moved
 
