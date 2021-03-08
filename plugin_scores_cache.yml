@@ -273,7 +273,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1695
+  :age_in_days: 1741
   :readme_score: 100
   :tests: 30
   :actions:
@@ -312,11 +312,11 @@ fastlane-plugin-sentry:
     category:
     description: Create new releases for a project on Sentry
     details: " "
-  :sha: 9491d645c080ac3bc02e7e6278b3328d4098c728135d5899403970df2a4443b3
-  :github_stars: 70
-  :github_subscribers: 14
-  :github_issues: 12
-  :github_forks: 31
+  :sha: 16ce92fca6b0d4d2374e516b400ab0f91e759d00e2cfd2bc6672ee0605b3f28a
+  :github_stars: 73
+  :github_subscribers: 15
+  :github_issues: 13
+  :github_forks: 33
   :github_contributors: 16
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
@@ -4392,7 +4392,7 @@ fastlane-plugin-run_tests_firebase_testlab:
   :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2018-02-12
-  :age_in_days: 1054
+  :age_in_days: 1120
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4401,11 +4401,11 @@ fastlane-plugin-instabug_official:
     category:
     description:
     details:
-  :sha: 1594712133736d5308e8a5701d9dab4ae7ac0e6941c6a5ce39df6e5bebcb0d18
-  :github_stars: 3
+  :sha: d8a19ffd8a8e5efab862eb335eaf525fbbb474204deabcc80b296913dd6ff6c9
+  :github_stars: 4
   :github_subscribers: 3
   :github_issues: 1
-  :github_forks: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
@@ -6608,7 +6608,7 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 607
+  :age_in_days: 704
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6619,7 +6619,7 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       If you use Bitcode you can also use it to download the latest dSYM files from
       App Store Connect.
-  :sha: ad9370fe0e2ed82c39aefa6ab5b5569b1a88a502dc8b98df09d524bdcc15c41a
+  :sha: 42d7b1e813778f3a74cf3e4895602c2d2d3b1f73ced031fbe177ca2e2341f934
   :github_stars: 9
   :github_subscribers: 3
   :github_issues: 0
@@ -9194,7 +9194,7 @@ fastlane-plugin-github_action:
   :github_contributors: 0
 fastlane-plugin-slack_bot:
   :initial_commit: 2020-05-27
-  :age_in_days: 273
+  :age_in_days: 285
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9219,7 +9219,7 @@ fastlane-plugin-slack_bot:
     category:
     description: Update a slack message using time-stamp(ts) value
     details:
-  :sha: 8ca3c5f559d75ec1c00d86303bfd2e5cbcb12612bd4b2483b38f9ebb3c744678
+  :sha: 2de6016ddc759efa0cd32d7173118e998fd7f71cf9243d871708fd7c9469d8b7
   :github_stars: 5
   :github_subscribers: 1
   :github_issues: 0
@@ -10094,7 +10094,7 @@ fastlane-plugin-jira_link:
   :github_contributors: 0
 fastlane-plugin-unity3d:
   :initial_commit: 2021-01-05
-  :age_in_days: 16
+  :age_in_days: 62
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10103,8 +10103,8 @@ fastlane-plugin-unity3d:
     category: building
     description: fastlane plugin for unity3d engine
     details: fastlane for unity3d engine
-  :sha: 9c96d4fc6f6297491ba4c9eac18359879971b429911ef0efa97d55dd2645f8de
-  :github_stars: 0
+  :sha: da0316b4432490d000b9be5310306fd3f263019dac14e7d3df0599bbf7ff12f7
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
@@ -10348,3 +10348,60 @@ fastlane-plugin-flutter_dart_version_manager:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-creator:
+  :initial_commit: 2021-03-04
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: creator
+    category:
+    description: Mobile build framework for rust-lang
+    details: Mobile build framework for rust-lang
+  :sha: 76ece2fe79023b32b249f6666a88b792276a66771e531da1b5b1ed1379f423d7
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-taiwan_number_one:
+  :initial_commit: 2021-03-03
+  :age_in_days: 5
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: taiwan_number_one
+    category:
+    description:
+    details:
+  :sha: 0ad3379a4701cbc0749fa04095da0b1ed7768bdea998422afafab7729caef236
+  :github_stars: 2
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-asana_task:
+  :initial_commit: 2021-03-08
+  :age_in_days: 0
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: asana_task
+    category:
+    description: asana task plugin
+    details: asana task plugin
+  :sha: 7707a80a32419be229587c8ce4a0f89cc5f50c3db84a26fae1f2cbca808bd92a
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-upload_symbols_to_shake:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2

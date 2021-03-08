@@ -228,6 +228,7 @@ Key | Description | Default
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6') | 
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air']) | 
   `skip_detect_devices` | Should skip auto detecting of devices if none were specified | `false`
+  `ensure_devices_found` | Should fail if devices not found | `false`
   `force_quit_simulator` | Enabling this option will automatically killall Simulator processes before the run | `false`
   `reset_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `disable_slide_to_type` | Enabling this option will disable the simulator from showing the 'Slide to type' prompt | `true`
