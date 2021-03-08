@@ -1477,7 +1477,7 @@ brew install fastlane
 <li>Add the <code>./SnapshotHelper.swift</code> file to your UI Test target (You can move the file anywhere you want)</li>
 <li>Add a new Xcode scheme for the newly created UI Test target</li>
 <li>Edit the scheme</li>
-<li>In the list on the left click "Build", and enable the checkbox under the "Run" column for your target. </li>
+<li>In the list on the left click "Build", and enable the checkbox under the "Run" column for your target.</li>
 <li>Enable the <code>Shared</code> box of the newly created scheme</li>
 <li>(Objective C only) Add the bridging header to your test class.<ul>
 <li><code>#import "MYUITests-Swift.h"</code></li>
@@ -1500,7 +1500,7 @@ app.launch()
 
 <p><strong>Objective C:</strong></p>
 <pre><code class="objective-c">XCUIApplication *app = [[XCUIApplication alloc] init];
-[Snapshot setupSnapshot:app];
+[Snapshot setupSnapshot:app waitForAnimations:NO];
 [app launch];
 </code></pre>
 
@@ -1553,12 +1553,12 @@ fastlane snapshot                               # Generate screenshots for the s
 <p><img alt="/img/getting-started/ios/snapshot.gif" src="../../../img/getting-started/ios/snapshot.gif" /></p>
 <h1 id="upload-screenshots-to-the-app-store"><a name="user-content-upload-screenshots-to-the-app-store" href="#upload-screenshots-to-the-app-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload Screenshots to the App Store</h1>
 <p>After generating your screenshots using <code>fastlane snapshot</code>, you usually want to upload them to App Store Connect.</p>
-<p>If you followed the setup guide, you already ran <code>fastlane init</code> before, so you should have your existing screenshots and metadata inside the <code>fastlane/screenshots</code> and <code>fastlane/metadata</code> directory. Running <code>fastlane snapshot</code> will store the screenshots in the <code>fastlane/screenshots</code> directory by default. </p>
+<p>If you followed the setup guide, you already ran <code>fastlane init</code> before, so you should have your existing screenshots and metadata inside the <code>fastlane/screenshots</code> and <code>fastlane/metadata</code> directory. Running <code>fastlane snapshot</code> will store the screenshots in the <code>fastlane/screenshots</code> directory by default.</p>
 <p>To upload the screenshots stored in <code>fastlane/screenshots</code>, just run</p>
 <pre><code class="no-highlight">fastlane deliver
 </code></pre>
 
-<p>This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on App Store Connect. </p>
+<p>This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on App Store Connect.</p>
 <h1 id="use-in-fastfile"><a name="user-content-use-in-fastfile" href="#use-in-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use in Fastfile</h1>
 <p>To put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a <em>fastlane</em> lane called <code>screenshots</code>. It would be responsible for:</p>
 <ol>
@@ -1636,7 +1636,7 @@ end
 </code></pre>
 
 <h1 id="advanced-snapshot"><a name="user-content-advanced-snapshot" href="#advanced-snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced <em>snapshot</em></h1>
-<p><details> 
+<p><details>
 <summary>Sample uses</summary></p>
 <pre><code class="ruby">lane :screenshots do
   capture_screenshots
