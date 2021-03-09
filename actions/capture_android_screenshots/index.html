@@ -1394,7 +1394,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 &lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
 
 &lt;!-- Allows changing locales --&gt;
-&lt;uses-permission android:name=&quot;android.permission.CHANGE_CONFIGURATION&quot; tools:ignore=&quot;ProtectedPermissions&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.CHANGE_CONFIGURATION&quot; /&gt;
 </code></pre>
 
 <h5 id="configuring-your-ui-tests-for-screenshots"><a name="user-content-configuring-your-ui-tests-for-screenshots" href="#configuring-your-ui-tests-for-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots</h5>
@@ -1490,9 +1490,7 @@ clear_previous_screenshots(true)
 <p>Check out <a href="http://developer.android.com/training/testing/ui-testing/espresso-testing.html">Testing UI for a Single App</a> for an introduction to using Espresso for UI testing.</p>
 <h5 id="example-ui-test-class-using-junit4"><a name="user-content-example-ui-test-class-using-junit4" href="#example-ui-test-class-using-junit4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example UI Test Class (Using JUnit4)</h5>
 <p>Java:</p>
-<pre><code class="java">import tools.fastlane.screengrab.Screengrab
-
-@RunWith(JUnit4.class)
+<pre><code class="java">@RunWith(JUnit4.class)
 public class JUnit4StyleTests {
     @ClassRule
     public static final LocaleTestRule localeTestRule = new LocaleTestRule();
