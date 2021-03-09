@@ -60,6 +60,7 @@ Key | Description | Default
   `locale` | Select the folder locale for your screenshots | `en-US`
   `device` | Select the device format for your screenshots | 
   `description` | Your app description | 
+  `changelog` | Your app changelog | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
