@@ -33,6 +33,8 @@ The most interesting file is `fastlane/Fastfile`, which contains all the informa
 
 _supply_ is a _fastlane_ tool that uploads app metadata, screenshots and binaries to Google Play. You can also select tracks for builds and promote builds to production!
 
+For _supply_ to be able to initialize, you need to have successfully uploaded an APK to your app in the Google Play Console at least once.
+
 Setting it up requires downloading a credentials file from your Google Developers Service Account.
 
 ### Collect your Google credentials
