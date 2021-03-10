@@ -4,5 +4,5 @@ source("https://rubygems.org")
 gem "danger"
 gem "fastlane", git: "https://github.com/fastlane/fastlane"
 gem "rubocop", "0.49.1"
-
-gem "parallel", "1.19.2" # 1.20.0 requires Ruby 2.5
+gem "signet", "<0.15.0" # 0.15.0 requires Ruby 2.5
+gem "parallel", "<1.20.0" # 1.20.0 requires Ruby 2.5
