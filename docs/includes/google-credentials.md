@@ -1,8 +1,5 @@
 Tip: If you see Google Play Console or Google Developer Console in your local language, add `&hl=en` at the end of the URL (before any `#...`) to switch to English.
 
-Settings → Developer Account → API access
-Create new service account
-
 
 1. Open the [Google Play Console]("https://play.google.com/apps/publish/")
 1. Click **Settings** → **Developer Account** → **API access**
