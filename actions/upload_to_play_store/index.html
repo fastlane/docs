@@ -1388,23 +1388,25 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>Setup consists of setting up your Google Developers Service Account</p>
 <p>Tip: If you see Google Play Console or Google Developer Console in your local language, add <code>&amp;hl=en</code> at the end of the URL (before any <code>#...</code>) to switch to English.</p>
 <ol>
-<li>Open the <a href="https://play.google.com/apps/publish/">Google Play Console</a></li>
-<li>Click the <strong>Settings</strong> menu entry, followed by <strong>API access</strong></li>
-<li>Click the <strong>CREATE SERVICE ACCOUNT</strong> button </li>
+<li>Open the <a href="" title="https://play.google.com/apps/publish/">Google Play Console</a></li>
+<li>Click <strong>Settings</strong> → <strong>Developer Account</strong> → <strong>API access</strong></li>
+<li>Click the <strong>Create new service account</strong> button</li>
 <li>Follow the <strong>Google Developers Console</strong> link in the dialog, which opens a new tab/window:<ol>
 <li>Click the <strong>CREATE SERVICE ACCOUNT</strong> button at the top of the <strong>Google Developers Console</strong></li>
-<li>Provide a <code>Service account name</code></li>
-<li>Click <strong>Select a role</strong> and choose <strong>Service Accounts &gt; Service Account User</strong></li>
-<li>Check the <strong>Furnish a new private key</strong> checkbox</li>
-<li>Make sure <strong>JSON</strong> is selected as the <code>Key type</code></li>
-<li>Click <strong>SAVE</strong> to close the dialog</li>
-<li>Make a note of the file name of the JSON file downloaded to your computer</li>
+<li>Provide a <code>Service account name</code> and click <strong>Create</strong></li>
+<li>Click <strong>Select a role</strong>, then find and select <strong>Service Account User</strong>, and proceed.</li>
+<li>Click the <strong>Done</strong> button</li>
+<li>Click on the <strong>Actions</strong> vertical three-dot icon of the service account you just created</li>
+<li>Select <strong>Manage keys</strong> on the menu</li>
+<li>Click <strong>ADD KEY</strong> -&gt; <strong>Create New Key</strong></li>
+<li>Make sure <strong>JSON</strong> is selected as the <code>Key type</code>, and click <strong>CREATE</strong></li>
+<li>Save the file on your computer when prompted and remember where it was saved to</li>
 </ol>
 </li>
 <li>Back on the <strong>Google Play Console</strong>, click <strong>DONE</strong> to close the dialog</li>
-<li>Click on <strong>Grant Access</strong> for the newly added service account</li>
-<li>Choose <strong>Release Manager</strong> (or alternatively <strong>Project Lead</strong>) from the <code>Role</code> dropdown. (Note that choosing <strong>Release Manager</strong> grants access to the production track and all other tracks. Choosing <strong>Project Lead</strong> grants access to update all tracks <em>except</em> the production track.)</li>
-<li>Click <strong>ADD USER</strong> to close the dialog</li>
+<li>Click on <strong>Grant Access</strong> for the newly added service account at the bottom of the screen</li>
+<li>Choose the permissions you'd like this account to have. We recommend <strong>Admin (all permissions)</strong>, but you may want to manually select all checkboxes and leave out some of the <strong>Releases</strong> permissions such as <strong>Release to production</strong>.</li>
+<li>Click <strong>Invite user</strong> to finish.</li>
 </ol>
 <p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key.</p>
 <h3 id="migrating-google-credential-format-from-p12-key-file-to-json"><a name="user-content-migrating-google-credential-format-from-p12-key-file-to-json" href="#migrating-google-credential-format-from-p12-key-file-to-json" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migrating Google credential format (from .p12 key file to .json)</h3>
