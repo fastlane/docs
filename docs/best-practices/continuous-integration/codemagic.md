@@ -6,7 +6,7 @@ When using *fastlane* for beta distribution to third-party services, you will ne
 
 Here's an example of using *fastlane* to publish a successfully built Android app to Firebase App Distribution as part of the Codemagic workflow.
 
-First,  create a [Firebase token](https://firebase.google.com/docs/cli#cli-ci-systems), [encrypt](https://docs.codemagic.io/building/encrypting/) it and save it into an environment variable with the name `FIREBASE_TOKEN`.
+First, create a [Firebase token](https://firebase.google.com/docs/cli#cli-ci-systems), [encrypt](https://docs.codemagic.io/building/encrypting/) it and save it into an environment variable with the name `FIREBASE_TOKEN`.
 
 Then add the script to install the Fastlane Firebase App Distribution plugin and call the lane to publish the app. The scripts are added to the `publish` section of [codemagic.yaml](https://docs.codemagic.io/getting-started/yaml/) or as a pre-publish script when configuring the builds in the UI.
 
