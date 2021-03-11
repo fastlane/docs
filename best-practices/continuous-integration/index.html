@@ -1473,6 +1473,7 @@ brew install fastlane
 <li><code>FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD</code>: You need to provide an <a href="#application-specific-passwords">application specific password</a> if you have 2-factor enabled and use <em>pilot</em> or <em>deliver</em> to upload a binary to App Store Connect</li>
 <li><code>FASTLANE_SESSION</code>: You need to provide a <a href="#spaceauth">pregenerated session via <code>fastlane spaceauth</code></a> if you have 2-factor authentication enabled and want to use any actions that communicates with App Store Connect.</li>
 <li><code>LANG</code> and <code>LC_ALL</code>: These set up the locale your shell and all the commands you execute run at. <em>fastlane</em> needs these to be set to an UTF-8 locale to work correctly, for example <code>en_US.UTF-8</code>. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.</li>
+<li><code>SPACESHIP_ONLY_ALLOW_INTERACTIVE_2FA</code>: Explicitly prevents being prompted for 2FA in non-interactive mode.</li>
 </ul>
 <h2 id="deploy-strategy"><a name="user-content-deploy-strategy" href="#deploy-strategy" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy Strategy</h2>
 <p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.</p>
