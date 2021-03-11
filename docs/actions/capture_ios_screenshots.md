@@ -94,7 +94,7 @@ Here a few links to get started:
 
 # Quick Start
 
-- Create a new UI Test target in your Xcode project ([top part of this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line)) and give it the same iOS Deployment Target setting as your project. 
+- Create a new UI Test target in your Xcode project ([top part of this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
 - Run `fastlane snapshot init` in your project folder
 - Add the ./SnapshotHelper.swift to your UI Test target (You can move the file anywhere you want)
   - (Xcode 8 only) add the ./SnapshotHelperXcode8.swift to your UI Test target
