@@ -3007,7 +3007,7 @@ fastlane-plugin-napp_distribution:
   :github_contributors: 1
 fastlane-plugin-static_assets:
   :initial_commit: 2017-01-19
-  :age_in_days: 402
+  :age_in_days: 1513
   :readme_score: 50
   :tests: 1
   :actions:
@@ -3021,12 +3021,12 @@ fastlane-plugin-static_assets:
     category:
     description: Generate code for buildtime-safe assignments of images.
     details:
-  :sha: 83caa8585abd214923fab29c8c6f9d9a97f78f1e30ddb0e2a1c903873357cf33
+  :sha: 0d95d0dcb0868ba052ceaceda2aed97e58cccbfa25b91cbdb449ef2f09f50101
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-transifex_api:
   :github_stars: 0
   :github_subscribers: 0
@@ -5014,21 +5014,21 @@ fastlane-plugin-podspec_dependency_versioning:
   :github_contributors: 0
 fastlane-plugin-ipa_info:
   :initial_commit: 2018-06-27
-  :age_in_days: 939
+  :age_in_days: 989
   :readme_score: 100
-  :tests: 1
+  :tests: 4
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: ipa_info
     category:
     description: Show information of an ipa file.
     details: Show information of an ipa file.
-  :sha: aaa34d0f9c3c66bcaf9d339e2a9c2401dfefbb94b2dea985b54b0af4a3561dbb
+  :sha: 4fc057e7aef76d05408c402db8f6b8cbb1789166940637fe8f477c21624f46c1
   :github_stars: 1
   :github_subscribers: 0
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-slack_upload:
   :initial_commit: 2018-06-12
   :age_in_days: 38

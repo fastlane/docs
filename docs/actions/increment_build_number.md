@@ -54,6 +54,7 @@ build_number = increment_build_number
 Key | Description | Default
 ----|-------------|--------
   `build_number` | Change to a specific version. When you provide this parameter, Apple Generic Versioning does not have to be enabled | 
+  `skip_info_plist` | Don't update Info.plist files when updating the build version | `false`
   `xcodeproj` | optional, you must specify the path to your main Xcode project if it is not in the project root directory | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

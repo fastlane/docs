@@ -376,7 +376,7 @@ Key | Description | Default
   `distribute_only` | Distribute a previously uploaded build (equivalent to the `fastlane pilot distribute` command) | `false`
   `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? | `false`
-  `notify_external_testers` | Should notify external testers? | `true`
+  `notify_external_testers` | Should notify external testers? (Not setting a value will use App Store Connect's default which is to notify) | 
   `app_version` | The version number of the application build to distribute. If the version number is not specified, then the most recent build uploaded to TestFlight will be distributed. If specified, the most recent build for the version number will be distributed | 
   `build_number` | The build number of the application build to distribute. If the build number is not specified, the most recent build is distributed | 
   `expire_previous_builds` | Should expire previous builds? | `false`
