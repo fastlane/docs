@@ -30,7 +30,7 @@ Several _fastlane_ actions communicate with Apple services that need authenticat
 
 ### Method 1: App Store Connect API key (recommended)
 
-This is the recommended and official way of authenticating with Apple services. However, it doesn't support all features yet. Check out [App Store Connect API](https://docs.fastlane.tools/app-store-connect-api/) for more information.
+This is the recommended and official way of authenticating with Apple services. However, it doesn't support all of the _fastlane_ features yet. Check out [App Store Connect API](/app-store-connect-api) for more information.
 
 ### Method 2: Two-step or two-factor authentication
 
