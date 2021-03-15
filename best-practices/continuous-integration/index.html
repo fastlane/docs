@@ -1412,7 +1412,7 @@ brew install fastlane
 <li><a href="#deploy-strategy">Deploy Strategy</a></li>
 </ul>
 <h2 id="integrations"><a name="user-content-integrations" href="#integrations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Integrations</h2>
-<p>Multiple CI products and services offer integrations with fastlane:</p>
+<p>Multiple CI products and services offer integrations with <em>fastlane</em>:</p>
 <ul>
 <li><a href="../../best-practices/continuous-integration/appcircle/">Appcircle</a></li>
 <li><a href="../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a> (formerly known as: Visual Studio Team Services)</li>
@@ -1422,48 +1422,43 @@ brew install fastlane
 <li><a href="../../best-practices/continuous-integration/gitlab/">GitLab CI</a></li>
 <li><a href="../../best-practices/continuous-integration/jenkins/">Jenkins</a></li>
 <li><a href="../../best-practices/continuous-integration/nevercode/">NeverCode</a></li>
-<li><a href="../../best-practices/continuous-integration/semaphore/">Semaphore</a> </li>
+<li><a href="../../best-practices/continuous-integration/semaphore/">Semaphore</a></li>
 <li><a href="../../best-practices/continuous-integration/travis/">Travis</a></li>
 </ul>
-<h2 id="authentication-with-apple-services"><a name="user-content-authentication-with-apple-services" href="#authentication-with-apple-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Authentication with Apple services</h2>
-<p>Several Fastlane actions communicate with Apple services that need authentication. This can pose several challenges on CI:</p>
-<h3 id="separate-apple-id-for-ci"><a name="user-content-separate-apple-id-for-ci" href="#separate-apple-id-for-ci" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Separate Apple ID for CI</h3>
-<p>The easiest way to get <em>fastlane</em> running on a CI system is to create a separate Apple ID that</p>
+<h2 id="authenticating-with-apple-services"><a name="user-content-authenticating-with-apple-services" href="#authenticating-with-apple-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Authenticating with Apple services</h2>
+<p>Several <em>fastlane</em> actions communicate with Apple services that need authentication. This can pose several challenges on CI. There are 3 ways to connect to Apple services:</p>
+<h3 id="method-1-app-store-connect-api-key-recommended"><a name="user-content-method-1-app-store-connect-api-key-recommended" href="#method-1-app-store-connect-api-key-recommended" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Method 1: App Store Connect API key (recommended)</h3>
+<p>This is the recommended and official way of authenticating with Apple services. However, it doesn't support all of the <em>fastlane</em> features yet. Check out <a href="../../app-store-connect-api">App Store Connect API</a> for more information.</p>
+<h3 id="method-2-two-step-or-two-factor-authentication"><a name="user-content-method-2-two-step-or-two-factor-authentication" href="#method-2-two-step-or-two-factor-authentication" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Method 2: Two-step or two-factor authentication</h3>
+<p>For actions that aren't yet supported by the official App Store Connect API, you will need to authenticate with your Apple ID. Luckily, <em>fastlane</em> fully supports <a href="https://support.apple.com/en-us/HT204915">2-factor authentication (2FA)</a> (and legacy <a href="https://support.apple.com/en-us/HT204152">2-step verification (2SV)</a>) for logging in to your Apple ID and Apple Developer account. 🌟</p>
+<h4 id="manual-verification"><a name="user-content-manual-verification" href="#manual-verification" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manual verification</h4>
+<p>With 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.</p>
+<p>The resulting session will be stored in <code>~/.fastlane/spaceship/[email]/cookie</code>.</p>
+<h4 id="storing-a-manually-verified-session-using-spaceauth"><a name="user-content-storing-a-manually-verified-session-using-spaceauth" href="#storing-a-manually-verified-session-using-spaceauth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Storing a manually verified session using <code>spaceauth</code></h4>
+<p>As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you can generate a login session for your Apple ID in advance by running:</p>
+<pre><code>fastlane spaceauth -u user@email.com
+</code></pre>
+
+<p>The generated value then has to be stored inside the <code>FASTLANE_SESSION</code> environment variable on your CI system. This session will be reused instead of triggering a new login each time <em>fastlane</em> communicates with Apple's APIs.</p>
+<p>It's advised that you run <code>spaceauth</code> in the same machine as your CI, instead of running it locally on your machine - see the notes below regarding session duration.</p>
+<h4 id="important-note-about-session-duration"><a name="user-content-important-note-about-session-duration" href="#important-note-about-session-duration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Important note about session duration</h4>
+<p>The session generated, stored and reused as part of a 2FA/2SV authentication, or as part of <em>spaceauth</em> is subject to technical limitations imposed by Apple. Namely:</p>
 <ul>
-<li>doesn't have 2-factor authentication enabled</li>
-<li>doesn't have the Account Holder role</li>
+<li>An Apple ID session is only valid within a certain region, meaning if the region you're using your session (e.g. CI system) is different than the region where you created that session (e.g. your local machine), you might run into issues. It's advised that you create the session in the same machine that will be used to consume it, to make the session last longer.</li>
+<li>The session's validity can greatly vary (anything between 1 day and 1 month, depending on factors such as geolocation of the session usage). This means you'll have to generate a new session at least once a month. Usually you'd only know about it when your build starts failing.</li>
 </ul>
-<p>Creating a separate Apple ID allows you to limit the permission scope (limited access to only the apps and resources it needs), have a long, randomly generated password, and will make it much more convenient for you to set up CI using <em>fastlane</em>.</p>
-<h3 id="two-step-or-two-factor-auth"><a name="user-content-two-step-or-two-factor-auth" href="#two-step-or-two-factor-auth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Two-step or Two-factor auth</h3>
-<p><em>fastlane</em> fully supports <a href="https://support.apple.com/en-us/HT204915">2-factor authentication (2FA)</a> (and legacy <a href="https://support.apple.com/en-us/HT204152">2-step verification (2SV)</a>) for logging in to your Apple ID and Apple Developer account. 🌟</p>
-<p>Note: <a href="https://developer.apple.com/news/?id=02202019a">Apple announced that as of February 27th 2019</a>, it is enforcing 2-factor authentication on developer Apple IDs with the "Account Holder" role.</p>
-<h4 id="security-code-and-session"><a name="user-content-security-code-and-session" href="#security-code-and-session" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Security code and session</h4>
-<p>When your Apple account has 2-factor authentication (or 2-step verification) enabled, you will be asked to verify your identity by entering a security code. If you already have a trusted device configured for your account, then the code will appear on the device. If you don't have any devices configured, but have trusted a phone number, then the code will be sent to your phone.</p>
-<p>The resulting session will be stored in <code>~/.fastlane/spaceship/[email]/cookie</code>. Validity can greatly vary (anything between 1 day and 1 month) and is not within <code>fastlane</code>'s domain and up to Apple.</p>
-<h4 id="use-of-application-specific-passwords-and-spaceauth"><a name="user-content-use-of-application-specific-passwords-and-spaceauth" href="#use-of-application-specific-passwords-and-spaceauth" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use of application specific passwords and <code>spaceauth</code></h4>
-<p>When you can not enter the security code manually, as on a Continuous Integration system, you have to use other ways to log in:</p>
-<h5 id="application-specific-passwords"><a name="user-content-application-specific-passwords" href="#application-specific-passwords" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Application specific passwords</h5>
-<p>If you want to upload builds to App Store Connect (actions <code>upload_to_app_store</code> and <code>deliver</code>) or TestFlight (actions <code>upload_to_testflight</code>, <code>pilot</code> or <code>testflight</code>) from your CI machine, you need to generate an <em>application specific password</em>:</p>
+<p>Unfortunately there is nothing <em>fastlane</em> can do better in this regard, as these are technical limitations on how App Store Connect sessions are handled.</p>
+<h3 id="method-3-application-specific-passwords"><a name="user-content-method-3-application-specific-passwords" href="#method-3-application-specific-passwords" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Method 3: Application-specific passwords</h3>
+<p>If you want to upload builds to App Store Connect (actions <code>upload_to_app_store</code> and <code>deliver</code>) or TestFlight (actions <code>upload_to_testflight</code>, <code>pilot</code> or <code>testflight</code>) from your CI machine, you may generate an <em>application specific password</em>:</p>
 <ol>
 <li>Visit <a href="https://appleid.apple.com/account/manage">appleid.apple.com/account/manage</a></li>
 <li>Generate a new application specific password</li>
 <li>Provide the application specific password using the environment variable <code>FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD</code></li>
 </ol>
 <p>This will supply the application specific password to iTMSTransporter, the tool used by those actions to perform the upload.</p>
-<p>Note: The application specific password will <em>not</em> work if your action usage does anything else than uploading the binary, e.g. updating any metadata like setting release notes or distributing to testers, etc.</p>
-<h5 id="spaceauth"><code>spaceauth</code></h5>
-<p>All other actions interacting with Apple's APIs do not accept application specific passwords.</p>
-<p>As your CI machine will not be able to prompt you for your two-factor authentication or two-step verification information, you need to generate a login session for Apple ID in advance. You can generate one on your local machine by running:</p>
-<pre><code>fastlane spaceauth -u user@email.com
-</code></pre>
-
-<p>The generated value then has to be stored inside the <code>FASTLANE_SESSION</code> environment variable on your CI system. This session will be reused instead of triggering a new login each time <em>fastlane</em> communicates with Apple's APIs.</p>
-<p>Please note:</p>
-<ul>
-<li>An Apple ID session is only valid for a certain region, meaning if your CI system is in a different region than your local machine, you might run into issues</li>
-<li>An Apple ID session is only valid for up to a month, meaning you'll have to generate a new session every month. Usually you'd only know about it when your build starts failing</li>
-</ul>
-<p>Unfortunately there is nothing <em>fastlane</em> can do better in this regard, as these are technical limitations on how App Store Connect sessions are handled.</p>
+<p>Note: The application specific password will <strong>not</strong> work if your action usage does anything else than uploading the binary, e.g. updating any metadata like setting release notes or distributing to testers, etc. For those actions, you <strong>must</strong> use one of the other methods.</p>
+<h3 id="method-4-apple-id-without-2fa-deprecated"><a name="user-content-method-4-apple-id-without-2fa-deprecated" href="#method-4-apple-id-without-2fa-deprecated" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Method 4: Apple ID without 2FA (deprecated)</h3>
+<p><a href="https://developer.apple.com/news/?id=02202019a">Apple announced that as of February 27th 2019</a>, it would enforce 2-factor authentication on developer Apple IDs with the "Account Holder" role. Since then, they extended this rule to all roles, and then later throughout 2020 they slowly enforced all existing accounts to register 2FA. As of March 3rd 2021, no accounts without 2FA registered are able to login until they register a 2FA method, essentially breaking all "non-2FA compliant Apple IDs" that still existed. For this reason, when using <em>fastlane</em> in your CI, you <strong>will</strong> have to work your way with 2FA.</p>
 <h2 id="environment-variables-to-set"><a name="user-content-environment-variables-to-set" href="#environment-variables-to-set" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Environment variables to set</h2>
 <p>Most setups will need the following environment variables</p>
 <ul>
