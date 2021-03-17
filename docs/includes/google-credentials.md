@@ -18,11 +18,10 @@ Tip: If you see Google Play Console or Google Developer Console in your local la
 1. Choose the permissions you'd like this account to have. We recommend **Admin (all permissions)**, but you may want to manually select all checkboxes and leave out some of the **Releases** permissions such as **Release to production**.
 1. Click **Invite user** to finish.
 
-You can use [`fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json`](https://docs.fastlane.tools/actions/validate_play_store_json_key/) to test the connection to Google Play Store with the downloaded private key. Once that works, add a path to the JSON file in the `fastlane/Appfile` file:
+You can use [`fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json`](https://docs.fastlane.tools/actions/validate_play_store_json_key/) to test the connection to Google Play Store with the downloaded private key. Once that works, add the path to the JSON file to your [Appfile](/advanced/Appfile):
 
-```
-json_key_file("fastlane/play-store-credentials.json")
+```ruby
+json_key_file("path/to/your/play-store-credentials.json")
 package_name("my.package.name")
-```
 
 The path is relative to where you normally run `fastlane`.
