@@ -1443,10 +1443,18 @@ See <a href="https://formulae.brew.sh/formula/fastlane">this page</a> for detail
 <li>Choose the permissions you'd like this account to have. We recommend <strong>Admin (all permissions)</strong>, but you may want to manually select all checkboxes and leave out some of the <strong>Releases</strong> permissions such as <strong>Release to production</strong>.</li>
 <li>Click <strong>Invite user</strong> to finish.</li>
 </ol>
-<p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key.</p>
-<h3 id="configure-supply"><a name="user-content-configure-supply" href="#configure-supply" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure <em>supply</em></h3>
-<p>Edit your <code>fastlane/Appfile</code> and change the <code>json_key_file</code> line to have the path to your credentials file:</p>
-<pre><code class="ruby">json_key_file &quot;/path/to/your/downloaded/key.json&quot;
+<p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key. Once that works, add the path to the JSON file to your <a href="../../../advanced/Appfile">Appfile</a>:</p>
+<pre><code class="ruby">json_key_file(&quot;path/to/your/play-store-credentials.json&quot;)
+package_name(&quot;my.package.name&quot;)
+
+The path is relative to where you normally run `fastlane`.
+
+### Configure _supply_
+
+Edit your `fastlane/Appfile` and change the `json_key_file` line to have the path to your credentials file:
+
+```ruby
+json_key_file &quot;/path/to/your/downloaded/key.json&quot;
 </code></pre>
 
 <h3 id="fetch-your-app-metadata"><a name="user-content-fetch-your-app-metadata" href="#fetch-your-app-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fetch your app metadata</h3>

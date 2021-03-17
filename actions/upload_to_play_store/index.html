@@ -1408,35 +1408,47 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Choose the permissions you'd like this account to have. We recommend <strong>Admin (all permissions)</strong>, but you may want to manually select all checkboxes and leave out some of the <strong>Releases</strong> permissions such as <strong>Release to production</strong>.</li>
 <li>Click <strong>Invite user</strong> to finish.</li>
 </ol>
-<p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key.</p>
-<h3 id="migrating-google-credential-format-from-p12-key-file-to-json"><a name="user-content-migrating-google-credential-format-from-p12-key-file-to-json" href="#migrating-google-credential-format-from-p12-key-file-to-json" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migrating Google credential format (from .p12 key file to .json)</h3>
-<p>In previous versions of supply, credentials to your Play Console were stored as <code>.p12</code> files. Since version 0.4.0, supply now supports the recommended <code>.json</code> key Service Account credential files. If you wish to upgrade:</p>
-<ul>
-<li>follow the <a href="#setup">Setup</a> procedure once again to make sure you create the appropriate JSON file</li>
-<li>update your fastlane configuration or your command line invocation to use the appropriate argument if necessary.
-  Note that you don't need to take note nor pass the <code>issuer</code> argument anymore.</li>
-</ul>
-<p>The previous p12 configuration is still currently supported.</p>
-<h2 id="quick-start"><a name="user-content-quick-start" href="#quick-start" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quick Start</h2>
-<blockquote>
-<p>Before using <em>supply</em> to connect to Google Play Store, you'll need to set up your app manually first by uploading at least one build to Google Play Store. See <a href="https://github.com/fastlane/fastlane/issues/14686">fastlane/fastlane#14686</a> for more info.</p>
-</blockquote>
-<ul>
-<li><code>cd [your_project_folder]</code></li>
-<li><code>fastlane supply init</code></li>
-<li>Make changes to the downloaded metadata, add images, screenshots and/or an APK</li>
-<li><code>fastlane supply</code></li>
-</ul>
-<h2 id="available-commands"><a name="user-content-available-commands" href="#available-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Available Commands</h2>
-<ul>
-<li><code>fastlane supply</code>: update an app with metadata, a build, images and screenshots</li>
-<li><code>fastlane supply init</code>: download metadata for an existing app to a local directory</li>
-<li><code>fastlane action supply</code>: show information on available commands, arguments and environment variables</li>
-</ul>
-<p>You can either run <em>supply</em> on its own and use it interactively, or you can pass arguments or specify environment variables for all the options to skip the questions.</p>
-<h2 id="uploading-an-apk"><a name="user-content-uploading-an-apk" href="#uploading-an-apk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading an APK</h2>
-<p>To upload a new binary to Google Play, simply run</p>
-<pre><code class="no-highlight">fastlane supply --apk path/to/app.apk
+<p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key. Once that works, add the path to the JSON file to your <a href="../../advanced/Appfile">Appfile</a>:</p>
+<pre><code class="ruby">json_key_file(&quot;path/to/your/play-store-credentials.json&quot;)
+package_name(&quot;my.package.name&quot;)
+
+The path is relative to where you normally run `fastlane`.
+
+### Migrating Google credential format (from .p12 key file to .json)
+
+In previous versions of supply, credentials to your Play Console were stored as `.p12` files. Since version 0.4.0, supply now supports the recommended `.json` key Service Account credential files. If you wish to upgrade:
+
+- follow the &lt;a href=&quot;#setup&quot;&gt;Setup&lt;/a&gt; procedure once again to make sure you create the appropriate JSON file
+- update your fastlane configuration or your command line invocation to use the appropriate argument if necessary.
+  Note that you don't need to take note nor pass the `issuer` argument anymore.
+
+
+The previous p12 configuration is still currently supported.
+
+
+## Quick Start
+
+&gt; Before using _supply_ to connect to Google Play Store, you'll need to set up your app manually first by uploading at least one build to Google Play Store. See [fastlane/fastlane#14686](https://github.com/fastlane/fastlane/issues/14686) for more info.
+
+- `cd [your_project_folder]`
+- `fastlane supply init`
+- Make changes to the downloaded metadata, add images, screenshots and/or an APK
+- `fastlane supply`
+
+## Available Commands
+
+- `fastlane supply`: update an app with metadata, a build, images and screenshots
+- `fastlane supply init`: download metadata for an existing app to a local directory
+- `fastlane action supply`: show information on available commands, arguments and environment variables
+
+You can either run _supply_ on its own and use it interactively, or you can pass arguments or specify environment variables for all the options to skip the questions.
+
+## Uploading an APK
+
+To upload a new binary to Google Play, simply run
+
+```no-highlight
+fastlane supply --apk path/to/app.apk
 </code></pre>
 
 <p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
