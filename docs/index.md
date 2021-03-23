@@ -75,6 +75,12 @@ Before submitting a new GitHub issue, please make sure to search for [existing G
 
 If that doesn't help, please [submit an issue](https://github.com/fastlane/fastlane/issues) on GitHub and provide information about your setup, in particular the output of the `fastlane env` command.
 
+## System requirements
+
+_fastlane_ is officially supported to run on macOS.
+
+🐧 Linux and 🖥️ Windows are partially supported. Some underlying software like Xcode are only available on macOS, but many other tools, actions, and the `spaceship` module can work on other platforms.
+
 ## _fastlane_ team
 
 <table>
