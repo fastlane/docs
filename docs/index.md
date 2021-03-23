@@ -77,9 +77,9 @@ If that doesn't help, please [submit an issue](https://github.com/fastlane/fastl
 
 ## System requirements
 
-Currently, _fastlane_ is officially supported to run on macOS. 
+_fastlane_ is officially supported to run on macOS.
 
-But we are working on 🐧 Linux and 🖥️ Windows support for parts of _fastlane_. Some underlying software like Xcode or iTunes Transporter is only available for macOS, but many other tools and actions can theoretically also work on other platforms. Please see [this Github issue for further information](https://github.com/fastlane/fastlane/issues/11687).
+🐧 Linux and 🖥️ Windows are partially supported. Some underlying software like Xcode are only available on macOS, but many other tools, actions, and the `spaceship` module can work on other platforms.
 
 ## _fastlane_ team
 
