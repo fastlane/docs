@@ -76,7 +76,7 @@ fastlane-plugin-versioning:
   :github_contributors: 12
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 1439
+  :age_in_days: 1757
   :readme_score: 100
   :tests: 3
   :actions:
@@ -85,12 +85,12 @@ fastlane-plugin-aws_s3:
     category:
     description: Generates a plist file and uploads all to AWS S3
     details:
-  :sha: 200d230e78fe34fb727f36f36afe19d7085a4e65bd0c45ed58025c6825d6358b
-  :github_stars: 98
-  :github_subscribers: 5
+  :sha: ae802f99fe43802164de72c92f5b3471d70d5912f4a64c2abbd9aa07fa9e4013
+  :github_stars: 112
+  :github_subscribers: 4
   :github_issues: 15
-  :github_forks: 46
-  :github_contributors: 20
+  :github_forks: 52
+  :github_contributors: 0
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
   :age_in_days: 1451
@@ -158,7 +158,7 @@ fastlane-plugin-update_provisioning_profile_specifier:
   :github_contributors: 0
 fastlane-plugin-appicon:
   :initial_commit: 2016-07-01
-  :age_in_days: 1411
+  :age_in_days: 1729
   :readme_score: 100
   :tests: 0
   :actions:
@@ -173,12 +173,12 @@ fastlane-plugin-appicon:
     description: Generate required icon sizes and iconset from a master application
       icon
     details:
-  :sha: 5bf4bc112d38e6afef629711d38fb67803db2c6d46aac318697770570edf9788
-  :github_stars: 271
-  :github_subscribers: 10
-  :github_issues: 15
+  :sha: e5a592f4566a06fcae5c30dad50500293885ae0a954b19189f3fea3c64ddbb8a
+  :github_stars: 295
+  :github_subscribers: 9
+  :github_issues: 19
   :github_forks: 41
-  :github_contributors: 19
+  :github_contributors: 20
 fastlane-plugin-badge:
   :initial_commit: 2016-12-16
   :age_in_days: 1139
@@ -215,9 +215,9 @@ fastlane-plugin-increment_version_code:
   :github_contributors: 2
 fastlane-plugin-changelog:
   :initial_commit: 2016-06-25
-  :age_in_days: 1094
+  :age_in_days: 1735
   :readme_score: 100
-  :tests: 27
+  :tests: 28
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: read_changelog
@@ -243,12 +243,12 @@ fastlane-plugin-changelog:
     description: Stamps the [Unreleased] section with provided identifier in your
       project CHANGELOG.md file
     details:
-  :sha: 28445a09b4f9a98094827b5478b2edba807f8072cb5d4b80d7632961fb97365d
-  :github_stars: 122
-  :github_subscribers: 2
-  :github_issues: 1
-  :github_forks: 20
-  :github_contributors: 7
+  :sha: 4e526be75da1b3e89594eeec374a4bea5efe4396adf5414794534f70a746d42a
+  :github_stars: 176
+  :github_subscribers: 1
+  :github_issues: 2
+  :github_forks: 45
+  :github_contributors: 10
 fastlane-plugin-tpa:
   :initial_commit: 2016-06-17
   :age_in_days: 1321
@@ -1420,7 +1420,7 @@ fastlane-plugin-raven:
   :github_contributors: 3
 fastlane-plugin-aws_sns:
   :initial_commit: 2016-11-17
-  :age_in_days: 465
+  :age_in_days: 1590
   :readme_score: 50
   :tests: 1
   :actions:
@@ -1429,12 +1429,12 @@ fastlane-plugin-aws_sns:
     category:
     description: Creates AWS SNS platform applications
     details: Creates AWS SNS platform applications for iOS and Android
-  :sha: 8e4d5a5fb9de637e15928a9c2548839848e01faae2c5a46bc2b8b27722511f1a
-  :github_stars: 8
+  :sha: b15f10d28664bd86af4a0fc49b0e025376d81381f37e7e033d7798257bd40e4c
+  :github_stars: 10
   :github_subscribers: 2
-  :github_issues: 1
-  :github_forks: 1
-  :github_contributors: 1
+  :github_issues: 2
+  :github_forks: 7
+  :github_contributors: 0
 fastlane-plugin-branch:
   :initial_commit: 2017-04-14
   :age_in_days: 317
@@ -4409,9 +4409,9 @@ fastlane-plugin-instabug_official:
   :github_contributors: 0
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
-  :age_in_days: 983
+  :age_in_days: 1141
   :readme_score: 100
-  :tests: 20
+  :tests: 19
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: update_google_drive_file
@@ -4428,11 +4428,11 @@ fastlane-plugin-google_drive:
     category:
     description: Create new folder on Google Drive
     details: "\\n"
-  :sha: f6c64b6ebbb6222e1bf8b961d7d9aa1a11a83503a003caf3e46d00dd62f78ceb
-  :github_stars: 34
+  :sha: 9bf7d65482f6d85d413b5e2af18f15674ea0ccdc7a92175cdb9f73055a2491a2
+  :github_stars: 39
   :github_subscribers: 1
   :github_issues: 2
-  :github_forks: 8
+  :github_forks: 10
   :github_contributors: 0
 fastlane-plugin-localize:
   :initial_commit: 2018-02-19
@@ -5014,7 +5014,7 @@ fastlane-plugin-podspec_dependency_versioning:
   :github_contributors: 0
 fastlane-plugin-ipa_info:
   :initial_commit: 2018-06-27
-  :age_in_days: 989
+  :age_in_days: 1003
   :readme_score: 100
   :tests: 4
   :actions:
@@ -5023,8 +5023,8 @@ fastlane-plugin-ipa_info:
     category:
     description: Show information of an ipa file.
     details: Show information of an ipa file.
-  :sha: 4fc057e7aef76d05408c402db8f6b8cbb1789166940637fe8f477c21624f46c1
-  :github_stars: 1
+  :sha: 0a34f7514802c7f5a62544cb5c86cd68def0756cbc35abb458a579c8f16e602b
+  :github_stars: 2
   :github_subscribers: 0
   :github_issues: 1
   :github_forks: 0
@@ -5065,7 +5065,7 @@ fastlane-plugin-build_log_info:
   :github_contributors: 1
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 693
+  :age_in_days: 954
   :readme_score: 100
   :tests: 29
   :actions:
@@ -5074,12 +5074,12 @@ fastlane-plugin-mango:
     category:
     description: Action that runs Android tasks on a specified Docker image
     details:
-  :sha: c99168a6b384b9361b94ec7559a417626676a7faf229e267e7d025e19d30f8e9
-  :github_stars: 42
-  :github_subscribers: 25
-  :github_issues: 2
-  :github_forks: 6
-  :github_contributors: 5
+  :sha: 5fd5f5ea67e0be3048f6ccdef17e50da76289705ac1cf6d516f5d3d4abec3c0a
+  :github_stars: 47
+  :github_subscribers: 24
+  :github_issues: 0
+  :github_forks: 7
+  :github_contributors: 0
 fastlane-plugin-ciutils:
   :initial_commit: 2016-11-19
   :age_in_days: 872
@@ -6157,7 +6157,7 @@ fastlane-plugin-transifex_tool:
   :github_contributors: 0
 fastlane-plugin-google_sheet_localize:
   :initial_commit: 2019-01-31
-  :age_in_days: 755
+  :age_in_days: 785
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6167,7 +6167,7 @@ fastlane-plugin-google_sheet_localize:
     description: Creates .strings files for iOS and strings.xml files for Android
     details: Creates .strings files for iOS and strings.xml files for Android. The
       localization is mananged on a google sheet.
-  :sha: 6ca4c1420480010008c0393651a737b265fbba942454cf0a0fde080a1b06cbe0
+  :sha: c530bad744fdc4189c902eba2a350d77bb674d4ca4b80d0748b7497a403b6425
   :github_stars: 16
   :github_subscribers: 4
   :github_issues: 4
@@ -8652,7 +8652,7 @@ fastlane-plugin-clang_format:
   :github_contributors: 0
 fastlane-plugin-match_keystore:
   :initial_commit: 2020-03-31
-  :age_in_days: 163
+  :age_in_days: 360
   :readme_score: 50
   :tests: 1
   :actions:
@@ -8662,12 +8662,12 @@ fastlane-plugin-match_keystore:
     description: Easily sync your Android keystores across your team
     details: This way, your entire team can use the same account and have one code
       signing identity without any manual work or confusion.
-  :sha: e9745c294a58bbc796e06e034bb577220cad171807d89cca665173f250a8144a
-  :github_stars: 3
+  :sha: 4a657f1f8e76193ec653b8a4f65fc143d6ac75740a87206eed3a654f4f7e88b9
+  :github_stars: 4
   :github_subscribers: 1
-  :github_issues: 4
+  :github_issues: 5
   :github_forks: 4
-  :github_contributors: 0
+  :github_contributors: 2
 fastlane-plugin-uninow_sentry:
   :initial_commit: 2016-06-01
   :age_in_days: 1404
@@ -9764,7 +9764,7 @@ fastlane-plugin-android_update_package_identifier:
   :github_contributors: 0
 fastlane-plugin-sunny_project:
   :initial_commit: 2020-09-19
-  :age_in_days: 138
+  :age_in_days: 188
   :readme_score: 50
   :tests: 1
   :actions:
@@ -9838,7 +9838,7 @@ fastlane-plugin-sunny_project:
     category:
     description: Executes pub publish command
     details:
-  :sha: 6a9446338e05c74fbf384e9a6abff9b44473aaad38b67d5959849e17970954a1
+  :sha: c5e27d60a4907ba99f5ac97820e768aceee2bbb02a980ef1a5927fde4d762131
   :github_stars: 0
   :github_subscribers: 2
   :github_issues: 0
@@ -10367,24 +10367,24 @@ fastlane-plugin-creator:
   :github_contributors: 1
 fastlane-plugin-taiwan_number_one:
   :initial_commit: 2021-03-03
-  :age_in_days: 5
+  :age_in_days: 23
   :readme_score: 100
-  :tests: 1
+  :tests: 0
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: taiwan_number_one
     category:
     description:
     details:
-  :sha: 0ad3379a4701cbc0749fa04095da0b1ed7768bdea998422afafab7729caef236
-  :github_stars: 2
+  :sha: 4fb3c59f54d877596edb0421244d50384c57d5270cdd729541a140a27a956620
+  :github_stars: 7
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-asana_task:
   :initial_commit: 2021-03-08
-  :age_in_days: 0
+  :age_in_days: 18
   :readme_score: 50
   :tests: 1
   :actions:
@@ -10393,13 +10393,25 @@ fastlane-plugin-asana_task:
     category:
     description: asana task plugin
     details: asana task plugin
-  :sha: 7707a80a32419be229587c8ce4a0f89cc5f50c3db84a26fae1f2cbca808bd92a
+  :sha: 4de5433c80d205d2413003f6bf15918193a8b87ed36f20ec50c9a07e47ee2756
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-upload_symbols_to_shake:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-android_reporter:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-discord_webhook_notifier:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
