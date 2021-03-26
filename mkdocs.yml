@@ -163,6 +163,7 @@ pages:
   - mailgun: actions/mailgun.md
   - make_changelog_from_jenkins: actions/make_changelog_from_jenkins.md
   - match: actions/match.md
+  - match_nuke: actions/match_nuke.md
   - min_fastlane_version: actions/min_fastlane_version.md
   - modify_services: actions/modify_services.md
   - nexus_upload: actions/nexus_upload.md
