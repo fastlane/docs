@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>min_fastlane_version - fastlane docs</title>
+  <title>match_nuke - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "min_fastlane_version";
-    var mkdocs_page_input_path = "actions/min_fastlane_version.md";
-    var mkdocs_page_url = "/actions/min_fastlane_version/";
+    var mkdocs_page_name = "match_nuke";
+    var mkdocs_page_input_path = "actions/match_nuke.md";
+    var mkdocs_page_url = "/actions/match_nuke/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1317,14 +1317,14 @@
         
       
     
-    <li>min_fastlane_version</li>
+    <li>match_nuke</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/min_fastlane_version.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/match_nuke.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1352,52 +1352,288 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/min_fastlane_version.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/match_nuke.rb
 -->
 
-<h1 id="min_fastlane_version"><a name="user-content-min_fastlane_version" href="#min_fastlane_version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>min_fastlane_version</h1>
-<p>Verifies the minimum fastlane version required</p>
+<h1 id="match_nuke"><a name="user-content-match_nuke" href="#match_nuke" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>match_nuke</h1>
+<p>Easily nuke your certificate and provisioning profiles (via <em>match</em>)</p>
 <blockquote>
-<p>Add this to your <code>Fastfile</code> to require a certain version of <em>fastlane</em>.<br>Use it if you use an action that just recently came out and you need it.</p>
+<p>Use the match_nuke action to revoke your certificates and provisioning profiles.<br>Don't worry, apps that are already available in the App Store / TestFlight will still work.<br>Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build.<br>After clearing your account you'll start from a clean state, and you can run match to generate your certificates and profiles again.<br>More information: https://docs.fastlane.tools/actions/match/</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>min_fastlane_version</th>
+<th>match_nuke</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Supported platforms</td>
-<td>ios, android, mac</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx</td>
+<td>@crazymanish</td>
 </tr>
 </tbody>
 </table>
-<h2 id="1-example"><a name="user-content-1-example" href="#1-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1 Example</h2>
-<pre><code class="ruby">min_fastlane_version(&quot;1.50.0&quot;)
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">match_nuke(type: &quot;development&quot;)
 </code></pre>
 
+<pre><code class="ruby">match_nuke(type: &quot;development&quot;, api_key: app_store_connect_api_key)
+</code></pre>
+
+<h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution</td>
+<td><code>development</code></td>
+</tr>
+<tr>
+<td><code>additional_cert_types</code></td>
+<td>Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td>Only fetch existing certificates and profiles, don't generate new ones</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>generate_apple_certs</code></td>
+<td>Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>skip_provisioning_profiles</code></td>
+<td>Skip syncing provisioning profiles</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier(s) of your app (comma-separated string or array of strings)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>api_key_path</code></td>
+<td>Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Your Apple ID Username</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>team_id</code></td>
+<td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>team_name</code></td>
+<td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>storage_mode</code></td>
+<td>Define where you want to store your certificates</td>
+<td><code>git</code></td>
+</tr>
+<tr>
+<td><code>git_url</code></td>
+<td>URL to the git repo containing all the certificates</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_branch</code></td>
+<td>Specific git branch to use</td>
+<td><code>master</code></td>
+</tr>
+<tr>
+<td><code>git_full_name</code></td>
+<td>git user full name to commit</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_user_email</code></td>
+<td>git user email to commit</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shallow_clone</code></td>
+<td>Make a shallow clone of the repository (truncate the history to 1 revision)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>clone_branch_directly</code></td>
+<td>Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>git_basic_authorization</code></td>
+<td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_bearer_authorization</code></td>
+<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_private_key</code></td>
+<td>Use a private key to access the git repo (e.g.: access to GitHub repository via Deploy keys), usually a id_rsa named file or the contents hereof</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_cloud_bucket_name</code></td>
+<td>Name of the Google Cloud Storage bucket to use</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_cloud_keys_file</code></td>
+<td>Path to the gc_keys.json file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_cloud_project_id</code></td>
+<td>ID of the Google Cloud project to use for authentication</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_region</code></td>
+<td>Name of the S3 region</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_access_key</code></td>
+<td>S3 access key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_secret_access_key</code></td>
+<td>S3 secret access key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_bucket</code></td>
+<td>Name of the S3 bucket</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_object_prefix</code></td>
+<td>Prefix to be used on all objects uploaded to S3</td>
+<td></td>
+</tr>
+<tr>
+<td><code>keychain_name</code></td>
+<td>Keychain the items should be imported to</td>
+<td><code>login.keychain</code></td>
+</tr>
+<tr>
+<td><code>keychain_password</code></td>
+<td>This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password</td>
+<td></td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>Renew the provisioning profiles every time you run match</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>force_for_new_devices</code></td>
+<td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore'</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_confirmation</code></td>
+<td>Disables confirmation prompts during nuke, answering them with yes</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_docs</code></td>
+<td>Skip generation of a README.md for the created git repository</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td>Set the provisioning profile's platform to work with (i.e. ios, tvos, macos, catalyst)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>derive_catalyst_app_identifier</code></td>
+<td>Enable this if you have the Mac Catalyst capability enabled and your project was created with Xcode 11.3 or earlier. Prepends 'maccatalyst.' to the app identifier for the provisioning profile mapping</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>template_name</code></td>
+<td>The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile_name</code></td>
+<td>A custom name for the provisioning profile. This will replace the default provisioning profile name if specified</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fail_on_name_taken</code></td>
+<td>Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_certificate_matching</code></td>
+<td>Set to true if there is no access to Apple developer portal but there are certificates, keys and profiles provided. Only works with match import action</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>output_path</code></td>
+<td>Path in which to export certificates, key and profile</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_set_partition_list</code></td>
+<td>Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>verbose</code></td>
+<td>Print out extra information and all commands</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action min_fastlane_version
+<pre><code class="no-highlight">fastlane action match_nuke
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run min_fastlane_version
+<pre><code class="no-highlight">fastlane run match_nuke
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run min_fastlane_version parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run match_nuke parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1405,7 +1641,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/min_fastlane_version.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/match_nuke.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1416,10 +1652,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../modify_services/" class="btn btn-neutral float-right" title="modify_services">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../min_fastlane_version/" class="btn btn-neutral float-right" title="min_fastlane_version">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../match_nuke/" class="btn btn-neutral" title="match_nuke"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../match/" class="btn btn-neutral" title="match"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1461,10 +1697,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../match_nuke/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../match/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../modify_services/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../min_fastlane_version/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
