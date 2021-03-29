@@ -23,5 +23,5 @@ You can use [`fastlane run validate_play_store_json_key json_key:/path/to/your/d
 ```ruby
 json_key_file("path/to/your/play-store-credentials.json")
 package_name("my.package.name")
-
+```
 The path is relative to where you normally run `fastlane`.
