@@ -58,6 +58,31 @@ Add the _fastlane_ dependency to your `Package.swift`.
 .package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", from: "2.179.0")
 ```
 
+A full example of a working package description would be the following.
+
+```swift
+// swift-tools-version:5.2
+
+import PackageDescription
+
+let package = Package(
+    name: "fastlaneRunner",
+    products: [
+        .executable(name: "fastlaneRunner", targets: ["fastlaneRunner"])
+    ],
+    dependencies: [
+        .package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", from: "2.179.0")
+    ],
+    targets: [
+        .target(
+            name: "fastlaneRunner",
+            dependencies: ["Fastlane"],
+            path: "Sources/Thingy"
+        )
+    ]
+)
+```
+
 ### Step 3
 
 Create your Fastfile.swift file in your package and add the desired lanes, as follows.
