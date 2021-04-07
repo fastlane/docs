@@ -55,7 +55,7 @@ Create an executable Swift Package Manager project with `swift package init --ty
 Add the _fastlane_ dependency to your `Package.swift`.
 
 ```swift
-.package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", .from("2.179.0"))
+.package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", from: "2.179.0")
 ```
 
 ### Step 3
