@@ -44,7 +44,7 @@ Run `fastlane <laneName>` in your terminal to execute _fastlane_.
 
 ## Get Started (SPM) (Beta)
 
-Swift Package Manager support is included as a preliminar support which allows the combination of other SPM packages with _fastlane_.
+Swift Package Manager support is included as a preliminary feature that allows the usage of _fastlane_ with other SPM packages.
 
 ### Step 1
 
