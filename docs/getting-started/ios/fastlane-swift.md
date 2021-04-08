@@ -8,7 +8,7 @@ Fastlane.swift is currently in beta. Please provide feedback by opening an issue
 
 Fastlane.swift currently supports all built-in [fastlane actions](https://docs.fastlane.tools/actions/) and 3rd party [plugins](https://docs.fastlane.tools/plugins/available-plugins/). Make sure to update to the most recent _fastlane_ release to try these features.
 
-## Get Started
+## Get Started (Xcode)
 
 ### Step 1
 
@@ -41,6 +41,84 @@ Run `fastlane <laneName>` in your terminal to execute _fastlane_.
 ### Step 4
 
 🎉
+
+## Get Started (SPM) (Beta)
+
+Swift Package Manager (SPM) support adds the ability to distribute _fastlane_ as a Swift Package Manager package, which allows other packages to integrate with the toolset.
+
+### Step 1
+
+Create an executable Swift Package Manager project with `swift package init --type executable`.
+
+### Step 2
+
+Add the _fastlane_ dependency to your `Package.swift`.
+
+```swift
+.package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", from: "2.179.0")
+```
+
+A full example of a working package description would be the following.
+
+```swift
+// swift-tools-version:5.2
+
+import PackageDescription
+
+let package = Package(
+    name: "fastlaneRunner",
+    products: [
+        .executable(name: "fastlaneRunner", targets: ["fastlaneRunner"])
+    ],
+    dependencies: [
+        .package(name: "Fastlane", url: "https://github.com/fastlane/fastlane", from: "2.179.0")
+    ],
+    targets: [
+        .target(
+            name: "fastlaneRunner",
+            dependencies: ["Fastlane"],
+            path: "Sources/Thingy"
+        )
+    ]
+)
+```
+
+### Step 3
+
+Create your Fastfile.swift file in your package and add the desired lanes, as follows.
+
+``` swift
+import Fastlane
+
+// Create a class with: 
+class FastFile: LaneFile {
+    // Your lanes goes here.
+}
+```
+
+### Step 4
+
+Add an entry point (`@main`) or a `main.swift` file (mandatory for executable SPM packages) and don't forget to start the _fastlane_ runloop as follows:
+
+```swift
+import Fastlane
+
+Main().run(with: Fastfile())
+```
+
+### Step 5
+
+Modify the target of your executable to have executable arguments `lane myLane` or add them in the call after making `swift build`.
+
+```no-highlight
+myExecutable lane myLane
+```
+
+#### Notes:
+
+- You can edit the created `Package.swift` file to add your desired dependencies so you can use them in the Fastfile.
+
+- If you want to just push your `Package.swift` and `Package.resolved` to the repo, you'd need to `swift build` the package to create your executable again which can be found in the `.debug` or `.release` folders, depending on how you built the package (`.debug` by default). 
 
 ## Defining Lanes
 
