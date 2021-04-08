@@ -1356,7 +1356,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="jira"><a name="user-content-jira" href="#jira" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>jira</h1>
-<p>Leave a comment on JIRA tickets</p>
+<p>Leave a comment on a Jira ticket</p>
 <table>
 <thead>
 <tr>
@@ -1371,16 +1371,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@iAmChrisTruman</td>
+<td>@iAmChrisTruman, @crazymanish</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>A hash containing all relevant information of the Jira comment<br>Access Jira comment 'id', 'author', 'body', and more</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
 <pre><code class="ruby">jira(
   url: &quot;https://bugs.yourdomain.com&quot;,
   username: &quot;Your username&quot;,
-  password: &quot;Your password&quot;,
-  ticket_id: &quot;Ticket ID, i.e. IOS-123&quot;,
+  password: &quot;Your password or API token&quot;,
+  ticket_id: &quot;IOS-123&quot;,
   comment_text: &quot;Text to post as a comment&quot;
 )
 </code></pre>
@@ -1389,9 +1393,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   url: &quot;https://yourserverdomain.com&quot;,
   context_path: &quot;/jira&quot;,
   username: &quot;Your username&quot;,
-  password: &quot;Your password&quot;,
-  ticket_id: &quot;Ticket ID, i.e. IOS-123&quot;,
+  password: &quot;Your password or API token&quot;,
+  ticket_id: &quot;IOS-123&quot;,
   comment_text: &quot;Text to post as a comment&quot;
+)
+</code></pre>
+
+<pre><code class="ruby">jira(
+  ticket_id: &quot;IOS-123&quot;,
+  comment_text: &quot;Text to post as a comment&quot;,
+  fail_on_error: false
 )
 </code></pre>
 
@@ -1417,12 +1428,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>username</code></td>
-<td>Username for JIRA instance</td>
+<td>Username for Jira instance</td>
 <td></td>
 </tr>
 <tr>
 <td><code>password</code></td>
-<td>Password for Jira</td>
+<td>Password or API token for Jira</td>
 <td></td>
 </tr>
 <tr>
@@ -1435,11 +1446,34 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td>Text to add to the ticket as a comment</td>
 <td></td>
 </tr>
+<tr>
+<td><code>fail_on_error</code></td>
+<td>Should an error adding the Jira comment cause a failure?</td>
+<td><code>true</code></td>
+</tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
+<h2 id="lane-variables"><a name="user-content-lane-variables" href="#lane-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Variables</h2>
+<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>jira</code> action generates the following Lane Variables:</p>
+<table>
+<thead>
+<tr>
+<th>SharedValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SharedValues::JIRA_JSON</code></td>
+<td>The whole Jira API JSON object</td>
+</tr>
+</tbody>
+</table>
+<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.
+<hr /></p>
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
 <pre><code class="no-highlight">fastlane action jira

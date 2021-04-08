@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>app_store_connect_api_key - fastlane docs</title>
+  <title>sourcedocs - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "app_store_connect_api_key";
-    var mkdocs_page_input_path = "actions/app_store_connect_api_key.md";
-    var mkdocs_page_url = "/actions/app_store_connect_api_key/";
+    var mkdocs_page_name = "sourcedocs";
+    var mkdocs_page_input_path = "actions/sourcedocs.md";
+    var mkdocs_page_url = "/actions/sourcedocs/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1317,14 +1317,14 @@
         
       
     
-    <li>app_store_connect_api_key</li>
+    <li>sourcedocs</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/app_store_connect_api_key.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/sourcedocs.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1352,18 +1352,15 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/app_store_connect_api_key.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/sourcedocs.rb
 -->
 
-<h1 id="app_store_connect_api_key"><a name="user-content-app_store_connect_api_key" href="#app_store_connect_api_key" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_store_connect_api_key</h1>
-<p>Load the App Store Connect API token to use in other fastlane tools and actions</p>
-<blockquote>
-<p>Load the App Store Connect API token to use in other fastlane tools and actions</p>
-</blockquote>
+<h1 id="sourcedocs"><a name="user-content-sourcedocs" href="#sourcedocs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>sourcedocs</h1>
+<p>Generate docs using SourceDocs</p>
 <table>
 <thead>
 <tr>
-<th>app_store_connect_api_key</th>
+<th>sourcedocs</th>
 <th></th>
 </tr>
 </thead>
@@ -1374,32 +1371,15 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@joshdholtz</td>
+<td>@Kukurijek</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples"><a name="user-content-3-examples" href="#3-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3 Examples</h2>
-<pre><code class="ruby">app_store_connect_api_key(
-  key_id: &quot;D83848D23&quot;,
-  issuer_id: &quot;227b0bbf-ada8-458c-9d62-3d8022b7d07f&quot;,
-  key_filepath: &quot;D83848D23.p8&quot;
-)
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">sourcedocs(output_folder: 'docs')
 </code></pre>
 
-<pre><code class="ruby">app_store_connect_api_key(
-  key_id: &quot;D83848D23&quot;,
-  issuer_id: &quot;227b0bbf-ada8-458c-9d62-3d8022b7d07f&quot;,
-  key_filepath: &quot;D83848D23.p8&quot;,
-  duration: 200,
-  in_house: true
-)
-</code></pre>
-
-<pre><code class="ruby">app_store_connect_api_key(
-  key_id: &quot;D83848D23&quot;,
-  issuer_id: &quot;227b0bbf-ada8-458c-9d62-3d8022b7d07f&quot;,
-  key_content: &quot;-----BEGIN EC PRIVATE KEY-----\nfewfawefawfe\n-----END EC PRIVATE KEY-----&quot;
-)
+<pre><code class="ruby">sourcedocs(output_folder: 'docs', clean: true, reproducible: true, scheme: 'MyApp')
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1413,38 +1393,73 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
-<td><code>key_id</code></td>
-<td>The key ID</td>
+<td><code>all_modules</code></td>
+<td>Generate documentation for all modules in a Swift package</td>
 <td></td>
 </tr>
 <tr>
-<td><code>issuer_id</code></td>
-<td>The issuer ID</td>
+<td><code>spm_module</code></td>
+<td>Generate documentation for Swift Package Manager module</td>
 <td></td>
 </tr>
 <tr>
-<td><code>key_filepath</code></td>
-<td>The path to the key p8 file</td>
+<td><code>module_name</code></td>
+<td>Generate documentation for a Swift module</td>
 <td></td>
 </tr>
 <tr>
-<td><code>key_content</code></td>
-<td>The content of the key p8 file</td>
+<td><code>link_beginning</code></td>
+<td>The text to begin links with</td>
 <td></td>
 </tr>
 <tr>
-<td><code>is_key_content_base64</code></td>
-<td>Whether :key_content is Base64 encoded or not</td>
-<td><code>false</code></td>
+<td><code>link_ending</code></td>
+<td>The text to end links with (default: .md)</td>
+<td></td>
 </tr>
 <tr>
-<td><code>duration</code></td>
-<td>The token session duration</td>
-<td><code>1200</code></td>
+<td><code>output_folder</code></td>
+<td>Output directory to clean (default: Documentation/Reference)</td>
+<td></td>
 </tr>
 <tr>
-<td><code>in_house</code></td>
-<td>Is App Store or Enterprise (in house) team? App Store Connect API cannot determine this on its own (yet)</td>
+<td><code>min_acl</code></td>
+<td>Access level to include in documentation [private, fileprivate, internal, public, open] (default: public)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>module_name_path</code></td>
+<td>Include the module name as part of the output folder path</td>
+<td></td>
+</tr>
+<tr>
+<td><code>clean</code></td>
+<td>Delete output folder before generating documentation</td>
+<td></td>
+</tr>
+<tr>
+<td><code>collapsible</code></td>
+<td>Put methods, properties and enum cases inside collapsible blocks</td>
+<td></td>
+</tr>
+<tr>
+<td><code>table_of_contents</code></td>
+<td>Generate a table of contents with properties and methods for each type</td>
+<td></td>
+</tr>
+<tr>
+<td><code>reproducible</code></td>
+<td>Generate documentation that is reproducible: only depends on the sources</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>Create documentation for specific scheme</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sdk_platform</code></td>
+<td>Create documentation for specific sdk platform</td>
 <td></td>
 </tr>
 </tbody>
@@ -1452,38 +1467,20 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
-<h2 id="lane-variables"><a name="user-content-lane-variables" href="#lane-variables" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lane Variables</h2>
-<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>app_store_connect_api_key</code> action generates the following Lane Variables:</p>
-<table>
-<thead>
-<tr>
-<th>SharedValue</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SharedValues::APP_STORE_CONNECT_API_KEY</code></td>
-<td>The App Store Connect API key information used for authorization requests. This hash can be passed directly into the :api_key options on other tools or into Spaceship::ConnectAPI::Token.create method</td>
-</tr>
-</tbody>
-</table>
-<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.
-<hr /></p>
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action app_store_connect_api_key
+<pre><code class="no-highlight">fastlane action sourcedocs
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run app_store_connect_api_key
+<pre><code class="no-highlight">fastlane run sourcedocs
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run app_store_connect_api_key parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run sourcedocs parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1491,7 +1488,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/app_store_connect_api_key.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/sourcedocs.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1502,10 +1499,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../appaloosa/" class="btn btn-neutral float-right" title="appaloosa">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../spaceship_logs/" class="btn btn-neutral float-right" title="spaceship_logs">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../app_store_build_number/" class="btn btn-neutral" title="app_store_build_number"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../sonar/" class="btn btn-neutral" title="sonar"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1547,10 +1544,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../app_store_build_number/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../sonar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../appaloosa/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../spaceship_logs/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
