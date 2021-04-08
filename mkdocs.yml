@@ -220,6 +220,7 @@ pages:
   - slather: actions/slather.md
   - snapshot: actions/snapshot.md
   - sonar: actions/sonar.md
+  - sourcedocs: actions/sourcedocs.md
   - spaceship_logs: actions/spaceship_logs.md
   - spaceship_stats: actions/spaceship_stats.md
   - splunkmint: actions/splunkmint.md
