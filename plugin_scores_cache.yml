@@ -10434,3 +10434,21 @@ fastlane-plugin-clean_xcarchive:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-swift_doc:
+  :initial_commit: 2021-04-08
+  :age_in_days: 0
+  :readme_score: 100
+  :tests: 14
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: swift_doc
+    category: documentation
+    description: Generate documentation, documentation coverage, or a class diagram
+      using SwiftDoc
+    details:
+  :sha: 39f1f16135512697aa8512c80fdc328a175fb652e64008b12633ba58976476bf
+  :github_stars: 0
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
