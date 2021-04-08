@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # jira
 
 
-Leave a comment on JIRA tickets
+Leave a comment on a Jira ticket
 
 
 
@@ -17,18 +17,19 @@ Leave a comment on JIRA tickets
 jira ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @iAmChrisTruman
+Author | @iAmChrisTruman, @crazymanish
+Returns | A hash containing all relevant information of the Jira comment<br>Access Jira comment 'id', 'author', 'body', and more
 
 
 
-## 2 Examples
+## 3 Examples
 
 ```ruby
 jira(
   url: "https://bugs.yourdomain.com",
   username: "Your username",
-  password: "Your password",
-  ticket_id: "Ticket ID, i.e. IOS-123",
+  password: "Your password or API token",
+  ticket_id: "IOS-123",
   comment_text: "Text to post as a comment"
 )
 ```
@@ -38,9 +39,17 @@ jira(
   url: "https://yourserverdomain.com",
   context_path: "/jira",
   username: "Your username",
-  password: "Your password",
-  ticket_id: "Ticket ID, i.e. IOS-123",
+  password: "Your password or API token",
+  ticket_id: "IOS-123",
   comment_text: "Text to post as a comment"
+)
+```
+
+```ruby
+jira(
+  ticket_id: "IOS-123",
+  comment_text: "Text to post as a comment",
+  fail_on_error: false
 )
 ```
 
@@ -54,16 +63,29 @@ Key | Description | Default
 ----|-------------|--------
   `url` | URL for Jira instance | 
   `context_path` | Appends to the url (ex: "/jira") | `''`
-  `username` | Username for JIRA instance | 
-  `password` | Password for Jira | 
+  `username` | Username for Jira instance | 
+  `password` | Password or API token for Jira | 
   `ticket_id` | Ticket ID for Jira, i.e. IOS-123 | 
   `comment_text` | Text to add to the ticket as a comment | 
+  `fail_on_error` | Should an error adding the Jira comment cause a failure? | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
 
 <hr />
 
+
+
+## Lane Variables
+
+Actions can communicate with each other using a shared hash `lane_context`, that can be accessed in other actions, plugins or your lanes: `lane_context[SharedValues:XYZ]`. The `jira` action generates the following Lane Variables:
+
+SharedValue | Description 
+------------|-------------
+  `SharedValues::JIRA_JSON` | The whole Jira API JSON object
+
+To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
+<hr />
 
 
 ## Documentation

@@ -16,7 +16,7 @@ Load the App Store Connect API token to use in other fastlane tools and actions
 
 app_store_connect_api_key ||
 ---|---
-Supported platforms | ios, android, mac
+Supported platforms | ios, mac
 Author | @joshdholtz
 
 

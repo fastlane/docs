@@ -76,7 +76,7 @@ fastlane-plugin-versioning:
   :github_contributors: 12
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 1757
+  :age_in_days: 1770
   :readme_score: 100
   :tests: 3
   :actions:
@@ -85,12 +85,12 @@ fastlane-plugin-aws_s3:
     category:
     description: Generates a plist file and uploads all to AWS S3
     details:
-  :sha: ae802f99fe43802164de72c92f5b3471d70d5912f4a64c2abbd9aa07fa9e4013
-  :github_stars: 112
+  :sha: 71eca083f45614278c2cbc0993534c59ca80c59203f7b7765fbb3bdecbdf11dc
+  :github_stars: 113
   :github_subscribers: 4
-  :github_issues: 15
+  :github_issues: 14
   :github_forks: 52
-  :github_contributors: 0
+  :github_contributors: 24
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
   :age_in_days: 1451
@@ -181,7 +181,7 @@ fastlane-plugin-appicon:
   :github_contributors: 20
 fastlane-plugin-badge:
   :initial_commit: 2016-12-16
-  :age_in_days: 1139
+  :age_in_days: 1574
   :readme_score: 100
   :tests: 1
   :actions:
@@ -190,11 +190,11 @@ fastlane-plugin-badge:
     category:
     description: Automatically add a badge to your app icon
     details: "\\n"
-  :sha: c8970a60da8c31f7ad0c53fad0502ea3696cb822171cfa9bc43fcdf35c1dec18
-  :github_stars: 130
-  :github_subscribers: 2
-  :github_issues: 0
-  :github_forks: 10
+  :sha: 28b352ba20071aa41bf15d8698bfb9bc94fded089c222516aff225a9ed63b675
+  :github_stars: 175
+  :github_subscribers: 1
+  :github_issues: 1
+  :github_forks: 15
   :github_contributors: 2
 fastlane-plugin-increment_version_code:
   :initial_commit: 2016-07-29
@@ -3369,7 +3369,7 @@ fastlane-plugin-gradle_manager:
   :github_contributors: 0
 fastlane-plugin-app_info:
   :initial_commit: 2016-12-08
-  :age_in_days: 928
+  :age_in_days: 1582
   :readme_score: 100
   :tests: 13
   :actions:
@@ -3379,12 +3379,12 @@ fastlane-plugin-app_info:
     description: Parse and dump mobile app(ipa/apk) metedata.
     details: Teardown tool for mobile app(ipa/apk), analysis metedata like version,
       name, icon etc.
-  :sha: 767b1aaed30ace60fee99e2db15ab545fb11039a352d6283be9676e5c508874f
-  :github_stars: 1
+  :sha: e0a30ceb022fba670742c95a18a69d9832e3601a170bf8ee66c4740500162346
+  :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 1
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-xbluepill:
   :initial_commit: 2018-01-25
   :age_in_days: 31
@@ -6157,7 +6157,7 @@ fastlane-plugin-transifex_tool:
   :github_contributors: 0
 fastlane-plugin-google_sheet_localize:
   :initial_commit: 2019-01-31
-  :age_in_days: 785
+  :age_in_days: 798
   :readme_score: 100
   :tests: 1
   :actions:
@@ -6167,11 +6167,11 @@ fastlane-plugin-google_sheet_localize:
     description: Creates .strings files for iOS and strings.xml files for Android
     details: Creates .strings files for iOS and strings.xml files for Android. The
       localization is mananged on a google sheet.
-  :sha: c530bad744fdc4189c902eba2a350d77bb674d4ca4b80d0748b7497a403b6425
+  :sha: de78253377995ad16f13a2384668f87d287037423681af5615d9c3fa575674f7
   :github_stars: 16
-  :github_subscribers: 4
-  :github_issues: 4
-  :github_forks: 2
+  :github_subscribers: 5
+  :github_issues: 5
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-git_build_versioning:
   :initial_commit: 2018-10-29
@@ -8091,7 +8091,7 @@ fastlane-plugin-dropbox_upload:
   :github_contributors: 0
 fastlane-plugin-repack_ios:
   :initial_commit: 2019-11-24
-  :age_in_days: 404
+  :age_in_days: 501
   :readme_score: 100
   :tests: 0
   :actions:
@@ -8104,8 +8104,8 @@ fastlane-plugin-repack_ios:
       assets or non-executable resources without rebuilding the native code. It supports
       fastlane's sigh and match actions to automatically detect provisioning profiles
       and certificates for resigning the modified ipa package.
-  :sha: 454a0daa6364443078e1786780c04292b8065a17dee2efead8824f165118da38
-  :github_stars: 9
+  :sha: 2626e0347e852fb2cb93534cbd96381c7a906c2147a30d5b401cf6a267bb6008
+  :github_stars: 10
   :github_subscribers: 2
   :github_issues: 0
   :github_forks: 3
@@ -10003,7 +10003,7 @@ fastlane-plugin-xambuild:
   :github_contributors: 0
 fastlane-plugin-write_changelog_from_commits:
   :initial_commit: 2020-11-25
-  :age_in_days: 37
+  :age_in_days: 134
   :readme_score: 50
   :tests: 7
   :actions:
@@ -10017,8 +10017,8 @@ fastlane-plugin-write_changelog_from_commits:
       secions of the changelog (bugfix, feature etc). Then it will create a new file
       in the changelogs directory that is named after the current version, and write
       the contents of the changelog
-  :sha: 4c957eb80f97ed706f28efb7182afc8ee4aa402a4ba43ee0a8b37b4c6006b2c6
-  :github_stars: 0
+  :sha: af2564ff78ae16c92befd612dd21801360f5f47c059d73c9b52c451e932f3454
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
@@ -10060,7 +10060,7 @@ fastlane-plugin-jira_issue_link:
   :github_contributors: 0
 fastlane-plugin-emerge:
   :initial_commit: 2020-12-07
-  :age_in_days: 74
+  :age_in_days: 122
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10069,7 +10069,7 @@ fastlane-plugin-emerge:
     category:
     description: Fastlane plugin for Emerge
     details:
-  :sha: 72fac71137f3b410c14094f984608dc074c3d82d01ea12235a741df06a88ac59
+  :sha: d31e69f7713f672c05018242a1e74d259846c3ded1e0acd6bb478b399025fa80
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
@@ -10367,7 +10367,7 @@ fastlane-plugin-creator:
   :github_contributors: 1
 fastlane-plugin-taiwan_number_one:
   :initial_commit: 2021-03-03
-  :age_in_days: 23
+  :age_in_days: 36
   :readme_score: 100
   :tests: 0
   :actions:
@@ -10376,7 +10376,7 @@ fastlane-plugin-taiwan_number_one:
     category:
     description:
     details:
-  :sha: 4fb3c59f54d877596edb0421244d50384c57d5270cdd729541a140a27a956620
+  :sha: 783df3e778c363bd2e9a36cb63c1b8ca760b0186ff650060dcbfb248edda7da3
   :github_stars: 7
   :github_subscribers: 2
   :github_issues: 0
@@ -10417,3 +10417,20 @@ fastlane-plugin-discord_webhook_notifier:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-clean_xcarchive:
+  :initial_commit: 2021-01-30
+  :age_in_days: 68
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: clean_xcarchive
+    category:
+    description: Delete the archive created at build
+    details:
+  :sha: 4d2eb400d74e3488d611f59c3df081111668cd98eb93de780bd1fe20c79c5c15
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

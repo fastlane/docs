@@ -34,6 +34,7 @@ Key | Description | Default
   `asc_provider` | Provider short name for accounts associated with multiple providers | 
   `print_log` | Whether to print notarization log file, listing issues on failure and warnings on success | `false`
   `verbose` | Whether to log requests | `false`
+  `api_key_path` | Path to AppStore Connect API key | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
