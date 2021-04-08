@@ -4,6 +4,7 @@ module Fastlane
       def self.run(params)
         content = params[:content] || File.read(params[:path])
         ENV["CI"] = 1.to_s
+        ENV["GIT_BRANCH"] = "main" # This will prevent Actions.git_branch from executing a shell command
         fill_in_env_variables
 
         # /m says we ignore new line
@@ -35,6 +36,7 @@ module Fastlane
         end
 
         ENV.delete("CI")
+        ENV.delete("GIT_BRANCH")
         UI.user_error!("Found #{errors.count} errors in the documentation") unless errors.empty?
       end
 
