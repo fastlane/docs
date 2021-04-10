@@ -54,6 +54,12 @@ The generated value then has to be stored inside the `FASTLANE_SESSION` environm
 
 It's advised that you run `spaceauth` in the same machine as your CI, instead of running it locally on your machine - see the notes below regarding session duration.
 
+You can also pass in the `--exports_to_clipboard` option so that the export code is automatically copied to clipboard, which you can then execute by running `eval $(pbpaste)` right after running `spaceauth`, for instance:
+
+```sh
+fastlane spaceauth -u user@example.org --exports_to_clipboard && eval $(pbpaste)
+```
+
 #### Important note about session duration
 
 The session generated, stored and reused as part of a 2FA/2SV authentication, or as part of _spaceauth_ is subject to technical limitations imposed by Apple. Namely:
