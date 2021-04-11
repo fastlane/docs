@@ -60,6 +60,20 @@ You can also pass in the `--exports_to_clipboard` option so that the export code
 fastlane spaceauth -u user@example.org --exports_to_clipboard && eval $(pbpaste)
 ```
 
+Note: `--exports_to_clipboard` uses `pbcopy`, and both `pbcopy` and `pbpaste` are only available in macOS. If you use a different OS, make sure you create aliases to `pbcopy` and `pbpaste`, such as:
+
+```sh
+# On Linux:
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
+# or
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+```
+
 #### Important note about session duration
 
 The session generated, stored and reused as part of a 2FA/2SV authentication, or as part of _spaceauth_ is subject to technical limitations imposed by Apple. Namely:
