@@ -54,10 +54,15 @@ The generated value then has to be stored inside the `FASTLANE_SESSION` environm
 
 It's advised that you run `spaceauth` in the same machine as your CI, instead of running it locally on your machine - see the notes below regarding session duration.
 
-You can also pass in the `--exports_to_clipboard` option so that the export code is automatically copied to clipboard, which you can then execute by running `eval $(pbpaste)` right after running `spaceauth`, for instance:
+You can also pass in the `--exports_to_clipboard` option to automatically export the session to clipboard. Use cases could be:
 
 ```sh
-fastlane spaceauth -u user@example.org --exports_to_clipboard && eval $(pbpaste)
+fastlane spaceauth -u user@example.org --exports_to_clipboard && export FASTLANE_SESSION=$(pbpaste)
+
+# or
+
+fastlane spaceauth -u user@example.org --exports_to_clipboard
+FASTLANE_SESSION=$(pbpaste) fastlane another_lane
 ```
 
 Note: `--exports_to_clipboard` uses `pbcopy`, and both `pbcopy` and `pbpaste` are only available in macOS. If you use a different OS, make sure you create aliases to `pbcopy` and `pbpaste`, such as:
