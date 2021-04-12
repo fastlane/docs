@@ -79,6 +79,13 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 ```
 
+`SpaceauthRunner` also has a `session_string` method that can be used to get the session string directly:
+
+```ruby
+fastlane_session = Spaceship::SpaceauthRunner.new(username: "user@example.org").run.session_string
+# Then you could for instance save the session to an env var on your CI programmatically, e.g. Aws::SecretsManager
+```
+
 #### Important note about session duration
 
 The session generated, stored and reused as part of a 2FA/2SV authentication, or as part of _spaceauth_ is subject to technical limitations imposed by Apple. Namely:
