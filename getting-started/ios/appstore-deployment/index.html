@@ -228,6 +228,18 @@
           
             
           
+            
+              <li class="toctree-l3"><a href="#building-your-app">Building your app</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#submitting-your-app">Submitting your app</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#best-practices">Best Practices</a></li>
+            
+          
         </ul>
       
     </li>
@@ -1408,7 +1420,7 @@ brew install fastlane
 
 <p></details></p>
 <h1 id="ios-app-store-deployment-using-fastlane"><a name="user-content-ios-app-store-deployment-using-fastlane" href="#ios-app-store-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS App Store deployment using <em>fastlane</em></h1>
-<h2 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h2>
+<h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app using an action called <em>build_app</em>, just add the following to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :release do
   build_app(scheme: &quot;MyApp&quot;)
@@ -1428,12 +1440,12 @@ end
 </code></pre>
 
 <p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>build_app</em>, run <code>fastlane action build_app</code>.</p>
-<h3 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h3>
+<h2 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h2>
 <p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/getting-started/">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
-<h2 id="submitting-your-app"><a name="user-content-submitting-your-app" href="#submitting-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submitting your app</h2>
-<h3 id="generating-screenshots"><a name="user-content-generating-screenshots" href="#generating-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating screenshots</h3>
+<h1 id="submitting-your-app"><a name="user-content-submitting-your-app" href="#submitting-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Submitting your app</h1>
+<h2 id="generating-screenshots"><a name="user-content-generating-screenshots" href="#generating-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generating screenshots</h2>
 <p>To find out more about how to automatically generate screenshots for the App Store, check out <a href="../screenshots/"><em>fastlane</em> screenshots for iOS and tvOS</a>.</p>
-<h3 id="upload-the-binary-and-app-metadata"><a name="user-content-upload-the-binary-and-app-metadata" href="#upload-the-binary-and-app-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload the binary and app metadata</h3>
+<h2 id="upload-the-binary-and-app-metadata"><a name="user-content-upload-the-binary-and-app-metadata" href="#upload-the-binary-and-app-metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload the binary and app metadata</h2>
 <p>After building your app, it's ready to be uploaded to the App Store. If you've already followed <a href="../beta-deployment/">iOS Beta deployment using <em>fastlane</em></a>, the following code might look similar already.</p>
 <pre><code class="ruby">lane :release do
   capture_screenshots                  # generate new screenshots for the App Store
@@ -1446,9 +1458,9 @@ end
 
 <p><em>fastlane</em> automatically passes on information about the generated screenshots and the binary to the <code>upload_to_app_store</code> action of your <code>Fastfile</code>.</p>
 <p>For a list of all options for each of the steps run <code>fastlane action [action_name]</code>.</p>
-<h3 id="more-details"><a name="user-content-more-details" href="#more-details" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More details</h3>
+<h2 id="more-details"><a name="user-content-more-details" href="#more-details" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>More details</h2>
 <p>For more details on how <code>upload_to_app_store</code> works, how you can define more options, check out <a href="../../../actions/upload_to_app_store/">upload_to_app_store</a>.</p>
-<h2 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h2>
+<h1 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h1>
 <p><details>
 <summary>Push Notifications</summary></p>
 <p>To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:</p>

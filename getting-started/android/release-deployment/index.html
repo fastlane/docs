@@ -356,6 +356,14 @@
           
             
           
+            
+              <li class="toctree-l3"><a href="#building-your-app">Building your app</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#uploading-your-apk">Uploading your APK</a></li>
+            
+          
         </ul>
       
     </li>
@@ -1358,7 +1366,7 @@
           <div role="main">
             <div class="section">
               
-                <p><style type="text/css">
+                <style type="text/css">
   .fastlane-setup {
     border-left: .4rem solid #00b0ff;
     border-bottom: .1rem solid rgba(0,176,255,.1);
@@ -1381,7 +1389,8 @@
     font-size: 18px;
     font-weight: 350;
   }
-</style></p>
+</style>
+
 <p><details class="fastlane-setup-wrapper">
   <summary class="fastlane-setup">New to fastlane? Click here to open the installation &amp; setup instructions first</summary></p>
 <p class="fastlane-setup-header">1) Install the latest Xcode command line tools</p>
@@ -1407,7 +1416,7 @@ brew install fastlane
 
 <p></details></p>
 <h1 id="deploy-to-google-play-using-fastlane"><a name="user-content-deploy-to-google-play-using-fastlane" href="#deploy-to-google-play-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy to Google Play using <em>fastlane</em></h1>
-<h2 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h2>
+<h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app by delegating to your existing Gradle build. Just add the following to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :playstore do
   gradle(
@@ -1425,7 +1434,7 @@ end
 <pre><code class="no-highlight">fastlane action gradle
 </code></pre>
 
-<h2 id="uploading-your-apk"><a name="user-content-uploading-your-apk" href="#uploading-your-apk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your APK</h2>
+<h1 id="uploading-your-apk"><a name="user-content-uploading-your-apk" href="#uploading-your-apk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your APK</h1>
 <p>To upload your binary to Google Play, <em>fastlane</em> uses a tool called <em>supply</em>. Because <em>supply</em> needs authentication information from Google, if you haven't yet done the <a href="../setup/"><em>supply</em> setup steps</a>, please do those now!</p>
 <p>With that done, simply add a call to <em>supply</em> to the lane you set up above:</p>
 <pre><code class="ruby">lane :playstore do

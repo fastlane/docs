@@ -182,6 +182,26 @@
           
             
           
+            
+              <li class="toctree-l3"><a href="#capture-screenshots-automatically">Capture Screenshots Automatically</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#upload-screenshots-to-the-app-store">Upload Screenshots to the App Store</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#use-in-fastfile">Use in Fastfile</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#put-your-screenshots-into-device-frames">Put Your Screenshots Into Device Frames</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#advanced-snapshot">Advanced snapshot</a></li>
+            
+          
         </ul>
       
     </li>
@@ -1416,16 +1436,16 @@ brew install fastlane
 <li>Is the same content displayed for each of your size variations?</li>
 </ul>
 <p><em>fastlane</em> tools can automate this process making it fast, and consistent while giving you beautiful results!</p>
-<h3 id="alternatives"><a name="user-content-alternatives" href="#alternatives" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Alternatives</h3>
+<h2 id="alternatives"><a name="user-content-alternatives" href="#alternatives" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Alternatives</h2>
 <p>For the full story about the many ways that developers can capture and beautify screenshots check out <a href="https://krausefx.com/blog/creating-perfect-app-store-screenshots-of-your-ios-app">this article</a>.</p>
-<h4 id="manually-capturing-screenshots"><a name="user-content-manually-capturing-screenshots" href="#manually-capturing-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manually Capturing Screenshots</h4>
+<h3 id="manually-capturing-screenshots"><a name="user-content-manually-capturing-screenshots" href="#manually-capturing-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Manually Capturing Screenshots</h3>
 <p>Manually taking screenshots takes too much time, which also decreases the quality of the screenshots. Since it is not automated, the screenshots will show slightly different content on the various devices and languages. Many companies choose to create screenshots in one language and use them for all languages. While this might seem okay to us developers, there are many potential users out there that cannot read the text on your app screenshots if they are not localised. Have you ever looked at a screenshot with content in a language you don't know? It won't convince you to download the app.</p>
 <p>However, the biggest disadvantage of this method is what happens when you need to repeat the process. If you notice a spelling mistake in the screenshots, if you release an update with a new design, or if you just want to show more up to date content, you'll have to create new screenshots for all languages and devices... manually.</p>
 <p>The positive side of this approach is that your screenshots will all be crisp and correctly sized, with readable text.</p>
-<h4 id="scaled-screenshots-via-app-store-connect"><a name="user-content-scaled-screenshots-via-app-store-connect" href="#scaled-screenshots-via-app-store-connect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Scaled Screenshots via App Store Connect</h4>
+<h3 id="scaled-screenshots-via-app-store-connect"><a name="user-content-scaled-screenshots-via-app-store-connect" href="#scaled-screenshots-via-app-store-connect" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Scaled Screenshots via App Store Connect</h3>
 <p>App Store Connect allows you to use one set of screenshots per device type, which will then be scaled to the appropriate size when viewed in the App Store on a user's device.</p>
 <p>While this is convenient, this approach has the same problems as the device frame approach: The screenshots don't actually show how the app looks on the user's device. It's a valid way to start though, since you can gradually overwrite screenshots for specific languages and devices.</p>
-<h2 id="capture-screenshots-automatically"><a name="user-content-capture-screenshots-automatically" href="#capture-screenshots-automatically" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Capture Screenshots Automatically</h2>
+<h1 id="capture-screenshots-automatically"><a name="user-content-capture-screenshots-automatically" href="#capture-screenshots-automatically" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Capture Screenshots Automatically</h1>
 <p><em>snapshot</em> works with <em>fastlane</em> to automate the process of capturing screenshots of your app. It allows you to:</p>
 <ul>
 <li>Capture hundreds of screenshots in multiple languages on all simulators</li>
@@ -1440,7 +1460,7 @@ brew install fastlane
 <p><a href="/img/getting-started/ios/htmlPagePreviewFade.jpg">
   <img src="/img/getting-started/ios/htmlPagePreviewFade.jpg" alt="HTML summary page" width="500" />
 </a></p>
-<h3 id="getting-started-using-ui-tests"><a name="user-content-getting-started-using-ui-tests" href="#getting-started-using-ui-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started Using UI Tests</h3>
+<h2 id="getting-started-using-ui-tests"><a name="user-content-getting-started-using-ui-tests" href="#getting-started-using-ui-tests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started Using UI Tests</h2>
 <p><em>snapshot</em> uses the capabilities of Apple's UI Tests to drive interactions with your app. To get familiar with writing UI Tests, check out the following introductions:</p>
 <ul>
 <li><a href="https://developer.apple.com/videos/play/wwdc2015-406/">WWDC 2015 Introduction to UI Tests</a></li>
@@ -1450,7 +1470,7 @@ brew install fastlane
 <li><a href="https://tisunov.github.io/2015/11/06/automating-app-store-screenshots-generation-with-fastlane-snapshot-and-sketch.html">Automating App Store screenshots using fastlane snapshot and frameit</a></li>
 </ul>
 <p>To jump-start your UI tests, you can use the UI Test recorder, which you can start by clicking the red record button on the bottom of the window. By interacting with your app through the simulator while using it, Xcode will generate UI Test code for you. To learn more, check out this <a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">this blog post</a>!</p>
-<h3 id="setting-up-snapshot"><a name="user-content-setting-up-snapshot" href="#setting-up-snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting Up <em>snapshot</em></h3>
+<h2 id="setting-up-snapshot"><a name="user-content-setting-up-snapshot" href="#setting-up-snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting Up <em>snapshot</em></h2>
 <ol>
 <li>Create a new UI Test target in your Xcode project (See the top part of <a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">this article</a>)</li>
 <li>Run <code>fastlane snapshot init</code> in your project folder</li>
@@ -1531,7 +1551,7 @@ fastlane snapshot                               # Generate screenshots for the s
 </code></pre>
 
 <p><img alt="/img/getting-started/ios/snapshot.gif" src="../../../img/getting-started/ios/snapshot.gif" /></p>
-<h2 id="upload-screenshots-to-the-app-store"><a name="user-content-upload-screenshots-to-the-app-store" href="#upload-screenshots-to-the-app-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload Screenshots to the App Store</h2>
+<h1 id="upload-screenshots-to-the-app-store"><a name="user-content-upload-screenshots-to-the-app-store" href="#upload-screenshots-to-the-app-store" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload Screenshots to the App Store</h1>
 <p>After generating your screenshots using <code>fastlane snapshot</code>, you usually want to upload them to App Store Connect.</p>
 <p>If you followed the setup guide, you already ran <code>fastlane init</code> before, so you should have your existing screenshots and metadata inside the <code>fastlane/screenshots</code> and <code>fastlane/metadata</code> directory. Running <code>fastlane snapshot</code> will store the screenshots in the <code>fastlane/screenshots</code> directory by default.</p>
 <p>To upload the screenshots stored in <code>fastlane/screenshots</code>, just run</p>
@@ -1539,7 +1559,7 @@ fastlane snapshot                               # Generate screenshots for the s
 </code></pre>
 
 <p>This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on App Store Connect.</p>
-<h2 id="use-in-fastfile"><a name="user-content-use-in-fastfile" href="#use-in-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use in Fastfile</h2>
+<h1 id="use-in-fastfile"><a name="user-content-use-in-fastfile" href="#use-in-fastfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use in Fastfile</h1>
 <p>To put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a <em>fastlane</em> lane called <code>screenshots</code>. It would be responsible for:</p>
 <ol>
 <li>Running your app through <em>snapshot</em> to automatically capture your screenshots</li>
@@ -1557,7 +1577,7 @@ end
 fastlane action upload_to_app_store
 </code></pre>
 
-<h2 id="put-your-screenshots-into-device-frames"><a name="user-content-put-your-screenshots-into-device-frames" href="#put-your-screenshots-into-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Put Your Screenshots Into Device Frames</h2>
+<h1 id="put-your-screenshots-into-device-frames"><a name="user-content-put-your-screenshots-into-device-frames" href="#put-your-screenshots-into-device-frames" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Put Your Screenshots Into Device Frames</h1>
 <p><em>frameit</em> helps you beautify your screenshots with device frames and text by running one simple command. It provides support for:</p>
 <ul>
 <li>Multiple device types</li>
@@ -1568,7 +1588,7 @@ fastlane action upload_to_app_store
 <p><a href="/img/getting-started/ios/frameit-results.png">
   <img src="/img/getting-started/ios/frameit-results.png" alt="frameit results" width="800" />
 </a></p>
-<h3 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h3>
+<h2 id="usage"><a name="user-content-usage" href="#usage" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Usage</h2>
 <p>To automatically add device frames around all screenshots in the current directory and its subdirectories, just run:</p>
 <pre><code class="no-highlight">fastlane frameit
 </code></pre>
@@ -1576,7 +1596,7 @@ fastlane action upload_to_app_store
 <p>This will only add a device frame around the screenshots, not the background and title. Those images can be used for your website, email newsletter and similar.</p>
 <p>If you want to implement the custom titles and background, you'll have to setup a <code>Framefile.json</code>, more information can be found <a href="https://docs.fastlane.tools/actions/frameit/#titles-and-background-optional">here</a>.</p>
 <p>If you want to upload the screenshots to the App Store, you <strong>have</strong> to provide a <code>Framefile.json</code>, with titles and background, otherwise the resolution of the framed screenshots doesn't match the requirements of App Store Connect.</p>
-<h3 id="dependencies"><a name="user-content-dependencies" href="#dependencies" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependencies</h3>
+<h2 id="dependencies"><a name="user-content-dependencies" href="#dependencies" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dependencies</h2>
 <p><details>
 <summary>Installing ImageMagick</summary></p>
 <p>To perform image manipulation, <em>frameit</em> depends on a tool called <code>imagemagick</code>. The easiest way to install it is through <a href="http://brew.sh/">homebrew</a>:</p>
@@ -1615,9 +1635,7 @@ end
 <pre><code class="no-highlight">fastlane action frame_screenshots
 </code></pre>
 
-<div id=""></div>
-
-<p>Advanced <em>snapshot</em></p>
+<h1 id="advanced-snapshot"><a name="user-content-advanced-snapshot" href="#advanced-snapshot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Advanced <em>snapshot</em></h1>
 <p><details>
 <summary>Sample uses</summary></p>
 <pre><code class="ruby">lane :screenshots do

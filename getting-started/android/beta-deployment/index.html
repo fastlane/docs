@@ -333,6 +333,18 @@
           
             
           
+            
+              <li class="toctree-l3"><a href="#building-your-app">Building your app</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#uploading-your-app">Uploading your app</a></li>
+            
+          
+            
+              <li class="toctree-l3"><a href="#release-notes">Release Notes</a></li>
+            
+          
         </ul>
       
     </li>
@@ -1409,7 +1421,7 @@ brew install fastlane
 <p></details></p>
 <h1 id="deploy-to-beta-distribution-services-using-fastlane"><a name="user-content-deploy-to-beta-distribution-services-using-fastlane" href="#deploy-to-beta-distribution-services-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Deploy to Beta distribution services using <em>fastlane</em></h1>
 <p>If you would like to distribute your beta builds to Google Play, please make sure you've done the steps from <a href="../setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing.</p>
-<h2 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h2>
+<h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
 <p><em>fastlane</em> takes care of building your app by delegating to your existing Gradle build. Just add the following to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :beta do
   # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
@@ -1431,7 +1443,7 @@ end
 <pre><code class="no-highlight">fastlane action gradle
 </code></pre>
 
-<h2 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h2>
+<h1 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h1>
 <p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <em>fastlane</em> is that you can easily switch beta providers, or even upload to multiple at once, with a minimum of configuration. Follow that with a notification posted to the group messaging service of your choice to let the team know that you've shipped.</p>
 <pre><code class="ruby">lane :beta do
   gradle(task: 'assemble', build_type: 'Release')
@@ -1440,7 +1452,7 @@ end
 end
 </code></pre>
 
-<h3 id="supported-beta-testing-services"><a name="user-content-supported-beta-testing-services" href="#supported-beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Supported beta testing services</h3>
+<h2 id="supported-beta-testing-services"><a name="user-content-supported-beta-testing-services" href="#supported-beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Supported beta testing services</h2>
 <p><details>
 <summary>Google Play</summary></p>
 <p>In order to distribute to Google Play with <em>upload_to_play_store</em> you will need to have your Google credentials set up. Make sure you've gone through <a href="../setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing!</p>
@@ -1491,7 +1503,7 @@ end
 <hr />
 <p></details></p>
 <p>More information about additional supported beta testing services can be found in the <a href="https://docs.fastlane.tools/actions/#beta">list of "Beta" actions</a></p>
-<h2 id="release-notes"><a name="user-content-release-notes" href="#release-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Release Notes</h2>
+<h1 id="release-notes"><a name="user-content-release-notes" href="#release-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Release Notes</h1>
 <p><details>
 <summary>Generate based on Git commits</summary></p>
 <p>You take the time to write great Git commit messages, right? Why not take advantage of them to automatically summarize the work done for your latest beta release?</p>

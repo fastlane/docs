@@ -1420,7 +1420,7 @@ end
 <pre><code class="no-highlight">fastlane tests
 </code></pre>
 
-<h3 id="setting-up-fastlane-to-run-on-ci"><a name="user-content-setting-up-fastlane-to-run-on-ci" href="#setting-up-fastlane-to-run-on-ci" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em> to run on CI</h3>
+<h2 id="setting-up-fastlane-to-run-on-ci"><a name="user-content-setting-up-fastlane-to-run-on-ci" href="#setting-up-fastlane-to-run-on-ci" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up <em>fastlane</em> to run on CI</h2>
 <p>To run Android tests using <em>fastlane</em> on a Continuous Integration service, check out <a href="../../../best-practices/continuous-integration/">the Continuous Integration docs</a>.</p>
 <p>Since <em>fastlane</em> stores all configuration in simple configuration files, and runs via the command line, it supports every kind of CI system.</p>
 <p>We also prepared some docs to help you get started with some of the popular CI systems.</p>
@@ -1440,10 +1440,10 @@ end
 <pre><code class="no-highlight">fastlane tests
 </code></pre>
 
-<h3 id="posting-build-results"><a name="user-content-posting-build-results" href="#posting-build-results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Posting build results</h3>
+<h2 id="posting-build-results"><a name="user-content-posting-build-results" href="#posting-build-results" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Posting build results</h2>
 <p>If you want to post test results on Slack, Hipchat, or other team chat client, check out the available <a href="../../../actions/#notifications">fastlane actions</a>.</p>
-<h4 id="build-failures"><a name="user-content-build-failures" href="#build-failures" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build failures</h4>
-<h5 id="hipchat"><a name="user-content-hipchat" href="#hipchat" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hipchat</h5>
+<h3 id="build-failures"><a name="user-content-build-failures" href="#build-failures" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build failures</h3>
+<h4 id="hipchat"><a name="user-content-hipchat" href="#hipchat" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hipchat</h4>
 <p>To post a message when <em>fastlane</em> encounters a test or build failure, add the following to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">error do |ex|
   hipchat(message: &quot;Tests have failed!&quot;,
@@ -1452,7 +1452,7 @@ end
 end
 </code></pre>
 
-<h5 id="other-services"><a name="user-content-other-services" href="#other-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other services</h5>
+<h4 id="other-services"><a name="user-content-other-services" href="#other-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Other services</h4>
 <p>The above example uses Hipchat, but <em>fastlane</em> supports <a href="../../../actions/#notifications">many other services out there</a>. </p>
               
             </div>
