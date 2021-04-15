@@ -10,20 +10,27 @@ repo_url: https://github.com/fastlane/docs
 google_analytics:
 - UA-18658848-13
 - docs.fastlane.tools
-strict: true
+strict: false
+#strict: true
 markdown_extensions:
-- pymdownx.headeranchor
+  #- pymdownx.headeranchor
 - markdown.extensions.attr_list
 - markdown_include.include
 - mdx_truly_sane_lists
-theme_dir: theme
+- toc:
+    toc_depth: 1-2
+docs_dir: docs
+extra_css: [./css/fastlane.css,./css/sidenav.css,./css/code.css,./css/breadcrmbs.css]
+theme:
+    name: readthedocs
+    custom_dir: theme
 pages:
 - Home: index.md
 - Getting Started:
   - iOS:
     - Setup: getting-started/ios/setup.md
     - Running Tests: getting-started/ios/running-tests.md
-    - _Swift: getting-started/ios/fastlane-swift.md
+    - Swift: getting-started/ios/fastlane-swift.md
     - Screenshots: getting-started/ios/screenshots.md
     - Beta Deployment: getting-started/ios/beta-deployment.md
     - App Store Deployment: getting-started/ios/appstore-deployment.md
