@@ -205,22 +205,6 @@
           
             
           
-            
-              <li class="toctree-l3"><a href="#building-your-app">Building your app</a></li>
-            
-          
-            
-              <li class="toctree-l3"><a href="#uploading-your-app">Uploading your app</a></li>
-            
-          
-            
-              <li class="toctree-l3"><a href="#release-notes">Release Notes</a></li>
-            
-          
-            
-              <li class="toctree-l3"><a href="#best-practices">Best Practices</a></li>
-            
-          
         </ul>
       
     </li>
@@ -1424,7 +1408,7 @@ brew install fastlane
 
 <p></details></p>
 <h1 id="ios-beta-deployment-using-fastlane"><a name="user-content-ios-beta-deployment-using-fastlane" href="#ios-beta-deployment-using-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>iOS Beta deployment using <em>fastlane</em></h1>
-<h1 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h1>
+<h2 id="building-your-app"><a name="user-content-building-your-app" href="#building-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building your app</h2>
 <p><em>fastlane</em> takes care of building your app using an action called <em>build_app</em>, just add the following to your <code>Fastfile</code>:</p>
 <pre><code class="ruby">lane :beta do
   build_app(scheme: &quot;MyApp&quot;)
@@ -1444,9 +1428,9 @@ end
 </code></pre>
 
 <p>If everything works, you should have a <code>[ProductName].ipa</code> file in the current directory. To get a list of all available parameters for <em>build_app</em>, run <code>fastlane action build_app</code>.</p>
-<h2 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h2>
+<h3 id="codesigning"><a name="user-content-codesigning" href="#codesigning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Codesigning</h3>
 <p>Chances are that something went wrong because of code signing at the previous step. We prepared our own <a href="../../../codesigning/getting-started/">Code Signing Guide</a> that helps you setting up the right code signing approach for your project.</p>
-<h1 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h1>
+<h2 id="uploading-your-app"><a name="user-content-uploading-your-app" href="#uploading-your-app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading your app</h2>
 <p>After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of <em>fastlane</em> is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.</p>
 <p>All you have to do is to put the name of the beta testing provider of your choice after building the app using <em>build_app</em>:</p>
 <pre><code class="ruby">lane :beta do
@@ -1462,7 +1446,7 @@ end
 <pre><code class="no-highlight">fastlane action slack
 </code></pre>
 
-<h3 id="beta-testing-services"><a name="user-content-beta-testing-services" href="#beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Beta testing services</h3>
+<h4 id="beta-testing-services"><a name="user-content-beta-testing-services" href="#beta-testing-services" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Beta testing services</h4>
 <p><details>
 <summary>TestFlight</summary></p>
 <p>You can easily upload new builds to TestFlight (which is part of App Store Connect) using <em>fastlane</em>. To do so, just use the built-in <code>testflight</code> action after building your app</p>
@@ -1561,7 +1545,7 @@ end
 <p>More information about the service on <a href="https://testfairy.com">TestFairy.com</a>.
 </details></p>
 <p>More information about additional supported beta testing services can be found in the <a href="https://docs.fastlane.tools/actions/#beta">list of "Beta" actions</a></p>
-<h1 id="release-notes"><a name="user-content-release-notes" href="#release-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Release Notes</h1>
+<h2 id="release-notes"><a name="user-content-release-notes" href="#release-notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Release Notes</h2>
 <p><details>
 <summary>Automatically based on git commits</summary></p>
 <p>Your changelog changes, so it doesn't make a lot of sense to store a static release note in the <code>Fastfile</code>.</p>
@@ -1626,18 +1610,18 @@ end
 
 <hr />
 <p></details></p>
-<h1 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h1>
+<h2 id="best-practices"><a name="user-content-best-practices" href="#best-practices" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Best Practices</h2>
 <p><details>
 <summary>Manage devices and testers using <em>fastlane</em></summary></p>
 <p><details>
 <summary>TestFlight</summary></p>
 <p>If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.</p>
 <p><em>fastlane</em> supports automatically registering devices using different approaches</p>
-<h4 id="boarding"><a href="https://github.com/fastlane/boarding#readme">boarding</a></h4>
+<h5 id="boarding"><a href="https://github.com/fastlane/boarding#readme">boarding</a></h5>
 <p><a href="https://github.com/fastlane/boarding#readme">boarding</a> allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.</p>
 <p><img alt="/img/getting-started/ios/boarding-screenshot.png" src="../../../img/getting-started/ios/boarding-screenshot.png" /></p>
 <p>Check out the <a href="https://github.com/fastlane/boarding#readme">boarding GitHub repo</a> for more information.</p>
-<h4 id="pilot"><a name="user-content-pilot" href="#pilot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pilot</h4>
+<h5 id="pilot"><a name="user-content-pilot" href="#pilot" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>pilot</h5>
 <p><em>pilot</em> is automatically installed with <em>fastlane</em>, you can use it to register individual testers to TestFlight</p>
 <pre><code class="no-highlight"># Register a new external tester
 fastlane pilot add email@invite.com
@@ -1675,7 +1659,7 @@ B123456789012345678901234567890123456789  DeviceName2
 <summary>Incrementing the build number</summary></p>
 <p>Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.</p>
 <p>To do so, there are some built-in fastlane actions available, here are some examples</p>
-<h3 id="fetching-the-latest-build-number-from-testflight"><a name="user-content-fetching-the-latest-build-number-from-testflight" href="#fetching-the-latest-build-number-from-testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fetching the latest build number from TestFlight</h3>
+<h4 id="fetching-the-latest-build-number-from-testflight"><a name="user-content-fetching-the-latest-build-number-from-testflight" href="#fetching-the-latest-build-number-from-testflight" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fetching the latest build number from TestFlight</h4>
 <p>The code sample below will use the latest build number from TestFlight and temporarily set it. </p>
 <pre><code class="ruby">lane :beta do
   increment_build_number(
@@ -1685,7 +1669,7 @@ B123456789012345678901234567890123456789  DeviceName2
 end
 </code></pre>
 
-<h3 id="committing-the-build-number-to-version-control"><a name="user-content-committing-the-build-number-to-version-control" href="#committing-the-build-number-to-version-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Committing the build number to version control</h3>
+<h4 id="committing-the-build-number-to-version-control"><a name="user-content-committing-the-build-number-to-version-control" href="#committing-the-build-number-to-version-control" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Committing the build number to version control</h4>
 <p>The code sample below will increment the build number and commit the project changes to version control.</p>
 <pre><code class="ruby">lane :beta do
   # Ensure that your git status is not dirty
@@ -1711,7 +1695,7 @@ end
 <pre><code class="no-highlight">fastlane action [action_name]
 </code></pre>
 
-<h3 id="use-the-number-of-commits"><a name="user-content-use-the-number-of-commits" href="#use-the-number-of-commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the number of commits</h3>
+<h4 id="use-the-number-of-commits"><a name="user-content-use-the-number-of-commits" href="#use-the-number-of-commits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use the number of commits</h4>
 <p>This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via <a href="https://docs.fastlane.tools/actions/number_of_commits/"><code>number_of_commits</code></a>) as the build number. This will only work if you always run the build on the same branch.</p>
 <pre><code class="ruby">lane :beta do
   increment_build_number(build_number: number_of_commits)

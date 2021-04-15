@@ -1354,15 +1354,15 @@
                 <h1 id="getting-started-with-fastlaneswift-beta"><a name="user-content-getting-started-with-fastlaneswift-beta" href="#getting-started-with-fastlaneswift-beta" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Getting Started with Fastlane.swift (beta)</h1>
 <p>Welcome to Fastlane.swift. Fastlane.swift allows you to write your <em>fastlane</em> configuration using Xcode, in Swift - the language you have come to know and love from the world of iOS development.</p>
 <p>Fastlane.swift is currently in beta. Please provide feedback by opening an issue in the <a href="https://github.com/fastlane/fastlane"><em>fastlane</em> repo</a>.</p>
-<h2 id="currently-supported"><a name="user-content-currently-supported" href="#currently-supported" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Currently Supported</h2>
+<h3 id="currently-supported"><a name="user-content-currently-supported" href="#currently-supported" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Currently Supported</h3>
 <p>Fastlane.swift currently supports all built-in <a href="https://docs.fastlane.tools/actions/">fastlane actions</a> and 3rd party <a href="https://docs.fastlane.tools/plugins/available-plugins/">plugins</a>. Make sure to update to the most recent <em>fastlane</em> release to try these features.</p>
-<h2 id="get-started-xcode"><a name="user-content-get-started-xcode" href="#get-started-xcode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Get Started (Xcode)</h2>
-<h3 id="step-1"><a name="user-content-step-1" href="#step-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1</h3>
+<h3 id="get-started-xcode"><a name="user-content-get-started-xcode" href="#get-started-xcode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Get Started (Xcode)</h3>
+<h4 id="step-1"><a name="user-content-step-1" href="#step-1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1</h4>
 <p>Run the following command in your terminal:</p>
 <pre><code class="no-highlight">fastlane init swift
 </code></pre>
 
-<h3 id="step-2"><a name="user-content-step-2" href="#step-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2</h3>
+<h4 id="step-2"><a name="user-content-step-2" href="#step-2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2</h4>
 <p>Open the file located at <code>[project]/fastlane/swift/FastlaneSwiftRunner/FastlaneSwiftRunner.xcodeproj</code> to configure your lanes in <code>Fastfile.swift</code>.</p>
 <pre><code class="swift">func betaLane() {
     desc(&quot;Submit a new Beta Build to Apple TestFlight. This will also make sure the profile is up to date&quot;)
@@ -1375,15 +1375,15 @@
 }
 </code></pre>
 
-<h3 id="step-3"><a name="user-content-step-3" href="#step-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3</h3>
+<h4 id="step-3"><a name="user-content-step-3" href="#step-3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3</h4>
 <p>Run <code>fastlane &lt;laneName&gt;</code> in your terminal to execute <em>fastlane</em>.</p>
-<h3 id="step-4"><a name="user-content-step-4" href="#step-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4</h3>
+<h4 id="step-4"><a name="user-content-step-4" href="#step-4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4</h4>
 <p>🎉</p>
-<h2 id="get-started-spm-beta"><a name="user-content-get-started-spm-beta" href="#get-started-spm-beta" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Get Started (SPM) (Beta)</h2>
+<h3 id="get-started-spm-beta"><a name="user-content-get-started-spm-beta" href="#get-started-spm-beta" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Get Started (SPM) (Beta)</h3>
 <p>Swift Package Manager (SPM) support adds the ability to distribute <em>fastlane</em> as a Swift Package Manager package, which allows other packages to integrate with the toolset.</p>
-<h3 id="step-1_1"><a name="user-content-step-1_1" href="#step-1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1</h3>
+<h4 id="step-1_1"><a name="user-content-step-1_1" href="#step-1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1</h4>
 <p>Create an executable Swift Package Manager project with <code>swift package init --type executable</code>.</p>
-<h3 id="step-2_1"><a name="user-content-step-2_1" href="#step-2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2</h3>
+<h4 id="step-2_1"><a name="user-content-step-2_1" href="#step-2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2</h4>
 <p>Add the <em>fastlane</em> dependency to your <code>Package.swift</code>.</p>
 <pre><code class="swift">.package(name: &quot;Fastlane&quot;, url: &quot;https://github.com/fastlane/fastlane&quot;, from: &quot;2.179.0&quot;)
 </code></pre>
@@ -1411,7 +1411,7 @@ let package = Package(
 )
 </code></pre>
 
-<h3 id="step-3_1"><a name="user-content-step-3_1" href="#step-3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3</h3>
+<h4 id="step-3_1"><a name="user-content-step-3_1" href="#step-3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 3</h4>
 <p>Create your Fastfile.swift file in your package and add the desired lanes, as follows.</p>
 <pre><code class="swift">import Fastlane
 
@@ -1421,26 +1421,26 @@ class FastFile: LaneFile {
 }
 </code></pre>
 
-<h3 id="step-4_1"><a name="user-content-step-4_1" href="#step-4_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4</h3>
+<h4 id="step-4_1"><a name="user-content-step-4_1" href="#step-4_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 4</h4>
 <p>Add an entry point (<code>@main</code>) or a <code>main.swift</code> file (mandatory for executable SPM packages) and don't forget to start the <em>fastlane</em> runloop as follows:</p>
 <pre><code class="swift">import Fastlane
 
 Main().run(with: Fastfile())
 </code></pre>
 
-<h3 id="step-5"><a name="user-content-step-5" href="#step-5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 5</h3>
+<h4 id="step-5"><a name="user-content-step-5" href="#step-5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 5</h4>
 <p>Modify the target of your executable to have executable arguments <code>lane myLane</code> or add them in the call after making <code>swift build</code>.</p>
 <pre><code class="no-highlight">myExecutable lane myLane
 </code></pre>
 
-<h4 id="notes"><a name="user-content-notes" href="#notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Notes:</h4>
+<h5 id="notes"><a name="user-content-notes" href="#notes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Notes:</h5>
 <ul>
 <li>You can edit the created <code>Package.swift</code> file to add your desired dependencies so you can use them in the Fastfile.</li>
 </ul>
 <ul>
 <li>If you want to just push your <code>Package.swift</code> and <code>Package.resolved</code> to the repo, you'd need to <code>swift build</code> the package to create your executable again which can be found in the <code>.debug</code> or <code>.release</code> folders, depending on how you built the package (<code>.debug</code> by default). </li>
 </ul>
-<h2 id="defining-lanes"><a name="user-content-defining-lanes" href="#defining-lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Defining Lanes</h2>
+<h3 id="defining-lanes"><a name="user-content-defining-lanes" href="#defining-lanes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Defining Lanes</h3>
 <p>Lanes are defined with functions that end with <code>Lane</code> within the <code>class Fastfile: LaneFile</code>.</p>
 <pre><code class="swift">class Fastfile: LaneFile {
     func testLane() {
@@ -1453,7 +1453,7 @@ Main().run(with: Fastfile())
 }
 </code></pre>
 
-<h2 id="passing-parameters"><a name="user-content-passing-parameters" href="#passing-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passing Parameters</h2>
+<h3 id="passing-parameters"><a name="user-content-passing-parameters" href="#passing-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Passing Parameters</h3>
 <p>To pass parameters from the command line to your lane, use the following syntax:</p>
 <pre><code class="no-highlight">fastlane [lane] key:value key2:value2
 
@@ -1474,20 +1474,20 @@ fastlane deploy submit:false build_number:24
 }
 </code></pre>
 
-<h2 id="using-plugins"><a name="user-content-using-plugins" href="#using-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Plugins</h2>
+<h3 id="using-plugins"><a name="user-content-using-plugins" href="#using-plugins" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Plugins</h3>
 <p>Once you <a href="https://docs.fastlane.tools/plugins/using-plugins/#add-a-plugin-to-your-project">add a plugin</a>, <em>fastlane</em> will automatically generate the corresponding API and make it available in <code>fastlane/swift/Plugins.swift</code>.</p>
 <p>Example:</p>
 <pre><code class="sh">bundle exec fastlane add_plugin ascii_art
 </code></pre>
 
 <p>The <code>fastlane/swift/Plugins.swift</code> file should now contain the function <code>asciiArt()</code>, and you can access it in your lanes in <code>fastlane/Fastlane.swift</code>.</p>
-<h2 id="run-parallel"><a name="user-content-run-parallel" href="#run-parallel" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run Parallel</h2>
+<h3 id="run-parallel"><a name="user-content-run-parallel" href="#run-parallel" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run Parallel</h3>
 <p><code>Fastlane Swift</code> uses socket internally. Therefore, for several <code>Lane</code>s to run in parallel at the same time, each <code>Lane</code> must be specified different <code>socket port</code> (lane's default <code>socket port</code> is <code>2000</code>)</p>
 <p>To specify <code>socket port</code> from the command line to your lane, use the following syntax:</p>
 <pre><code class="no-highlight">fastlane [lane] --swift_server_port [socket port]
 </code></pre>
 
-<h2 id="we-would-love-your-feedback"><a name="user-content-we-would-love-your-feedback" href="#we-would-love-your-feedback" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>We Would Love Your Feedback</h2>
+<h3 id="we-would-love-your-feedback"><a name="user-content-we-would-love-your-feedback" href="#we-would-love-your-feedback" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>We Would Love Your Feedback</h3>
 <p>Please feel free to <a href="https://github.com/fastlane/fastlane">open an issue on GitHub</a> to report any problems you are having with Fastlane.swift and we will respond as quickly as possible.</p>
               
             </div>
