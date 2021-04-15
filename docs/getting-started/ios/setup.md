@@ -1,14 +1,14 @@
 # Getting started with _fastlane_ for iOS
 
-## Setup Xcode for _fastlane_
+### Setup Xcode for _fastlane_
 
 {!docs/includes/installing-fastlane-ios.md!}
 
-## Installing _fastlane_
+### Installing _fastlane_
 
 {!docs/includes/installing-fastlane.md!}
 
-## Setting up _fastlane_
+### Setting up _fastlane_
 
 Navigate your terminal to your project's directory and run
 
@@ -38,7 +38,7 @@ Depending on what kind of setup you choose, different files will be set up for y
 
 The most interesting file is `fastlane/Fastfile`, which contains all the information that is needed to distribute your app.
 
-## What's next?
+### What's next?
 
 _fastlane_ created all the required files for you, now you can go ahead and customise it to generate screenshots or to automatically distribute new builds
 
@@ -46,7 +46,7 @@ _fastlane_ created all the required files for you, now you can go ahead and cust
 - [Automatic iOS Beta deployment](beta-deployment.md)
 - [Automatic iOS App Store deployment](appstore-deployment.md)
 
-### Set up environment variables
+#### Set up environment variables
 
 _fastlane_ requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:
 
@@ -57,7 +57,7 @@ export LANG=en_US.UTF-8
 
 You can find your shell profile at `~/.bashrc`, `~/.bash_profile`, `~/.profile` or `~/.zshrc` depending on your system.
 
-### Use a Gemfile
+#### Use a Gemfile
 
 It is recommended that you use a `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
 

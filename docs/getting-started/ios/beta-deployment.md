@@ -2,7 +2,7 @@
 
 # iOS Beta deployment using _fastlane_
 
-# Building your app
+## Building your app
 
 _fastlane_ takes care of building your app using an action called _build_app_, just add the following to your `Fastfile`:
 
@@ -30,11 +30,11 @@ fastlane beta
 
 If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _build_app_, run `fastlane action build_app`.
 
-## Codesigning
+### Codesigning
 
 Chances are that something went wrong because of code signing at the previous step. We prepared our own [Code Signing Guide](/codesigning/getting-started/) that helps you setting up the right code signing approach for your project.
 
-# Uploading your app
+## Uploading your app
 
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.
 
@@ -56,7 +56,7 @@ To get a list of all available parameters for a given action, run
 fastlane action slack
 ```
 
-### Beta testing services
+#### Beta testing services
 
 
 <details>
@@ -267,7 +267,7 @@ end
 ---
 </details>
 
-# Best Practices
+## Best Practices
 
 <details>
 <summary>Manage devices and testers using _fastlane_</summary>
@@ -279,7 +279,7 @@ If you're using TestFlight you don't need to worry about UDIDs of your devices. 
 
 _fastlane_ supports automatically registering devices using different approaches
 
-#### [boarding](https://github.com/fastlane/boarding#readme)
+##### [boarding](https://github.com/fastlane/boarding#readme)
 
 [boarding](https://github.com/fastlane/boarding#readme) allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.
 
@@ -287,7 +287,7 @@ _fastlane_ supports automatically registering devices using different approaches
 
 Check out the [boarding GitHub repo](https://github.com/fastlane/boarding#readme) for more information.
 
-#### pilot
+##### pilot
 
 _pilot_ is automatically installed with _fastlane_, you can use it to register individual testers to TestFlight
 
@@ -337,7 +337,7 @@ Depending on the beta testing service you use, you'll have to increment the buil
 
 To do so, there are some built-in fastlane actions available, here are some examples
 
-### Fetching the latest build number from TestFlight
+#### Fetching the latest build number from TestFlight
 
 The code sample below will use the latest build number from TestFlight and temporarily set it. 
 
@@ -350,7 +350,7 @@ lane :beta do
 end
 ```
 
-### Committing the build number to version control
+#### Committing the build number to version control
 
 The code sample below will increment the build number and commit the project changes to version control.
 
@@ -382,7 +382,7 @@ For all the steps above, there are more parameters available, run the following 
 fastlane action [action_name]
 ```
 
-### Use the number of commits
+#### Use the number of commits
 
 This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via [`number_of_commits`](https://docs.fastlane.tools/actions/number_of_commits/)) as the build number. This will only work if you always run the build on the same branch.
 
