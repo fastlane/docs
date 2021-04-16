@@ -5,7 +5,7 @@ copyright: Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
-site_favicon: img/favicon.ico
+#site_favicon: img/favicon.ico
 repo_url: https://github.com/fastlane/docs
 google_analytics:
 - UA-18658848-13
@@ -24,7 +24,7 @@ extra_css: [./css/sidenav.css,./css/fastlane.css,./css/code.css,./css/breadcrmbs
 theme:
     name: readthedocs
     custom_dir: theme
-pages:
+nav:
 - Home: index.md
 - Getting Started:
   - iOS:
