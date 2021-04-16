@@ -18,9 +18,9 @@ markdown_extensions:
 - markdown_include.include
 - mdx_truly_sane_lists
 - toc:
-    toc_depth: 1-2
+    toc_depth: 2
 docs_dir: docs
-extra_css: [./css/fastlane.css,./css/sidenav.css,./css/code.css,./css/breadcrmbs.css]
+extra_css: [./css/sidenav.css,./css/fastlane.css,./css/code.css,./css/breadcrmbs.css]
 theme:
     name: readthedocs
     custom_dir: theme
@@ -30,10 +30,10 @@ pages:
   - iOS:
     - Setup: getting-started/ios/setup.md
     - Running Tests: getting-started/ios/running-tests.md
-    - Swift: getting-started/ios/fastlane-swift.md
     - Screenshots: getting-started/ios/screenshots.md
     - Beta Deployment: getting-started/ios/beta-deployment.md
     - App Store Deployment: getting-started/ios/appstore-deployment.md
+    - Swift: getting-started/ios/fastlane-swift.md
   - Android:
     - Setup: getting-started/android/setup.md
     - Running Tests: getting-started/android/running-tests.md
@@ -287,7 +287,8 @@ pages:
 - Apple:
   - Using App Store Connect API: app-store-connect-api.md
   - Uploading App Privacy Details: uploading-app-privacy-details.md
-- FAQs: faqs.md
+- FAQs:
+  - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
   - Xcode Project: codesigning/xcode-project.md
