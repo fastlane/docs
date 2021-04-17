@@ -1,6 +1,8 @@
 ## Authenticating with Apple services
 
-Several _fastlane_ actions communicate with Apple services that need authentication. This can pose several challenges on CI. There are 3 ways to connect to Apple services:
+Several _fastlane_ actions communicate with Apple services that need authentication. As this can pose several challenges especially on CI, this document focuses on those challenges, but everything described here can be done on your local machine as well.
+
+There are 3 ways to connect to Apple services:
 
 ### Method 1: App Store Connect API key (recommended)
 
