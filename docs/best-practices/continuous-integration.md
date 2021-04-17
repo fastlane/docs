@@ -26,7 +26,7 @@ Multiple CI products and services offer integrations with _fastlane_:
 
 ## Authenticating with Apple services
 
-See [Getting Started > iOS > Authentication](/getting-started/ios/authentication).
+Check out [Authenticating with Apple services](/getting-started/ios/authentication) to learn the best ways to authenticate, catered for your specific use case.
 
 ## Environment variables to set
 
