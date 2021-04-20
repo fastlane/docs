@@ -54,6 +54,38 @@ The generated value then has to be stored inside the `FASTLANE_SESSION` environm
 
 It's advised that you run `spaceauth` in the same machine as your CI, instead of running it locally on your machine - see the notes below regarding session duration.
 
+You can also pass in the `--copy_to_clipboard` option to automatically copy the session string to clipboard. Use cases could be for instance:
+
+```sh
+fastlane spaceauth -u user@example.org --copy_to_clipboard && export FASTLANE_SESSION=$(pbpaste)
+
+# or
+
+fastlane spaceauth -u user@example.org --copy_to_clipboard
+FASTLANE_SESSION=$(pbpaste) fastlane another_lane
+```
+
+Note: `--copy_to_clipboard` uses `pbcopy`, and both `pbcopy` and `pbpaste` are only available in macOS. If you use a different OS, make sure you create aliases to `pbcopy` and `pbpaste`, such as:
+
+```sh
+# On Linux:
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
+# or
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+```
+
+`SpaceauthRunner` also has a `session_string` method that can be used to get the session string directly:
+
+```ruby
+fastlane_session = Spaceship::SpaceauthRunner.new(username: "user@example.org").run.session_string
+# Then you could for instance save the session to an env var on your CI programmatically, e.g. Aws::SecretsManager
+```
+
 #### Important note about session duration
 
 The session generated, stored and reused as part of a 2FA/2SV authentication, or as part of _spaceauth_ is subject to technical limitations imposed by Apple. Namely:
