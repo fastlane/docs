@@ -1441,6 +1441,32 @@ brew install fastlane
 
 <p>The generated value then has to be stored inside the <code>FASTLANE_SESSION</code> environment variable on your CI system. This session will be reused instead of triggering a new login each time <em>fastlane</em> communicates with Apple's APIs.</p>
 <p>It's advised that you run <code>spaceauth</code> in the same machine as your CI, instead of running it locally on your machine - see the notes below regarding session duration.</p>
+<p>You can also pass in the <code>--copy_to_clipboard</code> option to automatically copy the session string to clipboard. Use cases could be for instance:</p>
+<pre><code class="sh">fastlane spaceauth -u user@example.org --copy_to_clipboard &amp;&amp; export FASTLANE_SESSION=$(pbpaste)
+
+# or
+
+fastlane spaceauth -u user@example.org --copy_to_clipboard
+FASTLANE_SESSION=$(pbpaste) fastlane another_lane
+</code></pre>
+
+<p>Note: <code>--copy_to_clipboard</code> uses <code>pbcopy</code>, and both <code>pbcopy</code> and <code>pbpaste</code> are only available in macOS. If you use a different OS, make sure you create aliases to <code>pbcopy</code> and <code>pbpaste</code>, such as:</p>
+<pre><code class="sh"># On Linux:
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
+# or
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+</code></pre>
+
+<p><code>SpaceauthRunner</code> also has a <code>session_string</code> method that can be used to get the session string directly:</p>
+<pre><code class="ruby">fastlane_session = Spaceship::SpaceauthRunner.new(username: &quot;user@example.org&quot;).run.session_string
+# Then you could for instance save the session to an env var on your CI programmatically, e.g. Aws::SecretsManager
+</code></pre>
+
 <h4 id="important-note-about-session-duration"><a name="user-content-important-note-about-session-duration" href="#important-note-about-session-duration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Important note about session duration</h4>
 <p>The session generated, stored and reused as part of a 2FA/2SV authentication, or as part of <em>spaceauth</em> is subject to technical limitations imposed by Apple. Namely:</p>
 <ul>
