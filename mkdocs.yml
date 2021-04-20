@@ -20,7 +20,7 @@ markdown_extensions:
 - toc:
     toc_depth: 2
 docs_dir: docs
-extra_css: [./css/sidenav.css,./css/fastlane.css,./css/code.css,./css/breadcrmbs.css]
+extra_css: [./css/sidenav.css,./css/fastlane.css,./css/code.css,./css/breadcrumbs.css]
 theme:
     name: readthedocs
     custom_dir: theme
