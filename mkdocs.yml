@@ -15,7 +15,7 @@ strict: false
 markdown_extensions:
   #- pymdownx.headeranchor
 - markdown.extensions.attr_list
-  #- markdown_include.include
+- markdown_include.include
 - mdx_truly_sane_lists
 - toc:
     toc_depth: 2
