@@ -267,8 +267,8 @@ Key | Description | Default
   `skip_upload_screenshots` | Whether to skip uploading SCREENSHOTS | `false`
   `track_promote_to` | The track to promote to. The default available tracks are: production, beta, alpha, internal | 
   `validate_only` | Only validate changes with Google Play rather than actually publish | `false`
-  `mapping` | Path to the mapping file to upload | 
-  `mapping_paths` | An array of paths to mapping files to upload | 
+  `mapping` | Path to the mapping file to upload (mapping.txt or native-debug-symbols.zip alike) | 
+  `mapping_paths` | An array of paths to mapping files to upload (mapping.txt or native-debug-symbols.zip alike) | 
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
   `check_superseded_tracks` | **DEPRECATED!** Google Play does this automatically now - Check the other tracks for superseded versions and disable them | `false`
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
