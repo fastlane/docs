@@ -6,7 +6,7 @@ fastlane
 [![Twitter: @FastlaneTools](https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat)](https://twitter.com/FastlaneTools){: .badge }
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE){: .badge }
 [![Gem](https://img.shields.io/gem/v/fastlane.svg?style=flat)](https://rubygems.org/gems/fastlane){: .badge }
-![Platforms](https://img.shields.io/badge/os-macos%20--%20linux%20--%20windows-blue?style=flat)
+[![Platforms](https://img.shields.io/badge/os-macos%20--%20linux%20--%20windows-blue?style=flat)](#){: .badge }
 
 _fastlane_ is the easiest way to automate beta deployments and releases for your iOS and Android apps. 🚀 It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
