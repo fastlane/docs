@@ -436,8 +436,13 @@ span.toctree-expand:before {
 .wy-menu-vertical ul {
   padding-left: 10px;
 }
+.wy-menu-vertical ul ul,
 .wy-menu-vertical ul.root {
   padding-left: 0px;
+}
+
+.wy-menu-vertical ul .toctree-l3 {
+  padding-left: 0px; 
 }
 
 .wy-menu-vertical li.on a, .wy-menu-vertical li.current > a {
@@ -452,7 +457,6 @@ span.toctree-expand:before {
 
 .wy-menu-vertical li.on a, .wy-menu-vertical li.current > a.toc-no-link {
   color: #666666 !important;
-  font-weight: 100 !important;
 }
 
 .wy-menu-vertical li.toctree-l1.current > a {
