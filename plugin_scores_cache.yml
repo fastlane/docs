@@ -1,9 +1,9 @@
 ---
 fastlane-plugin-versioning:
   :initial_commit: 2016-06-03
-  :age_in_days: 1566
+  :age_in_days: 1797
   :readme_score: 100
-  :tests: 75
+  :tests: 77
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: get_version_number_from_git_branch
@@ -68,12 +68,12 @@ fastlane-plugin-versioning:
     category:
     description: Increment the build number of your project
     details: "\\n"
-  :sha: d692d7c1c0da93f4fdfe5580982eb78e0d6391bd432bc73eff02c7f9e50a5f89
-  :github_stars: 320
-  :github_subscribers: 5
-  :github_issues: 6
-  :github_forks: 35
-  :github_contributors: 12
+  :sha: 11514ff091b7d6f868e3a4fcdbc358235f7b1076fb476db7ec3a7652a33f5423
+  :github_stars: 368
+  :github_subscribers: 6
+  :github_issues: 11
+  :github_forks: 41
+  :github_contributors: 13
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
   :age_in_days: 1770
@@ -4936,7 +4936,7 @@ fastlane-plugin-line_notify:
   :github_contributors: 0
 fastlane-plugin-browserstack:
   :initial_commit: 2018-05-31
-  :age_in_days: 242
+  :age_in_days: 1070
   :readme_score: 100
   :tests: 17
   :actions:
@@ -4954,12 +4954,12 @@ fastlane-plugin-browserstack:
       tests.
     details: Uploads IPA and APK files to BrowserStack AppLive for running manual
       tests.
-  :sha: c0a2256672c5e1681a30c95d0b35fe91cf6a62cd8e0f31acdd2777530097d9f9
-  :github_stars: 5
-  :github_subscribers: 6
-  :github_issues: 1
-  :github_forks: 3
-  :github_contributors: 2
+  :sha: f9d0c3adcfaa51b3d660be596d444ea98ecf24d3de2865b84624c16e040c2225
+  :github_stars: 10
+  :github_subscribers: 9
+  :github_issues: 2
+  :github_forks: 7
+  :github_contributors: 4
 fastlane-plugin-release:
   :initial_commit: 2018-07-04
   :age_in_days: 7
@@ -6608,9 +6608,9 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 704
+  :age_in_days: 762
   :readme_score: 100
-  :tests: 1
+  :tests: 35
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: dynatrace_process_symbols
@@ -6619,11 +6619,11 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       If you use Bitcode you can also use it to download the latest dSYM files from
       App Store Connect.
-  :sha: 42d7b1e813778f3a74cf3e4895602c2d2d3b1f73ced031fbe177ca2e2341f934
+  :sha: afa12c0eba80fb4a04f5ce5d5b24abd07f3f64e28a0904be31ea6a8f743c4f2f
   :github_stars: 9
-  :github_subscribers: 3
-  :github_issues: 0
-  :github_forks: 2
+  :github_subscribers: 5
+  :github_issues: 1
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-download_hocky_build:
   :initial_commit: 2019-04-08
@@ -7831,9 +7831,9 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 539
+  :age_in_days: 643
   :readme_score: 100
-  :tests: 65
+  :tests: 91
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution_login
@@ -7842,15 +7842,24 @@ fastlane-plugin-firebase_app_distribution:
     details: See https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane
       for more information.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_app_distribution_get_udids
+    category:
+    description: Download the UDIDs of your Firebase App Distribution testers
+    details: Export your testers' device identifiers in a CSV file, so you can add
+      them your provisioning profile. This file can be imported into your Apple developer
+      account using the Register Multiple Devices option. See the [App Distribution
+      docs](https://firebase.google.com/docs/app-distribution/ios/distribute-console#register-tester-devices)
+      for more info.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: 308a65c6cbfcd9134301bdfc4cf69c5a0fcd98e5b23a06a14b9f6ec44d392a7d
-  :github_stars: 73
-  :github_subscribers: 8
-  :github_issues: 14
-  :github_forks: 9
+  :sha: aab66fb54d1891cc72721da0a4c46c8a0f4be294242122243c65498aee39f599
+  :github_stars: 85
+  :github_subscribers: 10
+  :github_issues: 13
+  :github_forks: 10
   :github_contributors: 13
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
@@ -10498,5 +10507,60 @@ fastlane-plugin-try_adb_test:
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-copy_screenshots:
+  :initial_commit: 2021-05-04
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: copy_screenshots
+    category: screenshots
+    description: Copy screenshots with a specified device name. This action should
+      be executed after `capture_ios_screenshots` action.
+    details: Main purpose of this action is copying screenshots for iPad Pro.
+  :sha: d0ec14b5187d01ec029d768ac60d1374439a4663497ee9889b02108d6dc19a12
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-dependency_check_ios_analyzer:
+  :initial_commit: 2021-05-01
+  :age_in_days: 4
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: dependency_check_ios_analyzer
+    category: testing
+    description: Fastlane wrapper around the OWASP dependency-check iOS analyzers
+      (Swift Package Manager and CocoaPods).
+    details:
+  :sha: eb7df51bb6dec8b64a5bf584d1d656a72f38d792ad4345781ceab9643c5c92a2
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-simulator_add_root_cert:
+  :initial_commit: 2021-04-27
+  :age_in_days: 8
+  :readme_score: 100
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: simulator_add_root_cert
+    category:
+    description: Easily add a root cert to your simulators with Fastlane
+    details: Xcode command line tools `simctl` abstraction to allow for automated
+      installation of certificates into your simulators. For SSL proxying, and corporate
+      security.
+  :sha: 01d6aab2df2642966dc57135307d6cc9ae7e8b54588f8f5985f47d35b66a6e32
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
   :github_forks: 0
   :github_contributors: 0

@@ -49,8 +49,8 @@ Key | Description | Default
 ----|-------------|--------
   `path` | The file(s) or directory(ies) you want to commit. You can pass an array of multiple file-paths or fileglobs "*.txt" to commit all matching files. The files already staged but not specified and untracked files won't be committed | 
   `message` | The commit message that should be used | 
-  `skip_git_hooks` | Set to true to pass --no-verify to git | 
-  `allow_nothing_to_commit` | Set to true to allow commit without any git changes in the files you want to commit | 
+  `skip_git_hooks` | Set to true to pass `--no-verify` to git | `false`
+  `allow_nothing_to_commit` | Set to true to allow commit without any git changes in the files you want to commit | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
