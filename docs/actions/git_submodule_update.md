@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # git_submodule_update
 
 
-Executes a git submodule command
+Executes a git submodule update command
 
 
 
@@ -21,14 +21,34 @@ Author | @braunico
 
 
 
+## 4 Examples
+
+```ruby
+git_submodule_update
+```
+
+```ruby
+git_submodule_update(recursive: true)
+```
+
+```ruby
+git_submodule_update(init: true)
+```
+
+```ruby
+git_submodule_update(recursive: true, init: true)
+```
+
+
+
 
 
 ## Parameters
 
 Key | Description | Default
 ----|-------------|--------
-  `recursive` | Should the submodules be updated recursively | `false`
-  `init` | Should the submodules be initiated before update | `false`
+  `recursive` | Should the submodules be updated recursively? | `false`
+  `init` | Should the submodules be initiated before update? | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
