@@ -1612,7 +1612,7 @@ launch_arguments([
 
 <p>To get more information about language and locale codes please read <a href="https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">Internationalization and Localization Guide</a>.</p>
 <h2 id="use-a-clean-status-bar"><a name="user-content-use-a-clean-status-bar" href="#use-a-clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a clean status bar</h2>
-<p>You can set <code>override_status_bar</code> to <code>true</code> to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception.</p>
+<p>You can set <code>override_status_bar</code> to <code>true</code> to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception. If you need more granular customization, to set a Carrier name for example, also set <code>override_status_bar_arguments</code> to the specific arguments to be passed to the <code>xcrun simctl status_bar override</code> command. Run <code>xcrun simctl status_bar --help</code> to see the options available.</p>
 <h2 id="editing-the-snapfile"><a name="user-content-editing-the-snapfile" href="#editing-the-snapfile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Editing the <code>Snapfile</code></h2>
 <p>Change syntax highlighting to <em>Ruby</em>.</p>
 <h3 id="simulator-doesnt-launch-the-application"><a name="user-content-simulator-doesnt-launch-the-application" href="#simulator-doesnt-launch-the-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Simulator doesn't launch the application</h3>
@@ -1767,6 +1767,11 @@ If you're skipping the animations, this wait time is unnecessary and can be skip
 <td><code>override_status_bar</code></td>
 <td>Enabling this option will automatically override the status bar to show 9:41 AM, full battery, and full reception</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>override_status_bar_arguments</code></td>
+<td>Fully customize the status bar by setting each option here. See <code>xcrun simctl status_bar --help</code></td>
+<td></td>
 </tr>
 <tr>
 <td><code>localize_simulator</code></td>

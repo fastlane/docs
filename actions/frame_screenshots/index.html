@@ -1738,7 +1738,21 @@ frameit(
 <h2 id="upload-screenshots"><a name="user-content-upload-screenshots" href="#upload-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Upload screenshots</h2>
 <p>Use <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> to upload iOS screenshots to App Store Connect, or <a href="https://docs.fastlane.tools/actions/supply/"><em>supply</em></a> to upload Android screenshots to Play Store completely automatically 🚀</p>
 <h2 id="use-a-clean-status-bar"><a name="user-content-use-a-clean-status-bar" href="#use-a-clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use a clean status bar</h2>
-<p>You can set <code>override_status_bar</code> to <code>true</code> in snapshot to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception.</p>
+<p>You can set <code>override_status_bar</code> to <code>true</code> in snapshot to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception. If you need more granular customization, to set a Carrier name for example, also set <code>override_status_bar_arguments</code> to the specific arguments to be passed to the <code>xcrun simctl status_bar override</code> command. Run <code>xcrun simctl status_bar --help</code> to see the options available.</p>
+<h3 id="examples_1"><a name="user-content-examples_1" href="#examples_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Examples</h3>
+<pre><code class="ruby"># Sets the time to 9:41AM with full battery and reception, with the default carrier name: Carrier
+capture_ios_screenshots(
+    override_status_bar: true
+)
+</code></pre>
+
+<pre><code class="ruby"># Set the time to 9:41AM, battery at 75% and charging, on the TELUS LTE network
+capture_ios_screenshots(
+    override_status_bar: true,
+    override_status_bar_arguments: &quot;--time 9:41 --dataNetwork lte --cellularMode active --cellularBars 4 --batteryState charging --batteryLevel 75 --operatorName TELUS&quot;
+)
+</code></pre>
+
 <h2 id="gray-artifacts-around-text"><a name="user-content-gray-artifacts-around-text" href="#gray-artifacts-around-text" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gray artifacts around text</h2>
 <p>If you run into any quality issues, like having a border around the font, it usually helps to just re-install <code>imagemagick</code>. You can do so by running</p>
 <pre><code class="sh">brew uninstall imagemagick

@@ -1356,7 +1356,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="git_submodule_update"><a name="user-content-git_submodule_update" href="#git_submodule_update" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_submodule_update</h1>
-<p>Executes a git submodule command</p>
+<p>Executes a git submodule update command</p>
 <table>
 <thead>
 <tr>
@@ -1375,6 +1375,19 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
+<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
+<pre><code class="ruby">git_submodule_update
+</code></pre>
+
+<pre><code class="ruby">git_submodule_update(recursive: true)
+</code></pre>
+
+<pre><code class="ruby">git_submodule_update(init: true)
+</code></pre>
+
+<pre><code class="ruby">git_submodule_update(recursive: true, init: true)
+</code></pre>
+
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
 <table>
 <thead>
@@ -1387,12 +1400,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>recursive</code></td>
-<td>Should the submodules be updated recursively</td>
+<td>Should the submodules be updated recursively?</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>init</code></td>
-<td>Should the submodules be initiated before update</td>
+<td>Should the submodules be initiated before update?</td>
 <td><code>false</code></td>
 </tr>
 </tbody>
