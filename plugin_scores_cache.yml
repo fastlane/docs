@@ -7831,7 +7831,7 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 643
+  :age_in_days: 652
   :readme_score: 100
   :tests: 91
   :actions:
@@ -7855,7 +7855,7 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: aab66fb54d1891cc72721da0a4c46c8a0f4be294242122243c65498aee39f599
+  :sha: 2a4cd355211d2bcab287920e118a39cdacd76c6b14ebafb344eb2c2d7e62bba7
   :github_stars: 85
   :github_subscribers: 10
   :github_issues: 13
@@ -10069,7 +10069,7 @@ fastlane-plugin-jira_issue_link:
   :github_contributors: 0
 fastlane-plugin-emerge:
   :initial_commit: 2020-12-07
-  :age_in_days: 134
+  :age_in_days: 158
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10078,7 +10078,7 @@ fastlane-plugin-emerge:
     category:
     description: Fastlane plugin for Emerge
     details:
-  :sha: c6a4fbea393af0c1871e388548cba8f1857eb98287a7194630cf26fcff481572
+  :sha: 4254c52e330369b514fc094e0ced384d96500d31c5278b025ff75f76992406fc
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
@@ -10560,6 +10560,23 @@ fastlane-plugin-simulator_add_root_cert:
       security.
   :sha: 01d6aab2df2642966dc57135307d6cc9ae7e8b54588f8f5985f47d35b66a6e32
   :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-depman:
+  :initial_commit: 2021-05-12
+  :age_in_days: 2
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: depman
+    category: testing
+    description: Arcsinus Dependency manager
+    details: Invokes depman-scanner to programmatically run Depman analysis
+  :sha: fc56e4f4225647c647c7283ab6b20403c8af64a391b5c94ec331c9a40ed3c42d
+  :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
