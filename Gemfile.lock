@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 7ba2d6a31e47c7919b3847fdbbde72feec68d213
+  revision: 76788f1cd51005b0bbaa5e9bb4c1bbca9ae240ef
   specs:
-    fastlane (2.182.0)
+    fastlane (2.183.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       artifactory (~> 3.0)
@@ -19,8 +19,9 @@ GIT
       faraday_middleware (~> 1.0)
       fastimage (>= 2.1.0, < 3.0.0)
       gh_inspector (>= 1.1.2, < 2.0.0)
-      google-api-client (>= 0.37.0, < 0.39.0)
-      google-cloud-storage (>= 1.15.0, < 2.0.0)
+      google-apis-androidpublisher_v3 (~> 0.1)
+      google-apis-playcustomapp_v1 (~> 0.1)
+      google-cloud-storage (~> 1.31)
       highline (~> 2.0)
       json (< 3.0.0)
       jwt (>= 2.1.0, < 3)
@@ -50,7 +51,7 @@ GEM
     ast (2.4.2)
     atomos (0.1.3)
     aws-eventstream (1.1.1)
-    aws-partitions (1.451.0)
+    aws-partitions (1.455.0)
     aws-sdk-core (3.114.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -118,14 +119,8 @@ GEM
     gh_inspector (1.1.3)
     git (1.8.1)
       rchardet (~> 1.8)
-    google-api-client (0.38.0)
-      addressable (~> 2.5, >= 2.5.1)
-      googleauth (~> 0.9)
-      httpclient (>= 2.8.1, < 3.0)
-      mini_mime (~> 1.0)
-      representable (~> 3.0)
-      retriable (>= 2.0, < 4.0)
-      signet (~> 0.12)
+    google-apis-androidpublisher_v3 (0.2.0)
+      google-apis-core (~> 0.1)
     google-apis-core (0.3.0)
       addressable (~> 2.5, >= 2.5.1)
       googleauth (~> 0.14)
@@ -137,6 +132,8 @@ GEM
       signet (~> 0.14)
       webrick
     google-apis-iamcredentials_v1 (0.3.0)
+      google-apis-core (~> 0.1)
+    google-apis-playcustomapp_v1 (0.2.0)
       google-apis-core (~> 0.1)
     google-apis-storage_v1 (0.3.0)
       google-apis-core (~> 0.1)
