@@ -7831,7 +7831,7 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 652
+  :age_in_days: 655
   :readme_score: 100
   :tests: 91
   :actions:
@@ -7855,10 +7855,10 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: 2a4cd355211d2bcab287920e118a39cdacd76c6b14ebafb344eb2c2d7e62bba7
-  :github_stars: 85
+  :sha: 617debd7eb2eee677bf2f910590b6e61f4826dcfc832e8b01eb9d146f2ba0289
+  :github_stars: 86
   :github_subscribers: 10
-  :github_issues: 13
+  :github_issues: 12
   :github_forks: 10
   :github_contributors: 13
 fastlane-plugin-secrets:
@@ -8171,7 +8171,7 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 324
+  :age_in_days: 520
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8190,12 +8190,12 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
-  :sha: a7132b49e3cc1927509a7935139cc3fe8b66de4d4dfb595337ac58f8b7d7b9f1
-  :github_stars: 16
+  :sha: a2925bc8f8c8d4cfa3a7177300fc9e2b7d01e6da28d96e5bdfff4094df4cf772
+  :github_stars: 34
   :github_subscribers: 2
-  :github_issues: 0
-  :github_forks: 11
-  :github_contributors: 0
+  :github_issues: 2
+  :github_forks: 10
+  :github_contributors: 6
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
   :age_in_days: 16
@@ -8483,7 +8483,7 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 305
+  :age_in_days: 441
   :readme_score: 100
   :tests: 13
   :actions:
@@ -8492,11 +8492,11 @@ fastlane-plugin-flutter_version:
     category:
     description: A plugin to retrieve versioning information for Flutter projects.
     details:
-  :sha: 95f4ffee2ccd7fc55f7fdfe99ae5b0e9047e702c0e5e08a0cb0e2e207985725a
-  :github_stars: 15
+  :sha: 0a004e79f6ab1d30e4c718d592f1365a458ebdc49ce5ccb0b6791f9364e3dea2
+  :github_stars: 37
   :github_subscribers: 1
-  :github_issues: 6
-  :github_forks: 8
+  :github_issues: 8
+  :github_forks: 12
   :github_contributors: 0
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
@@ -10576,6 +10576,23 @@ fastlane-plugin-depman:
     description: Arcsinus Dependency manager
     details: Invokes depman-scanner to programmatically run Depman analysis
   :sha: fc56e4f4225647c647c7283ab6b20403c8af64a391b5c94ec331c9a40ed3c42d
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-build_app_for_simulator:
+  :initial_commit: 2021-05-15
+  :age_in_days: 2
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: build_app_for_simulator
+    category: building
+    description: This plugin builds apps exclusively for iOS, tvOS or watchOS Simulators.
+    details:
+  :sha: ac95a504a22e420d0e9249a107c82a9c502bee01a3e560c04090a68cfdedb8b4
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
