@@ -8483,7 +8483,7 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 441
+  :age_in_days: 442
   :readme_score: 100
   :tests: 13
   :actions:
@@ -8492,10 +8492,10 @@ fastlane-plugin-flutter_version:
     category:
     description: A plugin to retrieve versioning information for Flutter projects.
     details:
-  :sha: 0a004e79f6ab1d30e4c718d592f1365a458ebdc49ce5ccb0b6791f9364e3dea2
+  :sha: '0890f874e77e3e298ed75ad14c2315086b9d0423cfd424ad22c4df7a94f943d9'
   :github_stars: 37
   :github_subscribers: 1
-  :github_issues: 8
+  :github_issues: 5
   :github_forks: 12
   :github_contributors: 0
 fastlane-plugin-swiftformat:
