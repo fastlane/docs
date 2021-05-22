@@ -631,24 +631,44 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 **Keys**
 
-- `violenceCartoonOrFantasy`
-- `violenceRealistic`
-- `violenceRealisticProlongedGraphicOrSadistic`
-- `profanityOrCrudeHumor`
-- `matureOrSuggestiveThemes`
-- `horrorOrFearThemes`
-- `medicalOrTreatmentInformation`
-- `alcoholTobaccoOrDrugUseOrReferences`
-- `gamblingSimulated`
-- `sexualContentOrNudity`
-- `sexualContentGraphicAndNudity`
+- 'alcoholTobaccoOrDrugUseOrReferences'
+- 'contests'
+- 'gambling'
+- 'gamblingSimulated'
+- 'medicalOrTreatmentInformation'
+- 'profanityOrCrudeHumor'
+
+- 'sexualContentGraphicAndNudity'
+- 'sexualContentOrNudity'
+- 'horrorOrFearThemes'
+- 'matureOrSuggestiveThemes'
+- 'unrestrictedWebAccess'
+- 'violenceCartoonOrFantasy'
+- 'violenceRealisticProlongedGraphicOrSadistic'
+- 'violenceRealistic'
+- 'kidsAgeBand'
 
 #### Boolean
 
 **Keys**
 
+- `gambling`
+- 'seventeenPlus'
 - `unrestrictedWebAccess`
-- `gamblingAndContests`
+
+#### Kids Age
+
+**Values**
+
+- `FIVE_AND_UNDER`
+- `SIX_TO_EIGHT`
+- `NINE_TO_ELEVEN`
+- `null`
+
+**Keys**
+
+- `kidsAgeBand`
+
 </details>
 
 <br />
@@ -838,7 +858,7 @@ Key | Description | Default
   `primary_second_sub_category` | Metadata: The english name of the primary second sub category (e.g. `Educational`, `Puzzle`) | 
   `secondary_first_sub_category` | Metadata: The english name of the secondary first sub category (e.g. `Educational`, `Puzzle`) | 
   `secondary_second_sub_category` | Metadata: The english name of the secondary second sub category (e.g. `Educational`, `Puzzle`) | 
-  `trade_representative_contact_information` | Metadata: A hash containing the trade representative contact information | 
+  `trade_representative_contact_information` | **DEPRECATED!** This is no longer used by App Store Connect - Metadata: A hash containing the trade representative contact information | 
   `app_review_information` | Metadata: A hash containing the review information | 
   `app_review_attachment_file` | Metadata: Path to the app review attachment file | 
   `description` | Metadata: The localised app description | 

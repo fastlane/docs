@@ -8483,7 +8483,7 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 441
+  :age_in_days: 446
   :readme_score: 100
   :tests: 13
   :actions:
@@ -8492,12 +8492,12 @@ fastlane-plugin-flutter_version:
     category:
     description: A plugin to retrieve versioning information for Flutter projects.
     details:
-  :sha: 0a004e79f6ab1d30e4c718d592f1365a458ebdc49ce5ccb0b6791f9364e3dea2
+  :sha: '0890f874e77e3e298ed75ad14c2315086b9d0423cfd424ad22c4df7a94f943d9'
   :github_stars: 37
   :github_subscribers: 1
-  :github_issues: 8
+  :github_issues: 4
   :github_forks: 12
-  :github_contributors: 0
+  :github_contributors: 6
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
   :age_in_days: 32
@@ -10529,7 +10529,7 @@ fastlane-plugin-copy_screenshots:
   :github_contributors: 0
 fastlane-plugin-dependency_check_ios_analyzer:
   :initial_commit: 2021-05-01
-  :age_in_days: 4
+  :age_in_days: 21
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10539,7 +10539,7 @@ fastlane-plugin-dependency_check_ios_analyzer:
     description: Fastlane wrapper around the OWASP dependency-check iOS analyzers
       (Swift Package Manager and CocoaPods).
     details:
-  :sha: eb7df51bb6dec8b64a5bf584d1d656a72f38d792ad4345781ceab9643c5c92a2
+  :sha: f80e3edadd2710fa73e2dde25c2efd8695ee999fb50a9f2be01ebee5cd45f5c9
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -10597,4 +10597,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-wpmreleasetoolkit:
+  :initial_commit: 2018-07-10
+  :age_in_days: 1047
+  :readme_score: 100
+  :tests: 126
+  :actions: []
+  :sha: 25105ed1809291fe6aa5e79e73fed5d7956442c1383e20fb5e9947bac52c8dd4
+  :github_stars: 16
+  :github_subscribers: 18
+  :github_issues: 25
+  :github_forks: 6
   :github_contributors: 0

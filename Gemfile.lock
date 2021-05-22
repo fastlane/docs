@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 7cc8c67a42ada48d83f1d1c25d3f2a8c89d0c3c2
+  revision: 584c9b7a4a04059012c85c60096d3c4b600f029c
   specs:
-    fastlane (2.183.1)
+    fastlane (2.184.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       artifactory (~> 3.0)
@@ -51,7 +51,7 @@ GEM
     ast (2.4.2)
     atomos (0.1.3)
     aws-eventstream (1.1.1)
-    aws-partitions (1.456.0)
+    aws-partitions (1.461.0)
     aws-sdk-core (3.114.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -60,7 +60,7 @@ GEM
     aws-sdk-kms (1.43.0)
       aws-sdk-core (~> 3, >= 3.112.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.94.1)
+    aws-sdk-s3 (1.95.0)
       aws-sdk-core (~> 3, >= 3.112.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
@@ -119,7 +119,7 @@ GEM
     gh_inspector (1.1.3)
     git (1.8.1)
       rchardet (~> 1.8)
-    google-apis-androidpublisher_v3 (0.2.0)
+    google-apis-androidpublisher_v3 (0.3.0)
       google-apis-core (~> 0.1)
     google-apis-core (0.3.0)
       addressable (~> 2.5, >= 2.5.1)
@@ -143,7 +143,7 @@ GEM
     google-cloud-env (1.5.0)
       faraday (>= 0.17.3, < 2.0)
     google-cloud-errors (1.1.0)
-    google-cloud-storage (1.31.0)
+    google-cloud-storage (1.31.1)
       addressable (~> 2.5)
       digest-crc (~> 0.4)
       google-apis-iamcredentials_v1 (~> 0.1)
