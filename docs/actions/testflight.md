@@ -390,6 +390,7 @@ Key | Description | Default
   `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
   `wait_processing_interval` | Interval in seconds to wait for App Store Connect processing | `30`
+  `wait_processing_timeout_duration` | Timeout duration in seconds to wait for App Store Connect processing. If set, after exceeding timeout duration, this will `force stop` to wait for App Store Connect processing and exit with exception | 
   `wait_for_uploaded_build` | **DEPRECATED!** No longer needed with the transition over to the App Store Connect API - Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`
   `reject_build_waiting_for_review` | Expire previous if it's 'waiting for review' | `false`
 

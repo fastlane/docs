@@ -4613,7 +4613,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 1014
+  :age_in_days: 1141
   :readme_score: 100
   :tests: 14
   :actions:
@@ -4642,11 +4642,11 @@ fastlane-plugin-flutter:
       and generate .dart files from them.  (4) Generate an empty test importing all
       files, which would be used to calculate correct full coverage numbers."
     details:
-  :sha: 77b853f75e8c419d750091f9cdb3eee9340785f47b71784544a78d3b8671c9fe
-  :github_stars: 19
+  :sha: ad7d4a8684f8443a5d7dba5ab1aa2723208e1a6563d0a2d24ccd3cbb11816a44
+  :github_stars: 20
   :github_subscribers: 2
-  :github_issues: 0
-  :github_forks: 4
+  :github_issues: 1
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
@@ -6009,7 +6009,7 @@ fastlane-plugin-notarize:
   :github_contributors: 0
 fastlane-plugin-gmail:
   :initial_commit: 2018-12-11
-  :age_in_days: 37
+  :age_in_days: 899
   :readme_score: 100
   :tests: 5
   :actions:
@@ -6018,10 +6018,10 @@ fastlane-plugin-gmail:
     category:
     description: A short description with <= 80 characters of what this action does
     details: You can use this action to do cool things...
-  :sha: 93d1fcbc6b700a2212c8bf569b5542e4a4433fbae654abf8d45cec11036ac2c8
-  :github_stars: 6
-  :github_subscribers: 6
-  :github_issues: 0
+  :sha: a4b05c5f1560afb53e1248b3590ece1ff0c7e0d2649b6db8f76f2b4a23aa3c45
+  :github_stars: 7
+  :github_subscribers: 7
+  :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-discord:
@@ -8483,7 +8483,7 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 441
+  :age_in_days: 452
   :readme_score: 100
   :tests: 13
   :actions:
@@ -8492,12 +8492,12 @@ fastlane-plugin-flutter_version:
     category:
     description: A plugin to retrieve versioning information for Flutter projects.
     details:
-  :sha: 0a004e79f6ab1d30e4c718d592f1365a458ebdc49ce5ccb0b6791f9364e3dea2
+  :sha: '0890f874e77e3e298ed75ad14c2315086b9d0423cfd424ad22c4df7a94f943d9'
   :github_stars: 37
   :github_subscribers: 1
-  :github_issues: 8
+  :github_issues: 4
   :github_forks: 12
-  :github_contributors: 0
+  :github_contributors: 6
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
   :age_in_days: 32
@@ -10529,7 +10529,7 @@ fastlane-plugin-copy_screenshots:
   :github_contributors: 0
 fastlane-plugin-dependency_check_ios_analyzer:
   :initial_commit: 2021-05-01
-  :age_in_days: 4
+  :age_in_days: 27
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10539,12 +10539,12 @@ fastlane-plugin-dependency_check_ios_analyzer:
     description: Fastlane wrapper around the OWASP dependency-check iOS analyzers
       (Swift Package Manager and CocoaPods).
     details:
-  :sha: eb7df51bb6dec8b64a5bf584d1d656a72f38d792ad4345781ceab9643c5c92a2
+  :sha: f80e3edadd2710fa73e2dde25c2efd8695ee999fb50a9f2be01ebee5cd45f5c9
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-simulator_add_root_cert:
   :initial_commit: 2021-04-27
   :age_in_days: 8
@@ -10598,3 +10598,39 @@ fastlane-plugin-build_app_for_simulator:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-wpmreleasetoolkit:
+  :initial_commit: 2018-07-10
+  :age_in_days: 1053
+  :readme_score: 100
+  :tests: 126
+  :actions: []
+  :sha: ed366f42b7d6124db93448b34a0beb0c057ba36db392b1a59798f39b903b04d0
+  :github_stars: 16
+  :github_subscribers: 18
+  :github_issues: 27
+  :github_forks: 6
+  :github_contributors: 9
+fastlane-plugin-allure_zephyr:
+  :initial_commit: 2021-05-24
+  :age_in_days: 4
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: allure_zephyr
+    category:
+    description: Publish Allure results to Zephyr
+    details: This plugin publishes test results from Allure to Zephyr, for those tests
+      that have links included.
+  :sha: e78910b89f0ae4afec6ec337c68c3d2c60f92a9d7384eea37d8f43740e0c8c7a
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-hello_gem_kimjg:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
