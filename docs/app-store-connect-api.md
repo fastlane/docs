@@ -56,7 +56,7 @@ lane :release do
     issuer_id: "6053b7fe-68a8-4acb-89be-165aa6465141",
     key_filepath: "./AuthKey_D383SF739.p8",
     duration: 1200, # optional (maximum 1200)
-    in_house: false, # optional but may be required if using match/sigh
+    in_house: false # optional but may be required if using match/sigh
   )
 
   pilot(api_key: api_key)
@@ -74,7 +74,7 @@ lane :release do
     issuer_id: "6053b7fe-68a8-4acb-89be-165aa6465141",
     key_filepath: "./AuthKey_D383SF739.p8",
     duration: 1200, # optional (maximum 1200)
-    in_house: false, # optional but may be required if using match/sigh
+    in_house: false # optional but may be required if using match/sigh
   )
 
   # Automatically loads Actions.lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
@@ -101,7 +101,7 @@ The JSON file allows optional:
   "issuer_id": "6053b7fe-68a8-4acb-89be-165aa6465141",
   "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----",
   "duration": 1200, # optional (maximum 1200)
-  "in_house": false, # optional but may be required if using match/sigh
+  "in_house": false # optional but may be required if using match/sigh
 }
 ```
 
