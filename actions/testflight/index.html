@@ -1460,12 +1460,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <h3 id="add-a-new-tester"><a name="user-content-add-a-new-tester" href="#add-a-new-tester" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Add a new tester</h3>
-<p>To add a new tester to both your App Store Connect account and to your app (if given), use the <code>pilot add</code> command. This will create a new tester (if necessary) or add an existing tester to the app to test.</p>
-<pre><code class="no-highlight">fastlane pilot add email@invite.com
+<p>To add a new tester to your App Store Connect account and to associate it to at least one testing group of your app, use the <code>pilot add</code> command. This will create a new tester (if necessary) or add an existing tester to the app to test.</p>
+<pre><code class="no-highlight">fastlane pilot add email@invite.com -g group-1,group-2
 </code></pre>
 
 <p>Additionally you can specify the app identifier (if necessary):</p>
-<pre><code class="no-highlight">fastlane pilot add email@email.com -a com.krausefx.app
+<pre><code class="no-highlight">fastlane pilot add email@email.com -a com.krausefx.app -g group-1,group-2
 </code></pre>
 
 <h3 id="find-a-tester"><a name="user-content-find-a-tester" href="#find-a-tester" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Find a tester</h3>
@@ -1488,8 +1488,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 
 <h3 id="remove-a-tester"><a name="user-content-remove-a-tester" href="#remove-a-tester" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Remove a tester</h3>
-<p>This command will only remove external beta testers.</p>
+<p>This command will remove beta tester from app (from all internal and external groups)</p>
 <pre><code class="no-highlight">fastlane pilot remove felix@krausefx.com
+</code></pre>
+
+<p>You can also use <code>groups</code> option to remove the tester from the groups specified:</p>
+<pre><code class="no-highlight">fastlane pilot remove felix@krausefx.com -g group-1,group-2
 </code></pre>
 
 <h3 id="export-testers"><a name="user-content-export-testers" href="#export-testers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Export testers</h3>
@@ -1729,7 +1733,7 @@ pilot...
 </tr>
 <tr>
 <td><code>distribute_external</code></td>
-<td>Should the build be distributed to external testers?</td>
+<td>Should the build be distributed to external testers? If set to true, use of <code>groups</code> option is required</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1774,7 +1778,7 @@ pilot...
 </tr>
 <tr>
 <td><code>groups</code></td>
-<td>Associate tester to one group or more by group name / group id. E.g. <code>-g "Team 1","Team 2"</code></td>
+<td>Associate tester to one group or more by group name / group id. E.g. <code>-g "Team 1","Team 2"</code> This is required when <code>distribute_external</code> option is set to true or when we want to add a tester to one or more external testing groups</td>
 <td></td>
 </tr>
 <tr>
@@ -1801,6 +1805,11 @@ pilot...
 <td><code>wait_processing_interval</code></td>
 <td>Interval in seconds to wait for App Store Connect processing</td>
 <td><code>30</code></td>
+</tr>
+<tr>
+<td><code>wait_processing_timeout_duration</code></td>
+<td>Timeout duration in seconds to wait for App Store Connect processing. If set, after exceeding timeout duration, this will <code>force stop</code> to wait for App Store Connect processing and exit with exception</td>
+<td></td>
 </tr>
 <tr>
 <td><code>wait_for_uploaded_build</code></td>

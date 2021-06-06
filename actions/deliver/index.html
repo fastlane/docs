@@ -1566,7 +1566,7 @@ reset_ratings(false)
 
 <h5 id="app_rating_config_path"><a name="user-content-app_rating_config_path" href="#app_rating_config_path" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>app_rating_config_path</h5>
 <p>You can set the app age ratings using <em>deliver</em>. You'll have to create and store a <code>JSON</code> configuration file. Copy the <a href="https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json">template</a> to your project folder and pass the path to the <code>JSON</code> file using the <code>app_rating_config_path</code> option.</p>
-<p>The keys/values on the top allow values from 0-2, and the items on the bottom allow only 0 or 1. More information in <a href="#reference">#reference</a>.</p>
+<p>The keys/values on the top allow one of 3 strings: "NONE", "INFREQUENT_OR_MILD" or "FREQUENT_OR_INTENSE", and the items on the bottom allow false or true. More information in <a href="#reference">#reference</a>.</p>
 <h2 id="metadata"><a name="user-content-metadata" href="#metadata" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Metadata</h2>
 <p>All options below are useful if you want to specify certain app metadata in your <code>Deliverfile</code> or <code>Fastfile</code></p>
 <h3 id="localized"><a name="user-content-localized" href="#localized" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Localized</h3>
@@ -1976,9 +1976,9 @@ end
 <h4 id="non-boolean"><a name="user-content-non-boolean" href="#non-boolean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Non Boolean</h4>
 <p><strong>Values</strong></p>
 <ul>
-<li>0: None</li>
-<li>1: Infrequent/Mild</li>
-<li>2: Frequent/Intense</li>
+<li>0: None (Legacy value, use <code>NONE</code> instead)</li>
+<li>1: Infrequent/Mild (Legacy value, use <code>INFREQUENT_OR_MILD</code> instead)</li>
+<li>2: Frequent/Intense (Legacy value, use <code>FREQUENT_OR_INTENSE</code>instead)</li>
 </ul>
 <ul>
 <li><code>NONE</code></li>
@@ -1987,25 +1987,43 @@ end
 </ul>
 <p><strong>Keys</strong></p>
 <ul>
-<li><code>violenceCartoonOrFantasy</code></li>
-<li><code>violenceRealistic</code></li>
-<li><code>violenceRealisticProlongedGraphicOrSadistic</code></li>
-<li><code>profanityOrCrudeHumor</code></li>
-<li><code>matureOrSuggestiveThemes</code></li>
-<li><code>horrorOrFearThemes</code></li>
-<li><code>medicalOrTreatmentInformation</code></li>
-<li><code>alcoholTobaccoOrDrugUseOrReferences</code></li>
-<li><code>gamblingSimulated</code></li>
-<li><code>sexualContentOrNudity</code></li>
-<li><code>sexualContentGraphicAndNudity</code></li>
+<li>'alcoholTobaccoOrDrugUseOrReferences'</li>
+<li>'contests'</li>
+<li>'gamblingSimulated'</li>
+<li>'medicalOrTreatmentInformation'</li>
+<li>'profanityOrCrudeHumor'</li>
+</ul>
+<ul>
+<li>'sexualContentGraphicAndNudity'</li>
+<li>'sexualContentOrNudity'</li>
+<li>'horrorOrFearThemes'</li>
+<li>'matureOrSuggestiveThemes'</li>
+<li>'unrestrictedWebAccess'</li>
+<li>'violenceCartoonOrFantasy'</li>
+<li>'violenceRealisticProlongedGraphicOrSadistic'</li>
+<li>'violenceRealistic'</li>
+<li>'kidsAgeBand'</li>
 </ul>
 <h4 id="boolean"><a name="user-content-boolean" href="#boolean" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Boolean</h4>
 <p><strong>Keys</strong></p>
 <ul>
+<li><code>gambling</code></li>
+<li>'seventeenPlus'</li>
 <li><code>unrestrictedWebAccess</code></li>
-<li><code>gamblingAndContests</code>
-</details></li>
 </ul>
+<h4 id="kids-age"><a name="user-content-kids-age" href="#kids-age" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Kids Age</h4>
+<p><strong>Values</strong></p>
+<ul>
+<li><code>FIVE_AND_UNDER</code></li>
+<li><code>SIX_TO_EIGHT</code></li>
+<li><code>NINE_TO_ELEVEN</code></li>
+<li><code>null</code></li>
+</ul>
+<p><strong>Keys</strong></p>
+<ul>
+<li><code>kidsAgeBand</code></li>
+</ul>
+<p></details></p>
 <p><br /></p>
 <h2 id="default-values"><a name="user-content-default-values" href="#default-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Default values</h2>
 <p>Deliver has a special <code>default</code> language code which allows you to provide values that are not localized, and which will be used as defaults when you don’t provide a specific localized value.</p>
@@ -2351,7 +2369,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tr>
 <tr>
 <td><code>trade_representative_contact_information</code></td>
-<td>Metadata: A hash containing the trade representative contact information</td>
+<td><strong>DEPRECATED!</strong> This is no longer used by App Store Connect - Metadata: A hash containing the trade representative contact information</td>
 <td></td>
 </tr>
 <tr>
