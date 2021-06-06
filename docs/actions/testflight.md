@@ -148,16 +148,16 @@ The output will look like this:
 
 ### Add a new tester
 
-To add a new tester to both your App Store Connect account and to your app (if given), use the `pilot add` command. This will create a new tester (if necessary) or add an existing tester to the app to test.
+To add a new tester to your App Store Connect account and to associate it to at least one testing group of your app, use the `pilot add` command. This will create a new tester (if necessary) or add an existing tester to the app to test.
 
 ```no-highlight
-fastlane pilot add email@invite.com
+fastlane pilot add email@invite.com -g group-1,group-2
 ```
 
 Additionally you can specify the app identifier (if necessary):
 
 ```no-highlight
-fastlane pilot add email@email.com -a com.krausefx.app
+fastlane pilot add email@email.com -a com.krausefx.app -g group-1,group-2
 ```
 
 ### Find a tester
@@ -186,10 +186,16 @@ The resulting output will look like this:
 
 ### Remove a tester
 
-This command will only remove external beta testers.
+This command will remove beta tester from app (from all internal and external groups)
 
 ```no-highlight
 fastlane pilot remove felix@krausefx.com
+```
+
+You can also use `groups` option to remove the tester from the groups specified:
+
+```no-highlight
+fastlane pilot remove felix@krausefx.com -g group-1,group-2
 ```
 
 ### Export testers
@@ -375,7 +381,7 @@ Key | Description | Default
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
   `distribute_only` | Distribute a previously uploaded build (equivalent to the `fastlane pilot distribute` command) | `false`
   `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
-  `distribute_external` | Should the build be distributed to external testers? | `false`
+  `distribute_external` | Should the build be distributed to external testers? If set to true, use of `groups` option is required | `false`
   `notify_external_testers` | Should notify external testers? (Not setting a value will use App Store Connect's default which is to notify) | 
   `app_version` | The version number of the application build to distribute. If the version number is not specified, then the most recent build uploaded to TestFlight will be distributed. If specified, the most recent build for the version number will be distributed | 
   `build_number` | The build number of the application build to distribute. If the build number is not specified, the most recent build is distributed | 
@@ -384,12 +390,13 @@ Key | Description | Default
   `last_name` | The tester's last name | 
   `email` | The tester's email | 
   `testers_file_path` | Path to a CSV file of testers | `./testers.csv`
-  `groups` | Associate tester to one group or more by group name / group id. E.g. `-g "Team 1","Team 2"` | 
+  `groups` | Associate tester to one group or more by group name / group id. E.g. `-g "Team 1","Team 2"` This is required when `distribute_external` option is set to true or when we want to add a tester to one or more external testing groups  | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
   `wait_processing_interval` | Interval in seconds to wait for App Store Connect processing | `30`
+  `wait_processing_timeout_duration` | Timeout duration in seconds to wait for App Store Connect processing. If set, after exceeding timeout duration, this will `force stop` to wait for App Store Connect processing and exit with exception | 
   `wait_for_uploaded_build` | **DEPRECATED!** No longer needed with the transition over to the App Store Connect API - Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`
   `reject_build_waiting_for_review` | Expire previous if it's 'waiting for review' | `false`
 

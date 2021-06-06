@@ -47,7 +47,7 @@ swiftlint(
 
 Key | Description | Default
 ----|-------------|--------
-  `mode` | SwiftLint mode: :lint, :autocorrect or :analyze | `:lint`
+  `mode` | SwiftLint mode: :lint, :fix, :autocorrect or :analyze | `:lint`
   `path` | Specify path to lint | 
   `output_file` | Path to output SwiftLint result | 
   `config_file` | Custom configuration file of SwiftLint | 

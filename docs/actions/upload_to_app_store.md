@@ -301,7 +301,7 @@ reset_ratings(false)
 ##### app_rating_config_path
 You can set the app age ratings using _deliver_. You'll have to create and store a `JSON` configuration file. Copy the [template](https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json) to your project folder and pass the path to the `JSON` file using the `app_rating_config_path` option.
 
-The keys/values on the top allow values from 0-2, and the items on the bottom allow only 0 or 1. More information in [#reference](#reference).
+The keys/values on the top allow one of 3 strings: "NONE", "INFREQUENT_OR_MILD" or "FREQUENT_OR_INTENSE", and the items on the bottom allow false or true. More information in [#reference](#reference).
 
 
 ## Metadata
@@ -621,9 +621,9 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 **Values**
 
-- 0: None
-- 1: Infrequent/Mild
-- 2: Frequent/Intense
+- 0: None (Legacy value, use `NONE` instead)
+- 1: Infrequent/Mild (Legacy value, use `INFREQUENT_OR_MILD` instead)
+- 2: Frequent/Intense (Legacy value, use `FREQUENT_OR_INTENSE`instead)
 
 - `NONE`
 - `INFREQUENT_OR_MILD`
@@ -631,24 +631,43 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 **Keys**
 
-- `violenceCartoonOrFantasy`
-- `violenceRealistic`
-- `violenceRealisticProlongedGraphicOrSadistic`
-- `profanityOrCrudeHumor`
-- `matureOrSuggestiveThemes`
-- `horrorOrFearThemes`
-- `medicalOrTreatmentInformation`
-- `alcoholTobaccoOrDrugUseOrReferences`
-- `gamblingSimulated`
-- `sexualContentOrNudity`
-- `sexualContentGraphicAndNudity`
+- 'alcoholTobaccoOrDrugUseOrReferences'
+- 'contests'
+- 'gamblingSimulated'
+- 'medicalOrTreatmentInformation'
+- 'profanityOrCrudeHumor'
+
+- 'sexualContentGraphicAndNudity'
+- 'sexualContentOrNudity'
+- 'horrorOrFearThemes'
+- 'matureOrSuggestiveThemes'
+- 'unrestrictedWebAccess'
+- 'violenceCartoonOrFantasy'
+- 'violenceRealisticProlongedGraphicOrSadistic'
+- 'violenceRealistic'
+- 'kidsAgeBand'
 
 #### Boolean
 
 **Keys**
 
+- `gambling`
+- 'seventeenPlus'
 - `unrestrictedWebAccess`
-- `gamblingAndContests`
+
+#### Kids Age
+
+**Values**
+
+- `FIVE_AND_UNDER`
+- `SIX_TO_EIGHT`
+- `NINE_TO_ELEVEN`
+- `null`
+
+**Keys**
+
+- `kidsAgeBand`
+
 </details>
 
 <br />
@@ -838,7 +857,7 @@ Key | Description | Default
   `primary_second_sub_category` | Metadata: The english name of the primary second sub category (e.g. `Educational`, `Puzzle`) | 
   `secondary_first_sub_category` | Metadata: The english name of the secondary first sub category (e.g. `Educational`, `Puzzle`) | 
   `secondary_second_sub_category` | Metadata: The english name of the secondary second sub category (e.g. `Educational`, `Puzzle`) | 
-  `trade_representative_contact_information` | Metadata: A hash containing the trade representative contact information | 
+  `trade_representative_contact_information` | **DEPRECATED!** This is no longer used by App Store Connect - Metadata: A hash containing the trade representative contact information | 
   `app_review_information` | Metadata: A hash containing the review information | 
   `app_review_attachment_file` | Metadata: Path to the app review attachment file | 
   `description` | Metadata: The localised app description | 
