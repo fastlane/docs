@@ -54,7 +54,7 @@ Codemagic does not automatically install CocoaPods, Carthage or any other extern
 
 To perform code signing on your iOS app, you can either follow the best practices laid out in [`fastlane` docs](https://docs.fastlane.tools/codesigning/getting-started/#using-match), or you could also make use of [Codemagic's standard code signing methods](https://docs.codemagic.io/code-signing-yaml/signing-ios/).
 
-When invoking [`match`](https://docs.fastlane.tools/actions/match/) from the `Fastfile`, keep in mind that you need to **grant access to the credentials repository** and expose the **_match_ passphrase** during the build. The _match_ passphrase can be defined as a `MATCH_PASSWORD` environment file — this will be automatically detected by _fastlane_ and used to decrypt the credentials repository. You can upload the SSH key for cloning the credentials repository as an environment variable, i.e. `MATCH_SSH_KEY`. 
+When invoking [`match`](https://docs.fastlane.tools/actions/match/) from the `Fastfile`, keep in mind that you need to **grant access to the credentials repository** and expose the **_match_ passphrase** during the build. The _match_ passphrase can be defined as a `MATCH_PASSWORD` environment variable — this will be automatically detected by _fastlane_ and used to decrypt the credentials repository. You can upload the SSH key for cloning the credentials repository as an environment variable, i.e. `MATCH_SSH_KEY`. 
 
 ## Publish your build artifacts
 
