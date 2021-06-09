@@ -12,7 +12,7 @@
 
 Once you've added the application, configure the build workflow in a [codemagic.yaml](https://docs.codemagic.io/getting-started/yaml/) file and commit it to the root directory of the repository. 
 
-Save your keys and other sensitive information as environment variables in the `environment` section of `codemagic.yaml`. Make sure to [encrypt](https://docs.codemagic.io/building/encrypting/) the values in Codemagic so as not to expose them. Note that if you encrypt a key file, it will be base64-encoded and would have to be decoded during the build.
+Save your keys and other sensitive information as environment variables in the `environment` section of `codemagic.yaml`. Make sure to [encrypt](https://docs.codemagic.io/building/encrypting/) the values in Codemagic so as to not expose them. Note that if you encrypt a key file, it will be base64-encoded and would have to be decoded during the build.
 
 ```yaml
     environment:
