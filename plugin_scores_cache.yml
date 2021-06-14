@@ -1601,9 +1601,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 1274
+  :age_in_days: 1498
   :readme_score: 100
-  :tests: 114
+  :tests: 131
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_fetch_version_number
@@ -1625,12 +1625,12 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 0be409829b0bc14cde09cca46eb01a9be49bdbe1c25a5ec9dccad94b7e808922
-  :github_stars: 357
-  :github_subscribers: 21
-  :github_issues: 34
-  :github_forks: 94
-  :github_contributors: 42
+  :sha: 8f349405ec8f6ce5a04b739155b6c9604082b53c81c06e24b2dc009e786dfa3e
+  :github_stars: 402
+  :github_subscribers: 17
+  :github_issues: 49
+  :github_forks: 102
+  :github_contributors: 41
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -4485,7 +4485,7 @@ fastlane-plugin-retry_tests:
   :github_contributors: 2
 fastlane-plugin-icon_versioning:
   :initial_commit: 2017-12-14
-  :age_in_days: 637
+  :age_in_days: 1278
   :readme_score: 100
   :tests: 42
   :actions:
@@ -4495,11 +4495,11 @@ fastlane-plugin-icon_versioning:
     description: Overlay build information on top of your app icon. Based on original
       work by Krzysztof Zabłocki (https://github.com/krzysztofzablocki/Bootstrap).
     details:
-  :sha: c5c7dab39f9412a8bb71430b2af3832da8d0336e9c10585695df4849d039c48e
-  :github_stars: 43
+  :sha: e0197ad2ed6e10d32c6945a600b5152018cb8653ce7ce32d1033db02dfe5b908
+  :github_stars: 48
   :github_subscribers: 1
   :github_issues: 2
-  :github_forks: 3
+  :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-resize_screenshots:
   :initial_commit: 2018-03-04
@@ -6009,21 +6009,21 @@ fastlane-plugin-notarize:
   :github_contributors: 0
 fastlane-plugin-gmail:
   :initial_commit: 2018-12-11
-  :age_in_days: 908
+  :age_in_days: 916
   :readme_score: 100
-  :tests: 5
+  :tests: 6
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: gmail
     category:
     description: A short description with <= 80 characters of what this action does
     details: You can use this action to do cool things...
-  :sha: a4b05c5f1560afb53e1248b3590ece1ff0c7e0d2649b6db8f76f2b4a23aa3c45
+  :sha: 43526aad04b7e9b52d1e489c97b0f52d59ef20b95553f63c7f0290b4bc039bf9
   :github_stars: 7
   :github_subscribers: 7
-  :github_issues: 1
+  :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-discord:
   :initial_commit: 2019-01-13
   :age_in_days: 4
@@ -8483,7 +8483,7 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 461
+  :age_in_days: 469
   :readme_score: 100
   :tests: 13
   :actions:
@@ -8492,12 +8492,12 @@ fastlane-plugin-flutter_version:
     category:
     description: A plugin to retrieve versioning information for Flutter projects.
     details:
-  :sha: 70b9eef6dda3334bc5ee93541ded8dac9bcc083c92f8715137a3498d1cd4e8eb
+  :sha: 1ed5702fbf11d8baf543f8abf77ba81a547a2e3c585d0fe0757288e066d622af
   :github_stars: 39
   :github_subscribers: 1
-  :github_issues: 3
+  :github_issues: 4
   :github_forks: 13
-  :github_contributors: 0
+  :github_contributors: 6
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
   :age_in_days: 32
@@ -9697,7 +9697,7 @@ fastlane-plugin-semantic_convention_release:
   :github_contributors: 0
 fastlane-plugin-simple_loco:
   :initial_commit: 2020-08-28
-  :age_in_days: 7
+  :age_in_days: 290
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9709,12 +9709,12 @@ fastlane-plugin-simple_loco:
       See https://localise.biz/api/docs/export/exportlocale for all options. Common
       mobile platforms (Android, iOS, Xamarin, Flutter) have some extra logic to create
       the correct paths, and a custom implementation is provided for other platforms.
-  :sha: '08dd3d3634acd8fe481a8a0fdce1d0424b9059faa6abc5f2964ad1f697f3edb8'
-  :github_stars: 0
+  :sha: 5503ef49dee17e6deb50a04650002a32c7a2c84e3d5b9e63819c735e00b057a5
+  :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 2
 fastlane-plugin-flutter_version_manager:
   :initial_commit: 2020-09-01
   :age_in_days: 3
@@ -10359,21 +10359,26 @@ fastlane-plugin-flutter_dart_version_manager:
   :github_contributors: 0
 fastlane-plugin-creator:
   :initial_commit: 2021-03-04
-  :age_in_days: 4
-  :readme_score: 50
-  :tests: 1
+  :age_in_days: 102
+  :readme_score: 100
+  :tests: 0
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: creator
+    name: creator_build_android
     category:
-    description: Mobile build framework for rust-lang
-    details: Mobile build framework for rust-lang
-  :sha: 76ece2fe79023b32b249f6666a88b792276a66771e531da1b5b1ed1379f423d7
+    description: Builds apk file from rust project
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: creator_build_ios
+    category:
+    description: Builds ipa file from rust project
+    details:
+  :sha: d33e72fd13984a3a4506d65b43e24496bafe9c1e6586607cd4a75a8e7dee1508
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-taiwan_number_one:
   :initial_commit: 2021-03-03
   :age_in_days: 48
@@ -10600,16 +10605,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 1062
+  :age_in_days: 1070
   :readme_score: 100
-  :tests: 128
+  :tests: 136
   :actions: []
-  :sha: 0e3c902a1cef32dafcdc423ceba5479a1a248f9555ad040fee1f189b65528c6f
+  :sha: 9739c8a7d399ab8c8b73d197ec09979b256d4de98d1c778d675c1f94719239f5
   :github_stars: 17
   :github_subscribers: 17
-  :github_issues: 25
+  :github_issues: 24
   :github_forks: 6
-  :github_contributors: 9
+  :github_contributors: 0
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
   :age_in_days: 13
