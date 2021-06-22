@@ -16,6 +16,14 @@ Navigate your terminal to your project's directory and run
 fastlane init
 ```
 
+Note that if you want to create your first app on AppStore Connect account, you need to set developer name (`company_name`) with `PRODUCE_COMPANY_NAME` environment variable:
+
+```no-highlight
+PRODUCE_COMPANY_NAME="YOUR COMPANY NAME" fastlane init
+```
+
+To get more information check `company_name` description in the [Create app documentation](http://docs.fastlane.tools/actions/create_app_online/#parameters_1).
+
 To have your `Fastfile` configuration written in Swift (Beta)
 
 ```no-highlight
