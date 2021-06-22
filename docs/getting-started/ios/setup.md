@@ -16,7 +16,7 @@ Navigate your terminal to your project's directory and run
 fastlane init
 ```
 
-Note that if you want to create your first app on AppStore Connect account, you need to set developer name (`company_name`) with `PRODUCE_COMPANY_NAME` environment variable:
+Note that if you want to create your first app on your App Store Connect account, you need to set the developer name (`company_name`) with `PRODUCE_COMPANY_NAME` environment variable:
 
 ```no-highlight
 PRODUCE_COMPANY_NAME="YOUR COMPANY NAME" fastlane init
