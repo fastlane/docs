@@ -22,7 +22,7 @@ Note that if you want to create your first app on your App Store Connect account
 PRODUCE_COMPANY_NAME="YOUR COMPANY NAME" fastlane init
 ```
 
-To get more information check `company_name` description in the [Create app documentation](http://docs.fastlane.tools/actions/create_app_online/#parameters_1).
+To get more information check `company_name` description in the [Create app documentation](/actions/create_app_online/#parameters_1).
 
 To have your `Fastfile` configuration written in Swift (Beta)
 
