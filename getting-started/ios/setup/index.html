@@ -1407,6 +1407,11 @@ See <a href="https://formulae.brew.sh/formula/fastlane">this page</a> for detail
 <pre><code class="no-highlight">fastlane init
 </code></pre>
 
+<p>Note that if you want to create your first app on your App Store Connect account, you need to set the developer name (<code>company_name</code>) with <code>PRODUCE_COMPANY_NAME</code> environment variable:</p>
+<pre><code class="no-highlight">PRODUCE_COMPANY_NAME=&quot;YOUR COMPANY NAME&quot; fastlane init
+</code></pre>
+
+<p>To get more information check <code>company_name</code> description in the <a href="../../../actions/create_app_online/#parameters_1">Create app documentation</a>.</p>
 <p>To have your <code>Fastfile</code> configuration written in Swift (Beta)</p>
 <pre><code class="no-highlight">fastlane init swift
 </code></pre>
