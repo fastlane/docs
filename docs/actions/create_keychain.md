@@ -46,7 +46,7 @@ Key | Description | Default
   `password` | Password for the keychain | 
   `default_keychain` | Should the newly created Keychain be the new system default keychain | `false`
   `unlock` | Unlock keychain after create | `false`
-  `timeout` | timeout interval in seconds. Set `false` if you want to specify "no time-out" | `300`
+  `timeout` | timeout interval in seconds | `300`
   `lock_when_sleeps` | Lock keychain when the system sleeps | `false`
   `lock_after_timeout` | Lock keychain after timeout interval | `false`
   `add_to_search_list` | Add keychain to search list | `true`
