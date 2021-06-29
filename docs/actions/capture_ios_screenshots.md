@@ -15,7 +15,7 @@ Generate new localized screenshots on multiple devices (via _snapshot_)
   <img src="/img/actions/snapshot.png" width="250">
 </p>
 
-###### Automate taking localized screenshots of your iOS and tvOS apps on every device
+###### Automate taking localized screenshots of your iOS, tvOS, and watchOS apps on every device
 
 <hr />
 <h4 align="center">
@@ -23,7 +23,7 @@ Generate new localized screenshots on multiple devices (via _snapshot_)
 </h4>
 <hr />
 
-_snapshot_ generates localized iOS and tvOS screenshots for different device types and languages for the App Store and can be uploaded using ([_deliver_](https://docs.fastlane.tools/actions/deliver/)).
+_snapshot_ generates localized iOS, tvOS, and watchOS screenshots for different device types and languages for the App Store and can be uploaded using ([_deliver_](https://docs.fastlane.tools/actions/deliver/)).
 
 You have to manually create 20 (languages) x 6 (devices) x 5 (screenshots) = **600 screenshots**.
 
