@@ -63,7 +63,7 @@ Key | Description | Default
 ----|-------------|--------
   `path` | Path to the keychain file | `login`
   `password` | Keychain password | 
-  `add_to_search_list` | Add to keychain search list | `true`
+  `add_to_search_list` | Add to keychain search list, valid values are true, false, :add, and :replace | `true`
   `set_default` | Set as default keychain | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

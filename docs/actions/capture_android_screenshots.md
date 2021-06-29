@@ -42,7 +42,7 @@ gem install fastlane
 androidTestImplementation 'tools.fastlane:screengrab:x.x.x'
 ```
 
-The latest version is [ ![Download](https://api.bintray.com/packages/fastlane/fastlane/screengrab/images/download.svg) ](https://bintray.com/fastlane/fastlane/screengrab/_latestVersion)
+The latest version is [ ![Download](https://maven-badges.herokuapp.com/maven-central/tools.fastlane/screengrab/badge.svg)](https://search.maven.org/artifact/tools.fastlane/screengrab)
 
 As of Screengrab version 2.0.0, all Android test dependencies are AndroidX dependencies. This means a device with API 18+, Android 4.3 or greater is required. If you wish to capture screenshots with an older Android OS, then you must use a 1.x.x version.
 
@@ -51,21 +51,28 @@ As of Screengrab version 2.0.0, all Android test dependencies are AndroidX depen
 Ensure that the following permissions exist in your **src/debug/AndroidManifest.xml**
 
 ```xml
-<!-- Allows unlocking your device and activating its screen so UI tests can succeed -->
-<uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
-<uses-permission android:name="android.permission.WAKE_LOCK"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
 
-<!-- Allows for storing and retrieving screenshots -->
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Allows storing screenshots on external storage, where it can be accessed by ADB -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
 
-<!-- Allows changing locales -->
-<uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <!-- Allows changing locales -->
+    <uses-permission
+            android:name="android.permission.CHANGE_CONFIGURATION"
+            tools:ignore="ProtectedPermissions" />
+
+    <!-- Allows changing SystemUI demo mode -->
+    <uses-permission
+            android:name="android.permission.DUMP"
+            tools:ignore="ProtectedPermissions" />
+
+</manifest>
 ```
 
 ##### Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots
 
-1. Add `LocaleTestRule` to your tests class to handle automatic switching of locales.  
+1. Add `LocaleTestRule` to your tests class to handle automatic switching of locales.
    If you're using Java use:
    ```java
    @ClassRule
@@ -76,7 +83,7 @@ Ensure that the following permissions exist in your **src/debug/AndroidManifest.
    @Rule @JvmField
    val localeTestRule = LocaleTestRule()
    ```
-   Important is the `@JvmField` annotation. It won't work like that:
+   The `@JvmField` annotation is important. It won't work like this:
    ```kotlin
    companion object {
        @get:ClassRule
@@ -92,7 +99,7 @@ Ensure that the following permissions exist in your **src/debug/AndroidManifest.
   - You can also create a lane and use `build_android_app`:
     ```ruby
     desc "Build debug and test APK for screenshots"
-    lane :build_for_screengrab do
+    lane :build_and_screengrab do
       build_android_app(
         task: 'assemble',
         build_type: 'Debug'
@@ -101,6 +108,7 @@ Ensure that the following permissions exist in your **src/debug/AndroidManifest.
         task: 'assemble',
         build_type: 'AndroidTest'
       )
+      screengrab()
     end
     ```
 - Once complete run `fastlane screengrab` in your app project directory to generate screenshots
@@ -176,7 +184,7 @@ public class JUnit4StyleTests {
     public static final LocaleTestRule localeTestRule = new LocaleTestRule();
 
     @Rule
-    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityScenarioRule<MainActivity> activityRule = new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
     public void testTakeScreenshot() {
@@ -194,7 +202,7 @@ Kotlin:
 @RunWith(JUnit4.class)
 class JUnit4StyleTests {
     @get:Rule
-    var activityRule = ActivityTestRule(MainActivity::class.java)
+    var activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Rule @JvmField
     val localeTestRule = LocaleTestRule()
@@ -221,22 +229,13 @@ When using JUnit 3 you'll need to add a bit more code:
 - Use `LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getEndingLocale());` in `tearDown()`
 - Use `Screengrab.screenshot("name_of_screenshot_here");` to capture screenshots at the appropriate points in your tests
 
-If you're having trouble getting your device unlocked and the screen activated to run tests, try using `ScreenUtil.activateScreenForTesting(activity);` in your test setup.
-
 ## Clean Status Bar
 
-Screengrab can clean your status bar to make your screenshots even more beautiful.  
+Screengrab can clean your status bar to make your screenshots even more beautiful.
+It is simply a wrapper that allows configuring SystemUI DemoMode in your code.
 Note: the clean status bar feature is only supported on devices with *API level >= 23*.
 
-To use the clean status bar feature add the following lines to your src/debug/AndroidManifest.xml
-```xml
-<!-- Indicates the use of the clean status bar feature -->
-<uses-feature android:name="tools.fastlane.screengrab.cleanstatusbar"/>
-<!-- Allows for changing the status bar -->
-<uses-permission android:name="android.permission.DUMP"/>
-```
-
-After that you can enable and disable the clean status bar at any moment during your tests.  
+You can enable and disable the clean status bar at any moment during your tests.
 In most cases you probably want to do this in the @BeforeClass and @AfterClass methods.
 ```java
 @BeforeClass
@@ -250,7 +249,7 @@ public static void afterAll() {
 }
 ```
 
-Have a look at the methods of the `CleanStatusBar` class to customize the status bar even more.  
+Have a look at the methods of the `CleanStatusBar` class to customize the status bar even more.
 You could for example show the Bluetooth icon and the LTE text.
 ```java
 new CleanStatusBar()
@@ -383,7 +382,7 @@ capture_android_screenshots(
 Key | Description | Default
 ----|-------------|--------
   `android_home` | Path to the root of your Android SDK installation, e.g. ~/tools/android-sdk-macosx | [*](#parameters-legend-dynamic)
-  `build_tools_version` | The Android build tools version to use, e.g. '23.0.2' | 
+  `build_tools_version` | **DEPRECATED!** The Android build tools version to use, e.g. '23.0.2' | 
   `locales` | A list of locales which should be used | `["en-US"]`
   `clear_previous_screenshots` | Enabling this option will automatically clear previously generated screenshots before running screengrab | `false`
   `output_directory` | The directory where to store the screenshots | `fastlane/metadata/android`
@@ -394,8 +393,8 @@ Key | Description | Default
   `use_tests_in_classes` | Only run tests in these Java classes | 
   `launch_arguments` | Additional launch arguments | 
   `test_instrumentation_runner` | The fully qualified class name of your test instrumentation runner | `androidx.test.runner.AndroidJUnitRunner`
-  `ending_locale` | Return the device to this locale after running tests | `en-US`
-  `use_adb_root` | Restarts the adb daemon using `adb root` to allow access to screenshots directories on device. Use if getting 'Permission denied' errors | `false`
+  `ending_locale` | **DEPRECATED!** Return the device to this locale after running tests | `en-US`
+  `use_adb_root` | **DEPRECATED!** Restarts the adb daemon using `adb root` to allow access to screenshots directories on device. Use if getting 'Permission denied' errors | `false`
   `app_apk_path` | The path to the APK for the app under test | [*](#parameters-legend-dynamic)
   `tests_apk_path` | The path to the APK for the the tests bundle | [*](#parameters-legend-dynamic)
   `specific_device` | Use the device or emulator with the given serial number or qualifier | 

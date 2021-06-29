@@ -24,7 +24,7 @@ Author | @JaviSoto, @KrauseFx
 ## 1 Example
 
 ```ruby
-ensure_xcode_version(version: "7.2")
+ensure_xcode_version(version: "12.5")
 ```
 
 
