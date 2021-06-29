@@ -1417,7 +1417,7 @@ Options for create:
   -y, --sku STRING     SKU Number (e.g. '1234') (PRODUCE_SKU)
   -j, --platform STRING The platform to use (optional) (PRODUCE_PLATFORM)
   -m, --language STRING Primary Language (e.g. 'English', 'German') (PRODUCE_LANGUAGE)
-  -c, --company_name STRING The name of your company. Only required if it's the first app you create (PRODUCE_COMPANY_NAME)
+  -c, --company_name STRING The name of your company. It's used to set company name on App Store Connect team's app pages. Only required if it's the first app you create (PRODUCE_COMPANY_NAME)
   -i, --skip_itc [VALUE] Skip the creation of the app on App Store Connect (PRODUCE_SKIP_ITC)
   -d, --skip_devcenter [VALUE] Skip the creation of the app on the Apple Developer Portal (PRODUCE_SKIP_DEVCENTER)
   -s, --itc_users ARRAY Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles (ITC_USERS)
@@ -1461,53 +1461,123 @@ Options for create:
 <pre><code class="no-highlight">fastlane produce enable_services --help
 </code></pre>
 
-<pre><code class="no-highlight">--app-group          Enable App Groups
---apple-pay          Enable Apple Pay
---associated-domains Enable Associated Domains
---data-protection STRING Enable Data Protection, suitable values are &quot;complete&quot;, &quot;unlessopen&quot; and &quot;untilfirstauth&quot;
---game-center        Enable Game Center
---healthkit          Enable HealthKit
---homekit            Enable HomeKit
---hotspot            Enable Hotspot
---icloud STRING      Enable iCloud, suitable values are &quot;legacy&quot; and &quot;cloudkit&quot;
---in-app-purchase    Enable In-App Purchase
---inter-app-audio    Enable Inter-App-Audio
---multipath          Enable Multipath
---network-extension  Enable Network Extensions
---nfc-tag-reading    Enable NFC Tag Reading
---personal-vpn       Enable Personal VPN
---passbook           Enable Passbook (deprecated)
---push-notification  Enable Push notification (only enables the service, does not configure certificates)
---sirikit            Enable SiriKit
---vpn-conf           Enable VPN Configuration (deprecated)
---wallet             Enable Wallet
---wireless-conf      Enable Wireless Accessory Configuration
+<pre><code class="no-highlight">--access-wifi                         Enable Access Wifi
+--app-attest                          Enable App Attest
+--app-group                           Enable App Group
+--apple-pay                           Enable Apple Pay
+--associated-domains                  Enable Associated Domains
+--auto-fill-credential                Enable Auto Fill Credential
+--class-kit                           Enable Class Kit
+--icloud STRING                        Enable iCloud, suitable values are &quot;xcode5_compatible&quot; and &quot;xcode6_compatible&quot;
+--custom-network-protocol             Enable Custom Network Protocol
+--data-protection STRING              Enable Data Protection, suitable values are &quot;complete&quot;, &quot;unlessopen&quot; and &quot;untilfirstauth&quot;
+--extended-virtual-address-space      Enable Extended Virtual Address Space
+--game-center STRING                  Enable Game Center, suitable values are &quot;ios&quot; and &quot;macos
+--health-kit                          Enable Health Kit
+--hls-interstitial-preview            Enable Hls Interstitial Preview
+--home-kit                            Enable Home Kit
+--hotspot                             Enable Hotspot
+--in-app-purchase                     Enable In App Purchase
+--inter-app-audio                     Enable Inter App Audio
+--low-latency-hls                     Enable Low Latency Hls
+--managed-associated-domains          Enable Managed Associated Domains
+--maps                                Enable Maps
+--multipath                           Enable Multipath
+--network-extension                   Enable Network Extension
+--nfc-tag-reading                     Enable NFC Tag Reading
+--personal-vpn                        Enable Personal VPN
+--passbook                            Enable Passbook (deprecated)
+--push-notification                   Enable Push Notification
+--sign-in-with-apple                  Enable Sign In With Apple
+--siri-kit                            Enable Siri Kit
+--system-extension                    Enable System Extension
+--user-management                     Enable User Management
+--vpn-configuration                   Enable Vpn Configuration (deprecated)
+--wallet                              Enable Wallet
+--wireless-accessory                  Enable Wireless Accessory
+--car-play-audio-app                  Enable Car Play Audio App
+--car-play-messaging-app              Enable Car Play Messaging App
+--car-play-navigation-app             Enable Car Play Navigation App
+--car-play-voip-calling-app           Enable Car Play Voip Calling App
+--critical-alerts                     Enable Critical Alerts
+--hotspot-helper                      Enable Hotspot Helper
+--driver-kit                          Enable DriverKit
+--driver-kit-endpoint-security        Enable DriverKit Endpoint Security
+--driver-kit-family-hid-device        Enable DriverKit Family HID Device
+--driver-kit-family-networking        Enable DriverKit Family Networking
+--driver-kit-family-serial            Enable DriverKit Family Serial
+--driver-kit-hid-event-service        Enable DriverKit HID EventService
+--driver-kit-transport-hid            Enable DriverKit Transport HID
+--multitasking-camera-access          Enable Multitasking Camera Access
+--sf-universal-link-api               Enable SFUniversalLink API
+--vp9-decoder                         Enable VP9 Decoder
+--music-kit                           Enable MusicKit
+--shazam-kit                          Enable ShazamKit
+--communication-notifications         Enable Communication Notifications
+--group-activities                    Enable Group Activities
+--health-kit-estimate-recalibration   Enable HealthKit Estimate Recalibration
+--time-sensitive-notifications        Enable Time Sensitive Notifications
 </code></pre>
 
 <pre><code class="no-highlight">fastlane produce disable_services --help
 </code></pre>
 
-<pre><code class="no-highlight">--app-group          Disable App Groups
---apple-pay          Disable Apple Pay
---associated-domains Disable Associated Domains
---data-protection    Disable Data Protection
---game-center        Disable Game Center
---healthkit          Disable HealthKit
---homekit            Disable HomeKit
---hotspot            Disable Hotspot
---icloud             Disable iCloud
---in-app-purchase    Disable In-App Purchase
---inter-app-audio    Disable Inter-App-Audio
---multipath          Disable Multipath
---network-extension  Disable Network Extensions
---nfc-tag-reading    Disable NFC Tag Reading
---personal-vpn       Disable Personal VPN
---passbook           Disable Passbook (deprecated)
---push-notification  Disable Push notifications
---sirikit            Disable SiriKit
---vpn-conf           Disable VPN Configuration (deprecated)
---wallet             Disable Wallet
---wireless-conf      Disable Wireless Accessory Configuration
+<pre><code class="no-highlight">--access-wifi                         Disable Access Wifi
+--app-attest                          Disable App Attest
+--app-group                           Disable App Group
+--apple-pay                           Disable Apple Pay
+--associated-domains                  Disable Associated Domains
+--auto-fill-credential                Disable Auto Fill Credential
+--class-kit                           Disable Class Kit
+--icloud STRING                        Disable iCloud
+--custom-network-protocol             Disable Custom Network Protocol
+--data-protection STRING              Disable Data Protection
+--extended-virtual-address-space      Disable Extended Virtual Address Space
+--game-center STRING                  Disable Game Center
+--health-kit                          Disable Health Kit
+--hls-interstitial-preview            Disable Hls Interstitial Preview
+--home-kit                            Disable Home Kit
+--hotspot                             Disable Hotspot
+--in-app-purchase                     Disable In App Purchase
+--inter-app-audio                     Disable Inter App Audio
+--low-latency-hls                     Disable Low Latency Hls
+--managed-associated-domains          Disable Managed Associated Domains
+--maps                                Disable Maps
+--multipath                           Disable Multipath
+--network-extension                   Disable Network Extension
+--nfc-tag-reading                     Disable NFC Tag Reading
+--personal-vpn                        Disable Personal VPN
+--passbook                            Disable Passbook (deprecated)
+--push-notification                   Disable Push Notification
+--sign-in-with-apple                  Disable Sign In With Apple
+--siri-kit                            Disable Siri Kit
+--system-extension                    Disable System Extension
+--user-management                     Disable User Management
+--vpn-configuration                   Disable Vpn Configuration (deprecated)
+--wallet                              Disable Wallet
+--wireless-accessory                  Disable Wireless Accessory
+--car-play-audio-app                  Disable Car Play Audio App
+--car-play-messaging-app              Disable Car Play Messaging App
+--car-play-navigation-app             Disable Car Play Navigation App
+--car-play-voip-calling-app           Disable Car Play Voip Calling App
+--critical-alerts                     Disable Critical Alerts
+--hotspot-helper                      Disable Hotspot Helper
+--driver-kit                          Disable DriverKit
+--driver-kit-endpoint-security        Disable DriverKit Endpoint Security
+--driver-kit-family-hid-device        Disable DriverKit Family HID Device
+--driver-kit-family-networking        Disable DriverKit Family Networking
+--driver-kit-family-serial            Disable DriverKit Family Serial
+--driver-kit-hid-event-service        Disable DriverKit HID EventService
+--driver-kit-transport-hid            Disable DriverKit Transport HID
+--multitasking-camera-access          Disable Multitasking Camera Access
+--sf-universal-link-api               Disable SFUniversalLink API
+--vp9-decoder                         Disable VP9 Decoder
+--music-kit                           Disable MusicKit
+--shazam-kit                          Disable ShazamKit
+--communication-notifications         Disable Communication Notifications
+--group-activities                    Disable Group Activities
+--health-kit-estimate-recalibration   Disable HealthKit Estimate Recalibration
+--time-sensitive-notifications        Disable Time Sensitive Notifications
 </code></pre>
 
 <h2 id="creating-apple-pay-merchants-and-associating-them-with-an-app-id"><a name="user-content-creating-apple-pay-merchants-and-associating-them-with-an-app-id" href="#creating-apple-pay-merchants-and-associating-them-with-an-app-id" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Creating Apple Pay merchants and associating them with an App ID</h2>
@@ -1548,30 +1618,64 @@ Options for create:
     # Optional
     # App services can be enabled during app creation
     enable_services: {
-      access_wifi: &quot;on&quot;,             # Valid values: &quot;on&quot;, &quot;off&quot;
-      app_group: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
-      apple_pay: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
-      associated_domains: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
-      auto_fill_credential: &quot;on&quot;,    # Valid values: &quot;on&quot;, &quot;off&quot;
-      data_protection: &quot;complete&quot;,   # Valid values: &quot;complete&quot;, &quot;unlessopen&quot;, &quot;untilfirstauth&quot;,
-      game_center: &quot;on&quot;,             # Valid values: &quot;on&quot;, &quot;off&quot;
-      health_kit: &quot;on&quot;,              # Valid values: &quot;on&quot;, &quot;off&quot;
-      home_kit: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
-      hotspot: &quot;on&quot;,                 # Valid values: &quot;on&quot;, &quot;off&quot;
-      icloud: &quot;cloudkit&quot;,            # Valid values: &quot;legacy&quot;, &quot;cloudkit&quot;
-      in_app_purchase: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
-      inter_app_audio: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
-      passbook: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
-      multipath: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
-      network_extension: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
-      nfc_tag_reading: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
-      personal_vpn: &quot;on&quot;,            # Valid values: &quot;on&quot;, &quot;off&quot;
-      passbook: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot; (deprecated)
-      push_notification: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
-      siri_kit: &quot;on&quot;,                # Valid values: &quot;on&quot;, &quot;off&quot;
-      vpn_configuration: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot; (deprecated)
-      wallet: &quot;on&quot;,                  # Valid values: &quot;on&quot;, &quot;off&quot;
-      wireless_accessory: &quot;on&quot;,      # Valid values: &quot;on&quot;, &quot;off&quot;
+      access_wifi: &quot;on&quot;,                        # Valid values: &quot;on&quot;, &quot;off&quot;
+      app_attest: &quot;on&quot;,                         # Valid values: &quot;on&quot;, &quot;off&quot;
+      app_group: &quot;on&quot;,                          # Valid values: &quot;on&quot;, &quot;off&quot;
+      apple_pay: &quot;on&quot;,                          # Valid values: &quot;on&quot;, &quot;off&quot;
+      associated_domains: &quot;on&quot;,                 # Valid values: &quot;on&quot;, &quot;off&quot;
+      auto_fill_credential: &quot;on&quot;,               # Valid values: &quot;on&quot;, &quot;off&quot;
+      car_play_audio_app: &quot;on&quot;,                 # Valid values: &quot;on&quot;, &quot;off&quot;
+      car_play_messaging_app: &quot;on&quot;,             # Valid values: &quot;on&quot;, &quot;off&quot;
+      car_play_navigation_app: &quot;on&quot;,            # Valid values: &quot;on&quot;, &quot;off&quot;
+      car_play_voip_calling_app: &quot;on&quot;,          # Valid values: &quot;on&quot;, &quot;off&quot;
+      class_kit: &quot;on&quot;,                          # Valid values: &quot;on&quot;, &quot;off&quot;
+      icloud: &quot;xcode5_compatible&quot;,              # Valid values: &quot;xcode5_compatible&quot;, &quot;xcode6_compatible&quot;, &quot;off&quot;
+      critical_alerts: &quot;on&quot;,                    # Valid values: &quot;on&quot;, &quot;off&quot;
+      custom_network_protocol: &quot;on&quot;,            # Valid values: &quot;on&quot;, &quot;off&quot;
+      data_protection: &quot;complete&quot;,              # Valid values: &quot;complete&quot;, &quot;unlessopen&quot;, &quot;untilfirstauth&quot;, &quot;off&quot;
+      extended_virtual_address_space: &quot;on&quot;,     # Valid values: &quot;on&quot;, &quot;off&quot;
+      file_provider_testing_mode: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
+      fonts: &quot;on&quot;,                              # Valid values: &quot;on&quot;, &quot;off&quot;
+      game_center: &quot;ios&quot;,                       # Valid values: &quot;ios&quot;, &quot;macos&quot;, off&quot;
+      health_kit: &quot;on&quot;,                         # Valid values: &quot;on&quot;, &quot;off&quot;
+      hls_interstitial_preview: &quot;on&quot;,           # Valid values: &quot;on&quot;, &quot;off&quot;
+      home_kit: &quot;on&quot;,                           # Valid values: &quot;on&quot;, &quot;off&quot;
+      hotspot: &quot;on&quot;,                            # Valid values: &quot;on&quot;, &quot;off&quot;
+      hotspot_helper: &quot;on&quot;,                     # Valid values: &quot;on&quot;, &quot;off&quot;
+      in_app_purchase: &quot;on&quot;,                    # Valid values: &quot;on&quot;, &quot;off&quot;
+      inter_app_audio: &quot;on&quot;,                    # Valid values: &quot;on&quot;, &quot;off&quot;
+      low_latency_hls: &quot;on&quot;,                    # Valid values: &quot;on&quot;, &quot;off&quot;
+      managed_associated_domains: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
+      maps: &quot;on&quot;,                               # Valid values: &quot;on&quot;, &quot;off&quot;
+      multipath: &quot;on&quot;,                          # Valid values: &quot;on&quot;, &quot;off&quot;
+      network_extension: &quot;on&quot;,                  # Valid values: &quot;on&quot;, &quot;off&quot;
+      nfc_tag_reading: &quot;on&quot;,                    # Valid values: &quot;on&quot;, &quot;off&quot;
+      passbook: &quot;on&quot;,                           # Valid values: &quot;on&quot;, &quot;off&quot; (deprecated)
+      personal_vpn: &quot;on&quot;,                       # Valid values: &quot;on&quot;, &quot;off&quot;
+      push_notification: &quot;on&quot;,                  # Valid values: &quot;on&quot;, &quot;off&quot;
+      sign_in_with_apple: &quot;on&quot;,                 # Valid values: &quot;on&quot;, &quot;off&quot;
+      siri_kit: &quot;on&quot;,                           # Valid values: &quot;on&quot;, &quot;off&quot;
+      system_extension: &quot;on&quot;,                   # Valid values: &quot;on&quot;, &quot;off&quot;
+      user_management: &quot;on&quot;,                    # Valid values: &quot;on&quot;, &quot;off&quot;
+      vpn_configuration: &quot;on&quot;,                  # Valid values: &quot;on&quot;, &quot;off&quot; (deprecated)
+      wallet: &quot;on&quot;,                             # Valid values: &quot;on&quot;, &quot;off&quot;
+      wireless_accessory: &quot;on&quot;,                 # Valid values: &quot;on&quot;, &quot;off&quot;
+      driver_kit: &quot;on&quot;,                         # Valid values: &quot;on&quot;, &quot;off&quot;
+      driver_kit_endpoint_security: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
+      driver_kit_family_hid_device: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
+      driver_kit_family_networking: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
+      driver_kit_family_serial: &quot;on&quot;,           # Valid values: &quot;on&quot;, &quot;off&quot;
+      driver_kit_hid_event_service: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
+      driver_kit_transport_hid: &quot;on&quot;,           # Valid values: &quot;on&quot;, &quot;off&quot;
+      multitasking_camera_access: &quot;on&quot;,         # Valid values: &quot;on&quot;, &quot;off&quot;
+      sf_universal_link_api: &quot;on&quot;,              # Valid values: &quot;on&quot;, &quot;off&quot;
+      vp9_decoder: &quot;on&quot;,                        # Valid values: &quot;on&quot;, &quot;off&quot;
+      music_kit: &quot;on&quot;,                          # Valid values: &quot;on&quot;, &quot;off&quot;
+      shazam_kit: &quot;on&quot;,                         # Valid values: &quot;on&quot;, &quot;off&quot;
+      communication_notifications: &quot;on&quot;,        # Valid values: &quot;on&quot;, &quot;off&quot;
+      group_activities: &quot;on&quot;,                   # Valid values: &quot;on&quot;, &quot;off&quot;
+      health_kit_estimate_recalibration: &quot;on&quot;,  # Valid values: &quot;on&quot;, &quot;off&quot;
+      time_sensitive_notifications: &quot;on&quot;,       # Valid values: &quot;on&quot;, &quot;off&quot;
     }
   )
 
@@ -1679,7 +1783,7 @@ end
 </tr>
 <tr>
 <td><code>company_name</code></td>
-<td>The name of your company. Only required if it's the first app you create</td>
+<td>The name of your company. It's used to set company name on App Store Connect team's app pages. Only required if it's the first app you create</td>
 <td></td>
 </tr>
 <tr>
@@ -1699,7 +1803,7 @@ end
 </tr>
 <tr>
 <td><code>enable_services</code></td>
-<td>Array with Spaceship App Services (e.g. access_wifi: (on|off), app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), auto_fill_credential: (on|off), data_protection: (complete|unlessopen|untilfirstauth), game_center: (on|off), health_kit: (on|off), home_kit: (on|off), hotspot: (on|off), icloud: (legacy|cloudkit), in_app_purchase: (on|off), inter_app_audio: (on|off), multipath: (on|off), network_extension: (on|off), nfc_tag_reading: (on|off), personal_vpn: (on|off), passbook: (on|off), push_notification: (on|off), siri_kit: (on|off), vpn_configuration: (on|off), wallet: (on|off), wireless_accessory: (on|off))</td>
+<td>Array with Spaceship App Services (e.g. access_wifi: (on|off), app_attest: (on|off), app_group: (on|off), apple_pay: (on|off), associated_domains: (on|off), auto_fill_credential: (on|off), class_kit: (on|off), icloud: (legacy|cloudkit), custom_network_protocol: (on|off), data_protection: (complete|unlessopen|untilfirstauth), extended_virtual_address_space: (on|off), family_controls: (on|off), file_provider_testing_mode: (on|off), fonts: (on|off), game_center: (ios|mac), health_kit: (on|off), hls_interstitial_preview: (on|off), home_kit: (on|off), hotspot: (on|off), in_app_purchase: (on|off), inter_app_audio: (on|off), low_latency_hls: (on|off), managed_associated_domains: (on|off), maps: (on|off), multipath: (on|off), network_extension: (on|off), nfc_tag_reading: (on|off), personal_vpn: (on|off), passbook: (on|off), push_notification: (on|off), sign_in_with_apple: (on), siri_kit: (on|off), system_extension: (on|off), user_management: (on|off), vpn_configuration: (on|off), wallet: (on|off), wireless_accessory: (on|off), car_play_audio_app: (on|off), car_play_messaging_app: (on|off), car_play_navigation_app: (on|off), car_play_voip_calling_app: (on|off), critical_alerts: (on|off), hotspot_helper: (on|off), driver_kit: (on|off), driver_kit_endpoint_security: (on|off), driver_kit_family_hid_device: (on|off), driver_kit_family_networking: (on|off), driver_kit_family_serial: (on|off), driver_kit_hid_event_service: (on|off), driver_kit_transport_hid: (on|off), multitasking_camera_access: (on|off), sf_universal_link_api: (on|off), vp9_decoder: (on|off), music_kit: (on|off), shazam_kit: (on|off), communication_notifications: (on|off), group_activities: (on|off), health_kit_estimate_recalibration: (on|off), time_sensitive_notifications: (on|off))</td>
 <td><code>{}</code></td>
 </tr>
 <tr>

@@ -1381,25 +1381,32 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="java">androidTestImplementation 'tools.fastlane:screengrab:x.x.x'
 </code></pre>
 
-<p>The latest version is <a href="https://bintray.com/fastlane/fastlane/screengrab/_latestVersion"> <img alt="Download" src="https://api.bintray.com/packages/fastlane/fastlane/screengrab/images/download.svg" /> </a></p>
+<p>The latest version is <a href="https://search.maven.org/artifact/tools.fastlane/screengrab"> <img alt="Download" src="https://maven-badges.herokuapp.com/maven-central/tools.fastlane/screengrab/badge.svg" /></a></p>
 <p>As of Screengrab version 2.0.0, all Android test dependencies are AndroidX dependencies. This means a device with API 18+, Android 4.3 or greater is required. If you wish to capture screenshots with an older Android OS, then you must use a 1.x.x version.</p>
 <h5 id="configuring-your-manifest-permissions"><a name="user-content-configuring-your-manifest-permissions" href="#configuring-your-manifest-permissions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your Manifest Permissions</h5>
 <p>Ensure that the following permissions exist in your <strong>src/debug/AndroidManifest.xml</strong></p>
-<pre><code class="xml">&lt;!-- Allows unlocking your device and activating its screen so UI tests can succeed --&gt;
-&lt;uses-permission android:name=&quot;android.permission.DISABLE_KEYGUARD&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;/&gt;
+<pre><code class="xml">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;
 
-&lt;!-- Allows for storing and retrieving screenshots --&gt;
-&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
-&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;
+    &lt;!-- Allows storing screenshots on external storage, where it can be accessed by ADB --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; android:maxSdkVersion=&quot;18&quot; /&gt;
 
-&lt;!-- Allows changing locales --&gt;
-&lt;uses-permission android:name=&quot;android.permission.CHANGE_CONFIGURATION&quot; /&gt;
+    &lt;!-- Allows changing locales --&gt;
+    &lt;uses-permission
+            android:name=&quot;android.permission.CHANGE_CONFIGURATION&quot;
+            tools:ignore=&quot;ProtectedPermissions&quot; /&gt;
+
+    &lt;!-- Allows changing SystemUI demo mode --&gt;
+    &lt;uses-permission
+            android:name=&quot;android.permission.DUMP&quot;
+            tools:ignore=&quot;ProtectedPermissions&quot; /&gt;
+
+&lt;/manifest&gt;
 </code></pre>
 
 <h5 id="configuring-your-ui-tests-for-screenshots"><a name="user-content-configuring-your-ui-tests-for-screenshots" href="#configuring-your-ui-tests-for-screenshots" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots</h5>
 <ol>
-<li>Add <code>LocaleTestRule</code> to your tests class to handle automatic switching of locales.<br />
+<li>Add <code>LocaleTestRule</code> to your tests class to handle automatic switching of locales.
    If you're using Java use:
    <code>java
    @ClassRule
@@ -1408,7 +1415,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
    <code>kotlin
    @Rule @JvmField
    val localeTestRule = LocaleTestRule()</code>
-   Important is the <code>@JvmField</code> annotation. It won't work like that:
+   The <code>@JvmField</code> annotation is important. It won't work like this:
    <code>kotlin
    companion object {
        @get:ClassRule
@@ -1425,7 +1432,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>You can also create a lane and use <code>build_android_app</code>:
   <code>ruby
   desc "Build debug and test APK for screenshots"
-  lane :build_for_screengrab do
+  lane :build_and_screengrab do
     build_android_app(
       task: 'assemble',
       build_type: 'Debug'
@@ -1434,6 +1441,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
       task: 'assemble',
       build_type: 'AndroidTest'
     )
+    screengrab()
   end</code></li>
 </ul>
 </li>
@@ -1496,7 +1504,7 @@ public class JUnit4StyleTests {
     public static final LocaleTestRule localeTestRule = new LocaleTestRule();
 
     @Rule
-    public ActivityTestRule&lt;MainActivity&gt; activityRule = new ActivityTestRule&lt;&gt;(MainActivity.class);
+    public ActivityScenarioRule&lt;MainActivity&gt; activityRule = new ActivityScenarioRule&lt;&gt;(MainActivity.class);
 
     @Test
     public void testTakeScreenshot() {
@@ -1514,7 +1522,7 @@ public class JUnit4StyleTests {
 <pre><code class="kotlin">@RunWith(JUnit4.class)
 class JUnit4StyleTests {
     @get:Rule
-    var activityRule = ActivityTestRule(MainActivity::class.java)
+    var activityRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Rule @JvmField
     val localeTestRule = LocaleTestRule()
@@ -1539,18 +1547,11 @@ class JUnit4StyleTests {
 <li>Use <code>LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getEndingLocale());</code> in <code>tearDown()</code></li>
 <li>Use <code>Screengrab.screenshot("name_of_screenshot_here");</code> to capture screenshots at the appropriate points in your tests</li>
 </ul>
-<p>If you're having trouble getting your device unlocked and the screen activated to run tests, try using <code>ScreenUtil.activateScreenForTesting(activity);</code> in your test setup.</p>
 <h2 id="clean-status-bar"><a name="user-content-clean-status-bar" href="#clean-status-bar" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Clean Status Bar</h2>
-<p>Screengrab can clean your status bar to make your screenshots even more beautiful.<br />
+<p>Screengrab can clean your status bar to make your screenshots even more beautiful.
+It is simply a wrapper that allows configuring SystemUI DemoMode in your code.
 Note: the clean status bar feature is only supported on devices with <em>API level &gt;= 23</em>.</p>
-<p>To use the clean status bar feature add the following lines to your src/debug/AndroidManifest.xml</p>
-<pre><code class="xml">&lt;!-- Indicates the use of the clean status bar feature --&gt;
-&lt;uses-feature android:name=&quot;tools.fastlane.screengrab.cleanstatusbar&quot;/&gt;
-&lt;!-- Allows for changing the status bar --&gt;
-&lt;uses-permission android:name=&quot;android.permission.DUMP&quot;/&gt;
-</code></pre>
-
-<p>After that you can enable and disable the clean status bar at any moment during your tests.<br />
+<p>You can enable and disable the clean status bar at any moment during your tests.
 In most cases you probably want to do this in the @BeforeClass and @AfterClass methods.</p>
 <pre><code class="java">@BeforeClass
 public static void beforeAll() {
@@ -1563,7 +1564,7 @@ public static void afterAll() {
 }
 </code></pre>
 
-<p>Have a look at the methods of the <code>CleanStatusBar</code> class to customize the status bar even more.<br />
+<p>Have a look at the methods of the <code>CleanStatusBar</code> class to customize the status bar even more.
 You could for example show the Bluetooth icon and the LTE text.</p>
 <pre><code class="java">new CleanStatusBar()
     .setBluetoothState(BluetoothState.DISCONNECTED)
@@ -1691,7 +1692,7 @@ if (extras != null) {
 </tr>
 <tr>
 <td><code>build_tools_version</code></td>
-<td>The Android build tools version to use, e.g. '23.0.2'</td>
+<td><strong>DEPRECATED!</strong> The Android build tools version to use, e.g. '23.0.2'</td>
 <td></td>
 </tr>
 <tr>
@@ -1746,12 +1747,12 @@ if (extras != null) {
 </tr>
 <tr>
 <td><code>ending_locale</code></td>
-<td>Return the device to this locale after running tests</td>
+<td><strong>DEPRECATED!</strong> Return the device to this locale after running tests</td>
 <td><code>en-US</code></td>
 </tr>
 <tr>
 <td><code>use_adb_root</code></td>
-<td>Restarts the adb daemon using <code>adb root</code> to allow access to screenshots directories on device. Use if getting 'Permission denied' errors</td>
+<td><strong>DEPRECATED!</strong> Restarts the adb daemon using <code>adb root</code> to allow access to screenshots directories on device. Use if getting 'Permission denied' errors</td>
 <td><code>false</code></td>
 </tr>
 <tr>

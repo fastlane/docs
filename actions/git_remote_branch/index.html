@@ -8,7 +8,7 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>unlock_keychain - fastlane docs</title>
+  <title>git_remote_branch - fastlane docs</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -29,9 +29,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "unlock_keychain";
-    var mkdocs_page_input_path = "actions/unlock_keychain.md";
-    var mkdocs_page_url = "/actions/unlock_keychain/";
+    var mkdocs_page_name = "git_remote_branch";
+    var mkdocs_page_input_path = "actions/git_remote_branch.md";
+    var mkdocs_page_url = "/actions/git_remote_branch/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -1317,14 +1317,14 @@
         
       
     
-    <li>unlock_keychain</li>
+    <li>git_remote_branch</li>
 
     
       <li class="wy-breadcrumbs-aside">
         
           <!-- custom edit link for all actions -->
           <!-- Edit the action, from which we generate the docs -->
-          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/unlock_keychain.rb" class="icon icon-github" target="_blank">
+          <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/git_remote_branch.rb" class="icon icon-github" target="_blank">
             Edit on GitHub
           </a>
         
@@ -1352,18 +1352,18 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/unlock_keychain.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_remote_branch.rb
 -->
 
-<h1 id="unlock_keychain"><a name="user-content-unlock_keychain" href="#unlock_keychain" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>unlock_keychain</h1>
-<p>Unlock a keychain</p>
+<h1 id="git_remote_branch"><a name="user-content-git_remote_branch" href="#git_remote_branch" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>git_remote_branch</h1>
+<p>Returns the name of the current git remote default branch</p>
 <blockquote>
-<p>Unlocks the given keychain file and adds it to the keychain search list.<br>Keychains can be replaced with <code>add_to_search_list: :replace</code>.</p>
+<p>If no default remote branch could be found, this action will return nil. This is a wrapper for the internal action Actions.git_default_remote_branch_name</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>unlock_keychain</th>
+<th>git_remote_branch</th>
 <th></th>
 </tr>
 </thead>
@@ -1374,35 +1374,15 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@xfreebird</td>
+<td>@SeanMcNeil</td>
 </tr>
 </tbody>
 </table>
-<h2 id="4-examples"><a name="user-content-4-examples" href="#4-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4 Examples</h2>
-<pre><code class="ruby">unlock_keychain( # Unlock an existing keychain and add it to the keychain search list
-  path: &quot;/path/to/KeychainName.keychain&quot;,
-  password: &quot;mysecret&quot;
-)
+<h2 id="2-examples"><a name="user-content-2-examples" href="#2-examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2 Examples</h2>
+<pre><code class="ruby">git_remote_branch # Query git for first available remote name
 </code></pre>
 
-<pre><code class="ruby">unlock_keychain( # By default the keychain is added to the existing. To replace them with the selected keychain you may use `:replace`
-  path: &quot;/path/to/KeychainName.keychain&quot;,
-  password: &quot;mysecret&quot;,
-  add_to_search_list: :replace # To only add a keychain use `true` or `:add`.
-)
-</code></pre>
-
-<pre><code class="ruby">unlock_keychain( # In addition, the keychain can be selected as a default keychain
-  path: &quot;/path/to/KeychainName.keychain&quot;,
-  password: &quot;mysecret&quot;,
-  set_default: true
-)
-</code></pre>
-
-<pre><code class="ruby">unlock_keychain( # If the keychain file is located in the standard location `~/Library/Keychains`, then it is sufficient to provide the keychain file name, or file name with its suffix.
-  path: &quot;KeychainName&quot;,
-  password: &quot;mysecret&quot;
-)
+<pre><code class="ruby">git_remote_branch(remote_name:&quot;upstream&quot;) # Provide a remote name
 </code></pre>
 
 <h2 id="parameters"><a name="user-content-parameters" href="#parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameters</h2>
@@ -1416,24 +1396,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </thead>
 <tbody>
 <tr>
-<td><code>path</code></td>
-<td>Path to the keychain file</td>
-<td><code>login</code></td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>Keychain password</td>
+<td><code>remote_name</code></td>
+<td>The remote repository to check</td>
 <td></td>
-</tr>
-<tr>
-<td><code>add_to_search_list</code></td>
-<td>Add to keychain search list, valid values are true, false, :add, and :replace</td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>set_default</code></td>
-<td>Set as default keychain</td>
-<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
@@ -1442,18 +1407,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h2 id="documentation"><a name="user-content-documentation" href="#documentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="no-highlight">fastlane action unlock_keychain
+<pre><code class="no-highlight">fastlane action git_remote_branch
 </code></pre>
 
 <hr />
 
 <h2 id="cli"><a name="user-content-cli" href="#cli" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="no-highlight">fastlane run unlock_keychain
+<pre><code class="no-highlight">fastlane run git_remote_branch
 </code></pre>
 
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="no-highlight">fastlane run unlock_keychain parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="no-highlight">fastlane run git_remote_branch parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
@@ -1461,7 +1426,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <hr />
 
 <h2 id="source-code"><a name="user-content-source-code" href="#source-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/unlock_keychain.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_remote_branch.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -1472,10 +1437,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../update_app_group_identifiers/" class="btn btn-neutral float-right" title="update_app_group_identifiers">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../git_submodule_update/" class="btn btn-neutral float-right" title="git_submodule_update">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../typetalk/" class="btn btn-neutral" title="typetalk"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../git_pull/" class="btn btn-neutral" title="git_pull"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -1517,10 +1482,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../typetalk/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../git_pull/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../update_app_group_identifiers/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../git_submodule_update/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -1507,8 +1507,8 @@ output_name(&quot;MyApp&quot;)           # the name of the ipa file
 <p>Optional: If <em>gym</em> can't automatically detect the provisioning profiles to use, you can pass a mapping of bundle identifiers to provisioning profiles:</p>
 <pre><code class="ruby">build_app(
   scheme: &quot;Release&quot;,
+  export_method: &quot;app-store&quot;,
   export_options: {
-    method: &quot;app-store&quot;,
     provisioningProfiles: { 
       &quot;com.example.bundleid&quot; =&gt; &quot;Provisioning Profile Name&quot;,
       &quot;com.example.bundleid2&quot; =&gt; &quot;Provisioning Profile Name 2&quot;
