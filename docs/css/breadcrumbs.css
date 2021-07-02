@@ -59,6 +59,15 @@
     display: block;
     padding-left: 0px;
   }
+
+  .algolia-autocomplete .ds-dropdown-menu {
+    max-width: 80vh !important;
+    min-width: 250px !important;
+  }
+}
+
+.algolia-autocomplete .ds-dropdown-menu {
+  z-index: 10000 !important;
 }
 
 @media print {
