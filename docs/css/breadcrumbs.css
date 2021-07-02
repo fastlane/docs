@@ -39,13 +39,25 @@
   box-shadow: none
 }
 
-@media screen and (max-width: 480px) {
+/*
+.wy-breadcrumbs-aside {
+  padding-left: 10px;
+}
+*/
+
+@media screen and (max-width: 768px) {
   .wy-breadcrumbs-extra {
     display: none;
   }
 
   .wy-breadcrumbs li.wy-breadcrumbs-aside {
     display: none;
+  }
+
+  .wy-breadcrumbs-extra-search,
+  .wy-breadcrumbs li.wy-breadcrumbs-aside-search {
+    display: block;
+    padding-left: 0px;
   }
 }
 

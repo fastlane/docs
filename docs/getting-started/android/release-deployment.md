@@ -2,7 +2,7 @@
 
 # Deploy to Google Play using _fastlane_
 
-# Building your app
+## Building your app
 
 _fastlane_ takes care of building your app by delegating to your existing Gradle build. Just add the following to your `Fastfile`:
 
@@ -27,7 +27,7 @@ When that completes you should have the appropriate APK ready to go in the stand
 fastlane action gradle
 ```
 
-# Uploading your APK
+## Uploading your APK
 
 To upload your binary to Google Play, _fastlane_ uses a tool called _supply_. Because _supply_ needs authentication information from Google, if you haven't yet done the [_supply_ setup steps](setup.md), please do those now!
 

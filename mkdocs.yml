@@ -5,28 +5,35 @@ copyright: Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
-site_favicon: img/favicon.ico
+#site_favicon: img/favicon.ico
 repo_url: https://github.com/fastlane/docs
 google_analytics:
 - UA-18658848-13
 - docs.fastlane.tools
-strict: true
+strict: false
+#strict: true
 markdown_extensions:
-- pymdownx.headeranchor
+  #- pymdownx.headeranchor
 - markdown.extensions.attr_list
 - markdown_include.include
 - mdx_truly_sane_lists
-theme_dir: theme
-pages:
+- toc:
+    toc_depth: 2
+docs_dir: docs
+extra_css: [./css/sidenavv.css,./css/fastlane.css,./css/code.css,./css/breadcrumbs.css,./css/fabric.css,./css/sidenav.css]
+theme:
+    name: readthedocs
+    custom_dir: theme
+nav:
 - Home: index.md
 - Getting Started:
   - iOS:
     - Setup: getting-started/ios/setup.md
     - Running Tests: getting-started/ios/running-tests.md
-    - _Swift: getting-started/ios/fastlane-swift.md
     - Screenshots: getting-started/ios/screenshots.md
     - Beta Deployment: getting-started/ios/beta-deployment.md
     - App Store Deployment: getting-started/ios/appstore-deployment.md
+    - Swift: getting-started/ios/fastlane-swift.md
   - Android:
     - Setup: getting-started/android/setup.md
     - Running Tests: getting-started/android/running-tests.md
@@ -280,7 +287,8 @@ pages:
 - Apple:
   - Using App Store Connect API: app-store-connect-api.md
   - Uploading App Privacy Details: uploading-app-privacy-details.md
-- FAQs: faqs.md
+- FAQs:
+  - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
   - Xcode Project: codesigning/xcode-project.md
