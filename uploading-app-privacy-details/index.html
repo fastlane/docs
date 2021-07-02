@@ -8,43 +8,40 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>Uploading App Privacy Details - fastlane docs</title>
-  
-
   <link rel="shortcut icon" href="../img/favicon.ico">
-  
+  <title>Uploading App Privacy Details - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../css/sidenavv.css" rel="stylesheet" />
+  <link href="../css/fastlane.css" rel="stylesheet" />
+  <link href="../css/code.css" rel="stylesheet" />
+  <link href="../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../css/fabric.css" rel="stylesheet" />
+  <link href="../css/sidenav.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
-  <link href="../css/breadcrumbs.css" rel="stylesheet">
-  <link href="../css/code.css" rel="stylesheet">
-  <link href="../css/fabric.css" rel="stylesheet">
-  <link href="../css/fastlane.css" rel="stylesheet">
-  <link href="../css/sidenav.css" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Uploading App Privacy Details";
     var mkdocs_page_input_path = "uploading-app-privacy-details.md";
-    var mkdocs_page_url = "/uploading-app-privacy-details/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
       ga('send', 'pageview');
@@ -58,1248 +55,223 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> fastlane docs</a>
         
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
           
-            <li>
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="..">
-        Home
-      </a>
-      
-      
-    </li>
-  
-<li>
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="..">Home</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Getting Started</span></li>
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>iOS</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/ios/setup/">
-        Setup
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/ios/running-tests/">
-        Running Tests
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/ios/screenshots/">
-        Screenshots
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/ios/beta-deployment/">
-        Beta Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/ios/appstore-deployment/">
-        App Store Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Android</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/android/setup/">
-        Setup
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/android/running-tests/">
-        Running Tests
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/android/screenshots/">
-        Screenshots
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/android/beta-deployment/">
-        Beta Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/android/release-deployment/">
-        Release Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Cross Platform</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/cross-platform/react-native/">
-        React Native
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/cross-platform/flutter/">
-        Flutter
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/cross-platform/nativescript/">
-        NativeScript
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Actions</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../actions/">
-        Available Actions
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../create-action/">
-        Create Your Own Action
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Apple</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../app-store-connect-api/">
-        Using App Store Connect API
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    current
-    
-    
-    ">
-      <a class="
-      current
-      
-      " href="./">
-        Uploading App Privacy Details
-      </a>
-      
-      
-        <ul>
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
           
           
-            
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul class="current">
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current active current">
+  <a class="reference internal current" href="./">Uploading App Privacy Details</a>
+      <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#uploading-app-privacy-details-with-fastlane">Uploading App Privacy Details with fastlane</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example-json-configuration-file">Example JSON configuration file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-values">Data Values</a>
+    </li>
+      </ul>
+                      </li>
+                  </ul>
           
-        </ul>
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../faqs/">FAQs</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../faqs/">
-        FAQs
-      </a>
-      
-      
-    </li>
-  
-<li>
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Codesigning</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../codesigning/getting-started/">
-        Getting Started
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../codesigning/xcode-project/">
-        Xcode Project
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../codesigning/troubleshooting/">
-        Troubleshooting
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../codesigning/common-issues/">
-        Common Issues
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Plugins</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../plugins/available-plugins/">
-        Available Plugins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../plugins/using-plugins/">
-        Use Plugins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../plugins/create-plugin/">
-        Create Your Own Plugin
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../plugins/plugins-troubleshooting/">
-        Plugins Troubleshooting
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Best Practices</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/source-control/">
-        Source Control
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/">
-        Continuous Integration
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>CI Integrations</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/appcircle/">
-        Appcircle
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/azure-devops/">
-        Azure DevOps
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/bamboo/">
-        Bamboo
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/bitrise/">
-        Bitrise
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/circle-ci/">
-        CircleCI
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/gitlab/">
-        GitLab CI
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/jenkins/">
-        Jenkins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/nevercode/">
-        NeverCode
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/semaphore/">
-        Semaphore
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/continuous-integration/travis/">
-        Travis
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../best-practices/keys/">
-        Keys
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../advanced/other/">Other</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Advanced</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../advanced/fastlane/">
-        fastlane
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../advanced/Fastfile/">
-        Fastfile
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../advanced/Appfile/">
-        Appfile
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../advanced/lanes/">
-        Lanes
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../advanced/actions/">
-        Actions
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../advanced/other/">
-        Other
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-
-<li>
-          
-        </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -1325,19 +297,21 @@
     
     <li>Uploading App Privacy Details</li>
 
+
     
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/fastlane/docs/edit/master/docs/uploading-app-privacy-details.md" class="icon icon-github" target="_blank">
-            Edit on GitHub
-          </a>
+          <a href="https://github.com/fastlane/docs/edit/master/docs/uploading-app-privacy-details.md"
+            class="icon icon-github"> Edit on GitHub</a>
         
       </li>
     
-    <li class="wy-breadcrumbs-aside">
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
       <input type="text" name="q" placeholder="Search docs" />
     </li>
   </ul>
+  
   <hr/>
 </div>
 
@@ -1354,8 +328,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="uploading-app-privacy-details"><a name="user-content-uploading-app-privacy-details" href="#uploading-app-privacy-details" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading App Privacy Details</h1>
-<h2 id="introduction"><a name="user-content-introduction" href="#introduction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Introduction</h2>
+                <h1 id="uploading-app-privacy-details">Uploading App Privacy Details</h1>
+<h2 id="introduction">Introduction</h2>
 <p>Apple <a href="https://developer.apple.com/app-store/app-privacy-details/">announced</a> that as of December 8, 2020, the App Store would start displaying detailed information about an app's privacy practices. App Store Connect will ask developers a series of questions on how privacy is respected over an array of categories. A category then allows for a selection of multiple purposes. After the purposes are selected, there are then questions on how the data is selected.</p>
 <p>An example would be:</p>
 <ul>
@@ -1385,95 +359,86 @@
 </li>
 </ul>
 <p><img src="/img/app-privacy-details-app-store-connect.png"></p>
-<h2 id="uploading-app-privacy-details-with-fastlane"><a name="user-content-uploading-app-privacy-details-with-fastlane" href="#uploading-app-privacy-details-with-fastlane" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Uploading App Privacy Details with <em>fastlane</em></h2>
+<h2 id="uploading-app-privacy-details-with-fastlane">Uploading App Privacy Details with <em>fastlane</em></h2>
 <p><em>fastlane</em> has the ability to upload your app's app privacy details with the <code>upload_app_privacy_details_to_app_store</code> action. This action has two steps. The first is answering an interactive questionnaire (similar to what App Store Connect dashboard offers) and saving the answers to a JSON config file. The second is the upload of the app privacy answers to App Store Connect.</p>
 <p>The action outputs a JSON config file to <code>fastlane/app_privacy_details.json</code> (by default) which will save your configuration. This JSON file is output so the answers can be saved in source control, reviewed by you or team members, and used for other apps. The JSON file can then be used again by this action (with the <code>json_path</code> option) to skip the interactive questions.</p>
 <p>These two steps can be done together or separate.</p>
-<h3 id="option-1-answer-and-upload-together"><a name="user-content-option-1-answer-and-upload-together" href="#option-1-answer-and-upload-together" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Option 1: Answer and Upload Together</h3>
+<h3 id="option-1-answer-and-upload-together">Option 1: Answer and Upload Together</h3>
 <p>By default, <code>upload_app_privacy_details_to_app_store</code> will prompt you with questions and then upload them directly to App Store Connect. The action will also output a JSON config file to <code>fastlane/app_privacy_details.json</code>.</p>
 <p>In CLI...</p>
-<pre><code class="sh">fastlane run upload_app_privacy_details_to_app_store \
+<pre><code class="language-sh">fastlane run upload_app_privacy_details_to_app_store \
   username:&quot;your@email.com&quot; \
   team_name:&quot;Your Team&quot; \
   app_identifier:&quot;com.your.bundle&quot;
 </code></pre>
-
 <p>or in <code>Fastfile</code>...</p>
-<pre><code class="ruby">upload_app_privacy_details_to_app_store(
+<pre><code class="language-ruby">upload_app_privacy_details_to_app_store(
   username: &quot;your@email.com&quot;,
   team_name: &quot;Your Team&quot;,
   app_identifier: &quot;com.your.bundle&quot;
 )
 </code></pre>
-
 <p>or in <code>Fastfile.swift</code>...</p>
-<pre><code class="swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
+<pre><code class="language-swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
                                   appIdentifier: &quot;com.your.bundle&quot;,
                                   teamName: &quot;Your Team&quot;)
 </code></pre>
-
-<h3 id="option-2-answer-and-upload-separate"><a name="user-content-option-2-answer-and-upload-separate" href="#option-2-answer-and-upload-separate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Option 2: Answer and Upload Separate</h3>
+<h3 id="option-2-answer-and-upload-separate">Option 2: Answer and Upload Separate</h3>
 <p>If you do not want to upload the app privacy details to App Store Connect right away, <code>skip_upload:true</code> can be passed to the action. This will prompt you with the interactive questions and save the JSON configuration file but that is it.</p>
 <p>After reviewing the file, the same action can be used again with the <code>json_path</code> option to bypass the questions (since the answers are in the JSON file) and upload them right away to App Store Connect.</p>
-<h4 id="step-1-answering-questions"><a name="user-content-step-1-answering-questions" href="#step-1-answering-questions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 1: Answering Questions</h4>
+<h4 id="step-1-answering-questions">Step 1: Answering Questions</h4>
 <p>In CLI...</p>
-<pre><code class="sh">fastlane run upload_app_privacy_details_to_app_store \
+<pre><code class="language-sh">fastlane run upload_app_privacy_details_to_app_store \
   username:&quot;your@email.com&quot; \
   team_name:&quot;Your Team&quot; \
   app_identifier:&quot;com.your.bundle&quot; \
   skip_upload:true
 </code></pre>
-
 <p>or in <code>Fastfile</code>...</p>
-<pre><code class="ruby">upload_app_privacy_details_to_app_store(
+<pre><code class="language-ruby">upload_app_privacy_details_to_app_store(
   username: &quot;your@email.com&quot;,
   team_name: &quot;Your Team&quot;,
   app_identifier: &quot;com.your.bundle&quot;,
   skip_upload: true
 )
 </code></pre>
-
 <p>or in <code>Fastfile.swift</code>...</p>
-<pre><code class="swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
+<pre><code class="language-swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
                                   appIdentifier: &quot;com.your.bundle&quot;,
                                   teamName: &quot;Your Team&quot;,
                                   skipUpload: true)
 </code></pre>
-
 <p><img src="/img/app-privacy-details-action-questions.png"/></p>
-<h4 id="step-2-uploading"><a name="user-content-step-2-uploading" href="#step-2-uploading" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Step 2: Uploading</h4>
+<h4 id="step-2-uploading">Step 2: Uploading</h4>
 <p>In CLI...</p>
-<pre><code class="sh">fastlane run upload_app_privacy_details_to_app_store \
+<pre><code class="language-sh">fastlane run upload_app_privacy_details_to_app_store \
   username:&quot;your@email.com&quot; \
   team_name:&quot;Your Team&quot; \
   app_identifier:&quot;com.your.bundle&quot; \
   json_path:&quot;fastlane/app_privacy_details.json&quot;
 </code></pre>
-
 <p>or in <code>Fastfile</code>...</p>
-<pre><code class="ruby">upload_app_privacy_details_to_app_store(
+<pre><code class="language-ruby">upload_app_privacy_details_to_app_store(
   username: &quot;your@email.com&quot;,
   team_name: &quot;Your Team&quot;,
   app_identifier: &quot;com.your.bundle&quot;,
   json_path: &quot;fastlane/app_privacy_details.json&quot;
 )
 </code></pre>
-
 <p>or in <code>Fastfile.swift</code>...</p>
-<pre><code class="swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
+<pre><code class="language-swift">uploadAppPrivacyDetailsToAppStore(username: &quot;your@email.com&quot;,
                                   appIdentifier: &quot;com.your.bundle&quot;,
                                   teamName: &quot;Your Team&quot;,
                                   jsonPath: &quot;fastlane/app_privacy_details.json&quot;)
 </code></pre>
-
 <p><img src="/img/app-privacy-details-action-upload.png"/></p>
-<h3 id="requirements"><a name="user-content-requirements" href="#requirements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Requirements</h3>
+<h3 id="requirements">Requirements</h3>
 <p>This action requires an Apple ID with owner or admin permissions on the Apple Development team. The APIs this action uses are also <strong>not available</strong> on the official App Store Connect API so the App Store Connect API Key <strong>cannot</strong> be used at this time.</p>
-<h2 id="example-json-configuration-file"><a name="user-content-example-json-configuration-file" href="#example-json-configuration-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Example JSON configuration file</h2>
+<h2 id="example-json-configuration-file">Example JSON configuration file</h2>
 <p>Below are two examples of the <code>app_privacy_details.json</code> file that <code>upload_app_privacy_details_to_app_store</code> action will create.</p>
-<h3 id="not-collecting-data"><a name="user-content-not-collecting-data" href="#not-collecting-data" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Not collecting data</h3>
+<h3 id="not-collecting-data">Not collecting data</h3>
 <p>This is what will be output if your app does not collect any data.</p>
-<pre><code class="js">[
+<pre><code class="language-js">[
   {
     &quot;data_protections&quot;: [
       &quot;DATA_NOT_COLLECTED&quot;
@@ -1481,10 +446,9 @@
   }
 ]
 </code></pre>
-
-<h3 id="collecting-data"><a name="user-content-collecting-data" href="#collecting-data" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Collecting data</h3>
+<h3 id="collecting-data">Collecting data</h3>
 <p>This is what will be output that matches the example at the top of this page.</p>
-<pre><code class="js">[
+<pre><code class="language-js">[
   {
     &quot;category&quot;: &quot;PAYMENT_INFORMATION&quot;,
     &quot;purposes&quot;: [
@@ -1507,10 +471,9 @@
   }
 ]
 </code></pre>
-
-<h2 id="data-values"><a name="user-content-data-values" href="#data-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Data Values</h2>
+<h2 id="data-values">Data Values</h2>
 <p>These are the values you will see in your JSON configuration file. You won't need to ever manually enter these values in your JSON configuration file (as this is what the interactive questionnaire will output for you).</p>
-<h3 id="categories"><a name="user-content-categories" href="#categories" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Categories</h3>
+<h3 id="categories">Categories</h3>
 <ul>
 <li><code>PAYMENT_INFORMATION</code></li>
 <li><code>CREDIT_AND_FRAUD</code></li>
@@ -1545,7 +508,7 @@
 <li><code>FITNESS</code></li>
 <li><code>COARSE_LOCATION</code></li>
 </ul>
-<h3 id="purposes"><a name="user-content-purposes" href="#purposes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Purposes</h3>
+<h3 id="purposes">Purposes</h3>
 <ul>
 <li><code>THIRD_PARTY_ADVERTISING</code></li>
 <li><code>DEVELOPERS_ADVERTISING</code></li>
@@ -1554,7 +517,7 @@
 <li><code>APP_FUNCTIONALITY</code></li>
 <li><code>OTHER_PURPOSES</code></li>
 </ul>
-<h3 id="data-protections"><a name="user-content-data-protections" href="#data-protections" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Data Protections</h3>
+<h3 id="data-protections">Data Protections</h3>
 <ul>
 <li>Uses <code>DATA_LINKED_TO_YOU</code> or <code>DATA_NOT_LINKED_TO_YOU</code></li>
 <li>Optionally uses <code>DATA_USED_TO_TRACK_YOU</code></li>
@@ -1563,15 +526,6 @@
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../faqs/" class="btn btn-neutral float-right" title="FAQs">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../app-store-connect-api/" class="btn btn-neutral" title="Using App Store Connect API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -1586,7 +540,7 @@
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - 
 </footer>
 
 <script type="text/javascript">
@@ -1597,7 +551,7 @@
     } 
   }
 </script>
-	  
+      
         </div>
       </div>
 
@@ -1605,10 +559,10 @@
 
   </div>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../app-store-connect-api/" style="color: #fcfcfc;">&laquo; Previous</a></span>
@@ -1618,6 +572,17 @@
       
     </span>
 </div>
+    <script>var base_url = '..';</script>
+    <!-- <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script> -->
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

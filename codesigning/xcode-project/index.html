@@ -8,43 +8,40 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>Xcode Project - fastlane docs</title>
-  
-
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  
+  <title>Xcode Project - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../css/code.css" rel="stylesheet" />
+  <link href="../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../css/fabric.css" rel="stylesheet" />
+  <link href="../../css/sidenav.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
-  <link href="../../css/breadcrumbs.css" rel="stylesheet">
-  <link href="../../css/code.css" rel="stylesheet">
-  <link href="../../css/fabric.css" rel="stylesheet">
-  <link href="../../css/fastlane.css" rel="stylesheet">
-  <link href="../../css/sidenav.css" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Xcode Project";
     var mkdocs_page_input_path = "codesigning/xcode-project.md";
-    var mkdocs_page_url = "/codesigning/xcode-project/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
-
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
       ga('send', 'pageview');
@@ -58,1256 +55,215 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> fastlane docs</a>
         
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
           
-            <li>
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../..">
-        Home
-      </a>
-      
-      
-    </li>
-  
-<li>
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../..">Home</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Getting Started</span></li>
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>iOS</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/setup/">
-        Setup
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/running-tests/">
-        Running Tests
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/screenshots/">
-        Screenshots
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/beta-deployment/">
-        Beta Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/appstore-deployment/">
-        App Store Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Android</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/setup/">
-        Setup
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/running-tests/">
-        Running Tests
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/screenshots/">
-        Screenshots
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/beta-deployment/">
-        Beta Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/release-deployment/">
-        Release Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Cross Platform</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/cross-platform/react-native/">
-        React Native
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/cross-platform/flutter/">
-        Flutter
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/cross-platform/nativescript/">
-        NativeScript
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Actions</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../actions/">
-        Available Actions
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../create-action/">
-        Create Your Own Action
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Apple</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../app-store-connect-api/">
-        Using App Store Connect API
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../uploading-app-privacy-details/">
-        Uploading App Privacy Details
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../faqs/">
-        FAQs
-      </a>
-      
-      
-    </li>
-  
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Codesigning</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../getting-started/">
-        Getting Started
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    current
-    
-    
-    ">
-      <a class="
-      current
-      
-      " href="./">
-        Xcode Project
-      </a>
-      
-      
-        <ul>
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
           
           
-            
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
           
-            
-              <li class="toctree-l3"><a href="#xcode-9-and-up">Xcode 9 and up</a></li>
-            
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
           
-            
-              <li class="toctree-l3"><a href="#xcode-8">Xcode 8</a></li>
-            
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul class="current">
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current active current">
+  <a class="reference internal current" href="./">Xcode Project</a>
+      <ul class="current">
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
           
-        </ul>
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../troubleshooting/">
-        Troubleshooting
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../common-issues/">
-        Common Issues
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Plugins</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/available-plugins/">
-        Available Plugins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/using-plugins/">
-        Use Plugins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/create-plugin/">
-        Create Your Own Plugin
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/plugins-troubleshooting/">
-        Plugins Troubleshooting
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Best Practices</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/source-control/">
-        Source Control
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/">
-        Continuous Integration
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>CI Integrations</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/appcircle/">
-        Appcircle
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/azure-devops/">
-        Azure DevOps
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/bamboo/">
-        Bamboo
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/bitrise/">
-        Bitrise
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/circle-ci/">
-        CircleCI
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/gitlab/">
-        GitLab CI
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/jenkins/">
-        Jenkins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/nevercode/">
-        NeverCode
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/semaphore/">
-        Semaphore
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/travis/">
-        Travis
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/keys/">
-        Keys
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Advanced</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../advanced/fastlane/">
-        fastlane
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../advanced/Fastfile/">
-        Fastfile
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../advanced/Appfile/">
-        Appfile
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../advanced/lanes/">
-        Lanes
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../advanced/actions/">
-        Actions
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../advanced/other/">
-        Other
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-
-<li>
-          
-        </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -1333,19 +289,21 @@
     
     <li>Xcode Project</li>
 
+
     
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/fastlane/docs/edit/master/docs/codesigning/xcode-project.md" class="icon icon-github" target="_blank">
-            Edit on GitHub
-          </a>
+          <a href="https://github.com/fastlane/docs/edit/master/docs/codesigning/xcode-project.md"
+            class="icon icon-github"> Edit on GitHub</a>
         
       </li>
     
-    <li class="wy-breadcrumbs-aside">
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
       <input type="text" name="q" placeholder="Search docs" />
     </li>
   </ul>
+  
   <hr/>
 </div>
 
@@ -1387,35 +345,44 @@
   }
 </style>
 
-<p><details class="fastlane-setup-wrapper">
-  <summary class="fastlane-setup">New to fastlane? Click here to open the installation &amp; setup instructions first</summary></p>
+<details class="fastlane-setup-wrapper">
+  <summary class="fastlane-setup">New to fastlane? Click here to open the installation & setup instructions first</summary>
+
+
 <p class="fastlane-setup-header">1) Install the latest Xcode command line tools</p>
 
-<pre><code class="no-highlight">xcode-select --install
+
+<pre><code class="language-no-highlight">xcode-select --install
 </code></pre>
+
 
 <p class="fastlane-setup-header">2) Install <i>fastlane</i></p>
 
-<pre><code class="sh"># Using RubyGems
+
+<pre><code class="language-sh"># Using RubyGems
 sudo gem install fastlane -NV
 
 # Alternatively using Homebrew
 brew install fastlane
 </code></pre>
 
+
 <p class="fastlane-setup-header">3) Navigate to your project and run</p>
 
-<pre><code class="no-highlight">fastlane init
+
+<pre><code class="language-no-highlight">fastlane init
 </code></pre>
+
 
 <p class="fastlane-setup-more-details"><a href="/getting-started/ios/setup/">More Details</a></p>
 
-<p></details></p>
-<h1 id="setting-up-your-xcode-project"><a name="user-content-setting-up-your-xcode-project" href="#setting-up-your-xcode-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Setting up your Xcode Project</h1>
-<h1 id="xcode-9-and-up"><a name="user-content-xcode-9-and-up" href="#xcode-9-and-up" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 9 and up</h1>
+</details>
+
+<h1 id="setting-up-your-xcode-project">Setting up your Xcode Project</h1>
+<h1 id="xcode-9-and-up">Xcode 9 and up</h1>
 <p>In most cases, <em>fastlane</em> will work out of the box with Xcode 9 and up if you selected manual code signing and choose a provisioning profile name for each of your targets (<a href="#xcode-8">see Xcode 8 section</a>).</p>
 <p>If you don't use <em>match</em>, we recommend defining a mapping of app target to provisioning profile in your <code>Fastfile</code>. By defining those profiles, you can guarantee reproducible builds every time you run it.</p>
-<pre><code class="ruby">lane :beta do
+<pre><code class="language-ruby">lane :beta do
   build_app(
     export_method: &quot;app-store&quot;,
     export_options: {
@@ -1427,14 +394,12 @@ brew install fastlane
   )
 end
 </code></pre>
-
 <p>You can also use Xcode’s <em>Automatically Manage Signing</em> feature. By default, automatic signing via <code>xcodebuild</code> is disabled. To enable it, pass <code>-allowProvisioningUpdates</code> via the <code>xcargs</code> option:</p>
-<pre><code class="ruby">lane :beta do
+<pre><code class="language-ruby">lane :beta do
   build_app(xcargs: &quot;-allowProvisioningUpdates&quot;)
 end
 </code></pre>
-
-<h1 id="xcode-8"><a name="user-content-xcode-8" href="#xcode-8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Xcode 8</h1>
+<h1 id="xcode-8">Xcode 8</h1>
 <p>With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)</p>
 <p>You can now specify which provisioning profile to use in the <code>General</code> tab after disabling <code>Automatically manage signing</code>.</p>
 <p><img src="/img/codesigning/ProvisioningProfileSelectionNew.png" width=500 /></p>
@@ -1447,14 +412,13 @@ end
 <li>The provisioning profile is not installed on the local machine</li>
 </ul>
 <p>Check out <a href="../troubleshooting/">Debugging codesigning issues</a> for more information on how to debug signing issues.</p>
-<h3 id="build-settings"><a name="user-content-build-settings" href="#build-settings" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build settings</h3>
+<h3 id="build-settings">Build settings</h3>
 <p>Specify the name of the provisioning profile using the <code>PROVISIONING_PROFILE_SPECIFIER</code>:</p>
-<pre><code class="no-highlight">DEVELOPMENT_TEAM = N8XAAASEU2;
+<pre><code class="language-no-highlight">DEVELOPMENT_TEAM = N8XAAASEU2;
 PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quot;;
 </code></pre>
-
 <p>It is recommended to select the provisioning profile in the <code>General</code> tab in your Xcode project, so Xcode will automatically set the values mentioned above for you.</p>
-<h4 id="set-using-environment-variable"><a name="user-content-set-using-environment-variable" href="#set-using-environment-variable" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Set using environment variable</h4>
+<h4 id="set-using-environment-variable">Set using environment variable</h4>
 <p>You could pass the profile specifier via environment variables, but usually it's enough to define it statically in your project, per target, since usually neither your Team ID, nor the provisioning profile change.</p>
 <p>If you're using <a href="https://fastlane.tools/match"><em>match</em></a> the following environment variables are being set for you:</p>
 <pre><code>+---------------------+------------------------------------------------+--------------------------------------+
@@ -1469,8 +433,7 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
 | Development Team ID | sigh_me.themoji.beta_appstore_team-id          | N8XAAASEU2                           |
 +---------------------+------------------------------------------------+--------------------------------------+
 </code></pre>
-
-<h4 id="using-match-development-or-xcode-automatic-provisioning"><a name="user-content-using-match-development-or-xcode-automatic-provisioning" href="#using-match-development-or-xcode-automatic-provisioning" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using <code>match development</code> or Xcode Automatic Provisioning</h4>
+<h4 id="using-match-development-or-xcode-automatic-provisioning">Using <code>match development</code> or Xcode Automatic Provisioning</h4>
 <p><img src="/img/codesigning/XcodeAutomaticallyManageSigning.png" width=300 /></p>
 <p>Apple's Automatic Provisioning will automatically generate a private key, development certificate, and managed development provisioning profile for each computer used to build a project. Since Xcode can auto-generate these for you, there is no need to share them between teammates' computers. As such, when using Xcode Automatic Provisioning, there is no need to use <code>match development</code> to keep development keys, certificates, and provisioning profiles in sync.</p>
 <p>If you are already using <em>match</em> to manage development code signing, Automatic Provisioning will use the <em>match</em>-generated key and certificate. However, Xcode will create and manage its own provisioning profile and will not use the <em>match</em>-generated profile.</p>
@@ -1480,15 +443,6 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../troubleshooting/" class="btn btn-neutral float-right" title="Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../getting-started/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -1503,7 +457,7 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - 
 </footer>
 
 <script type="text/javascript">
@@ -1514,7 +468,7 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
     } 
   }
 </script>
-	  
+      
         </div>
       </div>
 
@@ -1522,10 +476,10 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
 
   </div>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../getting-started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
@@ -1535,6 +489,17 @@ PROVISIONING_PROFILE_SPECIFIER = &quot;match AppStore me.themoji.app.release&quo
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
+    <!-- <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script> -->
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

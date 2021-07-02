@@ -8,43 +8,40 @@
   
   <meta name="author" content="fastlane team">
   
-  <title>Actions - fastlane docs</title>
-  
-
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  
+  <title>Actions - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../css/code.css" rel="stylesheet" />
+  <link href="../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../css/fabric.css" rel="stylesheet" />
+  <link href="../../css/sidenav.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
-  <link href="../../css/breadcrumbs.css" rel="stylesheet">
-  <link href="../../css/code.css" rel="stylesheet">
-  <link href="../../css/fabric.css" rel="stylesheet">
-  <link href="../../css/fastlane.css" rel="stylesheet">
-  <link href="../../css/sidenav.css" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Actions";
     var mkdocs_page_input_path = "advanced/actions.md";
-    var mkdocs_page_url = "/advanced/actions/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
-
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
   <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
       ga('send', 'pageview');
@@ -58,1268 +55,215 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> fastlane docs</a>
         
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
           
-            <li>
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../..">
-        Home
-      </a>
-      
-      
-    </li>
-  
-<li>
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../..">Home</a>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Getting Started</span></li>
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>iOS</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/setup/">
-        Setup
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/running-tests/">
-        Running Tests
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/screenshots/">
-        Screenshots
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/beta-deployment/">
-        Beta Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/ios/appstore-deployment/">
-        App Store Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Android</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/setup/">
-        Setup
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/running-tests/">
-        Running Tests
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/screenshots/">
-        Screenshots
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/beta-deployment/">
-        Beta Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/android/release-deployment/">
-        Release Deployment
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Cross Platform</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/cross-platform/react-native/">
-        React Native
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/cross-platform/flutter/">
-        Flutter
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../getting-started/cross-platform/nativescript/">
-        NativeScript
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-    </ul>
-  
-
-<li>
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
           
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Actions</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../actions/">
-        Available Actions
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../create-action/">
-        Create Your Own Action
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Apple</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../app-store-connect-api/">
-        Using App Store Connect API
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../uploading-app-privacy-details/">
-        Uploading App Privacy Details
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../faqs/">
-        FAQs
-      </a>
-      
-      
-    </li>
-  
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Codesigning</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../codesigning/getting-started/">
-        Getting Started
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../codesigning/xcode-project/">
-        Xcode Project
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../codesigning/troubleshooting/">
-        Troubleshooting
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../codesigning/common-issues/">
-        Common Issues
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Plugins</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/available-plugins/">
-        Available Plugins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/using-plugins/">
-        Use Plugins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/create-plugin/">
-        Create Your Own Plugin
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../plugins/plugins-troubleshooting/">
-        Plugins Troubleshooting
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Best Practices</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/source-control/">
-        Source Control
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/">
-        Continuous Integration
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>CI Integrations</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/appcircle/">
-        Appcircle
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/azure-devops/">
-        Azure DevOps
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/bamboo/">
-        Bamboo
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/bitrise/">
-        Bitrise
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/circle-ci/">
-        CircleCI
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/gitlab/">
-        GitLab CI
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/jenkins/">
-        Jenkins
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/nevercode/">
-        NeverCode
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/semaphore/">
-        Semaphore
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/continuous-integration/travis/">
-        Travis
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../../best-practices/keys/">
-        Keys
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-    <ul class="subnav">
-      <li><span>Advanced</span></li>
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../fastlane/">
-        fastlane
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../Fastfile/">
-        Fastfile
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../Appfile/">
-        Appfile
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../lanes/">
-        Lanes
-      </a>
-      
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    current
-    
-    
-    ">
-      <a class="
-      current
-      
-      " href="./">
-        Actions
-      </a>
-      
-      
-        <ul>
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
           
           
-            
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
           
-            
-              <li class="toctree-l3"><a href="#naming-actions">Naming actions</a></li>
-            
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
           
-            
-              <li class="toctree-l3"><a href="#interacting-with-the-user">Interacting with the user</a></li>
-            
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
           
-            
-              <li class="toctree-l3"><a href="#run-actions-directly">Run actions directly</a></li>
-            
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
           
-            
-              <li class="toctree-l3"><a href="#shell-values">Shell values</a></li>
-            
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
           
-            
-              <li class="toctree-l3"><a href="#building-actions">Building Actions</a></li>
-            
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul class="current">
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current active current">
+  <a class="reference internal current" href="./">Actions</a>
+      <ul class="current">
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../other/">Other</a>
+                      </li>
+                  </ul>
           
-        </ul>
-      
-    </li>
-  
-
-      
-        
-
-
-  
-  
-    <li class="toctree-l1 
-    
-    
-    
-    
-    ">
-      <a class="
-      
-      
-      " href="../other/">
-        Other
-      </a>
-      
-      
-    </li>
-  
-
-      
-    </ul>
-  
-
-<li>
-          
-            <li>
-
-
-  
-  
-
-<li>
-          
-        </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -1345,19 +289,21 @@
     
     <li>Actions</li>
 
+
     
       <li class="wy-breadcrumbs-aside">
         
-          <a href="https://github.com/fastlane/docs/edit/master/docs/advanced/actions.md" class="icon icon-github" target="_blank">
-            Edit on GitHub
-          </a>
+          <a href="https://github.com/fastlane/docs/edit/master/docs/advanced/actions.md"
+            class="icon icon-github"> Edit on GitHub</a>
         
       </li>
     
-    <li class="wy-breadcrumbs-aside">
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
       <input type="text" name="q" placeholder="Search docs" />
     </li>
   </ul>
+  
   <hr/>
 </div>
 
@@ -1399,41 +345,49 @@
   }
 </style>
 
-<p><details class="fastlane-setup-wrapper">
-  <summary class="fastlane-setup">New to fastlane? Click here to open the installation &amp; setup instructions first</summary></p>
+<details class="fastlane-setup-wrapper">
+  <summary class="fastlane-setup">New to fastlane? Click here to open the installation & setup instructions first</summary>
+
+
 <p class="fastlane-setup-header">1) Install the latest Xcode command line tools</p>
 
-<pre><code class="no-highlight">xcode-select --install
+
+<pre><code class="language-no-highlight">xcode-select --install
 </code></pre>
+
 
 <p class="fastlane-setup-header">2) Install <i>fastlane</i></p>
 
-<pre><code class="sh"># Using RubyGems
+
+<pre><code class="language-sh"># Using RubyGems
 sudo gem install fastlane -NV
 
 # Alternatively using Homebrew
 brew install fastlane
 </code></pre>
 
+
 <p class="fastlane-setup-header">3) Navigate to your project and run</p>
 
-<pre><code class="no-highlight">fastlane init
+
+<pre><code class="language-no-highlight">fastlane init
 </code></pre>
+
 
 <p class="fastlane-setup-more-details"><a href="/getting-started/ios/setup/">More Details</a></p>
 
-<p></details></p>
-<h1 id="actions"><a name="user-content-actions" href="#actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Actions</h1>
-<h1 id="naming-actions"><a name="user-content-naming-actions" href="#naming-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Naming actions</h1>
+</details>
+
+<h1 id="actions">Actions</h1>
+<h1 id="naming-actions">Naming actions</h1>
 <p>You can specify a <em>"step name"</em> for all actions (starting with <code>fastlane 2.120.0</code>) to disambiguate the use of some action several times, in different context.
 To do so, add the <code>:step_name</code> property to your arguments.</p>
 <p>For instance with the <a href="https://github.com/joshrlesch/fastlane-plugin-yarn">fastlane-plugin-yarn</a> and the native sh:</p>
-<pre><code class="ruby">yarn(step_name: 'install_dependencies')
+<pre><code class="language-ruby">yarn(step_name: 'install_dependencies')
 yarn(commmand: 'build', step_name: 'building_project')
 yarn(commmand: 'test', step_name: 'testing_project')
 yarn(commmand: 'publish-coverage', step_name: 'publishing_project')
 </code></pre>
-
 <p>These name will appear as the step description instead of generic <code>yarn</code> as you can see in the following output:</p>
 <pre><code>[08:13:37]: --- Step: install_dependencies ---
 [08:13:37]: ----------------------------------
@@ -1478,10 +432,9 @@ yarn(commmand: 'publish-coverage', step_name: 'publishing_project')
 | 4    | yarn                       | 12          |
 +------+----------------------------+-------------+
 </code></pre>
-
-<h1 id="interacting-with-the-user"><a name="user-content-interacting-with-the-user" href="#interacting-with-the-user" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Interacting with the user</h1>
+<h1 id="interacting-with-the-user">Interacting with the user</h1>
 <p>Instead of using <code>puts</code>, <code>raise</code> and <code>gets</code>, please use the helper class <code>UI</code> across all fastlane tools:</p>
-<pre><code class="ruby">UI.message &quot;Neutral message (usually white)&quot;
+<pre><code class="language-ruby">UI.message &quot;Neutral message (usually white)&quot;
 UI.success &quot;Successfully finished processing (usually green)&quot;
 UI.error &quot;Wahaha, what's going on here! (usually red)&quot;
 UI.important &quot;Make sure to use Windows (usually yellow)&quot;
@@ -1521,25 +474,22 @@ UI.crash!(&quot;Network timeout&quot;)
 ###### a deprecation message
 UI.deprecated(&quot;The '--key' parameter is deprecated&quot;)
 </code></pre>
-
-<h1 id="run-actions-directly"><a name="user-content-run-actions-directly" href="#run-actions-directly" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Run actions directly</h1>
+<h1 id="run-actions-directly">Run actions directly</h1>
 <p>If you just want to try an action without adding them to your <code>Fastfile</code> yet, you can use</p>
-<pre><code class="no-highlight">fastlane run notification message:&quot;My Text&quot; title:&quot;The Title&quot;
+<pre><code class="language-no-highlight">fastlane run notification message:&quot;My Text&quot; title:&quot;The Title&quot;
 </code></pre>
-
 <p>To get the available options for any action run <code>fastlane action [action_name]</code>. You might not be able to set some kind of parameters using this method.</p>
-<h1 id="shell-values"><a name="user-content-shell-values" href="#shell-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Shell values</h1>
+<h1 id="shell-values">Shell values</h1>
 <p>You can get value from shell commands:</p>
-<pre><code class="ruby">output = sh(&quot;pod update&quot;)
+<pre><code class="language-ruby">output = sh(&quot;pod update&quot;)
 </code></pre>
-
-<h1 id="building-actions"><a name="user-content-building-actions" href="#building-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Building Actions</h1>
-<h2 id="using-fastlanecoreconfiguration"><a name="user-content-using-fastlanecoreconfiguration" href="#using-fastlanecoreconfiguration" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using FastlaneCore::Configuration</h2>
+<h1 id="building-actions">Building Actions</h1>
+<h2 id="using-fastlanecoreconfiguration">Using FastlaneCore::Configuration</h2>
 <p>Most actions accept one or more parameters to customize their behavior. Actions define their
 parameters in an <code>available_options</code> method. This method returns an array of <code>FastlaneCore::ConfigItem</code>
 objects to describe supported options. Each option is declared by creating a new
 <code>ConfigItem</code>, e.g.:</p>
-<pre><code class="ruby">FastlaneCore::ConfigItem.new(
+<pre><code class="language-ruby">FastlaneCore::ConfigItem.new(
   key: :file,
   env_name: &quot;MY_NEW_ACTION_FILE&quot;,
   description: &quot;A file to operate on&quot;,
@@ -1547,24 +497,21 @@ objects to describe supported options. Each option is declared by creating a new
   optional: false
 )
 </code></pre>
-
 <p>This declares a <code>file</code> option for use with the action in a Fastfile, e.g.:</p>
-<pre><code class="ruby">my_new_action(file: &quot;file.txt&quot;)
+<pre><code class="language-ruby">my_new_action(file: &quot;file.txt&quot;)
 </code></pre>
-
 <p>If the optional <code>env_name</code> is present, an environment variable with the specified
 name may also be used in place of an option in the Fastfile:</p>
-<pre><code class="bash">MY_NEW_ACTION_FILE=file.txt fastlane run my_new_action
+<pre><code class="language-bash">MY_NEW_ACTION_FILE=file.txt fastlane run my_new_action
 </code></pre>
-
 <p>The <code>type</code> argument to the <code>FastlaneCore::ConfigItem</code> initializer specifies the
 name of a Ruby class representing a standard
 data type. Supplied arguments will be coerced to the specified type. Some standard types
 support default conversions.</p>
-<h3 id="boolean-parameters"><a name="user-content-boolean-parameters" href="#boolean-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Boolean parameters</h3>
+<h3 id="boolean-parameters">Boolean parameters</h3>
 <p>Ruby does not have a single class to represent a Boolean type. When specifying
 Boolean parameters, use <code>is_string: false</code>, without specifying a <code>type</code>, e.g.:</p>
-<pre><code class="ruby">FastlaneCore::ConfigItem.new(
+<pre><code class="language-ruby">FastlaneCore::ConfigItem.new(
   key: :commit,
   env_name: &quot;MY_NEW_ACTION_COMMIT&quot;,
   description: &quot;Commit the results if true&quot;,
@@ -1573,21 +520,19 @@ Boolean parameters, use <code>is_string: false</code>, without specifying a <cod
   is_string: false
 )
 </code></pre>
-
 <p>When passing a string value, e.g. from an environment variable, certain set
 string values are recognized:</p>
-<pre><code class="bash">MY_NEW_ACTION_COMMIT=true
+<pre><code class="language-bash">MY_NEW_ACTION_COMMIT=true
 MY_NEW_ACTION_COMMIT=false
 MY_NEW_ACTION_COMMIT=yes
 MY_NEW_ACTION_COMMIT=no
 </code></pre>
-
 <p>These values may also be passed in all caps, e.g. <code>MY_NEW_ACTION_COMMIT=YES</code>.</p>
-<h3 id="array-parameters"><a name="user-content-array-parameters" href="#array-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Array parameters</h3>
+<h3 id="array-parameters">Array parameters</h3>
 <p>If a parameter is declared with <code>type: Array</code> and a <code>String</code> argument is passed,
 an array will be produced by splitting the string using the comma character
 as a delimiter:</p>
-<pre><code class="ruby">FastlaneCore::ConfigItem.new(
+<pre><code class="language-ruby">FastlaneCore::ConfigItem.new(
   key: :files,
   env_name: &quot;MY_NEW_ACTION_FILES&quot;,
   description: &quot;One or more files to operate on&quot;,
@@ -1595,28 +540,24 @@ as a delimiter:</p>
   optional: false
 )
 </code></pre>
-
-<pre><code class="ruby">my_new_action(files: &quot;file1.txt,file2.txt&quot;)
+<pre><code class="language-ruby">my_new_action(files: &quot;file1.txt,file2.txt&quot;)
 </code></pre>
-
 <p>This is received by the action as <code>["file1.txt", "file2.txt"]</code>.</p>
 <p>This also means a parameter that accepts an array may take a single string as an
 argument:</p>
-<pre><code class="ruby">my_new_action(files: &quot;file.txt&quot;)
+<pre><code class="language-ruby">my_new_action(files: &quot;file.txt&quot;)
 </code></pre>
-
 <p>This is received by the action as <code>["file.txt"]</code>.</p>
 <p>Comma-separated lists are particularly useful when using environment variables:</p>
-<pre><code class="bash">export MY_NEW_ACTION_FILES=file1.txt,file2.txt
+<pre><code class="language-bash">export MY_NEW_ACTION_FILES=file1.txt,file2.txt
 </code></pre>
-
-<h3 id="polymorphic-parameters"><a name="user-content-polymorphic-parameters" href="#polymorphic-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Polymorphic parameters</h3>
+<h3 id="polymorphic-parameters">Polymorphic parameters</h3>
 <p>To allow for different types to be passed to a parameter (beyond what is
 provided above), specify <code>is_string: false</code> without a <code>type</code> field. Use
 an optional <code>verify_block</code> argument (see below) or verify the argument within
 your action. If the block does not raise, the option is considered verified.
 The <code>UI.user_error!</code> method is a convenient way to handle verification failure.</p>
-<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+<pre><code class="language-Ruby">FastlaneCore::ConfigItem.new(
   key: :polymorphic_option,
   is_string: false,
   verify_block: -&gt;(value) { verify_option(value) }
@@ -1635,58 +576,51 @@ def verify_option(value)
   end
 end
 </code></pre>
-
-<h3 id="callback-parameters"><a name="user-content-callback-parameters" href="#callback-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Callback parameters</h3>
+<h3 id="callback-parameters">Callback parameters</h3>
 <p>If your action needs to provide a callback, specify <code>Proc</code> for the <code>type</code> field.</p>
-<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+<pre><code class="language-Ruby">FastlaneCore::ConfigItem.new(
   key: :callback,
   description: &quot;Optional callback argument&quot;,
   optional: true,
   type: Proc
 )
 </code></pre>
-
 <p>To invoke the callback in your action, use the <code>Proc#call</code> method and pass
 any arguments:</p>
-<pre><code class="Ruby">params[:callback].call(result) if params[:callback]
+<pre><code class="language-Ruby">params[:callback].call(result) if params[:callback]
 </code></pre>
-
 <p>To notify the user of success or failure, it's usually best just to return a
 value such as <code>true</code> or <code>false</code> from your action. Use a callback for contextual
 error handling. For example, the built-in <code>sh</code> action passes the entire command
 output to an optional <code>error_callback</code>:</p>
-<pre><code class="Ruby">callback = lambda do |result|
+<pre><code class="language-Ruby">callback = lambda do |result|
   handle_missing_file if result =~ /file not found/i
   handle_auth_failure if result =~ /login failed/i
 end
 
 sh &quot;some_cmd&quot;, error_callback: callback
 </code></pre>
-
-<h3 id="note-on-procs"><a name="user-content-note-on-procs" href="#note-on-procs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Note on Procs</h3>
+<h3 id="note-on-procs">Note on Procs</h3>
 <p>When passing a block as a parameter to an action or ConfigItem, use
 a Proc object. There are three ways to create an instance of Proc in Ruby.</p>
 <p>Using the <code>lambda</code> operator:</p>
-<pre><code class="Ruby">verify_block = lambda do |value|
+<pre><code class="language-Ruby">verify_block = lambda do |value|
   ...
 end
 </code></pre>
-
 <p>Using <code>Proc.new</code>:</p>
-<pre><code class="Ruby">verify_block = Proc.new do |value|
+<pre><code class="language-Ruby">verify_block = Proc.new do |value|
   ...
 end
 </code></pre>
-
 <p>Using the <code>Proc</code> literal notation:</p>
-<pre><code class="Ruby">verify_block = -&gt;(value) { ... }
+<pre><code class="language-Ruby">verify_block = -&gt;(value) { ... }
 </code></pre>
-
 <p>Note that you cannot pass a block literal as a <code>Proc</code>.</p>
-<h3 id="verify-blocks"><a name="user-content-verify-blocks" href="#verify-blocks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Verify blocks</h3>
+<h3 id="verify-blocks">Verify blocks</h3>
 <p>Use a <code>verify_block</code> argument with your <code>ConfigItem</code> to provide special
 argument verification:</p>
-<pre><code class="Ruby">verify_block = lambda do |value|
+<pre><code class="language-Ruby">verify_block = lambda do |value|
   # Has to be a String to get this far
   uri = URI(value)
   UI.error &quot;Invalid scheme #{uri.scheme}&quot; unless uri.scheme == &quot;http&quot; || uri.scheme == &quot;https&quot;
@@ -1698,12 +632,11 @@ FastlaneCore::ConfigItem.new(
   verify_block: verify_block
 )
 </code></pre>
-
 <p>The <code>verify_block</code> requires a <code>Proc</code> argument (see above).</p>
-<h3 id="conflicting-options"><a name="user-content-conflicting-options" href="#conflicting-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Conflicting options</h3>
+<h3 id="conflicting-options">Conflicting options</h3>
 <p>If your action includes multiple conflicting options, use <code>conflicting_options</code>
 in the <code>ConfigItem</code> for each. Make sure conflicting options are optional.</p>
-<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+<pre><code class="language-Ruby">FastlaneCore::ConfigItem.new(
   key: :text,
   type: String,
   optional: true,
@@ -1716,10 +649,9 @@ FastlaneCore::ConfigItem.new(
   conflicting_options: [:text]
 )
 </code></pre>
-
 <p>You can also pass a <code>conflict_block</code> (a <code>Proc</code>, see above) if you want to
 implement special handling of conflicting options:</p>
-<pre><code class="Ruby">conflict_block = Proc.new do |other|
+<pre><code class="language-Ruby">conflict_block = Proc.new do |other|
   UI.user_error! &quot;Unexpected conflict with option #{other}&quot; unless [:text, :text_file].include?(other)
   UI.message &quot;Ignoring :text_file in favor of :text&quot;
 end
@@ -1739,12 +671,11 @@ FastlaneCore::ConfigItem.new(
   conflict_block: conflict_block
 )
 </code></pre>
-
-<h3 id="optional-parameters"><a name="user-content-optional-parameters" href="#optional-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Optional parameters</h3>
+<h3 id="optional-parameters">Optional parameters</h3>
 <p>Parameters with <code>optional: true</code> will be <code>nil</code> unless a <code>default_value</code> field
 is present. Make sure the <code>default_value</code> is reasonable unless it's acceptable
 for the key to be absent.</p>
-<pre><code class="Ruby">FastlaneCore::ConfigItem.new(
+<pre><code class="language-Ruby">FastlaneCore::ConfigItem.new(
   key: :build_configuration,
   description: &quot;Which build configuration to use&quot;,
   type: String,
@@ -1766,33 +697,29 @@ FastlaneCore::ConfigItem.new(
   # Not every project has a workspace, so nil is a good default value here.
 )
 </code></pre>
-
 <p>Within the action <code>params[:build_configuration]</code> will never be nil. Specifying
 the <code>default_value</code> is preferable to something in code like:</p>
-<pre><code class="Ruby">config = params[:build_configuration] || &quot;Release&quot;
+<pre><code class="language-Ruby">config = params[:build_configuration] || &quot;Release&quot;
 </code></pre>
-
 <p>Default values are included in the documentation for action parameters.</p>
-<h3 id="configuration-files"><a name="user-content-configuration-files" href="#configuration-files" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuration files</h3>
+<h3 id="configuration-files">Configuration files</h3>
 <p>Many built-in actions such as <em>deliver</em>, <em>gym</em> and <em>scan</em> support configuration files
 (<code>Deliverfile</code>, <code>Gymfile</code>, <code>Scanfile</code>). This is useful for actions with many options.
 To add support for a configuration file to a custom action, call <code>load_configuration_file</code>
 early, usually as the first line of <code>run</code>:</p>
-<pre><code class="ruby">def self.run(params)
+<pre><code class="language-ruby">def self.run(params)
   params.load_configuration_file(&quot;MyNewActionfile&quot;)
   # ...
 </code></pre>
-
 <p>This will load any parameters specified in <code>MyNewActionfile</code>. This method looks for
 the specified file in <code>./fastlane</code>, <code>./.fastlane</code> and <code>.</code>, in that order. The
 file is evaluated by the Ruby interpreter.
 You may specify they <code>key</code> from any <code>FastlaneCore::ConfigItem</code> as a method call in the
 configuration file:</p>
-<pre><code class="ruby">command &quot;ls -la&quot;
+<pre><code class="language-ruby">command &quot;ls -la&quot;
 files %w{file1.txt file2.txt}
 </code></pre>
-
-<h3 id="resolution-order"><a name="user-content-resolution-order" href="#resolution-order" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Resolution order</h3>
+<h3 id="resolution-order">Resolution order</h3>
 <p>Parameters are resolved from different sources in the following order:</p>
 <ol>
 <li>A parameter directly passed to an action using the <code>key</code>, usually from the <code>Fastfile</code>.</li>
@@ -1800,15 +727,14 @@ files %w{file1.txt file2.txt}
 <li>A configuration file used in <code>load_configuration_file</code>.</li>
 <li>The <code>default_value</code> of the <code>ConfigItem</code>. If not explicitly set, this will be <code>nil</code>.</li>
 </ol>
-<h2 id="user-input-and-output"><a name="user-content-user-input-and-output" href="#user-input-and-output" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>User input and output</h2>
+<h2 id="user-input-and-output">User input and output</h2>
 <p>The <code>FastlaneCore::UI</code> utility may be used to display output to the user and also
 request input from an action.
 <code>UI</code> includes a number of methods to customize the output for different purposes:</p>
-<pre><code class="ruby">UI.message &quot;Hello from my_new_action.&quot;
+<pre><code class="language-ruby">UI.message &quot;Hello from my_new_action.&quot;
 UI.important &quot;Warning: This is a new action.&quot;
 UI.error &quot;Something unexpected happened in my_new_action. Attempting to continue.&quot;
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -1857,9 +783,8 @@ UI.error &quot;Something unexpected happened in my_new_action. Attempting to con
 </table>
 <p>Methods ending in an exclamation point (<code>!</code>) terminate execution of the current
 lane and report an error:</p>
-<pre><code class="ruby">UI.user_error! &quot;Could not open file #{file_path}&quot;
+<pre><code class="language-ruby">UI.user_error! &quot;Could not open file #{file_path}&quot;
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -1896,19 +821,17 @@ lane and report an error:</p>
 </table>
 <p>Note that these methods raise exceptions that are rescued in the runner context for
 the lane. This terminates further lane execution, so it is not necessary to return.</p>
-<pre><code class="ruby"># No need for &quot;and return&quot; here
+<pre><code class="language-ruby"># No need for &quot;and return&quot; here
 UI.user_error!(&quot;Could not open file #{file_path}&quot;) and return if file.nil?
 </code></pre>
-
 <p>The following methods may be used to prompt the user for input.</p>
-<pre><code class="ruby">if UI.interactive?
+<pre><code class="language-ruby">if UI.interactive?
   name = UI.input &quot;Please enter your name: &quot;
   is_correct = UI.confirm &quot;Is this correct? &quot;
   choice = UI.select &quot;Please choose from the following list:&quot;, %w{alpha beta gamma}
   password = UI.password &quot;Please enter your password: &quot;
 end
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -1939,63 +862,57 @@ end
 </tr>
 </tbody>
 </table>
-<h2 id="invoking-shell-commands"><a name="user-content-invoking-shell-commands" href="#invoking-shell-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Invoking shell commands</h2>
+<h2 id="invoking-shell-commands">Invoking shell commands</h2>
 <p>If your action needs to run a shell command, there are several methods. You can
 easily determine the exit status of the command and capture all terminal output
 from the command.</p>
-<h3 id="using-kernelsystem"><a name="user-content-using-kernelsystem" href="#using-kernelsystem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using Kernel#system</h3>
+<h3 id="using-kernelsystem">Using Kernel#system</h3>
 <p>Use the Ruby <code>system</code> method call to invoke a command string. This does not
 redirect stdin, stdout or stderr, so output formatting will be unaffected. It executes
 the command in a subshell.</p>
-<pre><code class="ruby">system &quot;cat fastlane/Fastfile&quot;
+<pre><code class="language-ruby">system &quot;cat fastlane/Fastfile&quot;
 </code></pre>
-
 <p>Upon command completion, the method returns true or false to indicate completion
 status. The <code>$?</code> global variable will also indicate the exit status of the
 command.</p>
-<pre><code class="ruby">system &quot;cat fastlane/Fastfile&quot;
+<pre><code class="language-ruby">system &quot;cat fastlane/Fastfile&quot;
 UI.user_error! &quot;Could not execute command&quot; unless $?.exitstatus == 0
 </code></pre>
-
 <p>If the command to be executed is not found, system will return <code>nil</code>, and
 <code>$?.exitstatus</code> will be nonzero.</p>
-<h3 id="using-backticks"><a name="user-content-using-backticks" href="#using-backticks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using backticks</h3>
+<h3 id="using-backticks">Using backticks</h3>
 <p>To capture the output of a command, enclose the command in backticks:</p>
-<pre><code class="ruby">pod_cmd = `which pod`
+<pre><code class="language-ruby">pod_cmd = `which pod`
 UI.important &quot;'pod' command not found&quot; if pod_cmd.empty?
 </code></pre>
-
 <p>Because you are capturing stdout, the command output will not appear at
 the terminal unless you log it using <code>UI</code>. Formatting may be lost when
 capturing command output. The entire output to stdout will be captured after the
 command returns. Output to stderr is not captured or redirected. The <code>$?</code>
 global variable will indicate the completion status of the command.</p>
 <p>If the command to be executed is not found, <code>Errno::ENOENT</code> is raised.</p>
-<h3 id="using-the-sh-method"><a name="user-content-using-the-sh-method" href="#using-the-sh-method" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Using the sh method</h3>
+<h3 id="using-the-sh-method">Using the sh method</h3>
 <p>You can also use the built-in <code>sh</code> method:</p>
-<pre><code class="ruby">sh &quot;pwd&quot;
+<pre><code class="language-ruby">sh &quot;pwd&quot;
 </code></pre>
-
 <p>This is called the same way in an action as in a Fastfile. This provides consistent
 logging of command output. All output to stdout and stderr is logged via <code>UI</code>.</p>
 <p>The <code>sh</code> method can accept a block, which will receive the <code>Process::Status</code>
 returned by the command, the complete output of the command, and an equivalent
 shell command upon completion of the command.</p>
-<pre><code class="ruby">sh &quot;ls&quot;, &quot;-la&quot; do |status, result, command|
+<pre><code class="language-ruby">sh &quot;ls&quot;, &quot;-la&quot; do |status, result, command|
   unless status.success?
     UI.error &quot;Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}&quot;
   end
   UI.message &quot;Output is #{result.inspect}&quot;
 end
 </code></pre>
-
 <p>To be notified only when an error occurs, use the <code>error_callback</code> parameter
 (a Proc):</p>
-<pre><code class="ruby">success = true
+<pre><code class="language-ruby">success = true
 sh(&quot;pwd&quot;, error_callback: -&gt;(result) { success = false })
 UI.user_error &quot;Command failed&quot; unless success
 </code></pre>
-
 <p>The <code>result</code> argument to the <code>error_callback</code> is the entire string output
 of the command.</p>
 <p>If the command to be executed is not found, <code>Errno::ENOENT</code> is raised without
@@ -2007,30 +924,26 @@ as the first argument to a block.</p>
 <p>The return value of the method is the output of the command, unless a block is
 given. Then the output is available within the block, and the return value of
 <code>sh</code> is the return value of the block. This enables usage like:</p>
-<pre><code class="ruby">if sh command { |s| s.success? }
+<pre><code class="language-ruby">if sh command { |s| s.success? }
   UI.success &quot;Command succeeded&quot;
 else
   UI.error &quot;Command failed&quot;
 end
 </code></pre>
-
 <p>Anywhere other than an action or a Fastfile (e.g. in helper code), you can
 invoke this method as <code>Actions.sh</code>.</p>
-<h3 id="escaping-in-shell-commands"><a name="user-content-escaping-in-shell-commands" href="#escaping-in-shell-commands" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Escaping in shell commands</h3>
+<h3 id="escaping-in-shell-commands">Escaping in shell commands</h3>
 <p>Use <code>shellwords</code> to escape arguments to shell commands.</p>
-<pre><code class="Ruby">`git commit -aqm #{Shellwords.escape commit_message}`
+<pre><code class="language-Ruby">`git commit -aqm #{Shellwords.escape commit_message}`
 </code></pre>
-
-<pre><code class="Ruby">system &quot;cat #{path.shellescape}&quot;
+<pre><code class="language-Ruby">system &quot;cat #{path.shellescape}&quot;
 </code></pre>
-
 <p>When using <code>system</code> or <code>sh</code>, pass a list of arguments instead of shell-escaping
 individual arguments.</p>
-<pre><code class="Ruby">sh &quot;git&quot;, &quot;commit&quot;, &quot;-aqm&quot;, commit_message
+<pre><code class="language-Ruby">sh &quot;git&quot;, &quot;commit&quot;, &quot;-aqm&quot;, commit_message
 system &quot;cat&quot;, path
 </code></pre>
-
-<h2 id="calling-other-actions"><a name="user-content-calling-other-actions" href="#calling-other-actions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Calling other actions</h2>
+<h2 id="calling-other-actions">Calling other actions</h2>
 <p>Some built-in utility actions, such as <code>sh</code>, may be used in custom actions (e.g., in
 plugins). It's not generally a good idea to call a complex action from another action.
 In particular:</p>
@@ -2050,15 +963,6 @@ In particular:</p>
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../other/" class="btn btn-neutral float-right" title="Other">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../lanes/" class="btn btn-neutral" title="Lanes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
@@ -2072,7 +976,7 @@ In particular:</p>
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - 
 </footer>
 
 <script type="text/javascript">
@@ -2083,7 +987,7 @@ In particular:</p>
     } 
   }
 </script>
-	  
+      
         </div>
       </div>
 
@@ -2091,10 +995,10 @@ In particular:</p>
 
   </div>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/fastlane/docs" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../lanes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
@@ -2104,6 +1008,17 @@ In particular:</p>
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
+    <!-- <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script> -->
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
