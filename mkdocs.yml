@@ -1,29 +1,31 @@
 ---
 site_name: fastlane docs
-theme: readthedocs
+theme:
+  name: readthedocs
+  custom_dir: theme
 copyright: Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
-#site_favicon: img/favicon.ico
 repo_url: https://github.com/fastlane/docs
 google_analytics:
 - UA-18658848-13
 - docs.fastlane.tools
 strict: false
-#strict: true
 markdown_extensions:
-  #- pymdownx.headeranchor
 - markdown.extensions.attr_list
 - markdown_include.include
 - mdx_truly_sane_lists
 - toc:
     toc_depth: 2
 docs_dir: docs
-extra_css: [./css/sidenavv.css,./css/fastlane.css,./css/code.css,./css/breadcrumbs.css,./css/fabric.css,./css/sidenav.css]
-theme:
-    name: readthedocs
-    custom_dir: theme
+extra_css:
+- "./css/sidenavv.css"
+- "./css/fastlane.css"
+- "./css/code.css"
+- "./css/breadcrumbs.css"
+- "./css/fabric.css"
+- "./css/sidenav.css"
 nav:
 - Home: index.md
 - Getting Started:

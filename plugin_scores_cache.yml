@@ -5739,13 +5739,13 @@ fastlane-plugin-androidmanifest_editor:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-upload_dsym_to_bugly:
-  :github_stars: 10
+  :github_stars: 14
   :github_subscribers: 1
   :github_issues: 1
-  :github_forks: 0
-  :github_contributors: 0
+  :github_forks: 1
+  :github_contributors: 1
   :initial_commit: 2018-11-12
-  :age_in_days: 781
+  :age_in_days: 963
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5754,12 +5754,7 @@ fastlane-plugin-upload_dsym_to_bugly:
     category:
     description: upload_dsym_to_bugly
     details:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: upload_app_to_bugly
-    category:
-    description: upload_app_to_bugly
-    details: You can use this action to do cool things...
-  :sha: 38a21b8b6a99574b7a29db66f1c21fc04a464d7c82862d4496d989a250e565c4
+  :sha: c184b36923bfe8ee19dae08bbfd64562228a765f779dcbbe6efe7bcddb0e25d0
 fastlane-plugin-jira_util:
   :initial_commit: 2016-09-01
   :age_in_days: 1215
@@ -10664,3 +10659,22 @@ fastlane-plugin-hello_gem_kimjg:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-verify_ipa_with_app_store_connect:
+  :initial_commit: 2021-06-30
+  :age_in_days: 2
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: verify_ipa_with_app_store_connect
+    category:
+    description: Uses the command line tool iTMSTransporter provided with Xcode to
+      verify the ipa.
+    details: You can use this action to check for issues before an actual upload to
+      App Store Connect.
+  :sha: ba15c93a0616323daa750ffa1054ace03646893feda4465abc2fa0a1f180be33
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
