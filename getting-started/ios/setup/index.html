@@ -80,6 +80,9 @@
       </ul>
                   </li>
                   <li class="toctree-l2">
+  <a class="reference internal" href="../authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
   <a class="reference internal" href="../running-tests/">Running Tests</a>
                   </li>
                   <li class="toctree-l2">
@@ -379,12 +382,14 @@ See <a href="https://formulae.brew.sh/formula/fastlane">this page</a> for detail
 <p><img src="/img/getting-started/ios/fastlane-init.png" width="800" /></p>
 <p>The most interesting file is <code>fastlane/Fastfile</code>, which contains all the information that is needed to distribute your app.</p>
 <h3 id="whats-next">What's next?</h3>
-<p><em>fastlane</em> created all the required files for you, now you can go ahead and customise it to generate screenshots or to automatically distribute new builds</p>
+<p><em>fastlane</em> created all the required files for you. Now you can go ahead and customise <em>fastlane</em> to generate screenshots, or automatically distribute new builds, and much, much more. Here're some examples:</p>
 <ul>
 <li><a href="../screenshots/">Generate localized iOS screenshots for the App Store</a></li>
 <li><a href="../beta-deployment/">Automatic iOS Beta deployment</a></li>
 <li><a href="../appstore-deployment/">Automatic iOS App Store deployment</a></li>
+<li>Discover all <a href="/actions"><em>fastlane</em> actions</a></li>
 </ul>
+<p>Do note that if the automation you're building requires connectivity with Apple's servers, such as for code signing when building your app, or uploading your app to the App Store Connect, and so on, you will need to authenticate. Check out <a href="../authentication/">Authenticating with Apple services</a> to learn the best ways to authenticate, catered for your specific use case.</p>
 <h4 id="set-up-environment-variables">Set up environment variables</h4>
 <p><em>fastlane</em> requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:</p>
 <pre><code class="language-sh">export LC_ALL=en_US.UTF-8
@@ -452,7 +457,7 @@ gem &quot;fastlane&quot;
         <span><a href="../../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../running-tests/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../authentication/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
