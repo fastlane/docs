@@ -3,7 +3,7 @@ version: 2.0
 jobs:
   "Test":
     docker:
-      - image: fastlanetools/ci:0.3.0
+      - image: fastlanetools/ci:0.4.0
     working_directory: ~/code
     steps:
       - checkout
@@ -16,7 +16,7 @@ jobs:
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
     docker:
-      - image: fastlanetools/ci:0.3.0
+      - image: fastlanetools/ci:0.4.0
     working_directory: ~/code
     steps:
       - checkout

@@ -19,7 +19,7 @@ To use the newly created lane, just run
 fastlane tests
 ```
 
-## Setting up _fastlane_ to run on CI
+### Setting up _fastlane_ to run on CI
 
 To run Android tests using _fastlane_ on a Continuous Integration service, check out [the Continuous Integration docs](/best-practices/continuous-integration/).
 
@@ -45,13 +45,13 @@ If your CI system isn't listed here, no problem, _fastlane_ runs on any CI. To t
 fastlane tests
 ```
 
-## Posting build results
+### Posting build results
 
 If you want to post test results on Slack, Hipchat, or other team chat client, check out the available [fastlane actions](/actions/#notifications).
 
-### Build failures
+#### Build failures
 
-#### Hipchat
+##### Hipchat
 
 To post a message when _fastlane_ encounters a test or build failure, add the following to your `Fastfile`:
 
@@ -63,6 +63,6 @@ error do |ex|
 end
 ```
 
-#### Other services
+##### Other services
 
 The above example uses Hipchat, but _fastlane_ supports [many other services out there](/actions/#notifications). 

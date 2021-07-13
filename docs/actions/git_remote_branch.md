@@ -1,34 +1,34 @@
 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/clipboard.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_remote_branch.rb
 -->
 
-# clipboard
+# git_remote_branch
 
 
-Copies a given string into the clipboard. Works only on macOS
-
-
-
+Returns the name of the current git remote default branch
 
 
 
 
-clipboard ||
+> If no default remote branch could be found, this action will return nil. This is a wrapper for the internal action Actions.git_default_remote_branch_name
+
+
+git_remote_branch ||
 ---|---
 Supported platforms | ios, android, mac
-Author | @KrauseFx, @joshdholtz, @rogerluan
+Author | @SeanMcNeil
 
 
 
 ## 2 Examples
 
 ```ruby
-clipboard(value: "https://docs.fastlane.tools/")
+git_remote_branch # Query git for first available remote name
 ```
 
 ```ruby
-clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
+git_remote_branch(remote_name:"upstream") # Provide a remote name
 ```
 
 
@@ -39,7 +39,7 @@ clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
 
 Key | Description | Default
 ----|-------------|--------
-  `value` | The string that should be copied into the clipboard | 
+  `remote_name` | The remote repository to check | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
@@ -52,7 +52,7 @@ Key | Description | Default
 
 To show the documentation in your terminal, run
 ```no-highlight
-fastlane action clipboard
+fastlane action git_remote_branch
 ```
 
 <hr />
@@ -62,13 +62,13 @@ fastlane action clipboard
 It is recommended to add the above action into your `Fastfile`, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal
 
 ```no-highlight
-fastlane run clipboard
+fastlane run git_remote_branch
 ```
 
 To pass parameters, make use of the `:` symbol, for example
 
 ```no-highlight
-fastlane run clipboard parameter1:"value1" parameter2:"value2"
+fastlane run git_remote_branch parameter1:"value1" parameter2:"value2"
 ```
 
 It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. `param:"1,2,3"`). Hashes are not currently supported.
@@ -79,7 +79,7 @@ It is recommended to add all _fastlane_ actions you use to your `Fastfile`.
 
 ## Source code
 
-This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/clipboard.rb" target="_blank">view the source code on GitHub</a>
+This action, just like the rest of _fastlane_, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/git_remote_branch.rb" target="_blank">view the source code on GitHub</a>
 
 <hr />
 

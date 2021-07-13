@@ -44,7 +44,7 @@ Key | Description | Default
 ----|-------------|--------
   `force` | Force setup, even if not executed by Jenkins | `false`
   `unlock_keychain` | Unlocks keychain | `true`
-  `add_keychain_to_search_list` | Add to keychain search list | `:replace`
+  `add_keychain_to_search_list` | Add to keychain search list, valid values are true, false, :add, and :replace | `:replace`
   `set_default_keychain` | Set keychain as default | `true`
   `keychain_path` | Path to keychain | 
   `keychain_password` | Keychain password | `''`

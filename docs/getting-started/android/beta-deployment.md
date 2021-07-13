@@ -4,7 +4,7 @@
 
 If you would like to distribute your beta builds to Google Play, please make sure you've done the steps from [Setting up _supply_](setup/#setting-up-supply) before continuing.
 
-# Building your app
+## Building your app
 
 _fastlane_ takes care of building your app by delegating to your existing Gradle build. Just add the following to your `Fastfile`:
 
@@ -34,7 +34,7 @@ To get a list of all available parameters for the `gradle` action, run:
 fastlane action gradle
 ```
 
-# Uploading your app
+## Uploading your app
 
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta providers, or even upload to multiple at once, with a minimum of configuration. Follow that with a notification posted to the group messaging service of your choice to let the team know that you've shipped.
 
@@ -46,7 +46,7 @@ lane :beta do
 end
 ```
 
-## Supported beta testing services
+### Supported beta testing services
 
 <details>
 <summary>Google Play</summary>
@@ -114,7 +114,7 @@ For more information and options (such as adding release notes) see the full [Ge
 
 More information about additional supported beta testing services can be found in the [list of "Beta" actions](https://docs.fastlane.tools/actions/#beta)
 
-# Release Notes
+## Release Notes
 
 <details>
 <summary>Generate based on Git commits</summary>
