@@ -31,6 +31,7 @@ nav:
 - Getting Started:
   - iOS:
     - Setup: getting-started/ios/setup.md
+    - Authentication: getting-started/ios/authentication.md
     - Running Tests: getting-started/ios/running-tests.md
     - Screenshots: getting-started/ios/screenshots.md
     - Beta Deployment: getting-started/ios/beta-deployment.md
