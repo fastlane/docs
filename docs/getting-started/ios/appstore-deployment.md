@@ -64,7 +64,7 @@ For more details on how `upload_to_app_store` works, how you can define more opt
 
 ## Best Practices
 
-<details>
+<details markdown="1">
 <summary>Push Notifications</summary>
 
 To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:
@@ -82,7 +82,7 @@ If you don't have any push certificates already, _get_push_certificate_ will cre
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Incrementing the build number</summary>
 
 The code sample below will use the latest build number from App Store Connect and temporarily set it. 

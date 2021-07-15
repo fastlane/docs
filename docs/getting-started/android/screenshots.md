@@ -183,7 +183,7 @@ fastlane action upload_to_play_store
 
 ## Advanced _screengrab_
 
-<details>
+<details markdown="1">
 <summary>Launch Arguments</summary>
 
 You can provide additional arguments to your testcases on launch. These strings will be available in your tests through `InstrumentationRegistry.getArguments()`.
