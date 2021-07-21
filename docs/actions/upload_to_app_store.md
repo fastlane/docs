@@ -117,7 +117,7 @@ deliver(
 
 ## More options
 
-<details>
+<details markdown="1">
 <summary>View all available options and their valid values</summary>
 
 ## Available options
@@ -527,7 +527,7 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 ## Reference
 
-<details>
+<details markdown="1">
 <summary>View all available categories, etc.</summary>
 
 ### Available Categories

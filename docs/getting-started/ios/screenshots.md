@@ -214,7 +214,7 @@ If you want to upload the screenshots to the App Store, you **have** to provide 
 
 ### Dependencies
 
-<details>
+<details markdown="1">
 <summary>Installing ImageMagick</summary>
 
 To perform image manipulation, _frameit_ depends on a tool called `imagemagick`. The easiest way to install it is through [homebrew](http://brew.sh/):
@@ -224,7 +224,7 @@ brew install libpng jpeg imagemagick
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Troubleshooting ImageMagick</summary>
 
 If you have installed _imagemagick_ but are seeing error messages like:
@@ -240,7 +240,7 @@ brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick -
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Setting Up Device Frames</summary>
 
 To download the latest device frames, you can run
@@ -271,7 +271,7 @@ fastlane action frame_screenshots
 
 ## Advanced _snapshot_
 
-<details>
+<details markdown="1">
 <summary>Sample uses</summary>
 
 ```ruby
@@ -325,7 +325,7 @@ fastlane action capture_screenshots
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Reset Xcode simulators</summary>
 
 You can run this command in the terminal to delete and re-create all iOS simulators. This is useful when Xcode duplicated your local simulators.
@@ -335,7 +335,7 @@ fastlane snapshot reset_simulators
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Launch Arguments</summary>
 
 You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through `ProcessInfo.processInfo.arguments`. Alternatively, use user-default syntax (`-key value`) and they will be available as key-value pairs in `UserDefaults.standard`.
@@ -370,7 +370,7 @@ launch_arguments([
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Update snapshot helpers</summary>
 
 Some updates require the helper files to be updated. _snapshot_ will automatically warn you and tell you how to update.
@@ -385,14 +385,14 @@ to update your `SnapshotHelper.swift` files. In case you modified your `Snapshot
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Clean status bar</summary>
 
 To clean the status bar (9:41, full battery and full signal), use [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic).
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>How does _snapshot_ work?</summary>
 
 The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So _snapshot_ uses a different approach:

@@ -61,7 +61,7 @@ For example, _fastlane_ requires admin access to the Apple Developer account to 
 
 > **Warning:** Manually editing your _match_ repo can introduce unexpected behavior and is not recommended. Proceed with caution.
 
-<details>
+<details markdown="1">
 <summary>Instructions</summary>
 
 

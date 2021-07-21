@@ -48,7 +48,7 @@ end
 
 ### Supported beta testing services
 
-<details>
+<details markdown="1">
 <summary>Google Play</summary>
 
 In order to distribute to Google Play with _upload_to_play_store_ you will need to have your Google credentials set up. Make sure you've gone through [Setting up _supply_](setup/#setting-up-supply) before continuing!
@@ -74,7 +74,7 @@ fastlane action upload_to_play_store
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Firebase App Distribution</summary>
 
 Install the Firebase App Distribution plugin:
@@ -116,7 +116,7 @@ More information about additional supported beta testing services can be found i
 
 ## Release Notes
 
-<details>
+<details markdown="1">
 <summary>Generate based on Git commits</summary>
 
 You take the time to write great Git commit messages, right? Why not take advantage of them to automatically summarize the work done for your latest beta release?
@@ -147,7 +147,7 @@ changelog_from_git_commits(
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Prompt for changelog</summary>
 
 You can automatically be asked for the changelog in your terminal using the `prompt` action:
@@ -175,7 +175,7 @@ end
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Fetch the changelog from the file system or remote server</summary>
 
 You can fetch values from anywhere, including the file system and remote server, by writing code in your `Fastfile`
