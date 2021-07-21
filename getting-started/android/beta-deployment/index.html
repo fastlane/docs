@@ -422,11 +422,8 @@ end
 </code></pre>
 <h3 id="supported-beta-testing-services">Supported beta testing services</h3>
 <details>
-<summary>Google Play</summary>
-
-In order to distribute to Google Play with _upload_to_play_store_ you will need to have your Google credentials set up. Make sure you've gone through [Setting up _supply_](setup/#setting-up-supply) before continuing!
-
-
+<p><summary>Google Play</summary></p>
+<p>In order to distribute to Google Play with <em>upload_to_play_store</em> you will need to have your Google credentials set up. Make sure you've gone through <a href="setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing!</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
   gradle(
@@ -437,38 +434,20 @@ In order to distribute to Google Play with _upload_to_play_store_ you will need 
   # ...
 end
 </code></pre>
-
-
-To get a list of all available options, run:
-
-
+<p>To get a list of all available options, run:</p>
 <pre><code class="language-no-highlight">fastlane action upload_to_play_store
 </code></pre>
-
-
----
+<hr />
 </details>
-
 <details>
-<summary>Firebase App Distribution</summary>
-
-Install the Firebase App Distribution plugin:
-
-
+<p><summary>Firebase App Distribution</summary></p>
+<p>Install the Firebase App Distribution plugin:</p>
 <pre><code class="language-no-highlight">fastlane add_plugin firebase_app_distribution
 </code></pre>
-
-
-Authenticate with Firebase by running the `firebase_app_distribution_login` action (or using one of the other [authentication methods](https://firebase.google.com/docs/app-distribution/android/distribute-fastlane#step_2_authenticate_with_firebase)):
-
-
+<p>Authenticate with Firebase by running the <code>firebase_app_distribution_login</code> action (or using one of the other <a href="https://firebase.google.com/docs/app-distribution/android/distribute-fastlane#step_2_authenticate_with_firebase">authentication methods</a>):</p>
 <pre><code class="language-no-highlight">fastlane run firebase_app_distribution_login
 </code></pre>
-
-
-Then add the `firebase_app_distribution` action to your lane:
-
-
+<p>Then add the <code>firebase_app_distribution</code> action to your lane:</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
   gradle(
@@ -483,21 +462,14 @@ Then add the `firebase_app_distribution` action to your lane:
   # ...
 end
 </code></pre>
-
-
-For more information and options (such as adding release notes) see the full [Getting Started](https://firebase.google.com/docs/app-distribution/android/distribute-fastlane) guide.
-
----
+<p>For more information and options (such as adding release notes) see the full <a href="https://firebase.google.com/docs/app-distribution/android/distribute-fastlane">Getting Started</a> guide.</p>
+<hr />
 </details>
-
 <p>More information about additional supported beta testing services can be found in the <a href="https://docs.fastlane.tools/actions/#beta">list of "Beta" actions</a></p>
 <h2 id="release-notes">Release Notes</h2>
 <details>
-<summary>Generate based on Git commits</summary>
-
-You take the time to write great Git commit messages, right? Why not take advantage of them to automatically summarize the work done for your latest beta release?
-
-
+<p><summary>Generate based on Git commits</summary></p>
+<p>You take the time to write great Git commit messages, right? Why not take advantage of them to automatically summarize the work done for your latest beta release?</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
 
@@ -511,26 +483,17 @@ You take the time to write great Git commit messages, right? Why not take advant
   )
 end
 </code></pre>
-
-
-You can get a list of all available options by running `fastlane action changelog_from_git_commits`, but here are some examples:
-
-
+<p>You can get a list of all available options by running <code>fastlane action changelog_from_git_commits</code>, but here are some examples:</p>
 <pre><code class="language-ruby">changelog_from_git_commits(
   between: ['7b092b3', 'HEAD'], # Optional, lets you specify a revision/tag range between which to collect commit info
   merge_commit_filtering: 'exclude_merges' # Optional, lets you filter out merge commits
 )
 </code></pre>
-
----
+<hr />
 </details>
-
 <details>
-<summary>Prompt for changelog</summary>
-
-You can automatically be asked for the changelog in your terminal using the `prompt` action:
-
-
+<p><summary>Prompt for changelog</summary></p>
+<p>You can automatically be asked for the changelog in your terminal using the <code>prompt</code> action:</p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Ask for a one line input
   changelog = prompt(text: &quot;Changelog: &quot;)
@@ -549,17 +512,11 @@ You can automatically be asked for the changelog in your terminal using the `pro
   )
 end
 </code></pre>
-
-
----
+<hr />
 </details>
-
 <details>
-<summary>Fetch the changelog from the file system or remote server</summary>
-
-You can fetch values from anywhere, including the file system and remote server, by writing code in your `Fastfile`
-
-
+<p><summary>Fetch the changelog from the file system or remote server</summary></p>
+<p>You can fetch values from anywhere, including the file system and remote server, by writing code in your <code>Fastfile</code></p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Read from file system
   #   note the `..`, since fastlane runs in the _fastlane_ directory
@@ -575,9 +532,7 @@ You can fetch values from anywhere, including the file system and remote server,
   )
 end
 </code></pre>
-
-
----
+<hr />
 </details>
               
             </div>

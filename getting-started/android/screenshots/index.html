@@ -534,19 +534,13 @@ fastlane action upload_to_play_store
 </code></pre>
 <h2 id="advanced-screengrab">Advanced <em>screengrab</em></h2>
 <details>
-<summary>Launch Arguments</summary>
-
-You can provide additional arguments to your testcases on launch. These strings will be available in your tests through `InstrumentationRegistry.getArguments()`.
-
-
+<p><summary>Launch Arguments</summary></p>
+<p>You can provide additional arguments to your testcases on launch. These strings will be available in your tests through <code>InstrumentationRegistry.getArguments()</code>.</p>
 <pre><code class="language-ruby">launch_arguments([
   &quot;username hjanuschka&quot;,
   &quot;build_number 201&quot;
 ])
 </code></pre>
-
-
-
 <pre><code class="language-java">Bundle extras = InstrumentationRegistry.getArguments();
 String peerID = null;
 if (extras != null) {
@@ -560,7 +554,6 @@ if (extras != null) {
   System.out.println(&quot;No extras&quot;);
 }
 </code></pre>
-
 </details>
               
             </div>

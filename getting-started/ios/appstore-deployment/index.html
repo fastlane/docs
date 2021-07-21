@@ -430,30 +430,19 @@ end
 <p>For more details on how <code>upload_to_app_store</code> works, how you can define more options, check out <a href="/actions/upload_to_app_store/">upload_to_app_store</a>.</p>
 <h2 id="best-practices">Best Practices</h2>
 <details>
-<summary>Push Notifications</summary>
-
-To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:
-
-
+<p><summary>Push Notifications</summary></p>
+<p>To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:</p>
 <pre><code class="language-ruby">lane :release do
   get_push_certificate
   # ...
 end
 </code></pre>
-
-
-_get_push_certificate_ will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.
-
-If you don't have any push certificates already, _get_push_certificate_ will create one for you and store locally in your project's directory. To get more information about the available options run `fastlane action get_push_certificate`.
-
+<p><em>get_push_certificate</em> will ensure your certificate is valid for at least another 2 weeks, and create a new one if it isn't.</p>
+<p>If you don't have any push certificates already, <em>get_push_certificate</em> will create one for you and store locally in your project's directory. To get more information about the available options run <code>fastlane action get_push_certificate</code>.</p>
 </details>
-
 <details>
-<summary>Incrementing the build number</summary>
-
-The code sample below will use the latest build number from App Store Connect and temporarily set it. 
-
-
+<p><summary>Incrementing the build number</summary></p>
+<p>The code sample below will use the latest build number from App Store Connect and temporarily set it. </p>
 <pre><code class="language-ruby">lane :beta do
   increment_build_number(
     build_number: app_store_build_number + 1,
@@ -461,13 +450,10 @@ The code sample below will use the latest build number from App Store Connect an
   )
 end
 </code></pre>
-
-
-For all the steps above, there are more parameters available, run the following to get a full list:
-
-
+<p>For all the steps above, there are more parameters available, run the following to get a full list:</p>
 <pre><code class="language-no-highlight">fastlane action [action_name]
 </code></pre>
+</details>
               
             </div>
           </div>

@@ -425,22 +425,15 @@ end
 </code></pre>
 <h4 id="beta-testing-services">Beta testing services</h4>
 <details>
-<summary>TestFlight</summary>
-
-You can easily upload new builds to TestFlight (which is part of App Store Connect) using _fastlane_. To do so, just use the built-in `testflight` action after building your app
-
-
+<p><summary>TestFlight</summary></p>
+<p>You can easily upload new builds to TestFlight (which is part of App Store Connect) using <em>fastlane</em>. To do so, just use the built-in <code>testflight</code> action after building your app</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
   build_app
   upload_to_testflight
 end
 </code></pre>
-
-
-Some example use cases
-
-
+<p>Some example use cases</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
   build_app
@@ -454,42 +447,22 @@ Some example use cases
   upload_to_testflight(skip_waiting_for_build_processing: true)
 end
 </code></pre>
-
-
-If you used `fastlane init` to setup _fastlane_, your Apple ID is stored in the `fastlane/Appfile`. You can also overwrite the username, using `upload_to_testflight(username: "bot@fastlane.tools")`.
-
-To get a list of all available options, run
-
-
+<p>If you used <code>fastlane init</code> to setup <em>fastlane</em>, your Apple ID is stored in the <code>fastlane/Appfile</code>. You can also overwrite the username, using <code>upload_to_testflight(username: "bot@fastlane.tools")</code>.</p>
+<p>To get a list of all available options, run</p>
 <pre><code class="language-no-highlight">fastlane action upload_to_testflight
 </code></pre>
-
-
-With _fastlane_, you can also automatically manage your beta testers, check out the other actions available.
-
----
+<p>With <em>fastlane</em>, you can also automatically manage your beta testers, check out the other actions available.</p>
+<hr />
 </details>
-
 <details>
-<summary>Firebase App Distribution</summary>
-
-Install the Firebase App Distribution plugin:
-
-
+<p><summary>Firebase App Distribution</summary></p>
+<p>Install the Firebase App Distribution plugin:</p>
 <pre><code class="language-no-highlight">fastlane add_plugin firebase_app_distribution
 </code></pre>
-
-
-Authenticate with Firebase by running the `firebase_app_distribution_login` action (or using one of the other [authentication methods](https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane#step_2_authenticate_with_firebase)):
-
-
+<p>Authenticate with Firebase by running the <code>firebase_app_distribution_login</code> action (or using one of the other <a href="https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane#step_2_authenticate_with_firebase">authentication methods</a>):</p>
 <pre><code class="language-no-highlight">fastlane run firebase_app_distribution_login
 </code></pre>
-
-
-Then add the `firebase_app_distribution` action to your lane:
-
-
+<p>Then add the <code>firebase_app_distribution</code> action to your lane:</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
   build_app
@@ -501,40 +474,24 @@ Then add the `firebase_app_distribution` action to your lane:
   # ...
 end
 </code></pre>
-
-
-For more information and options (such as adding release notes) see the full [Getting Started](https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane) guide.
-
----
+<p>For more information and options (such as adding release notes) see the full <a href="https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane">Getting Started</a> guide.</p>
+<hr />
 </details>
-
 <details>
-<summary>HockeyApp</summary>
-
-
+<p><summary>HockeyApp</summary></p>
 <pre><code class="language-ruby">lane :beta do
   # ...
   build_app
   hockey(api_token: &quot;[insert_key_here]&quot;)
 end
 </code></pre>
-
-
-To get your API token, open [API Tokens in Account Settings](https://rink.hockeyapp.net/manage/auth_tokens). From there, you can find your existing API token, or create a new one. 
-
-To get a list of all available options see the [`hockey` action docs](https://docs.fastlane.tools/actions/hockey/), or run 
-
-
+<p>To get your API token, open <a href="https://rink.hockeyapp.net/manage/auth_tokens">API Tokens in Account Settings</a>. From there, you can find your existing API token, or create a new one. </p>
+<p>To get a list of all available options see the <a href="https://docs.fastlane.tools/actions/hockey/"><code>hockey</code> action docs</a>, or run </p>
 <pre><code class="language-no-highlight">fastlane action hockey
 </code></pre>
-
-
 </details>
-
 <details>
-<summary>TestFairy</summary>
-
-
+<p><summary>TestFairy</summary></p>
 <pre><code class="language-ruby">lane :beta do
   # ...
   build_app
@@ -549,26 +506,16 @@ To get a list of all available options see the [`hockey` action docs](https://do
   testfairy(api_key: &quot;[insert_key_here]&quot;, testers_groups: [&quot;group1&quot;])
 end
 </code></pre>
-
-
-To get a list of all available options, run
-
-
+<p>To get a list of all available options, run</p>
 <pre><code class="language-no-highlight">fastlane action testfairy
 </code></pre>
-
-
-More information about the service on [TestFairy.com](https://testfairy.com).
+<p>More information about the service on <a href="https://testfairy.com">TestFairy.com</a>.</p>
 </details>
-
 <p>More information about additional supported beta testing services can be found in the <a href="https://docs.fastlane.tools/actions/#beta">list of "Beta" actions</a></p>
 <h1 id="release-notes">Release Notes</h1>
 <details>
-<summary>Automatically based on git commits</summary>
-
-Your changelog changes, so it doesn't make a lot of sense to store a static release note in the `Fastfile`.
-
-
+<p><summary>Automatically based on git commits</summary></p>
+<p>Your changelog changes, so it doesn't make a lot of sense to store a static release note in the <code>Fastfile</code>.</p>
 <pre><code class="language-ruby">lane :beta do
   sync_code_signing
   build_app
@@ -577,26 +524,17 @@ Your changelog changes, so it doesn't make a lot of sense to store a static rele
   upload_to_testflight
 end
 </code></pre>
-
-
-Get a list of all available options using `fastlane action changelog_from_git_commits`, here are some examples
-
-
+<p>Get a list of all available options using <code>fastlane action changelog_from_git_commits</code>, here are some examples</p>
 <pre><code class="language-ruby">changelog_from_git_commits(
   between: ['7b092b3', 'HEAD'], # Optional, lets you specify a revision/tag range between which to collect commit info
   merge_commit_filtering: 'exclude_merges' # Optional, lets you filter out merge commits
 )
 </code></pre>
-
----
+<hr />
 </details>
-
 <details>
-<summary>Prompt for changelog</summary>
-
-You can automatically be asked for the changelog in your terminal using the `prompt` action:
-
-
+<p><summary>Prompt for changelog</summary></p>
+<p>You can automatically be asked for the changelog in your terminal using the <code>prompt</code> action:</p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Ask for a one line input
   changelog = prompt(text: &quot;Changelog: &quot;)
@@ -614,17 +552,11 @@ You can automatically be asked for the changelog in your terminal using the `pro
   upload_to_testflight(changelog: changelog)
 end
 </code></pre>
-
-
----
+<hr />
 </details>
-
 <details>
-<summary>Fetching the changelog from the file system or remote server</summary>
-
-You can fetch values from anywhere in your `Fastfile`, including the file system and remote server
-
-
+<p><summary>Fetching the changelog from the file system or remote server</summary></p>
+<p>You can fetch values from anywhere in your <code>Fastfile</code>, including the file system and remote server</p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Read from file system
   #   note the `..`, since fastlane runs in the _fastlane_ directory
@@ -639,52 +571,32 @@ You can fetch values from anywhere in your `Fastfile`, including the file system
   upload_to_testflight(changelog: changelog)
 end
 </code></pre>
-
-
----
+<hr />
 </details>
-
 <h2 id="best-practices">Best Practices</h2>
 <details>
-<summary>Manage devices and testers using _fastlane_</summary>
-
+<p><summary>Manage devices and testers using <em>fastlane</em></summary></p>
 <details>
-<summary>TestFlight</summary>
-
-If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.
-
-_fastlane_ supports automatically registering devices using different approaches
-
-##### [boarding](https://github.com/fastlane/boarding#readme)
-
-[boarding](https://github.com/fastlane/boarding#readme) allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.
-
-![/img/getting-started/ios/boarding-screenshot.png](/img/getting-started/ios/boarding-screenshot.png)
-
-Check out the [boarding GitHub repo](https://github.com/fastlane/boarding#readme) for more information.
-
-##### pilot
-
-_pilot_ is automatically installed with _fastlane_, you can use it to register individual testers to TestFlight
-
-
+<p><summary>TestFlight</summary></p>
+<p>If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.</p>
+<p><em>fastlane</em> supports automatically registering devices using different approaches</p>
+<h5 id="boarding"><a href="https://github.com/fastlane/boarding#readme">boarding</a></h5>
+<p><a href="https://github.com/fastlane/boarding#readme">boarding</a> allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.</p>
+<p><img alt="/img/getting-started/ios/boarding-screenshot.png" src="/img/getting-started/ios/boarding-screenshot.png" /></p>
+<p>Check out the <a href="https://github.com/fastlane/boarding#readme">boarding GitHub repo</a> for more information.</p>
+<h5 id="pilot">pilot</h5>
+<p><em>pilot</em> is automatically installed with <em>fastlane</em>, you can use it to register individual testers to TestFlight</p>
 <pre><code class="language-no-highlight"># Register a new external tester
 fastlane pilot add email@invite.com
 
 # Register a new external tester and add them to your app
 fastlane pilot add email@invite.com -a com.app.name
 </code></pre>
-
----
-
+<hr />
 </details>
-
 <details>
-<summary>Third party beta testing services</summary>
-
-If you're using a third party beta testing service, you'll need to manage your registered devices and their UDIDs. _fastlane_ already supports device registrations and updating provisioning profiles out of the box. 
-
-
+<p><summary>Third party beta testing services</summary></p>
+<p>If you're using a third party beta testing service, you'll need to manage your registered devices and their UDIDs. <em>fastlane</em> already supports device registrations and updating provisioning profiles out of the box. </p>
 <pre><code class="language-ruby">lane :beta do
   # Before calling match, we make sure all our devices are registered on the Apple Developer Portal
   register_devices(devices_file: &quot;devices.txt&quot;)
@@ -696,31 +608,19 @@ If you're using a third party beta testing service, you'll need to manage your r
   # ...
 end
 </code></pre>
-
-
-The `devices.txt` should look like this:
-
+<p>The <code>devices.txt</code> should look like this:</p>
 <pre><code class="language-no-highlight">Device ID Device Name
 A123456789012345678901234567890123456789  DeviceName1
 B123456789012345678901234567890123456789  DeviceName2
 </code></pre>
-
-
 </details>
 </details>
-
 <details>
-<summary>Incrementing the build number</summary>
-
-Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.
-
-To do so, there are some built-in fastlane actions available, here are some examples
-
-#### Fetching the latest build number from TestFlight
-
-The code sample below will use the latest build number from TestFlight and temporarily set it. 
-
-
+<p><summary>Incrementing the build number</summary></p>
+<p>Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.</p>
+<p>To do so, there are some built-in fastlane actions available, here are some examples</p>
+<h4 id="fetching-the-latest-build-number-from-testflight">Fetching the latest build number from TestFlight</h4>
+<p>The code sample below will use the latest build number from TestFlight and temporarily set it. </p>
 <pre><code class="language-ruby">lane :beta do
   increment_build_number(
     build_number: latest_testflight_build_number + 1,
@@ -728,13 +628,8 @@ The code sample below will use the latest build number from TestFlight and tempo
   )
 end
 </code></pre>
-
-
-#### Committing the build number to version control
-
-The code sample below will increment the build number and commit the project changes to version control.
-
-
+<h4 id="committing-the-build-number-to-version-control">Committing the build number to version control</h4>
+<p>The code sample below will increment the build number and commit the project changes to version control.</p>
 <pre><code class="language-ruby">lane :beta do
   # Ensure that your git status is not dirty
   ensure_git_status_clean
@@ -754,29 +649,16 @@ The code sample below will increment the build number and commit the project cha
   push_to_git_remote
 end
 </code></pre>
-
-
-
-For all the steps above, there are more parameters available, run the following to get a full list:
-
-
+<p>For all the steps above, there are more parameters available, run the following to get a full list:</p>
 <pre><code class="language-no-highlight">fastlane action [action_name]
 </code></pre>
-
-
-#### Use the number of commits
-
-This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via [`number_of_commits`](https://docs.fastlane.tools/actions/number_of_commits/)) as the build number. This will only work if you always run the build on the same branch.
-
-
+<h4 id="use-the-number-of-commits">Use the number of commits</h4>
+<p>This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via <a href="https://docs.fastlane.tools/actions/number_of_commits/"><code>number_of_commits</code></a>) as the build number. This will only work if you always run the build on the same branch.</p>
 <pre><code class="language-ruby">lane :beta do
   increment_build_number(build_number: number_of_commits)
 end
 </code></pre>
-
-
----
-
+<hr />
 </details>
               
             </div>

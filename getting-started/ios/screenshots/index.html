@@ -558,48 +558,27 @@ fastlane action upload_to_app_store
 <p>If you want to upload the screenshots to the App Store, you <strong>have</strong> to provide a <code>Framefile.json</code>, with titles and background, otherwise the resolution of the framed screenshots doesn't match the requirements of App Store Connect.</p>
 <h3 id="dependencies">Dependencies</h3>
 <details>
-<summary>Installing ImageMagick</summary>
-
-To perform image manipulation, _frameit_ depends on a tool called `imagemagick`. The easiest way to install it is through [homebrew](http://brew.sh/):
-
-
+<p><summary>Installing ImageMagick</summary></p>
+<p>To perform image manipulation, <em>frameit</em> depends on a tool called <code>imagemagick</code>. The easiest way to install it is through <a href="http://brew.sh/">homebrew</a>:</p>
 <pre><code class="language-no-highlight">brew install libpng jpeg imagemagick
 </code></pre>
-
 </details>
-
 <details>
-<summary>Troubleshooting ImageMagick</summary>
-
-If you have installed _imagemagick_ but are seeing error messages like:
-
-
+<p><summary>Troubleshooting ImageMagick</summary></p>
+<p>If you have installed <em>imagemagick</em> but are seeing error messages like:</p>
 <pre><code class="language-no-highlight">mogrify: no decode delegate for this image format `PNG'
 </code></pre>
-
-
-You may need to reinstall and build from source. Run:
-
-
+<p>You may need to reinstall and build from source. Run:</p>
 <pre><code class="language-no-highlight">brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick --build-from-source
 </code></pre>
-
 </details>
-
 <details>
-<summary>Setting Up Device Frames</summary>
-
-To download the latest device frames, you can run
-
-
+<p><summary>Setting Up Device Frames</summary></p>
+<p>To download the latest device frames, you can run</p>
 <pre><code class="language-no-highlight">fastlane frameit setup
 </code></pre>
-
-
-This usually happens automatically when you use _frameit_ for the first time on a new machine
-
+<p>This usually happens automatically when you use <em>frameit</em> for the first time on a new machine</p>
 </details>
-
 <p>To add the framing to your deployment process, use the following code in your <code>Fastfile</code>:</p>
 <pre><code class="language-ruby">lane :screenshots do
   capture_screenshots
@@ -612,165 +591,93 @@ end
 </code></pre>
 <h2 id="advanced-snapshot">Advanced <em>snapshot</em></h2>
 <details>
-<summary>Sample uses</summary>
-
-
+<p><summary>Sample uses</summary></p>
 <pre><code class="language-ruby">lane :screenshots do
   capture_screenshots
 end
 </code></pre>
-
-
-Your screenshots will be stored in the `./screenshots/` folder by default (or `./fastlane/screenshots` if you're using [_fastlane_](https://fastlane.tools))
-
-If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and _snapshot_ will continue with the next device or language. To stop the flow after the first error, run
-
-
+<p>Your screenshots will be stored in the <code>./screenshots/</code> folder by default (or <code>./fastlane/screenshots</code> if you're using <a href="https://fastlane.tools"><em>fastlane</em></a>)</p>
+<p>If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and <em>snapshot</em> will continue with the next device or language. To stop the flow after the first error, run</p>
 <pre><code class="language-ruby">capture_screenshots(stop_after_first_error: true)
 </code></pre>
-
-
-Also by default, _snapshot_ will open the HTML after all is done. This can be skipped with the following command
-
-
+<p>Also by default, <em>snapshot</em> will open the HTML after all is done. This can be skipped with the following command</p>
 <pre><code class="language-ruby">capture_screenshots(skip_open_summary: true)
 </code></pre>
-
-
-There are a lot of options available that define how to build your app, for example
-
-
+<p>There are a lot of options available that define how to build your app, for example</p>
 <pre><code class="language-ruby">capture_screenshots(scheme: &quot;UITests&quot;, configuration: &quot;Release&quot;, sdk: &quot;iphonesimulator&quot;)
 </code></pre>
-
-
-Reinstall the app before running _snapshot_
-
-
+<p>Reinstall the app before running <em>snapshot</em></p>
 <pre><code class="language-ruby">capture_screenshots(reinstall_app: true, app_identifier: &quot;tools.fastlane.app&quot;)
 </code></pre>
-
-
-By default _snapshot_ automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. [#372](https://github.com/fastlane/snapshot/issues/372)). You can adapt this number using
-
-
+<p>By default <em>snapshot</em> automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. <a href="https://github.com/fastlane/snapshot/issues/372">#372</a>). You can adapt this number using</p>
 <pre><code class="language-ruby">capture_screenshots(number_of_retries: 3)
 </code></pre>
-
-
-Add photos and/or videos to the simulator before running _snapshot_
-
-
+<p>Add photos and/or videos to the simulator before running <em>snapshot</em></p>
 <pre><code class="language-ruby">capture_screenshots(add_photos: &quot;MyTestApp/demo.jpg&quot;, add_videos: &quot;MyTestApp/demo.mp4&quot;)
 </code></pre>
-
-
-For a list for all available options run
-
-
+<p>For a list for all available options run</p>
 <pre><code class="language-no-highlight">fastlane action capture_screenshots
 </code></pre>
-
 </details>
-
 <details>
-<summary>Reset Xcode simulators</summary>
-
-You can run this command in the terminal to delete and re-create all iOS simulators. This is useful when Xcode duplicated your local simulators.
-
-
+<p><summary>Reset Xcode simulators</summary></p>
+<p>You can run this command in the terminal to delete and re-create all iOS simulators. This is useful when Xcode duplicated your local simulators.</p>
 <pre><code class="language-no-highlight">fastlane snapshot reset_simulators
 </code></pre>
-
 </details>
-
 <details>
-<summary>Launch Arguments</summary>
-
-You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through `ProcessInfo.processInfo.arguments`. Alternatively, use user-default syntax (`-key value`) and they will be available as key-value pairs in `UserDefaults.standard`.
-
-
+<p><summary>Launch Arguments</summary></p>
+<p>You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through <code>ProcessInfo.processInfo.arguments</code>. Alternatively, use user-default syntax (<code>-key value</code>) and they will be available as key-value pairs in <code>UserDefaults.standard</code>.</p>
 <pre><code class="language-ruby">launch_arguments([
   &quot;-firstName Felix -lastName Krause&quot;
 ])
 </code></pre>
-
-
-
 <pre><code class="language-swift">name.text = UserDefaults.standard.string(forKey: &quot;firstName&quot;)
 // name.text = &quot;Felix&quot;
 </code></pre>
-
-
-_snapshot_ includes `-FASTLANE_SNAPSHOT YES`, which will set a temporary user default for the key `FASTLANE_SNAPSHOT`, you may use this to detect when the app is run by _snapshot_.
-
-
+<p><em>snapshot</em> includes <code>-FASTLANE_SNAPSHOT YES</code>, which will set a temporary user default for the key <code>FASTLANE_SNAPSHOT</code>, you may use this to detect when the app is run by <em>snapshot</em>.</p>
 <pre><code class="language-swift">if UserDefaults.standard.bool(forKey: &quot;FASTLANE_SNAPSHOT&quot;) {
     // runtime check that we are in snapshot mode
 }
 </code></pre>
-
-
-Specify multiple argument strings and _snapshot_ will generate screenshots for each combination of arguments, devices, and languages. This is useful for comparing the same screenshots with different feature flags, dynamic text sizes, and different data sets.
-
-
+<p>Specify multiple argument strings and <em>snapshot</em> will generate screenshots for each combination of arguments, devices, and languages. This is useful for comparing the same screenshots with different feature flags, dynamic text sizes, and different data sets.</p>
 <pre><code class="language-ruby"># Snapfile for A/B Test Comparison
 launch_arguments([
   &quot;-secretFeatureEnabled YES&quot;,
   &quot;-secretFeatureEnabled NO&quot;
 ])
 </code></pre>
-
 </details>
-
 <details>
-<summary>Update snapshot helpers</summary>
-
-Some updates require the helper files to be updated. _snapshot_ will automatically warn you and tell you how to update.
-
-Basically you can run
-
-
+<p><summary>Update snapshot helpers</summary></p>
+<p>Some updates require the helper files to be updated. <em>snapshot</em> will automatically warn you and tell you how to update.</p>
+<p>Basically you can run</p>
 <pre><code class="language-no-highlight">fastlane snapshot update
 </code></pre>
-
-
-to update your `SnapshotHelper.swift` files. In case you modified your `SnapshotHelper.swift` and want to manually update the file, check out [SnapshotHelper.swift](https://github.com/fastlane/fastlane/blob/master/snapshot/lib/assets/SnapshotHelper.swift).
-
+<p>to update your <code>SnapshotHelper.swift</code> files. In case you modified your <code>SnapshotHelper.swift</code> and want to manually update the file, check out <a href="https://github.com/fastlane/fastlane/blob/master/snapshot/lib/assets/SnapshotHelper.swift">SnapshotHelper.swift</a>.</p>
 </details>
-
 <details>
-<summary>Clean status bar</summary>
-
-To clean the status bar (9:41, full battery and full signal), use [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic).
-
+<p><summary>Clean status bar</summary></p>
+<p>To clean the status bar (9:41, full battery and full signal), use <a href="https://github.com/shinydevelopment/SimulatorStatusMagic">SimulatorStatusMagic</a>.</p>
 </details>
-
 <details>
-<summary>How does _snapshot_ work?</summary>
-
-The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So _snapshot_ uses a different approach:
-
-When you run unit tests in Xcode, the reporter generates a plist file, documenting all events that occurred during the tests ([More Information](http://michele.io/test-logs-in-xcode)). Additionally, Xcode generates screenshots before, during and after each of these events. There is no way to manually trigger a screenshot event. The screenshots and the plist files are stored in the DerivedData directory, which _snapshot_ stores in a temporary folder.
-
-When the user calls `snapshot(...)` in the UI Tests (Swift or Objective C) the script actually does a rotation to `.Unknown` which doesn't have any effect on the actual app, but is enough to trigger a screenshot. It has no effect to the application and is not something you would do in your tests. The goal was to find *some* event that a user would never trigger, so that we know it's from _snapshot_. On tvOS, there is no orientation so we ask for a count of app views with type "Browser" (which should never exist on tvOS).
-
-_snapshot_ then iterates through all test events and check where we either did this weird rotation (on iOS) or searched for browsers (on tvOS). Once _snapshot_ has all events triggered by _snapshot_ it collects a ordered list of all the file names of the actual screenshots of the application.
-
-In the test output, the Swift _snapshot_ function will print out something like this
-
-> snapshot: [some random text here]
-
-_snapshot_ finds all these entries using a regex. The number of _snapshot_ outputs in the terminal and the number of _snapshot_ events in the plist file should be the same. Knowing that, _snapshot_ automatically matches these 2 lists to identify the name of each of these screenshots. They are then copied over to the output directory and separated by language and device.
-
-Two things have to be passed on from _snapshot_ to the `xcodebuild` command line tool:
-
-- The device type is passed via the `destination` parameter of the `xcodebuild` parameter
-- The language is passed via a temporary file which is written by _snapshot_ before running the tests and read by the UI Tests when launching the application
-
-If you find a better way to do any of this, please submit an issue on GitHub or even a pull request :+1:
-
-Also, feel free to duplicate radar [23062925](https://openradar.appspot.com/radar?id=5056366381105152).
+<p><summary>How does <em>snapshot</em> work?</summary></p>
+<p>The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So <em>snapshot</em> uses a different approach:</p>
+<p>When you run unit tests in Xcode, the reporter generates a plist file, documenting all events that occurred during the tests (<a href="http://michele.io/test-logs-in-xcode">More Information</a>). Additionally, Xcode generates screenshots before, during and after each of these events. There is no way to manually trigger a screenshot event. The screenshots and the plist files are stored in the DerivedData directory, which <em>snapshot</em> stores in a temporary folder.</p>
+<p>When the user calls <code>snapshot(...)</code> in the UI Tests (Swift or Objective C) the script actually does a rotation to <code>.Unknown</code> which doesn't have any effect on the actual app, but is enough to trigger a screenshot. It has no effect to the application and is not something you would do in your tests. The goal was to find <em>some</em> event that a user would never trigger, so that we know it's from <em>snapshot</em>. On tvOS, there is no orientation so we ask for a count of app views with type "Browser" (which should never exist on tvOS).</p>
+<p><em>snapshot</em> then iterates through all test events and check where we either did this weird rotation (on iOS) or searched for browsers (on tvOS). Once <em>snapshot</em> has all events triggered by <em>snapshot</em> it collects a ordered list of all the file names of the actual screenshots of the application.</p>
+<p>In the test output, the Swift <em>snapshot</em> function will print out something like this</p>
+<blockquote>
+<p>snapshot: [some random text here]</p>
+</blockquote>
+<p><em>snapshot</em> finds all these entries using a regex. The number of <em>snapshot</em> outputs in the terminal and the number of <em>snapshot</em> events in the plist file should be the same. Knowing that, <em>snapshot</em> automatically matches these 2 lists to identify the name of each of these screenshots. They are then copied over to the output directory and separated by language and device.</p>
+<p>Two things have to be passed on from <em>snapshot</em> to the <code>xcodebuild</code> command line tool:</p>
+<ul>
+<li>The device type is passed via the <code>destination</code> parameter of the <code>xcodebuild</code> parameter</li>
+<li>The language is passed via a temporary file which is written by <em>snapshot</em> before running the tests and read by the UI Tests when launching the application</li>
+</ul>
+<p>If you find a better way to do any of this, please submit an issue on GitHub or even a pull request :+1:</p>
+<p>Also, feel free to duplicate radar <a href="https://openradar.appspot.com/radar?id=5056366381105152">23062925</a>.</p>
 </details>
               
             </div>
