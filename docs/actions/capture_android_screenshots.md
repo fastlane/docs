@@ -260,7 +260,7 @@ new CleanStatusBar()
 
 # Advanced _screengrab_
 
-<details markdown="1">
+<details>
 <summary>Launch Arguments</summary>
 
 You can provide additional arguments to your test cases on launch. These strings will be available in your tests through `InstrumentationRegistry.getArguments()`.
@@ -290,7 +290,7 @@ if (extras != null) {
 ```
 </details>
 
-<details markdown="1">
+<details>
 <summary>Detecting screengrab at runtime</summary>
 
 For some apps, it is helpful to know when _screengrab_ is running so that you can display specific data for your screenshots. For iOS fastlane users, this is much like "FASTLANE_SNAPSHOT". In order to do this, you'll need to have at least two product flavors of your app.
