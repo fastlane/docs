@@ -224,6 +224,7 @@ Key | Description | Default
 ----|-------------|--------
   `workspace` | Path to the workspace file | 
   `project` | Path to the project file | 
+  `package_path` | Path to the Swift Package | 
   `scheme` | The project's scheme. Make sure it's marked as `Shared` | 
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6') | 
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air']) | 
