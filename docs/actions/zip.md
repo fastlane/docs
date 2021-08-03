@@ -22,7 +22,7 @@ Returns | The path to the output zip file
 
 
 
-## 4 Examples
+## 6 Examples
 
 ```ruby
 zip
@@ -52,6 +52,23 @@ zip(
 )
 ```
 
+```ruby
+zip(
+  path: "./",
+  output_path: "Source Code.zip",
+  exclude: [".git/*"]
+)
+```
+
+```ruby
+zip(
+  path: "./",
+  output_path: "Swift Code.zip",
+  include: ["**/*.swift"],
+  exclude: ["Package.swift", "vendor/*", "Pods/*"]
+)
+```
+
 
 
 
@@ -65,6 +82,8 @@ Key | Description | Default
   `verbose` | Enable verbose output of zipped file | `true`
   `password` | Encrypt the contents of the zip archive using a password | 
   `symlinks` | Store symbolic links as such in the zip archive | `false`
+  `include` | Array of paths or patterns to include | `[]`
+  `exclude` | Array of paths or patterns to exclude | `[]`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

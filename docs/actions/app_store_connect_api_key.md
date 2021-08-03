@@ -62,7 +62,7 @@ Key | Description | Default
   `key_filepath` | The path to the key p8 file | 
   `key_content` | The content of the key p8 file | 
   `is_key_content_base64` | Whether :key_content is Base64 encoded or not | `false`
-  `duration` | The token session duration | `1200`
+  `duration` | The token session duration | `500`
   `in_house` | Is App Store or Enterprise (in house) team? App Store Connect API cannot determine this on its own (yet) | `false`
   `set_spaceship_token` | Authorizes all Spaceship::ConnectAPI requests by automatically setting Spaceship::ConnectAPI.token | `true`
 
