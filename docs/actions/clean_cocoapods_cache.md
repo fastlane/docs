@@ -40,6 +40,10 @@ clean_cocoapods_cache(name: "CACHED_POD")
 Key | Description | Default
 ----|-------------|--------
   `name` | Pod name to be removed from cache | 
+  `no_ansi` | Show output without ANSI codes | `false`
+  `verbose` | Show more debugging information | `false`
+  `silent` | Show nothing | `false`
+  `allow_root` | Allows CocoaPods to run as root | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

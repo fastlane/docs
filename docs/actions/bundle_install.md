@@ -45,6 +45,8 @@ Key | Description | Default
   `trust_policy` | Sets level of security when dealing with signed gems. Accepts `LowSecurity`, `MediumSecurity` and `HighSecurity` as values | 
   `without` | Exclude gems that are part of the specified named group | 
   `with` | Include gems that are part of the specified named group | 
+  `frozen` | Don't allow the Gemfile.lock to be updated after install | `false`
+  `redownload` | Force download every gem, even if the required versions are already available locally | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

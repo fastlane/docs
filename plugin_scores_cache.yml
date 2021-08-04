@@ -5080,7 +5080,7 @@ fastlane-plugin-build_log_info:
   :github_contributors: 1
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 954
+  :age_in_days: 1084
   :readme_score: 100
   :tests: 29
   :actions:
@@ -5089,9 +5089,9 @@ fastlane-plugin-mango:
     category:
     description: Action that runs Android tasks on a specified Docker image
     details:
-  :sha: 5fd5f5ea67e0be3048f6ccdef17e50da76289705ac1cf6d516f5d3d4abec3c0a
-  :github_stars: 47
-  :github_subscribers: 24
+  :sha: 6171ab0c942fc3b29d8b4a8f82ff5555056e6ae349b20f4bf3e2b4f399f7f89e
+  :github_stars: 48
+  :github_subscribers: 25
   :github_issues: 0
   :github_forks: 7
   :github_contributors: 0
@@ -9228,7 +9228,7 @@ fastlane-plugin-github_action:
   :github_contributors: 0
 fastlane-plugin-slack_bot:
   :initial_commit: 2020-05-27
-  :age_in_days: 328
+  :age_in_days: 433
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9253,11 +9253,11 @@ fastlane-plugin-slack_bot:
     category:
     description: Update a slack message using time-stamp(ts) value
     details:
-  :sha: 04eaabac46de625cc2be4db83a8e46776c4012a43c40b6b53846df7549918eae
-  :github_stars: 5
+  :sha: 480c208864b6cb1446f5029a6149175ea78173c4c14002bfbcbb8b16ee226545
+  :github_stars: 7
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 1
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-try_scan:
   :initial_commit: 2020-06-07
