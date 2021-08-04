@@ -350,7 +350,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="4-examples">4 Examples</h2>
+<h2 id="6-examples">6 Examples</h2>
 <pre><code class="language-ruby">zip
 </code></pre>
 <pre><code class="language-ruby">zip(
@@ -369,6 +369,19 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   output_path: &quot;Latest.app.zip&quot;,
   verbose: false,
   symlinks: true
+)
+</code></pre>
+<pre><code class="language-ruby">zip(
+  path: &quot;./&quot;,
+  output_path: &quot;Source Code.zip&quot;,
+  exclude: [&quot;.git/*&quot;]
+)
+</code></pre>
+<pre><code class="language-ruby">zip(
+  path: &quot;./&quot;,
+  output_path: &quot;Swift Code.zip&quot;,
+  include: [&quot;**/*.swift&quot;],
+  exclude: [&quot;Package.swift&quot;, &quot;vendor/*&quot;, &quot;Pods/*&quot;]
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -405,6 +418,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>symlinks</code></td>
 <td>Store symbolic links as such in the zip archive</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>include</code></td>
+<td>Array of paths or patterns to include</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>exclude</code></td>
+<td>Array of paths or patterns to exclude</td>
+<td><code>[]</code></td>
 </tr>
 </tbody>
 </table>

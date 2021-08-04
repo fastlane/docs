@@ -400,109 +400,59 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 <h2 id="more-options">More options</h2>
 <details>
-<summary>View all available options and their valid values</summary>
-
-## Available options
-
-All the options below can easily be added to your `Deliverfile`. The great thing: if you use _fastlane_ you can use all these options from your `Fastfile` too, for example:
-
-
+<p><summary>View all available options and their valid values</summary></p>
+<h2 id="available-options">Available options</h2>
+<p>All the options below can easily be added to your <code>Deliverfile</code>. The great thing: if you use <em>fastlane</em> you can use all these options from your <code>Fastfile</code> too, for example:</p>
 <pre><code class="language-ruby">deliver(
   submit_for_review: true,
   metadata_path: &quot;../folder&quot;
 )
 </code></pre>
-
-
-##### app_identifier
-The bundle identifier (e.g. "com.krausefx.app")
-
-##### username
-Your Apple ID email address
-
-##### ipa
-
-A path to a signed ipa file, which will be uploaded. If you don't provide this value, only app metadata will be uploaded. If you want to submit the app for review make sure to either use `fastlane deliver --submit_for_review` or add `submit_for_review true` to your `Deliverfile`
-
-
+<h5 id="app_identifier">app_identifier</h5>
+<p>The bundle identifier (e.g. "com.krausefx.app")</p>
+<h5 id="username">username</h5>
+<p>Your Apple ID email address</p>
+<h5 id="ipa">ipa</h5>
+<p>A path to a signed ipa file, which will be uploaded. If you don't provide this value, only app metadata will be uploaded. If you want to submit the app for review make sure to either use <code>fastlane deliver --submit_for_review</code> or add <code>submit_for_review true</code> to your <code>Deliverfile</code></p>
 <pre><code class="language-ruby-skip-tests">ipa(&quot;App.ipa&quot;)
 </code></pre>
-
-
-if you use [_fastlane_](https://fastlane.tools) the ipa file will automatically be detected.
-
-##### pkg
-A path to a signed pkg file, which will be uploaded. Submission logic of ipa applies to pkg files.
-
+<p>if you use <a href="https://fastlane.tools"><em>fastlane</em></a> the ipa file will automatically be detected.</p>
+<h5 id="pkg">pkg</h5>
+<p>A path to a signed pkg file, which will be uploaded. Submission logic of ipa applies to pkg files.</p>
 <pre><code class="language-ruby-skip-tests">pkg(&quot;MacApp.pkg&quot;)
 </code></pre>
-
-
-##### app_version
-
-Optional, as it is usually automatically detected. Specify the version that should be created / edited on App Store Connect:
-
-
+<h5 id="app_version">app_version</h5>
+<p>Optional, as it is usually automatically detected. Specify the version that should be created / edited on App Store Connect:</p>
 <pre><code class="language-ruby-skip-tests">app_version(&quot;2.0&quot;)
 </code></pre>
-
-
-##### skip_app_version_update
-
-In the case if _deliver_ uploads your application to App Store Connect it will automatically update "Prepare for submission" app version (which could be found on App Store Connect->My Apps->App Store page)
-
-The option allows uploading your app without updating "Prepare for submission" version.
-
-This could be useful in the case if you are generating a lot of uploads while not submitting the latest build for Apple review.
-
-The default value is false.
-
-
+<h5 id="skip_app_version_update">skip_app_version_update</h5>
+<p>In the case if <em>deliver</em> uploads your application to App Store Connect it will automatically update "Prepare for submission" app version (which could be found on App Store Connect-&gt;My Apps-&gt;App Store page)</p>
+<p>The option allows uploading your app without updating "Prepare for submission" version.</p>
+<p>This could be useful in the case if you are generating a lot of uploads while not submitting the latest build for Apple review.</p>
+<p>The default value is false.</p>
 <pre><code class="language-ruby-skip-tests">skip_app_version_update(true)
 </code></pre>
-
-
-##### submit_for_review
-
-Add this to your `Deliverfile` to automatically submit the app for review after uploading metadata/binary. This will select the latest build.
-
-
+<h5 id="submit_for_review">submit_for_review</h5>
+<p>Add this to your <code>Deliverfile</code> to automatically submit the app for review after uploading metadata/binary. This will select the latest build.</p>
 <pre><code class="language-ruby-skip-tests">submit_for_review(true)
 </code></pre>
-
-
-##### screenshots_path
-A path to a folder containing subfolders for each language. This will automatically detect the device type based on the image resolution. Also includes  Watch Support.
-
-![/img/actions/deliver_screenshots.png](/img/actions/deliver_screenshots.png)
-
-##### metadata_path
-Path to the metadata you want to use. The folder has to be structured like this
-
-![/img/actions/deliver_metadata.png](/img/actions/deliver_metadata.png)
-
-If you run `deliver init` this will automatically be created for you.
-
-##### force
-
-
+<h5 id="screenshots_path">screenshots_path</h5>
+<p>A path to a folder containing subfolders for each language. This will automatically detect the device type based on the image resolution. Also includes  Watch Support.</p>
+<p><img alt="/img/actions/deliver_screenshots.png" src="/img/actions/deliver_screenshots.png" /></p>
+<h5 id="metadata_path">metadata_path</h5>
+<p>Path to the metadata you want to use. The folder has to be structured like this</p>
+<p><img alt="/img/actions/deliver_metadata.png" src="/img/actions/deliver_metadata.png" /></p>
+<p>If you run <code>deliver init</code> this will automatically be created for you.</p>
+<h5 id="force">force</h5>
 <pre><code class="language-ruby-skip-tests">force(true)
 </code></pre>
-
-If set to `true`, no HTML report will be generated before the actual upload. You can also pass `--force` when calling _deliver_.
-
-
-##### price_tier
-Pass the price tier as number. This will be active from the current day.
-
+<p>If set to <code>true</code>, no HTML report will be generated before the actual upload. You can also pass <code>--force</code> when calling <em>deliver</em>.</p>
+<h5 id="price_tier">price_tier</h5>
+<p>Pass the price tier as number. This will be active from the current day.</p>
 <pre><code class="language-ruby-skip-tests">price_tier 0
 </code></pre>
-
-##### trade_representative_contact_information
-Trade Representative Contact information for Korean App Store. Available options: `first_name`, `last_name`, `address_line1`, `address_line2`, `address_line3`, `city_name`, `state`, `country`, `postal_code`, `phone_number`, `email_address`, `is_displayed_on_app_store`.
-
-
-
+<h5 id="trade_representative_contact_information">trade_representative_contact_information</h5>
+<p>Trade Representative Contact information for Korean App Store. Available options: <code>first_name</code>, <code>last_name</code>, <code>address_line1</code>, <code>address_line2</code>, <code>address_line3</code>, <code>city_name</code>, <code>state</code>, <code>country</code>, <code>postal_code</code>, <code>phone_number</code>, <code>email_address</code>, <code>is_displayed_on_app_store</code>.</p>
 <pre><code class="language-ruby-skip-tests">trade_representative_contact_information(
   first_name: &quot;Felix&quot;,
   last_name: &quot;Krause&quot;,
@@ -517,17 +467,10 @@ Trade Representative Contact information for Korean App Store. Available options
   email_address: &quot;github@krausefx.com&quot;,
 )
 </code></pre>
-
-
-You can also provide these values by creating files in a `metadata/trade_representative_contact_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `first_name.txt`, `address_line1.txt` etc.). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will be take priority over values from these files.
-
-`is_displayed_on_app_store` is the option on App Store Connect described as: `Display Trade Representative Contact Information on the Korean App Store`
-
-##### app_review_information
-Contact information for the app review team. Available options: `first_name`, `last_name`, `phone_number`, `email_address`, `demo_user`, `demo_password`, `notes`.
-
-
-
+<p>You can also provide these values by creating files in a <code>metadata/trade_representative_contact_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>first_name.txt</code>, <code>address_line1.txt</code> etc.). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will be take priority over values from these files.</p>
+<p><code>is_displayed_on_app_store</code> is the option on App Store Connect described as: <code>Display Trade Representative Contact Information on the Korean App Store</code></p>
+<h5 id="app_review_information">app_review_information</h5>
+<p>Contact information for the app review team. Available options: <code>first_name</code>, <code>last_name</code>, <code>phone_number</code>, <code>email_address</code>, <code>demo_user</code>, <code>demo_password</code>, <code>notes</code>.</p>
 <pre><code class="language-ruby-skip-tests">app_review_information(
   first_name: &quot;Felix&quot;,
   last_name: &quot;Krause&quot;,
@@ -538,191 +481,114 @@ Contact information for the app review team. Available options: `first_name`, `l
   notes: &quot;such notes, very text&quot;
 )
 </code></pre>
-
-
-You can also provide these values by creating files in a `metadata/review_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `first_name.txt`, `notes.txt` etc.). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will be take priority over values from these files.
-
-##### app_review_attachment_file
-You can provide additional information to the app review team as a file attachment. As of this writing, Apple supports following file attachment formats: .pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.
-
-Provide an empty string (i.e. "", not null) to remove the existing attachment file (if any) from the review information being edited.
-
-
+<p>You can also provide these values by creating files in a <code>metadata/review_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>first_name.txt</code>, <code>notes.txt</code> etc.). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will be take priority over values from these files.</p>
+<h5 id="app_review_attachment_file">app_review_attachment_file</h5>
+<p>You can provide additional information to the app review team as a file attachment. As of this writing, Apple supports following file attachment formats: .pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.</p>
+<p>Provide an empty string (i.e. "", not null) to remove the existing attachment file (if any) from the review information being edited.</p>
 <pre><code class="language-ruby-skip-tests">app_review_attachment_file: &quot;./readme.txt&quot;
 </code></pre>
-
-
-##### submission_information
-Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. [A list of available options](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb).
-
-
+<h5 id="submission_information">submission_information</h5>
+<p>Must be a hash. This is used as the last step for the deployment process, where you define if you use third party content or use encryption. <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb">A list of available options</a>.</p>
 <pre><code class="language-ruby-skip-tests">submission_information({
   add_id_info_serves_ads: true,
   ...
 })
 </code></pre>
-
-
-##### automatic_release
-Should the app be released to all users once Apple approves it? If set to `false`, you'll have to manually release the update once it got approved.
-
-
+<h5 id="automatic_release">automatic_release</h5>
+<p>Should the app be released to all users once Apple approves it? If set to <code>false</code>, you'll have to manually release the update once it got approved.</p>
 <pre><code class="language-ruby-skip-tests">automatic_release(true)
 # or
 automatic_release(false)
 </code></pre>
-
-
-##### phased_release
-
-Enable or disable the phased releases feature of App Store Connect. If set to `true`, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on App Store Connect.
-
-
+<h5 id="phased_release">phased_release</h5>
+<p>Enable or disable the phased releases feature of App Store Connect. If set to <code>true</code>, the update will be released over a 7 day period. Default behavior is to leave whatever you defined on App Store Connect.</p>
 <pre><code class="language-ruby-skip-tests">phased_release(true)
 # or
 phased_release(false)
 </code></pre>
-
-
-##### reset_ratings
-
-Reset your app's summary rating for all territories. If set to `true`, it will reset rating when this version is released. Default behavior is to keep existing rating.
-
-
+<h5 id="reset_ratings">reset_ratings</h5>
+<p>Reset your app's summary rating for all territories. If set to <code>true</code>, it will reset rating when this version is released. Default behavior is to keep existing rating.</p>
 <pre><code class="language-ruby-skip-tests">reset_ratings(true)
 # or
 reset_ratings(false)
 </code></pre>
-
-
-##### app_rating_config_path
-You can set the app age ratings using _deliver_. You'll have to create and store a `JSON` configuration file. Copy the [template](https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json) to your project folder and pass the path to the `JSON` file using the `app_rating_config_path` option.
-
-The keys/values on the top allow one of 3 strings: "NONE", "INFREQUENT_OR_MILD" or "FREQUENT_OR_INTENSE", and the items on the bottom allow false or true. More information in [#reference](#reference).
-
-
-## Metadata
-
-All options below are useful if you want to specify certain app metadata in your `Deliverfile` or `Fastfile`
-
-### Localized
-
-Localized values should be set like this
-
-
+<h5 id="app_rating_config_path">app_rating_config_path</h5>
+<p>You can set the app age ratings using <em>deliver</em>. You'll have to create and store a <code>JSON</code> configuration file. Copy the <a href="https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json">template</a> to your project folder and pass the path to the <code>JSON</code> file using the <code>app_rating_config_path</code> option.</p>
+<p>The keys/values on the top allow one of 3 strings: "NONE", "INFREQUENT_OR_MILD" or "FREQUENT_OR_INTENSE", and the items on the bottom allow false or true. More information in <a href="#reference">#reference</a>.</p>
+<h2 id="metadata">Metadata</h2>
+<p>All options below are useful if you want to specify certain app metadata in your <code>Deliverfile</code> or <code>Fastfile</code></p>
+<h3 id="localized">Localized</h3>
+<p>Localized values should be set like this</p>
 <pre><code class="language-ruby-skip-tests">description({
   'en-US' =&gt; &quot;English Description here&quot;,
   'de-DE' =&gt; &quot;Deutsche Beschreibung hier&quot;
 })
 </code></pre>
-
-
-##### name
-The title/name of the app
-
-##### subtitle
-
-Localized subtitle of the app
-
-
+<h5 id="name">name</h5>
+<p>The title/name of the app</p>
+<h5 id="subtitle">subtitle</h5>
+<p>Localized subtitle of the app</p>
 <pre><code class="language-ruby-skip-tests">subtitle(
   &quot;en-US&quot; =&gt; &quot;Awesome English subtitle here&quot;,
   &quot;de-DE&quot; =&gt; &quot;Jetzt mit deutschen Untertiteln!&quot;
 )
 </code></pre>
-
-
-##### description
-The description of the app
-
-##### release_notes
-The release_notes (What's new / Changelog) of the latest version
-
-##### support_url, marketing_url, privacy_url
-These URLs are shown in the AppStore
-
-##### keywords
-
-Keywords separated using a comma.
-
-
+<h5 id="description">description</h5>
+<p>The description of the app</p>
+<h5 id="release_notes">release_notes</h5>
+<p>The release_notes (What's new / Changelog) of the latest version</p>
+<h5 id="support_url-marketing_url-privacy_url">support_url, marketing_url, privacy_url</h5>
+<p>These URLs are shown in the AppStore</p>
+<h5 id="keywords">keywords</h5>
+<p>Keywords separated using a comma.</p>
 <pre><code class="language-ruby-skip-tests">keywords(
   &quot;en-US&quot; =&gt; &quot;Keyword1, Keyword2&quot;
 )
 </code></pre>
-
-
-##### promotional_text
-
-Localized promotional text
-
-
+<h5 id="promotional_text">promotional_text</h5>
+<p>Localized promotional text</p>
 <pre><code class="language-ruby-skip-tests">promotional_text(
   &quot;en-US&quot; =&gt; &quot;Hey, you should totally buy our app, it's the best&quot;,
   &quot;de-DE&quot; =&gt; &quot;App kaufen bitte&quot;
 )
 </code></pre>
-
-
-##### app_icon
-A path to a new app icon, which must be exactly 1024x1024px
-
+<h5 id="app_icon">app_icon</h5>
+<p>A path to a new app icon, which must be exactly 1024x1024px</p>
 <pre><code class="language-ruby-skip-tests">app_icon('./AppIcon.png')
 </code></pre>
-
-
-##### apple_watch_app_icon
-A path to a new app icon for the  Watch, which must be exactly 1024x1024px
-
+<h5 id="apple_watch_app_icon">apple_watch_app_icon</h5>
+<p>A path to a new app icon for the  Watch, which must be exactly 1024x1024px</p>
 <pre><code class="language-ruby-skip-tests">apple_watch_app_icon('./AppleWatchAppIcon.png')
 </code></pre>
-
-
-##### platform
-
-The platform of your application (a.e. ios, osx).
-
-This option is optional. The default value is "ios" and deliver should be able to figure out the platform from your binary.
-
-However, in the case if multiple binaries present, you can specify a platform which you want to deliver explicitly.
-
-The available options:
-
-- 'ios'
-- 'appletvos'
-- 'osx'
-
-
-### Non-Localized
-
-##### copyright
-The up to date copyright information.
-
+<h5 id="platform">platform</h5>
+<p>The platform of your application (a.e. ios, osx).</p>
+<p>This option is optional. The default value is "ios" and deliver should be able to figure out the platform from your binary.</p>
+<p>However, in the case if multiple binaries present, you can specify a platform which you want to deliver explicitly.</p>
+<p>The available options:</p>
+<ul>
+<li>'ios'</li>
+<li>'appletvos'</li>
+<li>'osx'</li>
+</ul>
+<h3 id="non-localized">Non-Localized</h3>
+<h5 id="copyright">copyright</h5>
+<p>The up to date copyright information.</p>
 <pre><code class="language-ruby-skip-tests">copyright(&quot;#{Time.now.year} Felix Krause&quot;)
 </code></pre>
-
-
-##### primary_category
-The english name of the category you want to set (e.g. `Business`, `Books`)
-
-See [#reference](#reference) for a list of available categories
-
-##### secondary_category
-The english name of the secondary category you want to set
-
-##### primary_first_sub_category
-The english name of the primary first sub category you want to set
-
-##### primary_second_sub_category
-The english name of the primary second sub category you want to set
-
-##### secondary_first_sub_category
-The english name of the secondary first sub category you want to set
-
-##### secondary_second_sub_category
-The english name of the secondary second sub category you want to set
+<h5 id="primary_category">primary_category</h5>
+<p>The english name of the category you want to set (e.g. <code>Business</code>, <code>Books</code>)</p>
+<p>See <a href="#reference">#reference</a> for a list of available categories</p>
+<h5 id="secondary_category">secondary_category</h5>
+<p>The english name of the secondary category you want to set</p>
+<h5 id="primary_first_sub_category">primary_first_sub_category</h5>
+<p>The english name of the primary first sub category you want to set</p>
+<h5 id="primary_second_sub_category">primary_second_sub_category</h5>
+<p>The english name of the primary second sub category you want to set</p>
+<h5 id="secondary_first_sub_category">secondary_first_sub_category</h5>
+<p>The english name of the secondary first sub category you want to set</p>
+<h5 id="secondary_second_sub_category">secondary_second_sub_category</h5>
+<p>The english name of the secondary second sub category you want to set</p>
 </details>
-
 <h1 id="submit-build">Submit Build</h1>
 <p><em>deliver</em> allows you to promote an existing build to production. Below are examples to select a previously uploaded build and submit it for review.</p>
 <pre><code class="language-no-highlight">fastlane deliver submit_build --build_number 830
@@ -956,148 +822,145 @@ end
 </table>
 <h2 id="reference">Reference</h2>
 <details>
-<summary>View all available categories, etc.</summary>
-
-### Available Categories
-
-- `FOOD_AND_DRINK`
-- `BUSINESS`
-- `EDUCATION`
-- `SOCIAL_NETWORKING`
-- `BOOKS`
-- `SPORTS`
-- `FINANCE`
-- `REFERENCE`
-- `GRAPHICS_AND_DESIGN`
-- `DEVELOPER_TOOLS`
-- `HEALTH_AND_FITNESS`
-- `MUSIC`
-- `WEATHER`
-- `TRAVEL`
-- `ENTERTAINMENT`
-- `STICKERS`
-- `GAMES`
-- `LIFESTYLE`
-- `MEDICAL`
-- `MAGAZINES_AND_NEWSPAPERS`
-- `UTILITIES`
-- `SHOPPING`
-- `PRODUCTIVITY`
-- `NEWS`
-- `PHOTO_AND_VIDEO`
-- `NAVIGATION`
-
-### Available Game Subcategories
-
-- `MZGenre.Action`
-- `MZGenre.Adventure`
-- `MZGenre.Arcade`
-- `MZGenre.Board`
-- `MZGenre.Card`
-- `MZGenre.Casino`
-- `MZGenre.Dice`
-- `MZGenre.Educational`
-- `MZGenre.Family`
-- `MZGenre.Music`
-- `MZGenre.Puzzle`
-- `MZGenre.Racing`
-- `MZGenre.RolePlaying`
-- `MZGenre.Simulation`
-- `MZGenre.Sports`
-- `MZGenre.Strategy`
-- `MZGenre.Trivia`
-- `MZGenre.Word`
-
-- `GAMES_SPORTS`
-- `GAMES_WORD`
-- `GAMES_MUSIC`
-- `GAMES_ADVENTURE`
-- `GAMES_ACTION`
-- `GAMES_ROLE_PLAYING`
-- `GAMES_CASUAL`
-- `GAMES_BOARD`
-- `GAMES_TRIVIA`
-- `GAMES_CARD`
-- `GAMES_PUZZLE`
-- `GAMES_CASINO`
-- `GAMES_STRATEGY`
-- `GAMES_SIMULATION`
-- `GAMES_RACING`
-- `GAMES_FAMILY`
-
-### Available Stickers Subcategories
-
-- `STICKERS_PLACES_AND_OBJECTS`
-- `STICKERS_EMOJI_AND_EXPRESSIONS`
-- `STICKERS_CELEBRATIONS`
-- `STICKERS_CELEBRITIES`
-- `STICKERS_MOVIES_AND_TV`
-- `STICKERS_SPORTS_AND_ACTIVITIES`
-- `STICKERS_EATING_AND_DRINKING`
-- `STICKERS_CHARACTERS`
-- `STICKERS_ANIMALS`
-- `STICKERS_FASHION`
-- `STICKERS_ART`
-- `STICKERS_GAMING`
-- `STICKERS_KIDS_AND_FAMILY`
-- `STICKERS_PEOPLE`
-- `STICKERS_MUSIC`
-
-### Available age rating groups
-
-#### Non Boolean
-
-**Values**
-
-- 0: None (Legacy value, use `NONE` instead)
-- 1: Infrequent/Mild (Legacy value, use `INFREQUENT_OR_MILD` instead)
-- 2: Frequent/Intense (Legacy value, use `FREQUENT_OR_INTENSE`instead)
-
-- `NONE`
-- `INFREQUENT_OR_MILD`
-- `FREQUENT_OR_INTENSE`
-
-**Keys**
-
-- 'alcoholTobaccoOrDrugUseOrReferences'
-- 'contests'
-- 'gamblingSimulated'
-- 'medicalOrTreatmentInformation'
-- 'profanityOrCrudeHumor'
-
-- 'sexualContentGraphicAndNudity'
-- 'sexualContentOrNudity'
-- 'horrorOrFearThemes'
-- 'matureOrSuggestiveThemes'
-- 'unrestrictedWebAccess'
-- 'violenceCartoonOrFantasy'
-- 'violenceRealisticProlongedGraphicOrSadistic'
-- 'violenceRealistic'
-- 'kidsAgeBand'
-
-#### Boolean
-
-**Keys**
-
-- `gambling`
-- 'seventeenPlus'
-- `unrestrictedWebAccess`
-
-#### Kids Age
-
-**Values**
-
-- `FIVE_AND_UNDER`
-- `SIX_TO_EIGHT`
-- `NINE_TO_ELEVEN`
-- `null`
-
-**Keys**
-
-- `kidsAgeBand`
-
+<p><summary>View all available categories, etc.</summary></p>
+<h3 id="available-categories">Available Categories</h3>
+<ul>
+<li><code>FOOD_AND_DRINK</code></li>
+<li><code>BUSINESS</code></li>
+<li><code>EDUCATION</code></li>
+<li><code>SOCIAL_NETWORKING</code></li>
+<li><code>BOOKS</code></li>
+<li><code>SPORTS</code></li>
+<li><code>FINANCE</code></li>
+<li><code>REFERENCE</code></li>
+<li><code>GRAPHICS_AND_DESIGN</code></li>
+<li><code>DEVELOPER_TOOLS</code></li>
+<li><code>HEALTH_AND_FITNESS</code></li>
+<li><code>MUSIC</code></li>
+<li><code>WEATHER</code></li>
+<li><code>TRAVEL</code></li>
+<li><code>ENTERTAINMENT</code></li>
+<li><code>STICKERS</code></li>
+<li><code>GAMES</code></li>
+<li><code>LIFESTYLE</code></li>
+<li><code>MEDICAL</code></li>
+<li><code>MAGAZINES_AND_NEWSPAPERS</code></li>
+<li><code>UTILITIES</code></li>
+<li><code>SHOPPING</code></li>
+<li><code>PRODUCTIVITY</code></li>
+<li><code>NEWS</code></li>
+<li><code>PHOTO_AND_VIDEO</code></li>
+<li><code>NAVIGATION</code></li>
+</ul>
+<h3 id="available-game-subcategories">Available Game Subcategories</h3>
+<ul>
+<li><code>MZGenre.Action</code></li>
+<li><code>MZGenre.Adventure</code></li>
+<li><code>MZGenre.Arcade</code></li>
+<li><code>MZGenre.Board</code></li>
+<li><code>MZGenre.Card</code></li>
+<li><code>MZGenre.Casino</code></li>
+<li><code>MZGenre.Dice</code></li>
+<li><code>MZGenre.Educational</code></li>
+<li><code>MZGenre.Family</code></li>
+<li><code>MZGenre.Music</code></li>
+<li><code>MZGenre.Puzzle</code></li>
+<li><code>MZGenre.Racing</code></li>
+<li><code>MZGenre.RolePlaying</code></li>
+<li><code>MZGenre.Simulation</code></li>
+<li><code>MZGenre.Sports</code></li>
+<li><code>MZGenre.Strategy</code></li>
+<li><code>MZGenre.Trivia</code></li>
+<li><code>MZGenre.Word</code></li>
+</ul>
+<ul>
+<li><code>GAMES_SPORTS</code></li>
+<li><code>GAMES_WORD</code></li>
+<li><code>GAMES_MUSIC</code></li>
+<li><code>GAMES_ADVENTURE</code></li>
+<li><code>GAMES_ACTION</code></li>
+<li><code>GAMES_ROLE_PLAYING</code></li>
+<li><code>GAMES_CASUAL</code></li>
+<li><code>GAMES_BOARD</code></li>
+<li><code>GAMES_TRIVIA</code></li>
+<li><code>GAMES_CARD</code></li>
+<li><code>GAMES_PUZZLE</code></li>
+<li><code>GAMES_CASINO</code></li>
+<li><code>GAMES_STRATEGY</code></li>
+<li><code>GAMES_SIMULATION</code></li>
+<li><code>GAMES_RACING</code></li>
+<li><code>GAMES_FAMILY</code></li>
+</ul>
+<h3 id="available-stickers-subcategories">Available Stickers Subcategories</h3>
+<ul>
+<li><code>STICKERS_PLACES_AND_OBJECTS</code></li>
+<li><code>STICKERS_EMOJI_AND_EXPRESSIONS</code></li>
+<li><code>STICKERS_CELEBRATIONS</code></li>
+<li><code>STICKERS_CELEBRITIES</code></li>
+<li><code>STICKERS_MOVIES_AND_TV</code></li>
+<li><code>STICKERS_SPORTS_AND_ACTIVITIES</code></li>
+<li><code>STICKERS_EATING_AND_DRINKING</code></li>
+<li><code>STICKERS_CHARACTERS</code></li>
+<li><code>STICKERS_ANIMALS</code></li>
+<li><code>STICKERS_FASHION</code></li>
+<li><code>STICKERS_ART</code></li>
+<li><code>STICKERS_GAMING</code></li>
+<li><code>STICKERS_KIDS_AND_FAMILY</code></li>
+<li><code>STICKERS_PEOPLE</code></li>
+<li><code>STICKERS_MUSIC</code></li>
+</ul>
+<h3 id="available-age-rating-groups">Available age rating groups</h3>
+<h4 id="non-boolean">Non Boolean</h4>
+<p><strong>Values</strong></p>
+<ul>
+<li>0: None (Legacy value, use <code>NONE</code> instead)</li>
+<li>1: Infrequent/Mild (Legacy value, use <code>INFREQUENT_OR_MILD</code> instead)</li>
+<li>2: Frequent/Intense (Legacy value, use <code>FREQUENT_OR_INTENSE</code>instead)</li>
+</ul>
+<ul>
+<li><code>NONE</code></li>
+<li><code>INFREQUENT_OR_MILD</code></li>
+<li><code>FREQUENT_OR_INTENSE</code></li>
+</ul>
+<p><strong>Keys</strong></p>
+<ul>
+<li>'alcoholTobaccoOrDrugUseOrReferences'</li>
+<li>'contests'</li>
+<li>'gamblingSimulated'</li>
+<li>'medicalOrTreatmentInformation'</li>
+<li>'profanityOrCrudeHumor'</li>
+</ul>
+<ul>
+<li>'sexualContentGraphicAndNudity'</li>
+<li>'sexualContentOrNudity'</li>
+<li>'horrorOrFearThemes'</li>
+<li>'matureOrSuggestiveThemes'</li>
+<li>'unrestrictedWebAccess'</li>
+<li>'violenceCartoonOrFantasy'</li>
+<li>'violenceRealisticProlongedGraphicOrSadistic'</li>
+<li>'violenceRealistic'</li>
+<li>'kidsAgeBand'</li>
+</ul>
+<h4 id="boolean">Boolean</h4>
+<p><strong>Keys</strong></p>
+<ul>
+<li><code>gambling</code></li>
+<li>'seventeenPlus'</li>
+<li><code>unrestrictedWebAccess</code></li>
+</ul>
+<h4 id="kids-age">Kids Age</h4>
+<p><strong>Values</strong></p>
+<ul>
+<li><code>FIVE_AND_UNDER</code></li>
+<li><code>SIX_TO_EIGHT</code></li>
+<li><code>NINE_TO_ELEVEN</code></li>
+<li><code>null</code></li>
+</ul>
+<p><strong>Keys</strong></p>
+<ul>
+<li><code>kidsAgeBand</code></li>
+</ul>
 </details>
-
 <p><br /></p>
 <h2 id="default-values">Default values</h2>
 <p>Deliver has a special <code>default</code> language code which allows you to provide values that are not localized, and which will be used as defaults when you don’t provide a specific localized value.</p>
