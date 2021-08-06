@@ -273,9 +273,9 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1883
+  :age_in_days: 1892
   :readme_score: 100
-  :tests: 71
+  :tests: 73
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_dsym
@@ -322,12 +322,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload debugging information files.
     details: " "
-  :sha: ee509b008adcd277313c750aa2e3177b057e8904ec2509d1aa131a6b8962889a
-  :github_stars: 82
-  :github_subscribers: 18
-  :github_issues: 18
+  :sha: 379fcc26c269a0a2f679f1a328dc75d15491445ac55dfcb06663c88e401931d1
+  :github_stars: 83
+  :github_subscribers: 17
+  :github_issues: 16
   :github_forks: 42
-  :github_contributors: 21
+  :github_contributors: 0
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -4407,7 +4407,7 @@ fastlane-plugin-run_tests_firebase_testlab:
   :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2018-02-12
-  :age_in_days: 1120
+  :age_in_days: 1271
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4416,11 +4416,11 @@ fastlane-plugin-instabug_official:
     category:
     description:
     details:
-  :sha: d8a19ffd8a8e5efab862eb335eaf525fbbb474204deabcc80b296913dd6ff6c9
+  :sha: 85dd86e3a4201d5e6b1322daf2f2992b0bb001a4991e8ad09603cc6685ed21ad
   :github_stars: 4
-  :github_subscribers: 3
+  :github_subscribers: 4
   :github_issues: 1
-  :github_forks: 3
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
@@ -5080,7 +5080,7 @@ fastlane-plugin-build_log_info:
   :github_contributors: 1
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 1084
+  :age_in_days: 1087
   :readme_score: 100
   :tests: 29
   :actions:
@@ -5089,7 +5089,7 @@ fastlane-plugin-mango:
     category:
     description: Action that runs Android tasks on a specified Docker image
     details:
-  :sha: 6171ab0c942fc3b29d8b4a8f82ff5555056e6ae349b20f4bf3e2b4f399f7f89e
+  :sha: 70cf87aaa1fd27d4cf3b0c5a186bc1561e70b4acb467c0f6e50853d57c534994
   :github_stars: 48
   :github_subscribers: 25
   :github_issues: 0
@@ -10406,7 +10406,7 @@ fastlane-plugin-creator:
   :github_contributors: 1
 fastlane-plugin-taiwan_number_one:
   :initial_commit: 2021-03-03
-  :age_in_days: 147
+  :age_in_days: 156
   :readme_score: 100
   :tests: 0
   :actions:
@@ -10415,7 +10415,7 @@ fastlane-plugin-taiwan_number_one:
     category:
     description:
     details:
-  :sha: d3cc5da91d9655408fe9cdf58af7d114f5f80f99e75fa8c1ce7448ad42338926
+  :sha: 44f825aebeec3fcd24da0e25ebc29ff694991f277b779beb90cfebf978f412f5
   :github_stars: 8
   :github_subscribers: 2
   :github_issues: 0
@@ -10630,14 +10630,14 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 1114
+  :age_in_days: 1123
   :readme_score: 100
   :tests: 140
   :actions: []
-  :sha: 32025648de9eb9912eec9539250b1e758b338d94796d3243a3f39f7693a954cc
+  :sha: 98a44113d5f6ee737397c139e1efaa5e5b08f968584a68bc99d171368454e3aa
   :github_stars: 21
   :github_subscribers: 18
-  :github_issues: 29
+  :github_issues: 27
   :github_forks: 6
   :github_contributors: 0
 fastlane-plugin-allure_zephyr:
@@ -10728,7 +10728,7 @@ fastlane-plugin-unity_exporter:
   :github_contributors: 0
 fastlane-plugin-sns_http_subscribe:
   :initial_commit: 2021-07-12
-  :age_in_days: 16
+  :age_in_days: 25
   :readme_score: 50
   :tests: 1
   :actions:
@@ -10737,9 +10737,70 @@ fastlane-plugin-sns_http_subscribe:
     category:
     description:
     details:
-  :sha: d3c3c0adb5d890181a16d8b8f526f2bbc8b46e1eff17509ae27a078d4c536542
+  :sha: ac2abad98c6511a8780cde53b66cbafdfebed0b9bbbfc6558cf3414063498c2f
+  :github_stars: 1
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-aliyunoss:
+  :initial_commit: 2021-08-04
+  :age_in_days: 2
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: aliyunoss
+    category:
+    description:
+    details:
+  :sha: 9a78eeb82cceb3b85852ee711cc7faad5524c1591fcbdfa53f142e3afa0ceb2d
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
+fastlane-plugin-periphery:
+  :initial_commit: 2021-07-23
+  :age_in_days: 14
+  :readme_score: 50
+  :tests: 8
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: periphery
+    category:
+    description:
+    details:
+  :sha: f7ecd9b304f74f5d4485ed7779d1712f4f83251009366f3ed9568061db13b7fd
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-google_cloud_storage_update:
+  :initial_commit: 2016-12-19
+  :age_in_days: 1691
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: google_cloud_storage_check_file
+    category:
+    description: Check if file exists in Google Cloud Storage
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: google_cloud_storage_check_file
+    category:
+    description: Download a file from Google Cloud Storage
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: google_cloud_storage_upload
+    category:
+    description: Upload a file to Google Cloud Storage
+    details:
+  :sha: fc5a5a01100d073c58f0c36dcf8ba9d1fa01c5fce6657b087a5ecdac34cba6cf
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
