@@ -21,7 +21,6 @@ markdown_extensions:
     toc_depth: 2
 docs_dir: docs
 extra_css:
-- "./css/sidenavv.css"
 - "./css/fastlane.css"
 - "./css/code.css"
 - "./css/breadcrumbs.css"
