@@ -421,9 +421,9 @@ brew install fastlane
 </code></pre>
 <h4 id="gradle-dependency">Gradle dependency</h4>
 <p>Add the test dependency to your Gradle build:</p>
-<pre><code class="language-java">androidTestCompile 'tools.fastlane:screengrab:x.x.x'
+<pre><code class="language-java">androidTestImplementation 'tools.fastlane:screengrab:x.x.x'
 </code></pre>
-<p>The latest version can be determined by visiting the <a href="https://rubygems.org/gems/screengrab"><em>screengrab</em> RubyGems page</a></p>
+<p>The latest version is <a href="https://search.maven.org/artifact/tools.fastlane/screengrab"> <img alt="Download" src="https://maven-badges.herokuapp.com/maven-central/tools.fastlane/screengrab/badge.svg" /></a></p>
 <h4 id="configuring-your-manifest-permissions">Configuring your Manifest Permissions</h4>
 <p>Ensure that the following permissions exist in your <code>src/debug/AndroidManifest.xml</code></p>
 <pre><code class="language-xml">&lt;!-- Allows unlocking your device and activating its screen so UI tests can succeed --&gt;
