@@ -1,0 +1,50 @@
+# GitHub Actions Integration
+
+Use [GitHub Actions runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) running on a macOS machine
+to build using fastlane.
+
+## Repository setup
+
+First create a `Gemfile` in the root of your project with the following content:
+
+```ruby
+source 'https://rubygems.org'
+
+gem 'fastlane'
+```
+
+Add a `.github/workflows/build-ios-app.yml` file to trigger _fastlane_.
+
+```yml
+name: build-ios-app
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: fastlane beta
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+```
+
+See [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
+for more information on how this file works.
+
+## Setting up the lanes
+
+```ruby
+platform :ios do
+  lane :beta do
+    setup_ci if ENV['CI']
+    match(type: 'appstore')
+    build_app
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+  end
+end
+```
+
+`setup_ci` creates a temporary keychain. Without this, the build could freeze and never finish.
