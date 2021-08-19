@@ -47,4 +47,4 @@ platform :ios do
 end
 ```
 
-`setup_ci` creates a temporary keychain. Without this, the build could freeze and never finish.
+Note the usage of `setup_ci`: it creates a temporary keychain. Without this, the build could freeze and never finish.
