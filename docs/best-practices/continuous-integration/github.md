@@ -1,7 +1,6 @@
 # GitHub Actions Integration
 
-Use [GitHub Actions runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) running on a macOS machine
-to build using fastlane.
+Use [GitHub Actions runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) running on a macOS machine to build using _fastlane_.
 
 ## Repository setup
 
