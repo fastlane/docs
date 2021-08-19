@@ -34,6 +34,8 @@ See [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/refe
 
 ## Setting up the lanes
 
+Here's an example of a `Fastfile` with a lane that runs _match_, builds the app, and uploads to TestFlight:
+
 ```ruby
 platform :ios do
   lane :beta do
