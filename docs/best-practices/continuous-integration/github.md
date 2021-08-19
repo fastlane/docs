@@ -12,7 +12,7 @@ source 'https://rubygems.org'
 gem 'fastlane'
 ```
 
-Add a `.github/workflows/build-ios-app.yml` file to trigger _fastlane_.
+Add a workflow yaml file to your repository. For example, if naming your workflow "build-ios-app", add `.github/workflows/build-ios-app.yml` with the following content:
 
 ```yml
 name: build-ios-app
