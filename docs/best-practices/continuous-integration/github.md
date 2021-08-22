@@ -1,7 +1,6 @@
 # GitHub Actions Integration
 
-Use [GitHub Actions runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) running on a macOS machine
-to build using fastlane.
+Use [GitHub Actions runner](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners) running on a macOS machine to build using _fastlane_.
 
 ## Repository setup
 
@@ -13,7 +12,7 @@ source 'https://rubygems.org'
 gem 'fastlane'
 ```
 
-Add a `.github/workflows/build-ios-app.yml` file to trigger _fastlane_.
+Add a workflow yaml file to your repository. For example, if naming your workflow "build-ios-app", add `.github/workflows/build-ios-app.yml` with the following content:
 
 ```yml
 name: build-ios-app
@@ -31,10 +30,11 @@ jobs:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 ```
 
-See [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
-for more information on how this file works.
+See [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions) for more information on how this file works.
 
 ## Setting up the lanes
+
+Here's an example of a `Fastfile` with a lane that runs _match_, builds the app, and uploads to TestFlight:
 
 ```ruby
 platform :ios do
@@ -47,4 +47,4 @@ platform :ios do
 end
 ```
 
-`setup_ci` creates a temporary keychain. Without this, the build could freeze and never finish.
+Note the usage of `setup_ci`: it creates a temporary keychain. Without this, the build could freeze and never finish.
