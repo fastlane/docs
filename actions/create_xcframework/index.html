@@ -329,7 +329,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="create_xcframework">create_xcframework</h1>
 <p>Package multiple build configs of a library/framework into a single xcframework</p>
 <blockquote>
-<p>Utility for packaging multiple build configurations of a given library<br>or framework into a single xcframework.<br><br>If you want to package several frameworks just provide an array containing<br>the list of frameworks to be packaged using the :frameworks parameter.<br><br>If you want to package several libraries with their corresponding headers<br>provide a hash containing the library as the key and the directory containing<br>its headers as the value (or an empty string if there are no headers associated<br>with the provided library).<br><br>Finally specify the location of the xcframework to be generated using the :output<br>parameter.<br></p>
+<p>Utility for packaging multiple build configurations of a given library<br>or framework into a single xcframework.<br><br>If you want to package several frameworks just provide one of:<br><br>  * An array containing the list of frameworks using the :frameworks parameter<br>    (if they have no associated dSYMs):<br>      ['FrameworkA.framework', 'FrameworkB.framework']<br><br>  * A hash containing the list of frameworks with their dSYMs using the<br>    :frameworks_with_dsyms parameter:<br>      {<br>        'FrameworkA.framework' =&gt; {},<br>        'FrameworkB.framework' =&gt; { dsyms: 'FrameworkB.framework.dSYM' }<br>      }<br><br>If you want to package several libraries just provide one of:<br><br>  * An array containing the list of libraries using the :libraries parameter<br>    (if they have no associated headers or dSYMs):<br>      ['LibraryA.so', 'LibraryB.so']<br><br>  * A hash containing the list of libraries with their headers and dSYMs<br>    using the :libraries_with_headers_or_dsyms parameter:<br>      {<br>        'LibraryA.so' =&gt; { dsyms: 'libraryA.so.dSYM' },<br>        'LibraryB.so' =&gt; { headers: 'headers' }<br>      }<br><br>Finally specify the location of the xcframework to be generated using the :output<br>parameter.<br></p>
 </blockquote>
 <table>
 <thead>
@@ -349,10 +349,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples">2 Examples</h2>
+<h2 id="4-examples">4 Examples</h2>
 <pre><code class="language-ruby">create_xcframework(frameworks: ['FrameworkA.framework', 'FrameworkB.framework'], output: 'UniversalFramework.xcframework')
 </code></pre>
-<pre><code class="language-ruby">create_xcframework(libraries: { 'LibraryA.so' =&gt; '', 'LibraryB.so' =&gt; 'LibraryBHeaders'}, output: 'UniversalFramework.xcframework')
+<pre><code class="language-ruby">create_xcframework(frameworks_with_dsyms: {'FrameworkA.framework' =&gt; {}, 'FrameworkB.framework' =&gt; { dsyms: 'FrameworkB.framework.dSYM' } }, output: 'UniversalFramework.xcframework')
+</code></pre>
+<pre><code class="language-ruby">create_xcframework(libraries: ['LibraryA.so', 'LibraryB.so'], output: 'UniversalFramework.xcframework')
+</code></pre>
+<pre><code class="language-ruby">create_xcframework(libraries_with_headers_or_dsyms: { 'LibraryA.so' =&gt; { dsyms: 'libraryA.so.dSYM' }, 'LibraryB.so' =&gt; { headers: 'LibraryBHeaders' } }, output: 'UniversalFramework.xcframework')
 </code></pre>
 <h2 id="parameters">Parameters</h2>
 <table>
@@ -366,12 +370,22 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>frameworks</code></td>
-<td>Frameworks to add to the target xcframework</td>
+<td>Frameworks (without dSYMs) to add to the target xcframework</td>
+<td></td>
+</tr>
+<tr>
+<td><code>frameworks_with_dsyms</code></td>
+<td>Frameworks (with dSYMs) to add to the target xcframework</td>
 <td></td>
 </tr>
 <tr>
 <td><code>libraries</code></td>
-<td>Libraries to add to the target xcframework, with their corresponding headers</td>
+<td>Libraries (without headers or dSYMs) to add to the target xcframework</td>
+<td></td>
+</tr>
+<tr>
+<td><code>libraries_with_headers_or_dsyms</code></td>
+<td>Libraries (with headers or dSYMs) to add to the target xcframework</td>
 <td></td>
 </tr>
 <tr>
