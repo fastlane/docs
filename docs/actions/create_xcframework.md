@@ -11,7 +11,7 @@ Package multiple build configs of a library/framework into a single xcframework
 
 
 
-> Utility for packaging multiple build configurations of a given library<br>or framework into a single xcframework.<br><br>If you want to package several frameworks just provide an array containing<br>the list of frameworks to be packaged using the :frameworks parameter.<br><br>If you want to package several libraries with their corresponding headers<br>provide a hash containing the library as the key and the directory containing<br>its headers as the value (or an empty string if there are no headers associated<br>with the provided library).<br><br>Finally specify the location of the xcframework to be generated using the :output<br>parameter.<br>
+> Utility for packaging multiple build configurations of a given library<br>or framework into a single xcframework.<br><br>If you want to package several frameworks just provide one of:<br><br>  * An array containing the list of frameworks using the :frameworks parameter<br>    (if they have no associated dSYMs):<br>      ['FrameworkA.framework', 'FrameworkB.framework']<br><br>  * A hash containing the list of frameworks with their dSYMs using the<br>    :frameworks_with_dsyms parameter:<br>      {<br>        'FrameworkA.framework' => {},<br>        'FrameworkB.framework' => { dsyms: 'FrameworkB.framework.dSYM' }<br>      }<br><br>If you want to package several libraries just provide one of:<br><br>  * An array containing the list of libraries using the :libraries parameter<br>    (if they have no associated headers or dSYMs):<br>      ['LibraryA.so', 'LibraryB.so']<br><br>  * A hash containing the list of libraries with their headers and dSYMs<br>    using the :libraries_with_headers_or_dsyms parameter:<br>      {<br>        'LibraryA.so' => { dsyms: 'libraryA.so.dSYM' },<br>        'LibraryB.so' => { headers: 'headers' }<br>      }<br><br>Finally specify the location of the xcframework to be generated using the :output<br>parameter.<br>
 
 
 create_xcframework ||
@@ -21,14 +21,22 @@ Author | @jgongo
 
 
 
-## 2 Examples
+## 4 Examples
 
 ```ruby
 create_xcframework(frameworks: ['FrameworkA.framework', 'FrameworkB.framework'], output: 'UniversalFramework.xcframework')
 ```
 
 ```ruby
-create_xcframework(libraries: { 'LibraryA.so' => '', 'LibraryB.so' => 'LibraryBHeaders'}, output: 'UniversalFramework.xcframework')
+create_xcframework(frameworks_with_dsyms: {'FrameworkA.framework' => {}, 'FrameworkB.framework' => { dsyms: 'FrameworkB.framework.dSYM' } }, output: 'UniversalFramework.xcframework')
+```
+
+```ruby
+create_xcframework(libraries: ['LibraryA.so', 'LibraryB.so'], output: 'UniversalFramework.xcframework')
+```
+
+```ruby
+create_xcframework(libraries_with_headers_or_dsyms: { 'LibraryA.so' => { dsyms: 'libraryA.so.dSYM' }, 'LibraryB.so' => { headers: 'LibraryBHeaders' } }, output: 'UniversalFramework.xcframework')
 ```
 
 
@@ -39,8 +47,10 @@ create_xcframework(libraries: { 'LibraryA.so' => '', 'LibraryB.so' => 'LibraryBH
 
 Key | Description | Default
 ----|-------------|--------
-  `frameworks` | Frameworks to add to the target xcframework | 
-  `libraries` | Libraries to add to the target xcframework, with their corresponding headers | 
+  `frameworks` | Frameworks (without dSYMs) to add to the target xcframework | 
+  `frameworks_with_dsyms` | Frameworks (with dSYMs) to add to the target xcframework | 
+  `libraries` | Libraries (without headers or dSYMs) to add to the target xcframework | 
+  `libraries_with_headers_or_dsyms` | Libraries (with headers or dSYMs) to add to the target xcframework | 
   `output` | The path to write the xcframework to | 
   `allow_internal_distribution` | Specifies that the created xcframework contains information not suitable for public distribution | `false`
 
