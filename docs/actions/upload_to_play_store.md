@@ -275,6 +275,7 @@ Key | Description | Default
   `deactivate_on_promote` | **DEPRECATED!** Google Play does this automatically now - When promoting to a new track, deactivate the binary in the origin track | `true`
   `version_codes_to_retain` | An array of version codes to retain when publishing a new APK | 
   `changes_not_sent_for_review` | Indicates that the changes in this edit will not be reviewed until they are explicitly sent for review from the Google Play Console UI | `false`
+  `rescue_changes_not_sent_for_review` | Catches changes_not_sent_for_review errors when an edit is committed and retries with the configuration that the error message recommended | `true`
   `in_app_update_priority` | In-app update priority for all the newly added apks in the release. Can take values between [0,5] | 
   `obb_main_references_version` | References version of 'main' expansion file | 
   `obb_main_file_size` | Size of 'main' expansion file in bytes | 

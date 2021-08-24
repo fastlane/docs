@@ -76,7 +76,7 @@ fastlane-plugin-versioning:
   :github_contributors: 15
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
-  :age_in_days: 1770
+  :age_in_days: 1908
   :readme_score: 100
   :tests: 3
   :actions:
@@ -85,12 +85,12 @@ fastlane-plugin-aws_s3:
     category:
     description: Generates a plist file and uploads all to AWS S3
     details:
-  :sha: 71eca083f45614278c2cbc0993534c59ca80c59203f7b7765fbb3bdecbdf11dc
-  :github_stars: 113
-  :github_subscribers: 4
-  :github_issues: 14
-  :github_forks: 52
-  :github_contributors: 24
+  :sha: 4664020deb0c2ba63a20fe636947d6a917cd0f8e03d6afee21486e5f574cd453
+  :github_stars: 118
+  :github_subscribers: 5
+  :github_issues: 17
+  :github_forks: 55
+  :github_contributors: 25
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
   :age_in_days: 1800
@@ -273,9 +273,9 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1883
+  :age_in_days: 1910
   :readme_score: 100
-  :tests: 71
+  :tests: 74
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_dsym
@@ -318,16 +318,21 @@ fastlane-plugin-sentry:
     description: Create new releases for a project on Sentry
     details: " "
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_check_cli_installed
+    category:
+    description: Checks that sentry-cli with the correct version is installed
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_dif
     category:
     description: Upload debugging information files.
     details: " "
-  :sha: ee509b008adcd277313c750aa2e3177b057e8904ec2509d1aa131a6b8962889a
-  :github_stars: 82
-  :github_subscribers: 18
-  :github_issues: 18
+  :sha: 379fcc26c269a0a2f679f1a328dc75d15491445ac55dfcb06663c88e401931d1
+  :github_stars: 85
+  :github_subscribers: 17
+  :github_issues: 17
   :github_forks: 42
-  :github_contributors: 21
+  :github_contributors: 0
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -3250,7 +3255,7 @@ fastlane-plugin-dingtalk:
   :github_contributors: 1
 fastlane-plugin-install_provisioning_profiles:
   :initial_commit: 2017-11-18
-  :age_in_days: 531
+  :age_in_days: 1375
   :readme_score: 100
   :tests: 1
   :actions:
@@ -3259,8 +3264,8 @@ fastlane-plugin-install_provisioning_profiles:
     category:
     description: Install all the provisioning profiles located in you're project.
     details:
-  :sha: 8da5d9bfbe5dd7c9eafbb00676aded6d89c61b8d3a4966f98506115569c693e1
-  :github_stars: 0
+  :sha: cc97d67322c89d52884413c6d0b208757412e8c28dc56249047e35864563c1e2
+  :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 1
@@ -4407,7 +4412,7 @@ fastlane-plugin-run_tests_firebase_testlab:
   :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2018-02-12
-  :age_in_days: 1120
+  :age_in_days: 1289
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4416,12 +4421,12 @@ fastlane-plugin-instabug_official:
     category:
     description:
     details:
-  :sha: d8a19ffd8a8e5efab862eb335eaf525fbbb474204deabcc80b296913dd6ff6c9
+  :sha: 85dd86e3a4201d5e6b1322daf2f2992b0bb001a4991e8ad09603cc6685ed21ad
   :github_stars: 4
-  :github_subscribers: 3
+  :github_subscribers: 4
   :github_issues: 1
-  :github_forks: 3
-  :github_contributors: 0
+  :github_forks: 5
+  :github_contributors: 8
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
   :age_in_days: 1265
@@ -4736,21 +4741,21 @@ fastlane-plugin-promo_code:
   :github_contributors: 0
 fastlane-plugin-xcodegen:
   :initial_commit: 2018-04-25
-  :age_in_days: 798
+  :age_in_days: 1217
   :readme_score: 100
-  :tests: 8
+  :tests: 12
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: xcodegen
     category:
     description: Runs `xcodegen` for the project
     details: "\\n"
-  :sha: 68957020cdad8f56d94fbc88bdee9c61882c95ce0019aef47bb8422e64be9363
-  :github_stars: 10
-  :github_subscribers: 8
-  :github_issues: 1
-  :github_forks: 2
-  :github_contributors: 2
+  :sha: 9bbed6c2ea21ca6869567e350d0b62cf41770949d15e40869058d689f1a6d06d
+  :github_stars: 17
+  :github_subscribers: 7
+  :github_issues: 0
+  :github_forks: 3
+  :github_contributors: 3
 fastlane-plugin-xcode_test_reporter:
   :initial_commit: 2018-05-03
   :age_in_days: 15
@@ -5080,7 +5085,7 @@ fastlane-plugin-build_log_info:
   :github_contributors: 1
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 1084
+  :age_in_days: 1105
   :readme_score: 100
   :tests: 29
   :actions:
@@ -5089,12 +5094,12 @@ fastlane-plugin-mango:
     category:
     description: Action that runs Android tasks on a specified Docker image
     details:
-  :sha: 6171ab0c942fc3b29d8b4a8f82ff5555056e6ae349b20f4bf3e2b4f399f7f89e
+  :sha: 70cf87aaa1fd27d4cf3b0c5a186bc1561e70b4acb467c0f6e50853d57c534994
   :github_stars: 48
-  :github_subscribers: 25
+  :github_subscribers: 23
   :github_issues: 0
   :github_forks: 7
-  :github_contributors: 0
+  :github_contributors: 5
 fastlane-plugin-ciutils:
   :initial_commit: 2016-11-19
   :age_in_days: 872
@@ -5823,7 +5828,7 @@ fastlane-plugin-jira_issue_details:
   :github_contributors: 0
 fastlane-plugin-jira_release_notes:
   :initial_commit: 2018-12-04
-  :age_in_days: 808
+  :age_in_days: 994
   :readme_score: 100
   :tests: 12
   :actions:
@@ -5832,11 +5837,11 @@ fastlane-plugin-jira_release_notes:
     category:
     description: Jira release notes
     details: Fetch release notes for Jira project for version
-  :sha: a72613a1be41c4072bf6797a5b16c408592c1c59a4bfc55b5b438786b410b65d
-  :github_stars: 10
-  :github_subscribers: 6
-  :github_issues: 1
-  :github_forks: 2
+  :sha: dfa50f540a9b7778b90d8b4bb8b1f3686da1d3c7ae129312dc123697b8c9458a
+  :github_stars: 12
+  :github_subscribers: 7
+  :github_issues: 2
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-bugtags:
   :initial_commit: 2018-11-06
@@ -8146,7 +8151,7 @@ fastlane-plugin-repack_ios:
   :github_contributors: 0
 fastlane-plugin-bundletool:
   :initial_commit: 2019-12-08
-  :age_in_days: 316
+  :age_in_days: 625
   :readme_score: 100
   :tests: 4
   :actions:
@@ -8156,12 +8161,12 @@ fastlane-plugin-bundletool:
     description: Extracts an universal apk from an .aab file
     details: Using the google oficial bundletool to extract an universal apk from
       .aab file to distribute it
-  :sha: d18081c1325d56781366ad5e28f816f7e58589b6f23739e13efd3616f046717c
-  :github_stars: 9
+  :sha: f8832626bb243eed510da54ba0f2935741457ed13b999b0effc4414521974e21
+  :github_stars: 14
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 3
-  :github_contributors: 0
+  :github_forks: 4
+  :github_contributors: 3
 fastlane-plugin-bitwarden:
   :initial_commit: 2019-12-12
   :age_in_days: 7
@@ -10094,7 +10099,7 @@ fastlane-plugin-jira_issue_link:
   :github_contributors: 0
 fastlane-plugin-emerge:
   :initial_commit: 2020-12-07
-  :age_in_days: 158
+  :age_in_days: 260
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10103,9 +10108,9 @@ fastlane-plugin-emerge:
     category:
     description: Fastlane plugin for Emerge
     details:
-  :sha: 4254c52e330369b514fc094e0ced384d96500d31c5278b025ff75f76992406fc
-  :github_stars: 2
-  :github_subscribers: 1
+  :sha: b44de151fba1b6ba5915569d01b24472846acafe7e8ffa2f137e6ae0bba7f69f
+  :github_stars: 4
+  :github_subscribers: 2
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
@@ -10406,7 +10411,7 @@ fastlane-plugin-creator:
   :github_contributors: 1
 fastlane-plugin-taiwan_number_one:
   :initial_commit: 2021-03-03
-  :age_in_days: 147
+  :age_in_days: 174
   :readme_score: 100
   :tests: 0
   :actions:
@@ -10415,7 +10420,7 @@ fastlane-plugin-taiwan_number_one:
     category:
     description:
     details:
-  :sha: d3cc5da91d9655408fe9cdf58af7d114f5f80f99e75fa8c1ce7448ad42338926
+  :sha: 44f825aebeec3fcd24da0e25ebc29ff694991f277b779beb90cfebf978f412f5
   :github_stars: 8
   :github_subscribers: 2
   :github_issues: 0
@@ -10630,16 +10635,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 1114
+  :age_in_days: 1141
   :readme_score: 100
   :tests: 140
   :actions: []
-  :sha: 32025648de9eb9912eec9539250b1e758b338d94796d3243a3f39f7693a954cc
+  :sha: 98a44113d5f6ee737397c139e1efaa5e5b08f968584a68bc99d171368454e3aa
   :github_stars: 21
   :github_subscribers: 18
-  :github_issues: 29
+  :github_issues: 28
   :github_forks: 6
-  :github_contributors: 0
+  :github_contributors: 9
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
   :age_in_days: 13
@@ -10728,7 +10733,7 @@ fastlane-plugin-unity_exporter:
   :github_contributors: 0
 fastlane-plugin-sns_http_subscribe:
   :initial_commit: 2021-07-12
-  :age_in_days: 16
+  :age_in_days: 43
   :readme_score: 50
   :tests: 1
   :actions:
@@ -10737,9 +10742,108 @@ fastlane-plugin-sns_http_subscribe:
     category:
     description:
     details:
-  :sha: d3c3c0adb5d890181a16d8b8f526f2bbc8b46e1eff17509ae27a078d4c536542
+  :sha: ac2abad98c6511a8780cde53b66cbafdfebed0b9bbbfc6558cf3414063498c2f
+  :github_stars: 1
+  :github_subscribers: 3
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-aliyunoss:
+  :initial_commit: 2021-08-04
+  :age_in_days: 20
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: aliyunoss
+    category:
+    description:
+    details:
+  :sha: 9a78eeb82cceb3b85852ee711cc7faad5524c1591fcbdfa53f142e3afa0ceb2d
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-periphery:
+  :initial_commit: 2021-07-23
+  :age_in_days: 32
+  :readme_score: 50
+  :tests: 8
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: periphery
+    category:
+    description:
+    details:
+  :sha: f7ecd9b304f74f5d4485ed7779d1712f4f83251009366f3ed9568061db13b7fd
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-simplemdm:
+  :initial_commit: 2021-07-22
+  :age_in_days: 33
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_simplemdm
+    category:
+    description: Upload IPA to Simple MDM
+    details: When using SimpleMDM for iOS app distribution, this provides an automate
+      way to send updates directly to SimpleMDM
+  :sha: 8549b4fa9dbefcb501b1cda8e6622564f525476657f09f39572a5e5a5e9af5c5
+  :github_stars: 0
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-retrieve_devices:
+  :initial_commit: 2021-08-17
+  :age_in_days: 7
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: retrieve_devices
+    category: misc
+    description: This action will retrieve a list of each device registered with Apple
+    details: "\\n"
+  :sha: 34fccc8151016cc9332dd877bf0b46fbde4caacc2dae011d20711ce4891db5b5
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-app47:
+  :initial_commit: 2021-07-23
+  :age_in_days: 32
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_app47
+    category:
+    description: Upload IPA to Simple MDM
+    details: When using App47 for iOS app distribution, this provides an automate
+      way to send updates directly to App47
+  :sha: 8326e336670a2ed4b6a453107f3bac753c38c8ad13d1d74c37b2be943bce9b78
+  :github_stars: 0
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-scipio:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-google_cloud_storage_update:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2

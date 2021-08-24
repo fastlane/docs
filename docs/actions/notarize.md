@@ -28,6 +28,7 @@ Author | @zeplin
 Key | Description | Default
 ----|-------------|--------
   `package` | Path to package to notarize, e.g. .app bundle or disk image | 
+  `use_notarytool` | Whether to `xcrun notarytool` or `xcrun altool` | [*](#parameters-legend-dynamic)
   `try_early_stapling` | Whether to try early stapling while the notarization request is in progress | `false`
   `bundle_id` | Bundle identifier to uniquely identify the package | 
   `username` | Apple ID username | [*](#parameters-legend-dynamic)
