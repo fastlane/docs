@@ -25,7 +25,7 @@ This content was moved and now lives [here](/create-action/#local-actions).
 
 ## Find a plugin
 
-Head over to [Available Plugins](https://docs.fastlane.tools/plugins/available-plugins/) for a list of plugins you can use.
+Head over to [Available Plugins](https://docs.fastlane.tools/generated/available-plugins/) for a list of plugins you can use.
 
 List all available plugins using
 

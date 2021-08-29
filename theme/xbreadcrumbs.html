@@ -5,7 +5,7 @@
       {% for doc in current_page.ancestors %}
         {% if doc.title == "_Actions" %}
           <!-- Special case for the hidden action pages -->
-          <li><a href="/actions/">Actions</a> &raquo;</li>
+          <li><a href="/generated/actions/">Actions</a> &raquo;</li>
         {% elif doc.link %}
           <li><a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;</li>
         {% else %}
@@ -15,7 +15,7 @@
     {% endif %}
     {% if current_page %}<li>{{ current_page.title }}</li>{% endif %}
 
-    {% if current_page and current_page.input_path != "actions.md" and current_page.input_path != "plugins/available-plugins.md" %}
+    {% if current_page and current_page.input_path != "generated/actions.md" and current_page.input_path != "generated/available-plugins.md" %}
       <li class="wy-breadcrumbs-aside">
         {% if "actions/" in current_page.input_path %}
           <!-- custom edit link for all actions -->
