@@ -333,7 +333,7 @@ Check out the [MindNode example project](https://github.com/fastlane/examples/tr
 
 ## Generate localized screenshots
 
-Check out [_snapshot_](https://docs.fastlane.tools/actions/snapshot/) to automatically generate screenshots using ```UI Automation```.
+Check out [_snapshot_](https://docs.fastlane.tools/generated/actions/snapshot/) to automatically generate screenshots using ```UI Automation```.
 
 ## Resume framing
 
@@ -341,7 +341,7 @@ Framing screenshots is a slow operation. In case you need to resume framing, or 
 
 ## Upload screenshots
 
-Use [_deliver_](https://docs.fastlane.tools/actions/deliver/) to upload iOS screenshots to App Store Connect, or [_supply_](https://docs.fastlane.tools/actions/supply/) to upload Android screenshots to Play Store completely automatically 🚀
+Use [_deliver_](https://docs.fastlane.tools/generated/actions/deliver/) to upload iOS screenshots to App Store Connect, or [_supply_](https://docs.fastlane.tools/generated/actions/supply/) to upload Android screenshots to Play Store completely automatically 🚀
 
 ## Use a clean status bar
 
@@ -482,4 +482,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

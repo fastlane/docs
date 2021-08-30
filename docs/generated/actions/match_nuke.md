@@ -11,7 +11,7 @@ Easily nuke your certificate and provisioning profiles (via _match_)
 
 
 
-> Use the match_nuke action to revoke your certificates and provisioning profiles.<br>Don't worry, apps that are already available in the App Store / TestFlight will still work.<br>Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build.<br>After clearing your account you'll start from a clean state, and you can run match to generate your certificates and profiles again.<br>More information: https://docs.fastlane.tools/actions/match/
+> Use the match_nuke action to revoke your certificates and provisioning profiles.<br>Don't worry, apps that are already available in the App Store / TestFlight will still work.<br>Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build.<br>After clearing your account you'll start from a clean state, and you can run match to generate your certificates and profiles again.<br>More information: https://docs.fastlane.tools/generated/actions/match/
 
 
 match_nuke ||
@@ -126,4 +126,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

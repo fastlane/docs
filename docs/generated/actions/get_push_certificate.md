@@ -23,7 +23,7 @@ _pem_ does all that for you, just by simply running _pem_.
 
 _pem_ creates new .pem, .cer, and .p12 files to be uploaded to your push server if a valid push notification profile is needed. _pem_ does not cover uploading the file to your server.
 
-To automate iOS Provisioning profiles you can use [_match_](https://docs.fastlane.tools/actions/match/).
+To automate iOS Provisioning profiles you can use [_match_](https://docs.fastlane.tools/generated/actions/match/).
 
 -------
 
@@ -243,4 +243,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

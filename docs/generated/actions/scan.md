@@ -283,7 +283,7 @@ Key | Description | Default
   `slack_icon_url` | Overrides the webhook's image property if slack_use_webhook_configured_username_and_icon is false | `https://fastlane.tools/assets/img/fastlane_icon.png`
   `skip_slack` | Don't publish to slack, even when an URL is given | `false`
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
-  `slack_default_payloads` | Specifies default payloads to include in Slack messages. For more info visit https://docs.fastlane.tools/actions/slack | 
+  `slack_default_payloads` | Specifies default payloads to include in Slack messages. For more info visit https://docs.fastlane.tools/generated/actions/slack | 
   `destination` | Use only if you're a pro, use the other options instead | 
   `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
@@ -352,4 +352,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

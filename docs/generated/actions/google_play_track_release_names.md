@@ -11,7 +11,7 @@ Retrieves release names for a Google Play track
 
 
 
-> More information: [https://docs.fastlane.tools/actions/supply/](https://docs.fastlane.tools/actions/supply/)
+> More information: [https://docs.fastlane.tools/generated/actions/supply/](https://docs.fastlane.tools/generated/actions/supply/)
 
 
 google_play_track_release_names ||
@@ -87,4 +87,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

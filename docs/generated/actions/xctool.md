@@ -11,7 +11,7 @@ Run tests using xctool
 
 
 
-> You can run any `xctool` action. This will require having [xctool](https://github.com/facebook/xctool) installed through [Homebrew](http://brew.sh).<br>It is recommended to store the build configuration in the `.xctool-args` file.<br>More information: [https://docs.fastlane.tools/actions/xctool/](https://docs.fastlane.tools/actions/xctool/).
+> You can run any `xctool` action. This will require having [xctool](https://github.com/facebook/xctool) installed through [Homebrew](http://brew.sh).<br>It is recommended to store the build configuration in the `.xctool-args` file.<br>More information: [https://docs.fastlane.tools/generated/actions/xctool/](https://docs.fastlane.tools/generated/actions/xctool/).
 
 
 xctool ||
@@ -81,4 +81,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

@@ -11,7 +11,7 @@ Modifies the services of the app created on Developer Portal
 
 
 
-> The options are the same as `:enable_services` in the [produce action](https://docs.fastlane.tools/actions/produce/#parameters_1)
+> The options are the same as `:enable_services` in the [produce action](https://docs.fastlane.tools/generated/actions/produce/#parameters_1)
 
 
 modify_services ||
@@ -93,4 +93,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

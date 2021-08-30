@@ -243,7 +243,7 @@ _pilot_ uses the iTunes [Transporter](https://help.apple.com/itc/transporteruser
 DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS="-t DAV" pilot ...
 ```
 
-If you are using _pilot_ via the [fastlane action](https://docs.fastlane.tools/actions#pilot), add the following to your `Fastfile`
+If you are using _pilot_ via the [fastlane action](https://docs.fastlane.tools/generated/actions#pilot), add the following to your `Fastfile`
 
 ```no-highlight
 ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
@@ -277,7 +277,7 @@ _pilot_/`upload_to_testflight` updates build information and testers after the b
 
 testflight ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @KrauseFx
 
 
@@ -366,9 +366,10 @@ Key | Description | Default
   `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of the app to upload or manage testers (optional) | [*](#parameters-legend-dynamic)
-  `app_platform` | The platform to use (optional) | `ios`
+  `app_platform` | The platform to use (optional) | 
   `apple_id` | Apple ID property in the App Information section in App Store Connect | [*](#parameters-legend-dynamic)
   `ipa` | Path to the ipa file to upload | [*](#parameters-legend-dynamic)
+  `pkg` | Path to your pkg file | [*](#parameters-legend-dynamic)
   `demo_account_required` | Do you need a demo account when Apple does review? | 
   `beta_app_review_info` | Beta app review information for contact info and demo account | 
   `localized_app_info` | Localized beta app test info for description, feedback email, marketing url, and privacy policy | 
@@ -442,4 +443,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

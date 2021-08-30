@@ -71,7 +71,7 @@ For more information about the concept, visit [codesigning.guide](https://codesi
 💥  | Easily reset your existing profiles and certificates if your current account has expired or invalid profiles
 ♻️  | Automatically renew your provisioning profiles to include all your devices using the `--force` option
 👥  | Support for multiple Apple accounts and multiple teams
-✨ | Tightly integrated with [_fastlane_](https://fastlane.tools) to work seamlessly with [_gym_](https://docs.fastlane.tools/actions/gym/) and other build tools
+✨ | Tightly integrated with [_fastlane_](https://fastlane.tools) to work seamlessly with [_gym_](https://docs.fastlane.tools/generated/actions/gym/) and other build tools
 
 ## Usage
 
@@ -400,7 +400,7 @@ gym
 
 ##### Registering new devices
 
-By using _match_, you'll save a lot of time every time you add new device to your Ad Hoc or Development profiles. Use _match_ in combination with the [`register_devices`](https://docs.fastlane.tools/actions/register_devices/) action.
+By using _match_, you'll save a lot of time every time you add new device to your Ad Hoc or Development profiles. Use _match_ in combination with the [`register_devices`](https://docs.fastlane.tools/generated/actions/register_devices/) action.
 
 ```ruby
 lane :beta do
@@ -686,7 +686,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING` | The match provisioning profile mapping
-  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be appstore, adhoc, development, enterprise
+  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be app-store, ad-hoc, development, enterprise, can be used in `build_app` as a default value for `export_method`
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />
@@ -727,4 +727,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

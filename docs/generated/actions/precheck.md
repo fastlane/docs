@@ -85,7 +85,7 @@ custom_text(data: ["chrome", "webos"],
 
 ### Use with [_fastlane_](https://fastlane.tools)
 
-_precheck_ is fully integrated with [_deliver_](https://docs.fastlane.tools/actions/deliver/) another [_fastlane_](https://fastlane.tools) tool.
+_precheck_ is fully integrated with [_deliver_](https://docs.fastlane.tools/generated/actions/deliver/) another [_fastlane_](https://fastlane.tools) tool.
 
 Update your `Fastfile` to contain the following code:
 
@@ -210,4 +210,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

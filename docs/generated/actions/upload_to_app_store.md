@@ -728,7 +728,7 @@ To solve this a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain
 
 ## Automatically create screenshots
 
-If you want to integrate _deliver_ with [_snapshot_](https://docs.fastlane.tools/actions/snapshot/), check out [_fastlane_](https://fastlane.tools)!
+If you want to integrate _deliver_ with [_snapshot_](https://docs.fastlane.tools/generated/actions/snapshot/), check out [_fastlane_](https://fastlane.tools)!
 
 ## Jenkins integration
 Detailed instructions about how to set up _deliver_ and _fastlane_ in `Jenkins` can be found in the [fastlane README](https://docs.fastlane.tools/best-practices/continuous-integration/#jenkins-integration).
@@ -918,4 +918,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

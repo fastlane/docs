@@ -69,9 +69,9 @@ Keep in mind, there is no way for _cert_ to download existing certificates + pri
 
 Run `fastlane action cert` to get a list of all available environment variables.
 
-## Use with [_sigh_](https://docs.fastlane.tools/actions/sigh/)
+## Use with [_sigh_](https://docs.fastlane.tools/generated/actions/sigh/)
 
-_cert_ becomes really interesting when used in [_fastlane_](https://fastlane.tools) in combination with [_sigh_](https://docs.fastlane.tools/actions/sigh/).
+_cert_ becomes really interesting when used in [_fastlane_](https://fastlane.tools) in combination with [_sigh_](https://docs.fastlane.tools/generated/actions/sigh/).
 
 Update your `Fastfile` to contain the following code:
 
@@ -204,4 +204,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

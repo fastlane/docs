@@ -16,7 +16,7 @@ Creates a 'Version Bump' commit. Run after `increment_build_number`
 >- All `.plist` files
 - The `.xcodeproj/project.pbxproj` file
 >
-Then commits those files to the repo.<br>Customize the message with the `:message` option. It defaults to 'Version Bump'.<br>If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the [clean_build_artifacts](https://docs.fastlane.tools/actions/clean_build_artifacts/) action to clean those temporary files up before running this action.
+Then commits those files to the repo.<br>Customize the message with the `:message` option. It defaults to 'Version Bump'.<br>If you have other uncommitted changes in your repo, this action will fail. If you started off in a clean repo, and used the _ipa_ and or _sigh_ actions, then you can use the [clean_build_artifacts](https://docs.fastlane.tools/generated/actions/clean_build_artifacts/) action to clean those temporary files up before running this action.
 
 
 commit_version_bump ||
@@ -145,4 +145,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>

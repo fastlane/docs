@@ -11,7 +11,7 @@ Use the `xcodebuild` command to build and sign your app
 
 
 
-> **Note**: `xcodebuild` is a complex command, so it is recommended to use [_gym_](https://docs.fastlane.tools/actions/gym/) for building your ipa file and [_scan_](https://docs.fastlane.tools/actions/scan/) for testing your app instead.
+> **Note**: `xcodebuild` is a complex command, so it is recommended to use [_gym_](https://docs.fastlane.tools/generated/actions/gym/) for building your ipa file and [_scan_](https://docs.fastlane.tools/generated/actions/scan/) for testing your app instead.
 
 
 xcodebuild ||
@@ -75,4 +75,4 @@ This action, just like the rest of _fastlane_, is fully open source, <a href="ht
 
 <hr />
 
-<a href="/actions/"><b>Back to actions</b></a>
+<a href="/generated/actions/"><b>Back to actions</b></a>
