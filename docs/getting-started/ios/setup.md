@@ -22,7 +22,7 @@ Note that if you want to create your first app on your App Store Connect account
 PRODUCE_COMPANY_NAME="YOUR COMPANY NAME" fastlane init
 ```
 
-To get more information check `company_name` description in the [Create app documentation](/actions/create_app_online/#parameters_1).
+To get more information check `company_name` description in the [Create app documentation](/generated/actions/create_app_online/#parameters_1).
 
 To have your `Fastfile` configuration written in Swift (Beta)
 
@@ -45,7 +45,7 @@ _fastlane_ created all the required files for you. Now you can go ahead and cust
 - [Generate localized iOS screenshots for the App Store](screenshots.md)
 - [Automatic iOS Beta deployment](beta-deployment.md)
 - [Automatic iOS App Store deployment](appstore-deployment.md)
-- Discover all [_fastlane_ actions](/actions)
+- Discover all [_fastlane_ actions](/generated/actions)
 
 Do note that if the automation you're building requires connectivity with Apple's servers, such as for code signing when building your app, or uploading your app to the App Store Connect, and so on, you will need to authenticate. Check out [Authenticating with Apple services](authentication.md) to learn the best ways to authenticate, catered for your specific use case.
 

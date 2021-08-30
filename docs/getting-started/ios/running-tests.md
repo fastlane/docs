@@ -20,7 +20,7 @@ lane :tests do
 end
 ```
 
-Check out the [list of all available parameters](/actions/run_tests/#parameters)
+Check out the [list of all available parameters](https://docs.fastlane.tools/generated/actions/run_tests/#parameters)
 
 To use the newly created lane, just run
 ```no-highlight
@@ -60,7 +60,7 @@ fastlane tests
 
 ### Posting build results
 
-If you want to post test results on Slack, Hipchat or other team chat client, check out the available [fastlane actions](/actions/#notifications).
+If you want to post test results on Slack, Hipchat or other team chat client, check out the available [fastlane actions](https://docs.fastlane.tools/generated/actions/#notifications).
 
 #### Build failures
 
@@ -90,5 +90,5 @@ error do |ex|
 end
 ```
 
-The above example uses Hipchat, but _fastlane_ supports [many other services out there](/actions/#notifications). 
+The above example uses Hipchat, but _fastlane_ supports [many other services out there](https://docs.fastlane.tools/generated/actions/#notifications). 
 

@@ -19,13 +19,13 @@ Nevercode scans the repository from the specified branch. This includes cloning 
 
 ## External dependencies
 
-Nevercode does not automatically install CocoaPods, Carthage or any other external dependencies for _fastlane_ projects. Please use the _fastlane_'s built-in [actions](https://docs.fastlane.tools/actions/), such as [`cocoapods`](https://docs.fastlane.tools/actions/cocoapods/) and [`carthage`](https://docs.fastlane.tools/actions/carthage/), to gain control of that.
+Nevercode does not automatically install CocoaPods, Carthage or any other external dependencies for _fastlane_ projects. Please use the _fastlane_'s built-in [actions](https://docs.fastlane.tools/generated/actions/), such as [`cocoapods`](https://docs.fastlane.tools/generated/actions/cocoapods/) and [`carthage`](https://docs.fastlane.tools/generated/actions/carthage/), to gain control of that.
 
 ## Code signing
 
 To perform code signing on your iOS app, you can either follow the best practices laid out in [`fastlane` docs](https://docs.fastlane.tools/codesigning/getting-started/#using-match), or you could also make use of [Nevercode's standard code signing methods](https://developer.nevercode.io/docs/code-signing).
 
-When invoking [`match`](https://docs.fastlane.tools/actions/match/) from the `Fastfile`, keep in mind that you need to **grant access to the credentials repository** and expose the **_match_ passphrase** during the build. Both can be securely achieved thanks to the well designed environment variable support of _fastlane_ and Nevercode's support for several SSH keys for authentication.
+When invoking [`match`](https://docs.fastlane.tools/generated/actions/match/) from the `Fastfile`, keep in mind that you need to **grant access to the credentials repository** and expose the **_match_ passphrase** during the build. Both can be securely achieved thanks to the well designed environment variable support of _fastlane_ and Nevercode's support for several SSH keys for authentication.
 
 In your app settings on Nevercode, navigate to the **Environment** tab to manage environment variables and files:
 
@@ -36,7 +36,7 @@ In your app settings on Nevercode, navigate to the **Environment** tab to manage
 
 ### iOS
 
-Testing in Nevercode with _fastlane_ for iOS is 100% automatic. By default, [`scan`](https://docs.fastlane.tools/actions/scan/) is used to invoke the test run, but you can easily swap it out for any other `lane` that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.
+Testing in Nevercode with _fastlane_ for iOS is 100% automatic. By default, [`scan`](https://docs.fastlane.tools/generated/actions/scan/) is used to invoke the test run, but you can easily swap it out for any other `lane` that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.
 
 #### Warning
 
@@ -62,7 +62,7 @@ You can use either `fastlane` to take care of artifact distribution or choose fr
 
 ## Manage build versions
 
-To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, you could make use of it within [`increment_version_number`](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build.
+To make your build version management easy, Nevercode exports the `NEVERCODE_BUILD_NUMBER` environment variable that you can use in your build script. For instance, you could make use of it within [`increment_version_number`](https://docs.fastlane.tools/generated/actions/increment_version_number/) action to define a new version for each build.
 
 ## More Information
 

@@ -17,7 +17,7 @@ If you are new to code signing, check out the [WWDC session](https://developer.a
 
 The concept of [_match_](https://fastlane.tools/match) is described in the [codesigning guide](https://codesigning.guide). 
 
-With [_match_](https://fastlane.tools/match) you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach [is secure](https://docs.fastlane.tools/actions/match/#is-this-secure) and uses technology you already use.
+With [_match_](https://fastlane.tools/match) you store your private keys and certificates in a git repo to sync them across machines. This makes it easy to onboard new team-members and set up new Mac machines. This approach [is secure](https://docs.fastlane.tools/generated/actions/match/#is-this-secure) and uses technology you already use.
 
 
 Getting started with [_match_](https://fastlane.tools/match) requires you to revoke your existing certificates.

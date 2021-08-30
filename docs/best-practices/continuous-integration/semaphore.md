@@ -84,7 +84,7 @@ blocks:
             - bundle exec xcversion select 11.2.1
 
             # Run tests of iOS and Mac app on a simulator or connected device.
-            # See https://docs.fastlane.tools/actions/scan/
+            # See https://docs.fastlane.tools/generated/actions/scan/
             - bundle exec fastlane test
 
   - name: Build app

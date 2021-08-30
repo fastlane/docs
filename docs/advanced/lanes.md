@@ -172,7 +172,7 @@ end
 
 # Lane Context
 
-The different [actions](/actions) can *communicate* with each other using a shared hash. You can access this in your code (lanes, actions, plugins etc.):
+The different [actions](/generated/actions/) can *communicate* with each other using a shared hash. You can access this in your code (lanes, actions, plugins etc.):
 
 ```ruby
 lane_context[SharedValues::VARIABLE_NAME_HERE]

@@ -68,7 +68,7 @@ This behavior isn't great, and has been like this since the very early days of _
 
 ## Passing parameters to _fastlane_ command line tools
 
-_fastlane_ contains several command line tools, e.g. [`fastlane deliver`](/actions/deliver/) or [`fastlane snapshot`](/actions/snapshot/). To pass parameters to these tools, append the option names and values as you would for a normal shell command:
+_fastlane_ contains several command line tools, e.g. [`fastlane deliver`](/generated/actions/deliver/) or [`fastlane snapshot`](/generated/actions/snapshot/). To pass parameters to these tools, append the option names and values as you would for a normal shell command:
 
 ```shell
 fastlane [tool] --[option]=[value]
