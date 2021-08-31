@@ -313,7 +313,7 @@ SharedValue | Description
   `SharedValues::SIGH_PROFILE_PATHS` | Paths in which certificates, key and profile are exported
   `SharedValues::SIGH_UUID` | UUID (Universally Unique IDentifier) of a provisioning profile
   `SharedValues::SIGH_NAME` | The name of the profile
-  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be appstore, adhoc, development, enterprise
+  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be app-store, ad-hoc, development, enterprise, developer-id, can be used in `build_app` as a default value for `export_method`
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />

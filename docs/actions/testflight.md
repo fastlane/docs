@@ -277,7 +277,7 @@ _pilot_/`upload_to_testflight` updates build information and testers after the b
 
 testflight ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @KrauseFx
 
 
@@ -366,9 +366,10 @@ Key | Description | Default
   `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `app_identifier` | The bundle identifier of the app to upload or manage testers (optional) | [*](#parameters-legend-dynamic)
-  `app_platform` | The platform to use (optional) | `ios`
+  `app_platform` | The platform to use (optional) | 
   `apple_id` | Apple ID property in the App Information section in App Store Connect | [*](#parameters-legend-dynamic)
   `ipa` | Path to the ipa file to upload | [*](#parameters-legend-dynamic)
+  `pkg` | Path to your pkg file | [*](#parameters-legend-dynamic)
   `demo_account_required` | Do you need a demo account when Apple does review? | 
   `beta_app_review_info` | Beta app review information for contact info and demo account | 
   `localized_app_info` | Localized beta app test info for description, feedback email, marketing url, and privacy policy | 
