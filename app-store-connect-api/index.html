@@ -446,7 +446,7 @@ end
 <ul>
 <li><code>key_id</code></li>
 <li><code>issuer_id</code></li>
-<li><code>key</code> (the content of the <code>.p8</code> file)</li>
+<li><code>key_content</code> (the content of the <code>.p8</code> file)</li>
 </ul>
 <p>The JSON file allows optional:</p>
 <ul>
@@ -456,7 +456,7 @@ end
 <pre><code class="language-js">{
   &quot;key_id&quot;: &quot;D383SF739&quot;,
   &quot;issuer_id&quot;: &quot;6053b7fe-68a8-4acb-89be-165aa6465141&quot;,
-  &quot;key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----&quot;,
+  &quot;key_content&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----&quot;,
   &quot;duration&quot;: 1200, # optional (maximum 1200)
   &quot;in_house&quot;: false # optional but may be required if using match/sigh
 }
