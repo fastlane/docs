@@ -89,7 +89,7 @@ Below is an example of the _fastlane_ API Key JSON file format that tools and ac
 
 - `key_id`
 - `issuer_id`
-- `key` (the content of the `.p8` file)
+- `key_content` (the content of the `.p8` file)
 
 The JSON file allows optional:
 
@@ -100,7 +100,7 @@ The JSON file allows optional:
 {
   "key_id": "D383SF739",
   "issuer_id": "6053b7fe-68a8-4acb-89be-165aa6465141",
-  "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----",
+  "key_content": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----",
   "duration": 1200, # optional (maximum 1200)
   "in_house": false # optional but may be required if using match/sigh
 }
