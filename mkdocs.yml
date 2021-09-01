@@ -312,6 +312,7 @@ nav:
     - Bamboo: best-practices/continuous-integration/bamboo.md
     - Bitrise: best-practices/continuous-integration/bitrise.md
     - CircleCI: best-practices/continuous-integration/circle-ci.md
+    - GitHub Actions: best-practices/continuous-integration/github.md
     - GitLab CI: best-practices/continuous-integration/gitlab.md
     - Jenkins: best-practices/continuous-integration/jenkins.md
     - NeverCode: best-practices/continuous-integration/nevercode.md
