@@ -13,7 +13,7 @@
     {% if page %}<li>{{ page.title }}</li>{% endif %}
 
 
-    {% if page and page.file.src_path != "actions.md" and page.src_path != "plugins/available-plugins.md" %}
+    {% if page and page.file.src_path != "actions.md" and page.file.src_path != "plugins/available-plugins.md" %}
       <li class="wy-breadcrumbs-aside">
         {%- block repo %}
         {% if page and page.edit_url %}
