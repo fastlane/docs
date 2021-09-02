@@ -659,7 +659,7 @@ Key | Description | Default
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
-  `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore' | `false`
+  `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos, catalyst) | [*](#parameters-legend-dynamic)
@@ -686,7 +686,7 @@ Actions can communicate with each other using a shared hash `lane_context`, that
 SharedValue | Description 
 ------------|-------------
   `SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING` | The match provisioning profile mapping
-  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be appstore, adhoc, development, enterprise
+  `SharedValues::SIGH_PROFILE_TYPE` | The profile type, can be app-store, ad-hoc, development, enterprise, can be used in `build_app` as a default value for `export_method`
 
 To get more information check the [Lanes documentation](https://docs.fastlane.tools/advanced/lanes/#lane-context).
 <hr />
