@@ -12,7 +12,7 @@ echo "Starting deploy to https://docs.fastlane.tools"
 # This is only used to skip running the tests for this one
 # The markdown parsing only works with the exact string ```ruby
 # This only works on Linux
-find ./docs/actions/ -type f | xargs sed -i 's/\`\`\`ruby\-skip\-tests/\`\`\`ruby/g'
+find ./docs/generated/actions/ -type f | xargs sed -i 's/\`\`\`ruby\-skip\-tests/\`\`\`ruby/g'
 
 # Build the docs page locally
 mkdocs build
