@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Capture android screenshots - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../../css/code.css" rel="stylesheet" />
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../../css/fabric.css" rel="stylesheet" />
+  <link href="../../../css/sidenav.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Capture android screenshots";
+    var mkdocs_page_input_path = "generated/actions/capture_android_screenshots.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Capture android screenshots</li>
+
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions/capture_android_screenshots.md"
+            class="icon icon-github"> Edit on GitHub</a>
+        
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/capture_android_screenshots.rb
+-->
+
+<h1 id="capture_android_screenshots">capture_android_screenshots</h1>
+<p>Automated localized screenshots of your Android app (via <em>screengrab</em>)</p>
+<p align="center">
+  <img src="/img/actions/screengrab.png" width="250">
+</p>
+
+<h6 id="automated-localized-screenshots-of-your-android-app-on-every-device">Automated localized screenshots of your Android app on every device</h6>
+<p><em>screengrab</em> generates localized screenshots of your Android app for different device types and languages for Google Play and can be uploaded using <a href="https://fastlane.tools/supply"><em>supply</em></a>.</p>
+<p><img src="/img/actions/running-screengrab.gif" width="640"></p>
+<h3 id="why-should-i-automate-this-process">Why should I automate this process?</h3>
+<ul>
+<li>Create hundreds of screenshots in multiple languages on emulators or real devices, saving you hours</li>
+<li>Easily verify that localizations fit into labels on all screen dimensions to find UI mistakes before you ship</li>
+<li>You only need to configure it once for anyone on your team to run it</li>
+<li>Keep your screenshots perfectly up-to-date with every app update. Your customers deserve it!</li>
+<li>Fully integrates with <a href="https://fastlane.tools"><em>fastlane</em></a> and <a href="https://fastlane.tools/supply"><em>supply</em></a></li>
+</ul>
+<h1 id="installation">Installation</h1>
+<p>Install the gem</p>
+<pre><code class="language-no-highlight">gem install fastlane
+</code></pre>
+<h5 id="gradle-dependency">Gradle dependency</h5>
+<pre><code class="language-java">androidTestImplementation 'tools.fastlane:screengrab:x.x.x'
+</code></pre>
+<p>The latest version is <a href="https://search.maven.org/artifact/tools.fastlane/screengrab"> <img alt="Download" src="https://maven-badges.herokuapp.com/maven-central/tools.fastlane/screengrab/badge.svg" /></a></p>
+<p>As of Screengrab version 2.0.0, all Android test dependencies are AndroidX dependencies. This means a device with API 18+, Android 4.3 or greater is required. If you wish to capture screenshots with an older Android OS, then you must use a 1.x.x version.</p>
+<h5 id="configuring-your-manifest-permissions">Configuring your Manifest Permissions</h5>
+<p>Ensure that the following permissions exist in your <strong>src/debug/AndroidManifest.xml</strong></p>
+<pre><code class="language-xml">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        xmlns:tools=&quot;http://schemas.android.com/tools&quot;&gt;
+
+    &lt;!-- Allows storing screenshots on external storage, where it can be accessed by ADB --&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; android:maxSdkVersion=&quot;18&quot; /&gt;
+
+    &lt;!-- Allows changing locales --&gt;
+    &lt;uses-permission
+            android:name=&quot;android.permission.CHANGE_CONFIGURATION&quot;
+            tools:ignore=&quot;ProtectedPermissions&quot; /&gt;
+
+    &lt;!-- Allows changing SystemUI demo mode --&gt;
+    &lt;uses-permission
+            android:name=&quot;android.permission.DUMP&quot;
+            tools:ignore=&quot;ProtectedPermissions&quot; /&gt;
+
+&lt;/manifest&gt;
+</code></pre>
+<h5 id="configuring-your-ui-tests-for-screenshots">Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots</h5>
+<ol>
+<li>
+<p>Add <code>LocaleTestRule</code> to your tests class to handle automatic switching of locales.
+   If you're using Java use:
+   <code>java
+   @ClassRule
+   public static final LocaleTestRule localeTestRule = new LocaleTestRule();</code>
+   If you're using Kotlin use:
+   <code>kotlin
+   @Rule @JvmField
+   val localeTestRule = LocaleTestRule()</code>
+   The <code>@JvmField</code> annotation is important. It won't work like this:
+   <code>kotlin
+   companion object {
+       @get:ClassRule
+       val localeTestRule = LocaleTestRule()
+   }</code></p>
+</li>
+<li>
+<p>To capture screenshots, add the following to your tests <code>Screengrab.screenshot("name_of_screenshot_here");</code> on the appropriate screens</p>
+</li>
+</ol>
+<h1 id="generating-screenshots-with-screengrab">Generating Screenshots with Screengrab</h1>
+<ul>
+<li>Then, before running <code>fastlane screengrab</code> you'll need a debug and test apk<ul>
+<li>You can create your APKs manually with <code>./gradlew assembleDebug assembleAndroidTest</code></li>
+<li>You can also create a lane and use <code>build_android_app</code>:
+  <code>ruby
+  desc "Build debug and test APK for screenshots"
+  lane :build_and_screengrab do
+    build_android_app(
+      task: 'assemble',
+      build_type: 'Debug'
+    )
+    build_android_app(
+      task: 'assemble',
+      build_type: 'AndroidTest'
+    )
+    screengrab()
+  end</code></li>
+</ul>
+</li>
+<li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
+<li>You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments</li>
+</ul>
+</li>
+<li>Your screenshots will be saved to <code>fastlane/metadata/android</code> in the directory where you ran <em>screengrab</em></li>
+</ul>
+<h2 id="improved-screenshot-capture-with-ui-automator">Improved screenshot capture with UI Automator</h2>
+<p>As of <em>screengrab</em> 0.5.0, you can specify different strategies to control the way <em>screengrab</em> captures screenshots. The newer strategy delegates to <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator">UI Automator</a> which fixes a number of problems compared to the original strategy:</p>
+<ul>
+<li>Shadows/elevation are correctly captured for Material UI</li>
+<li>Multi-window situations are correctly captured (dialogs, etc.)</li>
+<li>Works on Android N</li>
+</ul>
+<p>UI Automator is the default strategy. However, UI Automator requires a device with <strong>API level &gt;= 18</strong>. If you need to grab screenshots on an older Android version, use the latest 1.x.x version of this library and set the DecorView ScreenshotStrategy.</p>
+<pre><code class="language-java">Screengrab.setDefaultScreenshotStrategy(new DecorViewScreenshotStrategy());
+</code></pre>
+<h2 id="improved-screenshot-capture-with-falcon">Improved screenshot capture with Falcon</h2>
+<p>As of <em>screengrab</em> 1.2.0, you can specify a new strategy to delegate to <a href="https://github.com/jraska/Falcon">Falcon</a>. Falcon may work better than UI Automator in some situations and also provides similar benefits as UI Automator:</p>
+<ul>
+<li>Multi-window situations are correctly captured (dialogs, etc.)</li>
+<li>Works on Android N</li>
+</ul>
+<p>Falcon requires a device with <strong>API level &gt;= 10</strong>. To enable it for all screenshots by default, make the following call before your tests run:</p>
+<pre><code class="language-java">Screengrab.setDefaultScreenshotStrategy(new FalconScreenshotStrategy(activityRule.getActivity()));
+</code></pre>
+<h2 id="advanced-screengrabfile-configuration">Advanced Screengrabfile Configuration</h2>
+<p>Running <code>fastlane screengrab init</code> generated a Screengrabfile which can store all of your configuration options. Since most values will not change often for your project, it is recommended to store them there.</p>
+<p>The <code>Screengrabfile</code> is written in Ruby, so you may find it helpful to use an editor that highlights Ruby syntax to modify this file.</p>
+<pre><code class="language-ruby-skip-tests"># remove the leading '#' to uncomment lines
+
+# app_package_name('your.app.package')
+# use_tests_in_packages(['your.screenshot.tests.package'])
+
+# app_apk_path('path/to/your/app.apk')
+# tests_apk_path('path/to/your/tests.apk')
+
+locales(['en-US', 'fr-FR', 'it-IT'])
+
+# clear all previously generated screenshots in your local output directory before creating new ones
+clear_previous_screenshots(true)
+</code></pre>
+<p>For more information about all available options run</p>
+<pre><code class="language-no-highlight">fastlane action screengrab
+</code></pre>
+<h1 id="tips">Tips</h1>
+<h2 id="ui-tests">UI Tests</h2>
+<p>Check out <a href="http://developer.android.com/training/testing/ui-testing/espresso-testing.html">Testing UI for a Single App</a> for an introduction to using Espresso for UI testing.</p>
+<h5 id="example-ui-test-class-using-junit4">Example UI Test Class (Using JUnit4)</h5>
+<p>Java:</p>
+<pre><code class="language-java">@RunWith(JUnit4.class)
+public class JUnit4StyleTests {
+    @ClassRule
+    public static final LocaleTestRule localeTestRule = new LocaleTestRule();
+
+    @Rule
+    public ActivityScenarioRule&lt;MainActivity&gt; activityRule = new ActivityScenarioRule&lt;&gt;(MainActivity.class);
+
+    @Test
+    public void testTakeScreenshot() {
+        Screengrab.screenshot(&quot;before_button_click&quot;);
+
+        onView(withId(R.id.fab)).perform(click());
+
+        Screengrab.screenshot(&quot;after_button_click&quot;);
+    }
+}
+
+</code></pre>
+<p>Kotlin:</p>
+<pre><code class="language-kotlin">@RunWith(JUnit4.class)
+class JUnit4StyleTests {
+    @get:Rule
+    var activityRule = ActivityScenarioRule(MainActivity::class.java)
+
+    @Rule @JvmField
+    val localeTestRule = LocaleTestRule()
+
+    @Test
+    fun testTakeScreenshot() {
+        Screengrab.screenshot(&quot;before_button_click&quot;)
+
+        onView(withId(R.id.fab)).perform(click())
+
+        Screengrab.screenshot(&quot;after_button_click&quot;)
+    }
+}
+
+</code></pre>
+<p>There is an <a href="https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester">example project</a> showing how to use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.</p>
+<p>Using JUnit 4 is preferable because of its ability to perform actions before and after the entire test class is run. This means you will change the device's locale far fewer times when compared with JUnit 3 running those commands before and after each test method.</p>
+<p>When using JUnit 3 you'll need to add a bit more code:</p>
+<ul>
+<li>Use <code>LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getTestLocale());</code> in <code>setUp()</code></li>
+<li>Use <code>LocaleUtil.changeDeviceLocaleTo(LocaleUtil.getEndingLocale());</code> in <code>tearDown()</code></li>
+<li>Use <code>Screengrab.screenshot("name_of_screenshot_here");</code> to capture screenshots at the appropriate points in your tests</li>
+</ul>
+<h2 id="clean-status-bar">Clean Status Bar</h2>
+<p>Screengrab can clean your status bar to make your screenshots even more beautiful.
+It is simply a wrapper that allows configuring SystemUI DemoMode in your code.
+Note: the clean status bar feature is only supported on devices with <em>API level &gt;= 23</em>.</p>
+<p>You can enable and disable the clean status bar at any moment during your tests.
+In most cases you probably want to do this in the @BeforeClass and @AfterClass methods.</p>
+<pre><code class="language-java">@BeforeClass
+public static void beforeAll() {
+    CleanStatusBar.enableWithDefaults();
+}
+
+@AfterClass
+public static void afterAll() {
+    CleanStatusBar.disable();
+}
+</code></pre>
+<p>Have a look at the methods of the <code>CleanStatusBar</code> class to customize the status bar even more.
+You could for example show the Bluetooth icon and the LTE text.</p>
+<pre><code class="language-java">new CleanStatusBar()
+    .setBluetoothState(BluetoothState.DISCONNECTED)
+    .setMobileNetworkDataType(MobileDataType.LTE)
+    .enable();
+</code></pre>
+<h1 id="advanced-screengrab">Advanced <em>screengrab</em></h1>
+<details>
+<p><summary>Launch Arguments</summary></p>
+<p>You can provide additional arguments to your test cases on launch. These strings will be available in your tests through <code>InstrumentationRegistry.getArguments()</code>.</p>
+<pre><code class="language-ruby">screengrab(
+  launch_arguments: [
+    &quot;username hjanuschka&quot;,
+    &quot;build_number 201&quot;
+  ]
+)
+</code></pre>
+<pre><code class="language-java">Bundle extras = InstrumentationRegistry.getArguments();
+String peerID = null;
+if (extras != null) {
+  if (extras.containsKey(&quot;username&quot;)) {
+    username = extras.getString(&quot;username&quot;);
+    System.out.println(&quot;Username: &quot; + username);
+  } else {
+    System.out.println(&quot;No username in extras&quot;);
+  }
+} else {
+  System.out.println(&quot;No extras&quot;);
+}
+</code></pre>
+</details>
+<details>
+<p><summary>Detecting screengrab at runtime</summary></p>
+<p>For some apps, it is helpful to know when <em>screengrab</em> is running so that you can display specific data for your screenshots. For iOS fastlane users, this is much like "FASTLANE_SNAPSHOT". In order to do this, you'll need to have at least two product flavors of your app.</p>
+<p>Add two product flavors to the app-level build.gradle file:</p>
+<pre><code>android {
+...
+    flavorDimensions &quot;mode&quot;
+    productFlavors {
+        screengrab {
+            dimension &quot;mode&quot;
+        }
+        regular {
+            dimension &quot;mode&quot;
+        }
+    }
+...
+}
+</code></pre>
+<p>Check for the existence of that flavor (i.e screengrab) in your app code as follows in order to use mock data or customize data for screenshots:</p>
+<pre><code>if (BuildConfig.FLAVOR == &quot;screengrab&quot;) {
+    System.out.println(&quot;screengrab is running!&quot;);
+}
+</code></pre>
+<p>When running <em>screengrab</em>, do the following to build the flavor you want as well as the test apk. Note that you use "assembleFlavor_name" where Flavor_name is the flavor name, capitalized (i.e. Screengrab).</p>
+<pre><code>./gradlew assembleScreengrab assembleAndroidTest
+</code></pre>
+<p>Run <em>screengrab</em>:</p>
+<pre><code>fastlane screengrab
+</code></pre>
+<p><em>screengrab</em> will ask you to select the debug and test apps (which you can then add to your Screengrabfile to skip this step later).</p>
+<p>The debug apk should be somewhere like this:</p>
+<p><code>app/build/outputs/apk/screengrab/debug/app-screengrab-debug.apk</code></p>
+<p>The test apk should be somewhere like this:</p>
+<p><code>app/build/outputs/apk/androidTest/screengrab/debug/app-screengrab-debug-androidTest.apk</code></p>
+<p>Sit back and enjoy your new screenshots!</p>
+<p>Note: while this could also be done by creating a new build variant (i.e. debug, release and creating a new one called screengrab), <a href="http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Testing">Android only allows one build type to be tested</a> which defaults to debug. That's why we use product flavors.</p>
+</details>
+<hr />
+
+<table>
+<thead>
+<tr>
+<th>capture_android_screenshots</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@asfalcone, @i2amsam, @mfurtak</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-examples">3 Examples</h2>
+<pre><code class="language-ruby">capture_android_screenshots
+</code></pre>
+<pre><code class="language-ruby">screengrab # alias for &quot;capture_android_screenshots&quot;
+</code></pre>
+<pre><code class="language-ruby">capture_android_screenshots(
+  locales: [&quot;en-US&quot;, &quot;fr-FR&quot;, &quot;ja-JP&quot;],
+  clear_previous_screenshots: true,
+  app_apk_path: &quot;build/outputs/apk/example-debug.apk&quot;,
+  tests_apk_path: &quot;build/outputs/apk/example-debug-androidTest-unaligned.apk&quot;
+)
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>android_home</code></td>
+<td>Path to the root of your Android SDK installation, e.g. ~/tools/android-sdk-macosx</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>build_tools_version</code></td>
+<td><strong>DEPRECATED!</strong> The Android build tools version to use, e.g. '23.0.2'</td>
+<td></td>
+</tr>
+<tr>
+<td><code>locales</code></td>
+<td>A list of locales which should be used</td>
+<td><code>["en-US"]</code></td>
+</tr>
+<tr>
+<td><code>clear_previous_screenshots</code></td>
+<td>Enabling this option will automatically clear previously generated screenshots before running screengrab</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>output_directory</code></td>
+<td>The directory where to store the screenshots</td>
+<td><code>fastlane/metadata/android</code></td>
+</tr>
+<tr>
+<td><code>skip_open_summary</code></td>
+<td>Don't open the summary after running <em>screengrab</em></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>app_package_name</code></td>
+<td>The package name of the app under test (e.g. com.yourcompany.yourapp)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>tests_package_name</code></td>
+<td>The package name of the tests bundle (e.g. com.yourcompany.yourapp.test)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>use_tests_in_packages</code></td>
+<td>Only run tests in these Java packages</td>
+<td></td>
+</tr>
+<tr>
+<td><code>use_tests_in_classes</code></td>
+<td>Only run tests in these Java classes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>launch_arguments</code></td>
+<td>Additional launch arguments</td>
+<td></td>
+</tr>
+<tr>
+<td><code>test_instrumentation_runner</code></td>
+<td>The fully qualified class name of your test instrumentation runner</td>
+<td><code>androidx.test.runner.AndroidJUnitRunner</code></td>
+</tr>
+<tr>
+<td><code>ending_locale</code></td>
+<td><strong>DEPRECATED!</strong> Return the device to this locale after running tests</td>
+<td><code>en-US</code></td>
+</tr>
+<tr>
+<td><code>use_adb_root</code></td>
+<td><strong>DEPRECATED!</strong> Restarts the adb daemon using <code>adb root</code> to allow access to screenshots directories on device. Use if getting 'Permission denied' errors</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>app_apk_path</code></td>
+<td>The path to the APK for the app under test</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>tests_apk_path</code></td>
+<td>The path to the APK for the the tests bundle</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>specific_device</code></td>
+<td>Use the device or emulator with the given serial number or qualifier</td>
+<td></td>
+</tr>
+<tr>
+<td><code>device_type</code></td>
+<td>Type of device used for screenshots. Matches Google Play Types (phone, sevenInch, tenInch, tv, wear)</td>
+<td><code>phone</code></td>
+</tr>
+<tr>
+<td><code>exit_on_test_failure</code></td>
+<td>Whether or not to exit Screengrab on test failure. Exiting on failure will not copy sceenshots to local machine nor open sceenshots summary</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>reinstall_app</code></td>
+<td>Enabling this option will automatically uninstall the application before running it</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_timestamp_suffix</code></td>
+<td>Add timestamp suffix to screenshot filename</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>adb_host</code></td>
+<td>Configure the host used by adb to connect, allows running on remote devices farm</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
+<hr />
+
+<h2 id="lane-variables">Lane Variables</h2>
+<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>capture_android_screenshots</code> action generates the following Lane Variables:</p>
+<table>
+<thead>
+<tr>
+<th>SharedValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SharedValues::SCREENGRAB_OUTPUT_DIRECTORY</code></td>
+<td>The path to the output directory</td>
+</tr>
+</tbody>
+</table>
+<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.</p>
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
+<pre><code class="language-no-highlight">fastlane action capture_android_screenshots
+</code></pre>
+<hr />
+
+<h2 id="cli">CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="language-no-highlight">fastlane run capture_android_screenshots
+</code></pre>
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="language-no-highlight">fastlane run capture_android_screenshots parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code">Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/capture_android_screenshots.rb" target="_blank">view the source code on GitHub</a></p>
+<hr />
+
+<p><a href="/actions/"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <!-- <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script> -->
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

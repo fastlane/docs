@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Scan - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../../css/code.css" rel="stylesheet" />
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../../css/fabric.css" rel="stylesheet" />
+  <link href="../../../css/sidenav.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Scan";
+    var mkdocs_page_input_path = "generated/actions/scan.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Scan</li>
+
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions/scan.md"
+            class="icon icon-github"> Edit on GitHub</a>
+        
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/scan.rb
+-->
+
+<h1 id="scan">scan</h1>
+<p>Alias for the <code>run_tests</code> action</p>
+<p align="center">
+  <img src="/img/actions/scan.png" width="250">
+</p>
+
+<h6 id="the-easiest-way-to-run-tests-of-your-ios-and-mac-app">The easiest way to run tests of your iOS and Mac app</h6>
+<p><em>scan</em> makes it easy to run tests of your iOS and Mac app on a simulator or connected device.</p>
+<hr />
+<p align="center">
+    <a href="#whats-scan">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#scanfile">Scanfile</a>
+</p>
+
+<hr />
+<h1 id="whats-scan">What's scan?</h1>
+<p><img alt="https://pbs.twimg.com/media/CURcEpuWoAArE3d.png:large" src="https://pbs.twimg.com/media/CURcEpuWoAArE3d.png:large" /></p>
+<h3 id="before-scan">Before <em>scan</em></h3>
+<pre><code class="language-no-highlight">xcodebuild \
+  -workspace MyApp.xcworkspace \
+  -scheme &quot;MyApp&quot; \
+  -sdk iphonesimulator \
+  -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' \
+  test
+</code></pre>
+<p>As the output will look like this</p>
+<pre><code class="language-no-highlight">/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.o Example/main.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+    cd /Users/felixkrause/Developer/fastlane/gym/example/cocoapods
+    export LANG=en_US.US-ASCII
+    export PATH=&quot;/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode-beta.app/Contents/Developer/usr/bin:/Users/felixkrause/.rvm/gems/ruby-2.2.0/bin:/Users/felixkrause/.rvm/gems/ruby-2.2.0@global/bin:/Users/felixkrause/.rvm/rubies/ruby-2.2.0/bin:/Users/felixkrause/.rvm/bin:/usr/local/heroku/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin&quot;
+    /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch arm64 -fmessage-length=126 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -fmodules -gmodules -fmodules-cache-path=/Users/felixkrause/Library/Developer/Xcode/DerivedData/ModuleCache -fmodules-prune-interval=86400 -fmodules-prune-after=345600 -fbuild-session-file=/Users/felixkrause/Library/Developer/Xcode/DerivedData/ModuleCache/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror=non-modular-include-in-framework-module -Wno-trigraphs -fpascal-strings -Os -fno-common -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wunreachable-code -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -DOBJC_OLD_DISPATCH_PROTOTYPES=0 -isysroot /Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -miphoneos-version-min=9.0 -g -fvisibility=hidden -Wno-sign-conversion -fembed-bitcode -iquote /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-generated-files.hmap -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-own-target-headers.hmap -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-all-target-headers.hmap -iquote /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/ExampleProductName-project-headers.hmap -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/BuildProductsPath/Release-iphoneos/include -I/Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public -I/Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public/HexColors -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/DerivedSources/arm64 -I/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/DerivedSources -F/Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/BuildProductsPath/Release-iphoneos -isystem /Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public -isystem /Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Pods/Headers/Public/HexColors -MMD -MT dependencies -MF /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.d --serialize-diagnostics /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.dia -c /Users/felixkrause/Developer/fastlane/gym/example/cocoapods/Example/main.m -o /Users/felixkrause/Library/Developer/Xcode/DerivedData/Example-fhlmxikmujknefgidqwqvtbatohi/Build/Intermediates/ArchiveIntermediates/Example/IntermediateBuildFilesPath/Example.build/Release-iphoneos/Example.build/Objects-normal/arm64/main.o
+</code></pre>
+<p>you'll probably want to use something like <a href="https://github.com/supermarin/xcpretty">xcpretty</a>, which will look like this:</p>
+<pre><code class="language-no-highlight">set -o pipefail &amp;&amp;
+  xcodebuild \
+    -workspace MyApp.xcworkspace \
+    -scheme &quot;MyApp&quot; \
+    -sdk iphonesimulator \
+    -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' \
+    test \
+  | xcpretty \
+    -r &quot;html&quot; \
+    -o &quot;tests.html&quot;
+</code></pre>
+<h3 id="with-scan">With <em>scan</em></h3>
+<pre><code class="language-no-highlight">fastlane scan
+</code></pre>
+<h3 id="why-scan">Why <em>scan</em>?</h3>
+<p><em>scan</em> uses the latest APIs and tools to make running tests plain simple and offer a great integration into your existing workflow, like <a href="https://fastlane.tools"><em>fastlane</em></a> or Jenkins.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>scan Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏁</td>
+<td>Beautiful inline build output while running the tests</td>
+</tr>
+<tr>
+<td>🚠</td>
+<td>Sensible defaults: Automatically detect the project, schemes and more</td>
+</tr>
+<tr>
+<td>📊</td>
+<td>Support for HTML, JSON and JUnit reports</td>
+</tr>
+<tr>
+<td>🔎</td>
+<td>Xcode duplicated your simulators again? <em>scan</em> will handle this for you</td>
+</tr>
+<tr>
+<td>🔗</td>
+<td>Works perfectly with <a href="https://fastlane.tools"><em>fastlane</em></a> and other tools</td>
+</tr>
+<tr>
+<td>🚅</td>
+<td>Don't remember any complicated build commands, just <em>scan</em></td>
+</tr>
+<tr>
+<td>🔧</td>
+<td>Easy and dynamic configuration using parameters and environment variables</td>
+</tr>
+<tr>
+<td>📢</td>
+<td>Beautiful slack notifications of the test results</td>
+</tr>
+<tr>
+<td>💾</td>
+<td>Store common build settings in a <code>Scanfile</code></td>
+</tr>
+<tr>
+<td>📤</td>
+<td>The raw <code>xcodebuild</code> outputs are stored in <code>~/Library/Logs/scan</code></td>
+</tr>
+<tr>
+<td>💻</td>
+<td>Supports both iOS and Mac applications</td>
+</tr>
+<tr>
+<td>👱</td>
+<td>Automatically switches to the <a href="https://github.com/kattrali/xcpretty-travis-formatter">travis formatter</a> when running on Travis</td>
+</tr>
+<tr>
+<td>📖</td>
+<td>Helps you resolve common test errors like simulator not responding</td>
+</tr>
+</tbody>
+</table>
+<p><em>scan</em> uses a plain <code>xcodebuild</code> command, therefore keeping 100% compatible with <code>xcodebuild</code>. To generate the nice output, <em>scan</em> uses <a href="https://github.com/supermarin/xcpretty">xcpretty</a>. You can always access the raw output in <code>~/Library/Logs/scan</code>.</p>
+<p><img alt="img/actions/scanScreenshot.png" src="/img/actions/scanScreenshot.png" />
+<img alt="img/actions/slack.png" src="/img/actions/slack.png" />
+<img alt="img/actions/scanHTML.png" src="/img/actions/scanHTML.png" />
+<img alt="img/actions/scanHTMLFailing.png" src="/img/actions/scanHTMLFailing.png" /></p>
+<h1 id="usage">Usage</h1>
+<pre><code class="language-no-highlight">fastlane scan
+</code></pre>
+<p>That's all you need to run your tests. If you want more control, here are some available parameters:</p>
+<pre><code class="language-no-highlight">fastlane scan --workspace &quot;Example.xcworkspace&quot; --scheme &quot;AppName&quot; --device &quot;iPhone 6&quot; --clean
+</code></pre>
+<p>If you need to use a different Xcode install, use <code>xcode-select</code> or define <code>DEVELOPER_DIR</code>:</p>
+<pre><code class="language-no-highlight">DEVELOPER_DIR=&quot;/Applications/Xcode6.2.app&quot; scan
+</code></pre>
+<p>To run <em>scan</em> on multiple devices via <a href="https://fastlane.tools"><em>fastlane</em></a>, add this to your <code>Fastfile</code>:</p>
+<pre><code class="language-ruby">scan(
+  workspace: &quot;Example.xcworkspace&quot;,
+  devices: [&quot;iPhone 6s&quot;, &quot;iPad Air&quot;]
+)
+</code></pre>
+<p>For a list of all available parameters use</p>
+<pre><code class="language-no-highlight">fastlane action scan
+</code></pre>
+<p>To access the raw <code>xcodebuild</code> output open <code>~/Library/Logs/scan</code></p>
+<h1 id="scanfile">Scanfile</h1>
+<p>Since you might want to manually trigger the tests but don't want to specify all the parameters every time, you can store your defaults in a so called <code>Scanfile</code>.</p>
+<p>Run <code>fastlane scan init</code> to create a new configuration file. Example:</p>
+<pre><code class="language-ruby-skip-tests">scheme(&quot;Example&quot;)
+devices([&quot;iPhone 6s&quot;, &quot;iPad Air&quot;])
+
+clean(true)
+
+output_types(&quot;html&quot;)
+</code></pre>
+<h1 id="automating-the-whole-process">Automating the whole process</h1>
+<p><em>scan</em> works great together with <a href="https://fastlane.tools"><em>fastlane</em></a>, which connects all deployment tools into one streamlined workflow.</p>
+<p>Using <em>fastlane</em> you can define a configuration like</p>
+<pre><code class="language-ruby">lane :test do
+  scan(scheme: &quot;Example&quot;)
+end
+</code></pre>
+<hr />
+
+<table>
+<thead>
+<tr>
+<th>scan</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-examples">6 Examples</h2>
+<pre><code class="language-ruby">run_tests
+</code></pre>
+<pre><code class="language-ruby">scan # alias for &quot;run_tests&quot;
+</code></pre>
+<pre><code class="language-ruby">run_tests(
+  workspace: &quot;App.xcworkspace&quot;,
+  scheme: &quot;MyTests&quot;,
+  clean: false
+)
+</code></pre>
+<pre><code class="language-ruby"># Build For Testing
+run_tests(
+   derived_data_path: &quot;my_folder&quot;,
+   build_for_testing: true
+)
+</code></pre>
+<pre><code class="language-ruby"># run tests using derived data from prev. build
+run_tests(
+   derived_data_path: &quot;my_folder&quot;,
+   test_without_building: true
+)
+</code></pre>
+<pre><code class="language-ruby"># or run it from an existing xctestrun package
+run_tests(
+   xctestrun: &quot;/path/to/mytests.xctestrun&quot;
+)
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workspace</code></td>
+<td>Path to the workspace file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>project</code></td>
+<td>Path to the project file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>package_path</code></td>
+<td>Path to the Swift Package</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>The project's scheme. Make sure it's marked as <code>Shared</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>device</code></td>
+<td>The name of the simulator type you want to run tests on (e.g. 'iPhone 6')</td>
+<td></td>
+</tr>
+<tr>
+<td><code>devices</code></td>
+<td>Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air'])</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_detect_devices</code></td>
+<td>Should skip auto detecting of devices if none were specified</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>ensure_devices_found</code></td>
+<td>Should fail if devices not found</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>force_quit_simulator</code></td>
+<td>Enabling this option will automatically killall Simulator processes before the run</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reset_simulator</code></td>
+<td>Enabling this option will automatically erase the simulator before running the application</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>disable_slide_to_type</code></td>
+<td>Enabling this option will disable the simulator from showing the 'Slide to type' prompt</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>prelaunch_simulator</code></td>
+<td>Enabling this option will launch the first simulator prior to calling any xcodebuild command</td>
+<td></td>
+</tr>
+<tr>
+<td><code>reinstall_app</code></td>
+<td>Enabling this option will automatically uninstall the application before running it</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier of the app to uninstall (only needed when enabling reinstall_app)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>only_testing</code></td>
+<td>Array of strings matching Test Bundle/Test Suite/Test Cases to run</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_testing</code></td>
+<td>Array of strings matching Test Bundle/Test Suite/Test Cases to skip</td>
+<td></td>
+</tr>
+<tr>
+<td><code>testplan</code></td>
+<td>The testplan associated with the scheme that should be used for testing</td>
+<td></td>
+</tr>
+<tr>
+<td><code>only_test_configurations</code></td>
+<td>Array of strings matching test plan configurations to run</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_test_configurations</code></td>
+<td>Array of strings matching test plan configurations to skip</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xctestrun</code></td>
+<td>Run tests using the provided <code>.xctestrun</code> file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>toolchain</code></td>
+<td>The toolchain that should be used for building the application (e.g. <code>com.apple.dt.toolchain.Swift_2_3, org.swift.30p620160816a</code>)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>clean</code></td>
+<td>Should the project be cleaned before building it?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>code_coverage</code></td>
+<td>Should code coverage be generated? (Xcode 7 and up)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>address_sanitizer</code></td>
+<td>Should the address sanitizer be turned on?</td>
+<td></td>
+</tr>
+<tr>
+<td><code>thread_sanitizer</code></td>
+<td>Should the thread sanitizer be turned on?</td>
+<td></td>
+</tr>
+<tr>
+<td><code>open_report</code></td>
+<td>Should the HTML report be opened when tests are completed?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>disable_xcpretty</code></td>
+<td>Disable xcpretty formatting of build, similar to <code>output_style='raw'</code> but this will also skip the test results table</td>
+<td></td>
+</tr>
+<tr>
+<td><code>output_directory</code></td>
+<td>The directory in which all reports will be stored</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>output_style</code></td>
+<td>Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty during xcodebuild)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>output_types</code></td>
+<td>Comma separated list of the output types (e.g. html, junit, json-compilation-database)</td>
+<td><code>html,junit</code></td>
+</tr>
+<tr>
+<td><code>output_files</code></td>
+<td>Comma separated list of the output files, corresponding to the types provided by :output_types (order should match). If specifying an output type of json-compilation-database with :use_clang_report_name enabled, that option will take precedence</td>
+<td></td>
+</tr>
+<tr>
+<td><code>buildlog_path</code></td>
+<td>The directory where to store the raw log</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>include_simulator_logs</code></td>
+<td>If the logs generated by the app (e.g. using NSLog, perror, etc.) in the Simulator should be written to the output_directory</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>suppress_xcode_output</code></td>
+<td>Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path</td>
+<td></td>
+</tr>
+<tr>
+<td><code>formatter</code></td>
+<td>A custom xcpretty formatter to use</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcpretty_args</code></td>
+<td>Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf')</td>
+<td></td>
+</tr>
+<tr>
+<td><code>derived_data_path</code></td>
+<td>The directory where build products and other derived data will go</td>
+<td></td>
+</tr>
+<tr>
+<td><code>should_zip_build_products</code></td>
+<td>Should zip the derived data build products and place in output path?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>output_xctestrun</code></td>
+<td>Should provide additional copy of .xctestrun file (settings.xctestrun) and place in output path?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>result_bundle</code></td>
+<td>Should an Xcode result bundle be generated in the output directory</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_clang_report_name</code></td>
+<td>Generate the json compilation database with clang naming convention (compile_commands.json)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>concurrent_workers</code></td>
+<td>Specify the exact number of test runners that will be spawned during parallel testing. Equivalent to -parallel-testing-worker-count</td>
+<td></td>
+</tr>
+<tr>
+<td><code>max_concurrent_simulators</code></td>
+<td>Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations</td>
+<td></td>
+</tr>
+<tr>
+<td><code>disable_concurrent_testing</code></td>
+<td>Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_build</code></td>
+<td>Should debug build be skipped before test build?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>test_without_building</code></td>
+<td>Test without building, requires a derived data path</td>
+<td></td>
+</tr>
+<tr>
+<td><code>build_for_testing</code></td>
+<td>Build for testing only, does not run tests</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sdk</code></td>
+<td>The SDK that should be used for building the application</td>
+<td></td>
+</tr>
+<tr>
+<td><code>configuration</code></td>
+<td>The configuration to use when building the app. Defaults to 'Release'</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>xcargs</code></td>
+<td>Pass additional arguments to xcodebuild. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcconfig</code></td>
+<td>Use an extra XCCONFIG file to build your app</td>
+<td></td>
+</tr>
+<tr>
+<td><code>app_name</code></td>
+<td>App name to use in slack message and logfile name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>deployment_target_version</code></td>
+<td>Target version of the app being build or tested. Used to filter out simulator version</td>
+<td></td>
+</tr>
+<tr>
+<td><code>slack_url</code></td>
+<td>Create an Incoming WebHook for your Slack group to post results there</td>
+<td></td>
+</tr>
+<tr>
+<td><code>slack_channel</code></td>
+<td>#channel or @username</td>
+<td></td>
+</tr>
+<tr>
+<td><code>slack_message</code></td>
+<td>The message included with each message posted to slack</td>
+<td></td>
+</tr>
+<tr>
+<td><code>slack_use_webhook_configured_username_and_icon</code></td>
+<td>Use webhook's default username and icon settings? (true/false)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>slack_username</code></td>
+<td>Overrides the webhook's username property if slack_use_webhook_configured_username_and_icon is false</td>
+<td><code>fastlane</code></td>
+</tr>
+<tr>
+<td><code>slack_icon_url</code></td>
+<td>Overrides the webhook's image property if slack_use_webhook_configured_username_and_icon is false</td>
+<td><code>https://fastlane.tools/assets/img/fastlane_icon.png</code></td>
+</tr>
+<tr>
+<td><code>skip_slack</code></td>
+<td>Don't publish to slack, even when an URL is given</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>slack_only_on_failure</code></td>
+<td>Only post on Slack if the tests fail</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>slack_default_payloads</code></td>
+<td>Specifies default payloads to include in Slack messages. For more info visit https://docs.fastlane.tools/actions/slack</td>
+<td></td>
+</tr>
+<tr>
+<td><code>destination</code></td>
+<td>Use only if you're a pro, use the other options instead</td>
+<td></td>
+</tr>
+<tr>
+<td><code>catalyst_platform</code></td>
+<td>Platform to build when using a Catalyst enabled app. Valid values are: ios, macos</td>
+<td></td>
+</tr>
+<tr>
+<td><code>custom_report_file_name</code></td>
+<td><strong>DEPRECATED!</strong> Use <code>--output_files</code> instead - Sets custom full report file name when generating a single report</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcodebuild_command</code></td>
+<td>Allows for override of the default <code>xcodebuild</code> command</td>
+<td><code>env NSUnbufferedIO=YES xcodebuild</code></td>
+</tr>
+<tr>
+<td><code>cloned_source_packages_path</code></td>
+<td>Sets a custom path for Swift Package Manager dependencies</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_package_dependencies_resolution</code></td>
+<td>Skips resolution of Swift Package Manager dependencies</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>disable_package_automatic_updates</code></td>
+<td>Prevents packages from automatically being resolved to versions other than those recorded in the <code>Package.resolved</code> file</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_system_scm</code></td>
+<td>Lets xcodebuild use system's scm configuration</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>number_of_retries</code></td>
+<td>The number of times a test can fail before scan should stop retrying</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>fail_build</code></td>
+<td>Should this step stop the build if the tests fail? Set this to false if you're using trainer</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
+<hr />
+
+<h2 id="lane-variables">Lane Variables</h2>
+<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>scan</code> action generates the following Lane Variables:</p>
+<table>
+<thead>
+<tr>
+<th>SharedValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SharedValues::SCAN_DERIVED_DATA_PATH</code></td>
+<td>The path to the derived data</td>
+</tr>
+<tr>
+<td><code>SharedValues::SCAN_GENERATED_PLIST_FILE</code></td>
+<td>The generated plist file</td>
+</tr>
+<tr>
+<td><code>SharedValues::SCAN_GENERATED_PLIST_FILES</code></td>
+<td>The generated plist files</td>
+</tr>
+<tr>
+<td><code>SharedValues::SCAN_ZIP_BUILD_PRODUCTS_PATH</code></td>
+<td>The path to the zipped build products</td>
+</tr>
+</tbody>
+</table>
+<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.</p>
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
+<pre><code class="language-no-highlight">fastlane action scan
+</code></pre>
+<hr />
+
+<h2 id="cli">CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="language-no-highlight">fastlane run scan
+</code></pre>
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="language-no-highlight">fastlane run scan parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code">Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/scan.rb" target="_blank">view the source code on GitHub</a></p>
+<hr />
+
+<p><a href="/actions/"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <!-- <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script> -->
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

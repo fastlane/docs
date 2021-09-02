@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Match nuke - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../../css/code.css" rel="stylesheet" />
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../../css/fabric.css" rel="stylesheet" />
+  <link href="../../../css/sidenav.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Match nuke";
+    var mkdocs_page_input_path = "generated/actions/match_nuke.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Match nuke</li>
+
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions/match_nuke.md"
+            class="icon icon-github"> Edit on GitHub</a>
+        
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/match_nuke.rb
+-->
+
+<h1 id="match_nuke">match_nuke</h1>
+<p>Easily nuke your certificate and provisioning profiles (via <em>match</em>)</p>
+<blockquote>
+<p>Use the match_nuke action to revoke your certificates and provisioning profiles.<br>Don't worry, apps that are already available in the App Store / TestFlight will still work.<br>Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build.<br>After clearing your account you'll start from a clean state, and you can run match to generate your certificates and profiles again.<br>More information: https://docs.fastlane.tools/actions/match/</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>match_nuke</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@crazymanish</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-examples">2 Examples</h2>
+<pre><code class="language-ruby">match_nuke(type: &quot;development&quot;)
+</code></pre>
+<pre><code class="language-ruby">match_nuke(type: &quot;development&quot;, api_key: app_store_connect_api_key)
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution</td>
+<td><code>development</code></td>
+</tr>
+<tr>
+<td><code>additional_cert_types</code></td>
+<td>Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td>Only fetch existing certificates and profiles, don't generate new ones</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>generate_apple_certs</code></td>
+<td>Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>skip_provisioning_profiles</code></td>
+<td>Skip syncing provisioning profiles</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier(s) of your app (comma-separated string or array of strings)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>api_key_path</code></td>
+<td>Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>api_key</code></td>
+<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>username</code></td>
+<td>Your Apple ID Username</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>team_id</code></td>
+<td>The ID of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>team_name</code></td>
+<td>The name of your Developer Portal team if you're in multiple teams</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>storage_mode</code></td>
+<td>Define where you want to store your certificates</td>
+<td><code>git</code></td>
+</tr>
+<tr>
+<td><code>git_url</code></td>
+<td>URL to the git repo containing all the certificates</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_branch</code></td>
+<td>Specific git branch to use</td>
+<td><code>master</code></td>
+</tr>
+<tr>
+<td><code>git_full_name</code></td>
+<td>git user full name to commit</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_user_email</code></td>
+<td>git user email to commit</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shallow_clone</code></td>
+<td>Make a shallow clone of the repository (truncate the history to 1 revision)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>clone_branch_directly</code></td>
+<td>Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>git_basic_authorization</code></td>
+<td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_bearer_authorization</code></td>
+<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64</td>
+<td></td>
+</tr>
+<tr>
+<td><code>git_private_key</code></td>
+<td>Use a private key to access the git repo (e.g.: access to GitHub repository via Deploy keys), usually a id_rsa named file or the contents hereof</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_cloud_bucket_name</code></td>
+<td>Name of the Google Cloud Storage bucket to use</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_cloud_keys_file</code></td>
+<td>Path to the gc_keys.json file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>google_cloud_project_id</code></td>
+<td>ID of the Google Cloud project to use for authentication</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_region</code></td>
+<td>Name of the S3 region</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_access_key</code></td>
+<td>S3 access key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_secret_access_key</code></td>
+<td>S3 secret access key</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_bucket</code></td>
+<td>Name of the S3 bucket</td>
+<td></td>
+</tr>
+<tr>
+<td><code>s3_object_prefix</code></td>
+<td>Prefix to be used on all objects uploaded to S3</td>
+<td></td>
+</tr>
+<tr>
+<td><code>keychain_name</code></td>
+<td>Keychain the items should be imported to</td>
+<td><code>login.keychain</code></td>
+</tr>
+<tr>
+<td><code>keychain_password</code></td>
+<td>This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password</td>
+<td></td>
+</tr>
+<tr>
+<td><code>force</code></td>
+<td>Renew the provisioning profiles every time you run match</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>force_for_new_devices</code></td>
+<td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id'</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_confirmation</code></td>
+<td>Disables confirmation prompts during nuke, answering them with yes</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_docs</code></td>
+<td>Skip generation of a README.md for the created git repository</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td>Set the provisioning profile's platform to work with (i.e. ios, tvos, macos, catalyst)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>derive_catalyst_app_identifier</code></td>
+<td>Enable this if you have the Mac Catalyst capability enabled and your project was created with Xcode 11.3 or earlier. Prepends 'maccatalyst.' to the app identifier for the provisioning profile mapping</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>template_name</code></td>
+<td>The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
+<td></td>
+</tr>
+<tr>
+<td><code>profile_name</code></td>
+<td>A custom name for the provisioning profile. This will replace the default provisioning profile name if specified</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fail_on_name_taken</code></td>
+<td>Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_certificate_matching</code></td>
+<td>Set to true if there is no access to Apple developer portal but there are certificates, keys and profiles provided. Only works with match import action</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>output_path</code></td>
+<td>Path in which to export certificates, key and profile</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_set_partition_list</code></td>
+<td>Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>verbose</code></td>
+<td>Print out extra information and all commands</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
+<pre><code class="language-no-highlight">fastlane action match_nuke
+</code></pre>
+<hr />
+
+<h2 id="cli">CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="language-no-highlight">fastlane run match_nuke
+</code></pre>
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="language-no-highlight">fastlane run match_nuke parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code">Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/match_nuke.rb" target="_blank">view the source code on GitHub</a></p>
+<hr />
+
+<p><a href="/actions/"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <!-- <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script> -->
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

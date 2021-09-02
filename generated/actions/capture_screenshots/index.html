@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Capture screenshots - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../../css/code.css" rel="stylesheet" />
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../../css/fabric.css" rel="stylesheet" />
+  <link href="../../../css/sidenav.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Capture screenshots";
+    var mkdocs_page_input_path = "generated/actions/capture_screenshots.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Capture screenshots</li>
+
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions/capture_screenshots.md"
+            class="icon icon-github"> Edit on GitHub</a>
+        
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/capture_screenshots.rb
+-->
+
+<h1 id="capture_screenshots">capture_screenshots</h1>
+<p>Alias for the <code>capture_ios_screenshots</code> action</p>
+<p align="center">
+  <img src="/img/actions/snapshot.png" width="250">
+</p>
+
+<h6 id="automate-taking-localized-screenshots-of-your-ios-tvos-and-watchos-apps-on-every-device">Automate taking localized screenshots of your iOS, tvOS, and watchOS apps on every device</h6>
+<hr />
+<h4 align="center">
+  Check out the new <a href="https://docs.fastlane.tools/getting-started/ios/screenshots/">fastlane documentation</a> on how to generate screenshots
+</h4>
+<hr />
+
+<p><em>snapshot</em> generates localized iOS, tvOS, and watchOS screenshots for different device types and languages for the App Store and can be uploaded using (<a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a>).</p>
+<p>You have to manually create 20 (languages) x 6 (devices) x 5 (screenshots) = <strong>600 screenshots</strong>.</p>
+<p>It's hard to get everything right!</p>
+<ul>
+<li>New screenshots with every (design) update</li>
+<li>No loading indicators</li>
+<li>Same content / screens</li>
+<li><a href="#use-a-clean-status-bar">Clean Status Bar</a></li>
+<li>Uploading screenshots (<a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> is your friend)</li>
+</ul>
+<p>More information about <a href="https://krausefx.com/blog/creating-perfect-app-store-screenshots-of-your-ios-app">creating perfect screenshots</a>.</p>
+<p><em>snapshot</em> runs completely in the background - you can do something else, while your computer takes the screenshots for you.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#ui-tests">UI Tests</a> &bull;
+    <a href="#quick-start">Quick Start</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#tips">Tips</a> &bull;
+    <a href="#how-does-it-work">How?</a>
+</p>
+
+<hr />
+<h1 id="features">Features</h1>
+<ul>
+<li>Create hundreds of screenshots in multiple languages on all simulators</li>
+<li>Take screenshots in multiple device simulators concurrently to cut down execution time (Xcode 9 only)</li>
+<li>Configure it once, store the configuration in git</li>
+<li>Do something else, while the computer takes the screenshots for you</li>
+<li>Integrates with <a href="https://fastlane.tools"><em>fastlane</em></a> and <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a></li>
+<li>Generates a beautiful web page, which shows all screenshots on all devices. This is perfect to send to QA or the marketing team</li>
+<li><em>snapshot</em> automatically waits for network requests to be finished before taking a screenshot (we don't want loading images in the App Store screenshots)</li>
+</ul>
+<p>After <em>snapshot</em> successfully created new screenshots, it will generate a beautiful HTML file to get a quick overview of all screens:</p>
+<p><img alt="img/actions/htmlPagePreviewFade.jpg" src="/img/actions/htmlPagePreviewFade.jpg" /></p>
+<h2 id="why">Why?</h2>
+<p>This tool automatically switches the language and device type and runs UI Tests for every combination.</p>
+<h3 id="why-should-i-automate-this-process">Why should I automate this process?</h3>
+<ul>
+<li>It takes <strong>hours</strong> to take screenshots</li>
+<li>You get a great overview of all your screens, running on all available simulators without the need to manually start it hundreds of times</li>
+<li>Easy verification for translators (without an iDevice) that translations do make sense in real App context</li>
+<li>Easy verification that localizations fit into labels on all screen dimensions</li>
+<li>It is an integration test: You can test for UI elements and other things inside your scripts</li>
+<li>Be so nice, and provide new screenshots with every App Store update. Your customers deserve it</li>
+<li>You realize, there is a spelling mistake in one of the screens? Well, just correct it and re-run the script</li>
+</ul>
+<h1 id="ui-tests">UI Tests</h1>
+<h2 id="getting-started">Getting started</h2>
+<p>This project uses Apple's newly announced UI Tests. We will not go into detail on how to write scripts.</p>
+<p>Here a few links to get started:</p>
+<ul>
+<li><a href="https://developer.apple.com/videos/play/wwdc2015-406/">WWDC 2015 Introduction to UI Tests</a></li>
+<li><a href="http://www.mokacoding.com/blog/xcode-7-ui-testing/">A first look into UI Tests</a></li>
+<li><a href="http://masilotti.com/ui-testing-xcode-7/">UI Testing in Xcode 7</a></li>
+<li><a href="https://github.com/ConfusedVorlon/HSTestingBackchannel">HSTestingBackchannel : ‘Cheat’ by communicating directly with your app</a></li>
+<li><a href="https://tisunov.github.io/2015/11/06/automating-app-store-screenshots-generation-with-fastlane-snapshot-and-sketch.html">Automating App Store screenshots using fastlane snapshot and frameit</a></li>
+</ul>
+<h1 id="quick-start">Quick Start</h1>
+<ul>
+<li>Create a new UI Test target in your Xcode project (<a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">top part of this article</a>)</li>
+<li>Run <code>fastlane snapshot init</code> in your project folder</li>
+<li>Add the ./SnapshotHelper.swift to your UI Test target (You can move the file anywhere you want)<ul>
+<li>(Xcode 8 only) add the ./SnapshotHelperXcode8.swift to your UI Test target</li>
+</ul>
+</li>
+<li>(Objective C only) add the bridging header to your test class:<ul>
+<li><code>#import "MYUITests-Swift.h"</code><br />
+  (The bridging header is named after your test target with <code>-Swift.h</code> appended.)</li>
+</ul>
+</li>
+<li>In your UI Test class, click the <code>Record</code> button on the bottom left and record your interaction</li>
+<li>To take a snapshot, call the following between interactions<ul>
+<li>Swift: <code>snapshot("01LoginScreen")</code></li>
+<li>Objective C: <code>[Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];</code></li>
+</ul>
+</li>
+<li>Add the following code to your <code>setUp()</code> method:</li>
+</ul>
+<p><strong>Swift:</strong></p>
+<pre><code class="language-swift">let app = XCUIApplication()
+setupSnapshot(app)
+app.launch()
+</code></pre>
+<p><strong>Objective C:</strong></p>
+<pre><code class="language-objective-c">XCUIApplication *app = [[XCUIApplication alloc] init];
+[Snapshot setupSnapshot:app waitForAnimations:NO];
+[app launch];
+</code></pre>
+<p><em>Make sure you only have one <code>launch</code> call in your test class, as Xcode adds one automatically on new test files.</em></p>
+<p><img alt="img/actions/snapshot.gif" src="/img/actions/snapshot.gif" /></p>
+<p>You can try the <em>snapshot</em> <a href="https://github.com/fastlane/fastlane/tree/master/snapshot/example">example project</a> by cloning this repo.</p>
+<p>To quick start your UI tests, you can use the UI Test recorder. You only have to interact with the simulator, and Xcode will generate the UI Test code for you. You can find the red record button on the bottom of the screen (more information in <a href="https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line">this blog post</a>)</p>
+<h1 id="usage">Usage</h1>
+<pre><code class="language-no-highlight">fastlane snapshot
+</code></pre>
+<p>Your screenshots will be stored in the <code>./screenshots/</code> folder by default (or <code>./fastlane/screenshots</code> if you're using <a href="https://fastlane.tools"><em>fastlane</em></a>)</p>
+<p>New with Xcode 9, <em>snapshot</em> can run multiple simulators concurrently. This is the default behavior in order to take your screenshots as quickly as possible. This can be disabled to run each device, one at a time, by setting the <code>:concurrent_simulators</code> option to <code>false</code>.</p>
+<p><strong>Note:</strong> While running <em>snapshot</em> with Xcode 9, the simulators will not be visibly spawned. So, while you won't see the simulators running your tests, they will, in fact, be taking your screenshots.</p>
+<p>If any error occurs while running the snapshot script on a device, that device will not have any screenshots, and <em>snapshot</em> will continue with the next device or language. To stop the flow after the first error, run</p>
+<pre><code class="language-no-highlight">fastlane snapshot --stop_after_first_error
+</code></pre>
+<p>Also by default, <em>snapshot</em> will open the HTML after all is done. This can be skipped with the following command</p>
+<pre><code class="language-no-highlight">fastlane snapshot --stop_after_first_error --skip_open_summary
+</code></pre>
+<p>There are a lot of options available that define how to build your app, for example</p>
+<pre><code class="language-no-highlight">fastlane snapshot --scheme &quot;UITests&quot; --configuration &quot;Release&quot;  --sdk &quot;iphonesimulator&quot;
+</code></pre>
+<p>Reinstall the app before running <em>snapshot</em></p>
+<pre><code class="language-no-highlight">fastlane snapshot --reinstall_app --app_identifier &quot;tools.fastlane.app&quot;
+</code></pre>
+<p>By default <em>snapshot</em> automatically retries running UI Tests if they fail. This is due to randomly failing UI Tests (e.g. <a href="https://github.com/fastlane/fastlane/issues/2517">#2517</a>). You can adapt this number using</p>
+<pre><code class="language-no-highlight">fastlane snapshot --number_of_retries 3
+</code></pre>
+<p>Add photos and/or videos to the simulator before running <em>snapshot</em></p>
+<pre><code class="language-no-highlight">fastlane snapshot --add_photos MyTestApp/Assets/demo.jpg --add_videos MyTestApp/Assets/demo.mp4
+</code></pre>
+<p>For a list for all available options run</p>
+<pre><code class="language-no-highlight">fastlane action snapshot
+</code></pre>
+<p>After running <em>snapshot</em> you will get a nice summary:</p>
+<p><img src="/img/actions/testSummary.png" width="500"></p>
+<h2 id="snapfile">Snapfile</h2>
+<p>All of the available options can also be stored in a configuration file called the <code>Snapfile</code>. Since most values will not change often for your project, it is recommended to store them there:</p>
+<p>First make sure to have a <code>Snapfile</code> (you get it for free when running <code>fastlane snapshot init</code>)</p>
+<p>The <code>Snapfile</code> can contain all the options that are also available on <code>fastlane action snapshot</code></p>
+<pre><code class="language-ruby-skip-tests">scheme(&quot;UITests&quot;)
+
+devices([
+  &quot;iPad (7th generation)&quot;,
+  &quot;iPad Air (3rd generation)&quot;,
+  &quot;iPad Pro (11-inch)&quot;,
+  &quot;iPad Pro (12.9-inch) (3rd generation)&quot;,
+  &quot;iPad Pro (9.7-inch)&quot;,
+  &quot;iPhone 11&quot;,
+  &quot;iPhone 11 Pro&quot;,
+  &quot;iPhone 11 Pro Max&quot;,
+  &quot;iPhone 8&quot;,
+  &quot;iPhone 8 Plus&quot;
+])
+
+languages([
+  &quot;en-US&quot;,
+  &quot;de-DE&quot;,
+  &quot;es-ES&quot;,
+  [&quot;pt&quot;, &quot;pt_BR&quot;] # Portuguese with Brazilian locale
+])
+
+launch_arguments([&quot;-username Felix&quot;])
+
+# The directory in which the screenshots should be stored
+output_directory('./screenshots')
+
+clear_previous_screenshots(true)
+
+override_status_bar(true)
+
+add_photos([&quot;MyTestApp/Assets/demo.jpg&quot;])
+</code></pre>
+<h3 id="completely-reset-all-simulators">Completely reset all simulators</h3>
+<p>You can run this command in the terminal to delete and re-create all iOS and tvOS simulators:</p>
+<pre><code class="language-no-highlight">fastlane snapshot reset_simulators
+</code></pre>
+<p><strong>Warning</strong>: This will delete <strong>all</strong> your simulators and replace by new ones! This is useful, if you run into weird problems when running <em>snapshot</em>.</p>
+<p>You can use the environment variable <code>SNAPSHOT_FORCE_DELETE</code> to stop asking for confirmation before deleting.</p>
+<pre><code class="language-no-highlight">SNAPSHOT_FORCE_DELETE=1 fastlane snapshot reset_simulators
+</code></pre>
+<h2 id="update-snapshot-helpers">Update snapshot helpers</h2>
+<p>Some updates require the helper files to be updated. <em>snapshot</em> will automatically warn you and tell you how to update.</p>
+<p>Basically you can run</p>
+<pre><code class="language-no-highlight">fastlane snapshot update
+</code></pre>
+<p>to update your <code>SnapshotHelper.swift</code> files. In case you modified your <code>SnapshotHelper.swift</code> and want to manually update the file, check out <a href="https://github.com/fastlane/fastlane/blob/master/snapshot/lib/assets/SnapshotHelper.swift">SnapshotHelper.swift</a>.</p>
+<h2 id="launch-arguments">Launch Arguments</h2>
+<p>You can provide additional arguments to your app on launch. These strings will be available in your app (e.g. not in the testing target) through <code>ProcessInfo.processInfo.arguments</code>. Alternatively, use user-default syntax (<code>-key value</code>) and they will be available as key-value pairs in <code>UserDefaults.standard</code>.</p>
+<pre><code class="language-ruby-skip-tests">launch_arguments([
+  &quot;-firstName Felix -lastName Krause&quot;
+])
+</code></pre>
+<pre><code class="language-swift">name.text = UserDefaults.standard.string(forKey: &quot;firstName&quot;)
+// name.text = &quot;Felix&quot;
+</code></pre>
+<p><em>snapshot</em> includes <code>-FASTLANE_SNAPSHOT YES</code>, which will set a temporary user default for the key <code>FASTLANE_SNAPSHOT</code>, you may use this to detect when the app is run by <em>snapshot</em>.</p>
+<pre><code class="language-swift">if UserDefaults.standard.bool(forKey: &quot;FASTLANE_SNAPSHOT&quot;) {
+    // runtime check that we are in snapshot mode
+}
+</code></pre>
+<p>Specify multiple argument strings and <em>snapshot</em> will generate screenshots for each combination of arguments, devices, and languages. This is useful for comparing the same screenshots with different feature flags, dynamic text sizes, and different data sets.</p>
+<pre><code class="language-ruby-skip-tests"># Snapfile for A/B Test Comparison
+launch_arguments([
+  &quot;-secretFeatureEnabled YES&quot;,
+  &quot;-secretFeatureEnabled NO&quot;
+])
+</code></pre>
+<h2 id="xcode-environment-variables">Xcode Environment Variables</h2>
+<p><em>snapshot</em> includes <code>FASTLANE_SNAPSHOT=YES</code> and <code>FASTLANE_LANGUAGE=&lt;language&gt;</code> as arguments when executing <code>xcodebuild</code>. This means you may use these environment variables in a custom build phase run script to do any additional configuration.</p>
+<h1 id="how-does-it-work">How does it work?</h1>
+<p>The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So <em>snapshot</em> uses a different approach:</p>
+<p>When you run unit tests in Xcode, the reporter generates a plist file, documenting all events that occurred during the tests (<a href="http://michele.io/test-logs-in-xcode">More Information</a>). Additionally, Xcode generates screenshots before, during and after each of these events. There is no way to manually trigger a screenshot event. The screenshots and the plist files are stored in the DerivedData directory, which <em>snapshot</em> stores in a temporary folder.</p>
+<p>When the user calls <code>snapshot(...)</code> in the UI Tests (Swift or Objective C) the script actually does a rotation to <code>.Unknown</code> which doesn't have any effect on the actual app, but is enough to trigger a screenshot. It has no effect to the application and is not something you would do in your tests. The goal was to find <em>some</em> event that a user would never trigger, so that we know it's from <em>snapshot</em>. On tvOS, there is no orientation so we ask for a count of app views with type "Browser" (which should never exist on tvOS).</p>
+<p><em>snapshot</em> then iterates through all test events and check where we either did this weird rotation (on iOS) or searched for browsers (on tvOS). Once <em>snapshot</em> has all events triggered by <em>snapshot</em> it collects a ordered list of all the file names of the actual screenshots of the application.</p>
+<p>In the test output, the Swift <em>snapshot</em> function will print out something like this</p>
+<blockquote>
+<p>snapshot: [some random text here]</p>
+</blockquote>
+<p><em>snapshot</em> finds all these entries using a regex. The number of <em>snapshot</em> outputs in the terminal and the number of <em>snapshot</em> events in the plist file should be the same. Knowing that, <em>snapshot</em> automatically matches these 2 lists to identify the name of each of these screenshots. They are then copied over to the output directory and separated by language and device.</p>
+<p>2 thing have to be passed on from <em>snapshot</em> to the <code>xcodebuild</code> command line tool:</p>
+<ul>
+<li>The device type is passed via the <code>destination</code> parameter of the <code>xcodebuild</code> parameter</li>
+<li>The language is passed via a temporary file which is written by <em>snapshot</em> before running the tests and read by the UI Tests when launching the application</li>
+</ul>
+<p>If you find a better way to do any of this, please submit an issue on GitHub or even a pull request :+1:</p>
+<p>Radar <a href="https://openradar.appspot.com/radar?id=5056366381105152">23062925</a> has been resolved with Xcode 8.3, so it's now possible to actually take screenshots from the simulator. We'll keep using the old approach for now, since many of you still want to use older versions of Xcode.</p>
+<h1 id="tips">Tips</h1>
+<hr />
+<h4 align="center">
+  Check out the new <a href="https://docs.fastlane.tools/getting-started/ios/screenshots/">fastlane documentation</a> on how to generate screenshots
+</h4>
+<hr />
+
+<h2 id="frame-the-screenshots">Frame the screenshots</h2>
+<p>If you want to add frames around the screenshots and even put a title on top, check out <a href="https://docs.fastlane.tools/actions/frameit/"><em>frameit</em></a>.</p>
+<h2 id="available-language-codes">Available language codes</h2>
+<pre><code class="language-ruby">ALL_LANGUAGES = [&quot;da&quot;, &quot;de-DE&quot;, &quot;el&quot;, &quot;en-AU&quot;, &quot;en-CA&quot;, &quot;en-GB&quot;, &quot;en-US&quot;, &quot;es-ES&quot;, &quot;es-MX&quot;, &quot;fi&quot;, &quot;fr-CA&quot;, &quot;fr-FR&quot;, &quot;id&quot;, &quot;it&quot;, &quot;ja&quot;, &quot;ko&quot;, &quot;ms&quot;, &quot;nl-NL&quot;, &quot;no&quot;, &quot;pt-BR&quot;, &quot;pt-PT&quot;, &quot;ru&quot;, &quot;sv&quot;, &quot;th&quot;, &quot;tr&quot;, &quot;vi&quot;, &quot;zh-Hans&quot;, &quot;zh-Hant&quot;]
+</code></pre>
+<p>To get more information about language and locale codes please read <a href="https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">Internationalization and Localization Guide</a>.</p>
+<h2 id="use-a-clean-status-bar">Use a clean status bar</h2>
+<p>You can set <code>override_status_bar</code> to <code>true</code> to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception. If you need more granular customization, to set a Carrier name for example, also set <code>override_status_bar_arguments</code> to the specific arguments to be passed to the <code>xcrun simctl status_bar override</code> command. Run <code>xcrun simctl status_bar --help</code> to see the options available.</p>
+<h2 id="editing-the-snapfile">Editing the <code>Snapfile</code></h2>
+<p>Change syntax highlighting to <em>Ruby</em>.</p>
+<h3 id="simulator-doesnt-launch-the-application">Simulator doesn't launch the application</h3>
+<p>When the app dies directly after the application is launched there might be 2 problems</p>
+<ul>
+<li>The simulator is somehow in a broken state and you need to re-create it. You can use <code>snapshot reset_simulators</code> to reset all simulators (this will remove all installed apps)</li>
+<li>A restart helps very often</li>
+</ul>
+<h2 id="determine-language">Determine language</h2>
+<p>To detect the currently used localization in your tests, access the <code>deviceLanguage</code> variable from <code>SnapshotHelper.swift</code>.</p>
+<h2 id="speed-up-snapshots">Speed up snapshots</h2>
+<p>A lot of time in UI tests is spent waiting for animations.</p>
+<p>You can disable <code>UIView</code> animations in your app to make the tests faster:</p>
+<pre><code class="language-swift">if ProcessInfo().arguments.contains(&quot;SKIP_ANIMATIONS&quot;) {
+    UIView.setAnimationsEnabled(false)
+}
+</code></pre>
+<p>This requires you to pass the launch argument like so:</p>
+<pre><code class="language-ruby">snapshot(launch_arguments: [&quot;SKIP_ANIMATIONS&quot;])
+</code></pre>
+<p>By default, <em>snapshot</em> will wait for a short time for the animations to finish.
+If you're skipping the animations, this wait time is unnecessary and can be skipped:</p>
+<pre><code class="language-swift">setupSnapshot(app, waitForAnimations: false)
+</code></pre>
+<hr />
+
+<table>
+<thead>
+<tr>
+<th>capture_screenshots</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-examples">3 Examples</h2>
+<pre><code class="language-ruby">capture_ios_screenshots
+</code></pre>
+<pre><code class="language-ruby">snapshot # alias for &quot;capture_ios_screenshots&quot;
+</code></pre>
+<pre><code class="language-ruby">capture_ios_screenshots(
+  skip_open_summary: true,
+  clean: true
+)
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workspace</code></td>
+<td>Path the workspace file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>project</code></td>
+<td>Path the project file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcargs</code></td>
+<td>Pass additional arguments to xcodebuild for the test phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++"</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcconfig</code></td>
+<td>Use an extra XCCONFIG file to build your app</td>
+<td></td>
+</tr>
+<tr>
+<td><code>devices</code></td>
+<td>A list of devices you want to take the screenshots from</td>
+<td></td>
+</tr>
+<tr>
+<td><code>languages</code></td>
+<td>A list of languages which should be used</td>
+<td><code>["en-US"]</code></td>
+</tr>
+<tr>
+<td><code>launch_arguments</code></td>
+<td>A list of launch arguments which should be used</td>
+<td><code>[""]</code></td>
+</tr>
+<tr>
+<td><code>output_directory</code></td>
+<td>The directory where to store the screenshots</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>output_simulator_logs</code></td>
+<td>If the logs generated by the app (e.g. using NSLog, perror, etc.) in the Simulator should be written to the output_directory</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>ios_version</code></td>
+<td>By default, the latest version should be used automatically. If you want to change it, do it here</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_open_summary</code></td>
+<td>Don't open the HTML summary after running <em>snapshot</em></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_helper_version_check</code></td>
+<td>Do not check for most recent SnapshotHelper code</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>clear_previous_screenshots</code></td>
+<td>Enabling this option will automatically clear previously generated screenshots before running snapshot</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reinstall_app</code></td>
+<td>Enabling this option will automatically uninstall the application before running it</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>erase_simulator</code></td>
+<td>Enabling this option will automatically erase the simulator before running the application</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>headless</code></td>
+<td>Enabling this option will prevent displaying the simulator window</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>override_status_bar</code></td>
+<td>Enabling this option will automatically override the status bar to show 9:41 AM, full battery, and full reception</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>override_status_bar_arguments</code></td>
+<td>Fully customize the status bar by setting each option here. See <code>xcrun simctl status_bar --help</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>localize_simulator</code></td>
+<td>Enabling this option will configure the Simulator's system language</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>dark_mode</code></td>
+<td>Enabling this option will configure the Simulator to be in dark mode (false for light, true for dark)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>app_identifier</code></td>
+<td>The bundle identifier of the app to uninstall (only needed when enabling reinstall_app)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>add_photos</code></td>
+<td>A list of photos that should be added to the simulator before running the application</td>
+<td></td>
+</tr>
+<tr>
+<td><code>add_videos</code></td>
+<td>A list of videos that should be added to the simulator before running the application</td>
+<td></td>
+</tr>
+<tr>
+<td><code>html_template</code></td>
+<td>A path to screenshots.html template</td>
+<td></td>
+</tr>
+<tr>
+<td><code>buildlog_path</code></td>
+<td>The directory where to store the build log</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>clean</code></td>
+<td>Should the project be cleaned before building it?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>test_without_building</code></td>
+<td>Test without building, requires a derived data path</td>
+<td></td>
+</tr>
+<tr>
+<td><code>configuration</code></td>
+<td>The configuration to use when building the app. Defaults to 'Release'</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>xcpretty_args</code></td>
+<td>Additional xcpretty arguments</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sdk</code></td>
+<td>The SDK that should be used for building the application</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scheme</code></td>
+<td>The scheme you want to use, this must be the scheme for the UI Tests</td>
+<td></td>
+</tr>
+<tr>
+<td><code>number_of_retries</code></td>
+<td>The number of times a test can fail before snapshot should stop retrying</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>stop_after_first_error</code></td>
+<td>Should snapshot stop immediately after the tests completely failed on one device?</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>derived_data_path</code></td>
+<td>The directory where build products and other derived data will go</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_bundle</code></td>
+<td>Should an Xcode result bundle be generated in the output directory</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>test_target_name</code></td>
+<td>The name of the target you want to test (if you desire to override the Target Application from Xcode)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespace_log_files</code></td>
+<td>Separate the log files per device and per language</td>
+<td></td>
+</tr>
+<tr>
+<td><code>concurrent_simulators</code></td>
+<td>Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>disable_slide_to_type</code></td>
+<td>Disable the simulator from showing the 'Slide to type' prompt</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>cloned_source_packages_path</code></td>
+<td>Sets a custom path for Swift Package Manager dependencies</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_package_dependencies_resolution</code></td>
+<td>Skips resolution of Swift Package Manager dependencies</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>disable_package_automatic_updates</code></td>
+<td>Prevents packages from automatically being resolved to versions other than those recorded in the <code>Package.resolved</code> file</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>testplan</code></td>
+<td>The testplan associated with the scheme that should be used for testing</td>
+<td></td>
+</tr>
+<tr>
+<td><code>only_testing</code></td>
+<td>Array of strings matching Test Bundle/Test Suite/Test Cases to run</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_testing</code></td>
+<td>Array of strings matching Test Bundle/Test Suite/Test Cases to skip</td>
+<td></td>
+</tr>
+<tr>
+<td><code>disable_xcpretty</code></td>
+<td>Disable xcpretty formatting of build</td>
+<td></td>
+</tr>
+<tr>
+<td><code>suppress_xcode_output</code></td>
+<td>Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path</td>
+<td></td>
+</tr>
+<tr>
+<td><code>use_system_scm</code></td>
+<td>Lets xcodebuild use system's scm configuration</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
+<hr />
+
+<h2 id="lane-variables">Lane Variables</h2>
+<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>capture_screenshots</code> action generates the following Lane Variables:</p>
+<table>
+<thead>
+<tr>
+<th>SharedValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SharedValues::SNAPSHOT_SCREENSHOTS_PATH</code></td>
+<td>The path to the screenshots</td>
+</tr>
+</tbody>
+</table>
+<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.</p>
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
+<pre><code class="language-no-highlight">fastlane action capture_screenshots
+</code></pre>
+<hr />
+
+<h2 id="cli">CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="language-no-highlight">fastlane run capture_screenshots
+</code></pre>
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="language-no-highlight">fastlane run capture_screenshots parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code">Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/capture_screenshots.rb" target="_blank">view the source code on GitHub</a></p>
+<hr />
+
+<p><a href="/actions/"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <!-- <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script> -->
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Actions - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../css/code.css" rel="stylesheet" />
+  <link href="../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../css/fabric.css" rel="stylesheet" />
+  <link href="../../css/sidenav.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Actions";
+    var mkdocs_page_input_path = "generated/actions.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Actions</li>
+
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions.md"
+            class="icon icon-github"> Edit on GitHub</a>
+        
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/assets/Actions.md.erb
+-->
+
+<style type="text/css">
+  .fastlane-setup {
+    border-left: .4rem solid #00b0ff;
+    border-bottom: .1rem solid rgba(0,176,255,.1);
+    background-color: rgba(0,176,255,.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: 200;
+  }
+  .fastlane-setup-wrapper {
+    background-color: rgba(0,176,255,.05);
+  }
+  .fastlane-setup-wrapper[open] {
+    padding-bottom: 1px;
+  }
+  .fastlane-setup-header {
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .fastlane-setup-more-details {
+    font-size: 18px;
+    font-weight: 350;
+  }
+</style>
+
+<details class="fastlane-setup-wrapper">
+  <summary class="fastlane-setup">New to fastlane? Click here to open the installation & setup instructions first</summary>
+
+
+<p class="fastlane-setup-header">1) Install the latest Xcode command line tools</p>
+
+
+<pre><code class="language-no-highlight">xcode-select --install
+</code></pre>
+
+
+<p class="fastlane-setup-header">2) Install <i>fastlane</i></p>
+
+
+<pre><code class="language-sh"># Using RubyGems
+sudo gem install fastlane -NV
+
+# Alternatively using Homebrew
+brew install fastlane
+</code></pre>
+
+
+<p class="fastlane-setup-header">3) Navigate to your project and run</p>
+
+
+<pre><code class="language-no-highlight">fastlane init
+</code></pre>
+
+
+<p class="fastlane-setup-more-details"><a href="/getting-started/ios/setup/">More Details</a></p>
+
+</details>
+
+<h1 id="fastlane-actions">fastlane actions</h1>
+<p>This page contains a list of all built-in fastlane actions and their available options.</p>
+<p>To get the most up-to-date information from the command line on your current version you can also run</p>
+<pre><code class="language-sh">fastlane actions # list all available fastlane actions
+fastlane action [action_name] # more information for a specific action
+</code></pre>
+<p>You can import another <code>Fastfile</code> by using the <code>import</code> action. This is useful if you have shared lanes across multiple apps and you want to store a <code>Fastfile</code> in a separate folder. The path must be relative to the <code>Fastfile</code> this is called from.</p>
+<pre><code class="language-ruby">import './path/to/other/Fastfile'
+</code></pre>
+<p>For <em>fastlane</em> plugins, check out the <a href="/plugins/available-plugins/">available plugins</a> page.
+If you want to create your own action, check out the <a href="/create-action/#local-actions">local actions</a> page.</p>
+<ul>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#building">Building</a></li>
+<li><a href="#screenshots">Screenshots</a></li>
+<li><a href="#project">Project</a></li>
+<li><a href="#code-signing">Code Signing</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#beta">Beta</a></li>
+<li><a href="#push">Push</a></li>
+<li><a href="#releasing-your-app">Releasing your app</a></li>
+<li><a href="#source-control">Source Control</a></li>
+<li><a href="#notifications">Notifications</a></li>
+<li><a href="#app-store-connect">App Store Connect</a></li>
+<li><a href="#misc">Misc</a></li>
+<li><a href="#deprecated">Deprecated</a></li>
+<li><a href="/plugins/available-plugins/">Plugins</a></li>
+</ul>
+<h1 id="testing">Testing</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/scan/">scan</a></td>
+<td>Alias for the <code>run_tests</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/slather/">slather</a></td>
+<td>Use slather to generate a code coverage report</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/swiftlint/">swiftlint</a></td>
+<td>Run swift code validation using SwiftLint</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcov/">xcov</a></td>
+<td>Nice code coverage reports without hassle</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/sonar/">sonar</a></td>
+<td>Invokes sonar-scanner to programmatically run SonarQube analysis</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/oclint/">oclint</a></td>
+<td>Lints implementation files with OCLint</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/gcovr/">gcovr</a></td>
+<td>Runs test coverage reports for your Xcode project</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/lcov/">lcov</a></td>
+<td>Generates coverage data using lcov</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/appium/">appium</a></td>
+<td>Run UI test by Appium with RSpec</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/xctool/">xctool</a></td>
+<td>Run tests using xctool</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcode_server_get_assets/">xcode_server_get_assets</a></td>
+<td>Downloads Xcode Bot assets like the <code>.xcarchive</code> and logs</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/run_tests/">run_tests</a></td>
+<td>Easily run tests of your iOS app (via <em>scan</em>)</td>
+<td>ios, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="building">Building</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/gym/">gym</a></td>
+<td>Alias for the <code>build_app</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/cocoapods/">cocoapods</a></td>
+<td>Runs <code>pod install</code> for the project</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/gradle/">gradle</a></td>
+<td>All gradle related actions, including building and testing your Android app</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/clear_derived_data/">clear_derived_data</a></td>
+<td>Deletes the Xcode Derived Data</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/adb/">adb</a></td>
+<td>Run ADB Actions</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/xcversion/">xcversion</a></td>
+<td>Select an Xcode to use by version specifier</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcodebuild/">xcodebuild</a></td>
+<td>Use the <code>xcodebuild</code> command to build and sign your app</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/carthage/">carthage</a></td>
+<td>Runs <code>carthage</code> for your project</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcode_select/">xcode_select</a></td>
+<td>Change the xcode-path to use. Useful for beta versions of Xcode</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ensure_xcode_version/">ensure_xcode_version</a></td>
+<td>Ensure the right version of Xcode is used</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/clean_cocoapods_cache/">clean_cocoapods_cache</a></td>
+<td>Remove the cache for pods</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/verify_xcode/">verify_xcode</a></td>
+<td>Verifies that the Xcode installation is properly signed by Apple</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcode_install/">xcode_install</a></td>
+<td>Make sure a certain version of Xcode is installed</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/verify_pod_keys/">verify_pod_keys</a></td>
+<td>Verifies all keys referenced from the Podfile are non-empty</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/spm/">spm</a></td>
+<td>Runs Swift Package Manager on your project</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xctest/">xctest</a></td>
+<td>Runs tests on the given simulator</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcarchive/">xcarchive</a></td>
+<td>Archives the project using <code>xcodebuild</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcclean/">xcclean</a></td>
+<td>Cleans the project using <code>xcodebuild</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_app/">build_app</a></td>
+<td>Easily build and sign your app (via <em>gym</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_mac_app/">build_mac_app</a></td>
+<td>Alias for the <code>build_app</code> action but only for macOS</td>
+<td>mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_ios_app/">build_ios_app</a></td>
+<td>Alias for the <code>build_app</code> action but only for iOS</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/xcexport/">xcexport</a></td>
+<td>Exports the project using <code>xcodebuild</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_android_app/">build_android_app</a></td>
+<td>Alias for the <code>gradle</code> action</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/xcbuild/">xcbuild</a></td>
+<td>Builds the project using <code>xcodebuild</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/create_xcframework/">create_xcframework</a></td>
+<td>Package multiple build configs of a library/framework into a single xcframework</td>
+<td>ios, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="screenshots">Screenshots</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/snapshot/">snapshot</a></td>
+<td>Alias for the <code>capture_ios_screenshots</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/screengrab/">screengrab</a></td>
+<td>Alias for the <code>capture_android_screenshots</code> action</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/frameit/">frameit</a></td>
+<td>Alias for the <code>frame_screenshots</code> action</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/capture_android_screenshots/">capture_android_screenshots</a></td>
+<td>Automated localized screenshots of your Android app (via <em>screengrab</em>)</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/capture_screenshots/">capture_screenshots</a></td>
+<td>Alias for the <code>capture_ios_screenshots</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a></td>
+<td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
+<td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
+<td>ios, android, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="project">Project</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/increment_build_number/">increment_build_number</a></td>
+<td>Increment the build number of your project</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/set_info_plist_value/">set_info_plist_value</a></td>
+<td>Sets value to Info.plist of your project as native Ruby data structures</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_version_number/">get_version_number</a></td>
+<td>Get the version number of your project</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_info_plist_value/">get_info_plist_value</a></td>
+<td>Returns value from Info.plist of your project as native Ruby data structures</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_info_plist/">update_info_plist</a></td>
+<td>Update a Info.plist file with bundle identifier and display name</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/update_app_identifier/">update_app_identifier</a></td>
+<td>Update the project's bundle identifier</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/get_build_number/">get_build_number</a></td>
+<td>Get the build number of your project</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/increment_version_number/">increment_version_number</a></td>
+<td>Increment the version number of your project</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_project_team/">update_project_team</a></td>
+<td>Update Xcode Development Team ID</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_app_group_identifiers/">update_app_group_identifiers</a></td>
+<td>This action changes the app group identifiers in the entitlements file</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/get_ipa_info_plist_value/">get_ipa_info_plist_value</a></td>
+<td>Returns a value from Info.plist inside a .ipa file</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/recreate_schemes/">recreate_schemes</a></td>
+<td>Recreate not shared Xcode project schemes</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_url_schemes/">update_url_schemes</a></td>
+<td>Updates the URL schemes in the given Info.plist</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/set_build_number_repository/">set_build_number_repository</a></td>
+<td>Set the build number from the current repository</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/set_pod_key/">set_pod_key</a></td>
+<td>Sets a value for a key with cocoapods-keys</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_keychain_access_groups/">update_keychain_access_groups</a></td>
+<td>This action changes the keychain access groups in the entitlements file</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/update_plist/">update_plist</a></td>
+<td>Update a plist file</td>
+<td>ios</td>
+</tr>
+</tbody>
+</table>
+<h1 id="code-signing">Code Signing</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/sigh/">sigh</a></td>
+<td>Alias for the <code>get_provisioning_profile</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/match/">match</a></td>
+<td>Alias for the <code>sync_code_signing</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/cert/">cert</a></td>
+<td>Alias for the <code>get_certificates</code> action</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/import_certificate/">import_certificate</a></td>
+<td>Import certificate from inputfile into a keychain</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_project_provisioning/">update_project_provisioning</a></td>
+<td>Update projects code signing settings from your provisioning profile</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/resign/">resign</a></td>
+<td>Codesign an existing ipa file</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/register_devices/">register_devices</a></td>
+<td>Registers new devices to the Apple Dev Portal</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/register_device/">register_device</a></td>
+<td>Registers a new device to the Apple Dev Portal</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/update_code_signing_settings/">update_code_signing_settings</a></td>
+<td>Configures Xcode's Codesigning options</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/match_nuke/">match_nuke</a></td>
+<td>Easily nuke your certificate and provisioning profiles (via <em>match</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_provisioning_profile/">get_provisioning_profile</a></td>
+<td>Generates a provisioning profile, saving it in the current folder (via <em>sigh</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/notarize/">notarize</a></td>
+<td>Notarizes a macOS app</td>
+<td>mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_certificates/">get_certificates</a></td>
+<td>Create new iOS code signing certificates (via <em>cert</em>)</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/sync_code_signing/">sync_code_signing</a></td>
+<td>Easily sync your certificates and profiles across your team (via <em>match</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/install_provisioning_profile/">install_provisioning_profile</a></td>
+<td>Install provisioning profile from path</td>
+<td>ios, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="documentation">Documentation</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/jazzy/">jazzy</a></td>
+<td>Generate docs using Jazzy</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/appledoc/">appledoc</a></td>
+<td>Generate Apple-like source code documentation from the source code</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/sourcedocs/">sourcedocs</a></td>
+<td>Generate docs using SourceDocs</td>
+<td>ios, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="beta">Beta</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/pilot/">pilot</a></td>
+<td>Alias for the <code>upload_to_testflight</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/testflight/">testflight</a></td>
+<td>Alias for the <code>upload_to_testflight</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/deploygate/">deploygate</a></td>
+<td>Upload a new build to <a href="https://deploygate.com/">DeployGate</a></td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/apteligent/">apteligent</a></td>
+<td>Upload dSYM file to <a href="http://www.apteligent.com/">Apteligent (Crittercism)</a></td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/appetize/">appetize</a></td>
+<td>Upload your app to <a href="https://appetize.io/">Appetize.io</a> to stream it in browser</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/testfairy/">testfairy</a></td>
+<td>Upload a new build to <a href="https://www.testfairy.com/">TestFairy</a></td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/appaloosa/">appaloosa</a></td>
+<td>Upload your app to <a href="https://www.appaloosa-store.com/">Appaloosa Store</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/nexus_upload/">nexus_upload</a></td>
+<td>Upload a file to <a href="https://www.sonatype.com">Sonatype Nexus platform</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/installr/">installr</a></td>
+<td>Upload a new build to <a href="http://installrapp.com/">Installr</a></td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/splunkmint/">splunkmint</a></td>
+<td>Upload dSYM file to <a href="https://mint.splunk.com/">Splunk MINT</a></td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/tryouts/">tryouts</a></td>
+<td>Upload a new build to <a href="https://tryouts.io/">Tryouts</a></td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/podio_item/">podio_item</a></td>
+<td>Creates or updates an item within your Podio app</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_to_testflight/">upload_to_testflight</a></td>
+<td>Upload new binary to App Store Connect for TestFlight beta testing (via <em>pilot</em>)</td>
+<td>ios, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="push">Push</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/pem/">pem</a></td>
+<td>Alias for the <code>get_push_certificate</code> action</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/update_urban_airship_configuration/">update_urban_airship_configuration</a></td>
+<td>Set <a href="https://www.urbanairship.com/">Urban Airship</a> plist configuration values</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/onesignal/">onesignal</a></td>
+<td>Create or update a new <a href="https://onesignal.com/">OneSignal</a> application</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/get_push_certificate/">get_push_certificate</a></td>
+<td>Ensure a valid push profile is active, creating a new one if needed (via <em>pem</em>)</td>
+<td>ios</td>
+</tr>
+</tbody>
+</table>
+<h1 id="releasing-your-app">Releasing your app</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/deliver/">deliver</a></td>
+<td>Alias for the <code>upload_to_app_store</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/supply/">supply</a></td>
+<td>Alias for the <code>upload_to_play_store</code> action</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/appstore/">appstore</a></td>
+<td>Alias for the <code>upload_to_app_store</code> action</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/download_from_play_store/">download_from_play_store</a></td>
+<td>Download metadata and binaries from Google Play (via <em>supply</em>)</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/download_app_privacy_details_from_app_store/">download_app_privacy_details_from_app_store</a></td>
+<td>Download App Privacy Details from an app in App Store Connect</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_to_play_store/">upload_to_play_store</a></td>
+<td>Upload metadata, screenshots and binaries to Google Play (via <em>supply</em>)</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_to_app_store/">upload_to_app_store</a></td>
+<td>Upload metadata and binary to App Store Connect (via <em>deliver</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_app_privacy_details_to_app_store/">upload_app_privacy_details_to_app_store</a></td>
+<td>Upload App Privacy Details for an app in App Store Connect</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_to_play_store_internal_app_sharing/">upload_to_play_store_internal_app_sharing</a></td>
+<td>Upload binaries to Google Play Internal App Sharing (via <em>supply</em>)</td>
+<td>android</td>
+</tr>
+</tbody>
+</table>
+<h1 id="source-control">Source Control</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/ensure_git_status_clean/">ensure_git_status_clean</a></td>
+<td>Raises an exception if there are uncommitted git changes</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/git_branch/">git_branch</a></td>
+<td>Returns the name of the current git branch, possibly as managed by CI ENV vars</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/last_git_commit/">last_git_commit</a></td>
+<td>Return last git commit hash, abbreviated commit hash, commit message and author</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/reset_git_repo/">reset_git_repo</a></td>
+<td>Resets git repo to a clean state by discarding uncommitted changes</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/changelog_from_git_commits/">changelog_from_git_commits</a></td>
+<td>Collect git commit messages into a changelog</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/number_of_commits/">number_of_commits</a></td>
+<td>Return the number of commits in current git branch</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/git_pull/">git_pull</a></td>
+<td>Executes a simple git pull command</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/last_git_tag/">last_git_tag</a></td>
+<td>Get the most recent git tag</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/push_to_git_remote/">push_to_git_remote</a></td>
+<td>Push local changes to the remote branch</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/add_git_tag/">add_git_tag</a></td>
+<td>This will add an annotated git tag to the current branch</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/commit_version_bump/">commit_version_bump</a></td>
+<td>Creates a 'Version Bump' commit. Run after <code>increment_build_number</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/git_tag_exists/">git_tag_exists</a></td>
+<td>Checks if the git tag with the given name exists in the current repo</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ensure_git_branch/">ensure_git_branch</a></td>
+<td>Raises an exception if not on a specific git branch</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/git_commit/">git_commit</a></td>
+<td>Directly commit the given file with the given message</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/push_git_tags/">push_git_tags</a></td>
+<td>Push local tags to the remote - this will only push tags</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/git_add/">git_add</a></td>
+<td>Directly add the given file or all files</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_build_number_repository/">get_build_number_repository</a></td>
+<td>Get the build number from the current repository</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/set_github_release/">set_github_release</a></td>
+<td>This will create a new release on GitHub and upload assets for it</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/create_pull_request/">create_pull_request</a></td>
+<td>This will create a new pull request on GitHub</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_github_release/">get_github_release</a></td>
+<td>This will verify if a given release version is available on GitHub</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/hg_ensure_clean_status/">hg_ensure_clean_status</a></td>
+<td>Raises an exception if there are uncommitted hg changes</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/hg_commit_version_bump/">hg_commit_version_bump</a></td>
+<td>This will commit a version bump to the hg repo</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/hg_push/">hg_push</a></td>
+<td>This will push changes to the remote hg repository</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/hg_add_tag/">hg_add_tag</a></td>
+<td>This will add a hg tag to the current branch</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/github_api/">github_api</a></td>
+<td>Call a GitHub API endpoint and get the resulting JSON response</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/git_remote_branch/">git_remote_branch</a></td>
+<td>Returns the name of the current git remote default branch</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/git_submodule_update/">git_submodule_update</a></td>
+<td>Executes a git submodule update command</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/commit_github_file/">commit_github_file</a></td>
+<td>This will commit a file directly on GitHub via the API</td>
+<td>ios, android, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="notifications">Notifications</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/slack/">slack</a></td>
+<td>Send a success/error message to your <a href="https://slack.com">Slack</a> group</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/notification/">notification</a></td>
+<td>Display a macOS notification with custom message and title</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/hipchat/">hipchat</a></td>
+<td>Send a error/success message to <a href="https://www.hipchat.com/">HipChat</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/mailgun/">mailgun</a></td>
+<td>Send a success/error message to an email group</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/chatwork/">chatwork</a></td>
+<td>Send a success/error message to <a href="https://go.chatwork.com/">ChatWork</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ifttt/">ifttt</a></td>
+<td>Connect to the <a href="https://ifttt.com/maker">IFTTT Maker Channel</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/flock/">flock</a></td>
+<td>Send a message to a <a href="https://flock.com/">Flock</a> group</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/twitter/">twitter</a></td>
+<td>Post a tweet on <a href="https://twitter.com">Twitter.com</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/typetalk/">typetalk</a></td>
+<td>Post a message to <a href="https://www.typetalk.com/">Typetalk</a></td>
+<td>ios, android, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="app-store-connect">App Store Connect</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/produce/">produce</a></td>
+<td>Alias for the <code>create_app_online</code> action</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/precheck/">precheck</a></td>
+<td>Alias for the <code>check_app_store_metadata</code> action</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/latest_testflight_build_number/">latest_testflight_build_number</a></td>
+<td>Fetches most recent build number from TestFlight</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/download_dsyms/">download_dsyms</a></td>
+<td>Download dSYM files from App Store Connect for Bitcode apps</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/app_store_build_number/">app_store_build_number</a></td>
+<td>Returns the current build_number of either live or edit version</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/set_changelog/">set_changelog</a></td>
+<td>Set the changelog for all languages on App Store Connect</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/create_app_online/">create_app_online</a></td>
+<td>Creates the given application on iTC and the Dev Portal (via <em>produce</em>)</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/app_store_connect_api_key/">app_store_connect_api_key</a></td>
+<td>Load the App Store Connect API token to use in other fastlane tools and actions</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/check_app_store_metadata/">check_app_store_metadata</a></td>
+<td>Check your app's metadata before you submit your app to review (via <em>precheck</em>)</td>
+<td>ios</td>
+</tr>
+</tbody>
+</table>
+<h1 id="misc">Misc</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/puts/">puts</a></td>
+<td>Prints out the given text</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/default_platform/">default_platform</a></td>
+<td>Defines a default platform to not have to specify the platform</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/fastlane_version/">fastlane_version</a></td>
+<td>Alias for the <code>min_fastlane_version</code> action</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/lane_context/">lane_context</a></td>
+<td>Access lane context values</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/import/">import</a></td>
+<td>Import another Fastfile to use its lanes</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/import_from_git/">import_from_git</a></td>
+<td>Import another Fastfile from a remote git repository to use its lanes</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/clean_build_artifacts/">clean_build_artifacts</a></td>
+<td>Deletes files created as result of running gym, cert, sigh or download_dsyms</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/skip_docs/">skip_docs</a></td>
+<td>Skip the creation of the fastlane/README.md file when running fastlane</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/is_ci/">is_ci</a></td>
+<td>Is the current run being executed on a CI system, like Jenkins or Travis</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_jenkins/">setup_jenkins</a></td>
+<td>Setup xcodebuild, gym and scan for easier Jenkins integration</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/unlock_keychain/">unlock_keychain</a></td>
+<td>Unlock a keychain</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_fastlane/">update_fastlane</a></td>
+<td>Makes sure fastlane-tools are up-to-date when running fastlane</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/bundle_install/">bundle_install</a></td>
+<td>This action runs <code>bundle install</code> (if available)</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_symbols_to_crashlytics/">upload_symbols_to_crashlytics</a></td>
+<td>Upload dSYM symbolication files to Crashlytics</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/create_keychain/">create_keychain</a></td>
+<td>Create a new Keychain</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/delete_keychain/">delete_keychain</a></td>
+<td>Delete keychains and remove them from the search list</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/backup_file/">backup_file</a></td>
+<td>This action backs up your file to "[path].back"</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/copy_artifacts/">copy_artifacts</a></td>
+<td>Copy and save your build artifacts (useful when you use reset_git_repo)</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/prompt/">prompt</a></td>
+<td>Ask the user for a value or for confirmation</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/reset_simulator_contents/">reset_simulator_contents</a></td>
+<td>Shutdown and reset running simulators</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/restore_file/">restore_file</a></td>
+<td>This action restore your file that was backuped with the <code>backup_file</code> action</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/say/">say</a></td>
+<td>This action speaks the given text out loud</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/zip/">zip</a></td>
+<td>Compress a file or folder to a zip</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/danger/">danger</a></td>
+<td>Runs <code>danger</code> for the project</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/artifactory/">artifactory</a></td>
+<td>This action uploads an artifact to artifactory</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/version_bump_podspec/">version_bump_podspec</a></td>
+<td>Increment or set the version in a podspec file</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/team_id/">team_id</a></td>
+<td>Specify the Team ID you want to use for the Apple Developer Portal</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/backup_xcarchive/">backup_xcarchive</a></td>
+<td>Save your [zipped] xcarchive elsewhere from default path</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/pod_lib_lint/">pod_lib_lint</a></td>
+<td>Pod lib lint</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/erb/">erb</a></td>
+<td>Allows to Generate output files based on ERB templates</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/download/">download</a></td>
+<td>Download a file from a remote server (e.g. JSON file)</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/rocket/">rocket</a></td>
+<td>Outputs ascii-art for a rocket 🚀</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/debug/">debug</a></td>
+<td>Print out an overview of the lane context values</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/make_changelog_from_jenkins/">make_changelog_from_jenkins</a></td>
+<td>Generate a changelog using the Changes section from the current Jenkins build</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/pod_push/">pod_push</a></td>
+<td>Push a Podspec to Trunk or a private repository</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/dsym_zip/">dsym_zip</a></td>
+<td>Creates a zipped dSYM in the project root from the .xcarchive</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ensure_no_debug_code/">ensure_no_debug_code</a></td>
+<td>Ensures the given text is nowhere in the code base</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/cloc/">cloc</a></td>
+<td>Generates a Code Count that can be read by Jenkins (xml format)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/team_name/">team_name</a></td>
+<td>Set a team to use by its name</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/scp/">scp</a></td>
+<td>Transfer files via SCP</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/verify_build/">verify_build</a></td>
+<td>Able to verify various settings in ipa file</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/install_on_device/">install_on_device</a></td>
+<td>Installs an .ipa file on a connected iOS-device via usb or wifi</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/version_get_podspec/">version_get_podspec</a></td>
+<td>Receive the version number from a podspec file</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/rsync/">rsync</a></td>
+<td>Rsync files from :source to :destination</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/adb_devices/">adb_devices</a></td>
+<td>Get an array of Connected android device serials</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/dotgpg_environment/">dotgpg_environment</a></td>
+<td>Reads in production secrets set in a dotgpg file and puts them in ENV</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/jira/">jira</a></td>
+<td>Leave a comment on a Jira ticket</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/read_podspec/">read_podspec</a></td>
+<td>Loads a CocoaPods spec as JSON</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ssh/">ssh</a></td>
+<td>Allows remote command execution using ssh</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/appetize_viewing_url_generator/">appetize_viewing_url_generator</a></td>
+<td>Generate an URL for appetize simulator</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/install_xcode_plugin/">install_xcode_plugin</a></td>
+<td>Install an Xcode plugin for the current user</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/add_extra_platforms/">add_extra_platforms</a></td>
+<td>Modify the default list of supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/clipboard/">clipboard</a></td>
+<td>Copies a given string into the clipboard. Works only on macOS</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_and_upload_to_appetize/">build_and_upload_to_appetize</a></td>
+<td>Generate and upload an ipa file to appetize.io</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/update_icloud_container_identifiers/">update_icloud_container_identifiers</a></td>
+<td>This action changes the iCloud container identifiers in the entitlements file</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/sh/">sh</a></td>
+<td>Runs a shell command</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/println/">println</a></td>
+<td>Alias for the <code>puts</code> action</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/google_play_track_release_names/">google_play_track_release_names</a></td>
+<td>Retrieves release names for a Google Play track</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/modify_services/">modify_services</a></td>
+<td>Modifies the services of the app created on Developer Portal</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/min_fastlane_version/">min_fastlane_version</a></td>
+<td>Verifies the minimum fastlane version required</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/spaceship_stats/">spaceship_stats</a></td>
+<td>Print out Spaceship stats from this session (number of request to each domain)</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/plugin_scores/">plugin_scores</a></td>
+<td>[31mNo description provided[0m</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a></td>
+<td>Create Managed Google Play Apps</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_travis/">setup_travis</a></td>
+<td>Setup the keychain and match to work with Travis CI</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ensure_env_vars/">ensure_env_vars</a></td>
+<td>Raises an exception if the specified env vars are not set</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/spaceship_logs/">spaceship_logs</a></td>
+<td>Find, print, and copy Spaceship logs</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/environment_variable/">environment_variable</a></td>
+<td>Sets/gets env vars for Fastlane.swift. Don't use in ruby, use <code>ENV[key] = val</code></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/ruby_version/">ruby_version</a></td>
+<td>Verifies the minimum ruby version required</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_ci/">setup_ci</a></td>
+<td>Setup the keychain and match to work with CI</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
+<td>Setup the keychain and match to work with CircleCI</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/validate_play_store_json_key/">validate_play_store_json_key</a></td>
+<td>Validate that the Google Play Store <code>json_key</code> works</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a></td>
+<td>Raises an exception if not using <code>bundle exec</code> to run fastlane</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a></td>
+<td>Obtain publishing rights for custom apps on Managed Google Play Store</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a></td>
+<td>Retrieves version codes for a Google Play track</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/opt_out_usage/">opt_out_usage</a></td>
+<td>This will stop uploading the information which actions were run</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/echo/">echo</a></td>
+<td>Alias for the <code>puts</code> action</td>
+<td>ios, android, mac</td>
+</tr>
+</tbody>
+</table>
+<h1 id="deprecated">Deprecated</h1>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+<th>Supported Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/actions/crashlytics/">crashlytics</a></td>
+<td>Refer to <a href="https://appdistro.page.link/fastlane-repo">Firebase App Distribution</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/hockey/">hockey</a></td>
+<td>Refer to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a></td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/badge/">badge</a></td>
+<td>Automatically add a badge to your app icon</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/automatic_code_signing/">automatic_code_signing</a></td>
+<td>Configures Xcode's Codesigning options</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/s3/">s3</a></td>
+<td>Generates a plist file and uploads all to AWS S3</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="/actions/notify/">notify</a></td>
+<td>Shows a macOS notification - use <code>notification</code> instead</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/update_project_code_signing/">update_project_code_signing</a></td>
+<td>Updated code signing settings from 'Automatic' to a specific profile</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/ipa/">ipa</a></td>
+<td>Easily build and sign your app using shenzhen</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_symbols_to_sentry/">upload_symbols_to_sentry</a></td>
+<td>Upload dSYM symbolication files to Sentry</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/opt_out_crash_reporting/">opt_out_crash_reporting</a></td>
+<td>This will prevent reports from being uploaded when <em>fastlane</em> crashes</td>
+<td>ios, android, mac</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <!-- <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script> -->
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

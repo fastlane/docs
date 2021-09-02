@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Supply - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../../css/code.css" rel="stylesheet" />
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../../css/fabric.css" rel="stylesheet" />
+  <link href="../../../css/sidenav.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Supply";
+    var mkdocs_page_input_path = "generated/actions/supply.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Supply</li>
+
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions/supply.md"
+            class="icon icon-github"> Edit on GitHub</a>
+        
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/supply.rb
+-->
+
+<h1 id="supply">supply</h1>
+<p>Alias for the <code>upload_to_play_store</code> action</p>
+<p align="center">
+  <img src="/img/actions/supply.png" width="250">
+</p>
+
+<h6 id="command-line-tool-for-updating-android-apps-and-their-metadata-on-the-google-play-store">Command line tool for updating Android apps and their metadata on the Google Play Store</h6>
+<p><em>supply</em> uploads app metadata, screenshots, binaries, and app bundles to Google Play. You can also select tracks for builds and promote builds to production.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#setup">Setup</a> &bull;
+    <a href="#quick-start">Quick Start</a> &bull;
+    <a href="#available-commands">Commands</a> &bull;
+    <a href="#uploading-an-apk">Uploading an APK</a> &bull;
+    <a href="#uploading-an-aab">Uploading an AAB</a> &bull;
+    <a href="#images-and-screenshots">Images</a>
+</p>
+
+<hr />
+<h2 id="features">Features</h2>
+<ul>
+<li>Update existing Android applications on Google Play via the command line</li>
+<li>Upload new builds (APKs and AABs)</li>
+<li>Retrieve and edit metadata, such as title and description, for multiple languages</li>
+<li>Upload the app icon, promo graphics and screenshots for multiple languages</li>
+<li>Have a local copy of the metadata in your git repository</li>
+<li>Retrieve version code numbers from existing Google Play tracks</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p>Setup consists of setting up your Google Developers Service Account</p>
+<p><strong>Tip:</strong> If you see Google Play Console or Google Developer Console in your local language, add <code>&amp;hl=en</code> at the end of the URL (before any <code>#...</code>) to switch to English.</p>
+<ol>
+<li>Open the <a href="https://play.google.com/console/">Google Play Console</a></li>
+<li>Click <strong>Account Details</strong>, and note the <strong>Developer Account ID</strong> listed there</li>
+<li>Click <strong>Setup</strong> → <strong>API access</strong></li>
+<li>Click the <strong>Create new service account</strong> button</li>
+<li>Follow the <strong>Google Cloud Platform</strong> link in the dialog, which opens a new tab/window:<ol>
+<li>Click the <strong>CREATE SERVICE ACCOUNT</strong> button at the top of the <strong>Google Cloud Platform Console</strong></li>
+<li>Verify that you are on the correct Google Cloud Platform Project by looking for the <strong>Developer Account ID</strong> from earlier within the light gray text in the second input, preceding <code>.iam.gserviceaccount.com</code>. If not, open the picker in the top navigation bar, and find the one with the <strong>ID</strong> that contains it.</li>
+<li>Provide a <code>Service account name</code> and click <strong>Create</strong></li>
+<li>Click <strong>Select a role</strong>, then find and select <strong>Service Account User</strong>, and proceed</li>
+<li>Click the <strong>Done</strong> button</li>
+<li>Click on the <strong>Actions</strong> vertical three-dot icon of the service account you just created</li>
+<li>Select <strong>Manage keys</strong> on the menu</li>
+<li>Click <strong>ADD KEY</strong> -&gt; <strong>Create New Key</strong></li>
+<li>Make sure <strong>JSON</strong> is selected as the <code>Key type</code>, and click <strong>CREATE</strong></li>
+<li>Save the file on your computer when prompted and remember where it was saved to</li>
+</ol>
+</li>
+<li>Return to the <strong>Google Play Console</strong> tab, and click <strong>DONE</strong> to close the dialog</li>
+<li>Click on <strong>Grant Access</strong> for the newly added service account at the bottom of the screen (you may need to click <strong>Refresh service accounts</strong> before it shows up)</li>
+<li>Choose the permissions you'd like this account to have. We recommend <strong>Admin (all permissions)</strong>, but you may want to manually select all checkboxes and leave out some of the <strong>Releases</strong> permissions such as <strong>Release to production</strong></li>
+<li>Click <strong>Invite user</strong> to finish</li>
+</ol>
+<p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key. Once that works, add the path to the JSON file to your <a href="/advanced/Appfile">Appfile</a>:</p>
+<pre><code class="language-ruby">json_key_file(&quot;path/to/your/play-store-credentials.json&quot;)
+package_name(&quot;my.package.name&quot;)
+</code></pre>
+<p>The path is relative to where you normally run <code>fastlane</code>.</p>
+<h3 id="migrating-google-credential-format-from-p12-key-file-to-json">Migrating Google credential format (from .p12 key file to .json)</h3>
+<p>In previous versions of supply, credentials to your Play Console were stored as <code>.p12</code> files. Since version 0.4.0, supply now supports the recommended <code>.json</code> key Service Account credential files. If you wish to upgrade:</p>
+<ul>
+<li>follow the <a href="#setup">Setup</a> procedure once again to make sure you create the appropriate JSON file</li>
+<li>update your fastlane configuration or your command line invocation to use the appropriate argument if necessary.
+  Note that you don't need to take note nor pass the <code>issuer</code> argument anymore.</li>
+</ul>
+<p>The previous p12 configuration is still currently supported.</p>
+<h2 id="quick-start">Quick Start</h2>
+<blockquote>
+<p>Before using <em>supply</em> to connect to Google Play Store, you'll need to set up your app manually first by uploading at least one build to Google Play Store. See <a href="https://github.com/fastlane/fastlane/issues/14686">fastlane/fastlane#14686</a> for more info.</p>
+</blockquote>
+<ul>
+<li><code>cd [your_project_folder]</code></li>
+<li><code>fastlane supply init</code></li>
+<li>Make changes to the downloaded metadata, add images, screenshots and/or an APK</li>
+<li><code>fastlane supply</code></li>
+</ul>
+<h2 id="available-commands">Available Commands</h2>
+<ul>
+<li><code>fastlane supply</code>: update an app with metadata, a build, images and screenshots</li>
+<li><code>fastlane supply init</code>: download metadata for an existing app to a local directory</li>
+<li><code>fastlane action supply</code>: show information on available commands, arguments and environment variables</li>
+</ul>
+<p>You can either run <em>supply</em> on its own and use it interactively, or you can pass arguments or specify environment variables for all the options to skip the questions.</p>
+<h2 id="uploading-an-apk">Uploading an APK</h2>
+<p>To upload a new binary to Google Play, simply run</p>
+<pre><code class="language-no-highlight">fastlane supply --apk path/to/app.apk
+</code></pre>
+<p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
+<p>To gradually roll out a new build use</p>
+<pre><code class="language-no-highlight">fastlane supply --apk path/app.apk --track beta --rollout 0.5
+</code></pre>
+<p>To set the in-app update priority level for a release, set a valid update priority (an integer value from 0 to 5) using option <code>in_app_update_priority</code></p>
+<pre><code class="language-no-highlight">fastlane supply --apk path/app.apk --track beta --in_app_update_priority 3
+</code></pre>
+<h3 id="expansion-files-obb">Expansion files (<code>.obb</code>)</h3>
+<p>Expansion files (obbs) found under the same directory as your APK will also be uploaded together with your APK as long as:</p>
+<ul>
+<li>they are identified as type 'main' or 'patch' (by containing 'main' or 'patch' in their file name)</li>
+<li>you have at most one of each type</li>
+</ul>
+<p>If you only want to update the APK, but keep the expansion files from the previous version on Google Play use</p>
+<pre><code class="language-no-highlight">fastlane supply --apk path/app.apk --obb_main_references_version 21 --obb_main_file_size 666154207
+</code></pre>
+<p>or</p>
+<pre><code class="language-no-highlight">fastlane supply --apk path/app.apk --obb_patch_references_version 21 --obb_patch_file_size 666154207
+</code></pre>
+<h2 id="uploading-an-aab">Uploading an AAB</h2>
+<p>To upload a new <a href="https://developer.android.com/guide/app-bundle/">Android application bundle</a> to Google Play, simply run</p>
+<pre><code class="language-no-highlight">fastlane supply --aab path/to/app.aab
+</code></pre>
+<p>This will also upload app metadata if you previously ran <code>fastlane supply init</code>.</p>
+<p>To gradually roll out a new build use</p>
+<pre><code class="language-no-highlight">fastlane supply --aab path/app.aab --track beta --rollout 0.5
+</code></pre>
+<p>To set the in-app update priority level for a release, set a valid update priority (an integer value from 0 to 5) using option <code>in_app_update_priority</code></p>
+<pre><code class="language-no-highlight">fastlane supply --aab path/app.aab --track beta --in_app_update_priority 3
+</code></pre>
+<h2 id="images-and-screenshots">Images and Screenshots</h2>
+<p>After running <code>fastlane supply init</code>, you will have a metadata directory. This directory contains one or more locale directories (e.g. en-US, en-GB, etc.), and inside this directory are text files such as <code>title.txt</code> and <code>short_description.txt</code>.</p>
+<p>Inside of a given locale directory is a folder called <code>images</code>. Here you can supply images with the following file names (extension can be png, jpg or jpeg):</p>
+<ul>
+<li><code>featureGraphic</code></li>
+<li><code>icon</code></li>
+<li><code>promoGraphic</code></li>
+<li><code>tvBanner</code></li>
+</ul>
+<p>You can also supply screenshots by creating directories within the <code>images</code> directory with the following names, containing PNGs or JPEGs:</p>
+<ul>
+<li><code>phoneScreenshots/</code></li>
+<li><code>sevenInchScreenshots/</code> (7-inch tablets)</li>
+<li><code>tenInchScreenshots/</code> (10-inch tablets)</li>
+<li><code>tvScreenshots/</code></li>
+<li><code>wearScreenshots/</code></li>
+</ul>
+<p>You may name images anything you like, but screenshots will appear in the Play Store in alphanumerical filename order.
+Note that these will replace the current images and screenshots on the play store listing, not add to them.</p>
+<h2 id="changelogs-whats-new">Changelogs (What's new)</h2>
+<p>You can add changelog files under the <code>changelogs/</code> directory for each locale. The filename should exactly match the <a href="https://developer.android.com/studio/publish/versioning#appversioning">version code</a> of the APK that it represents. You can also provide default notes that will be used if no files match the version code by adding a <code>default.txt</code> file. <code>fastlane supply init</code> will populate changelog files from existing data on Google Play if no <code>metadata/</code> directory exists when it is run.</p>
+<pre><code class="language-no-highlight">└── fastlane
+    └── metadata
+        └── android
+            ├── en-US
+            │   └── changelogs
+            │       ├── default.txt
+            │       ├── 100000.txt
+            │       └── 100100.txt
+            └── fr-FR
+                └── changelogs
+                    ├── default.txt
+                    └── 100100.txt
+</code></pre>
+<h2 id="track-promotion">Track Promotion</h2>
+<p>A common Play publishing scenario might involve uploading an APK version to a test track, testing it, and finally promoting that version to production.</p>
+<p>This can be done using the <code>--track_promote_to</code> parameter. The <code>--track_promote_to</code> parameter works with the <code>--track</code> parameter to command the Play API to promote existing Play track APK version(s) (those active on the track identified by the <code>--track</code> param value) to a new track (<code>--track_promote_to</code> value).</p>
+<h2 id="retrieve-track-release-names-version-codes">Retrieve Track Release Names &amp; Version Codes</h2>
+<p>Before performing a new APK upload you may want to check existing track version codes or release names, or you may simply want to provide an informational lane that displays the currently promoted version codes or release name for the production track. You can use the <code>google_play_track_version_codes</code> action to retrieve existing version codes for a package and track. You can use the <code>google_play_track_release_names</code> action to retrieve existing release names for a package and track.
+For more information, see the <code>fastlane action google_play_track_version_codes</code> and <code>fastlane action google_play_track_release_names</code> help output.</p>
+<h2 id="migration-from-androidpublisherv2-to-androidpublisherv3-in-fastlane-21350">Migration from AndroidPublisherV2 to AndroidPublisherV3 in <em>fastlane</em> 2.135.0</h2>
+<h3 id="new-options">New Options</h3>
+<ul>
+<li><code>:version_name</code><ul>
+<li>Used when uploading with <code>:apk_path</code>, <code>:apk_paths</code>, <code>:aab_path</code>, and <code>:aab_paths</code></li>
+<li>Can be any string such (example: "October Release" or "Awesome New Feature")</li>
+<li>Defaults to the version name in app/build.gradle or AndroidManifest.xml</li>
+</ul>
+</li>
+<li><code>:release_status</code><ul>
+<li>Used when uploading with <code>:apk_path</code>, <code>:apk_paths</code>, <code>:aab_path</code>, and <code>:aab_paths</code></li>
+<li>Can set as  "draft" to complete the release at some other time</li>
+<li>Defaults to "completed"</li>
+</ul>
+</li>
+<li><code>:version_code</code><ul>
+<li>Used for <code>:update_rollout</code>, <code>:track_promote_to</code>, and uploading of meta data and screenshots</li>
+</ul>
+</li>
+<li><code>:skip_upload_changelogs</code><ul>
+<li>Changelogs were previously included with the <code>:skip_upload_metadata</code> but is now its own option</li>
+</ul>
+</li>
+</ul>
+<h3 id="deprecated-options">Deprecated Options</h3>
+<ul>
+<li><code>:check_superseded_tracks</code><ul>
+<li>Google Play will automatically remove releases that are superseded now</li>
+</ul>
+</li>
+<li><code>:deactivate_on_promote</code><ul>
+<li>Google Play will automatically deactivate a release from its previous track on promote</li>
+</ul>
+</li>
+</ul>
+<p>:</p>
+<hr />
+
+<table>
+<thead>
+<tr>
+<th>supply</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>android</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-examples">2 Examples</h2>
+<pre><code class="language-ruby">upload_to_play_store
+</code></pre>
+<pre><code class="language-ruby">supply # alias for &quot;upload_to_play_store&quot;
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>package_name</code></td>
+<td>The package name of the application to use</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>version_name</code></td>
+<td>Version name (used when uploading new apks/aabs) - defaults to 'versionName' in build.gradle or AndroidManifest.xml</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>version_code</code></td>
+<td>Version code (used when updating rollout or promoting specific versions)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>release_status</code></td>
+<td>Release status (used when uploading new apks/aabs) - valid values are completed, draft, halted, inProgress</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>track</code></td>
+<td>The track of the application to use. The default available tracks are: production, beta, alpha, internal</td>
+<td><code>production</code></td>
+</tr>
+<tr>
+<td><code>rollout</code></td>
+<td>The percentage of the user fraction when uploading to the rollout track (setting to 1 will complete the rollout)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>metadata_path</code></td>
+<td>Path to the directory containing the metadata files</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td><strong>DEPRECATED!</strong> Use <code>--json_key</code> instead - The p12 File used to authenticate with Google</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>issuer</code></td>
+<td><strong>DEPRECATED!</strong> Use <code>--json_key</code> instead - The issuer of the p12 file (email address of the service account)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>json_key</code></td>
+<td>The path to a file containing service account JSON, used to authenticate with Google</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>json_key_data</code></td>
+<td>The raw service account JSON data used to authenticate with Google</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>apk</code></td>
+<td>Path to the APK file to upload</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>apk_paths</code></td>
+<td>An array of paths to APK files to upload</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aab</code></td>
+<td>Path to the AAB file to upload</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>aab_paths</code></td>
+<td>An array of paths to AAB files to upload</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_upload_apk</code></td>
+<td>Whether to skip uploading APK</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_upload_aab</code></td>
+<td>Whether to skip uploading AAB</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_upload_metadata</code></td>
+<td>Whether to skip uploading metadata, changelogs not included</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_upload_changelogs</code></td>
+<td>Whether to skip uploading changelogs</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_upload_images</code></td>
+<td>Whether to skip uploading images, screenshots not included</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_upload_screenshots</code></td>
+<td>Whether to skip uploading SCREENSHOTS</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>track_promote_to</code></td>
+<td>The track to promote to. The default available tracks are: production, beta, alpha, internal</td>
+<td></td>
+</tr>
+<tr>
+<td><code>validate_only</code></td>
+<td>Only validate changes with Google Play rather than actually publish</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>mapping</code></td>
+<td>Path to the mapping file to upload (mapping.txt or native-debug-symbols.zip alike)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mapping_paths</code></td>
+<td>An array of paths to mapping files to upload (mapping.txt or native-debug-symbols.zip alike)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>root_url</code></td>
+<td>Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/</td>
+<td></td>
+</tr>
+<tr>
+<td><code>check_superseded_tracks</code></td>
+<td><strong>DEPRECATED!</strong> Google Play does this automatically now - Check the other tracks for superseded versions and disable them</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>Timeout for read, open, and send (in seconds)</td>
+<td><code>300</code></td>
+</tr>
+<tr>
+<td><code>deactivate_on_promote</code></td>
+<td><strong>DEPRECATED!</strong> Google Play does this automatically now - When promoting to a new track, deactivate the binary in the origin track</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>version_codes_to_retain</code></td>
+<td>An array of version codes to retain when publishing a new APK</td>
+<td></td>
+</tr>
+<tr>
+<td><code>changes_not_sent_for_review</code></td>
+<td>Indicates that the changes in this edit will not be reviewed until they are explicitly sent for review from the Google Play Console UI</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>rescue_changes_not_sent_for_review</code></td>
+<td>Catches changes_not_sent_for_review errors when an edit is committed and retries with the configuration that the error message recommended</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>in_app_update_priority</code></td>
+<td>In-app update priority for all the newly added apks in the release. Can take values between [0,5]</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_main_references_version</code></td>
+<td>References version of 'main' expansion file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_main_file_size</code></td>
+<td>Size of 'main' expansion file in bytes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_patch_references_version</code></td>
+<td>References version of 'patch' expansion file</td>
+<td></td>
+</tr>
+<tr>
+<td><code>obb_patch_file_size</code></td>
+<td>Size of 'patch' expansion file in bytes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ack_bundle_installation_warning</code></td>
+<td>Must be set to true if the bundle installation may trigger a warning on user devices (e.g can only be downloaded over wifi). Typically this is required for bundles over 150MB</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
+<pre><code class="language-no-highlight">fastlane action supply
+</code></pre>
+<hr />
+
+<h2 id="cli">CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="language-no-highlight">fastlane run supply
+</code></pre>
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="language-no-highlight">fastlane run supply parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code">Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/supply.rb" target="_blank">view the source code on GitHub</a></p>
+<hr />
+
+<p><a href="/actions/"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <!-- <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script> -->
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

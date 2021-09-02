@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Frame screenshots - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="../../../css/sidenavv.css" rel="stylesheet" />
+  <link href="../../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../../css/code.css" rel="stylesheet" />
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../../css/fabric.css" rel="stylesheet" />
+  <link href="../../../css/sidenav.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Frame screenshots";
+    var mkdocs_page_input_path = "generated/actions/frame_screenshots.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">CI Integrations</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/nevercode/">NeverCode</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../best-practices/continuous-integration/travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../best-practices/keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Frame screenshots</li>
+
+
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions/frame_screenshots.md"
+            class="icon icon-github"> Edit on GitHub</a>
+        
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <!--
+This file is auto-generated and will be re-generated every time the docs are updated.
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/frame_screenshots.rb
+-->
+
+<h1 id="frame_screenshots">frame_screenshots</h1>
+<p>Adds device frames around all screenshots (via <em>frameit</em>)</p>
+<p align="center">
+  <img src="/img/actions/frameit.png" width="250">
+</p>
+
+<h6 id="easily-put-your-screenshots-into-the-right-device-frames">Easily put your screenshots into the right device frames</h6>
+<p><em>frameit</em> allows you to put a gorgeous device frame around your iOS, macOS and Android screenshots just by running one simple command. Use <em>frameit</em> to prepare perfect screenshots for the App Store, your website, QA or emails.</p>
+<hr />
+<p align="center">
+    <a href="#features">Features</a> &bull;
+    <a href="#usage">Usage</a> &bull;
+    <a href="#tips">Tips</a>
+</p>
+
+<hr />
+<h5 align="center"><em>frameit</em> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
+
+<h1 id="features">Features</h1>
+<h2 id="frame-screenshot">Frame screenshot</h2>
+<p>Put a gorgeous device frame around your iOS, macOS and Android screenshots just by running one simple command. Support for:</p>
+<ul>
+<li>iPhone, iPad and Mac</li>
+<li>Set of Android devices</li>
+<li>Portrait and Landscape modes</li>
+<li>Several device frame colors</li>
+</ul>
+<p>The complete and updated list of supported devices and colors can be found <a href="https://github.com/fastlane/frameit-frames/tree/gh-pages/latest">here</a></p>
+<p>Here is a nice gif, that shows <em>frameit</em> in action:</p>
+<p><img alt="img/actions/FrameitGit.gif" src="/img/actions/FrameitGit.gif?raw=1" /></p>
+<h2 id="advanced-features">Advanced Features</h2>
+<ul>
+<li>Put framed screenshot on colored background, define padding</li>
+<li>add text above or under framed screenshot<ul>
+<li>keyword + text</li>
+<li>choose text font and color</li>
+<li>multi line text</li>
+<li>"intelligent" positioning of text that always looks good(ish)</li>
+</ul>
+</li>
+</ul>
+<h2 id="results">Results</h2>
+<p><img alt="img/actions/ScreenshotsBig.png" src="/img/actions/ScreenshotsBig.png?raw=1" /></p>
+<hr />
+<p><img alt="img/actions/ScreenshotsOverview.png" src="/img/actions/ScreenshotsOverview.png?raw=1" /></p>
+<hr />
+<p><img alt="img/actions/MacExample.png" src="/img/actions/MacExample.png?raw=1" /></p>
+<h5 align="center">The <em>frameit</em> 2.0 update was kindly sponsored by <a href="https://mindnode.com/">MindNode</a>, seen in the screenshots above.</h5>
+
+<p>The first time that <em>frameit</em> is executed the frames will be downloaded automatically. Originally the frames are coming from <a href="http://facebook.design/devices">Facebook frameset</a> and they are kept on <a href="https://github.com/fastlane/frameit-frames">this repo</a>.</p>
+<p>More information about this process and how to update the frames can be found <a href="https://github.com/fastlane/fastlane/tree/master/frameit/frames_generator">here</a></p>
+<h1 id="usage">Usage</h1>
+<h2 id="basic-usage">Basic Usage</h2>
+<p>Why should you have to use Photoshop, just to add a frame around your screenshots?</p>
+<p>Just navigate to your folder of screenshots and use the following command (iOS and Mac OS are default platforms for backward compatibility):</p>
+<pre><code class="language-no-highlight">fastlane frameit
+</code></pre>
+<p>To frame Android screenshots:</p>
+<pre><code class="language-no-highlight">fastlane frameit android
+</code></pre>
+<p>To use the silver version of the frames:</p>
+<pre><code class="language-no-highlight">fastlane frameit silver
+</code></pre>
+<p>To download the latest frames</p>
+<pre><code class="language-no-highlight">fastlane frameit download_frames
+</code></pre>
+<p>Note: When using <em>frameit</em> without titles on top, the screenshots will have the full resolution, which means they can't be uploaded to the App Store directly. They are supposed to be used for websites, print media and emails. Check out the section below to use the screenshots for the App Store.</p>
+<h2 id="advanced-usage-optional">Advanced Usage (optional)</h2>
+<h3 id="text-and-background">Text and Background</h3>
+<p>With <em>frameit</em> it's possible to add a custom background and text below or above the framed screenshots in fonts and colors you define.</p>
+<p>A working example can be found in the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">fastlane examples</a> project.</p>
+<h3 id="framefilejson"><code>Framefile.json</code></h3>
+<p>The Framefile allows to define general and screenshot specific information.
+It has the following general JSON structure:</p>
+<pre><code class="language-json">{
+  &quot;device_frame_version&quot;: &quot;latest&quot;,
+  &quot;default&quot;: {
+    ...
+  },
+  &quot;data&quot;: [
+     ...
+  ]
+}
+</code></pre>
+<h3 id="general-parameters">General parameters</h3>
+<p>The general parameters are defined in the <code>default</code> key and can be:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background</code></td>
+<td>The background that should be used for the framed screenshot. Specify the (relative) path to the image file (e.g. <code>*.jpg</code>). This parameter is mandatory.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>keyword</code></td>
+<td>An object that contains up to 3 keys to describe the optional keyword. See <a href="#keyword-and-title-parameters">table</a> below.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>An object that contains up to 3 keys to describe the mandatory title. See <a href="#keyword-and-title-parameters">table</a> below.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>stack_title</code></td>
+<td>Specifies whether <em>frameit</em> should display the keyword above the title when both keyword and title are defined. If it is false, the title and keyword will be displayed side by side when both keyword and title are defined.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>title_below_image</code></td>
+<td>Specifies whether <em>frameit</em> should place the title and optional keyword below the device frame. If it is false, it will be placed above the device frame.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>show_complete_frame</code></td>
+<td>Specifies whether <em>frameit</em> should shrink the device frame so that it is completely shown in the framed screenshot. If it is false, clipping of the device frame might occur at the bottom (when <code>title_below_image</code> is <code>false</code>) or top (when <code>title_below_image</code> is <code>true</code>) of the framed screenshot.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>padding</code></td>
+<td>The content of the framed screenshot will be resized to match the specified <code>padding</code> around all edges. The vertical padding is also applied between the text and the top or bottom (depending on <code>title_below_image</code>) of the device frame. <p> There are 3 different options of specifying the padding: <p> 1. Default: An integer value that defines both horizontal and vertical padding in pixels. <br> 2. A string that defines (different) padding values in pixels for horizontal and vertical padding. The syntax is <code>"&lt;horizontal&gt;x&lt;vertical&gt;"</code>, e.g. <code>"30x60"</code>. <br> 3. A string that defines (different) padding values in percentage for horizontal and vertical padding. The syntax is <code>"&lt;horizontal&gt;%x&lt;vertical&gt;%"</code>, e.g. <code>"5%x10%"</code>. <br> <strong>Note:</strong> The percentage is calculated from the smallest image dimension (height or width). <p> A combination of option 2 and 3 is possible, e.g. <code>"5%x40"</code>.</td>
+<td><code>50</code></td>
+</tr>
+<tr>
+<td><code>interline_spacing</code></td>
+<td>Specifies whether <em>frameit</em> should add or subtract this many pixels between the individual lines of text. This only applies to a multi-line <code>title</code> and/or <code>keyword</code> to expand or squash together the individual lines of text.</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>font_scale_factor</code></td>
+<td>Specifies whether <em>frameit</em> should increase or decrease the font size of the text. Is ignored for <code>keyword</code> or <code>title</code>, if <code>font_size</code> is specified.</td>
+<td><code>0.1</code></td>
+</tr>
+<tr>
+<td><code>frame</code></td>
+<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK</code>, <code>WHITE</code>, <code>GOLD</code> and <code>ROSE_GOLD</code>)</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>title_min_height</code></td>
+<td>Specifies a height always reserved for the title. Value can be a percentage of the height or an absolute value. The device will be placed below (or above) this area. Convenient to ensure the device top (or bottom) will be consistently placed at the same height on the different screenshots.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>use_platform</code></td>
+<td>Overrides the platform used for the screenshot. Valid values are <code>IOS</code>, <code>ANDROID</code> and <code>ANY</code>.</td>
+<td><code>IOS</code></td>
+</tr>
+<tr>
+<td><code>force_device_type</code></td>
+<td>Forces a specific device. Valid values are: Huawei P8, Motorola Moto E, Motorola Moto G, Nexus 4, Nexus 5X, Nexus 6P, Nexus 9, Samsung Galaxy Grand Prime, Samsung Galaxy Note 5, Samsung Galaxy S Duos, Samsung Galaxy S3, Samsung Galaxy S5, Samsung Galaxy S7, Samsung Galaxy S8, Samsung Galaxy S9, iPhone 5s, iPhone 5c, iPhone SE, iPhone 6s, iPhone 6s Plus, iPhone 7, iPhone 7 Plus, iPhone 8, iPhone 8 Plus, iPhone X, iPhone XS, iPhone XR, iPhone XS Max, iPad Air 2, iPad Mini 4, iPad Pro, MacBook, Google Pixel 3, Google Pixel 3 XL, HTC One A9, HTC One M8</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="specific-parameters">Specific parameters</h3>
+<p>The screenshot specific parameters are related to the keyword and title texts.
+These are defined in the <code>data</code> key. This is an array with the following keys for each screenshot:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>filter</code></td>
+<td>This is mandatory to link the individual configuration to the screenshot, based on part of the file name. <p>Example:<br>If a screenshot is named <code>iPhone 8-Brainstorming.png</code> you can use value <code>Brainstorming</code> for <code>filter</code>.  If there are more than one <code>filter</code> matching an entry, they will all be applied in order (which means that the last one has the highest precedence). All other keys from that array element will only be applied on this specific screenshot.</td>
+</tr>
+<tr>
+<td><code>keyword</code></td>
+<td>Similar use as in <code>default</code>, except that parameter <code>text</code> can be used here because it is screenshot specific.</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>Similar use as in <code>default</code>, except that parameter <code>text</code> can be used here because it is screenshot specific.</td>
+</tr>
+<tr>
+<td><code>frame</code></td>
+<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK</code>, <code>WHITE</code>, <code>GOLD</code> and <code>ROSE_GOLD</code>)</td>
+</tr>
+<tr>
+<td><code>use_platform</code></td>
+<td>Overrides the platform used for the screenshot. Valid values are <code>IOS</code>, <code>ANDROID</code> and <code>ANY</code>.</td>
+</tr>
+<tr>
+<td><code>force_device_type</code></td>
+<td>Forces a specific device. Valid values are the same as for the general parameter.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="framefile-keyword-and-title-parameters"><a name="keyword-and-title-parameters"></a>Framefile <code>keyword</code> and <code>title</code> parameters</h3>
+<p>The <code>keyword</code> and <code>title</code> parameters are both used in <code>default</code> and <code>data</code>. They both consist of the following optional keys:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color</code></td>
+<td>The font color for the text. Specify a HEX/HTML color code.</td>
+<td><code>#000000</code> (black)</td>
+</tr>
+<tr>
+<td><code>font</code></td>
+<td>The font family for the text. Specify the (relative) path to the font file (e.g. an OpenType Font).</td>
+<td>The default <code>imagemagick</code> font, which is system dependent.</td>
+</tr>
+<tr>
+<td><code>font_size</code></td>
+<td>The font size for the text specified in points. If not specified or <code>0</code>, font will be scaled automatically to fit the available space. <em>frameit</em> still shrinks the text, if it would not fit.</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>font_weight</code></td>
+<td>The <a href="https://imagemagick.org/script/command-line-options.php#weight">font weight for the text</a>. Specify an integer value (e.g. 900).</td>
+<td>NA</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>The text that should be used for the <code>keyword</code> or <code>title</code>. <p> Note: If you want to use localised text, use <a href="#strings-files"><code>.strings</code> files</a>.</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example</h3>
+<pre><code class="language-json">{
+  &quot;device_frame_version&quot;: &quot;latest&quot;,
+  &quot;default&quot;: {
+    &quot;keyword&quot;: {
+      &quot;font&quot;: &quot;./fonts/MyFont-Rg.otf&quot;
+    },
+    &quot;title&quot;: {
+      &quot;font&quot;: &quot;./fonts/MyFont-Th.otf&quot;,
+      &quot;font_size&quot;: 128,
+      &quot;color&quot;: &quot;#545454&quot;
+    },
+    &quot;background&quot;: &quot;./background.jpg&quot;,
+    &quot;padding&quot;: 50,
+    &quot;show_complete_frame&quot;: false,
+    &quot;stack_title&quot; : false,
+    &quot;title_below_image&quot;: true,
+    &quot;frame&quot;: &quot;WHITE&quot;,
+    &quot;use_platform&quot;: &quot;IOS&quot;
+  },
+
+  &quot;data&quot;: [
+    {
+      &quot;filter&quot;: &quot;Brainstorming&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#d21559&quot;
+      }
+    },
+    {
+      &quot;filter&quot;: &quot;Organizing&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#feb909&quot;
+      },
+      &quot;frame&quot;: &quot;ROSE_GOLD&quot;
+    },
+    {
+      &quot;filter&quot;: &quot;Sharing&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#aa4dbc&quot;
+      }
+    },
+    {
+      &quot;filter&quot;: &quot;Styling&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#31bb48&quot;
+      }
+    },
+    {
+      &quot;filter&quot;: &quot;Android&quot;,
+      &quot;use_platform&quot;: &quot;ANDROID&quot;
+    }
+  ]
+}
+</code></pre>
+<p>You can find a more complex <a href="https://github.com/fastlane/examples/blob/master/MindNode/screenshots/Framefile.json">configuration</a> to also support Chinese, Japanese and Korean languages.</p>
+<p>The <code>Framefile.json</code> should be in the <code>screenshots</code> folder, as seen in the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">example</a>.</p>
+<h3 id="strings-files"><code>.strings</code> files</h3>
+<p>To define the title and optionally the keyword, put two <code>.strings</code> files into the language folder (e.g. <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots/en-US">en-US in the example project</a>)</p>
+<p>The <code>keyword.strings</code> and <code>title.strings</code> are standard <code>.strings</code> file you already use for your iOS apps, making it easy to use your existing translation service to get localized titles.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>These <code>.strings</code> files <strong>MUST</strong> be utf-8 (UTF-8) or utf-16 encoded (UTF-16 BE with BOM). They also must begin with an empty line. If you are having trouble see <a href="https://github.com/fastlane/fastlane/issues/1740">issue #1740</a></li>
+<li>You <strong>MUST</strong> provide a background if you want titles. <em>frameit</em> will not add the titles if a background is not specified.</li>
+</ul>
+<h3 id="screenshot-orientation">Screenshot orientation</h3>
+<p>By default <em>frameit</em> adds a frame to your screenshot based on an orientation you took it. For a portrait (vertical orientation) it is going to add portrait frame and for a landscape (horizontal orientation) - landscape left (= <a href="https://developer.apple.com/documentation/uikit/uiinterfaceorientation/landscapeleft">Home button on the left side</a>).</p>
+<p>One way to override the default behavior is editing the file name by adding <code>force_landscaperight</code> to the end.</p>
+<h3 id="force_orientation_block"><code>force_orientation_block</code></h3>
+<p>If the default behavior doesn't fit your needs and you don't want or can't rename your screenshots, you can customize <em>frameit</em>'s orientation behavior by setting a <code>force_orientation_block</code> parameter. The valid values are: <code>:landscape_left</code> (home button on the left side), <code>:landscape_right</code> (home button on the right side), <code>:portrait</code> (home button on the bottom), <code>nil</code> (home button on the right side).</p>
+<h3 id="examples">Examples</h3>
+<pre><code class="language-ruby"># It matches the filename to the framed device orientation
+frameit(
+  path: &quot;./fastlane/screenshots&quot;,
+  force_orientation_block: proc do |filename|
+    case filename
+      when &quot;iPad Pro (12.9-inch)-01LoginScreen&quot;
+        :landscape_right
+      when &quot;iPhone 6 Plus-01LoginScreen&quot;
+        :portrait
+      # and so on
+    end
+  end
+)
+</code></pre>
+<pre><code class="language-ruby"># It frames the screenshots in landscape right whenever the filename contains `landscape` word
+frameit(
+  silver: true,
+  path: &quot;./fastlane/screenshots&quot;,
+  force_orientation_block: proc do |filename|
+    f = filename.downcase
+    if f.include?(&quot;landscape&quot;)
+      :landscape_right
+    end
+  end
+)
+</code></pre>
+<h1 id="mac">Mac</h1>
+<p>With <em>frameit</em> it's possible to also frame macOS Application screenshots. You have to provide the following:</p>
+<ul>
+<li>A (relative) path to a <code>background</code> image file, which should contain both the background and the Mac.</li>
+<li>The <code>offset</code> information so <em>frameit</em> knows where to position your screenshot on the <code>background</code>:<ul>
+<li><code>offset</code> : A string that specifies the horizontal and vertical offset in pixels, with respect to the top left corner of the <code>background</code> image. The syntax is <code>"+&lt;horizontal&gt;+&lt;vertical&gt;"</code>, e.g. <code>"+200+150"</code>.</li>
+<li><code>titleHeight</code> : The height in pixels that should be used for the title.</li>
+</ul>
+</li>
+</ul>
+<h2 id="example_1">Example</h2>
+<pre><code class="language-json">{
+  &quot;default&quot;: {
+    &quot;title&quot;: {
+      &quot;color&quot;: &quot;#545454&quot;
+    },
+    &quot;background&quot;: &quot;Mac.jpg&quot;,
+    &quot;offset&quot;: {
+      &quot;offset&quot;: &quot;+676+479&quot;,
+      &quot;titleHeight&quot;: 320
+    }
+  },
+  &quot;data&quot;: [
+    {
+      &quot;filter&quot;: &quot;Brainstorming&quot;,
+      &quot;keyword&quot;: {
+        &quot;color&quot;: &quot;#d21559&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>Check out the <a href="https://github.com/fastlane/examples/tree/master/MindNode/screenshots">MindNode example project</a>.</p>
+<h1 id="tips">Tips</h1>
+<h2 id="generate-localized-screenshots">Generate localized screenshots</h2>
+<p>Check out <a href="https://docs.fastlane.tools/actions/snapshot/"><em>snapshot</em></a> to automatically generate screenshots using <code>UI Automation</code>.</p>
+<h2 id="resume-framing">Resume framing</h2>
+<p>Framing screenshots is a slow operation. In case you need to resume framing, or just frame a couple updated screenshots again, you can rely on the <code>--resume</code> flag. Only screenshots which have not been framed yet – or for which there isn't an up-to-date framed image – will be framed. This feature uses the file modification dates and will reframe screenshots if the screenshot is newer than the framed file.</p>
+<h2 id="upload-screenshots">Upload screenshots</h2>
+<p>Use <a href="https://docs.fastlane.tools/actions/deliver/"><em>deliver</em></a> to upload iOS screenshots to App Store Connect, or <a href="https://docs.fastlane.tools/actions/supply/"><em>supply</em></a> to upload Android screenshots to Play Store completely automatically 🚀</p>
+<h2 id="use-a-clean-status-bar">Use a clean status bar</h2>
+<p>You can set <code>override_status_bar</code> to <code>true</code> in snapshot to set the status bar to Tuesday January 9th at 9:41AM with full battery and reception. If you need more granular customization, to set a Carrier name for example, also set <code>override_status_bar_arguments</code> to the specific arguments to be passed to the <code>xcrun simctl status_bar override</code> command. Run <code>xcrun simctl status_bar --help</code> to see the options available.</p>
+<h3 id="examples_1">Examples</h3>
+<pre><code class="language-ruby"># Sets the time to 9:41AM with full battery and reception, with the default carrier name: Carrier
+capture_ios_screenshots(
+    override_status_bar: true
+)
+</code></pre>
+<pre><code class="language-ruby"># Set the time to 9:41AM, battery at 75% and charging, on the TELUS LTE network
+capture_ios_screenshots(
+    override_status_bar: true,
+    override_status_bar_arguments: &quot;--time 9:41 --dataNetwork lte --cellularMode active --cellularBars 4 --batteryState charging --batteryLevel 75 --operatorName TELUS&quot;
+)
+</code></pre>
+<h2 id="gray-artifacts-around-text">Gray artifacts around text</h2>
+<p>If you run into any quality issues, like having a border around the font, it usually helps to just re-install <code>imagemagick</code>. You can do so by running</p>
+<pre><code class="language-sh">brew uninstall imagemagick
+brew install imagemagick
+</code></pre>
+<h2 id="uninstall">Uninstall</h2>
+<ul>
+<li><code>gem uninstall fastlane</code></li>
+<li><code>rm -rf ~/.frameit</code></li>
+</ul>
+<hr />
+
+<table>
+<thead>
+<tr>
+<th>frame_screenshots</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supported platforms</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td>Author</td>
+<td>@KrauseFx</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-examples">6 Examples</h2>
+<pre><code class="language-ruby">frame_screenshots
+</code></pre>
+<pre><code class="language-ruby">frameit # alias for &quot;frame_screenshots&quot;
+</code></pre>
+<pre><code class="language-ruby">frame_screenshots(use_platform: &quot;ANDROID&quot;)
+</code></pre>
+<pre><code class="language-ruby">frame_screenshots(silver: true)
+</code></pre>
+<pre><code class="language-ruby">frame_screenshots(path: &quot;/screenshots&quot;)
+</code></pre>
+<pre><code class="language-ruby">frame_screenshots(rose_gold: true)
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>white</code></td>
+<td>Use white device frames</td>
+<td></td>
+</tr>
+<tr>
+<td><code>silver</code></td>
+<td>Use white device frames. Alias for :white</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rose_gold</code></td>
+<td>Use rose gold device frames. Alias for :rose_gold</td>
+<td></td>
+</tr>
+<tr>
+<td><code>gold</code></td>
+<td>Use gold device frames. Alias for :gold</td>
+<td></td>
+</tr>
+<tr>
+<td><code>force_device_type</code></td>
+<td>Forces a given device type, useful for Mac screenshots, as their sizes vary</td>
+<td></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphone5s</code></td>
+<td>Use iPhone 5s instead of iPhone SE frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphone6s</code></td>
+<td>Use iPhone 6s frames instead of iPhone 7 frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphone7</code></td>
+<td>Use iPhone 7 frames instead of iPhone 8 frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphonex</code></td>
+<td>Use iPhone X instead of iPhone XS frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphonexr</code></td>
+<td>Use iPhone XR instead of iPhone 11 frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphonexs</code></td>
+<td>Use iPhone XS instead of iPhone 11 Pro frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_legacy_iphonexsmax</code></td>
+<td>Use iPhone XS Max instead of iPhone 11 Pro Max frames</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>force_orientation_block</code></td>
+<td>[Advanced] A block to customize your screenshots' device orientation</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>debug_mode</code></td>
+<td>Output debug information in framed screenshots</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>resume</code></td>
+<td>Resume frameit instead of reprocessing all screenshots</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>use_platform</code></td>
+<td>Choose a platform, the valid options are IOS, ANDROID and ANY (default is either general platform defined in the fastfile or IOS to ensure backward compatibility)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>The path to the directory containing the screenshots</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+</tbody>
+</table>
+<p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+<p>To show the documentation in your terminal, run</p>
+<pre><code class="language-no-highlight">fastlane action frame_screenshots
+</code></pre>
+<hr />
+
+<h2 id="cli">CLI</h2>
+<p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
+<pre><code class="language-no-highlight">fastlane run frame_screenshots
+</code></pre>
+<p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
+<pre><code class="language-no-highlight">fastlane run frame_screenshots parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+</code></pre>
+<p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
+<p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
+<hr />
+
+<h2 id="source-code">Source code</h2>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/frame_screenshots.rb" target="_blank">view the source code on GitHub</a></p>
+<hr />
+
+<p><a href="/actions/"><b>Back to actions</b></a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = '_blank';
+    } 
+  }
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <!-- <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script> -->
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
