@@ -921,7 +921,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>force_for_new_devices</code></td>
-<td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile type 'appstore'</td>
+<td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id'</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1000,7 +1000,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>SharedValues::SIGH_PROFILE_TYPE</code></td>
-<td>The profile type, can be appstore, adhoc, development, enterprise</td>
+<td>The profile type, can be app-store, ad-hoc, development, enterprise, can be used in <code>build_app</code> as a default value for <code>export_method</code></td>
 </tr>
 </tbody>
 </table>
