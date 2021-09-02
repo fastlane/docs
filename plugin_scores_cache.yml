@@ -5447,7 +5447,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 751
+  :age_in_days: 1206
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5456,12 +5456,12 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details:
-  :sha: af4ed54b84edbf01d15500e21fc5a52b0c31e3909f3d2227610719bdabf41419
+  :sha: 84f78f3d0160dca9d98d58a66e8c9713eb1076490869da08f5333b75039be1ae
   :github_stars: 5
-  :github_subscribers: 4
-  :github_issues: 1
+  :github_subscribers: 5
+  :github_issues: 0
   :github_forks: 3
-  :github_contributors: 0
+  :github_contributors: 2
 fastlane-plugin-android_change_package_name:
   :initial_commit: 2018-09-28
   :age_in_days: 38
@@ -7861,9 +7861,9 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 655
+  :age_in_days: 763
   :readme_score: 100
-  :tests: 91
+  :tests: 104
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution_login
@@ -7871,6 +7871,11 @@ fastlane-plugin-firebase_app_distribution:
     description: Authenticate with Firebase App Distribution using a Google account.
     details: See https://firebase.google.com/docs/app-distribution/ios/distribute-fastlane
       for more information.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_app_distribution_add_testers
+    category:
+    description: Create testers in bulk from a comma-separated list or a file
+    details: Create testers in bulk from a comma-separated list or a file
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution_get_udids
     category:
@@ -7885,12 +7890,17 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Release your beta builds with Firebase App Distribution
     details: Release your beta builds with Firebase App Distribution
-  :sha: 617debd7eb2eee677bf2f910590b6e61f4826dcfc832e8b01eb9d146f2ba0289
-  :github_stars: 86
-  :github_subscribers: 10
-  :github_issues: 12
-  :github_forks: 10
-  :github_contributors: 13
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_app_distribution_remove_testers
+    category:
+    description: Delete testers in bulk from a comma-separated list or a file
+    details: Delete testers in bulk from a comma-separated list or a file
+  :sha: 6884fb069c2585370e68bcd3603a3fcd1e1e14b87f15a8881f6715828ebcd594
+  :github_stars: 97
+  :github_subscribers: 12
+  :github_issues: 13
+  :github_forks: 12
+  :github_contributors: 14
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
   :age_in_days: 49
@@ -10847,3 +10857,163 @@ fastlane-plugin-google_cloud_storage_update:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-npm:
+  :initial_commit: 2021-08-25
+  :age_in_days: 8
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: npm_test
+    category:
+    description: A very simple plugin to run npm scripts
+    details: A very simple plugin to run npm scripts
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: npm_run
+    category:
+    description: A very simple plugin to run npm scripts
+    details: A very simple plugin to run npm scripts
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: npm_post_install
+    category:
+    description: A very simple plugin to run npm scripts
+    details: A very simple plugin to run npm scripts
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: npm_install
+    category:
+    description: A very simple plugin to run npm scripts
+    details: A very simple plugin to run npm scripts
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upgrade_package_json_version
+    category:
+    description: A very simple plugin to run npm scripts
+    details: A very simple plugin to run npm scripts
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: npm_lint
+    category:
+    description: Runs lint script
+    details: A very simple plugin to run npm scripts
+  :sha: 6aa3aac0a280ed87a2c627f13e28844c07fd3dd8507e29bf1a34554f8816e5b9
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-jira_issues_release_notes:
+  :initial_commit: 2021-08-23
+  :age_in_days: 10
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_release_changelog
+    category:
+    description: It generates a release note based on the issues keys and descriptions
+      found in the commits
+    details: It generates a release note based on the issues keys and descriptions
+      found in the commits
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_comment
+    category:
+    description: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+    details: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_versions
+    category:
+    description: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+    details: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_issues_keys_from_commits
+    category:
+    description: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+    details: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_feature_validation
+    category:
+    description: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+    details: It generates a release note based on the issues keys found in branch
+      name and descriptions found in the commits
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: jira_release_validation
+    category:
+    description: It generates a release note based on the issues keys and descriptions
+      found in the commits
+    details: It generates a release note based on the issues keys and descriptions
+      found in the commits
+  :sha: 78dab27dcd338c38c11119c999836fe12a591ca5486566194225edbb454cde92
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-flutter_build_increment:
+  :initial_commit: 2021-08-31
+  :age_in_days: 2
+  :readme_score: 0
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_build_increment
+    category:
+    description: Increments pubspec.yaml build version number i.e. 1.0.0+1 to 1.0.0+2
+    details: Increments pubspec.yaml build version number i.e. 1.0.0+1 to 1.0.0+2
+  :sha: 3d5ab23d1025c92f1c6b803ca5f293120a287828f52840abd4982c39cce4d405
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-gitlab_tag_release:
+  :initial_commit: 2021-08-27
+  :age_in_days: 6
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_get_release
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_create_release
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_collect_release_evidence
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_list_releases
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_delete_tag
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_update_release
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gitlab_delete_release
+    category:
+    description:
+    details:
+  :sha: 89100305f125edefbb9cf13166fc20b9aae556fecc14c11a1e12f43ce43b6a57
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
