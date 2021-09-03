@@ -3,11 +3,7 @@ opt_out_usage
 
 lane :test do |options|
   Dir.chdir("..") do
-    if options[:skip_building]
-      sh("python hooks.py")
-    else
-      build_site
-    end
+    build_site unless options[:skip_building]
     ensure_filenames
     ensure_redirects
     ensure_image_assets

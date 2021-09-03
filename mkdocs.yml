@@ -19,11 +19,6 @@ markdown_extensions:
 - mdx_truly_sane_lists
 - toc:
     toc_depth: 2
-plugins:
-- search
-- mkdocs-simple-hooks:
-    hooks:
-      on_pre_build: hooks:copy_generated_files
 docs_dir: docs
 extra_css:
 - "./css/sidenavv.css"
@@ -54,7 +49,7 @@ nav:
     - Flutter: getting-started/cross-platform/flutter.md
     - NativeScript: getting-started/cross-platform/nativescript.md
 - Actions:
-  - Available Actions: actions.md
+  - Available Actions: generated/actions.md
   - Create Your Own Action: create-action.md
 - _Actions:
   - adb: generated/actions/adb.md
