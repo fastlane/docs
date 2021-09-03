@@ -10901,7 +10901,7 @@ fastlane-plugin-npm:
   :github_contributors: 1
 fastlane-plugin-jira_issues_release_notes:
   :initial_commit: 2021-08-23
-  :age_in_days: 10
+  :age_in_days: 11
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10947,12 +10947,12 @@ fastlane-plugin-jira_issues_release_notes:
       found in the commits
     details: It generates a release note based on the issues keys and descriptions
       found in the commits
-  :sha: 78dab27dcd338c38c11119c999836fe12a591ca5486566194225edbb454cde92
+  :sha: c31931ed7f97129d59a2619b01f07e2d82ab98c768a3b67c58910f3adaa55fef
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-flutter_build_increment:
   :initial_commit: 2021-08-31
   :age_in_days: 2
@@ -11017,3 +11017,20 @@ fastlane-plugin-gitlab_tag_release:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-pgyer_upload_v2:
+  :initial_commit: 2021-09-02
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: pgyer_upload_v2
+    category:
+    description: distribute app to pgyer_upload_v2 beta testing service
+    details: distribute app to pgyer_upload__v2 by API V2 beta testing service.
+  :sha: 02b72a3902951d3e457b2ecc265ee792fb24b55c999d868216ebe64184137d97
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2

@@ -20,10 +20,10 @@ markdown_extensions:
 - toc:
     toc_depth: 2
 plugins:
-  - search
-  - mkdocs-simple-hooks:
-      hooks:
-        on_pre_build: "hooks:copy_generated_files"
+- search
+- mkdocs-simple-hooks:
+    hooks:
+      on_pre_build: hooks:copy_generated_files
 docs_dir: docs
 extra_css:
 - "./css/sidenavv.css"
