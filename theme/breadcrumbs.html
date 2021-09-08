@@ -26,12 +26,15 @@
           {% endif %}
         {% endset %}
 
-        {% if "actions/" in page.file.src_path %}
-          <a href="{{ config.fastlane_repo_base_edit_uri }}/{{ page.file.src_path|string|safe|replace(".md", ".rb") }}" {{ icon_class_block }}>
-        {% elif page.edit_url %}
-          <a href="{{ page.edit_url }}" {{ icon_class_block }}>
-        {% endif %}
-        Edit on {{ config.repo_name }}</a>
+        {% set edit_docs_file_url %}
+          {%- if "actions/" in page.file.src_path %}
+            {{ config.fastlane_repo_base_edit_uri }}/{{ page.file.src_path|string|safe|replace(".md", ".rb") }}
+          {%- elif page.edit_url %}
+            {{ page.edit_url }}
+          {%- endif %}
+        {% endset %}
+
+        <a href="{{ edit_docs_file_url }}" {{ icon_class_block }}>Edit on {{ config.repo_name }}</a>
 
         {%- endblock %}
       </li>
