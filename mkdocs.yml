@@ -25,7 +25,8 @@ plugins:
       hooks:
         on_pre_build: "hooks:copy_generated_files"
 docs_dir: docs
-fastlane_repo_base_edit_uri: "https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane"
+extra:
+  fastlane_repo_base_edit_uri: "https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane"
 extra_css:
 - "./css/sidenavv.css"
 - "./css/fastlane.css"

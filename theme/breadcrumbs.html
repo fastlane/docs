@@ -28,7 +28,7 @@
 
         {% set edit_docs_file_url %}
           {%- if "actions/" in page.file.src_path %}
-            {{ config.fastlane_repo_base_edit_uri }}/{{ page.file.src_path|string|safe|replace(".md", ".rb") }}
+            {{ config.extra.fastlane_repo_base_edit_uri }}/{{ page.file.src_path|string|safe|replace(".md", ".rb") }}
           {%- elif page.edit_url %}
             {{ page.edit_url }}
           {%- endif %}
