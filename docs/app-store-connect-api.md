@@ -44,7 +44,7 @@ The API Key (located in the `.p8`) file, the key id, and the issuer id are neede
 
 **Note:** The App Store Connect API does not yet have the ability to determine if the team is App Store or Enterprise. The `app_store_connect_api_key` action and the _fastlane_ API Key JSON file format allow for an optional `in_house` key as a temporary workaround.
 
-### Using `app_store_connect_api_key`
+### Using `app_store_connect_api_key` action
 
 There is a new `app_store_connect_api_key` action which takes the key id, the issuer id, and API Key file (`.p8`) to generate a dictionary/hash used for JWT authorization. This action can be used in two ways:
 
@@ -83,13 +83,17 @@ lane :release do
 end
 ```
 
+### Using _fastlane_ API Key hash option
+
+Expected keys and values are described in _fastlane_ API Key JSON file format below
+
 ### Using _fastlane_ API Key JSON file 
 
 Below is an example of the _fastlane_ API Key JSON file format that tools and actions will also be able to read. The JSON file requires:
 
 - `key_id`
 - `issuer_id`
-- `key_content` (the content of the `.p8` file)
+- `key` (the content of the `.p8` file)
 
 The JSON file allows optional:
 
@@ -100,7 +104,7 @@ The JSON file allows optional:
 {
   "key_id": "D383SF739",
   "issuer_id": "6053b7fe-68a8-4acb-89be-165aa6465141",
-  "key_content": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----",
+  "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----",
   "duration": 1200, # optional (maximum 1200)
   "in_house": false # optional but may be required if using match/sigh
 }
