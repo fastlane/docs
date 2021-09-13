@@ -85,7 +85,10 @@ end
 
 ### Using _fastlane_ API Key hash option
 
-Expected keys and values are described in _fastlane_ API Key JSON file format below
+Keys and values that can be used in hash in `api_key` parameter in actions (e.g. `upload_to_testflight`) and tools (e.g. `cert`) are described in _fastlane_ API Key JSON file format below.
+The only difference when using hash is that you could use `filepath` instead of `key`.
+
+Please note that `key_content` and `key_filepath` described in `app_store_connect_api_key` action are invalid both in hash and in JSON file.
 
 ### Using _fastlane_ API Key JSON file 
 
