@@ -89,6 +89,7 @@ Keys and values that can be used in hash in `api_key` parameter in actions (e.g.
 The only difference when using hash is that you could use `filepath` instead of `key`.
 
 Please note that `key_content` and `key_filepath` described in `app_store_connect_api_key` action are invalid both in hash and in JSON file.
+View [Token code on Github](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
 
 ### Using _fastlane_ API Key JSON file 
 
