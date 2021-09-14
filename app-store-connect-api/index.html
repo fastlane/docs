@@ -414,7 +414,7 @@
 <h2 id="using-an-app-store-connect-api-key">Using an App Store Connect API Key</h2>
 <p>The API Key (located in the <code>.p8</code>) file, the key id, and the issuer id are needed to create the JWT token for authorization. There are multiple ways that these pieces of information can be input into <em>fastlane</em>.</p>
 <p><strong>Note:</strong> The App Store Connect API does not yet have the ability to determine if the team is App Store or Enterprise. The <code>app_store_connect_api_key</code> action and the <em>fastlane</em> API Key JSON file format allow for an optional <code>in_house</code> key as a temporary workaround.</p>
-<h3 id="using-app_store_connect_api_key">Using <code>app_store_connect_api_key</code></h3>
+<h3 id="using-app_store_connect_api_key-action">Using <code>app_store_connect_api_key</code> action</h3>
 <p>There is a new <code>app_store_connect_api_key</code> action which takes the key id, the issuer id, and API Key file (<code>.p8</code>) to generate a dictionary/hash used for JWT authorization. This action can be used in two ways:</p>
 <h4 id="use-return-value-and-pass-in-as-an-option">Use return value and pass in as an option</h4>
 <pre><code class="language-ruby">lane :release do
@@ -444,12 +444,17 @@ end
   pilot
 end
 </code></pre>
+<h3 id="using-fastlane-api-key-hash-option">Using <em>fastlane</em> API Key hash option</h3>
+<p>Keys and values that can be used in hash in <code>api_key</code> parameter in actions (e.g. <code>upload_to_testflight</code>) and tools (e.g. <code>cert</code>) are described in <em>fastlane</em> API Key JSON file format below.
+The only difference when using hash is that you could use <code>filepath</code> instead of <code>key</code>.</p>
+<p>Please note that <code>key_content</code> and <code>key_filepath</code> described in <code>app_store_connect_api_key</code> action are invalid both in hash and in JSON file.
+View <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb">Token code on Github</a></p>
 <h3 id="using-fastlane-api-key-json-file">Using <em>fastlane</em> API Key JSON file</h3>
 <p>Below is an example of the <em>fastlane</em> API Key JSON file format that tools and actions will also be able to read. The JSON file requires:</p>
 <ul>
 <li><code>key_id</code></li>
 <li><code>issuer_id</code></li>
-<li><code>key_content</code> (the content of the <code>.p8</code> file)</li>
+<li><code>key</code> (the content of the <code>.p8</code> file)</li>
 </ul>
 <p>The JSON file allows optional:</p>
 <ul>
@@ -459,7 +464,7 @@ end
 <pre><code class="language-js">{
   &quot;key_id&quot;: &quot;D383SF739&quot;,
   &quot;issuer_id&quot;: &quot;6053b7fe-68a8-4acb-89be-165aa6465141&quot;,
-  &quot;key_content&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----&quot;,
+  &quot;key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----&quot;,
   &quot;duration&quot;: 1200, # optional (maximum 1200)
   &quot;in_house&quot;: false # optional but may be required if using match/sigh
 }
