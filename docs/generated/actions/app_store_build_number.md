@@ -62,7 +62,7 @@ build_num = app_store_build_number(
 Key | Description | Default
 ----|-------------|--------
   `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
-  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | [*](#parameters-legend-dynamic)
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option) | [*](#parameters-legend-dynamic)
   `initial_build_number` | sets the build number to given value if no build is in current train | 
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)

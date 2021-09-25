@@ -20,10 +20,10 @@ markdown_extensions:
 - toc:
     toc_depth: 2
 plugins:
-  - search
-  - mkdocs-simple-hooks:
-      hooks:
-        on_pre_build: "hooks:copy_generated_files"
+- search
+- mkdocs-simple-hooks:
+    hooks:
+      on_pre_build: hooks:copy_generated_files
 docs_dir: docs
 extra_css:
 - "./css/sidenavv.css"
@@ -98,7 +98,6 @@ nav:
   - commit_github_file: actions/commit_github_file.md
   - commit_version_bump: actions/commit_version_bump.md
   - copy_artifacts: actions/copy_artifacts.md
-  - crashlytics: actions/crashlytics.md
   - create_app_on_managed_play_store: actions/create_app_on_managed_play_store.md
   - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
