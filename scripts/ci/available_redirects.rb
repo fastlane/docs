@@ -9,6 +9,7 @@ def docs_redirects
     "actions/Actions" => "actions",
     "best-practices/gitignore" => "best-practices/source-control",
     "best-practices/SourceControl" => "best-practices/source-control",
-    "best-practices/ContinuousIntegration" => "best-practices/continuous-integration"
+    "best-practices/ContinuousIntegration" => "best-practices/continuous-integration",
+    "actions/crashlytics" => "actions/upload_symbols_to_crashlytics"
   }
 end
