@@ -279,7 +279,7 @@ Key | Description | Default
   `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles | `false`
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
-  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option) | 
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
@@ -290,6 +290,7 @@ Key | Description | Default
   `cert_owner_name` | The certificate name to use for new profiles, or to renew with. (e.g. "Felix Krause") | 
   `filename` | Filename to use for the generated provisioning profile (must include .mobileprovision) | 
   `skip_fetch_profiles` | Skips the verification of existing profiles which is useful if you have thousands of profiles | `false`
+  `include_all_certificates` | Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type | `false`
   `skip_certificate_verification` | Skips the verification of the certificates for every existing profiles. This will make sure the provisioning profile can be used on the local machine | [*](#parameters-legend-dynamic)
   `platform` | Set the provisioning profile's platform (i.e. ios, tvos, macos, catalyst) | `ios`
   `readonly` | Only fetch existing profile, don't generate new ones | `false`

@@ -46,6 +46,7 @@ Key | Description | Default
   `scheme` | Scheme to use when calling slather | 
   `configuration` | Configuration to use when calling slather (since slather-2.4.1) | 
   `input_format` | The input format that slather should look for | 
+  `github` | Tell slather that it is running on Github Actions | 
   `buildkite` | Tell slather that it is running on Buildkite | 
   `teamcity` | Tell slather that it is running on TeamCity | 
   `jenkins` | Tell slather that it is running on Jenkins | 
