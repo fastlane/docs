@@ -541,7 +541,7 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 </tr>
 <tr>
 <td><code>api_key</code></td>
-<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option)</td>
+<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option)</td>
 <td></td>
 </tr>
 <tr>
@@ -592,6 +592,11 @@ This will result in <em>sigh</em> always using the correct signing certificate, 
 <tr>
 <td><code>skip_fetch_profiles</code></td>
 <td>Skips the verification of existing profiles which is useful if you have thousands of profiles</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>include_all_certificates</code></td>
+<td>Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type</td>
 <td><code>false</code></td>
 </tr>
 <tr>

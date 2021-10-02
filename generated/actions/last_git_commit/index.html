@@ -351,7 +351,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </table>
 <h2 id="1-example">1 Example</h2>
 <pre><code class="language-ruby">commit = last_git_commit
-crashlytics(notes: commit[:message]) # message of commit
+pilot(changelog: commit[:message]) # message of commit
 author = commit[:author] # author of the commit
 author_email = commit[:author_email] # email of the author of the commit
 hash = commit[:commit_hash] # long sha of commit

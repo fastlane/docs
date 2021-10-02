@@ -376,8 +376,19 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   # ...
 
   properties: {
-    &quot;versionCode&quot; =&gt; 100,
-    &quot;versionName&quot; =&gt; &quot;1.0.0&quot;,
+    &quot;exampleNumber&quot; =&gt; 100,
+    &quot;exampleString&quot; =&gt; &quot;1.0.0&quot;,
+    # ...
+  }
+)
+</code></pre>
+<p>You can use this to change the version code and name of your app:</p>
+<pre><code class="language-ruby">gradle(
+  # ...
+
+  properties: {
+    &quot;android.injected.version.code&quot; =&gt; 100,
+    &quot;android.injected.version.name&quot; =&gt; &quot;1.0.0&quot;,
     # ...
   }
 )

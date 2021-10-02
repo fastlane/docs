@@ -796,7 +796,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>api_key</code></td>
-<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option)</td>
+<td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option)</td>
 <td></td>
 </tr>
 <tr>
@@ -922,6 +922,16 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>force_for_new_devices</code></td>
 <td>Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id'</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>include_all_certificates</code></td>
+<td>Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>force_for_new_certificates</code></td>
+<td>Renew the provisioning profiles if the device count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'</td>
 <td><code>false</code></td>
 </tr>
 <tr>
