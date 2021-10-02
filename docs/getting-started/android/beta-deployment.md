@@ -2,7 +2,7 @@
 
 # Deploy to Beta distribution services using _fastlane_
 
-If you would like to distribute your beta builds to Google Play, please make sure you've done the steps from [Setting up _supply_](setup/#setting-up-supply) before continuing.
+If you would like to distribute your beta builds to Google Play, please make sure you've done the steps from [Setting up _supply_](../setup/#setting-up-supply) before continuing.
 
 ## Building your app
 
