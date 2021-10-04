@@ -4,13 +4,11 @@
 
 ## Getting started
 
-For publishing iOS apps it is recommended to create an App Store Connect API key so you don't have to use 2FA. This also offers better performance and increased reliability. More details can be found [here](https://docs.fastlane.tools/app-store-connect-api/).
+For publishing iOS apps, it is recommended to create an App Store Connect API key so you don't have to use 2FA. This also offers better performance and increased reliability. More details can be found [here](https://docs.fastlane.tools/app-store-connect-api/).
 
-## Adding Environment variables
+## Adding environment variables
 
-The following **environment variables** need to be added to your workflow for Fastlane integration. 
-
-Make sure that the **secure** checkbox is checked to encrypt any senstive values such as API keys or passwords.
+The following **environment variables** need to be added to your workflow for *fastlane* integration. 
 
 - `MATCH_PASSWORD` - the password used to encrypt/decrypt the repository used to store your distrbution certificates and provisioning profiles.
 - `MATCH_KEYCHAIN` - an arbitrary name to use for the keychain on the Coemagic build server, e.g "fastlane_keychain"
@@ -19,7 +17,9 @@ Make sure that the **secure** checkbox is checked to encrypt any senstive values
 - `APP_STORE_CONNECT_KEY_IDENTIFIER` - the key identifier of your App Store Connect API key.
 - `APP_STORE_CONNECT_ISSUER_ID` - the issuer of your App Store Connect API key.
 
-Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. You can then and import your variable groups into your `codemagic.yaml` . For example, if you named your variable group 'fastlane', the group should be imported as follows:
+Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. Save all the variables to the same variable group and make sure that the **secure** checkbox is checked to encrypt any senstive values such as API keys or passwords.
+
+You can then import your variable group into your `codemagic.yaml`. For example, if you named your variable group 'fastlane', the group should be imported as follows:
 
 ```
 workflows:
@@ -29,11 +29,11 @@ workflows:
         - fastlane
 ```
 
-## Executing the Fastlane in your workflow
+## Executing *fastlane* in your workflow
 
-It is recommended to run your Fastlane lanes using the codemagic.yaml configuration file. 
+It is recommended to run your *fastlane* lanes using the `codemagic.yaml` configuration file. 
 
-You should install your depenpendencies with `bundle install` and then execute the Fastlane lane with `bundle exec fastlane <lane_name>` as follows:
+You should install your depenpendencies with `bundle install` and then execute the *fastlane* lane with `bundle exec fastlane <lane_name>` as follows:
 
 ```
       scripts:
@@ -41,7 +41,7 @@ You should install your depenpendencies with `bundle install` and then execute t
         - bundle exec fastlane beta
 ```
 
-If you need to use a specific version of bundler as defined in the Gemfile.lock file, you should install it with `gem install bundler:<version>` as follows:
+If you need to use a specific version of bundler as defined in the `Gemfile.lock` file, you should install it with `gem install bundler:<version>` as follows:
 
 ```
       scripts:
@@ -51,9 +51,9 @@ If you need to use a specific version of bundler as defined in the Gemfile.lock 
        
 ```
 
-## Cocoapods
+## CocoaPods
 
-If you are using dependencies from Cocoapods it might be necessary to include the cocoapods gem in your Gemfile to prevent scope conflict issues. 
+If you are using dependencies from Cocoapods, it might be necessary to include the CocoaPods gem in your Gemfile to prevent scope conflict issues. 
 
 ```
 gem "fastlane"
@@ -62,4 +62,4 @@ gem "cocoapods"
 
 ## Starting your build
 
-You can start your build manually from within the Codemagic web app, or configure your builds to start on events such as pushing to your repository, creating or updating a pull request, adding a new tag, or even monitoring for file system changes. 
+You can start your build manually from within the Codemagic web app, or configure your builds to start on events such as pushing to your repository, creating or updating a pull request, adding a new tag, or even monitoring for file system changes. See more info in [Codemagic docs](https://docs.codemagic.io/).
