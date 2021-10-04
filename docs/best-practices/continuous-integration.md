@@ -18,10 +18,10 @@ Multiple CI products and services offer integrations with _fastlane_:
 - [Bamboo](/best-practices/continuous-integration/bamboo/)
 - [Bitrise](/best-practices/continuous-integration/bitrise/)
 - [CircleCI](/best-practices/continuous-integration/circle-ci/)
+- [Codemagic](/best-practices/continuous-integration/codemagic/)
 - [GitHub Actions](/best-practices/continuous-integration/github/)
 - [GitLab CI](/best-practices/continuous-integration/gitlab/)
 - [Jenkins](/best-practices/continuous-integration/jenkins/)
-- [Codemagic](/best-practices/continuous-integration/codemagic/)
 - [Semaphore](/best-practices/continuous-integration/semaphore/)
 - [Travis](/best-practices/continuous-integration/travis/)
 
