@@ -2,68 +2,63 @@
 
 [Codemagic](https://codemagic.io/) is a cloud-based CI/CD tool for mobile applications that you can use for continuous integration and delivery together with *fastlane*. Codemagic has *fastlane* pre-installed, so you can easily run your *fastlane* scripts as part of the Codemagic build process. You only need a Fastfile in your repository to get started.
 
-## Add your app to Codemagic
+## Getting started
 
-1. Click **Add application** on Codemagic dashboard.
-2. Choose whether to add your application via a supported Git provider or add it manually using the other [available authentication methods](https://docs.codemagic.io/getting-started/adding-apps-from-custom-sources/).
-3. Select the project type and confirm adding the application.
+For publishing iOS apps, it is recommended to create an App Store Connect API key so you don't have to use 2FA. This also offers better performance and increased reliability. More details can be found [here](https://docs.fastlane.tools/app-store-connect-api/).
 
-## Configure your workflow
+## Adding environment variables
 
-Once you've added the application, configure the build workflow in a [codemagic.yaml](https://docs.codemagic.io/getting-started/yaml/) file and commit it to the root directory of the repository. 
+The following **environment variables** need to be added to your workflow for *fastlane* integration. 
 
-Save your keys and other sensitive information as environment variables in the `environment` section of `codemagic.yaml`. Make sure to [encrypt](https://docs.codemagic.io/building/encrypting/) the values in Codemagic so as to not expose them. Note that if you encrypt a key file, it will be base64-encoded and would have to be decoded during the build.
+- `MATCH_PASSWORD` - the password used to encrypt/decrypt the repository used to store your distrbution certificates and provisioning profiles.
+- `MATCH_KEYCHAIN` - an arbitrary name to use for the keychain on the Coemagic build server, e.g "fastlane_keychain"
+- `MATCH_SSH_KEY` - an SSH private key used for cloning the Match repository that contains your distrbution certificates and provisioning profiles. The public key should be added to your Github account. See [here](https://docs.codemagic.io/configuration/access-private-git-submodules/) for more information about accessing Git dependencies with SSH keys.
+- `APP_STORE_CONNECT_PRIVATE_KEY` - the App Store Connect API key. Copy the entire contents of the .p8 file and paste into the environment variable value field.
+- `APP_STORE_CONNECT_KEY_IDENTIFIER` - the key identifier of your App Store Connect API key.
+- `APP_STORE_CONNECT_ISSUER_ID` - the issuer of your App Store Connect API key.
+
+Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. Save all the variables to the same variable group and make sure that the **secure** checkbox is checked to encrypt any senstive values such as API keys or passwords.
+
+You can then import your variable group into your `codemagic.yaml`. For example, if you named your variable group 'fastlane', the group should be imported as follows:
 
 ```yaml
+workflows:
+  workflow-name:
     environment:
-      vars:
-        MATCH_PASSWORD: Encrypted(...)
-        MATCH_SSH_KEY: Encrypted(...)
-        FASTLANE_USER: Encrypted(...)
-        FASTLANE_PASSWORD: Encrypted(...)
-        FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: Encrypted(...)
-        ANDROID_KEYSTORE: Encrypted(...)
-        ANDROID_KEY_PROPERTIES: Encrypted(...)
-        GOOGLE_PLAY_JSON: Encrypted(...)
+      groups:
+        - fastlane
 ```
 
-In the `scripts` section, decode the encoded key files and add the commands to run the lanes.
+## Executing *fastlane* in your workflow
+
+It is recommended to run your *fastlane* lanes using the `codemagic.yaml` configuration file. 
+
+You should install your depenpendencies with `bundle install` and then execute the *fastlane* lane with `bundle exec fastlane <lane_name>` as follows:
 
 ```yaml
-    scripts:
-      - echo $GOOGLE_PLAY_JSON | base64 --decode > google_play.json
-      - bundle install
-      - bundle exec fastlane setup_keychain
-      - |
-        # set up release keystore & key.properties
-        echo $ANDROID_KEYSTORE | base64 --decode > "$FCI_BUILD_DIR/android/app/itc-release.keystore"
-        echo $ANDROID_KEY_PROPERTIES | base64 --decode > "$FCI_BUILD_DIR/android/key.properties"
-      - |
-        # set up local properties
-        echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
-      - bundle exec fastlane android deploy
-      - find . -name "Podfile" -execdir pod install \;
-      - bundle exec fastlane ios deploy
+scripts:
+  - bundle install
+  - bundle exec fastlane beta
 ```
 
-## External dependencies
+If you need to use a specific version of bundler as defined in the `Gemfile.lock` file, you should install it with `gem install bundler:<version>` as follows:
 
-Codemagic does not automatically install CocoaPods, Carthage or any other external dependencies for _fastlane_ projects. Please use the _fastlane_'s built-in [actions](https://docs.fastlane.tools/actions/), such as [`cocoapods`](https://docs.fastlane.tools/actions/cocoapods/) and [`carthage`](https://docs.fastlane.tools/actions/carthage/), to gain control of that.
+```yaml
+scripts:
+  - gem install bundler:2.2.27
+  - bundle install
+  - bundle exec fastlane beta      
+```
 
-## Code signing
+## CocoaPods
 
-To perform code signing on your iOS app, you can either follow the best practices laid out in [`fastlane` docs](https://docs.fastlane.tools/codesigning/getting-started/#using-match), or you could also make use of [Codemagic's standard code signing methods](https://docs.codemagic.io/code-signing-yaml/signing-ios/).
+If you are using dependencies from Cocoapods, it might be necessary to include the CocoaPods gem in your Gemfile to prevent scope conflict issues. 
 
-When invoking [`match`](https://docs.fastlane.tools/actions/match/) from the `Fastfile`, keep in mind that you need to **grant access to the credentials repository** and expose the **_match_ passphrase** during the build. The _match_ passphrase can be defined as a `MATCH_PASSWORD` environment variable — this will be automatically detected by _fastlane_ and used to decrypt the credentials repository. You can upload the SSH key for cloning the credentials repository as an environment variable, i.e. `MATCH_SSH_KEY`. 
+```
+gem "fastlane"
+gem "cocoapods"
+```
 
-## Publish your build artifacts
+## Starting your build
 
-You can use either `fastlane` to take care of artifact distribution or choose from a number of [Codemagic's own integrations](https://docs.codemagic.io/publishing-yaml/distribution/).
-
-## Manage build versions
-
-To make your [build version management](https://docs.codemagic.io/building/build-versioning/) easy, Codemagic exports the `BUILD_NUMBER` environment variable that you can use in your build script. For instance, you could make use of it within [`increment_version_number`](https://docs.fastlane.tools/actions/increment_version_number/) action to define a new version for each build.
-
-## More information
-
-Check out [Codemagic documentation](https://docs.codemagic.io/) for more.
+You can start your build manually from within the Codemagic web app, or configure your builds to start on events such as pushing to your repository, creating or updating a pull request, adding a new tag, or even monitoring for file system changes. See more info in [Codemagic docs](https://docs.codemagic.io/).
