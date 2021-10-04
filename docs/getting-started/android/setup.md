@@ -1,10 +1,10 @@
 # Getting started with _fastlane_ for Android
 
-## Installing _fastlane_
+### Installing _fastlane_
 
 {!docs/includes/installing-fastlane.md!}
 
-## Setting up _fastlane_
+### Setting up _fastlane_
 
 Navigate your terminal to your project's directory and run
 
@@ -29,17 +29,19 @@ You can see the newly created `./fastlane` directory, with the following files:
 
 The most interesting file is `fastlane/Fastfile`, which contains all the information that is needed to distribute your app.
 
-## Setting up _supply_
+### Setting up _supply_
 
 _supply_ is a _fastlane_ tool that uploads app metadata, screenshots and binaries to Google Play. You can also select tracks for builds and promote builds to production!
 
+For _supply_ to be able to initialize, you need to have successfully uploaded an APK to your app in the Google Play Console at least once.
+
 Setting it up requires downloading a credentials file from your Google Developers Service Account.
 
-### Collect your Google credentials
+#### Collect your Google credentials
 
 {!docs/includes/google-credentials.md!}
 
-### Configure _supply_
+#### Configure _supply_
 
 Edit your `fastlane/Appfile` and change the `json_key_file` line to have the path to your credentials file:
 
@@ -47,7 +49,7 @@ Edit your `fastlane/Appfile` and change the `json_key_file` line to have the pat
 json_key_file "/path/to/your/downloaded/key.json"
 ```
 
-### Fetch your app metadata
+#### Fetch your app metadata
 
 If your app has been created on the Google Play developer console, you're ready to start using _supply_ to manage it! Run:
 
@@ -61,14 +63,14 @@ and all of your current Google Play store metadata will be downloaded to `fastla
 
 Due to limitations of the Google Play API, _supply_ can't download existing screenshots or videos.
 
-## What's next?
+### What's next?
 
 _fastlane_ is ready to generate screenshots and automatically distribute new builds! To learn more, check out:
 
 - [_fastlane_ screenshots for Android](screenshots.md)
 - [Deploy to Google Play using _fastlane_](release-deployment.md)
 
-### Set up environment variables
+#### Set up environment variables
 
 _fastlane_ requires some environment variables set up to run correctly. In particular, having your locale not set to a UTF-8 locale will cause issues with building and uploading your build. In your shell profile add the following lines:
 
@@ -79,7 +81,7 @@ export LANG=en_US.UTF-8
 
 You can find your shell profile at `~/.bashrc`, `~/.bash_profile`, `~/.profile` or `~/.zshrc` depending on your system.
 
-### Use a Gemfile
+#### Use a Gemfile
 
 It is recommended that you use a `Gemfile` to define your dependency on _fastlane_. This will clearly define the used _fastlane_ version, and its dependencies, and will also speed up using _fastlane_.
 

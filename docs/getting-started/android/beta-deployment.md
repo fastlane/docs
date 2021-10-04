@@ -4,7 +4,7 @@
 
 If you would like to distribute your beta builds to Google Play, please make sure you've done the steps from [Setting up _supply_](setup/#setting-up-supply) before continuing.
 
-# Building your app
+## Building your app
 
 _fastlane_ takes care of building your app by delegating to your existing Gradle build. Just add the following to your `Fastfile`:
 
@@ -34,7 +34,7 @@ To get a list of all available parameters for the `gradle` action, run:
 fastlane action gradle
 ```
 
-# Uploading your app
+## Uploading your app
 
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta providers, or even upload to multiple at once, with a minimum of configuration. Follow that with a notification posted to the group messaging service of your choice to let the team know that you've shipped.
 
@@ -46,9 +46,9 @@ lane :beta do
 end
 ```
 
-## Supported beta testing services
+### Supported beta testing services
 
-<details>
+<details markdown="1">
 <summary>Google Play</summary>
 
 In order to distribute to Google Play with _upload_to_play_store_ you will need to have your Google credentials set up. Make sure you've gone through [Setting up _supply_](setup/#setting-up-supply) before continuing!
@@ -74,8 +74,22 @@ fastlane action upload_to_play_store
 ---
 </details>
 
-<details>
-<summary>Crashlytics</summary>
+<details markdown="1">
+<summary>Firebase App Distribution</summary>
+
+Install the Firebase App Distribution plugin:
+
+```no-highlight
+fastlane add_plugin firebase_app_distribution
+```
+
+Authenticate with Firebase by running the `firebase_app_distribution_login` action (or using one of the other [authentication methods](https://firebase.google.com/docs/app-distribution/android/distribute-fastlane#step_2_authenticate_with_firebase)):
+
+```no-highlight
+fastlane run firebase_app_distribution_login
+```
+
+Then add the `firebase_app_distribution` action to your lane:
 
 ```ruby
 lane :beta do
@@ -85,30 +99,24 @@ lane :beta do
     build_type: 'Release'
   )
 
-  crashlytics(
-    api_token: '[insert_key_here]',
-    build_secret: '[insert_secret_here]'
+  firebase_app_distribution(
+    app: "1:123456789:android:abcd1234",
+    groups: "qa-team, trusted-testers"
   )
   # ...
 end
 ```
 
-To get your API token, open the [organizations settings page](https://www.fabric.io/settings/organizations) and click on the API key and build secret links.
-
-Additionally you can specify `notes`, `emails`, `groups` and `notifications`. To get a list of all available options, run:
-
-```no-highlight
-fastlane action crashlytics
-```
+For more information and options (such as adding release notes) see the full [Getting Started](https://firebase.google.com/docs/app-distribution/android/distribute-fastlane) guide.
 
 ---
 </details>
 
 More information about additional supported beta testing services can be found in the [list of "Beta" actions](https://docs.fastlane.tools/actions/#beta)
 
-# Release Notes
+## Release Notes
 
-<details>
+<details markdown="1">
 <summary>Generate based on Git commits</summary>
 
 You take the time to write great Git commit messages, right? Why not take advantage of them to automatically summarize the work done for your latest beta release?
@@ -139,7 +147,7 @@ changelog_from_git_commits(
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Prompt for changelog</summary>
 
 You can automatically be asked for the changelog in your terminal using the `prompt` action:
@@ -167,7 +175,7 @@ end
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Fetch the changelog from the file system or remote server</summary>
 
 You can fetch values from anywhere, including the file system and remote server, by writing code in your `Fastfile`

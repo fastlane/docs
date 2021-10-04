@@ -2,7 +2,7 @@
 
 # iOS App Store deployment using _fastlane_
 
-# Building your app
+## Building your app
 
 _fastlane_ takes care of building your app using an action called _build_app_, just add the following to your `Fastfile`:
 
@@ -30,17 +30,17 @@ fastlane release
 
 If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _build_app_, run `fastlane action build_app`.
 
-## Codesigning
+### Codesigning
 
 Chances are that something went wrong because of code signing at the previous step. We prepared our own [Code Signing Guide](/codesigning/getting-started/) that helps you setting up the right code signing approach for your project.
 
-# Submitting your app
+## Submitting your app
 
-## Generating screenshots
+### Generating screenshots
 
 To find out more about how to automatically generate screenshots for the App Store, check out [_fastlane_ screenshots for iOS and tvOS](screenshots.md).
 
-## Upload the binary and app metadata
+### Upload the binary and app metadata
 
 After building your app, it's ready to be uploaded to the App Store. If you've already followed [iOS Beta deployment using _fastlane_](beta-deployment.md), the following code might look similar already.
 
@@ -58,13 +58,13 @@ _fastlane_ automatically passes on information about the generated screenshots a
 
 For a list of all options for each of the steps run `fastlane action [action_name]`.
 
-## More details
+### More details
 
 For more details on how `upload_to_app_store` works, how you can define more options, check out [upload_to_app_store](/actions/upload_to_app_store/).
 
-# Best Practices
+## Best Practices
 
-<details>
+<details markdown="1">
 <summary>Push Notifications</summary>
 
 To make sure your latest push notification certificate is still valid during your submission process, add the following at the beginning of your lane:
@@ -82,7 +82,7 @@ If you don't have any push certificates already, _get_push_certificate_ will cre
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Incrementing the build number</summary>
 
 The code sample below will use the latest build number from App Store Connect and temporarily set it. 

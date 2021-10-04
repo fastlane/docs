@@ -51,7 +51,7 @@ version: 2
 jobs:
   build:
     macos:
-      xcode: "9.0"
+      xcode: "11.3"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
