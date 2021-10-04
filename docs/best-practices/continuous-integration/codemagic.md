@@ -1,19 +1,65 @@
 # Codemagic Integration
 
-[Codemagic](https://codemagic.io/) is a cloud-based CI/CD tool for mobile applications that you can use for continuous delivery together with *fastlane*. Codemagic has *fastlane* pre-installed, so you can easily run your *fastlane* scripts as part of the Codemagic build process. 
+[Codemagic](https://codemagic.io/) is a cloud-based CI/CD tool for mobile applications that you can use for continuous integration and delivery together with *fastlane*. Codemagic has *fastlane* pre-installed, so you can easily run your *fastlane* scripts as part of the Codemagic build process. You only need a Fastfile in your repository to get started.
 
-When using *fastlane* for beta distribution to third-party services, you will need to add the API keys / secrets to Codemagic as [environment variables](https://docs.codemagic.io/building/environment-variables/). 
+## Getting started
 
-Here's an example of using *fastlane* to publish a successfully built Android app to Firebase App Distribution as part of the Codemagic workflow.
+For publishing iOS apps it is recommended to create an App Store Connect API key so you don't have to use 2FA. This also offers better performance and increased reliability. More details can be found [here](https://docs.fastlane.tools/app-store-connect-api/).
 
-First, create a [Firebase token](https://firebase.google.com/docs/cli#cli-ci-systems), [encrypt](https://docs.codemagic.io/building/encrypting/) it and save it into an environment variable with the name `FIREBASE_TOKEN`.
+## Adding Environment variables
 
-Then add the script to install the Fastlane Firebase App Distribution plugin and call the lane to publish the app. The scripts are added to the `publish` section of [codemagic.yaml](https://docs.codemagic.io/getting-started/yaml/) or as a pre-publish script when configuring the builds in the UI.
+The following **environment variables** need to be added to your workflow for Fastlane integration. 
+
+Make sure that the **secure** checkbox is checked to encrypt any senstive values such as API keys or passwords.
+
+- `MATCH_PASSWORD` - the password used to encrypt/decrypt the repository used to store your distrbution certificates and provisioning profiles.
+- `MATCH_KEYCHAIN` - an arbitrary name to use for the keychain on the Coemagic build server, e.g "fastlane_keychain"
+- `MATCH_SSH_KEY` - an SSH private key used for cloning the Match repository that contains your distrbution certificates and provisioning profiles. The public key should be added to your Github account. See [here](https://docs.codemagic.io/configuration/access-private-git-submodules/) for more information about accessing Git dependencies with SSH keys.
+- `APP_STORE_CONNECT_PRIVATE_KEY` - the App Store Connect API key. Copy the entire contents of the .p8 file and paste into the environment variable value field.
+- `APP_STORE_CONNECT_KEY_IDENTIFIER` - the key identifier of your App Store Connect API key.
+- `APP_STORE_CONNECT_ISSUER_ID` - the issuer of your App Store Connect API key.
+
+Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. You can then and import your variable groups into your `codemagic.yaml` . For example, if you named your variable group 'fastlane', the group should be imported as follows:
 
 ```
-gem install bundler
-sudo gem install fastlane-plugin-firebase_app_distribution --user-install 
-cd android
-bundle install
-bundle exec fastlane <your_android_lane>  
+workflows:
+  workflow-name:
+    environment:
+      groups:
+        - fastlane
 ```
+
+## Executing the Fastlane in your workflow
+
+It is recommended to run your Fastlane lanes using the codemagic.yaml configuration file. 
+
+You should install your depenpendencies with `bundle install` and then execute the Fastlane lane with `bundle exec fastlane <lane_name>` as follows:
+
+```
+      scripts:
+        - bundle install
+        - bundle exec fastlane beta
+```
+
+If you need to use a specific version of bundler as defined in the Gemfile.lock file, you should install it with `gem install bundler:<version>` as follows:
+
+```
+      scripts:
+        - gem install bundler:2.2.27
+        - bundle install
+        - bundle exec fastlane beta
+       
+```
+
+## Cocoapods
+
+If you are using dependencies from Cocoapods it might be necessary to include the cocoapods gem in your Gemfile to prevent scope conflict issues. 
+
+```
+gem "fastlane"
+gem "cocoapods"
+```
+
+## Starting your build
+
+You can start your build manually from within the Codemagic web app, or configure your builds to start on events such as pushing to your repository, creating or updating a pull request, adding a new tag, or even monitoring for file system changes. 
