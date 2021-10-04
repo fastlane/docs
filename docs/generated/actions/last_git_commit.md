@@ -26,7 +26,7 @@ Returns | Returns the following dict: {commit_hash: "commit hash", abbreviated_c
 
 ```ruby
 commit = last_git_commit
-crashlytics(notes: commit[:message]) # message of commit
+pilot(changelog: commit[:message]) # message of commit
 author = commit[:author] # author of the commit
 author_email = commit[:author_email] # email of the author of the commit
 hash = commit[:commit_hash] # long sha of commit

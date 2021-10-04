@@ -67,7 +67,7 @@ Key | Description | Default
   `devices` | A hash of devices, with the name as key and the UDID as value | 
   `devices_file` | Provide a path to a file with the devices to register. For the format of the file see the examples | 
   `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
-  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#use-return-value-and-pass-in-as-an-option) | [*](#parameters-legend-dynamic)
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option) | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `username` | Optional: Your Apple ID | [*](#parameters-legend-dynamic)
