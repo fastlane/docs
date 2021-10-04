@@ -40,7 +40,7 @@ xcode-select --install
 sudo gem install fastlane -NV
 
 # Alternatively using Homebrew
-brew cask install fastlane
+brew install fastlane
 ```
 
 <p class="fastlane-setup-header">3) Navigate to your project and run</p>

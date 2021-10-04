@@ -2,16 +2,16 @@
 
 ## Installation
 
-The recommended way to install [Jenkins](http://jenkins-ci.org/) is through [homebrew](http://brew.sh/):
+The recommended way to [install Jenkins on macOS](https://www.jenkins.io/download/lts/macos/) is through [homebrew](http://brew.sh/):
 
 ```no-highlight
-brew update && brew install jenkins
+brew update && brew install jenkins-lts
 ```
 
 From now on start `Jenkins` by running:
 
 ```no-highlight
-jenkins
+brew services start jenkins-lts
 ```
 
 To store the password in the Keychain of your remote machine, it is recommended that you run _match_ or _deliver_ using ssh or remote desktop at least once.

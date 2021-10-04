@@ -14,8 +14,11 @@ You can set the environment variable `FASTLANE_HIDE_CHANGELOG` to hide the detai
 
 ### Output environment variables
 
-- To hide timestamps in each row, set the `FASTLANE_HIDE_TIMESTAMP` environment variable to true (overruled by `--verbose`). 
+- To hide timestamps in each row, set the `FASTLANE_HIDE_TIMESTAMP` environment variable to true (overruled by `--verbose`).
+- To output the timezone in the timestamp, set the `FASTLANE_SHOW_TIMEZONE` environment variable to true.
 - To disable output formatting, set the `FASTLANE_DISABLE_OUTPUT_FORMAT` environment variable to true.
+- To disable warnings about startup time and Gemfile usage, set the `SKIP_SLOW_FASTLANE_WARNING` environment variable to true.
+- To disable action summary table output, set the `FASTLANE_SKIP_ACTION_SUMMARY` environment variable to true.
 
 ## How fastlane works
 

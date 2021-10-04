@@ -2,6 +2,65 @@
 
 # Actions
 
+# Naming actions
+
+You can specify a _"step name"_ for all actions (starting with `fastlane 2.120.0`) to disambiguate the use of some action several times, in different context.
+To do so, add the `:step_name` property to your arguments.
+
+For instance with the [fastlane-plugin-yarn](https://github.com/joshrlesch/fastlane-plugin-yarn) and the native sh:
+```ruby
+yarn(step_name: 'install_dependencies')
+yarn(command: 'build', step_name: 'building_project')
+yarn(command: 'test', step_name: 'testing_project')
+yarn(command: 'publish-coverage', step_name: 'publishing_project')
+```
+These name will appear as the step description instead of generic `yarn` as you can see in the following output:
+```
+[08:13:37]: --- Step: install_dependencies ---
+[08:13:37]: ----------------------------------
+[08:13:37]: $ yarn
+[08:13:37]: ▸ yarn install v1.12.3
+[08:13:37]: ▸ [1/4] Resolving packages...
+[08:13:37]: ▸ success Already up-to-date.
+[08:13:37]: ▸ Done in 0.04s.
+[08:13:37]: ------------------------------
+[08:13:37]: --- Step: building_project ---
+[08:13:37]: ------------------------------
+[08:13:37]: $ yarn build
+[08:13:37]: ▸ yarn run v1.12.3
+[08:13:38]: ▸ $ sleep 22 && echo build the project
+[08:14:00]: ▸ build the project
+[08:14:00]: ▸ Done in 22.09s.
+[08:14:00]: -----------------------------
+[08:14:00]: --- Step: testing_project ---
+[08:14:00]: -----------------------------
+[08:14:00]: $ yarn test
+[08:14:00]: ▸ yarn run v1.12.3
+[08:14:00]: ▸ $ sleep 30 && echo test all the things
+[08:14:30]: ▸ test all the things
+[08:14:30]: ▸ Done in 30.09s.
+[08:14:30]: ------------------
+[08:14:30]: --- Step: yarn ---
+[08:14:30]: ------------------
+[08:14:30]: $ yarn publish-coverage
+[08:14:30]: ▸ yarn run v1.12.3
+[08:14:31]: ▸ $ sleep 12 && echo Covered all the things
+[08:14:43]: ▸ Covered all the things
+[08:14:43]: ▸ Done in 12.10s.
+
++------+----------------------------+-------------+
+|                fastlane summary                 |
++------+----------------------------+-------------+
+| Step | Action                     | Time (in s) |
++------+----------------------------+-------------+
+| 1    | install_dependencies       | 0           |
+| 2    | building_project           | 22          |
+| 3    | testing_project            | 30          |
+| 4    | yarn                       | 12          |
++------+----------------------------+-------------+
+```
+
+
 # Interacting with the user
 
 Instead of using `puts`, `raise` and `gets`, please use the helper class `UI` across all fastlane tools:
