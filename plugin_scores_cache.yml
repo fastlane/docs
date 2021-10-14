@@ -268,34 +268,14 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1910
+  :age_in_days: 1961
   :readme_score: 100
-  :tests: 74
+  :tests: 77
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_upload_dsym
+    name: sentry_check_cli_installed
     category:
-    description: Upload dSYM symbolication files to Sentry
-    details: " "
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_set_commits
-    category:
-    description: Set commits of a release
-    details: " "
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_upload_sourcemap
-    category:
-    description: Upload a sourcemap to a release of a project on Sentry
-    details: " "
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_finalize_release
-    category:
-    description: Finalize a release for a project on Sentry
-    details: " "
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_upload_file
-    category:
-    description: Upload files to a release of a project on Sentry
+    description: Checks that sentry-cli with the correct version is installed
     details: " "
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_create_deploy
@@ -303,31 +283,51 @@ fastlane-plugin-sentry:
     description: Creates a new release deployment for a project on Sentry
     details: " "
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_upload_proguard
-    category:
-    description: Upload mapping to a project on Sentry
-    details: " "
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_create_release
     category:
     description: Create new releases for a project on Sentry
     details: " "
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_check_cli_installed
+    name: sentry_finalize_release
     category:
-    description: Checks that sentry-cli with the correct version is installed
+    description: Finalize a release for a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_set_commits
+    category:
+    description: Set commits of a release
     details: " "
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_dif
     category:
     description: Upload debugging information files.
     details: " "
-  :sha: 379fcc26c269a0a2f679f1a328dc75d15491445ac55dfcb06663c88e401931d1
-  :github_stars: 85
-  :github_subscribers: 17
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_dsym
+    category:
+    description: Upload dSYM symbolication files to Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_file
+    category:
+    description: Upload files to a release of a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_proguard
+    category:
+    description: Upload mapping to a project on Sentry
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_sourcemap
+    category:
+    description: Upload a sourcemap to a release of a project on Sentry
+    details: " "
+  :sha: 20e27f927544109e22d4383ca50bfd23f70a86bbdacd927d944b9509c0d32335
+  :github_stars: 89
+  :github_subscribers: 19
   :github_issues: 17
-  :github_forks: 42
-  :github_contributors: 0
+  :github_forks: 43
+  :github_contributors: 24
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -3384,22 +3384,22 @@ fastlane-plugin-gradle_manager:
   :github_contributors: 0
 fastlane-plugin-app_info:
   :initial_commit: 2016-12-08
-  :age_in_days: 1693
+  :age_in_days: 1771
   :readme_score: 100
-  :tests: 13
+  :tests: 19
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: app_info
     category:
-    description: Parse and dump mobile app(ipa/apk) metedata.
-    details: Teardown tool for mobile app(ipa/apk), analysis metedata like version,
-      name, icon etc.
-  :sha: 0370073d95d3b5479fc1cbb839fcf5624d4685cceae1d9a009ea0f7039edfa9b
+    description: Parse and dump mobile app(ipa, apk and aab file) metedata.
+    details: Teardown tool for mobile app(ipa, apk and aab file), analysis metedata
+      like version, name, icon etc.
+  :sha: 4fbe9954aec9272050cd1f95be42f29188fabca13a3e85498f0f669ecd6579eb
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 1
   :github_forks: 1
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-xbluepill:
   :initial_commit: 2018-01-25
   :age_in_days: 31
@@ -4628,19 +4628,19 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 1150
+  :age_in_days: 1280
   :readme_score: 100
-  :tests: 14
+  :tests: 18
   :actions:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: flutter_bootstrap
-    category:
-    description: Flutter SDK installation, upgrade and application bootstrap
-    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter
     category:
     description: Run "flutter" binary with the specified arguments
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_bootstrap
+    category:
+    description: Flutter SDK installation, upgrade and application bootstrap
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: flutter_build
@@ -4657,10 +4657,10 @@ fastlane-plugin-flutter:
       and generate .dart files from them.  (4) Generate an empty test importing all
       files, which would be used to calculate correct full coverage numbers."
     details:
-  :sha: ad7d4a8684f8443a5d7dba5ab1aa2723208e1a6563d0a2d24ccd3cbb11816a44
-  :github_stars: 20
+  :sha: e738dd4b8a77004e4c856ae2499b1610e1bc502f20de38f416154cb8634dfceb
+  :github_stars: 24
   :github_subscribers: 2
-  :github_issues: 1
+  :github_issues: 3
   :github_forks: 5
   :github_contributors: 1
 fastlane-plugin-ding_talk:
@@ -6418,29 +6418,26 @@ fastlane-plugin-fast_city:
   :github_contributors: 0
 fastlane-plugin-semantic_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 705
+  :age_in_days: 942
   :readme_score: 100
-  :tests: 40
+  :tests: 42
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: analyze_commits
+    category:
+    description:
+    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: conventional_changelog
     category:
     description:
     details: Uses conventional commits. It groups commits by their types and generates
       release notes in markdown or slack format.
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: analyze_commits
-    category:
-    description: Finds a tag of last release and determinates version of next release
-    details: This action will find a last release tag and analyze all commits since
-      the tag. It uses conventional commits. Every time when commit is marked as fix
-      or feat it will increase patch or minor number (you can setup this default behaviour).
-      After all it will suggest if the version should be released or not.
-  :sha: c914d35ac746aa7305de04b706ea15c3f9a5ceae994877ed51efb84bc5240cea
-  :github_stars: 108
-  :github_subscribers: 2
-  :github_issues: 4
-  :github_forks: 26
+  :sha: c65fd7bf3d140d8175f49fcb333509d3ff71b20be9354f65cc1bd937ae8f78d4
+  :github_stars: 145
+  :github_subscribers: 1
+  :github_issues: 5
+  :github_forks: 30
   :github_contributors: 6
 fastlane-plugin-android_emulator_kami:
   :initial_commit: 2018-01-24
@@ -9238,10 +9235,15 @@ fastlane-plugin-github_action:
   :github_contributors: 0
 fastlane-plugin-slack_bot:
   :initial_commit: 2020-05-27
-  :age_in_days: 433
+  :age_in_days: 505
   :readme_score: 100
   :tests: 1
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: fetch_files_slack
+    category:
+    description: 'List files of any #channel using Slack bot `files.list` api.'
+    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: file_upload_to_slack
     category:
@@ -9254,19 +9256,14 @@ fastlane-plugin-slack_bot:
     details: 'Post a slack message to any #channel/@user using Slack bot chat postMessage
       api.'
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: fetch_files_slack
-    category:
-    description: 'List files of any #channel using Slack bot `files.list` api.'
-    details:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: update_slack_message
     category:
     description: Update a slack message using time-stamp(ts) value
     details:
-  :sha: 480c208864b6cb1446f5029a6149175ea78173c4c14002bfbcbb8b16ee226545
-  :github_stars: 7
+  :sha: e9bd162f7258482288db9025a696f8f558fa27268a78b9320049072597f450d9
+  :github_stars: 12
   :github_subscribers: 1
-  :github_issues: 0
+  :github_issues: 1
   :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-try_scan:
@@ -11069,3 +11066,37 @@ fastlane-plugin-pgyer_upload_v2:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 2
+fastlane-plugin-saucelabs:
+  :initial_commit: 2021-09-26
+  :age_in_days: 18
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: saucelabs_upload
+    category:
+    description: Sauce labs android & ios Fastlane plugin
+    details: Upload ios&android artifacts to Sauce Labs https://docs.saucelabs.com/
+  :sha: 2cc715e715f7e080b68e319169cdc3b6c6c39f52f9db24ea6daf6bfc8e4b9713
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-us_ionic:
+  :initial_commit: 2016-12-10
+  :age_in_days: 1769
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ionic
+    category: building
+    description: Build your Ionic app
+    details: Easily integrate your Ionic build into a Fastlane setup
+  :sha: 664bf717ae9f7c7ee8644c862bf5866db6acfd786c7689ab845e4627f525fcf5
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
