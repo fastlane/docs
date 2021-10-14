@@ -21,7 +21,7 @@ Multiple CI products and services offer integrations with _fastlane_:
 - [GitHub Actions](/best-practices/continuous-integration/github/)
 - [GitLab CI](/best-practices/continuous-integration/gitlab/)
 - [Jenkins](/best-practices/continuous-integration/jenkins/)
-- [NeverCode](/best-practices/continuous-integration/nevercode/)
+- [Nevercode](/best-practices/continuous-integration/nevercode/)
 - [Semaphore](/best-practices/continuous-integration/semaphore/)
 - [Travis](/best-practices/continuous-integration/travis/)
 

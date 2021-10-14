@@ -35,7 +35,8 @@ Key | Description | Default
   `asc_provider` | Provider short name for accounts associated with multiple providers | 
   `print_log` | Whether to print notarization log file, listing issues on failure and warnings on success | `false`
   `verbose` | Whether to log requests | `false`
-  `api_key_path` | Path to AppStore Connect API key | 
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option) | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
