@@ -356,10 +356,10 @@
 <p>You'll find the following Jenkins plugins to be useful:</p>
 <p>(note: We do not recommend installing the Xcode plugin)</p>
 <ul>
-<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin">HTML Publisher Plugin</a>:</strong> Can be used to show the generated screenshots right inside Jenkins.</li>
-<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin">AnsiColor Plugin</a>:</strong> Used to show the coloured output of the fastlane tools. Don’t forget to enable <code>Color ANSI Console Output</code> in the <code>Build Environment</code> or your project.</li>
-<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/Rebuild+Plugin">Rebuild Plugin</a>:</strong> This plugin will save you a lot of time.</li>
-<li><strong><a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>:</strong> Manages keychains across Jenkins installations.</li>
+<li><strong><a href="https://plugins.jenkins.io/htmlpublisher">HTML Publisher Plugin</a>:</strong> Can be used to show the generated screenshots right inside Jenkins.</li>
+<li><strong><a href="https://plugins.jenkins.io/ansicolor">AnsiColor Plugin</a>:</strong> Used to show the coloured output of the fastlane tools. Don’t forget to enable <code>Color ANSI Console Output</code> in the <code>Build Environment</code> or your project.</li>
+<li><strong><a href="https://plugins.jenkins.io/rebuild">Rebuild Plugin</a>:</strong> This plugin will save you a lot of time.</li>
+<li><strong><a href="https://plugins.jenkins.io/kpp-management-plugin">Keychains and Provisioning Profiles Plugin</a>:</strong> Manages keychains across Jenkins installations.</li>
 </ul>
 <h2 id="build-step">Build Step</h2>
 <p>Add an "Execute shell" build step using your appropriate <em>fastlane</em> command per the example below:</p>
@@ -368,12 +368,12 @@
 <p>Replace <code>appstore</code> with the lane you want to use.</p>
 <p>(note: if using a Gemfile, prefix that command with <code>bundle exec</code>)</p>
 <h3 id="setup_jenkins">setup_jenkins</h3>
-<p>You can use <code>setup_jenkins</code> action which integrates well with the <a href="https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin">Keychains and Provisioning Profiles Plugin</a>. Selected keychain will be automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the <code>./output</code> folder in the job workspace. In additions <code>setup_jenkins</code> will create separate derived data folder for each job (in the <code>./derivedData</code>).</p>
+<p>You can use <code>setup_jenkins</code> action which integrates well with the <a href="https://plugins.jenkins.io/kpp-management-plugin">Keychains and Provisioning Profiles Plugin</a>. Selected keychain will be automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the <code>./output</code> folder in the job workspace. In additions <code>setup_jenkins</code> will create separate derived data folder for each job (in the <code>./derivedData</code>).</p>
 <p>Under the hood <code>setup_jenkins</code> configures other actions like: <em>gym</em>, <em>scan</em>, <code>xcodebuild</code>, <code>backup_xcarchive</code> and <code>clear_derived_data</code>.</p>
 <h3 id="commit_version_bump-git_commit">commit_version_bump || git_commit</h3>
 <p>You can use <code>commit_version_bump</code> or <code>git_commit</code> action to commit changes to your repository in your fastlane setup. When you are using webhooks to trigger your build on a push this will cause an infinite loop of triggering builds.</p>
 <h4 id="gitlab">Gitlab</h4>
-<p>When you are using Gitlab you will need the <a href="https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin">GitLab Plugin</a>. Inside the job you want to configure you go to <code>Build Triggers &gt; Build when a change is pushed to GitLab &gt; Enable [ci-skip]</code>.
+<p>When you are using Gitlab you will need the <a href="https://plugins.jenkins.io/gitlab-plugin">GitLab Plugin</a>. Inside the job you want to configure you go to <code>Build Triggers &gt; Build when a change is pushed to GitLab &gt; Enable [ci-skip]</code>.
 When you include <code>[ci-skip]</code> in your build this commit won't trigger the build in jenkins at all.</p>
 <p><strong>Example</strong>  </p>
 <pre><code class="language-ruby">build_number = increment_build_number
