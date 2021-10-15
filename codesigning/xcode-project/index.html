@@ -386,7 +386,7 @@ brew install fastlane
 
 <h1 id="setting-up-your-xcode-project">Setting up your Xcode Project</h1>
 <h1 id="xcode-9-and-up">Xcode 9 and up</h1>
-<p>In most cases, <em>fastlane</em> will work out of the box with Xcode 9 and up if you selected manual code signing and choose a provisioning profile name for each of your targets (<a href="#xcode-8">see Xcode 8 section</a>).</p>
+<p>In most cases, <em>fastlane</em> will work out of the box with Xcode 9 and up if you selected manual code signing and <a href="#specify-provisioning-profile-name-for-each-targets">choose a provisioning profile name for each of your targets</a>.</p>
 <p>If you don't use <em>match</em>, we recommend defining a mapping of app target to provisioning profile in your <code>Fastfile</code>. By defining those profiles, you can guarantee reproducible builds every time you run it.</p>
 <pre><code class="language-ruby">lane :beta do
   build_app(
@@ -405,8 +405,8 @@ end
   build_app(xcargs: &quot;-allowProvisioningUpdates&quot;)
 end
 </code></pre>
-<h1 id="xcode-8">Xcode 8</h1>
-<p>With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)</p>
+<h1 id="specify-provisioning-profile-name-for-each-targets">Specify provisioning profile name for each targets</h1>
+<p>You can set a provisioning profile name for each of your targets. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)</p>
 <p>You can now specify which provisioning profile to use in the <code>General</code> tab after disabling <code>Automatically manage signing</code>.</p>
 <p><img src="/img/codesigning/ProvisioningProfileSelectionNew.png" width=500 /></p>
 <p>Alternatively you can also specify the provisioning profile in the <code>Build Settings</code> tab.</p>
