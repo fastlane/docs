@@ -4,7 +4,7 @@
 
 # Xcode 9 and up
 
-In most cases, _fastlane_ will work out of the box with Xcode 9 and up if you selected manual code signing and choose a provisioning profile name for each of your targets ([see Xcode 8 section](#xcode-8)).
+In most cases, _fastlane_ will work out of the box with Xcode 9 and up if you selected manual code signing and [choose a provisioning profile name for each of your targets](#specify-provisioning-profile-name-for-each-targets).
 
 If you don't use _match_, we recommend defining a mapping of app target to provisioning profile in your `Fastfile`. By defining those profiles, you can guarantee reproducible builds every time you run it.
 
@@ -31,9 +31,9 @@ end
 ```
 
 
-# Xcode 8
+# Specify provisioning profile name for each targets
 
-With Xcode 8 you can set a provisioning profile name for each of your targets instead of a provisioning profile UUID. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)
+You can set a provisioning profile name for each of your targets. By doing so, Xcode automatically selects the latest provisioning profile matching its name. This way you don't have to update your Xcode project, every time you re-generate your provisioning profile (e.g. when adding a new device)
 
 You can now specify which provisioning profile to use in the `General` tab after disabling `Automatically manage signing`.
 
