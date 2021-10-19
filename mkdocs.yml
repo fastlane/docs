@@ -28,7 +28,6 @@ google_analytics:
 - UA-18658848-13
 - docs.fastlane.tools
 extra_css:
-- "./css/sidenavv.css"
 - "./css/fastlane.css"
 - "./css/code.css"
 - "./css/breadcrumbs.css"
