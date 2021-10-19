@@ -12,22 +12,30 @@
     {% endif %}
     {% if page %}<li>{{ page.title }}</li>{% endif %}
 
-
-    {% if page and page.file.src_path != "actions.md" 
-          and not "actions/" in page.file.src_path 
-          and page.file.src_path != "plugins/available-plugins.md" %}
+    {% if page and page.file.src_path != "actions.md" and page.file.src_path != "plugins/available-plugins.md" %}
       <li class="wy-breadcrumbs-aside">
         {%- block repo %}
-        {% if page and page.edit_url %}
-          <a href="{{ page.edit_url }}"
+
+        {% set icon_class_block %}
           {%- if config.repo_name|lower == 'github' %}
             class="icon icon-github"
           {%- elif config.repo_name|lower == 'bitbucket' %}
             class="icon icon-bitbucket"
           {%- elif config.repo_name|lower == 'gitlab' %}
             class="icon icon-gitlab"
-          {% endif %}> Edit on {{ config.repo_name }}</a>
-        {% endif %}
+          {% endif %}
+        {% endset %}
+
+        {% set edit_docs_file_url %}
+          {%- if "actions/" in page.file.src_path %}
+            {{ config.extra.fastlane_repo_base_edit_uri }}/{{ page.file.src_path|string|safe|replace(".md", ".rb") }}
+          {%- elif page.edit_url %}
+            {{ page.edit_url }}
+          {%- endif %}
+        {% endset %}
+
+        <a href="{{ edit_docs_file_url }}" {{ icon_class_block }}>Edit on {{ config.repo_name }}</a>
+
         {%- endblock %}
       </li>
     {% endif %}
