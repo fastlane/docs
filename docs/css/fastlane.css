@@ -38,6 +38,10 @@ a {
   color: #008BF3;
 }
 
+a > code {
+  color: #008BF3 !important;
+}
+
 h3, h4, h5, h6 {
   color: #333 !important;
 }
