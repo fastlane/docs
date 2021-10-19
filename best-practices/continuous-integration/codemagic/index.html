@@ -9,7 +9,7 @@
   <meta name="author" content="fastlane team">
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>Nevercode - fastlane docs</title>
+  <title>Codemagic - fastlane docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -26,8 +26,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Nevercode";
-    var mkdocs_page_input_path = "best-practices/continuous-integration/nevercode.md";
+    var mkdocs_page_name = "Codemagic";
+    var mkdocs_page_input_path = "best-practices/continuous-integration/codemagic.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -218,6 +218,21 @@
                   <li class="toctree-l2">
   <a class="reference internal" href="../circle-ci/">CircleCI</a>
                   </li>
+                  <li class="toctree-l2 current active">
+  <a class="reference internal current" href="./">Codemagic</a>
+      <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting started</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adding-environment-variables">Adding environment variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#executing-fastlane-in-your-workflow">Executing fastlane in your workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cocoapods">CocoaPods</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#starting-your-build">Starting your build</a>
+    </li>
+      </ul>
+                  </li>
                   <li class="toctree-l2">
   <a class="reference internal" href="../github/">GitHub Actions</a>
                   </li>
@@ -226,27 +241,6 @@
                   </li>
                   <li class="toctree-l2">
   <a class="reference internal" href="../jenkins/">Jenkins</a>
-                  </li>
-                  <li class="toctree-l2 current active">
-  <a class="reference internal current" href="./">Nevercode</a>
-      <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#specify-app-repository">Specify app repository</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#define-the-lane-to-be-built">Define the lane to be built</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#external-dependencies">External dependencies</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#code-signing">Code signing</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#run-tests">Run tests</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#publish-your-build-artifacts">Publish your build artifacts</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#manage-build-versions">Manage build versions</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#more-information">More Information</a>
-    </li>
-      </ul>
                   </li>
                   <li class="toctree-l2">
   <a class="reference internal" href="../semaphore/">Semaphore</a>
@@ -312,7 +306,7 @@
         
       
     
-    <li>Nevercode</li>
+    <li>Codemagic</li>
 
     
       <li class="wy-breadcrumbs-aside">
@@ -322,7 +316,7 @@
         
 
         <a href="
-            https://github.com/fastlane/docs/edit/master/docs/best-practices/continuous-integration/nevercode.md
+            https://github.com/fastlane/docs/edit/master/docs/best-practices/continuous-integration/codemagic.md
         " 
             class="icon icon-github"
         >Edit on GitHub</a>
@@ -350,54 +344,48 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="nevercode-integration">Nevercode Integration</h1>
-<p>With <a href="https://nevercode.io">Nevercode</a> you can set up automated builds for your Android and iOS application using <em>fastlane</em>. You only need a <a href="https://docs.fastlane.tools/#fastlane"><code>Fastfile</code></a> in your repository to get started.</p>
-<h2 id="specify-app-repository">Specify app repository</h2>
-<ol>
-<li>Click <strong>Add a new app</strong> on Nevercode dashboard.</li>
-<li>Choose whether to add your application via supported providers using OAuth or add it manually using the other available <a href="https://developer.nevercode.io/docs/authenticating-repository-access">authentication methods</a>.</li>
-</ol>
-<h2 id="define-the-lane-to-be-built">Define the lane to be built</h2>
-<p>After specifying app repository, Nevercode takes a first look at it by listing the <code>branches</code> in this repository. The next step for you is to select the branch you want Nevercode to scan for projects.</p>
-<ol>
-<li>Select a <code>branch</code> from the dropdown that Nevercode should scan. <strong>Note</strong> that you can change the branch later if needed.</li>
-<li>Click <strong>Scan branch</strong>.
-Nevercode scans the repository from the specified branch. This includes cloning the repository, looking up the available <code>Fastfiles</code> and listing the pre-configured <code>lanes</code>. All this can be monitored real-time from your browser via the live log window.</li>
-<li>Once scanning the branch has finished, choose the <code>lane</code> which will be executed as the main build step by Nevercode.</li>
-<li>Finalize the setup by checking the appropriate <a href="https://developer.nevercode.io/docs/build-configuration#section-general-build-settings">build options</a> and click <strong>Save and start build</strong>.</li>
-</ol>
-<h2 id="external-dependencies">External dependencies</h2>
-<p>Nevercode does not automatically install CocoaPods, Carthage or any other external dependencies for <em>fastlane</em> projects. Please use the <em>fastlane</em>'s built-in <a href="https://docs.fastlane.tools/actions/">actions</a>, such as <a href="https://docs.fastlane.tools/actions/cocoapods/"><code>cocoapods</code></a> and <a href="https://docs.fastlane.tools/actions/carthage/"><code>carthage</code></a>, to gain control of that.</p>
-<h2 id="code-signing">Code signing</h2>
-<p>To perform code signing on your iOS app, you can either follow the best practices laid out in <a href="https://docs.fastlane.tools/codesigning/getting-started/#using-match"><code>fastlane</code> docs</a>, or you could also make use of <a href="https://developer.nevercode.io/docs/code-signing">Nevercode's standard code signing methods</a>.</p>
-<p>When invoking <a href="https://docs.fastlane.tools/actions/match/"><code>match</code></a> from the <code>Fastfile</code>, keep in mind that you need to <strong>grant access to the credentials repository</strong> and expose the <strong><em>match</em> passphrase</strong> during the build. Both can be securely achieved thanks to the well designed environment variable support of <em>fastlane</em> and Nevercode's support for several SSH keys for authentication.</p>
-<p>In your app settings on Nevercode, navigate to the <strong>Environment</strong> tab to manage environment variables and files:</p>
+                <h1 id="codemagic-integration">Codemagic Integration</h1>
+<p><a href="https://codemagic.io/">Codemagic</a> is a cloud-based CI/CD tool for mobile applications that you can use for continuous integration and delivery together with <em>fastlane</em>. Codemagic has <em>fastlane</em> pre-installed, so you can easily run your <em>fastlane</em> scripts as part of the Codemagic build process. You only need a Fastfile in your repository to get started. You can find the version of pre-installed <em>fastlane</em> based on build machine type from <a href="https://docs.codemagic.io/specs/machine-type/">here</a>.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>For publishing iOS apps, it is recommended to create an App Store Connect API key so you don't have to use 2FA. This also offers better performance and increased reliability. More details can be found <a href="https://docs.fastlane.tools/app-store-connect-api/">here</a>.</p>
+<h2 id="adding-environment-variables">Adding environment variables</h2>
+<p>The following <strong>environment variables</strong> need to be added to your workflow for <em>fastlane</em> integration. </p>
 <ul>
-<li><em>match</em> passphrase can be defined as a <code>MATCH_PASSWORD</code> environment file — this will be automatically detected by <em>fastlane</em> and used to decrypt the credentials repository.</li>
-<li>You can upload the SSH key for cloning the credentials repository as an environment file, i.e. <code>MATCH_SSH_KEY</code>. All environment files whose variable name has the suffix <code>_SSH_KEY</code> will be automatically added to the SSH agent and will be ready for use during the whole build process.</li>
+<li><code>MATCH_PASSWORD</code> - the password used to encrypt/decrypt the repository used to store your distrbution certificates and provisioning profiles.</li>
+<li><code>MATCH_KEYCHAIN</code> - an arbitrary name to use for the keychain on the Codemagic build server, e.g "fastlane_keychain"</li>
+<li><code>MATCH_SSH_KEY</code> - an SSH private key used for cloning the Match repository that contains your distrbution certificates and provisioning profiles. The public key should be added to your Github account. See <a href="https://docs.codemagic.io/configuration/access-private-git-submodules/">here</a> for more information about accessing Git dependencies with SSH keys.</li>
+<li><code>APP_STORE_CONNECT_PRIVATE_KEY</code> - the App Store Connect API key. Copy the entire contents of the .p8 file and paste into the environment variable value field.</li>
+<li><code>APP_STORE_CONNECT_KEY_IDENTIFIER</code> - the key identifier of your App Store Connect API key.</li>
+<li><code>APP_STORE_CONNECT_ISSUER_ID</code> - the issuer of your App Store Connect API key.</li>
 </ul>
-<h2 id="run-tests">Run tests</h2>
-<h3 id="ios">iOS</h3>
-<p>Testing in Nevercode with <em>fastlane</em> for iOS is 100% automatic. By default, <a href="https://docs.fastlane.tools/actions/scan/"><code>scan</code></a> is used to invoke the test run, but you can easily swap it out for any other <code>lane</code> that you have configured for your test runs. Test results are automatically collected and you don't need to do anything to convert the results from one format to another or place them in a special location on the build machine.</p>
-<h4 id="warning">Warning</h4>
-<p>In case you wish to run tests as part of the main build step, we suggest that you use <a href="https://github.com/KrauseFx/trainer#use-with-fastlane">Trainer</a> to generate reliable JUnit results from the test run and put the results in a directory where we can discover them:</p>
-<pre><code class="language-no-highlight">trainer(output_directory: ENV[&quot;NEVERCODE_XUNIT_RESULTS_DIR&quot;])
+<p>Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. Save all the variables to the same variable group and make sure that the <strong>secure</strong> checkbox is checked to encrypt any senstive values such as API keys or passwords.</p>
+<p>You can then import your variable group into your <code>codemagic.yaml</code>. For example, if you named your variable group 'fastlane', the group should be imported as follows:</p>
+<pre><code class="language-yaml">workflows:
+  workflow-name:
+    environment:
+      groups:
+        - fastlane
 </code></pre>
-<h3 id="android">Android</h3>
-<p>Nevercode detects your <strong><em>fastlane</em> tests for Android</strong> automatically. However, tests are disabled by default and have to be enabled manually.</p>
-<ol>
-<li>In your app settings on Nevercode, navigate to the <strong>Test</strong> tab.</li>
-<li>Click on <strong><em>fastlane</em> Gradle</strong> to expand it.</li>
-<li>Select <strong>Enabled</strong> and type the <strong>lane name</strong> for tests as specified in your <code>Fastfile</code>.</li>
-<li>If you would like to run the tests on Android emulator, make sure to select <strong>Require Android emulator</strong>.</li>
-<li>Click <strong>Save</strong> to finish the setup. Your <em>fastlane</em> tests will be enabled and run each time you build your app.</li>
-</ol>
-<h2 id="publish-your-build-artifacts">Publish your build artifacts</h2>
-<p>You can use either <code>fastlane</code> to take care of artifact distribution or choose from a number of <a href="https://developer.nevercode.io/docs/what-kind-of-build-distribution-services-does-nevercode-support">Nevercode's own integrations</a>.</p>
-<h2 id="manage-build-versions">Manage build versions</h2>
-<p>To make your build version management easy, Nevercode exports the <code>NEVERCODE_BUILD_NUMBER</code> environment variable that you can use in your build script. For instance, you could make use of it within <a href="https://docs.fastlane.tools/actions/increment_version_number/"><code>increment_version_number</code></a> action to define a new version for each build.</p>
-<h2 id="more-information">More Information</h2>
-<p>Check out <a href="https://developer.nevercode.io/docs">Nevercode documentation</a> for more.</p>
+<h2 id="executing-fastlane-in-your-workflow">Executing <em>fastlane</em> in your workflow</h2>
+<p>It is recommended to run your <em>fastlane</em> lanes using the <code>codemagic.yaml</code> configuration file. </p>
+<p>You should install your depenpendencies with <code>bundle install</code> and then execute the <em>fastlane</em> lane with <code>bundle exec fastlane &lt;lane_name&gt;</code> as follows:</p>
+<pre><code class="language-yaml">scripts:
+  - bundle install
+  - bundle exec fastlane beta
+</code></pre>
+<p>If you need to use a specific version of bundler as defined in the <code>Gemfile.lock</code> file, you should install it with <code>gem install bundler:&lt;version&gt;</code> as follows:</p>
+<pre><code class="language-yaml">scripts:
+  - gem install bundler:2.2.27
+  - bundle install
+  - bundle exec fastlane beta      
+</code></pre>
+<h2 id="cocoapods">CocoaPods</h2>
+<p>If you are using dependencies from Cocoapods, it might be necessary to include the CocoaPods gem in your Gemfile to prevent scope conflict issues. </p>
+<pre><code>gem &quot;fastlane&quot;
+gem &quot;cocoapods&quot;
+</code></pre>
+<h2 id="starting-your-build">Starting your build</h2>
+<p>You can start your build manually from within the Codemagic web app, or configure your builds to start on events such as pushing to your repository, creating or updating a pull request, adding a new tag, or even monitoring for file system changes. See more info in <a href="https://docs.codemagic.io/">Codemagic docs</a>.</p>
               
             </div>
           </div>
@@ -441,10 +429,10 @@ Nevercode scans the repository from the specified branch. This includes cloning 
           <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../jenkins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../circle-ci/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../semaphore/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../github/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
