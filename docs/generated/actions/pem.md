@@ -196,7 +196,7 @@ Key | Description | Default
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `p12_password` | The password that is used for your p12 file | `''`
+  `p12_password` | The password that is used for your p12 file | 
   `pem_name` | The file name of the generated .pem file | 
   `output_path` | The path to a directory in which all certificates and private keys should be stored | `.`
   `new_profile` | Block that is called if there is a new profile | 

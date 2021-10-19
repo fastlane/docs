@@ -396,10 +396,10 @@ Key | Description | Default
   `ending_locale` | **DEPRECATED!** Return the device to this locale after running tests | `en-US`
   `use_adb_root` | **DEPRECATED!** Restarts the adb daemon using `adb root` to allow access to screenshots directories on device. Use if getting 'Permission denied' errors | `false`
   `app_apk_path` | The path to the APK for the app under test | [*](#parameters-legend-dynamic)
-  `tests_apk_path` | The path to the APK for the the tests bundle | [*](#parameters-legend-dynamic)
+  `tests_apk_path` | The path to the APK for the tests bundle | [*](#parameters-legend-dynamic)
   `specific_device` | Use the device or emulator with the given serial number or qualifier | 
   `device_type` | Type of device used for screenshots. Matches Google Play Types (phone, sevenInch, tenInch, tv, wear) | `phone`
-  `exit_on_test_failure` | Whether or not to exit Screengrab on test failure. Exiting on failure will not copy sceenshots to local machine nor open sceenshots summary | `true`
+  `exit_on_test_failure` | Whether or not to exit Screengrab on test failure. Exiting on failure will not copy screenshots to local machine nor open screenshots summary | `true`
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `use_timestamp_suffix` | Add timestamp suffix to screenshot filename | `true`
   `adb_host` | Configure the host used by adb to connect, allows running on remote devices farm | 

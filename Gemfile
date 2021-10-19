@@ -4,3 +4,6 @@ source("https://rubygems.org")
 gem "danger"
 gem "fastlane", git: "https://github.com/fastlane/fastlane"
 gem "rubocop", "0.49.1"
+
+# Needed for testing sample code
+gem "xcov"
