@@ -27,8 +27,9 @@ Below are the statuses of each tool:
 | cert | **Yes** | **Yes** |
 | match | **Yes** | **Yes** |
 | produce | **Partial** | No |
-| pem | No | No |
+| pem | **Yes** | No |
 | precheck | **Yes (except for IAP)** | **Yes (except for IAP)** |
+| download_dsyms | **Yes** | No |
 
 ## Creating an App Store Connect API Key
 
@@ -91,7 +92,7 @@ The only difference when using hash is that you could use `filepath` instead of 
 Please note that `key_content` and `key_filepath` described in `app_store_connect_api_key` action are invalid both in hash and in JSON file.
 View [Token code on Github](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
 
-### Using _fastlane_ API Key JSON file 
+### Using _fastlane_ API Key JSON file
 
 Below is an example of the _fastlane_ API Key JSON file format that tools and actions will also be able to read. The JSON file requires:
 
