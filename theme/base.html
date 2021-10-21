@@ -152,7 +152,7 @@
     {%- for path in config['extra_javascript'] %}
       <script src="{{ path|url }}" defer></script>
     {%- endfor %}
-    <script defer>
+    <script>
         window.onload = function () {
             $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
             $("div[role=main] table").toggleClass("docutils");
