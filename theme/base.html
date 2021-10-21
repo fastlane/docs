@@ -80,10 +80,10 @@
       <div class="wy-side-nav-search">
     {%- block site_name %}
         <a href="{{ nav.homepage.url|url }}" class="icon icon-home"> {{ config.site_name }}</a>
-	  {%- endblock %}
-	  {%- block search_button %}
+    {%- endblock %}
+    {%- block search_button %}
         {% if 'search' in config['plugins'] %}{% include "searchbox.html" %}{% endif %}
-	  {%- endblock %}
+    {%- endblock %}
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
