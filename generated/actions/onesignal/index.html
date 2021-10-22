@@ -503,12 +503,66 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </footer>
 
 <script type="text/javascript">
-  var links = document.links;
-  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-    if (links[i].hostname != window.location.hostname) {
-      links[i].target = '_blank';
-    } 
+  function ensureExternalLinksOpenInNewTab() {
+    const links = document.links;
+    for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+      if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+      }
+    }
   }
+
+  function scrollToAnchorNestedInDetailsIfNeeded() {
+    function scrollToElement() {
+      const id = window.location.hash.substr(1);
+      if (id === '') {
+        return;
+      }
+
+      const element = document.getElementById(id);
+      if (!element) {
+        return;
+      }
+
+      const details = document.getElementsByTagName('details');
+      for (const element of details) {
+        element.open = false;
+      }
+
+      let temp = element;
+      while (temp && temp.tagName) {
+        if (temp.tagName.toLowerCase() === 'details') {
+          temp.open = true;
+        }
+
+        temp = temp.parentNode;
+      }
+
+      element.scrollIntoView();
+    }
+
+    function onReady(callback) {
+      if (document.readyState !== 'loading') {
+        callback();
+      } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', callback);
+      } else {
+        document.attachEvent('onreadystatechange', function() {
+          if (document.readyState === 'complete') {
+            callback();
+          }
+        });
+      }
+    }
+
+    onReady(function () {
+      scrollToElement();
+      window.addEventListener('hashchange', scrollToElement);
+    });
+  }
+
+  ensureExternalLinksOpenInNewTab();
+  scrollToAnchorNestedInDetailsIfNeeded();
 </script>
       
         </div>
@@ -531,7 +585,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     <!-- <script src="../../../js/theme_extra.js" defer></script>
     <script src="../../../js/theme.js" defer></script> -->
       <script src="../../../search/main.js" defer></script>
-    <script defer>
+    <script>
         window.onload = function () {
             $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
             $("div[role=main] table").toggleClass("docutils");
