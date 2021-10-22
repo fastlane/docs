@@ -427,7 +427,7 @@ fastlane-plugin-automated_test_emulator_run:
   :github_contributors: 5
 fastlane-plugin-aws_device_farm:
   :initial_commit: 2016-10-10
-  :age_in_days: 1484
+  :age_in_days: 1838
   :readme_score: 100
   :tests: 1
   :actions:
@@ -441,11 +441,11 @@ fastlane-plugin-aws_device_farm:
     category:
     description: Packages .app from deriveddata to an aws-compatible ipa
     details: Packages .app to .ipa
-  :sha: 96545f6576190e4c1861b4f2225dce8ca8aac34dc31c6df0f2c3d76abacf7d40
-  :github_stars: 80
-  :github_subscribers: 5
-  :github_issues: 5
-  :github_forks: 34
+  :sha: 75c1d0e64699f8d2a074856506889ab1816ce2048f232a8cb1d9ad94b5ca2b47
+  :github_stars: 82
+  :github_subscribers: 6
+  :github_issues: 4
+  :github_forks: 35
   :github_contributors: 0
 fastlane-plugin-download_github_release_asset:
   :initial_commit: 2016-10-16
@@ -3384,7 +3384,7 @@ fastlane-plugin-gradle_manager:
   :github_contributors: 0
 fastlane-plugin-app_info:
   :initial_commit: 2016-12-08
-  :age_in_days: 1771
+  :age_in_days: 1779
   :readme_score: 100
   :tests: 19
   :actions:
@@ -3394,7 +3394,7 @@ fastlane-plugin-app_info:
     description: Parse and dump mobile app(ipa, apk and aab file) metedata.
     details: Teardown tool for mobile app(ipa, apk and aab file), analysis metedata
       like version, name, icon etc.
-  :sha: 4fbe9954aec9272050cd1f95be42f29188fabca13a3e85498f0f669ecd6579eb
+  :sha: 6a1b11f42df8d4865be7aedb8fe8ea2da03ad8ee817413ea0959918cd987919c
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 1
@@ -5442,7 +5442,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 1206
+  :age_in_days: 1256
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5451,7 +5451,7 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details:
-  :sha: 84f78f3d0160dca9d98d58a66e8c9713eb1076490869da08f5333b75039be1ae
+  :sha: 2824801d310a352519ce1ff70f3decbc2434bc3e385d27b75d69008a43092ce9
   :github_stars: 5
   :github_subscribers: 5
   :github_issues: 0
@@ -6615,7 +6615,7 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 846
+  :age_in_days: 932
   :readme_score: 100
   :tests: 35
   :actions:
@@ -6626,8 +6626,8 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       If you use Bitcode you can also use it to download the latest dSYM files from
       App Store Connect.
-  :sha: f5c82a326c82a61da63f5164a7629af590edce7981cd351a7c78cb8c680888fd
-  :github_stars: 9
+  :sha: d84197ec91bd77a2f2c54bc28a442267e7630e275ccb4ef2a653d196406413cd
+  :github_stars: 10
   :github_subscribers: 5
   :github_issues: 0
   :github_forks: 2
@@ -10637,16 +10637,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 1141
+  :age_in_days: 1200
   :readme_score: 100
-  :tests: 140
+  :tests: 144
   :actions: []
-  :sha: 98a44113d5f6ee737397c139e1efaa5e5b08f968584a68bc99d171368454e3aa
+  :sha: 38cf9deef20474eee8187e75cda47833e0a2ace5aae81521198c74a3ea0969d1
   :github_stars: 21
-  :github_subscribers: 18
-  :github_issues: 28
+  :github_subscribers: 17
+  :github_issues: 30
   :github_forks: 6
-  :github_contributors: 9
+  :github_contributors: 10
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
   :age_in_days: 13
@@ -11100,3 +11100,20 @@ fastlane-plugin-us_ionic:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
+fastlane-plugin-validate_ipa:
+  :initial_commit: 2021-10-18
+  :age_in_days: 4
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: validate_ipa
+    category:
+    description: Validate the IPA using altool.
+    details:
+  :sha: 4fa181a4016deba6d707988bba74118e00b22a6f0074b4d0b3df2e4855f82c6f
+  :github_stars: 5
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
