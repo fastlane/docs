@@ -29,7 +29,7 @@ Below are the statuses of each tool:
 | produce | **Partial** | No |
 | pem | **Yes** | No |
 | precheck | **Yes (except for IAP)** | **Yes (except for IAP)** |
-| download_dsyms | **Yes** | No |
+| download_dsyms | **Yes** | **Yes** |
 
 ## Creating an App Store Connect API Key
 
