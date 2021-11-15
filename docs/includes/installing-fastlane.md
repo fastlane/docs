@@ -15,7 +15,7 @@ ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]
 
 **Bundler**
 
-It is recommended that you use _Bundler_ and `Gemfile` to define your dependency on _fastlane_. This will clearly define the _fastlane_ version to be used and its dependencies and will also speed up _fastlane_ execution.
+It is recommended that you use _Bundler_ and `Gemfile` to define your dependency on _fastlane_. This will clearly define the _fastlane_ version to be used and its dependencies, and will also speed up _fastlane_ execution.
 
 - Install _Bundler_ by running `gem install bundler`
 - Create a `./Gemfile` in the root directory of your project with the content
