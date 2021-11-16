@@ -1,4 +1,4 @@
-_fastlane_ can be installed multiple ways. The preferred method is with [_Bundler_](https://bundler.io). _fastlane_ can also be installed directly through with Homebrew (if on macOS). It is possible to use macOS's system Ruby but it's not recommended as it can be hard to manage dependencies and cause conflicts.
+_fastlane_ can be installed in multiple ways. The preferred method is with [_Bundler_](https://bundler.io). _fastlane_ can also be installed directly through with Homebrew (if on macOS). It is possible to use macOS's system Ruby, but it's not recommended, as it can be hard to manage dependencies, and causes conflicts.
 
 #### Managed Ruby environment + Bundler (macOS/Linux/Windows)
 
@@ -31,7 +31,7 @@ gem "fastlane"
 
 #### Homebrew (macOS)
 
-This way you don't have to install Ruby separately and instead _homebrew_ installs the most adequate Ruby version for _fastlane_.
+This way, you don't have to install Ruby separately, and instead _homebrew_ installs the adequate Ruby version for _fastlane_.
 See [this page](https://formulae.brew.sh/formula/fastlane) for details.
 
 ```sh
