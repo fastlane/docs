@@ -151,7 +151,7 @@ _pem_ uses the [password manager](https://github.com/fastlane/fastlane/tree/mast
 
 pem ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @KrauseFx
 
 
@@ -186,6 +186,7 @@ get_push_certificate(
 
 Key | Description | Default
 ----|-------------|--------
+  `platform` | Set certificate's platform. Used for creation of production & development certificates. Supported platforms: ios, macos | `ios`
   `development` | Renew the development push certificate instead of the production one | `false`
   `website_push` | Create a Website Push certificate | `false`
   `generate_p12` | Generate a p12 file additionally to a PEM file | `true`

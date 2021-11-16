@@ -11,7 +11,7 @@ Get the version number of your project
 
 
 
-> This action will return the current version number set on your project.
+> This action will return the current version number set on your project. It first looks in the plist and then for '$(MARKETING_VERSION)' in the build settings.
 
 
 get_version_number ||

@@ -30,6 +30,7 @@ Key | Description | Default
   `package` | Path to package to notarize, e.g. .app bundle or disk image | 
   `use_notarytool` | Whether to `xcrun notarytool` or `xcrun altool` | [*](#parameters-legend-dynamic)
   `try_early_stapling` | Whether to try early stapling while the notarization request is in progress | `false`
+  `skip_stapling` | Do not staple the notarization ticket to the artifact; useful for single file executables and ZIP archives | `false`
   `bundle_id` | Bundle identifier to uniquely identify the package | 
   `username` | Apple ID username | [*](#parameters-legend-dynamic)
   `asc_provider` | Provider short name for accounts associated with multiple providers | 
