@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1961
+  :age_in_days: 1994
   :readme_score: 100
   :tests: 77
   :actions:
@@ -322,12 +322,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload a sourcemap to a release of a project on Sentry
     details: " "
-  :sha: 20e27f927544109e22d4383ca50bfd23f70a86bbdacd927d944b9509c0d32335
-  :github_stars: 89
-  :github_subscribers: 19
-  :github_issues: 17
-  :github_forks: 43
-  :github_contributors: 24
+  :sha: f1b1fa286ba797d9ccd154a7b35138ff52ab75702258739dd992229626e81a6b
+  :github_stars: 91
+  :github_subscribers: 22
+  :github_issues: 18
+  :github_forks: 45
+  :github_contributors: 25
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -5442,7 +5442,7 @@ fastlane-plugin-xamarin:
   :github_contributors: 0
 fastlane-plugin-waldo:
   :initial_commit: 2018-05-15
-  :age_in_days: 1256
+  :age_in_days: 1281
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5451,7 +5451,7 @@ fastlane-plugin-waldo:
     category: testing
     description: Upload a new build to [Waldo](https://www.waldo.io)
     details:
-  :sha: 2824801d310a352519ce1ff70f3decbc2434bc3e385d27b75d69008a43092ce9
+  :sha: b1b205e1554251853c0febe9d7c9e94a13545270344ee6e64a8aa0530daf51bf
   :github_stars: 5
   :github_subscribers: 5
   :github_issues: 0
@@ -6890,20 +6890,20 @@ fastlane-plugin-summonbin:
   :github_contributors: 0
 fastlane-plugin-semaphore:
   :initial_commit: 2019-04-19
-  :age_in_days: 206
+  :age_in_days: 942
   :readme_score: 100
-  :tests: 7
+  :tests: 9
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: setup_semaphore
     category:
     description: Semaphore CI integration
     details: This plugin provides actions for setiing up Semaphore CI environment
-  :sha: a0acf4181f141c930b57d2f1b5f69ed1930fe60c47e3e01278b8c8d3ccef4ac6
+  :sha: 67e58cd246b85c1732fda8075ac155f49c4c9c3639293659b022105d2a9891bc
   :github_stars: 1
-  :github_subscribers: 3
-  :github_issues: 0
-  :github_forks: 0
+  :github_subscribers: 6
+  :github_issues: 2
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-transporter:
   :initial_commit: 2019-04-25
@@ -8014,7 +8014,7 @@ fastlane-plugin-fir_cli:
   :github_contributors: 0
 fastlane-plugin-xcresult_to_junit:
   :initial_commit: 2019-11-12
-  :age_in_days: 342
+  :age_in_days: 735
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8024,11 +8024,11 @@ fastlane-plugin-xcresult_to_junit:
     description: Produces junit xml files from Xcode 11+ xcresult files
     details: By using the xcresulttool this plugin parses xcresult files and generates
       junit reports to be used with other tools to display iOS test results
-  :sha: 3382aa8322b9100d0700fd56d2ed765d32e3802990ec758b64a3f850e07552b3
-  :github_stars: 7
+  :sha: a3e3f26bb1ad7f035080ae4a6ad812b48f5c08ecf5e1de9bcfa871d06561ad26
+  :github_stars: 8
   :github_subscribers: 1
-  :github_issues: 1
-  :github_forks: 3
+  :github_issues: 0
+  :github_forks: 4
   :github_contributors: 0
 fastlane-plugin-alioss:
   :initial_commit: 2019-11-27
@@ -8515,7 +8515,7 @@ fastlane-plugin-connected:
   :github_contributors: 2
 fastlane-plugin-flutter_version:
   :initial_commit: 2020-03-02
-  :age_in_days: 484
+  :age_in_days: 624
   :readme_score: 100
   :tests: 13
   :actions:
@@ -8524,11 +8524,11 @@ fastlane-plugin-flutter_version:
     category:
     description: A plugin to retrieve versioning information for Flutter projects.
     details:
-  :sha: 1ed5702fbf11d8baf543f8abf77ba81a547a2e3c585d0fe0757288e066d622af
-  :github_stars: 44
-  :github_subscribers: 1
+  :sha: 819c787431f7907cb159eefbb20891a6ab76aa1004a6222b2ce7cea50613be7f
+  :github_stars: 56
+  :github_subscribers: 3
   :github_issues: 2
-  :github_forks: 13
+  :github_forks: 14
   :github_contributors: 6
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
@@ -9729,7 +9729,7 @@ fastlane-plugin-semantic_convention_release:
   :github_contributors: 0
 fastlane-plugin-simple_loco:
   :initial_commit: 2020-08-28
-  :age_in_days: 305
+  :age_in_days: 445
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9741,12 +9741,12 @@ fastlane-plugin-simple_loco:
       See https://localise.biz/api/docs/export/exportlocale for all options. Common
       mobile platforms (Android, iOS, Xamarin, Flutter) have some extra logic to create
       the correct paths, and a custom implementation is provided for other platforms.
-  :sha: 5503ef49dee17e6deb50a04650002a32c7a2c84e3d5b9e63819c735e00b057a5
+  :sha: bb6eddf804e458cb42a889a2683ec816afac1a28f1453be6cd9cf20287e90787
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 1
-  :github_contributors: 2
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-flutter_version_manager:
   :initial_commit: 2020-09-01
   :age_in_days: 3
@@ -10369,7 +10369,7 @@ fastlane-plugin-fetch_version_code:
   :github_contributors: 0
 fastlane-plugin-flutter_dart_version_manager:
   :initial_commit: 2021-02-14
-  :age_in_days: 5
+  :age_in_days: 275
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10382,8 +10382,8 @@ fastlane-plugin-flutter_dart_version_manager:
     name: flutter_set_version
     category:
     description: A version manager for flutter
-    details: Later
-  :sha: 1d807724187880aa0041138d7cb608eaf32d11af983121e84248f1c766edeaba
+    details:
+  :sha: 6548b18581e5e8b57afff1eb333a149c05be99a0f1991c186db88ce0fcbeab33
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
@@ -10637,14 +10637,14 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 1200
+  :age_in_days: 1225
   :readme_score: 100
   :tests: 144
   :actions: []
-  :sha: 38cf9deef20474eee8187e75cda47833e0a2ace5aae81521198c74a3ea0969d1
-  :github_stars: 21
+  :sha: 6a5ee14f2c5a84ea2db84fc05b63d4eb4feda8f3148a259c67d9c428e4619cee
+  :github_stars: 24
   :github_subscribers: 17
-  :github_issues: 30
+  :github_issues: 29
   :github_forks: 6
   :github_contributors: 10
 fastlane-plugin-allure_zephyr:
@@ -10692,9 +10692,9 @@ fastlane-plugin-verify_ipa_with_app_store_connect:
   :github_contributors: 1
 fastlane-plugin-docc:
   :initial_commit: 2021-06-27
-  :age_in_days: 31
+  :age_in_days: 142
   :readme_score: 100
-  :tests: 2
+  :tests: 4
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: docc
@@ -10703,12 +10703,12 @@ fastlane-plugin-docc:
     details: Xcode 13 has new features to build, write, and browse documentation for
       Swift frameworks and packages. With this plugin you can automate building of
       your documentation (e.g. in CI), so you can deploy the new docs automatically.
-  :sha: ce6e3898785210e2072e121097fffd1829de8bc4116b6058e346c6fe33a37c12
+  :sha: d0ea89005125bca3e33433fcf07bdc958b6294d55826e1d756f46e20dafee28c
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-unity_exporter:
   :initial_commit: 2021-07-19
   :age_in_days: 9
@@ -11011,7 +11011,7 @@ fastlane-plugin-gitlab_tag_release:
   :github_contributors: 1
 fastlane-plugin-notifyworker:
   :initial_commit: 2021-09-06
-  :age_in_days: 19
+  :age_in_days: 71
   :readme_score: 50
   :tests: 1
   :actions:
@@ -11021,12 +11021,12 @@ fastlane-plugin-notifyworker:
     description: Notify some worker App's status
     details: Let some worker know the status of the app, for example, tell worker
       in the company that the app is updated and the app can be tested
-  :sha: c7bca245c95af662197e927ff38c7440cd8ba0b06fe26edbd869bce434d21d52
+  :sha: e5aca51c8bcd434caeaacd144ee0ccd7a80808139673ff5e2ef591e14f0e71e4
   :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 1
+  :github_contributors: 0
 fastlane-plugin-create_dmg:
   :initial_commit: 2021-09-17
   :age_in_days: 8
@@ -11117,3 +11117,56 @@ fastlane-plugin-validate_ipa:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-change_domain:
+  :initial_commit: 2021-11-08
+  :age_in_days: 8
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: change_domain
+    category:
+    description: Change the package identifier in the AndroidManifest.xml file
+    details: It will permits you to change the package name of your project before
+      the build
+  :sha: 981903057b766123c23595704cf665270b93fbe198be8e6cea8fe67deba0c251
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xiaomi_devupload:
+  :initial_commit: 2021-11-02
+  :age_in_days: 14
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: xiaomi_devupload
+    category:
+    description: Fastlane plugin for upload android app to xiaomi market
+    details: Fastlane plugin for upload android app to xiaomi market，小米应用商店 app 自动上传并提审插件
+  :sha: 62287000996b679feb7b6f1f8f8aafed310270c8586119e9cce5eb8dd6626f32
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-automated_test_emulator_run_beemo:
+  :initial_commit: 2016-07-26
+  :age_in_days: 1939
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: automated_test_emulator_run_beemo
+    category:
+    description: Starts AVD, based on AVD_setup.json file, before test launch and
+      kills it after testing is done.
+    details:
+  :sha: 7a6b413f17f928f18ed75bc46526ad444a7e6bc46952616be7d29e4cbe3c5e2e
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

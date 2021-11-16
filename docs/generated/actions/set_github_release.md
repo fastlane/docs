@@ -54,6 +54,7 @@ Key | Description | Default
   `description` | Description of this release | [*](#parameters-legend-dynamic)
   `is_draft` | Whether the release should be marked as draft | `false`
   `is_prerelease` | Whether the release should be marked as prerelease | `false`
+  `is_generate_release_notes` | Whether the name and body of this release should be generated automatically | `false`
   `upload_assets` | Path to assets to be uploaded with the release | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
