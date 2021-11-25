@@ -336,7 +336,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="get_version_number">get_version_number</h1>
 <p>Get the version number of your project</p>
 <blockquote>
-<p>This action will return the current version number set on your project.</p>
+<p>This action will return the current version number set on your project. It first looks in the plist and then for '$(MARKETING_VERSION)' in the build settings.</p>
 </blockquote>
 <table>
 <thead>
