@@ -370,11 +370,15 @@ end
 <code>.circleci/config.yml</code> with the following content:</p>
 <pre><code class="language-yml"># .circleci/config.yml
 
-version: 2
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.2.0
+
 jobs:
   build:
     macos:
-      xcode: &quot;11.3&quot;
+      xcode: &quot;13.1.0&quot;
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
@@ -382,13 +386,7 @@ jobs:
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum &quot;Gemfile.lock&quot; }}
-      - run: bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum &quot;Gemfile.lock&quot; }}
-          paths:
-            - vendor/bundle
+      - ruby/install-deps
       - run:
           name: fastlane
           command: bundle exec fastlane $FASTLANE_LANE
