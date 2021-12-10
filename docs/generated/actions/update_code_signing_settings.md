@@ -17,12 +17,12 @@ Configures Xcode's Codesigning options
 update_code_signing_settings ||
 ---|---
 Supported platforms | ios, mac
-Author | @mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons, @att55
+Author | @mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons, @att55, @abcdev
 Returns | The current status (boolean) of codesigning after modification
 
 
 
-## 2 Examples
+## 3 Examples
 
 ```ruby
  # manual code signing
@@ -40,6 +40,18 @@ update_code_signing_settings(
 )
 ```
 
+```ruby
+ # more advanced manual code signing
+update_code_signing_settings(
+  use_automatic_signing: true,
+  path: "demo-project/demo/demo.xcodeproj",
+  team_id: "QABC123DEV",
+  bundle_identifier: "com.demoapp.QABC123DEV",
+  profile_name: "Demo App Deployment Profile",
+  entitlements_file_path: "Demo App/generated/New.entitlements"
+)
+```
+
 
 
 
@@ -54,6 +66,7 @@ Key | Description | Default
   `targets` | Specify targets you want to toggle the signing mech. (default to all targets) | 
   `build_configurations` | Specify build_configurations you want to toggle the signing mech. (default to all configurations) | 
   `code_sign_identity` | Code signing identity type (iPhone Developer, iPhone Distribution) | 
+  `entitlements_file_path` | Path to your entitlements file | 
   `profile_name` | Provisioning profile name to use for code signing | 
   `profile_uuid` | Provisioning profile UUID to use for code signing | 
   `bundle_identifier` | Application Product Bundle Identifier | 

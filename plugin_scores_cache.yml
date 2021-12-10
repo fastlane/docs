@@ -1887,7 +1887,7 @@ fastlane-plugin-upload_to_onesky:
   :github_contributors: 1
 fastlane-plugin-rome:
   :initial_commit: 2017-03-27
-  :age_in_days: 899
+  :age_in_days: 1719
   :readme_score: 100
   :tests: 2
   :actions:
@@ -1897,12 +1897,12 @@ fastlane-plugin-rome:
     description: An S3 cache tool for Carthage
     details: Rome is a tool that allows developers on Apple platforms to use Amazon's
       S3  and/or others as a shared cache for frameworks built with Carthage.
-  :sha: 36575db10a6578a117585bcc22ce480f8341788249acb051d71f7058f4f874ae
-  :github_stars: 14
-  :github_subscribers: 2
-  :github_issues: 1
-  :github_forks: 3
-  :github_contributors: 5
+  :sha: e692bf9f25f65270cd1c7a1c77f075cd9aa352c47819f831577cc56ee53b8f6a
+  :github_stars: 16
+  :github_subscribers: 3
+  :github_issues: 3
+  :github_forks: 6
+  :github_contributors: 6
 fastlane-plugin-git_status:
   :initial_commit: 2016-12-07
   :age_in_days: 445
@@ -5080,7 +5080,7 @@ fastlane-plugin-build_log_info:
   :github_contributors: 1
 fastlane-plugin-mango:
   :initial_commit: 2018-08-15
-  :age_in_days: 1105
+  :age_in_days: 1213
   :readme_score: 100
   :tests: 29
   :actions:
@@ -5089,9 +5089,9 @@ fastlane-plugin-mango:
     category:
     description: Action that runs Android tasks on a specified Docker image
     details:
-  :sha: 70cf87aaa1fd27d4cf3b0c5a186bc1561e70b4acb467c0f6e50853d57c534994
-  :github_stars: 48
-  :github_subscribers: 23
+  :sha: 3da9bf532ff48805b8918f6871971b80eb5cece157f50670c73036a45b86340c
+  :github_stars: 49
+  :github_subscribers: 22
   :github_issues: 0
   :github_forks: 7
   :github_contributors: 5
@@ -7150,7 +7150,7 @@ fastlane-plugin-react_native_util:
   :github_contributors: 0
 fastlane-plugin-get_application_id_flavor:
   :initial_commit: 2017-11-18
-  :age_in_days: 1070
+  :age_in_days: 1483
   :readme_score: 50
   :tests: 1
   :actions:
@@ -7161,9 +7161,9 @@ fastlane-plugin-get_application_id_flavor:
     details: Get the applicationId of an Android project. This action will return
       the applicationId of your project according to the one set in your build.gradle
       file.
-  :sha: 87b7c88e2b03459a8757b1c7bcf4bf6a41e68d73f31e4194a9b6b8ad4bff8408
+  :sha: cd543c7ebf7bd9581dc97a6528b7b90878aef79dae0e9d04920916af0f395f3b
   :github_stars: 0
-  :github_subscribers: 0
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 3
   :github_contributors: 0
@@ -8203,15 +8203,10 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 520
+  :age_in_days: 727
   :readme_score: 100
   :tests: 1
   :actions:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: huawei_appgallery_connect_submit_for_review
-    category:
-    description: Huawei AppGallery Connect Plugin
-    details: Fastlane plugin to upload Android app to Huawei AppGallery Connect
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: huawei_appgallery_connect
     category:
@@ -8222,12 +8217,17 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
-  :sha: a2925bc8f8c8d4cfa3a7177300fc9e2b7d01e6da28d96e5bdfff4094df4cf772
-  :github_stars: 34
-  :github_subscribers: 2
-  :github_issues: 2
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: huawei_appgallery_connect_submit_for_review
+    category:
+    description: Huawei AppGallery Connect Plugin
+    details: Fastlane plugin to upload Android app to Huawei AppGallery Connect
+  :sha: 01a10678dd1735240351756a6065228db9161c870512d708079d372eaacbd777
+  :github_stars: 44
+  :github_subscribers: 4
+  :github_issues: 0
   :github_forks: 10
-  :github_contributors: 6
+  :github_contributors: 0
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
   :age_in_days: 16
@@ -10345,11 +10345,23 @@ fastlane-plugin-clear_archived_data:
   :github_forks: 1
   :github_contributors: 1
 fastlane-plugin-linear_api:
-  :github_stars: 0
-  :github_subscribers: 0
+  :github_stars: 2
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
+  :initial_commit: 2021-02-16
+  :age_in_days: 297
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: linear_api
+    category:
+    description: Provide an interface to access the Linear API
+    details: This plugin will send your query to the Linear - Issue Tracking GraphQL
+      API and return the result json
+  :sha: 81fddc1c64636097216ee14c335e79604f26a93c70129a12fdc48ea884aace3a
 fastlane-plugin-fetch_version_code:
   :initial_commit: 2019-03-16
   :age_in_days: 706
@@ -11167,6 +11179,118 @@ fastlane-plugin-automated_test_emulator_run_beemo:
   :sha: 7a6b413f17f928f18ed75bc46526ad444a7e6bc46952616be7d29e4cbe3c5e2e
   :github_stars: 0
   :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-datadog:
+  :initial_commit: 2021-11-15
+  :age_in_days: 25
+  :readme_score: 100
+  :tests: 4
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_symbols_to_datadog
+    category: misc
+    description: Uploads dSYM files to Datadog in order to symbolicate crash reports
+    details:
+  :sha: 63b2ae91cc54f751ac2b0293a7b4cb7b341ab08c23a3011ecc4ad801a05c72f9
+  :github_stars: 3
+  :github_subscribers: 9
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-sourcery:
+  :initial_commit: 2021-11-21
+  :age_in_days: 19
+  :readme_score: 100
+  :tests: 7
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sourcery
+    category: building
+    description: Sourcery is a code generator for Swift language, built on top of
+      Apple's own SwiftSyntax. It extends the language abstractions to allow you to
+      generate boilerplate code automatically.
+    details:
+  :sha: e95b1b7013112151ad6a7bfccca5369c270620aaa42228f896aba83d3921410f
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-android_versioning_plus:
+  :initial_commit: 2017-02-18
+  :age_in_days: 1756
+  :readme_score: 50
+  :tests: 22
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_value_from_build
+    category:
+    description:
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_version_code
+    category:
+    description: Get the version code of your project
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_version_name
+    category:
+    description: Get the version name of your project
+    details: " "
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: increment_version_code
+    category:
+    description: Increment the version code of your project
+    details: "\\n"
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: increment_version_name
+    category:
+    description: Increment the version name of your project
+    details: "\\n"
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_value_in_build
+    category:
+    description: Set the value of your project
+    details: "\\n"
+  :sha: dafd9641427d3c4db7137721cf4d1b37aa2c3cdb339b88918c7e6e30117809e1
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-push_cert_alert:
+  :initial_commit: 2021-11-09
+  :age_in_days: 31
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: check_push_certificate
+    category:
+    description: Easily create alerts for your APNS push certificate expiration
+    details:
+  :sha: e5ac945391a7c1cfa9c877112bd1b80864c72b7074f4671512f4017f749717dc
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ns_update_ios_identifier:
+  :initial_commit: 2021-12-09
+  :age_in_days: 1
+  :readme_score: 50
+  :tests: 4
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ns_update_ios_identifier
+    category:
+    description: Update iOS's AppIdentifier for NativeScript.
+    details: Update iOS's AppIdentifier for NativeScript.
+  :sha: '08c23c57529b7e9fb70d6fa53df7956ebfcc3e4fd967682f35b651646fbf6fd2'
+  :github_stars: 0
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
