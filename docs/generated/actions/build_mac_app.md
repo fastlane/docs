@@ -348,6 +348,7 @@ Key | Description | Default
   `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file | 
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
+  `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`

@@ -226,8 +226,8 @@ Key | Description | Default
   `project` | Path to the project file | 
   `package_path` | Path to the Swift Package | 
   `scheme` | The project's scheme. Make sure it's marked as `Shared` | 
-  `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6') | 
-  `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air']) | 
+  `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6' or 'iPhone SE (2nd generation) (14.5)') | 
+  `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air', 'iPhone SE (2nd generation) (14.5)']) | 
   `skip_detect_devices` | Should skip auto detecting of devices if none were specified | `false`
   `ensure_devices_found` | Should fail if devices not found | `false`
   `force_quit_simulator` | Enabling this option will automatically killall Simulator processes before the run | `false`

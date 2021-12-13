@@ -11,13 +11,13 @@ Select an Xcode to use by version specifier
 
 
 
-> Finds and selects a version of an installed Xcode that best matches the provided [`Gem::Version` requirement specifier](http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version)
+> Finds and selects a version of an installed Xcode that best matches the provided [`Gem::Version` requirement specifier](http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version)<br>You can either manually provide a specific version using `version:` or you make use of the `.xcode-version` file.
 
 
 xcversion ||
 ---|---
 Supported platforms | ios, mac
-Author | @oysta
+Author | @oysta, @rogerluan
 
 
 
@@ -39,7 +39,7 @@ xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8
 
 Key | Description | Default
 ----|-------------|--------
-  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0') | 
+  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0') | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
