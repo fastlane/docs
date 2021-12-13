@@ -336,7 +336,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="xcversion">xcversion</h1>
 <p>Select an Xcode to use by version specifier</p>
 <blockquote>
-<p>Finds and selects a version of an installed Xcode that best matches the provided <a href="http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version"><code>Gem::Version</code> requirement specifier</a></p>
+<p>Finds and selects a version of an installed Xcode that best matches the provided <a href="http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version"><code>Gem::Version</code> requirement specifier</a><br>You can either manually provide a specific version using <code>version:</code> or you make use of the <code>.xcode-version</code> file.</p>
 </blockquote>
 <table>
 <thead>
@@ -352,7 +352,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@oysta</td>
+<td>@oysta, @rogerluan</td>
 </tr>
 </tbody>
 </table>
@@ -374,7 +374,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>version</code></td>
 <td>The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~&gt; 7.1.0')</td>
-<td></td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 </tbody>
 </table>

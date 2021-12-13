@@ -352,7 +352,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons, @att55</td>
+<td>@mathiasAichinger, @hjanuschka, @p4checo, @portellaa, @aeons, @att55, @abcdev</td>
 </tr>
 <tr>
 <td>Returns</td>
@@ -360,7 +360,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples">2 Examples</h2>
+<h2 id="3-examples">3 Examples</h2>
 <pre><code class="language-ruby"> # manual code signing
 update_code_signing_settings(
   use_automatic_signing: false,
@@ -371,6 +371,16 @@ update_code_signing_settings(
 update_code_signing_settings(
   use_automatic_signing: true,
   path: &quot;demo-project/demo/demo.xcodeproj&quot;
+)
+</code></pre>
+<pre><code class="language-ruby"> # more advanced manual code signing
+update_code_signing_settings(
+  use_automatic_signing: true,
+  path: &quot;demo-project/demo/demo.xcodeproj&quot;,
+  team_id: &quot;QABC123DEV&quot;,
+  bundle_identifier: &quot;com.demoapp.QABC123DEV&quot;,
+  profile_name: &quot;Demo App Deployment Profile&quot;,
+  entitlements_file_path: &quot;Demo App/generated/New.entitlements&quot;
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -411,6 +421,11 @@ update_code_signing_settings(
 <tr>
 <td><code>code_sign_identity</code></td>
 <td>Code signing identity type (iPhone Developer, iPhone Distribution)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>entitlements_file_path</code></td>
+<td>Path to your entitlements file</td>
 <td></td>
 </tr>
 <tr>
