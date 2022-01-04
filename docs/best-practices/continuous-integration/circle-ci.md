@@ -47,11 +47,15 @@ Next, create a `.circleci` directory in your project and add a
 ```yml
 # .circleci/config.yml
 
-version: 2
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.2.0
+
 jobs:
   build:
     macos:
-      xcode: "11.3"
+      xcode: "13.1.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
@@ -59,13 +63,7 @@ jobs:
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-      - restore_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-      - run: bundle check || bundle install --path vendor/bundle
-      - save_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
+      - ruby/install-deps
       - run:
           name: fastlane
           command: bundle exec fastlane $FASTLANE_LANE

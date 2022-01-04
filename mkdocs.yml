@@ -4,28 +4,47 @@ theme: readthedocs
 site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
-site_favicon: img/favicon.ico
+copyright: Copyright &copy; 2021 <a href="https://fastlane.tools">fastlane</a>
 repo_url: https://github.com/fastlane/docs
+theme:
+  name: readthedocs
+  custom_dir: theme
+strict: false
+markdown_extensions:
+- markdown.extensions.attr_list
+- markdown.extensions.md_in_html
+- markdown_include.include
+- mdx_truly_sane_lists
+- toc:
+    toc_depth: 2
+plugins:
+- search
+- mkdocs-simple-hooks:
+    hooks:
+      on_pre_build: hooks:copy_generated_files
+docs_dir: docs
+extra:
+  fastlane_repo_base_edit_uri: https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane
 google_analytics:
 - UA-18658848-13
 - docs.fastlane.tools
-strict: true
-markdown_extensions:
-- pymdownx.headeranchor
-- markdown.extensions.attr_list
-- markdown_include.include
-- mdx_truly_sane_lists
-theme_dir: theme
-pages:
+extra_css:
+- "./css/fastlane.css"
+- "./css/code.css"
+- "./css/breadcrumbs.css"
+- "./css/fabric.css"
+- "./css/sidenav.css"
+nav:
 - Home: index.md
 - Getting Started:
   - iOS:
     - Setup: getting-started/ios/setup.md
+    - Authentication: getting-started/ios/authentication.md
     - Running Tests: getting-started/ios/running-tests.md
-    - _Swift: getting-started/ios/fastlane-swift.md
     - Screenshots: getting-started/ios/screenshots.md
     - Beta Deployment: getting-started/ios/beta-deployment.md
     - App Store Deployment: getting-started/ios/appstore-deployment.md
+    - Swift: getting-started/ios/fastlane-swift.md
   - Android:
     - Setup: getting-started/android/setup.md
     - Running Tests: getting-started/android/running-tests.md
@@ -81,7 +100,6 @@ pages:
   - commit_github_file: actions/commit_github_file.md
   - commit_version_bump: actions/commit_version_bump.md
   - copy_artifacts: actions/copy_artifacts.md
-  - crashlytics: actions/crashlytics.md
   - create_app_on_managed_play_store: actions/create_app_on_managed_play_store.md
   - create_app_online: actions/create_app_online.md
   - create_keychain: actions/create_keychain.md
@@ -127,6 +145,7 @@ pages:
   - git_branch: actions/git_branch.md
   - git_commit: actions/git_commit.md
   - git_pull: actions/git_pull.md
+  - git_remote_branch: actions/git_remote_branch.md
   - git_submodule_update: actions/git_submodule_update.md
   - git_tag_exists: actions/git_tag_exists.md
   - github_api: actions/github_api.md
@@ -162,6 +181,7 @@ pages:
   - mailgun: actions/mailgun.md
   - make_changelog_from_jenkins: actions/make_changelog_from_jenkins.md
   - match: actions/match.md
+  - match_nuke: actions/match_nuke.md
   - min_fastlane_version: actions/min_fastlane_version.md
   - modify_services: actions/modify_services.md
   - nexus_upload: actions/nexus_upload.md
@@ -218,6 +238,7 @@ pages:
   - slather: actions/slather.md
   - snapshot: actions/snapshot.md
   - sonar: actions/sonar.md
+  - sourcedocs: actions/sourcedocs.md
   - spaceship_logs: actions/spaceship_logs.md
   - spaceship_stats: actions/spaceship_stats.md
   - splunkmint: actions/splunkmint.md
@@ -276,7 +297,8 @@ pages:
 - Apple:
   - Using App Store Connect API: app-store-connect-api.md
   - Uploading App Privacy Details: uploading-app-privacy-details.md
-- FAQs: faqs.md
+- FAQs:
+  - FAQs: faqs.md
 - Codesigning:
   - Getting Started: codesigning/getting-started.md
   - Xcode Project: codesigning/xcode-project.md
@@ -296,9 +318,10 @@ pages:
     - Bamboo: best-practices/continuous-integration/bamboo.md
     - Bitrise: best-practices/continuous-integration/bitrise.md
     - CircleCI: best-practices/continuous-integration/circle-ci.md
+    - Codemagic: best-practices/continuous-integration/codemagic.md
+    - GitHub Actions: best-practices/continuous-integration/github.md
     - GitLab CI: best-practices/continuous-integration/gitlab.md
     - Jenkins: best-practices/continuous-integration/jenkins.md
-    - NeverCode: best-practices/continuous-integration/nevercode.md
     - Semaphore: best-practices/continuous-integration/semaphore.md
     - Travis: best-practices/continuous-integration/travis.md
   - Keys: best-practices/keys.md

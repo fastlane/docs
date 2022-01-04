@@ -2,7 +2,7 @@
 
 # iOS Beta deployment using _fastlane_
 
-# Building your app
+## Building your app
 
 _fastlane_ takes care of building your app using an action called _build_app_, just add the following to your `Fastfile`:
 
@@ -30,11 +30,11 @@ fastlane beta
 
 If everything works, you should have a `[ProductName].ipa` file in the current directory. To get a list of all available parameters for _build_app_, run `fastlane action build_app`.
 
-## Codesigning
+### Codesigning
 
 Chances are that something went wrong because of code signing at the previous step. We prepared our own [Code Signing Guide](/codesigning/getting-started/) that helps you setting up the right code signing approach for your project.
 
-# Uploading your app
+## Uploading your app
 
 After building your app, it's ready to be uploaded to a beta testing service of your choice. The beauty of _fastlane_ is that you can easily switch beta provider, or even upload to multiple at once, without any extra work.
 
@@ -56,10 +56,10 @@ To get a list of all available parameters for a given action, run
 fastlane action slack
 ```
 
-### Beta testing services
+#### Beta testing services
 
 
-<details>
+<details markdown="1">
 <summary>TestFlight</summary>
 
 You can easily upload new builds to TestFlight (which is part of App Store Connect) using _fastlane_. To do so, just use the built-in `testflight` action after building your app
@@ -102,7 +102,7 @@ With _fastlane_, you can also automatically manage your beta testers, check out 
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Firebase App Distribution</summary>
 
 Install the Firebase App Distribution plugin:
@@ -137,7 +137,7 @@ For more information and options (such as adding release notes) see the full [Ge
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>HockeyApp</summary>
 
 ```ruby
@@ -158,7 +158,7 @@ fastlane action hockey
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>TestFairy</summary>
 
 ```ruby
@@ -190,7 +190,7 @@ More information about additional supported beta testing services can be found i
 
 # Release Notes
 
-<details>
+<details markdown="1">
 <summary>Automatically based on git commits</summary>
 
 Your changelog changes, so it doesn't make a lot of sense to store a static release note in the `Fastfile`.
@@ -216,7 +216,7 @@ changelog_from_git_commits(
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Prompt for changelog</summary>
 
 You can automatically be asked for the changelog in your terminal using the `prompt` action:
@@ -243,7 +243,7 @@ end
 ---
 </details>
 
-<details>
+<details markdown="1">
 <summary>Fetching the changelog from the file system or remote server</summary>
 
 You can fetch values from anywhere in your `Fastfile`, including the file system and remote server
@@ -267,19 +267,19 @@ end
 ---
 </details>
 
-# Best Practices
+## Best Practices
 
-<details>
+<details markdown="1">
 <summary>Manage devices and testers using _fastlane_</summary>
 
-<details>
+<details markdown="1">
 <summary>TestFlight</summary>
 
 If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.
 
 _fastlane_ supports automatically registering devices using different approaches
 
-#### [boarding](https://github.com/fastlane/boarding#readme)
+##### [boarding](https://github.com/fastlane/boarding#readme)
 
 [boarding](https://github.com/fastlane/boarding#readme) allows you set up a registration page for your beta testers, so they can enter their email address and start testing your application.
 
@@ -287,7 +287,7 @@ _fastlane_ supports automatically registering devices using different approaches
 
 Check out the [boarding GitHub repo](https://github.com/fastlane/boarding#readme) for more information.
 
-#### pilot
+##### pilot
 
 _pilot_ is automatically installed with _fastlane_, you can use it to register individual testers to TestFlight
 
@@ -302,7 +302,7 @@ fastlane pilot add email@invite.com -a com.app.name
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Third party beta testing services</summary>
 
 If you're using a third party beta testing service, you'll need to manage your registered devices and their UDIDs. _fastlane_ already supports device registrations and updating provisioning profiles out of the box. 
@@ -330,14 +330,14 @@ B123456789012345678901234567890123456789  DeviceName2
 </details>
 </details>
 
-<details>
+<details markdown="1">
 <summary>Incrementing the build number</summary>
 
 Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.
 
 To do so, there are some built-in fastlane actions available, here are some examples
 
-### Fetching the latest build number from TestFlight
+#### Fetching the latest build number from TestFlight
 
 The code sample below will use the latest build number from TestFlight and temporarily set it. 
 
@@ -350,7 +350,7 @@ lane :beta do
 end
 ```
 
-### Committing the build number to version control
+#### Committing the build number to version control
 
 The code sample below will increment the build number and commit the project changes to version control.
 
@@ -382,7 +382,7 @@ For all the steps above, there are more parameters available, run the following 
 fastlane action [action_name]
 ```
 
-### Use the number of commits
+#### Use the number of commits
 
 This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via [`number_of_commits`](https://docs.fastlane.tools/actions/number_of_commits/)) as the build number. This will only work if you always run the build on the same branch.
 

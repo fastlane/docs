@@ -27,13 +27,15 @@ Below are the statuses of each tool:
 | cert | **Yes** | **Yes** |
 | match | **Yes** | **Yes** |
 | produce | **Partial** | No |
-| pem | No | No |
+| pem | **Yes** | No |
 | precheck | **Yes (except for IAP)** | **Yes (except for IAP)** |
+| download_dsyms | **Yes** | **Yes** |
 
 ## Creating an App Store Connect API Key
 
 1. Create a new App Store Connect API Key in the [Users page](https://appstoreconnect.apple.com/access/api)
   - For more info, go to the [App Store Connect API Docs](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api)
+  - Give your API Key an appropriate role for the task at hand. You can read more about roles in [Permissions in App Store Connect](https://developer.apple.com/support/roles/)
 2. Download the newly created API Key file (`.p8`)
   - This file cannot be downloaded again after the page has been refreshed
 
@@ -43,7 +45,7 @@ The API Key (located in the `.p8`) file, the key id, and the issuer id are neede
 
 **Note:** The App Store Connect API does not yet have the ability to determine if the team is App Store or Enterprise. The `app_store_connect_api_key` action and the _fastlane_ API Key JSON file format allow for an optional `in_house` key as a temporary workaround.
 
-### Using `app_store_connect_api_key`
+### Using `app_store_connect_api_key` action
 
 There is a new `app_store_connect_api_key` action which takes the key id, the issuer id, and API Key file (`.p8`) to generate a dictionary/hash used for JWT authorization. This action can be used in two ways:
 
@@ -56,7 +58,7 @@ lane :release do
     issuer_id: "6053b7fe-68a8-4acb-89be-165aa6465141",
     key_filepath: "./AuthKey_D383SF739.p8",
     duration: 1200, # optional (maximum 1200)
-    in_house: false, # optional but may be required if using match/sigh
+    in_house: false # optional but may be required if using match/sigh
   )
 
   pilot(api_key: api_key)
@@ -74,7 +76,7 @@ lane :release do
     issuer_id: "6053b7fe-68a8-4acb-89be-165aa6465141",
     key_filepath: "./AuthKey_D383SF739.p8",
     duration: 1200, # optional (maximum 1200)
-    in_house: false, # optional but may be required if using match/sigh
+    in_house: false # optional but may be required if using match/sigh
   )
 
   # Automatically loads Actions.lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
@@ -82,7 +84,15 @@ lane :release do
 end
 ```
 
-### Using _fastlane_ API Key JSON file 
+### Using _fastlane_ API Key hash option
+
+Keys and values that can be used in hash in `api_key` parameter in actions (e.g. `upload_to_testflight`) and tools (e.g. `cert`) are described in _fastlane_ API Key JSON file format below.
+The only difference when using hash is that you could use `filepath` instead of `key`.
+
+Please note that `key_content` and `key_filepath` described in `app_store_connect_api_key` action are invalid both in hash and in JSON file.
+View [Token code on Github](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
+
+### Using _fastlane_ API Key JSON file
 
 Below is an example of the _fastlane_ API Key JSON file format that tools and actions will also be able to read. The JSON file requires:
 
@@ -101,7 +111,7 @@ The JSON file allows optional:
   "issuer_id": "6053b7fe-68a8-4acb-89be-165aa6465141",
   "key": "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHknlhdlYdLu\n-----END PRIVATE KEY-----",
   "duration": 1200, # optional (maximum 1200)
-  "in_house": false, # optional but may be required if using match/sigh
+  "in_house": false # optional but may be required if using match/sigh
 }
 ```
 

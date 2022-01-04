@@ -3,3 +3,4 @@ site/
 /fastlane/report.xml
 .keys
 *.swp
+vendor/bundle

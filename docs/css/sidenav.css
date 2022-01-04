@@ -40,7 +40,7 @@
 }
 
 .wy-menu-vertical li.current {
-  background-color: #e5e5e5;
+  background-color: transparent;
 }
 
 .wy-menu-vertical li.current a {
@@ -95,7 +95,7 @@
 
 .wy-menu-vertical li.toctree-l1.current li.toctree-l2>ul,
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3>ul {
-  display: none;
+  display: block;
 }
 
 .wy-menu-vertical li.toctree-l1.current li.toctree-l2.current>ul,
@@ -421,4 +421,53 @@
     margin: 0;
     background: #fcfcfc
   }
+}
+
+/* Josh added this with big migration */
+
+span.toctree-expand:before {
+  content: "" !important;
+}
+
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+  margin-top: 0px;
+}
+
+.wy-menu-vertical ul {
+  padding-left: 10px;
+}
+.wy-menu-vertical ul ul,
+.wy-menu-vertical ul.root {
+  padding-left: 0px;
+}
+
+.wy-menu-vertical ul .toctree-l3 {
+  padding-left: 0px; 
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current > a {
+  font-weight: normal !important;
+  color: rgba(0, 93, 255, 0.7);
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current.active > a {
+  font-weight: bold !important;
+  color: rgba(0, 93, 255, 0.7);
+}
+
+.wy-menu-vertical li.on a, .wy-menu-vertical li.current > a.toc-no-link {
+  color: #666666 !important;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+  border: none;
+}
+
+.wy-menu-vertical li.toctree-l2.current > a {
+  font-weight: 700;
+}
+
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+  background-color: transparent;
 }

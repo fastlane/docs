@@ -11,11 +11,11 @@ Your App Store screenshots are probably the most important thing when it comes t
 
 _fastlane_ tools can automate this process making it fast, and consistent while giving you beautiful results!
 
-## Alternatives
+### Alternatives
 
 For the full story about the many ways that developers can capture and beautify screenshots check out [this article](https://krausefx.com/blog/creating-perfect-app-store-screenshots-of-your-ios-app).
 
-### Manually Capturing Screenshots
+#### Manually Capturing Screenshots
 
 Manually taking screenshots takes too much time, which also decreases the quality of the screenshots. Since it is not automated, the screenshots will show slightly different content on the various devices and languages. Many companies choose to create screenshots in one language and use them for all languages. While this might seem okay to us developers, there are many potential users out there that cannot read the text on your app screenshots if they are not localised. Have you ever looked at a screenshot with content in a language you don't know? It won't convince you to download the app.
 
@@ -23,13 +23,13 @@ However, the biggest disadvantage of this method is what happens when you need t
 
 The positive side of this approach is that your screenshots will all be crisp and correctly sized, with readable text.
 
-### Scaled Screenshots via App Store Connect
+#### Scaled Screenshots via App Store Connect
 
 App Store Connect allows you to use one set of screenshots per device type, which will then be scaled to the appropriate size when viewed in the App Store on a user's device.
 
 While this is convenient, this approach has the same problems as the device frame approach: The screenshots don't actually show how the app looks on the user's device. It's a valid way to start though, since you can gradually overwrite screenshots for specific languages and devices.
 
-# Capture Screenshots Automatically
+## Capture Screenshots Automatically
 
 _snapshot_ works with _fastlane_ to automate the process of capturing screenshots of your app. It allows you to:
 
@@ -47,7 +47,7 @@ After _snapshot_ successfully captures all the screenshots, it will show you a b
   <img src="/img/getting-started/ios/htmlPagePreviewFade.jpg" alt="HTML summary page" width="500" />
 </a>
 
-## Getting Started Using UI Tests
+### Getting Started Using UI Tests
 
 _snapshot_ uses the capabilities of Apple's UI Tests to drive interactions with your app. To get familiar with writing UI Tests, check out the following introductions:
 
@@ -59,7 +59,7 @@ _snapshot_ uses the capabilities of Apple's UI Tests to drive interactions with 
 
 To jump-start your UI tests, you can use the UI Test recorder, which you can start by clicking the red record button on the bottom of the window. By interacting with your app through the simulator while using it, Xcode will generate UI Test code for you. To learn more, check out this [this blog post](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line)!
 
-## Setting Up _snapshot_
+### Setting Up _snapshot_
 
 1. Create a new UI Test target in your Xcode project (See the top part of [this article](https://krausefx.com/blog/run-xcode-7-ui-tests-from-the-command-line))
 1. Run `fastlane snapshot init` in your project folder
@@ -148,7 +148,7 @@ fastlane snapshot                               # Generate screenshots for the s
 
 ![/img/getting-started/ios/snapshot.gif](/img/getting-started/ios/snapshot.gif)
 
-# Upload Screenshots to the App Store
+## Upload Screenshots to the App Store
 
 After generating your screenshots using `fastlane snapshot`, you usually want to upload them to App Store Connect.
 
@@ -162,7 +162,7 @@ fastlane deliver
 
 This will also show you a metadata summary, before actually uploading the screenshots, as this will overwrite the metadata and screenshots you already have on App Store Connect.
 
-# Use in Fastfile
+## Use in Fastfile
 
 To put all of this together so that anyone on your team could trigger generating and uploading new screenshots, you can define a _fastlane_ lane called `screenshots`. It would be responsible for:
 
@@ -185,7 +185,7 @@ fastlane action capture_screenshots
 fastlane action upload_to_app_store
 ```
 
-# Put Your Screenshots Into Device Frames
+## Put Your Screenshots Into Device Frames
 
 _frameit_ helps you beautify your screenshots with device frames and text by running one simple command. It provides support for:
 
@@ -198,7 +198,7 @@ _frameit_ helps you beautify your screenshots with device frames and text by run
   <img src="/img/getting-started/ios/frameit-results.png" alt="frameit results" width="800" />
 </a>
 
-## Usage
+### Usage
 
 To automatically add device frames around all screenshots in the current directory and its subdirectories, just run:
 
@@ -212,9 +212,9 @@ If you want to implement the custom titles and background, you'll have to setup 
 
 If you want to upload the screenshots to the App Store, you **have** to provide a `Framefile.json`, with titles and background, otherwise the resolution of the framed screenshots doesn't match the requirements of App Store Connect.
 
-## Dependencies
+### Dependencies
 
-<details>
+<details markdown="1">
 <summary>Installing ImageMagick</summary>
 
 To perform image manipulation, _frameit_ depends on a tool called `imagemagick`. The easiest way to install it is through [homebrew](http://brew.sh/):
@@ -224,7 +224,7 @@ brew install libpng jpeg imagemagick
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Troubleshooting ImageMagick</summary>
 
 If you have installed _imagemagick_ but are seeing error messages like:
@@ -240,7 +240,7 @@ brew uninstall imagemagick; brew install libpng jpeg; brew install imagemagick -
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Setting Up Device Frames</summary>
 
 To download the latest device frames, you can run
@@ -269,9 +269,9 @@ To get a list of all available options for _frame_screenshots_ (which calls into
 fastlane action frame_screenshots
 ```
 
-# Advanced _snapshot_
+## Advanced _snapshot_
 
-<details>
+<details markdown="1">
 <summary>Sample uses</summary>
 
 ```ruby
@@ -325,7 +325,7 @@ fastlane action capture_screenshots
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Reset Xcode simulators</summary>
 
 You can run this command in the terminal to delete and re-create all iOS simulators. This is useful when Xcode duplicated your local simulators.
@@ -335,7 +335,7 @@ fastlane snapshot reset_simulators
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Launch Arguments</summary>
 
 You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through `ProcessInfo.processInfo.arguments`. Alternatively, use user-default syntax (`-key value`) and they will be available as key-value pairs in `UserDefaults.standard`.
@@ -370,7 +370,7 @@ launch_arguments([
 ```
 </details>
 
-<details>
+<details markdown="1">
 <summary>Update snapshot helpers</summary>
 
 Some updates require the helper files to be updated. _snapshot_ will automatically warn you and tell you how to update.
@@ -385,14 +385,14 @@ to update your `SnapshotHelper.swift` files. In case you modified your `Snapshot
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>Clean status bar</summary>
 
 To clean the status bar (9:41, full battery and full signal), use [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic).
 
 </details>
 
-<details>
+<details markdown="1">
 <summary>How does _snapshot_ work?</summary>
 
 The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So _snapshot_ uses a different approach:
