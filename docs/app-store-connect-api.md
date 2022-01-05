@@ -30,6 +30,7 @@ Below are the statuses of each tool:
 | pem | **Yes** | No |
 | precheck | **Yes (except for IAP)** | **Yes (except for IAP)** |
 | download_dsyms | **Yes** | **Yes** |
+| app_store_build_number | **Yes** | **Yes** |
 
 ## Creating an App Store Connect API Key
 
