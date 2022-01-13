@@ -266,6 +266,7 @@ Key | Description | Default
   `skip_upload_images` | Whether to skip uploading images, screenshots not included | `false`
   `skip_upload_screenshots` | Whether to skip uploading SCREENSHOTS | `false`
   `track_promote_to` | The track to promote to. The default available tracks are: production, beta, alpha, internal | 
+  `track_promote_release_status` | Promoted track release status (used when promoting a track) - valid values are completed, draft, halted, inProgress | `completed`
   `validate_only` | Only validate changes with Google Play rather than actually publish | `false`
   `mapping` | Path to the mapping file to upload (mapping.txt or native-debug-symbols.zip alike) | 
   `mapping_paths` | An array of paths to mapping files to upload (mapping.txt or native-debug-symbols.zip alike) | 
