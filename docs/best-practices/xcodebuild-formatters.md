@@ -1,6 +1,6 @@
 ## Xcodebuild Formatters
 
-_fastlane_ uses formatters to make the output from `xcodebuild` easier to read. `xcodebuild` is used by [scan](/actions/scan/), [gym](/actions/gym), and [snapshot](/actions/snapshot). The output of `xcodebuild` is piped into a formatter by _fastlane_. Below is an example of how _fastlane_ uses formatters:
+_fastlane_ uses formatters to make the output from `xcodebuild` easier to read. `xcodebuild` is used by [_scan_](/actions/scan/), [_gym_](/actions/gym), and [_snapshot_](/actions/snapshot). The output of `xcodebuild` is piped into a formatter by _fastlane_. Below is an example of how _fastlane_ uses formatters:
 
 ```no-highlight
 $ xcodebuild [flags] | xcbeautify
@@ -72,5 +72,5 @@ Historticaly, _fastlane_ was tightly integrated with [xcpretty](https://github.c
 - Generate an HTML report
 - Generate a JSON compilation database
 
-**Before 2.201.0**, [scan](/actions/scan/) used `xcpretty` to generate these files and determine success/failure with `xcpretty` output
-<br/>**As of 2.201.0**, [scan](/actions/scan/) will only generate these if `xcodebuild_formatter` is using `xcpretty` but now use `trainer` to parse test results to determine success/failure
+**Before 2.201.0**, [_scan_](/actions/scan/) used `xcpretty` to generate these files and determine success/failure with `xcpretty` output
+<br/>**As of 2.201.0**, [_scan_](/actions/scan/) will only generate these if `xcodebuild_formatter` is using `xcpretty` but now use `trainer` to parse test results to determine success/failure
