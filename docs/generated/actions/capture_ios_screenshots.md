@@ -450,7 +450,6 @@ Key | Description | Default
   `clean` | Should the project be cleaned before building it? | `false`
   `test_without_building` | Test without building, requires a derived data path | 
   `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#parameters-legend-dynamic)
-  `xcpretty_args` | Additional xcpretty arguments | 
   `sdk` | The SDK that should be used for building the application | 
   `scheme` | The scheme you want to use, this must be the scheme for the UI Tests | 
   `number_of_retries` | The number of times a test can fail before snapshot should stop retrying | `1`
@@ -467,6 +466,8 @@ Key | Description | Default
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
+  `xcpretty_args` | **DEPRECATED!** Use `xcodebuild_formatter: ''` instead - Additional xcpretty arguments | 
   `disable_xcpretty` | Disable xcpretty formatting of build | 
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
