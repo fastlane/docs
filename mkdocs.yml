@@ -308,6 +308,7 @@ nav:
   - Create Your Own Plugin: plugins/create-plugin.md
   - Plugins Troubleshooting: plugins/plugins-troubleshooting.md
 - Best Practices:
+  - Xcodebuild Formatters: best-practices/xcodebuild-formatters.md
   - Source Control: best-practices/source-control.md
   - Continuous Integration: best-practices/continuous-integration.md
   - CI Integrations:
