@@ -55,16 +55,16 @@ $ xcodebuild [flags] | <xcodebuild_formatter>
 $ brew install xcbeautify
 ```
 
-`xcbeautify` is the recommended because:
- 
- - Faster than `xcpretty`
+`xcbeautify` is the recommended one because it:
+
  - Supports Xcode's new build system output
- - Supports  Xcode's parallel testing output
+ - Supports Xcode's parallel testing output
  - Supports formatting Swift Package Manager output
+ - It's faster than `xcpretty`
 
 #### xcpretty
 
-Historticaly, _fastlane_ was tightly integrated with [xcpretty](https://github.com/xcpretty/xcpretty). `xcpretty` is a RubyGem and a dependency of _fastlane_. This was the best option for _fastlane_ as there were no extra steps for installing or using this formatter.
+Historically, _fastlane_ was tightly integrated with [xcpretty](https://github.com/xcpretty/xcpretty). `xcpretty` is a RubyGem and a dependency of _fastlane_. This was the best option for _fastlane_ as there were no extra steps for installing or using this formatter.
 
 `xcpretty` also did more than formatting. It used the `xcodebuild` output to:
 
