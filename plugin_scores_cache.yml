@@ -93,24 +93,24 @@ fastlane-plugin-aws_s3:
   :github_contributors: 25
 fastlane-plugin-bugsnag:
   :initial_commit: 2016-08-23
-  :age_in_days: 1859
+  :age_in_days: 1979
   :readme_score: 100
   :tests: 0
   :actions:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: upload_symbols_to_bugsnag
-    category:
-    description: Uploads dSYM debug symbol files to Bugsnag
-    details: Takes debug symbol (dSYM) files from a macOS, iOS, or tvOS project and
-      uploads them to Bugsnag to improve stacktrace quality
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: send_build_to_bugsnag
     category: building
     description: Notifies Bugsnag of a build
     details: Notifies Bugsnag of a new build being released including app version
       and source control details
-  :sha: cb7bbcf8bd123566bed68905ab8edcf99bfdde4876cb43bc491c4a0f5cf5ffd3
-  :github_stars: 30
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_symbols_to_bugsnag
+    category:
+    description: Uploads dSYM debug symbol files to Bugsnag
+    details: Takes debug symbol (dSYM) files from a macOS, iOS, or tvOS project and
+      uploads them to Bugsnag to improve stacktrace quality
+  :sha: ad5061d5bfb75887b15dc1be7d5a40c068bb337488e4eb7d75b39cc3aeb0011b
+  :github_stars: 31
   :github_subscribers: 19
   :github_issues: 3
   :github_forks: 9
@@ -1616,15 +1616,14 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 1513
+  :age_in_days: 1721
   :readme_score: 100
   :tests: 131
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: appcenter_fetch_version_number
+    name: appcenter_codepush_release_react
     category:
-    description: Fetches the latest version number of an app or the last build number
-      of a version from App Center
+    description: CodePush release react action
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_fetch_devices
@@ -1634,18 +1633,24 @@ fastlane-plugin-appcenter:
     details: 'By default, only the Collaborators group will be included, use `destination:
       ''*''` to match all groups.'
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: appcenter_fetch_version_number
+    category:
+    description: Fetches the latest version number of an app or the last build number
+      of a version from App Center
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_upload
     category:
     description: Distribute new release to App Center
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: 8f349405ec8f6ce5a04b739155b6c9604082b53c81c06e24b2dc009e786dfa3e
-  :github_stars: 404
-  :github_subscribers: 17
-  :github_issues: 49
-  :github_forks: 103
-  :github_contributors: 41
+  :sha: 2e2139ed444fe77e0343437b91b9dc44adca851adc83f5f383cb1a127ea2f6c7
+  :github_stars: 440
+  :github_subscribers: 16
+  :github_issues: 57
+  :github_forks: 110
+  :github_contributors: 44
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
   :age_in_days: 587
@@ -10728,7 +10733,7 @@ fastlane-plugin-docc:
   :github_contributors: 0
 fastlane-plugin-unity_exporter:
   :initial_commit: 2021-07-19
-  :age_in_days: 178
+  :age_in_days: 188
   :readme_score: 100
   :tests: 9
   :actions:
@@ -10744,12 +10749,26 @@ fastlane-plugin-unity_exporter:
     details: Plugin for 'fastlane' that defines a pre-processing action to export
       iOS and Android projects via Unity3D. This allows Unity3D to more easily integrate
       with 'fastlane'.
-  :sha: 0c98938aae86e4de807405cdfd858922a846145960b7fb11f4eadee39d7ffa13
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: unity_get_build_number
+    category:
+    description: Will get the build number that was used for the latest Unity export
+      action. Therefore make sure to call the Unity export action before you use this
+      action.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: unity_get_version_number
+    category:
+    description: Will get the version number that was used for the latest Unity export
+      action. Therefore make sure to call the Unity export action before you use this
+      action.
+    details:
+  :sha: 4ece2f291fb10b70bcb4fbb45bb818d02e52f55af826244d6b68c29c547c8aeb
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 2
   :github_forks: 0
-  :github_contributors: 0
+  :github_contributors: 1
 fastlane-plugin-sns_http_subscribe:
   :initial_commit: 2021-07-12
   :age_in_days: 43
@@ -11360,3 +11379,56 @@ fastlane-plugin-increment_build_number:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 1
+fastlane-plugin-execute_api:
+  :initial_commit: 2022-01-20
+  :age_in_days: 3
+  :readme_score: 50
+  :tests: 2
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: execute_api
+    category:
+    description:
+    details:
+  :sha: cf8e89be6753bfbf1504f8ed21ef7421fe475c817d67384c5dbdb64a7b21e17b
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-firebase_management_api:
+  :initial_commit: 2017-04-15
+  :age_in_days: 1744
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_management_api_add_app
+    category:
+    description: Add new app to Firebase project
+    details: Firebase plugin helps you list your projects, create applications and
+      download configuration files.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_management_api_upload_sha
+    category:
+    description: Add sha to to Firebase android app
+    details: Firebase plugin helps you list your projects, create applications and
+      download configuration files.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_management_api_download_config
+    category:
+    description: Download configuration file for Firebase app
+    details: Firebase plugin helps you list your projects, create applications and
+      download configuration files.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_management_api_list
+    category:
+    description: List all Firebase projects and their apps
+    details: Firebase plugin helps you list your projects, create applications and
+      download configuration files.
+  :sha: 94723d5ec73b4c7aa3c6067226c537ac49a6ac129a8ea3c1009ddbfc7d1e6687
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 5
