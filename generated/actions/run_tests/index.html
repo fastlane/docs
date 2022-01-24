@@ -674,11 +674,6 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
-<td><code>disable_xcpretty</code></td>
-<td>Disable xcpretty formatting of build, similar to <code>output_style='raw'</code> but this will also skip the test results table</td>
-<td></td>
-</tr>
-<tr>
 <td><code>output_directory</code></td>
 <td>The directory in which all reports will be stored</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
@@ -714,7 +709,27 @@ run_tests(
 <td></td>
 </tr>
 <tr>
+<td><code>xcodebuild_formatter</code></td>
+<td>xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>output_remove_retry_attempts</code></td>
+<td>Remove retry attempts from test results table and the JUnit report (if not using xcpretty)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>disable_xcpretty</code></td>
+<td><strong>DEPRECATED!</strong> Use <code>output_style: 'raw'</code> instead - Disable xcpretty formatting of build, similar to <code>output_style='raw'</code> but this will also skip the test results table</td>
+<td></td>
+</tr>
+<tr>
 <td><code>formatter</code></td>
+<td><strong>DEPRECATED!</strong> Use 'xcpretty_formatter' instead - A custom xcpretty formatter to use</td>
+<td></td>
+</tr>
+<tr>
+<td><code>xcpretty_formatter</code></td>
 <td>A custom xcpretty formatter to use</td>
 <td></td>
 </tr>
@@ -929,6 +944,10 @@ run_tests(
 <tr>
 <td><code>SharedValues::SCAN_GENERATED_PLIST_FILES</code></td>
 <td>The generated plist files</td>
+</tr>
+<tr>
+<td><code>SharedValues::SCAN_GENERATED_XCRESULT_PATH</code></td>
+<td>The path to the generated .xcresult</td>
 </tr>
 <tr>
 <td><code>SharedValues::SCAN_ZIP_BUILD_PRODUCTS_PATH</code></td>
