@@ -339,14 +339,15 @@ Key | Description | Default
   `xcargs` | Pass additional arguments to xcodebuild for the build phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
-  `disable_xcpretty` | Disable xcpretty formatting of build output | 
+  `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
+  `disable_xcpretty` | **DEPRECATED!** Use `xcodebuild_formatter: ''` instead - Disable xcpretty formatting of build output | 
   `xcpretty_test_format` | Use the test (RSpec style) format for build output | 
   `xcpretty_formatter` | A custom xcpretty formatter to use | 
   `xcpretty_report_junit` | Have xcpretty create a JUnit-style XML report at the provided path | 
   `xcpretty_report_html` | Have xcpretty create a simple HTML report at the provided path | 
   `xcpretty_report_json` | Have xcpretty create a JSON compilation database at the provided path | 
-  `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file | 
   `xcpretty_utf` | Have xcpretty use unicode encoding when reporting builds | 
+  `analyze_build_time` | Analyze the project build time and store the output in 'culprits.txt' file | 
   `skip_profile_detection` | Do not try to build a profile mapping from the xcodeproj. Match or a manually provided mapping should be used | `false`
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
