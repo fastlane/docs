@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: bdf2336949388cfcd9b13a718bca9c12bc6ab7df
+  revision: 23f0dd06a312f579b123c53ade50c9819a0b3c80
   specs:
-    fastlane (2.201.1)
+    fastlane (2.201.2)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.8, < 3.0.0)
       artifactory (~> 3.0)
@@ -62,7 +62,7 @@ GEM
     aws-sdk-kms (1.53.0)
       aws-sdk-core (~> 3, >= 3.125.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.111.2)
+    aws-sdk-s3 (1.111.3)
       aws-sdk-core (~> 3, >= 3.125.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)

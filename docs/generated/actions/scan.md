@@ -295,7 +295,7 @@ Key | Description | Default
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
-  `number_of_retries` | The number of times a test can fail before scan should stop retrying | `0`
+  `number_of_retries` | The number of times a test can fail | `0`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

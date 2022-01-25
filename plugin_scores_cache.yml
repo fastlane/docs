@@ -11432,3 +11432,20 @@ fastlane-plugin-firebase_management_api:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 5
+fastlane-plugin-amazon_appstore:
+  :initial_commit: 2021-12-24
+  :age_in_days: 32
+  :readme_score: 100
+  :tests: 34
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_amazon_appstore
+    category:
+    description: Upload apps to Amazon Appstore
+    details: Upload apps to Amazon Appstore
+  :sha: 696c9192d0457f1f4096f0f9528fc409f4db1b0f2e6181186bfe8468fb493ef8
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
