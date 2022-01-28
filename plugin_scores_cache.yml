@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1994
+  :age_in_days: 2067
   :readme_score: 100
   :tests: 77
   :actions:
@@ -322,10 +322,10 @@ fastlane-plugin-sentry:
     category:
     description: Upload a sourcemap to a release of a project on Sentry
     details: " "
-  :sha: f1b1fa286ba797d9ccd154a7b35138ff52ab75702258739dd992229626e81a6b
+  :sha: b2f33bec1b0a68ca8e2d5606ed5363c1f3ca2085cbbc7741d50232a12d0b0075
   :github_stars: 91
-  :github_subscribers: 22
-  :github_issues: 18
+  :github_subscribers: 28
+  :github_issues: 17
   :github_forks: 45
   :github_contributors: 25
 fastlane-plugin-carthage_cache:
@@ -3496,7 +3496,7 @@ fastlane-plugin-influxdb:
   :github_contributors: 0
 fastlane-plugin-telegram:
   :initial_commit: 2017-08-19
-  :age_in_days: 381
+  :age_in_days: 1623
   :readme_score: 50
   :tests: 1
   :actions:
@@ -3505,11 +3505,11 @@ fastlane-plugin-telegram:
     category:
     description: Allows post messages to telegram channel
     details: Allows post messages to telegram channel
-  :sha: 77241f0ba7606abc40203d24bd04698fcfea399c21445d63967c299c6deede0e
-  :github_stars: 10
+  :sha: c1096c572701c7735d7cbb2c13388d521264423b1f08d5cd92b77326218a9fa9
+  :github_stars: 43
   :github_subscribers: 2
-  :github_issues: 1
-  :github_forks: 2
+  :github_issues: 3
+  :github_forks: 6
   :github_contributors: 0
 fastlane-plugin-acknowledgements:
   :initial_commit: 2017-04-09
@@ -11432,3 +11432,20 @@ fastlane-plugin-firebase_management_api:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 5
+fastlane-plugin-amazon_appstore:
+  :initial_commit: 2021-12-24
+  :age_in_days: 35
+  :readme_score: 100
+  :tests: 34
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_amazon_appstore
+    category:
+    description: Upload apps to Amazon Appstore
+    details: Upload apps to Amazon Appstore
+  :sha: 696c9192d0457f1f4096f0f9528fc409f4db1b0f2e6181186bfe8468fb493ef8
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1

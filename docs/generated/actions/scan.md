@@ -170,6 +170,7 @@ scan ||
 ---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
+Returns | Outputs has of results with :number_of_tests, :number_of_failures, :number_of_retries, :number_of_tests_excluding_retries, :number_of_failures_excluding_retries
 
 
 
@@ -266,6 +267,7 @@ Key | Description | Default
   `output_xctestrun` | Should provide additional copy of .xctestrun file (settings.xctestrun) and place in output path? | `false`
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
+  `parallel_testing` | Optionally override the per-target setting in the scheme for running tests in parallel. Equivalent to -parallel-testing-enabled | 
   `concurrent_workers` | Specify the exact number of test runners that will be spawned during parallel testing. Equivalent to -parallel-testing-worker-count | 
   `max_concurrent_simulators` | Constrain the number of simulator devices on which to test concurrently. Equivalent to -maximum-concurrent-test-simulator-destinations | 
   `disable_concurrent_testing` | Do not run test bundles in parallel on the specified destinations. Testing will occur on each destination serially. Equivalent to -disable-concurrent-testing | `false`
@@ -295,7 +297,7 @@ Key | Description | Default
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
-  `number_of_retries` | The number of times a test can fail before scan should stop retrying | `0`
+  `number_of_retries` | The number of times a test can fail | `0`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
