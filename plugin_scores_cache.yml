@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 1994
+  :age_in_days: 2073
   :readme_score: 100
   :tests: 77
   :actions:
@@ -322,10 +322,10 @@ fastlane-plugin-sentry:
     category:
     description: Upload a sourcemap to a release of a project on Sentry
     details: " "
-  :sha: f1b1fa286ba797d9ccd154a7b35138ff52ab75702258739dd992229626e81a6b
+  :sha: b2f33bec1b0a68ca8e2d5606ed5363c1f3ca2085cbbc7741d50232a12d0b0075
   :github_stars: 91
-  :github_subscribers: 22
-  :github_issues: 18
+  :github_subscribers: 28
+  :github_issues: 17
   :github_forks: 45
   :github_contributors: 25
 fastlane-plugin-carthage_cache:
@@ -3496,7 +3496,7 @@ fastlane-plugin-influxdb:
   :github_contributors: 0
 fastlane-plugin-telegram:
   :initial_commit: 2017-08-19
-  :age_in_days: 381
+  :age_in_days: 1629
   :readme_score: 50
   :tests: 1
   :actions:
@@ -3505,12 +3505,12 @@ fastlane-plugin-telegram:
     category:
     description: Allows post messages to telegram channel
     details: Allows post messages to telegram channel
-  :sha: 77241f0ba7606abc40203d24bd04698fcfea399c21445d63967c299c6deede0e
-  :github_stars: 10
+  :sha: c1096c572701c7735d7cbb2c13388d521264423b1f08d5cd92b77326218a9fa9
+  :github_stars: 43
   :github_subscribers: 2
-  :github_issues: 1
-  :github_forks: 2
-  :github_contributors: 0
+  :github_issues: 3
+  :github_forks: 6
+  :github_contributors: 5
 fastlane-plugin-acknowledgements:
   :initial_commit: 2017-04-09
   :age_in_days: 322
@@ -4633,7 +4633,7 @@ fastlane-plugin-napp_notifications:
   :github_contributors: 1
 fastlane-plugin-flutter:
   :initial_commit: 2018-04-13
-  :age_in_days: 1280
+  :age_in_days: 1392
   :readme_score: 100
   :tests: 18
   :actions:
@@ -4662,11 +4662,11 @@ fastlane-plugin-flutter:
       and generate .dart files from them.  (4) Generate an empty test importing all
       files, which would be used to calculate correct full coverage numbers."
     details:
-  :sha: e738dd4b8a77004e4c856ae2499b1610e1bc502f20de38f416154cb8634dfceb
-  :github_stars: 24
+  :sha: 6b4659f297ea642bb1ff6540c59c560a0d0a6088d2496fa2e6d505a4a87dc713
+  :github_stars: 26
   :github_subscribers: 2
   :github_issues: 3
-  :github_forks: 5
+  :github_forks: 6
   :github_contributors: 1
 fastlane-plugin-ding_talk:
   :initial_commit: 2018-04-10
@@ -8542,7 +8542,7 @@ fastlane-plugin-flutter_version:
   :github_contributors: 6
 fastlane-plugin-swiftformat:
   :initial_commit: 2020-02-01
-  :age_in_days: 32
+  :age_in_days: 733
   :readme_score: 100
   :tests: 10
   :actions:
@@ -8554,12 +8554,12 @@ fastlane-plugin-swiftformat:
       Please specify your options using a `.swiftformat` file.  An up-to-date list
       with all available rules can be found in [Rules.md](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md)
       along with documentation for how they are used.
-  :sha: d3c874de58b6bb7b4a0e2434965f23d5b7913fdf24dbd4ea5e4b71e01a0ca53e
-  :github_stars: 0
+  :sha: 4633e8950411f3846cfb15b681b20a48b2fef4a6770032109d1fbad6fd4fabd8
+  :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_forks: 1
+  :github_contributors: 2
 fastlane-plugin-codepush:
   :initial_commit: 2020-03-01
   :age_in_days: 415
@@ -10588,7 +10588,7 @@ fastlane-plugin-copy_screenshots:
   :github_contributors: 0
 fastlane-plugin-dependency_check_ios_analyzer:
   :initial_commit: 2021-05-01
-  :age_in_days: 63
+  :age_in_days: 278
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10598,11 +10598,11 @@ fastlane-plugin-dependency_check_ios_analyzer:
     description: Fastlane wrapper around the OWASP dependency-check iOS analyzers
       (Swift Package Manager and CocoaPods).
     details:
-  :sha: d8da57735dbdacb7782e9ff2b584113b06e17e8e77f672cf9671601d837674ea
+  :sha: 516bcb3f65382f886f83b437dd6abdb3154ac022251cb633af07e2a9a0bf255d
   :github_stars: 0
-  :github_subscribers: 1
+  :github_subscribers: 2
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-simulator_add_root_cert:
   :initial_commit: 2021-04-27
@@ -11432,3 +11432,37 @@ fastlane-plugin-firebase_management_api:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 5
+fastlane-plugin-amazon_appstore:
+  :initial_commit: 2021-12-24
+  :age_in_days: 41
+  :readme_score: 100
+  :tests: 34
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_amazon_appstore
+    category:
+    description: Upload apps to Amazon Appstore
+    details: Upload apps to Amazon Appstore
+  :sha: 696c9192d0457f1f4096f0f9528fc409f4db1b0f2e6181186bfe8468fb493ef8
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+fastlane-plugin-flutter_versioncode_bump:
+  :initial_commit: 2022-01-31
+  :age_in_days: 3
+  :readme_score: 100
+  :tests: 6
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: flutter_versioncode_bump
+    category:
+    description: A plugin to bump the flutter version code with fastlane.
+    details:
+  :sha: 9569ca49c7308dbd8fcf47df45a90992fc37ceba9cb2f25aa2efeddba8f753dd
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0

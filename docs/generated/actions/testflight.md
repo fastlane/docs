@@ -400,6 +400,7 @@ Key | Description | Default
   `wait_processing_timeout_duration` | Timeout duration in seconds to wait for App Store Connect processing. If set, after exceeding timeout duration, this will `force stop` to wait for App Store Connect processing and exit with exception | 
   `wait_for_uploaded_build` | **DEPRECATED!** No longer needed with the transition over to the App Store Connect API - Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`
   `reject_build_waiting_for_review` | Expire previous if it's 'waiting for review' | `false`
+  `submit_beta_review` | Send the build for a beta review | `true`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
