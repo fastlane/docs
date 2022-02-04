@@ -75,6 +75,7 @@ Key | Description | Default
   `include_all_certificates` | Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type | `false`
   `force_for_new_certificates` | Renew the provisioning profiles if the device count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
+  `safe_remove_certs` | Remove certs from repository during nuke without revoking them on the developer portal | `false`
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos, catalyst) | [*](#parameters-legend-dynamic)
   `derive_catalyst_app_identifier` | Enable this if you have the Mac Catalyst capability enabled and your project was created with Xcode 11.3 or earlier. Prepends 'maccatalyst.' to the app identifier for the provisioning profile mapping | `false`
