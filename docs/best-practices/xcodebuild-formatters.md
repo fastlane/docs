@@ -26,12 +26,12 @@ scan(
   xcodebuild_formatter: "xcpretty"
 )
 
-# Specificy a local install of xcbeautify
+# Specify a local install of xcbeautify
 scan(
   xcodebuild_formatter: "/custom/path/to/xcbeautify"
 )
 
-# Specifify your own custom formatter
+# Specify your own custom formatter
 scan(
   xcodebuild_formatter: "/custom/path/to/my_formatter"
 )
@@ -72,5 +72,5 @@ Historically, _fastlane_ was tightly integrated with [xcpretty](https://github.c
 - Generate an HTML report
 - Generate a JSON compilation database
 
-**Before 2.201.0**, [_scan_](/actions/scan/) used `xcpretty` to generate these files and determine success/failure with `xcpretty` output
-<br/>**As of 2.201.0**, [_scan_](/actions/scan/) will only generate these if `xcodebuild_formatter` is using `xcpretty` but now use `trainer` to parse test results to determine success/failure
+**Before 2.201.0**, [_scan_](/actions/scan/) used `xcpretty` to generate these files and determine success/failure with `xcpretty` output.<br/>
+**As of 2.201.0**, [_scan_](/actions/scan/) will only generate these if `xcodebuild_formatter` is using `xcpretty` but now use `trainer` to parse test results to determine success/failure.
