@@ -55,7 +55,7 @@ $ xcodebuild [flags] | <xcodebuild_formatter>
 $ brew install xcbeautify
 ```
 
-`xcbeautify` is the recommended one because it:
+`xcbeautify` is currently recommended because it:
 
  - Supports Xcode's new build system output
  - Supports Xcode's parallel testing output
