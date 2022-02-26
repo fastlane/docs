@@ -503,6 +503,10 @@ end
 <td>Author</td>
 <td>@KrauseFx</td>
 </tr>
+<tr>
+<td>Returns</td>
+<td>Outputs has of results with :number_of_tests, :number_of_failures, :number_of_retries, :number_of_tests_excluding_retries, :number_of_failures_excluding_retries</td>
+</tr>
 </tbody>
 </table>
 <h2 id="6-examples">6 Examples</h2>
@@ -764,6 +768,11 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>parallel_testing</code></td>
+<td>Optionally override the per-target setting in the scheme for running tests in parallel. Equivalent to -parallel-testing-enabled</td>
+<td></td>
+</tr>
+<tr>
 <td><code>concurrent_workers</code></td>
 <td>Specify the exact number of test runners that will be spawned during parallel testing. Equivalent to -parallel-testing-worker-count</td>
 <td></td>
@@ -910,7 +919,7 @@ run_tests(
 </tr>
 <tr>
 <td><code>number_of_retries</code></td>
-<td>The number of times a test can fail before scan should stop retrying</td>
+<td>The number of times a test can fail</td>
 <td><code>0</code></td>
 </tr>
 <tr>

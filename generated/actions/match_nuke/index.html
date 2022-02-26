@@ -542,12 +542,17 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>force_for_new_certificates</code></td>
-<td>Renew the provisioning profiles if the device count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'</td>
+<td>Renew the provisioning profiles if the certificate count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true'</td>
 <td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_confirmation</code></td>
 <td>Disables confirmation prompts during nuke, answering them with yes</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>safe_remove_certs</code></td>
+<td>Remove certs from repository during nuke without revoking them on the developer portal</td>
 <td><code>false</code></td>
 </tr>
 <tr>
