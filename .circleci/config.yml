@@ -13,7 +13,7 @@ jobs:
       - run: bundle update
       - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop
-      - run: bundle exec danger || echo "danger failed, moving on"
+      - run: bundle exec danger
   "Deploy":
     docker:
       - image: fastlanetools/ci:0.4.0
