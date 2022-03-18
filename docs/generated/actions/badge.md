@@ -47,7 +47,7 @@ badge(shield: "Version-0.0.3-blue", no_badge: true)
 
 Key | Description | Default
 ----|-------------|--------
-  `dark` | Adds a dark flavored badge ontop of your icon | 
+  `dark` | Adds a dark flavored badge on top of your icon | 
   `custom` | Add your custom overlay/badge image | 
   `no_badge` | Hides the beta badge | 
   `shield` | Add a shield to your app icon from shields.io | 
