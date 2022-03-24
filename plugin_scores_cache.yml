@@ -7858,9 +7858,9 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 896
+  :age_in_days: 966
   :readme_score: 100
-  :tests: 109
+  :tests: 112
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution
@@ -7897,12 +7897,12 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Delete testers in bulk from a comma-separated list or a file
     details: Delete testers in bulk from a comma-separated list or a file
-  :sha: '06697d5a61cc4115ed902c344dc101d59f12b2956e6da4ac8f54f2cd0665b9c2'
-  :github_stars: 105
-  :github_subscribers: 12
-  :github_issues: 1
-  :github_forks: 17
-  :github_contributors: 15
+  :sha: aa98b09d398d0357a2bf1ce67606f7032dc7708524e3f9fbcb0a46e56d2feeee
+  :github_stars: 112
+  :github_subscribers: 13
+  :github_issues: 0
+  :github_forks: 18
+  :github_contributors: 0
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
   :age_in_days: 49
@@ -11545,7 +11545,7 @@ fastlane-plugin-testappio:
   :github_contributors: 0
 fastlane-plugin-automated_test_emulator_run_next:
   :initial_commit: 2016-07-26
-  :age_in_days: 2061
+  :age_in_days: 2067
   :readme_score: 100
   :tests: 1
   :actions:
@@ -11555,9 +11555,50 @@ fastlane-plugin-automated_test_emulator_run_next:
     description: Starts AVD, based on AVD_setup.json file, before test launch and
       kills it after testing is done.
     details:
-  :sha: 2f77d3bed5a1f2b9a87f443f9b9d9f7c0ae8d93357bc2f6ca4c335bfdf35d682
+  :sha: 4f33fbd871e8750833f2c00eae6a1d1aeaec00a726160eea131628a9fac76f1a
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 2
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-xcode_build_configuration:
+  :initial_commit: 2022-03-02
+  :age_in_days: 22
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_build_number_by_scheme_and_build_configuration
+    category:
+    description: Get the build number using scheme and build configuration
+    details: Gets the $(CURRENT_PROJECT_VERSION) build setting using scheme and  build
+      configuration
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: get_marketing_version_by_scheme_and_build_configuration
+    category:
+    description: Get the marketing version using scheme and build configuration
+    details: Gets the $(MARKETING_VERSION) build setting using scheme and  build configuration
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_app_version_by_scheme_and_build_configuration
+    category:
+    description: Set the app version with using marketing version and build number
+      input for relevant scheme and build configuration
+    details: Set the app version with using marketing version and build number input
+      for relevant scheme and build configuration
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_build_number_by_scheme_and_build_configuration
+    category:
+    description: Set the build number using scheme and build configuration
+    details: Set the $(CURRENT_PROJECT_VERSION) build setting using scheme and  build
+      configuration
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: set_marketing_version_by_scheme_and_build_configuration
+    category:
+    description: Set the marketing version using scheme and build configuration
+    details: Set the $(MARKETING_VERSION) build setting using scheme and  build configuration
+  :sha: ee78bb0fb38be1c74d20137536106db2b893608271508d2f833106c545e95f87
+  :github_stars: 2
+  :github_subscribers: 1
+  :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
