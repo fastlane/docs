@@ -25,11 +25,18 @@ Author | @mollyIV, @svenmuennich
 
 
 
-## 1 Example
+## 2 Examples
 
 ```ruby
 setup_ci(
   provider: "circleci"
+)
+```
+
+```ruby
+setup_ci(
+  provider: "circleci",
+  timeout: 0
 )
 ```
 
@@ -43,6 +50,7 @@ Key | Description | Default
 ----|-------------|--------
   `force` | Force setup, even if not executed by CI | `false`
   `provider` | CI provider. If none is set, the provider is detected automatically | 
+  `timeout` | Set a custom timeout in seconds for keychain.  Set `0` if you want to specify 'no time-out' | `3600`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
