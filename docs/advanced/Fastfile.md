@@ -114,6 +114,25 @@ end
 
 This will also automatically import all the local actions from this repo.
 
+
+## `import_from_gem`
+
+Import from another ruby gem, which you can use to create a single package with common `Fastfile`s and actions for all your projects.
+
+```ruby
+import_from_gem(gem_name: 'my_gem')
+# or
+import_from_gem(gem_name: 'my_gem',
+               paths: ['fastlane/Fastfile', 'fastlane/Fastfile_*'])
+
+lane :new_main_lane do
+  # ...
+end
+```
+
+This will also automatically import all the local actions from this gem.
+
+
 ## Note
 
 You should import the other `Fastfile` on the top above your lane declarations. When defining a new lane _fastlane_ will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the `override_lane` keyword.
