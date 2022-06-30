@@ -833,6 +833,7 @@ Key | Description | Default
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
   `sync_screenshots` | Sync screenshots with local ones. This is currently beta optionso set true to 'FASTLANE_ENABLE_BETA_DELIVER_SYNC_SCREENSHOTS' environment variable as well | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
+  `verify_only` | Verifies archive with App Store Connect without uploading | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
   `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | 
   `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Can not be used together with `automatic_release`) | 
