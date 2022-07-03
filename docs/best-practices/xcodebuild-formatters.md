@@ -55,11 +55,11 @@ $ xcodebuild [flags] | <xcodebuild_formatter>
 $ brew install xcbeautify
 ```
 
-`xcbeautify` is currently recommended because it:
+`xcbeautify` is currently recommended:
 
- - Supports Xcode's new build system output
- - Supports Xcode's parallel testing output
- - Supports formatting Swift Package Manager output
+ - It supports Xcode's new build system output
+ - It supports Xcode's parallel testing output
+ - It supports formatting Swift Package Manager output
  - It's faster than `xcpretty`
 
 #### xcpretty
