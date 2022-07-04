@@ -1,2 +1,0 @@
-[context.deploy-preview.environment]
-  PYTHON_VERSION = "3.7"
