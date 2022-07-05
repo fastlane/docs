@@ -22,7 +22,7 @@ on:
       - 'master'
 jobs:
   build:
-    runs-on: macOS-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
       - run: fastlane beta

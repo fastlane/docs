@@ -388,7 +388,7 @@ to update your `SnapshotHelper.swift` files. In case you modified your `Snapshot
 <details markdown="1">
 <summary>Clean status bar</summary>
 
-To clean the status bar (9:41, full battery and full signal), use [SimulatorStatusMagic](https://github.com/shinydevelopment/SimulatorStatusMagic).
+To clean the status bar (9:41, full battery and full signal), use [the `override_status_bar` parameter](https://docs.fastlane.tools/actions/capture_ios_screenshots/#use-a-clean-status-bar).
 
 </details>
 

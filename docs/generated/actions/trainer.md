@@ -30,7 +30,7 @@ Key | Description | Default
 ----|-------------|--------
   `path` | Path to the directory that should be converted | `.`
   `extension` | The extension for the newly created file. Usually .xml or .junit | `.xml`
-  `output_directory` | Directoy in which the xml files should be written to. Same directory as source by default | 
+  `output_directory` | Directory in which the xml files should be written to. Same directory as source by default | 
   `output_filename` | Filename the xml file should be written to. Defaults to name of input file. (Only works if one input file is used) | 
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're handling this with a test reporter | `true`
   `xcpretty_naming` | Produces class name and test name identical to xcpretty naming in junit file | `false`
