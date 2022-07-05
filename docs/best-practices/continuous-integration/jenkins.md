@@ -2,16 +2,16 @@
 
 ## Installation
 
-The recommended way to install [Jenkins](http://jenkins-ci.org/) is through [homebrew](http://brew.sh/):
+The recommended way to [install Jenkins on macOS](https://www.jenkins.io/download/lts/macos/) is through [homebrew](http://brew.sh/):
 
 ```no-highlight
-brew update && brew install jenkins
+brew update && brew install jenkins-lts
 ```
 
 From now on start `Jenkins` by running:
 
 ```no-highlight
-jenkins
+brew services start jenkins-lts
 ```
 
 To store the password in the Keychain of your remote machine, it is recommended that you run _match_ or _deliver_ using ssh or remote desktop at least once.
@@ -27,10 +27,10 @@ You'll find the following Jenkins plugins to be useful:
 
 (note: We do not recommend installing the Xcode plugin)
 
-- **[HTML Publisher Plugin](https://wiki.jenkins-ci.org/display/JENKINS/HTML+Publisher+Plugin):** Can be used to show the generated screenshots right inside Jenkins.
-- **[AnsiColor Plugin](https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin):** Used to show the coloured output of the fastlane tools. Don’t forget to enable `Color ANSI Console Output` in the `Build Environment` or your project.
-- **[Rebuild Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Rebuild+Plugin):** This plugin will save you a lot of time.
-- **[Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin):** Manages keychains across Jenkins installations.
+- **[HTML Publisher Plugin](https://plugins.jenkins.io/htmlpublisher):** Can be used to show the generated screenshots right inside Jenkins.
+- **[AnsiColor Plugin](https://plugins.jenkins.io/ansicolor):** Used to show the coloured output of the fastlane tools. Don’t forget to enable `Color ANSI Console Output` in the `Build Environment` or your project.
+- **[Rebuild Plugin](https://plugins.jenkins.io/rebuild):** This plugin will save you a lot of time.
+- **[Keychains and Provisioning Profiles Plugin](https://plugins.jenkins.io/kpp-management-plugin):** Manages keychains across Jenkins installations.
 
 ## Build Step
 
@@ -46,7 +46,7 @@ Replace `appstore` with the lane you want to use.
 
 ### setup_jenkins
 
-You can use `setup_jenkins` action which integrates well with the [Keychains and Provisioning Profiles Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Keychains+and+Provisioning+Profiles+Plugin). Selected keychain will be automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the `./output` folder in the job workspace. In additions `setup_jenkins` will create separate derived data folder for each job (in the `./derivedData`).
+You can use `setup_jenkins` action which integrates well with the [Keychains and Provisioning Profiles Plugin](https://plugins.jenkins.io/kpp-management-plugin). Selected keychain will be automatically unlocked and the selected code signing identity will be used. Also all build results, like IPA files, archives, dSYMs and result bundles will be stored in the `./output` folder in the job workspace. In additions `setup_jenkins` will create separate derived data folder for each job (in the `./derivedData`).
 
 Under the hood `setup_jenkins` configures other actions like: _gym_, _scan_, `xcodebuild`, `backup_xcarchive` and `clear_derived_data`.
 
@@ -56,7 +56,7 @@ You can use `commit_version_bump` or `git_commit` action to commit changes to yo
 
 #### Gitlab
 
-When you are using Gitlab you will need the [GitLab Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitLab+Plugin). Inside the job you want to configure you go to `Build Triggers > Build when a change is pushed to GitLab > Enable [ci-skip]`.
+When you are using Gitlab you will need the [GitLab Plugin](https://plugins.jenkins.io/gitlab-plugin). Inside the job you want to configure you go to `Build Triggers > Build when a change is pushed to GitLab > Enable [ci-skip]`.
 When you include `[ci-skip]` in your build this commit won't trigger the build in jenkins at all.
 
 **Example**  

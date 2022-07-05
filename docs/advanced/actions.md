@@ -10,9 +10,9 @@ To do so, add the `:step_name` property to your arguments.
 For instance with the [fastlane-plugin-yarn](https://github.com/joshrlesch/fastlane-plugin-yarn) and the native sh:
 ```ruby
 yarn(step_name: 'install_dependencies')
-yarn(commmand: 'build', step_name: 'building_project')
-yarn(commmand: 'test', step_name: 'testing_project')
-yarn(commmand: 'publish-coverage', step_name: 'publishing_project')
+yarn(command: 'build', step_name: 'building_project')
+yarn(command: 'test', step_name: 'testing_project')
+yarn(command: 'publish-coverage', step_name: 'publishing_project')
 ```
 These name will appear as the step description instead of generic `yarn` as you can see in the following output:
 ```
