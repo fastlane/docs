@@ -45,7 +45,16 @@ deploygate(
 )
 ```
 
-
+```ruby
+deploygate(
+  api_token: "...",
+  user: "target username or organization name",
+  aab: "./aab_file.aab",
+  message: "Build #{lane_context[SharedValues::BUILD_NUMBER]}",
+  distribution_key: "(Optional) Target Distribution Key",
+  distribution_name: "(Optional) Target Distribution Name"
+)
+```
 
 
 
@@ -57,6 +66,7 @@ Key | Description | Default
   `user` | Target username or organization name | 
   `ipa` | Path to your IPA file. Optional if you use the _gym_ or _xcodebuild_ action | [*](#parameters-legend-dynamic)
   `apk` | Path to your APK file | [*](#parameters-legend-dynamic)
+  `aab` | Path to your AAB file | [*](#parameters-legend-dynamic)
   `message` | Release Notes | `No changelog provided`
   `distribution_key` | Target Distribution Key | 
   `release_note` | Release note for distribution page | 
