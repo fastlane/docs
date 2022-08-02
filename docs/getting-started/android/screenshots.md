@@ -29,7 +29,7 @@ After _screengrab_ completes, it will show you summary of the screenshots you ca
 
 _screengrab_ uses the capabilities of Android's built-in [Instrumented tests](https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests.html) combined with [Espresso](https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso) to drive interactions with your app. 
 
-To start writing UI Tests with Espresso, checkout the [Create UI tests with Espresso Test Recorder](https://www.youtube.com/watch?v=JRkDVvB106k) video which talks about the Espresso Recording feature for writing UI tests. To learn more about UI testing in Android, refer to the [Testing UI for a Single App](http://developer.android.com/training/testing/ui-testing/espresso-testing.html) guide.
+To start writing UI Tests with Espresso, checkout the [Create UI tests with Espresso Test Recorder](https://www.youtube.com/watch?v=JRkDVvB106k) video which talks about the Espresso Recording feature for writing UI tests. To learn more about UI testing in Android, refer to the [Testing UI for a Single App](https://developer.android.com/training/testing/espresso) guide.
 
 ### Installing _screengrab_
 
