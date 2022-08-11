@@ -24,7 +24,7 @@ Author | @gin0606
 ## 3 Examples
 
 ```ruby
-import_certificate(certificate_path: "certs/AppleWWDRCA.cer")
+import_certificate(certificate_path: "certs/AppleWWDRCA6.cer")
 ```
 
 ```ruby
