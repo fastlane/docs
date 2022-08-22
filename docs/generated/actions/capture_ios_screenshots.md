@@ -439,7 +439,7 @@ Key | Description | Default
   `erase_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `headless` | Enabling this option will prevent displaying the simulator window | `true`
   `override_status_bar` | Enabling this option will automatically override the status bar to show 9:41 AM, full battery, and full reception (Adjust 'SNAPSHOT_SIMULATOR_WAIT_FOR_BOOT_TIMEOUT' environment variable if override status bar is not working. Might be because simulator is not fully booted. Defaults to 10 seconds) | `false`
-  `override_status_bar_arguments` | Fully customize the status bar by setting each option here. See `xcrun simctl status_bar --help` | 
+  `override_status_bar_arguments` | Fully customize the status bar by setting each option here. Requires `override_status_bar` to be set to `true`. See `xcrun simctl status_bar --help` | 
   `localize_simulator` | Enabling this option will configure the Simulator's system language | `false`
   `dark_mode` | Enabling this option will configure the Simulator to be in dark mode (false for light, true for dark) | 
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
