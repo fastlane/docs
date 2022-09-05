@@ -19,7 +19,7 @@ Alias for the `sync_code_signing` action
 
 A new approach to iOS and macOS code signing: Share one code signing identity across your development team to simplify your codesigning setup and prevent code signing issues.
 
-_match_ is the implementation of the [codesigning.guide concept](https://codesigning.guide). _match_ creates all required certificates & provisioning profiles and stores them in a separate git repository, Google Cloud, or Amazon S3. Every team member with access to the selected storage can use those credentials for code signing. _match_ also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams
+_match_ is the implementation of the [codesigning.guide concept](https://codesigning.guide). _match_ creates all required certificates & provisioning profiles and stores them in a separate git repository, Google Cloud, Amazon S3, or AWS Secrets manager. Every team member with access to the selected storage can use those credentials for code signing. _match_ also automatically repairs broken and expired credentials. It's the easiest way to share signing credentials across teams
 
 [More information on how to get started with codesigning](https://docs.fastlane.tools/codesigning/getting-started/)
 
@@ -86,7 +86,7 @@ fastlane match init
 
 <img src="/img/actions/match_init.gif" width="550" />
 
-You'll be asked if you want to store your code signing identities inside a **Git repo**, **Google Cloud** or **Amazon S3**.
+You'll be asked if you want to store your code signing identities inside a **Git repo**, **Google Cloud**, **Amazon S3** or **AWS Secrets manager**.
 
 #### Git Storage
 
@@ -192,6 +192,16 @@ Example content (for more advanced setups check out the [fastlane section](#fast
 s3_bucket("ios-certificates")
 ```
 
+#### AWS Secrets Manager
+
+Use [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) for a fully hosted solution for your code signing identities. Certificates are stored on AWS Secrets manager, encrypted using AWS Managed keys. The files are compressed using ZLib and stored in binary format so you can only access them using the CLI (AWS limitation).
+
+Example content (for more advanced setups check out the [fastlane section](#fastlane)):
+
+```ruby-skip-tests
+google_cloud_bucket_name("major-key-certificates")
+```
+
 ### Multiple teams
 
 _match_ can store the codesigning files for multiple development teams:
@@ -205,9 +215,9 @@ match(git_branch: "team1", username: "user@team1.com")
 match(git_branch: "team2", username: "user@team2.com")
 ```
 
-#### Google Cloud or Amazon S3 Storage
+#### Google Cloud, Amazon S3 Storage or AWS Secrets manager
 
-If you use Google Cloud or Amazon S3 Storage, you don't need to do anything manually. Just use Google Cloud or Amazon S3 Storage, and the top level folder will be the team ID.
+If you use Google Cloud, Amazon S3 Storage or AWS Secrets manager, you don't need to do anything manually. Just use Google Cloud, Amazon S3 Storage, AWS Secrets manager and the top level folder will be the team ID.
 
 ### Run
 
@@ -473,6 +483,10 @@ Accessing Google Cloud Storage from your CI system requires you to provide the `
 
 Accessing Amazon S3 Storage from your CI system requires you to provide the `s3_region`, `s3_access_key`, `s3_secret_access_key` and `s3_bucket` options (or environment variables), with keys that has read access to the bucket.
 
+#### Amazon S3 Storage access
+
+Accessing Amazon S3 Storage from your CI system requires you to provide the `aws_secrets_manager_region`, `aws_secrets_manager_access_key`, `aws_secrets_manager_secret_access_key` and (recommended) `aws_secrets_manager_prefix` options (or environment variables), with keys that has read access to the bucket.
+
 ### Nuke
 
 If you never really cared about code signing and have a messy Apple Developer account with a lot of invalid, expired or Xcode managed profiles/certificates, you can use the `match nuke` command to revoke your certificates and provisioning profiles. Don't worry, apps that are already available in the App Store / TestFlight will still work. Builds distributed via Ad Hoc or Enterprise will be disabled after nuking your account, so you'll have to re-upload a new build. After clearing your account you'll start from a clean state, and you can run _match_ to generate your certificates and profiles again.
@@ -656,6 +670,12 @@ Key | Description | Default
   `s3_secret_access_key` | S3 secret access key | 
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
+  `aws_secrets_manager_region` | Region of AWS Secrets manager to use |
+  `aws_secrets_manager_access_key` | AWS Secrets manager access key |
+  `aws_secrets_manager_secret_access_key` | AWS Secrets manager secret access key |
+  `aws_secrets_manager_prefix` | AWS Secrets manager prefix for all secrets (eg. 'fastlane-certs-', highly recommended for clarity if you don't use a separate account for secrets) |
+  `aws_secrets_manager_force_delete_without_recovery` | Delete secrets without recovery period. Can't be used when `aws_secrets_manager_recovery_window_days` is defined |
+  `aws_secrets_manager_recovery_window_days` | Recovery window in days for deleted secrets. Can't be used when `aws_secrets_manager_recovery_window_days` is defined | `7`
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
