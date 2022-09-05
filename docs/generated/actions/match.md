@@ -675,7 +675,7 @@ Key | Description | Default
   `aws_secrets_manager_secret_access_key` | AWS Secrets manager secret access key |
   `aws_secrets_manager_prefix` | AWS Secrets manager prefix for all secrets (eg. 'fastlane-certs-', highly recommended for clarity if you don't use a separate account for secrets) |
   `aws_secrets_manager_force_delete_without_recovery` | Delete secrets without recovery period. Can't be used when `aws_secrets_manager_recovery_window_days` is defined |
-  `aws_secrets_manager_recovery_window_days` | Recovery window in days for deleted secrets. Can't be used when `aws_secrets_manager_recovery_window_days` is defined | `7`
+  `aws_secrets_manager_recovery_window_days` | Recovery window in days for deleted secrets. Can't be used when `aws_secrets_manager_force_delete_without_recovery` is defined | `7`
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
