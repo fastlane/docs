@@ -199,7 +199,8 @@ Use [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) for a fully h
 Example content (for more advanced setups check out the [fastlane section](#fastlane)):
 
 ```ruby-skip-tests
-google_cloud_bucket_name("major-key-certificates")
+aws_secrets_manager_region("us-east-1")
+aws_secrets_manager_prefix("fastlane-")
 ```
 
 ### Multiple teams
