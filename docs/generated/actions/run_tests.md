@@ -170,7 +170,7 @@ run_tests ||
 ---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
-Returns | Outputs has of results with :number_of_tests, :number_of_failures, :number_of_retries, :number_of_tests_excluding_retries, :number_of_failures_excluding_retries
+Returns | Outputs hash of results with the following keys: :number_of_tests, :number_of_failures, :number_of_retries, :number_of_tests_excluding_retries, :number_of_failures_excluding_retries
 
 
 

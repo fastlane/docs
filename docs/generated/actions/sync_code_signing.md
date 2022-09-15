@@ -651,11 +651,13 @@ Key | Description | Default
   `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
   `google_cloud_keys_file` | Path to the gc_keys.json file | 
   `google_cloud_project_id` | ID of the Google Cloud project to use for authentication | 
+  `skip_google_cloud_account_confirmation` | Skips confirming to use the system google account | `false`
   `s3_region` | Name of the S3 region | 
   `s3_access_key` | S3 access key | 
   `s3_secret_access_key` | S3 secret access key | 
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
+  `gitlab_project` | GitLab Project Path (i.e. 'gitlab-org/gitlab') | 
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
