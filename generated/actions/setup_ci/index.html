@@ -360,9 +360,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="1-example">1 Example</h2>
+<h2 id="2-examples">2 Examples</h2>
 <pre><code class="language-ruby">setup_ci(
   provider: &quot;circleci&quot;
+)
+</code></pre>
+<pre><code class="language-ruby">setup_ci(
+  provider: &quot;circleci&quot;,
+  timeout: 0
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -384,6 +389,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>provider</code></td>
 <td>CI provider. If none is set, the provider is detected automatically</td>
 <td></td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>Set a custom timeout in seconds for keychain.  Set <code>0</code> if you want to specify 'no time-out'</td>
+<td><code>3600</code></td>
 </tr>
 </tbody>
 </table>
