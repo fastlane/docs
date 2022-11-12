@@ -288,6 +288,7 @@ nav:
   - xcode_select: actions/xcode_select.md
   - xcode_server_get_assets: actions/xcode_server_get_assets.md
   - xcodebuild: actions/xcodebuild.md
+  - xcodes: actions/xcodes.md
   - xcov: actions/xcov.md
   - xctest: actions/xctest.md
   - xctool: actions/xctool.md

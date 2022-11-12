@@ -277,6 +277,7 @@ Key | Description | Default
   `development` | Renew the development certificate instead of the production one | `false`
   `skip_install` | By default, the certificate will be added to your local machine. Setting this flag will skip this action | `false`
   `force` | Renew provisioning profiles regardless of its state - to automatically add all devices for ad hoc profiles | `false`
+  `include_mac_in_profiles` | Include Apple Silicon Mac devices in provisioning profiles for iOS/iPadOS apps | `false`
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
   `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option) | 
