@@ -335,6 +335,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="xcversion">xcversion</h1>
 <p>Select an Xcode to use by version specifier</p>
 <blockquote>
+<p>The xcode-install gem, which this action depends on, has been sunset. Please migrate to <a href="https://docs.fastlane.tools/actions/xcodes">xcodes</a>. You can find a migration guide here: <a href="https://github.com/xcpretty/xcode-install/blob/master/MIGRATION.md">xcpretty/xcode-install/MIGRATION.md</a></p>
 <p>Finds and selects a version of an installed Xcode that best matches the provided <a href="http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version"><code>Gem::Version</code> requirement specifier</a><br>You can either manually provide a specific version using <code>version:</code> or you make use of the <code>.xcode-version</code> file.</p>
 </blockquote>
 <table>
@@ -355,10 +356,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples">2 Examples</h2>
+<h2 id="3-examples">3 Examples</h2>
 <pre><code class="language-ruby">xcversion(version: &quot;8.1&quot;) # Selects Xcode 8.1.0
 </code></pre>
 <pre><code class="language-ruby">xcversion(version: &quot;~&gt; 8.1.0&quot;) # Selects the latest installed version from the 8.1.x set
+</code></pre>
+<pre><code class="language-ruby">xcversion # When missing, the version value defaults to the value specified in the .xcode-version file
 </code></pre>
 <h2 id="parameters">Parameters</h2>
 <table>
@@ -372,7 +375,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>version</code></td>
-<td>The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~&gt; 7.1.0')</td>
+<td>The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~&gt; 7.1.0'). Defaults to the value specified in the .xcode-version file</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 </tbody>

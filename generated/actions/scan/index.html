@@ -455,7 +455,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>That's all you need to run your tests. If you want more control, here are some available parameters:</p>
 <pre><code class="language-no-highlight">fastlane scan --workspace &quot;Example.xcworkspace&quot; --scheme &quot;AppName&quot; --device &quot;iPhone 6&quot; --clean
 </code></pre>
-<p>If you need to use a different Xcode install, use <code>xcode-select</code> or define <code>DEVELOPER_DIR</code>:</p>
+<p>If you need to use a different Xcode install, use <code>[xcodes](https://docs.fastlane.tools/actions/xcodes)</code> or define <code>DEVELOPER_DIR</code>:</p>
 <pre><code class="language-no-highlight">DEVELOPER_DIR=&quot;/Applications/Xcode6.2.app&quot; scan
 </code></pre>
 <p>To run <em>scan</em> on multiple devices via <a href="https://fastlane.tools"><em>fastlane</em></a>, add this to your <code>Fastfile</code>:</p>

@@ -428,7 +428,7 @@ xcodebuild -exportArchive \
 <p>That's all you need to build your application. If you want more control, here are some available parameters:</p>
 <pre><code class="language-no-highlight">fastlane gym --workspace &quot;Example.xcworkspace&quot; --scheme &quot;AppName&quot; --clean
 </code></pre>
-<p>If you need to use a different Xcode installation, use <code>xcode-select</code> or define <code>DEVELOPER_DIR</code>:</p>
+<p>If you need to use a different Xcode installation, use <code>[xcodes](https://docs.fastlane.tools/actions/xcodes)</code> or define <code>DEVELOPER_DIR</code>:</p>
 <pre><code class="language-no-highlight">DEVELOPER_DIR=&quot;/Applications/Xcode6.2.app&quot; fastlane gym
 </code></pre>
 <p>For a list of all available parameters use</p>
@@ -474,7 +474,7 @@ output_name(&quot;MyApp&quot;)           # the name of the ipa file
   scheme: &quot;Release&quot;,
   export_method: &quot;app-store&quot;,
   export_options: {
-    provisioningProfiles: { 
+    provisioningProfiles: {
       &quot;com.example.bundleid&quot; =&gt; &quot;Provisioning Profile Name&quot;,
       &quot;com.example.bundleid2&quot; =&gt; &quot;Provisioning Profile Name 2&quot;
     }
@@ -501,10 +501,10 @@ end
 error do |lane, exception|
   slack(
     # message with short human friendly message
-    message: exception.to_s, 
-    success: false, 
+    message: exception.to_s,
+    success: false,
     # Output containing extended log output
-    payload: { &quot;Output&quot; =&gt; exception.error_info.to_s } 
+    payload: { &quot;Output&quot; =&gt; exception.error_info.to_s }
   )
 end
 </code></pre>

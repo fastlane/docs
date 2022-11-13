@@ -378,10 +378,12 @@ update_code_signing_settings(
 </code></pre>
 <pre><code class="language-ruby"> # more advanced manual code signing
 update_code_signing_settings(
-  use_automatic_signing: true,
+  use_automatic_signing: false,
   path: &quot;demo-project/demo/demo.xcodeproj&quot;,
   team_id: &quot;QABC123DEV&quot;,
   bundle_identifier: &quot;com.demoapp.QABC123DEV&quot;,
+  code_sign_identity: &quot;iPhone Distribution&quot;,
+  sdk: &quot;iphoneos*&quot;,
   profile_name: &quot;Demo App Deployment Profile&quot;,
   entitlements_file_path: &quot;Demo App/generated/New.entitlements&quot;
 )
@@ -405,6 +407,11 @@ update_code_signing_settings(
 <td><code>use_automatic_signing</code></td>
 <td>Defines if project should use automatic signing</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>sdk</code></td>
+<td>Build target SDKs (iphoneos<em>, macosx</em>, iphonesimulator*)</td>
+<td></td>
 </tr>
 <tr>
 <td><code>team_id</code></td>

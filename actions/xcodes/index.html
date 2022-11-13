@@ -9,7 +9,7 @@
   <meta name="author" content="fastlane team">
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>xcversion - fastlane docs</title>
+  <title>xcodes - fastlane docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -26,8 +26,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "xcversion";
-    var mkdocs_page_input_path = "actions/xcversion.md";
+    var mkdocs_page_name = "xcodes";
+    var mkdocs_page_input_path = "actions/xcodes.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -293,7 +293,7 @@
         
       
     
-    <li>xcversion</li>
+    <li>xcodes</li>
 
     
       <li class="wy-breadcrumbs-aside">
@@ -303,7 +303,7 @@
         
 
         <a href="
-            https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/xcversion.rb
+            https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/xcodes.rb
         " 
             class="icon icon-github"
         >Edit on GitHub</a>
@@ -333,19 +333,18 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcversion.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcodes.rb
 -->
 
-<h1 id="xcversion">xcversion</h1>
-<p>Select an Xcode to use by version specifier</p>
+<h1 id="xcodes">xcodes</h1>
+<p>Make sure a certain version of Xcode is installed, installing it only if needed</p>
 <blockquote>
-<p>The xcode-install gem, which this action depends on, has been sunset. Please migrate to <a href="https://docs.fastlane.tools/actions/xcodes">xcodes</a>. You can find a migration guide here: <a href="https://github.com/xcpretty/xcode-install/blob/master/MIGRATION.md">xcpretty/xcode-install/MIGRATION.md</a></p>
-<p>Finds and selects a version of an installed Xcode that best matches the provided <a href="http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version"><code>Gem::Version</code> requirement specifier</a><br>You can either manually provide a specific version using <code>version:</code> or you make use of the <code>.xcode-version</code> file.</p>
+<p>Makes sure a specific version of Xcode is installed. If that's not the case, it will automatically be downloaded by <a href="https://github.com/RobotsAndPencils/xcodes">xcodes</a>.<br>This will make sure to use the correct Xcode version for later actions.<br>Note that this action depends on <a href="https://github.com/RobotsAndPencils/xcodes">xcodes</a> CLI, so make sure you have it installed in your environment. For the installation guide, see: https://github.com/RobotsAndPencils/xcodes#installation</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>xcversion</th>
+<th>xcodes</th>
 <th></th>
 </tr>
 </thead>
@@ -356,16 +355,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@oysta, @rogerluan</td>
+<td>@rogerluan</td>
+</tr>
+<tr>
+<td>Returns</td>
+<td>The path to the newly installed Xcode version</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples">3 Examples</h2>
-<pre><code class="language-ruby">xcversion(version: &quot;8.1&quot;) # Selects Xcode 8.1.0
+<h2 id="2-examples">2 Examples</h2>
+<pre><code class="language-ruby">xcodes(version: &quot;14.1&quot;)
 </code></pre>
-<pre><code class="language-ruby">xcversion(version: &quot;~&gt; 8.1.0&quot;) # Selects the latest installed version from the 8.1.x set
-</code></pre>
-<pre><code class="language-ruby">xcversion # When missing, the version value defaults to the value specified in the .xcode-version file
+<pre><code class="language-ruby">xcodes # When missing, the version value defaults to the value specified in the .xcode-version file
 </code></pre>
 <h2 id="parameters">Parameters</h2>
 <table>
@@ -379,33 +380,72 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>version</code></td>
-<td>The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~&gt; 7.1.0'). Defaults to the value specified in the .xcode-version file</td>
+<td>The version number of the version of Xcode to install. Defaults to the value specified in the .xcode-version file</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>update_list</code></td>
+<td>Whether the list of available Xcode versions should be updated before running the install command</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>select_for_current_build_only</code></td>
+<td>When true, it won't attempt to install an Xcode version, just find the installed Xcode version that best matches the passed version argument, and select it for the current build steps. It doesn't change the global Xcode version (e.g. via 'xcrun xcode-select'), which would require sudo permissions — when this option is true, this action doesn't require sudo permissions</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>binary_path</code></td>
+<td>Where the xcodes binary lives on your system (full path)</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>xcodes_args</code></td>
+<td>Pass in xcodes command line arguments directly. When present, other parameters are ignored and only this parameter is used to build the command to be executed</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
+<h2 id="lane-variables">Lane Variables</h2>
+<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>xcodes</code> action generates the following Lane Variables:</p>
+<table>
+<thead>
+<tr>
+<th>SharedValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SharedValues::XCODES_XCODE_PATH</code></td>
+<td>The path to the newly installed Xcode version</td>
+</tr>
+</tbody>
+</table>
+<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.</p>
+<hr />
+
 <h2 id="documentation">Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="language-no-highlight">fastlane action xcversion
+<pre><code class="language-no-highlight">fastlane action xcodes
 </code></pre>
 <hr />
 
 <h2 id="cli">CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="language-no-highlight">fastlane run xcversion
+<pre><code class="language-no-highlight">fastlane run xcodes
 </code></pre>
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="language-no-highlight">fastlane run xcversion parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="language-no-highlight">fastlane run xcodes parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
 <p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
 <hr />
 
 <h2 id="source-code">Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcversion.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/xcodes.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -506,10 +546,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
           <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../xctool/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../xcodebuild/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../zip/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../xcov/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
