@@ -18,7 +18,23 @@
 1. Return to the **Google Play Console** tab, and click **DONE** to close the dialog
 1. Click on **Grant Access** for the newly added service account at the bottom of the screen (you may need to click **Refresh service accounts** before it shows up)
 1. Choose the permissions you'd like this account to have. We recommend **Admin (all permissions)**, but you may want to manually select all checkboxes and leave out some of the **Releases** permissions such as **Release to production**
-1. Click **Invite user** to finish
+
+Go to the Google Play Console and find the API Access Section under Setup -> API Access in the navigation panel on the left
+
+![image](https://user-images.githubusercontent.com/1289702/204157056-3227dd8f-03cf-4c1f-85f1-7fd5eae7059b.png)
+
+On the API Access page click the “View Play Console permissons” link. You may have to scroll down a bit. It’s going to be attached to the service account that you made for your app.
+
+![image](https://user-images.githubusercontent.com/1289702/204157081-b0525611-8c5a-417a-beac-040cdb6f25d8.png)
+
+Click on the “Account permissions” tab
+
+![image](https://user-images.githubusercontent.com/1289702/204157104-500c7142-dfe6-4ad0-b9d5-7d9dc836c3f0.png)
+
+and click the checkmark labelled Admin
+
+![image](https://user-images.githubusercontent.com/1289702/204157156-6d9fd9ea-d045-4409-9639-6214faa8957d.png)
+
 
 You can use [`fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json`](https://docs.fastlane.tools/actions/validate_play_store_json_key/) to test the connection to Google Play Store with the downloaded private key. Once that works, add the path to the JSON file to your [Appfile](/advanced/Appfile):
 
