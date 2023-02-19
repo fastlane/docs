@@ -627,7 +627,7 @@ match   # alias for "sync_code_signing"
 
 Key | Description | Default
 ----|-------------|--------
-  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution | `development`
+  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution, developer_id_installer | `development`
   `additional_cert_types` | Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer) | 
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
