@@ -265,6 +265,7 @@ Key | Description | Default
   `derived_data_path` | The directory where build products and other derived data will go | 
   `should_zip_build_products` | Should zip the derived data build products and place in output path? | `false`
   `output_xctestrun` | Should provide additional copy of .xctestrun file (settings.xctestrun) and place in output path? | `false`
+  `result_bundle_path` | Custom path for the result bundle, overrides result_bundle | 
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
   `parallel_testing` | Optionally override the per-target setting in the scheme for running tests in parallel. Equivalent to -parallel-testing-enabled | 

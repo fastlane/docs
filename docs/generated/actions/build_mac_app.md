@@ -340,6 +340,7 @@ Key | Description | Default
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
   `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
+  `build_timing_summary` | Create a build timing summary | `false`
   `disable_xcpretty` | **DEPRECATED!** Use `xcodebuild_formatter: ''` instead - Disable xcpretty formatting of build output | 
   `xcpretty_test_format` | Use the test (RSpec style) format for build output | 
   `xcpretty_formatter` | A custom xcpretty formatter to use | 
