@@ -4412,7 +4412,7 @@ fastlane-plugin-run_tests_firebase_testlab:
   :github_contributors: 0
 fastlane-plugin-instabug_official:
   :initial_commit: 2018-02-12
-  :age_in_days: 1289
+  :age_in_days: 1838
   :readme_score: 100
   :tests: 1
   :actions:
@@ -4421,12 +4421,12 @@ fastlane-plugin-instabug_official:
     category:
     description:
     details:
-  :sha: 85dd86e3a4201d5e6b1322daf2f2992b0bb001a4991e8ad09603cc6685ed21ad
-  :github_stars: 4
+  :sha: 3c0a0133babe3edd13fd3f016a9c0631f1ab9360738bba79725152be97f3b9a6
+  :github_stars: 5
   :github_subscribers: 4
   :github_issues: 1
   :github_forks: 5
-  :github_contributors: 8
+  :github_contributors: 0
 fastlane-plugin-google_drive:
   :initial_commit: 2018-02-09
   :age_in_days: 1836
@@ -12504,7 +12504,7 @@ fastlane-plugin-package_submit:
   :github_contributors: 0
 fastlane-plugin-xcodetestcoverage:
   :initial_commit: 2023-02-18
-  :age_in_days: 1
+  :age_in_days: 6
   :readme_score: 100
   :tests: 1
   :actions:
@@ -12513,7 +12513,7 @@ fastlane-plugin-xcodetestcoverage:
     category:
     description: plugin for getting coverage test data from Xcode
     details: plugin for getting test data from Xcode
-  :sha: 1e0fb76080beca04022507135716c8492f9b4e3751ae72c6227de2146c2e3248
+  :sha: 5bfbe3a9402629d1f58a571be8b03afabfe4fd7f6211786ab9fcc435a8efd597
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -12555,6 +12555,23 @@ fastlane-plugin-firebase_test_lab_integration:
     description: FirebaseTestLabIntegration
     details: FirebaseTestLabIntegration
   :sha: ff12190849357863359ccd7ca63094785a49f8590c6a0251f0021e247a6165f4
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-auth_with_github_app:
+  :initial_commit: 2023-02-09
+  :age_in_days: 15
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: auth_with_github_app
+    category:
+    description: Get a GitHub access token using the GitHub App
+    details:
+  :sha: 9bcf429e13360d4ca3bd2861dd5871c3afc8d5c03b729be1cce07f6e205a2152
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
