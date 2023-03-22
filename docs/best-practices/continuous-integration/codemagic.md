@@ -17,7 +17,7 @@ The following **environment variables** need to be added to your workflow for *f
 - `APP_STORE_CONNECT_KEY_IDENTIFIER` - the key identifier of your App Store Connect API key.
 - `APP_STORE_CONNECT_ISSUER_ID` - the issuer of your App Store Connect API key.
 
-Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. Save all the variables to the same variable group and make sure that the **secure** checkbox is checked to encrypt any senstive values such as API keys or passwords.
+Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. Save all the variables to the same variable group and make sure that the **secure** checkbox is checked to encrypt any sensitive values such as API keys or passwords.
 
 You can then import your variable group into your `codemagic.yaml`. For example, if you named your variable group 'fastlane', the group should be imported as follows:
 

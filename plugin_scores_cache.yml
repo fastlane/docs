@@ -970,7 +970,7 @@ fastlane-plugin-instrumented_tests:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: instrumented_tests
     category:
-    description: Run android instrumented tests via a gradle command againts a newly
+    description: Run android instrumented tests via a gradle command against a newly
       created avd
     details: "\\n"
   :sha: ab5b2db551ee3881db221ea29c042e22391c2a48129f719bd69271ba6b03367c
@@ -2075,7 +2075,7 @@ fastlane-plugin-git_info_extract:
     name: git_info_extract
     category:
     description: Extract JIRA information from git merge
-    details: using git log to get infomation
+    details: using git log to get information
   :sha: 8108f584bc237c6ac9ca2bfc01dbe7b3a80f458532613b8f01b408d48b1566b1
   :github_stars: 1
   :github_subscribers: 0
@@ -2318,7 +2318,7 @@ fastlane-plugin-build_cache:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: check_build_cache_workspace
     category:
-    description: Check if cache for current build is avaiable
+    description: Check if cache for current build is available
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: unarchive_derived_data
@@ -2975,7 +2975,7 @@ fastlane-plugin-humanable_build_number:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: humanable_build_number
     category:
-    description: Automatic generate app build number unque and human readable friendly,
+    description: Automatic generate app build number unique and human readable friendly,
       like yymmHHMM. both support iOS and Android.
     details: 'The default will using the datetime of git last commit, but else the
       datetime of build and formatted to yymmHHMM. '
@@ -3716,7 +3716,7 @@ fastlane-plugin-apperian:
     name: apperian
     category:
     description: Allows to upload your app file to Apperian
-    details: Detailled description will follow soon
+    details: Detailed description will follow soon
   :sha: 844c4593754b0875435e144d01099a1773db25fd5d0da1909cd2bad75e7f8097
   :github_stars: 0
   :github_subscribers: 1
@@ -3897,7 +3897,7 @@ fastlane-plugin-bearychat:
     name: bearychat
     category:
     description: send messages to a bearychat channal
-    details: send messages to a bearychat channe
+    details: send messages to a bearychat channel
   :sha: 678aa32cd53b93c7ec854e042b76c537a4eb12ae67401c80f8d93fa0126be4e5
   :github_stars: 1
   :github_subscribers: 1
@@ -5187,7 +5187,7 @@ fastlane-plugin-git_pull_branch:
     name: git_pull_branch
     category:
     description: pull code from different branch
-    details: git_pull pulls code from same brach only. This plugin will pull code
+    details: git_pull pulls code from same branch only. This plugin will pull code
       from specified branch.
   :sha: 701fde65cbfce8f5760f3b700543b4e2882dc16284bd43b0f7fe8c6dd6b23b55
   :github_stars: 0
@@ -7054,7 +7054,7 @@ fastlane-plugin-file_manager:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
-fastlane-plugin-testin:
+fastlane-plugin-testing:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -7322,7 +7322,7 @@ fastlane-plugin-wechat:
     name: wechat
     category:
     description: this is a wechat api wrapper
-    details: send message via enterprice wechat server api
+    details: send message via enterprise wechat server api
   :sha: 31c71aea9c44510c1cc86e366ce4afd0fb5b5e298202e89cb8849659cabb3b63
   :github_stars: 0
   :github_subscribers: 0
@@ -8137,7 +8137,7 @@ fastlane-plugin-dropbox_upload:
     name: dropbox_upload
     category:
     description: upload files to dropbox
-    details: use dropbox devlop access_token
+    details: use dropbox develop access_token
   :sha: 0023bd05f9039df860f4a971ccc4236acfe158cfacec0db903b9b12745ce1f32
   :github_stars: 0
   :github_subscribers: 1
@@ -8175,7 +8175,7 @@ fastlane-plugin-bundletool:
     name: bundletool
     category:
     description: Extracts an universal apk from an .aab file
-    details: Using the google oficial bundletool to extract an universal apk from
+    details: Using the google official bundletool to extract an universal apk from
       .aab file to distribute it
   :sha: 50b70360e229e7e82511821afad2bef35b79cbffc679cfde710393ba1692613e
   :github_stars: 25
@@ -9974,14 +9974,14 @@ fastlane-plugin-teams_message_card:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
-fastlane-plugin-microsft_teams_message_card:
+fastlane-plugin-microsoft_teams_message_card:
   :initial_commit: 2020-10-02
   :age_in_days: 10
   :readme_score: 50
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: microsft_teams_message_card
+    name: microsoft_teams_message_card
     category: notifications
     description: Send a message card to your Microsoft teams channel
     details: Send a message card to your Microsoft teams channel
@@ -10074,7 +10074,7 @@ fastlane-plugin-write_changelog_from_commits:
       the last tag.
     details: This plugin will search through all of your commits since the last tag.
       It will pattern match on keywords at the beginning in order to generate different
-      secions of the changelog (bugfix, feature etc). Then it will create a new file
+      sections of the changelog (bugfix, feature etc). Then it will create a new file
       in the changelogs directory that is named after the current version, and write
       the contents of the changelog
   :sha: 7be5323152bdd8326c58ed2f16eac4ffa0f1fed2b4633cc6edf3cc31f3bf3e16
