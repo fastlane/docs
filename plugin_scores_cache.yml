@@ -9981,7 +9981,7 @@ fastlane-plugin-microsoft_teams_message_card:
   :tests: 1
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: microsoft_teams_message_card
+    name: microsft_teams_message_card
     category: notifications
     description: Send a message card to your Microsoft teams channel
     details: Send a message card to your Microsoft teams channel
