@@ -9974,7 +9974,7 @@ fastlane-plugin-teams_message_card:
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
-fastlane-plugin-microsoft_teams_message_card:
+fastlane-plugin-microsft_teams_message_card:
   :initial_commit: 2020-10-02
   :age_in_days: 10
   :readme_score: 50
