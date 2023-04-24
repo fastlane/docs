@@ -528,6 +528,8 @@ If you want to manually decrypt a file you can.
 openssl aes-256-cbc -k "<password>" -in "<fileYouWantToDecryptPath>" -out "<decryptedFilePath>" -a -d -md [md5|sha256]
 ```
 
+_**Note:** You may need to swap double quotes `"` for single quotes `'` if your match password contains an exclamation mark `!`_
+
 #### Export Distribution Certificate and Private Key as Single .p12 File
 
 _match_ stores the certificate (`.cer`) and the private key (`.p12`) files separately. The following steps will repackage the separate certificate and private key into a single `.p12` file.
