@@ -525,7 +525,7 @@ Please be careful when using this option and ensure the certificates and profile
 If you want to manually decrypt a file you can.
 
 ```no-highlight
-openssl aes-256-cbc -k "<password>" -in "<fileYouWantToDecryptPath>" -out "<decryptedFilePath>" -a -d
+openssl aes-256-cbc -k "<password>" -in "<fileYouWantToDecryptPath>" -out "<decryptedFilePath>" -a -d -md [md5|sha256]
 ```
 
 #### Export Distribution Certificate and Private Key as Single .p12 File
