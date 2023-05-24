@@ -525,10 +525,8 @@ Please be careful when using this option and ensure the certificates and profile
 If you want to manually decrypt a file you can.
 
 ```no-highlight
-openssl aes-256-cbc -k "<password>" -in "<fileYouWantToDecryptPath>" -out "<decryptedFilePath>" -a -d -md [md5|sha256]
+openssl aes-256-cbc -k "<password>" -in "<fileYouWantToDecryptPath>" -out "<decryptedFilePath>" -a -d
 ```
-
-_**Note:** You may need to swap double quotes `"` for single quotes `'` if your match password contains an exclamation mark `!`._
 
 #### Export Distribution Certificate and Private Key as Single .p12 File
 
@@ -660,6 +658,7 @@ Key | Description | Default
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
   `gitlab_project` | GitLab Project Path (i.e. 'gitlab-org/gitlab') | 
+  `gitlab_host` | GitLab Host (i.e. 'https://gitlab.com') | `https://gitlab.com`
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
