@@ -291,6 +291,7 @@ Key | Description | Default
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
   `slack_default_payloads` | Specifies default payloads to include in Slack messages. For more info visit https://docs.fastlane.tools/actions/slack | 
   `destination` | Use only if you're a pro, use the other options instead | 
+  `run_rosetta_simulator` | Adds arch=x86_64 to the xcodebuild 'destination' argument to run simulator in a Rosetta mode | `false`
   `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`

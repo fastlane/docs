@@ -37,7 +37,8 @@ Key | Description | Default
 ----|-------------|--------
   `show_uncommitted_changes` | The flag whether to show uncommitted changes if the repo is dirty | `false`
   `show_diff` | The flag whether to show the git diff if the repo is dirty | `false`
-  `ignored` | The flag whether to ignore file the git status if the repo is dirty | 
+  `ignored` | The handling mode of the ignored files. The available options are: `'traditional'`, `'none'` (default) and `'matching'`. Specifying `'none'` to this parameter is the same as not specifying the parameter at all, which means that no ignored file will be used to check if the repo is dirty or not. Specifying `'traditional'` or `'matching'` causes some ignored files to be used to check if the repo is dirty or not (more info in the official docs: https://git-scm.com/docs/git-status#Documentation/git-status.txt---ignoredltmodegt) | 
+  `ignore_files` | Array of files to ignore | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
