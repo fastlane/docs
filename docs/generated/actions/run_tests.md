@@ -174,7 +174,7 @@ Returns | Outputs hash of results with the following keys: :number_of_tests, :nu
 
 
 
-## 6 Examples
+## 7 Examples
 
 ```ruby
 run_tests
@@ -189,6 +189,18 @@ run_tests(
   workspace: "App.xcworkspace",
   scheme: "MyTests",
   clean: false
+)
+```
+
+```ruby
+# run tests on a pure swift package (SPM), no xcodeproj or xcworkspace required
+run_tests(
+  package_path: ".",
+  scheme: "MySwiftCode-Package", # Must have -Package
+  clean: true,
+  device: "iPhone 11 Pro", # Required for destination
+  result_bundle: true, # Last two lines may be required for proper xcresults output
+  output_directory: Dir.pwd + "/test_output"
 )
 ```
 
