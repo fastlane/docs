@@ -246,7 +246,7 @@ Key | Description | Default
 ----|-------------|--------
   `package_name` | The package name of the application to use | [*](#parameters-legend-dynamic)
   `version_name` | Version name (used when uploading new apks/aabs) - defaults to 'versionName' in build.gradle or AndroidManifest.xml | [*](#parameters-legend-dynamic)
-  `version_code` | Version code (used when updating rollout or promoting specific versions) | [*](#parameters-legend-dynamic)
+  `version_code` | The versionCode for which to download the generated APK | [*](#parameters-legend-dynamic)
   `release_status` | Release status (used when uploading new apks/aabs) - valid values are completed, draft, halted, inProgress | [*](#parameters-legend-dynamic)
   `track` | The track of the application to use. The default available tracks are: production, beta, alpha, internal | `production`
   `rollout` | The percentage of the user fraction when uploading to the rollout track (setting to 1 will complete the rollout) | 
