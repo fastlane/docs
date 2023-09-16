@@ -17,7 +17,7 @@ Upload new binary to App Store Connect for TestFlight beta testing (via _pilot_)
 
 ###### The best way to manage your TestFlight testers and builds from your terminal
 
-Pilot makes it easier to manage your app on Apple’s TestFlight. You can:
+_pilot_ makes it easier to manage your app on Apple’s TestFlight. You can:
 
 - Upload & distribute builds
 - Add & remove testers
