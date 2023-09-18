@@ -225,7 +225,7 @@ fastlane match development
 
 <img src="/img/actions/match_appstore_small.gif" width="550" />
 
-This will create a new certificate and provisioning profile (if required) and store them in your selected storage.  
+This will create a new certificate and provisioning profile (if required) and store them in your selected storage.
 If you previously ran _match_ with the configured storage it will automatically install the existing profiles from your storage.
 
 The provisioning profiles are installed in `~/Library/MobileDevice/Provisioning Profiles` while the certificates and private keys are installed in your Keychain.
@@ -413,7 +413,7 @@ By using the `force_for_new_devices` parameter, _match_ will check if the (enabl
 
 _**Important:** The `force_for_new_devices` parameter is ignored for App Store provisioning profiles since they don't contain any device information._
 
-If you're not using _fastlane_, you can also use the `force_for_new_devices` option from the command line:
+If you're not using `Fastfile`, you can also use the `force_for_new_devices` option from the command line:
 
 ```no-highlight
 fastlane match adhoc --force_for_new_devices
@@ -421,7 +421,7 @@ fastlane match adhoc --force_for_new_devices
 
 ##### Templates (aka: custom entitlements)
 
-Match can generate profiles that contain custom entitlements by passing in the entitlement's name with the `template_name` parameter.
+_match_ can generate profiles that contain custom entitlements by passing in the entitlement's name with the `template_name` parameter.
 
 ```
 match(type: "development",
@@ -659,6 +659,7 @@ Key | Description | Default
   `s3_secret_access_key` | S3 secret access key | 
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
+  `s3_skip_encryption` | Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html | `false`
   `gitlab_project` | GitLab Project Path (i.e. 'gitlab-org/gitlab') | 
   `gitlab_host` | GitLab Host (i.e. 'https://gitlab.com') | `https://gitlab.com`
   `keychain_name` | Keychain the items should be imported to | `login.keychain`

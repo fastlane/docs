@@ -1,7 +1,7 @@
 ---
 fastlane-plugin-versioning:
   :initial_commit: 2016-06-03
-  :age_in_days: 2301
+  :age_in_days: 2662
   :readme_score: 100
   :tests: 80
   :actions:
@@ -68,11 +68,11 @@ fastlane-plugin-versioning:
     category:
     description: Increment build number in xcodeproj
     details:
-  :sha: 1f3d3ef6f3ec2f14014796c9a85e9f0a0cd96e22b311ef63edf7bb05eab250f9
-  :github_stars: 430
+  :sha: f664834a03e144fb5329113a39597d1fcdf9e8a184d827f27f59a6ba5d093259
+  :github_stars: 483
   :github_subscribers: 6
-  :github_issues: 7
-  :github_forks: 52
+  :github_issues: 8
+  :github_forks: 59
   :github_contributors: 0
 fastlane-plugin-aws_s3:
   :initial_commit: 2016-06-03
@@ -1616,9 +1616,9 @@ fastlane-plugin-ensure_xcode_build_version:
   :github_contributors: 1
 fastlane-plugin-appcenter:
   :initial_commit: 2017-05-08
-  :age_in_days: 2207
+  :age_in_days: 2323
   :readme_score: 100
-  :tests: 132
+  :tests: 134
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcenter_codepush_release_react
@@ -1645,11 +1645,11 @@ fastlane-plugin-appcenter:
     details: Symbols will also be uploaded automatically if a `app.dSYM.zip` file
       is found next to `app.ipa`. In case it is located in a different place you can
       specify the path explicitly in `:dsym` parameter.
-  :sha: d783aaffc6003341d045734f8509b44d989662d31d5423f39e51ab0bbf2a118c
-  :github_stars: 487
+  :sha: 3c98bc086618123d53757d59cfde0aecefee0967b34a93d05bb42c24c0c4ffe5
+  :github_stars: 493
   :github_subscribers: 15
-  :github_issues: 41
-  :github_forks: 125
+  :github_issues: 42
+  :github_forks: 129
   :github_contributors: 0
 fastlane-plugin-latest_hockeyapp_version_number:
   :initial_commit: 2016-07-18
@@ -5759,13 +5759,13 @@ fastlane-plugin-androidmanifest_editor:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-upload_dsym_to_bugly:
-  :github_stars: 20
+  :github_stars: 30
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 3
+  :github_issues: 1
+  :github_forks: 6
   :github_contributors: 0
   :initial_commit: 2018-11-12
-  :age_in_days: 1222
+  :age_in_days: 1770
   :readme_score: 100
   :tests: 1
   :actions:
@@ -5774,7 +5774,7 @@ fastlane-plugin-upload_dsym_to_bugly:
     category:
     description: upload_dsym_to_bugly
     details:
-  :sha: 4915e7eec7dd7858e5cdf3596e9e53cd7974f1d6791ac808d70a64869f0009af
+  :sha: 4f931448db46caecc0408a504acfe42519d06ad64b41941efe5477982af46a3b
 fastlane-plugin-jira_util:
   :initial_commit: 2016-09-01
   :age_in_days: 1215
@@ -6630,7 +6630,7 @@ fastlane-plugin-bowl:
   :github_contributors: 0
 fastlane-plugin-dynatrace:
   :initial_commit: 2019-04-04
-  :age_in_days: 1511
+  :age_in_days: 1627
   :readme_score: 100
   :tests: 42
   :actions:
@@ -6641,8 +6641,8 @@ fastlane-plugin-dynatrace:
     details: This action allows you to process and upload symbol files to Dynatrace.
       If you use Bitcode you can also use it to download the latest dSYM files from
       App Store Connect.
-  :sha: 9fe43e72d3d21d702803640f8633f07a9cffb39ec2baf0e843f9d2c8fcd7cf51
-  :github_stars: 10
+  :sha: 7a44a9986fe293f2ad6dd901113dd583231c3b5a45e0296a21020a83417a67c3
+  :github_stars: 11
   :github_subscribers: 7
   :github_issues: 0
   :github_forks: 4
@@ -7868,9 +7868,9 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 1298
+  :age_in_days: 1508
   :readme_score: 100
-  :tests: 115
+  :tests: 123
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution
@@ -7882,6 +7882,16 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Create testers in bulk from a comma-separated list or a file
     details: Create testers in bulk from a comma-separated list or a file
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_app_distribution_create_group
+    category:
+    description: Create a tester group
+    details: Create a tester group
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: firebase_app_distribution_delete_group
+    category:
+    description: Delete a tester group
+    details: Delete a tester group
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution_get_latest_release
     category:
@@ -7901,11 +7911,11 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Delete testers in bulk from a comma-separated list or a file
     details: Delete testers in bulk from a comma-separated list or a file
-  :sha: 41a83c229f0bd60ebba3605e09ecb6c739228d5df43e8934fcd555ea2ce29323
-  :github_stars: 138
-  :github_subscribers: 16
-  :github_issues: 0
-  :github_forks: 24
+  :sha: 7c9ff1e74ff64d28b051425f4b27d736f5c08127eaa7fc6e17c99fffde003217
+  :github_stars: 151
+  :github_subscribers: 45
+  :github_issues: 2
+  :github_forks: 29
   :github_contributors: 0
 fastlane-plugin-secrets:
   :initial_commit: 2019-09-23
@@ -8217,7 +8227,7 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 1257
+  :age_in_days: 1373
   :readme_score: 100
   :tests: 1
   :actions:
@@ -8226,6 +8236,11 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details: Fastlane plugin to upload Android app to Huawei AppGallery Connect
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: huawei_appgallery_connect_get_app_id
+    category:
+    description: Huawei AppGallery Connect Plugin
+    details: Fastlane plugin to get Android app to Huawei AppGallery Connect information
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: huawei_appgallery_connect_get_app_info
     category:
@@ -8241,11 +8256,11 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details:
-  :sha: ad26db2805047699f58bb934fb9accf6308ace052576e92de1d5c6e87802fd3f
-  :github_stars: 69
-  :github_subscribers: 3
-  :github_issues: 2
-  :github_forks: 16
+  :sha: 681a2359e07688300d877969c777a97d996ce53e539a93b4a605f15c727c4de2
+  :github_stars: 74
+  :github_subscribers: 5
+  :github_issues: 1
+  :github_forks: 18
   :github_contributors: 0
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
@@ -9254,10 +9269,15 @@ fastlane-plugin-github_action:
   :github_contributors: 0
 fastlane-plugin-slack_bot:
   :initial_commit: 2020-05-27
-  :age_in_days: 899
+  :age_in_days: 1208
   :readme_score: 100
   :tests: 1
   :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: delete_slack_message
+    category:
+    description: Deleate a slack message using time-stamp(ts) value
+    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: fetch_files_slack
     category:
@@ -9279,11 +9299,11 @@ fastlane-plugin-slack_bot:
     category:
     description: Update a slack message using time-stamp(ts) value
     details:
-  :sha: 166c612c450d699ca0b602d87da08b34822dbd60c47639b9c982f0604544f1a7
-  :github_stars: 23
+  :sha: c7881788af9a5d1f9503584d8ed2c5167b2748534345c0a2d689050d181c54a4
+  :github_stars: 33
   :github_subscribers: 1
-  :github_issues: 1
-  :github_forks: 3
+  :github_issues: 0
+  :github_forks: 5
   :github_contributors: 0
 fastlane-plugin-try_scan:
   :initial_commit: 2020-06-07
@@ -10673,14 +10693,14 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 1779
+  :age_in_days: 1895
   :readme_score: 100
-  :tests: 401
+  :tests: 427
   :actions: []
-  :sha: b615f676cc8d6d2db95a33ea3df92ae6097610ced89178902ca3a9089c9e427e
-  :github_stars: 30
+  :sha: 6498f499e98bd1ac6579bf145d19cb6d3b44d26350fc5731dd895292a31e1206
+  :github_stars: 31
   :github_subscribers: 22
-  :github_issues: 41
+  :github_issues: 38
   :github_forks: 10
   :github_contributors: 0
 fastlane-plugin-allure_zephyr:
@@ -11554,7 +11574,7 @@ fastlane-plugin-testappio:
   :github_contributors: 0
 fastlane-plugin-automated_test_emulator_run_next:
   :initial_commit: 2016-07-26
-  :age_in_days: 2248
+  :age_in_days: 2609
   :readme_score: 100
   :tests: 1
   :actions:
@@ -11564,11 +11584,11 @@ fastlane-plugin-automated_test_emulator_run_next:
     description: Starts AVD, based on AVD_setup.json file, before test launch and
       kills it after testing is done.
     details:
-  :sha: 4f33fbd871e8750833f2c00eae6a1d1aeaec00a726160eea131628a9fac76f1a
+  :sha: 63cd37b7f0829f6ff49dc8596f1c17ce992573be77098874dd54edce7adc6947
   :github_stars: 0
-  :github_subscribers: 1
+  :github_subscribers: 2
   :github_issues: 2
-  :github_forks: 0
+  :github_forks: 3
   :github_contributors: 0
 fastlane-plugin-saucectl:
   :initial_commit: 2021-11-26
@@ -11720,7 +11740,7 @@ fastlane-plugin-sonarcloud_metric_kit:
   :github_contributors: 0
 fastlane-plugin-better_semantic_release:
   :initial_commit: 2019-03-17
-  :age_in_days: 1529
+  :age_in_days: 1645
   :readme_score: 100
   :tests: 42
   :actions:
@@ -11734,7 +11754,7 @@ fastlane-plugin-better_semantic_release:
     category:
     description:
     details:
-  :sha: 4309dbd05e40327e04eed7389d6baa3ceb0179c4208e472d9443e7c8273cfd98
+  :sha: '091913a738351434d1b67a64acfd5271854da03076016c72f0bec8e64b5ae91a'
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -11815,7 +11835,7 @@ fastlane-plugin-work_feishu:
   :github_contributors: 2
 fastlane-plugin-generic_version:
   :initial_commit: 2022-05-18
-  :age_in_days: 126
+  :age_in_days: 487
   :readme_score: 50
   :tests: 1
   :actions:
@@ -11849,7 +11869,7 @@ fastlane-plugin-generic_version:
     description: Manage your app version for Android and iOS
     details: With this plugin you have a unified way to manage your cross platform
       app version.
-  :sha: 8b820fe29a6306ed6f57849e5868f377afb11f09fd47dd2f8fa4397cad8b5949
+  :sha: 00ef7180e81aeda9ef7e87c22d9767650ce39f45a989c14cbdf92eba11ef3c87
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -12060,7 +12080,7 @@ fastlane-plugin-get_last_circleci_build_number_bitbucket:
   :github_contributors: 0
 fastlane-plugin-stream_actions:
   :initial_commit: 2022-10-27
-  :age_in_days: 209
+  :age_in_days: 325
   :readme_score: 100
   :tests: 24
   :actions:
@@ -12083,6 +12103,11 @@ fastlane-plugin-stream_actions:
     name: allure_run_testplan
     category:
     description: Sync and run testplan on Allure Testops
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: build_app_for_ios_simulator
+    category: building
+    description: This plugin builds apps exclusively for iOS, tvOS or watchOS Simulators.
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: custom_match
@@ -12140,9 +12165,14 @@ fastlane-plugin-stream_actions:
     category:
     description: Adds environment variables to a test plan
     details:
-  :sha: a188ec2552f29d29ba8688720359b942c550114e7379bbaced18aee1d72cbced
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: wait_android_emu_idle
+    category:
+    description:
+    details:
+  :sha: 2a16c10957fce8cfc7ad916d290eee4d821058d961cb53889861e5c9ed481114
   :github_stars: 3
-  :github_subscribers: 22
+  :github_subscribers: 23
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
@@ -12165,7 +12195,7 @@ fastlane-plugin-installonair:
   :github_contributors: 2
 fastlane-plugin-schindler:
   :initial_commit: 2022-09-29
-  :age_in_days: 44
+  :age_in_days: 353
   :readme_score: 100
   :tests: 1
   :actions:
@@ -12173,14 +12203,15 @@ fastlane-plugin-schindler:
     name: schindler
     category:
     description: Schindler is a TestFlight tool for release useless quota.
-    details: Schindler is a TestFlight automatic processing tool, which is used to
-      maintain the number of TestFlight quota, eliminate useless testers, and improve
-      the external gray effect of iOS.
-  :sha: f5a99e6e78bf0183d5990e03a9319591043966cc9240bf940734e80edbd54f5a
-  :github_stars: 0
+    details: Remove TestFlight testers that are not actually testing your app. Schindler
+      is a TestFlight automatic processing tool, which is used to maintain the number
+      of TestFlight quota, eliminate useless testers, and improve the external gray
+      effect of iOS App.
+  :sha: ff5ff5ca8bddb95f11a3531eb82e168ae624507dac3aa2ee795dec96233d21f6
+  :github_stars: 2
   :github_subscribers: 1
   :github_issues: 0
-  :github_forks: 1
+  :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-shake_bugs:
   :initial_commit: 2022-09-24
@@ -12596,7 +12627,7 @@ fastlane-plugin-lambdatest:
   :github_contributors: 2
 fastlane-plugin-maestro:
   :initial_commit: 2023-02-27
-  :age_in_days: 86
+  :age_in_days: 202
   :readme_score: 100
   :tests: 1
   :actions:
@@ -12613,8 +12644,8 @@ fastlane-plugin-maestro:
     description: Runs Maestro test
     details: Installs / updates Maestro or runs maestro test depending on the parameter
       `:command`
-  :sha: 7897786dab821440f8e6fdbd7a097bb28c16dfb9f02eaf5bfdfd6b1891c9e26b
-  :github_stars: 7
+  :sha: 3bd6431a517e0ec9e29f84e9febe8eb886799f497eba328458e0f231acd982d5
+  :github_stars: 10
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 3
@@ -12664,7 +12695,7 @@ fastlane-plugin-rearchive:
   :github_contributors: 0
 fastlane-plugin-translate_gpt:
   :initial_commit: 2023-04-23
-  :age_in_days: 31
+  :age_in_days: 147
   :readme_score: 100
   :tests: 1
   :actions:
@@ -12673,11 +12704,11 @@ fastlane-plugin-translate_gpt:
     category:
     description: Translate a strings file using OpenAI's GPT API
     details:
-  :sha: 8bb00e204b9e84efd1e6256c0375b5ab582c90099bd0504aaef941d335070518
-  :github_stars: 7
-  :github_subscribers: 1
+  :sha: 234dd8f7344e44ea42926da6f058d56db6779db4179ee1f8b3fd5454ccaa54e4
+  :github_stars: 16
+  :github_subscribers: 3
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 84
   :github_contributors: 0
 fastlane-plugin-testlane:
   :initial_commit: 2023-05-11
@@ -12730,7 +12761,7 @@ fastlane-plugin-versioning_android_kts:
   :github_contributors: 0
 fastlane-plugin-sapfire:
   :initial_commit: 2023-03-30
-  :age_in_days: 55
+  :age_in_days: 171
   :readme_score: 100
   :tests: 1
   :actions:
@@ -12782,7 +12813,7 @@ fastlane-plugin-sapfire:
     category: production
     description: Pushes a package to the server and publishes it
     details:
-  :sha: ea24a6a0d1638ef3c7382e69edf17c46681747b5b58dedd646511bfcfd4adfbd
+  :sha: e5d03ee8335d74ee7122b893491a2184f3a9197861fe016f74e3883da2b7b8b3
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
@@ -12850,6 +12881,186 @@ fastlane-plugin-auth_with_github_app:
     description: Get a GitHub access token using the GitHub App
     details:
   :sha: 9bcf429e13360d4ca3bd2861dd5871c3afc8d5c03b729be1cce07f6e205a2152
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-rooster:
+  :initial_commit: 2023-06-22
+  :age_in_days: 87
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rooster_merge_request
+    category:
+    description: Send gitlab merge requests reminder to slack.
+    details: fetching merge requests using Gitlab REST API and send to Slack using
+      webhook url.
+  :sha: bc92fae1bb2f1fbf26f45ed5a8eb5c4a43b650fc3927f48d59474b2abb34378a
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-android_testlab_script_swit:
+  :initial_commit: 2023-08-24
+  :age_in_days: 24
+  :readme_score: 50
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: android_testlab_script_swit
+    category:
+    description: Android Firebase TestLab with Robo Script Test
+    details: This plug-in uses Firebase TestLab. You can also include RoboScript files.
+  :sha: dc530b7ce4305e0d72b65f7937ac2924496d6b399630004f59a5a5ef6d0efc13
+  :github_stars: 0
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-zhuixi_build_app:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-rustore:
+  :initial_commit: 2023-07-25
+  :age_in_days: 54
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rustore_publish
+    category:
+    description: Rustore fastlane integration plugin
+    details:
+  :sha: 8e8db8c4c8556022fd6b85b7ddc5a82e5ea7636ddad390a0601e70eac2914552
+  :github_stars: 5
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 1
+  :github_contributors: 0
+fastlane-plugin-tinifyme:
+  :initial_commit: 2023-06-16
+  :age_in_days: 93
+  :readme_score: 100
+  :tests: 15
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: tinifyme
+    category:
+    description: Compress assets using TinyPNG.
+    details: fastlane plugin to automate image compression in your project via precommit
+      hook or one-off runs.
+  :sha: 24523222c5f7e821bb48f8b3810f2707271ca77579c0e2fcf7b6a9bb5f956e94
+  :github_stars: 6
+  :github_subscribers: 2
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-figure_release:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+fastlane-plugin-gmail_notify:
+  :initial_commit: 2023-08-14
+  :age_in_days: 34
+  :readme_score: 100
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: gmail_notify
+    category:
+    description: Sends a mail using SMTP
+    details: This plugin sends a mail using SMTP
+  :sha: 336b884ea4ea43aed7090710de4d38688be9aea3b99e238d744fe6210c63c11c
+  :github_stars: 1
+  :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-codepush-fix:
+  :initial_commit: 2020-03-01
+  :age_in_days: 1295
+  :readme_score: 100
+  :tests: 6
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_add_deployment
+    category:
+    description: CodePush add deployment action
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_exists_deployment
+    category:
+    description: CodePush check if deployment exists
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_get_deployment_key
+    category:
+    description: CodePush get deployment key given deployment name
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_list_deployment
+    category:
+    description: CodePush list deployment action
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_login
+    category:
+    description: CodePush login action
+    details: Log in to App Center to access CodePush service. You can pass token via
+      login_token param or set APP_CENTER_LOGIN_TOKEN environment variable. If none
+      were passed your action will be blocked with UI prompt.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_logout
+    category:
+    description: CodePush logout action
+    details: Log out of App Center
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_promote
+    category:
+    description: CodePush promote action
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_release_react
+    category:
+    description: CodePush release-react action
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_remove_deployment
+    category:
+    description: CodePush remove deployment action
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: codepush_rename_deployment
+    category:
+    description: CodePush rename deployment action
+    details:
+  :sha: 06e2f25560b7fa3595b62899d04431170efaebecc6f83b2666413b370e4b6462
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-upload_to_oss:
+  :initial_commit: 2023-09-13
+  :age_in_days: 4
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_oss
+    category:
+    description:
+    details:
+  :sha: 7909c99fa2228ce041498825e5ee1f8e0d85437e2e59cab23b7823e9179088cd
   :github_stars: 0
   :github_subscribers: 1
   :github_issues: 0
