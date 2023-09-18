@@ -69,6 +69,7 @@ Key | Description | Default
   `s3_secret_access_key` | S3 secret access key | 
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
+  `s3_skip_encryption` | Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html | `false`
   `gitlab_project` | GitLab Project Path (i.e. 'gitlab-org/gitlab') | 
   `gitlab_host` | GitLab Host (i.e. 'https://gitlab.com') | `https://gitlab.com`
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
