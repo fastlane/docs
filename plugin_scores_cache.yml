@@ -12970,7 +12970,7 @@ fastlane-plugin-figure_release:
   :github_contributors: 2
 fastlane-plugin-gmail_notify:
   :initial_commit: 2023-08-14
-  :age_in_days: 34
+  :age_in_days: 36
   :readme_score: 100
   :tests: 1
   :actions:
@@ -12979,7 +12979,7 @@ fastlane-plugin-gmail_notify:
     category:
     description: Sends a mail using SMTP
     details: This plugin sends a mail using SMTP
-  :sha: 336b884ea4ea43aed7090710de4d38688be9aea3b99e238d744fe6210c63c11c
+  :sha: 42cc273c7c9a0228cbc3558e073022d1fd4f5da324b0d5f8e3df1b2021f1f075
   :github_stars: 1
   :github_subscribers: 1
   :github_issues: 0
