@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: f06aa50ffdec6f19c1468f9f2c4d9c30441aafa3
+  revision: 425719196c38bda13950d2bc0dfcb08b1e14cac1
   specs:
-    fastlane (2.215.1)
+    fastlane (2.216.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.8, < 3.0.0)
       artifactory (~> 3.0)
