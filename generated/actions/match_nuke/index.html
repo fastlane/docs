@@ -372,7 +372,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tbody>
 <tr>
 <td><code>type</code></td>
-<td>Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution</td>
+<td>Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution, developer_id_installer</td>
 <td><code>development</code></td>
 </tr>
 <tr>
@@ -521,8 +521,28 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td></td>
 </tr>
 <tr>
+<td><code>s3_skip_encryption</code></td>
+<td>Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>gitlab_project</code></td>
 <td>GitLab Project Path (i.e. 'gitlab-org/gitlab')</td>
+<td></td>
+</tr>
+<tr>
+<td><code>gitlab_host</code></td>
+<td>GitLab Host (i.e. 'https://gitlab.com')</td>
+<td><code>https://gitlab.com</code></td>
+</tr>
+<tr>
+<td><code>job_token</code></td>
+<td>GitLab CI_JOB_TOKEN</td>
+<td></td>
+</tr>
+<tr>
+<td><code>private_token</code></td>
+<td>GitLab Access Token</td>
 <td></td>
 </tr>
 <tr>
@@ -665,7 +685,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

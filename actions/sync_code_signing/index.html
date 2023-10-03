@@ -511,7 +511,7 @@ match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 <pre><code class="language-no-highlight">fastlane match development
 </code></pre>
 <p><img src="/img/actions/match_appstore_small.gif" width="550" /></p>
-<p>This will create a new certificate and provisioning profile (if required) and store them in your selected storage.<br />
+<p>This will create a new certificate and provisioning profile (if required) and store them in your selected storage.
 If you previously ran <em>match</em> with the configured storage it will automatically install the existing profiles from your storage.</p>
 <p>The provisioning profiles are installed in <code>~/Library/MobileDevice/Provisioning Profiles</code> while the certificates and private keys are installed in your Keychain.</p>
 <p>To get a more detailed output of what <em>match</em> is doing use</p>
@@ -629,11 +629,11 @@ end
 </code></pre>
 <p>By using the <code>force_for_new_devices</code> parameter, <em>match</em> will check if the (enabled) device count has changed since the last time you ran <em>match</em>, and automatically re-generate the provisioning profile if necessary. You can also use <code>force: true</code> to re-generate the provisioning profile on each run.</p>
 <p><em><strong>Important:</strong> The <code>force_for_new_devices</code> parameter is ignored for App Store provisioning profiles since they don't contain any device information.</em></p>
-<p>If you're not using <em>fastlane</em>, you can also use the <code>force_for_new_devices</code> option from the command line:</p>
+<p>If you're not using <code>Fastfile</code>, you can also use the <code>force_for_new_devices</code> option from the command line:</p>
 <pre><code class="language-no-highlight">fastlane match adhoc --force_for_new_devices
 </code></pre>
 <h5 id="templates-aka-custom-entitlements">Templates (aka: custom entitlements)</h5>
-<p>Match can generate profiles that contain custom entitlements by passing in the entitlement's name with the <code>template_name</code> parameter.</p>
+<p><em>match</em> can generate profiles that contain custom entitlements by passing in the entitlement's name with the <code>template_name</code> parameter.</p>
 <pre><code>match(type: &quot;development&quot;,
       template_name: &quot;Apple Pay Pass Suppression Development&quot;)
 </code></pre>
@@ -689,8 +689,9 @@ fastlane match nuke enterprise
 <p>Please be careful when using this option and ensure the certificates and profiles match the type (development, adhoc, appstore, enterprise, developer_id) and are not revoked or expired.</p>
 <h3 id="manual-decrypt">Manual Decrypt</h3>
 <p>If you want to manually decrypt a file you can.</p>
-<pre><code class="language-no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;&lt;fileYouWantToDecryptPath&gt;&quot; -out &quot;&lt;decryptedFilePath&gt;&quot; -a -d
+<pre><code class="language-no-highlight">openssl aes-256-cbc -k &quot;&lt;password&gt;&quot; -in &quot;&lt;fileYouWantToDecryptPath&gt;&quot; -out &quot;&lt;decryptedFilePath&gt;&quot; -a -d -md [md5|sha256]
 </code></pre>
+<p><em><strong>Note:</strong> You may need to swap double quotes <code>"</code> for single quotes <code>'</code> if your match password contains an exclamation mark <code>!</code>.</em></p>
 <h4 id="export-distribution-certificate-and-private-key-as-single-p12-file">Export Distribution Certificate and Private Key as Single .p12 File</h4>
 <p><em>match</em> stores the certificate (<code>.cer</code>) and the private key (<code>.p12</code>) files separately. The following steps will repackage the separate certificate and private key into a single <code>.p12</code> file.</p>
 <p>Decrypt your cert found in <code>certs/&lt;type&gt;/&lt;unique-id&gt;.cer</code> as a pem file:</p>
@@ -768,7 +769,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tbody>
 <tr>
 <td><code>type</code></td>
-<td>Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution</td>
+<td>Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution, developer_id_installer</td>
 <td><code>development</code></td>
 </tr>
 <tr>
@@ -917,8 +918,28 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td></td>
 </tr>
 <tr>
+<td><code>s3_skip_encryption</code></td>
+<td>Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>gitlab_project</code></td>
 <td>GitLab Project Path (i.e. 'gitlab-org/gitlab')</td>
+<td></td>
+</tr>
+<tr>
+<td><code>gitlab_host</code></td>
+<td>GitLab Host (i.e. 'https://gitlab.com')</td>
+<td><code>https://gitlab.com</code></td>
+</tr>
+<tr>
+<td><code>job_token</code></td>
+<td>GitLab CI_JOB_TOKEN</td>
+<td></td>
+</tr>
+<tr>
+<td><code>private_token</code></td>
+<td>GitLab Access Token</td>
 <td></td>
 </tr>
 <tr>
@@ -1084,7 +1105,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

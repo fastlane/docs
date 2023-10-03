@@ -758,6 +758,11 @@ run_tests(
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>result_bundle_path</code></td>
+<td>Custom path for the result bundle, overrides result_bundle</td>
+<td></td>
+</tr>
+<tr>
 <td><code>result_bundle</code></td>
 <td>Should an Xcode result bundle be generated in the output directory</td>
 <td><code>false</code></td>
@@ -881,6 +886,11 @@ run_tests(
 <td><code>destination</code></td>
 <td>Use only if you're a pro, use the other options instead</td>
 <td></td>
+</tr>
+<tr>
+<td><code>run_rosetta_simulator</code></td>
+<td>Adds arch=x86_64 to the xcodebuild 'destination' argument to run simulator in a Rosetta mode</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>catalyst_platform</code></td>
@@ -1007,7 +1017,7 @@ run_tests(
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

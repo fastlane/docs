@@ -339,6 +339,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="ensure_xcode_version">ensure_xcode_version</h1>
 <p>Ensure the right version of Xcode is used</p>
 <blockquote>
+<p>The xcode-install gem, which this action depends on, has been sunset. Please migrate to <a href="https://docs.fastlane.tools/actions/xcodes">xcodes</a>. You can find a migration guide here: <a href="https://github.com/xcpretty/xcode-install/blob/master/MIGRATION.md">xcpretty/xcode-install/MIGRATION.md</a></p>
 <p>If building your app requires a specific version of Xcode, you can invoke this command before using gym.<br>For example, to ensure that a beta version of Xcode is not accidentally selected to build, which would make uploading to TestFlight fail.<br>You can either manually provide a specific version using <code>version:</code> or you make use of the <code>.xcode-version</code> file.<br>Using the <code>strict</code> parameter, you can either verify the full set of version numbers strictly (i.e. <code>11.3.1</code>) or only a subset of them (i.e. <code>11.3</code> or <code>11</code>).</p>
 </blockquote>
 <table>
@@ -446,7 +447,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

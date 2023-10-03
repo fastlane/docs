@@ -357,7 +357,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="language-java">androidTestImplementation 'tools.fastlane:screengrab:x.x.x'
 </code></pre>
 <p>The latest version is <a href="https://search.maven.org/artifact/tools.fastlane/screengrab"> <img alt="Download" src="https://maven-badges.herokuapp.com/maven-central/tools.fastlane/screengrab/badge.svg" /></a></p>
-<p>As of Screengrab version 2.0.0, all Android test dependencies are AndroidX dependencies. This means a device with API 18+, Android 4.3 or greater is required. If you wish to capture screenshots with an older Android OS, then you must use a 1.x.x version.</p>
+<p>As of <em>screengrab</em> version 2.0.0, all Android test dependencies are AndroidX dependencies. This means a device with API 18+, Android 4.3 or greater is required. If you wish to capture screenshots with an older Android OS, then you must use a 1.x.x version.</p>
 <h5 id="configuring-your-manifest-permissions">Configuring your Manifest Permissions</h5>
 <p>Ensure that the following permissions exist in your <strong>src/debug/AndroidManifest.xml</strong></p>
 <pre><code class="language-xml">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
@@ -381,51 +381,51 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h5 id="configuring-your-ui-tests-for-screenshots">Configuring your <a href="#ui-tests">UI Tests</a> for Screenshots</h5>
 <ol>
 <li>
-<p>Add <code>LocaleTestRule</code> to your tests class to handle automatic switching of locales.
-   If you're using Java use:
-   <code>java
-   @ClassRule
-   public static final LocaleTestRule localeTestRule = new LocaleTestRule();</code>
-   If you're using Kotlin use:
-   <code>kotlin
-   @Rule @JvmField
-   val localeTestRule = LocaleTestRule()</code>
-   The <code>@JvmField</code> annotation is important. It won't work like this:
-   <code>kotlin
-   companion object {
-       @get:ClassRule
-       val localeTestRule = LocaleTestRule()
-   }</code></p>
+<p>Add <code>LocaleTestRule</code> to your tests class to handle automatic switching of locales.</p>
+<p>If you're using Java use:</p>
+<p><code>java
+ @ClassRule
+ public static final LocaleTestRule localeTestRule = new LocaleTestRule();</code></p>
+<p>If you're using Kotlin use:</p>
+<p><code>kotlin
+ @Rule @JvmField
+ val localeTestRule = LocaleTestRule()</code></p>
+<p>The <code>@JvmField</code> annotation is important. It won't work like this:</p>
+<p><code>kotlin
+ companion object {
+     @get:ClassRule
+     val localeTestRule = LocaleTestRule()
+ }</code></p>
 </li>
 <li>
 <p>To capture screenshots, add the following to your tests <code>Screengrab.screenshot("name_of_screenshot_here");</code> on the appropriate screens</p>
 </li>
 </ol>
-<h1 id="generating-screenshots-with-screengrab">Generating Screenshots with Screengrab</h1>
+<h1 id="generating-screenshots-with-screengrab">Generating Screenshots with <em>screengrab</em></h1>
 <ul>
 <li>Then, before running <code>fastlane screengrab</code> you'll need a debug and test apk<ul>
 <li>You can create your APKs manually with <code>./gradlew assembleDebug assembleAndroidTest</code></li>
-<li>You can also create a lane and use <code>build_android_app</code>:
-  <code>ruby
-  desc "Build debug and test APK for screenshots"
-  lane :build_and_screengrab do
-    build_android_app(
-      task: 'assemble',
-      build_type: 'Debug'
-    )
-    build_android_app(
-      task: 'assemble',
-      build_type: 'AndroidTest'
-    )
-    screengrab()
-  end</code></li>
+<li>
+<p>You can also create a lane and use <code>build_android_app</code>:</p>
+<p><code>ruby
+desc "Build debug and test APK for screenshots"
+lane :build_and_screengrab do
+  build_android_app(
+    task: 'assemble',
+    build_type: 'Debug'
+  )
+  build_android_app(
+    task: 'assemble',
+    build_type: 'AndroidTest'
+  )
+  screengrab()
+end</code>
+- Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots
+  - You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments
+- Your screenshots will be saved to <code>fastlane/metadata/android</code> in the directory where you ran <em>screengrab</em></p>
+</li>
 </ul>
 </li>
-<li>Once complete run <code>fastlane screengrab</code> in your app project directory to generate screenshots<ul>
-<li>You will be prompted to provide any required parameters which are not in your <strong>Screengrabfile</strong> or provided as command line arguments</li>
-</ul>
-</li>
-<li>Your screenshots will be saved to <code>fastlane/metadata/android</code> in the directory where you ran <em>screengrab</em></li>
 </ul>
 <h2 id="improved-screenshot-capture-with-ui-automator">Improved screenshot capture with UI Automator</h2>
 <p>As of <em>screengrab</em> 0.5.0, you can specify different strategies to control the way <em>screengrab</em> captures screenshots. The newer strategy delegates to <a href="https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator">UI Automator</a> which fixes a number of problems compared to the original strategy:</p>
@@ -487,7 +487,6 @@ public class JUnit4StyleTests {
         Screengrab.screenshot(&quot;after_button_click&quot;);
     }
 }
-
 </code></pre>
 <p>Kotlin:</p>
 <pre><code class="language-kotlin">@RunWith(JUnit4.class)
@@ -507,7 +506,6 @@ class JUnit4StyleTests {
         Screengrab.screenshot(&quot;after_button_click&quot;)
     }
 }
-
 </code></pre>
 <p>There is an <a href="https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester">example project</a> showing how to use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.</p>
 <p>Using JUnit 4 is preferable because of its ability to perform actions before and after the entire test class is run. This means you will change the device's locale far fewer times when compared with JUnit 3 running those commands before and after each test method.</p>
@@ -518,7 +516,7 @@ class JUnit4StyleTests {
 <li>Use <code>Screengrab.screenshot("name_of_screenshot_here");</code> to capture screenshots at the appropriate points in your tests</li>
 </ul>
 <h2 id="clean-status-bar">Clean Status Bar</h2>
-<p>Screengrab can clean your status bar to make your screenshots even more beautiful.
+<p><em>screengrab</em> can clean your status bar to make your screenshots even more beautiful.
 It is simply a wrapper that allows configuring SystemUI DemoMode in your code.
 Note: the clean status bar feature is only supported on devices with <em>API level &gt;= 23</em>.</p>
 <p>You can enable and disable the clean status bar at any moment during your tests.
@@ -818,7 +816,7 @@ if (extras != null) {
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

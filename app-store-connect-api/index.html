@@ -466,6 +466,16 @@ end
 <h3 id="using-fastlane-api-key-hash-option">Using <em>fastlane</em> API Key hash option</h3>
 <p>Keys and values that can be used in hash in <code>api_key</code> parameter in actions (e.g. <code>upload_to_testflight</code>) and tools (e.g. <code>cert</code>) are described in <em>fastlane</em> API Key JSON file format below.
 The only difference when using hash is that you could use <code>filepath</code> instead of <code>key</code>.</p>
+<p>Below is an example of API key being used with CLI:</p>
+<pre><code class="language-no-highlight">$ bundle exec fastlane match appstore \
+    --api_key &quot;
+        {
+            \&quot;filepath\&quot;: \&quot;/Users/bartek/Downloads/AuthKey_TJP2GMDZCI.p8\&quot;,
+            \&quot;key_id\&quot;: \&quot;TJP2GMDZCI\&quot;,
+            \&quot;issuer_id\&quot;: \&quot;57246542-96fe-1a63-e053-0824d011072a\&quot;
+        }
+    &quot;
+</code></pre>
 <p>Please note that <code>key_content</code> and <code>key_filepath</code> described in <code>app_store_connect_api_key</code> action are invalid both in hash and in JSON file.
 View <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb">Token code on Github</a></p>
 <h3 id="using-fastlane-api-key-json-file">Using <em>fastlane</em> API Key JSON file</h3>
@@ -514,7 +524,7 @@ end
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

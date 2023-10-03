@@ -370,7 +370,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Downloads the certificate</li>
 <li>Generates a new <code>.pem</code> file in the current working directory, which you can upload to your server</li>
 </ul>
-<p>Note that <em>pem</em> will never revoke your existing certificates. <em>pem</em> can't download any of your existing push certificates, as the private key is only available on the machine it was created on. </p>
+<p>Note that <em>pem</em> will never revoke your existing certificates. <em>pem</em> can't download any of your existing push certificates, as the private key is only available on the machine it was created on.</p>
 <p>If you already have a push certificate enabled, which is active for at least 30 more days, <em>pem</em> will not create a new certificate. If you still want to create one, use the <code>force</code>:</p>
 <pre><code class="language-no-highlight">fastlane pem --force
 </code></pre>
@@ -403,7 +403,7 @@ While the file is valid, the Mac's Keychain Access will not allow you to open th
 Enter Import Password:
   &lt;hit enter: the p12 has no password&gt;
 MAC verified OK
-Enter PEM pass phrase:
+Enter your pem passphrase:
   &lt;enter a temporary password to encrypt the pem file&gt;
 
 % openssl pkcs12 -export -in my.pem -out my-with-passphrase.p12
@@ -584,7 +584,7 @@ Enter Export Password:
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

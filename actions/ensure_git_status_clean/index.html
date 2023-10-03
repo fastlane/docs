@@ -384,7 +384,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>ignored</code></td>
-<td>The flag whether to ignore file the git status if the repo is dirty</td>
+<td>The handling mode of the ignored files. The available options are: <code>'traditional'</code>, <code>'none'</code> (default) and <code>'matching'</code>. Specifying <code>'none'</code> to this parameter is the same as not specifying the parameter at all, which means that no ignored file will be used to check if the repo is dirty or not. Specifying <code>'traditional'</code> or <code>'matching'</code> causes some ignored files to be used to check if the repo is dirty or not (more info in the official docs: https://git-scm.com/docs/git-status#Documentation/git-status.txt---ignoredltmodegt)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ignore_files</code></td>
+<td>Array of files to ignore</td>
 <td></td>
 </tr>
 </tbody>
@@ -451,7 +456,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2022 <a href="https://fastlane.tools">fastlane</a>
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2023 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
