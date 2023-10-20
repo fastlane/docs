@@ -1,5 +1,7 @@
 **Tip:** If you see Google Play Console or Google Developer Console in your local language, add `&hl=en` at the end of the URL (before any `#...`) to switch to English. All the links below already have this to make it easier to find the correct buttons.
 
+**Note:** if you face issues when following these instructions, you might want to refer to the [official documentation by Google](https://developers.google.com/android-publisher/getting_started/?hl=en).
+
 1. Open the [Google Play Console](https://play.google.com/console/?hl=en)
    1. Click **Account Details**, and note the **Developer Account ID** listed there
 1. Open [Create Project on Google Cloud](https://console.cloud.google.com/projectcreate/?hl=en) and create a project if none exists that fits
