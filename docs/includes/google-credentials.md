@@ -11,7 +11,7 @@
    1. Verify that you are on the correct Google Cloud Platform Project by looking for the **Developer Account ID** from earlier within the light gray text in the second input, preceding `.iam.gserviceaccount.com`, or by checking the project name in the navigaton bar. If not, open the picker in the top navigation bar, and find the right one.
    1. Provide a `Service account name` (e.g. fastlane-supply)
    1. Copy the generated email address that is noted below the `Service account-ID` field for later use
-   1. Click **DONE** (don't click **CREATE AND CONTINUE** as the optional steps such as granting access are not needed): img src="/img/getting-started/android/creating-service-account.png" width="700" />
+   1. Click **DONE** (don't click **CREATE AND CONTINUE** as the optional steps such as granting access are not needed): <img src="/img/getting-started/android/creating-service-account.png" width="700" />
    1. Click on the **Actions** vertical three-dot icon of the service account you just created
    1. Select **Manage keys** on the menu
    1. Click **ADD KEY** → **Create New Key**
