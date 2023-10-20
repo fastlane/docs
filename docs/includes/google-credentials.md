@@ -4,15 +4,17 @@
 
 1. Open the [Google Play Console](https://play.google.com/console/?hl=en)
    1. Click **Account Details**, and note the **Developer Account ID** listed there
-1. Open [Create Project on Google Cloud](https://console.cloud.google.com/projectcreate/?hl=en) and create a project if none exists that fits
-   1. Enable the [Google Play Developer API](https://console.developers.google.com/apis/api/androidpublisher.googleapis.com/?hl=en) by selecting the project and pushing "enable"
-1. Open [Service Accounts on Google Cloud](https://console.cloud.google.com/iam-admin/serviceaccounts?hl=en) and select the project you used before
-   1. Click the **CREATE SERVICE ACCOUNT** button at the top of the **Google Cloud Platform Console**
-   1. Verify that you are on the correct Google Cloud Platform Project by looking for the **Developer Account ID** from earlier within the light gray text in the second input, preceding `.iam.gserviceaccount.com`. If not, open the picker in the top navigation bar, and find the one with the **ID** that contains it
-   1. Provide a `Service account name` (e.g. fastlane-supply) and click **Create**
-   1. Copy the generated email address that is noted below the ServiceAccount-ID field for later use
-   1. Click **Select a role**, then find and select **Service Account User**, and proceed
-   1. Click the **Done** button
+1. Enable the [Google Play Developer API](https://console.developers.google.com/apis/api/androidpublisher.googleapis.com/?hl=en) by selecting an existing Google Cloud Project that fits your needs and pushing **ENABLE**
+   1. If you don't have an existing project or prefer to have a dedicated one for _fastlane_, [create a new one here](https://console.cloud.google.com/projectcreate/?hl=en) and follow the instructions
+1. Open [Service Accounts on Google Cloud](https://console.cloud.google.com/iam-admin/serviceaccounts?hl=en) and select the project you'd like to use
+   1. Click the **CREATE SERVICE ACCOUNT** button at the top of the **Google Cloud Platform Console** page
+   1. Verify that you are on the correct Google Cloud Platform Project by looking for the **Developer Account ID** from earlier within the light gray text in the second input, preceding `.iam.gserviceaccount.com`, or by checking the project name in the navigaton bar. If not, open the picker in the top navigation bar, and find the right one.
+   1. Provide a <kbd>Service account name</kbd> (e.g. fastlane-supply)
+   1. Copy the generated email address that is noted below the <kbd>Service account-ID</kbd> field for later use
+   1. Click **DONE** (don't click **CREATE AND CONTINUE** as the optional steps such as granting access are not needed):
+
+   <img src="/img/getting-started/android/creating-service-account.png" width="996" />
+
    1. Click on the **Actions** vertical three-dot icon of the service account you just created
    1. Select **Manage keys** on the menu
    1. Click **ADD KEY** → **Create New Key**
