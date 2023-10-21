@@ -363,29 +363,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <h2 id="setup">Setup</h2>
 <p>Setup consists of setting up your Google Developers Service Account</p>
-<p><strong>Tip:</strong> If you see Google Play Console or Google Developer Console in your local language, add <code>&amp;hl=en</code> at the end of the URL (before any <code>#...</code>) to switch to English.</p>
+<p><strong>Tip:</strong> If you see Google Play Console or Google Developer Console in your local language, add <code>&amp;hl=en</code> at the end of the URL (before any <code>#...</code>) to switch to English. All the links below already have this to make it easier to find the correct buttons.</p>
+<p><strong>Note:</strong> if you face issues when following these instructions, you might want to refer to the <a href="https://developers.google.com/android-publisher/getting_started/?hl=en">official documentation by Google</a>.</p>
 <ol>
-<li>Open the <a href="https://play.google.com/console/">Google Play Console</a></li>
+<li>Open the <a href="https://play.google.com/console/?hl=en">Google Play Console</a><ol>
 <li>Click <strong>Account Details</strong>, and note the <strong>Developer Account ID</strong> listed there</li>
-<li>Click <strong>Setup</strong> → <strong>API access</strong></li>
-<li>Click the <strong>Create new service account</strong> button</li>
-<li>Follow the <strong>Google Cloud Platform</strong> link in the dialog, which opens a new tab/window:<ol>
-<li>Click the <strong>CREATE SERVICE ACCOUNT</strong> button at the top of the <strong>Google Cloud Platform Console</strong></li>
-<li>Verify that you are on the correct Google Cloud Platform Project by looking for the <strong>Developer Account ID</strong> from earlier within the light gray text in the second input, preceding <code>.iam.gserviceaccount.com</code>. If not, open the picker in the top navigation bar, and find the one with the <strong>ID</strong> that contains it.</li>
-<li>Provide a <code>Service account name</code> and click <strong>Create</strong></li>
-<li>Click <strong>Select a role</strong>, then find and select <strong>Service Account User</strong>, and proceed</li>
-<li>Click the <strong>Done</strong> button</li>
-<li>Click on the <strong>Actions</strong> vertical three-dot icon of the service account you just created</li>
-<li>Select <strong>Manage keys</strong> on the menu</li>
-<li>Click <strong>ADD KEY</strong> -&gt; <strong>Create New Key</strong></li>
-<li>Make sure <strong>JSON</strong> is selected as the <code>Key type</code>, and click <strong>CREATE</strong></li>
-<li>Save the file on your computer when prompted and remember where it was saved to</li>
 </ol>
 </li>
-<li>Return to the <strong>Google Play Console</strong> tab, and click <strong>DONE</strong> to close the dialog</li>
-<li>Click on <strong>Grant Access</strong> for the newly added service account at the bottom of the screen (you may need to click <strong>Refresh service accounts</strong> before it shows up)</li>
-<li>Choose the permissions you'd like this account to have. We recommend <strong>Admin (all permissions)</strong>, but you may want to manually select all checkboxes and leave out some of the <strong>Releases</strong> permissions such as <strong>Release to production</strong></li>
-<li>Click <strong>Invite user</strong> to finish</li>
+<li>Enable the <a href="https://console.developers.google.com/apis/api/androidpublisher.googleapis.com/?hl=en">Google Play Developer API</a> by selecting an existing Google Cloud Project that fits your needs and pushing <strong>ENABLE</strong><ol>
+<li>If you don't have an existing project or prefer to have a dedicated one for <em>fastlane</em>, <a href="https://console.cloud.google.com/projectcreate/?hl=en">create a new one here</a> and follow the instructions</li>
+</ol>
+</li>
+<li>Open <a href="https://console.cloud.google.com/iam-admin/serviceaccounts?hl=en">Service Accounts on Google Cloud</a> and select the project you'd like to use<ol>
+<li>Click the <strong>CREATE SERVICE ACCOUNT</strong> button at the top of the <strong>Google Cloud Platform Console</strong> page</li>
+<li>Verify that you are on the correct Google Cloud Platform Project by looking for the <strong>Developer Account ID</strong> from earlier within the light gray text in the second input, preceding <code>.iam.gserviceaccount.com</code>, or by checking the project name in the navigaton bar. If not, open the picker in the top navigation bar, and find the right one.</li>
+<li>Provide a <code>Service account name</code> (e.g. fastlane-supply)</li>
+<li>Copy the generated email address that is noted below the <code>Service account-ID</code> field for later use</li>
+<li>Click <strong>DONE</strong> (don't click <strong>CREATE AND CONTINUE</strong> as the optional steps such as granting access are not needed): <img src="/img/getting-started/android/creating-service-account.png" width="700" /></li>
+<li>Click on the <strong>Actions</strong> vertical three-dot icon of the service account you just created</li>
+<li>Select <strong>Manage keys</strong> on the menu</li>
+<li>Click <strong>ADD KEY</strong> → <strong>Create New Key</strong></li>
+<li>Make sure <strong>JSON</strong> is selected as the <code>Key type</code>, and click <strong>CREATE</strong></li>
+<li>Save the file on your computer when prompted and remember where it was saved at</li>
+</ol>
+</li>
+<li>Open the <a href="https://play.google.com/console/?hl=en">Google Play Console</a> and select <strong>Users and Permissions</strong><ol>
+<li>Click <strong>Invite new users</strong></li>
+<li>Paste the email address you saved for later use into the email address field</li>
+<li>Click on <strong>Account Permissions</strong></li>
+<li>Choose the permissions you'd like this account to have. We recommend <strong>Admin (all permissions)</strong>, but you may want to manually select all checkboxes and leave out some of the <strong>Releases</strong> permissions such as <strong>Release to production, exclude devices, and use Play App Signing</strong></li>
+<li>Click on <strong>Invite User</strong></li>
+</ol>
+</li>
 </ol>
 <p>You can use <a href="https://docs.fastlane.tools/actions/validate_play_store_json_key/"><code>fastlane run validate_play_store_json_key json_key:/path/to/your/downloaded/file.json</code></a> to test the connection to Google Play Store with the downloaded private key. Once that works, add the path to the JSON file to your <a href="/advanced/Appfile">Appfile</a>:</p>
 <pre><code class="language-ruby">json_key_file(&quot;path/to/your/play-store-credentials.json&quot;)
