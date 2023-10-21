@@ -26,7 +26,7 @@ scan(
   xcodebuild_formatter: "xcpretty"
 )
 
-# Specificy a local install of xcbeautify
+# Specifify a local install of xcbeautify
 scan(
   xcodebuild_formatter: "/custom/path/to/xcbeautify"
 )
