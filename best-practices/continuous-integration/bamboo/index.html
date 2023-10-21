@@ -357,7 +357,7 @@
 <p>By default bamboo will do an anonymous shallow clone of the repo.  This will not preserve the  <code>git remote</code> information nor the list of tags.  If you are using bamboo to create commits you may want to use a code block similar to the following:</p>
 <pre><code class="language-ruby"># In prep for eventually committing a version/build bump - set the git params
 sh('git config user.name &quot;&lt;COMMITTER USERNAME&gt;&quot;')
-sh('git config user.email &lt;COMITTER EMAIL&gt;')
+sh('git config user.email &lt;COMMITTER EMAIL&gt;')
 
 # Bamboo does an anonymous checkout so in order to update the build versions must set the git repo URL
 git_remote_cmd = 'git remote set-url origin ' + ENV['bamboo_repository_git_repositoryUrl']
