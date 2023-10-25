@@ -15,7 +15,7 @@ There are two main formatters the community is using. These are:
 
 As of _fastlane_ 2.201.0, `scan`, `gym`, and `snapshot` all offer a new `xcodebuild_formatter` option.
 
-This option will default to `xcbeautify` if its installed, otherwise it will fallback to `xcpretty`. However, `scan`, `gym`, and `snapshot` will end up using `xcpretty` if any options are set that are customizing with `xcpretty` (ex: `xcpretty_args`)
+"This option will default to xcbeautify if it's installed; otherwise, it will fallback to xcpretty. However, scan, gym, and snapshot will end up using xcpretty if any options are set that customize it with xcpretty (e.g., xcpretty_args)."
 
 ```ruby
 scan(
