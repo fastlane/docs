@@ -344,7 +344,7 @@
 </ul>
 <h3 id="specifying-formatter-with-fastlane-22010-and-above">Specifying formatter with <em>fastlane</em> 2.201.0 and above</h3>
 <p>As of <em>fastlane</em> 2.201.0, <code>scan</code>, <code>gym</code>, and <code>snapshot</code> all offer a new <code>xcodebuild_formatter</code> option.</p>
-<p>This option will default to <code>xcbeautify</code> if its installed, otherwise it will fallback to <code>xcpretty</code>. However, <code>scan</code>, <code>gym</code>, and <code>snapshot</code> will end up using <code>xcpretty</code> if any options are set that are customizing with <code>xcpretty</code> (ex: <code>xcpretty_args</code>)</p>
+<p>This option will default to <code>xcbeautify</code> if it's installed; otherwise, it will fallback to <code>xcpretty</code>. However, <em>scan</em>, <em>gym</em>, and <em>snapshot</em> will end up using <code>xcpretty</code> if any options are set that customize it with <code>xcpretty</code> (e.g., <code>xcpretty_args</code>).</p>
 <pre><code class="language-ruby">scan(
   xcodebuild_formatter: &quot;xcbeautify&quot;
 )
