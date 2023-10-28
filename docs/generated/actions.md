@@ -257,7 +257,7 @@ Action | Description | Supported Platforms
 <a href="/actions/chatwork/">chatwork</a> | Send a success/error message to [ChatWork](https://go.chatwork.com/) | ios, android, mac
 <a href="/actions/ifttt/">ifttt</a> | Connect to the [IFTTT Maker Channel](https://ifttt.com/maker) | ios, android, mac
 <a href="/actions/flock/">flock</a> | Send a message to a [Flock](https://flock.com/) group | ios, android, mac
-<a href="/actions/twitter/">twitter</a> | Post a tweet on [Twitter.com](https://twitter.com) | ios, android, mac
+<a href="/actions/twitter/">X</a> | Post a tweet on [X.com](https://x.com) | ios, android, mac
 <a href="/actions/typetalk/">typetalk</a> | Post a message to [Typetalk](https://www.typetalk.com/) | ios, android, mac
 
 

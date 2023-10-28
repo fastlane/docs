@@ -3,18 +3,18 @@ This file is auto-generated and will be re-generated every time the docs are upd
 To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/twitter.rb
 -->
 
-# twitter
+# X
 
 
-Post a tweet on [Twitter.com](https://twitter.com)
+Post a tweet on [X.com](https://x.com)
 
 
 
 
-> Post a tweet on Twitter. Requires you to setup an app on [twitter.com](https://twitter.com) and obtain `consumer` and `access_token`.
+> Post a tweet on X. Requires you to setup an app on [x.com](https://x.com) and obtain `consumer` and `access_token`.
 
 
-twitter ||
+X ||
 ---|---
 Supported platforms | ios, android, mac
 Author | @hjanuschka

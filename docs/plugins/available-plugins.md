@@ -45959,11 +45959,11 @@ Auto generated, please only modify https://github.com/fastlane/fastlane/blob/mas
 
 <div class="quality-index" style="color: #63b319">130</div>
 
-<h3 id="twitter"><a href="https://github.com/rb-de0/fastlane-plugin-twitter" target="_blank"><code>twitter</code></a></h3>
+<h3 id="twitter"><a href="https://github.com/rb-de0/fastlane-plugin-twitter" target="_blank"><code>X</code></a></h3>
 
 <p class="via-text">via rb_de0</p>
 
-> A simple twitter plugin
+> A simple X plugin
 
 
 <details>
