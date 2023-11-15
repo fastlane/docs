@@ -72,6 +72,7 @@ Key | Description | Default
   `arch` | Specify which architecture the binary file is in. Needed for universal binaries | 
   `source_files` | A Dir.glob compatible pattern used to limit the lookup to specific source files. Ignored in gcov mode | `false`
   `decimals` | The amount of decimals to use for % coverage reporting | `false`
+  `ymlfile` | Relative path to a file used in place of '.slather.yml' | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
