@@ -40,7 +40,7 @@ sonar(
   project_name: "iOS - AwesomeApp",
   sources_path: File.expand_path("../AwesomeApp"),
   sonar_organization: "myOrg",
-  sonar_login: "123456abcdef",
+  sonar_token: "123456abcdef",
   sonar_url: "https://sonarcloud.io"
 )
 ```
@@ -62,7 +62,8 @@ Key | Description | Default
   `project_language` | Language key, e.g. objc | 
   `source_encoding` | Used encoding of source files, e.g., UTF-8 | 
   `sonar_runner_args` | Pass additional arguments to sonar-scanner. Be sure to provide the arguments with a leading `-D` e.g. FL_SONAR_RUNNER_ARGS="-Dsonar.verbose=true" | 
-  `sonar_login` | Pass the Sonar Login token (e.g: xxxxxxprivate_token_XXXXbXX7e) | 
+  `sonar_login` | **DEPRECATED!** Login and password were deprecated in favor of login token. See https://community.sonarsource.com/t/deprecating-sonar-login-and-sonar-password-in-favor-of-sonar-token/95829 for more details - Pass the Sonar Login Token (e.g: xxxxxxprivate_token_XXXXbXX7e) | 
+  `sonar_token` | Pass the Sonar Token (e.g: xxxxxxprivate_token_XXXXbXX7e) | 
   `sonar_url` | Pass the url of the Sonar server | 
   `sonar_organization` | Key of the organization on SonarCloud | 
   `branch_name` | Pass the branch name which is getting scanned | 
