@@ -454,7 +454,7 @@ fastlane deliver submit_build --build_number 830 --submission_information "{\"ex
 
 ### App Privacy Details
 
-Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practies. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
+Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practices. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
 
 # Credentials
 
@@ -835,8 +835,8 @@ Key | Description | Default
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
   `verify_only` | Verifies archive with App Store Connect without uploading | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
-  `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | 
-  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Can not be used together with `automatic_release`) | 
+  `automatic_release` | Should the app be automatically released once it's approved? (Cannot be used together with `auto_release_date`) | 
+  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Cannot be used together with `automatic_release`) | 
   `phased_release` | Enable the phased release feature of iTC | `false`
   `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
   `price_tier` | The price tier of this application | 
