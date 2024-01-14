@@ -64,7 +64,7 @@ $ brew install xcbeautify
 
 #### xcpretty
 
-Historticaly, _fastlane_ was tightly integrated with [xcpretty](https://github.com/xcpretty/xcpretty). `xcpretty` is a RubyGem and a dependency of _fastlane_. This was the best option for _fastlane_ as there were no extra steps for installing or using this formatter.
+Historically, _fastlane_ was tightly integrated with [xcpretty](https://github.com/xcpretty/xcpretty). `xcpretty` is a RubyGem and a dependency of _fastlane_. This was the best option for _fastlane_ as there were no extra steps for installing or using this formatter.
 
 `xcpretty` also did more than formatting. It used the `xcodebuild` output to:
 
