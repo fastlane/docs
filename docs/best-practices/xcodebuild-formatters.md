@@ -31,7 +31,7 @@ scan(
   xcodebuild_formatter: "/custom/path/to/xcbeautify"
 )
 
-# Specifify your own custom formatter
+# Specify your own custom formatter
 scan(
   xcodebuild_formatter: "/custom/path/to/my_formatter"
 )
