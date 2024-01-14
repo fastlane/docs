@@ -106,7 +106,7 @@ $ bundle exec fastlane match appstore \
 ```
 
 Please note that `key_content` and `key_filepath` described in `app_store_connect_api_key` action are invalid both in hash and in JSON file.
-View [Token code on Github](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
+View [Token code on GitHub](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
 
 ### Using _fastlane_ API Key JSON file
 
