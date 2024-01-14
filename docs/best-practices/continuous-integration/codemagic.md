@@ -33,7 +33,7 @@ workflows:
 
 It is recommended to run your *fastlane* lanes using the `codemagic.yaml` configuration file. 
 
-You should install your depenpendencies with `bundle install` and then execute the *fastlane* lane with `bundle exec fastlane <lane_name>` as follows:
+You should install your dependencies with `bundle install` and then execute the *fastlane* lane with `bundle exec fastlane <lane_name>` as follows:
 
 ```yaml
 scripts:
