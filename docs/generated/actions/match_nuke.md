@@ -80,6 +80,7 @@ Key | Description | Default
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id' | `false`
   `include_mac_in_profiles` | Include Apple Silicon Mac devices in provisioning profiles for iOS/iPadOS apps | `false`
   `include_all_certificates` | Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type | `false`
+  `certificate_id` | Select certificate by id. Useful if multiple certificates are stored in one place | 
   `force_for_new_certificates` | Renew the provisioning profiles if the certificate count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
   `safe_remove_certs` | Remove certs from repository during nuke without revoking them on the developer portal | `false`
