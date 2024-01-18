@@ -15,8 +15,12 @@ jobs:
           name: Investigate why bundle update fails
           command: |
             mv Gemfile.lock Gemfile.lock.old
+            echo "Trying to install"
             bundle install
-            git diff Gemfile.lock
+            git --no-pager diff Gemfile.lock
+            echo "Trying to update"
+            bundle update
+            git --no-pager diff Gemfile.lock
             rm Gemfile.lock
             mv Gemfile.lock.old Gemfile.lock
       - run: bundle update
