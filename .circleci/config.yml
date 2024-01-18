@@ -10,6 +10,13 @@ jobs:
       - run: sudo pip3 install pipenv
       - run: pipenv install
       - run: gem install bundler -v $(ruby .ci/bundler_version.rb)
+      - run: bundle -v
+      - run: |
+        mv Gemfile.lock Gemfile.lock.old
+        bundle install
+        git diff Gemfile.lock
+        rm Gemfile.lock
+        mv Gemfile.lock.old Gemfile.lock
       - run: bundle update
       - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop
