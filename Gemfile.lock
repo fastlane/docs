@@ -152,7 +152,7 @@ GEM
       google-apis-core (>= 0.11.0, < 2.a)
     google-apis-playcustomapp_v1 (0.13.0)
       google-apis-core (>= 0.11.0, < 2.a)
-    google-apis-storage_v1 (0.31.0)
+    google-apis-storage_v1 (0.32.0)
       google-apis-core (>= 0.11.0, < 2.a)
     google-cloud-core (1.6.1)
       google-cloud-env (>= 1.0, < 3.a)
@@ -275,6 +275,7 @@ GEM
 
 PLATFORMS
   -darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   danger (~> 8)
