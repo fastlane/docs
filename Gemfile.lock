@@ -98,7 +98,8 @@ GEM
     declarative (0.0.20)
     digest-crc (0.6.5)
       rake (>= 12.0.0, < 14.0.0)
-    domain_name (0.6.20240107)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.8.1)
     emoji_regex (3.2.3)
     excon (0.109.0)
@@ -159,11 +160,11 @@ GEM
     google-cloud-env (1.6.0)
       faraday (>= 0.17.3, < 3.0)
     google-cloud-errors (1.3.1)
-    google-cloud-storage (1.47.0)
+    google-cloud-storage (1.37.0)
       addressable (~> 2.8)
       digest-crc (~> 0.4)
       google-apis-iamcredentials_v1 (~> 0.1)
-      google-apis-storage_v1 (~> 0.31.0)
+      google-apis-storage_v1 (~> 0.1)
       google-cloud-core (~> 1.6)
       googleauth (>= 0.16.2, < 2.a)
       mini_mime (~> 1.0)
@@ -247,6 +248,9 @@ GEM
     tty-spinner (0.9.3)
       tty-cursor (~> 0.7)
     uber (0.1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.9.1)
     unicode-display_width (1.8.0)
     word_wrap (1.0.0)
     xcodeproj (1.23.0)
@@ -270,7 +274,7 @@ GEM
     xcresult (0.2.1)
 
 PLATFORMS
-  ruby
+  -darwin-22
 
 DEPENDENCIES
   danger (~> 8)
@@ -279,4 +283,4 @@ DEPENDENCIES
   xcov
 
 BUNDLED WITH
-   2.3.11
+   2.3.21
