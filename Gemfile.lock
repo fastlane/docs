@@ -274,6 +274,7 @@ GEM
     xcresult (0.2.1)
 
 PLATFORMS
+  ruby
   -darwin-22
   x86_64-linux
 
