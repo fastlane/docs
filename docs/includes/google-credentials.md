@@ -8,7 +8,7 @@
    1. If you don't have an existing project or prefer to have a dedicated one for _fastlane_, [create a new one here](https://console.cloud.google.com/projectcreate/?hl=en) and follow the instructions
 1. Open [Service Accounts on Google Cloud](https://console.cloud.google.com/iam-admin/serviceaccounts?hl=en) and select the project you'd like to use
    1. Click the **CREATE SERVICE ACCOUNT** button at the top of the **Google Cloud Platform Console** page
-   1. Verify that you are on the correct Google Cloud Platform Project by looking for the **Developer Account ID** from earlier within the light gray text in the second input, preceding `.iam.gserviceaccount.com`, or by checking the project name in the navigaton bar. If not, open the picker in the top navigation bar, and find the right one.
+   1. Verify that you are on the correct Google Cloud Platform Project by looking for the **Developer Account ID** from earlier within the light gray text in the second input, preceding `.iam.gserviceaccount.com`, or by checking the project name in the navigation bar. If not, open the picker in the top navigation bar, and find the right one.
    1. Provide a `Service account name` (e.g. fastlane-supply)
    1. Copy the generated email address that is noted below the `Service account-ID` field for later use
    1. Click **DONE** (don't click **CREATE AND CONTINUE** as the optional steps such as granting access are not needed): <img src="/img/getting-started/android/creating-service-account.png" width="700" />
