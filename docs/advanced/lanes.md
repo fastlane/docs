@@ -268,7 +268,7 @@ app_identifier "com.used.id"
 app_identifier "com.ignored.id"
 ```
 
-the `app_identfier` will be `"com.used.id"` and the second value will be ignored. The `for_lane` and `for_platform` configuration blocks provide a limited exception to this rule.
+the `app_identifier` will be `"com.used.id"` and the second value will be ignored. The `for_lane` and `for_platform` configuration blocks provide a limited exception to this rule.
 
 All configuration files (Appfile, Matchfile, Screengrabfile, etc.) can use `for_lane` and `for_platform` blocks to control (and override) configuration values for those circumstances.
 
