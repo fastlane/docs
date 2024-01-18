@@ -276,6 +276,8 @@ GEM
 
 PLATFORMS
   ruby
+  -darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   danger (~> 8)
@@ -284,4 +286,4 @@ DEPENDENCIES
   xcov
 
 BUNDLED WITH
-   2.3.11
+   2.3.21
