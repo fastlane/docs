@@ -11,6 +11,7 @@ jobs:
       - run: pipenv install
       - run: gem install bundler -v $(ruby .ci/bundler_version.rb)
       - run: bundle -v
+      - run: ruby -v
       - run:
           name: Investigate why bundle update fails
           command: |
