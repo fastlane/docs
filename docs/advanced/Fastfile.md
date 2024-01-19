@@ -114,10 +114,9 @@ end
 
 This will also automatically import all the local actions from this repo.
 
-
 ## `import_from_gem`
 
-Import from another ruby gem, which you can use to create a single package with common `Fastfile`s and actions for all your projects.
+Import from another Ruby gem, which you can use to create a single package with common `Fastfile`s and actions for all your projects.
 
 ```ruby
 import_from_gem(gem_name: 'my_gem')
@@ -131,7 +130,6 @@ end
 ```
 
 This will also automatically import all the local actions from this gem.
-
 
 ## Note
 
