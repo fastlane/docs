@@ -13,3 +13,4 @@ As there is no official getting started guide yet, here are some publications by
   - [Simple iOS Releases in React Native](https://shift.infinite.red/simple-react-native-ios-releases-4c28bb53a97b)
 - [Automatic Screenshots with Fastlane & Detox for React Native](https://medium.com/@mra.ghamkhar/automatic-screenshots-with-fastlane-detox-fe5f7e855e51)
 - [Automating React Native deployments for iOS with Fastlane](https://rhysc.me/blog/automate-react-native-deployment-fastlane)
+- [How to deploy React Native app to App Store, Play Store, App Center and App Gallery with one command](https://blog.borodutch.com/how-to-deploy-react-native-app-to-app-store-play-store-and-app-gallery-with-one-command)
