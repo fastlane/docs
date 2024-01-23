@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 2454
+  :age_in_days: 2723
   :readme_score: 100
   :tests: 92
   :actions:
@@ -322,11 +322,11 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: 60ee95ded986e049989510ef09528576d377be27a3fde170d38960deaf72fa0d
-  :github_stars: 111
-  :github_subscribers: 34
+  :sha: 4953da56a6263632326abb2990393f5fddad5227c161443003dd4df8d2e6aa60
+  :github_stars: 124
+  :github_subscribers: 44
   :github_issues: 4
-  :github_forks: 50
+  :github_forks: 52
   :github_contributors: 0
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
@@ -772,7 +772,7 @@ fastlane-plugin-unzip:
   :github_contributors: 1
 fastlane-plugin-cordova:
   :initial_commit: 2016-12-10
-  :age_in_days: 1434
+  :age_in_days: 2531
   :readme_score: 100
   :tests: 0
   :actions:
@@ -781,12 +781,12 @@ fastlane-plugin-cordova:
     category: building
     description: Build your Cordova app
     details: Easily integrate your cordova build into a Fastlane setup
-  :sha: 7bad4b0f0f9340e0b21094287b55a7d17ddf50de0eb22226a05e8c53768c9076
-  :github_stars: 108
-  :github_subscribers: 7
-  :github_issues: 19
-  :github_forks: 32
-  :github_contributors: 13
+  :sha: f5a1023b31c3a9c09a2005e5b5d7eb75029b9174a5a97f9827fccb3d0352e866
+  :github_stars: 114
+  :github_subscribers: 10
+  :github_issues: 21
+  :github_forks: 39
+  :github_contributors: 0
 fastlane-plugin-clubmate:
   :initial_commit: 2016-05-30
   :age_in_days: 636
@@ -1541,7 +1541,7 @@ fastlane-plugin-xamarin_build:
   :github_contributors: 4
 fastlane-plugin-pgyer:
   :initial_commit: 2017-01-21
-  :age_in_days: 2314
+  :age_in_days: 2489
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1550,11 +1550,11 @@ fastlane-plugin-pgyer:
     category:
     description:
     details:
-  :sha: b4865fabee470ee4d4b44fb183f2ba09bfcd6a6b30a865759d255e639a8aa6d8
-  :github_stars: 53
+  :sha: add82bf98af1c996d65cbb7b5ca20adfe7a04256f928bea669890fb650480980
+  :github_stars: 62
   :github_subscribers: 4
-  :github_issues: 3
-  :github_forks: 27
+  :github_issues: 4
+  :github_forks: 30
   :github_contributors: 0
 fastlane-plugin-act:
   :initial_commit: 2016-08-11
@@ -7868,9 +7868,9 @@ fastlane-plugin-set_sonar_properties:
   :github_contributors: 0
 fastlane-plugin-firebase_app_distribution:
   :initial_commit: 2019-08-01
-  :age_in_days: 1508
+  :age_in_days: 1567
   :readme_score: 100
-  :tests: 123
+  :tests: 124
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: firebase_app_distribution
@@ -7911,10 +7911,10 @@ fastlane-plugin-firebase_app_distribution:
     category:
     description: Delete testers in bulk from a comma-separated list or a file
     details: Delete testers in bulk from a comma-separated list or a file
-  :sha: 7c9ff1e74ff64d28b051425f4b27d736f5c08127eaa7fc6e17c99fffde003217
-  :github_stars: 151
+  :sha: e9f91aa31e82d40f5082739f78241665fc5f483ea79f31948f7e467061e615b1
+  :github_stars: 156
   :github_subscribers: 45
-  :github_issues: 2
+  :github_issues: 1
   :github_forks: 29
   :github_contributors: 0
 fastlane-plugin-secrets:
@@ -9768,7 +9768,7 @@ fastlane-plugin-semantic_convention_release:
   :github_contributors: 0
 fastlane-plugin-simple_loco:
   :initial_commit: 2020-08-28
-  :age_in_days: 445
+  :age_in_days: 1174
   :readme_score: 100
   :tests: 1
   :actions:
@@ -9780,8 +9780,8 @@ fastlane-plugin-simple_loco:
       See https://localise.biz/api/docs/export/exportlocale for all options. Common
       mobile platforms (Android, iOS, Xamarin, Flutter) have some extra logic to create
       the correct paths, and a custom implementation is provided for other platforms.
-  :sha: bb6eddf804e458cb42a889a2683ec816afac1a28f1453be6cd9cf20287e90787
-  :github_stars: 2
+  :sha: 2493e2c602715c668f12465a81a8e303ecda7150bd68895e10cc98c3efb96ea6
+  :github_stars: 3
   :github_subscribers: 1
   :github_issues: 0
   :github_forks: 2
@@ -10140,7 +10140,7 @@ fastlane-plugin-jira_issue_link:
   :github_contributors: 0
 fastlane-plugin-emerge:
   :initial_commit: 2020-12-07
-  :age_in_days: 466
+  :age_in_days: 1073
   :readme_score: 100
   :tests: 1
   :actions:
@@ -10154,11 +10154,11 @@ fastlane-plugin-emerge:
     category:
     description: Fastlane plugin to download order files
     details:
-  :sha: b09a1c16acb9310d6afd0a7e9a09f08dbb98a1af0181cb22a7dad6a7a83cd117
-  :github_stars: 4
-  :github_subscribers: 3
+  :sha: 33f376308949b47dc5b57f42aef1fab95089a07df06fb8765600f333c475174d
+  :github_stars: 12
+  :github_subscribers: 4
   :github_issues: 0
-  :github_forks: 0
+  :github_forks: 1
   :github_contributors: 0
 fastlane-plugin-jira_link:
   :initial_commit: 2021-01-09
@@ -10693,15 +10693,15 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 1895
+  :age_in_days: 1954
   :readme_score: 100
-  :tests: 427
+  :tests: 501
   :actions: []
-  :sha: 6498f499e98bd1ac6579bf145d19cb6d3b44d26350fc5731dd895292a31e1206
-  :github_stars: 31
-  :github_subscribers: 22
+  :sha: d351aeb0b49bff4d5b663350cbc5a42c1c79417a8ec1be6468fb5e27d02fc5b8
+  :github_stars: 30
+  :github_subscribers: 23
   :github_issues: 38
-  :github_forks: 10
+  :github_forks: 9
   :github_contributors: 0
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
@@ -12080,7 +12080,7 @@ fastlane-plugin-get_last_circleci_build_number_bitbucket:
   :github_contributors: 0
 fastlane-plugin-stream_actions:
   :initial_commit: 2022-10-27
-  :age_in_days: 325
+  :age_in_days: 384
   :readme_score: 100
   :tests: 24
   :actions:
@@ -12170,9 +12170,9 @@ fastlane-plugin-stream_actions:
     category:
     description:
     details:
-  :sha: 2a16c10957fce8cfc7ad916d290eee4d821058d961cb53889861e5c9ed481114
+  :sha: 6a588704c07664996a0da5c6766a2cff134cfac6de9c07c61f15aee51e554600
   :github_stars: 3
-  :github_subscribers: 23
+  :github_subscribers: 25
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
@@ -13063,6 +13063,23 @@ fastlane-plugin-upload_to_oss:
   :sha: 7909c99fa2228ce041498825e5ee1f8e0d85437e2e59cab23b7823e9179088cd
   :github_stars: 0
   :github_subscribers: 1
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-post_google_chat:
+  :initial_commit: 2020-09-30
+  :age_in_days: 1141
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: post_google_chat
+    category:
+    description: Send message to google chat
+    details: post google chat
+  :sha: 31929e8fcdcfcba08c39d8d748b2f4e0c322143d28f6f9bfdf21679f881a536e
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 0
