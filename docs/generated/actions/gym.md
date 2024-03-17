@@ -55,8 +55,8 @@ fastlane gym
 
 _gym_ uses the latest APIs to build and sign your application which results in much faster build times.
 
-|          |  Gym Features  |
-|----------|----------------|
+|          |  _gym_ Features  |
+|----------|------------------|
 🚀 | _gym_ builds 30% faster than other build tools like [shenzhen](https://github.com/nomad/shenzhen)
 🏁 | Beautiful inline build output
 📖 | Helps you resolve common build errors like code signing issues
@@ -87,7 +87,7 @@ That's all you need to build your application. If you want more control, here ar
 fastlane gym --workspace "Example.xcworkspace" --scheme "AppName" --clean
 ```
 
-If you need to use a different Xcode installation, use `xcode-select` or define `DEVELOPER_DIR`:
+If you need to use a different Xcode installation, use `[xcodes](https://docs.fastlane.tools/actions/xcodes)` or define `DEVELOPER_DIR`:
 
 ```no-highlight
 DEVELOPER_DIR="/Applications/Xcode6.2.app" fastlane gym
@@ -163,7 +163,7 @@ build_app(
   scheme: "Release",
   export_method: "app-store",
   export_options: {
-    provisioningProfiles: { 
+    provisioningProfiles: {
       "com.example.bundleid" => "Provisioning Profile Name",
       "com.example.bundleid2" => "Provisioning Profile Name 2"
     }
@@ -197,10 +197,10 @@ end
 error do |lane, exception|
   slack(
     # message with short human friendly message
-    message: exception.to_s, 
-    success: false, 
+    message: exception.to_s,
+    success: false,
     # Output containing extended log output
-    payload: { "Output" => exception.error_info.to_s } 
+    payload: { "Output" => exception.error_info.to_s }
   )
 end
 ```
@@ -342,6 +342,7 @@ Key | Description | Default
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
   `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
+  `build_timing_summary` | Create a build timing summary | `false`
   `disable_xcpretty` | **DEPRECATED!** Use `xcodebuild_formatter: ''` instead - Disable xcpretty formatting of build output | 
   `xcpretty_test_format` | Use the test (RSpec style) format for build output | 
   `xcpretty_formatter` | A custom xcpretty formatter to use | 

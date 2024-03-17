@@ -1,9 +1,6 @@
 source("https://rubygems.org")
 
-# We want to test with the latest master branch
-gem "danger"
+gem "danger", "~> 8" # Fixed on 8.x because 9.x uses Octokit 5.x which doesn't support Ruby 2.6, which is needed to run verify_docs lane in fastlane's main repo.
 gem "fastlane", git: "https://github.com/fastlane/fastlane"
 gem "rubocop", "0.49.1"
-
-# Needed for testing sample code
-gem "xcov"
+gem "xcov" # Needed for testing sample code

@@ -113,7 +113,7 @@ That's all you need to run your tests. If you want more control, here are some a
 fastlane scan --workspace "Example.xcworkspace" --scheme "AppName" --device "iPhone 6" --clean
 ```
 
-If you need to use a different Xcode install, use `xcode-select` or define `DEVELOPER_DIR`:
+If you need to use a different Xcode install, use `[xcodes](https://docs.fastlane.tools/actions/xcodes)` or define `DEVELOPER_DIR`:
 
 ```no-highlight
 DEVELOPER_DIR="/Applications/Xcode6.2.app" scan
@@ -170,7 +170,7 @@ run_tests ||
 ---|---
 Supported platforms | ios, mac
 Author | @KrauseFx
-Returns | Outputs has of results with :number_of_tests, :number_of_failures, :number_of_retries, :number_of_tests_excluding_retries, :number_of_failures_excluding_retries
+Returns | Outputs hash of results with the following keys: :number_of_tests, :number_of_failures, :number_of_retries, :number_of_tests_excluding_retries, :number_of_failures_excluding_retries
 
 
 
@@ -265,6 +265,7 @@ Key | Description | Default
   `derived_data_path` | The directory where build products and other derived data will go | 
   `should_zip_build_products` | Should zip the derived data build products and place in output path? | `false`
   `output_xctestrun` | Should provide additional copy of .xctestrun file (settings.xctestrun) and place in output path? | `false`
+  `result_bundle_path` | Custom path for the result bundle, overrides result_bundle | 
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
   `parallel_testing` | Optionally override the per-target setting in the scheme for running tests in parallel. Equivalent to -parallel-testing-enabled | 
@@ -290,6 +291,7 @@ Key | Description | Default
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
   `slack_default_payloads` | Specifies default payloads to include in Slack messages. For more info visit https://docs.fastlane.tools/actions/slack | 
   `destination` | Use only if you're a pro, use the other options instead | 
+  `run_rosetta_simulator` | Adds arch=x86_64 to the xcodebuild 'destination' argument to run simulator in a Rosetta mode | `false`
   `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
