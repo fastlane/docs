@@ -422,8 +422,8 @@ capture_ios_screenshots(
 
 Key | Description | Default
 ----|-------------|--------
-  `workspace` | Path the workspace file | 
-  `project` | Path the project file | 
+  `workspace` | Path to the workspace file | 
+  `project` | Path to the project file | 
   `xcargs` | Pass additional arguments to xcodebuild for the test phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
   `devices` | A list of devices you want to take the screenshots from | 
