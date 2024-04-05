@@ -356,7 +356,7 @@
 <ul>
 <li><code>MATCH_PASSWORD</code> - the password used to encrypt/decrypt the repository used to store your distribution certificates and provisioning profiles.</li>
 <li><code>MATCH_KEYCHAIN</code> - an arbitrary name to use for the keychain on the Codemagic build server, e.g "fastlane_keychain"</li>
-<li><code>MATCH_SSH_KEY</code> - an SSH private key used for cloning the Match repository that contains your distribution certificates and provisioning profiles. The public key should be added to your Github account. See <a href="https://docs.codemagic.io/configuration/access-private-git-submodules/">here</a> for more information about accessing Git dependencies with SSH keys.</li>
+<li><code>MATCH_SSH_KEY</code> - an SSH private key used for cloning the Match repository that contains your distribution certificates and provisioning profiles. The public key should be added to your GitHub account. See <a href="https://docs.codemagic.io/configuration/access-private-git-submodules/">here</a> for more information about accessing Git dependencies with SSH keys.</li>
 <li><code>APP_STORE_CONNECT_PRIVATE_KEY</code> - the App Store Connect API key. Copy the entire contents of the .p8 file and paste into the environment variable value field.</li>
 <li><code>APP_STORE_CONNECT_KEY_IDENTIFIER</code> - the key identifier of your App Store Connect API key.</li>
 <li><code>APP_STORE_CONNECT_ISSUER_ID</code> - the issuer of your App Store Connect API key.</li>
@@ -371,7 +371,7 @@
 </code></pre>
 <h2 id="executing-fastlane-in-your-workflow">Executing <em>fastlane</em> in your workflow</h2>
 <p>It is recommended to run your <em>fastlane</em> lanes using the <code>codemagic.yaml</code> configuration file. </p>
-<p>You should install your depenpendencies with <code>bundle install</code> and then execute the <em>fastlane</em> lane with <code>bundle exec fastlane &lt;lane_name&gt;</code> as follows:</p>
+<p>You should install your dependencies with <code>bundle install</code> and then execute the <em>fastlane</em> lane with <code>bundle exec fastlane &lt;lane_name&gt;</code> as follows:</p>
 <pre><code class="language-yaml">scripts:
   - bundle install
   - bundle exec fastlane beta
@@ -407,7 +407,7 @@ gem &quot;cocoapods&quot;
     </p>
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> - Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
