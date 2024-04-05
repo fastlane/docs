@@ -21,7 +21,7 @@ Author | @fjcaetano, @nxtstep
 
 
 
-## 3 Examples
+## 6 Examples
 
 ```ruby
 spm
@@ -30,7 +30,7 @@ spm
 ```ruby
 spm(
   command: "build",
-  build_path: "./build",
+  scratch_path: "./build",
   configuration: "release"
 )
 ```
@@ -39,6 +39,26 @@ spm(
 spm(
   command: "generate-xcodeproj",
   xcconfig: "Package.xcconfig"
+)
+```
+
+```ruby
+spm(
+  command: "test",
+  parallel: true
+)
+```
+
+```ruby
+spm(
+  simulator: "iphonesimulator"
+)
+```
+
+```ruby
+spm(
+  simulator: "macosx",
+  simulator_arch: "arm64"
 )
 ```
 
@@ -52,7 +72,9 @@ Key | Description | Default
 ----|-------------|--------
   `command` | The swift command (one of: build, test, clean, reset, update, resolve, generate-xcodeproj, init) | `build`
   `enable_code_coverage` | Enables code coverage for the generated Xcode project when using the 'generate-xcodeproj' and the 'test' command | 
-  `build_path` | Specify build/cache directory [default: ./.build] | 
+  `scratch_path` | Specify build/cache directory [default: ./.build] | 
+  `parallel` | Enables running tests in parallel when using the 'test' command | `false`
+  `build_path` | **DEPRECATED!** `build_path` option is deprecated, use `scratch_path` instead - Specify build/cache directory [default: ./.build] | 
   `package_path` | Change working directory before any other operation | 
   `xcconfig` | Use xcconfig file to override swift package generate-xcodeproj defaults | 
   `configuration` | Build with configuration (debug\|release) [default: debug] | 
@@ -60,6 +82,8 @@ Key | Description | Default
   `xcpretty_output` | Specifies the output type for xcpretty. eg. 'test', or 'simple' | 
   `xcpretty_args` | Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf'), requires xcpretty_output to be specified also | 
   `verbose` | Increase verbosity of informational output | `false`
+  `simulator` | Specifies the simulator to pass for Swift Compiler (one of: iphonesimulator, macosx) | 
+  `simulator_arch` | Specifies the architecture of the simulator to pass for Swift Compiler (one of: x86_64, arm64). Requires the simulator option to be specified also, otherwise, it's ignored | `arm64`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -454,7 +454,7 @@ fastlane deliver submit_build --build_number 830 --submission_information "{\"ex
 
 ### App Privacy Details
 
-Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practies. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
+Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practices. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
 
 # Credentials
 
@@ -831,12 +831,14 @@ Key | Description | Default
   `skip_app_version_update` | Don’t create or update the app version that is being prepared for submission | `false`
   `force` | Skip verification of HTML preview file | `false`
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
+  `screenshot_processing_timeout` | Timeout in seconds to wait before considering screenshot processing as failed, used to handle cases where uploads to the App Store are stuck in processing | `3600`
   `sync_screenshots` | Sync screenshots with local ones. This is currently beta option so set true to 'FASTLANE_ENABLE_BETA_DELIVER_SYNC_SCREENSHOTS' environment variable as well | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
   `verify_only` | Verifies archive with App Store Connect without uploading | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
-  `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | 
-  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Can not be used together with `automatic_release`) | 
+  `version_check_wait_retry_limit` | After submitting a new version, App Store Connect takes some time to recognize the new version and we must wait until it's available before attempting to upload metadata for it. There is a mechanism that will check if it's available and retry with an exponential backoff if it's not available yet. This option specifies how many times we should retry before giving up. Setting this to a value below 5 is not recommended and will likely cause failures. Increase this parameter when Apple servers seem to be degraded or slow | `7`
+  `automatic_release` | Should the app be automatically released once it's approved? (Cannot be used together with `auto_release_date`) | 
+  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Cannot be used together with `automatic_release`) | 
   `phased_release` | Enable the phased release feature of iTC | `false`
   `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
   `price_tier` | The price tier of this application | 
