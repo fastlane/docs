@@ -23,9 +23,6 @@ plugins:
 docs_dir: docs
 extra:
   fastlane_repo_base_edit_uri: https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane
-google_analytics:
-- UA-18658848-13
-- docs.fastlane.tools
 extra_css:
 - "./css/fastlane.css"
 - "./css/code.css"
