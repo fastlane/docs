@@ -72,6 +72,8 @@ Key | Description | Default
   `s3_skip_encryption` | Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html | `false`
   `gitlab_project` | GitLab Project Path (i.e. 'gitlab-org/gitlab') | 
   `gitlab_host` | GitLab Host (i.e. 'https://gitlab.com') | `https://gitlab.com`
+  `job_token` | GitLab CI_JOB_TOKEN | 
+  `private_token` | GitLab Access Token | 
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`

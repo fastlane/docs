@@ -15,7 +15,7 @@ There are two main formatters the community is using. These are:
 
 As of _fastlane_ 2.201.0, `scan`, `gym`, and `snapshot` all offer a new `xcodebuild_formatter` option.
 
-This option will default to `xcbeautify` if its installed, otherwise it will fallback to `xcpretty`. However, `scan`, `gym`, and `snapshot` will end up using `xcpretty` if any options are set that are customizing with `xcpretty` (ex: `xcpretty_args`)
+This option will default to `xcbeautify` if it's installed; otherwise, it will fallback to `xcpretty`. However, _scan_, _gym_, and _snapshot_ will end up using `xcpretty` if any options are set that customize it with `xcpretty` (e.g., `xcpretty_args`).
 
 ```ruby
 scan(
@@ -26,12 +26,12 @@ scan(
   xcodebuild_formatter: "xcpretty"
 )
 
-# Specificy a local install of xcbeautify
+# Specify a local installation of xcbeautify
 scan(
   xcodebuild_formatter: "/custom/path/to/xcbeautify"
 )
 
-# Specifify your own custom formatter
+# Specify your own custom formatter
 scan(
   xcodebuild_formatter: "/custom/path/to/my_formatter"
 )
@@ -64,7 +64,7 @@ $ brew install xcbeautify
 
 #### xcpretty
 
-Historticaly, _fastlane_ was tightly integrated with [xcpretty](https://github.com/xcpretty/xcpretty). `xcpretty` is a RubyGem and a dependency of _fastlane_. This was the best option for _fastlane_ as there were no extra steps for installing or using this formatter.
+Historically, _fastlane_ was tightly integrated with [xcpretty](https://github.com/xcpretty/xcpretty). `xcpretty` is a RubyGem and a dependency of _fastlane_. This was the best option for _fastlane_ as there were no extra steps for installing or using this formatter.
 
 `xcpretty` also did more than formatting. It used the `xcodebuild` output to:
 

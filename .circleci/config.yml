@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: sudo pip3 install pipenv
       - run: pipenv install
-      - run: gem install bundler
+      - run: gem install bundler -v $(ruby .ci/bundler_version.rb)
       - run: bundle update
       - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop
@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run: sudo pip3 install pipenv
       - run: pipenv install
-      - run: gem install bundler
+      - run: gem install bundler -v $(ruby .ci/bundler_version.rb)
       - run: bundle update
       - run: pipenv run ./scripts/ci/deploy.sh
 
