@@ -36,16 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -314,11 +304,9 @@
 
         
 
-        <a href="
-            https://github.com/fastlane/docs/edit/master/docs/getting-started/android/beta-deployment.md
-        " 
+        <a href="https://github.com/fastlane/docs/edit/master/docs/getting-started/android/beta-deployment.md" 
             class="icon icon-github"
-        >Edit on GitHub</a>
+        > Edit on GitHub</a>
       </li>
     
 
@@ -432,7 +420,7 @@ end
 </code></pre>
 <h3 id="supported-beta-testing-services">Supported beta testing services</h3>
 <details>
-<p><summary>Google Play</summary></p>
+<summary>Google Play</summary>
 <p>In order to distribute to Google Play with <em>upload_to_play_store</em> you will need to have your Google credentials set up. Make sure you've gone through <a href="/getting-started/android/setup/#setting-up-supply">Setting up <em>supply</em></a> before continuing!</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
@@ -450,7 +438,7 @@ end
 <hr />
 </details>
 <details>
-<p><summary>Firebase App Distribution</summary></p>
+<summary>Firebase App Distribution</summary>
 <p>Install the Firebase App Distribution plugin:</p>
 <pre><code class="language-no-highlight">fastlane add_plugin firebase_app_distribution
 </code></pre>
@@ -478,7 +466,7 @@ end
 <p>More information about additional supported beta testing services can be found in the <a href="https://docs.fastlane.tools/actions/#beta">list of "Beta" actions</a></p>
 <h2 id="release-notes">Release Notes</h2>
 <details>
-<p><summary>Generate based on Git commits</summary></p>
+<summary>Generate based on Git commits</summary>
 <p>You take the time to write great Git commit messages, right? Why not take advantage of them to automatically summarize the work done for your latest beta release?</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
@@ -502,7 +490,7 @@ end
 <hr />
 </details>
 <details>
-<p><summary>Prompt for changelog</summary></p>
+<summary>Prompt for changelog</summary>
 <p>You can automatically be asked for the changelog in your terminal using the <code>prompt</code> action:</p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Ask for a one line input
@@ -525,7 +513,7 @@ end
 <hr />
 </details>
 <details>
-<p><summary>Fetch the changelog from the file system or remote server</summary></p>
+<summary>Fetch the changelog from the file system or remote server</summary>
 <p>You can fetch values from anywhere, including the file system and remote server, by writing code in your <code>Fastfile</code></p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Read from file system
@@ -562,7 +550,7 @@ end
     </p>
   </div>
 
-  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-06-08 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -635,18 +623,20 @@ end
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../screenshots/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../release-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../screenshots/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../release-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../../..';</script>
     <!-- <script src="../../../js/theme_extra.js" defer></script>

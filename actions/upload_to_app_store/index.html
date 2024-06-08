@@ -36,16 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -302,11 +292,9 @@
 
         
 
-        <a href="
-            https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/upload_to_app_store.rb
-        " 
+        <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/upload_to_app_store.rb" 
             class="icon icon-github"
-        >Edit on GitHub</a>
+        > Edit on GitHub</a>
       </li>
     
 
@@ -410,7 +398,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 <h2 id="more-options">More options</h2>
 <details>
-<p><summary>View all available options and their valid values</summary></p>
+<summary>View all available options and their valid values</summary>
 <h2 id="available-options">Available options</h2>
 <p>All the options below can easily be added to your <code>Deliverfile</code>. The great thing: if you use <em>fastlane</em> you can use all these options from your <code>Fastfile</code> too, for example:</p>
 <pre><code class="language-ruby">deliver(
@@ -622,7 +610,7 @@ end
 <pre><code class="language-no-highlight">fastlane deliver submit_build --build_number 830 --submission_information &quot;{\&quot;export_compliance_uses_encryption\&quot;: false, \&quot;add_id_info_uses_idfa\&quot;: false }&quot;
 </code></pre>
 <h3 id="app-privacy-details">App Privacy Details</h3>
-<p>Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practies. <em>deliver</em> does not allow for updating of this information but this can be done with the <em>upload_app_privacy_details_to_app_store</em> action. More information on <a href="https://docs.fastlane.tools/uploading-app-privacy-details">Uploading App Privacy Details</a></p>
+<p>Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practices. <em>deliver</em> does not allow for updating of this information but this can be done with the <em>upload_app_privacy_details_to_app_store</em> action. More information on <a href="https://docs.fastlane.tools/uploading-app-privacy-details">Uploading App Privacy Details</a></p>
 <h1 id="credentials">Credentials</h1>
 <p>A detailed description about how your credentials are handled is available in a <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">credentials_manager</a>.</p>
 <h3 id="how-does-this-thing-even-work-is-magic-involved">How does this thing even work? Is magic involved? 🎩</h3>
@@ -832,7 +820,7 @@ end
 </table>
 <h2 id="reference">Reference</h2>
 <details>
-<p><summary>View all available categories, etc.</summary></p>
+<summary>View all available categories, etc.</summary>
 <h3 id="available-categories">Available Categories</h3>
 <ul>
 <li><code>FOOD_AND_DRINK</code></li>
@@ -1176,6 +1164,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>screenshot_processing_timeout</code></td>
+<td>Timeout in seconds to wait before considering screenshot processing as failed, used to handle cases where uploads to the App Store are stuck in processing</td>
+<td><code>3600</code></td>
+</tr>
+<tr>
 <td><code>sync_screenshots</code></td>
 <td>Sync screenshots with local ones. This is currently beta option so set true to 'FASTLANE_ENABLE_BETA_DELIVER_SYNC_SCREENSHOTS' environment variable as well</td>
 <td><code>false</code></td>
@@ -1196,13 +1189,18 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>version_check_wait_retry_limit</code></td>
+<td>After submitting a new version, App Store Connect takes some time to recognize the new version and we must wait until it's available before attempting to upload metadata for it. There is a mechanism that will check if it's available and retry with an exponential backoff if it's not available yet. This option specifies how many times we should retry before giving up. Setting this to a value below 5 is not recommended and will likely cause failures. Increase this parameter when Apple servers seem to be degraded or slow</td>
+<td><code>7</code></td>
+</tr>
+<tr>
 <td><code>automatic_release</code></td>
-<td>Should the app be automatically released once it's approved? (Can not be used together with <code>auto_release_date</code>)</td>
+<td>Should the app be automatically released once it's approved? (Cannot be used together with <code>auto_release_date</code>)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>auto_release_date</code></td>
-<td>Date in milliseconds for automatically releasing on pending approval (Can not be used together with <code>automatic_release</code>)</td>
+<td>Date in milliseconds for automatically releasing on pending approval (Cannot be used together with <code>automatic_release</code>)</td>
 <td></td>
 </tr>
 <tr>
@@ -1445,7 +1443,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
     </p>
   </div>
 
-  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-06-08 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -1518,18 +1516,20 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../upload_symbols_to_sentry/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../upload_to_play_store/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../upload_symbols_to_sentry/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../upload_to_play_store/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
     <!-- <script src="../../js/theme_extra.js" defer></script>

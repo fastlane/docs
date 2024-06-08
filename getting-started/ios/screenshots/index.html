@@ -36,16 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -318,11 +308,9 @@
 
         
 
-        <a href="
-            https://github.com/fastlane/docs/edit/master/docs/getting-started/ios/screenshots.md
-        " 
+        <a href="https://github.com/fastlane/docs/edit/master/docs/getting-started/ios/screenshots.md" 
             class="icon icon-github"
-        >Edit on GitHub</a>
+        > Edit on GitHub</a>
       </li>
     
 
@@ -568,13 +556,13 @@ fastlane action upload_to_app_store
 <p>If you want to upload the screenshots to the App Store, you <strong>have</strong> to provide a <code>Framefile.json</code>, with titles and background, otherwise the resolution of the framed screenshots doesn't match the requirements of App Store Connect.</p>
 <h3 id="dependencies">Dependencies</h3>
 <details>
-<p><summary>Installing ImageMagick</summary></p>
+<summary>Installing ImageMagick</summary>
 <p>To perform image manipulation, <em>frameit</em> depends on a tool called <code>imagemagick</code>. The easiest way to install it is through <a href="http://brew.sh/">homebrew</a>:</p>
 <pre><code class="language-no-highlight">brew install libpng jpeg imagemagick
 </code></pre>
 </details>
 <details>
-<p><summary>Troubleshooting ImageMagick</summary></p>
+<summary>Troubleshooting ImageMagick</summary>
 <p>If you have installed <em>imagemagick</em> but are seeing error messages like:</p>
 <pre><code class="language-no-highlight">mogrify: no decode delegate for this image format `PNG'
 </code></pre>
@@ -583,7 +571,7 @@ fastlane action upload_to_app_store
 </code></pre>
 </details>
 <details>
-<p><summary>Setting Up Device Frames</summary></p>
+<summary>Setting Up Device Frames</summary>
 <p>To download the latest device frames, you can run</p>
 <pre><code class="language-no-highlight">fastlane frameit setup
 </code></pre>
@@ -601,7 +589,7 @@ end
 </code></pre>
 <h2 id="advanced-snapshot">Advanced <em>snapshot</em></h2>
 <details>
-<p><summary>Sample uses</summary></p>
+<summary>Sample uses</summary>
 <pre><code class="language-ruby">lane :screenshots do
   capture_screenshots
 end
@@ -630,13 +618,13 @@ end
 </code></pre>
 </details>
 <details>
-<p><summary>Reset Xcode simulators</summary></p>
+<summary>Reset Xcode simulators</summary>
 <p>You can run this command in the terminal to delete and re-create all iOS simulators. This is useful when Xcode duplicated your local simulators.</p>
 <pre><code class="language-no-highlight">fastlane snapshot reset_simulators
 </code></pre>
 </details>
 <details>
-<p><summary>Launch Arguments</summary></p>
+<summary>Launch Arguments</summary>
 <p>You can provide additional arguments to your app on launch. These strings will be available in your app (eg. not in the testing target) through <code>ProcessInfo.processInfo.arguments</code>. Alternatively, use user-default syntax (<code>-key value</code>) and they will be available as key-value pairs in <code>UserDefaults.standard</code>.</p>
 <pre><code class="language-ruby">launch_arguments([
   &quot;-firstName Felix -lastName Krause&quot;
@@ -659,7 +647,7 @@ launch_arguments([
 </code></pre>
 </details>
 <details>
-<p><summary>Update snapshot helpers</summary></p>
+<summary>Update snapshot helpers</summary>
 <p>Some updates require the helper files to be updated. <em>snapshot</em> will automatically warn you and tell you how to update.</p>
 <p>Basically you can run</p>
 <pre><code class="language-no-highlight">fastlane snapshot update
@@ -667,11 +655,11 @@ launch_arguments([
 <p>to update your <code>SnapshotHelper.swift</code> files. In case you modified your <code>SnapshotHelper.swift</code> and want to manually update the file, check out <a href="https://github.com/fastlane/fastlane/blob/master/snapshot/lib/assets/SnapshotHelper.swift">SnapshotHelper.swift</a>.</p>
 </details>
 <details>
-<p><summary>Clean status bar</summary></p>
+<summary>Clean status bar</summary>
 <p>To clean the status bar (9:41, full battery and full signal), use <a href="https://docs.fastlane.tools/actions/capture_ios_screenshots/#use-a-clean-status-bar">the <code>override_status_bar</code> parameter</a>.</p>
 </details>
 <details>
-<p><summary>How does <em>snapshot</em> work?</summary></p>
+<summary>How does _snapshot_ work?</summary>
 <p>The easiest solution would be to just render the UIWindow into a file. That's not possible because UI Tests don't run on a main thread. So <em>snapshot</em> uses a different approach:</p>
 <p>When you run unit tests in Xcode, the reporter generates a plist file, documenting all events that occurred during the tests (<a href="http://michele.io/test-logs-in-xcode">More Information</a>). Additionally, Xcode generates screenshots before, during and after each of these events. There is no way to manually trigger a screenshot event. The screenshots and the plist files are stored in the DerivedData directory, which <em>snapshot</em> stores in a temporary folder.</p>
 <p>When the user calls <code>snapshot(...)</code> in the UI Tests (Swift or Objective C) the script actually does a rotation to <code>.Unknown</code> which doesn't have any effect on the actual app, but is enough to trigger a screenshot. It has no effect to the application and is not something you would do in your tests. The goal was to find <em>some</em> event that a user would never trigger, so that we know it's from <em>snapshot</em>. On tvOS, there is no orientation so we ask for a count of app views with type "Browser" (which should never exist on tvOS).</p>
@@ -707,7 +695,7 @@ launch_arguments([
     </p>
   </div>
 
-  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-06-08 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -780,18 +768,20 @@ launch_arguments([
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../running-tests/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../beta-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../running-tests/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../beta-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../../..';</script>
     <!-- <script src="../../../js/theme_extra.js" defer></script>

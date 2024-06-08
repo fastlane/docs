@@ -36,16 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -302,11 +292,9 @@
 
         
 
-        <a href="
-            https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/upload_to_play_store.rb
-        " 
+        <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/upload_to_play_store.rb" 
             class="icon icon-github"
-        >Edit on GitHub</a>
+        > Edit on GitHub</a>
       </li>
     
 
@@ -371,7 +359,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p><strong>Note:</strong> if you face issues when following these instructions, you might want to refer to the <a href="https://developers.google.com/android-publisher/getting_started/?hl=en">official documentation by Google</a>.</p>
 <ol>
 <li>Open the <a href="https://play.google.com/console/?hl=en">Google Play Console</a><ol>
-<li>Click <strong>Account Details</strong>, and note the <strong>Developer Account ID</strong> listed there</li>
+<li>Click <strong>Account Details</strong>, and note the <strong>Google Cloud Project ID</strong> listed there</li>
 </ol>
 </li>
 <li>Enable the <a href="https://console.developers.google.com/apis/api/androidpublisher.googleapis.com/?hl=en">Google Play Developer API</a> by selecting an existing Google Cloud Project that fits your needs and pushing <strong>ENABLE</strong><ol>
@@ -380,7 +368,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </li>
 <li>Open <a href="https://console.cloud.google.com/iam-admin/serviceaccounts?hl=en">Service Accounts on Google Cloud</a> and select the project you'd like to use<ol>
 <li>Click the <strong>CREATE SERVICE ACCOUNT</strong> button at the top of the <strong>Google Cloud Platform Console</strong> page</li>
-<li>Verify that you are on the correct Google Cloud Platform Project by looking for the <strong>Developer Account ID</strong> from earlier within the light gray text in the second input, preceding <code>.iam.gserviceaccount.com</code>, or by checking the project name in the navigation bar. If not, open the picker in the top navigation bar, and find the right one.</li>
+<li>Verify that you are on the correct Google Cloud Platform Project by looking for the <strong>Google Cloud Project ID</strong> from earlier within the light gray text in the second input, preceding <code>.iam.gserviceaccount.com</code>, or by checking the project name in the navigation bar. If not, open the picker in the top navigation bar, and find the right one.</li>
 <li>Provide a <code>Service account name</code> (e.g. fastlane-supply)</li>
 <li>Copy the generated email address that is noted below the <code>Service account-ID</code> field for later use</li>
 <li>Click <strong>DONE</strong> (don't click <strong>CREATE AND CONTINUE</strong> as the optional steps such as granting access are not needed): <img src="/img/getting-started/android/creating-service-account.png" width="700" /></li>
@@ -504,6 +492,9 @@ Note that these will replace the current images and screenshots on the play stor
 <h2 id="retrieve-track-release-names-version-codes">Retrieve Track Release Names &amp; Version Codes</h2>
 <p>Before performing a new APK upload you may want to check existing track version codes or release names, or you may simply want to provide an informational lane that displays the currently promoted version codes or release name for the production track. You can use the <code>google_play_track_version_codes</code> action to retrieve existing version codes for a package and track. You can use the <code>google_play_track_release_names</code> action to retrieve existing release names for a package and track.
 For more information, see the <code>fastlane action google_play_track_version_codes</code> and <code>fastlane action google_play_track_release_names</code> help output.</p>
+<h2 id="parallel-uploads">Parallel uploads</h2>
+<p>By default <em>supply</em> will spawn 10 threads to upload the metadata concurrently (<em>images, screenshots, texts</em>). If you want to change this, set either <code>DELIVER_NUMBER_OF_THREADS</code> or <code>FL_NUMBER_OF_THREADS</code> environment variable to any value between 1 and 10.</p>
+<p>If you want <em>supply</em> to upload with more than 10 threads in parallel then you need to <strong>additionally</strong> set <code>FL_MAX_NUMBER_OF_THREADS</code> environment variable to the max number of parallel upload threads you wish to have (<strong>Warning ⚠️</strong> use this at your own risk!).</p>
 <h2 id="migration-from-androidpublisherv2-to-androidpublisherv3-in-fastlane-21350">Migration from AndroidPublisherV2 to AndroidPublisherV3 in <em>fastlane</em> 2.135.0</h2>
 <h3 id="new-options">New Options</h3>
 <ul>
@@ -539,7 +530,6 @@ For more information, see the <code>fastlane action google_play_track_version_co
 </ul>
 </li>
 </ul>
-<p>:</p>
 <hr />
 
 <table>
@@ -820,7 +810,7 @@ For more information, see the <code>fastlane action google_play_track_version_co
     </p>
   </div>
 
-  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-06-08 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -893,18 +883,20 @@ For more information, see the <code>fastlane action google_play_track_version_co
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../upload_to_app_store/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../upload_to_play_store_internal_app_sharing/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../upload_to_app_store/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../upload_to_play_store_internal_app_sharing/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
     <!-- <script src="../../js/theme_extra.js" defer></script>

@@ -36,16 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -298,11 +288,9 @@
 
         
 
-        <a href="
-            https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/generated/actions/screengrab.rb
-        " 
+        <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/generated/actions/screengrab.rb" 
             class="icon icon-github"
-        >Edit on GitHub</a>
+        > Edit on GitHub</a>
       </li>
     
 
@@ -540,7 +528,7 @@ You could for example show the Bluetooth icon and the LTE text.</p>
 </code></pre>
 <h1 id="advanced-screengrab">Advanced <em>screengrab</em></h1>
 <details>
-<p><summary>Launch Arguments</summary></p>
+<summary>Launch Arguments</summary>
 <p>You can provide additional arguments to your test cases on launch. These strings will be available in your tests through <code>InstrumentationRegistry.getArguments()</code>.</p>
 <pre><code class="language-ruby">screengrab(
   launch_arguments: [
@@ -564,7 +552,7 @@ if (extras != null) {
 </code></pre>
 </details>
 <details>
-<p><summary>Detecting screengrab at runtime</summary></p>
+<summary>Detecting screengrab at runtime</summary>
 <p>For some apps, it is helpful to know when <em>screengrab</em> is running so that you can display specific data for your screenshots. For iOS fastlane users, this is much like "FASTLANE_SNAPSHOT". In order to do this, you'll need to have at least two product flavors of your app.</p>
 <p>Add two product flavors to the app-level build.gradle file:</p>
 <pre><code>android {
@@ -816,7 +804,7 @@ if (extras != null) {
     </p>
   </div>
 
-  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-06-08 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -889,14 +877,16 @@ if (extras != null) {
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
 </div>
     <script>var base_url = '../../..';</script>
     <!-- <script src="../../../js/theme_extra.js" defer></script>

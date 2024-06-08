@@ -36,16 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -298,11 +288,9 @@
 
         
 
-        <a href="
-            https://github.com/fastlane/docs/edit/master/docs/generated/actions.md
-        " 
+        <a href="https://github.com/fastlane/docs/edit/master/docs/generated/actions.md" 
             class="icon icon-github"
-        >Edit on GitHub</a>
+        > Edit on GitHub</a>
       </li>
     
 
@@ -566,19 +554,9 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/build_mac_app/">build_mac_app</a></td>
-<td>Alias for the <code>build_app</code> action but only for macOS</td>
-<td>mac</td>
-</tr>
-<tr>
-<td><a href="/actions/spm/">spm</a></td>
-<td>Runs Swift Package Manager on your project</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/build_ios_app/">build_ios_app</a></td>
-<td>Alias for the <code>build_app</code> action but only for iOS</td>
-<td>ios</td>
+<td><a href="/actions/xcodes/">xcodes</a></td>
+<td>Make sure a certain version of Xcode is installed, installing it only if needed</td>
+<td>ios, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/xcclean/">xcclean</a></td>
@@ -586,24 +564,9 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcarchive/">xcarchive</a></td>
-<td>Archives the project using <code>xcodebuild</code></td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/build_android_app/">build_android_app</a></td>
-<td>Alias for the <code>gradle</code> action</td>
-<td>ios, android</td>
-</tr>
-<tr>
-<td><a href="/actions/xcexport/">xcexport</a></td>
-<td>Exports the project using <code>xcodebuild</code></td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/build_app/">build_app</a></td>
-<td>Easily build and sign your app (via <em>gym</em>)</td>
-<td>ios, mac</td>
+<td><a href="/actions/spm/">spm</a></td>
+<td>Runs Swift Package Manager on your project</td>
+<td>ios, android, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/xcbuild/">xcbuild</a></td>
@@ -616,14 +579,39 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/xcodes/">xcodes</a></td>
-<td>Make sure a certain version of Xcode is installed, installing it only if needed</td>
+<td><a href="/actions/build_app/">build_app</a></td>
+<td>Easily build and sign your app (via <em>gym</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcarchive/">xcarchive</a></td>
+<td>Archives the project using <code>xcodebuild</code></td>
 <td>ios, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/create_xcframework/">create_xcframework</a></td>
 <td>Package multiple build configs of a library/framework into a single xcframework</td>
 <td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/xcexport/">xcexport</a></td>
+<td>Exports the project using <code>xcodebuild</code></td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/build_android_app/">build_android_app</a></td>
+<td>Alias for the <code>gradle</code> action</td>
+<td>ios, android</td>
+</tr>
+<tr>
+<td><a href="/actions/build_ios_app/">build_ios_app</a></td>
+<td>Alias for the <code>build_app</code> action but only for iOS</td>
+<td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/build_mac_app/">build_mac_app</a></td>
+<td>Alias for the <code>build_app</code> action but only for macOS</td>
+<td>mac</td>
 </tr>
 </tbody>
 </table>
@@ -653,6 +641,11 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, android, mac</td>
 </tr>
 <tr>
+<td><a href="/actions/capture_android_screenshots/">capture_android_screenshots</a></td>
+<td>Automated localized screenshots of your Android app (via <em>screengrab</em>)</td>
+<td>android</td>
+</tr>
+<tr>
 <td><a href="/actions/frame_screenshots/">frame_screenshots</a></td>
 <td>Adds device frames around all screenshots (via <em>frameit</em>)</td>
 <td>ios, android, mac</td>
@@ -666,11 +659,6 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td><a href="/actions/capture_ios_screenshots/">capture_ios_screenshots</a></td>
 <td>Generate new localized screenshots on multiple devices (via <em>snapshot</em>)</td>
 <td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/capture_android_screenshots/">capture_android_screenshots</a></td>
-<td>Automated localized screenshots of your Android app (via <em>screengrab</em>)</td>
-<td>android</td>
 </tr>
 </tbody>
 </table>
@@ -822,24 +810,9 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios</td>
 </tr>
 <tr>
-<td><a href="/actions/match_nuke/">match_nuke</a></td>
-<td>Easily nuke your certificate and provisioning profiles (via <em>match</em>)</td>
-<td>ios, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/get_provisioning_profile/">get_provisioning_profile</a></td>
 <td>Generates a provisioning profile, saving it in the current folder (via <em>sigh</em>)</td>
 <td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/sync_code_signing/">sync_code_signing</a></td>
-<td>Easily sync your certificates and profiles across your team (via <em>match</em>)</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/notarize/">notarize</a></td>
-<td>Notarizes a macOS app</td>
-<td>mac</td>
 </tr>
 <tr>
 <td><a href="/actions/get_certificates/">get_certificates</a></td>
@@ -847,13 +820,28 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios</td>
 </tr>
 <tr>
+<td><a href="/actions/notarize/">notarize</a></td>
+<td>Notarizes a macOS app</td>
+<td>mac</td>
+</tr>
+<tr>
 <td><a href="/actions/update_code_signing_settings/">update_code_signing_settings</a></td>
 <td>Configures Xcode's Codesigning options</td>
 <td>ios, mac</td>
 </tr>
 <tr>
+<td><a href="/actions/match_nuke/">match_nuke</a></td>
+<td>Easily nuke your certificate and provisioning profiles (via <em>match</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
 <td><a href="/actions/install_provisioning_profile/">install_provisioning_profile</a></td>
 <td>Install provisioning profile from path</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/sync_code_signing/">sync_code_signing</a></td>
+<td>Easily sync your certificates and profiles across your team (via <em>match</em>)</td>
 <td>ios, mac</td>
 </tr>
 </tbody>
@@ -1020,6 +1008,21 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, mac</td>
 </tr>
 <tr>
+<td><a href="/actions/upload_to_play_store_internal_app_sharing/">upload_to_play_store_internal_app_sharing</a></td>
+<td>Upload binaries to Google Play Internal App Sharing (via <em>supply</em>)</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/download_app_privacy_details_from_app_store/">download_app_privacy_details_from_app_store</a></td>
+<td>Download App Privacy Details from an app in App Store Connect</td>
+<td>ios, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/upload_to_app_store/">upload_to_app_store</a></td>
+<td>Upload metadata and binary to App Store Connect (via <em>deliver</em>)</td>
+<td>ios, mac</td>
+</tr>
+<tr>
 <td><a href="/actions/download_universal_apk_from_google_play/">download_universal_apk_from_google_play</a></td>
 <td>Download the Universal APK of a given version code from the Google Play Console</td>
 <td>android</td>
@@ -1033,21 +1036,6 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td><a href="/actions/download_from_play_store/">download_from_play_store</a></td>
 <td>Download metadata and binaries from Google Play (via <em>supply</em>)</td>
 <td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/upload_to_app_store/">upload_to_app_store</a></td>
-<td>Upload metadata and binary to App Store Connect (via <em>deliver</em>)</td>
-<td>ios, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/upload_to_play_store_internal_app_sharing/">upload_to_play_store_internal_app_sharing</a></td>
-<td>Upload binaries to Google Play Internal App Sharing (via <em>supply</em>)</td>
-<td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/download_app_privacy_details_from_app_store/">download_app_privacy_details_from_app_store</a></td>
-<td>Download App Privacy Details from an app in App Store Connect</td>
-<td>ios, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/upload_to_play_store/">upload_to_play_store</a></td>
@@ -1192,6 +1180,11 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, android, mac</td>
 </tr>
 <tr>
+<td><a href="/actions/commit_github_file/">commit_github_file</a></td>
+<td>This will commit a file directly on GitHub via the API</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
 <td><a href="/actions/git_submodule_update/">git_submodule_update</a></td>
 <td>Executes a git submodule update command</td>
 <td>ios, android, mac</td>
@@ -1199,11 +1192,6 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <tr>
 <td><a href="/actions/git_remote_branch/">git_remote_branch</a></td>
 <td>Returns the name of the current git remote default branch</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/commit_github_file/">commit_github_file</a></td>
-<td>This will commit a file directly on GitHub via the API</td>
 <td>ios, android, mac</td>
 </tr>
 </tbody>
@@ -1434,7 +1422,7 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 </tr>
 <tr>
 <td><a href="/actions/restore_file/">restore_file</a></td>
-<td>This action restore your file that was backuped with the <code>backup_file</code> action</td>
+<td>This action restore your file that was backed up with the <code>backup_file</code> action</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -1613,8 +1601,8 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a></td>
-<td>Retrieves version codes for a Google Play track</td>
+<td><a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a></td>
+<td>Create Managed Google Play Apps</td>
 <td>android</td>
 </tr>
 <tr>
@@ -1628,23 +1616,18 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, android, mac</td>
 </tr>
 <tr>
+<td><a href="/actions/opt_out_usage/">opt_out_usage</a></td>
+<td>This will stop uploading the information which actions were run</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
 <td><a href="/actions/setup_travis/">setup_travis</a></td>
 <td>Setup the keychain and match to work with Travis CI</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/ensure_env_vars/">ensure_env_vars</a></td>
-<td>Raises an exception if the specified env vars are not set</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/google_play_track_release_names/">google_play_track_release_names</a></td>
-<td>Retrieves release names for a Google Play track</td>
-<td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/opt_out_usage/">opt_out_usage</a></td>
-<td>This will stop uploading the information which actions were run</td>
+<td><a href="/actions/min_fastlane_version/">min_fastlane_version</a></td>
+<td>Verifies the minimum fastlane version required</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -1653,33 +1636,28 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a></td>
-<td>Obtain publishing rights for custom apps on Managed Google Play Store</td>
-<td>android</td>
-</tr>
-<tr>
-<td><a href="/actions/min_fastlane_version/">min_fastlane_version</a></td>
-<td>Verifies the minimum fastlane version required</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/println/">println</a></td>
 <td>Alias for the <code>puts</code> action</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/create_app_on_managed_play_store/">create_app_on_managed_play_store</a></td>
-<td>Create Managed Google Play Apps</td>
+<td><a href="/actions/google_play_track_version_codes/">google_play_track_version_codes</a></td>
+<td>Retrieves version codes for a Google Play track</td>
 <td>android</td>
 </tr>
 <tr>
-<td><a href="/actions/validate_play_store_json_key/">validate_play_store_json_key</a></td>
-<td>Validate that the Google Play Store <code>json_key</code> works</td>
+<td><a href="/actions/get_managed_play_store_publishing_rights/">get_managed_play_store_publishing_rights</a></td>
+<td>Obtain publishing rights for custom apps on Managed Google Play Store</td>
 <td>android</td>
 </tr>
 <tr>
-<td><a href="/actions/echo/">echo</a></td>
-<td>Alias for the <code>puts</code> action</td>
+<td><a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a></td>
+<td>Raises an exception if not using <code>bundle exec</code> to run fastlane</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
+<td>Setup the keychain and match to work with CircleCI</td>
 <td>ios, android, mac</td>
 </tr>
 <tr>
@@ -1688,19 +1666,19 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <td>ios, mac</td>
 </tr>
 <tr>
-<td><a href="/actions/setup_circle_ci/">setup_circle_ci</a></td>
-<td>Setup the keychain and match to work with CircleCI</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
-<td><a href="/actions/ensure_bundle_exec/">ensure_bundle_exec</a></td>
-<td>Raises an exception if not using <code>bundle exec</code> to run fastlane</td>
-<td>ios, android, mac</td>
-</tr>
-<tr>
 <td><a href="/actions/modify_services/">modify_services</a></td>
 <td>Modifies the services of the app created on Developer Portal</td>
 <td>ios</td>
+</tr>
+<tr>
+<td><a href="/actions/validate_play_store_json_key/">validate_play_store_json_key</a></td>
+<td>Validate that the Google Play Store <code>json_key</code> works</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/ensure_env_vars/">ensure_env_vars</a></td>
+<td>Raises an exception if the specified env vars are not set</td>
+<td>ios, android, mac</td>
 </tr>
 <tr>
 <td><a href="/actions/spaceship_stats/">spaceship_stats</a></td>
@@ -1710,6 +1688,16 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 <tr>
 <td><a href="/actions/spaceship_logs/">spaceship_logs</a></td>
 <td>Find, print, and copy Spaceship logs</td>
+<td>ios, android, mac</td>
+</tr>
+<tr>
+<td><a href="/actions/google_play_track_release_names/">google_play_track_release_names</a></td>
+<td>Retrieves release names for a Google Play track</td>
+<td>android</td>
+</tr>
+<tr>
+<td><a href="/actions/echo/">echo</a></td>
+<td>Alias for the <code>puts</code> action</td>
 <td>ios, android, mac</td>
 </tr>
 </tbody>
@@ -1799,7 +1787,7 @@ If you want to create your own action, check out the <a href="/create-action/#lo
     </p>
   </div>
 
-  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-06-08 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -1872,14 +1860,16 @@ If you want to create your own action, check out the <a href="/create-action/#lo
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
 </div>
     <script>var base_url = '../..';</script>
     <!-- <script src="../../js/theme_extra.js" defer></script>

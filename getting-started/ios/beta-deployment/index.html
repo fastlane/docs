@@ -36,16 +36,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-18658848-13', 'docs.fastlane.tools');
-      ga('send', 'pageview');
-  </script>
-  
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -312,11 +302,9 @@
 
         
 
-        <a href="
-            https://github.com/fastlane/docs/edit/master/docs/getting-started/ios/beta-deployment.md
-        " 
+        <a href="https://github.com/fastlane/docs/edit/master/docs/getting-started/ios/beta-deployment.md" 
             class="icon icon-github"
-        >Edit on GitHub</a>
+        > Edit on GitHub</a>
       </li>
     
 
@@ -435,7 +423,7 @@ end
 </code></pre>
 <h4 id="beta-testing-services">Beta testing services</h4>
 <details>
-<p><summary>TestFlight</summary></p>
+<summary>TestFlight</summary>
 <p>You can easily upload new builds to TestFlight (which is part of App Store Connect) using <em>fastlane</em>. To do so, just use the built-in <code>testflight</code> action after building your app</p>
 <pre><code class="language-ruby">lane :beta do
   # ...
@@ -465,7 +453,7 @@ end
 <hr />
 </details>
 <details>
-<p><summary>Firebase App Distribution</summary></p>
+<summary>Firebase App Distribution</summary>
 <p>Install the Firebase App Distribution plugin:</p>
 <pre><code class="language-no-highlight">fastlane add_plugin firebase_app_distribution
 </code></pre>
@@ -488,7 +476,7 @@ end
 <hr />
 </details>
 <details>
-<p><summary>HockeyApp</summary></p>
+<summary>HockeyApp</summary>
 <pre><code class="language-ruby">lane :beta do
   # ...
   build_app
@@ -501,7 +489,7 @@ end
 </code></pre>
 </details>
 <details>
-<p><summary>TestFairy</summary></p>
+<summary>TestFairy</summary>
 <pre><code class="language-ruby">lane :beta do
   # ...
   build_app
@@ -524,7 +512,7 @@ end
 <p>More information about additional supported beta testing services can be found in the <a href="https://docs.fastlane.tools/actions/#beta">list of "Beta" actions</a></p>
 <h1 id="release-notes">Release Notes</h1>
 <details>
-<p><summary>Automatically based on git commits</summary></p>
+<summary>Automatically based on git commits</summary>
 <p>Your changelog changes, so it doesn't make a lot of sense to store a static release note in the <code>Fastfile</code>.</p>
 <pre><code class="language-ruby">lane :beta do
   sync_code_signing
@@ -543,7 +531,7 @@ end
 <hr />
 </details>
 <details>
-<p><summary>Prompt for changelog</summary></p>
+<summary>Prompt for changelog</summary>
 <p>You can automatically be asked for the changelog in your terminal using the <code>prompt</code> action:</p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Ask for a one line input
@@ -565,7 +553,7 @@ end
 <hr />
 </details>
 <details>
-<p><summary>Fetching the changelog from the file system or remote server</summary></p>
+<summary>Fetching the changelog from the file system or remote server</summary>
 <p>You can fetch values from anywhere in your <code>Fastfile</code>, including the file system and remote server</p>
 <pre><code class="language-ruby">lane :beta do
   # Variant 1: Read from file system
@@ -585,9 +573,9 @@ end
 </details>
 <h2 id="best-practices">Best Practices</h2>
 <details>
-<p><summary>Manage devices and testers using <em>fastlane</em></summary></p>
+<summary>Manage devices and testers using _fastlane_</summary>
 <details>
-<p><summary>TestFlight</summary></p>
+<summary>TestFlight</summary>
 <p>If you're using TestFlight you don't need to worry about UDIDs of your devices. Instead you just maintain a list of testers based on their Apple ID email address.</p>
 <p><em>fastlane</em> supports automatically registering devices using different approaches</p>
 <h5 id="boarding"><a href="https://github.com/fastlane/boarding#readme">boarding</a></h5>
@@ -605,7 +593,7 @@ fastlane pilot add email@invite.com -a com.app.name
 <hr />
 </details>
 <details>
-<p><summary>Third party beta testing services</summary></p>
+<summary>Third party beta testing services</summary>
 <p>If you're using a third party beta testing service, you'll need to manage your registered devices and their UDIDs. <em>fastlane</em> already supports device registrations and updating provisioning profiles out of the box. </p>
 <pre><code class="language-ruby">lane :beta do
   # Before calling match, we make sure all our devices are registered on the Apple Developer Portal
@@ -626,7 +614,7 @@ B123456789012345678901234567890123456789  DeviceName2
 </details>
 </details>
 <details>
-<p><summary>Incrementing the build number</summary></p>
+<summary>Incrementing the build number</summary>
 <p>Depending on the beta testing service you use, you'll have to increment the build number each time you upload a new build. This is a requirement for TestFlight for example.</p>
 <p>To do so, there are some built-in fastlane actions available, here are some examples</p>
 <h4 id="fetching-the-latest-build-number-from-testflight">Fetching the latest build number from TestFlight</h4>
@@ -688,7 +676,7 @@ end
     </p>
   </div>
 
-  Documentation built 2024-04-05 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2024-06-08 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2024 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -761,18 +749,20 @@ end
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/fastlane/docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-        <span><a href="../screenshots/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../appstore-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../screenshots/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../appstore-deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '../../..';</script>
     <!-- <script src="../../../js/theme_extra.js" defer></script>
