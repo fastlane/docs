@@ -31,7 +31,8 @@ cp "scripts/ci/generate_redirects.rb" "/tmp/"
 # Clean all temporary files (e.g. .bundle/config and .ruby-version)
 git clean -f -d
 # Check out gh-pages and clear all files
-git reset --hard HEAD # we don't want the `git checkout` to cause issues (e.g. https://circleci.com/gh/fastlane/docs/730)
+git reset --hard HEAD
+git fetch
 git checkout gh-pages
 rm -rf *
 # Copy the finished HTML page to the current directory
