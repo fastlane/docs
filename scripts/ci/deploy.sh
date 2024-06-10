@@ -28,7 +28,7 @@ cp -R "site/" "/tmp/fl-docs"
 # Copy the needed Ruby scripts to a temporary location (used for redirects)
 cp "scripts/ci/available_redirects.rb" "/tmp/"
 cp "scripts/ci/generate_redirects.rb" "/tmp/"
-# Clean all temporary files (e.g. .bundle/config and .ruby-version) and reset the index
+# Clean untracked files (like temp .bundle/* or generated docs/actions*) and reset index
 git clean -f -d
 git reset --hard HEAD
 # Check out gh-pages and clear all files
