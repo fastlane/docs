@@ -34,9 +34,10 @@ Below are the statuses of each tool:
 
 ## Creating an App Store Connect API Key
 
-1. Create a new App Store Connect API Key in the [Users page](https://appstoreconnect.apple.com/access/api)
+1. Create a new App Store Connect API Key in the [Users and Access](https://appstoreconnect.apple.com/access/users) page
   - For more info, go to the [App Store Connect API Docs](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api)
-  - Select the "Keys" tab
+  - Open the `Integrations` tab, select `App Store Connect API`, and create a new "Team Key" using the `+` button
+    - Note that if you can't see the `App Store Connect API` tab, this means you don't have permission yet. Please refer to the docs above to know how to get this permission
   - Give your API Key an appropriate role for the task at hand. You can read more about roles in [Permissions in App Store Connect](https://developer.apple.com/support/roles/)
   - Note the Issuer ID as you will need it for the configuration steps below
 2. Download the newly created API Key file (`.p8`)
