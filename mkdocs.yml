@@ -7,6 +7,8 @@ repo_url: https://github.com/fastlane/docs
 theme:
   name: readthedocs
   custom_dir: theme
+  analytics:
+    gtag: UA-18658848-13
 strict: false
 markdown_extensions:
 - markdown.extensions.attr_list
