@@ -81,6 +81,8 @@ _fastlane_ is officially supported to run on macOS.
 
 🐧 Linux and 🖥️ Windows are partially supported. Some underlying software like Xcode are only available on macOS, but many other tools, actions, and the `spaceship` module can work on other platforms.
 
+For more information, see [Using _fastlane_ on Linux and Windows](https://docs.fastlane.tools/best-practices/linux-windows/).
+
 ## _fastlane_ team
 
 <table>
@@ -168,12 +170,12 @@ _fastlane_ is officially supported to run on macOS.
 Special thanks to all [contributors](https://github.com/fastlane/fastlane/graphs/contributors) for extending and improving _fastlane_.
 
 ## Metrics
- 
-_fastlane_ tracks a few key metrics to understand how developers are using the tool and to help us know what areas need improvement. No personal/sensitive information is ever collected. Metrics that are collected include: 
- 
+
+_fastlane_ tracks a few key metrics to understand how developers are using the tool and to help us know what areas need improvement. No personal/sensitive information is ever collected. Metrics that are collected include:
+
 * The number of _fastlane_ runs
 * A salted hash of the app identifier or package name, which helps us anonymously identify unique usage of _fastlane_
- 
+
 You can easily opt-out of metrics collection by adding `opt_out_usage` at the top of your `Fastfile` or by setting the environment variable `FASTLANE_OPT_OUT_USAGE`. [Check out the metrics code on GitHub](https://github.com/fastlane/fastlane/tree/master/fastlane_core/lib/fastlane_core/analytics)
 
 ## License
