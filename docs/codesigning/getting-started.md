@@ -53,6 +53,19 @@ That's why it is recommended to specify a specific provisioning profile somehow:
 
 The instructions below are more advanced, and take more time to setup than other approaches.
 
+##### Fully Automatic Signing
+
+If you want to keep your default Xcode workflow and be able to archive/upload builds from Xcode without fastlane if needed, you can simply use a lane like this:
+
+```ruby
+lane :release do
+  build_app(scheme: "Release")
+  upload_to_testflight
+end
+```
+
+Replace "Release" with the name of the scheme you currently use to archive/upload builds. Just make sure it is shared (in Xcode, click on the current scheme and scroll to "Manage Schemes…" at the bottom).
+
 ##### Automatic & Manual Signing
 
 To simplify development workflow you could use `Automatic` code signing for development, and `Manual` for release builds.
