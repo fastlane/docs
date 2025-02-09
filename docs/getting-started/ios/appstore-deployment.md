@@ -100,5 +100,5 @@ For all the steps above, there are more parameters available, run the following 
 
 ```no-highlight
 fastlane action [action_name]
-```
+```xcode-select --install
 
