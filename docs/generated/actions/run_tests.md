@@ -174,7 +174,7 @@ Returns | Outputs hash of results with the following keys: :number_of_tests, :nu
 
 
 
-## 6 Examples
+## 7 Examples
 
 ```ruby
 run_tests
@@ -189,6 +189,18 @@ run_tests(
   workspace: "App.xcworkspace",
   scheme: "MyTests",
   clean: false
+)
+```
+
+```ruby
+# run tests on a pure swift package (SPM), no xcodeproj or xcworkspace required
+run_tests(
+  package_path: ".",
+  scheme: "MySwiftCode-Package", # Must have -Package
+  clean: true,
+  device: "iPhone 11 Pro", # Required for destination
+  result_bundle: true, # Last two lines may be required for proper xcresults output
+  output_directory: Dir.pwd + "/test_output"
 )
 ```
 
@@ -225,7 +237,7 @@ Key | Description | Default
 ----|-------------|--------
   `workspace` | Path to the workspace file | 
   `project` | Path to the project file | 
-  `package_path` | Path to the Swift Package | 
+  `package_path` | Path to the Swift Package (ie "."), required if it's a pure Swift Package with no project or workspace file | 
   `scheme` | The project's scheme. Make sure it's marked as `Shared` | 
   `device` | The name of the simulator type you want to run tests on (e.g. 'iPhone 6' or 'iPhone SE (2nd generation) (14.5)') | 
   `devices` | Array of devices to run the tests on (e.g. ['iPhone 6', 'iPad Air', 'iPhone SE (2nd generation) (14.5)']) | 
