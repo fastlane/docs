@@ -65,7 +65,7 @@ lane :release do
     in_house: false # optional but may be required if using match/sigh
   )
 
-  pilot(api_key: api_key)
+  pilot(api_key: api_key) # can be every action listed in the table above.
 end
 ```
 
@@ -84,7 +84,7 @@ lane :release do
   )
 
   # Automatically loads Actions.lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
-  pilot
+  pilot # can be every action listed in the table above.
 end
 ```
 
