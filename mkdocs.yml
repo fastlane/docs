@@ -153,7 +153,6 @@ nav:
   - hg_commit_version_bump: actions/hg_commit_version_bump.md
   - hg_ensure_clean_status: actions/hg_ensure_clean_status.md
   - hg_push: actions/hg_push.md
-  - hipchat: actions/hipchat.md
   - hockey: actions/hockey.md
   - ifttt: actions/ifttt.md
   - import: actions/import.md
