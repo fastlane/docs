@@ -70,7 +70,7 @@ Key | Description | Default
   `app_identifier` | The bundle identifier of your app | [*](#parameters-legend-dynamic)
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `platform` | The app platform for dSYMs you wish to download (ios, appletvos) | `:ios`
+  `platform` | The app platform for dSYMs you wish to download (ios, xros, appletvos) | `:ios`
   `version` | The app version for dSYMs you wish to download, pass in 'latest' to download only the latest build's dSYMs or 'live' to download only the live version dSYMs | 
   `build_number` | The app build_number for dSYMs you wish to download | 
   `min_version` | The minimum app version for dSYMs you wish to download | 

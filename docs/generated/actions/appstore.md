@@ -387,6 +387,7 @@ The available options:
 
 - 'ios'
 - 'appletvos'
+- 'xros'
 - 'osx'
 
 
@@ -444,12 +445,12 @@ end
 
 Omit `build_number` to let _fastlane_ automatically select the latest build number for the current version being edited for release from App Store Connect.
 
-### Compliance and IDFA settings
+### Compliance settings
 
-Use the `submission_information` parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
+Use the `submission_information` parameter for additional submission specifiers, including compliance settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
 
 ```no-highlight
-fastlane deliver submit_build --build_number 830 --submission_information "{\"export_compliance_uses_encryption\": false, \"add_id_info_uses_idfa\": false }"
+fastlane deliver submit_build --build_number 830 --submission_information "{\"export_compliance_uses_encryption\": false }"
 ```
 
 ### App Privacy Details
@@ -843,7 +844,7 @@ Key | Description | Default
   `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
   `price_tier` | The price tier of this application | 
   `app_rating_config_path` | Path to the app rating's config | 
-  `submission_information` | Extra information for the submission (e.g. compliance specifications, IDFA settings) | 
+  `submission_information` | Extra information for the submission (e.g. compliance specifications) | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)

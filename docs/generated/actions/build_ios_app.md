@@ -354,6 +354,7 @@ Key | Description | Default
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
+  `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -57,6 +57,7 @@ Key | Description | Default
   `quiet` | Whether or not to disable changelog output | `false`
   `include_merges` | **DEPRECATED!** Use `:merge_commit_filtering` instead - Whether or not to include any commits that are merges | 
   `merge_commit_filtering` | Controls inclusion of merge commits when collecting the changelog. Valid values: 'include_merges', 'exclude_merges', 'only_include_merges' | `include_merges`
+  `app_path` | Scopes the changelog to a specific subdirectory of the repository | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
