@@ -237,8 +237,8 @@ Key | Description | Default
   `prelaunch_simulator` | Enabling this option will launch the first simulator prior to calling any xcodebuild command | 
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
-  `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
-  `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `only_testing` | Array of test identifiers to run. Expected format: TestTarget[/TestSuite[/TestCase]] | 
+  `skip_testing` | Array of test identifiers to skip. Expected format: TestTarget[/TestSuite[/TestCase]] | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_test_configurations` | Array of strings matching test plan configurations to run | 
   `skip_test_configurations` | Array of strings matching test plan configurations to skip | 
@@ -301,6 +301,7 @@ Key | Description | Default
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
   `number_of_retries` | The number of times a test can fail | `0`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
+  `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

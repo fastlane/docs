@@ -82,6 +82,7 @@ Key | Description | Default
   `xcpretty_output` | Specifies the output type for xcpretty. eg. 'test', or 'simple' | 
   `xcpretty_args` | Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf'), requires xcpretty_output to be specified also | 
   `verbose` | Increase verbosity of informational output | `false`
+  `very_verbose` | Increase verbosity to include debug output | `false`
   `simulator` | Specifies the simulator to pass for Swift Compiler (one of: iphonesimulator, macosx) | 
   `simulator_arch` | Specifies the architecture of the simulator to pass for Swift Compiler (one of: x86_64, arm64). Requires the simulator option to be specified also, otherwise, it's ignored | `arm64`
 

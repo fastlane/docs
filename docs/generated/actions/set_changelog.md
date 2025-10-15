@@ -47,7 +47,7 @@ Key | Description | Default
   `changelog` | Changelog text that should be uploaded to App Store Connect | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `platform` | The platform of the app (ios, appletvos, mac) | `ios`
+  `platform` | The platform of the app (ios, appletvos, xros, mac) | `ios`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 
