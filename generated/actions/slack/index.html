@@ -408,8 +408,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>icon_url</code></td>
-<td>Overrides the webhook's image property if use_webhook_configured_username_and_icon is false</td>
+<td>Specifies a URL of an image to use as the photo of the message. Overrides the webhook's image property if use_webhook_configured_username_and_icon is false</td>
 <td><code>https://fastlane.tools/assets/img/fastlane_icon.png</code></td>
+</tr>
+<tr>
+<td><code>icon_emoji</code></td>
+<td>Specifies an emoji (using colon shortcodes, eg. :white_check_mark:) to use as the photo of the message. Overrides the webhook's image property if use_webhook_configured_username_and_icon is false. This parameter takes precedence over icon_url</td>
+<td></td>
 </tr>
 <tr>
 <td><code>payload</code></td>
@@ -486,7 +491,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

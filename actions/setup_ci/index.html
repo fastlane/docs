@@ -352,7 +352,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples">2 Examples</h2>
+<h2 id="3-examples">3 Examples</h2>
 <pre><code class="language-ruby">setup_ci(
   provider: &quot;circleci&quot;
 )
@@ -360,6 +360,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <pre><code class="language-ruby">setup_ci(
   provider: &quot;circleci&quot;,
   timeout: 0
+)
+</code></pre>
+<pre><code class="language-ruby">setup_ci(
+  provider: &quot;circleci&quot;,
+  timeout: 0,
+  keychain_name: &quot;custom_keychain_name&quot;
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -386,6 +392,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>timeout</code></td>
 <td>Set a custom timeout in seconds for keychain.  Set <code>0</code> if you want to specify 'no time-out'</td>
 <td><code>3600</code></td>
+</tr>
+<tr>
+<td><code>keychain_name</code></td>
+<td>Set a custom keychain name</td>
+<td><code>fastlane_tmp_keychain</code></td>
 </tr>
 </tbody>
 </table>
@@ -432,7 +443,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

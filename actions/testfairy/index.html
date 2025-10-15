@@ -325,9 +325,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 -->
 
 <h1 id="testfairy">testfairy</h1>
-<p>Upload a new build to <a href="https://www.testfairy.com/">TestFairy</a></p>
+<p>Upload a new build to SauceLabs' TestFairy</p>
 <blockquote>
-<p>You can retrieve your API key on <a href="https://free.testfairy.com/settings/">your settings page</a></p>
+<p>Upload a new build to <a href="https://saucelabs.com/products/mobile-testing/app-betas">TestFairy</a>.<br>You can retrieve your API key on <a href="https://app.testfairy.com/settings/access-key">your settings page</a><br></p>
 </blockquote>
 <table>
 <thead>
@@ -427,13 +427,38 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>custom</code></td>
-<td>Array of custom options. Contact support@testfairy.com for more information</td>
+<td>Array of custom options. Contact support for more information</td>
 <td><code>''</code></td>
 </tr>
 <tr>
 <td><code>timeout</code></td>
 <td>Request timeout in seconds</td>
 <td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>Custom tags that can be used to organize your builds</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>folder_name</code></td>
+<td>Name of the dashboard folder that contains this app</td>
+<td><code>''</code></td>
+</tr>
+<tr>
+<td><code>landing_page_mode</code></td>
+<td>Visibility of build landing after upload. Can be 'open' or 'closed'</td>
+<td><code>open</code></td>
+</tr>
+<tr>
+<td><code>upload_to_saucelabs</code></td>
+<td>Upload file directly to Sauce Labs. It can be 'on' or 'off'</td>
+<td><code>off</code></td>
+</tr>
+<tr>
+<td><code>platform</code></td>
+<td>Use if upload build is not iOS or Android. Contact support for more information</td>
+<td><code>''</code></td>
 </tr>
 </tbody>
 </table>
@@ -507,7 +532,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

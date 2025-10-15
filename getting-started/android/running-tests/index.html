@@ -414,18 +414,14 @@ end
 <pre><code class="language-no-highlight">fastlane tests
 </code></pre>
 <h3 id="posting-build-results">Posting build results</h3>
-<p>If you want to post test results on Slack, Hipchat, or other team chat client, check out the available <a href="/actions/#notifications">fastlane actions</a>.</p>
+<p>If you want to post test results on Slack or other team chat client, check out the available <a href="/actions/#notifications">fastlane actions</a>.</p>
 <h4 id="build-failures">Build failures</h4>
-<h5 id="hipchat">Hipchat</h5>
 <p>To post a message when <em>fastlane</em> encounters a test or build failure, add the following to your <code>Fastfile</code>:</p>
-<pre><code class="language-ruby">error do |ex|
-  hipchat(message: &quot;Tests have failed!&quot;,
-          channel: &quot;Room or @username&quot;,
-          success: false)
+<pre><code class="language-ruby">error do |lane, exception|
+  # Call here an action to post a message to your team chat.
 end
 </code></pre>
-<h5 id="other-services">Other services</h5>
-<p>The above example uses Hipchat, but <em>fastlane</em> supports <a href="/actions/#notifications">many other services out there</a>. </p>
+<p>For a full list of the available notification actions, check out the <a href="/actions/#notifications">notifications section</a>.</p>
               
             </div>
           </div>
@@ -444,7 +440,7 @@ end
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

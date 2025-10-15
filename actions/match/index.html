@@ -620,11 +620,14 @@ end
 <p>If you're not using <code>Fastfile</code>, you can also use the <code>force_for_new_devices</code> option from the command line:</p>
 <pre><code class="language-no-highlight">fastlane match adhoc --force_for_new_devices
 </code></pre>
-<h5 id="templates-aka-custom-entitlements">Templates (aka: custom entitlements)</h5>
-<p><em>match</em> can generate profiles that contain custom entitlements by passing in the entitlement's name with the <code>template_name</code> parameter.</p>
-<pre><code>match(type: &quot;development&quot;,
-      template_name: &quot;Apple Pay Pass Suppression Development&quot;)
-</code></pre>
+<h5 id="managed-capabilities">Managed capabilities</h5>
+<blockquote>
+<p>[!IMPORTANT]
+This feature has been deprecated since May 2025, until Apple provides a new solution. We will update this documentation once we have more information on how to handle managed capabilities in the future.</p>
+</blockquote>
+<p>Managed capabilities — formerly known as "additional entitlements" or "custom entitlements", enabled via "templates" — are additional capabilities that require Apple's review and approval before they can be distributed.</p>
+<p>These capabilities used to be enabled by passing a <code>template_name</code> parameter to the <em>match</em> action, which would then generate a provisioning profile with the entitlements specified by the given template. However, this feature was never officially supported by Apple's API (undocumented), and they eventually removed it in May 2025 (<a href="https://github.com/fastlane/fastlane/issues/29498">see issue #29498</a>). Apple still hasn't provided a replacement for this functionality.</p>
+<p>As a result, the <code>template_name</code> parameter was deprecated in the <em>match</em> action, and it will not generate provisioning profiles with custom entitlements.</p>
 <h3 id="setup-xcode-project">Setup Xcode project</h3>
 <p><a href="/codesigning/xcode-project/">Docs on how to set up your Xcode project</a></p>
 <h4 id="to-build-from-the-command-line-using-fastlane">To build from the command line using <a href="https://fastlane.tools"><em>fastlane</em></a></h4>
@@ -705,7 +708,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <p>If attackers would have your certificate and provisioning profile, they could codesign an application with the same bundle identifier.</p>
 <p>What's the worst that could happen for each of the profile types?</p>
 <h4 id="app-store-profiles">App Store Profiles</h4>
-<p>An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days (checkout <a href="http://appreviewtimes.com">appreviewtimes.com</a> for up-to-date expectations). Attackers could only submit an app for review, if they also got access to your App Store Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.</p>
+<p>An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days. Attackers could only submit an app for review, if they also got access to your App Store Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.</p>
 <h4 id="development-and-ad-hoc-profiles">Development and Ad Hoc Profiles</h4>
 <p>In general those profiles are harmless as they can only be used to install a signed application on a small subset of devices. To add new devices, the attacker would also need your Apple Developer Portal credentials (which are not stored in git, but in your local keychain).</p>
 <h4 id="enterprise-profiles">Enterprise Profiles</h4>
@@ -1000,7 +1003,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>template_name</code></td>
-<td>The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
+<td><strong>DEPRECATED!</strong> Removed since May 2025 on App Store Connect API OpenAPI v3.8.0 - Learn more: https://docs.fastlane.tools/actions/match/#managed-capabilities - The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
 <td></td>
 </tr>
 <tr>
@@ -1026,6 +1029,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <tr>
 <td><code>skip_set_partition_list</code></td>
 <td>Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>force_legacy_encryption</code></td>
+<td>Force encryption to use legacy cbc algorithm for backwards compatibility with older match versions</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -1101,7 +1109,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

@@ -356,7 +356,8 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   branch: &quot;HEAD&quot;, # The branch to checkout on the repository.
   path: &quot;fastlane/Fastfile&quot;, # The path of the Fastfile in the repository.
   version: [&quot;&gt;= 1.1.0&quot;, &quot;&lt; 2.0.0&quot;], # The version to checkout on the repository. Multiple conditions can be used to select the latest version within constraints.
-  cache_path: &quot;~/.cache/fastlane/imported&quot; # A directory in which the repository will be added, which means that it will not be cloned again on subsequent calls.
+  cache_path: &quot;~/.cache/fastlane/imported&quot;, # A directory in which the repository will be added, which means that it will not be cloned again on subsequent calls.
+  git_extra_headers: [&quot;Authorization: Basic &lt;YOUR BASE64 KEY&gt;&quot;, &quot;Cache-Control: no-cache&quot;]
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -398,6 +399,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>cache_path</code></td>
 <td>The path to a directory where the repository should be cloned into. Defaults to <code>nil</code>, which causes the repository to be cloned on every call, to a temporary directory</td>
 <td></td>
+</tr>
+<tr>
+<td><code>git_extra_headers</code></td>
+<td>An optional list of custom HTTP headers to access the git repo (<code>Authorization: Basic &lt;YOUR BASE64 KEY&gt;</code>, <code>Cache-Control: no-cache</code>, etc.)</td>
+<td><code>[]</code></td>
 </tr>
 </tbody>
 </table>
@@ -444,7 +450,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

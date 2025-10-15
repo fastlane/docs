@@ -604,7 +604,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>template_name</code></td>
-<td>The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
+<td><strong>DEPRECATED!</strong> Removed since May 2025 on App Store Connect API OpenAPI v3.8.0 - Learn more: https://docs.fastlane.tools/actions/match/#managed-capabilities - The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development")</td>
 <td></td>
 </tr>
 <tr>
@@ -630,6 +630,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <tr>
 <td><code>skip_set_partition_list</code></td>
 <td>Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>force_legacy_encryption</code></td>
+<td>Force encryption to use legacy cbc algorithm for backwards compatibility with older match versions</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -682,7 +687,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

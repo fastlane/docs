@@ -566,6 +566,7 @@ reset_ratings(false)
 <ul>
 <li>'ios'</li>
 <li>'appletvos'</li>
+<li>'xros'</li>
 <li>'osx'</li>
 </ul>
 <h3 id="non-localized">Non-Localized</h3>
@@ -605,9 +606,9 @@ reset_ratings(false)
 end
 </code></pre>
 <p>Omit <code>build_number</code> to let <em>fastlane</em> automatically select the latest build number for the current version being edited for release from App Store Connect.</p>
-<h3 id="compliance-and-idfa-settings">Compliance and IDFA settings</h3>
-<p>Use the <code>submission_information</code> parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb"><code>app_submission.rb</code></a> file for options. See <a href="https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149">this example</a>.</p>
-<pre><code class="language-no-highlight">fastlane deliver submit_build --build_number 830 --submission_information &quot;{\&quot;export_compliance_uses_encryption\&quot;: false, \&quot;add_id_info_uses_idfa\&quot;: false }&quot;
+<h3 id="compliance-settings">Compliance settings</h3>
+<p>Use the <code>submission_information</code> parameter for additional submission specifiers, including compliance settings. Look at the Spaceship's <a href="https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb"><code>app_submission.rb</code></a> file for options. See <a href="https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149">this example</a>.</p>
+<pre><code class="language-no-highlight">fastlane deliver submit_build --build_number 830 --submission_information &quot;{\&quot;export_compliance_uses_encryption\&quot;: false }&quot;
 </code></pre>
 <h3 id="app-privacy-details">App Privacy Details</h3>
 <p>Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practices. <em>deliver</em> does not allow for updating of this information but this can be done with the <em>upload_app_privacy_details_to_app_store</em> action. More information on <a href="https://docs.fastlane.tools/uploading-app-privacy-details">Uploading App Privacy Details</a></p>
@@ -1225,7 +1226,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 </tr>
 <tr>
 <td><code>submission_information</code></td>
-<td>Extra information for the submission (e.g. compliance specifications, IDFA settings)</td>
+<td>Extra information for the submission (e.g. compliance specifications)</td>
 <td></td>
 </tr>
 <tr>
@@ -1443,7 +1444,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

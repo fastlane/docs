@@ -611,12 +611,12 @@ run_tests(
 </tr>
 <tr>
 <td><code>only_testing</code></td>
-<td>Array of strings matching Test Bundle/Test Suite/Test Cases to run</td>
+<td>Array of test identifiers to run. Expected format: TestTarget[/TestSuite[/TestCase]]</td>
 <td></td>
 </tr>
 <tr>
 <td><code>skip_testing</code></td>
-<td>Array of strings matching Test Bundle/Test Suite/Test Cases to skip</td>
+<td>Array of test identifiers to skip. Expected format: TestTarget[/TestSuite[/TestCase]]</td>
 <td></td>
 </tr>
 <tr>
@@ -929,6 +929,11 @@ run_tests(
 <td>Should this step stop the build if the tests fail? Set this to false if you're using trainer</td>
 <td><code>true</code></td>
 </tr>
+<tr>
+<td><code>package_authorization_provider</code></td>
+<td>Lets xcodebuild use a specified package authorization provider (keychain|netrc)</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
@@ -1009,7 +1014,7 @@ run_tests(
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

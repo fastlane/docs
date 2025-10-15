@@ -376,7 +376,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Automatically detects the bundle identifier from your <code>ipa</code> file</li>
 <li>Automatically fetch the AppID of your app based on the bundle identifier</li>
 </ul>
-<p><em>pilot</em> uses <a href="https://spaceship.airforce"><em>spaceship</em></a> to submit the build metadata and the iTunes Transporter to upload the binary. Because iTunes Transporter's upload capability is only supported on OS X, <code>pilot upload</code> does not work on Linux, as described <a href="https://github.com/fastlane/fastlane/issues/5789">in this issue</a></p>
+<p><em>pilot</em> uses <a href="https://spaceship.airforce"><em>spaceship</em></a> to submit the build metadata and the iTunes Transporter to upload the binary.</p>
+<h3 id="upload-from-linux">Upload from Linux</h3>
+<p>To upload binaries from Linux:
+- make sure you have <a href="https://help.apple.com/itc/transporteruserguide/en.lproj/static.html">Transporter on Linux</a> installed
+- set the following environment variables:
+    - <code>FASTLANE_ITUNES_TRANSPORTER_USE_SHELL_SCRIPT=true</code>
+    - <code>FASTLANE_ITUNES_TRANSPORTER_PATH=/usr/local/itms</code> (<em>or the path where Transporter is installed</em>)</p>
+<p><em>Note: fastlane will temporarily save the upload credentials in <code>$HOME/.appstoreconnect/private_keys/</code>. Any other files in that directory will be deleted upon upload completion.</em></p>
 <h2 id="list-builds">List builds</h2>
 <p>To list all builds for specific application use</p>
 <pre><code class="language-no-highlight">fastlane pilot builds
@@ -813,7 +820,7 @@ pilot...
     </p>
   </div>
 
-  Documentation built 2025-02-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
