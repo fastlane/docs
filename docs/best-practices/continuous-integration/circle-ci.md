@@ -55,7 +55,7 @@ orbs:
 jobs:
   build:
     macos:
-      xcode: "13.1.0"
+      xcode: "15.4.0"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
