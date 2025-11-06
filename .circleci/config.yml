@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@2.5.4
+  python: circleci/python@3.3.0
 
 jobs:
   "Test":
@@ -9,8 +10,8 @@ jobs:
     working_directory: ~/code
     steps:
       - checkout
-      - run: sudo pip3 install pipenv
-      - run: pipenv install
+      - python/install-packages:
+          pkg-manager: pipenv
       - ruby/install-deps
       - run: pipenv run bundle exec fastlane test
       - run: bundle exec rubocop
@@ -21,8 +22,8 @@ jobs:
     working_directory: ~/code
     steps:
       - checkout
-      - run: sudo pip3 install pipenv
-      - run: pipenv install
+      - python/install-packages:
+          pkg-manager: pipenv
       - ruby/install-deps
       - run: pipenv run ./scripts/ci/deploy.sh
 
