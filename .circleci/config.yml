@@ -6,7 +6,7 @@ orbs:
 jobs:
   "Test":
     docker:
-      - image: cimg/ruby:3.1-node
+      - image: ibotpeaches/fastlaneci-test:latest
     working_directory: ~/code
     steps:
       - checkout
@@ -18,7 +18,7 @@ jobs:
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
     docker:
-      - image: cimg/ruby:3.1-node
+      - image: ibotpeaches/fastlaneci-test:latest
     working_directory: ~/code
     steps:
       - checkout
