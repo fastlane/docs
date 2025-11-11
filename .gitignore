@@ -1,4 +1,5 @@
 .DS_Store
+.idea
 site/
 /fastlane/report.xml
 .keys
