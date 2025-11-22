@@ -618,7 +618,7 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 ### Available age rating groups
 
-#### Non Boolean
+#### Infrequent/Mild or Frequent/Intense
 
 **Values**
 
@@ -632,29 +632,40 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 **Keys**
 
-- 'alcoholTobaccoOrDrugUseOrReferences'
-- 'contests'
-- 'gamblingSimulated'
-- 'medicalOrTreatmentInformation'
-- 'profanityOrCrudeHumor'
+- `alcoholTobaccoOrDrugUseOrReferences`
+- `contests`
+- `gamblingSimulated`
+- `medicalOrTreatmentInformation`
+- `profanityOrCrudeHumor`
 
-- 'sexualContentGraphicAndNudity'
-- 'sexualContentOrNudity'
-- 'horrorOrFearThemes'
-- 'matureOrSuggestiveThemes'
-- 'unrestrictedWebAccess'
-- 'violenceCartoonOrFantasy'
-- 'violenceRealisticProlongedGraphicOrSadistic'
-- 'violenceRealistic'
-- 'kidsAgeBand'
+- `horrorOrFearThemes`
+- `kidsAgeBand`
+- `matureOrSuggestiveThemes`
+- `sexualContentGraphicAndNudity`
+- `sexualContentOrNudity`
+- `violenceCartoonOrFantasy`
+- `violenceRealistic`
+- `violenceRealisticProlongedGraphicOrSadistic`
+
+#### Fifteen Plus or Nineteen Plus
+
+**Values**
+
+- `NONE`
+- `FIFTEEN_PLUS`
+- `NINETEEN_PLUS`
+
+**Keys**
+
+- `koreaAgeRatingOverride`
 
 #### Boolean
 
 **Keys**
 
 - `gambling`
-- 'seventeenPlus'
 - `unrestrictedWebAccess`
+- `lootBox`
 
 #### Kids Age
 
