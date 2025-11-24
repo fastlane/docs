@@ -1,14 +1,15 @@
 GIT
   remote: https://github.com/fastlane/fastlane
-  revision: 04d67765f9cfc8001ba84aa780d214d088765520
+  revision: b64f76aa3c92cbdbeaa5c6fdcc532ef744620000
   specs:
-    fastlane (2.229.0)
+    fastlane (2.229.1)
       CFPropertyList (>= 2.3, < 4.0.0)
       abbrev (~> 0.1.2)
       addressable (>= 2.8, < 3.0.0)
       artifactory (~> 3.0)
       aws-sdk-s3 (~> 1.0)
       babosa (>= 1.0.3, < 2.0.0)
+      base64 (~> 0.2.0)
       bundler (>= 1.12.0, < 3.0.0)
       colored (~> 1.2)
       commander (~> 4.6)
@@ -34,6 +35,7 @@ GIT
       multipart-post (>= 2.0.0, < 3.0.0)
       mutex_m (~> 0.3.0)
       naturally (~> 2.2)
+      nkf (~> 0.2.0)
       optparse (>= 0.1.1, < 1.0.0)
       plist (>= 3.1.0, < 4.0.0)
       rubyzip (>= 2.0.0, < 3.0.0)
@@ -78,7 +80,7 @@ GEM
     aws-sigv4 (1.12.1)
       aws-eventstream (~> 1, >= 1.0.2)
     babosa (1.0.4)
-    base64 (0.3.0)
+    base64 (0.2.0)
     bigdecimal (3.3.1)
     claide (1.1.0)
     claide-plugins (0.9.2)
@@ -207,6 +209,7 @@ GEM
     nanaimo (0.4.0)
     nap (1.1.0)
     naturally (2.3.0)
+    nkf (0.2.0)
     no_proxy_fix (0.1.2)
     octokit (4.25.1)
       faraday (>= 1, < 3)
