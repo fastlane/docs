@@ -1,5 +1,7 @@
 **Tip:** If you see Google Play Console or Google Developer Console in your local language, add `&hl=en` at the end of the URL (before any `#...`) to switch to English. All the links below already have this to make it easier to find the correct buttons.
 
+**Tip:** Google Cloud setup can also be [automated using Terraform](https://registry.terraform.io/providers/hashicorp/google/latest/docs).
+
 **Note:** if you face issues when following these instructions, you might want to refer to the [official documentation by Google](https://developers.google.com/android-publisher/getting_started/?hl=en).
 
 1. Open the [Google Play Console](https://play.google.com/console/?hl=en)
@@ -12,11 +14,15 @@
    1. Provide a `Service account name` (e.g. fastlane-supply)
    1. Copy the generated email address that is noted below the `Service account-ID` field for later use
    1. Click **DONE** (don't click **CREATE AND CONTINUE** as the optional steps such as granting access are not needed): <img src="/img/getting-started/android/creating-service-account.png" width="700" />
-   1. Click on the **Actions** vertical three-dot icon of the service account you just created
-   1. Select **Manage keys** on the menu
-   1. Click **ADD KEY** → **Create New Key**
-   1. Make sure **JSON** is selected as the `Key type`, and click **CREATE**
-   1. Save the file on your computer when prompted and remember where it was saved at
+1. Setup [authentication](https://cloud.google.com/iam/docs/best-practices-service-accounts#choose-when-to-use) for the service account, fastlane supports Workload Identity Federation and service account keys
+   - When using Workload Identity Federation (such as for GitHub Actions)
+      1. 
+   - To use service account keys:
+      1. Click on the **Actions** vertical three-dot icon of the service account you just created
+      1. Select **Manage keys** on the menu
+      1. Click **ADD KEY** → **Create New Key**
+      1. Make sure **JSON** is selected as the `Key type`, and click **CREATE**
+      1. Save the file on your computer when prompted and remember where it was saved at
 1. Open the [Google Play Console](https://play.google.com/console/?hl=en) and select **Users and Permissions**
    1. Click **Invite new users**
    1. Paste the email address you saved for later use into the email address field
