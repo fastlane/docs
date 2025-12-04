@@ -1,7 +1,5 @@
 **Tip:** If you see Google Play Console or Google Developer Console in your local language, add `&hl=en` at the end of the URL (before any `#...`) to switch to English. All the links below already have this to make it easier to find the correct buttons.
 
-**Tip:** Google Cloud setup can also be [automated using Terraform](https://registry.terraform.io/providers/hashicorp/google/latest/docs).
-
 **Note:** if you face issues when following these instructions, you might want to refer to the [official documentation by Google](https://developers.google.com/android-publisher/getting_started/?hl=en).
 
 1. Open the [Google Play Console](https://play.google.com/console/?hl=en)
