@@ -12,11 +12,20 @@
    1. Provide a `Service account name` (e.g. fastlane-supply)
    1. Copy the generated email address that is noted below the `Service account-ID` field for later use
    1. Click **DONE** (don't click **CREATE AND CONTINUE** as the optional steps such as granting access are not needed): <img src="/img/getting-started/android/creating-service-account.png" width="700" />
-   1. Click on the **Actions** vertical three-dot icon of the service account you just created
-   1. Select **Manage keys** on the menu
-   1. Click **ADD KEY** → **Create New Key**
-   1. Make sure **JSON** is selected as the `Key type`, and click **CREATE**
-   1. Save the file on your computer when prompted and remember where it was saved at
+1. Setup [authentication](https://cloud.google.com/iam/docs/best-practices-service-accounts#choose-when-to-use) for the service account, fastlane supports Workload Identity Federation and service account keys
+   - When using Workload Identity Federation (such as for GitHub Actions)
+      1. Create a Workload Identity Pool
+      1. Get the full ID of the Workload Identity Pool, for example: `projects/123456789/locations/global/workloadIdentityPools/github`
+      1. Create a Workload Identity Provider in that pool
+         - This is how you connect Google Cloud to your external identity provider (such as [GitHub](https://github.com/google-github-actions/auth), [GitLab](https://docs.gitlab.com/ci/cloud_services/google_cloud), etc.)
+         - Ensure you include a condition to restrict access, for example: `assertion.repository_owner == '${GITHUB_ORG}'`
+      1. Authenticate using this identity provider in your build workflow.
+   - To use service account keys:
+      1. Click on the **Actions** vertical three-dot icon of the service account you just created
+      1. Select **Manage keys** on the menu
+      1. Click **ADD KEY** → **Create New Key**
+      1. Make sure **JSON** is selected as the `Key type`, and click **CREATE**
+      1. Save the file on your computer when prompted and remember where it was saved at
 1. Open the [Google Play Console](https://play.google.com/console/?hl=en) and select **Users and Permissions**
    1. Click **Invite new users**
    1. Paste the email address you saved for later use into the email address field
