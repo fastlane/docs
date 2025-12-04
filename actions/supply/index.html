@@ -372,12 +372,23 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <li>Provide a <code>Service account name</code> (e.g. fastlane-supply)</li>
 <li>Copy the generated email address that is noted below the <code>Service account-ID</code> field for later use</li>
 <li>Click <strong>DONE</strong> (don't click <strong>CREATE AND CONTINUE</strong> as the optional steps such as granting access are not needed): <img src="/img/getting-started/android/creating-service-account.png" width="700" /></li>
-<li>Click on the <strong>Actions</strong> vertical three-dot icon of the service account you just created</li>
-<li>Select <strong>Manage keys</strong> on the menu</li>
-<li>Click <strong>ADD KEY</strong> → <strong>Create New Key</strong></li>
-<li>Make sure <strong>JSON</strong> is selected as the <code>Key type</code>, and click <strong>CREATE</strong></li>
-<li>Save the file on your computer when prompted and remember where it was saved at</li>
 </ol>
+</li>
+<li>Setup <a href="https://cloud.google.com/iam/docs/best-practices-service-accounts#choose-when-to-use">authentication</a> for the service account, fastlane supports Workload Identity Federation and service account keys<ul>
+<li>When using Workload Identity Federation (such as for GitHub Actions)
+    1. Create a Workload Identity Pool
+    1. Get the full ID of the Workload Identity Pool, for example: <code>projects/123456789/locations/global/workloadIdentityPools/github</code>
+    1. Create a Workload Identity Provider in that pool
+       - This is how you connect Google Cloud to your external identity provider (such as <a href="https://github.com/google-github-actions/auth">GitHub</a>, <a href="https://docs.gitlab.com/ci/cloud_services/google_cloud">GitLab</a>, etc.)
+       - Ensure you include a condition to restrict access, for example: <code>assertion.repository_owner == '${GITHUB_ORG}'</code>
+    1. Authenticate using this identity provider in your build workflow.</li>
+<li>To use service account keys:
+    1. Click on the <strong>Actions</strong> vertical three-dot icon of the service account you just created
+    1. Select <strong>Manage keys</strong> on the menu
+    1. Click <strong>ADD KEY</strong> → <strong>Create New Key</strong>
+    1. Make sure <strong>JSON</strong> is selected as the <code>Key type</code>, and click <strong>CREATE</strong>
+    1. Save the file on your computer when prompted and remember where it was saved at</li>
+</ul>
 </li>
 <li>Open the <a href="https://play.google.com/console/?hl=en">Google Play Console</a> and select <strong>Users and Permissions</strong><ol>
 <li>Click <strong>Invite new users</strong></li>
@@ -810,7 +821,7 @@ For more information, see the <code>fastlane action google_play_track_version_co
     </p>
   </div>
 
-  Documentation built 2025-12-03 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-12-04 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
