@@ -335,11 +335,11 @@ fastlane-plugin-sentry:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
   :sha: dfec8a491880da804ec44ccd7bcb2d91c5f9285663d8350408daaf5b75b655ec
-  :github_stars: 145
-  :github_subscribers: 47
-  :github_issues: 4
-  :github_forks: 52
-  :github_contributors: 0
+  :github_stars: 146
+  :github_subscribers: 46
+  :github_issues: 6
+  :github_forks: 51
+  :github_contributors: 41
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -1553,7 +1553,7 @@ fastlane-plugin-xamarin_build:
   :github_contributors: 4
 fastlane-plugin-pgyer:
   :initial_commit: 2017-01-21
-  :age_in_days: 3227
+  :age_in_days: 3253
   :readme_score: 100
   :tests: 1
   :actions:
@@ -1562,12 +1562,12 @@ fastlane-plugin-pgyer:
     category:
     description:
     details:
-  :sha: 61a724dd1b8948843bdf261f9fc770d244595760df34baf684ed77df0be51f80
+  :sha: 10c4110db37c5195c5e9e1ce309186d64a7e85eb3849ab16629f0fcde4419472
   :github_stars: 65
   :github_subscribers: 3
   :github_issues: 4
   :github_forks: 31
-  :github_contributors: 0
+  :github_contributors: 5
 fastlane-plugin-act:
   :initial_commit: 2016-08-11
   :age_in_days: 879
@@ -11216,14 +11216,14 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 2692
+  :age_in_days: 2718
   :readme_score: 100
   :tests: 658
   :actions: []
-  :sha: 0aa1fc3160a901a3f17560fb656dce63240fa5e29c641603e0471f978a3ff23b
+  :sha: 88a0639a05bd02c915eb2ad7a29a0baf566b8900011a6a6524cb944933323619
   :github_stars: 32
   :github_subscribers: 17
-  :github_issues: 45
+  :github_issues: 43
   :github_forks: 8
   :github_contributors: 0
 fastlane-plugin-allure_zephyr:
@@ -14026,7 +14026,7 @@ fastlane-plugin-shorebird:
   :github_contributors: 1
 fastlane-plugin-fastci:
   :initial_commit: 2025-09-04
-  :age_in_days: 79
+  :age_in_days: 105
   :readme_score: 100
   :tests: 1
   :actions:
@@ -14066,6 +14066,11 @@ fastlane-plugin-fastci:
     description: 打包
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sentry_upload_dsym
+    category: building
+    description: Sentry 上传 dSYM 文件
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: update_build_number
     category: building
     description: 更新 build 号
@@ -14085,7 +14090,7 @@ fastlane-plugin-fastci:
     category:
     description:
     details:
-  :sha: 4257f2ce27a9118225a00b77cce7c0c3197605ac1f4a9de4361df95580679485
+  :sha: a01f3fd69a3a74e09e903afc604e34a23819b3bca479529c09327f786d9aaf5c
   :github_stars: 3
   :github_subscribers: 0
   :github_issues: 0

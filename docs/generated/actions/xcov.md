@@ -11,7 +11,7 @@ Nice code coverage reports without hassle
 
 
 
-> Create nice code coverage reports and post coverage summaries on Slack *(xcov gem is required)*.<br>More information: [https://github.com/nakiostudio/xcov](https://github.com/nakiostudio/xcov).
+> Create nice code coverage reports and post coverage summaries on Slack *(xcov gem is required)*.<br>More information: [https://github.com/fastlane-community/xcov](https://github.com/fastlane-community/xcov).
 
 
 xcov ||
@@ -45,7 +45,11 @@ Key | Description | Default
   `configuration` | The configuration used when building the app. Defaults to 'Release' | 
   `source_directory` | The path to project's root directory | 
   `derived_data_path` | The directory where build products and other derived data will go | 
+  `xccov_file_direct_path` | The path or array of paths to the xccoverage/xccovreport/xcresult files to parse to generate code coverage | 
   `output_directory` | The directory in which all reports will be stored | [*](#parameters-legend-dynamic)
+  `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
+  `is_swift_package` | Enables generating coverage reports for Package.swift derived projects | `false`
   `html_report` | Produce an HTML report | `true`
   `markdown_report` | Produce a Markdown report | `false`
   `json_report` | Produce a JSON report | `false`
@@ -57,6 +61,7 @@ Key | Description | Default
   `slack_message` | The message which is published together with a successful report | `Your *xcov* coverage report`
   `ignore_file_path` | Relative or absolute path to the file containing the list of ignored files | [*](#parameters-legend-dynamic)
   `include_test_targets` | Enables coverage reports for .xctest targets | `false`
+  `include_zero_targets` | Final report will include target even if the coverage is 0% | `true`
   `exclude_targets` | Comma separated list of targets to exclude from coverage report | 
   `include_targets` | Comma separated list of targets to include in coverage report. If specified then exlude_targets will be ignored | 
   `only_project_targets` | Display the coverage only for main project targets (e.g. skip Pods targets) | `false`
