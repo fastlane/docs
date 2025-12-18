@@ -16,7 +16,7 @@ Shows a macOS notification - use `notification` instead
 
 notify ||
 ---|---
-Supported platforms | ios, android, mac
+Supported platforms | 
 Author | @champo, @KrauseFx
 
 

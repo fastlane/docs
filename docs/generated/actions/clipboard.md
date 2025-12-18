@@ -16,7 +16,7 @@ Copies a given string into the clipboard. Works only on macOS
 
 clipboard ||
 ---|---
-Supported platforms | ios, android, mac
+Supported platforms | 
 Author | @KrauseFx, @joshdholtz, @rogerluan
 
 

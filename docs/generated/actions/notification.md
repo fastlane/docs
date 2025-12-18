@@ -16,7 +16,7 @@ Display a macOS notification with custom message and title
 
 notification ||
 ---|---
-Supported platforms | ios, android, mac
+Supported platforms | 
 Author | @champo, @cbowns, @KrauseFx, @amarcadet, @dusek
 
 
