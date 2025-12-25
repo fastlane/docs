@@ -327,7 +327,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="xcov">xcov</h1>
 <p>Nice code coverage reports without hassle</p>
 <blockquote>
-<p>Create nice code coverage reports and post coverage summaries on Slack <em>(xcov gem is required)</em>.<br>More information: <a href="https://github.com/nakiostudio/xcov">https://github.com/nakiostudio/xcov</a>.</p>
+<p>Create nice code coverage reports and post coverage summaries on Slack <em>(xcov gem is required)</em>.<br>More information: <a href="https://github.com/fastlane-community/xcov">https://github.com/fastlane-community/xcov</a>.</p>
 </blockquote>
 <table>
 <thead>
@@ -395,9 +395,29 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td></td>
 </tr>
 <tr>
+<td><code>xccov_file_direct_path</code></td>
+<td>The path or array of paths to the xccoverage/xccovreport/xcresult files to parse to generate code coverage</td>
+<td></td>
+</tr>
+<tr>
 <td><code>output_directory</code></td>
 <td>The directory in which all reports will be stored</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>cloned_source_packages_path</code></td>
+<td>Sets a custom path for Swift Package Manager dependencies</td>
+<td></td>
+</tr>
+<tr>
+<td><code>use_system_scm</code></td>
+<td>Lets xcodebuild use system's scm configuration</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>is_swift_package</code></td>
+<td>Enables generating coverage reports for Package.swift derived projects</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>html_report</code></td>
@@ -453,6 +473,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>include_test_targets</code></td>
 <td>Enables coverage reports for .xctest targets</td>
 <td><code>false</code></td>
+</tr>
+<tr>
+<td><code>include_zero_targets</code></td>
+<td>Final report will include target even if the coverage is 0%</td>
+<td><code>true</code></td>
 </tr>
 <tr>
 <td><code>exclude_targets</code></td>
@@ -549,7 +574,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2025-12-13 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-12-25 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

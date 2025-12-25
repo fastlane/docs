@@ -501,7 +501,10 @@ match(git_branch: &quot;team2&quot;, username: &quot;user@team2.com&quot;)
 <p><img src="/img/actions/match_appstore_small.gif" width="550" /></p>
 <p>This will create a new certificate and provisioning profile (if required) and store them in your selected storage.
 If you previously ran <em>match</em> with the configured storage it will automatically install the existing profiles from your storage.</p>
-<p>The provisioning profiles are installed in <code>~/Library/MobileDevice/Provisioning Profiles</code> while the certificates and private keys are installed in your Keychain.</p>
+<p>The provisioning profiles are installed in <code>~/Library/Developer/Xcode/UserData/Provisioning Profiles</code> (<code>~/Library/MobileDevice/Provisioning Profiles</code> for Xcode versions prior to 16.0) while the certificates and private keys are installed in your Keychain.</p>
+<blockquote>
+<p>fastlane relies on the system's default Xcode version to determine the current version. The path where provisioning profiles are stored changed in Xcode 16. If you use the <code>xcode_select</code> or <code>xcodes</code> actions and you have Xcode 15 and 16 installed in your system, please make sure to execute them before invoking the <code>sync_code_signing</code> action.  </p>
+</blockquote>
 <p>To get a more detailed output of what <em>match</em> is doing use</p>
 <pre><code class="language-no-highlight">fastlane match --verbose
 </code></pre>
@@ -1109,7 +1112,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
     </p>
   </div>
 
-  Documentation built 2025-12-13 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2025-12-25 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2025 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
