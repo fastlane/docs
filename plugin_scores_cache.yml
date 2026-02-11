@@ -268,9 +268,9 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3461
+  :age_in_days: 3542
   :readme_score: 100
-  :tests: 136
+  :tests: 137
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_check_cli_installed
@@ -305,25 +305,10 @@ fastlane-plugin-sentry:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_build
     category:
-    description: Upload iOS build archive to Sentry with optional git context
-    details: This action allows you to upload iOS build archives (.xcarchive) to Sentry
-      with optional git-related parameters for enhanced context including commit SHAs,
-      branch names, repository information, and pull request details.
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_upload_dif
-    category:
-    description: Upload debugging information files.
-    details: " "
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_upload_dsym
-    category:
-    description: Upload dSYM symbolication files to Sentry
-    details: " "
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: sentry_upload_file
-    category:
-    description: Upload files to a release of a project on Sentry
-    details: " "
+    description: Upload build files (iOS .xcarchive/.ipa or Android .apk/.aab) to
+      Sentry with optional git context
+    details: request details. Install groups can be specified to control update visibility
+      between builds.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_upload_proguard
     category:
@@ -334,12 +319,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: dfec8a491880da804ec44ccd7bcb2d91c5f9285663d8350408daaf5b75b655ec
-  :github_stars: 146
-  :github_subscribers: 46
-  :github_issues: 6
-  :github_forks: 51
-  :github_contributors: 41
+  :sha: 21400b8d06c764c546221ef26baceb9d7ef665761219cf0a789fe73ef84db5f2
+  :github_stars: 149
+  :github_subscribers: 44
+  :github_issues: 1
+  :github_forks: 52
+  :github_contributors: 0
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -11216,15 +11201,15 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 2718
+  :age_in_days: 2773
   :readme_score: 100
-  :tests: 658
+  :tests: 684
   :actions: []
-  :sha: 88a0639a05bd02c915eb2ad7a29a0baf566b8900011a6a6524cb944933323619
+  :sha: fa6be1e1e9c5d87050a920e263092f51d0151a8bd9f2ba03f548e6fe83bd73a7
   :github_stars: 32
   :github_subscribers: 17
   :github_issues: 43
-  :github_forks: 8
+  :github_forks: 9
   :github_contributors: 0
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
@@ -12624,7 +12609,7 @@ fastlane-plugin-get_last_circleci_build_number_bitbucket:
   :github_contributors: 0
 fastlane-plugin-stream_actions:
   :initial_commit: 2022-10-27
-  :age_in_days: 1122
+  :age_in_days: 1203
   :readme_score: 100
   :tests: 24
   :actions:
@@ -12652,6 +12637,11 @@ fastlane-plugin-stream_actions:
     name: build_app_for_ios_simulator
     category: building
     description: This plugin builds apps exclusively for iOS, tvOS or watchOS Simulators.
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: check_unsafe_flags
+    category:
+    description: Checks if Package.swift contains unsafe flags
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: current_branch
@@ -12784,12 +12774,12 @@ fastlane-plugin-stream_actions:
     category:
     description:
     details:
-  :sha: ea242f1eb13a2b9d7e6d2fd953895bcb19c24159ede38e2bd2b365fdae6cbc96
+  :sha: 734e0b98ea04c8dbbfaf55c08d525e7262f4ba9b683e89e579496c42cb2c40c8
   :github_stars: 2
   :github_subscribers: 27
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-installonair:
   :initial_commit: 2022-10-06
   :age_in_days: 37
@@ -13896,17 +13886,17 @@ fastlane-plugin-increment_version_build_number:
   :github_contributors: 0
 fastlane-plugin-translate_gpt_release_notes:
   :initial_commit: 2023-04-23
-  :age_in_days: 944
+  :age_in_days: 1025
   :readme_score: 100
-  :tests: 1
+  :tests: 244
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: translate_gpt_release_notes
     category:
-    description: Translate release notes or changelogs for iOS and Android apps using
-      OpenAI's GPT API
+    description: 'Translate release notes using AI providers: OpenAI, Claude, Gemini,
+      or DeepL'
     details:
-  :sha: 2d8d7c99165f5cb331fb1bb4e32d566223faf59ce3d193f22cee6db27616dddb
+  :sha: 5fa6b780d008a26d8a9fc2df5d8399d4f9d3599ba0caf10493a367e32c98ff0c
   :github_stars: 3
   :github_subscribers: 0
   :github_issues: 0
@@ -14252,6 +14242,75 @@ fastlane-plugin-google_play_versions:
     details: Use this action to fetch the highest build version code from a Play Store
       track, including version codes from builds that are archived.
   :sha: 25f2a35ebd5e42b70913641912397925adc98ddc6ff2d8f73831b090dca3d92d
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ionic_capacitor:
+  :initial_commit: 2016-12-10
+  :age_in_days: 3350
+  :readme_score: 100
+  :tests: 0
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ionic
+    category: building
+    description: Build your Ionic app
+    details: Easily integrate your Ionic build into a Fastlane setup
+  :sha: f36a2d59dfa31d7506839285a86c3b4054d749b84ff6c4abb2e7e1bf88ca2f78
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-ovo_poeditor:
+  :initial_commit: 2025-05-26
+  :age_in_days: 261
+  :readme_score: 50
+  :tests: 1
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: ovo_poeditor_strings
+    category:
+    description: Fetch latest POEditor terms and download them as .strings/.xml/.xcstrings
+      file
+    details: Fetch latest POEditor terms and download them as .strings/.xml/.xcstrings
+      file
+  :sha: 9f9b2d89081f440d8bf3d7c351ac3e37168eaec1d052dad948d30db5852801c0
+  :github_stars: 1
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+fastlane-plugin-google_play_track_updater:
+  :initial_commit: 2025-12-29
+  :age_in_days: 44
+  :readme_score: 100
+  :tests: 43
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: halt_google_play_release
+    category:
+    description: Halts an active staged rollout or completed for a specific version
+      on a Google Play track.
+    details: Halts an active staged rollout or completed for a specific version on
+      a Google Play track.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: resume_google_play_release
+    category:
+    description: Resumes a halted staged rollout for a specific version on a Google
+      Play track.
+    details: Resumes a halted staged rollout for a specific version on a Google Play
+      track.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: update_google_play_release_rollout
+    category:
+    description: Updates the rollout percentage for a staged rollout on a Google Play
+      track.
+    details: Updates the rollout percentage for a staged rollout on a Google Play
+      track.
+  :sha: 4e0bd8c9fd49ce40e51cf4df5713c45a387e85ddd0baad87d8fee4a4d6a7c9f1
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
