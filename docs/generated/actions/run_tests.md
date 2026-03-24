@@ -296,6 +296,7 @@ Key | Description | Default
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`

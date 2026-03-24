@@ -6,7 +6,7 @@ If you are just starting a new project, it's important to think about how you wa
 
 For existing projects it might make sense to switch from a manual process to the [match approach](https://codesigning.guide) to make it easier for new team-members to onboard.
 
-If you are new to code signing, check out the [WWDC session](https://developer.apple.com/videos/play/wwdc2016/401/) that describes the fundamentals of code signing in Xcode.
+If you are new to code signing, check out the [WWDC session](https://developer.apple.com/videos/play/wwdc2021/10204/) that describes modern app distribution, automatic signing, and cloud-managed certificates in Xcode.
 
 - [Using match](#using-match)
 - [Using cert and sigh](#using-cert-and-sigh)

@@ -6,7 +6,7 @@ orbs:
 jobs:
   "Test":
     docker:
-      - image: ibotpeaches/fastlaneci-test:latest
+      - image: fastlanetoolsci/fastlane:1.0.1
     working_directory: ~/code
     steps:
       - checkout

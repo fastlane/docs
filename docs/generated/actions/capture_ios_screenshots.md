@@ -461,6 +461,7 @@ Key | Description | Default
   `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9 | `true`
   `disable_slide_to_type` | Disable the simulator from showing the 'Slide to type' prompt | `false`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
   `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 

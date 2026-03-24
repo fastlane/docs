@@ -32,9 +32,3 @@ pipenv shell
 ## Adding a Python dependency
 
 Likely, to add a [Markdown extension](https://pythonhosted.org/Markdown/extensions/), install it with `pipenv install <some extension>` after making sure the virtualenv is loaded (`pipenv shell`).
-
-## Troubleshooting local docs server
-
-Running a local server with `mkdocs serve`, it may take several minutes to start. This delay is because `mkdocs` needs some time to read the `available-plugins.md` file. It can be confirmed by running `mkdocs serve --verbose` as `mkdocs` is stuck at reading this file.
-
-For testing changes on pages other than the list of available plugins, it is convenient to edit `docs/generated/available-plugins.md`, removing all of its content and saving the file before running `mkdocs serve`.
