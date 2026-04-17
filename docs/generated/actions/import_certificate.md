@@ -21,7 +21,7 @@ Author | @gin0606
 
 
 
-## 3 Examples
+## 4 Examples
 
 ```ruby
 import_certificate(certificate_path: "certs/AppleWWDRCA6.cer")
@@ -40,6 +40,14 @@ import_certificate(
 )
 ```
 
+```ruby
+import_certificate(
+  certificate_path: "certs/dist.p12",
+  certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default",
+  certificate_format: "pkcs12"
+)
+```
+
 
 
 
@@ -50,6 +58,7 @@ Key | Description | Default
 ----|-------------|--------
   `certificate_path` | Path to certificate | 
   `certificate_password` | Certificate password | `''`
+  `certificate_format` | Format of the certificate. Check the '-f' switch from 'security import --help' command | 
   `keychain_name` | Keychain the items should be imported to | 
   `keychain_path` | Path to the Keychain file to which the items should be imported | 
   `keychain_password` | The password for the keychain. Note that for the login keychain this is your user's password | 
