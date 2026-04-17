@@ -1,3 +1,6 @@
+plugins:
+  - rubocop-performance
+
 Style/MultipleComparison:
   Enabled: false
 
@@ -38,16 +41,18 @@ Metrics/ModuleLength:
   Enabled: false
 
 # certificate_1 is an okay variable name
-Style/VariableNumber:
+Naming/VariableNumber:
   Enabled: false
 
 # This is used a lot across the fastlane code base for config files
-Style/MethodMissing:
+Lint/MissingSuper:
+  Enabled: false
+Style/MissingRespondToMissing:
   Enabled: false
 
 # This rule isn't useful, lots of discussion happening around it also
 # e.g. https://github.com/bbatsov/rubocop/issues/2338
-MultilineBlockChain:
+Style/MultilineBlockChain:
   Enabled: false
 
 #
@@ -74,34 +79,16 @@ Style/TernaryParentheses:
 Style/EmptyMethod:
   Enabled: false
 
-# It's better to be more explicit about the type
-Style/BracesAroundHashParameters:
-  Enabled: false
-
 # specs sometimes have useless assignments, which is fine
 Lint/UselessAssignment:
   Exclude:
     - '**/spec/**/*'
 
-# In specs requires are done automatically
-Require/MissingRequireStatement:
-  Exclude:
-    - '**/spec/**/*.rb'
-    - '**/spec_helper.rb'
-    - 'spaceship/lib/spaceship/babosa_fix.rb'
-    - '**/Fastfile'
-    - '**/*.gemspec'
-    - 'rakelib/**/*'
-    - '**/*.rake'
-    - '**/Rakefile'
-    - 'fastlane/**/*' # TODO: remove
-    - 'supply/**/*' # TODO: remove
-
 # We could potentially enable the 2 below:
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   Enabled: false
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 
 # HoundCI doesn't like this rule
@@ -117,7 +104,7 @@ Style/SymbolArray:
   Enabled: false
 
 # We still support Ruby 2.0.0
-Layout/IndentHeredoc:
+Layout/HeredocIndentation:
   Enabled: false
 
 # This cop would not work fine with rspec
@@ -126,7 +113,7 @@ Style/MixinGrouping:
     - '**/spec/**/*'
 
 # Sometimes we allow a rescue block that doesn't contain code
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Enabled: false
 
 # Cop supports --auto-correct.
@@ -184,7 +171,7 @@ Metrics/ClassLength:
 
 
 # Configuration parameters: AllowURI, URISchemes.
-Metrics/LineLength:
+Layout/LineLength:
   Max: 370
 
 # Configuration parameters: CountKeywordArgs.
@@ -224,7 +211,7 @@ Lint/ParenthesesAsGroupedExpression:
 
 # This would reject is_ in front of methods
 # We use `is_supported?` everywhere already
-Style/PredicateName:
+Naming/PredicatePrefix:
   Enabled: false
 
 # We allow the $
@@ -237,7 +224,8 @@ Layout/SpaceAroundOperators:
     - '**/spec/actions_specs/xcodebuild_spec.rb'
 
 AllCops:
-  TargetRubyVersion: 2.0
+  NewCops: enable
+  TargetRubyVersion: 3.0
   Include:
     - '*/lib/assets/*Template'
     - '*/lib/assets/*TemplateAndroid'
@@ -247,7 +235,7 @@ AllCops:
     - '**/lib/assets/DefaultFastfileTemplate'
 
 # They have not to be snake_case
-Style/FileName:
+Naming/FileName:
   Exclude:
     - '**/Dangerfile'
     - '**/Brewfile'
@@ -279,15 +267,10 @@ Style/IfInsideElse:
 Style/CollectionMethods:
   Enabled: false
 
-# Check whether fork is handled correctly on all platforms
-CrossPlatform/ForkUsage:
-  Exclude:
-    - '**/plugins/template/**/*'
-
 # ( ) for method calls
 Style/MethodCallWithArgsParentheses:
   Enabled: true
-  IgnoredMethods:
+  AllowedMethods:
     - 'require'
     - 'require_relative'
     - 'fastlane_require'
