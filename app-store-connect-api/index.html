@@ -415,6 +415,12 @@
 </tbody>
 </table>
 <h2 id="creating-an-app-store-connect-api-key">Creating an App Store Connect API Key</h2>
+<p><strong>Note:</strong> It is highly recommended to create a <strong>Team Key</strong>, as it is required for any provisioning-related API access.</p>
+<p>There are two types of API Keys:</p>
+<ul>
+<li><strong>Team</strong> - Access to all apps, with varying levels of access based on selected roles.</li>
+<li><strong>Individual</strong> - Access and roles of the associated user. Individual keys aren’t able to use Provisioning endpoints, access <a href="https://developer.apple.com/documentation/appstoreconnectapi/sales-and-finance">Sales and Finance</a>, or <code>notaryTool</code>.</li>
+</ul>
 <ol>
 <li>Create a new App Store Connect API Key in the <a href="https://appstoreconnect.apple.com/access/users">Users and Access</a> page<ul>
 <li>For more info, go to the <a href="https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api">App Store Connect API Docs</a></li>
