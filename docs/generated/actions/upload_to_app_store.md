@@ -15,7 +15,7 @@ Upload metadata and binary to App Store Connect (via _deliver_)
   <img src="/img/actions/deliver.png" width="250">
 </p>
 
-_deliver_ uploads screenshots, metadata and binaries to App Store Connect. Use _deliver_ to submit your app for App Store review.
+_deliver_ uploads screenshots, App Preview videos, metadata and binaries to App Store Connect. Use _deliver_ to submit your app for App Store review.
 
 -------
 
@@ -31,7 +31,7 @@ _deliver_ uploads screenshots, metadata and binaries to App Store Connect. Use _
 <h5 align="center"><code>deliver</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
 # Features
-- Upload hundreds of localized screenshots completely automatically
+- Upload hundreds of localized screenshots and App Preview videos completely automatically
 - Upload a new ipa/pkg file to App Store Connect without Xcode from any Mac
 - Maintain your app metadata locally and push changes back to App Store Connect
 - Easily implement a real Continuous Deployment process using [_fastlane_](https://fastlane.tools)
@@ -55,13 +55,13 @@ From now on, you can run `fastlane deliver` to deploy a new update, or just uplo
 
 # Usage
 
-Check out your local `./fastlane/metadata` and `./fastlane/screenshots` folders (if you don't use [_fastlane_](https://fastlane.tools) it's `./metadata` instead)
+Check out your local `./fastlane/metadata`, `./fastlane/screenshots`, and `./fastlane/app-previews` folders (if you don't use [_fastlane_](https://fastlane.tools) it's `./metadata` instead)
 
 ![/img/actions/deliver_metadata.png](/img/actions/deliver_metadata.png)
 
 You'll see your metadata from App Store Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to App Store Connect.
 
-Run `fastlane deliver` to upload the app metadata from your local machine
+Run `fastlane deliver` to upload the app metadata, screenshots, and App Preview videos from your local machine
 
 ```no-highlight
 fastlane deliver
@@ -187,6 +187,19 @@ submit_for_review(true)
 A path to a folder containing subfolders for each language. This will automatically detect the device type based on the image resolution. Also includes  Watch Support.
 
 ![/img/actions/deliver_screenshots.png](/img/actions/deliver_screenshots.png)
+
+##### app_previews_path
+Path to the App Preview videos you want to upload. The folder must be structured with language-specific subfolders, similar to screenshots:
+
+![/img/actions/deliver_app-previews.png](/img/actions/deliver_app-previews.png)
+
+Up to 3 videos per locale and per device type are uploaded, then ordered by filename. Device type is inferred from the filename (case insensitive):
+
+```no-highlight
+IPHONE_40, IPHONE_47, IPHONE_55, IPHONE_58, IPHONE_61, IPHONE_65, IPHONE_67, IPAD_97, IPAD_105, IPAD_PRO_129, IPAD_PRO_3GEN_11, IPAD_PRO_3GEN_129, DESKTOP
+```
+
+A preview poster frame is set using `preview_frame_time_code`.
 
 ##### metadata_path
 Path to the metadata you want to use. The folder has to be structured like this
@@ -817,6 +830,9 @@ Change syntax highlighting to *Ruby*.
 ## Provider Short Name
 If you are on multiple App Store Connect teams, _deliver_ needs a provider short name to know where to upload your binary. _deliver_ will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the `itc_provider` option.
 
+## Provider Public ID
+The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication.
+
 <hr />
 
 
@@ -865,6 +881,9 @@ Key | Description | Default
   `use_live_version` | Force usage of live version rather than edit version | `false`
   `metadata_path` | Path to the folder containing the metadata files | 
   `screenshots_path` | Path to the folder containing the screenshots | 
+  `app_previews_path` | Path to the folder containing localized App Preview videos | 
+  `preview_frame_time_code` | Time code for the App Preview still frame written as hour:minute:second:centisecond (e.g. 00:00:00:01) | `00:00:05:00`
+  `overwrite_preview_videos` | Clear all previously uploaded App Preview videos before uploading the new ones | `false`
   `skip_binary_upload` | Skip uploading an ipa or pkg to App Store Connect | `false`
   `skip_screenshots` | Don't upload the screenshots | `false`
   `skip_metadata` | Don't upload the metadata (e.g. title, description). This will still upload screenshots | `false`
@@ -889,6 +908,7 @@ Key | Description | Default
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | [*](#parameters-legend-dynamic)
+  `provider_public_id` | The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication | [*](#parameters-legend-dynamic)
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
   `precheck_default_rule_level` | The default precheck rule level unless otherwise configured | `:warn`
   `individual_metadata_items` | **DEPRECATED!** Removed after the migration to the new App Store Connect API in June 2020 - An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow | 
