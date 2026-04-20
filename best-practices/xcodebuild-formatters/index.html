@@ -370,12 +370,12 @@ scan(
 <p><a href="https://github.com/tuist/xcbeautify">xcbeautify</a> is now the <strong>recommended</strong> formatter to use. <em>fastlane</em> users are required to install <code>xcbeautify</code> themselves if they want to use it.</p>
 <pre><code class="language-no-highlight">$ brew install xcbeautify
 </code></pre>
-<p><code>xcbeautify</code> is the recommended because:</p>
+<p><code>xcbeautify</code> is currently recommended:</p>
 <ul>
-<li>Faster than <code>xcpretty</code></li>
-<li>Supports Xcode's new build system output</li>
-<li>Supports  Xcode's parallel testing output</li>
-<li>Supports formatting Swift Package Manager output</li>
+<li>It supports Xcode's new build system output</li>
+<li>It supports Xcode's parallel testing output</li>
+<li>It supports formatting Swift Package Manager output</li>
+<li>It's faster than <code>xcpretty</code></li>
 </ul>
 <h4 id="xcpretty">xcpretty</h4>
 <p>Historically, <em>fastlane</em> was tightly integrated with <a href="https://github.com/xcpretty/xcpretty">xcpretty</a>. <code>xcpretty</code> is a RubyGem and a dependency of <em>fastlane</em>. This was the best option for <em>fastlane</em> as there were no extra steps for installing or using this formatter.</p>
@@ -385,8 +385,8 @@ scan(
 <li>Generate an HTML report</li>
 <li>Generate a JSON compilation database</li>
 </ul>
-<p><strong>Before 2.201.0</strong>, <a href="/actions/scan/"><em>scan</em></a> used <code>xcpretty</code> to generate these files and determine success/failure with <code>xcpretty</code> output
-<br/><strong>As of 2.201.0</strong>, <a href="/actions/scan/"><em>scan</em></a> will only generate these if <code>xcodebuild_formatter</code> is using <code>xcpretty</code> but now use <code>trainer</code> to parse test results to determine success/failure</p>
+<p><strong>Before 2.201.0</strong>, <a href="/actions/scan/"><em>scan</em></a> used <code>xcpretty</code> to generate these files and determine success/failure with <code>xcpretty</code> output.<br/>
+<strong>As of 2.201.0</strong>, <a href="/actions/scan/"><em>scan</em></a> will only generate these if <code>xcodebuild_formatter</code> is using <code>xcpretty</code> but now use <code>trainer</code> to parse test results to determine success/failure.</p>
               
             </div>
           </div>
@@ -405,7 +405,7 @@ scan(
     </p>
   </div>
 
-  Documentation built 2026-04-17 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-04-20 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
