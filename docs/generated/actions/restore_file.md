@@ -6,7 +6,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # restore_file
 
 
-This action restore your file that was backuped with the `backup_file` action
+This action restore your file that was backed up with the `backup_file` action
 
 
 

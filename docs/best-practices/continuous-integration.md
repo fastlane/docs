@@ -24,7 +24,8 @@ Multiple CI products and services offer integrations with _fastlane_:
 - [Jenkins](/best-practices/continuous-integration/jenkins/)
 - [Semaphore](/best-practices/continuous-integration/semaphore/)
 - [Travis](/best-practices/continuous-integration/travis/)
-
+- [AWS CodeBuild](/best-practices/continuous-integration/codebuild/)
+  
 ## Authenticating with Apple services
 
 Check out [Authenticating with Apple services](/getting-started/ios/authentication) to learn the best ways to authenticate, catered for your specific use case.
@@ -60,6 +61,7 @@ You can set up your own `Release` job, which is only triggered manually.
         "gitlab-ci-integration": "/best-practices/continuous-integration/gitlab/",
         "visual-studio-team-services": "/best-practices/continuous-integration/azure-devops/",
         "nevercode-integration": "/best-practices/continuous-integration/nevercode/",
+        "codebuild-integration": "/best-practices/continuous-integration/codebuild/",
     }
     /*
     * Best practice for extracting hashes:
@@ -108,3 +110,7 @@ This content was moved and now lives [here](/best-practices/continuous-integrati
 #### Nevercode Integration
 
 This content was moved and now lives [here](/best-practices/continuous-integration/nevercode/).
+
+#### AWS CodeBuild Integration
+
+This content was moved and now lives [here](/best-practices/continuous-integration/codebuild/).

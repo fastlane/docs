@@ -64,6 +64,8 @@ Key | Description | Default
   `verbose` | Show more debugging information | `false`
   `use_modular_headers` | Use modular headers option during validation | 
   `synchronous` | If validation depends on other recently pushed pods, synchronize | 
+  `no_overwrite` | Disallow pushing that would overwrite an existing spec | 
+  `local_only` | Does not perform the step of pushing REPO to its remote | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

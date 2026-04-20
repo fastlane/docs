@@ -51,7 +51,7 @@ end
 <details markdown="1">
 <summary>Google Play</summary>
 
-In order to distribute to Google Play with _upload_to_play_store_ you will need to have your Google credentials set up. Make sure you've gone through [Setting up _supply_](setup/#setting-up-supply) before continuing!
+In order to distribute to Google Play with _upload_to_play_store_ you will need to have your Google credentials set up. Make sure you've gone through [Setting up _supply_](/getting-started/android/setup/#setting-up-supply) before continuing!
 
 ```ruby
 lane :beta do

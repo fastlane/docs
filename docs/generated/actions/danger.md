@@ -49,6 +49,8 @@ Key | Description | Default
   `danger_id` | The identifier of this Danger instance | 
   `dangerfile` | The location of your Dangerfile | 
   `github_api_token` | GitHub API token for danger | 
+  `github_enterprise_host` | GitHub host URL for GitHub Enterprise | 
+  `github_enterprise_api_base_url` | GitHub API base URL for GitHub Enterprise | 
   `fail_on_errors` | Should always fail the build process, defaults to false | `false`
   `new_comment` | Makes Danger post a new comment instead of editing its previous one | `false`
   `remove_previous_comments` | Makes Danger remove all previous comment and create a new one in the end of the list | `false`

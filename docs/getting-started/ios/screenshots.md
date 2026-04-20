@@ -416,5 +416,5 @@ Two things have to be passed on from _snapshot_ to the `xcodebuild` command line
 
 If you find a better way to do any of this, please submit an issue on GitHub or even a pull request :+1:
 
-Also, feel free to duplicate radar [23062925](https://openradar.appspot.com/radar?id=5056366381105152).
+Also, feel free to duplicate radar [23062925](https://openradar.appspot.com/23062925).
 </details>

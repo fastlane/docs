@@ -11,7 +11,7 @@ Installs an .ipa file on a connected iOS-device via usb or wifi
 
 
 
-> Installs the ipa on the device. If no id is given, the first found iOS device will be used. Works via USB or Wi-Fi. This requires `ios-deploy` to be installed. Please have a look at [ios-deploy](https://github.com/ios-control/ios-deploy). To quickly install it, use `npm -g i ios-deploy`
+> Installs the ipa on the device. If no id is given, the first found iOS device will be used. Works via USB or Wi-Fi. This requires `ios-deploy` to be installed. Please have a look at [ios-deploy](https://github.com/ios-control/ios-deploy). To quickly install it, use `brew install ios-deploy`
 
 
 install_on_device ||
@@ -38,7 +38,7 @@ install_on_device(
 
 Key | Description | Default
 ----|-------------|--------
-  `extra` | Extra Commandline arguments passed to ios-deploy | 
+  `extra` | Extra Command-line arguments passed to ios-deploy | 
   `device_id` | id of the device / if not set defaults to first found device | 
   `skip_wifi` | Do not search for devices via WiFi | 
   `ipa` | The IPA file to put on the device | [*](#parameters-legend-dynamic)

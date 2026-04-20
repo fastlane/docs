@@ -17,7 +17,7 @@ Alias for the `upload_to_testflight` action
 
 ###### The best way to manage your TestFlight testers and builds from your terminal
 
-Pilot makes it easier to manage your app on Apple’s TestFlight. You can:
+_pilot_ makes it easier to manage your app on Apple’s TestFlight. You can:
 
 - Upload & distribute builds
 - Add & remove testers
@@ -90,7 +90,19 @@ _pilot_ does all kinds of magic for you:
 - Automatically detects the bundle identifier from your `ipa` file
 - Automatically fetch the AppID of your app based on the bundle identifier
 
-_pilot_ uses [_spaceship_](https://spaceship.airforce) to submit the build metadata and the iTunes Transporter to upload the binary. Because iTunes Transporter's upload capability is only supported on OS X, `pilot upload` does not work on Linux, as described [in this issue](https://github.com/fastlane/fastlane/issues/5789)
+_pilot_ uses [_spaceship_](https://spaceship.airforce) to submit the build metadata and the iTunes Transporter to upload the binary.
+
+### Upload from Linux
+
+To upload binaries from Linux:
+
+- have the package file and the `AppStoreInfo.plist` file in the same location on disk (_check [fastlane gym](https://docs.fastlane.tools/actions/gym/) on how to make them_)
+- make sure you have [Transporter on Linux](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html) installed
+- set the following environment variables:
+    - `FASTLANE_ITUNES_TRANSPORTER_USE_SHELL_SCRIPT=true`
+    - `FASTLANE_ITUNES_TRANSPORTER_PATH=/usr/local/itms` (_or the path where Transporter is installed_)
+
+_Note: fastlane will temporarily save the upload credentials in `$HOME/.appstoreconnect/private_keys/`. Any other files in that directory will be deleted upon upload completion._
 
 ## List builds
 
@@ -332,8 +344,8 @@ upload_to_testflight(
   localized_app_info: {
     "default": {
       feedback_email: "default@email.com",
-      marketing_url: "https://example.com/marketing-defafult",
-      privacy_policy_url: "https://example.com/privacy-defafult",
+      marketing_url: "https://example.com/marketing-default",
+      privacy_policy_url: "https://example.com/privacy-default",
       description: "Default description",
     },
     "en-GB": {

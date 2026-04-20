@@ -422,8 +422,8 @@ capture_ios_screenshots(
 
 Key | Description | Default
 ----|-------------|--------
-  `workspace` | Path the workspace file | 
-  `project` | Path the project file | 
+  `workspace` | Path to the workspace file | 
+  `project` | Path to the project file | 
   `xcargs` | Pass additional arguments to xcodebuild for the test phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
   `devices` | A list of devices you want to take the screenshots from | 
@@ -439,7 +439,7 @@ Key | Description | Default
   `erase_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `headless` | Enabling this option will prevent displaying the simulator window | `true`
   `override_status_bar` | Enabling this option will automatically override the status bar to show 9:41 AM, full battery, and full reception (Adjust 'SNAPSHOT_SIMULATOR_WAIT_FOR_BOOT_TIMEOUT' environment variable if override status bar is not working. Might be because simulator is not fully booted. Defaults to 10 seconds) | `false`
-  `override_status_bar_arguments` | Fully customize the status bar by setting each option here. See `xcrun simctl status_bar --help` | 
+  `override_status_bar_arguments` | Fully customize the status bar by setting each option here. Requires `override_status_bar` to be set to `true`. See `xcrun simctl status_bar --help` | 
   `localize_simulator` | Enabling this option will configure the Simulator's system language | `false`
   `dark_mode` | Enabling this option will configure the Simulator to be in dark mode (false for light, true for dark) | 
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
@@ -461,8 +461,10 @@ Key | Description | Default
   `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9 | `true`
   `disable_slide_to_type` | Disable the simulator from showing the 'Slide to type' prompt | `false`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 

@@ -387,6 +387,7 @@ The available options:
 
 - 'ios'
 - 'appletvos'
+- 'xros'
 - 'osx'
 
 
@@ -444,17 +445,17 @@ end
 
 Omit `build_number` to let _fastlane_ automatically select the latest build number for the current version being edited for release from App Store Connect.
 
-### Compliance and IDFA settings
+### Compliance settings
 
-Use the `submission_information` parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
+Use the `submission_information` parameter for additional submission specifiers, including compliance settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
 
 ```no-highlight
-fastlane deliver submit_build --build_number 830 --submission_information "{\"export_compliance_uses_encryption\": false, \"add_id_info_uses_idfa\": false }"
+fastlane deliver submit_build --build_number 830 --submission_information "{\"export_compliance_uses_encryption\": false }"
 ```
 
 ### App Privacy Details
 
-Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practies. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
+Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practices. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
 
 # Credentials
 
@@ -617,7 +618,7 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 ### Available age rating groups
 
-#### Non Boolean
+#### Infrequent/Mild or Frequent/Intense
 
 **Values**
 
@@ -626,34 +627,73 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 - 2: Frequent/Intense (Legacy value, use `FREQUENT_OR_INTENSE`instead)
 
 - `NONE`
+- `INFREQUENT`
 - `INFREQUENT_OR_MILD`
+- `FREQUENT`
 - `FREQUENT_OR_INTENSE`
 
 **Keys**
 
-- 'alcoholTobaccoOrDrugUseOrReferences'
-- 'contests'
-- 'gamblingSimulated'
-- 'medicalOrTreatmentInformation'
-- 'profanityOrCrudeHumor'
+- `alcoholTobaccoOrDrugUseOrReferences`
+- `contests`
+- `gamblingSimulated`
+- `gunsOrOtherWeapons`
+- `horrorOrFearThemes`
+- `matureOrSuggestiveThemes`
+- `medicalOrTreatmentInformation`
+- `profanityOrCrudeHumor`
+- `sexualContentGraphicAndNudity`
+- `sexualContentOrNudity`
+- `violenceCartoonOrFantasy`
+- `violenceRealistic`
+- `violenceRealisticProlongedGraphicOrSadistic`
 
-- 'sexualContentGraphicAndNudity'
-- 'sexualContentOrNudity'
-- 'horrorOrFearThemes'
-- 'matureOrSuggestiveThemes'
-- 'unrestrictedWebAccess'
-- 'violenceCartoonOrFantasy'
-- 'violenceRealisticProlongedGraphicOrSadistic'
-- 'violenceRealistic'
-- 'kidsAgeBand'
+#### Age Rating
+
+**Values**
+
+- `NONE`
+- `NINE_PLUS`
+- `THIRTEEN_PLUS`
+- `SIXTEEN_PLUS`
+- `EIGHTEEN_PLUS`
+- `UNRATED`
+
+**Keys**
+
+- `ageRatingOverrideV2`
+
+#### Korea Age Rating
+
+**Values**
+
+- `NONE`
+- `FIFTEEN_PLUS`
+- `NINETEEN_PLUS`
+
+**Keys**
+
+- `koreaAgeRatingOverride`
+
+#### URL
+
+**Keys**
+
+- `developerAgeRatingInfoUrl`
 
 #### Boolean
 
 **Keys**
 
+- `advertising`
+- `ageAssurance`
 - `gambling`
-- 'seventeenPlus'
+- `healthOrWellnessTopics`
+- `lootBox`
+- `messagingAndChat`
+- `parentalControls`
 - `unrestrictedWebAccess`
+- `userGeneratedContent`
 
 #### Kids Age
 
@@ -831,16 +871,19 @@ Key | Description | Default
   `skip_app_version_update` | Don’t create or update the app version that is being prepared for submission | `false`
   `force` | Skip verification of HTML preview file | `false`
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
-  `sync_screenshots` | Sync screenshots with local ones. This is currently beta optionso set true to 'FASTLANE_ENABLE_BETA_DELIVER_SYNC_SCREENSHOTS' environment variable as well | `false`
+  `screenshot_processing_timeout` | Timeout in seconds to wait before considering screenshot processing as failed, used to handle cases where uploads to the App Store are stuck in processing | `3600`
+  `sync_screenshots` | Sync screenshots with local ones. This is currently beta option so set true to 'FASTLANE_ENABLE_BETA_DELIVER_SYNC_SCREENSHOTS' environment variable as well | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
+  `verify_only` | Verifies archive with App Store Connect without uploading | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
-  `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | 
-  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Can not be used together with `automatic_release`) | 
+  `version_check_wait_retry_limit` | After submitting a new version, App Store Connect takes some time to recognize the new version and we must wait until it's available before attempting to upload metadata for it. There is a mechanism that will check if it's available and retry with an exponential backoff if it's not available yet. This option specifies how many times we should retry before giving up. Setting this to a value below 5 is not recommended and will likely cause failures. Increase this parameter when Apple servers seem to be degraded or slow | `7`
+  `automatic_release` | Should the app be automatically released once it's approved? (Cannot be used together with `auto_release_date`) | 
+  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Cannot be used together with `automatic_release`) | 
   `phased_release` | Enable the phased release feature of iTC | `false`
   `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
   `price_tier` | The price tier of this application | 
   `app_rating_config_path` | Path to the app rating's config | 
-  `submission_information` | Extra information for the submission (e.g. compliance specifications, IDFA settings) | 
+  `submission_information` | Extra information for the submission (e.g. compliance specifications) | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)

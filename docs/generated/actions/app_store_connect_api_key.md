@@ -58,7 +58,7 @@ app_store_connect_api_key(
 Key | Description | Default
 ----|-------------|--------
   `key_id` | The key ID | 
-  `issuer_id` | The issuer ID | 
+  `issuer_id` | The issuer ID. It can be nil if the key is individual API key | 
   `key_filepath` | The path to the key p8 file | 
   `key_content` | The content of the key p8 file | 
   `is_key_content_base64` | Whether :key_content is Base64 encoded or not | `false`

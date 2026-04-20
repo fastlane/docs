@@ -63,7 +63,8 @@ Key | Description | Default
   `use_webhook_configured_username_and_icon` | Use webhook's default username and icon settings? (true/false) | `false`
   `slack_url` | Create an Incoming WebHook for your Slack group | 
   `username` | Overrides the webhook's username property if use_webhook_configured_username_and_icon is false | `fastlane`
-  `icon_url` | Overrides the webhook's image property if use_webhook_configured_username_and_icon is false | `https://fastlane.tools/assets/img/fastlane_icon.png`
+  `icon_url` | Specifies a URL of an image to use as the photo of the message. Overrides the webhook's image property if use_webhook_configured_username_and_icon is false | `https://fastlane.tools/assets/img/fastlane_icon.png`
+  `icon_emoji` | Specifies an emoji (using colon shortcodes, eg. :white_check_mark:) to use as the photo of the message. Overrides the webhook's image property if use_webhook_configured_username_and_icon is false. This parameter takes precedence over icon_url | 
   `payload` | Add additional information to this post. payload must be a hash containing any key with any value | `{}`
   `default_payloads` | Specifies default payloads to include. Pass an empty array to suppress all the default payloads | `["lane", "test_result", "git_branch", "git_author", "last_git_commit", "last_git_commit_hash"]`
   `attachment_properties` | Merge additional properties in the slack attachment, see https://api.slack.com/docs/attachments | `{}`

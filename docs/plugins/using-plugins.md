@@ -64,6 +64,8 @@ gem "fastlane-plugin-xcversion"
 
 # Fetched from GitHub
 gem "fastlane-plugin-xcversion", git: "https://github.com/fastlane/fastlane-plugin-xcversion"
+gem "fastlane-plugin-xcversion", git: "https://github.com/fastlane/fastlane-plugin-xcversion", branch: "xcode-14-support"
+gem "fastlane-plugin-xcversion", git: "https://github.com/fastlane/fastlane-plugin-xcversion", tag: "2.0.0"
 
 # Fetched from a local directory
 gem "fastlane-plugin-xcversion", path: "../fastlane-plugin-xcversion"

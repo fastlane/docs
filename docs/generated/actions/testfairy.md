@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # testfairy
 
 
-Upload a new build to [TestFairy](https://www.testfairy.com/)
+Upload a new build to SauceLabs' TestFairy
 
 
 
 
-> You can retrieve your API key on [your settings page](https://free.testfairy.com/settings/)
+> Upload a new build to [TestFairy](https://saucelabs.com/products/mobile-testing/app-betas).<br>You can retrieve your API key on [your settings page](https://app.testfairy.com/settings/access-key)<br>
 
 
 testfairy ||
@@ -58,8 +58,13 @@ Key | Description | Default
   `auto_update` | Allows an easy upgrade of all users to the current version. To enable set to 'on' | `off`
   `notify` | Send email to testers | `off`
   `options` | Array of options (shake,video_only_wifi,anonymous) | `[]`
-  `custom` | Array of custom options. Contact support@testfairy.com for more information | `''`
+  `custom` | Array of custom options. Contact support for more information | `''`
   `timeout` | Request timeout in seconds | 
+  `tags` | Custom tags that can be used to organize your builds | `[]`
+  `folder_name` | Name of the dashboard folder that contains this app | `''`
+  `landing_page_mode` | Visibility of build landing after upload. Can be 'open' or 'closed' | `open`
+  `upload_to_saucelabs` | Upload file directly to Sauce Labs. It can be 'on' or 'off' | `off`
+  `platform` | Use if upload build is not iOS or Android. Contact support for more information | `''`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

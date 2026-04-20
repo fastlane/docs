@@ -39,7 +39,7 @@ match_nuke(type: "development", api_key: app_store_connect_api_key)
 
 Key | Description | Default
 ----|-------------|--------
-  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution | `development`
+  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution, developer_id_installer | `development`
   `additional_cert_types` | Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer) | 
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
@@ -63,28 +63,37 @@ Key | Description | Default
   `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
   `google_cloud_keys_file` | Path to the gc_keys.json file | 
   `google_cloud_project_id` | ID of the Google Cloud project to use for authentication | 
+  `skip_google_cloud_account_confirmation` | Skips confirming to use the system google account | `false`
   `s3_region` | Name of the S3 region | 
   `s3_access_key` | S3 access key | 
   `s3_secret_access_key` | S3 secret access key | 
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
+  `s3_skip_encryption` | Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html | `false`
+  `gitlab_project` | GitLab Project Path (i.e. 'gitlab-org/gitlab') | 
+  `gitlab_host` | GitLab Host (i.e. 'https://gitlab.com') | `https://gitlab.com`
+  `job_token` | GitLab CI_JOB_TOKEN | 
+  `private_token` | GitLab Access Token | 
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id' | `false`
+  `include_mac_in_profiles` | Include Apple Silicon Mac devices in provisioning profiles for iOS/iPadOS apps | `false`
   `include_all_certificates` | Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type | `false`
+  `certificate_id` | Select certificate by id. Useful if multiple certificates are stored in one place | 
   `force_for_new_certificates` | Renew the provisioning profiles if the certificate count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
   `safe_remove_certs` | Remove certs from repository during nuke without revoking them on the developer portal | `false`
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos, catalyst) | [*](#parameters-legend-dynamic)
   `derive_catalyst_app_identifier` | Enable this if you have the Mac Catalyst capability enabled and your project was created with Xcode 11.3 or earlier. Prepends 'maccatalyst.' to the app identifier for the provisioning profile mapping | `false`
-  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
+  `template_name` | **DEPRECATED!** Removed since May 2025 on App Store Connect API OpenAPI v3.8.0 - Learn more: https://docs.fastlane.tools/actions/match/#managed-capabilities - The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
   `profile_name` | A custom name for the provisioning profile. This will replace the default provisioning profile name if specified | 
   `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
   `skip_certificate_matching` | Set to true if there is no access to Apple developer portal but there are certificates, keys and profiles provided. Only works with match import action | `false`
   `output_path` | Path in which to export certificates, key and profile | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
+  `force_legacy_encryption` | Force encryption to use legacy cbc algorithm for backwards compatibility with older match versions | `false`
   `verbose` | Print out extra information and all commands | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

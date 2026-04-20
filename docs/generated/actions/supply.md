@@ -192,6 +192,12 @@ This can be done using the `--track_promote_to` parameter. The `--track_promote_
 Before performing a new APK upload you may want to check existing track version codes or release names, or you may simply want to provide an informational lane that displays the currently promoted version codes or release name for the production track. You can use the `google_play_track_version_codes` action to retrieve existing version codes for a package and track. You can use the `google_play_track_release_names` action to retrieve existing release names for a package and track.
 For more information, see the `fastlane action google_play_track_version_codes` and `fastlane action google_play_track_release_names` help output.
 
+## Parallel uploads
+
+By default _supply_ will spawn 10 threads to upload the metadata concurrently (_images, screenshots, texts_). If you want to change this, set either `DELIVER_NUMBER_OF_THREADS` or `FL_NUMBER_OF_THREADS` environment variable to any value between 1 and 10.
+
+If you want _supply_ to upload with more than 10 threads in parallel then you need to **additionally** set `FL_MAX_NUMBER_OF_THREADS` environment variable to the max number of parallel upload threads you wish to have (**Warning ⚠️** use this at your own risk!).
+
 ## Migration from AndroidPublisherV2 to AndroidPublisherV3 in _fastlane_ 2.135.0
 
 ### New Options
@@ -213,8 +219,6 @@ For more information, see the `fastlane action google_play_track_version_codes` 
   - Google Play will automatically remove releases that are superseded now
 - `:deactivate_on_promote`
   - Google Play will automatically deactivate a release from its previous track on promote
-
-:
 
 <hr />
 
@@ -246,7 +250,7 @@ Key | Description | Default
 ----|-------------|--------
   `package_name` | The package name of the application to use | [*](#parameters-legend-dynamic)
   `version_name` | Version name (used when uploading new apks/aabs) - defaults to 'versionName' in build.gradle or AndroidManifest.xml | [*](#parameters-legend-dynamic)
-  `version_code` | Version code (used when updating rollout or promoting specific versions) | [*](#parameters-legend-dynamic)
+  `version_code` | The versionCode for which to download the generated APK | [*](#parameters-legend-dynamic)
   `release_status` | Release status (used when uploading new apks/aabs) - valid values are completed, draft, halted, inProgress | [*](#parameters-legend-dynamic)
   `track` | The track of the application to use. The default available tracks are: production, beta, alpha, internal | `production`
   `rollout` | The percentage of the user fraction when uploading to the rollout track (setting to 1 will complete the rollout) | 
@@ -265,6 +269,7 @@ Key | Description | Default
   `skip_upload_changelogs` | Whether to skip uploading changelogs | `false`
   `skip_upload_images` | Whether to skip uploading images, screenshots not included | `false`
   `skip_upload_screenshots` | Whether to skip uploading SCREENSHOTS | `false`
+  `sync_image_upload` | Whether to use sha256 comparison to skip upload of images and screenshots that are already in Play Store | `false`
   `track_promote_to` | The track to promote to. The default available tracks are: production, beta, alpha, internal | 
   `track_promote_release_status` | Promoted track release status (used when promoting a track) - valid values are completed, draft, halted, inProgress | `completed`
   `validate_only` | Only validate changes with Google Play rather than actually publish | `false`

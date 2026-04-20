@@ -21,7 +21,7 @@ Author | @4brunu, @antondomashnev
 
 
 
-## 7 Examples
+## 8 Examples
 
 ```ruby
 git_add
@@ -51,6 +51,10 @@ git_add(path: "./Frameworks/*", shell_escape: false)
 git_add(path: "*.txt", shell_escape: false)
 ```
 
+```ruby
+git_add(path: "./tmp/.keep", force: true)
+```
+
 
 
 
@@ -61,6 +65,7 @@ Key | Description | Default
 ----|-------------|--------
   `path` | The file(s) and path(s) you want to add | 
   `shell_escape` | Shell escapes paths (set to false if using wildcards or manually escaping spaces in :path) | `true`
+  `force` | Allow adding otherwise ignored files | `false`
   `pathspec` | **DEPRECATED!** Use `--path` instead - The pathspec you want to add files from | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

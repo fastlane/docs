@@ -45,7 +45,7 @@ fastlane release
 👻 | Integrates with all major CI systems
 🖥 | Supports iOS, Mac, and Android apps
 🔧 | Extend and customise _fastlane_ to fit your needs, you're not dependent on anyone
-💭 | Never remember any commands any more, just _fastlane_
+💭 | Never remember any commands anymore, just _fastlane_
 🚢 | Deploy from any computer, including a CI server
 
 ## Getting Started

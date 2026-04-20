@@ -10,14 +10,14 @@ For publishing iOS apps, it is recommended to create an App Store Connect API ke
 
 The following **environment variables** need to be added to your workflow for *fastlane* integration. 
 
-- `MATCH_PASSWORD` - the password used to encrypt/decrypt the repository used to store your distrbution certificates and provisioning profiles.
+- `MATCH_PASSWORD` - the password used to encrypt/decrypt the repository used to store your distribution certificates and provisioning profiles.
 - `MATCH_KEYCHAIN` - an arbitrary name to use for the keychain on the Codemagic build server, e.g "fastlane_keychain"
-- `MATCH_SSH_KEY` - an SSH private key used for cloning the Match repository that contains your distrbution certificates and provisioning profiles. The public key should be added to your Github account. See [here](https://docs.codemagic.io/configuration/access-private-git-submodules/) for more information about accessing Git dependencies with SSH keys.
+- `MATCH_SSH_KEY` - an SSH private key used for cloning the Match repository that contains your distribution certificates and provisioning profiles. The public key should be added to your GitHub account. See [here](https://docs.codemagic.io/configuration/access-private-git-submodules/) for more information about accessing Git dependencies with SSH keys.
 - `APP_STORE_CONNECT_PRIVATE_KEY` - the App Store Connect API key. Copy the entire contents of the .p8 file and paste into the environment variable value field.
 - `APP_STORE_CONNECT_KEY_IDENTIFIER` - the key identifier of your App Store Connect API key.
 - `APP_STORE_CONNECT_ISSUER_ID` - the issuer of your App Store Connect API key.
 
-Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. Save all the variables to the same variable group and make sure that the **secure** checkbox is checked to encrypt any senstive values such as API keys or passwords.
+Environment variables can be added in the Codemagic web app using the 'Environment variables' tab. Save all the variables to the same variable group and make sure that the **secure** checkbox is checked to encrypt any sensitive values such as API keys or passwords.
 
 You can then import your variable group into your `codemagic.yaml`. For example, if you named your variable group 'fastlane', the group should be imported as follows:
 
@@ -33,7 +33,7 @@ workflows:
 
 It is recommended to run your *fastlane* lanes using the `codemagic.yaml` configuration file. 
 
-You should install your depenpendencies with `bundle install` and then execute the *fastlane* lane with `bundle exec fastlane <lane_name>` as follows:
+You should install your dependencies with `bundle install` and then execute the *fastlane* lane with `bundle exec fastlane <lane_name>` as follows:
 
 ```yaml
 scripts:

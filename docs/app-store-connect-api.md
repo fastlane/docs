@@ -34,9 +34,17 @@ Below are the statuses of each tool:
 
 ## Creating an App Store Connect API Key
 
-1. Create a new App Store Connect API Key in the [Users page](https://appstoreconnect.apple.com/access/api)
+**Note:** It is highly recommended to create a **Team Key**, as it is required for any provisioning-related API access.
+
+There are two types of API Keys:
+
+- **Team** - Access to all apps, with varying levels of access based on selected roles.
+- **Individual** - Access and roles of the associated user. Individual keys aren’t able to use Provisioning endpoints, access [Sales and Finance](https://developer.apple.com/documentation/appstoreconnectapi/sales-and-finance), or `notaryTool`.
+
+1. Create a new App Store Connect API Key in the [Users and Access](https://appstoreconnect.apple.com/access/users) page
   - For more info, go to the [App Store Connect API Docs](https://developer.apple.com/documentation/appstoreconnectapi/creating_api_keys_for_app_store_connect_api)
-  - Select the "Keys" tab
+  - Open the `Integrations` tab, select `App Store Connect API`, and create a new "Team Key" using the `+` button
+    - Note that if you can't see the `App Store Connect API` tab, this means you don't have permission yet. Please refer to the docs above to know how to get this permission
   - Give your API Key an appropriate role for the task at hand. You can read more about roles in [Permissions in App Store Connect](https://developer.apple.com/support/roles/)
   - Note the Issuer ID as you will need it for the configuration steps below
 2. Download the newly created API Key file (`.p8`)
@@ -92,8 +100,21 @@ end
 Keys and values that can be used in hash in `api_key` parameter in actions (e.g. `upload_to_testflight`) and tools (e.g. `cert`) are described in _fastlane_ API Key JSON file format below.
 The only difference when using hash is that you could use `filepath` instead of `key`.
 
+Below is an example of API key being used with CLI:
+
+```no-highlight
+$ bundle exec fastlane match appstore \
+    --api_key "
+        {
+            \"filepath\": \"/Users/bartek/Downloads/AuthKey_TJP2GMDZCI.p8\",
+            \"key_id\": \"TJP2GMDZCI\",
+            \"issuer_id\": \"57246542-96fe-1a63-e053-0824d011072a\"
+        }
+    "
+```
+
 Please note that `key_content` and `key_filepath` described in `app_store_connect_api_key` action are invalid both in hash and in JSON file.
-View [Token code on Github](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
+View [Token code on GitHub](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
 
 ### Using _fastlane_ API Key JSON file
 

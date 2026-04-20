@@ -29,7 +29,7 @@ After _screengrab_ completes, it will show you summary of the screenshots you ca
 
 _screengrab_ uses the capabilities of Android's built-in [Instrumented tests](https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests.html) combined with [Espresso](https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso) to drive interactions with your app. 
 
-To start writing UI Tests with Espresso, checkout the [Create UI tests with Espresso Test Recorder](https://www.youtube.com/watch?v=JRkDVvB106k) video which talks about the Espresso Recording feature for writing UI tests. To learn more about UI testing in Android, refer to the [Testing UI for a Single App](http://developer.android.com/training/testing/ui-testing/espresso-testing.html) guide.
+To start writing UI Tests with Espresso, checkout the [Create UI tests with Espresso Test Recorder](https://www.youtube.com/watch?v=JRkDVvB106k) video which talks about the Espresso Recording feature for writing UI tests. To learn more about UI testing in Android, refer to the [Testing UI for a Single App](https://developer.android.com/training/testing/espresso) guide.
 
 ### Installing _screengrab_
 
@@ -92,7 +92,7 @@ public class ExampleInstrumentedTest {
 }
 
 ```
-There is an [example project](https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester) showing how to use use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.
+There is an [example project](https://github.com/fastlane/fastlane/tree/master/screengrab/example/src/androidTest/java/tools/fastlane/localetester) showing how to use JUnit 3 or 4 and Espresso with the screengrab Java library to capture screenshots during a UI test run.
 
 Using JUnit 4 is preferable because of its ability to perform actions before and after the entire test class is run. This means you will change the device's locale far fewer times when compared with JUnit 3 running those commands before and after each test method.
 
