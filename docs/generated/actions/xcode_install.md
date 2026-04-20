@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Make sure a certain version of Xcode is installed
 
-
+> The xcode-install gem, which this action depends on, has been sunset. Please migrate to [xcodes](https://docs.fastlane.tools/actions/xcodes). You can find a migration guide here: [xcpretty/xcode-install/MIGRATION.md](https://github.com/xcpretty/xcode-install/blob/master/MIGRATION.md)
 
 
 > Makes sure a specific version of Xcode is installed. If that's not the case, it will automatically be downloaded by the [xcode_install](https://github.com/neonichu/xcode-install) gem. This will make sure to use the correct Xcode for later actions.

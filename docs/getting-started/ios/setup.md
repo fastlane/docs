@@ -40,7 +40,7 @@ The most interesting file is `fastlane/Fastfile`, which contains all the informa
 
 ### What's next?
 
-_fastlane_ created all the required files for you. Now you can go ahead and customise _fastlane_ to generate screenshots, or automatically distribute new builds, and much, much more. Here're some examples:
+_fastlane_ created all the required files for you. Now you can go ahead and customise _fastlane_ to generate screenshots, or automatically distribute new builds, and much, much more. Here are some examples:
 
 - [Generate localized iOS screenshots for the App Store](screenshots.md)
 - [Automatic iOS Beta deployment](beta-deployment.md)

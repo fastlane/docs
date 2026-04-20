@@ -11,7 +11,7 @@ Change the xcode-path to use. Useful for beta versions of Xcode
 
 
 
-> Select and build with the Xcode installed at the provided path.<br>Use the `xcversion` action if you want to select an Xcode:<br>- Based on a version specifier or<br>- You don't have known, stable paths, as may happen in a CI environment.
+> Select and build with the Xcode installed at the provided path.<br>Use the `xcodes` action if you want to select an Xcode:<br>- Based on a version specifier or<br>- You don't have known, stable paths, as may happen in a CI environment.
 
 
 xcode_select ||

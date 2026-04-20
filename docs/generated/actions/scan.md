@@ -113,7 +113,7 @@ That's all you need to run your tests. If you want more control, here are some a
 fastlane scan --workspace "Example.xcworkspace" --scheme "AppName" --device "iPhone 6" --clean
 ```
 
-If you need to use a different Xcode install, use `xcode-select` or define `DEVELOPER_DIR`:
+If you need to use a different Xcode install, use `[xcodes](https://docs.fastlane.tools/actions/xcodes)` or define `DEVELOPER_DIR`:
 
 ```no-highlight
 DEVELOPER_DIR="/Applications/Xcode6.2.app" scan
@@ -237,8 +237,8 @@ Key | Description | Default
   `prelaunch_simulator` | Enabling this option will launch the first simulator prior to calling any xcodebuild command | 
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
-  `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
-  `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `only_testing` | Array of test identifiers to run. Expected format: TestTarget[/TestSuite[/TestCase]] | 
+  `skip_testing` | Array of test identifiers to skip. Expected format: TestTarget[/TestSuite[/TestCase]] | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_test_configurations` | Array of strings matching test plan configurations to run | 
   `skip_test_configurations` | Array of strings matching test plan configurations to skip | 
@@ -265,6 +265,7 @@ Key | Description | Default
   `derived_data_path` | The directory where build products and other derived data will go | 
   `should_zip_build_products` | Should zip the derived data build products and place in output path? | `false`
   `output_xctestrun` | Should provide additional copy of .xctestrun file (settings.xctestrun) and place in output path? | `false`
+  `result_bundle_path` | Custom path for the result bundle, overrides result_bundle | 
   `result_bundle` | Should an Xcode result bundle be generated in the output directory | `false`
   `use_clang_report_name` | Generate the json compilation database with clang naming convention (compile_commands.json) | `false`
   `parallel_testing` | Optionally override the per-target setting in the scheme for running tests in parallel. Equivalent to -parallel-testing-enabled | 
@@ -290,15 +291,18 @@ Key | Description | Default
   `slack_only_on_failure` | Only post on Slack if the tests fail | `false`
   `slack_default_payloads` | Specifies default payloads to include in Slack messages. For more info visit https://docs.fastlane.tools/actions/slack | 
   `destination` | Use only if you're a pro, use the other options instead | 
+  `run_rosetta_simulator` | Adds arch=x86_64 to the xcodebuild 'destination' argument to run simulator in a Rosetta mode | `false`
   `catalyst_platform` | Platform to build when using a Catalyst enabled app. Valid values are: ios, macos | 
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
   `number_of_retries` | The number of times a test can fail | `0`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
+  `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -225,10 +225,12 @@ fastlane match development
 
 <img src="/img/actions/match_appstore_small.gif" width="550" />
 
-This will create a new certificate and provisioning profile (if required) and store them in your selected storage.  
+This will create a new certificate and provisioning profile (if required) and store them in your selected storage.
 If you previously ran _match_ with the configured storage it will automatically install the existing profiles from your storage.
 
-The provisioning profiles are installed in `~/Library/MobileDevice/Provisioning Profiles` while the certificates and private keys are installed in your Keychain.
+The provisioning profiles are installed in `~/Library/Developer/Xcode/UserData/Provisioning Profiles` (`~/Library/MobileDevice/Provisioning Profiles` for Xcode versions prior to 16.0) while the certificates and private keys are installed in your Keychain.
+
+> fastlane relies on the system's default Xcode version to determine the current version. The path where provisioning profiles are stored changed in Xcode 16. If you use the `xcode_select` or `xcodes` actions and you have Xcode 15 and 16 installed in your system, please make sure to execute them before invoking the `sync_code_signing` action.  
 
 To get a more detailed output of what _match_ is doing use
 
@@ -413,20 +415,22 @@ By using the `force_for_new_devices` parameter, _match_ will check if the (enabl
 
 _**Important:** The `force_for_new_devices` parameter is ignored for App Store provisioning profiles since they don't contain any device information._
 
-If you're not using _fastlane_, you can also use the `force_for_new_devices` option from the command line:
+If you're not using `Fastfile`, you can also use the `force_for_new_devices` option from the command line:
 
 ```no-highlight
 fastlane match adhoc --force_for_new_devices
 ```
 
-##### Templates (aka: custom entitlements)
+##### Managed capabilities
 
-Match can generate profiles that contain custom entitlements by passing in the entitlement's name with the `template_name` parameter.
+> [!IMPORTANT]
+> This feature has been deprecated since May 2025, until Apple provides a new solution. We will update this documentation once we have more information on how to handle managed capabilities in the future.
 
-```
-match(type: "development",
-      template_name: "Apple Pay Pass Suppression Development")
-```
+Managed capabilities — formerly known as "additional entitlements" or "custom entitlements", enabled via "templates" — are additional capabilities that require Apple's review and approval before they can be distributed.
+
+These capabilities used to be enabled by passing a `template_name` parameter to the _match_ action, which would then generate a provisioning profile with the entitlements specified by the given template. However, this feature was never officially supported by Apple's API (undocumented), and they eventually removed it in May 2025 ([see issue #29498](https://github.com/fastlane/fastlane/issues/29498)). Apple still hasn't provided a replacement for this functionality.
+
+As a result, the `template_name` parameter was deprecated in the _match_ action, and it will not generate provisioning profiles with custom entitlements.
 
 ### Setup Xcode project
 
@@ -522,11 +526,17 @@ Please be careful when using this option and ensure the certificates and profile
 
 ### Manual Decrypt
 
-If you want to manually decrypt a file you can.
+If you want to manually decrypt or encrypt a file, you can use the companion script `match_file`:
 
 ```no-highlight
-openssl aes-256-cbc -k "<password>" -in "<fileYouWantToDecryptPath>" -out "<decryptedFilePath>" -a -d
+match_file encrypt "<fileYouWantToEncryptPath>" ["<encryptedFilePath>"]
+
+match_file decrypt "<fileYouWantToDecryptPath>" ["<decryptedFilePath>"]
 ```
+
+The password will be asked interactively.
+
+_**Note:** You may need to swap double quotes `"` for single quotes `'` if your match password contains an exclamation mark `!`._
 
 #### Export Distribution Certificate and Private Key as Single .p12 File
 
@@ -571,7 +581,7 @@ What's the worst that could happen for each of the profile types?
 
 #### App Store Profiles
 
-An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days (checkout [appreviewtimes.com](http://appreviewtimes.com) for up-to-date expectations). Attackers could only submit an app for review, if they also got access to your App Store Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.
+An App Store profile can't be used for anything as long as it's not re-signed by Apple. The only way to get an app resigned is to submit an app for review which could take anywhere from 24 hours to a few days. Attackers could only submit an app for review, if they also got access to your App Store Connect credentials (which are not stored in git, but in your local keychain). Additionally you get an email notification every time a build gets uploaded to cancel the submission even before your app gets into the review stage.
 
 #### Development and Ad Hoc Profiles
 
@@ -627,7 +637,7 @@ match   # alias for "sync_code_signing"
 
 Key | Description | Default
 ----|-------------|--------
-  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution | `development`
+  `type` | Define the profile type, can be appstore, adhoc, development, enterprise, developer_id, mac_installer_distribution, developer_id_installer | `development`
   `additional_cert_types` | Create additional cert types needed for macOS installers (valid values: mac_installer_distribution, developer_id_installer) | 
   `readonly` | Only fetch existing certificates and profiles, don't generate new ones | `false`
   `generate_apple_certs` | Create a certificate type for Xcode 11 and later (Apple Development or Apple Distribution) | [*](#parameters-legend-dynamic)
@@ -657,24 +667,31 @@ Key | Description | Default
   `s3_secret_access_key` | S3 secret access key | 
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
+  `s3_skip_encryption` | Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html | `false`
   `gitlab_project` | GitLab Project Path (i.e. 'gitlab-org/gitlab') | 
+  `gitlab_host` | GitLab Host (i.e. 'https://gitlab.com') | `https://gitlab.com`
+  `job_token` | GitLab CI_JOB_TOKEN | 
+  `private_token` | GitLab Access Token | 
   `keychain_name` | Keychain the items should be imported to | `login.keychain`
   `keychain_password` | This might be required the first time you access certificates on a new mac. For the login/default keychain this is your macOS account password | 
   `force` | Renew the provisioning profiles every time you run match | `false`
   `force_for_new_devices` | Renew the provisioning profiles if the device count on the developer portal has changed. Ignored for profile types 'appstore' and 'developer_id' | `false`
+  `include_mac_in_profiles` | Include Apple Silicon Mac devices in provisioning profiles for iOS/iPadOS apps | `false`
   `include_all_certificates` | Include all matching certificates in the provisioning profile. Works only for the 'development' provisioning profile type | `false`
+  `certificate_id` | Select certificate by id. Useful if multiple certificates are stored in one place | 
   `force_for_new_certificates` | Renew the provisioning profiles if the certificate count on the developer portal has changed. Works only for the 'development' provisioning profile type. Requires 'include_all_certificates' option to be 'true' | `false`
   `skip_confirmation` | Disables confirmation prompts during nuke, answering them with yes | `false`
   `safe_remove_certs` | Remove certs from repository during nuke without revoking them on the developer portal | `false`
   `skip_docs` | Skip generation of a README.md for the created git repository | `false`
   `platform` | Set the provisioning profile's platform to work with (i.e. ios, tvos, macos, catalyst) | [*](#parameters-legend-dynamic)
   `derive_catalyst_app_identifier` | Enable this if you have the Mac Catalyst capability enabled and your project was created with Xcode 11.3 or earlier. Prepends 'maccatalyst.' to the app identifier for the provisioning profile mapping | `false`
-  `template_name` | The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
+  `template_name` | **DEPRECATED!** Removed since May 2025 on App Store Connect API OpenAPI v3.8.0 - Learn more: https://docs.fastlane.tools/actions/match/#managed-capabilities - The name of provisioning profile template. If the developer account has provisioning profile templates (aka: custom entitlements), the template name can be found by inspecting the Entitlements drop-down while creating/editing a provisioning profile (e.g. "Apple Pay Pass Suppression Development") | 
   `profile_name` | A custom name for the provisioning profile. This will replace the default provisioning profile name if specified | 
   `fail_on_name_taken` | Should the command fail if it was about to create a duplicate of an existing provisioning profile. It can happen due to issues on Apple Developer Portal, when profile to be recreated was not properly deleted first | `false`
   `skip_certificate_matching` | Set to true if there is no access to Apple developer portal but there are certificates, keys and profiles provided. Only works with match import action | `false`
   `output_path` | Path in which to export certificates, key and profile | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
+  `force_legacy_encryption` | Force encryption to use legacy cbc algorithm for backwards compatibility with older match versions | `false`
   `verbose` | Print out extra information and all commands | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

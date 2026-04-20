@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Select an Xcode to use by version specifier
 
-
+> The xcode-install gem, which this action depends on, has been sunset. Please migrate to [xcodes](https://docs.fastlane.tools/actions/xcodes). You can find a migration guide here: [xcpretty/xcode-install/MIGRATION.md](https://github.com/xcpretty/xcode-install/blob/master/MIGRATION.md)
 
 
 > Finds and selects a version of an installed Xcode that best matches the provided [`Gem::Version` requirement specifier](http://www.rubydoc.info/github/rubygems/rubygems/Gem/Version)<br>You can either manually provide a specific version using `version:` or you make use of the `.xcode-version` file.
@@ -21,7 +21,7 @@ Author | @oysta, @rogerluan
 
 
 
-## 2 Examples
+## 3 Examples
 
 ```ruby
 xcversion(version: "8.1") # Selects Xcode 8.1.0
@@ -29,6 +29,10 @@ xcversion(version: "8.1") # Selects Xcode 8.1.0
 
 ```ruby
 xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8.1.x set
+```
+
+```ruby
+xcversion # When missing, the version value defaults to the value specified in the .xcode-version file
 ```
 
 
@@ -39,7 +43,7 @@ xcversion(version: "~> 8.1.0") # Selects the latest installed version from the 8
 
 Key | Description | Default
 ----|-------------|--------
-  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0') | [*](#parameters-legend-dynamic)
+  `version` | The version of Xcode to select specified as a Gem::Version requirement string (e.g. '~> 7.1.0'). Defaults to the value specified in the .xcode-version file  | [*](#parameters-legend-dynamic)
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

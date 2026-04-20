@@ -103,7 +103,7 @@ irb(main):005:0> branch = 'master'
 Now create an instance of `Storage` and `Encryption`. The `download` method on `Storage` will clone the repo and the `decrypt_files` method on `Encryption` will decrypt the repo for you. Assign the return values to `storage` and `encrypt`, which we'll need later when we re-encrypt:
 
 ```ruby
-irb(main):006:0> storage = Match::Storage.for_mode("git", { git_url: git_url, shallow_clone: shallow_clone, git_branch: branch, clone_branch_directly: false})
+irb(main):006:0> storage = Match::Storage.from_params({storage_mode: "git", git_url: git_url, shallow_clone: shallow_clone, git_branch: branch, clone_branch_directly: false})
 irb(main):007:0> storage.download
 irb(main):008:0> encryption = Match::Encryption.for_storage_mode("git", { git_url: git_url, working_directory: storage.working_directory})
 irb(main):009:0> encryption.decrypt_files
