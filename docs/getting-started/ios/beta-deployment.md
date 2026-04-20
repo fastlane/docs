@@ -150,7 +150,7 @@ end
 
 To get your API token, open [API Tokens in Account Settings](https://rink.hockeyapp.net/manage/auth_tokens). From there, you can find your existing API token, or create a new one. 
 
-To get a list of all available options see the [`hockey` action docs](https://docs.fastlane.tools/actions/hockey/), or run 
+To get a list of all available options see the [`hockey` action docs](/actions/hockey/), or run 
 
 ```no-highlight
 fastlane action hockey
@@ -186,7 +186,7 @@ fastlane action testfairy
 More information about the service on [TestFairy.com](https://testfairy.com).
 </details>
 
-More information about additional supported beta testing services can be found in the [list of "Beta" actions](https://docs.fastlane.tools/actions/#beta)
+More information about additional supported beta testing services can be found in the [list of "Beta" actions](/actions/#beta)
 
 # Release Notes
 
@@ -384,7 +384,7 @@ fastlane action [action_name]
 
 #### Use the number of commits
 
-This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via [`number_of_commits`](https://docs.fastlane.tools/actions/number_of_commits/)) as the build number. This will only work if you always run the build on the same branch.
+This isn't recommended, however some teams prefer this approach. You can use the number of commits of the current branch (via [`number_of_commits`](/actions/number_of_commits/)) as the build number. This will only work if you always run the build on the same branch.
 
 ```ruby
 lane :beta do
