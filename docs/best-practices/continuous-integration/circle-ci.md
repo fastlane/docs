@@ -36,7 +36,7 @@ The `setup_circle_ci` _fastlane_ action will perform the following actions:
 
 * Create a new temporary keychain for use with
   [_match_](https://fastlane.tools/match) (see the [CircleCI code signing
-  doc](https://circleci.com/docs/2.0/ios-codesigning/) for more details).
+  doc](https://circleci.com/docs/guides/execution-managed/ios-codesigning/) for more details).
 * Switch _match_ to readonly mode to make sure CI does not create new
   code signing certificates or provisioning profiles.
 * Set up log and test result paths to be easily collectible.
@@ -50,19 +50,21 @@ Next, create a `.circleci` directory in your project and add a
 version: 2.1
 
 orbs:
-  ruby: circleci/ruby@1.2.0
+  macos: circleci/macos@2
+  ruby: circleci/ruby@2.5.4
 
 jobs:
   build:
     macos:
-      xcode: "13.1.0"
-    working_directory: /Users/distiller/project
+      xcode: "26.2.0"
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
+      - macos/switch-ruby:
+          version: 3.4.7
       - ruby/install-deps
       - run:
           name: fastlane
