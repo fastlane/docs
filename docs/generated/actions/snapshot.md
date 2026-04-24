@@ -463,7 +463,8 @@ Key | Description | Default
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
   `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
-  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file. This translates in the option `-disableAutomaticPackageResolution` being passed to xcodebuild | `false`
+  `skip_package_repository_fetches` | Skips updating package dependencies from their remote. This translates in the option `-skipPackageUpdates` being passed to xcodebuild | `false`
   `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 

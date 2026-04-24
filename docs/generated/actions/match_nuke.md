@@ -67,6 +67,7 @@ Key | Description | Default
   `s3_region` | Name of the S3 region | 
   `s3_access_key` | S3 access key | 
   `s3_secret_access_key` | S3 secret access key | 
+  `s3_session_token` | S3 session token | 
   `s3_bucket` | Name of the S3 bucket | 
   `s3_object_prefix` | Prefix to be used on all objects uploaded to S3 | 
   `s3_skip_encryption` | Skip encryption of all objects uploaded to S3. WARNING: only enable this on S3 buckets with sufficiently restricted permissions and server-side encryption enabled. See https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html | `false`

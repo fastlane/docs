@@ -313,6 +313,7 @@ Key | Description | Default
   `clean` | Should the project be cleaned before building it? | `false`
   `output_directory` | The directory in which the ipa file should be stored in | `.`
   `output_name` | The name of the resulting ipa file | 
+  `app_name` | App name to use in logfile name | 
   `configuration` | The configuration to use when building the app. Defaults to 'Release' | [*](#parameters-legend-dynamic)
   `silent` | Hide all information that's not necessary while building | `false`
   `codesigning_identity` | The name of the code signing identity to use. It has to match the name exactly. e.g. 'iPhone Distribution: SunApps GmbH' | 
@@ -353,7 +354,8 @@ Key | Description | Default
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
   `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
-  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file. This translates in the option `-disableAutomaticPackageResolution` being passed to xcodebuild | `false`
+  `skip_package_repository_fetches` | Skips updating package dependencies from their remote. This translates in the option `-skipPackageUpdates` being passed to xcodebuild | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
   `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
   `generate_appstore_info` | Generate AppStoreInfo.plist using swinfo for app-store exports | `false`
