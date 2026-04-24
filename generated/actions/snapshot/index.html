@@ -842,7 +842,12 @@ If you're skipping the animations, this wait time is unnecessary and can be skip
 </tr>
 <tr>
 <td><code>disable_package_automatic_updates</code></td>
-<td>Prevents packages from automatically being resolved to versions other than those recorded in the <code>Package.resolved</code> file</td>
+<td>Prevents packages from automatically being resolved to versions other than those recorded in the <code>Package.resolved</code> file. This translates in the option <code>-disableAutomaticPackageResolution</code> being passed to xcodebuild</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>skip_package_repository_fetches</code></td>
+<td>Skips updating package dependencies from their remote. This translates in the option <code>-skipPackageUpdates</code> being passed to xcodebuild</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -954,7 +959,7 @@ If you're skipping the animations, this wait time is unnecessary and can be skip
     </p>
   </div>
 
-  Documentation built 2026-04-20 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-04-24 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

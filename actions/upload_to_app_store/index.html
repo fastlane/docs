@@ -340,7 +340,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   <img src="/img/actions/deliver.png" width="250">
 </p>
 
-<p><em>deliver</em> uploads screenshots, metadata and binaries to App Store Connect. Use <em>deliver</em> to submit your app for App Store review.</p>
+<p><em>deliver</em> uploads screenshots, App Preview videos, metadata and binaries to App Store Connect. Use <em>deliver</em> to submit your app for App Store review.</p>
 <hr />
 <p align="center">
     <a href="#features">Features</a> &bull;
@@ -354,7 +354,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="features">Features</h1>
 <ul>
-<li>Upload hundreds of localized screenshots completely automatically</li>
+<li>Upload hundreds of localized screenshots and App Preview videos completely automatically</li>
 <li>Upload a new ipa/pkg file to App Store Connect without Xcode from any Mac</li>
 <li>Maintain your app metadata locally and push changes back to App Store Connect</li>
 <li>Easily implement a real Continuous Deployment process using <a href="https://fastlane.tools"><em>fastlane</em></a></li>
@@ -374,10 +374,10 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </ul>
 <p>From now on, you can run <code>fastlane deliver</code> to deploy a new update, or just upload new app metadata and screenshots.</p>
 <h1 id="usage">Usage</h1>
-<p>Check out your local <code>./fastlane/metadata</code> and <code>./fastlane/screenshots</code> folders (if you don't use <a href="https://fastlane.tools"><em>fastlane</em></a> it's <code>./metadata</code> instead)</p>
+<p>Check out your local <code>./fastlane/metadata</code>, <code>./fastlane/screenshots</code>, and <code>./fastlane/app-previews</code> folders (if you don't use <a href="https://fastlane.tools"><em>fastlane</em></a> it's <code>./metadata</code> instead)</p>
 <p><img alt="/img/actions/deliver_metadata.png" src="/img/actions/deliver_metadata.png" /></p>
 <p>You'll see your metadata from App Store Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to App Store Connect.</p>
-<p>Run <code>fastlane deliver</code> to upload the app metadata from your local machine</p>
+<p>Run <code>fastlane deliver</code> to upload the app metadata, screenshots, and App Preview videos from your local machine</p>
 <pre><code class="language-no-highlight">fastlane deliver
 </code></pre>
 <p>Provide the path to an <code>ipa</code> file to upload and submit your app for review:</p>
@@ -447,6 +447,13 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h5 id="screenshots_path">screenshots_path</h5>
 <p>A path to a folder containing subfolders for each language. This will automatically detect the device type based on the image resolution. Also includes  Watch Support.</p>
 <p><img alt="/img/actions/deliver_screenshots.png" src="/img/actions/deliver_screenshots.png" /></p>
+<h5 id="app_previews_path">app_previews_path</h5>
+<p>Path to the App Preview videos you want to upload. The folder must be structured with language-specific subfolders, similar to screenshots:</p>
+<p><img alt="/img/actions/deliver_app-previews.png" src="/img/actions/deliver_app-previews.png" /></p>
+<p>Up to 3 videos per locale and per device type are uploaded, then ordered by filename. Device type is inferred from the filename (case insensitive):</p>
+<pre><code class="language-no-highlight">IPHONE_40, IPHONE_47, IPHONE_55, IPHONE_58, IPHONE_61, IPHONE_65, IPHONE_67, IPAD_97, IPAD_105, IPAD_PRO_129, IPAD_PRO_3GEN_11, IPAD_PRO_3GEN_129, DESKTOP
+</code></pre>
+<p>A preview poster frame is set using <code>preview_frame_time_code</code>.</p>
 <h5 id="metadata_path">metadata_path</h5>
 <p>Path to the metadata you want to use. The folder has to be structured like this</p>
 <p><img alt="/img/actions/deliver_metadata.png" src="/img/actions/deliver_metadata.png" /></p>
@@ -1074,6 +1081,8 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <p>Change syntax highlighting to <em>Ruby</em>.</p>
 <h2 id="provider-short-name">Provider Short Name</h2>
 <p>If you are on multiple App Store Connect teams, <em>deliver</em> needs a provider short name to know where to upload your binary. <em>deliver</em> will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the <code>itc_provider</code> option.</p>
+<h2 id="provider-public-id">Provider Public ID</h2>
+<p>The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication.</p>
 <hr />
 
 <table>
@@ -1178,6 +1187,21 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><code>screenshots_path</code></td>
 <td>Path to the folder containing the screenshots</td>
 <td></td>
+</tr>
+<tr>
+<td><code>app_previews_path</code></td>
+<td>Path to the folder containing localized App Preview videos</td>
+<td></td>
+</tr>
+<tr>
+<td><code>preview_frame_time_code</code></td>
+<td>Time code for the App Preview still frame written as hour:minute:second:centisecond (e.g. 00:00:00:01)</td>
+<td><code>00:00:05:00</code></td>
+</tr>
+<tr>
+<td><code>overwrite_preview_videos</code></td>
+<td>Clear all previously uploaded App Preview videos before uploading the new ones</td>
+<td><code>false</code></td>
 </tr>
 <tr>
 <td><code>skip_binary_upload</code></td>
@@ -1297,6 +1321,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>itc_provider</code></td>
 <td>The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
+<td><a href="#parameters-legend-dynamic">*</a></td>
+</tr>
+<tr>
+<td><code>provider_public_id</code></td>
+<td>The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
@@ -1489,7 +1518,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
     </p>
   </div>
 
-  Documentation built 2026-04-20 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-04-24 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

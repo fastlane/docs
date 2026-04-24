@@ -353,7 +353,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples">3 Examples</h2>
+<h2 id="4-examples">4 Examples</h2>
 <pre><code class="language-ruby">app_store_connect_api_key(
   key_id: &quot;D83848D23&quot;,
   issuer_id: &quot;227b0bbf-ada8-458c-9d62-3d8022b7d07f&quot;,
@@ -374,6 +374,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   key_content: &quot;-----BEGIN EC PRIVATE KEY-----\nfewfawefawfe\n-----END EC PRIVATE KEY-----&quot;
 )
 </code></pre>
+<pre><code class="language-ruby">app_store_connect_api_key(
+  key_id: &quot;D83848D23&quot;, # no issuer_id if the key is individual
+  key_content: &quot;-----BEGIN EC PRIVATE KEY-----\nfewfawefawfe\n-----END EC PRIVATE KEY-----&quot;
+)
+</code></pre>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -391,7 +396,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>issuer_id</code></td>
-<td>The issuer ID. It can be nil if the key is individual API key</td>
+<td>The issuer ID. It should be nil if the key is individual API key</td>
 <td></td>
 </tr>
 <tr>
@@ -488,7 +493,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-04-20 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-04-24 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

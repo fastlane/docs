@@ -353,7 +353,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples">3 Examples</h2>
+<h2 id="4-examples">4 Examples</h2>
 <pre><code class="language-ruby">import_certificate(certificate_path: &quot;certs/AppleWWDRCA6.cer&quot;)
 </code></pre>
 <pre><code class="language-ruby">import_certificate(
@@ -363,6 +363,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </code></pre>
 <pre><code class="language-ruby">import_certificate(
   certificate_path: &quot;certs/development.cer&quot;
+)
+</code></pre>
+<pre><code class="language-ruby">import_certificate(
+  certificate_path: &quot;certs/dist.p12&quot;,
+  certificate_password: ENV[&quot;CERTIFICATE_PASSWORD&quot;] || &quot;default&quot;,
+  certificate_format: &quot;pkcs12&quot;
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -384,6 +390,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>certificate_password</code></td>
 <td>Certificate password</td>
 <td><code>''</code></td>
+</tr>
+<tr>
+<td><code>certificate_format</code></td>
+<td>Format of the certificate. Check the '-f' switch from 'security import --help' command</td>
+<td></td>
 </tr>
 <tr>
 <td><code>keychain_name</code></td>
@@ -450,7 +461,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-04-20 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-04-24 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
