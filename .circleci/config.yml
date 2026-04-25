@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@2.5.4
-  python: circleci/python@3.3.0
+  python: circleci/python@4.0.0
 
 jobs:
   "Test":
