@@ -1,0 +1,25 @@
+[project]
+name = "docs.fastlane.tools"
+version = "0.0.1"
+requires-python = ">=3.8.13"
+dependencies = [
+    "markdown-include",
+    "mdx-truly-sane-lists",
+    "mkdocs",
+    "mkdocs-bootstrap",
+    "mkdocs-bootswatch",
+    "mkdocs-simple-hooks",
+    "pymdown-extensions",
+    "importlib-metadata",
+    "typing-extensions",
+]
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.python.org/simple"

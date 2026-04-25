@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@2.5.4
-  python: circleci/python@3.3.0
+  python: circleci/python@4.0.0
 
 jobs:
   "Test":
@@ -11,9 +11,9 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          pkg-manager: pipenv
+          pkg-manager: uv
       - ruby/install-deps
-      - run: pipenv run bundle exec fastlane test
+      - run: uv run bundle exec fastlane test
       - run: bundle exec rubocop
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
@@ -23,9 +23,9 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          pkg-manager: pipenv
+          pkg-manager: uv
       - ruby/install-deps
-      - run: pipenv run ./scripts/ci/deploy.sh
+      - run: uv run ./scripts/ci/deploy.sh
 
 workflows:
   version: 2

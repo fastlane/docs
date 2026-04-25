@@ -1,4 +1,4 @@
 [build]
-command = "mkdocs build"
+command = "curl -LsSf https://astral.sh/uv/install.sh | sh; uv sync; uv run mkdocs build"
 publish = "site/"
 environment = { PYTHON_VERSION = "3.8.13" }

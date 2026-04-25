@@ -5,7 +5,9 @@ site/
 .keys
 *.swp
 vendor/bundle
+.venv
 
 # these files are generated during documentation build
 docs/actions.md
+docs/actions
 docs/plugins/available-plugins.md
