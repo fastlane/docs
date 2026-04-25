@@ -11,9 +11,9 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          pkg-manager: pipenv
+          pkg-manager: uv
       - ruby/install-deps
-      - run: pipenv run bundle exec fastlane test
+      - run: uv run bundle exec fastlane test
       - run: bundle exec rubocop
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
@@ -23,9 +23,9 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-          pkg-manager: pipenv
+          pkg-manager: uv
       - ruby/install-deps
-      - run: pipenv run ./scripts/ci/deploy.sh
+      - run: uv run ./scripts/ci/deploy.sh
 
 workflows:
   version: 2
