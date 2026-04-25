@@ -19,7 +19,6 @@ dev = []
 
 [tool.uv]
 package = false
-default-groups = "all"
 
 [[tool.uv.index]]
 name = "pypi"
