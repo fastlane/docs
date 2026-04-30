@@ -4,7 +4,8 @@ opt_out_usage
 lane :test do |options|
   Dir.chdir("..") do
     if options[:skip_building]
-      sh("python hooks.py")
+      python = system("which python3 > /dev/null 2>&1") ? "python3" : "python"
+      sh("#{python} hooks.py")
     else
       build_site
     end
