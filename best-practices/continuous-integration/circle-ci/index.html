@@ -361,7 +361,7 @@ end
 <p>The <code>setup_circle_ci</code> <em>fastlane</em> action will perform the following actions:</p>
 <ul>
 <li>Create a new temporary keychain for use with
-  <a href="https://fastlane.tools/match"><em>match</em></a> (see the <a href="https://circleci.com/docs/2.0/ios-codesigning/">CircleCI code signing
+  <a href="https://fastlane.tools/match"><em>match</em></a> (see the <a href="https://circleci.com/docs/guides/execution-managed/ios-codesigning/">CircleCI code signing
   doc</a> for more details).</li>
 <li>Switch <em>match</em> to readonly mode to make sure CI does not create new
   code signing certificates or provisioning profiles.</li>
@@ -374,19 +374,21 @@ end
 version: 2.1
 
 orbs:
-  ruby: circleci/ruby@1.2.0
+  macos: circleci/macos@2
+  ruby: circleci/ruby@2.5.4
 
 jobs:
   build:
     macos:
-      xcode: &quot;13.1.0&quot;
-    working_directory: /Users/distiller/project
+      xcode: &quot;26.2.0&quot;
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
+      - macos/switch-ruby:
+          version: 3.4.7
       - ruby/install-deps
       - run:
           name: fastlane
