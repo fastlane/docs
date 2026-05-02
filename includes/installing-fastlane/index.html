@@ -329,9 +329,12 @@
 <h4 id="managed-ruby-environment-bundler-macoslinuxwindows">Managed Ruby environment + Bundler (macOS/Linux/Windows)</h4>
 <p><strong>Ruby</strong></p>
 <p>If you use macOS, system Ruby is not recommended. <a href="https://www.ruby-lang.org/en/documentation/installation/#managers">There are a variety of ways to install Ruby without having to modify your system environment</a>. For macOS and Linux, <em>rbenv</em> is one of the most popular ways to manage your Ruby environment.</p>
-<p><em>fastlane</em> supports Ruby versions 2.5 or newer. Verify which Ruby version you're using:</p>
+<p><em>fastlane</em> supports Ruby versions 2.7 or newer, but prefers Ruby 3.3 or greater. Verify which Ruby version you're using:</p>
 <pre><code class="language-sh">$ ruby --version
 ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]
+</code></pre>
+<p>Running a version of Ruby that is planned for removal will emit a warning when you run <em>fastlane</em>. This is purely information to help you prepare for the future versions.</p>
+<pre><code class="language-sh">WARNING: Support for your Ruby version (3.1.2) is going away. fastlane will soon require Ruby 3.3.0 or newer.
 </code></pre>
 <p><strong>Bundler</strong></p>
 <p>It is recommended that you use <em>Bundler</em> and <code>Gemfile</code> to define your dependency on <em>fastlane</em>. This will clearly define the <em>fastlane</em> version to be used and its dependencies, and will also speed up <em>fastlane</em> execution.</p>
@@ -376,7 +379,7 @@ See <a href="https://formulae.brew.sh/formula/fastlane">this page</a> for detail
     </p>
   </div>
 
-  Documentation built 2026-04-30 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-05-02 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
