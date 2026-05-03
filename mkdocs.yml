@@ -31,6 +31,7 @@ extra_css:
 - "./css/breadcrumbs.css"
 - "./css/fabric.css"
 - "./css/sidenav.css"
+- "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
 nav:
 - Home: index.md
 - Getting Started:
