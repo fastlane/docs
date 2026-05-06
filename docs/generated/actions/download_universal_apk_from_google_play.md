@@ -30,8 +30,8 @@ Key | Description | Default
 ----|-------------|--------
   `package_name` | The package name of the application to use | [*](#parameters-legend-dynamic)
   `version_code` | The versionCode for which to download the generated APK | [*](#parameters-legend-dynamic)
-  `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
-  `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key` | The path to a Google credentials JSON file (Application Default, Workload Identity, or Service Account), used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key_data` | The raw content of a Google credentials JSON file (Application Default, Workload Identity, or Service Account), used to authenticate with Google | [*](#parameters-legend-dynamic)
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
   `destination` | The path on disk where to download the Generated Universal APK | 
