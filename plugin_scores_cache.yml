@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3609
+  :age_in_days: 3631
   :readme_score: 100
   :tests: 146
   :actions:
@@ -325,12 +325,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: 403049d8e7f75fe262e47e2b644d8c774a3a5114ba08915acf5d89df30bbd983
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :sha: 5a61bdbc9cad3e8a236adb5c99c77d23bdb0553c54ebfb82b3a54cfc755ad7de
+  :github_stars: 152
+  :github_subscribers: 40
+  :github_issues: 1
+  :github_forks: 56
+  :github_contributors: 0
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -11207,16 +11207,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 2840
+  :age_in_days: 2862
   :readme_score: 100
-  :tests: 697
+  :tests: 743
   :actions: []
-  :sha: 863d59f686237682e410cf9cace82abd8a0c7eb5bc7b526802943aaf35fb3b6a
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :sha: 0ccf3f0577be4f60feb36f5267c9998b2ed476eaac138d123ef2f000b08caff7
+  :github_stars: 32
+  :github_subscribers: 17
+  :github_issues: 42
+  :github_forks: 9
+  :github_contributors: 0
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
   :age_in_days: 13
@@ -12006,21 +12006,21 @@ fastlane-plugin-fileio_upload:
   :github_contributors: 0
 fastlane-plugin-amazon_appstore:
   :initial_commit: 2021-12-24
-  :age_in_days: 1577
+  :age_in_days: 1599
   :readme_score: 100
-  :tests: 80
+  :tests: 77
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: upload_to_amazon_appstore
     category:
     description: Upload apps to Amazon Appstore
     details: Upload apps to Amazon Appstore
-  :sha: 6654917c38d19b4623681f7a076d7f14aa893ce66fad1e2cb64d1bdb16254a24
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :sha: 05bf4462484824f32f4a978d637c6c7a7ec82c11cead6cd74dc511c39f2aa5b2
+  :github_stars: 9
+  :github_subscribers: 1
+  :github_issues: 2
+  :github_forks: 5
+  :github_contributors: 0
 fastlane-plugin-flutter_versioncode_bump:
   :initial_commit: 2022-01-31
   :age_in_days: 285
@@ -12622,9 +12622,9 @@ fastlane-plugin-get_last_circleci_build_number_bitbucket:
   :github_contributors: 0
 fastlane-plugin-stream_actions:
   :initial_commit: 2022-10-27
-  :age_in_days: 1270
+  :age_in_days: 1292
   :readme_score: 100
-  :tests: 24
+  :tests: 25
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: allure_api
@@ -12696,6 +12696,11 @@ fastlane-plugin-stream_actions:
     name: merge_release_to_main
     category:
     description: Merge release branch to main
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: next_pr_number
+    category:
+    description: Get next pull request number
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: pod_push_safely
@@ -12793,12 +12798,12 @@ fastlane-plugin-stream_actions:
     category:
     description:
     details:
-  :sha: 9bfbb3b291d0e38f23b591ffbf2a0948f45f000e66fff2fba57c658fdc97de00
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
+  :sha: 3e02dd04a250d78ebfd80cd42f82e86928416381bc26f9ead1d7cc5aef98ec4b
+  :github_stars: 2
+  :github_subscribers: 26
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-installonair:
   :initial_commit: 2022-10-06
   :age_in_days: 37
@@ -14300,7 +14305,7 @@ fastlane-plugin-google_play_versions:
   :github_contributors: 0
 fastlane-plugin-appcircle_testing_distribution:
   :initial_commit: 2024-06-06
-  :age_in_days: 682
+  :age_in_days: 704
   :readme_score: 100
   :tests: 0
   :actions:
@@ -14314,12 +14319,12 @@ fastlane-plugin-appcircle_testing_distribution:
       and teams. Appcircle integrates with enterprise authentication mechanisms such
       as LDAP and SSO, ensuring secure distribution of testing packages. Learn more
       about Appcircle testing distribution
-  :sha: 2127829c2b2c8ca52969119e5dbbeed4a5784f177b4e55c8ac0833103dfe39cc
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :sha: 053e6e4f72c04c9138b5d75509d41465a2db0dad6e5c565fdeb8ee802c0a1b96
+  :github_stars: 1
+  :github_subscribers: 2
+  :github_issues: 4
+  :github_forks: 2
+  :github_contributors: 0
 fastlane-plugin-semantic_versioning:
   :initial_commit: 2024-05-16
   :age_in_days: 703
@@ -14676,9 +14681,9 @@ fastlane-plugin-ovo_azure:
   :github_contributors: 3
 fastlane-plugin-ovo_poeditor:
   :initial_commit: 2025-05-26
-  :age_in_days: 328
+  :age_in_days: 350
   :readme_score: 50
-  :tests: 7
+  :tests: 11
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: ovo_poeditor_strings
@@ -14687,12 +14692,12 @@ fastlane-plugin-ovo_poeditor:
       file
     details: Fetch latest POEditor terms and download them as .strings/.xml/.xcstrings
       file
-  :sha: a43f20007c3d72a725bb1b6e6e6b4c838a820a632f8e12ca2f68030472bd2ff0
-  :github_stars: 0
+  :sha: 63aee512382a5656c31695d768405c67be36e562ae0732f6bea39c7dd0502741
+  :github_stars: 2
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-seclane:
   :github_stars: 0
   :github_subscribers: 0
@@ -14818,6 +14823,12 @@ fastlane-plugin-luciq_agent_release_tracking:
       agent metadata reporting. It tracks upload events per branch and provides better
       observability for engineering teams.
   :sha: 4c7de9c8247ec75d11292a9399e11ed08107132af1da624441fe8b8700e5462f
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 3
+fastlane-plugin-plist_surgeon:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
