@@ -207,6 +207,14 @@ footer .fastlane iframe {
   }
 }
 
+table th, table td {
+  padding: 3px 6px !important;
+}
+
+table td p {
+  margin-bottom: 0 !important;
+}
+
 /* List in List */
 .rst-content .section ol li ol {
   margin-bottom: 0px;
