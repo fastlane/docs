@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3631
+  :age_in_days: 3646
   :readme_score: 100
   :tests: 146
   :actions:
@@ -325,12 +325,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: 5a61bdbc9cad3e8a236adb5c99c77d23bdb0553c54ebfb82b3a54cfc755ad7de
-  :github_stars: 152
-  :github_subscribers: 40
-  :github_issues: 1
-  :github_forks: 56
-  :github_contributors: 0
+  :sha: 3b24d2ee05669d66cc464c7de72ca6f3e0a5f1432a25994406a2c8ef2d339d76
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 3
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -8250,9 +8250,9 @@ fastlane-plugin-repack_ios:
   :github_contributors: 0
 fastlane-plugin-bundletool:
   :initial_commit: 2019-12-08
-  :age_in_days: 2011
+  :age_in_days: 2361
   :readme_score: 100
-  :tests: 5
+  :tests: 8
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: bundletool
@@ -8260,12 +8260,12 @@ fastlane-plugin-bundletool:
     description: Extracts an universal apk from an .aab file
     details: Using the google oficial bundletool to extract an universal apk from
       .aab file to distribute it
-  :sha: a279b626f91b84b2ba290bbe0907453acc0e637c893609af25bf6a9c08d662eb
-  :github_stars: 34
-  :github_subscribers: 1
+  :sha: 66b99ad3ce04ff1d10535f0d43d8ed3e1a1d7d7fe25e1a87ee64c856e77a71c8
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
-  :github_forks: 12
-  :github_contributors: 0
+  :github_forks: 0
+  :github_contributors: 3
 fastlane-plugin-bitwarden:
   :initial_commit: 2019-12-12
   :age_in_days: 7
@@ -11207,16 +11207,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 2862
+  :age_in_days: 2877
   :readme_score: 100
-  :tests: 743
+  :tests: 772
   :actions: []
-  :sha: 0ccf3f0577be4f60feb36f5267c9998b2ed476eaac138d123ef2f000b08caff7
-  :github_stars: 32
-  :github_subscribers: 17
-  :github_issues: 42
-  :github_forks: 9
-  :github_contributors: 0
+  :sha: 33d32d117ae1a71c46b89c797c49c6722f5d2ef088330f89e996c879f1803f46
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 3
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
   :age_in_days: 13
@@ -14128,9 +14128,9 @@ fastlane-plugin-fastci:
   :github_contributors: 3
 fastlane-plugin-rename_android:
   :initial_commit: 2018-08-22
-  :age_in_days: 2797
+  :age_in_days: 2834
   :readme_score: 100
-  :tests: 21
+  :tests: 22
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: rename_android
@@ -14143,7 +14143,7 @@ fastlane-plugin-rename_android:
     category:
     description: Changes the manifest's label attribute (appName).
     details: Changes the apk manifest file's label attribute (appName).
-  :sha: bfdbc32f1c79175b358cb6b5cbb5bd750aafe681813944d2887f675305ad5aa4
+  :sha: 883e18055fabdf21c77fe83f229dfee3c993a3e1234aadb5f8644071c18310fc
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -14495,7 +14495,7 @@ fastlane-plugin-http_request:
   :github_contributors: 3
 fastlane-plugin-sq_ci_tools:
   :initial_commit: 2025-03-21
-  :age_in_days: 394
+  :age_in_days: 431
   :readme_score: 50
   :tests: 0
   :actions:
@@ -14569,7 +14569,32 @@ fastlane-plugin-sq_ci_tools:
     category:
     description:
     details:
-  :sha: 0020a45e753101ddbd9d264e2aa6c002f5c6f151df4f1324c15bbed603098006
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_yandex_api_get_iam_token
+    category:
+    description: Fetch Yandex API IAM-token
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_yandex_tracker_create_issue
+    category:
+    description: Create new issue in Yandex Tracker
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_yandex_tracker_find_issues
+    category:
+    description: Fetch Yandex tracker issues by passed query
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_yandex_tracker_transit_issue
+    category:
+    description: Transit issue to the new status
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_yandex_tracker_update_issue
+    category:
+    description: Update issue in Yandex Tracker
+    details:
+  :sha: b5d1edd50c5aef2970054a4ec880ccdb13c26a750dfac57a389e020d757d1844
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
