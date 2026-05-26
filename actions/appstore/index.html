@@ -459,6 +459,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>Path to the metadata you want to use. The folder has to be structured like this</p>
 <p><img alt="/img/actions/deliver_metadata.png" src="/img/actions/deliver_metadata.png" /></p>
 <p>If you run <code>deliver init</code> this will automatically be created for you.</p>
+<h5 id="app_clip_default_experience_metadata_path">app_clip_default_experience_metadata_path</h5>
+<p>Path to the App Clip metadata you want to use. The folder has to be structured like this</p>
+<p><img alt="/img/actions/deliver_metadata.png" src="/img/actions/deliver_app_clip_metadata_from_folder.png" /></p>
 <h5 id="force">force</h5>
 <pre><code class="language-ruby-skip-tests">force(true)
 </code></pre>
@@ -498,6 +501,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 )
 </code></pre>
 <p>You can also provide these values by creating files in a <code>metadata/review_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>first_name.txt</code>, <code>notes.txt</code> etc.). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will be take priority over values from these files.</p>
+<h5 id="app_clip_review_information">app_clip_review_information</h5>
+<p>Review information on the app clips for the app review team. Available options: <code>invocation_urls</code></p>
+<pre><code class="language-ruby-skip-tests">app_clip_review_information(
+  invocation_urls: [&quot;http://localhost.com&quot;]
+)
+</code></pre>
+<p>You can also provide these values by creating files in a <code>metadata/app_clip_review_information/</code> directory. The file names must match the pattern <code>&lt;key&gt;.txt</code> (e.g. <code>invocation_urls</code>). The contents of each file will be used as the value for the matching key. Values provided in the <code>Deliverfile</code> or <code>Fastfile</code> will take priority over values from these files.</p>
+<p>Example of the <code>invocation_urls.txt</code> file:</p>
+<pre><code>http://localhost.com/1, http://localhost.com/2
+</code></pre>
 <h5 id="app_review_attachment_file">app_review_attachment_file</h5>
 <p>You can provide additional information to the app review team as a file attachment. As of this writing, Apple supports following file attachment formats: .pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.</p>
 <p>Provide an empty string (i.e. "", not null) to remove the existing attachment file (if any) from the review information being edited.</p>
@@ -531,6 +544,13 @@ reset_ratings(false)
 <h5 id="app_rating_config_path">app_rating_config_path</h5>
 <p>You can set the app age ratings using <em>deliver</em>. You'll have to create and store a <code>JSON</code> configuration file. Copy the <a href="https://github.com/fastlane/fastlane/blob/master/deliver/assets/example_rating_config.json">template</a> to your project folder and pass the path to the <code>JSON</code> file using the <code>app_rating_config_path</code> option.</p>
 <p>The keys/values on the top allow one of 3 strings: "NONE", "INFREQUENT_OR_MILD" or "FREQUENT_OR_INTENSE", and the items on the bottom allow false or true. More information in <a href="#reference">#reference</a>.</p>
+<h5 id="app_clip_header_images_path">app_clip_header_images_path</h5>
+<p>A path to a folder containing subfolders for each language. Each language folder must contain
+only one image and these images must be exactly 1800x1200px. These images will be used for the
+<a href="https://developer.apple.com/documentation/app_clips/configuring_the_launch_experience_of_your_app_clip/#3604096">default App Clip experience</a>
+for this particular release.</p>
+<p>See the <a href="#app-clips">App Clip docs</a> for more info.</p>
+<p><img alt="/img/actions/deliver_app_clip_header_images.png" src="/img/actions/deliver_app_clip_header_images.png" /></p>
 <h2 id="metadata">Metadata</h2>
 <p>All options below are useful if you want to specify certain app metadata in your <code>Deliverfile</code> or <code>Fastfile</code></p>
 <h3 id="localized">Localized</h3>
@@ -587,6 +607,9 @@ reset_ratings(false)
 <li>'xros'</li>
 <li>'osx'</li>
 </ul>
+<h5 id="app_clip_default_experience_subtitle">app_clip_default_experience_subtitle</h5>
+<p>The subtitle that shows up for the default App Clip experience.</p>
+<p>See the <a href="#app-clips">App Clip docs</a> for more info.</p>
 <h3 id="non-localized">Non-Localized</h3>
 <h5 id="copyright">copyright</h5>
 <p>The up to date copyright information.</p>
@@ -605,6 +628,14 @@ reset_ratings(false)
 <p>The english name of the secondary first sub category you want to set</p>
 <h5 id="secondary_second_sub_category">secondary_second_sub_category</h5>
 <p>The english name of the secondary second sub category you want to set</p>
+<h5 id="app_clip_default_experience_action">app_clip_default_experience_action</h5>
+<p>The action button that shows up for the default App Clip experience. The valid options are listed below:</p>
+<ul>
+<li><code>OPEN</code></li>
+<li><code>VIEW</code></li>
+<li><code>PLAY</code></li>
+</ul>
+<p>See the <a href="#app-clips">App Clip docs</a> for more info.</p>
 </details>
 <h1 id="submit-build">Submit Build</h1>
 <p><em>deliver</em> allows you to promote an existing build to production. Below are examples to select a previously uploaded build and submit it for review.</p>
@@ -834,6 +865,46 @@ end
 <td><code>&lt;metadata_path&gt;/review_information</code></td>
 <td><code>notes.txt</code></td>
 <td><code>review_notes.txt</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="available-app-clip-metadata-folder-options">Available App Clip Metadata Folder Options</h2>
+<p><em>deliver</em> allows for metadata to be set through <code>.txt</code> files in the App Clip metadata folder. This folder can be set using <code>app_clip_default_experience_metadata_path</code>. Below are all the allowed metadata options.</p>
+<h3 id="non-localized-metadata_1">Non-Localized Metadata</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Editable While Live</th>
+<th>Directory</th>
+<th>Filename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_clip_default_experience_action</code></td>
+<td>No</td>
+<td><code>&lt;app_clip_metadata_path&gt;</code></td>
+<td><code>app_clip_default_experience_action.txt</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="localized-metadata_1">Localized Metadata</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Editable While Live</th>
+<th>Directory</th>
+<th>Filename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app_clip_default_experience_subtitle</code></td>
+<td>No</td>
+<td><code>&lt;app_clip_metadata_path&gt;/&lt;lang&gt;/</code></td>
+<td><code>app_clip_default_experience_subtitle.txt</code></td>
 </tr>
 </tbody>
 </table>
@@ -1084,6 +1155,28 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <p>If you are on multiple App Store Connect teams, <em>deliver</em> needs a provider short name to know where to upload your binary. <em>deliver</em> will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the <code>itc_provider</code> option.</p>
 <h2 id="provider-public-id">Provider Public ID</h2>
 <p>The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication.</p>
+<h2 id="app-clips">App Clips</h2>
+<p>You can optionally specify the default App Clip experience using the following options:
+- <code>app_clip_default_experience_action</code>
+- <code>app_clip_default_experience_subtitle</code>
+- <code>app_clip_header_images_path</code></p>
+<p>The default App Store Connect behavior is to not carry-over the previous version's default App Clip
+experience metadata. This is a contradictory behavior because it automatically carries over all
+other version metadata when creating a new version.</p>
+<p><em>deliver</em> fixes this issue by carrying over the previous version's default App Clip
+experience metadata by default, even if the options above are not specified.</p>
+<p>Example usage in your <code>Deliverfile</code>:</p>
+<pre><code class="language-ruby-skip-tests">deliver(
+  app_clip_default_experience_action: &quot;PLAY&quot;,
+  app_clip_default_experience_subtitle: {
+    &quot;en-US&quot;: &quot;this is a test from fastlane&quot;,
+    &quot;es-MX&quot;: &quot;está es una prueba de fastlane&quot;
+  },
+  app_clip_header_images_path: &quot;./fastlane/app-clip-header-images&quot;
+)
+</code></pre>
+<p>Note that the <strong>default</strong> App Clip experience and the <strong>advanced</strong> App Clip experiences are
+different, <a href="https://developer.apple.com/documentation/app_clips/configuring_the_launch_experience_of_your_app_clip/#3671988">Apple explains this here</a>.</p>
 <hr />
 
 <table>
@@ -1187,6 +1280,16 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <tr>
 <td><code>screenshots_path</code></td>
 <td>Path to the folder containing the screenshots</td>
+<td></td>
+</tr>
+<tr>
+<td><code>app_clip_header_images_path</code></td>
+<td>Path to the folder containing the app clip header images</td>
+<td></td>
+</tr>
+<tr>
+<td><code>app_clip_default_experience_metadata_path</code></td>
+<td>Path to the folder containing the app clip default experience metadata</td>
 <td></td>
 </tr>
 <tr>
@@ -1400,6 +1503,11 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td></td>
 </tr>
 <tr>
+<td><code>app_clip_review_information</code></td>
+<td>Metadata: A hash containing the app clip review information</td>
+<td></td>
+</tr>
+<tr>
 <td><code>app_review_attachment_file</code></td>
 <td>Metadata: Path to the app review attachment file</td>
 <td></td>
@@ -1470,6 +1578,16 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
 <td><code>true</code></td>
 </tr>
 <tr>
+<td><code>app_clip_default_experience_subtitle</code></td>
+<td>The localized subtitle for the default app clip experience</td>
+<td></td>
+</tr>
+<tr>
+<td><code>app_clip_default_experience_action</code></td>
+<td>Action for the default app clip experience (OPEN, VIEW, PLAY)</td>
+<td></td>
+</tr>
+<tr>
 <td><code>app</code></td>
 <td>The (spaceship) app ID of the app you want to use/modify</td>
 <td></td>
@@ -1519,7 +1637,7 @@ echo &quot;$TOOLS_PATH/$REL_PATH&quot;
     </p>
   </div>
 
-  Documentation built 2026-05-21 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-05-26 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
