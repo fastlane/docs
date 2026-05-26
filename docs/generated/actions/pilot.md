@@ -395,6 +395,8 @@ Key | Description | Default
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
   `skip_waiting_for_build_processing` | If set to true, the `distribute_external` option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan). If set to `true` and a changelog is provided, it will partially wait for the build to appear on AppStore Connect so the changelog can be set, and skip the remaining processing steps | `false`
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
+  `app_clip_invocations` | Add beta app clip invocations to your builds in TestFlight | 
+  `overwrite_app_clip_invocations` | Clear all previous beta app clip invocations before adding new ones | `false`
   `distribute_only` | Distribute a previously uploaded build (equivalent to the `fastlane pilot distribute` command) | `false`
   `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? If set to true, use of `groups` option is required | `false`
