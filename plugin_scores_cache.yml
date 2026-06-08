@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3646
+  :age_in_days: 3659
   :readme_score: 100
   :tests: 146
   :actions:
@@ -325,7 +325,7 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: 3b24d2ee05669d66cc464c7de72ca6f3e0a5f1432a25994406a2c8ef2d339d76
+  :sha: 40610b4c2be7b8e24242d94b89a7c99f612788644a25b27e60fb7257b3cca36b
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -12076,9 +12076,9 @@ fastlane-plugin-ionic_conf:
   :github_contributors: 0
 fastlane-plugin-testappio:
   :initial_commit: 2022-03-16
-  :age_in_days: 434
+  :age_in_days: 1545
   :readme_score: 100
-  :tests: 1
+  :tests: 51
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: upload_to_testappio
@@ -12087,12 +12087,12 @@ fastlane-plugin-testappio:
     details: This Fastlane plugin uploads your Android (APK) and iOS (IPA) package
       to TestApp.io and notify your team members about the new releases if you enable
       it.
-  :sha: ffcbd4f6d33d4590c2bafdf0c4b963e261d3f81d2cea9a98dcacf65003d6a458
-  :github_stars: 2
-  :github_subscribers: 2
+  :sha: 2c4a14f0ff5c47da18e6cdcd09789e84947dc472dbd80bec1636d09f79d3133d
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
-  :github_forks: 1
-  :github_contributors: 0
+  :github_forks: 0
+  :github_contributors: 3
 fastlane-plugin-automated_test_emulator_run_next:
   :initial_commit: 2016-07-26
   :age_in_days: 2609
@@ -14854,6 +14854,28 @@ fastlane-plugin-luciq_agent_release_tracking:
   :github_forks: 0
   :github_contributors: 3
 fastlane-plugin-plist_surgeon:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 3
+fastlane-plugin-rustored:
+  :initial_commit: 2026-06-03
+  :age_in_days: 5
+  :readme_score: 100
+  :tests: 15
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rustored_publish_aab
+    category:
+    description: Publish an AAB file to RuStore
+    details: Uploads an Android App Bundle to an existing RuStore app version.
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rustored_publish_apk
+    category:
+    description: Publish an APK file to RuStore
+    details: Uploads an APK to an existing RuStore app version.
+  :sha: 8bb4f9b5648cca3afe4787f7c407cda120f8ca189f17ad9f5c121fb3ae5b9654
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
