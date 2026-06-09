@@ -469,6 +469,7 @@ Key | Description | Default
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `run_rosetta_simulator` | Run simulator in a Rosetta mode | `false`
   `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
   `xcpretty_args` | **DEPRECATED!** Use `xcodebuild_formatter: ''` instead - Additional xcpretty arguments | 
   `disable_xcpretty` | Disable xcpretty formatting of build | 
