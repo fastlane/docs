@@ -268,7 +268,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3659
+  :age_in_days: 3671
   :readme_score: 100
   :tests: 146
   :actions:
@@ -325,7 +325,7 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: 40610b4c2be7b8e24242d94b89a7c99f612788644a25b27e60fb7257b3cca36b
+  :sha: 07474a9ee1cffff8e2585273c95e44da53af81be123164b3a58019022ece71b1
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -11207,11 +11207,11 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 2877
+  :age_in_days: 2902
   :readme_score: 100
-  :tests: 772
+  :tests: 795
   :actions: []
-  :sha: 33d32d117ae1a71c46b89c797c49c6722f5d2ef088330f89e996c879f1803f46
+  :sha: 2c7cf421027218e1ebf6338a50fba1421769e608e42c58480f679d2c673eabbe
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -13344,7 +13344,7 @@ fastlane-plugin-rearchive:
   :github_contributors: 0
 fastlane-plugin-translate_gpt:
   :initial_commit: 2023-04-23
-  :age_in_days: 779
+  :age_in_days: 1154
   :readme_score: 100
   :tests: 1
   :actions:
@@ -13353,12 +13353,12 @@ fastlane-plugin-translate_gpt:
     category:
     description: Translate a strings file using OpenAI's GPT API
     details:
-  :sha: 74a326864f373d7afcc43d3bb7cbb2c4000a9f9785c0cab91404d9b16b1f0cbd
-  :github_stars: 76
-  :github_subscribers: 2
+  :sha: 37ce695b704b7b552a07945d7d1f01b001deb1908bf28e16ec27c9a1bbbfb44e
+  :github_stars: 0
+  :github_subscribers: 0
   :github_issues: 0
-  :github_forks: 6
-  :github_contributors: 0
+  :github_forks: 0
+  :github_contributors: 3
 fastlane-plugin-testlane:
   :initial_commit: 2023-05-11
   :age_in_days: 13
@@ -13926,9 +13926,9 @@ fastlane-plugin-increment_version_build_number:
   :github_contributors: 0
 fastlane-plugin-translate_gpt_release_notes:
   :initial_commit: 2023-04-23
-  :age_in_days: 1092
+  :age_in_days: 1154
   :readme_score: 100
-  :tests: 296
+  :tests: 315
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: translate_gpt_release_notes
@@ -13936,7 +13936,7 @@ fastlane-plugin-translate_gpt_release_notes:
     description: 'Translate release notes using AI providers: OpenAI, Claude, Gemini,
       or DeepL'
     details:
-  :sha: 5c3fcba2794b7ddc46b756ce52e34687ff91acc0b0ab22a228d209247bf4637e
+  :sha: '08d16fac8c60975ed74eece4340b447121218011b20af0f75d7fca5e73c9d35f'
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -14495,7 +14495,7 @@ fastlane-plugin-http_request:
   :github_contributors: 3
 fastlane-plugin-sq_ci_tools:
   :initial_commit: 2025-03-21
-  :age_in_days: 431
+  :age_in_days: 456
   :readme_score: 50
   :tests: 0
   :actions:
@@ -14538,6 +14538,26 @@ fastlane-plugin-sq_ci_tools:
     name: sq_ci_tools_prepare_keychain
     category:
     description: Create in need and unblock keychain for iOS certificates
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_ru_store_find_or_create_draft_id
+    category:
+    description: Find or create draft id for passed application in RuStore
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_ru_store_get_token
+    category:
+    description: Fetch token for RuStore API
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_ru_store_send_to_review
+    category:
+    description: Send app draft to RuStore\
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: sq_ci_tools_ru_store_upload_aab
+    category:
+    description: Upload aab to RuStore\
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sq_ci_tools_send_max_message
@@ -14594,7 +14614,7 @@ fastlane-plugin-sq_ci_tools:
     category:
     description: Update issue in Yandex Tracker
     details:
-  :sha: b5d1edd50c5aef2970054a4ec880ccdb13c26a750dfac57a389e020d757d1844
+  :sha: 66e12ff9584d40e6f91c161bf7a6aed46c0514808a388a9d6e6e101f4db93326
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
@@ -14876,6 +14896,12 @@ fastlane-plugin-rustored:
     description: Publish an APK file to RuStore
     details: Uploads an APK to an existing RuStore app version.
   :sha: 8bb4f9b5648cca3afe4787f7c407cda120f8ca189f17ad9f5c121fb3ae5b9654
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 3
+ann-flutter-flavor:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0

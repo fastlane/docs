@@ -165,7 +165,7 @@ Key | Description | Default
   `curse_words` | including words that might be considered objectionable | 
   `free_stuff_in_iap` | using text indicating that your IAP is free | 
   `custom_text` | mentioning any of the user-specified words passed to custom_text(data: [words]) | 
-  `copyright_date` | using a copyright date that is any different from this current year, or missing a date | 
+  `copyright_date` | using a copyright year in the future, or missing a copyright year | 
   `unreachable_urls` | unreachable URLs in app metadata | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
