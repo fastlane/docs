@@ -6,6 +6,27 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    (function () {
+      var storageKey = 'fastlane-docs-color-mode';
+      var preference = 'auto';
+
+      try {
+        var storedPreference = window.localStorage.getItem(storageKey);
+        if (['auto', 'light', 'dark'].indexOf(storedPreference) !== -1) {
+          preference = storedPreference;
+        }
+      } catch (error) {
+        // Storage can be unavailable in privacy-restricted browser contexts.
+      }
+
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var colorMode = preference === 'auto' ? (prefersDark ? 'dark' : 'light') : preference;
+      document.documentElement.setAttribute('data-color-mode', colorMode);
+      document.documentElement.setAttribute('data-color-mode-preference', preference);
+    }());
+  </script>
   {% if page and page.is_homepage %}<meta name="description" content="{{ config.site_description }}">{% endif %}
   {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
   {% if page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
@@ -25,6 +46,7 @@
   {%- if config.theme.highlightjs %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" integrity="sha384-yaOEEinoAKxVHv1ZCY3vqJeRItlRVwZ9pyTCCJLHlyHNndGZIF+S30C1+8oRQ2sz" crossorigin="anonymous">
   {%- endif %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
   {%- for path in config['extra_css'] %}
   <link href="{{ path|url }}" rel="stylesheet" />
   {%- endfor %}
@@ -81,6 +103,14 @@
     {%- block site_name %}
         <a href="{{ nav.homepage.url|url }}" class="icon icon-home"> {{ config.site_name }}</a>
     {%- endblock %}
+        <div class="color-mode-control">
+          <label for="color-mode-select">Color mode</label>
+          <select id="color-mode-select" name="color-mode">
+            <option value="auto">Auto</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </div>
     {%- block search_button %}
         {% if 'search' in config['plugins'] %}{% include "searchbox.html" %}{% endif %}
     {%- endblock %}
