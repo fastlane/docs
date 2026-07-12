@@ -1,0 +1,629 @@
+/* Color mode control */
+.color-mode-control {
+  align-items: center;
+  display: flex;
+  font-size: 13px;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto 4px;
+}
+
+.color-mode-control label {
+  color: #666;
+  font-weight: 600;
+  margin: 0;
+}
+
+#color-mode-select {
+  background-color: #fff;
+  border: 1px solid #6d6d6d;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  font: inherit;
+  padding: 3px 24px 3px 7px;
+}
+
+#color-mode-select:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #9b6cff;
+  outline-offset: 2px;
+}
+
+.fastlane-wordmark {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+}
+
+.fastlane-wordmark > img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Dark mode */
+@media screen {
+html[data-color-mode="dark"] {
+  color-scheme: dark;
+  --fl-dark-background: #0d1117;
+  --fl-dark-surface: #161b22;
+  --fl-dark-surface-raised: #21262d;
+  --fl-dark-border: #30363d;
+  --fl-dark-control-border: #6e7681;
+  --fl-dark-text: #e6edf3;
+  --fl-dark-muted: #9da7b3;
+  --fl-dark-heading: #f0f6fc;
+  --fl-dark-link: #79c0ff;
+  --fl-dark-link-hover: #a5d6ff;
+  --fl-dark-focus: #f2cc60;
+}
+
+html[data-color-mode="dark"] body,
+html[data-color-mode="dark"] .wy-body-for-nav,
+html[data-color-mode="dark"] .wy-nav-content-wrap,
+html[data-color-mode="dark"] .wy-nav-content {
+  background: var(--fl-dark-background);
+  background-image: none;
+  color: var(--fl-dark-text);
+}
+
+html[data-color-mode="dark"] .wy-nav-side,
+html[data-color-mode="dark"] .wy-side-scroll,
+html[data-color-mode="dark"] .wy-side-nav-search {
+  background: var(--fl-dark-surface);
+}
+
+html[data-color-mode="dark"] .wy-nav-side {
+  border-right-color: var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] .wy-nav-top {
+  background: var(--fl-dark-surface-raised);
+  border-bottom: 1px solid var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] h1,
+html[data-color-mode="dark"] h2,
+html[data-color-mode="dark"] h3,
+html[data-color-mode="dark"] h4,
+html[data-color-mode="dark"] h5,
+html[data-color-mode="dark"] h6,
+html[data-color-mode="dark"] legend {
+  color: var(--fl-dark-heading) !important;
+}
+
+html[data-color-mode="dark"] a,
+html[data-color-mode="dark"] a:visited {
+  color: var(--fl-dark-link);
+}
+
+html[data-color-mode="dark"] a:hover,
+html[data-color-mode="dark"] a:active {
+  color: var(--fl-dark-link-hover);
+}
+
+html[data-color-mode="dark"] a > code,
+html[data-color-mode="dark"] .rst-content a code,
+html[data-color-mode="dark"] .rst-content .headeranchor {
+  color: var(--fl-dark-link) !important;
+}
+
+html[data-color-mode="dark"] a:focus-visible,
+html[data-color-mode="dark"] button:focus-visible,
+html[data-color-mode="dark"] input:focus-visible,
+html[data-color-mode="dark"] select:focus-visible,
+html[data-color-mode="dark"] summary:focus-visible,
+html[data-color-mode="dark"] .rst-content .headeranchor-link:focus-visible {
+  outline-color: var(--fl-dark-focus);
+}
+
+html[data-color-mode="dark"] hr {
+  border-top-color: var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] blockquote {
+  border-left-color: #59636f;
+  color: var(--fl-dark-muted) !important;
+}
+
+html[data-color-mode="dark"] footer,
+html[data-color-mode="dark"] .wy-breadcrumbs-extra,
+html[data-color-mode="dark"] .via-text,
+html[data-color-mode="dark"] .score-details,
+html[data-color-mode="dark"] .wy-table-secondary,
+html[data-color-mode="dark"] .wy-table-tertiary,
+html[data-color-mode="dark"] #search-results .context {
+  color: var(--fl-dark-muted);
+}
+
+@supports (mask-image: url("")) or (-webkit-mask-image: url("")) {
+  html[data-color-mode="dark"] .fastlane-wordmark::after {
+    background: var(--fl-dark-heading);
+    clip-path: inset(0 0 0 34%);
+    content: "";
+    inset: 0;
+    mask: url("../img/fastlane_text.png") center / 100% 100% no-repeat;
+    pointer-events: none;
+    position: absolute;
+    -webkit-mask: url("../img/fastlane_text.png") center / 100% 100% no-repeat;
+  }
+}
+
+html[data-color-mode="dark"] .githubButton {
+  /* Match the embedded document's light color scheme; a mismatch makes the
+     browser disable iframe transparency and paint an opaque backdrop. */
+  color-scheme: light;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Navigation */
+html[data-color-mode="dark"] .wy-menu-vertical header,
+html[data-color-mode="dark"] .wy-menu-vertical p.caption,
+html[data-color-mode="dark"] .wy-menu-vertical span,
+html[data-color-mode="dark"] .wy-menu-vertical li span.toctree-expand {
+  color: var(--fl-dark-muted);
+}
+
+html[data-color-mode="dark"] .wy-menu-vertical a,
+html[data-color-mode="dark"] .wy-menu-vertical li.current a,
+html[data-color-mode="dark"] .wy-menu-vertical li ul li a,
+html[data-color-mode="dark"] .wy-menu-vertical li.on a,
+html[data-color-mode="dark"] .wy-menu-vertical li.current > a,
+html[data-color-mode="dark"] .wy-menu-vertical li.current.active > a {
+  background: transparent;
+  color: var(--fl-dark-link);
+}
+
+html[data-color-mode="dark"] .wy-menu-vertical li.toctree-l3,
+html[data-color-mode="dark"] .wy-menu-vertical li.on a,
+html[data-color-mode="dark"] .wy-menu-vertical li.current > a {
+  background-color: transparent;
+}
+
+html[data-color-mode="dark"] .wy-menu-vertical li.current > a.toc-no-link {
+  color: var(--fl-dark-muted) !important;
+}
+
+html[data-color-mode="dark"] .wy-menu-vertical a:hover,
+html[data-color-mode="dark"] .wy-menu-vertical li.on a:hover,
+html[data-color-mode="dark"] .wy-menu-vertical li.current > a:hover,
+html[data-color-mode="dark"] .wy-menu-vertical li.current.active > a {
+  background-color: var(--fl-dark-surface-raised);
+  color: var(--fl-dark-link-hover);
+}
+
+html[data-color-mode="dark"] .wy-menu-vertical li.divide-top {
+  border-top-color: var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] .wy-menu-vertical li.divide-bottom {
+  border-bottom-color: var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] .color-mode-control label {
+  color: var(--fl-dark-muted);
+}
+
+html[data-color-mode="dark"] #color-mode-select,
+html[data-color-mode="dark"] .wy-breadcrumbs input[type="text"],
+html[data-color-mode="dark"] input,
+html[data-color-mode="dark"] select,
+html[data-color-mode="dark"] textarea {
+  background-color: var(--fl-dark-surface-raised);
+  border-color: var(--fl-dark-control-border);
+  color: var(--fl-dark-text);
+  caret-color: var(--fl-dark-text);
+}
+
+html[data-color-mode="dark"] input::placeholder,
+html[data-color-mode="dark"] textarea::placeholder {
+  color: var(--fl-dark-muted);
+  opacity: 1;
+}
+
+html[data-color-mode="dark"] input:disabled,
+html[data-color-mode="dark"] select:disabled,
+html[data-color-mode="dark"] textarea:disabled {
+  color: #7d8590;
+  opacity: 1;
+}
+
+/* Inline code and code block surfaces */
+html[data-color-mode="dark"] code,
+html[data-color-mode="dark"] .rst-content tt,
+html[data-color-mode="dark"] .rst-content code,
+html[data-color-mode="dark"] .rst-content .admonition code {
+  background-color: var(--fl-dark-surface-raised) !important;
+  border-color: var(--fl-dark-border);
+  color: var(--fl-dark-text) !important;
+}
+
+html[data-color-mode="dark"] .codeblock-example,
+html[data-color-mode="dark"] .codeblock,
+html[data-color-mode="dark"] pre.literal-block,
+html[data-color-mode="dark"] .rst-content .literal-block,
+html[data-color-mode="dark"] .rst-content pre.literal-block,
+html[data-color-mode="dark"] div[class^="highlight"] {
+  background: var(--fl-dark-surface);
+  border-color: var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] div[class^="highlight"] pre,
+html[data-color-mode="dark"] .rst-content pre code,
+html[data-color-mode="dark"] .rst-content .no-highlight {
+  background: var(--fl-dark-surface) !important;
+  color: var(--fl-dark-text) !important;
+}
+
+html[data-color-mode="dark"] .linenodiv pre {
+  border-right-color: var(--fl-dark-border);
+  color: #7d8590;
+}
+
+html[data-color-mode="dark"] .hll {
+  background-color: #2d333b;
+}
+
+/* Syntax highlighting */
+html[data-color-mode="dark"] .c,
+html[data-color-mode="dark"] .cm,
+html[data-color-mode="dark"] .c1,
+html[data-color-mode="dark"] .cs,
+html[data-color-mode="dark"] .cp,
+html[data-color-mode="dark"] .gh,
+html[data-color-mode="dark"] .go,
+html[data-color-mode="dark"] .gp,
+html[data-color-mode="dark"] .w,
+html[data-color-mode="dark"] .bp,
+html[data-color-mode="dark"] .gc,
+html[data-color-mode="dark"] .hljs-comment,
+html[data-color-mode="dark"] .hljs-quote {
+  color: #9da7b3;
+}
+
+html[data-color-mode="dark"] .k,
+html[data-color-mode="dark"] .kc,
+html[data-color-mode="dark"] .kd,
+html[data-color-mode="dark"] .kn,
+html[data-color-mode="dark"] .kp,
+html[data-color-mode="dark"] .kr,
+html[data-color-mode="dark"] .kt,
+html[data-color-mode="dark"] .o,
+html[data-color-mode="dark"] .ow,
+html[data-color-mode="dark"] .hljs-keyword,
+html[data-color-mode="dark"] .hljs-selector-tag,
+html[data-color-mode="dark"] .hljs-literal,
+html[data-color-mode="dark"] .hljs-section,
+html[data-color-mode="dark"] .hljs-link {
+  color: #ff7b72;
+}
+
+html[data-color-mode="dark"] .s,
+html[data-color-mode="dark"] .sb,
+html[data-color-mode="dark"] .sc,
+html[data-color-mode="dark"] .sd,
+html[data-color-mode="dark"] .s1,
+html[data-color-mode="dark"] .s2,
+html[data-color-mode="dark"] .se,
+html[data-color-mode="dark"] .sh,
+html[data-color-mode="dark"] .si,
+html[data-color-mode="dark"] .sr,
+html[data-color-mode="dark"] .sx,
+html[data-color-mode="dark"] .ss,
+html[data-color-mode="dark"] .hljs-string,
+html[data-color-mode="dark"] .hljs-doctag,
+html[data-color-mode="dark"] .hljs-regexp,
+html[data-color-mode="dark"] .hljs-template-tag,
+html[data-color-mode="dark"] .hljs-template-variable {
+  color: #a5d6ff;
+}
+
+html[data-color-mode="dark"] .m,
+html[data-color-mode="dark"] .mf,
+html[data-color-mode="dark"] .mh,
+html[data-color-mode="dark"] .mi,
+html[data-color-mode="dark"] .mo,
+html[data-color-mode="dark"] .no,
+html[data-color-mode="dark"] .il,
+html[data-color-mode="dark"] .hljs-number,
+html[data-color-mode="dark"] .hljs-meta {
+  color: #79c0ff;
+}
+
+html[data-color-mode="dark"] .na,
+html[data-color-mode="dark"] .nb,
+html[data-color-mode="dark"] .nc,
+html[data-color-mode="dark"] .nd,
+html[data-color-mode="dark"] .ne,
+html[data-color-mode="dark"] .nf,
+html[data-color-mode="dark"] .ni,
+html[data-color-mode="dark"] .nl,
+html[data-color-mode="dark"] .nt,
+html[data-color-mode="dark"] .nv,
+html[data-color-mode="dark"] .vc,
+html[data-color-mode="dark"] .vg,
+html[data-color-mode="dark"] .vi,
+html[data-color-mode="dark"] .hljs-attr,
+html[data-color-mode="dark"] .hljs-attribute,
+html[data-color-mode="dark"] .hljs-name,
+html[data-color-mode="dark"] .hljs-selector-id,
+html[data-color-mode="dark"] .hljs-selector-class,
+html[data-color-mode="dark"] .hljs-title,
+html[data-color-mode="dark"] .hljs-type,
+html[data-color-mode="dark"] .hljs-symbol,
+html[data-color-mode="dark"] .hljs-bullet {
+  color: #d2a8ff;
+}
+
+html[data-color-mode="dark"] .n,
+html[data-color-mode="dark"] .nn,
+html[data-color-mode="dark"] .hljs-variable,
+html[data-color-mode="dark"] .hljs-params {
+  color: var(--fl-dark-text);
+}
+
+html[data-color-mode="dark"] .hljs-built_in,
+html[data-color-mode="dark"] .hljs-builtin-name,
+html[data-color-mode="dark"] .hljs-selector-attr,
+html[data-color-mode="dark"] .hljs-selector-pseudo {
+  color: #ffa657;
+}
+
+html[data-color-mode="dark"] .err,
+html[data-color-mode="dark"] .gr,
+html[data-color-mode="dark"] .gt,
+html[data-color-mode="dark"] .hljs-deletion {
+  background-color: #3d1f24;
+  color: #ffa198;
+}
+
+html[data-color-mode="dark"] .gd,
+html[data-color-mode="dark"] .gd .x {
+  background-color: #3d1f24;
+  color: #ffa198;
+}
+
+html[data-color-mode="dark"] .gi,
+html[data-color-mode="dark"] .gi .x,
+html[data-color-mode="dark"] .hljs-addition {
+  background-color: #1b4721;
+  color: #aff5b4;
+}
+
+html[data-color-mode="dark"] .gu {
+  color: #d2a8ff;
+}
+
+/* Tables and secondary surfaces */
+html[data-color-mode="dark"] .wy-table thead,
+html[data-color-mode="dark"] .rst-content table.docutils thead,
+html[data-color-mode="dark"] .rst-content table.field-list thead,
+html[data-color-mode="dark"] .wy-table caption,
+html[data-color-mode="dark"] .rst-content table.docutils caption,
+html[data-color-mode="dark"] .rst-content table.field-list caption {
+  color: var(--fl-dark-heading);
+}
+
+html[data-color-mode="dark"] .wy-table-odd td,
+html[data-color-mode="dark"] .wy-table-striped tr:nth-child(odd) td,
+html[data-color-mode="dark"] .rst-content table.docutils:not(.field-list) tr:nth-child(odd) td {
+  background-color: var(--fl-dark-surface);
+}
+
+html[data-color-mode="dark"] .wy-table-striped tr:nth-child(even) td,
+html[data-color-mode="dark"] .rst-content table.docutils:not(.field-list) tr:nth-child(even) td,
+html[data-color-mode="dark"] .wy-table-backed,
+html[data-color-mode="dark"] .rst-content table.docutils thead th {
+  background-color: var(--fl-dark-surface-raised);
+}
+
+html[data-color-mode="dark"] .wy-table-bordered-all,
+html[data-color-mode="dark"] .wy-table-bordered,
+html[data-color-mode="dark"] .rst-content table.docutils,
+html[data-color-mode="dark"] .rst-content table.docutils td,
+html[data-color-mode="dark"] .rst-content table.docutils th,
+html[data-color-mode="dark"] .wy-table-horizontal td,
+html[data-color-mode="dark"] .wy-table-horizontal th {
+  border-color: var(--fl-dark-border) !important;
+}
+
+html[data-color-mode="dark"] .quality-index,
+html[data-color-mode="dark"] .rst-content .sidebar,
+html[data-color-mode="dark"] .wy-dropdown-menu {
+  background: var(--fl-dark-surface-raised);
+  border-color: var(--fl-dark-border);
+  color: var(--fl-dark-text);
+}
+
+html[data-color-mode="dark"] [style*="#558000"],
+html[data-color-mode="dark"] [style*="#63b319"],
+html[data-color-mode="dark"] [style*="#72CC1D"] {
+  color: #a8e063 !important;
+}
+
+html[data-color-mode="dark"] [style*="#a03030"],
+html[data-color-mode="dark"] [style*="#ff6666"] {
+  color: #ff9b95 !important;
+}
+
+html[data-color-mode="dark"] .rst-content .sidebar .sidebar-title,
+html[data-color-mode="dark"] .wy-dropdown-menu > dd > a:hover {
+  background: var(--fl-dark-border);
+  color: var(--fl-dark-heading);
+}
+
+html[data-color-mode="dark"] .btn-neutral {
+  background-color: var(--fl-dark-surface-raised) !important;
+  border: 1px solid var(--fl-dark-control-border);
+  color: var(--fl-dark-text) !important;
+}
+
+html[data-color-mode="dark"] .btn-neutral:hover {
+  background-color: #30363d !important;
+}
+
+html[data-color-mode="dark"] mark,
+html[data-color-mode="dark"] .rst-content .highlighted {
+  background: #6e5800;
+  color: #fff8c5;
+}
+
+html[data-color-mode="dark"] ins {
+  background: #1b4721;
+  color: #aff5b4;
+}
+
+html[data-color-mode="dark"] kbd,
+html[data-color-mode="dark"] .guilabel {
+  background: var(--fl-dark-surface-raised);
+  border-color: var(--fl-dark-control-border);
+  color: var(--fl-dark-text);
+}
+
+/* Alerts and setup details */
+html[data-color-mode="dark"] .rst-content .danger,
+html[data-color-mode="dark"] .rst-content .error,
+html[data-color-mode="dark"] .wy-alert.wy-alert-danger {
+  background: #3d1f24;
+}
+
+html[data-color-mode="dark"] .rst-content .danger .admonition-title,
+html[data-color-mode="dark"] .rst-content .error .admonition-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-danger .wy-alert-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-danger .admonition-title {
+  background: #8e3039;
+}
+
+html[data-color-mode="dark"] .rst-content .attention,
+html[data-color-mode="dark"] .rst-content .caution,
+html[data-color-mode="dark"] .rst-content .warning,
+html[data-color-mode="dark"] .rst-content .admonition-todo,
+html[data-color-mode="dark"] .wy-alert.wy-alert-warning {
+  background: #3b2e16;
+}
+
+html[data-color-mode="dark"] .rst-content .attention .admonition-title,
+html[data-color-mode="dark"] .rst-content .caution .admonition-title,
+html[data-color-mode="dark"] .rst-content .warning .admonition-title,
+html[data-color-mode="dark"] .rst-content .admonition-todo .admonition-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-warning .wy-alert-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-warning .admonition-title {
+  background: #8a6116;
+}
+
+html[data-color-mode="dark"] .rst-content .note,
+html[data-color-mode="dark"] .rst-content .seealso,
+html[data-color-mode="dark"] .wy-alert.wy-alert-info {
+  background: #172a3d;
+}
+
+html[data-color-mode="dark"] .rst-content .note .admonition-title,
+html[data-color-mode="dark"] .rst-content .seealso .admonition-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-info .wy-alert-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-info .admonition-title {
+  background: #245b83;
+}
+
+html[data-color-mode="dark"] .rst-content .hint,
+html[data-color-mode="dark"] .rst-content .important,
+html[data-color-mode="dark"] .rst-content .tip,
+html[data-color-mode="dark"] .wy-alert.wy-alert-success {
+  background: #17352b;
+}
+
+html[data-color-mode="dark"] .rst-content .hint .admonition-title,
+html[data-color-mode="dark"] .rst-content .important .admonition-title,
+html[data-color-mode="dark"] .rst-content .tip .admonition-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-success .wy-alert-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-success .admonition-title {
+  background: #1f6f55;
+}
+
+html[data-color-mode="dark"] .rst-content .wy-alert-neutral,
+html[data-color-mode="dark"] .wy-alert.wy-alert-neutral {
+  background: var(--fl-dark-surface-raised);
+}
+
+html[data-color-mode="dark"] .rst-content .wy-alert-neutral .admonition-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-neutral .wy-alert-title,
+html[data-color-mode="dark"] .wy-alert.wy-alert-neutral .admonition-title {
+  background: var(--fl-dark-border);
+  color: var(--fl-dark-text);
+}
+
+html[data-color-mode="dark"] .rst-content .fastlane-setup-wrapper {
+  background-color: rgba(0, 176, 255, .08);
+}
+
+html[data-color-mode="dark"] .rst-content .fastlane-setup {
+  background-color: rgba(0, 176, 255, .14);
+  border-bottom-color: rgba(121, 192, 255, .35);
+  color: var(--fl-dark-text);
+}
+
+/* Algolia DocSearch v2 */
+html[data-color-mode="dark"] .algolia-autocomplete .ds-dropdown-menu {
+  box-shadow: 0 0 0 1px var(--fl-dark-border), 0 8px 24px rgba(0, 0, 0, .45);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .ds-dropdown-menu::before {
+  background: var(--fl-dark-surface-raised);
+  border-color: var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .ds-dropdown-menu [class^="ds-dataset-"],
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion {
+  background: var(--fl-dark-surface-raised);
+  border-color: var(--fl-dark-border);
+  color: var(--fl-dark-text);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--category-header,
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--content::before,
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column::before,
+html[data-color-mode="dark"] .algolia-autocomplete .suggestion-layout-simple.algolia-docsearch-suggestion {
+  border-color: var(--fl-dark-border);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--category-header,
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column,
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--title {
+  color: var(--fl-dark-text);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--text,
+html[data-color-mode="dark"] .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--category-header-lvl0,
+html[data-color-mode="dark"] .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--category-header-lvl1 {
+  color: var(--fl-dark-muted);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion--highlight,
+html[data-color-mode="dark"] .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--title,
+html[data-color-mode="dark"] .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--title::before {
+  color: var(--fl-dark-link);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--text {
+  background: var(--fl-dark-surface);
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion,
+html[data-color-mode="dark"] .algolia-autocomplete .ds-dropdown-menu .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--content {
+  background-color: #28384d;
+}
+
+html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion code {
+  background: var(--fl-dark-surface) !important;
+  color: var(--fl-dark-text) !important;
+}
+}
+
+@media print {
+  .color-mode-control {
+    display: none;
+  }
+}
