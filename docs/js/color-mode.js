@@ -5,6 +5,7 @@
   var preferenceCycle = ['auto', 'light', 'dark'];
   var root = document.documentElement;
   var mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var reducedMotionQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
 
   function isValidPreference(preference) {
     return preferenceCycle.indexOf(preference) !== -1;
@@ -45,6 +46,21 @@
     }
   }
 
+  function applyPreferenceWithCrossfade(preference) {
+    var colorModeChanges = resolveColorMode(preference) !== root.getAttribute('data-color-mode');
+
+    if (colorModeChanges &&
+        typeof document.startViewTransition === 'function' &&
+        !(reducedMotionQuery && reducedMotionQuery.matches)) {
+      document.startViewTransition(function () {
+        applyPreference(preference);
+      });
+      return;
+    }
+
+    applyPreference(preference);
+  }
+
   function storePreference(preference) {
     try {
       window.localStorage.setItem(storageKey, preference);
@@ -72,7 +88,7 @@
     if (toggle) {
       toggle.addEventListener('click', function () {
         var preference = nextPreference(getPreference());
-        applyPreference(preference);
+        applyPreferenceWithCrossfade(preference);
         storePreference(preference);
       });
     }
