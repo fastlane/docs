@@ -1,30 +1,48 @@
-/* Color mode control */
-.color-mode-control {
+/* Color mode toggle */
+.wy-side-nav-search {
+  position: relative;
+}
+
+/* Hidden until the pre-paint script tags <html>, so visitors without
+   JavaScript are not offered a control that cannot work for them. */
+.color-mode-toggle {
+  display: none;
+}
+
+html[data-color-mode-preference] .color-mode-toggle {
   align-items: center;
-  display: flex;
-  font-size: 13px;
-  gap: 8px;
-  justify-content: center;
-  margin: 0 auto 4px;
-}
-
-.color-mode-control label {
-  color: #666;
-  font-weight: 600;
-  margin: 0;
-}
-
-#color-mode-select {
-  background-color: #fff;
-  border: 1px solid #6d6d6d;
-  border-radius: 3px;
-  color: #333;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: #555;
   cursor: pointer;
-  font: inherit;
-  padding: 3px 24px 3px 7px;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  width: 32px;
 }
 
-#color-mode-select:focus-visible,
+.color-mode-toggle:hover {
+  background-color: rgba(0, 0, 0, .08);
+  color: #111;
+}
+
+.color-mode-icon {
+  display: none;
+  height: 18px;
+  width: 18px;
+}
+
+html[data-color-mode-preference="auto"] .color-mode-icon-auto,
+html[data-color-mode-preference="light"] .color-mode-icon-light,
+html[data-color-mode-preference="dark"] .color-mode-icon-dark {
+  display: block;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -160,6 +178,15 @@ html[data-color-mode="dark"] .githubButton {
   filter: invert(1) hue-rotate(180deg);
 }
 
+/* Netlify's deploy-preview drawer is a cross-origin iframe, so it cannot
+   follow the page palette; invert it like the GitHub button above. The
+   injector keeps a `height: 48px` inline style only while the drawer is a
+   collapsed banner and swaps it for viewport-sized values when expanded,
+   where inverting would distort screenshots and camera previews. */
+html[data-color-mode="dark"] div[data-netlify-site-id] iframe[title="Netlify Drawer"][style*="height: 48px"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /* Navigation */
 html[data-color-mode="dark"] .wy-menu-vertical header,
 html[data-color-mode="dark"] .wy-menu-vertical p.caption,
@@ -204,11 +231,15 @@ html[data-color-mode="dark"] .wy-menu-vertical li.divide-bottom {
   border-bottom-color: var(--fl-dark-border);
 }
 
-html[data-color-mode="dark"] .color-mode-control label {
+html[data-color-mode="dark"] .color-mode-toggle {
   color: var(--fl-dark-muted);
 }
 
-html[data-color-mode="dark"] #color-mode-select,
+html[data-color-mode="dark"] .color-mode-toggle:hover {
+  background-color: var(--fl-dark-surface-raised);
+  color: var(--fl-dark-heading);
+}
+
 html[data-color-mode="dark"] .wy-breadcrumbs input[type="text"],
 html[data-color-mode="dark"] input,
 html[data-color-mode="dark"] select,
@@ -623,7 +654,7 @@ html[data-color-mode="dark"] .algolia-autocomplete .algolia-docsearch-suggestion
 }
 
 @media print {
-  .color-mode-control {
+  html[data-color-mode-preference] .color-mode-toggle {
     display: none;
   }
 }

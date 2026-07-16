@@ -103,14 +103,19 @@
     {%- block site_name %}
         <a href="{{ nav.homepage.url|url }}" class="icon icon-home"> {{ config.site_name }}</a>
     {%- endblock %}
-        <div class="color-mode-control">
-          <label for="color-mode-select">Color mode</label>
-          <select id="color-mode-select" name="color-mode">
-            <option value="auto">Auto</option>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-          </select>
-        </div>
+        <button id="color-mode-toggle" class="color-mode-toggle" type="button" aria-live="polite" aria-label="Color mode">
+          <svg class="color-mode-icon color-mode-icon-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/>
+          </svg>
+          <svg class="color-mode-icon color-mode-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2.8M12 19.2V22M2 12h2.8M19.2 12H22M4.9 4.9l2 2M17.1 17.1l2 2M19.1 4.9l-2 2M6.9 17.1l-2 2"/>
+          </svg>
+          <svg class="color-mode-icon color-mode-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
     {%- block search_button %}
         {% if 'search' in config['plugins'] %}{% include "searchbox.html" %}{% endif %}
     {%- endblock %}
