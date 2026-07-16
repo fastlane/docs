@@ -2,17 +2,25 @@
   'use strict';
 
   var storageKey = 'fastlane-docs-color-mode';
-  var validPreferences = ['auto', 'light', 'dark'];
+  var preferenceCycle = ['auto', 'light', 'dark'];
   var root = document.documentElement;
   var mediaQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
   function isValidPreference(preference) {
-    return validPreferences.indexOf(preference) !== -1;
+    return preferenceCycle.indexOf(preference) !== -1;
   }
 
   function getPreference() {
     var preference = root.getAttribute('data-color-mode-preference');
     return isValidPreference(preference) ? preference : 'auto';
+  }
+
+  function nextPreference(preference) {
+    return preferenceCycle[(preferenceCycle.indexOf(preference) + 1) % preferenceCycle.length];
+  }
+
+  function describePreference(preference) {
+    return preference === 'auto' ? 'auto (follows your system)' : preference;
   }
 
   function resolveColorMode(preference) {
@@ -28,9 +36,12 @@
     root.setAttribute('data-color-mode', resolveColorMode(safePreference));
     root.setAttribute('data-color-mode-preference', safePreference);
 
-    var selector = document.getElementById('color-mode-select');
-    if (selector) {
-      selector.value = safePreference;
+    var toggle = document.getElementById('color-mode-toggle');
+    if (toggle) {
+      var label = 'Color mode: ' + describePreference(safePreference) +
+        '. Switch to ' + describePreference(nextPreference(safePreference)) + '.';
+      toggle.setAttribute('aria-label', label);
+      toggle.setAttribute('title', label);
     }
   }
 
@@ -55,12 +66,12 @@
   }
 
   function initializeColorModeControl() {
-    var selector = document.getElementById('color-mode-select');
+    var toggle = document.getElementById('color-mode-toggle');
     applyPreference(getPreference());
 
-    if (selector) {
-      selector.addEventListener('change', function (event) {
-        var preference = event.currentTarget.value;
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var preference = nextPreference(getPreference());
         applyPreference(preference);
         storePreference(preference);
       });
