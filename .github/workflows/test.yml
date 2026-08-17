@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup_ruby
+      - uses: ./.github/actions/setup_uv
+
+      - name: Run tests
+        run: uv run bundle exec fastlane test
+
+      - name: Run RuboCop
+        run: bundle exec rubocop

@@ -1,0 +1,16 @@
+name: 'Install'
+description: 'Install and pre-build'
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v7
+      with:
+        python-version-file: ".python-version"
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v10.0.1
+
+    - name: Install deps
+      shell: bash
+      run: uv sync
