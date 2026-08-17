@@ -1,0 +1,49 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ./.github/actions/setup_ruby
+      - uses: ./.github/actions/setup_uv
+
+      # The ```ruby-skip-tests fences only exist so the test lane skips them;
+      # the published page should render them as regular Ruby code blocks
+      - name: Restore Ruby code fences
+        run: find ./docs/generated/actions/ -type f | xargs sed -i 's/```ruby-skip-tests/```ruby/g'
+
+      - name: Build site
+        run: uv run mkdocs build
+
+      - name: Generate redirects
+        run: cd site && ruby ../scripts/ci/generate_redirects.rb
+
+      - name: Add CNAME
+        run: echo "docs.fastlane.tools" > site/CNAME
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/
+
+      - uses: actions/deploy-pages@v5
+        id: deployment
+
