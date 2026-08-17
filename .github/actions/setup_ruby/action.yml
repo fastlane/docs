@@ -1,0 +1,9 @@
+name: 'Install'
+description: 'Install Ruby deps'
+
+runs:
+  using: composite
+  steps:
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
