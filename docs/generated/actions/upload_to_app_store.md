@@ -427,9 +427,9 @@ apple_watch_app_icon('./AppleWatchAppIcon.png')
 
 The platform of your application (a.e. ios, osx).
 
-This option is optional. The default value is "ios" and deliver should be able to figure out the platform from your binary.
+This option is optional. The default value is "ios" and deliver will ignore this option and figure out the platform from your binary if exactly one binary is present.
 
-However, in the case if multiple binaries present, you can specify a platform which you want to deliver explicitly.
+However, in the cases of no binaries or multiple binaries being present, you can specify a platform which you want to deliver explicitly.
 
 The available options:
 
@@ -725,6 +725,8 @@ Key | Editable While Live | Directory | Filename
 - `profanityOrCrudeHumor`
 - `sexualContentGraphicAndNudity`
 - `sexualContentOrNudity`
+- `socialMedia`
+- `socialMediaAgeRestricted`
 - `violenceCartoonOrFantasy`
 - `violenceRealistic`
 - `violenceRealisticProlongedGraphicOrSadistic`
@@ -845,7 +847,9 @@ In this case, default values for keywords, urls, name and release notes are used
 
 [Starting March 20, 2019 Apple's App Store](https://developer.apple.com/news/?id=03202019a) requires 12.9-inch iPad Pro (3rd generation) screenshots additionally to the iPad Pro 2nd generation [screenshots](https://help.apple.com/app-store-connect/#/devd274dd925). As fastlane historically uses the screenshot dimensions to determine the "display family" of a screenshot, this poses a problem as both use the same dimensions and are recognized as the same device family.
 
-To solve this a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string `iPad Pro (12.9-inch) (3rd generation)`, `IPAD_PRO_3GEN_129`, or `ipadPro129` (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.
+For fastlane 2.230.0 and later, screenshots with the shared 12.9-inch iPad Pro resolution are treated as 3rd generation (and later) by default. To upload to the 2nd generation slot, include either `APP_IPAD_PRO_129` or both `12.9` and `2nd generation` in the filename.
+
+> Note: For fastlane versions earlier than 2.230.0, a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string `iPad Pro (12.9-inch) (3rd generation)`, `IPAD_PRO_3GEN_129`, or `ipadPro129` (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.
 
 ## Automatically create screenshots
 
@@ -1007,7 +1011,7 @@ Key | Description | Default
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | [*](#parameters-legend-dynamic)
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `xcrun iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | [*](#parameters-legend-dynamic)
   `provider_public_id` | The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication | [*](#parameters-legend-dynamic)
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
   `precheck_default_rule_level` | The default precheck rule level unless otherwise configured | `:warn`

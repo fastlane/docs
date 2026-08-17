@@ -258,6 +258,7 @@ Key | Description | Default
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
   `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
   `output_remove_retry_attempts` | Remove retry attempts from test results table and the JUnit report (if not using xcpretty) | `false`
+  `force_legacy_xcresulttool` | Force the use of the '--legacy' flag for xcresulttool instead of using the new commands | `false`
   `disable_xcpretty` | **DEPRECATED!** Use `output_style: 'raw'` instead - Disable xcpretty formatting of build, similar to `output_style='raw'` but this will also skip the test results table | 
   `formatter` | **DEPRECATED!** Use 'xcpretty_formatter' instead - A custom xcpretty formatter to use | 
   `xcpretty_formatter` | A custom xcpretty formatter to use | 

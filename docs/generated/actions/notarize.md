@@ -29,7 +29,6 @@ Key | Description | Default
 ----|-------------|--------
   `package` | Path to package to notarize, e.g. .app bundle or disk image | 
   `skip_stapling` | Do not staple the notarization ticket to the artifact; useful for single file executables and ZIP archives | `false`
-  `bundle_id` | Bundle identifier to uniquely identify the package | 
   `username` | Apple ID username | [*](#parameters-legend-dynamic)
   `asc_provider` | Provider short name for accounts associated with multiple providers | 
   `print_log` | Whether to print notarization log file, listing issues on failure and warnings on success | `false`
