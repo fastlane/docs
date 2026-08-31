@@ -81,6 +81,7 @@ Key | Description | Default
   `disable_sandbox` | Disable using the sandbox when executing subprocesses | `false`
   `xcpretty_output` | Specifies the output type for xcpretty. eg. 'test', or 'simple' | 
   `xcpretty_args` | Pass in xcpretty additional command line arguments (e.g. '--test --no-color' or '--tap --no-utf'), requires xcpretty_output to be specified also | 
+  `skip_update` | Skip updating dependencies from their remote during a resolution | `false`
   `verbose` | Increase verbosity of informational output | `false`
   `very_verbose` | Increase verbosity to include debug output | `false`
   `simulator` | Specifies the simulator to pass for Swift Compiler (one of: iphonesimulator, macosx) | 

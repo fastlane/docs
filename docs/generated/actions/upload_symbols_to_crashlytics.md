@@ -11,7 +11,7 @@ Upload dSYM symbolication files to Crashlytics
 
 
 
-> This action allows you to upload symbolication files to Crashlytics. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode. This action will not fail the build if one of the uploads failed. The reason for that is that sometimes some of dSYM files are invalid, and we don't want them to fail the complete build.
+> This action allows you to upload symbolication files to Crashlytics. It's extra useful if you use it to download the latest dSYM files from Apple when you use Bitcode. This action will not fail the build if one of the uploads failed by default.<br>The reason for that is that sometimes some of dSYM files are invalid, and we don't want them to fail the complete build. However, fail_on_build parameter can be used to prevent this behavior.
 
 
 upload_symbols_to_crashlytics ||
@@ -43,6 +43,7 @@ Key | Description | Default
   `binary_path` | The path to the upload-symbols file of the Fabric app | 
   `platform` | The platform of the app (ios, appletvos, mac) | `ios`
   `dsym_worker_threads` | The number of threads to use for simultaneous dSYM upload | `1`
+  `fail_on_error` | Should the action fail when an upload fails? | `false`
   `debug` | Enable debug mode for upload-symbols | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
