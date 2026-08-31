@@ -594,8 +594,8 @@ for this particular release.</p>
 </code></pre>
 <h5 id="platform">platform</h5>
 <p>The platform of your application (a.e. ios, osx).</p>
-<p>This option is optional. The default value is "ios" and deliver should be able to figure out the platform from your binary.</p>
-<p>However, in the case if multiple binaries present, you can specify a platform which you want to deliver explicitly.</p>
+<p>This option is optional. The default value is "ios" and deliver will ignore this option and figure out the platform from your binary if exactly one binary is present.</p>
+<p>However, in the cases of no binaries or multiple binaries being present, you can specify a platform which you want to deliver explicitly.</p>
 <p>The available options:</p>
 <ul>
 <li>'ios'</li>
@@ -1020,6 +1020,8 @@ end
 <li><code>profanityOrCrudeHumor</code></li>
 <li><code>sexualContentGraphicAndNudity</code></li>
 <li><code>sexualContentOrNudity</code></li>
+<li><code>socialMedia</code></li>
+<li><code>socialMediaAgeRestricted</code></li>
 <li><code>violenceCartoonOrFantasy</code></li>
 <li><code>violenceRealistic</code></li>
 <li><code>violenceRealisticProlongedGraphicOrSadistic</code></li>
@@ -1118,7 +1120,10 @@ end
 <p>In this case, default values for keywords, urls, name and release notes are used in all localizations, but each language has a fully localized description</p>
 <h2 id="uploading-screenshots-for-ipad-pro-129-inch-3rd-generation">Uploading screenshots for "iPad Pro (12.9-inch) (3rd generation)"</h2>
 <p><a href="https://developer.apple.com/news/?id=03202019a">Starting March 20, 2019 Apple's App Store</a> requires 12.9-inch iPad Pro (3rd generation) screenshots additionally to the iPad Pro 2nd generation <a href="https://help.apple.com/app-store-connect/#/devd274dd925">screenshots</a>. As fastlane historically uses the screenshot dimensions to determine the "display family" of a screenshot, this poses a problem as both use the same dimensions and are recognized as the same device family.</p>
-<p>To solve this a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string <code>iPad Pro (12.9-inch) (3rd generation)</code>, <code>IPAD_PRO_3GEN_129</code>, or <code>ipadPro129</code> (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.</p>
+<p>For fastlane 2.230.0 and later, screenshots with the shared 12.9-inch iPad Pro resolution are treated as 3rd generation (and later) by default. To upload to the 2nd generation slot, include either <code>APP_IPAD_PRO_129</code> or both <code>12.9</code> and <code>2nd generation</code> in the filename.</p>
+<blockquote>
+<p>Note: For fastlane versions earlier than 2.230.0, a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string <code>iPad Pro (12.9-inch) (3rd generation)</code>, <code>IPAD_PRO_3GEN_129</code>, or <code>ipadPro129</code> (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.</p>
+</blockquote>
 <h2 id="automatically-create-screenshots">Automatically create screenshots</h2>
 <p>If you want to integrate <em>deliver</em> with <a href="https://docs.fastlane.tools/actions/snapshot/"><em>snapshot</em></a>, check out <a href="https://fastlane.tools"><em>fastlane</em></a>!</p>
 <h2 id="jenkins-integration">Jenkins integration</h2>
@@ -1420,7 +1425,7 @@ different, <a href="https://developer.apple.com/documentation/app_clips/configur
 </tr>
 <tr>
 <td><code>itc_provider</code></td>
-<td>The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
+<td>The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run <code>xcrun iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
 <td><a href="#parameters-legend-dynamic">*</a></td>
 </tr>
 <tr>
@@ -1633,7 +1638,7 @@ different, <a href="https://developer.apple.com/documentation/app_clips/configur
     </p>
   </div>
 
-  Documentation built 2026-08-14 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-08-31 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

@@ -992,6 +992,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>renew_expired_certs</code></td>
+<td>Automatically renew expired certificates. Note: to renew <code>developer_id</code> and <code>developer_id_installer</code> certificates you must log in with the Account Holder account by using username and password; App Store Connect API key doesn't work in this case. The expired certificate is removed from the match storage and a new one is created, but the old certificate is not revoked on the Apple Developer Portal — run <code>fastlane match nuke</code> if you need to free up certificate slots</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>skip_confirmation</code></td>
 <td>Disables confirmation prompts during nuke, answering them with yes</td>
 <td><code>false</code></td>
@@ -1124,7 +1129,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
     </p>
   </div>
 
-  Documentation built 2026-08-14 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-08-31 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

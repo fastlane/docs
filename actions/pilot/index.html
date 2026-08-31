@@ -757,7 +757,7 @@ pilot...
 </tr>
 <tr>
 <td><code>groups</code></td>
-<td>Associate tester to one group or more by group name / group id. E.g. <code>-g "Team 1","Team 2"</code> This is required when <code>distribute_external</code> option is set to true or when we want to add a tester to one or more external testing groups</td>
+<td>Associate tester to one group or more by group name / group id. E.g. <code>-g "Team 1","a06cf5b5-95a9-4beb-88c6-f22bd6b3f7a2"</code> This is required when <code>distribute_external</code> option is set to true or when we want to add a tester to one or more external testing groups</td>
 <td></td>
 </tr>
 <tr>
@@ -777,7 +777,7 @@ pilot...
 </tr>
 <tr>
 <td><code>itc_provider</code></td>
-<td>The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run <code>pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
+<td>The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run <code>xcrun iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off</code>. The short names of providers should be listed in the second column</td>
 <td></td>
 </tr>
 <tr>
@@ -855,7 +855,7 @@ pilot...
     </p>
   </div>
 
-  Documentation built 2026-08-14 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-08-31 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
