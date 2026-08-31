@@ -1,12 +1,12 @@
 version: 2.1
 orbs:
-  ruby: circleci/ruby@2.5.4
+  ruby: circleci/ruby@3.0.0
   python: circleci/python@4.0.0
 
 jobs:
   "Test":
     docker:
-      - image: fastlanetoolsci/fastlane:1.0.1
+      - image: fastlanetoolsci/fastlane:1.2.0
     working_directory: ~/code
     steps:
       - checkout
@@ -18,7 +18,7 @@ jobs:
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
     docker:
-      - image: fastlanetoolsci/fastlane:1.0.1
+      - image: fastlanetoolsci/fastlane:1.2.0
     working_directory: ~/code
     steps:
       - checkout
