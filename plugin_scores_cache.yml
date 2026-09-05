@@ -93,7 +93,7 @@ fastlane-plugin-aws_s3:
   :github_contributors: 27
 fastlane-plugin-bugsnag:
   :initial_commit: 2025-09-18
-  :age_in_days: 333
+  :age_in_days: 352
   :readme_score: 100
   :tests: 32
   :actions:
@@ -108,7 +108,7 @@ fastlane-plugin-bugsnag:
     description: Uploads dSYM debug symbol files to Bugsnag
     details: Takes debug symbol (dSYM) files from a macOS, iOS, or tvOS project and
       uploads them to Bugsnag to improve stacktrace quality
-  :sha: 75b6c997a13b3e6c0b12837c1e16e45191e9333156252027a13183bbbf9d3f3c
+  :sha: b9ed6a4e63dc996a922b23dbb0385bb8d34109ec6481de5a3756becd9cba54ff
   :github_stars: 0
   :github_subscribers: 4
   :github_issues: 1
@@ -267,7 +267,7 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3729
+  :age_in_days: 3748
   :readme_score: 100
   :tests: 149
   :actions:
@@ -324,12 +324,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: c647f1cf7867c7edc3d06370ce204586853a43ec205ac9b0811a526c65b033c3
+  :sha: ee56f2f63211002667840a5d2719dc3cc36bb73b15a84b19007c4871d35ac523
   :github_stars: 153
   :github_subscribers: 41
-  :github_issues: 1
+  :github_issues: 2
   :github_forks: 55
-  :github_contributors: 0
+  :github_contributors: 49
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -1543,21 +1543,21 @@ fastlane-plugin-xamarin_build:
   :github_contributors: 4
 fastlane-plugin-pgyer:
   :initial_commit: 2017-01-21
-  :age_in_days: 3253
+  :age_in_days: 3514
   :readme_score: 100
-  :tests: 1
+  :tests: 3
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: pgyer
     category:
     description:
     details:
-  :sha: 10c4110db37c5195c5e9e1ce309186d64a7e85eb3849ab16629f0fcde4419472
-  :github_stars: 65
-  :github_subscribers: 3
+  :sha: 38eae5c04b09a3c8e9a90d18cba736d2c1f3a929b3b90f50c83b75a91651a9cc
+  :github_stars: 66
+  :github_subscribers: 4
   :github_issues: 4
   :github_forks: 31
-  :github_contributors: 5
+  :github_contributors: 0
 fastlane-plugin-act:
   :initial_commit: 2016-08-11
   :age_in_days: 879
@@ -8560,19 +8560,14 @@ fastlane-plugin-gitlab_changelog:
   :github_contributors: 2
 fastlane-plugin-zealot:
   :initial_commit: 2019-12-12
-  :age_in_days: 2007
+  :age_in_days: 2459
   :readme_score: 100
-  :tests: 1
+  :tests: 2
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: zealot_version_check
+    name: zealot
     category:
-    description: Check app version exists from Zealot
-    details:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: zealot_sync_devices
-    category:
-    description: Sync ios devices list to Zealot
+    description:
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: zealot_debug_file
@@ -8581,13 +8576,18 @@ fastlane-plugin-zealot:
       Over The Air Server for deployment of Android and iOS apps.
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: zealot
+    name: zealot_sync_devices
     category:
-    description:
+    description: Sync ios devices list to Zealot
     details:
-  :sha: 78d9aa760305a391764b5eed45c0c452085bec21ec85f72901c2b04e91388c52
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: zealot_version_check
+    category:
+    description: Check app version exists from Zealot
+    details:
+  :sha: e8ac360e464768f5a0e7bf8e9715f880202fde867de41cf3b7b2fc04497e28fa
   :github_stars: 9
-  :github_subscribers: 2
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 1
   :github_contributors: 0
@@ -10660,15 +10660,10 @@ fastlane-plugin-jira_issue_link:
   :github_contributors: 0
 fastlane-plugin-emerge:
   :initial_commit: 2020-12-07
-  :age_in_days: 1646
+  :age_in_days: 2098
   :readme_score: 100
-  :tests: 1
+  :tests: 2
   :actions:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: emerge_snapshot
-    category:
-    description: Fastlane plugin for Emerge to generate iOS snapshots
-    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: emerge
     category:
@@ -10679,11 +10674,16 @@ fastlane-plugin-emerge:
     category:
     description: Fastlane plugin to download order files
     details:
-  :sha: 8815f3a0f82076b74788ef9e49999497484bcae310359353448bd7fb5eff32dc
-  :github_stars: 14
-  :github_subscribers: 4
-  :github_issues: 1
-  :github_forks: 5
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: emerge_snapshot
+    category:
+    description: Fastlane plugin for Emerge to generate iOS snapshots
+    details:
+  :sha: 1c9349bd54d12af873ae4e8538ec2d5f72fd9982d075f458effaa64c04a5395c
+  :github_stars: 15
+  :github_subscribers: 3
+  :github_issues: 2
+  :github_forks: 6
   :github_contributors: 0
 fastlane-plugin-jira_link:
   :initial_commit: 2021-01-09
@@ -11218,16 +11218,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 2960
+  :age_in_days: 2979
   :readme_score: 100
-  :tests: 908
+  :tests: 947
   :actions: []
-  :sha: cfe39597775611aa7745ff3a6d6c7ac07644a052bee9d7e4c3eaebe0f7e03cac
+  :sha: 6ffd06713e7e98c0d4a65df404b6cf8ffe66258b0976900899d888e57909aa67
   :github_stars: 31
   :github_subscribers: 17
-  :github_issues: 48
+  :github_issues: 45
   :github_forks: 10
-  :github_contributors: 27
+  :github_contributors: 28
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
   :age_in_days: 13
@@ -14948,6 +14948,52 @@ fastlane-plugin-appcircle_publish:
   :github_forks: 0
   :github_contributors: 0
 ann-flavor-flutter:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 3
+fastlane-plugin-godot:
+  :initial_commit: 2026-08-26
+  :age_in_days: 10
+  :readme_score: 100
+  :tests: 45
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_export
+    category:
+    description: Export a Godot project headlessly using an export preset
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_get_version
+    category:
+    description: Read the version name and build number from export_presets.cfg
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_init
+    category:
+    description: Scaffold the files a Godot project needs for fastlane mobile releases
+      (never overwrites existing files)
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_install_templates
+    category:
+    description: Download and install the export templates matching the Godot binary's
+      version, for one platform or all
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_set_version
+    category:
+    description: Write the version name and build number into every preset in export_presets.cfg,
+      keeping platforms in sync
+    details:
+  :sha: 6c27d78f5da60796342ddbff46c1c3299578b85e0ef9db53fa1f5edeb874d60b
+  :github_stars: 1
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+ann-flavor-fastlane:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0

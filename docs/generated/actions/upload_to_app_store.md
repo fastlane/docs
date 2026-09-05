@@ -1029,6 +1029,7 @@ Key | Description | Default
   `app_review_information` | Metadata: A hash containing the review information | 
   `app_clip_review_information` | Metadata: A hash containing the app clip review information | 
   `app_review_attachment_file` | Metadata: Path to the app review attachment file | 
+  `routing_app_coverage_file` | Metadata: Path to the routing app coverage file (`.geojson`) that is required for routing apps | 
   `description` | Metadata: The localised app description | 
   `name` | Metadata: The localised app name | 
   `subtitle` | Metadata: The localised app subtitle | 
