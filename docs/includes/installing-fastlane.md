@@ -6,11 +6,11 @@ _fastlane_ can be installed in multiple ways. The preferred method is with [_Bun
 
 If you use macOS, system Ruby is not recommended. [There are a variety of ways to install Ruby without having to modify your system environment](https://www.ruby-lang.org/en/documentation/installation/#managers). For macOS and Linux, _rbenv_ is one of the most popular ways to manage your Ruby environment.
 
-_fastlane_ supports Ruby versions 3.0 or newer, but prefers Ruby 3.3 or greater. Verify which Ruby version you're using:
+_fastlane_ supports Ruby versions 3.1 or newer, but prefers Ruby 3.3 or greater. Verify which Ruby version you're using:
 
 ```sh
 $ ruby --version
-ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]
+ruby 3.4.7 (2025-10-08 revision 7a5688e2a2) +PRISM [arm64-darwin25]
 ```
 
 Running a version of Ruby that is planned for removal will emit a warning when you run _fastlane_. This is purely information to help you prepare for the future versions.
