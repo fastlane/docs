@@ -34,6 +34,7 @@ changelog_from_git_commits(
   pretty: "- (%ae) %s",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
   date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
   match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
+  matching_pattern: "[.*?].*",   # Optional, lets you filter out commits not matching the regex pattern
   merge_commit_filtering: "exclude_merges" # Optional, lets you filter out merge commits
 )
 ```
@@ -50,6 +51,7 @@ Key | Description | Default
   `commits_count` | Number of commits to include in changelog, you mustn't use it with :between key at the same time | 
   `path` | Path of the git repository | `./`
   `pretty` | The format applied to each commit while generating the collected value | `%B`
+  `matching_pattern` | A regexp pattern to filter only the commits matching the pattern | 
   `date_format` | The date format applied to each commit while generating the collected value | 
   `ancestry_path` | Whether or not to use ancestry-path param | `false`
   `tag_match_pattern` | A glob(7) pattern to match against when finding the last git tag | 

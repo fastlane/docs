@@ -397,6 +397,7 @@ Key | Description | Default
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
   `app_clip_invocations` | Add beta app clip invocations to your builds in TestFlight | 
   `overwrite_app_clip_invocations` | Clear all previous beta app clip invocations before adding new ones | `false`
+  `routing_app_coverage_file` | Path to the routing app coverage file (`.geojson`) that is required for routing apps. It will be uploaded to the editable App Store version of the app | 
   `distribute_only` | Distribute a previously uploaded build (equivalent to the `fastlane pilot distribute` command) | `false`
   `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? If set to true, use of `groups` option is required | `false`
