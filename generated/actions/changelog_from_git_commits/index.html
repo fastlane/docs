@@ -366,6 +366,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
   pretty: &quot;- (%ae) %s&quot;,# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
   date_format: &quot;short&quot;,# Optional, lets you provide an additional date format to dates within the pretty-formatted string
   match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
+  matching_pattern: &quot;[.*?].*&quot;,   # Optional, lets you filter out commits not matching the regex pattern
   merge_commit_filtering: &quot;exclude_merges&quot; # Optional, lets you filter out merge commits
 )
 </code></pre>
@@ -398,6 +399,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>pretty</code></td>
 <td>The format applied to each commit while generating the collected value</td>
 <td><code>%B</code></td>
+</tr>
+<tr>
+<td><code>matching_pattern</code></td>
+<td>A regexp pattern to filter only the commits matching the pattern</td>
+<td></td>
 </tr>
 <tr>
 <td><code>date_format</code></td>
@@ -503,7 +509,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-08-31 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-09-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

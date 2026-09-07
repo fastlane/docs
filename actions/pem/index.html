@@ -386,6 +386,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p>If you want to generate a Website Push certificate:</p>
 <pre><code class="language-no-highlight">fastlane pem --website_push
 </code></pre>
+<p>If you want to generate a VoIP Services certificate (the type PushKit requires):</p>
+<pre><code class="language-no-highlight">fastlane pem --voip_push
+</code></pre>
 <p>Set a password for your <code>p12</code> file:</p>
 <pre><code class="language-no-highlight">fastlane pem -p &quot;MyPass&quot;
 </code></pre>
@@ -480,6 +483,11 @@ Enter Export Password:
 <tr>
 <td><code>website_push</code></td>
 <td>Create a Website Push certificate</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>voip_push</code></td>
+<td>Create a VoIP Services certificate</td>
 <td><code>false</code></td>
 </tr>
 <tr>
@@ -587,7 +595,7 @@ Enter Export Password:
     </p>
   </div>
 
-  Documentation built 2026-08-31 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-09-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
