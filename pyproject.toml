@@ -1,11 +1,12 @@
 [project]
 name = "docs.fastlane.tools"
 version = "0.0.1"
-requires-python = ">=3.8.13"
+requires-python = ">=3.9"
 dependencies = [
     "markdown-include",
     "mdx-truly-sane-lists",
-    "mkdocs",
+    "properdocs",
+    "properdocs-theme-readthedocs",
     "mkdocs-bootstrap",
     "mkdocs-bootswatch",
     "mkdocs-simple-hooks",
