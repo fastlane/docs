@@ -32,6 +32,9 @@ extra_css:
 - "./css/fabric.css"
 - "./css/sidenav.css"
 - https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+- "./css/color-mode.css"
+extra_javascript:
+- "./js/color-mode.js"
 nav:
 - Home: index.md
 - Getting Started:
