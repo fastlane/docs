@@ -93,7 +93,7 @@ fastlane-plugin-aws_s3:
   :github_contributors: 27
 fastlane-plugin-bugsnag:
   :initial_commit: 2025-09-18
-  :age_in_days: 352
+  :age_in_days: 361
   :readme_score: 100
   :tests: 32
   :actions:
@@ -108,7 +108,7 @@ fastlane-plugin-bugsnag:
     description: Uploads dSYM debug symbol files to Bugsnag
     details: Takes debug symbol (dSYM) files from a macOS, iOS, or tvOS project and
       uploads them to Bugsnag to improve stacktrace quality
-  :sha: b9ed6a4e63dc996a922b23dbb0385bb8d34109ec6481de5a3756becd9cba54ff
+  :sha: a190fbd0c497d58817892ace28b82b512e0fb9bba064d88b7df4b206dbc5b148
   :github_stars: 0
   :github_subscribers: 4
   :github_issues: 1
@@ -6007,9 +6007,9 @@ fastlane-plugin-flutter_build:
   :github_contributors: 0
 fastlane-plugin-appbox:
   :initial_commit: 2018-12-20
-  :age_in_days: 2529
+  :age_in_days: 2825
   :readme_score: 100
-  :tests: 1
+  :tests: 15
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appbox
@@ -6018,12 +6018,12 @@ fastlane-plugin-appbox:
       directly to the devices from your Dropbox account.
     details: Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications
       directly to the devices from your Dropbox account.
-  :sha: 0c19e92681cbd7ccaeccea77e6baa4cc7b7c4654cb9fe87c119d61566c6ecd70
-  :github_stars: 19
+  :sha: 70af9d19249fb2ec906c8b4b7d4616b3d96790a476e37d2b46f2c89ed6821acc
+  :github_stars: 20
   :github_subscribers: 1
-  :github_issues: 1
+  :github_issues: 0
   :github_forks: 3
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-bitrise:
   :initial_commit: 2018-12-30
   :age_in_days: 8
@@ -10787,22 +10787,22 @@ fastlane-plugin-dingtalk_msg:
   :github_contributors: 0
 fastlane-plugin-teams_bot:
   :initial_commit: 2021-01-19
-  :age_in_days: 2
+  :age_in_days: 2064
   :readme_score: 100
-  :tests: 1
+  :tests: 6
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: teams_bot
     category:
-    description: Easily send a message to a Microsoft Teams channel through the Webhook
-      connector
+    description: Easily send a message to a Microsoft Teams channel through a webhook
+      workflow
     details: Send a message to a specific channel on your Microsoft Teams organization
-  :sha: 9e87687a947269c6c2c86f4bcff089e4fb2208e7aec4c2f74c340efa62a75519
-  :github_stars: 1
+  :sha: 7263f399d897fcb1492f2054fe945644e05ac585d7c7977c4c976d05ac42d721
+  :github_stars: 11
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_issues: 1
+  :github_forks: 3
+  :github_contributors: 0
 fastlane-plugin-aws_device_farm_upload:
   :initial_commit: 2021-01-09
   :age_in_days: 41
@@ -14899,26 +14899,26 @@ fastlane-plugin-plist_surgeon:
   :github_contributors: 3
 fastlane-plugin-rustored:
   :initial_commit: 2026-06-03
-  :age_in_days: 5
+  :age_in_days: 103
   :readme_score: 100
-  :tests: 15
+  :tests: 17
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: rustored_publish_aab
     category:
-    description: Publish an AAB file to RuStore
-    details: Uploads an Android App Bundle to an existing RuStore app version.
+    description: Upload an AAB file to an existing RuStore draft version
+    details: Uploads an Android App Bundle to an existing RuStore draft version.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: rustored_publish_apk
     category:
-    description: Publish an APK file to RuStore
-    details: Uploads an APK to an existing RuStore app version.
-  :sha: 8bb4f9b5648cca3afe4787f7c407cda120f8ca189f17ad9f5c121fb3ae5b9654
-  :github_stars: 0
+    description: Upload an APK file to an existing RuStore draft version
+    details: Uploads an APK to an existing RuStore draft version.
+  :sha: 6359bffc52c05f969b286828cb4e23faa955c777ad603e8fcfd0e59476458c8a
+  :github_stars: 3
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 1
 ann-flutter-flavor:
   :github_stars: 0
   :github_subscribers: 0
