@@ -1,10 +1,10 @@
 # Codemagic Integration
 
-[Codemagic](https://codemagic.io/) is a cloud-based CI/CD tool for mobile applications that you can use for continuous integration and delivery together with *fastlane*. Codemagic has *fastlane* pre-installed, so you can easily run your *fastlane* scripts as part of the Codemagic build process. You only need a Fastfile in your repository to get started. You can find the version of pre-installed *fastlane* based on build machine type from [here](https://docs.codemagic.io/specs/machine-type/).
+[Codemagic](https://codemagic.io/) is a cloud-based CI/CD tool for mobile applications that you can use for continuous integration and delivery together with *fastlane*. Codemagic has *fastlane* pre-installed, so you can easily run your *fastlane* scripts as part of the Codemagic build process. You only need a Fastfile in your repository to get started. You can find the version of pre-installed *fastlane* based on build [machine type from Codemagic](https://docs.codemagic.io/specs/machine-type/).
 
 ## Getting started
 
-For publishing iOS apps, it is recommended to create an App Store Connect API key so you don't have to use 2FA. This also offers better performance and increased reliability. More details can be found [here](https://docs.fastlane.tools/app-store-connect-api/).
+For publishing iOS apps, it is recommended to create an App Store Connect API key so you don't have to use 2FA. This also offers better performance and increased reliability. Read more about the [official API](/app-store-connect-api/).
 
 ## Adding environment variables
 
@@ -12,7 +12,7 @@ The following **environment variables** need to be added to your workflow for *f
 
 - `MATCH_PASSWORD` - the password used to encrypt/decrypt the repository used to store your distribution certificates and provisioning profiles.
 - `MATCH_KEYCHAIN` - an arbitrary name to use for the keychain on the Codemagic build server, e.g "fastlane_keychain"
-- `MATCH_SSH_KEY` - an SSH private key used for cloning the Match repository that contains your distribution certificates and provisioning profiles. The public key should be added to your GitHub account. See [here](https://docs.codemagic.io/configuration/access-private-git-submodules/) for more information about accessing Git dependencies with SSH keys.
+- `MATCH_SSH_KEY` - an SSH private key used for cloning the Match repository that contains your distribution certificates and provisioning profiles. The public key should be added to your GitHub account. See [Codemagic submodule docs](https://docs.codemagic.io/configuration/access-private-git-submodules/) for more information about accessing Git dependencies with SSH keys.
 - `APP_STORE_CONNECT_PRIVATE_KEY` - the App Store Connect API key. Copy the entire contents of the .p8 file and paste into the environment variable value field.
 - `APP_STORE_CONNECT_KEY_IDENTIFIER` - the key identifier of your App Store Connect API key.
 - `APP_STORE_CONNECT_ISSUER_ID` - the issuer of your App Store Connect API key.
