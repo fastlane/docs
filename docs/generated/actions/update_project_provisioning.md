@@ -46,7 +46,7 @@ Key | Description | Default
   `target_filter` | A filter for the target name. Use a standard regex | 
   `build_configuration_filter` | Legacy option, use 'target_filter' instead | 
   `build_configuration` | A filter for the build configuration name. Use a standard regex. Applied to all configurations if not specified | 
-  `certificate` | Path to apple root certificate | `/tmp/AppleIncRootCertificate.cer`
+  `certificate` | Path to apple root certificate | `/var/folders/jn/s5t32t113zx6n4gbmrbg181c0000gn/T/AppleIncRootCertificate.cer`
   `code_signing_identity` | Code sign identity for build configuration | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
