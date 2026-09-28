@@ -84,7 +84,7 @@ pre .cs, pre .c {
 
 
 /*
- * Additions specific to the search functionality provided by MkDocs
+ * Additions specific to the search functionality provided by ProperDocs
  */
 
 .search-results {
@@ -187,7 +187,7 @@ td, th {
 
 /*
  * Please note that this amendment also involves removing certain inline-styles
- * from the file ./mkdocs/themes/readthedocs/versions.html.
+ * from the file properdocs_theme_readthedocs/versions.html.
  *
  * https://github.com/mkdocs/mkdocs/issues/2012
  */
