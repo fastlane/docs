@@ -831,6 +831,11 @@ archive | xcpretty
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>disallow_xcodebuild_settings_lookup</code></td>
+<td>Raises an error instead of fetching build settings by running <code>xcodebuild -showBuildSettings</code>, which can take a long time on large projects. The error names the required build setting, so the corresponding option can be specified manually</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>disable_package_automatic_updates</code></td>
 <td>Prevents packages from automatically being resolved to versions other than those recorded in the <code>Package.resolved</code> file. This translates in the option <code>-disableAutomaticPackageResolution</code> being passed to xcodebuild</td>
 <td><code>false</code></td>
