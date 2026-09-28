@@ -87,6 +87,12 @@ If you want to generate a Website Push certificate:
 fastlane pem --website_push
 ```
 
+If you want to generate a VoIP Services certificate (the type PushKit requires):
+
+```no-highlight
+fastlane pem --voip_push
+```
+
 Set a password for your `p12` file:
 
 ```no-highlight
@@ -189,6 +195,7 @@ Key | Description | Default
   `platform` | Set certificate's platform. Used for creation of production & development certificates. Supported platforms: ios, macos | `ios`
   `development` | Renew the development push certificate instead of the production one | `false`
   `website_push` | Create a Website Push certificate | `false`
+  `voip_push` | Create a VoIP Services certificate | `false`
   `generate_p12` | Generate a p12 file additionally to a PEM file | `true`
   `active_days_limit` | If the current certificate is active for less than this number of days, generate a new one | `30`
   `force` | Create a new push certificate, even if the current one is active for 30 (or PEM_ACTIVE_DAYS_LIMIT) more days | `false`

@@ -92,29 +92,28 @@ fastlane-plugin-aws_s3:
   :github_forks: 60
   :github_contributors: 27
 fastlane-plugin-bugsnag:
-  :initial_commit: 2016-08-23
-  :age_in_days: 3378
+  :initial_commit: 2025-09-18
+  :age_in_days: 361
   :readme_score: 100
-  :tests: 0
+  :tests: 32
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: send_build_to_bugsnag
-    category: building
-    description: Notifies Bugsnag of a build
-    details: Notifies Bugsnag of a new build being released including app version
-      and source control details
+    category:
+    description:
+    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: upload_symbols_to_bugsnag
     category:
     description: Uploads dSYM debug symbol files to Bugsnag
     details: Takes debug symbol (dSYM) files from a macOS, iOS, or tvOS project and
       uploads them to Bugsnag to improve stacktrace quality
-  :sha: 8ddac4b79cb4b5d00432cccd5789a9e1a1119c29f7773a27d01b1d8a2363915d
-  :github_stars: 39
-  :github_subscribers: 30
-  :github_issues: 4
-  :github_forks: 12
-  :github_contributors: 0
+  :sha: a190fbd0c497d58817892ace28b82b512e0fb9bba064d88b7df4b206dbc5b148
+  :github_stars: 0
+  :github_subscribers: 4
+  :github_issues: 1
+  :github_forks: 0
+  :github_contributors: 3
 fastlane-plugin-trainer:
   :initial_commit: 2016-07-20
   :age_in_days: 874
@@ -268,9 +267,9 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3671
+  :age_in_days: 3748
   :readme_score: 100
-  :tests: 146
+  :tests: 149
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_check_cli_installed
@@ -325,12 +324,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: 07474a9ee1cffff8e2585273c95e44da53af81be123164b3a58019022ece71b1
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :sha: ee56f2f63211002667840a5d2719dc3cc36bb73b15a84b19007c4871d35ac523
+  :github_stars: 153
+  :github_subscribers: 41
+  :github_issues: 2
+  :github_forks: 55
+  :github_contributors: 49
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -679,19 +678,19 @@ fastlane-plugin-yarn:
   :github_contributors: 4
 fastlane-plugin-applivery:
   :initial_commit: 2016-07-26
-  :age_in_days: 3241
+  :age_in_days: 3674
   :readme_score: 100
-  :tests: 1
+  :tests: 59
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: applivery
     category: beta
     description: Upload new iOS or Android build to Applivery
-    details:
-  :sha: 164362e1ea2a990e656bbd8b4f179b48233009a4726cd8beb5976705a79e3c58
+    details: " "
+  :sha: c77cada7828dd9ce1fa6b463fcc6aeae9071a48f8b75c410e527493bd010f162
   :github_stars: 12
-  :github_subscribers: 4
-  :github_issues: 2
+  :github_subscribers: 3
+  :github_issues: 0
   :github_forks: 8
   :github_contributors: 0
 fastlane-plugin-xcake:
@@ -1544,21 +1543,21 @@ fastlane-plugin-xamarin_build:
   :github_contributors: 4
 fastlane-plugin-pgyer:
   :initial_commit: 2017-01-21
-  :age_in_days: 3253
+  :age_in_days: 3514
   :readme_score: 100
-  :tests: 1
+  :tests: 3
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: pgyer
     category:
     description:
     details:
-  :sha: 10c4110db37c5195c5e9e1ce309186d64a7e85eb3849ab16629f0fcde4419472
-  :github_stars: 65
-  :github_subscribers: 3
+  :sha: 38eae5c04b09a3c8e9a90d18cba736d2c1f3a929b3b90f50c83b75a91651a9cc
+  :github_stars: 66
+  :github_subscribers: 4
   :github_issues: 4
   :github_forks: 31
-  :github_contributors: 5
+  :github_contributors: 0
 fastlane-plugin-act:
   :initial_commit: 2016-08-11
   :age_in_days: 879
@@ -6008,9 +6007,9 @@ fastlane-plugin-flutter_build:
   :github_contributors: 0
 fastlane-plugin-appbox:
   :initial_commit: 2018-12-20
-  :age_in_days: 2529
+  :age_in_days: 2825
   :readme_score: 100
-  :tests: 1
+  :tests: 15
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appbox
@@ -6019,12 +6018,12 @@ fastlane-plugin-appbox:
       directly to the devices from your Dropbox account.
     details: Deploy Development, Ad-Hoc and In-house (Enterprise) iOS applications
       directly to the devices from your Dropbox account.
-  :sha: 0c19e92681cbd7ccaeccea77e6baa4cc7b7c4654cb9fe87c119d61566c6ecd70
-  :github_stars: 19
+  :sha: 70af9d19249fb2ec906c8b4b7d4616b3d96790a476e37d2b46f2c89ed6821acc
+  :github_stars: 20
   :github_subscribers: 1
-  :github_issues: 1
+  :github_issues: 0
   :github_forks: 3
-  :github_contributors: 2
+  :github_contributors: 0
 fastlane-plugin-bitrise:
   :initial_commit: 2018-12-30
   :age_in_days: 8
@@ -8300,9 +8299,9 @@ fastlane-plugin-bitwarden:
   :github_contributors: 0
 fastlane-plugin-huawei_appgallery_connect:
   :initial_commit: 2019-12-14
-  :age_in_days: 2170
+  :age_in_days: 2438
   :readme_score: 100
-  :tests: 1
+  :tests: 8
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: huawei_appgallery_connect
@@ -8334,11 +8333,23 @@ fastlane-plugin-huawei_appgallery_connect:
     category:
     description: Huawei AppGallery Connect Plugin
     details:
-  :sha: d11d12ae4fc26eb4438ac6208aba0a7a0e3ba323b451bb9d380f67df705d27ad
-  :github_stars: 90
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: huawei_appgallery_connect_upload_assets
+    category:
+    description: Upload app icons, screenshots, and other visual assets to Huawei
+      AppGallery Connect
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: huawei_appgallery_connect_withdraw_review
+    category:
+    description: Withdraw an app version currently under AppGallery review
+    details: Withdraws an app version from review so it can be updated and submitted
+      again
+  :sha: 596567d951b22f33eaac54ec6e8013e74aa4f54091bf0a8e96cb40301097f40f
+  :github_stars: 93
   :github_subscribers: 6
-  :github_issues: 1
-  :github_forks: 31
+  :github_issues: 0
+  :github_forks: 32
   :github_contributors: 0
 fastlane-plugin-xcode_tools_select:
   :initial_commit: 2019-12-03
@@ -8549,19 +8560,14 @@ fastlane-plugin-gitlab_changelog:
   :github_contributors: 2
 fastlane-plugin-zealot:
   :initial_commit: 2019-12-12
-  :age_in_days: 2007
+  :age_in_days: 2459
   :readme_score: 100
-  :tests: 1
+  :tests: 2
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: zealot_version_check
+    name: zealot
     category:
-    description: Check app version exists from Zealot
-    details:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: zealot_sync_devices
-    category:
-    description: Sync ios devices list to Zealot
+    description:
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: zealot_debug_file
@@ -8570,13 +8576,18 @@ fastlane-plugin-zealot:
       Over The Air Server for deployment of Android and iOS apps.
     details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: zealot
+    name: zealot_sync_devices
     category:
-    description:
+    description: Sync ios devices list to Zealot
     details:
-  :sha: 78d9aa760305a391764b5eed45c0c452085bec21ec85f72901c2b04e91388c52
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: zealot_version_check
+    category:
+    description: Check app version exists from Zealot
+    details:
+  :sha: e8ac360e464768f5a0e7bf8e9715f880202fde867de41cf3b7b2fc04497e28fa
   :github_stars: 9
-  :github_subscribers: 2
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 1
   :github_contributors: 0
@@ -10649,15 +10660,10 @@ fastlane-plugin-jira_issue_link:
   :github_contributors: 0
 fastlane-plugin-emerge:
   :initial_commit: 2020-12-07
-  :age_in_days: 1646
+  :age_in_days: 2098
   :readme_score: 100
-  :tests: 1
+  :tests: 2
   :actions:
-  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: emerge_snapshot
-    category:
-    description: Fastlane plugin for Emerge to generate iOS snapshots
-    details:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: emerge
     category:
@@ -10668,11 +10674,16 @@ fastlane-plugin-emerge:
     category:
     description: Fastlane plugin to download order files
     details:
-  :sha: 8815f3a0f82076b74788ef9e49999497484bcae310359353448bd7fb5eff32dc
-  :github_stars: 14
-  :github_subscribers: 4
-  :github_issues: 1
-  :github_forks: 5
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: emerge_snapshot
+    category:
+    description: Fastlane plugin for Emerge to generate iOS snapshots
+    details:
+  :sha: 1c9349bd54d12af873ae4e8538ec2d5f72fd9982d075f458effaa64c04a5395c
+  :github_stars: 15
+  :github_subscribers: 3
+  :github_issues: 2
+  :github_forks: 6
   :github_contributors: 0
 fastlane-plugin-jira_link:
   :initial_commit: 2021-01-09
@@ -10776,22 +10787,22 @@ fastlane-plugin-dingtalk_msg:
   :github_contributors: 0
 fastlane-plugin-teams_bot:
   :initial_commit: 2021-01-19
-  :age_in_days: 2
+  :age_in_days: 2064
   :readme_score: 100
-  :tests: 1
+  :tests: 6
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: teams_bot
     category:
-    description: Easily send a message to a Microsoft Teams channel through the Webhook
-      connector
+    description: Easily send a message to a Microsoft Teams channel through a webhook
+      workflow
     details: Send a message to a specific channel on your Microsoft Teams organization
-  :sha: 9e87687a947269c6c2c86f4bcff089e4fb2208e7aec4c2f74c340efa62a75519
-  :github_stars: 1
+  :sha: 7263f399d897fcb1492f2054fe945644e05ac585d7c7977c4c976d05ac42d721
+  :github_stars: 11
   :github_subscribers: 1
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 1
+  :github_issues: 1
+  :github_forks: 3
+  :github_contributors: 0
 fastlane-plugin-aws_device_farm_upload:
   :initial_commit: 2021-01-09
   :age_in_days: 41
@@ -11207,16 +11218,16 @@ fastlane-plugin-build_app_for_simulator:
   :github_contributors: 0
 fastlane-plugin-wpmreleasetoolkit:
   :initial_commit: 2018-07-10
-  :age_in_days: 2902
+  :age_in_days: 2979
   :readme_score: 100
-  :tests: 795
+  :tests: 947
   :actions: []
-  :sha: 2c7cf421027218e1ebf6338a50fba1421769e608e42c58480f679d2c673eabbe
-  :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :sha: 6ffd06713e7e98c0d4a65df404b6cf8ffe66258b0976900899d888e57909aa67
+  :github_stars: 31
+  :github_subscribers: 17
+  :github_issues: 45
+  :github_forks: 10
+  :github_contributors: 28
 fastlane-plugin-allure_zephyr:
   :initial_commit: 2021-05-24
   :age_in_days: 13
@@ -12006,21 +12017,21 @@ fastlane-plugin-fileio_upload:
   :github_contributors: 0
 fastlane-plugin-amazon_appstore:
   :initial_commit: 2021-12-24
-  :age_in_days: 1599
+  :age_in_days: 1697
   :readme_score: 100
-  :tests: 77
+  :tests: 90
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: upload_to_amazon_appstore
     category:
     description: Upload apps to Amazon Appstore
     details: Upload apps to Amazon Appstore
-  :sha: 05bf4462484824f32f4a978d637c6c7a7ec82c11cead6cd74dc511c39f2aa5b2
+  :sha: 6b11ff6d2374de37566b340d737173760cf6df9f6180a4c753a87dcd92b70e48
   :github_stars: 9
   :github_subscribers: 1
   :github_issues: 2
   :github_forks: 5
-  :github_contributors: 0
+  :github_contributors: 4
 fastlane-plugin-flutter_versioncode_bump:
   :initial_commit: 2022-01-31
   :age_in_days: 285
@@ -12622,9 +12633,9 @@ fastlane-plugin-get_last_circleci_build_number_bitbucket:
   :github_contributors: 0
 fastlane-plugin-stream_actions:
   :initial_commit: 2022-10-27
-  :age_in_days: 1292
+  :age_in_days: 1390
   :readme_score: 100
-  :tests: 25
+  :tests: 60
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: allure_api
@@ -12685,8 +12696,15 @@ fastlane-plugin-stream_actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: is_check_required
     category:
-    description: Analyzes the impact of changes on PR
+    description: Decides whether a CI check (tests, build, etc.) needs to run for
+      the current pull request state
     details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: lint_swift_package
+    category:
+    description: Scans Package.swift for common mistakes in dependency declarations
+    details: insecure url, or is duplicated. All dependencies should be pinned with
+      `from:` or `exact:`.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: merge_main_to_develop
     category:
@@ -12798,9 +12816,9 @@ fastlane-plugin-stream_actions:
     category:
     description:
     details:
-  :sha: 3e02dd04a250d78ebfd80cd42f82e86928416381bc26f9ead1d7cc5aef98ec4b
+  :sha: 1538fdce2feb03763cb9c1b1bc0388d48bb678ea8dfa852db7fd516d0184a6ee
   :github_stars: 2
-  :github_subscribers: 26
+  :github_subscribers: 25
   :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
@@ -13926,7 +13944,7 @@ fastlane-plugin-increment_version_build_number:
   :github_contributors: 0
 fastlane-plugin-translate_gpt_release_notes:
   :initial_commit: 2023-04-23
-  :age_in_days: 1154
+  :age_in_days: 1212
   :readme_score: 100
   :tests: 315
   :actions:
@@ -13936,12 +13954,12 @@ fastlane-plugin-translate_gpt_release_notes:
     description: 'Translate release notes using AI providers: OpenAI, Claude, Gemini,
       or DeepL'
     details:
-  :sha: '08d16fac8c60975ed74eece4340b447121218011b20af0f75d7fca5e73c9d35f'
-  :github_stars: 0
+  :sha: 54462a4f3610ba94dc62c53dc5c663ef0ebb4d23bc0036b44a597648820b02c5
+  :github_stars: 3
   :github_subscribers: 0
   :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-cc_upload_dsym_to_bugly:
   :initial_commit: 2023-12-18
   :age_in_days: 108
@@ -14305,7 +14323,7 @@ fastlane-plugin-google_play_versions:
   :github_contributors: 0
 fastlane-plugin-appcircle_testing_distribution:
   :initial_commit: 2024-06-06
-  :age_in_days: 704
+  :age_in_days: 802
   :readme_score: 100
   :tests: 0
   :actions:
@@ -14318,11 +14336,11 @@ fastlane-plugin-appcircle_testing_distribution:
       extensive platform for managing and tracking applications, versions, testers,
       and teams. Appcircle integrates with enterprise authentication mechanisms such
       as LDAP and SSO, ensuring secure distribution of testing packages. Learn more
-      about Appcircle testing distribution
-  :sha: 053e6e4f72c04c9138b5d75509d41465a2db0dad6e5c565fdeb8ee802c0a1b96
+      about Appcircle testing distribution.
+  :sha: a932c0fde1ec0f743dd27d4039803de02c8f238b94f96374cb2d93c64e00f2c1
   :github_stars: 1
   :github_subscribers: 2
-  :github_issues: 4
+  :github_issues: 3
   :github_forks: 2
   :github_contributors: 0
 fastlane-plugin-semantic_versioning:
@@ -14458,7 +14476,7 @@ fastlane-plugin-ionic_capacitor:
   :github_contributors: 3
 fastlane-plugin-rustore_connect:
   :initial_commit: 2025-09-03
-  :age_in_days: 228
+  :age_in_days: 348
   :readme_score: 100
   :tests: 18
   :actions:
@@ -14469,12 +14487,12 @@ fastlane-plugin-rustore_connect:
     details: This Fastlane plugin provides seamless integration with RuStore, allowing
       you to easily upload and manage your Android application releases directly from
       your CI/CD pipeline.
-  :sha: f21a840f69ffb281eb39940902f37c2217678f9d9a410972ef1e51f60e61b4fe
+  :sha: 6af2980e26758a646bba8116427eb58b45d305f2a9f699b53f51f2892d925cce
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-http_request:
   :initial_commit: 2025-11-05
   :age_in_days: 165
@@ -14495,7 +14513,7 @@ fastlane-plugin-http_request:
   :github_contributors: 3
 fastlane-plugin-sq_ci_tools:
   :initial_commit: 2025-03-21
-  :age_in_days: 456
+  :age_in_days: 514
   :readme_score: 50
   :tests: 0
   :actions:
@@ -14614,12 +14632,12 @@ fastlane-plugin-sq_ci_tools:
     category:
     description: Update issue in Yandex Tracker
     details:
-  :sha: 66e12ff9584d40e6f91c161bf7a6aed46c0514808a388a9d6e6e101f4db93326
+  :sha: e4a42ed7d4166bce74ea4fe97166f5c966fea429d23051fc0c7eec2bf35ee67f
   :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
+  :github_subscribers: 5
+  :github_issues: 1
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-ovo_onetrust:
   :initial_commit: 2026-01-02
   :age_in_days: 107
@@ -14807,22 +14825,22 @@ fastlane-plugin-ding_talk_abc:
   :github_contributors: 3
 fastlane-plugin-appcircle_enterprise_app_store:
   :initial_commit: 2024-06-07
-  :age_in_days: 681
+  :age_in_days: 801
   :readme_score: 100
-  :tests: 1
+  :tests: 8
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: appcircle_enterprise_app_store
     category:
     description: Efficiently publish your apps to Appcircle Enterprise Store
-    details: Appcircle Enterprise Mobile App Store is your own mobile app store for
-      providing access to in-house apps with a customizable mobile storefront
-  :sha: 54cbcd0fcf99107d4458872a436d49b50dcbca23f47c0ad967abeda44727cdfe
+    details: Appcircle Enterprise App Store is your own mobile app store for providing
+      access to in-house apps with a customizable mobile storefront
+  :sha: 9e60957bcb7b0d95273d8c71b5a558827169165cde73b45cf0137f5550871733
   :github_stars: 0
-  :github_subscribers: 0
-  :github_issues: 0
-  :github_forks: 0
-  :github_contributors: 3
+  :github_subscribers: 2
+  :github_issues: 1
+  :github_forks: 1
+  :github_contributors: 0
 fastlane-plugin-luciq_agent_release_tracking:
   :initial_commit: 2025-07-08
   :age_in_days: 285
@@ -14881,27 +14899,101 @@ fastlane-plugin-plist_surgeon:
   :github_contributors: 3
 fastlane-plugin-rustored:
   :initial_commit: 2026-06-03
-  :age_in_days: 5
+  :age_in_days: 103
   :readme_score: 100
-  :tests: 15
+  :tests: 17
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: rustored_publish_aab
     category:
-    description: Publish an AAB file to RuStore
-    details: Uploads an Android App Bundle to an existing RuStore app version.
+    description: Upload an AAB file to an existing RuStore draft version
+    details: Uploads an Android App Bundle to an existing RuStore draft version.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: rustored_publish_apk
     category:
-    description: Publish an APK file to RuStore
-    details: Uploads an APK to an existing RuStore app version.
-  :sha: 8bb4f9b5648cca3afe4787f7c407cda120f8ca189f17ad9f5c121fb3ae5b9654
+    description: Upload an APK file to an existing RuStore draft version
+    details: Uploads an APK to an existing RuStore draft version.
+  :sha: 6359bffc52c05f969b286828cb4e23faa955c777ad603e8fcfd0e59476458c8a
+  :github_stars: 3
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 1
+ann-flutter-flavor:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
   :github_contributors: 3
-ann-flutter-flavor:
+fastlane-plugin-appcircle_publish:
+  :initial_commit: 2026-06-30
+  :age_in_days: 48
+  :readme_score: 100
+  :tests: 10
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: appcircle_publish
+    category:
+    description: Upload a binary to an Appcircle Publish profile and/or trigger its
+      publish flow
+    details: 'Uploads an application binary to an existing Appcircle Publish profile
+      and/or triggers the profile''s publish flow. Upload and publish are independent
+      options: enable either or both. When both are enabled, the uploaded version
+      is marked as release candidate and published; a new publish is never started
+      if one is already in progress for the profile.'
+  :sha: 871ed8186ed51ddf2616a7f10df889f20f1063f35af4a9a7eceb47e6c595312c
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 0
+ann-flavor-flutter:
+  :github_stars: 0
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 3
+fastlane-plugin-godot:
+  :initial_commit: 2026-08-26
+  :age_in_days: 10
+  :readme_score: 100
+  :tests: 45
+  :actions:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_export
+    category:
+    description: Export a Godot project headlessly using an export preset
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_get_version
+    category:
+    description: Read the version name and build number from export_presets.cfg
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_init
+    category:
+    description: Scaffold the files a Godot project needs for fastlane mobile releases
+      (never overwrites existing files)
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_install_templates
+    category:
+    description: Download and install the export templates matching the Godot binary's
+      version, for one platform or all
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: godot_set_version
+    category:
+    description: Write the version name and build number into every preset in export_presets.cfg,
+      keeping platforms in sync
+    details:
+  :sha: 6c27d78f5da60796342ddbff46c1c3299578b85e0ef9db53fa1f5edeb874d60b
+  :github_stars: 1
+  :github_subscribers: 0
+  :github_issues: 0
+  :github_forks: 0
+  :github_contributors: 2
+ann-flavor-fastlane:
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0

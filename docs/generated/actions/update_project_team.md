@@ -11,13 +11,13 @@ Update Xcode Development Team ID
 
 
 
-> This action updates the Developer Team ID of your Xcode project.
+> This action updates (or adds) the Developer Team ID of your Xcode project.
 
 
 update_project_team ||
 ---|---
 Supported platforms | ios, mac
-Author | @lgaches
+Author | @lgaches, @iBotPeaches
 
 
 

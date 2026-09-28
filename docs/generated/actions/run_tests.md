@@ -258,6 +258,7 @@ Key | Description | Default
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
   `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
   `output_remove_retry_attempts` | Remove retry attempts from test results table and the JUnit report (if not using xcpretty) | `false`
+  `force_legacy_xcresulttool` | Force the use of the '--legacy' flag for xcresulttool instead of using the new commands | `false`
   `disable_xcpretty` | **DEPRECATED!** Use `output_style: 'raw'` instead - Disable xcpretty formatting of build, similar to `output_style='raw'` but this will also skip the test results table | 
   `formatter` | **DEPRECATED!** Use 'xcpretty_formatter' instead - A custom xcpretty formatter to use | 
   `xcpretty_formatter` | A custom xcpretty formatter to use | 
@@ -298,6 +299,7 @@ Key | Description | Default
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
   `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
+  `disallow_xcodebuild_settings_lookup` | Raises an error instead of fetching build settings by running `xcodebuild -showBuildSettings`, which can take a long time on large projects. The error names the required build setting, so the corresponding option can be specified manually | `false`
   `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file. This translates in the option `-disableAutomaticPackageResolution` being passed to xcodebuild | `false`
   `skip_package_repository_fetches` | Skips updating package dependencies from their remote. This translates in the option `-skipPackageUpdates` being passed to xcodebuild | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
