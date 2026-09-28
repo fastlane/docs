@@ -1,9 +1,9 @@
-![img/fastlane_text.png](img/fastlane_text.png)
+<span class="fastlane-wordmark"><img src="img/fastlane_text.png" alt="fastlane"></span>
 
 fastlane
 ============
 
-[![Twitter: @FastlaneTools](https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat)](https://twitter.com/FastlaneTools){: .badge }
+[![X: @FastlaneTools](https://img.shields.io/badge/contact-@FastlaneTools-blue.svg?style=flat&logo=x&logoColor=white)](https://x.com/FastlaneTools){: .badge }
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE){: .badge }
 [![Gem](https://img.shields.io/gem/v/fastlane.svg?style=flat)](https://rubygems.org/gems/fastlane){: .badge }
 [![Platforms](https://img.shields.io/badge/os-macos%20--%20linux%20--%20windows-blue?style=flat)](#){: .badge }
