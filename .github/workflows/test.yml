@@ -6,11 +6,14 @@ on:
       - master
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: ./.github/actions/setup_ruby
       - uses: ./.github/actions/setup_uv

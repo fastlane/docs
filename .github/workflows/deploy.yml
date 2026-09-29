@@ -30,7 +30,7 @@ jobs:
         run: find ./docs/generated/actions/ -type f | xargs sed -i 's/```ruby-skip-tests/```ruby/g'
 
       - name: Build site
-        run: uv run mkdocs build
+        run: uv run properdocs build
 
       - name: Generate redirects
         run: cd site && ruby ../scripts/ci/generate_redirects.rb

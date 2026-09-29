@@ -1,4 +1,4 @@
-name: 'Install'
+name: 'Setup Ruby'
 description: 'Install Ruby deps'
 
 runs:
