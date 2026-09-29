@@ -267,9 +267,9 @@ fastlane-plugin-tpa:
   :github_contributors: 0
 fastlane-plugin-sentry:
   :initial_commit: 2016-06-01
-  :age_in_days: 3748
+  :age_in_days: 3772
   :readme_score: 100
-  :tests: 149
+  :tests: 152
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: sentry_check_cli_installed
@@ -324,12 +324,12 @@ fastlane-plugin-sentry:
     category:
     description: Upload one or more sourcemap(s) to a release of a project on Sentry
     details: " "
-  :sha: ee56f2f63211002667840a5d2719dc3cc36bb73b15a84b19007c4871d35ac523
+  :sha: 6e54758f74d3c74744844e9e6aa03e8ea23bbbb239cf20ac740273ddea6dc7fb
   :github_stars: 153
   :github_subscribers: 41
   :github_issues: 2
-  :github_forks: 55
-  :github_contributors: 49
+  :github_forks: 56
+  :github_contributors: 0
 fastlane-plugin-carthage_cache:
   :initial_commit: 2016-06-04
   :age_in_days: 631
@@ -12633,9 +12633,9 @@ fastlane-plugin-get_last_circleci_build_number_bitbucket:
   :github_contributors: 0
 fastlane-plugin-stream_actions:
   :initial_commit: 2022-10-27
-  :age_in_days: 1390
+  :age_in_days: 1433
   :readme_score: 100
-  :tests: 60
+  :tests: 58
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: allure_api
@@ -12703,8 +12703,7 @@ fastlane-plugin-stream_actions:
     name: lint_swift_package
     category:
     description: Scans Package.swift for common mistakes in dependency declarations
-    details: insecure url, or is duplicated. All dependencies should be pinned with
-      `from:` or `exact:`.
+    details: or a closed version range.
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: merge_main_to_develop
     category:
@@ -12816,9 +12815,9 @@ fastlane-plugin-stream_actions:
     category:
     description:
     details:
-  :sha: 1538fdce2feb03763cb9c1b1bc0388d48bb678ea8dfa852db7fd516d0184a6ee
+  :sha: 4f58835952f199e37470b549c276a203f2fc351000a41c53d40940fa17b05c79
   :github_stars: 2
-  :github_subscribers: 25
+  :github_subscribers: 23
   :github_issues: 1
   :github_forks: 0
   :github_contributors: 0
@@ -13944,9 +13943,9 @@ fastlane-plugin-increment_version_build_number:
   :github_contributors: 0
 fastlane-plugin-translate_gpt_release_notes:
   :initial_commit: 2023-04-23
-  :age_in_days: 1212
+  :age_in_days: 1255
   :readme_score: 100
-  :tests: 315
+  :tests: 358
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: translate_gpt_release_notes
@@ -13954,7 +13953,7 @@ fastlane-plugin-translate_gpt_release_notes:
     description: 'Translate release notes using AI providers: OpenAI, Claude, Gemini,
       or DeepL'
     details:
-  :sha: 54462a4f3610ba94dc62c53dc5c663ef0ebb4d23bc0036b44a597648820b02c5
+  :sha: 252002b92c87ba797bed3bd602e40c4a1cd2338ba5581f759116bd4d765cfaa2
   :github_stars: 3
   :github_subscribers: 0
   :github_issues: 0
@@ -14286,22 +14285,42 @@ fastlane-plugin-native_symbols:
   :github_forks: 0
   :github_contributors: 0
 fastlane-plugin-upload_to_ru_store:
-  :github_stars: 0
-  :github_subscribers: 0
+  :github_stars: 4
+  :github_subscribers: 1
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 0
   :initial_commit: 2025-05-20
-  :age_in_days: 334
+  :age_in_days: 497
   :readme_score: 100
-  :tests: 1
+  :tests: 59
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
-    name: upload_to_ru_store
-    category:
-    description: Uploads AAB/APK release to RuStore
+    name: rustore_archive_version
+    category: production
+    description: Archives a RuStore application version
+    details: ARCHIVABLE_STATUSES
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rustore_publish_settings
+    category: production
+    description: Changes publication settings of an existing RuStore version
     details:
-  :sha: 25b464aa4a5d8aa358d73fb5b1c49361f690a076c303ca702ea55906e70f7c98
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rustore_publish_version
+    category: production
+    description: Publishes a moderated RuStore version whose publish type is MANUAL
+    details: MANUAL
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: rustore_version_status
+    category: production
+    description: Reads the status of the latest RuStore version of an application
+    details:
+  - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
+    name: upload_to_ru_store
+    category: production
+    description: Uploads an AAB/APK release to RuStore and sends it to moderation
+    details: DELAYED
+  :sha: '0695deeeb7e3b6ef270f43d3062c8eaa882a296bf565fc7ed7cbe1c907164be3'
 fastlane-plugin-google_play_versions:
   :initial_commit: 2025-11-03
   :age_in_days: 19
@@ -14668,9 +14687,9 @@ fastlane-plugin-infisical:
   :github_contributors: 3
 fastlane-plugin-saucelabs_appdist:
   :initial_commit: 2026-02-17
-  :age_in_days: 61
+  :age_in_days: 224
   :readme_score: 100
-  :tests: 8
+  :tests: 49
   :actions:
   - !ruby/object:FastlaneCore::Helper::PluginScoresHelper::FastlanePluginAction
     name: saucelabs_appdist
@@ -14678,12 +14697,12 @@ fastlane-plugin-saucelabs_appdist:
     description: Upload a new build to Sauce Labs App Distribution
     details: A Sauce Labs fastlane plugin for uploading iOS and Android builds to
       Mobile App Distribution (MAD).
-  :sha: 28011ff9e15b04ace49b3039294532da2bd14ab3ef1fab50def888dcbaa5a12d
+  :sha: d8a97e4f6b3b69f60c5bfe95e48960de2d10108c1c663ecddba75771a2852df2
   :github_stars: 0
   :github_subscribers: 0
   :github_issues: 0
   :github_forks: 0
-  :github_contributors: 3
+  :github_contributors: 0
 fastlane-plugin-faststudy:
   :initial_commit: 2026-02-27
   :age_in_days: 51

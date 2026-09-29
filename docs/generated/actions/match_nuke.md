@@ -96,6 +96,7 @@ Key | Description | Default
   `output_path` | Path in which to export certificates, key and profile | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `force_legacy_encryption` | Force encryption to use legacy cbc algorithm for backwards compatibility with older match versions | `false`
+  `offline_profile` | Enable profile with 'Offline Support' (7 day validity). Requires Apple ID login, not supported with App Store Connect API key authentication | `false`
   `verbose` | Print out extra information and all commands | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
