@@ -438,6 +438,8 @@ produce   # alias for "create_app_online"
 Key | Description | Default
 ----|-------------|--------
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option) | 
   `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app) | [*](#parameters-legend-dynamic)
   `bundle_identifier_suffix` | App Identifier Suffix (Ignored if App Identifier does not end with .*) | 
   `app_name` | App Name | 
