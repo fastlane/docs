@@ -418,6 +418,16 @@ Main().run(with: Fastfile())
 <ul>
 <li>If you want to just push your <code>Package.swift</code> and <code>Package.resolved</code> to the repo, you'd need to <code>swift build</code> the package to create your executable again which can be found in the <code>.debug</code> or <code>.release</code> folders, depending on how you built the package (<code>.debug</code> by default). </li>
 </ul>
+<h5 id="which-fastlane-the-runner-starts">Which <em>fastlane</em> the runner starts</h5>
+<p>The runner starts <code>fastlane socket_server</code> itself, choosing <em>fastlane</em> in this order:</p>
+<ol>
+<li><code>FASTLANE_SPM_BIN</code>, if set: the command to run, split by the shell, so quote a path that contains spaces (<code>FASTLANE_SPM_BIN="'/path with spaces/fastlane'"</code> or <code>FASTLANE_SPM_BIN="bundle exec fastlane"</code>).</li>
+<li>The Bundler binstub <code>bin/fastlane</code> next to your <code>Gemfile</code>.</li>
+<li><code>bundle exec fastlane</code>, when there is a <code>Gemfile</code>: the one in <code>BUNDLE_GEMFILE</code>, or the nearest <code>Gemfile</code> or <code>gems.rb</code> from the working directory up, as Bundler finds it.</li>
+<li><code>fastlane</code> on your <code>PATH</code>.</li>
+</ol>
+<p>When you start the runner from Xcode, the <code>PATH</code> it gets is minimal, so set <code>FASTLANE_SPM_BIN</code> to an absolute path.</p>
+<p>If another process already listens on the runner's port (<code>swiftServerPort</code>, 2000 by default) on <code>127.0.0.1</code> or <code>::1</code>, the runner stops and names it when it can, instead of connecting to it.</p>
 <h3 id="defining-lanes">Defining Lanes</h3>
 <p>Lanes are defined with functions that end with <code>Lane</code> within the <code>class Fastfile: LaneFile</code>.</p>
 <pre><code class="language-swift">class Fastfile: LaneFile {
@@ -480,7 +490,7 @@ fastlane deploy submit:false build_number:24
     </p>
   </div>
 
-  Documentation built 2026-09-28 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-10-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
