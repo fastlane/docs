@@ -17,6 +17,7 @@ Multiple CI products and services offer integrations with _fastlane_:
 - [Azure DevOps](/best-practices/continuous-integration/azure-devops/) (formerly known as: Visual Studio Team Services)
 - [Bamboo](/best-practices/continuous-integration/bamboo/)
 - [Bitrise](/best-practices/continuous-integration/bitrise/)
+- [Capawesome Cloud](/best-practices/continuous-integration/capawesome-cloud/)
 - [CircleCI](/best-practices/continuous-integration/circle-ci/)
 - [Codemagic](/best-practices/continuous-integration/codemagic/)
 - [GitHub Actions](/best-practices/continuous-integration/github/)

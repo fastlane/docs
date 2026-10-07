@@ -319,6 +319,7 @@ nav:
     - Azure DevOps: best-practices/continuous-integration/azure-devops.md
     - Bamboo: best-practices/continuous-integration/bamboo.md
     - Bitrise: best-practices/continuous-integration/bitrise.md
+    - Capawesome Cloud: best-practices/continuous-integration/capawesome-cloud.md
     - CircleCI: best-practices/continuous-integration/circle-ci.md
     - Codemagic: best-practices/continuous-integration/codemagic.md
     - GitHub Actions: best-practices/continuous-integration/github.md
