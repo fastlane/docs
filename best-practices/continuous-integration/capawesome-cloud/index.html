@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="fastlane team">
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Capawesome Cloud - fastlane docs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" integrity="sha384-yaOEEinoAKxVHv1ZCY3vqJeRItlRVwZ9pyTCCJLHlyHNndGZIF+S30C1+8oRQ2sz" crossorigin="anonymous">
+  <link href="../../../css/fastlane.css" rel="stylesheet" />
+  <link href="../../../css/code.css" rel="stylesheet" />
+  <link href="../../../css/breadcrumbs.css" rel="stylesheet" />
+  <link href="../../../css/fabric.css" rel="stylesheet" />
+  <link href="../../../css/sidenav.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Capawesome Cloud";
+    var mkdocs_page_input_path = "best-practices/continuous-integration/capawesome-cloud.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+  <script src="../../../js/html5shiv.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js" integrity="sha384-0H+01+wORQpYAMaLWyObzDlXZaG1Mgzrj0DsIDeQX762Cfo2fPEycKxVmhlDjSV4" crossorigin="anonymous"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T61SL9JJVH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T61SL9JJVH');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> fastlane docs</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+                  <ul class=" root">
+                      <li class="toctree-l1">
+  <a class="reference internal" href="../../..">Home</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Getting Started</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">iOS</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/authentication/">Authentication</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/appstore-deployment/">App Store Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/ios/fastlane-swift/">Swift</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Android</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/setup/">Setup</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/running-tests/">Running Tests</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/screenshots/">Screenshots</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/beta-deployment/">Beta Deployment</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/android/release-deployment/">Release Deployment</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal toc-no-link" href="#">Cross Platform</a>
+      <ul>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/react-native/">React Native</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/flutter/">Flutter</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../../../getting-started/cross-platform/nativescript/">NativeScript</a>
+                  </li>
+      </ul>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Actions</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../actions/">Available Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../create-action/">Create Your Own Action</a>
+                      </li>
+                  </ul>
+          
+          
+                  <p class="caption"><span class="caption-text">Apple</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../app-store-connect-api/">Using App Store Connect API</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../uploading-app-privacy-details/">Uploading App Privacy Details</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">FAQs</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../faqs/">FAQs</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Codesigning</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/getting-started/">Getting Started</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/xcode-project/">Xcode Project</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/troubleshooting/">Troubleshooting</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../codesigning/common-issues/">Common Issues</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Plugins</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/available-plugins/">Available Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/using-plugins/">Use Plugins</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/create-plugin/">Create Your Own Plugin</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../plugins/plugins-troubleshooting/">Plugins Troubleshooting</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Best Practices</span></p>
+                  <ul class="current">
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../xcodebuild-formatters/">Xcodebuild Formatters</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../source-control/">Source Control</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../">Continuous Integration</a>
+                      </li>
+                      <li class="toctree-l1 current active current">
+  <a class="reference internal current toc-no-link" href="#">CI Integrations</a>
+      <ul class="current">
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../appcircle/">Appcircle</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../azure-devops/">Azure DevOps</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../bamboo/">Bamboo</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../bitrise/">Bitrise</a>
+                  </li>
+                  <li class="toctree-l2 current active">
+  <a class="reference internal current" href="./">Capawesome Cloud</a>
+      <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#running-fastlane-in-a-capawesome-cloud-build">Running fastlane in a Capawesome Cloud build</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#calling-capawesome-cloud-from-a-lane">Calling Capawesome Cloud from a lane</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#further-documentation">Further documentation</a>
+    </li>
+      </ul>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../circle-ci/">CircleCI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../codemagic/">Codemagic</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../github/">GitHub Actions</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../gitlab/">GitLab CI</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../jenkins/">Jenkins</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../semaphore/">Semaphore</a>
+                  </li>
+                  <li class="toctree-l2">
+  <a class="reference internal" href="../travis/">Travis</a>
+                  </li>
+      </ul>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../keys/">Keys</a>
+                      </li>
+                  </ul>
+          
+                  <p class="caption"><span class="caption-text">Advanced</span></p>
+                  <ul>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/fastlane/">fastlane</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Fastfile/">Fastfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/Appfile/">Appfile</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/lanes/">Lanes</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/actions/">Actions</a>
+                      </li>
+                      <li class="toctree-l1 current">
+  <a class="reference internal" href="../../../advanced/other/">Other</a>
+                      </li>
+                  </ul>
+          
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">fastlane docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>CI Integrations &raquo;</li>
+        
+      
+        
+          <li>Best Practices &raquo;</li>
+        
+      
+    
+    <li>Capawesome Cloud</li>
+
+    
+      <li class="wy-breadcrumbs-aside">
+
+        
+
+        
+
+        <a href="https://github.com/fastlane/docs/edit/master/docs/best-practices/continuous-integration/capawesome-cloud.md" 
+            class="icon icon-github"
+        > Edit on GitHub</a>
+      </li>
+    
+
+    <li class="wy-breadcrumbs-aside wy-breadcrumbs-aside-search">
+      <input type="text" name="q" placeholder="Search docs" />
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+<!-- at the end of the BODY -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+    apiKey: 'c651753b86f5f8a00f8f2e9e9ca95865',
+    indexName: 'fastlane',
+    inputSelector: 'body > div.wy-grid-for-nav > section > div > div > div:nth-child(1) > ul > li.wy-breadcrumbs-aside > input[type="text"]',
+    debug: false
+});
+</script>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="capawesome-cloud-integration">Capawesome Cloud Integration</h1>
+<p><a href="https://capawesome.io/docs/cloud/">Capawesome Cloud</a> is a mobile CI/CD platform for Capacitor, Ionic, Cordova, and native iOS and Android apps. It builds and signs apps on hosted macOS machines, submits them to TestFlight, App Review and Google Play, and ships over-the-air Live Updates to the web layer of Capacitor and Cordova apps.</p>
+<p>You can combine it with <em>fastlane</em> in both directions:</p>
+<ul>
+<li><a href="#running-fastlane-in-a-capawesome-cloud-build">Run <em>fastlane</em> in a Capawesome Cloud build</a>. <em>fastlane</em> is pre-installed on every build stack, so a lane can prepare the project before Capawesome Cloud compiles it.</li>
+<li><a href="#calling-capawesome-cloud-from-a-lane">Call Capawesome Cloud from a lane</a>. Keep <em>fastlane</em> as your release orchestrator and let Capawesome Cloud run the native build, the store upload or a Live Update.</li>
+</ul>
+<h2 id="running-fastlane-in-a-capawesome-cloud-build">Running <em>fastlane</em> in a Capawesome Cloud build</h2>
+<p>Capawesome Cloud runs an npm script from your <code>package.json</code> to produce the web assets before it compiles the native project. It uses the <code>capawesome:build</code> script when present and falls back to <code>build</code> otherwise. Add your lane to that script to run it before the build. If your repository has a <code>Gemfile</code>, use <code>bundle exec</code>; Bundler is pre-installed as well. You can find the pre-installed <em>fastlane</em> version for each build stack <a href="https://capawesome.io/docs/cloud/native-builds/build-stacks/">here</a>.</p>
+<pre><code class="language-json">{
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;vite build&quot;,
+    &quot;capawesome:build&quot;: &quot;bundle install &amp;&amp; bundle exec fastlane prepare &amp;&amp; npm run build&quot;
+  }
+}
+</code></pre>
+<p>If you prefer to keep <code>package.json</code> untouched, set <code>webBuildCommand</code> in <code>capawesome.config.json</code> instead. See <a href="https://capawesome.io/docs/cloud/native-builds/web-build-script/">Configure Web Build Script</a>.</p>
+<p>A typical <code>prepare</code> lane sets the native build number from the build number Capawesome Cloud assigns to each build. Every build exposes <code>CI</code>, <code>CI_BUILD_NUMBER</code>, <code>CI_GIT_COMMIT_SHA</code> and <code>CI_PLATFORM</code>, among others (see the <a href="https://capawesome.io/docs/cloud/native-builds/environment-variables/">environment variables reference</a>):</p>
+<pre><code class="language-ruby">desc &quot;Prepare the native projects before Capawesome Cloud builds them&quot;
+lane :prepare do
+  increment_build_number(
+    build_number: ENV[&quot;CI_BUILD_NUMBER&quot;],
+    xcodeproj: &quot;ios/App/App.xcodeproj&quot;
+  )
+end
+</code></pre>
+<p>Secrets your lanes need, such as an App Store Connect API key, go into a Capawesome Cloud <a href="https://capawesome.io/docs/cloud/native-builds/environments/">environment</a>. Add them as <strong>secrets</strong> so they're encrypted and never appear in build logs, and select the environment with <code>--environment</code> when you trigger a build.</p>
+<p>Capawesome Cloud stores your <a href="https://capawesome.io/docs/cloud/native-builds/certificates/">certificates</a>, keystores and provisioning profiles and signs the app with the certificate you select for the build, so <em>match</em> and <em>sigh</em> are not needed in a Capawesome Cloud build. If your <code>prepare</code> lane calls them, guard those steps with the <code>CI</code> variable.</p>
+<h2 id="calling-capawesome-cloud-from-a-lane">Calling Capawesome Cloud from a lane</h2>
+<p>The lanes below call the <a href="https://capawesome.io/docs/cloud/cli/">Capawesome CLI</a>. They work from your machine or from any CI that runs <em>fastlane</em>.</p>
+<ol>
+<li>Create an <a href="https://capawesome.io/docs/cloud/accounts/tokens/">API token</a> in the Capawesome Cloud Console and expose it as the <code>CAPAWESOME_TOKEN</code> environment variable. The CLI reads it automatically, so no login step is needed.</li>
+<li>Find your App ID in the app settings of the Capawesome Cloud Console. The examples read it from <code>CAPAWESOME_CLOUD_APP_ID</code>.</li>
+<li>Node.js must be available on the machine running <em>fastlane</em>, since the CLI runs through <code>npx</code>.</li>
+</ol>
+<p>The CLI only prompts for missing values when it runs in a terminal and the <code>CI</code> environment variable is unset; otherwise it exits with a non-zero code. Pass every required value as a flag, and add <code>--yes</code> to <code>apps:builds:create</code> to skip its confirmation prompt.</p>
+<p>Pin the CLI version for reproducible runs. The examples share a constant at the top of the <code>Fastfile</code>:</p>
+<pre><code class="language-ruby"># fastlane/Fastfile
+CAPAWESOME_CLI = &quot;@capawesome/cli@4.26.1&quot;
+</code></pre>
+<h3 id="triggering-a-cloud-build">Triggering a cloud build</h3>
+<p>If <em>fastlane</em> already orchestrates your releases (versioning, changelogs, notifications), you can keep it and run the native build itself in Capawesome Cloud:</p>
+<pre><code class="language-ruby">desc &quot;Build the current commit in Capawesome Cloud&quot;
+lane :cloud_build do |options|
+  platform = options[:platform] || &quot;ios&quot;
+  type = options[:type] || (platform == &quot;ios&quot; ? &quot;app-store&quot; : &quot;release&quot;)
+  certificate = options[:certificate] || UI.user_error!(&quot;Pass certificate:&lt;name of a certificate in Capawesome Cloud&gt;&quot;)
+
+  sh(&quot;npx&quot;, CAPAWESOME_CLI, &quot;apps:builds:create&quot;,
+     &quot;--app-id&quot;, ENV[&quot;CAPAWESOME_CLOUD_APP_ID&quot;],
+     &quot;--platform&quot;, platform,
+     &quot;--type&quot;, type,
+     &quot;--certificate&quot;, certificate,
+     &quot;--git-ref&quot;, last_git_commit[:commit_hash],
+     &quot;--yes&quot;)
+end
+</code></pre>
+<p>Run it with:</p>
+<pre><code class="language-sh">fastlane cloud_build platform:ios &quot;certificate:App Store Distribution&quot;
+fastlane cloud_build platform:android type:release &quot;certificate:Play Store Keystore&quot;
+</code></pre>
+<p>Capawesome Cloud fetches the commit from your repository, so it needs access to it (see <a href="https://capawesome.io/docs/cloud/integrations/">Git integrations</a>) and the commit must be pushed before the lane runs. To build uncommitted files instead, pass <code>--path .</code> instead of <code>--git-ref</code> (see <a href="https://capawesome.io/docs/cloud/native-builds/build-without-git/">Build without Git</a>).</p>
+<p><code>--certificate</code> is the name of a signing certificate or keystore you uploaded to Capawesome Cloud; it is required for signed build types. Build types are <code>simulator</code>, <code>development</code>, <code>ad-hoc</code>, <code>app-store</code> and <code>enterprise</code> for iOS, and <code>debug</code> and <code>release</code> for Android. <code>apps:builds:create</code> waits for the build to finish and exits with a non-zero code if it fails, so the lane fails with it.</p>
+<h3 id="submitting-to-the-stores">Submitting to the stores</h3>
+<p>To build and submit in one step, add <code>--destination</code> with the name of a <a href="https://capawesome.io/docs/cloud/app-store-publishing/destinations/">destination</a> configured in Capawesome Cloud, and optionally <code>--release-notes</code>. To keep uploading with <em>fastlane</em> instead, download the signed artifact with <code>--ipa</code>, <code>--apk</code> or <code>--aab</code> and hand it to <em>pilot</em>, <em>deliver</em> or <em>supply</em>:</p>
+<pre><code class="language-ruby">desc &quot;Build in Capawesome Cloud, then upload with deliver&quot;
+lane :release do
+  sh(&quot;npx&quot;, CAPAWESOME_CLI, &quot;apps:builds:create&quot;,
+     &quot;--app-id&quot;, ENV[&quot;CAPAWESOME_CLOUD_APP_ID&quot;],
+     &quot;--platform&quot;, &quot;ios&quot;,
+     &quot;--type&quot;, &quot;app-store&quot;,
+     &quot;--certificate&quot;, &quot;App Store Distribution&quot;,
+     &quot;--git-ref&quot;, last_git_commit[:commit_hash],
+     &quot;--ipa&quot;, &quot;./build/App.ipa&quot;,
+     &quot;--yes&quot;)
+
+  deliver(ipa: &quot;./build/App.ipa&quot;, skip_screenshots: true)
+end
+</code></pre>
+<p>See the <a href="https://capawesome.io/docs/cloud/cli/commands/#appsbuildscreate">CLI reference</a> for all options.</p>
+<h3 id="publishing-a-live-update">Publishing a Live Update</h3>
+<p>Capawesome Cloud <a href="https://capawesome.io/docs/cloud/live-updates/">Live Updates</a> let you ship changes to the web layer of a Capacitor or Cordova app (HTML, CSS, JavaScript, images) without going through the app stores. Your existing lanes keep handling native builds and store submissions; you only add one lane for over-the-air updates.</p>
+<p>This requires the <a href="https://capawesome.io/docs/sdks/capacitor/live-update/">Live Update SDK</a> in your app and a published native binary that already includes it. Live Updates can only deliver <a href="https://capawesome.io/docs/cloud/live-updates/binary-compatible-changes/">binary-compatible changes</a>. Changes to native code, plugins or the Capacitor version still need a regular store release.</p>
+<p>A bundle that uses a plugin or native API missing from an older binary will break that binary. The recommended pattern is one channel per native build number, so every binary only receives bundles built for it. The app subscribes to its channel natively at build time or at runtime (see <a href="https://capawesome.io/docs/cloud/live-updates/channels/">Channels</a>), and your lane publishes to the matching one:</p>
+<pre><code class="language-ruby">desc &quot;Build the web assets and publish a Live Update for the given native build number&quot;
+lane :live_update do |options|
+  build_number = options[:build_number] || get_build_number(xcodeproj: &quot;ios/App/App.xcodeproj&quot;)
+  channel = &quot;production-#{build_number}&quot;
+
+  sh(&quot;npm&quot;, &quot;run&quot;, &quot;build&quot;)
+
+  # Create the channel if it doesn't exist yet; --ignore-errors makes this a no-op when it does.
+  sh(&quot;npx&quot;, CAPAWESOME_CLI, &quot;apps:channels:create&quot;,
+     &quot;--app-id&quot;, ENV[&quot;CAPAWESOME_CLOUD_APP_ID&quot;],
+     &quot;--name&quot;, channel,
+     &quot;--ignore-errors&quot;)
+
+  sh(&quot;npx&quot;, CAPAWESOME_CLI, &quot;apps:liveupdates:upload&quot;,
+     &quot;--app-id&quot;, ENV[&quot;CAPAWESOME_CLOUD_APP_ID&quot;],
+     &quot;--path&quot;, &quot;dist&quot;,
+     &quot;--channel&quot;, channel)
+end
+</code></pre>
+<p>Run it with:</p>
+<pre><code class="language-sh">fastlane live_update
+# or target a specific native build number explicitly
+fastlane live_update build_number:42
+</code></pre>
+<p>Replace <code>dist</code> with the output directory of your web build (for example <code>www</code>). One bundle serves both iOS and Android as long as both platforms share the same build number; if they don't, run the lane once per platform with the matching <code>build_number</code>. If you prefer a single channel, use <code>--ios-min</code>, <code>--ios-max</code>, <code>--android-min</code> and <code>--android-max</code> to restrict a bundle to a range of native build numbers instead. Add <code>--rollout-percentage 10</code> to release to a subset of devices first and raise it later from the Console or the CLI. See the <a href="https://capawesome.io/docs/cloud/cli/commands/#appsliveupdatesupload">CLI reference</a> for all options.</p>
+<h2 id="further-documentation">Further documentation</h2>
+<p>For more information, please refer to the <a href="https://capawesome.io/docs/cloud/">Capawesome Cloud documentation</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div class="fastlane" role="contentinfo">
+    <p>
+      <a href="https://github.com/fastlane/fastlane" target="_blank">
+        <img src="/img/fastlane_text.png" width="200" />
+      </a>
+      <iframe src="https://ghbtns.com/github-btn.html?user=fastlane&repo=fastlane&type=watch&count=true"
+        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20" class="githubButton"></iframe>
+    </p>
+  </div>
+
+  Documentation built 2026-10-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+</footer>
+
+<script type="text/javascript">
+  function ensureExternalLinksOpenInNewTab() {
+    const links = document.links;
+    for (let i = 0, linksLength = links.length; i < linksLength; i++) {
+      if (links[i].hostname != window.location.hostname) {
+        links[i].target = '_blank';
+      }
+    }
+  }
+
+  function scrollToAnchorNestedInDetailsIfNeeded() {
+    function scrollToElement() {
+      const id = window.location.hash.substr(1);
+      if (id === '') {
+        return;
+      }
+
+      const element = document.getElementById(id);
+      if (!element) {
+        return;
+      }
+
+      const details = document.getElementsByTagName('details');
+      for (const element of details) {
+        element.open = false;
+      }
+
+      let temp = element;
+      while (temp && temp.tagName) {
+        if (temp.tagName.toLowerCase() === 'details') {
+          temp.open = true;
+        }
+
+        temp = temp.parentNode;
+      }
+
+      element.scrollIntoView();
+    }
+
+    function onReady(callback) {
+      if (document.readyState !== 'loading') {
+        callback();
+      } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', callback);
+      } else {
+        document.attachEvent('onreadystatechange', function() {
+          if (document.readyState === 'complete') {
+            callback();
+          }
+        });
+      }
+    }
+
+    onReady(function () {
+      scrollToElement();
+      window.addEventListener('hashchange', scrollToElement);
+    });
+  }
+
+  ensureExternalLinksOpenInNewTab();
+  scrollToAnchorNestedInDetailsIfNeeded();
+</script>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/fastlane/docs" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../bitrise/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../circle-ci/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <!-- <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script> -->
+      <script src="../../../search/main.js" defer></script>
+    <script>
+        window.onload = function () {
+            $(document).on("click","[data-toggle='wy-nav-top']",function(){$("[data-toggle='wy-nav-shift']").toggleClass("shift")})
+            $("div[role=main] table").toggleClass("docutils");
+            //SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
