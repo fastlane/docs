@@ -57,8 +57,8 @@ Key | Description | Default
   `git_user_email` | git user email to commit | 
   `shallow_clone` | Make a shallow clone of the repository (truncate the history to 1 revision) | `false`
   `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail | `false`
-  `git_basic_authorization` | Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64 | 
-  `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64 | 
+  `git_basic_authorization` | Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64. Needs git 2.31 or later | 
+  `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64. Needs git 2.31 or later | 
   `git_private_key` | Use a private key to access the git repo (e.g.: access to GitHub repository via Deploy keys), usually a id_rsa named file or the contents hereof | 
   `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
   `google_cloud_keys_file` | Path to the gc_keys.json file | 
@@ -96,6 +96,7 @@ Key | Description | Default
   `output_path` | Path in which to export certificates, key and profile | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `force_legacy_encryption` | Force encryption to use legacy cbc algorithm for backwards compatibility with older match versions | `false`
+  `offline_profile` | Enable profile with 'Offline Support' (7 day validity). Requires Apple ID login, not supported with App Store Connect API key authentication | `false`
   `verbose` | Print out extra information and all commands | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

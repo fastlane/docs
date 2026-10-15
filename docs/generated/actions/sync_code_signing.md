@@ -94,12 +94,15 @@ Use Git Storage to store all code signing identities in a private git repo, owne
 
 First, enter the URL to your private (!) Git repo (You can create one for free on e.g. [GitHub](https://github.com/new) or [BitBucket](https://bitbucket.org/repo/create)). The URL you enter can be either a `https://` or a `git` URL. `fastlane match init` won't read or modify your certificates or profiles yet, and also won't validate your git URL.
 
+You'll then be asked which branch of that repo to use, defaulting to `main` if you leave the answer blank.
+
 This will create a `Matchfile` in your current directory (or in your `./fastlane/` folder).
 
 Example content (for more advanced setups check out the [fastlane section](#fastlane)):
 
 ```ruby-skip-tests
 git_url("https://github.com/fastlane/certificates")
+git_branch("main")
 
 app_identifier("tools.fastlane.app")
 username("user@fastlane.tools")
@@ -107,7 +110,7 @@ username("user@fastlane.tools")
 
 ##### Git Storage on GitHub
 
-If your machine is currently using SSH to authenticate with GitHub, you'll want to use a `git` URL, otherwise, you may see an authentication error when you attempt to use match. Alternatively, you can set a basic authorization for _match_:
+If your machine is currently using SSH to authenticate with GitHub, you'll want to use a `git` URL, otherwise, you may see an authentication error when you attempt to use match. Alternatively, you can set a basic authorization for _match_ (needs git 2.31 or later):
 
 Using parameter:
 
@@ -151,7 +154,7 @@ You can find more information about GitHub basic authentication and personal tok
 
 ##### Git Storage on Azure DevOps
 
-If you're running a pipeline on Azure DevOps and using git storage in a another repository on the same project, you might want to use `bearer` token authentication.
+If you're running a pipeline on Azure DevOps and using git storage in a another repository on the same project, you might want to use `bearer` token authentication (needs git 2.31 or later).
 
 Using parameter:
 
@@ -272,7 +275,7 @@ If you want to use a single developer and/or distribution certificate for multip
 
 ```ruby-skip-tests
 git_url("https://github.com/example/example-repo.git")
-git_branch("master")
+git_branch("main")
 ```
 
 _match_ will reuse certificates and will create separate provisioning profiles for each app.
@@ -420,6 +423,13 @@ If you're not using `Fastfile`, you can also use the `force_for_new_devices` opt
 ```no-highlight
 fastlane match adhoc --force_for_new_devices
 ```
+
+##### Offline profile use
+
+If your profile requires the 'Offline support (7 day validity)' setting for use without Internet, use `offline_profile: true` to add this permission to generated profiles.
+
+> [!NOTE]
+> Offline profiles can only be created when logging in with an Apple ID. Apple's App Store Connect API (`api_key` / `api_key_path`) does not support this setting, so _match_ will fail with a clear error if both are combined.
 
 ##### Managed capabilities
 
@@ -655,8 +665,8 @@ Key | Description | Default
   `git_user_email` | git user email to commit | 
   `shallow_clone` | Make a shallow clone of the repository (truncate the history to 1 revision) | `false`
   `clone_branch_directly` | Clone just the branch specified, instead of the whole repo. This requires that the branch already exists. Otherwise the command will fail | `false`
-  `git_basic_authorization` | Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64 | 
-  `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64 | 
+  `git_basic_authorization` | Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64. Needs git 2.31 or later | 
+  `git_bearer_authorization` | Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64. Needs git 2.31 or later | 
   `git_private_key` | Use a private key to access the git repo (e.g.: access to GitHub repository via Deploy keys), usually a id_rsa named file or the contents hereof | 
   `google_cloud_bucket_name` | Name of the Google Cloud Storage bucket to use | 
   `google_cloud_keys_file` | Path to the gc_keys.json file | 
@@ -694,6 +704,7 @@ Key | Description | Default
   `output_path` | Path in which to export certificates, key and profile | 
   `skip_set_partition_list` | Skips setting the partition list (which can sometimes take a long time). Setting the partition list is usually needed to prevent Xcode from prompting to allow a cert to be used for signing | `false`
   `force_legacy_encryption` | Force encryption to use legacy cbc algorithm for backwards compatibility with older match versions | `false`
+  `offline_profile` | Enable profile with 'Offline Support' (7 day validity). Requires Apple ID login, not supported with App Store Connect API key authentication | `false`
   `verbose` | Print out extra information and all commands | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>

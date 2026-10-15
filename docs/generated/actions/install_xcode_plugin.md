@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Install an Xcode plugin for the current user
 
-
+> Since Xcode 8, which added runtime library validation and source editor extensions ([New Features in Xcode 8](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/WhatsNewXcode/Chapters/xcode_8_0.html)), Xcode only loads plugins once you re-sign it yourself, and Xcode 14 removed its plugin system.<br>A source editor extension ships inside a macOS app: install the app, then enable the extension in the Extensions section of System Settings.
 
 
 

@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Upload dSYM file to [Splunk MINT](https://mint.splunk.com/)
 
-
+> Splunk MINT reached End of Life in December 2021 for all MINT products, including the SDK and its Web Service.<br>See [Splunk MINT SDK for iOS (EOL)](https://docs.splunk.com/Documentation/MintIOSSDK/latest/DevGuide/APIReference).
 
 
 
