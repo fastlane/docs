@@ -19,8 +19,7 @@ Easily build and sign your app (via _gym_)
 
 <p align="center">
     <a href="#whats-gym">Features</a> &bull;
-    <a href="#usage">Usage</a> &bull;
-    <a href="#tips">Tips</a>
+    <a href="#usage">Usage</a>
 </p>
 
 -------

@@ -248,6 +248,7 @@ Key | Description | Default
   `code_coverage` | Should code coverage be generated? (Xcode 7 and up) | 
   `address_sanitizer` | Should the address sanitizer be turned on? | 
   `thread_sanitizer` | Should the thread sanitizer be turned on? | 
+  `collect_test_diagnostics` | Whether verbose and long-running diagnostics (like sysdiagnoses or log archives) are collected when testing. Valid values are: on-failure or never. If not specified, the value in the test plan is used. Equivalent to -collect-test-diagnostics (Xcode 14 and up) | 
   `open_report` | Should the HTML report be opened when tests are completed? | `false`
   `output_directory` | The directory in which all reports will be stored | [*](#parameters-legend-dynamic)
   `output_style` | Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty during xcodebuild) | 

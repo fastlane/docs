@@ -17,9 +17,7 @@ Create new iOS code signing certificates (via _cert_)
 
 -------
 <p align="center">
-    <a href="#why">Why?</a> &bull;
     <a href="#usage">Usage</a> &bull;
-    <a href="#how-does-it-work">How does it work?</a> &bull;
     <a href="#tips">Tips</a>
 </p>
 
