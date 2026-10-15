@@ -337,7 +337,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h1 id="clean_build_artifacts">clean_build_artifacts</h1>
 <p>Deletes files created as result of running gym, cert, sigh or download_dsyms</p>
 <blockquote>
-<p>This action deletes the files that get created in your repo as a result of running the <em>gym</em> and <em>sigh</em> commands. It doesn't delete the <code>fastlane/report.xml</code> though, this is probably more suited for the .gitignore.<br><br>Useful if you quickly want to send out a test build by dropping down to the command line and typing something like <code>fastlane beta</code>, without leaving your repo in a messy state afterwards.</p>
+<p>This action deletes the files that get created in your repo as a result of running the <em>gym</em> and <em>sigh</em> commands. It doesn't delete the <code>fastlane/report.xml</code> though, this is probably more suited for the .gitignore.<br><br>From <em>cert</em> it only deletes the <code>.cer</code> file. The private key (<code>&lt;certificate id&gt;.p12</code>, despite its name an unencrypted PEM key) and the <code>.certSigningRequest</code> that <em>cert</em> writes to its <code>output_path</code> when it creates a certificate are kept: <em>cert</em> uses that <code>.p12</code> to install the certificate on a machine that doesn't have it, and on systems other than macOS it is the only copy of the key. Keep them out of version control.<br><br>Useful if you quickly want to send out a test build by dropping down to the command line and typing something like <code>fastlane beta</code>, without leaving your repo in a messy state afterwards.</p>
 </blockquote>
 <table>
 <thead>
@@ -420,7 +420,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-10-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

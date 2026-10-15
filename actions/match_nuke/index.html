@@ -468,12 +468,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td><code>git_basic_authorization</code></td>
-<td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64</td>
+<td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64. Needs git 2.31 or later</td>
 <td></td>
 </tr>
 <tr>
 <td><code>git_bearer_authorization</code></td>
-<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64</td>
+<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64. Needs git 2.31 or later</td>
 <td></td>
 </tr>
 <tr>
@@ -662,6 +662,11 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>offline_profile</code></td>
+<td>Enable profile with 'Offline Support' (7 day validity). Requires Apple ID login, not supported with App Store Connect API key authentication</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>verbose</code></td>
 <td>Print out extra information and all commands</td>
 <td><code>false</code></td>
@@ -711,7 +716,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-10-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

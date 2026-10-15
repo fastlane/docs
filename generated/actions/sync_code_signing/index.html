@@ -438,15 +438,17 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <h4 id="git-storage">Git Storage</h4>
 <p>Use Git Storage to store all code signing identities in a private git repo, owned and operated by you. The files will be encrypted using OpenSSL.</p>
 <p>First, enter the URL to your private (!) Git repo (You can create one for free on e.g. <a href="https://github.com/new">GitHub</a> or <a href="https://bitbucket.org/repo/create">BitBucket</a>). The URL you enter can be either a <code>https://</code> or a <code>git</code> URL. <code>fastlane match init</code> won't read or modify your certificates or profiles yet, and also won't validate your git URL.</p>
+<p>You'll then be asked which branch of that repo to use, defaulting to <code>main</code> if you leave the answer blank.</p>
 <p>This will create a <code>Matchfile</code> in your current directory (or in your <code>./fastlane/</code> folder).</p>
 <p>Example content (for more advanced setups check out the <a href="#fastlane">fastlane section</a>):</p>
 <pre><code class="language-ruby-skip-tests">git_url(&quot;https://github.com/fastlane/certificates&quot;)
+git_branch(&quot;main&quot;)
 
 app_identifier(&quot;tools.fastlane.app&quot;)
 username(&quot;user@fastlane.tools&quot;)
 </code></pre>
 <h5 id="git-storage-on-github">Git Storage on GitHub</h5>
-<p>If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise, you may see an authentication error when you attempt to use match. Alternatively, you can set a basic authorization for <em>match</em>:</p>
+<p>If your machine is currently using SSH to authenticate with GitHub, you'll want to use a <code>git</code> URL, otherwise, you may see an authentication error when you attempt to use match. Alternatively, you can set a basic authorization for <em>match</em> (needs git 2.31 or later):</p>
 <p>Using parameter:</p>
 <pre><code>match(git_basic_authorization: '&lt;YOUR BASE64 KEY&gt;')
 </code></pre>
@@ -469,7 +471,7 @@ match
 </code></pre>
 <p>You can find more information about GitHub basic authentication and personal token generation here: <a href="https://developer.github.com/v3/auth/#basic-authentication">https://developer.github.com/v3/auth/#basic-authentication</a></p>
 <h5 id="git-storage-on-azure-devops">Git Storage on Azure DevOps</h5>
-<p>If you're running a pipeline on Azure DevOps and using git storage in a another repository on the same project, you might want to use <code>bearer</code> token authentication.</p>
+<p>If you're running a pipeline on Azure DevOps and using git storage in a another repository on the same project, you might want to use <code>bearer</code> token authentication (needs git 2.31 or later).</p>
 <p>Using parameter:</p>
 <pre><code>match(git_bearer_authorization: '&lt;YOUR TOKEN&gt;')
 </code></pre>
@@ -536,7 +538,7 @@ end
 <p>If you want to use a single developer and/or distribution certificate for multiple apps belonging to the same development team, you may use the same signing identities repository and branch to store the signing identities for your apps:</p>
 <p><code>Matchfile</code> example for both App #1 and #2:</p>
 <pre><code class="language-ruby-skip-tests">git_url(&quot;https://github.com/example/example-repo.git&quot;)
-git_branch(&quot;master&quot;)
+git_branch(&quot;main&quot;)
 </code></pre>
 <p><em>match</em> will reuse certificates and will create separate provisioning profiles for each app.</p>
 <h4 id="passphrase">Passphrase</h4>
@@ -633,6 +635,12 @@ end
 <p>If you're not using <code>Fastfile</code>, you can also use the <code>force_for_new_devices</code> option from the command line:</p>
 <pre><code class="language-no-highlight">fastlane match adhoc --force_for_new_devices
 </code></pre>
+<h5 id="offline-profile-use">Offline profile use</h5>
+<p>If your profile requires the 'Offline support (7 day validity)' setting for use without Internet, use <code>offline_profile: true</code> to add this permission to generated profiles.</p>
+<blockquote>
+<p>[!NOTE]
+Offline profiles can only be created when logging in with an Apple ID. Apple's App Store Connect API (<code>api_key</code> / <code>api_key_path</code>) does not support this setting, so <em>match</em> will fail with a clear error if both are combined.</p>
+</blockquote>
 <h5 id="managed-capabilities">Managed capabilities</h5>
 <blockquote>
 <p>[!IMPORTANT]
@@ -866,12 +874,12 @@ openssl x509 -inform der -in cert.der -out cert.pem
 </tr>
 <tr>
 <td><code>git_basic_authorization</code></td>
-<td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64</td>
+<td>Use a basic authorization header to access the git repo (e.g.: access via HTTPS, GitHub Actions, etc), usually a string in Base64. Needs git 2.31 or later</td>
 <td></td>
 </tr>
 <tr>
 <td><code>git_bearer_authorization</code></td>
-<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64</td>
+<td>Use a bearer authorization header to access the git repo (e.g.: access to an Azure DevOps repository), usually a string in Base64. Needs git 2.31 or later</td>
 <td></td>
 </tr>
 <tr>
@@ -1060,6 +1068,11 @@ openssl x509 -inform der -in cert.der -out cert.pem
 <td><code>false</code></td>
 </tr>
 <tr>
+<td><code>offline_profile</code></td>
+<td>Enable profile with 'Offline Support' (7 day validity). Requires Apple ID login, not supported with App Store Connect API key authentication</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>verbose</code></td>
 <td>Print out extra information and all commands</td>
 <td><code>false</code></td>
@@ -1132,7 +1145,7 @@ openssl x509 -inform der -in cert.der -out cert.pem
     </p>
   </div>
 
-  Documentation built 2026-10-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

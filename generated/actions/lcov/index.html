@@ -336,6 +336,9 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 <h1 id="lcov">lcov</h1>
 <p>Generates coverage data using lcov</p>
+<blockquote>
+<p>Xcode records coverage as LLVM <code>.profdata</code>, not the gcov <code>.gcda</code> files that <code>lcov --capture --directory</code> reads, and this action looks for them under <code>Build/Intermediates</code>, which Xcode now names <code>Build/Intermediates.noindex</code>.<br>Use <code>slather</code>, or <code>xcrun llvm-cov export -format=lcov</code> to produce an lcov file.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -436,7 +439,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-10-07 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-10-15 with <a href="http://www.mkdocs.org">MkDocs</a> <!-- using <a href="https://www.mkdocs.org/user-guide/choosing-your-theme/#readthedocs">readthedocs theme</a> --> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
