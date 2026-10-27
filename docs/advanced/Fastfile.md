@@ -82,7 +82,7 @@ In general, think twice before you do this, most of the times, these action shou
 
 # Importing another Fastfile
 
-Within your `Fastfile` you can import another `Fastfile` using 2 methods:
+Within your `Fastfile` you can import another `Fastfile` using 3 methods:
 
 ## `import`
 
@@ -113,6 +113,24 @@ end
 ```
 
 This will also automatically import all the local actions from this repo.
+
+## `import_from_gem`
+
+Import from a Ruby gem, which you can use to share lanes and actions across your projects as a single package. Your `Gemfile.lock` then pins the version of the shared lanes and of everything they depend on.
+
+Add the gem to your project's `Gemfile`, then:
+
+```ruby
+import_from_gem(gem_name: 'my_company_lanes')
+# or
+import_from_gem(gem_name: 'my_company_lanes', paths: ['fastlane/Fastfile', 'fastlane/Fastfile.release'])
+
+lane :new_main_lane do
+  # ...
+end
+```
+
+By default every `fastlane/Fastfile*` in the gem is imported, so shared lanes can be split into files by purpose; `paths` takes glob patterns relative to the gem's folder. This also imports the `actions` folder next to each `Fastfile`, and loads the _fastlane_ plugins the gem depends on, so its lanes can use them without listing them in your `Pluginfile`.
 
 ## Note
 
