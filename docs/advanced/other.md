@@ -38,7 +38,7 @@ ENV["DELIVER_USER"] = "felix@krausefx.com"
 
 # Adding Credentials
 
-You can add credentials for use by _fastlane_ to your keychain using the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) command line interface. This is useful for situations like CI environments.
+You can add credentials for use by _fastlane_ to your keychain using the [CredentialsManager](https://github.com/fastlane/fastlane/tree/master/credentials_manager) command line interface. Any program running as you can read a password stored this way, so prefer an [App Store Connect API key](https://docs.fastlane.tools/app-store-connect-api/), or the `FASTLANE_PASSWORD` environment variable.
 
 **Adding a Credential**
 ```no-highlight
@@ -134,6 +134,6 @@ irb(main):012:0> storage.save_changes!(files_to_commit: files_to_commit)
 
 Your changes will be encrypted, committed, and pushed.
 
-> **Note:** If your keychain doesn't include the encryption passcode, you may be prompted for it. If so, just enter the same password you used to decrypt it.
+> **Note:** Unless `MATCH_PASSWORD` is set, you may be prompted for the encryption passcode. If so, just enter the same password you used to decrypt it.
 
 </details>

@@ -14,7 +14,7 @@ From now on start `Jenkins` by running:
 brew services start jenkins-lts
 ```
 
-To store the password in the Keychain of your remote machine, it is recommended that you run _match_ or _deliver_ using ssh or remote desktop at least once.
+Give _fastlane_ its credentials through Jenkins credentials exposed as environment variables: an [App Store Connect API key](https://docs.fastlane.tools/app-store-connect-api/) (or `FASTLANE_PASSWORD`), and `MATCH_PASSWORD` for _match_.
 
 ## Ruby Environment
 We recommend using [rbenv](https://github.com/rbenv/rbenv) for installing Ruby, though [rvm](https://rvm.io/) and the version of Ruby that comes bundled on macOS are fine too.
