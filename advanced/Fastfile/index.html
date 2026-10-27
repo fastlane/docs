@@ -445,7 +445,7 @@ end
 </code></pre>
 <p>In general, think twice before you do this, most of the times, these action should be separate. Only call actions from within action if it makes sense.</p>
 <h1 id="importing-another-fastfile">Importing another Fastfile</h1>
-<p>Within your <code>Fastfile</code> you can import another <code>Fastfile</code> using 2 methods:</p>
+<p>Within your <code>Fastfile</code> you can import another <code>Fastfile</code> using 3 methods:</p>
 <h2 id="import"><code>import</code></h2>
 <p>Import a <code>Fastfile</code> from a local path</p>
 <pre><code class="language-ruby">import &quot;../GeneralFastfile&quot;
@@ -466,6 +466,18 @@ lane :new_main_lane do
 end
 </code></pre>
 <p>This will also automatically import all the local actions from this repo.</p>
+<h2 id="import_from_gem"><code>import_from_gem</code></h2>
+<p>Import from a Ruby gem, which you can use to share lanes and actions across your projects as a single package. Your <code>Gemfile.lock</code> then pins the version of the shared lanes and of everything they depend on.</p>
+<p>Add the gem to your project's <code>Gemfile</code>, then:</p>
+<pre><code class="language-ruby">import_from_gem(gem_name: 'my_company_lanes')
+# or
+import_from_gem(gem_name: 'my_company_lanes', paths: ['fastlane/Fastfile', 'fastlane/Fastfile.release'])
+
+lane :new_main_lane do
+  # ...
+end
+</code></pre>
+<p>By default every <code>fastlane/Fastfile*</code> in the gem is imported, so shared lanes can be split into files by purpose; <code>paths</code> takes glob patterns relative to the gem's folder. This also imports the <code>actions</code> folder next to each <code>Fastfile</code>, and loads the <em>fastlane</em> plugins the gem depends on, so its lanes can use them without listing them in your <code>Pluginfile</code>.</p>
 <h2 id="note">Note</h2>
 <p>You should import the other <code>Fastfile</code> on the top above your lane declarations. When defining a new lane <em>fastlane</em> will make sure to not run into any name conflicts. If you want to overwrite an existing lane (from the imported one), use the <code>override_lane</code> keyword.</p>
 <h1 id="load-own-actions-from-external-folder">Load own actions from external folder</h1>
