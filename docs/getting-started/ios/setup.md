@@ -2,6 +2,8 @@
 
 ### Setup Xcode for _fastlane_
 
+_fastlane_ requires Xcode 16 or newer.
+
 {!docs/includes/installing-fastlane-ios.md!}
 
 ### Installing _fastlane_
