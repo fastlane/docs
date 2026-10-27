@@ -6,12 +6,12 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 # validate_play_store_json_key
 
 
-Validate that the Google Play Store `json_key` works
+Validate Google credentials JSON for the Google Play Store
 
 
 
 
-> Use this action to test and validate your private key json key file used to connect and authenticate with the Google Play API
+> Use this action to test and validate your Google credentials JSON file (of type authorized_user, external_account, service_account) used to connect and authenticate with the Google Play API
 
 
 validate_play_store_json_key ||
@@ -37,8 +37,8 @@ validate_play_store_json_key(
 
 Key | Description | Default
 ----|-------------|--------
-  `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
-  `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key` | The path to a Google credentials JSON file (Application Default, Workload Identity, or Service Account), used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key_data` | The raw content of a Google credentials JSON file (Application Default, Workload Identity, or Service Account), used to authenticate with Google | [*](#parameters-legend-dynamic)
   `root_url` | Root URL for the Google Play API. The provided URL will be used for API calls in place of https://www.googleapis.com/ | 
   `timeout` | Timeout for read, open, and send (in seconds) | `300`
 

@@ -49,7 +49,7 @@ Key | Description | Default
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
   `version` | The version number whose latest build number we want | 
   `platform` | The platform to use (optional) | `ios`
-  `initial_build_number` | sets the build number to given value if no build is in current train | `1`
+  `initial_build_number` | sets the build number to given value if no build (upload) is in current train | `1`
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
 

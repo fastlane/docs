@@ -90,7 +90,19 @@ _pilot_ does all kinds of magic for you:
 - Automatically detects the bundle identifier from your `ipa` file
 - Automatically fetch the AppID of your app based on the bundle identifier
 
-_pilot_ uses [_spaceship_](https://spaceship.airforce) to submit the build metadata and the iTunes Transporter to upload the binary. Because iTunes Transporter's upload capability is only supported on OS X, `pilot upload` does not work on Linux, as described [in this issue](https://github.com/fastlane/fastlane/issues/5789)
+_pilot_ uses [_spaceship_](https://spaceship.airforce) to submit the build metadata and the iTunes Transporter to upload the binary.
+
+### Upload from Linux
+
+To upload binaries from Linux:
+
+- have the package file and the `AppStoreInfo.plist` file in the same location on disk (_check [fastlane gym](https://docs.fastlane.tools/actions/gym/) on how to make them_)
+- make sure you have [Transporter on Linux](https://help.apple.com/itc/transporteruserguide/en.lproj/static.html) installed
+- set the following environment variables:
+    - `FASTLANE_ITUNES_TRANSPORTER_USE_SHELL_SCRIPT=true`
+    - `FASTLANE_ITUNES_TRANSPORTER_PATH=/usr/local/itms` (_or the path where Transporter is installed_)
+
+_Note: fastlane will temporarily save the upload credentials in `$HOME/.appstoreconnect/private_keys/`. Any other files in that directory will be deleted upon upload completion._
 
 ## List builds
 
@@ -265,6 +277,9 @@ _pilot_ uses the [CredentialsManager](https://github.com/fastlane/fastlane/tree/
 ## Provider Short Name
 If you are on multiple App Store Connect teams, iTunes Transporter may need a provider short name to know where to upload your binary. _pilot_ will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the `itc_provider` option.
 
+## Provider Public ID
+The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication.
+
 ## Use an Application Specific Password to upload
 
 _pilot_/`upload_to_testflight` can use an [Application Specific Password via the `FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD` environment variable](https://docs.fastlane.tools/best-practices/continuous-integration/#application-specific-passwords) to upload a binary if both the `skip_waiting_for_build_processing` and `apple_id` options are set. (If any of those are not set, it will use the normal Apple login process that might require 2FA authentication.)
@@ -332,8 +347,8 @@ upload_to_testflight(
   localized_app_info: {
     "default": {
       feedback_email: "default@email.com",
-      marketing_url: "https://example.com/marketing-defafult",
-      privacy_policy_url: "https://example.com/privacy-defafult",
+      marketing_url: "https://example.com/marketing-default",
+      privacy_policy_url: "https://example.com/privacy-default",
       description: "Default description",
     },
     "en-GB": {
@@ -380,6 +395,9 @@ Key | Description | Default
   `skip_submission` | Skip the distributing action of pilot and only upload the ipa file | `false`
   `skip_waiting_for_build_processing` | If set to true, the `distribute_external` option won't work and no build will be distributed to testers. (You might want to use this option if you are using this action on CI and have to pay for 'minutes used' on your CI plan). If set to `true` and a changelog is provided, it will partially wait for the build to appear on AppStore Connect so the changelog can be set, and skip the remaining processing steps | `false`
   `update_build_info_on_upload` | **DEPRECATED!** Update build info immediately after validation. This is deprecated and will be removed in a future release. App Store Connect no longer supports setting build info until after build processing has completed, which is when build info is updated by default | `false`
+  `app_clip_invocations` | Add beta app clip invocations to your builds in TestFlight | 
+  `overwrite_app_clip_invocations` | Clear all previous beta app clip invocations before adding new ones | `false`
+  `routing_app_coverage_file` | Path to the routing app coverage file (`.geojson`) that is required for routing apps. It will be uploaded to the editable App Store version of the app | 
   `distribute_only` | Distribute a previously uploaded build (equivalent to the `fastlane pilot distribute` command) | `false`
   `uses_non_exempt_encryption` | Provide the 'Uses Non-Exempt Encryption' for export compliance. This is used if there is 'ITSAppUsesNonExemptEncryption' is not set in the Info.plist | `false`
   `distribute_external` | Should the build be distributed to external testers? If set to true, use of `groups` option is required | `false`
@@ -391,11 +409,12 @@ Key | Description | Default
   `last_name` | The tester's last name | 
   `email` | The tester's email | 
   `testers_file_path` | Path to a CSV file of testers | `./testers.csv`
-  `groups` | Associate tester to one group or more by group name / group id. E.g. `-g "Team 1","Team 2"` This is required when `distribute_external` option is set to true or when we want to add a tester to one or more external testing groups  | 
+  `groups` | Associate tester to one group or more by group name / group id. E.g. `-g "Team 1","a06cf5b5-95a9-4beb-88c6-f22bd6b3f7a2"` This is required when `distribute_external` option is set to true or when we want to add a tester to one or more external testing groups  | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your team in the developer portal, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `xcrun iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | 
+  `provider_public_id` | The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication | 
   `wait_processing_interval` | Interval in seconds to wait for App Store Connect processing | `30`
   `wait_processing_timeout_duration` | Timeout duration in seconds to wait for App Store Connect processing. If set, after exceeding timeout duration, this will `force stop` to wait for App Store Connect processing and exit with exception | 
   `wait_for_uploaded_build` | **DEPRECATED!** No longer needed with the transition over to the App Store Connect API - Use version info from uploaded ipa file to determine what build to use for distribution. If set to false, latest processing or any latest build will be used | `false`

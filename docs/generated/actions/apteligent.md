@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Upload dSYM file to [Apteligent (Crittercism)](http://www.apteligent.com/)
 
-
+> VMware stopped selling Apteligent to new customers on February 4, 2019, and announced moving its capabilities to VMware Workspace ONE Intelligence.<br>See [Apteligent moving to Workspace ONE Intelligence](https://vcdx181.com/2019/01/20/apteligent-moving-to-workspace-one-intelligence/).
 
 
 

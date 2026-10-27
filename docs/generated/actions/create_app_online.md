@@ -23,8 +23,7 @@ _produce_ creates new iOS apps on both the Apple Developer Portal and App Store 
 
 <p align="center">
     <a href="#features">Features</a> &bull;
-    <a href="#usage">Usage</a> &bull;
-    <a href="#how-does-it-work">How does it work?</a>
+    <a href="#usage">Usage</a>
 </p>
 
 -------
@@ -151,10 +150,11 @@ fastlane produce enable_services --help
 --associated-domains                  Enable Associated Domains
 --auto-fill-credential                Enable Auto Fill Credential
 --class-kit                           Enable Class Kit
---icloud STRING                        Enable iCloud, suitable values are "xcode5_compatible" and "xcode6_compatible"
+--icloud STRING                       Enable iCloud, suitable values are "xcode5_compatible" and "xcode6_compatible"
 --custom-network-protocol             Enable Custom Network Protocol
 --data-protection STRING              Enable Data Protection, suitable values are "complete", "unlessopen" and "untilfirstauth"
 --extended-virtual-address-space      Enable Extended Virtual Address Space
+--declared-age-range                  Enable Declared Age Range capability
 --game-center STRING                  Enable Game Center, suitable values are "ios" and "macos
 --health-kit                          Enable Health Kit
 --hls-interstitial-preview            Enable Hls Interstitial Preview
@@ -214,10 +214,11 @@ fastlane produce disable_services --help
 --associated-domains                  Disable Associated Domains
 --auto-fill-credential                Disable Auto Fill Credential
 --class-kit                           Disable Class Kit
---icloud STRING                        Disable iCloud
+--icloud STRING                       Disable iCloud
 --custom-network-protocol             Disable Custom Network Protocol
 --data-protection STRING              Disable Data Protection
 --extended-virtual-address-space      Disable Extended Virtual Address Space
+--declared-age-range                  Disable Declared Age Range capability
 --game-center STRING                  Disable Game Center
 --health-kit                          Disable Health Kit
 --hls-interstitial-preview            Disable Hls Interstitial Preview
@@ -315,7 +316,7 @@ lane :release do
     app_version: '1.0',
     sku: '123',
     team_name: 'SunApps GmbH', # only necessary when in multiple teams
-    
+
     # Optional
     # App services can be enabled during app creation
     enable_services: {
@@ -330,6 +331,7 @@ lane :release do
       car_play_navigation_app: "on",            # Valid values: "on", "off"
       car_play_voip_calling_app: "on",          # Valid values: "on", "off"
       class_kit: "on",                          # Valid values: "on", "off"
+      declared_age_range: "on",                 # Valid values: "on", "off"
       icloud: "xcode5_compatible",              # Valid values: "xcode5_compatible", "xcode6_compatible", "off"
       critical_alerts: "on",                    # Valid values: "on", "off"
       custom_network_protocol: "on",            # Valid values: "on", "off"
@@ -447,7 +449,7 @@ Key | Description | Default
   `skip_itc` | Skip the creation of the app on App Store Connect | `false`
   `itc_users` | Array of App Store Connect users. If provided, you can limit access to this newly created app for users with the App Manager, Developer, Marketer or Sales roles | 
   `enabled_features` | **DEPRECATED!** Please use `enable_services` instead - Array with Spaceship App Services | `{}`
-  `enable_services` | Array with Spaceship App Services (e.g. access_wifi: (on\|off), app_attest: (on\|off), app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), auto_fill_credential: (on\|off), class_kit: (on\|off), icloud: (legacy\|cloudkit), custom_network_protocol: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), extended_virtual_address_space: (on\|off), family_controls: (on\|off), file_provider_testing_mode: (on\|off), fonts: (on\|off), game_center: (ios\|mac), health_kit: (on\|off), hls_interstitial_preview: (on\|off), home_kit: (on\|off), hotspot: (on\|off), in_app_purchase: (on\|off), inter_app_audio: (on\|off), low_latency_hls: (on\|off), managed_associated_domains: (on\|off), maps: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), sign_in_with_apple: (on), siri_kit: (on\|off), system_extension: (on\|off), user_management: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off), car_play_audio_app: (on\|off), car_play_messaging_app: (on\|off), car_play_navigation_app: (on\|off), car_play_voip_calling_app: (on\|off), critical_alerts: (on\|off), hotspot_helper: (on\|off), driver_kit: (on\|off), driver_kit_endpoint_security: (on\|off), driver_kit_family_hid_device: (on\|off), driver_kit_family_networking: (on\|off), driver_kit_family_serial: (on\|off), driver_kit_hid_event_service: (on\|off), driver_kit_transport_hid: (on\|off), multitasking_camera_access: (on\|off), sf_universal_link_api: (on\|off), vp9_decoder: (on\|off), music_kit: (on\|off), shazam_kit: (on\|off), communication_notifications: (on\|off), group_activities: (on\|off), health_kit_estimate_recalibration: (on\|off), time_sensitive_notifications: (on\|off)) | `{}`
+  `enable_services` | Array with Spaceship App Services (e.g. access_wifi: (on\|off), app_attest: (on\|off), app_group: (on\|off), apple_pay: (on\|off), associated_domains: (on\|off), auto_fill_credential: (on\|off), class_kit: (on\|off), declared_age_range: (on\|off), icloud: (legacy\|cloudkit), custom_network_protocol: (on\|off), data_protection: (complete\|unlessopen\|untilfirstauth), extended_virtual_address_space: (on\|off), family_controls: (on\|off), file_provider_testing_mode: (on\|off), fonts: (on\|off), game_center: (ios\|mac), health_kit: (on\|off), hls_interstitial_preview: (on\|off), home_kit: (on\|off), hotspot: (on\|off), in_app_purchase: (on\|off), inter_app_audio: (on\|off), low_latency_hls: (on\|off), managed_associated_domains: (on\|off), maps: (on\|off), multipath: (on\|off), network_extension: (on\|off), nfc_tag_reading: (on\|off), personal_vpn: (on\|off), passbook: (on\|off), push_notification: (on\|off), sign_in_with_apple: (on), siri_kit: (on\|off), system_extension: (on\|off), user_management: (on\|off), vpn_configuration: (on\|off), wallet: (on\|off), wireless_accessory: (on\|off), car_play_audio_app: (on\|off), car_play_messaging_app: (on\|off), car_play_navigation_app: (on\|off), car_play_voip_calling_app: (on\|off), critical_alerts: (on\|off), hotspot_helper: (on\|off), driver_kit: (on\|off), driver_kit_endpoint_security: (on\|off), driver_kit_family_hid_device: (on\|off), driver_kit_family_networking: (on\|off), driver_kit_family_serial: (on\|off), driver_kit_hid_event_service: (on\|off), driver_kit_transport_hid: (on\|off), multitasking_camera_access: (on\|off), sf_universal_link_api: (on\|off), vp9_decoder: (on\|off), music_kit: (on\|off), shazam_kit: (on\|off), communication_notifications: (on\|off), group_activities: (on\|off), health_kit_estimate_recalibration: (on\|off), time_sensitive_notifications: (on\|off)) | `{}`
   `skip_devcenter` | Skip the creation of the app on the Apple Developer Portal | `false`
   `team_id` | The ID of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)

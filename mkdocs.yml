@@ -7,6 +7,8 @@ repo_url: https://github.com/fastlane/docs
 theme:
   name: readthedocs
   custom_dir: theme
+  analytics:
+    gtag: G-T61SL9JJVH
 strict: false
 markdown_extensions:
 - markdown.extensions.attr_list
@@ -19,19 +21,17 @@ plugins:
 - search
 - mkdocs-simple-hooks:
     hooks:
-      on_pre_build: hooks:copy_generated_files
+      on_startup: hooks:copy_generated_files
 docs_dir: docs
 extra:
   fastlane_repo_base_edit_uri: https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane
-google_analytics:
-- UA-18658848-13
-- docs.fastlane.tools
 extra_css:
 - "./css/fastlane.css"
 - "./css/code.css"
 - "./css/breadcrumbs.css"
 - "./css/fabric.css"
 - "./css/sidenav.css"
+- https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
 nav:
 - Home: index.md
 - Getting Started:
@@ -156,7 +156,6 @@ nav:
   - hg_commit_version_bump: actions/hg_commit_version_bump.md
   - hg_ensure_clean_status: actions/hg_ensure_clean_status.md
   - hg_push: actions/hg_push.md
-  - hipchat: actions/hipchat.md
   - hockey: actions/hockey.md
   - ifttt: actions/ifttt.md
   - import: actions/import.md
@@ -255,6 +254,7 @@ nav:
   - twitter: actions/twitter.md
   - typetalk: actions/typetalk.md
   - unlock_keychain: actions/unlock_keychain.md
+  - update_app_age_rating: actions/update_app_age_rating.md
   - update_app_group_identifiers: actions/update_app_group_identifiers.md
   - update_app_identifier: actions/update_app_identifier.md
   - update_code_signing_settings: actions/update_code_signing_settings.md
@@ -319,6 +319,7 @@ nav:
     - Azure DevOps: best-practices/continuous-integration/azure-devops.md
     - Bamboo: best-practices/continuous-integration/bamboo.md
     - Bitrise: best-practices/continuous-integration/bitrise.md
+    - Capawesome Cloud: best-practices/continuous-integration/capawesome-cloud.md
     - CircleCI: best-practices/continuous-integration/circle-ci.md
     - Codemagic: best-practices/continuous-integration/codemagic.md
     - GitHub Actions: best-practices/continuous-integration/github.md

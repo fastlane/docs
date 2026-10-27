@@ -237,8 +237,8 @@ Key | Description | Default
   `prelaunch_simulator` | Enabling this option will launch the first simulator prior to calling any xcodebuild command | 
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
-  `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
-  `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `only_testing` | Array of test identifiers to run. Expected format: TestTarget[/TestSuite[/TestCase]] | 
+  `skip_testing` | Array of test identifiers to skip. Expected format: TestTarget[/TestSuite[/TestCase]] | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_test_configurations` | Array of strings matching test plan configurations to run | 
   `skip_test_configurations` | Array of strings matching test plan configurations to skip | 
@@ -248,6 +248,7 @@ Key | Description | Default
   `code_coverage` | Should code coverage be generated? (Xcode 7 and up) | 
   `address_sanitizer` | Should the address sanitizer be turned on? | 
   `thread_sanitizer` | Should the thread sanitizer be turned on? | 
+  `collect_test_diagnostics` | Whether verbose and long-running diagnostics (like sysdiagnoses or log archives) are collected when testing. Valid values are: on-failure or never. If not specified, the value in the test plan is used. Equivalent to -collect-test-diagnostics (Xcode 14 and up) | 
   `open_report` | Should the HTML report be opened when tests are completed? | `false`
   `output_directory` | The directory in which all reports will be stored | [*](#parameters-legend-dynamic)
   `output_style` | Define how the output should look like. Valid values are: standard, basic, rspec, or raw (disables xcpretty during xcodebuild) | 
@@ -258,6 +259,7 @@ Key | Description | Default
   `suppress_xcode_output` | Suppress the output of xcodebuild to stdout. Output is still saved in buildlog_path | 
   `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
   `output_remove_retry_attempts` | Remove retry attempts from test results table and the JUnit report (if not using xcpretty) | `false`
+  `force_legacy_xcresulttool` | Force the use of the '--legacy' flag for xcresulttool instead of using the new commands | `false`
   `disable_xcpretty` | **DEPRECATED!** Use `output_style: 'raw'` instead - Disable xcpretty formatting of build, similar to `output_style='raw'` but this will also skip the test results table | 
   `formatter` | **DEPRECATED!** Use 'xcpretty_formatter' instead - A custom xcpretty formatter to use | 
   `xcpretty_formatter` | A custom xcpretty formatter to use | 
@@ -296,11 +298,15 @@ Key | Description | Default
   `custom_report_file_name` | **DEPRECATED!** Use `--output_files` instead - Sets custom full report file name when generating a single report | 
   `xcodebuild_command` | Allows for override of the default `xcodebuild` command | `env NSUnbufferedIO=YES xcodebuild`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
-  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `disallow_xcodebuild_settings_lookup` | Raises an error instead of fetching build settings by running `xcodebuild -showBuildSettings`, which can take a long time on large projects. The error names the required build setting, so the corresponding option can be specified manually | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file. This translates in the option `-disableAutomaticPackageResolution` being passed to xcodebuild | `false`
+  `skip_package_repository_fetches` | Skips updating package dependencies from their remote. This translates in the option `-skipPackageUpdates` being passed to xcodebuild | `false`
   `use_system_scm` | Lets xcodebuild use system's scm configuration | `false`
   `number_of_retries` | The number of times a test can fail | `0`
   `fail_build` | Should this step stop the build if the tests fail? Set this to false if you're using trainer | `true`
+  `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

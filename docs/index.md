@@ -7,6 +7,7 @@ fastlane
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/fastlane/fastlane/blob/master/LICENSE){: .badge }
 [![Gem](https://img.shields.io/gem/v/fastlane.svg?style=flat)](https://rubygems.org/gems/fastlane){: .badge }
 [![Platforms](https://img.shields.io/badge/os-macos%20--%20linux%20--%20windows-blue?style=flat)](#){: .badge }
+[![OpenCollective](https://opencollective.com/fastlane/tiers/badge.svg)](https://opencollective.com/fastlane){: .badge }
 
 _fastlane_ is the easiest way to automate beta deployments and releases for your iOS and Android apps. 🚀 It handles all tedious tasks, like generating screenshots, dealing with code signing, and releasing your application.
 
@@ -45,7 +46,7 @@ fastlane release
 👻 | Integrates with all major CI systems
 🖥 | Supports iOS, Mac, and Android apps
 🔧 | Extend and customise _fastlane_ to fit your needs, you're not dependent on anyone
-💭 | Never remember any commands any more, just _fastlane_
+💭 | Never remember any commands anymore, just _fastlane_
 🚢 | Deploy from any computer, including a CI server
 
 ## Getting Started
@@ -83,87 +84,7 @@ _fastlane_ is officially supported to run on macOS.
 
 ## _fastlane_ team
 
-<table>
-<tr>
-<td>
-<a href='https://twitter.com/hjanuschka'><img src='https://github.com/hjanuschka.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/hjanuschka'>Helmut Januschka</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/KrauseFx'><img src='https://github.com/KrauseFx.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/KrauseFx'>Felix Krause</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/lacostej'><img src='https://github.com/lacostej.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/lacostej'>Jérôme Lacoste</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/Sujan'><img src='https://github.com/janpio.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/Sujan'>Jan Piotrowski</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/lmirosevic'><img src='https://github.com/lmirosevic.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/lmirosevic'>Luka Mirosevic</a></h4>
-</td>
-</tr>
-<tr>
-<td>
-<a href='https://twitter.com/aligatr'><img src='https://github.com/AliSoftware.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/aligatr'>Olivier Halligon</a></h4>
-</td>
-<td>
-<a href='#'><img src='https://github.com/jdee.png?size=200' width=140></a>
-<h4 align='center'><a href='#'>Jimmy Dee</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/Revolt666'><img src='https://github.com/revolter.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/Revolt666'>Iulian Onofrei</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/DanToml'><img src='https://github.com/DanToml.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/DanToml'>Danielle Tomlinson</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/getaaron'><img src='https://github.com/getaaron.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/getaaron'>Aaron Brager</a></h4>
-</td>
-</tr>
-<tr>
-<td>
-<a href='https://twitter.com/giginet'><img src='https://github.com/giginet.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/giginet'>Kohki Miki</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/snatchev'><img src='https://github.com/snatchev.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/snatchev'>Stefan Natchev</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/mgrebenets'><img src='https://github.com/mgrebenets.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/mgrebenets'>Maksym Grebenets</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/taquitos'><img src='https://github.com/taquitos.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/taquitos'>Joshua Liebowitz</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/acrooow'><img src='https://github.com/milch.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/acrooow'>Manu Wallner</a></h4>
-</td>
-</tr>
-<tr>
-<td>
-<a href='https://twitter.com/nafu003'><img src='https://github.com/nafu.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/nafu003'>Fumiya Nakamura</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/mellis1995'><img src='https://github.com/matthewellis.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/mellis1995'>Matthew Ellis</a></h4>
-</td>
-<td>
-<a href='https://twitter.com/joshdholtz'><img src='https://github.com/joshdholtz.png?size=200' width=140></a>
-<h4 align='center'><a href='https://twitter.com/joshdholtz'>Josh Holtz</a></h4>
-</td>
-</table>
+{!docs/generated/team-table.md!}
 
 Special thanks to all [contributors](https://github.com/fastlane/fastlane/graphs/contributors) for extending and improving _fastlane_.
 
@@ -173,6 +94,13 @@ _fastlane_ tracks a few key metrics to understand how developers are using the t
  
 * The number of _fastlane_ runs
 * A salted hash of the app identifier or package name, which helps us anonymously identify unique usage of _fastlane_
+* How _fastlane_ is executed (Swift vs Ruby)
+* The _fastlane_ version
+* How _fastlane_ was installed (Homebrew, gem, bundler, etc)
+* The Ruby version
+* The Operating System in use
+* The Xcode version
+* Whether it was run in non-interactively or interactively
  
 You can easily opt-out of metrics collection by adding `opt_out_usage` at the top of your `Fastfile` or by setting the environment variable `FASTLANE_OPT_OUT_USAGE`. [Check out the metrics code on GitHub](https://github.com/fastlane/fastlane/tree/master/fastlane_core/lib/fastlane_core/analytics)
 

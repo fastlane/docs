@@ -11,7 +11,7 @@ This will prevent reports from being uploaded when _fastlane_ crashes
 
 
 
-> _fastlane_ doesn't have crash reporting any more. Feel free to remove `opt_out_crash_reporting` from your Fastfile.
+> _fastlane_ doesn't have crash reporting anymore. Feel free to remove `opt_out_crash_reporting` from your Fastfile.
 
 
 opt_out_crash_reporting ||

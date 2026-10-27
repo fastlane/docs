@@ -47,22 +47,16 @@ fastlane tests
 
 ### Posting build results
 
-If you want to post test results on Slack, Hipchat, or other team chat client, check out the available [fastlane actions](/actions/#notifications).
+If you want to post test results on Slack or other team chat client, check out the available [fastlane actions](/actions/#notifications).
 
 #### Build failures
-
-##### Hipchat
 
 To post a message when _fastlane_ encounters a test or build failure, add the following to your `Fastfile`:
 
 ```ruby
-error do |ex|
-  hipchat(message: "Tests have failed!",
-          channel: "Room or @username",
-          success: false)
+error do |lane, exception|
+  # Call here an action to post a message to your team chat.
 end
 ```
 
-##### Other services
-
-The above example uses Hipchat, but _fastlane_ supports [many other services out there](/actions/#notifications). 
+For a full list of the available notification actions, check out the [notifications section](/actions/#notifications).

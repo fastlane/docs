@@ -65,6 +65,7 @@ Key | Description | Default
   `bundle_id` | Set new bundle ID during resign (`CFBundleIdentifier`) | 
   `use_app_entitlements` | Extract app bundle codesigning entitlements and combine with entitlements from new provisioning profile | 
   `keychain_path` | Provide a path to a keychain file that should be used by `/usr/bin/codesign` | 
+  `pagesize` | Page size in bytes passed to `/usr/bin/codesign --pagesize` (must be a power of two) | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

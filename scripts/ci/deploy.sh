@@ -15,7 +15,7 @@ echo "Starting deploy to https://docs.fastlane.tools"
 find ./docs/generated/actions/ -type f | xargs sed -i 's/\`\`\`ruby\-skip\-tests/\`\`\`ruby/g'
 
 # Build the docs page locally
-mkdocs build
+properdocs build
 
 # Bots need names too
 git config --global user.email "fastlanebothelper@krausefx.com"
@@ -45,7 +45,7 @@ ruby /tmp/generate_redirects.rb
 
 # Commit all the changes and push it to the remote
 git add -A
-git commit -m "Deployed with $(mkdocs --version)"
+git commit -m "Deployed with $(properdocs --version)"
 git push origin gh-pages
 
 # Post a Slack message

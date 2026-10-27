@@ -46,7 +46,7 @@ Key | Description | Default
   `scheme` | Scheme to use when calling slather | 
   `configuration` | Configuration to use when calling slather (since slather-2.4.1) | 
   `input_format` | The input format that slather should look for | 
-  `github` | Tell slather that it is running on Github Actions | 
+  `github` | Tell slather that it is running on GitHub Actions | 
   `buildkite` | Tell slather that it is running on Buildkite | 
   `teamcity` | Tell slather that it is running on TeamCity | 
   `jenkins` | Tell slather that it is running on Jenkins | 
@@ -72,6 +72,7 @@ Key | Description | Default
   `arch` | Specify which architecture the binary file is in. Needed for universal binaries | 
   `source_files` | A Dir.glob compatible pattern used to limit the lookup to specific source files. Ignored in gcov mode | `false`
   `decimals` | The amount of decimals to use for % coverage reporting | `false`
+  `ymlfile` | Relative path to a file used in place of '.slather.yml' | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

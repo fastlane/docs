@@ -120,6 +120,19 @@ myExecutable lane myLane
 
 - If you want to just push your `Package.swift` and `Package.resolved` to the repo, you'd need to `swift build` the package to create your executable again which can be found in the `.debug` or `.release` folders, depending on how you built the package (`.debug` by default). 
 
+##### Which _fastlane_ the runner starts
+
+The runner starts `fastlane socket_server` itself, choosing _fastlane_ in this order:
+
+1. `FASTLANE_SPM_BIN`, if set: the command to run, split by the shell, so quote a path that contains spaces (`FASTLANE_SPM_BIN="'/path with spaces/fastlane'"` or `FASTLANE_SPM_BIN="bundle exec fastlane"`).
+2. The Bundler binstub `bin/fastlane` next to your `Gemfile`.
+3. `bundle exec fastlane`, when there is a `Gemfile`: the one in `BUNDLE_GEMFILE`, or the nearest `Gemfile` or `gems.rb` from the working directory up, as Bundler finds it.
+4. `fastlane` on your `PATH`.
+
+When you start the runner from Xcode, the `PATH` it gets is minimal, so set `FASTLANE_SPM_BIN` to an absolute path.
+
+If another process already listens on the runner's port (`swiftServerPort`, 2000 by default) on `127.0.0.1` or `::1`, the runner stops and names it when it can, instead of connecting to it.
+
 ### Defining Lanes
 
 Lanes are defined with functions that end with `Lane` within the `class Fastfile: LaneFile`.

@@ -77,7 +77,7 @@ name = UI.input("What's your name? ")
 if UI.confirm("Are you '#{name}'?")
   UI.success "Oh yeah"
 else
-  UI.error "Wups, invalid"
+  UI.error "Whoops, invalid"
 end
 
 UI.password("Your password please: ") # password inputs are hidden

@@ -12,6 +12,10 @@ You can set the environment variable `FASTLANE_SKIP_UPDATE_CHECK` to skip the up
 
 You can set the environment variable `FASTLANE_HIDE_CHANGELOG` to hide the detailed changelog information when new _fastlane_ versions are available.
 
+### Prevent _fastlane_ from checking for related GitHub issues during an issue
+
+You can set the environment variable `FASTLANE_HIDE_GITHUB_ISSUES` to hide the related GitHub issues suggestions when an error occurs.
+
 ### Output environment variables
 
 - To hide timestamps in each row, set the `FASTLANE_HIDE_TIMESTAMP` environment variable to true (overruled by `--verbose`).

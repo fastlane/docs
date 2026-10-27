@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Downloads Xcode Bot assets like the `.xcarchive` and logs
 
-
+> Xcode Server is no longer supported since Xcode 14 ([Xcode 14 Release Notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-14-release-notes)).
 
 
 > This action downloads assets from your Xcode Server Bot (works with Xcode Server using Xcode 6 and 7. By default, this action downloads all assets, unzips them and deletes everything except for the `.xcarchive`.<br>If you'd like to keep all downloaded assets, pass `keep_all_assets: true`.<br>This action returns the path to the downloaded assets folder and puts into shared values the paths to the asset folder and to the `.xcarchive` inside it.

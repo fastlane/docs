@@ -61,6 +61,7 @@ Key | Description | Default
   `format` | Format code when mode is :autocorrect | `false`
   `no_cache` | Ignore the cache when mode is :autocorrect or :lint | `false`
   `compiler_log_path` | Compiler log path when mode is :analyze | 
+  `progress` | Show a live-updating progress bar instead of each file being processed | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

@@ -1,30 +1,31 @@
-version: 2.0
+version: 2.1
+orbs:
+  ruby: circleci/ruby@3.0.0
+  python: circleci/python@4.0.0
 
 jobs:
   "Test":
     docker:
-      - image: fastlanetools/ci:0.4.0
+      - image: fastlanetoolsci/fastlane:1.2.0
     working_directory: ~/code
     steps:
       - checkout
-      - run: sudo pip3 install pipenv
-      - run: pipenv install
-      - run: gem install bundler -v $(ruby .ci/bundler_version.rb)
-      - run: bundle update
-      - run: pipenv run bundle exec fastlane test
+      - python/install-packages:
+          pkg-manager: uv
+      - ruby/install-deps
+      - run: uv run bundle exec fastlane test
       - run: bundle exec rubocop
       - run: bundle exec danger || echo "danger failed, moving on"
   "Deploy":
     docker:
-      - image: fastlanetools/ci:0.4.0
+      - image: fastlanetoolsci/fastlane:1.2.0
     working_directory: ~/code
     steps:
       - checkout
-      - run: sudo pip3 install pipenv
-      - run: pipenv install
-      - run: gem install bundler -v $(ruby .ci/bundler_version.rb)
-      - run: bundle update
-      - run: pipenv run ./scripts/ci/deploy.sh
+      - python/install-packages:
+          pkg-manager: uv
+      - ruby/install-deps
+      - run: uv run ./scripts/ci/deploy.sh
 
 workflows:
   version: 2

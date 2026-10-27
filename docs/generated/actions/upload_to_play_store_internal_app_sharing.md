@@ -37,8 +37,8 @@ upload_to_play_store_internal_app_sharing
 Key | Description | Default
 ----|-------------|--------
   `package_name` | The package name of the application to use | [*](#parameters-legend-dynamic)
-  `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
-  `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key` | The path to a Google credentials JSON file (Application Default, Workload Identity, or Service Account), used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key_data` | The raw content of a Google credentials JSON file (Application Default, Workload Identity, or Service Account), used to authenticate with Google | [*](#parameters-legend-dynamic)
   `apk` | Path to the APK file to upload | [*](#parameters-legend-dynamic)
   `apk_paths` | An array of paths to APK files to upload | 
   `aab` | Path to the AAB file to upload | [*](#parameters-legend-dynamic)

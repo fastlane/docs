@@ -8,7 +8,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 
 Generates coverage data using lcov
 
-
+> Xcode records coverage as LLVM `.profdata`, not the gcov `.gcda` files that `lcov --capture --directory` reads, and this action looks for them under `Build/Intermediates`, which Xcode now names `Build/Intermediates.noindex`.<br>Use `slather`, or `xcrun llvm-cov export -format=lcov` to produce an lcov file.
 
 
 

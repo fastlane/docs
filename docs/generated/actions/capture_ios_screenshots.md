@@ -422,8 +422,8 @@ capture_ios_screenshots(
 
 Key | Description | Default
 ----|-------------|--------
-  `workspace` | Path the workspace file | 
-  `project` | Path the project file | 
+  `workspace` | Path to the workspace file | 
+  `project` | Path to the project file | 
   `xcargs` | Pass additional arguments to xcodebuild for the test phase. Be sure to quote the setting names and values e.g. OTHER_LDFLAGS="-ObjC -lstdc++" | 
   `xcconfig` | Use an extra XCCONFIG file to build your app | 
   `devices` | A list of devices you want to take the screenshots from | 
@@ -461,11 +461,16 @@ Key | Description | Default
   `concurrent_simulators` | Take snapshots on multiple simulators concurrently. Note: This option is only applicable when running against Xcode 9 | `true`
   `disable_slide_to_type` | Disable the simulator from showing the 'Slide to type' prompt | `false`
   `cloned_source_packages_path` | Sets a custom path for Swift Package Manager dependencies | 
+  `package_cache_path` | Sets a custom package cache path for Swift Package Manager dependencies | 
   `skip_package_dependencies_resolution` | Skips resolution of Swift Package Manager dependencies | `false`
-  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file | `false`
+  `disallow_xcodebuild_settings_lookup` | Raises an error instead of fetching build settings by running `xcodebuild -showBuildSettings`, which can take a long time on large projects. The error names the required build setting, so the corresponding option can be specified manually | `false`
+  `disable_package_automatic_updates` | Prevents packages from automatically being resolved to versions other than those recorded in the `Package.resolved` file. This translates in the option `-disableAutomaticPackageResolution` being passed to xcodebuild | `false`
+  `skip_package_repository_fetches` | Skips updating package dependencies from their remote. This translates in the option `-skipPackageUpdates` being passed to xcodebuild | `false`
+  `package_authorization_provider` | Lets xcodebuild use a specified package authorization provider (keychain\|netrc) | 
   `testplan` | The testplan associated with the scheme that should be used for testing | 
   `only_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to run | 
   `skip_testing` | Array of strings matching Test Bundle/Test Suite/Test Cases to skip | 
+  `run_rosetta_simulator` | Run simulator in a Rosetta mode | `false`
   `xcodebuild_formatter` | xcodebuild formatter to use (ex: 'xcbeautify', 'xcbeautify --quieter', 'xcpretty', 'xcpretty -test'). Use empty string (ex: '') to disable any formatter (More information: https://docs.fastlane.tools/best-practices/xcodebuild-formatters/) | [*](#parameters-legend-dynamic)
   `xcpretty_args` | **DEPRECATED!** Use `xcodebuild_formatter: ''` instead - Additional xcpretty arguments | 
   `disable_xcpretty` | Disable xcpretty formatting of build | 

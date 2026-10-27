@@ -19,7 +19,7 @@ Then you could use the following regex to ignore these commits
 
 
 ## Setting repository remote
-By default bamboo will do an anonymous shallow clone of the repo.  This will not preserve the  `git remote` information nor the list of tags.  If you are using bamboo to create commits you may want to use a code block similar to the following:
+Bamboo will do an anonymous shallow clone of the repo by default. This will preserve neither the `git remote` information nor the list of tags. If you are using bamboo to create commits you may want to use a code block similar to the following:
 
 
 ```ruby

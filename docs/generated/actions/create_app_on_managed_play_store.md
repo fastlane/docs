@@ -41,8 +41,8 @@ create_app_on_managed_play_store(
 
 Key | Description | Default
 ----|-------------|--------
-  `json_key` | The path to a file containing service account JSON, used to authenticate with Google | [*](#parameters-legend-dynamic)
-  `json_key_data` | The raw service account JSON data used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key` | The path to a Google credentials JSON file (Application Default, Workload Identity, or Service Account), used to authenticate with Google | [*](#parameters-legend-dynamic)
+  `json_key_data` | The raw content of a Google credentials JSON file (Application Default, Workload Identity, or Service Account) used to authenticate with Google | [*](#parameters-legend-dynamic)
   `developer_account_id` | The ID of your Google Play Console account. Can be obtained from the URL when you log in (`https://play.google.com/apps/publish/?account=...` or when you 'Obtain private app publishing rights' (https://developers.google.com/android/work/play/custom-app-api/get-started#retrieve_the_developer_account_id) | [*](#parameters-legend-dynamic)
   `apk` | Path to the APK file to upload | [*](#parameters-legend-dynamic)
   `app_title` | App Title | 

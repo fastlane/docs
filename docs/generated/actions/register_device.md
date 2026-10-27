@@ -16,7 +16,7 @@ Registers a new device to the Apple Dev Portal
 
 register_device ||
 ---|---
-Supported platforms | ios
+Supported platforms | ios, mac
 Author | @pvinis
 
 

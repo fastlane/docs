@@ -15,7 +15,7 @@ Upload metadata and binary to App Store Connect (via _deliver_)
   <img src="/img/actions/deliver.png" width="250">
 </p>
 
-_deliver_ uploads screenshots, metadata and binaries to App Store Connect. Use _deliver_ to submit your app for App Store review.
+_deliver_ uploads screenshots, App Preview videos, metadata and binaries to App Store Connect. Use _deliver_ to submit your app for App Store review.
 
 -------
 
@@ -31,7 +31,7 @@ _deliver_ uploads screenshots, metadata and binaries to App Store Connect. Use _
 <h5 align="center"><code>deliver</code> is part of <a href="https://fastlane.tools">fastlane</a>: The easiest way to automate beta deployments and releases for your iOS and Android apps.</h5>
 
 # Features
-- Upload hundreds of localized screenshots completely automatically
+- Upload hundreds of localized screenshots and App Preview videos completely automatically
 - Upload a new ipa/pkg file to App Store Connect without Xcode from any Mac
 - Maintain your app metadata locally and push changes back to App Store Connect
 - Easily implement a real Continuous Deployment process using [_fastlane_](https://fastlane.tools)
@@ -55,13 +55,13 @@ From now on, you can run `fastlane deliver` to deploy a new update, or just uplo
 
 # Usage
 
-Check out your local `./fastlane/metadata` and `./fastlane/screenshots` folders (if you don't use [_fastlane_](https://fastlane.tools) it's `./metadata` instead)
+Check out your local `./fastlane/metadata`, `./fastlane/screenshots`, and `./fastlane/app-previews` folders (if you don't use [_fastlane_](https://fastlane.tools) it's `./metadata` instead)
 
 ![/img/actions/deliver_metadata.png](/img/actions/deliver_metadata.png)
 
 You'll see your metadata from App Store Connect. Feel free to store the metadata in git (not the screenshots). You can now modify it locally and push the changes back to App Store Connect.
 
-Run `fastlane deliver` to upload the app metadata from your local machine
+Run `fastlane deliver` to upload the app metadata, screenshots, and App Preview videos from your local machine
 
 ```no-highlight
 fastlane deliver
@@ -188,12 +188,30 @@ A path to a folder containing subfolders for each language. This will automatica
 
 ![/img/actions/deliver_screenshots.png](/img/actions/deliver_screenshots.png)
 
+##### app_previews_path
+Path to the App Preview videos you want to upload. The folder must be structured with language-specific subfolders, similar to screenshots:
+
+![/img/actions/deliver_app-previews.png](/img/actions/deliver_app-previews.png)
+
+Up to 3 videos per locale and per device type are uploaded, then ordered by filename. Device type is inferred from the filename (case insensitive):
+
+```no-highlight
+IPHONE_40, IPHONE_47, IPHONE_55, IPHONE_58, IPHONE_61, IPHONE_65, IPHONE_67, IPAD_97, IPAD_105, IPAD_PRO_129, IPAD_PRO_3GEN_11, IPAD_PRO_3GEN_129, DESKTOP
+```
+
+A preview poster frame is set using `preview_frame_time_code`.
+
 ##### metadata_path
 Path to the metadata you want to use. The folder has to be structured like this
 
 ![/img/actions/deliver_metadata.png](/img/actions/deliver_metadata.png)
 
 If you run `deliver init` this will automatically be created for you.
+
+##### app_clip_default_experience_metadata_path
+Path to the App Clip metadata you want to use. The folder has to be structured like this
+
+![/img/actions/deliver_metadata.png](/img/actions/deliver_app_clip_metadata_from_folder.png)
 
 ##### force
 
@@ -250,6 +268,26 @@ app_review_information(
 
 You can also provide these values by creating files in a `metadata/review_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `first_name.txt`, `notes.txt` etc.). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will be take priority over values from these files.
 
+##### app_clip_review_information
+Review information on the app clips for the app review team. Available options: `invocation_urls`
+
+
+```ruby-skip-tests
+app_clip_review_information(
+  invocation_urls: ["http://localhost.com"]
+)
+```
+
+You can also provide these values by creating files in a `metadata/app_clip_review_information/` directory. The file names must match the pattern `<key>.txt` (e.g. `invocation_urls`). The contents of each file will be used as the value for the matching key. Values provided in the `Deliverfile` or `Fastfile` will take priority over values from these files.
+
+Example of the `invocation_urls.txt` file:
+
+
+```
+http://localhost.com/1, http://localhost.com/2
+```
+
+
 ##### app_review_attachment_file
 You can provide additional information to the app review team as a file attachment. As of this writing, Apple supports following file attachment formats: .pdf, .doc, .docx, .rtf, .pages, .xls, .xlsx, .numbers, .zip, .rar, .plist, .crash, .jpg, .png, .mp4, or .avi.
 
@@ -303,6 +341,16 @@ You can set the app age ratings using _deliver_. You'll have to create and store
 
 The keys/values on the top allow one of 3 strings: "NONE", "INFREQUENT_OR_MILD" or "FREQUENT_OR_INTENSE", and the items on the bottom allow false or true. More information in [#reference](#reference).
 
+##### app_clip_header_images_path
+
+A path to a folder containing subfolders for each language. Each language folder must contain
+only one image and these images must be exactly 1800x1200px. These images will be used for the
+[default App Clip experience](https://developer.apple.com/documentation/app_clips/configuring_the_launch_experience_of_your_app_clip/#3604096)
+for this particular release.
+
+See the [App Clip docs](#app-clips) for more info.
+
+![/img/actions/deliver_app_clip_header_images.png](/img/actions/deliver_app_clip_header_images.png)
 
 ## Metadata
 
@@ -379,16 +427,22 @@ apple_watch_app_icon('./AppleWatchAppIcon.png')
 
 The platform of your application (a.e. ios, osx).
 
-This option is optional. The default value is "ios" and deliver should be able to figure out the platform from your binary.
+This option is optional. The default value is "ios" and deliver will ignore this option and figure out the platform from your binary if exactly one binary is present.
 
-However, in the case if multiple binaries present, you can specify a platform which you want to deliver explicitly.
+However, in the cases of no binaries or multiple binaries being present, you can specify a platform which you want to deliver explicitly.
 
 The available options:
 
 - 'ios'
 - 'appletvos'
+- 'xros'
 - 'osx'
 
+##### app_clip_default_experience_subtitle
+
+The subtitle that shows up for the default App Clip experience.
+
+See the [App Clip docs](#app-clips) for more info.
 
 ### Non-Localized
 
@@ -417,6 +471,16 @@ The english name of the secondary first sub category you want to set
 
 ##### secondary_second_sub_category
 The english name of the secondary second sub category you want to set
+
+##### app_clip_default_experience_action
+
+The action button that shows up for the default App Clip experience. The valid options are listed below:
+
+- `OPEN`
+- `VIEW`
+- `PLAY`
+
+See the [App Clip docs](#app-clips) for more info.
 </details>
 
 # Submit Build
@@ -444,17 +508,17 @@ end
 
 Omit `build_number` to let _fastlane_ automatically select the latest build number for the current version being edited for release from App Store Connect.
 
-### Compliance and IDFA settings
+### Compliance settings
 
-Use the `submission_information` parameter for additional submission specifiers, including compliance and IDFA settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
+Use the `submission_information` parameter for additional submission specifiers, including compliance settings. Look at the Spaceship's [`app_submission.rb`](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/tunes/app_submission.rb) file for options. See [this example](https://github.com/artsy/eigen/blob/faa02e2746194d8d7c11899474de9c517435eca4/fastlane/Fastfile#L131-L149).
 
 ```no-highlight
-fastlane deliver submit_build --build_number 830 --submission_information "{\"export_compliance_uses_encryption\": false, \"add_id_info_uses_idfa\": false }"
+fastlane deliver submit_build --build_number 830 --submission_information "{\"export_compliance_uses_encryption\": false }"
 ```
 
 ### App Privacy Details
 
-Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practies. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
+Starting on December 8, 2020, Apple announced that developers are required to provide app privacy details that will help users understand an app's privacy practices. _deliver_ does not allow for updating of this information but this can be done with the _upload_app_privacy_details_to_app_store_ action. More information on [Uploading App Privacy Details](https://docs.fastlane.tools/uploading-app-privacy-details)
 
 # Credentials
 
@@ -475,7 +539,7 @@ _deliver_ uses the following techniques under the hood:
 
 ## Available language codes
 ```no-highlight
-ar-SA, ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, he, hi, hr, hu, id, it, ja, ko, ms, nl-NL, no, pl, pt-BR, pt-PT, ro, ru, sk, sv, th, tr, uk, vi, zh-Hans, zh-Hant
+ar-SA, bn-BD, ca, cs, da, de-DE, el, en-AU, en-CA, en-GB, en-US, es-ES, es-MX, fi, fr-CA, fr-FR, gu-IN, he, hi, hr, hu, id, it, ja, kn-IN, ko, ml-IN, mr-IN, ms, nl-NL, no, or-IN, pa-IN, pl, pt-BR, pt-PT, ro, ru, sk, sl-SI, sv, ta-IN, te-IN, th, tr, uk, ur-PK, vi, zh-Hans, zh-Hant
 ```
 
 ## Available Metadata Folder Options
@@ -523,6 +587,24 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
   `demo_user` | Yes | `<metadata_path>/review_information` | `demo_user.txt` | `review_demo_user.txt`
   `demo_password` | Yes | `<metadata_path>/review_information` | `demo_password.txt` | `review_demo_password.txt`
   `notes` | Yes | `<metadata_path>/review_information` | `notes.txt` | `review_notes.txt`
+
+
+## Available App Clip Metadata Folder Options
+
+_deliver_ allows for metadata to be set through `.txt` files in the App Clip metadata folder. This folder can be set using `app_clip_default_experience_metadata_path`. Below are all the allowed metadata options.
+
+### Non-Localized Metadata
+
+Key | Editable While Live | Directory | Filename
+----|--------|--------|--------
+  `app_clip_default_experience_action` | No | `<app_clip_metadata_path>` | `app_clip_default_experience_action.txt`
+
+
+### Localized Metadata
+
+Key | Editable While Live | Directory | Filename
+----|--------|--------|--------
+  `app_clip_default_experience_subtitle` | No | `<app_clip_metadata_path>/<lang>/` | `app_clip_default_experience_subtitle.txt`
 
 
 ## Reference
@@ -617,7 +699,7 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 
 ### Available age rating groups
 
-#### Non Boolean
+#### Infrequent/Mild or Frequent/Intense
 
 **Values**
 
@@ -626,34 +708,75 @@ Key | Editable While Live | Directory | Filename | Deprecated Filename
 - 2: Frequent/Intense (Legacy value, use `FREQUENT_OR_INTENSE`instead)
 
 - `NONE`
+- `INFREQUENT`
 - `INFREQUENT_OR_MILD`
+- `FREQUENT`
 - `FREQUENT_OR_INTENSE`
 
 **Keys**
 
-- 'alcoholTobaccoOrDrugUseOrReferences'
-- 'contests'
-- 'gamblingSimulated'
-- 'medicalOrTreatmentInformation'
-- 'profanityOrCrudeHumor'
+- `alcoholTobaccoOrDrugUseOrReferences`
+- `contests`
+- `gamblingSimulated`
+- `gunsOrOtherWeapons`
+- `horrorOrFearThemes`
+- `matureOrSuggestiveThemes`
+- `medicalOrTreatmentInformation`
+- `profanityOrCrudeHumor`
+- `sexualContentGraphicAndNudity`
+- `sexualContentOrNudity`
+- `socialMedia`
+- `socialMediaAgeRestricted`
+- `violenceCartoonOrFantasy`
+- `violenceRealistic`
+- `violenceRealisticProlongedGraphicOrSadistic`
 
-- 'sexualContentGraphicAndNudity'
-- 'sexualContentOrNudity'
-- 'horrorOrFearThemes'
-- 'matureOrSuggestiveThemes'
-- 'unrestrictedWebAccess'
-- 'violenceCartoonOrFantasy'
-- 'violenceRealisticProlongedGraphicOrSadistic'
-- 'violenceRealistic'
-- 'kidsAgeBand'
+#### Age Rating
+
+**Values**
+
+- `NONE`
+- `NINE_PLUS`
+- `THIRTEEN_PLUS`
+- `SIXTEEN_PLUS`
+- `EIGHTEEN_PLUS`
+- `UNRATED`
+
+**Keys**
+
+- `ageRatingOverrideV2`
+
+#### Korea Age Rating
+
+**Values**
+
+- `NONE`
+- `FIFTEEN_PLUS`
+- `NINETEEN_PLUS`
+
+**Keys**
+
+- `koreaAgeRatingOverride`
+
+#### URL
+
+**Keys**
+
+- `developerAgeRatingInfoUrl`
 
 #### Boolean
 
 **Keys**
 
+- `advertising`
+- `ageAssurance`
 - `gambling`
-- 'seventeenPlus'
+- `healthOrWellnessTopics`
+- `lootBox`
+- `messagingAndChat`
+- `parentalControls`
 - `unrestrictedWebAccess`
+- `userGeneratedContent`
 
 #### Kids Age
 
@@ -724,7 +847,9 @@ In this case, default values for keywords, urls, name and release notes are used
 
 [Starting March 20, 2019 Apple's App Store](https://developer.apple.com/news/?id=03202019a) requires 12.9-inch iPad Pro (3rd generation) screenshots additionally to the iPad Pro 2nd generation [screenshots](https://help.apple.com/app-store-connect/#/devd274dd925). As fastlane historically uses the screenshot dimensions to determine the "display family" of a screenshot, this poses a problem as both use the same dimensions and are recognized as the same device family.
 
-To solve this a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string `iPad Pro (12.9-inch) (3rd generation)`, `IPAD_PRO_3GEN_129`, or `ipadPro129` (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.
+For fastlane 2.230.0 and later, screenshots with the shared 12.9-inch iPad Pro resolution are treated as 3rd generation (and later) by default. To upload to the 2nd generation slot, include either `APP_IPAD_PRO_129` or both `12.9` and `2nd generation` in the filename.
+
+> Note: For fastlane versions earlier than 2.230.0, a screenshot of a 12.9-inch iPad Pro (3rd generation) must contain either the string `iPad Pro (12.9-inch) (3rd generation)`, `IPAD_PRO_3GEN_129`, or `ipadPro129` (Apple's internal naming of the display family for the 3rd generation iPad Pro) in its filename to be assigned the correct display family and to be uploaded to the correct screenshot slot in your app's metadata.
 
 ## Automatically create screenshots
 
@@ -777,6 +902,39 @@ Change syntax highlighting to *Ruby*.
 ## Provider Short Name
 If you are on multiple App Store Connect teams, _deliver_ needs a provider short name to know where to upload your binary. _deliver_ will try to use the long name of the selected team to detect the provider short name. To override the detected value with an explicit one, use the `itc_provider` option.
 
+## Provider Public ID
+The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication.
+
+## App Clips
+
+You can optionally specify the default App Clip experience using the following options:
+- `app_clip_default_experience_action`
+- `app_clip_default_experience_subtitle`
+- `app_clip_header_images_path`
+
+The default App Store Connect behavior is to not carry-over the previous version's default App Clip
+experience metadata. This is a contradictory behavior because it automatically carries over all
+other version metadata when creating a new version.
+
+_deliver_ fixes this issue by carrying over the previous version's default App Clip
+experience metadata by default, even if the options above are not specified.
+
+Example usage in your `Deliverfile`:
+
+```ruby-skip-tests
+deliver(
+  app_clip_default_experience_action: "PLAY",
+  app_clip_default_experience_subtitle: {
+    "en-US": "this is a test from fastlane",
+    "es-MX": "está es una prueba de fastlane"
+  },
+  app_clip_header_images_path: "./fastlane/app-clip-header-images"
+)
+```
+
+Note that the **default** App Clip experience and the **advanced** App Clip experiences are
+different, [Apple explains this here](https://developer.apple.com/documentation/app_clips/configuring_the_launch_experience_of_your_app_clip/#3671988).
+
 <hr />
 
 
@@ -825,28 +983,36 @@ Key | Description | Default
   `use_live_version` | Force usage of live version rather than edit version | `false`
   `metadata_path` | Path to the folder containing the metadata files | 
   `screenshots_path` | Path to the folder containing the screenshots | 
+  `app_clip_header_images_path` | Path to the folder containing the app clip header images | 
+  `app_clip_default_experience_metadata_path` | Path to the folder containing the app clip default experience metadata | 
+  `app_previews_path` | Path to the folder containing localized App Preview videos | 
+  `preview_frame_time_code` | Time code for the App Preview still frame written as hour:minute:second:centisecond (e.g. 00:00:00:01) | `00:00:05:00`
+  `overwrite_preview_videos` | Clear all previously uploaded App Preview videos before uploading the new ones | `false`
   `skip_binary_upload` | Skip uploading an ipa or pkg to App Store Connect | `false`
   `skip_screenshots` | Don't upload the screenshots | `false`
   `skip_metadata` | Don't upload the metadata (e.g. title, description). This will still upload screenshots | `false`
   `skip_app_version_update` | Don’t create or update the app version that is being prepared for submission | `false`
   `force` | Skip verification of HTML preview file | `false`
   `overwrite_screenshots` | Clear all previously uploaded screenshots before uploading the new ones | `false`
+  `screenshot_processing_timeout` | Timeout in seconds to wait before considering screenshot processing as failed, used to handle cases where uploads to the App Store are stuck in processing | `3600`
   `sync_screenshots` | Sync screenshots with local ones. This is currently beta option so set true to 'FASTLANE_ENABLE_BETA_DELIVER_SYNC_SCREENSHOTS' environment variable as well | `false`
   `submit_for_review` | Submit the new version for Review after uploading everything | `false`
   `verify_only` | Verifies archive with App Store Connect without uploading | `false`
   `reject_if_possible` | Rejects the previously submitted build if it's in a state where it's possible | `false`
-  `automatic_release` | Should the app be automatically released once it's approved? (Can not be used together with `auto_release_date`) | 
-  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Can not be used together with `automatic_release`) | 
+  `version_check_wait_retry_limit` | After submitting a new version, App Store Connect takes some time to recognize the new version and we must wait until it's available before attempting to upload metadata for it. There is a mechanism that will check if it's available and retry with an exponential backoff if it's not available yet. This option specifies how many times we should retry before giving up. Setting this to a value below 5 is not recommended and will likely cause failures. Increase this parameter when Apple servers seem to be degraded or slow | `7`
+  `automatic_release` | Should the app be automatically released once it's approved? (Cannot be used together with `auto_release_date`) | 
+  `auto_release_date` | Date in milliseconds for automatically releasing on pending approval (Cannot be used together with `automatic_release`) | 
   `phased_release` | Enable the phased release feature of iTC | `false`
   `reset_ratings` | Reset the summary rating when you release a new version of the application | `false`
   `price_tier` | The price tier of this application | 
   `app_rating_config_path` | Path to the app rating's config | 
-  `submission_information` | Extra information for the submission (e.g. compliance specifications, IDFA settings) | 
+  `submission_information` | Extra information for the submission (e.g. compliance specifications) | 
   `team_id` | The ID of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `team_name` | The name of your App Store Connect team if you're in multiple teams | [*](#parameters-legend-dynamic)
   `dev_portal_team_id` | The short ID of your Developer Portal team, if you're in multiple teams. Different from your iTC team ID! | [*](#parameters-legend-dynamic)
   `dev_portal_team_name` | The name of your Developer Portal team if you're in multiple teams | [*](#parameters-legend-dynamic)
-  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `pathToXcode.app/Contents/Applications/Application\ Loader.app/Contents/itms/bin/iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | [*](#parameters-legend-dynamic)
+  `itc_provider` | The provider short name to be used with the iTMSTransporter to identify your team. This value will override the automatically detected provider short name. To get provider short name run `xcrun iTMSTransporter -m provider -u 'USERNAME' -p 'PASSWORD' -account_type itunes_connect -v off`. The short names of providers should be listed in the second column | [*](#parameters-legend-dynamic)
+  `provider_public_id` | The provider public ID to be used with altool (--provider-public-id). This value will override the automatically detected provider value for altool uploads. Required after Xcode 26 when your account is associated with multiple providers and using username/app-password authentication | [*](#parameters-legend-dynamic)
   `run_precheck_before_submit` | Run precheck before submitting to app review | `true`
   `precheck_default_rule_level` | The default precheck rule level unless otherwise configured | `:warn`
   `individual_metadata_items` | **DEPRECATED!** Removed after the migration to the new App Store Connect API in June 2020 - An array of localized metadata items to upload individually by language so that errors can be identified. E.g. ['name', 'keywords', 'description']. Note: slow | 
@@ -861,7 +1027,9 @@ Key | Description | Default
   `secondary_second_sub_category` | Metadata: The english name of the secondary second sub category (e.g. `Educational`, `Puzzle`) | 
   `trade_representative_contact_information` | **DEPRECATED!** This is no longer used by App Store Connect - Metadata: A hash containing the trade representative contact information | 
   `app_review_information` | Metadata: A hash containing the review information | 
+  `app_clip_review_information` | Metadata: A hash containing the app clip review information | 
   `app_review_attachment_file` | Metadata: Path to the app review attachment file | 
+  `routing_app_coverage_file` | Metadata: Path to the routing app coverage file (`.geojson`) that is required for routing apps | 
   `description` | Metadata: The localised app description | 
   `name` | Metadata: The localised app name | 
   `subtitle` | Metadata: The localised app subtitle | 
@@ -875,6 +1043,8 @@ Key | Description | Default
   `languages` | Metadata: List of languages to activate | 
   `ignore_language_directory_validation` | Ignore errors when invalid languages are found in metadata and screenshot directories | `false`
   `precheck_include_in_app_purchases` | Should precheck check in-app purchases? | `true`
+  `app_clip_default_experience_subtitle` | The localized subtitle for the default app clip experience | 
+  `app_clip_default_experience_action` | Action for the default app clip experience (OPEN, VIEW, PLAY) | 
   `app` | The (spaceship) app ID of the app you want to use/modify | 
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
