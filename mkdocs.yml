@@ -4,6 +4,7 @@ site_author: fastlane team
 site_description: Documentation for fastlane tools, the easiest way to automate building
   and releasing your iOS and Android apps
 repo_url: https://github.com/fastlane/docs
+site_url: https://docs.fastlane.tools/
 theme:
   name: readthedocs
   custom_dir: theme
