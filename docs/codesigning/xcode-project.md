@@ -2,9 +2,9 @@
 
 # Setting up your Xcode Project
 
-# Xcode 9 and up
+# Provisioning profiles { #xcode-9-and-up }
 
-In most cases, _fastlane_ will work out of the box with Xcode 9 and up if you selected manual code signing and [choose a provisioning profile name for each of your targets](#specify-provisioning-profile-name-for-each-targets).
+In most cases, _fastlane_ will work out of the box if you selected manual code signing and [choose a provisioning profile name for each of your targets](#specify-provisioning-profile-name-for-each-targets).
 
 If you don't use _match_, we recommend defining a mapping of app target to provisioning profile in your `Fastfile`. By defining those profiles, you can guarantee reproducible builds every time you run it.
 

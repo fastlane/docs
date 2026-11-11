@@ -50,10 +50,6 @@ It's not immediately obvious what this error is or what it's caused by, so hopef
 
 This error happens to all projects built with `xcodebuild` / `xcrun`, so it's likely not caused by _fastlane_. _fastlane_ might help alleviate it with some env var unsetting / setting or other tricks, but this is an error from the new export APIs that Xcode uses.
 
-## Legacy export API
-
-As of Xcode 8.3, the deprecated / legacy export api (e.g. `use_legacy_build_api`) is removed, so you have to use the latest Xcode export API, which unfortunately still has some issues.
-
 ## Misleading errors
 
 The error message, `"No applicable devices found."`, is actually misleading: it's not the real error. Something else is erroring out at a lower level so you'll need to dig in to find out what.
