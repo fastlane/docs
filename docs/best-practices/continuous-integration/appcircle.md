@@ -1,40 +1,104 @@
 # Appcircle Integration
 
-[Appcircle](https://appcircle.io) is a mobile CI/CD platform that provides a fully automated environment to build and deploy apps, which also supports _fastlane_ for build automation.
+[Appcircle](https://appcircle.io) is a mobile CI/CD platform for building, testing, signing and distributing iOS and Android apps. It is available as Appcircle Cloud or as a self-hosted installation.
 
-With Appcircle, you can automate your build and signing processes with the flexible workflow structure and you can also use _fastlane_ as a workflow step within the build workflows. To use _fastlane_, Appcircle expects the presence of a fastfile in your repository.
+You can use _fastlane_ with Appcircle in two ways:
 
-## Creating a Build Profile to Connect Your Repository with a Fastfile
+- **Run your lanes on Appcircle:** add the **Fastlane** step to an Appcircle build workflow.
+- **Send builds to Appcircle from any CI:** use the Appcircle _fastlane_ plugins to upload binaries to Testing Distribution, the Enterprise App Store or Publish to Stores from your lanes, wherever they run.
 
-In Appcircle, a [build profile](https://docs.appcircle.io/build/adding-a-build-profile) contains the build workflows and the configuration of an app per target platform. (i.e. separate for iOS and Android).
+## Running _fastlane_ on Appcircle
 
-1.  To create your first build profile, go to the "**Build Module**". (The first item on the left menu) and click on the orange "**Add New**" button on the top right of the screen.
-2.  In the next screen, enter a name for your build profile and select the target operating system (iOS or Android) and the target platform (Obj-C/Swift, Java/Kotlin, React Native and Flutter projects are supported). If you have two different targets in your project for iOS and Android, you need to create two separate profiles. This allows you to manage separate build workflows for different operating systems.
-3.  Once created, click on the build profile to connect your repository that contains a fastfile. You can connect private and public repositories on GitHub, Bitbucket and other compatible git providers. You can authorize Appcircle to connect to your cloud repository provider account. This will allow you to use auto-build your project with hooks.
-4.  The build configuration has different flows for iOS and Android and the projects are configured on a branch basis. You can have different configurations for different branches and you can build any of your commits (assuming that they are compatible with the current configuration).
-5.  You can use _fastlane_ with the signing configuration defined in the lane or you can configure your build to use [Appcircle centralized code signing](https://app.gitbook.com/@smartface/s/appcircle/signing-identities/) as an alternative to _fastlane_ match.
+### Creating a Build Profile
 
+In Appcircle, a [build profile](https://docs.appcircle.io/build/build-process-management/profile-creation) holds the repository connection, workflows, configurations and triggers of an app for one target OS. Create a separate profile for iOS and for Android.
 
-## Adding _fastlane_ to the Appcircle Build Workflow as a Step
+1. Open the **Build** module and click **New profile**.
+2. Enter a name, then select the target OS (**iOS** or **Android**) and the target platform (Objective-C/Swift, Java/Kotlin, React Native or Flutter).
+3. Connect the repository that contains your `fastlane` folder. You can connect to GitHub, GitLab, Bitbucket and Azure DevOps, or use any Git server via SSH or a public URL. See [connection guides](https://docs.appcircle.io/build/manage-the-connections/connection-guides) for details.
 
-1.  A [workflow](https://docs.appcircle.io/workflows/why-to-use-workflows) in Appcircle is a ladder of steps taken to build your applications. Each step has a different purpose and the workflow can be customized by modifying step parameters and inputs, running custom scripts or re-ordering steps.
-2.  To utilize _fastlane_ in your builds, open the [workflow editor](https://docs.appcircle.io/workflows/why-to-use-workflows) and add the "**fastlane**" step after the "**Git Clone**" step. If you want to run a specific _fastlane_ command, you can add a "**Custom Script**" step anywhere after the _fastlane_ step.
-3.  Once added, click on the _fastlane_ step to configure it. Fastlane is easy to use with Appcircle just with two options.
-4.  The "**Fastlane Directory**" option is used to specify the fastfile path . If you keep your fastfile in its default location, it is automatically used without the need to change this field.
-5.  With the "**Fastlane Lane**" option, you can specify which lane to use.
-6.  Once everything is set up, press **Save** to save your step configuration. Then you can configure and run your build just like any other app.
+### Adding the Fastlane Step to a Workflow
 
-Appcircle also supports building and signing the app independently with the "Build" and "Sign" steps in the workflow. These steps can be used in parallel with _fastlane_.
+A [workflow](https://docs.appcircle.io/build/build-process-management/build-workflows) is an ordered list of steps that runs on the build machine. A build profile can have several workflows, for example one for pull requests and one for releases.
 
-## Running the Build Workflow
+1. In the build profile, click **Workflows**, select a workflow (or create one with **New**) and click **Manage Workflow**.
+2. Drag the **Fastlane** step from the Workflow Marketplace and drop it after the **Git Clone** step. The step needs the cloned project files to run.
+3. Click the step and configure its inputs:
+    - **Fastlane Directory** (`AC_FASTLANE_DIR`): the directory that contains your `fastlane` folder and `Gemfile`. Defaults to `$AC_REPOSITORY_DIR`, the root of the cloned repository, so only change it if _fastlane_ lives in a subdirectory (for example a React Native or Flutter project's `ios` folder).
+    - **Fastlane lane** (`AC_FASTLANE_LANE`): the lane to run, including the platform if you use one, for example `ios beta` or `android deploy`.
+4. Click **Save**.
 
-To run the build workflow that includes the _fastlane_ step, you can start a [manual build or trigger an automatic build](https://docs.appcircle.io/build/build-manually-or-with-triggers).
-The full output of the _fastlane_ execution can be viewed in the build log in real-time or after the build.
+If a `Gemfile` exists in the _fastlane_ directory, the step runs `bundle install` and then `bundle exec fastlane <lane>`, so the _fastlane_ version and [plugins](/plugins/using-plugins/) from your `Gemfile` and `Pluginfile` are used. Without a `Gemfile`, the step installs the latest _fastlane_ release. Committing a `Gemfile` and `Gemfile.lock` is recommended (see [Setting up _fastlane_](/getting-started/ios/setup/#use-a-gemfile)).
 
-## Deploying the Build Output
+The step's source code is available on [GitHub](https://github.com/appcircleio/appcircle-fastlane-component).
 
-You can use _fastlane_ to deploy the built apps to the supported third-party services or you can use the [Appcircle Distribute module](https://docs.appcircle.io/distribute/create-or-select-a-distribution-profile) to share the app with the testers or send it to the public app stores.
+### Environment Variables and Secrets
+
+Store credentials such as `MATCH_PASSWORD`, an [App Store Connect API key](/app-store-connect-api/) or a Google Play service account JSON in an [environment variable group](https://docs.appcircle.io/environment-variables), mark sensitive values as secret, and select the group in the build profile configuration. Your lanes can read these values with `ENV["NAME"]`.
+
+Appcircle also provides [built-in variables](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables) such as `AC_REPOSITORY_DIR`, `AC_OUTPUT_DIR`, `AC_GIT_BRANCH`, `AC_BUILD_NUMBER` and `AC_TRIGGER_REASON` that you can use in your lanes.
+
+### Code Signing
+
+You can sign your app in your lanes, for example with [_match_](/actions/match/) or by providing certificates and provisioning profiles yourself.
+
+As an alternative, you can store certificates, provisioning profiles and Android keystores in Appcircle's [Signing Identities](https://docs.appcircle.io/signing-identities) module, select them in the build profile [configuration](https://docs.appcircle.io/build/build-process-management/configurations), and let Appcircle's build and sign steps handle signing. These steps can be used alongside the Fastlane step in the same workflow.
+
+### Exporting Build Artifacts
+
+Appcircle only keeps the files that are in `$AC_OUTPUT_DIR` when the **Export Build Artifacts** step runs. To see your _fastlane_ output in the build artifacts, or to send it to other Appcircle modules, write it to that directory and make sure **Export Build Artifacts** comes after the Fastlane step:
+
+```ruby
+lane :beta do
+  build_app(
+    scheme: "MyApp",
+    output_directory: ENV["AC_OUTPUT_DIR"]
+  )
+end
+```
+
+### Running the Build
+
+Start a [manual build or set up triggers](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers). Click **Triggers** in the build profile to run a workflow and configuration automatically on every push, on pull/merge requests, on tag pushes or on a schedule.
+
+The full _fastlane_ output is shown in the build log in real time and stays available after the build.
+
+## Distributing Builds with the Appcircle Plugins
+
+Appcircle provides _fastlane_ plugins that upload builds from your lanes. They work in any environment, including Appcircle itself, other CI services and local machines.
+
+| Plugin | Action | Purpose |
+| --- | --- | --- |
+| [`appcircle_testing_distribution`](https://github.com/appcircleio/fastlane_plugin_appcircle_testing_distribution) | `appcircle_testing_distribution` | Share builds with testers and testing groups. |
+| [`appcircle_enterprise_app_store`](https://github.com/appcircleio/fastlane-plugin-appcircle_enterprise_app_store) | `appcircle_enterprise_app_store` | Publish in-house apps to the Enterprise App Store. |
+| [`appcircle_publish`](https://github.com/appcircleio/fastlane-plugin-appcircle_publish) | `appcircle_publish` | Upload to a Publish to Stores profile and trigger its publish flow to the App Store, Google Play, Huawei AppGallery or Microsoft Intune. |
+
+Add a plugin to your project with:
+
+```no-highlight
+fastlane add_plugin appcircle_testing_distribution
+```
+
+All plugins authenticate with an Appcircle **Personal Access Key** (previously called Personal API Token). Generate one under **Organization** > **Security** > **Personal access key** in Appcircle and store it as a secret, for example in `AC_PERSONAL_API_TOKEN`.
+
+```ruby
+lane :distribute do
+  build_app(scheme: "MyApp")
+
+  appcircle_testing_distribution(
+    personalAPIToken: ENV["AC_PERSONAL_API_TOKEN"],
+    profileName: "MyApp Beta",
+    createProfileIfNotExists: true,
+    appPath: lane_context[SharedValues::IPA_OUTPUT_PATH],
+    message: "New beta build"
+  )
+end
+```
+
+If you use a self-hosted Appcircle installation, pass your own `authEndpoint` and `apiEndpoint` to the actions. See each plugin's README for all parameters, or run `fastlane action <action_name>`.
+
+If you build on Appcircle, you can also send signed builds to Testing Distribution, Publish to Stores or the Enterprise App Store from the **Distribution** tab of the build profile configuration, without using the plugins.
 
 ## Further Documentation
 
-For more information, screenshots, and support, please refer to the [Appcircle documentation](https://docs.appcircle.io).
+For more information, see the [Appcircle documentation](https://docs.appcircle.io), in particular the [Fastlane workflow step](https://docs.appcircle.io/workflows/common-workflow-steps/fastlane) and the [Appcircle _fastlane_ plugins](https://docs.appcircle.io/marketplace/fastlane).
