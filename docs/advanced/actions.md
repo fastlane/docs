@@ -524,8 +524,8 @@ end
 
 Use `sh` to run a command from an action, a plugin or a Fastfile. It logs the
 command and its output, and fails the lane when the command fails. The sections
-after it cover the few cases where `system`, backticks or
-`FastlaneCore::CommandExecutor.execute` fit better.
+after it cover the few cases where `system` or
+`FastlaneCore::CommandExecutor.execute` fit better, and why to avoid backticks.
 
 ### Using the sh method
 
@@ -625,10 +625,23 @@ UI.user_error!("Could not log in") unless system("tool", "login")
 `system` returns `true` or `false`, or `nil` if the command is not found. It does
 not fail the lane, so check the result.
 
-### Using backticks
+### Using backticks and Helper.backticks
 
-Backticks return stdout only, but a failing command does not stop the lane and
-nothing is logged. Use `sh` with `separate_stderr: true` instead.
+Ruby's backticks and `FastlaneCore::Helper.backticks` both run a string through
+the shell and return stdout only:
+
+```ruby
+version = `xcodebuild -version`
+version = Helper.backticks("xcodebuild -version", print: false)
+```
+
+Neither checks the exit status: a failing command returns what it printed and the
+lane goes on, so check `$?` yourself. Backticks log nothing, and stderr goes
+straight to the terminal. `Helper.backticks` prints the command, then the output
+once the command has finished, unless `print: false`.
+
+Prefer `sh` with `separate_stderr: true`: it also returns stdout only, prints the
+output as it comes and fails the lane when the command fails.
 
 ### Using FastlaneCore::CommandExecutor.execute
 
