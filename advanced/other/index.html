@@ -413,7 +413,7 @@ fastlane test
 <pre><code>ENV[&quot;DELIVER_USER&quot;] = &quot;felix@krausefx.com&quot;
 </code></pre>
 <h1 id="adding-credentials">Adding Credentials</h1>
-<p>You can add credentials for use by <em>fastlane</em> to your keychain using the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> command line interface. This is useful for situations like CI environments.</p>
+<p>You can add credentials for use by <em>fastlane</em> to your keychain using the <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a> command line interface. Any program running as you can read a password stored this way, so prefer an <a href="https://docs.fastlane.tools/app-store-connect-api/">App Store Connect API key</a>, or the <code>FASTLANE_PASSWORD</code> environment variable.</p>
 <p><strong>Adding a Credential</strong></p>
 <pre><code class="language-no-highlight">fastlane fastlane-credentials add --username felix@krausefx.com
 Password: *********
@@ -481,7 +481,7 @@ irb(main):012:0&gt; storage.save_changes!(files_to_commit: files_to_commit)
 </code></pre>
 <p>Your changes will be encrypted, committed, and pushed.</p>
 <blockquote>
-<p><strong>Note:</strong> If your keychain doesn't include the encryption passcode, you may be prompted for it. If so, just enter the same password you used to decrypt it.</p>
+<p><strong>Note:</strong> Unless <code>MATCH_PASSWORD</code> is set, you may be prompted for the encryption passcode. If so, just enter the same password you used to decrypt it.</p>
 </blockquote>
 </details>
               

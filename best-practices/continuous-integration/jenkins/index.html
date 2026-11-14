@@ -357,7 +357,7 @@
 <p>From now on start <code>Jenkins</code> by running:</p>
 <pre><code class="language-no-highlight">brew services start jenkins-lts
 </code></pre>
-<p>To store the password in the Keychain of your remote machine, it is recommended that you run <em>match</em> or <em>deliver</em> using ssh or remote desktop at least once.</p>
+<p>Give <em>fastlane</em> its credentials through Jenkins credentials exposed as environment variables: an <a href="https://docs.fastlane.tools/app-store-connect-api/">App Store Connect API key</a> (or <code>FASTLANE_PASSWORD</code>), and <code>MATCH_PASSWORD</code> for <em>match</em>.</p>
 <h2 id="ruby-environment">Ruby Environment</h2>
 <p>We recommend using <a href="https://github.com/rbenv/rbenv">rbenv</a> for installing Ruby, though <a href="https://rvm.io/">rvm</a> and the version of Ruby that comes bundled on macOS are fine too.</p>
 <p>If using a Gemfile in your project, add an "Execute shell" step as your first build step and call <code>bundle update</code>.</p>
