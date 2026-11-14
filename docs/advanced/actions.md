@@ -94,8 +94,8 @@ FastlaneCore::CommandExecutor.execute(command: "ls",
                                           # handle error here
                                         end)
 
-###### or if you just want to receive a simple value use this only if the command doesn't take long
-diff = Helper.backticks("git diff")
+###### or, for a value you parse
+diff = sh("git", "diff", separate_stderr: true)
 
 ###### fastlane "crash" because of a user error everything that is caused by the user and is not unexpected
 UI.user_error!("You don't have a project in the current directory")
@@ -522,126 +522,153 @@ end
 
 ## Invoking shell commands
 
-If your action needs to run a shell command, there are several methods. You can
-easily determine the exit status of the command and capture all terminal output
-from the command.
-
-### Using Kernel#system
-
-Use the Ruby `system` method call to invoke a command string. This does not
-redirect stdin, stdout or stderr, so output formatting will be unaffected. It executes
-the command in a subshell.
-
-```ruby
-system "cat fastlane/Fastfile"
-```
-
-Upon command completion, the method returns true or false to indicate completion
-status. The `$?` global variable will also indicate the exit status of the
-command.
-
-```ruby
-system "cat fastlane/Fastfile"
-UI.user_error! "Could not execute command" unless $?.exitstatus == 0
-```
-
-If the command to be executed is not found, system will return `nil`, and
-`$?.exitstatus` will be nonzero.
-
-### Using backticks
-
-To capture the output of a command, enclose the command in backticks:
-
-```ruby
-pod_cmd = `which pod`
-UI.important "'pod' command not found" if pod_cmd.empty?
-```
-
-Because you are capturing stdout, the command output will not appear at
-the terminal unless you log it using `UI`. Formatting may be lost when
-capturing command output. The entire output to stdout will be captured after the
-command returns. Output to stderr is not captured or redirected. The `$?`
-global variable will indicate the completion status of the command.
-
-If the command to be executed is not found, `Errno::ENOENT` is raised.
+Use `sh` to run a command from an action, a plugin or a Fastfile. It logs the
+command and its output, and fails the lane when the command fails. The sections
+after it cover the few cases where `system`, backticks or
+`FastlaneCore::CommandExecutor.execute` fit better.
 
 ### Using the sh method
 
-You can also use the built-in `sh` method:
-
 ```ruby
-sh "pwd"
+sh("git", "commit", "-m", message)
 ```
 
-This is called the same way in an action as in a Fastfile. This provides consistent
-logging of command output. All output to stdout and stderr is logged via `UI`.
+This is called the same way in an action as in a Fastfile. Anywhere else (e.g.
+in helper code), call it as `Actions.sh`.
 
-The `sh` method can accept a block, which will receive the `Process::Status`
-returned by the command, the complete output of the command, and an equivalent
-shell command upon completion of the command.
+Pass the command as a list of arguments, as above: it runs without a shell, so a
+value with a space or `;` in it stays one argument. A single string goes through
+the shell, which you need for a glob, `~`, `$VAR`, a pipe or a redirection:
 
 ```ruby
-sh "ls", "-la" do |status, result, command|
+sh("ls *.ipa | wc -l")
+```
+
+`sh` returns the command's output, stdout and stderr merged, and prints it line by
+line as it comes. If the command exits with a nonzero status, `sh` raises and the
+lane stops, unless the exception is rescued. If the command is not found,
+`Errno::ENOENT` is raised.
+
+To handle the result yourself, pass a block. It receives the `Process::Status`,
+the output and the command as printed, and `sh` returns the block's value instead
+of raising:
+
+```ruby
+sh("ls", "-la") do |status, result, command|
   unless status.success?
-    UI.error "Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}"
+    UI.error("Command #{command} (pid #{status.pid}) failed with status #{status.exitstatus}")
   end
-  UI.message "Output is #{result.inspect}"
+  UI.message("Output is #{result.inspect}")
+end
+
+if sh(command) { |status| status.success? }
+  UI.success("Command succeeded")
 end
 ```
 
-To be notified only when an error occurs, use the `error_callback` parameter
-(a Proc):
+Read the exit status from the block, not from `$?`: after `sh`, `$?` still holds
+the status of an earlier command.
+
+To be notified only when an error occurs, use `error_callback` (a Proc). It
+receives the output, and `sh` does not raise:
 
 ```ruby
 success = true
 sh("pwd", error_callback: ->(result) { success = false })
-UI.user_error "Command failed" unless success
+UI.user_error!("Command failed") unless success
 ```
 
-The `result` argument to the `error_callback` is the entire string output
-of the command.
+The block and `error_callback` are not called when the command is not found.
 
-If the command to be executed is not found, `Errno::ENOENT` is raised without
-calling the block or `error_callback`.
+`sh` also takes these options:
 
-If an `error_callback` or block is not provided, and the command executes and
-returns an error, an exception is raised, and lane execution is terminated
-unless the exception is rescued. The exit status of the command will be available in `$?`. It is also available
-as the first argument to a block.
-
-The return value of the method is the output of the command, unless a block is
-given. Then the output is available within the block, and the return value of
-`sh` is the return value of the block. This enables usage like:
+|option|description|
+|------|-----------|
+|`log`|`false` prints neither the command nor its output (`--troubleshoot` prints them anyway)|
+|`separate_stderr`|`true` returns stdout only, for output you parse; stderr is still printed, and goes to the error message and `error_callback`|
+|`stdin`|Data written to the command's standard input. fastlane never prints it, though the command's own output may show it|
+|`chdir`|Directory the command runs in; fastlane's own directory stays as it is|
 
 ```ruby
-if sh command { |s| s.success? }
-  UI.success "Command succeeded"
-else
-  UI.error "Command failed"
-end
+version = sh("xcodebuild", "-version", separate_stderr: true)
+sh("gh", "auth", "login", "--with-token", stdin: ENV["GH_TOKEN"])
+sh("./gradlew", "assemble", chdir: "android")
 ```
 
-Anywhere other than an action or a Fastfile (e.g. in helper code), you can
-invoke this method as `Actions.sh`.
+Without `stdin`, the command reads an empty input, so a command that asks a
+question gets end-of-file instead of waiting.
+
+A Fastfile's `sh` runs in the `fastlane` directory, unlike actions; see
+[Directory behavior](fastlane.md#directory-behavior).
+
+In a plugin's specs, `Actions.sh` returns the command string instead of running
+it, so a spec can check the command it builds.
+
+### Keeping secrets out of the log
+
+`sh` prints the command, including its environment variables and arguments:
+`sh({ "TOKEN" => token }, "tool")` prints `$ TOKEN=<the token> tool`. To pass a
+secret, prefer `stdin` for a tool that reads it from its input. Otherwise pass
+`log: false`.
+
+### Commands that ask the user something
+
+`sh` gives the command a pipe for input, not the terminal, and prints its output
+a line at a time, so a prompt such as `Name: ` is not shown until it is answered.
+Give the tool a flag such as `--non-interactive` if it has one. Otherwise use
+`system`, which connects the command to the terminal:
+
+```ruby
+UI.user_error!("Could not log in") unless system("tool", "login")
+```
+
+`system` returns `true` or `false`, or `nil` if the command is not found. It does
+not fail the lane, so check the result.
+
+### Using backticks
+
+Backticks return stdout only, but a failing command does not stop the lane and
+nothing is logged. Use `sh` with `separate_stderr: true` instead.
+
+### Using FastlaneCore::CommandExecutor.execute
+
+Some tools print their progress only to a terminal. `execute` runs the command on
+a pseudo-terminal:
+
+```ruby
+FastlaneCore::CommandExecutor.execute(command: "xcodebuild -list",
+                                    print_all: true,
+                                        error: proc do |output, status|
+                                          # handle error here
+                                        end)
+```
+
+The command is always a string run through the shell. It returns stdout and
+stderr merged, without the final newline. It prints the command, and the output
+only with `print_all: true` or `--verbose`. It takes `chdir:`, and `env:`, which
+it never prints. Nothing writes to the command's input, so a command that reads it
+waits forever.
+
+### Timeouts
+
+None of these methods has a timeout. Wrapping one in `Timeout.timeout` leaves the
+command running after the exception. Use the tool's own timeout option if it has
+one.
 
 ### Escaping in shell commands
 
-Use `shellwords` to escape arguments to shell commands.
-
-```Ruby
-`git commit -aqm #{Shellwords.escape commit_message}`
-```
-
-```Ruby
-system "cat #{path.shellescape}"
-```
-
-When using `system` or `sh`, pass a list of arguments instead of shell-escaping
-individual arguments.
+Prefer a list of arguments, which needs no escaping:
 
 ```Ruby
 sh "git", "commit", "-aqm", commit_message
-system "cat", path
+```
+
+When a command string goes through the shell, use `shellwords` to escape the
+values in it:
+
+```Ruby
+sh "git commit -aqm #{commit_message.shellescape} && git push"
+FastlaneCore::CommandExecutor.execute(command: "cat #{path.shellescape}")
 ```
 
 ## Calling other actions
