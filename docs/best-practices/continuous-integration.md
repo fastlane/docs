@@ -7,6 +7,7 @@ _fastlane_ works very well in Continuous Integration setups. It for example auto
 - [Integrations](#integrations)
 - [Authentication with Apple services](#authentication-with-apple-services)
 - [Environment variables to set](#environment-variables-to-set)
+- [Prompts](#prompts)
 - [Deploy Strategy](#deploy-strategy)
 
 ## Integrations
@@ -42,6 +43,12 @@ Most setups will need the following environment variables
 - `FASTLANE_SESSION`: You need to provide a [pregenerated session via `fastlane spaceauth`](#spaceauth) if you have 2-factor authentication enabled and want to use any actions that communicates with App Store Connect.
 - `LANG` and `LC_ALL`: These set up the locale your shell and all the commands you execute run at. _fastlane_ needs these to be set to an UTF-8 locale to work correctly, for example `en_US.UTF-8`. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.
 - `SPACESHIP_ONLY_ALLOW_INTERACTIVE_2FA`: Explicitly prevents being prompted for 2FA in non-interactive mode.
+
+## Prompts
+
+On CI, _fastlane_ does not prompt: it stops with an error that names the option or environment variable to set. To get the same behavior outside of CI, for example when an AI agent or a script runs _fastlane_, set `CI=true`. This also makes your `Fastfile` behave as on CI: `is_ci` returns `true` and `setup_ci` runs.
+
+Prompts that read their answer straight from the terminal, such as the scheme picker or the 2FA code, also stop when standard input is not a terminal. To pipe answers into them, on CI too, set `FASTLANE_ALLOW_PIPED_INPUT=1`.
 
 ## Deploy Strategy
 
