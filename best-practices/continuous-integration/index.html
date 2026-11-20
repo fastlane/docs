@@ -210,6 +210,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#environment-variables-to-set">Environment variables to set</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prompts">Prompts</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#deploy-strategy">Deploy Strategy</a>
     </li>
       </ul>
@@ -407,6 +409,7 @@ brew install fastlane
 <li><a href="#integrations">Integrations</a></li>
 <li><a href="#authentication-with-apple-services">Authentication with Apple services</a></li>
 <li><a href="#environment-variables-to-set">Environment variables to set</a></li>
+<li><a href="#prompts">Prompts</a></li>
 <li><a href="#deploy-strategy">Deploy Strategy</a></li>
 </ul>
 <h2 id="integrations">Integrations</h2>
@@ -439,6 +442,9 @@ brew install fastlane
 <li><code>LANG</code> and <code>LC_ALL</code>: These set up the locale your shell and all the commands you execute run at. <em>fastlane</em> needs these to be set to an UTF-8 locale to work correctly, for example <code>en_US.UTF-8</code>. Many CI systems come with a locale that is unset or set to ASCII by default, so make sure to double-check whether yours is set correctly.</li>
 <li><code>SPACESHIP_ONLY_ALLOW_INTERACTIVE_2FA</code>: Explicitly prevents being prompted for 2FA in non-interactive mode.</li>
 </ul>
+<h2 id="prompts">Prompts</h2>
+<p>On CI, <em>fastlane</em> does not prompt: it stops with an error that names the option or environment variable to set. To get the same behavior outside of CI, for example when an AI agent or a script runs <em>fastlane</em>, set <code>CI=true</code>. This also makes your <code>Fastfile</code> behave as on CI: <code>is_ci</code> returns <code>true</code> and <code>setup_ci</code> runs.</p>
+<p>Prompts that read their answer straight from the terminal, such as the scheme picker or the 2FA code, also stop when standard input is not a terminal. To pipe answers into them, on CI too, set <code>FASTLANE_ALLOW_PIPED_INPUT=1</code>.</p>
 <h2 id="deploy-strategy">Deploy Strategy</h2>
 <p>You should <strong>not</strong> deploy a new App Store update after every commit, since you still have to wait 1-2 days for the review. Instead it is recommended that you use Git Tags, or custom triggers to deploy a new update.</p>
 <p>You can set up your own <code>Release</code> job, which is only triggered manually.</p>
@@ -509,7 +515,7 @@ brew install fastlane
     </p>
   </div>
 
-  Documentation built 2026-11-14 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-20 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
