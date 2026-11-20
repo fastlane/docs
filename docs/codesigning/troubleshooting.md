@@ -6,7 +6,7 @@ This guide will help you resolve the most common code signing errors. In general
 
 Make sure to find the exact error message in your build output. Many times the error message actually tells you how to resolve the issue. 
 
-To get even more details, try archiving using Xcode 8. 
+To get even more details, try archiving in Xcode. 
 
 ## Different machine
 
