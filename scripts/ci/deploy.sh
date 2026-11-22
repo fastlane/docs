@@ -28,10 +28,11 @@ cp -R "site/" "/tmp/fl-docs"
 # Copy the needed Ruby scripts to a temporary location (used for redirects)
 cp "scripts/ci/available_redirects.rb" "/tmp/"
 cp "scripts/ci/generate_redirects.rb" "/tmp/"
-# Clean all temporary files (e.g. .bundle/config and .ruby-version)
+# Clean untracked files (like temp .bundle/* or generated docs/actions*) and reset index
 git clean -f -d
+git reset --hard HEAD
 # Check out gh-pages and clear all files
-git reset --hard HEAD # we don't want the `git checkout` to cause issues (e.g. https://circleci.com/gh/fastlane/docs/730)
+git fetch
 git checkout gh-pages
 rm -rf *
 # Copy the finished HTML page to the current directory
