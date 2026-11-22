@@ -21,11 +21,11 @@ _fastlane_ is an open platform and we enable every developer to extend it to fit
 })();
 </script>
 
-This content was moved and now lives [here](/create-action/#local-actions).
+For more info see the dedicated [Local Actions page](/create-action/#local-actions).
 
 ## Find a plugin
 
-Head over to [Available Plugins](https://docs.fastlane.tools/plugins/available-plugins/) for a list of plugins you can use.
+Head over to [Available Plugins](available-plugins.md) for a list of plugins you can use.
 
 List all available plugins using
 
