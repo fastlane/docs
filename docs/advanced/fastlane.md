@@ -16,6 +16,10 @@ You can set the environment variable `FASTLANE_HIDE_CHANGELOG` to hide the detai
 
 You can set the environment variable `FASTLANE_HIDE_GITHUB_ISSUES` to hide the related GitHub issues suggestions when an error occurs.
 
+### Keep smart quotes in your _fastlane_ files
+
+_fastlane_ replaces smart quotes (such as `“` and `’`) with plain ones when it loads your `Fastfile`, `Appfile` and tool configuration files (such as `Deliverfile` or `Matchfile`), to repair files edited in TextEdit. If you use smart quotes on purpose, for example in release notes, set the environment variable `FASTLANE_SKIP_SMART_QUOTES_SANITIZE` to `1` to keep them.
+
 ### Output environment variables
 
 - To hide timestamps in each row, set the `FASTLANE_HIDE_TIMESTAMP` environment variable to true (overruled by `--verbose`).
