@@ -234,7 +234,7 @@ Key | Description | Default
   `force_quit_simulator` | Enabling this option will automatically killall Simulator processes before the run | `false`
   `reset_simulator` | Enabling this option will automatically erase the simulator before running the application | `false`
   `disable_slide_to_type` | Enabling this option will disable the simulator from showing the 'Slide to type' prompt | `true`
-  `prelaunch_simulator` | Enabling this option will launch the first simulator prior to calling any xcodebuild command | 
+  `prelaunch_simulator` | Enabling this option will launch the first simulator prior to calling any xcodebuild command | `false`
   `reinstall_app` | Enabling this option will automatically uninstall the application before running it | `false`
   `app_identifier` | The bundle identifier of the app to uninstall (only needed when enabling reinstall_app) | [*](#parameters-legend-dynamic)
   `only_testing` | Array of test identifiers to run. Expected format: TestTarget[/TestSuite[/TestCase]] | 

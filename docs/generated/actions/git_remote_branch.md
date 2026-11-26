@@ -11,7 +11,7 @@ Returns the name of the current git remote default branch
 
 
 
-> If no default remote branch could be found, this action will return nil. This is a wrapper for the internal action Actions.git_default_remote_branch_name
+> If no default remote branch could be found, this action will return an empty string, or nil outside a git repository. This is a wrapper for the internal action Actions.git_remote_branch_name
 
 
 git_remote_branch ||

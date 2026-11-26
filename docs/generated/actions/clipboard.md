@@ -28,7 +28,7 @@ clipboard(value: "https://docs.fastlane.tools/")
 ```
 
 ```ruby
-clipboard(value: lane_context[SharedValues::HOCKEY_DOWNLOAD_LINK] || "")
+clipboard(value: lane_context[SharedValues::SET_GITHUB_RELEASE_HTML_LINK] || "")
 ```
 
 

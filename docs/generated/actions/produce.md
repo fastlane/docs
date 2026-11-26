@@ -38,7 +38,7 @@ _produce_ creates new iOS apps on both the Apple Developer Portal and App Store 
 - **Associate** apps with iCloud Containers on the Apple Developer Portal
 - **Create** Merchant Identifiers on the Apple Developer Portal
 - **Associate** apps with Merchant Identifiers on the Apple Developer Portal
-- Support for **multiple Apple accounts**, storing your credentials securely in the Keychain
+- Support for **multiple Apple accounts**
 
 # Usage
 
@@ -437,6 +437,8 @@ produce   # alias for "create_app_online"
 Key | Description | Default
 ----|-------------|--------
   `username` | Your Apple ID Username | [*](#parameters-legend-dynamic)
+  `api_key_path` | Path to your App Store Connect API Key JSON file (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file) | 
+  `api_key` | Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option) | 
   `app_identifier` | App Identifier (Bundle ID, e.g. com.krausefx.app) | [*](#parameters-legend-dynamic)
   `bundle_identifier_suffix` | App Identifier Suffix (Ignored if App Identifier does not end with .*) | 
   `app_name` | App Name | 
