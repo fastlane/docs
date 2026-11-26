@@ -24,13 +24,13 @@ Author | @lmirosevic
 ## 2 Examples
 
 ```ruby
-push_to_git_remote # simple version. pushes "master" branch to "origin" remote
+push_to_git_remote # simple version. Pushes the current branch and all local tags to "origin" remote
 ```
 
 ```ruby
 push_to_git_remote(
   remote: "origin",         # optional, default: "origin"
-  local_branch: "develop",  # optional, aliased by "branch", default is set to current branch
+  local_branch: "develop",  # optional, default is set to current branch
   remote_branch: "develop", # optional, default is set to local_branch
   force: true,    # optional, default: false
   force_with_lease: true,   # optional, default: false

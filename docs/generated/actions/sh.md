@@ -22,7 +22,7 @@ Returns | Outputs the string and executes it. When running in tests, it returns 
 
 
 
-## 2 Examples
+## 4 Examples
 
 ```ruby
 sh("ls")
@@ -30,6 +30,14 @@ sh("ls")
 
 ```ruby
 sh("git", "commit", "-m", "My message")
+```
+
+```ruby
+sh("gh", "auth", "login", "--with-token", stdin: ENV["GH_TOKEN"])
+```
+
+```ruby
+version = sh("xcodebuild", "-version", separate_stderr: true)
 ```
 
 
@@ -43,6 +51,9 @@ Key | Description | Default
   `command` | Shell command to be executed | 
   `log` | Determines whether fastlane should print out the executed command itself and output of the executed command. If command line option --troubleshoot is used, then it overrides this option to true | `true`
   `error_callback` | A callback invoked with the command output if there is a non-zero exit status | 
+  `stdin` | Data written to the command's standard input, which is then closed. It is never printed, so it can carry a secret the command reads from its input | 
+  `chdir` | Directory the command runs in; the lane's own directory stays as it is | 
+  `separate_stderr` | Return stdout only; stderr goes to the error message and the error_callback | `false`
 
 <em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em>
 

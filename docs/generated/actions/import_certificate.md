@@ -24,19 +24,9 @@ Author | @gin0606
 ## 4 Examples
 
 ```ruby
-import_certificate(certificate_path: "certs/AppleWWDRCA6.cer")
-```
-
-```ruby
 import_certificate(
-  certificate_path: "certs/dist.p12",
-  certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default"
-)
-```
-
-```ruby
-import_certificate(
-  certificate_path: "certs/development.cer"
+  certificate_path: "certs/AppleWWDRCA6.cer",
+  keychain_name: "login.keychain"
 )
 ```
 
@@ -44,7 +34,23 @@ import_certificate(
 import_certificate(
   certificate_path: "certs/dist.p12",
   certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default",
-  certificate_format: "pkcs12"
+  keychain_name: "custom.keychain"
+)
+```
+
+```ruby
+import_certificate(
+  certificate_path: "certs/development.cer",
+  keychain_path: File.expand_path("~/Library/Keychains/login.keychain-db")
+)
+```
+
+```ruby
+import_certificate(
+  certificate_path: "certs/dist.p12",
+  certificate_password: ENV["CERTIFICATE_PASSWORD"] || "default",
+  certificate_format: "pkcs12",
+  keychain_path: "/path/to/custom.keychain"
 )
 ```
 
