@@ -1,4 +1,4 @@
-![img/fastlane_text.png](img/fastlane_text.png)
+<span class="fastlane-wordmark"><img src="img/fastlane_text.png" alt="fastlane"></span>
 
 fastlane
 ============
