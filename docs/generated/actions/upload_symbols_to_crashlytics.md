@@ -35,7 +35,7 @@ upload_symbols_to_crashlytics(dsym_path: "./App.dSYM.zip")
 
 Key | Description | Default
 ----|-------------|--------
-  `dsym_path` | Path to the DSYM file or zip to upload | [*](#parameters-legend-dynamic)
+  `dsym_path` | Path to the DSYM file or zip to upload. Defaults to the dSYM of the last build_app, or else the most recent .dSYM or .dSYM.zip under the current directory | [*](#parameters-legend-dynamic)
   `dsym_paths` | Paths to the DSYM files or zips to upload | 
   `api_token` | Crashlytics API Key | 
   `gsp_path` | Path to GoogleService-Info.plist | 

@@ -157,10 +157,10 @@ nav:
   - hg_commit_version_bump: actions/hg_commit_version_bump.md
   - hg_ensure_clean_status: actions/hg_ensure_clean_status.md
   - hg_push: actions/hg_push.md
-  - hockey: actions/hockey.md
   - ifttt: actions/ifttt.md
   - import: actions/import.md
   - import_certificate: actions/import_certificate.md
+  - import_from_gem: actions/import_from_gem.md
   - import_from_git: actions/import_from_git.md
   - increment_build_number: actions/increment_build_number.md
   - increment_version_number: actions/increment_version_number.md
@@ -253,7 +253,6 @@ nav:
   - trainer: actions/trainer.md
   - tryouts: actions/tryouts.md
   - twitter: actions/twitter.md
-  - typetalk: actions/typetalk.md
   - unlock_keychain: actions/unlock_keychain.md
   - update_app_age_rating: actions/update_app_age_rating.md
   - update_app_group_identifiers: actions/update_app_group_identifiers.md

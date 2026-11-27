@@ -18,7 +18,7 @@ export GEM_HOME=~/.gems
 export PATH=$PATH:~/.gems/bin
 ```
 >
-After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!<br><br>Recommended usage of the `update_fastlane` action is at the top inside of the `before_all` block, before running any other action.
+After the above changes, restart your terminal, then run `mkdir $GEM_HOME` to create the new gem directory. After this, you're good to go!<br><br>Recommended usage of the `update_fastlane` action is at the top inside of the `before_all` block, before running any other action.<br><br>When fastlane runs with Bundler (`bundle exec fastlane`), this action does nothing: run `bundle update fastlane` instead.
 
 
 update_fastlane ||
