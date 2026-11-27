@@ -113,6 +113,23 @@ $ bundle exec fastlane match appstore \
     "
 ```
 
+On the command line and in environment variables, the hash is given as JSON.
+
+To run a tool from a lane when it has no action (such as `deliver download_metadata`), pass the key in an environment variable rather than as `--api_key`. The hash from `app_store_connect_api_key` contains the private key itself, and a command line is not private: `sh` prints the command it runs to the log, and other users of the machine can see it with `ps` while it runs. The environment is neither printed nor visible to other users, though the command you start and its child processes do inherit it.
+
+```ruby
+lane :download_metadata do
+  api_key = app_store_connect_api_key(
+    key_id: "D383SF739",
+    issuer_id: "6053b7fe-68a8-4acb-89be-165aa6465141",
+    key_filepath: "./AuthKey_D383SF739.p8"
+  )
+
+  ENV["APP_STORE_CONNECT_API_KEY"] = api_key.to_json
+  sh("bundle exec fastlane deliver download_metadata --force")
+end
+```
+
 Please note that `key_content` and `key_filepath` described in `app_store_connect_api_key` action are invalid both in hash and in JSON file.
 View [Token code on GitHub](https://github.com/fastlane/fastlane/blob/master/spaceship/lib/spaceship/connect_api/token.rb)
 
