@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="fastlane team">
-  <link rel="canonical" href="https://docs.fastlane.tools/actions/hockey/">
+  <link rel="canonical" href="https://docs.fastlane.tools/actions/import_from_gem/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>hockey - fastlane docs</title>
+  <title>import_from_gem - fastlane docs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -27,9 +27,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "hockey";
-    var mkdocs_page_input_path = "actions/hockey.md";
-    var mkdocs_page_url = "/actions/hockey/";
+    var mkdocs_page_name = "import_from_gem";
+    var mkdocs_page_input_path = "actions/import_from_gem.md";
+    var mkdocs_page_url = "/actions/import_from_gem/";
   </script>
   
   <script src="../../js/jquery-3.6.0.min.js" defer></script>
@@ -297,7 +297,7 @@
         
       
     
-    <li>hockey</li>
+    <li>import_from_gem</li>
 
     
       <li class="wy-breadcrumbs-aside">
@@ -306,7 +306,7 @@
 
         
 
-        <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/hockey.rb" 
+        <a href="https://github.com/fastlane/fastlane/edit/master/fastlane/lib/fastlane/actions/import_from_gem.rb" 
             class="icon icon-github"
         > Edit on GitHub</a>
       </li>
@@ -335,19 +335,18 @@
               
                 <!--
 This file is auto-generated and will be re-generated every time the docs are updated.
-To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/hockey.rb
+To modify it, go to its source at https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/import_from_gem.rb
 -->
 
-<h1 id="hockey">hockey</h1>
-<p>Refer to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a></p>
+<h1 id="import_from_gem">import_from_gem</h1>
+<p>Import Fastfiles from an installed gem to use their lanes</p>
 <blockquote>
-<p>HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a></p>
-<p>HockeyApp will be no longer supported and will be transitioned into App Center on November 16, 2019.<br>Please migrate over to <a href="https://github.com/Microsoft/fastlane-plugin-appcenter/">App Center</a><br><br>Symbols will also be uploaded automatically if a <code>app.dSYM.zip</code> file is found next to <code>app.ipa</code>. In case it is located in a different place you can specify the path explicitly in the <code>:dsym</code> parameter.<br>More information about the available options can be found in the <a href="http://support.hockeyapp.net/kb/api/api-versions#upload-version">HockeyApp Docs</a>.</p>
+<p>Like <code>import_from_git</code>, this is useful if you share lanes across multiple apps, here by packaging the Fastfiles in a gem. The project's <code>Gemfile.lock</code> then pins the version of the shared lanes and of what they depend on, and the fastlane plugins the gem depends on are loaded when its Fastfiles are imported.<br>The gem must be in the project's Gemfile. By default every <code>fastlane/Fastfile*</code> in the gem is imported, so lanes can be split into files by purpose; an <code>actions</code> folder next to them is imported too.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th>hockey</th>
+<th>import_from_gem</th>
 <th></th>
 </tr>
 </thead>
@@ -358,33 +357,18 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 <tr>
 <td>Author</td>
-<td>@KrauseFx, @modzelewski, @lacostej</td>
+<td>@lacostej</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-examples">3 Examples</h2>
-<pre><code class="language-ruby">hockey(
-  api_token: &quot;...&quot;,
-  ipa: &quot;./app.ipa&quot;,
-  notes: &quot;Changelog&quot;
+<h2 id="2-examples">2 Examples</h2>
+<pre><code class="language-ruby">import_from_gem(
+  gem_name: &quot;my_company_lanes&quot; # The gem to import the Fastfiles from, listed in your Gemfile
 )
 </code></pre>
-<pre><code class="language-ruby">hockey(
-  api_token: &quot;...&quot;,
-  create_update: true,
-  public_identifier: &quot;....&quot;,
-  bundle_short_version: &quot;1.0.2&quot;,
-  bundle_version: &quot;1.0.2.145&quot;,
-  ipa: &quot;./my.msi&quot;,
-  notes: &quot;Changelog&quot;
-)
-</code></pre>
-<pre><code class="language-ruby"># You can bypass the CDN if you are uploading to Hockey and receive an SSL error (which can happen on corporate firewalls)
-hockey(
-  api_token: &quot;...&quot;,
-  ipa: &quot;./app.ipa&quot;,
-  notes: &quot;Changelog&quot;,
-  bypass_cdn: true
+<pre><code class="language-ruby">import_from_gem(
+  gem_name: &quot;my_company_lanes&quot;,
+  paths: [&quot;fastlane/Fastfile&quot;, &quot;fastlane/Fastfile.release&quot;] # The Fastfiles to import, relative to the gem
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -398,187 +382,39 @@ hockey(
 </thead>
 <tbody>
 <tr>
-<td><code>apk</code></td>
-<td>Path to your APK file</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>api_token</code></td>
-<td>API Token for Hockey Access</td>
+<td><code>gem_name</code></td>
+<td>The gem to import the Fastfiles and actions from</td>
 <td></td>
 </tr>
 <tr>
-<td><code>ipa</code></td>
-<td>Path to your IPA file. Optional if you use the <em>gym</em> or <em>xcodebuild</em> action. For Mac zip the .app. For Android provide path to .apk file. In addition you could use this to upload .msi, .zip, .pkg, etc if you use the 'create_update' mechanism</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>dsym</code></td>
-<td>Path to your symbols file. For iOS and Mac provide path to app.dSYM.zip. For Android provide path to mappings.txt file</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>create_update</code></td>
-<td>Set true if you want to create then update your app as opposed to just upload it. You will need the 'public_identifier', 'bundle_version' and 'bundle_short_version'</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>notes</code></td>
-<td>Beta Notes</td>
-<td><a href="#parameters-legend-dynamic">*</a></td>
-</tr>
-<tr>
-<td><code>notify</code></td>
-<td>Notify testers? "1" for yes</td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td><code>status</code></td>
-<td>Download status: "1" = No user can download; "2" = Available for download (only possible with full-access token)</td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td><code>create_status</code></td>
-<td>Download status for initial version creation when create_update is true: "1" = No user can download; "2" = Available for download (only possible with full-access token)</td>
-<td><code>2</code></td>
-</tr>
-<tr>
-<td><code>notes_type</code></td>
-<td>Notes type for your :notes, "0" = Textile, "1" = Markdown (default)</td>
-<td><code>1</code></td>
-</tr>
-<tr>
-<td><code>release_type</code></td>
-<td>Release type of the app: "0" = Beta (default), "1" = Store, "2" = Alpha, "3" = Enterprise</td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>mandatory</code></td>
-<td>Set to "1" to make this update mandatory</td>
-<td><code>0</code></td>
-</tr>
-<tr>
-<td><code>teams</code></td>
-<td>Comma separated list of team ID numbers to which this build will be restricted</td>
-<td></td>
-</tr>
-<tr>
-<td><code>users</code></td>
-<td>Comma separated list of user ID numbers to which this build will be restricted</td>
-<td></td>
-</tr>
-<tr>
-<td><code>tags</code></td>
-<td>Comma separated list of tags which will receive access to the build</td>
-<td></td>
-</tr>
-<tr>
-<td><code>bundle_short_version</code></td>
-<td>The bundle_short_version of your application, required when using <code>create_update</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>bundle_version</code></td>
-<td>The bundle_version of your application, required when using <code>create_update</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>public_identifier</code></td>
-<td>App id of the app you are targeting, usually you won't need this value. Required, if <code>upload_dsym_only</code> set to <code>true</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>commit_sha</code></td>
-<td>The Git commit SHA for this build</td>
-<td></td>
-</tr>
-<tr>
-<td><code>repository_url</code></td>
-<td>The URL of your source repository</td>
-<td></td>
-</tr>
-<tr>
-<td><code>build_server_url</code></td>
-<td>The URL of the build job on your build server</td>
-<td></td>
-</tr>
-<tr>
-<td><code>upload_dsym_only</code></td>
-<td>Flag to upload only the dSYM file to hockey app</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>owner_id</code></td>
-<td>ID for the owner of the app</td>
-<td></td>
-</tr>
-<tr>
-<td><code>strategy</code></td>
-<td>Strategy: 'add' = to add the build as a new build even if it has the same build number (default); 'replace' = to replace a build with the same build number</td>
-<td><code>add</code></td>
-</tr>
-<tr>
-<td><code>timeout</code></td>
-<td>Request timeout in seconds</td>
-<td></td>
-</tr>
-<tr>
-<td><code>bypass_cdn</code></td>
-<td>Flag to bypass Hockey CDN when it uploads successfully but reports error</td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>dsa_signature</code></td>
-<td>DSA signature for sparkle updates for macOS</td>
-<td><code>''</code></td>
+<td><code>paths</code></td>
+<td>The path(s) of the Fastfiles in the gem, as glob patterns</td>
+<td><code>["fastlane/Fastfile*"]</code></td>
 </tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
 <hr />
 
-<h2 id="lane-variables">Lane Variables</h2>
-<p>Actions can communicate with each other using a shared hash <code>lane_context</code>, that can be accessed in other actions, plugins or your lanes: <code>lane_context[SharedValues:XYZ]</code>. The <code>hockey</code> action generates the following Lane Variables:</p>
-<table>
-<thead>
-<tr>
-<th>SharedValue</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SharedValues::HOCKEY_DOWNLOAD_LINK</code></td>
-<td>The newly generated download link for this build</td>
-</tr>
-<tr>
-<td><code>SharedValues::HOCKEY_BUILD_INFORMATION</code></td>
-<td>contains all keys/values from the HockeyApp API, like :title, :bundle_identifier</td>
-</tr>
-</tbody>
-</table>
-<p>To get more information check the <a href="https://docs.fastlane.tools/advanced/lanes/#lane-context">Lanes documentation</a>.</p>
-<hr />
-
 <h2 id="documentation">Documentation</h2>
 <p>To show the documentation in your terminal, run</p>
-<pre><code class="language-no-highlight">fastlane action hockey
+<pre><code class="language-no-highlight">fastlane action import_from_gem
 </code></pre>
 <hr />
 
 <h2 id="cli">CLI</h2>
 <p>It is recommended to add the above action into your <code>Fastfile</code>, however sometimes you might want to run one-offs. To do so, you can run the following command from your terminal</p>
-<pre><code class="language-no-highlight">fastlane run hockey
+<pre><code class="language-no-highlight">fastlane run import_from_gem
 </code></pre>
 <p>To pass parameters, make use of the <code>:</code> symbol, for example</p>
-<pre><code class="language-no-highlight">fastlane run hockey parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
+<pre><code class="language-no-highlight">fastlane run import_from_gem parameter1:&quot;value1&quot; parameter2:&quot;value2&quot;
 </code></pre>
 <p>It's important to note that the CLI supports primitive types like integers, floats, booleans, and strings. Arrays can be passed as a comma delimited string (e.g. <code>param:"1,2,3"</code>). Hashes are not currently supported.</p>
 <p>It is recommended to add all <em>fastlane</em> actions you use to your <code>Fastfile</code>.</p>
 <hr />
 
 <h2 id="source-code">Source code</h2>
-<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/hockey.rb" target="_blank">view the source code on GitHub</a></p>
+<p>This action, just like the rest of <em>fastlane</em>, is fully open source, <a href="https://github.com/fastlane/fastlane/blob/master/fastlane/lib/fastlane/actions/import_from_gem.rb" target="_blank">view the source code on GitHub</a></p>
 <hr />
 
 <p><a href="/actions/"><b>Back to actions</b></a></p>
@@ -600,7 +436,7 @@ hockey(
     </p>
   </div>
 
-  Documentation built 2026-11-21 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-27 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
@@ -681,10 +517,10 @@ hockey(
         </span>
     
     
-      <span><a href="../hg_push/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../import_certificate/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../ifttt/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../import_from_git/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

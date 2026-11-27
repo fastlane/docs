@@ -520,6 +520,12 @@ Note that these will replace the current images and screenshots on the play stor
 <h2 id="track-promotion">Track Promotion</h2>
 <p>A common Play publishing scenario might involve uploading an APK version to a test track, testing it, and finally promoting that version to production.</p>
 <p>This can be done using the <code>--track_promote_to</code> parameter. The <code>--track_promote_to</code> parameter works with the <code>--track</code> parameter to command the Play API to promote existing Play track APK version(s) (those active on the track identified by the <code>--track</code> param value) to a new track (<code>--track_promote_to</code> value).</p>
+<h3 id="force-a-track-promotion">Force a Track Promotion</h3>
+<p>The Play Developer API only returns the release that is currently serving each track. A version that has already been superseded by a newer one is missing from that response, so promoting it fails with <code>Track 'internal' doesn't have any releases</code>, even though the Play Console still offers it. See <a href="https://github.com/fastlane/fastlane/issues/18497">fastlane/fastlane#18497</a> for more info.</p>
+<p>The <code>--track_promote_force</code> parameter works around this by building the release out of the values you pass instead of looking it up in the source track. Both <code>--version_code</code> and <code>--version_name</code> are required with it:</p>
+<pre><code class="language-no-highlight">fastlane supply --track internal --track_promote_to production --track_promote_force --version_code 42 --version_name &quot;1.2.3&quot;
+</code></pre>
+<p>Because the release is no longer looked up, the version code is not checked against the source track - make sure it is a version that exists in the track you are promoting from.</p>
 <h2 id="retrieve-track-release-names-version-codes">Retrieve Track Release Names &amp; Version Codes</h2>
 <p>Before performing a new APK upload you may want to check existing track version codes or release names, or you may simply want to provide an informational lane that displays the currently promoted version codes or release name for the production track. You can use the <code>google_play_track_version_codes</code> action to retrieve existing version codes for a package and track. You can use the <code>google_play_track_release_names</code> action to retrieve existing release names for a package and track.
 For more information, see the <code>fastlane action google_play_track_version_codes</code> and <code>fastlane action google_play_track_release_names</code> help output.</p>
@@ -717,6 +723,11 @@ For more information, see the <code>fastlane action google_play_track_version_co
 <td><code>completed</code></td>
 </tr>
 <tr>
+<td><code>track_promote_force</code></td>
+<td>Force the promotion of a version code that is no longer returned for the source track (:version_code and :version_name are required)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
 <td><code>validate_only</code></td>
 <td>Only validate changes with Google Play rather than actually publish</td>
 <td><code>false</code></td>
@@ -841,7 +852,7 @@ For more information, see the <code>fastlane action google_play_track_version_co
     </p>
   </div>
 
-  Documentation built 2026-11-21 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-27 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

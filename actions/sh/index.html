@@ -365,10 +365,14 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
-<h2 id="2-examples">2 Examples</h2>
+<h2 id="4-examples">4 Examples</h2>
 <pre><code class="language-ruby">sh(&quot;ls&quot;)
 </code></pre>
 <pre><code class="language-ruby">sh(&quot;git&quot;, &quot;commit&quot;, &quot;-m&quot;, &quot;My message&quot;)
+</code></pre>
+<pre><code class="language-ruby">sh(&quot;gh&quot;, &quot;auth&quot;, &quot;login&quot;, &quot;--with-token&quot;, stdin: ENV[&quot;GH_TOKEN&quot;])
+</code></pre>
+<pre><code class="language-ruby">version = sh(&quot;xcodebuild&quot;, &quot;-version&quot;, separate_stderr: true)
 </code></pre>
 <h2 id="parameters">Parameters</h2>
 <table>
@@ -394,6 +398,21 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td><code>error_callback</code></td>
 <td>A callback invoked with the command output if there is a non-zero exit status</td>
 <td></td>
+</tr>
+<tr>
+<td><code>stdin</code></td>
+<td>Data written to the command's standard input, which is then closed. It is never printed, so it can carry a secret the command reads from its input</td>
+<td></td>
+</tr>
+<tr>
+<td><code>chdir</code></td>
+<td>Directory the command runs in; the lane's own directory stays as it is</td>
+<td></td>
+</tr>
+<tr>
+<td><code>separate_stderr</code></td>
+<td>Return stdout only; stderr goes to the error message and the error_callback</td>
+<td><code>false</code></td>
 </tr>
 </tbody>
 </table>
@@ -440,7 +459,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-11-21 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-27 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

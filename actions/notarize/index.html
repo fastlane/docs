@@ -358,6 +358,25 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tr>
 </tbody>
 </table>
+<h2 id="2-examples">2 Examples</h2>
+<pre><code class="language-ruby">notarize(
+  package: &quot;MyApp.app&quot;,
+  api_key_path: &quot;fastlane/AuthKey.json&quot;
+)
+</code></pre>
+<pre><code class="language-ruby"># If you want to notarize locally but don't have access to the API key,
+# you can notarize using stored credentials:
+#
+# 1. Run `xcrun notarytool store-credentials --team-id &quot;TEAM_ID&quot; --apple-id &quot;APPLE_ID&quot;`
+# 2. There will be prompts for the profile name and the app-specific password (so the password never appears on the command line).
+# 3. The specified profile name can be used at any time without the need to specify team ID, username and password:
+#    `xcrun notarytool submit --keychain-profile KEYCHAIN_PROFILE_NAME`
+notarize(
+  package: &quot;MyApp.app&quot;,
+  keychain_profile: &quot;AC_PASSWORD&quot;,
+  keychain_path: &quot;~/Library/Keychains/notarization.keychain-db&quot;
+)
+</code></pre>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -408,6 +427,16 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <td>Your App Store Connect API Key information (https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-hash-option)</td>
 <td></td>
 </tr>
+<tr>
+<td><code>keychain_path</code></td>
+<td>The path to a keychain file to use for reading the keychain item. If not specified, the default user keychain is used</td>
+<td></td>
+</tr>
+<tr>
+<td><code>keychain_profile</code></td>
+<td>Authenticate with credentials stored in the Keychain. Use the profile name you provided in the "xcrun notarytool store-credentials" command. Unlike :username, no app-specific password is passed on the command line, so prefer it when you do not use an API key</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <p><em id="parameters-legend-dynamic">* = default value is dependent on the user's system</em></p>
@@ -453,7 +482,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-11-21 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-27 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

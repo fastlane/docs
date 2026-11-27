@@ -387,7 +387,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 <p><img alt="img/actions/MacExample.png" src="/img/actions/MacExample.png?raw=1" /></p>
 <h5 align="center">The <em>frameit</em> 2.0 update was kindly sponsored by <a href="https://mindnode.com/">MindNode</a>, seen in the screenshots above.</h5>
 
-<p>The first time that <em>frameit</em> is executed the frames will be downloaded automatically. Originally the frames are coming from <a href="https://design.facebook.com/toolsandresources/devices/">Facebook frameset</a> and they are kept on <a href="https://github.com/fastlane/frameit-frames">this repo</a>.</p>
+<p>The first time that <em>frameit</em> is executed the frames will be downloaded automatically. The frames originally came from the <a href="https://design.facebook.com/toolsandresources/devices/">Facebook frameset</a>, newer devices come from <a href="https://developer.apple.com/design/resources/#product-bezels">Apple Design Resources</a>, and they are kept on <a href="https://github.com/fastlane/frameit-frames">this repo</a>.</p>
 <p>More information about this process and how to update the frames can be found <a href="https://github.com/fastlane/fastlane/tree/master/frameit/frames_generator">here</a></p>
 <h1 id="usage">Usage</h1>
 <h2 id="basic-usage">Basic Usage</h2>
@@ -480,7 +480,7 @@ It has the following general JSON structure:</p>
 </tr>
 <tr>
 <td><code>frame</code></td>
-<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK</code>, <code>WHITE</code>, <code>GOLD</code> and <code>ROSE_GOLD</code>)</td>
+<td>Overrides the color of the frame to be used, e.g. <code>BLACK</code>, <code>WHITE</code>, <code>SILVER</code>, <code>SPACE_GRAY</code> or <code>GRAPHITE</code>. The available colors for each device are in <a href="https://github.com/fastlane/frameit-frames/tree/gh-pages/latest">frameit-frames</a>, written in upper case with underscores (e.g. <code>Sierra Blue</code> is <code>SIERRA_BLUE</code>). If the device has no frame in that color, its default color is used.</td>
 <td>NA</td>
 </tr>
 <tr>
@@ -495,7 +495,7 @@ It has the following general JSON structure:</p>
 </tr>
 <tr>
 <td><code>force_device_type</code></td>
-<td>Forces a specific device. Valid values are: Huawei P8, Motorola Moto E, Motorola Moto G, Nexus 4, Nexus 5X, Nexus 6P, Nexus 9, Samsung Galaxy Grand Prime, Samsung Galaxy Note 5, Samsung Galaxy S Duos, Samsung Galaxy S3, Samsung Galaxy S5, Samsung Galaxy S7, Samsung Galaxy S8, Samsung Galaxy S9, iPhone 5s, iPhone 5c, iPhone SE, iPhone 6s, iPhone 6s Plus, iPhone 7, iPhone 7 Plus, iPhone 8, iPhone 8 Plus, iPhone X, iPhone XS, iPhone XR, iPhone XS Max, iPad Air 2, iPad Mini 4, iPad Pro, MacBook, Google Pixel 3, Google Pixel 3 XL, HTC One A9, HTC One M8</td>
+<td>Forces a specific device. Valid values are: Google Pixel 3, Google Pixel 3 XL, Google Pixel 4, Google Pixel 4 XL, Google Pixel 5, HTC One A9, HTC One M8, Huawei P8, Motorola Moto E, Motorola Moto G, Nexus 4, Nexus 5X, Nexus 6P, Nexus 9, Samsung Galaxy Grand Prime, Samsung Galaxy Note 5, Samsung Galaxy Note 10, Samsung Galaxy Note 10+, Samsung Galaxy S Duos, Samsung Galaxy S3, Samsung Galaxy S5, Samsung Galaxy S7, Samsung Galaxy S8, Samsung Galaxy S9, Samsung Galaxy S10, Samsung Galaxy S10+, Xiaomi Mi Mix Alpha, Surface Pro X, iPhone 5s, iPhone 5c, iPhone SE, iPhone 6s, iPhone 6s Plus, iPhone 7, iPhone 7 Plus, iPhone 8, iPhone 8 Plus, iPhone X, iPhone XS, iPhone XR, iPhone XS Max, iPhone 11, iPhone 11 Pro, iPhone 11 Pro Max, iPhone 12, iPhone 12 Pro, iPhone 12 Pro Max, iPhone 12 Mini, iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 13 Mini, iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone 16, iPhone 16 Plus, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 17, iPhone 17 Pro, iPhone 17 Pro Max, iPad 10.2, iPad Air 2, iPad Air (2019), iPad Mini 4, iPad Mini (2019), iPad Pro, iPad Pro (12.9-inch) (3rd generation), iPad Pro (12.9-inch) (4th generation), iPad Pro (10.5-inch), iPad Pro (11-inch), MacBook</td>
 <td>NA</td>
 </tr>
 </tbody>
@@ -525,7 +525,7 @@ These are defined in the <code>data</code> key. This is an array with the follow
 </tr>
 <tr>
 <td><code>frame</code></td>
-<td>Overrides the color of the frame to be used. (Valid values are <code>BLACK</code>, <code>WHITE</code>, <code>GOLD</code> and <code>ROSE_GOLD</code>)</td>
+<td>Overrides the color of the frame to be used. Valid values are the same as for the general parameter.</td>
 </tr>
 <tr>
 <td><code>use_platform</code></td>
@@ -908,7 +908,7 @@ brew install imagemagick
     </p>
   </div>
 
-  Documentation built 2026-11-21 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-27 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

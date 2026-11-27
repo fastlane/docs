@@ -663,7 +663,7 @@ end
 <h1 id="credentials">Credentials</h1>
 <p>A detailed description about how your credentials are handled is available in a <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">credentials_manager</a>.</p>
 <h3 id="how-does-this-thing-even-work-is-magic-involved">How does this thing even work? Is magic involved? 🎩</h3>
-<p>Your password will be stored in the macOS keychain, but can also be passed using environment variables. (More information available on <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a>)</p>
+<p>Use an App Store Connect API key, or pass your password in the <code>FASTLANE_PASSWORD</code> environment variable. <em>fastlane</em> stores it in the macOS keychain only when <code>FASTLANE_STORE_PASSWORDS_IN_KEYCHAIN</code> is set. (More information available on <a href="https://github.com/fastlane/fastlane/tree/master/credentials_manager">CredentialsManager</a>)</p>
 <p>Before actually uploading anything to iTunes, <em>deliver</em> will generate a HTML summary of the collected data.</p>
 <p><em>deliver</em> uses the following techniques under the hood:</p>
 <ul>
@@ -1646,7 +1646,7 @@ different, <a href="https://developer.apple.com/documentation/app_clips/configur
     </p>
   </div>
 
-  Documentation built 2026-11-21 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-27 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">

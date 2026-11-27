@@ -358,21 +358,27 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
 </tbody>
 </table>
 <h2 id="4-examples">4 Examples</h2>
-<pre><code class="language-ruby">import_certificate(certificate_path: &quot;certs/AppleWWDRCA6.cer&quot;)
-</code></pre>
 <pre><code class="language-ruby">import_certificate(
-  certificate_path: &quot;certs/dist.p12&quot;,
-  certificate_password: ENV[&quot;CERTIFICATE_PASSWORD&quot;] || &quot;default&quot;
-)
-</code></pre>
-<pre><code class="language-ruby">import_certificate(
-  certificate_path: &quot;certs/development.cer&quot;
+  certificate_path: &quot;certs/AppleWWDRCA6.cer&quot;,
+  keychain_name: &quot;login.keychain&quot;
 )
 </code></pre>
 <pre><code class="language-ruby">import_certificate(
   certificate_path: &quot;certs/dist.p12&quot;,
   certificate_password: ENV[&quot;CERTIFICATE_PASSWORD&quot;] || &quot;default&quot;,
-  certificate_format: &quot;pkcs12&quot;
+  keychain_name: &quot;custom.keychain&quot;
+)
+</code></pre>
+<pre><code class="language-ruby">import_certificate(
+  certificate_path: &quot;certs/development.cer&quot;,
+  keychain_path: File.expand_path(&quot;~/Library/Keychains/login.keychain-db&quot;)
+)
+</code></pre>
+<pre><code class="language-ruby">import_certificate(
+  certificate_path: &quot;certs/dist.p12&quot;,
+  certificate_password: ENV[&quot;CERTIFICATE_PASSWORD&quot;] || &quot;default&quot;,
+  certificate_format: &quot;pkcs12&quot;,
+  keychain_path: &quot;/path/to/custom.keychain&quot;
 )
 </code></pre>
 <h2 id="parameters">Parameters</h2>
@@ -465,7 +471,7 @@ To modify it, go to its source at https://github.com/fastlane/fastlane/blob/mast
     </p>
   </div>
 
-  Documentation built 2026-11-21 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
+  Documentation built 2026-11-27 with <a href="https://properdocs.org">ProperDocs</a> — Copyright &copy; 2026 <a href="https://fastlane.tools">fastlane</a>
 </footer>
 
 <script type="text/javascript">
